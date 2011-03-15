@@ -1,0 +1,60 @@
+#! /bin/sh
+#
+# chkconfig: 345 83 26
+# description: the yaffas webmin daemon
+# processname: /opt/yaffas/webmin/miniserv.pl
+# pidfile: /opt/yaffas/var/miniserv.pid
+
+set -e
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC="yaffas"
+NAME=yaffas
+SCRIPTNAME=/etc/init.d/$NAME
+
+
+#
+#	Function that starts the daemon/service.
+#
+d_start() {
+	/opt/yaffas/etc/webmin/start > /dev/null
+}
+
+#
+#	Function that stops the daemon/service.
+#
+d_stop() {
+	/opt/yaffas/etc/webmin/stop > /dev/null
+}
+
+case "$1" in
+  start)
+	echo -n "Starting $DESC: $NAME"
+	d_start
+	echo "."
+	;;
+  stop)
+	echo -n "Stopping $DESC: $NAME"
+	d_stop
+	echo "."
+	;;
+  restart|force-reload)
+	#
+	#	If the "reload" option is implemented, move the "force-reload"
+	#	option to the "reload" entry above. If not, "force-reload" is
+	#	just the same as "restart".
+	#
+	echo -n "Restarting $DESC: $NAME"
+	d_stop
+	sleep 1
+	d_start
+	echo "."
+	;;
+  *)
+	# echo "Usage: $SCRIPTNAME {start|stop|restart|reload|force-reload}" >&2
+	echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+	exit 1
+	;;
+esac
+
+exit 0

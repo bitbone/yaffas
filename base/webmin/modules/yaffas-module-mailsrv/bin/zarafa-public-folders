@@ -1,0 +1,86 @@
+#!/usr/bin/php5
+<?php
+/* Copyright bitbone AG 2008-2009 */
+
+$testdir = "";
+if ($argv[1])
+	$testdir = $argv[1];
+
+define("CONFIG", $testdir."/etc/zarafa/folderadmin.cfg");
+
+include("mapi/mapi.util.php");
+include("mapi/mapicode.php");
+include("mapi/mapidefs.php");
+include("mapi/mapitags.php");
+
+if (! file_exists(CONFIG)) {
+	echo "Config file does not exists!\n";
+	exit(255);
+}
+$config = file(CONFIG);
+
+if (count($config) != 2) {
+	echo "Config incorrect!\n";
+	exit(255);
+}
+
+$session = mapi_logon_zarafa(rtrim($config[0]), rtrim($config[1]));
+if ($session == false) {
+	echo "Wrong username or password!\n";
+	exit(255);
+}
+
+$storetable = mapi_getmsgstorestable($session);
+$storeslist = mapi_table_queryallrows($storetable, array(PR_ENTRYID, PR_MDB_PROVIDER));
+$publicstore = false;
+for ($i = 0; $i < count($storeslist); $i++) {
+	if ($storeslist[$i][PR_MDB_PROVIDER] == ZARAFA_STORE_PUBLIC_GUID) {
+		$publicstore = mapi_openmsgstore($session, $storeslist[$i][PR_ENTRYID]);
+	}
+}
+
+if ($publicstore) {
+	$inbox = mapi_msgstore_openentry($publicstore, $folder_entryid);
+	if ($inbox == false) {
+		echo "Can't open public store\n";
+		exit(255);
+	}
+	$folders = mapi_folder_gethierarchytable($inbox, CONVENIENT_DEPTH);
+	$folderlist = mapi_table_queryallrows($folders);
+
+	foreach ($folderlist as $f) {
+		if ($f[PR_DISPLAY_NAME] == "IPM_SUBTREE") {
+			$folder = $f[PR_DISPLAY_NAME];
+			$folder = str_replace("IPM_SUBTREE", "", $folder);
+			if ($folder)
+				echo $folder."\n";
+			get_folders($f, $f[PR_DISPLAY_NAME]);
+		}
+	}
+	exit(0);
+}
+
+function get_folders($folder, $parent) {
+	global $publicstore;
+	$inbox = mapi_msgstore_openentry($publicstore, $folder[PR_ENTRYID]);
+	$folders = mapi_folder_gethierarchytable($inbox);
+	$folderlist = mapi_table_queryallrows($folders);
+	foreach ($folderlist as $f) {
+		if ($f[PR_DISPLAY_NAME] == "Admin") {
+			continue;
+		}
+
+		if ($parent != "")
+			$folder = $parent."/".$f[PR_DISPLAY_NAME];
+		else
+			$folder = $f[PR_DISPLAY_NAME];
+
+		$folder = str_replace("IPM_SUBTREE", "", $folder);
+		$folder = preg_replace("/^\//", "", $folder);
+
+		echo $folder."\n";
+
+		get_folders($f, $parent."/".$f[PR_DISPLAY_NAME]);
+	}
+}
+?>

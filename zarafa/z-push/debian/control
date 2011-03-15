@@ -1,0 +1,12 @@
+Source: z-push
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: z-push
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, php-pear, php-mail, libapache2-mod-php5
+Description: Open-source push technology
+ Z-push is an implementation of the ActiveSync protocol, which is used 'over-the-air' for multi platform ActiveSync devices, including Windows Mobile, Ericsson and Nokia phones. With Z-push any groupware can be connected and synced with these devices.

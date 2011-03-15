@@ -1,0 +1,8 @@
+lbl_insert=Schlüssel einspielen
+lbl_install_basekey=Neuen Basis-Schlüssel installieren
+lbl_install_calkey=Neuen Client-Schlüssel installieren
+lbl_installed_licences=Installierte Lizenzen
+lbl_base_key=Basis Schlüssel
+lbl_serial=Serialnummer
+lbl_log=Lizenzlog
+err_wrong_lic=Das ist keine gültige Zarafa-Seriennummer

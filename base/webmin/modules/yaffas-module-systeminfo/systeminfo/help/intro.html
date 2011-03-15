@@ -1,0 +1,25 @@
+<header>System Information</header>
+
+<h3>About System Information</h3>
+
+The System Information module provides a GUI frontend to a number of system statistics that are generally useful to a system administrator.  On the front page is displayed some general information, load information, memory usage, and filesystem information.  At the bottom of the page are links to deeper information about other parts of the system, including network socket usage and IRQ usage.
+
+<h3>General Information</h3>
+
+This section includes the currently running kernel revision, the CPU in use, the hostname, and the uptime of the system.  The uptime is the amount of time since the system was last rebooted.
+
+<h3>Load Average</h3>
+
+This section provides statistics about the load average of the system for the past minute, 5 minutes and 15 minutes, where a load average of 1 is full CPU utilization.  Load average can be misleading, however, as some tasks have a lower priority and are put off until there are free CPU cycles to handle them.  The system load average reports on the load of all processes in need of CPU cycles--thus it can lead to numbers that are higher than 1.  In a loaded network server, load will nearly always be above 1.  This is not an indication of problems, unless response of the server to requests and console activity is sluggish.  Load averages over 6 may be cause for concern even if response is still generally quick--it might be time to plan for a CPU upgrade.
+
+<h3>Memory Usage</h3>
+
+The memory usage section displays a graph of memory usage, dividing a single bar into colors to represent the different allocations of memory.  The green portion of the bar represents free memory.  This memory is unallocated by any part of the system, user or kernel, and can be allocated without requiring swapping or freeing of buffer pages.  The yellow portion of the bar represents memory that has been allocated by the kernel for buffer or disk cache usage.  Though this memory has been filled by the kernel, and allocated for its own use, it can be quickly freed without requiring paging of objects to disk (because it is buffering of objects already on disk).  Thus the yellow bar also represents available memory for programs to allocate.  Finally, the red portion of the bar represents memory that is allocated and in use by the kernel or the program for executable code or in memory data.  This memory cannot usually be quickly freed for use by other programs because it must be swapped out to disk so that program state is not lost.  Memory indicated in red can be thought of as "unavailable" memory, while yellow and green can generally be thought of as "available" memory.
+
+<h3>Filesystem Information</h3>
+
+Filesystem information provides a number of bar graphs to represent filesystem usage.  The table presents the device name or label, the size, space used, space available, a graph of the space used for an at-a-glance view, and the mount point where the device is accessible.
+
+<hr>
+<font size="-1">
+Copyright 2000,2001 Pascal Gauthier and Joe Cooper.  This module is licensed under the GPL.  I (Joe) have adopted this module after losing contact with Pascal, though he retains his portion of the copyright and I have left his original contact and copyright information intact--but it probably isn't worth your time to send an email to the address provided for him, as it began bouncing over a year ago and I've been unable to locate newer contact information.

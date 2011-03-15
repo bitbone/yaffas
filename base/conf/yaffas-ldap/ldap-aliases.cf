@@ -1,0 +1,9 @@
+server_host = localhost
+search_base = ou=People,BASE
+bind = yes
+bind_dn = cn=ldapadmin,ou=People,BASE
+bind_pw = ro%bitkit
+version = 3
+scope = sub
+query_filter = (zarafaAliases=%s)
+result_attribute = mail

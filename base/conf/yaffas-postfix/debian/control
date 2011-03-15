@@ -1,0 +1,11 @@
+Source: yaffas-postfix
+Section: yaffas
+Priority: extra
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.7.3
+
+Package: yaffas-postfix
+Architecture: all
+Description: Configuration package for postfix
+ Configuration package for postfix

@@ -1,0 +1,49 @@
+index_header=Dienste
+lbl_service=Dienst
+lbl_status=Status
+lbl_service_on_boot=Service starten beim Booten
+lbl_watchme=Überwachen
+lbl_action=Aktion
+lbl_execute=Ausführen
+lbl_start=Start
+lbl_stop=Stop
+lbl_config=Konfigurieren
+lbl_restart=Neustart
+lbl_started=Gestartet
+lbl_stopped=Gestoppt
+suc_start=Dienst wurde gestartet
+dis_start=Dienst darf nicht gestartet
+err_start=Dienst konnte nicht gestartet werden
+suc_stop=Dienst wurde gestoppt.
+dis_stop=Dienst darf nicht gestoppt werden
+err_stop=Dienst konnte nicht gestoppt werden
+suc_restart=Dienst wurde neu gestartet
+dis_restart=Dienst darf nicht neu gestartet werden
+err_restart=Dienst konnte nicht neu gestartet werden
+lbl_really_stop_title=Dienst stoppen
+lbl_really_stop=Wollen Sie diesen Dienst wirklich stoppen?
+
+
+lbl_shutdown=System herunterfahren
+lbl_halt=System herunterfahren
+lbl_reboot=System neu booten
+lbl_halting=Das System wird heruntergefahren und ausgeschalten.
+lbl_rebooting=Das System wird neu gestartet. In einigen Minuten können Sie sich wieder anmelden.
+lbl_sure_halt=Möchten Sie wirklich das System herunterfahren.
+lbl_sure_reboot=Möchen Sie wirklich das System neu starten.
+
+
+lbl_day=Tag
+lbl_month=Monat
+lbl_date=Datum
+lbl_hour=Stunde
+lbl_year=Jahr
+lbl_setdatetime=Systemzeit
+
+
+lbl_once=einmalig
+lbl_every=jede Stunde
+lbl_daily=jeden Tag
+lbl_minute= Minute 
+lbl_hour= Stunde 
+lbl_timeserver=Zeit-Server

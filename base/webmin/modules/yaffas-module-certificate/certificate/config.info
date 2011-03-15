@@ -1,0 +1,13 @@
+openssl_cmd=Path to openssl binary,0
+ssl_dir=OpenSSL data directory,0
+ssl_cert_dir=OpenSSL certificate directory,0
+ssl_key_dir=OpenSSL key directory,0
+ssl_csr_dir=OpenSSL CSR directory,0
+key_filename=Default filename for host key,0
+cert_filename=Default filename for host certificate,0
+key_cert_filename=Default filename for host key/certificate pair,0
+csr_filename=Default filename for host CSR,0
+sign_filename=Default filename for signed certificate,0
+incsr_filename=Default filename for someone else's CSR,0
+default_days=Default certificate validity (in days)
+default_wildcard=Default key/certificate filename wildcard

@@ -1,0 +1,12 @@
+Source: yaffas-module-zarafaresources
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: yaffas-module-zarafaresources
+Architecture: all
+Depends: yaffas-core, yaffas-module-users, yaffas-module-mailsrv, yaffas-install-lib
+Description: Module for managing zarafa resources
+ Module for managing zarafa resources

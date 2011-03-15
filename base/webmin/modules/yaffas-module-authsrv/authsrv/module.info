@@ -1,0 +1,7 @@
+longdesc=Authentication Server
+desc_de=Authentifizierungsserver
+desc_en=Authentication Server
+name=bbauthsrv
+category=accounts
+desc=Authentication Server
+version=0.1

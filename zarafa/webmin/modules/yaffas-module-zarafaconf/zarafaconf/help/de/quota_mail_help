@@ -1,0 +1,8 @@
+help_quota_mail=Sie können folgende Variablen zum erstellen des Textes verwenden:
+
+${ZARAFA_QUOTA_NAME} - der Name des Zarafakontos
+${ZARAFA_QUOTA_STORE_SIZE} - die aktuelle Größe des Kontos
+${ZARAFA_QUOTA_WARN_SIZE} - das Limit für eine Warnung
+${ZARAFA_QUOTA_SOFT_SIZE} - das Limit für eine Sendesperre des Kontos
+${ZARAFA_QUOTA_HARD_SIZE} - das Limit für eine Sende- und Empfangssperre des Kontos
+--

@@ -1,0 +1,7 @@
+longdesc=Logfile download module
+desc_de=Logdateien Betrachter
+desc_en=Logfiles Viewer
+name=bblogfile
+category=maintainance
+desc=Logfile download module
+version=1.0

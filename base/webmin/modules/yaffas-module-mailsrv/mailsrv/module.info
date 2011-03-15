@@ -1,0 +1,7 @@
+longdesc=Mailserver configuration
+desc_de=Konfiguration
+desc_en=Configuration
+name=bbmailsrv
+category=mailserver
+desc=configuration
+version=0.1

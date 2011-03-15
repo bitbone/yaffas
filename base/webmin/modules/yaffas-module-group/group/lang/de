@@ -1,0 +1,34 @@
+lbl_index_return=Netzwerk
+lbl_group_add=Erstellen
+lbl_link_edit=Benutzer ändern
+lbl_create_group_header=Gruppe erstellen
+lbl_delete=Gruppe löschen
+lbl_edit=Gruppe bearbeiten
+lbl_create=Gruppe anlegen
+lbl_changeuser=Benutzer ändern
+
+lbl_index_header=Gruppenverwaltung
+lbl_groupname=Gruppenname
+lbl_groups=Gruppen
+lbl_group=Gruppe
+lbl_user=Benutzer
+lbl_filetype=Dateityp
+
+lbl_set_filetype=Dateityp setzen
+
+lbl_create_cache=Erzeuge Zwischenspeicher
+lbl_done=fertig
+
+lbl_ask_delete=Wollen Sie diese Gruppen wirklich löschen?
+lbl_auth=Authentifizierung
+
+
+err_input=Alle Felder müssen ausgefüllt sein!
+err_create=Anlegen der Gruppe schlug fehl!
+err_delete=Löschen der Gruppe schlug fehl!
+err_group_not_exist=Gruppe existiert nicht!
+err_group_already_exists=Diese Gruppen existieren bereits!
+err_newgroup_name=Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zahlen bestehen, müssen länger als 1 Zeichen sein und mit einem Buchstaben beginnen!
+err_mode=Falscher Modus ausgewählt!
+err_no_group_selected=Keine Gruppe ausgewählt!
+err_no_local_auth=Diese Aktion wird nur bei lokaler Authentifizierung unterstützt.

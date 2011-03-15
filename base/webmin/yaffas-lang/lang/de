@@ -1,0 +1,91 @@
+category_accounts=Benutzerkonten
+category_appearance=Erscheinungsbild
+category_fax=Fax
+category_manual=Handbuch
+category_hardware=Hardware
+category_license=Lizenz
+category_mailbox=Mailbox
+category_mailserver=Mailserver
+category_maintainance=Wartung
+category_security=Sicherheit
+category_pdf=PDF Drucker
+category_zarafa=Zarafa
+category_groupware=Groupware
+
+err_db_connect=Konnte nicht mit der Datenbank Postgres verbinden.
+err_dir_exists=Konnte folgende Verzeichnisse nicht finden:
+err_dir_read=Konnte folgende Verzeichnisse nicht lesen:
+err_file_copy=Konnte die folgende Datei nicht kopieren:
+err_file_delete=Konnte folgende Datei(en) nicht löschen:
+err_file_execute=Konnte folgende Datei(en) nicht ausführen:
+err_file_exists=Konnte folgende Datei(en) nicht finden:
+err_file_hardlink=Konnte für folgende Dateien(en) kein hardlink erstellen.
+err_file_read=Konnte folgende Datei(en) nicht lesen:
+err_file_rename=Konnte folgende Datei(en) nicht umbenennen:
+err_file_symlink=Konnte für folgende Datei(en) kein symlink erstellen:
+err_file_write=Konnte folgende Datei(en) nicht schreiben:
+err_user_exists=Konnte folgende Benutzer nicht finden:
+err_license_expired_text=Ihre bitkit Lizenz ist abgelaufen. Bitte installieren Sie eine neue Lizenzdatei oder kontaktieren Sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a> für eine weitere Nutzung.
+err_name_is_alias=Es existiert bereits ein Alias mit diesem Namen:
+err_alias_is_user=Es existiert bereits ein Benutzer mit diesem Namen:
+
+lbl_apply=Anwenden
+lbl_cancel=Abbrechen
+lbl_no=Nein
+lbl_ok=OK
+lbl_paging_all=Alle anzeigen
+lbl_paging_next=Nachfolger
+lbl_paging_previous=Vorgänger
+lbl_paging_goto=Gehe zu
+lbl_save=Speichern
+lbl_yes=Ja
+lbl_create_cache=Erzeuge Zwischenspeicher
+lbl_done=fertig
+lbl_apply_filter=Filtern
+lbl_delete=löschen
+
+lbl_product_mail=bitkit|MAIL
+lbl_product_fax=bitkit|FAX
+lbl_product_gate=bitkit|GATE
+lbl_product_pdf=bitkit|PDF
+lbl_product_fileserver=bitkit|FILE
+
+longcategory_accounts=Module um Systemaccounts verwalten zu können
+longcategory_appearance=Module um die UI einstellen zu können
+longcategory_license=Module zum Verwalten der Lizenzen
+longcategory_fax=Module zur Faxconfiguration
+longcategory_handbook=Handbücher zur Systemadministration
+longcategory_hardware=Module für Drucker-, Festplatten- und andere Hardware-Konfigurationen.
+longcategory_mailbox=Module zur Mailboxverwaltung
+longcategory_mailserver=Module zur Mailserververwaltung
+longcategory_security=Module um sicherheitsrelevante Einstellung zu machen
+
+efileopen=Konnte $1 nicht öffnen: $2
+
+lbl_faxtakeover=Es wurden Änderungen an den Faxeinstellungen vorgenommen. Bitte klicken Sie in der Faxkonfiguration auf 'Übernehmen'.
+lbl_achtung=Achtung!
+
+lbl_lang=Sprache
+lbl_lang_de=Deutsch
+lbl_lang_en=Englisch
+
+lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
+lbl_about_bitkit=Über bitkit
+lbl_about_yaffas=Über yaffas
+
+lbl_logged_out=Abgemeldet
+lbl_logged_out_msg=Ein anderer Administrator hat sich eingeloggt. Sie müssen sich neu einloggen um weiter arbeiten zu können.
+
+lbl_loading=Wird geladen, bitte warten...
+lbl_error=Fehler
+
+lbl_help=Hilfe
+
+lbl_loading_data=Lade Daten...
+lbl_error_data=Fehler beim Holen der Daten.
+lbl_no_data=Keine Einträge vorhanden.
+
+lbl_filter_header=Filterdaten
+lbl_filter_show=Filter anzeigen
+
+err_connection_failed=Konnte Verbindung zum Server nicht aufbauen!

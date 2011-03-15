@@ -1,0 +1,7 @@
+name=Sysinfo
+desc=System Information
+desc_en=System Information
+dec_fr=Information Systeme
+depends=proc
+os_support=slackware-linux redhat-linux debian-linux suse-linux open-linux turbo-linux corel-linux
+category=hardware

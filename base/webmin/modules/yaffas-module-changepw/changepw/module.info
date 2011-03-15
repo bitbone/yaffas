@@ -1,0 +1,7 @@
+longdesc=Change Password of Web-Interface. Set Root-Password if unlimited License
+desc_de=Admin Passwort
+desc_en=Admin password
+name=changepw
+category=accounts
+desc=Set Password
+version=0.1

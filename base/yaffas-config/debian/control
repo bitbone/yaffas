@@ -1,0 +1,13 @@
+Source: yaffas-config
+Section: yaffas
+Priority: extra
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: www.yaffas.org
+
+Package: yaffas-config
+Architecture: all
+Depends: yaffas-ldap, yaffas-postfix, yaffas-samba
+Description: Meta-package for yaffas
+ Meta-package for yaffas

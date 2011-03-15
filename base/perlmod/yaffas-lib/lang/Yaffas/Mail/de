@@ -1,0 +1,6 @@
+err_mailbox_name=Der Name der Mailbox darf nur aus Zahlen und Buchstaben bestehen.
+err_quota_value=Der Wert des Quotas darf nur aus Zahlen bestehen.
+err_mailbox_not_exist=Die Mailbox existiert nicht.
+err_invalid_parameters=Falsche Parameter übergeben.
+err_folder_name=Der Ordnername darf nur aus Buchstaben a-z und Zahlen 0-9, sowie "-" und "." bestehen.
+err_alias_exists=Der Alias existiert bereits.

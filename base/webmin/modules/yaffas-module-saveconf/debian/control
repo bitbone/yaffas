@@ -1,0 +1,12 @@
+Source: yaffas-module-saveconf
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-module-saveconf
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, yaffas-module-authsrv, yaffas-lib, perl-modules
+Description: Backup configuration for yaffas
+ Backup for conffiles and ldap-database of yaffas

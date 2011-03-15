@@ -1,0 +1,64 @@
+c=Land (2-Buchstaben-Code)
+cn=Common Name (z.B. host.name.de)
+
+e_c=Ländername nicht korrekt.
+e_cn=Common Name nicht korrekt oder nicht gesetzt.
+e_days=Tage nicht korrekt.
+e_emailAddress=E-Mail Adresse nicht korrekt.
+e_genfailed=Fehler bei der Generierung
+e_l=Örtlichkeit nicht korrekt.
+e_o=Organizationen Name nicht korrekt.
+e_ou=Organization Unit nicht korrekt.
+e_service=Service nicht korrekt.
+e_st=Staat oder Provinz nicht korrekt.
+
+err_param=Parameter nicht korrekt.
+err_cert_not_valid=Zertifikat ungültig.
+err_fork=Fork missglückt
+err_cert_creation=Zertifikat wurde nicht erstellt.
+err_nothing_selected=Es wurde nichts ausgewählt.
+
+emailAddress=E-Mail Adresse (z.B. webmaster@company.com)
+
+gencert_days=Zertifikat gültig für (Tage)
+gencert_generate=Generiere Schlüssel
+gencert_header=Generiere Selbst Signierte Zertifikate und Schlüssel
+gencert_service=Service
+gencert_title=Generiere Zertifikat und Schlüssel
+gencert_e_linkerror=Symlink Fehler
+
+import_cert_file=Zertifikat:
+import_cert_service=Service:
+import_upload_cert=Zertifikat Hochladen
+import_upload_cert_s=Zertifikat hochladen
+import_title=Zertifikat Importieren
+import_del=Zertifikat Löschen
+import_delquestion=Soll das Zertifikat wirklich gelöscht werden?
+import_ok=Das Zertifikat wurde korrekt importiert!
+import_error=Beim Importierten tratt ein Fehler auf! Bitte überprüfen Sie ihre Zertifikatsdatei.
+
+index_header=Zertifikat / Schlüssel Verwaltung
+index_import=Zertifikat Importieren
+index_gencert=Generiere selbst signierte Zertifikate und Schlüssel
+index_view=Verwalte installierte Zertifikate
+index_title=Zertifikats Manager
+
+keysize=Schlüsselgröße (in Bits)
+l=Örtlichkeit (z.B. Stadt)
+o=Organization Name (z.B. Firma)
+ou=Organization Unit Name (z.B. Abteilung)
+
+st=Staat oder Provinz (Voller Name)
+
+view_begin=Gültig ab
+view_delete=Löschen
+view_deleted=Datei Erfolgreich gelöscht
+view_name=Name
+view_end=Gültig bis
+view_cert_not_valid=Zertifikat nicht gültig!
+view_header=Verwalte installierte Zertifikate
+
+restart_service=Die Dienste werden neu gestartet!
+
+
+succsess=Erfolgt

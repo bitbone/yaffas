@@ -1,0 +1,20 @@
+Source: yaffas-lib-file-samba
+Section: yaffas
+Priority: optional
+Build-Depends: debhelper (>= 5), libmodule-build-perl
+Build-Depends-Indep: perl (>= 5.6.10-12)
+Maintainer: Package Builder <packages@yaffas.org>
+Standards-Version: 3.8.0
+Homepage: http://search.cpan.org/dist/File-Samba/
+
+Package: yaffas-lib-file-samba
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, libdata-dump-perl
+Description: Module to manipulate a smb.conf file
+ This module allows for easy editing of smb.conf in an OO way.
+ The need arised from openfiler http://www.openfiler.org which at this current
+ time setups a smb conf for you, however any changes you made by hand are lost
+ when you make change due to the fact it doesnt havea way to edit an existing
+ smb.conf but simply creates a new one. This modules allows for any program to
+ be ables to extract the current config, make changes nd save the file. Comments
+ are lost however on save.

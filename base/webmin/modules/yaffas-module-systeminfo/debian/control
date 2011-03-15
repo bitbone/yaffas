@@ -1,0 +1,13 @@
+Source: yaffas-module-systeminfo
+Priority: optional
+Section: yaffas
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-module-systeminfo
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core
+Description: Module for collecting systeminfo
+ Module for collecting system information
+ shows memory, cpu, filesystem, irqs, io ports, ...

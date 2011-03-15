@@ -1,0 +1,12 @@
+Source: yaffas-module-service
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: yaffas-module-service
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core
+Description: bbservice module for webmin
+ This module allows the admin to control the installed services.

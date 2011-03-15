@@ -1,0 +1,31 @@
+lbl_userfilter=Userfilter
+lbl_filtertype=Filtertype
+lbl_filtergroup=Group
+lbl_ldapfilter_type_0=Default
+lbl_ldapfilter_type_1=AD Plugin
+lbl_ldapfilter_type_2=AD Group
+lbl_confirm_filter_save=Delete these zarafa stores?
+lbl_confirm_msg=With this step, the following zarafa stores would be deleted:
+err_no_group_found=Could not find Group.
+err_no_rootbasedn=Could not find the rootDomainNamingContext in AD.
+
+lbl_attachment_size=Size of attachments
+lbl_size=Size
+err_not_numeric=The value is not numeric.
+
+lbl_optimize=Optimize
+lbl_memory_installed=Addressable memory
+lbl_memory_optimize=Optimized for
+lbl_memory_optimize_header=Optimize memory
+lbl_unknown=unknown
+
+lbl_quota=Messages at reaching the quota
+lbl_quota_warn=Message at 80%
+lbl_quota_soft=Message at 90%
+lbl_quota_hard=Message at 100%
+
+lbl_default_quota=Default quota
+lbl_default_quota_header=Default Quota
+lbl_no_quota=Off
+
+err_quota_value=The quota value can only contain digits.

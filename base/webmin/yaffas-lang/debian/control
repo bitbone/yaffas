@@ -1,0 +1,13 @@
+Source: yaffas-lang
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-lang
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core
+# bbusermin-core disabled
+Description: Language files for webmin
+ Language files for webmin

@@ -1,0 +1,4 @@
+config_file=/etc/fetchmailrc
+fetchmail_path=fetchmail
+daemon_user=root
+pid_file=/var/run/fetchmail.pid

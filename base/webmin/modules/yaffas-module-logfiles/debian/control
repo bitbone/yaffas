@@ -1,0 +1,12 @@
+Source: yaffas-module-logfiles
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: yaffas-module-logfiles
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core
+Description: Webmin module for showing logfiles
+ Webmin module for showing logfiles

@@ -1,0 +1,24 @@
+lbl_resourcemanagement=Ressourcen verwalten
+lbl_resource=Ressource
+lbl_description=Beschreibung
+lbl_email=E-Mail
+lbl_decline_conflict=Konflikte verbieten
+lbl_decline_recurring=Wiederholungen verbieten
+lbl_newresource=Neue Ressource
+lbl_editresource=Ressource bearbeiten
+lbl_delresource=Ressource löschen
+lbl_delresource_question=Wollen Sie diese Ressourcen wirklich löschen?
+lbl_remind_perms=Vergessen Sie nicht, Benutzern, die diese Ressource buchen sollen die nötigen Berechtigungen auf den Kalender der Ressource zu geben.
+
+err_username=Der Name für die Ressource enthält ungültige Zeichen.
+err_never_user=Der Name für die Ressource ist bereits durch einen speziellen Benutzer belegt.
+err_gecos=Die Beschreibung für die Ressource enthält ungültige Werte.
+err_no_email=Keine E-Mail Adresse angegeben.
+err_mail_loc_host=Domänenanteil der E-Mail Adresse darf nicht localhost sein.
+err_missing_alias=Der lokale Teil der E-Mail Adresse muss dem Namen entsprechen.
+err_unknown_domain=Die Domäne ist in der Mailserver Konfiguration nicht als lokale Domäne definiert.
+err_email=Die E-Mail Adresse ist ungültig.
+err_user_exists_allready=Der Name für die Ressource ist bereits für einen Benutzer vergeben.
+err_name_is_alias=Der Name für die Ressource ist bereits für ein Benutzeralias vergeben.
+err_user_doesnt_exist=Die angegebene Ressource existiert nicht.
+err_no_domains=Es wurden noch keine lokalen Mail Domänen konfiguriert.

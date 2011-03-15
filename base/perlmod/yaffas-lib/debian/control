@@ -1,0 +1,14 @@
+Source: yaffas-lib
+Section: yaffas
+Priority: optional
+Build-Depends: debhelper (>= 7)
+Build-Depends-Indep: perl
+Maintainer: Package Builder <packages@yaffas.org>
+Standards-Version: 3.8.3
+Homepage: http://www.yaffas.org/
+
+Package: yaffas-lib
+Architecture: all
+Depends: ${perl:Depends}, ${misc:Depends}, libsort-naturally-perl, libalgorithm-dependency-perl, yaffas-lib-file-samba, libconfig-general-perl, binutils, liburi-perl, libdigest-sha1-perl, libarchive-tar-perl, liberror-perl, libnet-ldap-perl, libdbi-perl, libxml-libxml-perl, libdbd-pg-perl, smbclient, liblog-log4perl-perl, libschedule-at-perl, libalgorithm-dependency-perl, libcrypt-openssl-dsa-perl, libdata-dump-perl, libdevel-cover-perl, libsort-naturally-perl, libtest-classapi-perl, php5-cli
+Description: perl yaffas library
+ Yaffas library in perl for yaffas products

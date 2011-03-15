@@ -1,0 +1,10 @@
+%_signature gpg
+%_gpg_path ~/.gnupg
+%_gpg_name bitbone AG <info@bitbone.de>
+%_gpgbin /usr/bin/gpg
+
+%_topdir /usr/src/redhat
+%_builddir .
+%build_prepare %{__rm} -rf /usr/src/redhat/BUILD/%{name}-%{version} \
+	%{__mkdir} -p /usr/src/redhat/BUILD/%{name}-%{version} \
+	%{__cp} -a $OLDPWD/* /usr/src/redhat/BUILD/%{name}-%{version}

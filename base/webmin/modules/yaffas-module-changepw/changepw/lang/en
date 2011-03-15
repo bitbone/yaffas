@@ -1,0 +1,26 @@
+lbl_index_header=Change Password
+lbl_index_return=System
+
+lbl_pass=Password:
+lbl_pass2=Repeat password:
+lbl_save=Save
+lbl_adminpass=Admin-Password
+lbl_rootpass=Root-Password
+lbl_domadminpass=Domain-Administrator-Password
+
+err_mysql_password=Could not set MySQL password!
+err_file_read=Can't read following file(s):
+err_file_write=Can't write following file(s):
+
+err_root_password=Can not set the root password!
+err_domadmin_password=Can not set the domain-admintrator password!
+err_smbpasswd=Can not execute SMBPASSWD!
+err_license=This function is only available in the unlimited version
+err_execute=Can not execute following:
+err_ldapmodify=Can not execute LDAP Modify!
+err_delete_file=Can not delete following file(s):
+err_copy_file=Can not copy following file(s):
+
+err_password=Password have to be at least on character long and must not contain a hash (#).
+err_password_equal=Both passwords have to be identical.
+err_change_password=Password not valid.

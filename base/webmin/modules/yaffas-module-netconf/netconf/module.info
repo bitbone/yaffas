@@ -1,0 +1,7 @@
+longdesc=Net-Conf (Hostname, Domainname, IP-Address, DNS-Server)
+desc_de=Konfiguration
+desc_en=Configuration
+name=net-conf
+category=net
+desc=configuration
+version=0.1

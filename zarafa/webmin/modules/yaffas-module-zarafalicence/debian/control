@@ -1,0 +1,12 @@
+Source: yaffas-module-zarafalicence
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: yaffas-module-zarafalicence
+Architecture: all
+Depends: yaffas-core, yaffas-install-lib, zarafa-licensed
+Description: Module for installing a zarafa licence key
+ Module for installing a zarafa licence key

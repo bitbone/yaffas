@@ -1,0 +1,39 @@
+;
+; /etc/smb.conf
+;
+;
+[global]
+	server string = bitkit
+;	keep alive = 30
+	os level = 2
+
+	encrypt passwords = yes
+	socket options = TCP_NODELAY
+
+	obey pam restrictions = no
+	ldap admin dn = cn=ldapadmin,ou=People,-thedn-
+	ldap suffix = -thedn-
+	ldap group suffix = ou=Group
+	ldap user suffix = ou=People
+	ldap machine suffix = ou=People
+	ldap delete dn = Yes
+	ldap ssl  = on
+	workgroup = workgroup
+
+	enable privileges = yes
+
+	security = user
+	passdb backend = smbpasswd
+
+	include=/etc/samba/includes.smb
+
+[print$]
+	path = /etc/samba/printer/
+	browsable = yes
+	guest ok = yes
+	read only = yes
+	write list = @"Print Operators"
+	valid users = @"Print Operators"
+	force group = "Print Operators"
+	force create mode = 0664
+	force directory mode = 0775

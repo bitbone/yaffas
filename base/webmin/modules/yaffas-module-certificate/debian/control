@@ -1,0 +1,12 @@
+Source: yaffas-module-certificate
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-module-certificate
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, openssl
+Description: bbcertificate
+ bbcertificate

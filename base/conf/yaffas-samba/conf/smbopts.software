@@ -1,0 +1,5 @@
+[Software]
+	path = /opt/software/
+	read only = yes
+	browsable = yes
+	guest ok = yes

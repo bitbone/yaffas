@@ -1,0 +1,68 @@
+#!/usr/bin/perl -w
+# postinst script for yaffas-lang
+#
+# see: dh_installdeb(1)
+
+use encoding 'utf-8';
+
+my @langs = ("de", "en");
+my @path = qw(/opt/yaffas/webmin); # disabled usermin
+
+foreach my $path (@path) {
+	foreach $lang (@langs) {
+		my %content;
+		my %newcontent;
+		my $check = 1;
+		my $file = "$path/lang/$lang";
+
+		open FILE, "< /tmp/yaffas-lang/$lang" or die ("Can't open file: $!");
+		my @tmp = <FILE>;
+
+		foreach my $value (@tmp) {
+			my @values = split "=", $value, 2;
+			if (defined($values[1])) {
+				chomp $values[1];
+				$newcontent{$values[0]} = $values[1];
+			}
+		}
+		close FILE;
+
+		open FILE, "< $file" or $check = 0;
+
+		if ($check == 0) {
+			print "Couldn't open file: $!";
+			exit 0;
+		}
+
+		@tmp = <FILE>;
+		close FILE;
+
+		foreach my $value (@tmp) {
+			my @values = split "=", $value;
+			if (defined($values[1])) {
+				chomp $values[1];
+				$values[1] =~ s/&#252;/ü/g;
+				$values[1] =~ s/&#228;/ä/g;
+				$values[1] =~ s/&#246;/ö/g;
+				$values[1] =~ s/&#220;/Ü/g;
+				$values[1] =~ s/&#196;/Ä/g;
+				$values[1] =~ s/&#214;/Ö/g;
+				$values[1] =~ s/&#223;/ß/g;
+				$content{$values[0]} = $values[1];
+			}
+		}
+
+		foreach my $key (keys %newcontent) {
+			$content{$key} = $newcontent{$key};
+			#print "Adding key $key\n";
+		}
+
+		open FILE, "> $file" or $check = 0;
+		binmode FILE, ":utf8";
+		foreach my $key (sort keys %content) {
+			print FILE "$key=$content{$key}\n";
+			#print $key unless(defined($content{$key}));
+		}
+		close FILE;
+	}
+}

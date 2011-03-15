@@ -1,0 +1,8 @@
+help_user=Erklärung für zusätzlichen Benutzer
+ 
+ Um Einträge aus dem Active Directory lesen zu können, benötigt der bitkit Server Zugangsdaten für ein Benutzerkonto. Dies kann ein einfacher Benutzer sein.
+
+ Bedenken Sie, dass Sie nach einer Passwortänderung des Benutzers auch hier die Daten erneut eingeben müssen.
+
+ Automatische Erkennung: Falls Ihr Domänenadministrator in der Standard Benutzer Gruppe ("Users") ist, so kann der komplette DN des Benutzers vom Server abgerufen werden. Befindet sich der Administrator in einem anderen Teil des Active Directory funktioniert dies nicht automatisch und Sie müssen den kompletten DN des Benutzers eintragen.
+--

@@ -1,0 +1,21 @@
+# Toplevel make file for yaffas
+#
+
+# Directory location definitions 
+YAFFAS_PREFIX=	/opt/yaffas
+YAFFAS_PERL=	$(YAFFAS_PREFIX)/lib/perl5
+YAFFAS_MODULE=	$(YAFFAS_PERL)/Yaffas/Module
+
+YAFFAS_WEBMIN=	$(YAFFAS_PREFIX)/webmin
+YAFFAS_CONF=	$(YAFFAS_PREFIX)/etc
+YAFFAS_STATE=	$(YAFFAS_PREFIX)/var
+YAFFAS_BIN=		$(YAFFAS_PREFIX)/bin
+YAFFAS_DATA=	$(YAFFAS_PREFIX)/config
+YAFFAS_LANG=	$(YAFFAS_PREFIX)/lang
+YAFFAS_INIT=	$(YAFFAS_CONF)/init.d
+
+APACHE_ROOT=	/var/www
+
+# Other definitions commonly used by our makefiles
+YAFFAS_OWNER=	root
+YAFFAS_GROUP=	root

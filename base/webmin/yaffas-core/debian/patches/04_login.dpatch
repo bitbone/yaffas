@@ -1,0 +1,41 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 04_login.dpatch by Christof Musik <musik@bitbone.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: - add some more files which can be delivered without authentication
+## DP: - use regex for header checking
+
+@DPATCH@
+diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/webmin/miniserv.pl
+--- bbwebmin-core~/usr/local/webmin/miniserv.pl	2011-03-03 14:24:15.000000000 +0100
++++ bbwebmin-core/usr/local/webmin/miniserv.pl	2011-03-03 14:24:15.000000000 +0100
+@@ -1124,9 +1124,10 @@
+ 			}
+ 		}
+ 	}
++
+ $posted_data = undef;
+ if ($method eq 'POST'
+- && ($header{'content-type'} eq 'application/x-www-form-urlencoded'
++ && ($header{'content-type'} =~ m#application/x-www-form-urlencoded;?.*#
+  || $header{'content-type'} =~ m#multipart/form-data#)
+  && $page eq "/session_login.cgi"
+  ) {
+@@ -1155,7 +1156,7 @@
+ 		}
+ 	print DEBUG "handle_request: posted_data=$posted_data\n";
+ 
+-	if ($header{'content-type'} eq 'application/x-www-form-urlencoded') {
++	if ($header{'content-type'} =~ m#application/x-www-form-urlencoded;?.*#) {
+ 		local @in = split(/\&/, $posted_data);
+ 		foreach $i (@in) {
+ 			local ($k, $v) = split(/=/, $i, 2);
+@@ -3782,7 +3783,7 @@
+ 	  "maxconns", 50,
+ 	  "pam", "webmin",
+ 	  "sidname", "sid",
+-	  "unauth", "^/unauthenticated/ ^[A-Za-z0-9\\-/]+\\.jar\$ ^[A-Za-z0-9\\-/]+\\.class\$ ^[A-Za-z0-9\\-/]+\\.gif\$ ^[A-Za-z0-9\\-/]+\\.conf\$ ^[A-Za-z0-9\\-/]+\\.ico\$",
++	  "unauth", "^/unauthenticated/ ^[A-Za-z0-9\\-/]+\\.jar\$ ^[A-Za-z0-9\\-/]+\\.class\$ ^[A-Za-z0-9_\\-/]+\\.(gif|png|js|css)\$ ^[A-Za-z0-9\\-/]+\\.conf\$ ^[A-Za-z0-9\\-/]+\\.ico\$ /blank.html",
+ 	  "max_post", 10000,
+ 	 );
+ foreach my $v (keys %vital) {

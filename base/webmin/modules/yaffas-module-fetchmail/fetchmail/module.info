@@ -1,0 +1,16 @@
+category=mailserver
+desc_ru_SU=óÂÏÒÝÉË ÐÏÞÔÙ Fetchmail
+desc_ko_KR.euc=Fetchmail ¸ÞÀÏ °Ë»ö 
+longdesc=Configure the popular fetchmail program for automatically retrieving mail from other servers.
+desc_zh_TW.Big5=Fetchmail¨ú«HºÞ²z
+desc=Fetchmail Mail Retrieval
+desc_en=Fetchmail Mail Retrieval
+desc_pl=Pobieranie poczty przez fetchmaila
+desc_es=Descarga de Correo con Fetchmail
+desc_de=Fetchmail-Konfiguration
+name=Fetchmail
+desc_ja_JP.euc=Fetchmail ¥á¡¼¥ë¸¡º÷
+depends=1.140
+version=1.140
+desc_ru_RU=Ñáîðùèê ïî÷òû Fetchmail
+desc_ca=Lliurament de Correu Fetchmail

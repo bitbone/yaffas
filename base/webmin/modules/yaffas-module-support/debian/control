@@ -1,0 +1,13 @@
+Source: yaffas-module-support
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: yaffas-module-support
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, pciutils, lshw
+Source: yaffas-support
+Description: Module for collecting support information
+ Module for collecting support information

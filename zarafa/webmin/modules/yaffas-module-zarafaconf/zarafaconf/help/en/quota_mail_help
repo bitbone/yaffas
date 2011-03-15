@@ -1,0 +1,8 @@
+help_quota_mail=You can use the following variables to create the text:
+
+${ZARAFA_QUOTA_NAME} - the name of the zarafa account
+${ZARAFA_QUOTA_STORE_SIZE} - the current size of the account
+${ZARAFA_QUOTA_WARN_SIZE} - the limit to get a warning
+${ZARAFA_QUOTA_SOFT_SIZE} - the limit where sending gets disallowed
+${ZARAFA_QUOTA_HARD_SIZE} - the limit where sending and receiving gets disallowed
+--

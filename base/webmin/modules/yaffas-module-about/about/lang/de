@@ -1,0 +1,107 @@
+lbl_index_header=Über yaffas
+lbl_index_return=System
+lbl_version=Version
+lbl_versions=Versionen
+lbl_revision=Revision
+lbl_name=Produkt
+
+err_get_products=Die Produktinformationen können nicht abgerufen werden!
+
+index_title=System Information
+written_by=Geschrieben von
+
+general_information=Allgemeine Informationen
+os_on_arch=auf einem
+uptime=Uptime von
+uptime_days=Tage
+uptime_hours=Stunden
+uptime_minutes=Minuten
+loadavg_title=Durchschnitts Load
+loadavg_graph=CPU Load
+loadavg_proc=Gesamt Load
+loadavg_1=in der letzten Minute
+loadavg_5=in den letzten 5 Minuten
+loadavg_15=in den letzten 15 Minuten
+
+memory_usage=Speicher Auslastung
+main_memory=Haupt Speicher
+swap_memory=Swap Speicher
+mem_total=Total
+mem_used=Benutzt
+mem_free=Frei
+mem_shared=Shared
+mem_buffers=Buffers
+mem_cache=Cache
+mem_module=Modul
+mem_module_size=Größe
+mem_module_depend=Abhängige Module
+mem_current_modules=Verwendete Module
+mem_avail=Verfügbarer Speicher
+mem_usagekey=Usage Key:
+
+memkey_inuse=In Verwendung
+memkey_buffer=Buffer
+memkey_free=Frei
+
+irq_usage=IRQ Verwendung
+irq_device=Gerät
+irq_ioports=IO Verwendung
+
+network_load=Netzwerk Statistik
+network_nic=Interface
+network_receive=Empfangen
+network_send=Gesendet
+network_bytes=Bytes
+network_errors=Fehler
+network_dropped=Dropped
+network_overruns=Overruns
+network_frame=Frame
+network_carrier=Carrier
+network_collisions=Kollisionen
+network_connection=Aktive Verbindingen
+network_connection_protocol=Protokol
+network_connection_recvq=Empfangs Queue
+network_connection_sendq=Send Queue
+network_connection_localaddr=Lokal
+network_connection_foreignaddr=Ausgehende
+network_connection_state=State
+network_who=Who's logged
+network_who_user=User
+network_who_tty=TTY
+network_who_from=Von
+network_who_login=Login@
+network_who_idle=Idle
+network_who_jcpu=Jcpu
+network_who_pcpu=Pcpu
+network_who_what=Kommando
+network_opensockets=Listening sockets
+network_opensockets_active=Aktive sockets
+network_unixsockets=Unix sockets
+network_unixsockets_protocol=Protokol
+network_unixsockets_refcnt=RefCnt
+network_unixsockets_flags=Flags
+network_unixsockets_type=Typ
+network_unixsockets_state=State
+network_unixsockets_inode=I-node
+network_unixsockets_path=Pfad
+
+fs_stat=Dateisystem Statistik
+fs_mount=Gemountete Dateisysteme
+fs_mount_device=Gerät
+fs_mount_dir=Verzeichnis
+fs_mount_type=Dateisystem
+fs_mount_option=Mode
+
+df_title=Dateisystem Informationen
+
+lbl_filesystem=Dateisystem
+lbl_size=Größe
+lbl_used=Benutzt
+lbl_available=Verfügbar
+lbl_used_percent=Benutzt%
+lbl_mount=Eingehängt auf
+
+lbl_time=Zeit
+lbl_value=Wert
+
+lbl_mem_type=Speichertyp

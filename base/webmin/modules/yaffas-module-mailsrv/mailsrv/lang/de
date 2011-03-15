@@ -1,0 +1,100 @@
+lbl_baseconfig=Grundkonfiguration
+lbl_mailserver_name=Mailserver Name
+lbl_unknown_rcp=Bei unbekanntem Empfänger
+lbl_refuse_mail=Annahme verweigern
+lbl_delete_mail=E-Mail löschen
+lbl_sendto_mailadmin=An Mail Administrator senden
+lbl_mailadmin=Mail Administrator
+lbl_maildomain=Maildomain
+lbl_ip=IP
+
+lbl_smarthost=Smarthost
+lbl_smarthost_name=Smarthost Server
+lbl_username=Benutzername
+lbl_password=Passwort
+
+lbl_del_add_question=Möchten Sie diese Einträge wirklich ändern?
+lbl_edit_question=Möchten Sie diese Einträge wirklich editieren?
+lbl_del_question=Möchten Sie diese Einträge wirklich löschen?
+lbl_del_add_title=Einträge ändern
+
+
+lbl_acceptdomains=Lokale Domänen
+
+lbl_acceptrelay=Open Relay Subnetze
+
+lbl_save=Speichern
+
+lbl_return=Mailserv
+lbl_category=Mailserver
+
+lbl_add=Hinzufügen
+lbl_del=Löschen
+lbl_mailsize=Maximale Mailgröße
+
+lbl_forward_all_mails_title=E-Mail Weiterleitung
+lbl_forward_all_mails=Alle E-Mails weiterleiten aktivieren
+lbl_rewrite_domain=Lokale Domaine umschreiben
+
+lbl_enable_archive=Archivierung aktivieren
+lbl_archive_destination=Ziel der Archivierung
+lbl_archive=Archivierung
+
+lbl_only_for_public=Zarafa-Administrator für die Auslieferung in Öffentliche Ordner
+
+err_archive_name=Das Ziel muss entweder ein lokaler Benutzer oder eine E-Mail Adresse sein!
+
+err_no_rewrite=Es muss eine gültige Domain angegeben werden.
+
+err_no_entrys=Keine Einträge.
+err_smarthost=Smarthost nicht gültig.
+err_username=Benutzername nicht gültig.
+err_password=Password nicht gültig.
+err_maildomain=Maildomain nicht gültig.
+err_ip_entry=IP Addresse oder IP Bereich nicht gültig.
+err_domainname=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens ein Zeichen lang sein!
+err_mailadmin=Mailadmin nicht gültig.
+err_mailserver=Mailserver nicht gültig.
+err_size=Die Mailgröße muss eine Zahl sein.
+err_verify_value=Ungültiger Wert für Empfänger Verifizierung
+
+err_zarafa_not_installed=Zarafa ist nicht installiert.
+err_user_not_exists=Der Benutzer existiert nicht.
+err_password_missing=Das Passwort wurde nicht angegeben.
+err_user_not_zarafa_admin=Der Benutzer ist kein Zarafa-Administrator.
+err_user_password=Das Passwort des angegebenen Benutzers ist falsch.
+
+lbl_antivirus=Antivirus
+lbl_antispam=Antispam
+lbl_greylist=Greylist
+lbl_quarantine=Quarantäne
+lbl_mailsec=Mail Sicherheit
+lbl_spamassassin=Spamassassin
+lbl_policyserver=MPP Policyserver
+
+lbl_active=Aktiv
+lbl_disabled=Ausgeschaltet
+
+lbl_status=Status
+lbl_service=Dienst
+lbl_feature=Funktion
+
+lbl_start=Aktivieren
+lbl_stop=Deaktivieren
+
+lbl_started=Gestartet
+lbl_stopped=Gestoppt
+
+lbl_email=E-Mail
+lbl_virus_notify=Benachrichtigung bei Viren-Mails
+
+lbl_disable_tls=Deaktivieren von TLS/SSL
+lbl_disable_client_tls=Deaktivieren von TLS/SSL zum Smarthost
+lbl_disable_server_tls=Deaktivieren von TLS/SSL zum Mail-Client
+
+err_email_wrong=Ihre angebebene E-Mail Adresse ist nicht korrekt!
+
+err_kav_licence=Ihr KAV Lizenzschlüssel ist abgelaufen oder ungültig!
+err_kav_update=Führen Sie ein KAV Update duch bevor Sie dieses Feature aktivieren!
+err_kas_update=Führen Sie ein KAS Update duch bevor Sie dieses Feature aktivieren!
+err_activate_policyserver=Bitte aktivieren Sie zuerst in der MPP Oberfläche den Policyserver.

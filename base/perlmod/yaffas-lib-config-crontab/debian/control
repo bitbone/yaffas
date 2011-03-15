@@ -1,0 +1,27 @@
+Source: yaffas-lib-config-crontab
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 5)
+Build-Depends-Indep: perl (>= 5.6.10-12)
+Standards-Version: 3.8.0
+Homepage: http://search.cpan.org/dist/Config-Crontab/
+
+Package: yaffas-lib-config-crontab
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description:  Read/Write Vixie compatible crontab(5) files
+ Config::Crontab provides an object-oriented interface to
+ Vixie-style crontab(5) files for Perl.
+ .
+ A Config::Crontab object allows you to manipulate an ordered set
+ of Event, Env, or Comment objects (also included with this
+ package). Descriptions of these packages may be found below.
+ .
+ In short, Config::Crontab reads and writes crontab(5) files (and
+ does a little pretty-printing too) using objects. The general idea is
+ that you create a Config::Crontab object and associate it with a
+ file (if unassociated, it will work over a pipe to crontab -l). From
+ there, you can add lines to your crontab object, change existing line
+ attributes, and write everything back to file.
+

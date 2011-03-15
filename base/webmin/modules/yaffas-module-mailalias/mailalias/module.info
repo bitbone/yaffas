@@ -1,0 +1,7 @@
+longdesc=Mailalias configuration
+desc_de=Mailalias Konfiguration
+desc_en=Mailalias configuration
+name=bbmailalias
+category=mailserver
+desc=Mailalias configuration
+version=0.1

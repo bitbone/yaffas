@@ -1,0 +1,8 @@
+err_nothing_selected=A logfile must be selected.
+err_not_permitted=It is not allowed to download this file.
+lbl_logfiles=Logfiles
+lbl_download=Download
+lbl_show_old_logs=Show old logfiles
+lbl_show_new_logs=Show new logfiles
+lbl_size=Size
+lbl_file=File

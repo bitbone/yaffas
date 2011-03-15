@@ -1,0 +1,15 @@
+lbl_admin_pw=Admin Passwort
+lbl_admin_pw_repeat=Admin Passwort (Wiederholung)
+lbl_mysql_database=MySQL Datenbank
+lbl_mysql_host=MySQL Server
+lbl_mysql_user=MySQL Benutzername
+lbl_mysql_password=MySQL Passwort
+
+lbl_setup_finished=Setup abgeschlossen
+lbl_setup_finished_msg=Das Setup wurde erfolgreich abgeschlossen. Nach dem erneuten Login können Sie alle Funktionen nutzen.
+
+lbl_zarafa_settings=Zarafa Einstellungen
+lbl_basic_settings=Grundeinstellungen
+
+err_mysql_connect=Konnte die Datenbank nicht erreichen.
+err_password=Die Admin Passwörter stimmen nicht überein oder sind leer.

@@ -1,0 +1,66 @@
+err_ip=Die IP-Adresse oder Netzmaske ist nicht gültig.
+err_dns=Die DNS Server Adresse muss eine IP-Adresse sein.
+err_domain=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens zwei Zeichen lang sein!
+err_domain_rename=Konnte die Domain nicht umbenennen.
+err_hostname=Der Rechnername darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9) bestehen. Ausserdem sollte er mindestens zwei Zeichen lang sein!
+err_workgroup_check=Die Workgroup darf nur aus Buchstaben (a-z und A-Z), Zahlen (0-9), '.', '_' und '-' bestehen.
+err_copy_file=Konnte die folgende Datei nicht kopieren:
+
+err_one_enabled=Es muss mindestens eine Netzwerkschnittstelle aktiviert sein.
+err_gateway_eq_ip=Die Gateway Adresse muss sich von der Adresse des Server unterscheiden.
+err_search=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens zwei Zeichen lang sein!
+err_parent_enable=Die zugehörige Hardware-Schnittstelle muss aktiviert sein.
+
+err_get_sambasid=Fehler beim Lesen von Daten für Samba.
+err_set_sambasid=Fehler beim Schreiben von Daten für Samba.
+err_ldap_duplicate_sambadomain=Der angegebene Rechnername (sambaDomain) ist mehrmals im LDAP vorhanden.
+
+err_bonding_enabled=Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde.
+
+lbl_index_header=Konfiguration
+lbl_data=Netzwerk Einstellungen
+
+lbl_hostname=Rechnername
+lbl_domain=Domainname
+lbl_workgroup=Arbeitsgruppe
+lbl_ipaddr=IP-Adresse
+lbl_netmask=Netzmaske
+lbl_gateway=Gateway (falls vorhanden)
+lbl_search=Suchdomänen
+lbl_dns=DNS Server IP-Adresse
+lbl_index_return=Netzwerk
+lbl_delete=Löschen
+lbl_interface=Schnittstelle
+lbl_base_settings=Grundeinstellungen
+
+lbl_enabled=aktiviert
+lbl_disabled=deaktiviert
+lbl_status=Status
+lbl_new_ip=Neue virtuelle IP Adresse
+lbl_delete_device=Virtuelle IP löschen
+lbl_really_delete=Wollen Sie die folgende Netzwerkschnittstelle löschen?
+lbl_create=Erstellen
+lbl_new_interface=Neues virtuelle Adresse auf der Schnittstelle
+
+
+
+lbl_proxy_conf=HTTP Proxy
+lbl_proxy_ip=Proxy
+lbl_proxy_port=Port
+lbl_authentication=Authentifizierung (wenn nötig)
+lbl_user=Benutzer
+lbl_pass=Passwort
+
+err_proxy=Proxyname nicht gültig!
+err_port=Der Port ist nicht gültig!
+err_username=Der Benutzername ist nicht gültig!
+err_password=Das Passwort ist nicht gültig!
+err_set_apt=Fehler während des Setzens des APT Proxys!
+err_set_wget=Fehler während des Setzens des WGET Proxys!
+err_set_kav=Fehler während des Ssetzens des KAV Proxys!
+err_del_apt=Fehler während des Löschens des APT Proxys!
+err_del_wget=Fehler während des Löschens des WGET Proxys!
+err_10=Fehler während des Löschens des KAV Proxys!
+err_set_freshclam=Fehler während des Setzens des freshclam Proxys!
+err_del_freshclam=Fehler während des Löschens des freshclam Proxys!
+err_restart_freshclam=Fehler beim Neustart von freshclam!

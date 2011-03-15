@@ -1,0 +1,7 @@
+longdesc=SNMP Configuration
+desc_de=SNMP Konfiguration
+desc_en=SNMP Configuration
+name=bbsnmpconf
+category=net
+desc=SNMP Configuration
+version=1.0

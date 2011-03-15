@@ -1,0 +1,12 @@
+Source: yaffas-module-bulkmail
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.1
+
+Package: yaffas-module-bulkmail
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, perl-modules, yaffas-lib, libmime-lite-perl
+Description: Module for sending mails to all users.
+ Module for sending mails to all users.

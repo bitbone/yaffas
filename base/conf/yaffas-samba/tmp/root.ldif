@@ -1,0 +1,24 @@
+dn: uid=root,ou=People,-thedn-
+cn: root
+sn: root
+objectClass: inetOrgPerson
+objectClass: sambaSamAccount
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: root
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdMustChange: 2147483647
+sambaPrimaryGroupSID: -thesid--512
+gecos: Domain Administrator
+sambaLMPassword: D115B97057F1E25EC5031582C478952B
+sambaNTPassword: D455F22CD7AB589C078D50CC1D4FD202
+sambaAcctFlags: [U          ]
+sambaSID: -thesid--1000
+homeDirectory: /root
+uidNumber: 0
+loginShell: /bin/bash
+gidNumber: 512
+sambaPwdCanChange: 1174465610
+sambaPwdLastSet: 1174465610

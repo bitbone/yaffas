@@ -1,0 +1,24 @@
+#!/bin/bash
+set -e
+
+source /opt/yaffas/lib/bbinstall-lib.sh
+
+case "$1" in
+	configure)
+	FILE="/etc/webmin/webmin.acl"
+	MODULE="service"
+	add_webmin_acl $MODULE
+	del_license $MODULE "all"
+	add_license $MODULE ""
+	;;
+
+	abort-upgrade|abort-remove|abort-deconfigure)
+	;;
+
+	*)
+	echo "postinst called with unknown argument \`$1'" >&2
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,28 @@
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+smtpd_banner = $myhostname ESMTP $mail_name
+biff = no
+append_dot_mydomain = no
+readme_directory = no
+smtpd_tls_cert_file=/opt/yaffas/etc/ssl/certs/postfix.crt
+smtpd_tls_key_file=/opt/yaffas/etc/ssl/certs/postfix.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${data_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
+smtp_tls_security_level = may
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+mailbox_command = procmail -a "$EXTENSION"
+mailbox_size_limit = 0
+recipient_delimiter = +
+inet_interfaces = all
+myhostname = HOSTNAME
+mydestination =
+mynetworks = [::1]/128, [::ffff:127.0.0.0]/104, 127.0.0.0/8
+virtual_mailbox_domains = localhost
+virtual_mailbox_maps = ldap:/etc/postfix/ldap-users.cf
+virtual_alias_maps = regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf
+virtual_transport = lmtp:127.0.0.1:2003
+smtp_sasl_auth_enable = no
+smtp_sasl_password_maps = 
+smtp_sasl_security_options = 

@@ -1,0 +1,12 @@
+Source: yaffas-module-authsrv
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2
+
+Package: yaffas-module-authsrv
+Architecture: all
+Depends: ${shlibs:Depends}, yaffas-core, libpam-krb5, krb5-user, ntpdate, libgssrpc4, libkadm5clnt-mit7, libkadm5srv-mit7, libkdb5-4, yaffas-install-lib, libnss-ldap, slapd, libpam-ldap, ldap-utils, smbldap-tools, winbind, yaffas-module-mailsrv
+Description: bbauthsrv webmin modules
+ This module allows you to manage user authentication.

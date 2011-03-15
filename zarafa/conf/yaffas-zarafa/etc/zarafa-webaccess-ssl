@@ -1,0 +1,25 @@
+Alias /Microsoft-Server-ActiveSync /var/www/z-push/index.php
+
+<VirtualHost *:443>
+        ServerName zarafa
+        ServerAdmin webmaster@localhost
+        DocumentRoot /usr/share/zarafa-webaccess
+
+        ProxyPass               /zarafa http://127.0.0.1:236/
+        ProxyPassReverse        /zarafa http://127.0.0.1:236/
+
+        <Location /zarafa>
+                Order Allow,Deny
+                Allow from all
+        </Location>
+
+        SSLEngine on
+        SSLCertificateFile /opt/yaffas/etc/ssl/certs/zarafa-webaccess.crt
+        SSLCertificateKeyFile /opt/yaffas/etc/ssl/certs/zarafa-webaccess.key
+
+        SSLProtocol all
+        SSLCipherSuite HIGH:MEDIUM
+
+        CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
+

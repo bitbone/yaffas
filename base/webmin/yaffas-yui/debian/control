@@ -1,0 +1,13 @@
+Source: yaffas-yui
+Section: yaffas
+Priority: extra
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: yaffas-yui
+Architecture: all
+Pre-Depends: yaffas-core
+# bbusermin-core disabled
+Description: YUI Library for theme
+ YUI Library for theme

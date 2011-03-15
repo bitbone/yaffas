@@ -1,0 +1,12 @@
+Source: yaffas-module-fetchmail
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-module-fetchmail
+Architecture: all
+Depends: fetchmail, yaffas-core, perl-modules, yaffas-lib
+Description: Webmin fetchmail module
+ Webmin fetchmail module

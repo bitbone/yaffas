@@ -1,0 +1,4 @@
+#!/bin/sh
+echo Stopping Webmin server in /opt/yaffas/webmin
+pidfile=`grep "^pidfile=" /opt/yaffas/etc/webmin/miniserv.conf | sed -e 's/pidfile=//g'`
+kill `cat $pidfile`

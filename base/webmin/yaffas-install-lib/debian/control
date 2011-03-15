@@ -1,0 +1,12 @@
+Source: yaffas-install-lib
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-install-lib
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-lib, yaffas-core
+Description: webmin module postinstall shell functions
+ Some basic often used functions which are used to install webmin modules

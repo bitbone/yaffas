@@ -1,0 +1,9 @@
+lbl_insert=Insert key
+lbl_install_key=Install new key
+lbl_install_basekey=Install new base key
+lbl_install_calkey=Install new client key
+lbl_installed_licences=Installed Licences
+lbl_base_key=Base key
+lbl_serial=Serial number
+lbl_log=Licence Log
+err_wrong_lic=This is not a valid zarafa serial

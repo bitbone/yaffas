@@ -1,0 +1,13 @@
+Source: yaffas-samba
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: yaffas-samba
+Architecture: all
+Pre-Depends: samba, winbind, yaffas-ldap
+Replaces: samba
+Description: Samba Configuration for yaffas
+ Samba Configuration for yaffas

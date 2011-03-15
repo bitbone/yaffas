@@ -1,0 +1,31 @@
+lbl_userfilter=Benutzer Filter
+lbl_filtertype=Filtertyp
+lbl_filtergroup=Gruppe
+lbl_ldapfilter_type_0=Standard (alle)
+lbl_ldapfilter_type_1=AD Plugin
+lbl_ldapfilter_type_2=AD Gruppe
+lbl_confirm_filter_save=Löschen der Zarafa Stores?
+lbl_confirm_msg=Mit dem nächsten Schritt werden die folgenden Zarafa Stores gelöscht:
+err_no_group_found=Konnte die angegebene Gruppe nicht finden.
+err_no_rootbasedn=Konnte den rootDomainNamingContext im AD nicht finden.
+
+lbl_attachment_size=Größe von Anhängen
+lbl_size=Größe
+err_not_numeric=Es sind nur Dezimalzahlen als Anhangsgröße erlaubt.
+
+lbl_optimize=Optimiere
+lbl_memory_installed=Adressierbarer Speicher
+lbl_memory_optimize=Optimiert für
+lbl_memory_optimize_header=Speicheroptimierung
+lbl_unknown=Unbekannt
+
+lbl_quota=Meldungen bei überschreiten der Quota
+lbl_quota_warn=Meldung bei 80%
+lbl_quota_soft=Meldung bei 90%
+lbl_quota_hard=Meldung bei 100%
+
+lbl_default_quota=Standard Quota
+lbl_default_quota_header=Standard Quota
+lbl_no_quota=Aus
+
+err_quota_value=Der Wert des Quotas darf nur aus Zahlen bestehen.

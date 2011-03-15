@@ -1,0 +1,15 @@
+Source: yaffas-zarafa
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: yaffas-zarafa
+Architecture: all
+Pre-Depends: libapache2-mod-php5, mysql-server, yaffas-module-changelang, zarafa-webaccess, zarafa-webaccess-mobile
+Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa, php5-ldap, php-mail, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf
+Replaces: zarafa
+Conflicts: dovecot-imapd, dovecot-pop3d
+Description: configure bitkit for zarafa
+ additional bitkit configuration to make zarafa work

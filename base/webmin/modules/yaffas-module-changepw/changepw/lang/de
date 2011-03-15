@@ -1,0 +1,26 @@
+lbl_index_header=Passwort &auml;ndern
+lbl_index_return=System
+
+lbl_pass=Passwort:
+lbl_pass2=Passwort wiederholen:
+lbl_save=Sichern
+lbl_adminpass=Admin-Passwort
+lbl_rootpass=Root-Passwort
+lbl_domadminpass=Domänen-Administrator-Passwort
+
+err_mysql_password=Konnte das MySQL Passwort nicht setzen!
+err_file_read=Konnte folgende Datei(en) nicht lesen:
+err_file_write=Konnte folgende Datei(en) nicht schreiben:
+
+err_root_password=Konnte das Root Passwort nicht setzen!
+err_domadmin_password=Konnte das Domänen-Administrator Passwort nicht setzen!
+err_smbpasswd=Konnte SMBPASSWD nicht auf&uuml;hren!
+err_license=Diese Funktion ist nur in der uneingeschr&auml;nkten Version verf&uuml;gbar
+err_execute=Kann folgendes nicht ausf&uuml;hren:
+err_ldapmodify=Konnte LDAP Modifiy nicht ausf&uuml;hren!
+err_delete_file=Kann folgende Datei(en) nicht l&ouml;schen:
+err_copy_file=Kann folgende Datei(en) nicht kopieren:
+
+err_password=Das Passwort muss mindestens ein Zeichen lang sein und darf keine Raute (#) enthalten.
+err_password_equal=Beide Passw&ouml;rter m&uuml;ssen identisch sein.
+err_change_password=Das Passwort nicht gültig.

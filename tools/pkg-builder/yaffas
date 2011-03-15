@@ -1,0 +1,638 @@
+source_base = /daten/source/yaffas
+dest_base = /daten/build/repo/pool
+
+<yaffas>
+source BASE/base/PACKAGE_NAME
+dest BASE
+</yaffas>
+
+<yaffas-config>
+source BASE/base/PACKAGE_NAME
+dest BASE
+</yaffas-config>
+
+<yaffas-ldap>
+source BASE/base/conf/yaffas-ldap/
+dest BASE
+</yaffas-ldap>
+
+<yaffas-samba>
+source BASE/base/conf/yaffas-samba/
+dest BASE
+</yaffas-samba>
+
+<yaffas-certificates>
+source BASE/base/conf/PACKAGE_NAME/
+dest BASE
+</yaffas-certificates>
+
+<yaffas-postfix>
+source BASE/base/conf/PACKAGE_NAME/
+dest BASE
+</yaffas-postfix>
+
+<yaffas-zarafa>
+source BASE/zarafa/conf/PACKAGE_NAME/
+dest BASE
+</yaffas-zarafa>
+
+# <bbwebmin>
+# source BASE/base/webmin/bbwebmin/
+# dest BASE
+# </bbwebmin>
+
+<yaffas-module-logfiles>
+source BASE/base/webmin/modules/yaffas-module-logfiles/
+dest BASE
+</yaffas-module-logfiles>
+
+<yaffas-lib>
+source BASE/base/perlmod/yaffas-lib/
+dest BASE
+</yaffas-lib>
+
+<yaffas-lib-file-samba>
+source BASE/base/perlmod/PACKAGE_NAME
+dest BASE
+</yaffas-lib-file-samba>
+
+<yaffas-module-about>
+source BASE/base/webmin/modules/yaffas-module-about/
+dest BASE
+</yaffas-module-about>
+
+<yaffas-module-setup>
+source BASE/base/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-setup>
+
+<yaffas-module-certificate>
+source BASE/base/webmin/modules/yaffas-module-certificate/
+dest BASE
+</yaffas-module-certificate>
+
+<yaffas-module-changelang>
+source BASE/base/webmin/modules/yaffas-module-changelang/
+dest BASE
+</yaffas-module-changelang>
+
+<yaffas-module-changepw>
+source BASE/base/webmin/modules/yaffas-module-changepw/
+dest BASE
+</yaffas-module-changepw>
+
+<yaffas-module-group>
+source BASE/base/webmin/modules/yaffas-module-group/
+dest BASE
+</yaffas-module-group>
+
+<yaffas-module-mailalias>
+source BASE/base/webmin/modules/yaffas-module-mailalias/
+dest BASE
+</yaffas-module-mailalias>
+
+<yaffas-module-mailq>
+source BASE/base/webmin/modules/yaffas-module-mailq/
+dest BASE
+</yaffas-module-mailq>
+
+<yaffas-module-mailsrv>
+source BASE/base/webmin/modules/yaffas-module-mailsrv/
+dest BASE
+</yaffas-module-mailsrv>
+
+<yaffas-module-netconf>
+source BASE/base/webmin/modules/yaffas-module-netconf/
+dest BASE
+</yaffas-module-netconf>
+
+<yaffas-module-notify>
+source BASE/base/webmin/modules/yaffas-module-notify/
+dest BASE
+</yaffas-module-notify>
+
+<yaffas-module-saveconf>
+source BASE/base/webmin/modules/yaffas-module-saveconf/
+dest BASE
+</yaffas-module-saveconf>
+
+<yaffas-module-service>
+source BASE/base/webmin/modules/yaffas-module-service/
+dest BASE
+</yaffas-module-service>
+
+<yaffas-module-support>
+source BASE/base/webmin/modules/yaffas-module-support/
+dest BASE
+</yaffas-module-support>
+
+<yaffas-module-users>
+source BASE/base/webmin/modules/yaffas-module-users/
+dest BASE
+</yaffas-module-users>
+
+<yaffas-module-systeminfo>
+source BASE/base/webmin/modules/yaffas-module-systeminfo/
+dest BASE
+</yaffas-module-systeminfo>
+
+<yaffas-lang>
+source BASE/base/webmin/PACKAGE_NAME/
+dest BASE
+</yaffas-lang>
+
+<yaffas-install-lib>
+source BASE/base/webmin/PACKAGE_NAME/
+dest BASE
+</yaffas-install-lib>
+
+<yaffas-module-authsrv>
+source BASE/base/webmin/modules/yaffas-module-authsrv/
+dest BASE
+</yaffas-module-authsrv>
+
+<yaffas-module-snmpconf>
+source BASE/base/webmin/modules/yaffas-module-snmpconf/
+dest BASE
+</yaffas-module-snmpconf>
+
+<yaffas-core>
+source BASE/base/webmin/PACKAGE_NAME
+dest BASE
+</yaffas-core>
+
+<yaffas-yui>
+source BASE/base/webmin/PACKAGE_NAME
+dest BASE
+</yaffas-yui>
+
+<yaffas-theme>
+source BASE/base/webmin/PACKAGE_NAME
+dest BASE
+</yaffas-theme>
+
+# bbconf
+
+#<bbconf-pam>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-pam>
+#
+#<bbconf-ldap>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-ldap>
+#
+#<bbconf-cron>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-cron>
+#
+#<bbconf-sshd>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-sshd>
+#
+#<bbconf-init>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-init>
+#
+#<bbconf-locales>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-locales>
+#
+#<bbconf-certificates>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-certificates>
+#
+#<bbconf-apache>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-apache>
+#
+#<bbconf-samba>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-samba>
+#
+#<bbconf-mysql>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-mysql>
+#
+#<bbconf-pg>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-pg>
+#
+#<bbconf-lcd>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-lcd>
+#
+#<bbconf-snmp>
+#source BASE/base/bbconf/PACKAGE_NAME/
+#dest BASE
+#</bbconf-snmp>
+#
+#<bbupdate-base>
+#source BASE/base/PACKAGE_NAME/
+#dest BASE
+#</bbupdate-base>
+#
+##<bbbackup-client>
+##source BASE/tools/bitkit_backup
+##dest BASE
+##</bbbackup-client>
+#
+#<bbsvn-version>
+#source BASE/tools/PACKAGE_NAME/
+#dest BASE
+#</bbsvn-version>
+#
+#<bitkit-checklicence>
+#source BASE/base/PACKAGE_NAME/
+#dest BASE
+#</bitkit-checklicence>
+
+## -------------------------------------------------------------------------- ##
+
+# fax webmin modules
+
+#<bbupdate-fax>
+#dest BASE
+#source BASE/fax/PACKAGE_NAME/
+#</bbupdate-fax>
+#
+#<bblicence-fax>
+#source BASE/fax/bblicence-fax/
+#dest BASE
+#</bblicence-fax>
+#
+#<yaffas-module-fax2printgw>
+#source BASE/fax/webmin/modules/yaffas-module-fax2printgw/
+#dest BASE
+#</yaffas-module-fax2printgw>
+#
+#<yaffas-module-faxclient>
+#source BASE/fax/webmin/modules/yaffas-module-faxclient/
+#dest BASE
+#</yaffas-module-faxclient>
+#
+#<yaffas-module-faxconf-common>
+#source BASE/fax/webmin/modules/yaffas-module-faxconf-common/
+#dest BASE
+#</yaffas-module-faxconf-common>
+#
+#<bbwebmin-eicon-common>
+#source BASE/fax/webmin/modules/bbwebmin-eicon-common/
+#dest BASE
+#</bbwebmin-eicon-common>
+#
+##<yaffas-module-faxconf-avm>
+##source BASE/fax/webmin/modules/yaffas-module-faxconf-avm/
+##dest BASE
+##</yaffas-module-faxconf-avm>
+#
+#<yaffas-module-faxconf>
+#source BASE/fax/webmin/modules/yaffas-module-faxconf/
+#dest BASE
+#</yaffas-module-faxconf>
+#
+#<yaffas-module-eiconconf>
+#source BASE/fax/webmin/modules/yaffas-module-eiconconf/
+#dest BASE
+#</yaffas-module-feiconconf>
+#
+#<yaffas-module-faxprinter>
+#source BASE/fax/webmin/modules/yaffas-module-faxprinter/
+#dest BASE
+#</yaffas-module-faxprinter>
+#
+#<yaffas-module-faxstate>
+#source BASE/fax/webmin/modules/yaffas-module-faxstate/
+#dest BASE
+#</yaffas-module-faxstate>
+#
+#<yaffas-module-faxstatistic>
+#source BASE/fax/webmin/modules/yaffas-module-faxstatistic/
+#dest BASE
+#</yaffas-module-faxstatistic>
+#
+#<yaffas-module-watermark>
+#source BASE/fax/webmin/modules/yaffas-module-watermark/
+#dest BASE
+#</yaffas-module-watermark>
+#
+#<bbwebmin-lpadmin>
+#source BASE/fax/webmin/modules/bbwebmin-lpadmin/
+#dest BASE
+#</bbwebmin-lpadmin>
+#
+#<yaffas-module-avmconf>
+#source BASE/fax/webmin/modules/yaffas-module-avmconf/
+#dest BASE
+#</yaffas-module-avmconf>
+#
+#<yaffas-module-mail2fax>
+#source BASE/fax/webmin/modules/yaffas-module-mail2fax/
+#dest BASE
+#</yaffas-module-mail2fax>
+#
+#<mail2fax>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</mail2fax>
+#
+#<c2faxsend-wrapper>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</c2faxsend-wrapper>
+#
+## fax usermin
+#
+#<bbusermin-bbfaxq>
+#source BASE/fax/usermin/modules/bbusermin-bbfaxq/
+#dest BASE
+#</bbusermin-bbfaxq>
+#
+#<bbusermin-bbsendfax>
+#source BASE/fax/usermin/modules/bbusermin-bbsendfax/
+#dest BASE
+#</bbusermin-bbsendfax>
+#
+## fax conf
+#<bbconf-capi>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbconf-capi>
+#
+#<bbconf-hylafax>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbconf-hylafax>
+#
+#<bbconf-modsamba-fax>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbconf-modsamba-fax>
+#
+#<bbconf-pg-bbfaxconf>
+#source BASE/fax/bbconf-pg-bbfaxconf/
+#dest BASE
+#</bbconf-pg-bbfaxconf>
+#
+#<bbconf-pg-bkprint2fax>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbconf-pg-bkprint2fax>
+#
+#<bbmodps>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbmodps>
+#
+#<bbavm-firmware>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbavm-firmware>
+#
+#<bbwmtif>
+#source BASE/fax/PACKAGE_NAME
+#dest BASE
+#</bbwmtif>
+#
+### -------------------------------------------------------------------------- ##
+
+# mail
+
+## mail webmin
+#
+<yaffas-module-bulkmail>
+source BASE/base/webmin/modules/yaffas-module-bulkmail/
+dest BASE
+</yaffas-module-bulkmail>
+#
+#<yaffas-module-setvacation>
+#source BASE/mail/webmin/modules/yaffas-module-setvacation/
+#dest BASE
+#</yaffas-module-setvacation>
+#
+<yaffas-module-fetchmail>
+source BASE/base/webmin/modules/yaffas-module-fetchmail/
+dest BASE
+</yaffas-module-fetchmail>
+#
+#<yaffas-module-bwlist>
+#source BASE/mail/webmin/modules/yaffas-module-bwlist/
+#dest BASE
+#</yaffas-module-bwlist>
+#
+##<yaffas-module-spamassassin>
+##source BASE/mail/webmin/modules/yaffas-module-spamassassin/
+##dest BASE
+##</yaffas-module-spamassassin>
+#
+## mail bbconf
+#
+#<bbconf-exim>
+#source BASE/base/bbconf/bbconf-exim/
+#dest BASE
+#</bbconf-exim>
+#
+#<bbconf-sasl>
+#source BASE/mail/bbconf-sasl/
+#dest BASE
+#</bbconf-sasl>
+#
+#<bbconf-spamassassin>
+#source BASE/mail/bbconf-spamassassin/
+#dest BASE
+#</bbconf-spamassassin>
+#
+#<bbconf-fetchmail>
+#source BASE/mail/PACKAGE_NAME
+#dest BASE
+#</bbconf-fetchmail>
+#
+#<bbconf-cups>
+#source BASE/base/bbconf/PACKAGE_NAME
+#dest BASE
+#</bbconf-cups>
+#
+## mail base
+#
+#<bbupdate-mail>
+#dest BASE
+#source BASE/mail/bbupdate-mail/
+#</bbupdate-mail>
+#
+#<bbvacation>
+#dest BASE
+#source BASE/mail/PACKAGE_NAME/
+#</bbvacation>
+#
+### -------------------------------------------------------------------------- ##
+#
+## pdf
+#
+## pdf Webmin
+#
+#<bblicence-pdf>
+#source BASE/pdf/bblicence-pdf/
+#dest BASE
+#</bblicence-pdf>
+#
+#<yaffas-module-pdfprinter>
+#source BASE/pdf/webmin/modules/yaffas-module-pdfprinter/
+#dest BASE
+#</yaffas-module-pdfprinter>
+#
+#<yaffas-module-pdfstate>
+#source BASE/pdf/webmin/modules/yaffas-module-pdfstate/
+#dest BASE
+#</yaffas-module-pdfstate>
+#
+## pdf base 
+#
+#<bbupdate-pdf>
+#source BASE/pdf/PACKAGE_NAME/
+#dest BASE
+#</bbupdate-pdf>
+#
+#<bbpswrap>
+#source BASE/pdf/bbpswrap/
+#dest BASE
+#</bbpswrap>
+#
+## pdf conf
+#
+#<bbconf-modsamba-pdf>
+#source BASE/pdf/bbconf-modsamba-pdf/
+#dest BASE
+#</bbconf-modsamba-pdf>
+#
+#<bbconf-gs>
+#source BASE/pdf/bbconf-gs/
+#dest BASE
+#</bbconf-gs>
+#
+#<bbconf-apache-pdf>
+#source BASE/pdf/bbconf-apache-pdf/
+#dest BASE
+#</bbconf-apache-pdf>
+#
+### -------------------------------------------------------------------------- ##
+#
+## zarafa
+#
+## zarafa base
+#
+#<bbupdate-zarafa>
+#source BASE/zarafa/PACKAGE_NAME/
+#dest BASE
+#</bbupdate-zarafa>
+
+<yaffas-module-zarafalicence>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafalicence>
+
+## zarafa conf
+#
+#<bbconf-zarafa>
+#source BASE/zarafa/PACKAGE_NAME/
+#dest BASE
+#</bbconf-zarafa>
+#
+<z-push>
+source BASE/zarafa/PACKAGE_NAME/
+dest BASE
+</z-push>
+
+#<bbconf-modsamba-zarafa>
+#source BASE/zarafa/PACKAGE_NAME/
+#dest BASE
+#</bbconf-modsamba-zarafa>
+
+<yaffas-module-zarafaconf>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafaconf>
+
+<yaffas-module-zarafaresources>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafaresources>
+
+### -------------------------------------------------------------------------- ##
+#
+## mailgate
+#
+#<mpp>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</mpp>
+#
+#<mpp-key>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</mpp-key>
+#
+#<mppmanager>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</mppmanager>
+#
+#<sphinx>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</sphinx>
+#
+#<kav-mpp>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</kav-mpp>
+#
+#<bbupdate-mailgate>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</bbupdate-mailgate>
+#
+#<bbconf-clamav>
+#source BASE/gate/PACKAGE_NAME/
+#dest BASE
+#</bbconf-clamav>
+#
+#<yaffas-module-mailrouting>
+#source BASE/gate/webmin/modules/PACKAGE_NAME/
+#dest BASE
+#</yaffas-module-mailrouting>
+#
+#
+### -------------------------------------------------------------------------- ##
+#
+## fileserver
+#
+#<yaffas-module-shares>
+#source BASE/fileserver/webmin/modules/yaffas-module-shares/
+#dest BASE
+#</yaffas-module-shares>
+#
+#<bbupdate-fileserver>
+#source BASE/fileserver/PACKAGE_NAME/
+#dest BASE
+#</bbupdate-fileserver>
+#
+#<bblicence-fileserver>
+#source BASE/fileserver/bblicence-fileserver/
+#dest BASE
+#</bblicence-fileserver>
+#
+#<bbconf-fileserver>
+#source BASE/fileserver/PACKAGE_NAME/
+#dest BASE
+#</bbconf-fileserver>

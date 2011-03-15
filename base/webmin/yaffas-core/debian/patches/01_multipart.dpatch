@@ -1,0 +1,67 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_multipart.dpatch by Christof Musik <musik@bitbone.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/webmin/miniserv.pl
+--- bbwebmin-core~/usr/local/webmin/miniserv.pl	2007-08-01 11:05:57.000000000 +0200
++++ bbwebmin-core/usr/local/webmin/miniserv.pl	2007-08-07 14:38:53.000000000 +0200
+@@ -1125,8 +1125,11 @@
+ 		}
+ 	}
+ $posted_data = undef;
+-if ($method eq 'POST' &&
+-    $header{'content-type'} eq 'application/x-www-form-urlencoded') {
++if ($method eq 'POST'
++ && ($header{'content-type'} eq 'application/x-www-form-urlencoded'
++ || $header{'content-type'} =~ m#multipart/form-data#)
++ && $page eq "/session_login.cgi"
++ ) {
+ 	# Read in posted query string information, up the configured maximum
+ 	# post request length
+ 	$clen = $header{"content-length"};
+@@ -1150,15 +1153,34 @@
+ 		# MSIE includes an extra newline in the data
+ 		$posted_data =~ s/\r|\n//g;
+ 		}
+-	local @in = split(/\&/, $posted_data);
+-	foreach $i (@in) {
+-		local ($k, $v) = split(/=/, $i, 2);
+-		#$v =~ s/\r|\n//g;
+-		$k =~ s/\+/ /g; $k =~ s/%(..)/pack("c",hex($1))/ge;
+-		$v =~ s/\+/ /g; $v =~ s/%(..)/pack("c",hex($1))/ge;
+-		$in{$k} = $v;
+-		}
+ 	print DEBUG "handle_request: posted_data=$posted_data\n";
++
++	if ($header{'content-type'} eq 'application/x-www-form-urlencoded') {
++		local @in = split(/\&/, $posted_data);
++		foreach $i (@in) {
++			local ($k, $v) = split(/=/, $i, 2);
++			#$v =~ s/\r|\n//g;
++			$k =~ s/\+/ /g; $k =~ s/%(..)/pack("c",hex($1))/ge;
++			$v =~ s/\+/ /g; $v =~ s/%(..)/pack("c",hex($1))/ge;
++			$in{$k} = $v;
++			}
++	}
++	else {
++		if ($header{'content-type'} =~ /multipart\/form-data; boundary=(.*)$/) {
++			my $boundary = $1;
++			my @data = split /(--)?$boundary/, $posted_data;
++			foreach my $d (@data) {
++				print DEBUG "handle_request splitted line: ".$d."\n";
++				if ($d =~ /Content-Disposition: form-data; name="(.*)"[\n\r]*(.*)/) {
++					chomp(my $name = $1);
++					chomp(my $value = $2);
++					$name =~ s/[\n\r]*//g;
++					$value =~ s/[\n\r]*//g;
++					$in{$name} = $value;
++				}
++			}
++		}
++	}
+ 	}
+ 
+ # replace %XX sequences in page

@@ -1,0 +1,7 @@
+lbl_network=Zugriff für
+lbl_community=Community (Passwort)
+lbl_enable=SNMP aktivieren
+lbl_snmp_config=SNMP Konfiguration
+
+err_network_string=Der Zugriff kann nur für IP-Adressen oder Netzbereiche aktiviert werden.
+err_community_string=Der Community-String darf nur aus Zahlen (0-9) und Buchstaben (a-z, A-Z) bestehen.

@@ -1,0 +1,12 @@
+Source: yaffas-module-mailq
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: yaffas-module-mailq
+Architecture: all
+Depends: yaffas-core, libpostfix-parse-mailq-perl
+Description: Webmin module for Mailq Administration
+ Webmin module for Mailq Administration

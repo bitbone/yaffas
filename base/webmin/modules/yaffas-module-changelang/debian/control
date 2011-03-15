@@ -1,0 +1,12 @@
+Source: yaffas-module-changelang
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2
+
+Package: yaffas-module-changelang
+Architecture: all
+Depends: ${shlibs:Depends}, yaffas-core, perl-modules, yaffas-lib
+Description: Webmin module for changing language
+ Webmin module for changing language

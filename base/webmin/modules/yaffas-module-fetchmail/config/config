@@ -1,0 +1,7 @@
+start_cmd=
+pid_file=/var/run/fetchmail/fetchmail.pid
+daemon_user=fetchmail
+mda_command=
+fetchmail_path=/usr/bin/fetchmail
+config_file=/etc/fetchmailrc
+stop_cmd=

@@ -1,0 +1,5 @@
+yaffas-postfix (0.7.0-1) lucid; urgency=low
+
+  * initial release
+
+ -- Package Builder <packages@yaffas.org>  Mon, 08 Mar 2011 12:10:25 +0100

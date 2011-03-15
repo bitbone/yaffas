@@ -1,0 +1,24 @@
+lbl_resourcemanagement=Manage resources
+lbl_resource=Resource
+lbl_description=Description
+lbl_email=Email
+lbl_decline_conflict=Decline conflicts
+lbl_decline_recurring=Decline recurrings
+lbl_newresource=New resource
+lbl_editresource=Modify resource
+lbl_delresource=Delete resource
+lbl_delresource_question=Do you really want to delete these resources?
+lbl_remind_perms=Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource.
+
+err_username=The name of the resource contains illegal characters.
+err_never_user=The name of the resource is taken from a special user.
+err_gecos=The description of the resource contains illegal characters.
+err_no_email=No e-mail address specified.
+err_mail_loc_host=You cannot use localhost as domain-part.
+err_unknown_domain=The domain is not defined as local domain in your mailserver configuration.
+err_missing_alias=Local-part of e-mail address must be identical with name.
+err_email=The e-mail address is not valid.
+err_user_exists_allready=The name of the resource is taken from a user.
+err_name_is_alias=The name of the resource is taken from a user's alias.
+err_user_doesnt_exist=The given resource doesn't exist.
+err_no_domains=No local mail domains configured.

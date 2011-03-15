@@ -1,0 +1,182 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 02_session.dpatch by Christof Musik <musik@bitbone.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: No description.
+
+@DPATCH@
+diff -urNad bbwebmin-core~/usr/local/webmin/admin.cgi bbwebmin-core/usr/local/webmin/admin.cgi
+--- bbwebmin-core~/usr/local/webmin/admin.cgi	1970-01-01 01:00:00.000000000 +0100
++++ bbwebmin-core/usr/local/webmin/admin.cgi	2011-02-14 17:44:08.784197054 +0100
+@@ -0,0 +1,62 @@
++#!/usr/bin/perl -w
++# This file will called from bitbonethme/index.gi
++#use strict;
++use CGI;
++use Yaffas::UI;
++
++my $cgi = new CGI;
++our %lang;
++&getlang(\%lang);
++
++if($cgi->param('force')){
++	my @files = qw(/opt/yaffas/var/logged.stor /opt/yaffas/var/sessiondb.pag);
++	unlink @files;
++
++	my ($pid, $new);
++	my $i = 0;
++
++	my %sessiondb;
++	dbmopen(%sessiondb, "/opt/yaffas/var/sessiondb", 0700);
++	$sessiondb{$miniserv::session_id} = "admin ".time()." ".$ENV{REMOTE_HOST};
++	dbmclose(%sessiondb);
++	
++	open(PID, "</opt/yaffas/var/miniserv.pid"); chop($pid = <PID>); close(PID);
++	kill 10, $pid;
++
++	print "Content-type: text/html\n\n";
++	print "<html><head><meta http-equiv=\"refresh\" content=\"0; URL=/\"></head></html>\n";
++} else {
++	$ENV{REMOTE_USER} = "";
++	$main::logged_in = "1";
++	require "./yaffastheme/session_login.cgi";
++	return 1;
++}
++
++# get the language and write it via the reference into the hash
++sub getlang {
++	my $hash = shift;
++	my $config = '/opt/yaffas/etc/webmin/config';
++	my $lang;
++
++	local $_;
++
++	$lang = "en";
++
++	open(CONFIG, "< $config");
++	while(<CONFIG>){
++		$lang = $1 if m/^lang=(.*?)$/;
++	}
++	close(CONFIG);
++
++	open(LANG, "< /opt/yaffas/webmin/lang/$lang");
++	while(<LANG>){
++		chomp;
++		s/^\s+//;
++		s/\s+$//;
++		next unless length;
++		my ($key, $value) = split(/=/, $_, 2);
++		$hash->{$key} = $value;
++	}
++	close(LANG);
++	return 1;
++}
+diff -urNad bbwebmin-core~/usr/local/webmin/lang/de bbwebmin-core/usr/local/webmin/lang/de
+--- bbwebmin-core~/usr/local/webmin/lang/de	2011-02-14 17:42:56.000000000 +0100
++++ bbwebmin-core/usr/local/webmin/lang/de	2011-02-14 17:43:14.654142903 +0100
+@@ -251,3 +251,9 @@
+ users_title1=Wähle Benutzer..
+ users_title2=Wähle Benutzer..
+ yes=Ja
++admin_ask=Wollen Sie die bestehende Administratorverbindung trennen?
++admin_failed=Webmin konnte nicht neu gestartet werden.
++admin_submit=Trennen
++admin_text=Es ist bereits ein Administrator eingeloggt.<br>Wenn Sie sich einloggen wollen, m&uuml;ssen Sie erst die Verbindung des anderen Administrators trennen.
++admin_warning=Achtung!
++
+diff -urNad bbwebmin-core~/usr/local/webmin/lang/en bbwebmin-core/usr/local/webmin/lang/en
+--- bbwebmin-core~/usr/local/webmin/lang/en	2011-02-14 17:42:56.000000000 +0100
++++ bbwebmin-core/usr/local/webmin/lang/en	2011-02-14 17:43:14.654142903 +0100
+@@ -286,3 +286,9 @@
+ ui_rowlabel=$2 in row $1 :
+ 
+ header_statusmsg=$1 logged into $2 $3 on $4 ($5)
++
++admin_ask=Do you want to close the administrators connection?
++admin_failed=Couldnt restart webmin.
++admin_submit=Close
++admin_text=There is already an administrator.<br>If you want to log in, you will need to close his connection.
++admin_warning=Warning!
+diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/webmin/miniserv.pl
+--- bbwebmin-core~/usr/local/webmin/miniserv.pl	2011-02-14 17:43:14.374144965 +0100
++++ bbwebmin-core/usr/local/webmin/miniserv.pl	2011-02-14 17:43:14.654142903 +0100
+@@ -1940,6 +1940,36 @@
+ 	$ENV{'HTTP_COOKIE'} =~ s/;?\s*$sidname=([a-f0-9]+)//;
+ 	$ENV{'MOBILE_DEVICE'} = 1 if ($mobile_device);
+ 
++
++	### session handler. log users in/out, so that only one admin
++	### can see the frontend
++
++	dbmopen(%sessiondb, $config{'sessiondb'}, 0700);
++
++	if($config{'session'} && $config{'one_admin'} && int keys %sessiondb > 1) {
++		if($ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/$config{'one_admin_page'}$# && $ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/yaffastheme/session_login\.cgi$#) {
++			local @latest = sort {
++				my $c = (split(/\s+/, $sessiondb{$a}))[1];
++				my $d = (split(/\s+/, $sessiondb{$b}))[1];
++				$d <=> $c } keys %sessiondb;
++				local $latest_admin = pop @latest;
++
++
++				if($latest_admin ne $session_id){
++					&write_data("HTTP/1.0 302 Moved Temporarily\r\n");
++					&write_data("Date: $datestr\r\n");
++					&write_data("Server: $config{'server'}\r\n");
++					&write_data("Location: /$config{'one_admin_page'}\r\n");
++					&write_keep_alive(0);
++					&write_data("\r\n");
++					dbmclose(%sessiondb);
++					return 0;
++				}
++		}
++	}
++	dbmclose(%sessiondb);
++	
++
+ 	# Check if the CGI can be handled internally
+ 	open(CGI, $full);
+ 	local $first = <CGI>;
+diff -urNad bbwebmin-core~/usr/local/webmin/web-lib-funcs.pl bbwebmin-core/usr/local/webmin/web-lib-funcs.pl
+--- bbwebmin-core~/usr/local/webmin/web-lib-funcs.pl	2011-02-14 17:42:56.000000000 +0100
++++ bbwebmin-core/usr/local/webmin/web-lib-funcs.pl	2011-02-14 17:43:14.654142903 +0100
+@@ -402,31 +402,14 @@
+ # %in if none is given. Also sets the global variables $in and @in
+ sub ReadParse
+ {
+-local $a = $_[0] ? $_[0] : \%in;
+-%$a = ( );
+-local $i;
+-local $meth = $_[1] ? $_[1] : $ENV{'REQUEST_METHOD'};
+-undef($in);
+-if ($meth eq 'POST') {
+-	local $clen = $ENV{'CONTENT_LENGTH'};
+-	&read_fully(STDIN, \$in, $clen) == $clen ||
+-		&error("Failed to read POST input : $!");
+-	}
+-if ($ENV{'QUERY_STRING'}) {
+-	if ($in) { $in .= "&".$ENV{'QUERY_STRING'}; }
+-	else { $in = $ENV{'QUERY_STRING'}; }
+-	}
+-@in = split(/\&/, $in);
+-foreach $i (@in) {
+-	local ($k, $v) = split(/=/, $i, 2);
+-	if (!$_[2]) {
+-		$k =~ tr/\+/ /;
+-		$v =~ tr/\+/ /;
+-		}
+-	$k =~ s/%(..)/pack("c",hex($1))/ge;
+-	$v =~ s/%(..)/pack("c",hex($1))/ge;
+-	$a->{$k} = defined($a->{$k}) ? $a->{$k}."\0".$v : $v;
+-	}
++use CGI;
++
++my $cgi = CGI->new();
++
++my @names = $cgi->param();
++foreach my $n ($cgi->param()) {
++	$in{$n} = join "\0", $cgi->param($n);
++}
+ }
+ 
+ # read_fully(fh, &buffer, length)
