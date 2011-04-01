@@ -1,0 +1,48 @@
+div#backuplayout {
+    height: 100%;
+}
+
+#backuplayout div.yui-layout-unit-left div.yui-layout-bd {
+    background-color: #ddd !important;
+}
+
+#folderpane * table {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.ygtvfocus {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.ygtvlabel, .ygtvlabel:link, .ygtvlabel:visited, .ygtvlabel:hover {
+    background-color: #ddd;
+}
+
+.ygtvfocus .ygtvlabel, .ygtvfocus .ygtvlabel:link, .ygtvfocus .ygtvlabel:visited, .ygtvfocus .ygtvlabel:hover {
+    background-color: #0000ff;
+}
+
+.icon-folder { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_folder.gif) 0 0px no-repeat; }
+.icon-contact { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_contact.gif) 0 0px no-repeat; }
+.icon-task { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_task.gif) 0 0px no-repeat; }
+.icon-calendar { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_calendar.gif) 0 0px no-repeat; }
+.icon-note { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_note.gif) 0 0px no-repeat; }
+.icon-journal { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_journal.gif) 0 0px no-repeat; }
+.icon-store { display:block; height: 14px; padding-left: 20px; background: transparent url(/zarafabackup/images/icon_store.gif) 0 0px no-repeat; }
+
+#restoreloading {
+    float: right;
+    width: 16px;
+    height: 16px;
+    background: transparent url(/zarafabackup/images/loading.gif) 0 0px no-repeat;
+    display: none;
+    margin-left: 5px;
+}
+
+#restoremessage {
+    height: 200px;
+    overflow: auto;
+    white-space: pre;
+}

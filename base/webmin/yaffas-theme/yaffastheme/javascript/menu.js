@@ -2,6 +2,7 @@ Yaffas.Menu = function(s){
     this.container = s.container || "menu";
     this.trigger = s.trigger || null;
     this.items = s.items || [];
+    this.multiselect = s.multiselect || false;
     
     this.menu = null;
     this.setup();
@@ -33,8 +34,11 @@ Yaffas.Menu.prototype.setup = function(){
             
             var s = YAHOO.util.Dom.getElementsByClassName("yui-dt-selected");
             
-            for (var i = 0; i < s.length; ++i) {
-                YAHOO.util.Dom.removeClass(s[i], "yui-dt-selected");
+            if (this.multiselect === false) {
+                // clear all states
+                for (var i = 0; i < s.length; ++i) {
+                    YAHOO.util.Dom.removeClass(s[i], "yui-dt-selected");
+                }
             }
             
             YAHOO.util.Dom.addClass(selectedTR, "yui-dt-selected");
@@ -43,7 +47,7 @@ Yaffas.Menu.prototype.setup = function(){
         }
     }
     
-    //this.menu.subscribe("triggerContextMenu", onTriggerContextMenu);
+    this.menu.subscribe("triggerContextMenu", onTriggerContextMenu);
     this.menu.subscribe("beforeShow", onContextMenuBeforeShow);
     this.menu.render(document.body);
 }

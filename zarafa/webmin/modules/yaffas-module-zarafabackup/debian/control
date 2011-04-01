@@ -1,0 +1,12 @@
+Source: yaffas-module-zarafabackup
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: yaffas-module-zarafabackup
+Architecture: all
+Depends: yaffas-core, zarafa
+Description: Module for backup and restoring zarafa bricklevel backup
+ Module for backup and restoring zarafa bricklevel backup

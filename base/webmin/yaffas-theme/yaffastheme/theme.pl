@@ -52,6 +52,7 @@ sub theme_header() {
 		dragdrop
 		resize
 		layout
+		treeview
 	);
 	my $js_type = "-min";
 	
@@ -85,6 +86,7 @@ sub theme_header() {
 			"/yui/assets/skins/yaffas/datatable.css",
 			"/yui/assets/skins/yaffas/menu.css",
 			"/yui/assets/skins/yaffas/resize.css",
+			"/yui/assets/skins/yaffas/treeview.css",
 			"/yui/assets/skins/yaffas/layout.css",
 			"/yui/base/base-min.css",
 			"/yaffas.css",

@@ -11,6 +11,8 @@ Yaffas.Table = function(args){
     this.sortorder = args.sortOrder || YAHOO.widget.DataTable.CLASS_ASC;
     this.selectionmode = args.selectionMode || "single";
     this.hidePages = args.hidePages || false;
+    this.hideFilter = args.hideFilter || false;
+    this.config = args.config || false;
     this.table = null;
     this.source = null;
 	this.filterform = null;
@@ -51,19 +53,29 @@ Yaffas.Table.prototype.natsort = function (a, b, order, field) {
 
 
 Yaffas.Table.prototype.setupTable = function(){
-    var myConfigs = {
+    var myConfigs = $H({
         dynamicData: false,
         selectionMode: this.selectionmode,
         "MSG_LOADING": _("lbl_loading_data", "global"),
         "MSG_ERROR": _("lbl_error_data", "global"),
         "MSG_EMPTY": _("lbl_no_data", "global")
-    };
-    
+    });
+
+    if (this.config != false) {
+        myConfigs.update(this.config)
+    }
+    myConfigs = myConfigs.toObject();
+
     if (!this.hidePages) {
+        var f = _("lbl_table_pager");
+        if (!this.hideFilter) {
+            f += "<a href='#' class='filter_toggle'>"+_("lbl_filter_show")+"</a>";
+        }
+
         myConfigs["paginator"] = new YAHOO.widget.Paginator({
             rowsPerPage: 15,
             container: "datapager",
-            template: _("lbl_table_pager")+"<a href='#' class='filter_toggle'>"+_("lbl_filter_show")+"</a>",
+            template: f,
             alwaysVisible: false,
             rowsPerPageOptions: [10, 15, 25, 50, 75, 100],
             pageLinks: 5,
@@ -79,7 +91,10 @@ Yaffas.Table.prototype.setupTable = function(){
     this.source.responseType = YAHOO.util.XHRDataSource.TYPE_JSON;
     this.source.responseSchema = {
         resultsList: "Response",
-        fields: this.columns
+        fields: this.columns,
+        metaFields: {
+            totalRecords: "totalRecords"
+        }
     };
     this.source.filterarg = {};
 
@@ -102,7 +117,7 @@ Yaffas.Table.prototype.setupTable = function(){
                     filtered.push(data[i]);
                 }
             }
-			return {results: filtered};
+			return {results: filtered, meta: res.meta};
         }
         
         return res;
@@ -131,9 +146,16 @@ Yaffas.Table.prototype.setupTable = function(){
 	}
     
     this.table = new YAHOO.widget.DataTable(this.container, this.columns, this.source, myConfigs);
-    
+
+    this.table.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+        oPayload.totalRecords = oResponse.meta.totalRecords;
+        return oPayload;
+    }
+
     this.table.subscribe("postRenderEvent", function(){
-        this.table.sortColumn(this.table.getColumn(this.sortcolumn), this.sortorder);
+        if (this.sortcolumn >= 0) {
+            this.table.sortColumn(this.table.getColumn(this.sortcolumn), this.sortorder);
+        }
         this.table.unsubscribe("postRenderEvent");
 	    this.createFilterView();
     }
@@ -145,6 +167,9 @@ Yaffas.Table.prototype.setupTable = function(){
 }
 
 Yaffas.Table.prototype.createFilterView = function(){
+    if (this.hideFilter) {
+        return;
+    }
     if (!this.filterform) {
 		var i, ret = "", labels = {};
 	    

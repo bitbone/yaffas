@@ -239,6 +239,7 @@ use constant {
 		"postfix_ldap_aliases" => "/etc/postfix/ldap-aliases.cf",
 		"postfix_smtp_auth" => "/etc/postfix/smtp_auth.cf",
 		"fetchmail_default_conf" => "/etc/default/fetchmail",
+		"zarafa_backup_conf" => "/opt/yaffas/config/zarafa/backup.conf",
 	}
 };
 

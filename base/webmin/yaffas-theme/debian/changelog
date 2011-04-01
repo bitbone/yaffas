@@ -1,3 +1,9 @@
+yaffas-theme (0.7.0-2) lucid; urgency=low
+
+  * updated theme for new zarafa backup module
+
+ -- Christof Musik <musik@yaffas.org>  Fri, 01 Apr 2011 15:55:10 +0200
+
 yaffas-theme (0.7.0-1) lucid; urgency=low
 
   * initial release
