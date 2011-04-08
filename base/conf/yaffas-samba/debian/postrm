@@ -1,0 +1,22 @@
+#! /bin/sh
+set -e
+
+case "$1" in
+  purge)
+    # restore configuration files
+	if [ -e /etc/samba/smb.conf.yaffassave ]; then
+		mv -f /etc/samba/smb.conf.yaffassave /etc/samba/smb.conf
+	fi
+
+    # remove our configuration files
+	rm -f /etc/samba/smbopts.software
+	rm -f /etc/samba/includes.smb
+	rm -f /etc/samba/smbopts.global
+
+    ;;
+  *)
+     exit 0;;
+esac
+
+exit 0
+

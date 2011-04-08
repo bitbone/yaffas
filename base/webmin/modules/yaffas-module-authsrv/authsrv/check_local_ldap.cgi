@@ -10,7 +10,7 @@ use Yaffas::UI;
 use Yaffas::Exception;
 use Error qw(:try);
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX);
+use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX WEBMIN);
 use Yaffas::UGM;
 use Yaffas::File;
 use Yaffas::Constant;
@@ -72,6 +72,21 @@ try
 	Yaffas::Service::control(USERMIN, RESTART);
 	Yaffas::Service::control(POSTFIX, RESTART);
 	Yaffas::File->new(Yaffas::Constant::FILE->{auth_wizard_lock}, 1)->save();
+
+	# fork, because we have to restart webmin
+	my $pid = fork;
+	if ($pid == 0) {
+		# child
+		try {
+			Yaffas::Service::control(WEBMIN, RESTART);
+		} catch Yaffas::Exception with {
+			print Yaffas::UI::all_error_box(shift);
+		};
+	} else {
+		# parent
+		wait;
+	}
+
 	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with

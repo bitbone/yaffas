@@ -1,0 +1,23 @@
+#! /bin/sh
+set -e
+
+case "$1" in
+  purge)
+    # restore configuration files
+	if [ -e /etc/postfix/main.cf.yaffassave ]; then
+		mv -f /etc/postfix/main.cf.yaffassave /etc/postfix/main.cf
+	fi
+	if [ -e /etc/postfix/master.cf.yaffassave ]; then
+		mv -f /etc/postfix/master.cf.yaffassave /etc/postfix/master.cf
+	fi
+
+    # remove our configuration files
+	rm -f /etc/postfix/dynamicmaps.cf
+
+    ;;
+  *)
+     exit 0;;
+esac
+
+exit 0
+

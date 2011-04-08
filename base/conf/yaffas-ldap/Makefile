@@ -3,23 +3,17 @@ DESTDIR ?= /
 NTROOTDIR=mkntpwd/
 
 install:
-	mkdir -p $(DESTDIR)/etc/ldap
-	mkdir -p $(DESTDIR)/etc/postfix
-	mkdir -p $(DESTDIR)/etc/smbldap-tools
-	mkdir -p $(DESTDIR)/etc/ldap/schema
+	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	mkdir -p $(DESTDIR)/tmp
 	mkdir -p $(DESTDIR)/$(YAFFAS_BIN)
-	cp ldap.conf $(DESTDIR)/etc/
-	cp ldap.settings $(DESTDIR)/etc/
-	cp nsswitch.conf $(DESTDIR)/etc/
-	cp slapd.conf $(DESTDIR)/etc/ldap/
-	cp ldap.conf $(DESTDIR)/etc/ldap/
+	cp -f share/doc/example/etc/ldap.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -f share/doc/example/etc/ldap.secret $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -f share/doc/example/etc/ldap.settings $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -f share/doc/example/etc/nsswitch.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -r share/doc/example/$(ETC_LDAP) $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -r share/doc/example/etc/postfix $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -r share/doc/example/etc/smbldap-tools $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp bitkit_base.ldif $(DESTDIR)/tmp/
-	cp ldap.secret $(DESTDIR)/etc/
-	cp ldap-users.cf $(DESTDIR)/etc/postfix/
-	cp ldap-aliases.cf $(DESTDIR)/etc/postfix/
-	cp schema/* $(DESTDIR)/etc/ldap/schema/
-	cp smbldap* $(DESTDIR)/etc/smbldap-tools/
 	cp domrename.pl $(DESTDIR)/$(YAFFAS_BIN)
 
 clean:

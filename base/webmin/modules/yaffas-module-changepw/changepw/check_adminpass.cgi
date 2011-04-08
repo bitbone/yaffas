@@ -7,7 +7,6 @@ use Yaffas;
 use Yaffas::UI;
 use Yaffas::Module::ChangePW;
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use Data::Dumper;
 use Error qw(:try);
 use Yaffas::Exception;
 

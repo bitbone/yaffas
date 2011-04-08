@@ -532,6 +532,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$ldap_conf_ref->{'base'} = $basedn;
 		$ldap_conf->write();
 
+		mod_nsswitch("files ldap");
+
 		#/etc/zarafa/ldap.cfg
 		if (Yaffas::Product::check_product("zarafa")) {
 			my $zarafa_settings = {
@@ -607,7 +609,6 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			$msg->code && throw Yaffas::Exception('err_set_sambasid', [ $msg->code, $msg->error_desc ] );
 		}
 
-		mod_nsswitch("files ldap");
 		# for RedHat
 		mod_pam("ldap");
 
@@ -1345,7 +1346,7 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_group_type_attribute_value'} = "group";
 
 	} else {
-		$exception->add("err_invalid_authtype");
+		$exception->add("err_invalid_authtype", "$type");
 	}
 
 	foreach my $key (keys %{$additional_config}) {

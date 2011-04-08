@@ -1,6 +1,9 @@
 # Toplevel make file for yaffas
 #
 
+YAFFAS_OS ?= $(shell lsb_release -si)
+
+
 # Directory location definitions 
 YAFFAS_PREFIX=	/opt/yaffas
 YAFFAS_PERL=	$(YAFFAS_PREFIX)/lib/perl5
@@ -12,10 +15,32 @@ YAFFAS_STATE=	$(YAFFAS_PREFIX)/var
 YAFFAS_BIN=		$(YAFFAS_PREFIX)/bin
 YAFFAS_DATA=	$(YAFFAS_PREFIX)/config
 YAFFAS_LANG=	$(YAFFAS_PREFIX)/lang
+YAFFAS_DOC=		$(YAFFAS_PREFIX)/share/doc
+YAFFAS_EXAMPLE=	$(YAFFAS_DOC)/example
 YAFFAS_INIT=	$(YAFFAS_CONF)/init.d
 
 APACHE_ROOT=	/var/www
+APACHE_SITES=	/etc/apache2/sites-enabled
+ETC_LDAP=		/etc/ldap
+
+# Different paths on different distributions
+ifeq ("$(YAFFAS_OS)", "Ubuntu")
+	APACHE_SITES=	/etc/apache2/sites-enabled
+	ETC_LDAP=		/etc/ldap
+endif
+
+ifeq ("$(YAFFAS_OS)", "RedHatEnterpriseServer")
+	APACHE_SITES=	/etc/httpd/conf.d/
+	ETC_LDAP=		/etc/openldap
+endif
+
+ifeq ("$(YAFFAS_OS)", "CentOS")
+	APACHE_SITES=	/etc/httpd/conf.d/
+	ETC_LDAP=		/etc/openldap
+endif
+
 
 # Other definitions commonly used by our makefiles
 YAFFAS_OWNER=	root
 YAFFAS_GROUP=	root
+

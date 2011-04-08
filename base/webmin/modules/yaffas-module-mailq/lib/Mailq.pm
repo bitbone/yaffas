@@ -86,12 +86,39 @@ sub get_address_of_mailid($)
 	return @returnmail;
 }
 
-
-return 1;
+sub parse_mailq($) {
+	my $mailq = shift || return 0;
+	my @lines = split /\n/, $mailq;
+	my $entries;
+	my $entry;
+	foreach my $line (@lines) {
+		if($line =~ m/^-/) {
+			next;
+		}
+		if($line =~ m/^[0-9A-F]/) {
+			my @fields = split /\s+/, $line;
+			$entry->{queue_id} = $fields[0];
+			$entry->{sender} = $fields[6];
+			$entry->{size} = $fields[1];
+			$entry->{date} = $fields[2]." ".$fields[3]." ".$fields[4]." ".$fields[5];
+		}
+		elsif($line =~ m/^$/) {
+			push @$entries, $entry if defined $entry;
+			$entry = {};
+		} elsif($line =~ m/^\s+\(([^)]+)/) {
+			$entry->{error_string} = $1;
+		} elsif($line =~ m/^\s+([^(]+)/) {
+			push @{$entry->{remaining_rcpts}}, $1;
+		}
+	}
+	return $entries;
+}
 
 sub conf_dump {
     1;
 }
+
+return 1;
 
 =back
 

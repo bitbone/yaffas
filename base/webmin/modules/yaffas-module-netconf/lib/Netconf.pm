@@ -19,6 +19,7 @@ use Yaffas::Check;
 use Sort::Naturally;
 use File::Copy;
 use Net::LDAP;
+use IO::Interface::Simple;
 use Error qw(:try);
 
 =head1 NAME
@@ -50,10 +51,12 @@ sub new {
 	$self->{DEVICES} = _load_settings();
 
 	my $app = Yaffas::Constant::APPLICATION->{hostname};
-	chomp(my $hostname = `$app`);
+	chomp(my $hostname = `$app -s`);
 
-	$app = Yaffas::Constant::APPLICATION->{dnsdomainname};
-	chomp(my $domain = `$app`);
+	$app = Yaffas::Constant::APPLICATION->{hostname};
+	chomp(my $domain = `$app -d`);
+
+
 
 	my $workgroup = "" ;
 	my $wgc = Yaffas::File->new(Yaffas::Constant::FILE->{smb_includes_global});
@@ -146,7 +149,12 @@ sub save {
 	$self->_save_iftab();
 	$self->_save_workgroup();
 
-	Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
+	}
+	else {
+		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
+	}
 
 	$self->_save_interfaces();
 
@@ -156,14 +164,19 @@ sub save {
 
 	if ($pid == 0) {
 		## child
-		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
+		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+			Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
+		} else {
+			Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
+		}
+
 		if (-d Yaffas::Constant::DIR->{hylafax}) {
 			control(HYLAFAX, RESTART);
 		}
 		system(Yaffas::Constant::APPLICATION->{nscd}, "-i", "hosts");
 		control(USERMIN, RESTART);
 		control(SASLAUTHD, RESTART);
-		control(NSCD, RESTART);
+		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu';
 		control(ZARAFA_SERVER, RESTART);
 	} else {
 		## parent - will be killed by webmin restart
@@ -284,7 +297,13 @@ sub _load_settings {
 		my $pciid = "";
 
 		if ($dev =~ /^eth\d+(:\d+)?/) {
-			my @udevinfo = do_back_quote(Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
+			my @udev_cmd;
+			if(Yaffas::Constant::get_os() eq "Ubuntu"){
+				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
+			} else {
+				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevinfo}, '-a', '-p', "/class/net/$dev");
+			}
+			my @udevinfo = do_back_quote(@udev_cmd);
 
 			my $found_section = 0;
 			foreach my $line (@udevinfo) {
@@ -323,69 +342,139 @@ sub _load_settings {
 		}
 	}
 
-	my $interfaces = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces})
-		or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
+	my @enabled_interfaces;
 
-	my $device = "";
-	my ($ip, $netmask, $gateway, $dns, $search) = "";
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		my $interfaces = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces})
+			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
-	my $i = 0;
-	my @lines = $interfaces->get_content();
-	my @enabled_interfaces = ();
+		my $device = "";
+		my ($ip, $netmask, $gateway, $dns, $search) = "";
 
-	foreach my $line (@lines) {
-		$i++;
+		my $i = 0;
+		my @lines = $interfaces->get_content();
 
-		if ($line =~ /\s*address\s(.*)/) {
-			$ip = $1;
-		}
+		foreach my $line (@lines) {
+			$i++;
 
-		if ($line =~ /\s*netmask\s(.*)/) {
-			$netmask = $1;
-		}
-
-		if ($line =~ /\s*gateway\s(.*)/) {
-			$gateway = $1;
-		}
-
-		if ($line =~ /\s*dns-search\s(.*)/) {
-			$search = [split /\s+/, $1];
-		}
-
-		if ($line =~ /\s*dns-nameservers\s(.*)/) {
-			$dns = [split /\s+/, $1];
-		}
-
-		if ($line =~ /^\s*auto\s+(.*)$/) {
-			push @enabled_interfaces, split /\s+/, $1;
-		}
-
-		if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/ or $i == scalar @lines) {
-			if ($device ne "") {
-				# create objects for settings
-
-				my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-				$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
-
-				my $parent;
-				if ($device =~ /^(eth\d+):\d+$/) {
-					$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
-				}
-
-				if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
-					$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
-					$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
-					$settings{$device} = $d_obj;
-				}
-
-				$ip = $netmask = $gateway = $dns = $search = "";
+			if ($line =~ /\s*address\s(.*)/) {
+				$ip = $1;
 			}
-			$device = $1;
+
+			if ($line =~ /\s*netmask\s(.*)/) {
+				$netmask = $1;
+			}
+
+			if ($line =~ /\s*gateway\s(.*)/) {
+				$gateway = $1;
+			}
+
+			if ($line =~ /\s*dns-search\s(.*)/) {
+				$search = [split /\s+/, $1];
+			}
+
+			if ($line =~ /\s*dns-nameservers\s(.*)/) {
+				$dns = [split /\s+/, $1];
+			}
+
+			if ($line =~ /^\s*auto\s+(.*)$/) {
+				push @enabled_interfaces, split /\s+/, $1;
+			}
+
+			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/ or $i == scalar @lines) {
+				if ($device ne "") {
+					# create objects for settings
+
+					my $d_obj = Yaffas::Module::Netconf::Device->new($device);
+					$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
+
+					my $parent;
+					if ($device =~ /^(eth\d+):\d+$/) {
+						$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
+					}
+
+					if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
+						$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
+						$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
+						$settings{$device} = $d_obj;
+					}
+
+					$ip = $netmask = $gateway = $dns = $search = "";
+				}
+				$device = $1;
+			}
+		}
+	} else {
+		my ($ip, $netmask, $gateway);
+		my ($dns, $search) = ([],[]);
+
+		push @enabled_interfaces, map { $_->name } grep { m#^eth# } IO::Interface::Simple->interfaces;
+
+		my @routes = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'route'}, '-n');
+		foreach my $route (@routes){
+			$gateway = $1 if $route =~ m#^0\.0\.0\.0\s+([^ ]+)#ix;
+		}
+
+		my $yf = Yaffas::File->new(Yaffas::Constant::FILE->{'resolv_conf'});
+		foreach my $line ($yf->get_content()){
+			chomp $line;
+
+			if($line =~ m#search\s+(.+)\z#ix){
+				push @$search, $1;
+			}
+		}
+
+		foreach my $device (@enabled_interfaces){
+			my $fn = Yaffas::Constant::DIR->{'rhel5_scripts'} . "ifcfg-$device";
+			$dns = [];
+
+			if(-e $fn){
+				my $bkf = Yaffas::File->new($fn) || throw Yaffas::Exception("err_file_read", $fn);
+
+				foreach my $line ($bkf->get_content()){
+					chomp $line;
+					$ip = $1 if $line =~ m#^IPADDR=(.+)\z#ix;
+					$netmask = $1 if $line =~ m#^NETMASK=(.+)\z#ix;
+					push @$dns, $1 if $line =~ m#^DNS\d+=(.+)\z#ix;
+				}
+			}
+
+			unless($ip && $netmask){
+				my $iface = IO::Interface::Simple->new($device);
+				$ip = $iface->address();
+				$netmask = $iface->netmask();
+			}
+
+			my $d_obj = Yaffas::Module::Netconf::Device->new($device);
+			$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
+
+			my $parent;
+			if ($device =~ /^(eth\d+):\d+$/) {
+				$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
+			}
+
+			if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
+				$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
+				$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
+				$settings{$device} = $d_obj;
+			}
+
+			my $yf = Yaffas::File->new($fn) || throw Yaffas::Exception("err_file_read", $fn);
+			$settings{$device}->{'ENABLED'} = (defined $yf->search_line("ONBOOT=yes")) ? "onboot" : undef;
+
 		}
 	}
 
 	foreach my $dev (@enabled_interfaces) {
-		$settings{$dev}->{ENABLED} = 1 if exists $settings{$dev};
+		if(exists $settings{$dev}){
+			if(Yaffas::Constant::get_os() ne "Ubuntu") {
+				if(exists $settings{$dev}->{ENABLED} && $settings{$dev}->{ENABLED} eq 'onboot'){
+					$settings{$dev}->{ENABLED} = 1 
+				}
+			} else {
+				$settings{$dev}->{ENABLED} = 1;
+			}
+		}
 	}
 
 	return \%settings;
@@ -512,17 +601,20 @@ sub _save_hostname {
 	$file->save();
 
 	# call /etc/init.d/hostname.sh
-	my $app = Yaffas::Constant::APPLICATION->{"hostname.sh"};
-	system($app, "start");
-	throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		my $app = Yaffas::Constant::APPLICATION->{"hostname.sh"};
+		system($app, "start");
+		throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
+	}
+	else {
+		system(Yaffas::Constant::FILE->{'rhel_net'}, 'restart');
+	}
 }
 
 ## ---------------------------------------------------------------------- ##
 
 sub _save_interfaces {
 	my $self = shift;
-	my $file = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces}, "");
-	$file or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{network_interfaces});
 
 	my $lo_exists = undef;
 	foreach my $dev (keys %{$self->{DEVICES}}) {
@@ -538,11 +630,27 @@ sub _save_interfaces {
 		$d_obj->enable(1);
 		$self->{DEVICES}->{lo} = $d_obj;
 	}
+	
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces}, "");
+		$file or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{network_interfaces});
 
-	foreach my $dev (nsort keys %{$self->{DEVICES}}) {
-		$file->add_line($self->{DEVICES}->{$dev}->interface_dump());
+		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
+			$file->add_line($self->{DEVICES}->{$dev}->interface_dump());
+		}
+
+		$file->save();
 	}
-	$file->save();
+	else {
+		foreach my $dev (nsort keys %{$self->{DEVICES}}){
+			my $fn = Yaffas::Constant::DIR->{'rhel5_scripts'} . "ifcfg-$dev";
+			my $file = Yaffas::File->new($fn, "");
+			$file or throw Yaffas::Exception("err_file_write", $fn);
+
+			$file->add_line($self->{DEVICES}->{$dev}->interface_dump_rhel());
+			$file->save();
+		}
+	}
 }
 
 sub _save_iftab {
@@ -640,9 +748,6 @@ sub set_configuration {
 
 
 sub conf_dump () {
-	# do not save network configuration for RHEL5
-	return 1 if Yaffas::Constant::OS eq 'RHEL5';
-
 	my $cnf = Yaffas::Module::Netconf->new();
 
 	my $conf = Yaffas::Conf->new();
@@ -848,6 +953,30 @@ sub enable {
 		$self->{ENABLED} = $val;
 	}
 	return $self->{ENABLED};
+}
+
+sub interface_dump_rhel {
+	my $self = shift;
+
+	return unless ($self->{IP});
+	my @lines;
+
+	push @lines, "DEVICE=$self->{DEVICE}";
+	push @lines, "BOOTPROTO=none";
+	push @lines, "HWADDR=$self->{MAC}";
+	push @lines, "IPADDR=$self->{IP}";
+	push @lines, $self->{'ENABLED'} ? "ONBOOT=yes" : "ONBOOT=no";
+	push @lines, "NETMASK=$self->{NETMASK}";
+	push @lines, "GATEWAY=$self->{GATEWAY}";
+
+	for my $i (0 .. $#{ $self->{'DNS'} }){
+		push @lines, "DNS" . ($i+1) . "=" . $self->{'DNS'}->[$i];
+	}
+
+	push @lines, "PEERDNS=yes";
+	push @lines, "TYPE=Ethernet";
+
+	return @lines;
 }
 
 sub interface_dump {

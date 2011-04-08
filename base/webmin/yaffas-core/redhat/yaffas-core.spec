@@ -1,7 +1,7 @@
 Summary:	The yaffas core
 Name:		yaffas-core
-Version: 	1.0.0
-Release:	3
+Version: 0.7.0
+Release: 1
 License:	BSD
 Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
@@ -11,7 +11,7 @@ Patch2:		bitkit.patch
 Patch3:		login.patch
 BuildArch:	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	perl, perl-Net-SSLeay
+Requires:	perl, perl-Net-SSLeay, yaffas-install-lib, yaffas-lib
 AutoReqProv: no
 
 %description
@@ -51,8 +51,12 @@ fi
 
 # generate acl file for webmin if no one exists
 if [ ! -f /opt/yaffas/etc/webmin/webmin.acl ]; then
-	echo "admin: " > /opt/yaffas/etc/webmin/webmin.acl
+	echo "admin: " > /opt/yaffas/etc/webmin/webmin.acl-global
+	echo "admin: setup" > /opt/yaffas/etc/webmin/webmin.acl-setup
+	ln -sf /opt/yaffas/etc/webmin/webmin.acl-setup /opt/yaffas/etc/webmin/webmin.acl
 fi
+
+touch /opt/yaffas/etc/webmin/hidden_modules
 
 # correct permissions
 %{__chmod} 600 /opt/yaffas/etc/webmin/miniserv.*
@@ -60,12 +64,12 @@ fi
 # set selinux context
 #/usr/bin/chcon -u system_u -r object_r -t initrc_exec_t %{_initrddir}/yaffas
 
-if [ ! -e /etc/init.d/yaffas ]; then
-	ln -s /opt/yaffas/etc/init.d/yaffas /etc/init.d/yaffas
+if [ ! -e %{_initrddir}/yaffas ]; then
+	ln -s /opt/yaffas/etc/init.d/yaffas %{_initrddir}/yaffas
 fi
 
 /sbin/chkconfig --add yaffas
-chkconfig --level 35 yaffas on
+/sbin/chkconfig yaffas on
 /sbin/service yaffas start &>/dev/null || :
 
 %preun
@@ -94,3 +98,6 @@ fi
 %config /opt/yaffas/etc/init.d/yaffas
 
 %changelog
+* Mon Mar 08 2011 Package Builder <packages@yaffas.org> 0.7.0-1
+- initial release
+

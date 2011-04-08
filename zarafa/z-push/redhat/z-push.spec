@@ -1,6 +1,6 @@
 Name:		z-push
-Version:	1.4
-Release:	1%{?dist}
+Version: 1.4.5
+Release: 1
 Summary:	Open-source push technology
 Group:		Applications/System
 License:	GPL
@@ -24,12 +24,21 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+mkdir -p /var/www/z-push/state
+chown apache:apache /var/www/z-push/state
+
+HTTPD_CONF=/etc/httpd/conf/httpd.conf
+if ( ! grep -q "^Alias /Microsoft-Server-ActiveSync" $HTTPD_CONF ); then
+	echo -e "\nAlias /Microsoft-Server-ActiveSync /var/www/z-push/index.php" >> $HTTPD_CONF
+fi
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /var/www/z-push
 
-
 %changelog
-* Thu Mar 03 2011 Sebastian Stumpf <stumpf@bitbone.de> 1.4-1
-- Updated the build system
+* Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
+- initial release
+

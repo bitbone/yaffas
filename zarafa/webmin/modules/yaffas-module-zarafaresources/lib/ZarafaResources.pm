@@ -74,7 +74,13 @@ sub create_resource ($$$$) {
 		throw Yaffas::Exception("err_no_domains");
 	}
 
-	my $email = $resource.'@'.$domains[0];
+	my $email = $resource.'@';
+	for my $domain (@domains) {
+		unless($domain =~ m/^localhost$/) {
+			$email .= $domain;
+			last;
+		}
+	}
 
 	Yaffas::UGM::add_user( $resource, $email, 'resource', $description );
 	modify_resource( $resource, $description, $decline_conflict, $decline_recurring );

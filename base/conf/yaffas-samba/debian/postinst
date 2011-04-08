@@ -21,6 +21,17 @@ set -e
 case "$1" in
     configure)
 
+	# preserve config files and copy our config
+	# to default location
+	if [ -e /etc/samba/smb.conf ]; then
+		mv -f /etc/samba/smb.conf /etc/samba/smb.conf.yaffassave
+	fi
+	cp -f -a /opt/yaffas/share/doc/example/etc/samba/smb.conf /etc/samba
+	cp -f -a /opt/yaffas/share/doc/example/etc/samba/smbopts.software /etc/samba
+
+	mkdir -p /etc/samba/smbprinters/
+	mkdir -p /etc/samba/printer/{W32ALPHA,W32MIPS,W32PPC,W32X86,WIN40}
+
 	touch /etc/printcap
 
 	chmod -R 777 /etc/samba/printer/

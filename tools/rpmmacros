@@ -1,6 +1,6 @@
 %_signature gpg
 %_gpg_path ~/.gnupg
-%_gpg_name bitbone AG <info@bitbone.de>
+%_gpg_name Yaffas Repoadmin <repo@yaffas.org>
 %_gpgbin /usr/bin/gpg
 
 %_topdir /usr/src/redhat

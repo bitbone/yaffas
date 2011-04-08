@@ -8,7 +8,7 @@ Group:		Applications/System
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	yaffas-install-lib, yaffas-core
+Requires:	yaffas-install-lib, yaffas-core, perl-IO-Interface
 AutoReqProv: no
 
 %description
@@ -37,7 +37,6 @@ add_webmin_acl $MODULE
 %doc debian/{copyright,changelog}
 /opt/yaffas/webmin/netconf
 /opt/yaffas/lib/perl5/Yaffas/Module/Netconf.pm
-/opt/yaffas/lib/perl5/Yaffas/Module/Netconf.rhel.pm
 /opt/yaffas/lib/perl5/Yaffas/Module/Proxy.pm
 
 %changelog

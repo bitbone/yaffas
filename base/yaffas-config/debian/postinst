@@ -20,6 +20,8 @@
 case "$1" in
     configure)
 
+    mkdir -p /opt/yaffas/etc
+
     CONF="/opt/yaffas/etc/installed-products"
     KEY="framework"
     VALUE='yaffas|BASE v0.1'

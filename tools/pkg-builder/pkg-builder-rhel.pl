@@ -131,12 +131,12 @@ foreach my $name (@todo) {
 
 		foreach (@specfile) {
 			last if /^%changelog$/;
-			$_ =~ s/^Version: .*$/Version: $version/;
+			$_ =~ s/^Version:\s+.*$/Version: $version/;
 			if ( defined $release ) {
-				$_ =~ s/^Release: .*$/Release: $release/;
+				$_ =~ s/^Release:\s+.*$/Release: $release/;
 			}
 			else {
-				$_ =~ s/^Release: .*$/Release: 1/;
+				$_ =~ s/^Release:\s+.*$/Release: 1/;
 			}
 			print SPEC_OUT $_;
 		}
@@ -160,7 +160,7 @@ foreach my $name (@todo) {
 		rm_package( $name, $pkg{dest} );
 		foreach my $pfile (@package_file) {
 			print "Signing $pfile...\n";
-			sign_package($pfile);
+# 			sign_package($pfile);
 			print "Copying $pfile to $pkg{dest}\n";
 			copy_package( $pfile, $pkg{dest} );
 		}

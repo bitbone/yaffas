@@ -14,7 +14,7 @@ sub BEGIN {
 						&CAPIINIT &CAPI4HYLAFAX &GREYLIST
 						&FETCHMAIL &POSTGRESQL &SPAMASSASSIN &WINBIND &SNMPD
 						&DIVAS &GOGGLETYKE &SSHD
-						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED
+						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD
 						&MPPD
 						&START &STOP &RESTART &STATUS &RELOAD
@@ -320,6 +320,12 @@ sub POSTFIX(){ 40; }
 
 sub ZARAFA_LICENSED(){ 41; }
 
+=item ZARAFA_DAGENT
+
+=cut
+
+sub ZARAFA_DAGENT(){ 42; }
+
 =back
 
 =head2 Constants for Actions
@@ -376,6 +382,7 @@ a service. It contains the message which was put to stdout.
 =cut
 
 our %SERVICES;
+our %PROCESSES;
 
 if(Yaffas::Constant::OS eq 'Ubuntu') {
 	%SERVICES = (
@@ -411,6 +418,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 ZARAFA_SPOOLER() => "/etc/init.d/zarafa-spooler",
 				 ZARAFA_ICAL() => "/etc/init.d/zarafa-ical",
 				 ZARAFA_LICENSED() => "/etc/init.d/zarafa-licensed",
+				 ZARAFA_DAGENT() => "/etc/init.d/zarafa-dagent",
 				 APACHE() => "/etc/init.d/apache2",
 				 SSHD() => "/etc/init.d/ssh",
 				 MPPD() => "/etc/init.d/mppd",
@@ -419,6 +427,12 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 BBLCD() => "/etc/init.d/bblcd",
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
+				);
+
+	%PROCESSES = (
+				MYSQL() => "/usr/sbin/mysqld",
+				POSTFIX() => "/usr/lib/postfix/master",
+				APACHE() => "/usr/sbin/apache2",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -435,11 +449,11 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 CYRUS()   => "/sbin/service cyrus-imapd",
 				 SASLAUTHD() => "/sbin/service saslauthd",
 #				 INETD()   => "/etc/init.d/inetd",
-				 WEBMIN()  => "/sbin/service bbwebmin",
+				 WEBMIN()  => "/sbin/service yaffas",
 				 USERMIN() => "/sbin/service bbusermin",
 				 XINETD()  => "/sbin/service xinetd",
 #				 CAPIINIT()  => "/usr/sbin/capiinit",
-#				 MYSQL()   => "/etc/init.d/mysql",
+				 MYSQL()   => "/sbin/service mysqld",
 #				 CUPS()    => "/etc/init.d/cupsys",
 #				 KAV()     => "/etc/init.d/aveserver",
 #				 KAS()     => "/etc/init.d/ap-process-server",
@@ -451,17 +465,25 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 SNMPD() => "/sbin/service snmpd",
 				 DIVAS() => "/usr/lib/eicon/divas/Start",
 				 GOGGLETYKE() => "/sbin/service goggletyke",
-#				 ZARAFA_GATEWAY() => "/etc/init.d/zarafa-gateway",
-#				 ZARAFA_MONITOR() => "/etc/init.d/zarafa-monitor",
-#				 ZARAFA_SERVER() => "/etc/init.d/zarafa-server",
-#				 ZARAFA_SPOOLER() => "/etc/init.d/zarafa-spooler",
-#				 ZARAFA_ICAL() => "/etc/init.d/zarafa-ical",
+				 ZARAFA_GATEWAY() => "/sbin/service zarafa-gateway",
+				 ZARAFA_MONITOR() => "/sbin/service zarafa-monitor",
+				 ZARAFA_SERVER() => "/sbin/service zarafa-server",
+				 ZARAFA_SPOOLER() => "/sbin/service zarafa-spooler",
+				 ZARAFA_ICAL() => "/sbin/service zarafa-ical",
+				 ZARAFA_LICENSED() => "/sbin/service zarafa-licensed",
+				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
 				 APACHE() => "/sbin/service httpd",
 				 SSHD() => "/sbin/service sshd",
 #				 MPPD() => "/etc/init.d/mppd",
 #				 MPPMANAGER() => "/etc/init.d/mppmanager",
 #				 SEARCHD() => "/etc/init.d/searchd",
 #				 BBLCD() => "/etc/init.d/bblcd",
+				);
+
+	%PROCESSES = (
+				MYSQL() => "/usr/libexec/mysqld",
+				POSTFIX(), => "/usr/libexec/postfix/master",
+				APACHE(), => "/usr/sbin/httpd",
 				);
 }
 else {
@@ -502,9 +524,9 @@ sub installed_services(;$)
 		'postfix'	=> { 'constant' => POSTFIX(), 'allow' => [ 'start', 'stop', 'restart' ] },
 	};
 
-	if(Yaffas::Constant::OS eq 'RHEL5') {
-		$services->{'sendmail'}	= { 'constant' => SENDMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
-	}
+#	if(Yaffas::Constant::OS eq 'RHEL5') {
+#		$services->{'sendmail'}	= { 'constant' => SENDMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
+#	}
 
 	if(check_product('fax'))
 	{
@@ -561,7 +583,9 @@ sub installed_services(;$)
 		$services->{'zarafa-spooler'} = { 'constant' => ZARAFA_SPOOLER(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'zarafa-ical'} = { 'constant' => ZARAFA_ICAL(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'zarafa-licensed'} = { 'constant' => ZARAFA_LICENSED(), 'allow' => [ 'start', 'stop', 'restart' ] };
+		$services->{'zarafa-dagent'} = { 'constant' => ZARAFA_DAGENT(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'apache'}		= { 'constant' => APACHE(), 'allow' => [ 'start', 'stop', 'restart' ] };
+		$services->{'mysql'}		= { 'constant' => MYSQL(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		delete $services->{cyrus};
 	}
 
@@ -598,7 +622,7 @@ sub is_in_runlevel($){
 
 	if($initscript){
 		$initscript =~ s#$initprefix/init.d/##;
-		foreach (glob("$initprefix/rc2.d/*")){
+		foreach (glob("$initprefix/rc2.d/S*")){
 
 			my $symlink = readlink $_;
 			$symlink =~ m#/([^/]*)$#;
@@ -689,7 +713,7 @@ sub rm_from_runlevel($){
 			if( Yaffas::Constant::OS eq 'Ubuntu' ) {
 				system("update-rc.d -f $name remove");
 			} elsif( Yaffas::Constant::OS eq 'RHEL5' ) {
-				system("chkconfig --del $name");
+				system("chkconfig $name off");
 			}
 		}
 	}
@@ -713,7 +737,7 @@ sub control($;$){
 	$action = STATUS unless defined $action;
 	my $init_script = $Yaffas::Service::SERVICES{$service};
 	if($init_script =~ m#^/sbin/service#) {
-		$init_script =~ s#/sbin/service\s##;
+		$init_script =~ s#/sbin/service\s+##;
 		return undef unless (-x "/etc/rc.d/init.d/$init_script");
 	} else {
 		return undef unless (-x $Yaffas::Service::SERVICES{$service});
@@ -734,6 +758,7 @@ sub _start($$) {
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_ICAL() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_SPOOLER() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_LICENSED() } ||
+	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_DAGENT() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ WINBIND() }
 	   ){
 		if($_[0] =~ /\s/) {
@@ -802,6 +827,7 @@ sub _restart($$) {
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_ICAL() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_SPOOLER() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_LICENSED() } ||
+	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_DAGENT() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ BBLCD() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ WINBIND() }
 	   ){
@@ -840,11 +866,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SENDMAIL() }) {
 		return __check_process('/usr/sbin/sendmail');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTFIX() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-            return __check_process('/usr/libexec/postfix/master');
-		} else {
-            return __check_process('/usr/lib/postfix/master');
-		}
+		return __check_process($Yaffas::Service::PROCESSES{ POSTFIX() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ HYLAFAX() } ) {
 		return  __check_process('faxq') && __check_process('hfaxd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CYRUS() }) {
@@ -862,7 +884,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ XINETD() }) {
 		return __check_process('/usr/sbin/xinet');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ MYSQL() }) {
-		return __check_process('/usr/sbin/mysqld');
+		return __check_process($Yaffas::Service::PROCESSES{ MYSQL() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ KAV() }) {
 		return __check_process('aveserver');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ GREYLIST() }) {
@@ -871,19 +893,9 @@ sub _status($){
 		return __check_process('/usr/local/ap-mailfilter/bin/ap-process-server')
 			&& __check_process('/usr/local/ap-mailfilter/bin/kas-license');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ WEBMIN() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('/usr/bin/perl /opt/yaffas/webmin/miniserv.pl');
-		}
-		else {
-			return __check_process('/usr/bin/perl /opt/yaffas/webmin/miniserv.pl');
-		}
+		return __check_process('/usr/bin/perl /opt/yaffas/webmin/miniserv.pl');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ USERMIN() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('/usr/bin/perl /opt/Yaffas/usermin/miniserv.pl');
-		}
-		else {
-			return __check_process('/usr/bin/perl /usr/local/usermin/miniserv.pl');
-		}
+		return __check_process('/usr/bin/perl /opt/yaffas/usermin/miniserv.pl');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CUPS() }) {
 		return __check_process('/usr/sbin/cupsd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CAPIINIT() }) {
@@ -927,6 +939,8 @@ sub _status($){
 		return __check_process('/usr/bin/zarafa-ical');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_LICENSED() }) {
 		return __check_process('/usr/bin/zarafa-licensed');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_DAGENT() }) {
+		return __check_process('/usr/bin/zarafa-dagent');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SSHD() }) {
 		return __check_process('/usr/sbin/sshd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ MPPD() }) {
@@ -938,12 +952,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ NFSD() }) {
 		return __check_process('[nfsd]');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ APACHE() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('/usr/sbin/httpd');
-		}
-		else {
-			return __check_process('/usr/sbin/apache2');
-		}
+		return __check_process($Yaffas::Service::PROCESSES{ APACHE() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ BBLCD() }) {
 		return ((__check_process('/usr/bin/bblcdclient.pl'))&&(__check_process('/usr/bin/lcdproc')));
 	}

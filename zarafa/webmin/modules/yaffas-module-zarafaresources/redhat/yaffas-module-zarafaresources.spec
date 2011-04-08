@@ -24,6 +24,16 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+source /opt/yaffas/lib/bbinstall-lib.sh
+MODULE="zarafaresources"
+add_webmin_acl $MODULE
+
+%postun
+source /opt/yaffas/lib/bbinstall-lib.sh
+MODULE="zarafaresources"
+del_webmin_acl $MODULE
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}

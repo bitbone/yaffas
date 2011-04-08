@@ -13,6 +13,7 @@ use Yaffas::Constant;
 our @ISA = ("Yaffas::Module");
 
 my $apt_cpath = Yaffas::Constant::FILE->{"apt_conf"};
+my $yum_cpath = Yaffas::Constant::FILE->{"yum_conf"};
 my $wget_cpath = Yaffas::Constant::FILE->{"wget_conf"};
 my $kav_cpath = Yaffas::Constant::FILE->{"kav_conf"};
 my $freshclam_cpath = Yaffas::Constant::FILE->{"freshclam_conf"};
@@ -23,32 +24,55 @@ my $freshclam_cpath = Yaffas::Constant::FILE->{"freshclam_conf"};
 
 get_proxy opens the apt.conf file and reads the proxy configuration.
 it returns a array containting the username, password, proxy ip/domain, port.
-if no porxy is configured it returns "" for every element.
+if no proxy is configured it returns "" for every element.
+
+On a RHEL machine it works with the yum.conf, of course.
 
 =cut
 
 sub get_proxy {
 	my ($user, $proxy, $port);
 
-	my $bkf = Yaffas::File->new($apt_cpath) or throw Yaffas::Exception("err_file_read", $apt_cpath);
-	my $line_nr = $bkf->search_line("Acquire::http::Proxy");
-	if (defined $line_nr) {
-		my $line = $bkf->get_content($line_nr);
-		if ($line =~ m|"http://(.*)";| ){
-			my $interesting_part = $1;
-			my ($usr_pass, $url_port) = split /@/, $interesting_part;
-			unless ($url_port) {
-				$url_port = $usr_pass;
-				$usr_pass = ":";
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		my $bkf = Yaffas::File->new($apt_cpath) or throw Yaffas::Exception("err_file_read", $apt_cpath);
+		my $line_nr = $bkf->search_line("Acquire::http::Proxy");
+		if (defined $line_nr) {
+			my $line = $bkf->get_content($line_nr);
+			if ($line =~ m|"http://(.*)";| ){
+				my $interesting_part = $1;
+				my ($usr_pass, $url_port) = split /@/, $interesting_part;
+				unless ($url_port) {
+					$url_port = $usr_pass;
+					$usr_pass = ":";
+				}
+
+				my ($url, $port) = split /:/, $url_port;
+				my ($usr, $pass) = split /:/, $usr_pass;
+				return ($usr, $pass, $url, $port);
 			}
 
-			my ($url, $port) = split /:/, $url_port;
-			my ($usr, $pass) = split /:/, $usr_pass;
-			return ($usr, $pass, $url, $port);
 		}
+	} else {
+		my $pass = "";
+		open (FILE, '<', $yum_cpath) || throw Yaffas::Exception("err_file_read", $yum_cpath);
+		while(<FILE>){
+			chomp;
+			if(m#^proxy\s?=\s?http://(.+)\z#ix){
+				my $what = $1;
+				($proxy, $port) = split(":", $what, 2);
+			}
+			elsif(m#^proxy_username\s?=\s?(.*)\z#ix){
+				$user = $1;
+			}
+			elsif(m#^proxy_password\s?=\s?(.*)\z#ix){
+				$pass = $1
+			}
+		}
+		close(FILE);
 
+		return ($user, $pass, $proxy, $port);
 	}
-	## else
+
 	return ("", "", "", "");
 }
 
@@ -88,7 +112,11 @@ sub set_proxy($$$$){
 		$entry = $user  . ":" . $pass . "@" .  $entry if ($pass and $user);
 		$entry = $user  . "@" . $entry if ($user and !$pass);
 
-		_set_apt($entry);
+		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+			_set_apt($entry);
+		} else {
+			_set_yum($proxy, $port, $user, $pass);
+		}
 		_set_wget($entry);
 
 		# muss funktionieren bei einem MAIL, GATE und MAILFAX.
@@ -99,7 +127,11 @@ sub set_proxy($$$$){
 
 	} else {
 		# delmode
-		_del_apt();
+		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+			_del_apt();
+		} else {
+			_del_yum();
+		}
 		_del_wget();
 		if (Yaffas::Product::check_product("mailgate")) {
 			_del_kav();
@@ -124,6 +156,29 @@ sub _set_apt($) {
 	$bkf->write() or throw Yaffas::Exception('err_set_apt');
 }
 
+sub set_yum($$$$){
+	my ($host, $port, $user, $pass) = @_;
+	my %conf = (
+		proxy => "http://$host:$port",
+		proxy_username => $user,
+		proxy_password => $pass
+	);
+
+	my $bkf = Yaffas::File->new($yum_cpath) or throw Yaffas::Exception("err_file_read", $yum_cpath);
+
+	while(my ($k, $v) = each %conf){
+		my $num = $bkf->search_line(qr/^$k/);
+
+		if(defined $num){
+			$bkf->splice_line($num, 1, "$k=$v");
+		} else {
+			$bkf->add_line("$k=$v");
+		}
+	}
+
+	$bkf->write() or throw Yaffas::Exception('err_set_yum');
+}
+
 #delete the apt configuration
 sub _del_apt() {
 	my $bkf = Yaffas::File->new($apt_cpath) or throw Yaffas::Exception("err_file_read", $apt_cpath);;
@@ -133,6 +188,17 @@ sub _del_apt() {
 		$bkf->splice_line($line_nr, 1);
 		$bkf->write() or throw Yaffas::Exception('err_del_apt');
 	}
+}
+
+sub _del_yum(){ 
+	my $bkf = Yaffas::File->new($yum_cpath) or throw Yaffas::Exception("err_file_read", $yum_cpath);
+
+	foreach my $i (qw/proxy proxy_username proxy_password/){
+		my $num = $bkf->search_line(qr/^$i/);
+		$bkf->splice_line($num, 1) if $num;
+	}
+
+	$bkf->write() or throw Yaffas::Exception('err_del_yum');
 }
 
 # set the wget configuration

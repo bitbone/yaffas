@@ -19,13 +19,24 @@ set -e
 
 case "$1" in
     configure)
+
+	YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
+	for CFG in /etc/zarafa/*.cfg; do
+		cp -f $CFG ${CFG}.yaffassave
+	done
+	cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+	if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
+		mv -f /etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available/zarafa-webaccess-ssl.yaffassave
+	fi
+	cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
+
 	PHPINI=/etc/php5/apache2/php.ini
 	PHPCLIINI=/etc/php5/cli/php.ini
 	LDAPHOSTNAME=`grep "BASEDN=" /etc/ldap.settings | cut -d= -f2-`
 	LIC="/etc/zarafa/license/base"
 	chmod 600 /etc/zarafa/server.cfg
 	chmod 600 /etc/zarafa/ldap.cfg
-	chmod 600 /etc/zarafa/ldap.bitkit.cfg
+	chmod 600 /etc/zarafa/ldap.yaffas.cfg
 	#necessary if zarafa installed after first installation
 	/usr/sbin/locale-gen
 	export PERLLIB="/opt/yaffas/lib/perl5"
@@ -50,18 +61,13 @@ case "$1" in
 	a2enmod proxy
 	a2enmod ssl
     a2ensite zarafa-webaccess-ssl
-	sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.bitkit.cfg
+	sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.yaffas.cfg
 
 	#if ! grep "Listen.*443" /etc/apache2/ports.conf &>/dev/null; then
 	#	echo "Listen 443" >> /etc/apache2/ports.conf
 	#fi
 
     sed -e 's/DAGENT_ENABLED=no/DAGENT_ENABLED=yes/' -i /etc/default/zarafa-dagent
-
-	# hide modules from webmin ui
-	mkdir -p /etc/webmin/
-	echo -e "bbmailboxmgmt\nbbquotawarn\nbbmailfilter" >> /etc/webmin/hidden_modules
-	sed '/bbauthsrv/d' -i /etc/webmin/hidden_modules
 
 	# optimize memory
 
@@ -74,6 +80,8 @@ case "$1" in
 
 		mkdir -p /data/zarafa/attachments/
 	fi
+
+	rm -f /tmp/zarafa.te
 
 	#EVIL!!
 	set +e

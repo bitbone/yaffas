@@ -4,26 +4,19 @@ package Yaffas::Constant;
 use strict;
 use warnings;
 
+use Switch;
+
 ##################################################
 # determine of we are on a RHEL5 or Ubuntu machine
 ##################################################
-sub is_redhat {
-	my $redhat = 0;
-	my $release_file = '/etc/redhat-release';
-	if( -e $release_file && -r $release_file) {
-		open REL, $release_file;
-		my $test = <REL>;
-		if($test =~ /^Red Hat Enterprise Linux Server release 5/) {
-			$redhat = 1;
-		}
-		close REL;
-	}
-	return $redhat;
-}
 
 sub get_os {
-	return "RHEL5" if is_redhat();
-	return "Ubuntu";
+	my $lsb_release = `lsb_release -si -sr`;
+	switch ($lsb_release) {
+		case qr/CentOS 5|RedHatEnterpriseServer 5/ { return "RHEL5"; }
+		case qr/Ubuntu/ { return "Ubuntu"; }
+		else { return "unknown"; }
+	}
 }
 
 use constant { OS => get_os() };
@@ -81,6 +74,7 @@ use constant {
 		"zarafa_licence" => "/etc/zarafa/license/",
 		"selections" => "/selections",
 		"rhel5_devices" => "/etc/sysconfig/networking/devices/",
+		"rhel5_scripts" => "/etc/sysconfig/network-scripts/",
 		"mppserver_conf" => "/etc/mppserver/",
 	}
 };
@@ -93,6 +87,7 @@ use constant {
 		"tmpslap" => "/tmp/slapcat.ldif",
 		"goggletyke_cfg" => "/etc/goggletyke.cfg",
 		"apt_conf" => "/etc/apt/apt.conf",
+		"yum_conf" => "/etc/yum.conf",
 		"wget_conf" => "/etc/wgetrc",
 		"kav_conf" => "/etc/kav/kav_updater.conf",
 		"passwd" => "/etc/passwd",
@@ -123,7 +118,8 @@ use constant {
 		"hfaxd_conf" => '/etc/hylafax/hfaxd.conf',
 		"hosts_hfaxd" => '/etc/hylafax/hosts.hfaxd',
 		"fax_notify" => '/etc/hylafax/FaxNotify',
-		"smb_includes_global" => ( OS eq 'Ubuntu' ? "/etc/samba/smbopts.global" : "/etc/samba/smb.conf" ),
+#		"smb_includes_global" => ( OS eq 'Ubuntu' ? "/etc/samba/smbopts.global" : "/etc/samba/smb.conf" ),
+		"smb_includes_global" => "/etc/samba/smbopts.global",
 		"smb_includes" => '/etc/samba/includes.smb',
 		"c2faxsend_bb" => '/etc/c2faxsend_bb.conf',
 		"config_faxcapi" => '/etc/hylafax/config.faxCAPI',
@@ -139,7 +135,7 @@ use constant {
 		"print_msn_dispatch" => "/etc/hylafax/fax2print_controller",
 		"faxrcvd_opts" => "/data/fax/hylafax/etc/faxrcvd_opts",
 		"faxrcvd" => "/data/fax/hylafax/bin/faxrcvd",
-		"mysql_cnf" => "/etc/mysql/my.cnf",
+		"mysql_cnf" => ( OS eq 'Ubuntu' ? "/etc/mysql/my.cnf" : "/etc/my.cnf" ),
 		"exim_relay_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/exim.acceptrelay" : "/etc/exim/exim.acceptrelay" ),
 		"exim_domains_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/exim.acceptdomains" : "/etc/exim/exim.acceptdomains" ),
 		"bbexim_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/bbexim.conf" : "/etc/exim/bbexim.conf" ),
@@ -205,7 +201,7 @@ use constant {
 		"debiansysmaint" => "/etc/mysql/debian.cnf",
 		"ldap_settings" => "/etc/ldap.settings",
 		"zarafa_server_cfg" => "/etc/zarafa/server.cfg",
-		"zarafa_ldap_cfg" => "/etc/zarafa/ldap.bitkit.cfg",
+		"zarafa_ldap_cfg" => "/etc/zarafa/ldap.yaffas.cfg",
 		"zarafa_spooler_cfg" => "/etc/zarafa/spooler.cfg",
 		"need_takeover_flag_file" =>  "/data/config/fax/faxconf_takeover_needed",
 		"inittab" => "/etc/inittab",
@@ -240,6 +236,7 @@ use constant {
 		"postfix_smtp_auth" => "/etc/postfix/smtp_auth.cf",
 		"fetchmail_default_conf" => "/etc/default/fetchmail",
 		"zarafa_backup_conf" => "/opt/yaffas/config/zarafa/backup.conf",
+		"rhel_net" => "/etc/init.d/network",
 	}
 };
 

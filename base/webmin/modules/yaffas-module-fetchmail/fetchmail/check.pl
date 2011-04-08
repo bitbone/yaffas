@@ -1,4 +1,4 @@
-#!/usr/local/bin/perl
+#!/usr/bin/perl
 # check.pl
 # Run fetchmail, and send the output somewhere
 

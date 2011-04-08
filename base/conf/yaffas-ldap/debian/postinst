@@ -36,6 +36,46 @@ case "$1" in
 	# create group which allows users to read from ldap
 	addgroup --system ldapread
 
+	# save existing config files and
+	# copy our config files to default locations
+	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+	if [ -e /etc/ldap.conf ]; then
+		mv -f /etc/ldap.conf /etc/ldap.conf.yaffassave
+	fi
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
+	# leave nsswitch.conf will be change by setting authentication
+	#mv -f /etc/nsswitch.conf /etc/nsswitch.conf.yaffassave
+	#cp -f ${YAFFAS_EXAMPLE}/etc/nsswitch.conf /etc
+	if [ -e /etc/ldap/slapd.conf ]; then
+		mv -f /etc/ldap/slapd.conf /etc/ldap/slapd.conf.yaffassave
+	fi
+	cp -f -p ${YAFFAS_EXAMPLE}/etc/ldap/slapd.conf /etc/ldap
+	if [ -e /etc/ldap/ldap.conf]; then
+		mv -f /etc/ldap/ldap.conf /etc/ldap/ldap.conf.yaffassave
+	fi
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/ldap.conf /etc/ldap
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
+	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
+	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/samba.schema /etc/ldap/schema
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/zarafa.schema /etc/ldap/schema
+	if [ -e /etc/smbldap-tools/smbldap.conf]; then
+		mv -f /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap.conf.yaffassave
+	fi
+	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
+	if [ -e /etc/smbldap-tools/smbldap_bind.conf]; then
+		mv -f /etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools/smbldap_bind.conf.yaffassave
+	fi
+	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
+
+	# allow slapd access to our certificates
+	APPARMOR_SLAPD=/etc/apparmor.d/usr.sbin.slapd
+	if [ -w $APPARMOR_SLAPD ]; then
+		sed "s#\}#  /opt/yaffas/etc/ssl/certs/** r,\n&#" -i $APPARMOR_SLAPD
+		/etc/init.d/apparmor reload
+	fi
+
 	# some defines
 	CONF="/etc/ldap.conf"
 	NSS="/etc/nsswitch.conf"
@@ -71,6 +111,7 @@ case "$1" in
 	sed -e "s/BASE/$BASE/" -i $SLAPD
 	sed -e "s/BASE/$BASE/" -i $LDAPCONF
 	sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
+	sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
 	sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
 
 	# only on first installation, if no ldap tree is present
@@ -91,6 +132,7 @@ case "$1" in
 		# Einspielen des LDIF
 		slapadd -v -l $DOMRENAME_FILE -f /etc/ldap/slapd.conf
 		chown -R openldap:openldap /var/lib/ldap/
+		rm -f $DOMRENAME_FILE
 		rm $LDIF
 
 		#write ldap.settings

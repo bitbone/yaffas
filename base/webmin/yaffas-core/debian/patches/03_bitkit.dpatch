@@ -1,5 +1,5 @@
 #! /bin/sh /usr/share/dpatch/dpatch-run
-## 03_bitkit.dpatch by Christof Musik <musik@bitbone.de>
+## 03_yaffas.dpatch by Christof Musik <musik@bitbone.de>
 ##
 ## All lines beginning with `## DP:' are a description of the patch.
 ## DP: No description.
@@ -13,7 +13,7 @@ diff -urNad bbwebmin-core~/usr/local/webmin/lang/de bbwebmin-core/usr/local/webm
  session_clear=Zurücksetzen
  session_failed=Anmeldung fehlgeschlagen. Bitte versuchen Sie es noch einmal.
 -session_header=Anmelden bei Webmin
-+session_header=Anmelden beim bitkit administration interface
++session_header=Anmelden beim yaffas administration interface
  session_login=Anmelden
  session_logout=Abmeldung erfolgreich. Benutzen Sie das nachfolgende Formular, um sich erneut anzumelden.
  session_mesg=Sie müssen einen Benutzernamen und ein Passwort zur Anmeldung am Webmin Server auf $1 eingeben.
@@ -25,7 +25,7 @@ diff -urNad bbwebmin-core~/usr/local/webmin/lang/en bbwebmin-core/usr/local/webm
  referer_eself=referer_save.cgi cannot be linked to directly!
  
 -session_header=Login to Webmin
-+session_header=Login to bitkit administration interface
++session_header=Login to yaffas administration interface
  session_mesg=You must enter a username and password to login to the Webmin server on $1.
  session_mesg2=You must enter a username and password to login.
  session_user=Username
@@ -34,7 +34,7 @@ diff -urNad bbwebmin-core~/usr/local/webmin/lang/en bbwebmin-core/usr/local/webm
  session_save=Remember login permanently?
  
 -pam_header=Login to Webmin
-+pam_header=Login to bitkit administration interface
++pam_header=Login to yaffas administration interface
  pam_mesg=You must respond to the question below to login to Webmin server on $1.
  pam_mesg2=You must respond to the question below to login.
  pam_login=Continue

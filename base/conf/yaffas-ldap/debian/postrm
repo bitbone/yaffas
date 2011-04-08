@@ -1,0 +1,34 @@
+#! /bin/sh
+set -e
+
+case "$1" in
+  purge)
+    # restore configuration files
+    # and remove our configuration files
+	if [ -e /etc/ldap.conf.yaffassave ]; then
+		mv -f /etc/ldap.conf.yaffassave /etc/ldap.conf
+	fi
+	rm -f /etc/ldap.settings
+	if [ -e /etc/openldap/slapd.conf.yaffassave ]; then
+		mv -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
+	fi
+	if [ -e /etc/openldap/ldap.conf.yaffassave ]; then
+		mv -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
+	fi
+	rm -f /etc/ldap.secret
+	rm -f /etc/postfix/ldap-users.cf
+	rm -f /etc/postfix/ldap-aliases.cf
+	if [ -e /etc/smbldap-tools/smbldap.conf.yaffassave ]; then
+		mv -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
+	fi
+	if [ -e /etc/smbldap-tools/smbldap_bind.conf.yaffassave ]; then
+		mv -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
+	fi
+
+    ;;
+  *)
+     exit 0;;
+esac
+
+exit 0
+

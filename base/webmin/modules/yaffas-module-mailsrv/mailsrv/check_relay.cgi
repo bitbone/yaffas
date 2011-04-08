@@ -7,6 +7,7 @@ use Yaffas::UI;
 use Yaffas::Check;
 use Yaffas::Exception;
 use Yaffas::Module::Mailsrv::Postfix qw(rm_accept_relay set_accept_relay);
+use Yaffas::Service qw(POSTFIX RESTART control);
 
 
 use Error qw(:try);
@@ -37,6 +38,7 @@ try{
 		rm_accept_relay($_);
 	}
 	set_accept_relay($add);
+	control(POSTFIX() ,RESTART());
 	print Yaffas::UI::ok_box();
 
 } catch Yaffas::Exception with {

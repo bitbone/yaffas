@@ -2,25 +2,20 @@
 # yaffas-samba
 #
 
-INSTALL=cp
-OWNER=root
-GROUP=root
-BINDIR=/
+include ../../../Makefile.common
+DESTDIR ?= /
+NTROOTDIR=mkntpwd/
 
-DESTDIR=debian/tmp/
+INSTALL=cp
+
+SMB_CONF=smb.conf
 
 clean:
 
-install: 
-	mkdir -p $(DESTDIR)$(BINDIR)/tmp
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/smbprinters/
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/printer/W32ALPHA
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/printer/W32MIPS
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/printer/W32PPC
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/printer/W32X86
-	mkdir -p $(DESTDIR)$(BINDIR)/etc/samba/printer/WIN40
-	$(INSTALL) conf/smb.conf $(DESTDIR)$(BINDIR)/etc/samba/
-	$(INSTALL) conf/smbopts.software $(DESTDIR)$(BINDIR)/etc/samba/
-	$(INSTALL) tmp/root.ldif $(DESTDIR)$(BINDIR)/tmp
+install:
+	mkdir -p $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba
+	mkdir -p $(DESTDIR)/tmp
+	$(INSTALL) -f conf/$(SMB_CONF) $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/smb.conf
+	$(INSTALL) -f conf/smbopts.software $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/
+	$(INSTALL) -f tmp/root.ldif $(DESTDIR)/tmp
 

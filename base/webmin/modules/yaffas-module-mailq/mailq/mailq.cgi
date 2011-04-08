@@ -8,15 +8,13 @@ use Yaffas::Product qw(check_product);
 use Sort::Naturally;
 use Yaffas::Constant;
 use Yaffas::Module::Mailq;
-use Postfix::Parse::Mailq;
 use Text::Iconv;
 use JSON;
-use Data::Dumper;
 
 Yaffas::json_header();
 
 my $mailq = Yaffas::do_back_quote( Yaffas::Constant::APPLICATION->{mailq} );
-my $entries = Postfix::Parse::Mailq->read_string($mailq);
+my $entries = Yaffas::Module::Mailq::parse_mailq($mailq);
 
 my @return_array;
 my $line;
@@ -39,6 +37,7 @@ if (ref $entries eq "ARRAY") {
 }
 
 print to_json({"Response" => \@return_array});
+
 =pod
 
 =head1 COPYRIGHT

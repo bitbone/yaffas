@@ -3,7 +3,7 @@
 ;
 ;
 [global]
-	server string = bitkit
+	server string = yaffas
 ;	keep alive = 30
 	os level = 2
 
