@@ -60,10 +60,16 @@ sub show_index {
                 ),
             )
         ),
-        $Cgi->h2($main::text{lbl_backup_dir}),
-        $Cgi->p(
-            $Cgi->input({-name=>"backup_dir", -value => $settings->{global}->{dir}})
-        )
+
+        $Cgi->h2($main::text{lbl_settings}),
+        $Cgi->table(
+            $Cgi->Tr([
+                $Cgi->td([$main::text{lbl_backup_dir}.":", $Cgi->input({-name=>"backup_dir", -value => $settings->{global}->{dir}})]),
+                $Cgi->td([$main::text{lbl_preserve_time}.":", $Cgi->input({-name=>"preserve_time", -value => $settings->{global}->{preserve_time}})]),
+                ]
+            )
+        ),
+
     );
     print Yaffas::UI::section_button(
         $Cgi->submit({-value => $main::text{lbl_save}})
@@ -74,7 +80,6 @@ sub show_index {
 sub show_select_days {
     my $type = shift;
     my $selected = shift;
-    my @days = qw(Mo Di Mi Do Fr Sa So);
     my $ret;
 
     $ret = $Cgi->checkbox_group({

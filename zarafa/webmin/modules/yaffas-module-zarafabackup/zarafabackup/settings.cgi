@@ -37,7 +37,8 @@ Yaffas::Module::ZarafaBackup::settings({
             min => $min_diff,
         },
         "global" => {
-            "backup_dir" => $main::in{backup_dir}
+            "backup_dir" => $main::in{backup_dir},
+            "preserve_time" => $main::in{preserve_time}
         },
     });
 } catch Yaffas::Exception with {

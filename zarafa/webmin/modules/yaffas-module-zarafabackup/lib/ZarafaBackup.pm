@@ -6,7 +6,7 @@ use warnings;
 use Data::Dumper;
 use Error qw(:try);
 use File::Find;
-use File::Path qw(make_path);
+use File::Path qw(make_path rmtree);
 use POSIX;
 use Yaffas;
 use Yaffas::Exception;
@@ -16,10 +16,11 @@ use Yaffas::UI::Webmin;
 our $LOGFILE = "/var/log/zarafa-backup/tmp.restore.log";
 our $PIDFILE = "/var/log/zarafa-backup/restore-running";
 our $BACKUPDIR;
+my $preserve_time;
 
 BEGIN {
     my $file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{'zarafa_backup_conf'}, {-SplitPolicy=>"equalsign"})
-        or throw Yaffas::Exception("err_opening_file", Yaffas::Constant::FILE->{'zarafa_backup_conf'});
+        or throw Yaffas::Exception("err_file_open", Yaffas::Constant::FILE->{'zarafa_backup_conf'});
 
     my $content = $file->get_cfg_values();
 
@@ -28,6 +29,17 @@ BEGIN {
     }
     else {
         $BACKUPDIR = "/data/backup";
+    }
+
+    if (exists($content->{preserve_time})) {
+        $preserve_time = $content->{preserve_time};
+    }
+    else {
+        $preserve_time = 14;
+    }
+
+    if (not defined %main::text) {
+        %main::text = Yaffas::UI::Webmin::get_lang("zarafabackup");
     }
 }
 
@@ -67,6 +79,10 @@ sub run {
 
     print "Starting backup...\n";
     print Yaffas::do_back_quote("/bin/bash", "-c", "/usr/bin/zarafa-backup -a 2>&1");
+
+    if ($type eq "full") {
+        cleanup();
+    }
     print "done\n";
 }
 
@@ -93,10 +109,6 @@ sub restore {
     close F;
 
     open LOG, ">", $LOGFILE or throw Yaffas::Exception("err_file_open", $LOGFILE);
-
-    if (not defined %main::text) {
-        %main::text = Yaffas::UI::Webmin::get_lang("zarafabackup");
-    }
 
     my %r;
     foreach my $id (@{$ids}) {
@@ -164,28 +176,37 @@ sub add_cronjob {
     my $hour = shift;
     my $min = shift;
 
-    throw Yaffas::Exception("err_time") if ($hour eq "" || $hour > 24 || $hour < 0);
-    throw Yaffas::Exception("err_time") if ($min eq "" || $min > 24 || $min < 0);
-    throw Yaffas::Exception("err_days") unless (ref $days);
+    throw Yaffas::Exception("err_days") unless (ref $days eq "ARRAY");
+
+    if (scalar @{$days}) {
+        throw Yaffas::Exception("err_time") if ($hour eq "" || $hour > 24 || $hour < 0);
+        throw Yaffas::Exception("err_time") if ($min eq "" || $min > 24 || $min < 0);
+    }
 
     my $file = Yaffas::File->new( Yaffas::Constant::FILE->{'crontab'} )
-        or throw Yaffas::Exception( "err_opening_file",
+        or throw Yaffas::Exception( "err_file_open",
         Yaffas::Constant::FILE->{'crontab'} );
 
     my $cronline = "$min $hour * * ".(join ",", @{$days})." root /opt/yaffas/webmin/zarafabackup/backup-$type.sh";
+    my $ret = 1;
 
     my $linenr = -1;
-    if ( defined( $linenr = $file->search_line("backup-$type.sh") ) ) {
+    if ( defined( $linenr = $file->search_line("zarafabackup/backup-$type.sh") ) ) {
         if (scalar @{$days}) {
+        print "replace line";
             $file->splice_line( $linenr, 1, "$cronline" );
         }
         else {
+        print "remove line $linenr";
             $file->splice_line( $linenr, 1 );
-            return 0;
+            $ret = 0;
         }
     }
     else {
-        $file->add_line("$cronline");
+        print "add line";
+        if (scalar @{$days}) {
+            $file->add_line("$cronline");
+        }
     }
     $file->save();
     return 1;
@@ -195,7 +216,7 @@ sub get_cronjob {
     my $type = shift;
 
     my $file = Yaffas::File->new( Yaffas::Constant::FILE->{'crontab'} )
-        or throw Yaffas::Exception( "err_opening_file",
+        or throw Yaffas::Exception( "err_file_open",
         Yaffas::Constant::FILE->{'crontab'} );
 
     my $linenr = -1;
@@ -204,7 +225,7 @@ sub get_cronjob {
         $line = ($file->get_content())[$linenr];
         my @values = split /\s/, $line;
 
-        return {hour => $values[1], min => $values[0], days => [split /,/, $values[4]] };
+        return {hour => $values[1], min => $values[0], days => [split /,/, $values[4]]};
     }
     else {
         return {hour => "", min => "", days => []};
@@ -215,10 +236,24 @@ sub set_backupdir {
     my $dir = shift;
 
     my $file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{'zarafa_backup_conf'}, {-SplitPolicy=>"equalsign"})
-        or throw Yaffas::Exception("err_opening_file", Yaffas::Constant::FILE->{'zarafa_backup_conf'});
+        or throw Yaffas::Exception("err_file_open", Yaffas::Constant::FILE->{'zarafa_backup_conf'});
 
     my $content = $file->get_cfg_values();
     $content->{backup_dir} = $dir;
+    $file->save();
+}
+
+sub set_preserve_time {
+    my $t = shift;
+
+    my $file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{'zarafa_backup_conf'}, {-SplitPolicy=>"equalsign"})
+        or throw Yaffas::Exception("err_file_open", Yaffas::Constant::FILE->{'zarafa_backup_conf'});
+
+    chomp($t);
+    throw Yaffas::Exception("err_preserve_time") unless ($t =~ /^\d+$/);
+
+    my $content = $file->get_cfg_values();
+    $content->{preserve_time} = $t;
     $file->save();
 }
 
@@ -239,7 +274,7 @@ sub settings {
         }
 
         my $ret = add_cronjob("full", $settings->{full}->{days}, $settings->{full}->{hour}, $settings->{full}->{min});
-        if ($ret == 1) {
+        if ($ret == 1 && scalar @diff) {
             # full backup job was added
             add_cronjob("diff", \@diff, $settings->{diff}->{hour}, $settings->{diff}->{min});
         }
@@ -247,15 +282,46 @@ sub settings {
             add_cronjob("diff", [], $settings->{diff}->{hour}, $settings->{diff}->{min});
         }
         set_backupdir($settings->{global}->{backup_dir});
+        set_preserve_time($settings->{global}->{preserve_time});
     }
     else {
         return {
             "full" => get_cronjob("full"),
             "diff" => get_cronjob("diff"),
             "global" => {
-                "dir" => $BACKUPDIR
+                "dir" => $BACKUPDIR,
+                "preserve_time" => $preserve_time,
             }
         };
+    }
+}
+
+sub cleanup {
+    my @to_remove;
+
+    opendir DIR, $BACKUPDIR or throw Yaffas::Exception("err_open_dir", $BACKUPDIR);;
+    my @dirs = sort readdir DIR;
+    close DIR;
+
+    my ($sec,$min,$hour,$mday,$mon,$year,$wday,$yday,$isdst) = localtime();
+    my $date = mktime(0, 0, 0, $mday, $mon, $year) - ($preserve_time * 86400);
+    $date = int strftime("%Y%m%d", localtime($date));
+
+    foreach my $d (@dirs) {
+        my $tmp = $d;
+        next unless $tmp =~ /-F$/;
+        $tmp =~ s/-F$//;
+        next if ($d eq "." or $d eq "..");
+        if (int($tmp) <= $date) {
+            push @to_remove, $tmp;
+        }
+    }
+
+    foreach my $d (@dirs) {
+        if (grep {"$_-F" eq $d || $d =~ /.*-$_-D$/ } @to_remove) {
+            print $main::text{lbl_clean_dir}." $d\n";
+            rmtree($BACKUPDIR."/".$d);
+        }
     }
 }
 
