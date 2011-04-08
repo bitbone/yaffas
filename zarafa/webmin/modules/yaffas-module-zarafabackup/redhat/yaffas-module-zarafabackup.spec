@@ -31,4 +31,14 @@ rm -rf $RPM_BUILD_ROOT
 /opt/yaffas/lib/perl5/Yaffas/Module/ZarafaBackup.pm
 /opt/yaffas/webmin/zarafabackup
 
+%post
+source /opt/yaffas/lib/bbinstall-lib.sh
+MODULE="zarafabackup"
+add_webmin_acl $MODULE
+
+%postun
+source /opt/yaffas/lib/bbinstall-lib.sh
+MODULE="zarafabackup"
+del_webmin_acl $MODULE
+
 %changelog
