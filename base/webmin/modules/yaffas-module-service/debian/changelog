@@ -1,3 +1,9 @@
+yaffas-module-service (0.8.0-1) lucid; urgency=low
+
+  * update to version 0.8.0
+
+ -- Package Builder <packages@yaffas.org>  Fri, 08 Apr 2011 14:16:57 +0200
+
 yaffas-module-service (0.7.0-1) lucid; urgency=low
 
   * initial release
