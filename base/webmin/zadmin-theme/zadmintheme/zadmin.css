@@ -1,0 +1,430 @@
+body {
+	color: #000000 !important;
+	font-family: Arial, Helvetica, sans-serif !important;
+	font-size: 9pt !important;
+	padding: 0px !important;
+	margin: 0px !important;
+	display: none;
+}
+
+iframe {
+	display: none;
+}
+
+a:focus {
+	outline: none;
+}
+
+.yui-layout-unit-bottom {
+	border-top: 5px solid #FFC600;
+}
+
+img {
+	border-style: none;
+}
+
+input {
+	background-color: #ffffff;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border: 1px solid #888888;
+	margin: 2px;
+}
+
+input:hover {
+	border: 1px solid #005997;
+}
+
+form {
+	margin: 0px;
+}
+
+h2 {
+	border-bottom: 1px solid black;
+	padding-left: 5px;
+	padding-right: 0;
+}
+
+table {
+	margin-bottom: 0;
+}
+
+td, th {
+	padding: 3px;
+}
+
+div.yui-dt-paginator:first-child {
+	border-bottom: 1px solid black;
+	border-top: 0;
+	margin-top: 0 !important;
+}
+
+.yui-dt-paginator {
+	border-top: 1px solid black;
+	background-color: #eee;
+	margin-bottom: 0 !important;
+}
+
+.yui-dt-paginator span {
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	padding: 5px !important;
+}
+
+.filter_toggle {
+	margin-left: 10px !important;
+}
+
+.yui-pg-rpp-options {
+	margin: 0 !important;
+}
+
+#navigation {
+	margin: 0;
+	margin-top: 5px;
+	margin-left: 5px;
+	padding: 0;
+}
+
+#navigation a {
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	cursor: pointer;
+}
+
+#navigation div>a {
+	padding-left: 5px;
+}
+
+#navigation a:hover {
+	display: block;
+	background-color: #68ADD4;
+}
+
+#navigation hr {
+	padding: 0;
+	margin: 0;
+	margin-left: 5px;
+	margin-right: 5px;
+	border: 0;
+	background-color: black;
+	height: 1px;
+}
+
+.menuitem-selected {
+	font-weight: bold;
+	background-color: #68ADD4;
+}
+
+.yui-accordion-content {
+	background-color: white !important;
+}
+
+.yui-nav {
+	border-color: black !important;
+	z-index: 300 !important;
+	display: block;
+	font-size: 116% !important;
+}
+
+.yui-skin-zadmin .yui-navset .yui-nav .selected a, .yui-skin-zadmin .yui-navset .yui-nav .selected a:focus, .yui-skin-zadmin .yui-navset .yui-nav .selected a:hover {
+	background: #E15A00 url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -1400px;
+	color:#FFFFFF;
+}
+
+
+.yui-content {
+	background-color: white !important;
+}
+
+.yui-layout-unit-left {
+	background-image: url(/images/mainbg2.png) !important;
+	background-repeat: repeat-x !important;
+	background-position: top left !important;
+	background-color: white !important;
+}
+
+.yui-layout-unit-center {
+	background-image: url(/images/mainbg.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: top left !important;
+	background-color: white !important;
+}
+
+.debug {
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	z-index: 1;
+	background-color: white;
+	border: 1px solid;
+	overflow: auto;
+	white-space: pre;
+	height: 200px;
+}
+
+.green {
+	color: green;
+	font-weight: bold;
+}
+
+.red {
+	color: red;
+	font-weight: bold;
+}
+
+.yellow {
+	color: yellow;
+	font-weight: bold;
+}
+
+#tabbar {
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	background-color: transparent !important;
+}
+
+#tabbar .yui-content {
+	border: 1px solid black;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+#tabbar .yui-nav span {
+	padding-right: 16px;
+}
+
+#tabbar .yui-nav .close {
+	display: block;
+	background-image: url(/images/close.png);
+	background-repeat: no-repeat;
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 16px;
+	height: 16px;
+	padding-top: auto;
+	padding-bottom: auto;
+	padding: 0 !important;
+}
+
+div.section * table, div.section * p, div.section * pre {
+	margin: 5px !important;
+}
+
+div.sbutton {
+	padding: 5px;
+}
+
+div#menubar, div.menubar {
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-top: 0 !important;
+	border-bottom: 0 !important;
+	padding-top: 5px;
+	padding-left: 5px;
+	background: transparent !important;
+}
+
+div#menubar .yuimenubaritem, div.menubar .yuimenubaritem {
+	border-left: 1px solid #808080;
+	border-right: 1px solid #808080;
+	border: 1px solid #808080;
+	font-size: 110%;
+	background: transparent url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -100px !important;
+	margin-right: 5px;
+}
+
+div#menubar .yuimenubaritem-selected, div.menubar .yuimenubaritem-selected {
+	background: transparent url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -200px !important;
+}
+
+#response {
+	display: none;
+	visibility: hidden;
+}
+
+#yui-history-iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1px;
+	height: 1px;
+	visibility: hidden;
+}
+
+#topbarlogo {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border-style: none;
+	display: inline;
+	height: 85px;
+	display: block;
+	width: 100%;
+	background-image: url(images/logo_zadmin.png) !important;
+	background-position: left top; !important;
+	background-repeat: no-repeat;
+}
+
+#topbar-background {
+    background-color: #005997;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    top: 27px;
+}
+
+#logoyaffas-long {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	border-style: none;
+	display: inline;
+	height: 25px;
+	display: block;
+	width: 400px;
+	background-image: url(images/yet.gif) !important;
+	background-position: right !important;
+	background-repeat: no-repeat;
+}
+
+div.yui-layout-bd {
+	border: 0px !important;
+}
+
+.dlg_arguments {
+	margin-top: 1em;
+}
+
+.section td, .section th {
+	border-width: 0px;
+}
+
+/* menubar */
+
+#uimenubar {
+	position: absolute;
+	padding: 0;
+	margin: 0;
+	top: 30px !important;
+	right: 10px;
+	left: auto !important;
+	border: 0;
+	height: 24px;
+	z-index: 1;
+}
+
+#uimenubar .yuimenubaritemlabel {
+    color: white !important;
+}
+
+.yuimenubaritemlabel {
+	border: 0 !important;
+	cursor: pointer !important;
+}
+
+#logout {
+	background-image: url(/images/logout.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: transparent;
+	padding-left: 15px;
+	height: 22px;
+	cursor: pointer;
+}
+
+#main_language {
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: transparent;
+	padding-left: 35px;
+	height: 22px;
+	cursor: pointer;
+}
+
+#about {
+	background-image: url(/images/about.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: transparent;
+	padding-left: 15px;
+	height: 22px;
+	cursor: pointer;
+}
+
+#help {
+	background-image: url(/images/help.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: transparent;
+	padding-left: 15px;
+	height: 22px;
+	cursor: pointer;
+}
+
+#uimenubar.yuimenubar {
+	background: transparent !important;
+}
+
+.yuimenuitemlabel-selected {
+	background-color: #FFB16C !important;
+}
+.yui-menu-shadow-visible {
+	display: none;
+}
+
+/* table - changes in yui-tree */
+
+/* button */
+.yui-skin-zadmin .yui-button {
+	background: transparent url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -100px !important;
+}
+
+.yui-skin-zadmin  .yui-button-hover {
+	background: transparent url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -200px !important;
+}
+
+.small_form {
+	border: 1px solid #7F7F7F;
+	margin: 0 !important;
+	width: 100%;
+}
+
+.small_form td:first-child {
+	padding-left: 5px;
+}
+
+.small_form tr:nth-child(even) {
+	background-color: #EEEEEE;
+}
+
+.small_form div {
+	background-image: url(/images/trash.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-color: transparent;
+	height: 22px;
+	margin-left: 25px;
+	padding-right: 3px;
+	cursor: pointer;
+	text-align: right;
+}
+
+#error_dlg .hd {
+	background: #E15A00 url(/yui/assets/skins/zadmin/sprite.png) repeat-x scroll left -1400px !important;
+	color: white;
+}
+
+#notification {
+	padding: 5px;
+	font-weight: bold;
+	color: red;
+}
+
+#filter_form td {
+	border: 0;
+}

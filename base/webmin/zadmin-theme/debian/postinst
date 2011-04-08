@@ -1,0 +1,40 @@
+#!/bin/bash
+
+miniserv_file="miniserv.conf"
+config_file="config"
+
+config="/opt/yaffas/etc/webmin/$config_file"
+miniserv="/opt/yaffas/etc/webmin/$miniserv_file"
+
+source /opt/yaffas/lib/bbinstall-lib.sh
+
+if [ -f $config ]; then
+
+	echo "Changing Webmin Config";
+	cp $config $config.dpkg-old
+	
+	# Overall theme
+	cat $config | grep "theme=" > /dev/null
+	if [ $? -eq 0 ]; then
+		cat $config | sed -e 's/theme=.*/theme=zadmintheme/g' > /tmp/$config_file
+		cp /tmp/$config_file $config
+		rm /tmp/$config_file
+	else
+		echo "theme=zadmintheme" >> $config
+	fi
+	
+	# miniserv.conf
+	cat $miniserv | grep "preroot=" > /dev/null
+	if [ $? -eq 0 ]; then
+		cat $miniserv | sed -e 's/preroot=.*/preroot=zadmintheme/g' > /tmp/$miniserv_file
+		cp /tmp/$miniserv_file $miniserv
+		rm /tmp/$miniserv_file
+	else
+		echo "preroot=zadmintheme" >> $miniserv
+	fi
+
+	echo "Restarting Webmin ..."
+	/opt/yaffas/etc/webmin/stop && /opt/yaffas/etc/webmin/start
+else
+	echo "Config file does not exists!"
+fi
