@@ -51,7 +51,7 @@ case "$1" in
 		mv -f /etc/ldap/slapd.conf /etc/ldap/slapd.conf.yaffassave
 	fi
 	cp -f -p ${YAFFAS_EXAMPLE}/etc/ldap/slapd.conf /etc/ldap
-	if [ -e /etc/ldap/ldap.conf]; then
+	if [ -e /etc/ldap/ldap.conf ]; then
 		mv -f /etc/ldap/ldap.conf /etc/ldap/ldap.conf.yaffassave
 	fi
 	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/ldap.conf /etc/ldap
@@ -60,11 +60,11 @@ case "$1" in
 	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
 	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/samba.schema /etc/ldap/schema
 	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/zarafa.schema /etc/ldap/schema
-	if [ -e /etc/smbldap-tools/smbldap.conf]; then
+	if [ -e /etc/smbldap-tools/smbldap.conf ]; then
 		mv -f /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap.conf.yaffassave
 	fi
 	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-	if [ -e /etc/smbldap-tools/smbldap_bind.conf]; then
+	if [ -e /etc/smbldap-tools/smbldap_bind.conf ]; then
 		mv -f /etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools/smbldap_bind.conf.yaffassave
 	fi
 	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools

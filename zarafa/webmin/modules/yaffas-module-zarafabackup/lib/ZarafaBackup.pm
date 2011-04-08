@@ -6,7 +6,7 @@ use warnings;
 use Data::Dumper;
 use Error qw(:try);
 use File::Find;
-use File::Path qw(make_path rmtree);
+use File::Path qw(mkpath rmtree);
 use POSIX;
 use Yaffas;
 use Yaffas::Exception;
@@ -48,7 +48,7 @@ sub run {
 
     my $date = strftime("%Y%m%d", localtime());
 
-    make_path($BACKUPDIR);
+    mkpath($BACKUPDIR);
     chdir $BACKUPDIR;
 
     if ($type eq "diff") {
@@ -56,7 +56,7 @@ sub run {
         if ($last ne "") {
             my $old = $last."-F";
             my $new = $date."-".$last."-D";
-            make_path($new);
+            mkpath($new);
             chdir $new;
 
             find({ no_chdir => 1,
@@ -73,7 +73,7 @@ sub run {
     }
     else {
         my $d = $date."-F";
-        make_path($d) or throw Yaffas::Exception("err_mkdir", $d);
+        mkpath($d) or throw Yaffas::Exception("err_mkdir", $d);
         chdir $d or throw Yaffas::Exception("err_mkdir", $d);
     }
 

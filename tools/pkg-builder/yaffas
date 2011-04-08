@@ -6,6 +6,11 @@ source BASE/base/PACKAGE_NAME
 dest BASE
 </yaffas>
 
+<zadmin>
+source BASE/base/PACKAGE_NAME
+dest BASE
+</zadmin>
+
 <yaffas-config>
 source BASE/base/PACKAGE_NAME
 dest BASE
@@ -170,6 +175,11 @@ dest BASE
 source BASE/base/webmin/PACKAGE_NAME
 dest BASE
 </yaffas-theme>
+
+<zadmin-theme>
+source BASE/base/webmin/PACKAGE_NAME
+dest BASE
+</zadmin-theme>
 
 # bbconf
 
@@ -567,6 +577,11 @@ dest BASE
 source BASE/zarafa/webmin/modules/PACKAGE_NAME/
 dest BASE
 </yaffas-module-zarafaresources>
+
+<yaffas-module-zarafabackup>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafabackup>
 
 ### -------------------------------------------------------------------------- ##
 #

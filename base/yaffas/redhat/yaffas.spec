@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='yaffas|BASE v0.1'
+VALUE='yaffas|BASE v0.8'
 
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then

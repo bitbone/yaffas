@@ -22,6 +22,21 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post
+CONF="/opt/yaffas/etc/installed-products"
+KEY="framework"
+VALUE='yaffas|BASE v0.8'
+
+if [ -e $CONF ]; then
+	if ! grep -iq ^$KEY $CONF; then
+		echo "$KEY=$VALUE" >> $CONF
+	else
+		sed -e s/^$KEY=.*/"$KEY=$VALUE"/ -i $CONF
+	fi
+else
+	echo "$KEY=$VALUE" >> $CONF
+fi
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}

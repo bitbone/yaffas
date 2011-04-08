@@ -13,7 +13,7 @@ require '../systeminfo/sysinfo-lib.pl';
 
 sub show_panels {
 	print Yaffas::UI::section(
-		$main::text{lbl_index_header},
+		$main::text{lbl_index_title},
 		$Cgi->table(
 			{ -id => "panels", -style => "width: 99%; padding-left:0px" },
 			$Cgi->Tr(
