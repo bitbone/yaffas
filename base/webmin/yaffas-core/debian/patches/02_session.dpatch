@@ -5,14 +5,15 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad bbwebmin-core~/usr/local/webmin/admin.cgi bbwebmin-core/usr/local/webmin/admin.cgi
---- bbwebmin-core~/usr/local/webmin/admin.cgi	1970-01-01 01:00:00.000000000 +0100
-+++ bbwebmin-core/usr/local/webmin/admin.cgi	2011-02-14 17:44:08.784197054 +0100
-@@ -0,0 +1,62 @@
+diff -urNad yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin/admin.cgi
+--- yaffas-core~/usr/local/webmin/admin.cgi	1970-01-01 01:00:00.000000000 +0100
++++ yaffas-core/usr/local/webmin/admin.cgi	2011-04-11 10:57:34.000000000 +0200
+@@ -0,0 +1,64 @@
 +#!/usr/bin/perl -w
 +# This file will called from bitbonethme/index.gi
 +#use strict;
 +use CGI;
++use Yaffas;
 +use Yaffas::UI;
 +
 +my $cgi = new CGI;
@@ -39,7 +40,8 @@ diff -urNad bbwebmin-core~/usr/local/webmin/admin.cgi bbwebmin-core/usr/local/we
 +} else {
 +	$ENV{REMOTE_USER} = "";
 +	$main::logged_in = "1";
-+	require "./yaffastheme/session_login.cgi";
++	Yaffas::init_webmin();
++	require "./".$main::gconfig{theme}."/session_login.cgi";
 +	return 1;
 +}
 +
@@ -71,9 +73,9 @@ diff -urNad bbwebmin-core~/usr/local/webmin/admin.cgi bbwebmin-core/usr/local/we
 +	close(LANG);
 +	return 1;
 +}
-diff -urNad bbwebmin-core~/usr/local/webmin/lang/de bbwebmin-core/usr/local/webmin/lang/de
---- bbwebmin-core~/usr/local/webmin/lang/de	2011-02-14 17:42:56.000000000 +0100
-+++ bbwebmin-core/usr/local/webmin/lang/de	2011-02-14 17:43:14.654142903 +0100
+diff -urNad yaffas-core~/usr/local/webmin/lang/de yaffas-core/usr/local/webmin/lang/de
+--- yaffas-core~/usr/local/webmin/lang/de	2011-04-01 14:55:05.000000000 +0200
++++ yaffas-core/usr/local/webmin/lang/de	2011-04-11 10:44:09.000000000 +0200
 @@ -251,3 +251,9 @@
  users_title1=Wähle Benutzer..
  users_title2=Wähle Benutzer..
@@ -84,9 +86,9 @@ diff -urNad bbwebmin-core~/usr/local/webmin/lang/de bbwebmin-core/usr/local/webm
 +admin_text=Es ist bereits ein Administrator eingeloggt.<br>Wenn Sie sich einloggen wollen, m&uuml;ssen Sie erst die Verbindung des anderen Administrators trennen.
 +admin_warning=Achtung!
 +
-diff -urNad bbwebmin-core~/usr/local/webmin/lang/en bbwebmin-core/usr/local/webmin/lang/en
---- bbwebmin-core~/usr/local/webmin/lang/en	2011-02-14 17:42:56.000000000 +0100
-+++ bbwebmin-core/usr/local/webmin/lang/en	2011-02-14 17:43:14.654142903 +0100
+diff -urNad yaffas-core~/usr/local/webmin/lang/en yaffas-core/usr/local/webmin/lang/en
+--- yaffas-core~/usr/local/webmin/lang/en	2011-04-01 14:55:05.000000000 +0200
++++ yaffas-core/usr/local/webmin/lang/en	2011-04-11 10:44:09.000000000 +0200
 @@ -286,3 +286,9 @@
  ui_rowlabel=$2 in row $1 :
  
@@ -97,9 +99,9 @@ diff -urNad bbwebmin-core~/usr/local/webmin/lang/en bbwebmin-core/usr/local/webm
 +admin_submit=Close
 +admin_text=There is already an administrator.<br>If you want to log in, you will need to close his connection.
 +admin_warning=Warning!
-diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/webmin/miniserv.pl
---- bbwebmin-core~/usr/local/webmin/miniserv.pl	2011-02-14 17:43:14.374144965 +0100
-+++ bbwebmin-core/usr/local/webmin/miniserv.pl	2011-02-14 17:43:14.654142903 +0100
+diff -urNad yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webmin/miniserv.pl
+--- yaffas-core~/usr/local/webmin/miniserv.pl	2011-04-11 10:44:08.000000000 +0200
++++ yaffas-core/usr/local/webmin/miniserv.pl	2011-04-11 10:48:18.000000000 +0200
 @@ -1940,6 +1940,36 @@
  	$ENV{'HTTP_COOKIE'} =~ s/;?\s*$sidname=([a-f0-9]+)//;
  	$ENV{'MOBILE_DEVICE'} = 1 if ($mobile_device);
@@ -111,7 +113,7 @@ diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/
 +	dbmopen(%sessiondb, $config{'sessiondb'}, 0700);
 +
 +	if($config{'session'} && $config{'one_admin'} && int keys %sessiondb > 1) {
-+		if($ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/$config{'one_admin_page'}$# && $ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/yaffastheme/session_login\.cgi$#) {
++		if($ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/$config{'one_admin_page'}$# && $ENV{'SCRIPT_FILENAME'} !~ m#^/opt/yaffas/webmin/[\w\d-]+theme/session_login\.cgi$#) {
 +			local @latest = sort {
 +				my $c = (split(/\s+/, $sessiondb{$a}))[1];
 +				my $d = (split(/\s+/, $sessiondb{$b}))[1];
@@ -137,9 +139,9 @@ diff -urNad bbwebmin-core~/usr/local/webmin/miniserv.pl bbwebmin-core/usr/local/
  	# Check if the CGI can be handled internally
  	open(CGI, $full);
  	local $first = <CGI>;
-diff -urNad bbwebmin-core~/usr/local/webmin/web-lib-funcs.pl bbwebmin-core/usr/local/webmin/web-lib-funcs.pl
---- bbwebmin-core~/usr/local/webmin/web-lib-funcs.pl	2011-02-14 17:42:56.000000000 +0100
-+++ bbwebmin-core/usr/local/webmin/web-lib-funcs.pl	2011-02-14 17:43:14.654142903 +0100
+diff -urNad yaffas-core~/usr/local/webmin/web-lib-funcs.pl yaffas-core/usr/local/webmin/web-lib-funcs.pl
+--- yaffas-core~/usr/local/webmin/web-lib-funcs.pl	2011-04-01 14:55:06.000000000 +0200
++++ yaffas-core/usr/local/webmin/web-lib-funcs.pl	2011-04-11 10:44:09.000000000 +0200
 @@ -402,31 +402,14 @@
  # %in if none is given. Also sets the global variables $in and @in
  sub ReadParse
