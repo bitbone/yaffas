@@ -33,7 +33,7 @@ sub getDates {
 sub name {
     my $n = shift;
 
-    if ($n =~ /^.*-(\d\d\d\d)(\d\d)(\d\d)-D$/) {
+    if ($n =~ /^(\d\d\d\d)(\d\d)(\d\d)-.*?D$/) {
         return "$1-$2-$3";
     }
     if ($n =~ /^(\d\d\d\d)(\d\d)(\d\d)-F$/) {
