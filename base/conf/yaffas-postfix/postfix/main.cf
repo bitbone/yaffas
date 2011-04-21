@@ -12,7 +12,6 @@ smtp_tls_session_cache_database = btree:${data_directory}/smtp_scache
 smtp_tls_security_level = may
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
-mailbox_command = procmail -a "$EXTENSION"
 mailbox_size_limit = 0
 recipient_delimiter = +
 inet_interfaces = all
@@ -26,3 +25,13 @@ virtual_transport = lmtp:127.0.0.1:2003
 smtp_sasl_auth_enable = no
 smtp_sasl_password_maps = 
 smtp_sasl_security_options = 
+
+content_filter = amavis:[127.0.0.1]:10024
+smtpd_helo_required = yes
+smtpd_delay_reject = yes
+smtpd_recipient_restrictions = permit_mynetworks,
+							 permit_sasl_authenticated,
+							 reject_unauth_destination,
+							 reject_unknown_recipient_domain,
+							 check_client_access hash:/opt/yaffas/config/postfix-whitelist,
+							 check_policy_service inet:127.0.0.1:12525,

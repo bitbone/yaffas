@@ -1,0 +1,12 @@
+Source: yaffas-module-security
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>> 3.0.0)
+Standards-Version: 3.5.2
+
+Package: yaffas-module-security
+Architecture: all
+Depends: ${shlibs:Depends}, yaffas-core, yaffas-install-lib, libnet-dns-perl, policyd-weight, amavisd-new, clamav-daemon, spamassassin
+Description: Email security for yaffas
+ Integration of policyd-weight, clamav, spamassassin and amavis for yaffas.

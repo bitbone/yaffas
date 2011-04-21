@@ -237,6 +237,16 @@ use constant {
 		"fetchmail_default_conf" => "/etc/default/fetchmail",
 		"zarafa_backup_conf" => "/opt/yaffas/config/zarafa/backup.conf",
 		"rhel_net" => "/etc/init.d/network",
+		"freshclam" => "/etc/init.d/clamav-freshclam",
+		"policyd_conf" => "/etc/policyd-weight.conf",
+		"policy_mod" => "/opt/yaffas/config/policy",
+		"clamd_conf" => "/etc/clamav/clamd.conf",
+		"sa_local_conf" => "/etc/spamassassin/local.cf",
+		"amavis_conf" => "/etc/amavis/conf.d/60-yaffas",
+		"channels_cf" => "/opt/yaffas/config/channels.cf",
+		"channels_keys" => "/opt/yaffas/config/channels.keys",
+		"wl_postfix" => "/opt/yaffas/config/whitelist-postfix",
+		"wl_amavis" => "/opt/yaffas/config/whitelist-amavis",
 	}
 };
 
@@ -347,6 +357,8 @@ use constant {
 		"postmap" => '/usr/sbin/postmap',
 		"postsuper" => '/usr/sbin/postsuper',
 		"pfcat" => '/opt/yaffas/bin/pfcat.sh',
+		"sa_update" => "/usr/bin/sa-update",
+		"policyd_weight" => '/usr/sbin/policyd-weight',
 	}
 };
 

@@ -16,7 +16,7 @@ sub BEGIN {
 						&DIVAS &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD
-						&MPPD
+						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
 }
@@ -314,6 +314,7 @@ sub SENDMAIL(){ 39; }
 
 sub POSTFIX(){ 40; }
 
+
 =item ZARAFA_LICENSED
 
 =cut
@@ -325,6 +326,10 @@ sub ZARAFA_LICENSED(){ 41; }
 =cut
 
 sub ZARAFA_DAGENT(){ 42; }
+
+sub POLICYD_WEIGHT(){ 43; }
+sub AMAVIS(){ 44; }
+sub CLAMAV(){ 45 }
 
 =back
 
@@ -408,6 +413,9 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 FETCHMAIL() => "/etc/init.d/fetchmail",
 				 POSTGRESQL() => "/etc/init.d/postgresql-8.3",
 				 SPAMASSASSIN() => "/etc/init.d/spamassassin",
+				 POLICYD_WEIGHT() => "/etc/init.d/policyd-weight",
+				 AMAVIS() => "/etc/init.d/amavis",
+				 CLAMAV() => "/etc/init.d/clamav-daemon",
 				 WINBIND() => "/etc/init.d/winbind",
 				 SNMPD() => "/etc/init.d/snmpd",
 				 DIVAS() => "/usr/lib/eicon/divas/Start",
@@ -460,7 +468,10 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 #				 GREYLIST() => "/etc/init.d/greylist",
 #				 FETCHMAIL() => "/etc/init.d/fetchmail",
 				 POSTGRESQL() => "/sbin/service postgresql",
-#				 SPAMASSASSIN() => "/etc/init.d/spamassassin",
+				 SPAMASSASSIN() => "/etc/init.d/spamassassin",
+				 POLICYD_WEIGHT() => "/etc/init.d/policyd-weight",
+				 AMAVIS() => "/etc/init.d/amavis",
+				 CLAMAV() => "/etc/init.d/clamav-daemon",
 				 WINBIND() => "/sbin/service winbind",
 				 SNMPD() => "/sbin/service snmpd",
 				 DIVAS() => "/usr/lib/eicon/divas/Start",
@@ -955,6 +966,8 @@ sub _status($){
 		return __check_process($Yaffas::Service::PROCESSES{ APACHE() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ BBLCD() }) {
 		return ((__check_process('/usr/bin/bblcdclient.pl'))&&(__check_process('/usr/bin/lcdproc')));
+	} elsif ($service eq $Yaffas::Service::SERVICES{ AMAVIS() }) {
+		return __check_process('amavisd');
 	}
 	return undef;
 }

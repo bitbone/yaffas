@@ -1,0 +1,7 @@
+longdesc=Security
+desc_de=Sicherheit
+desc_en=Security
+name=security
+category=mailserver
+desc=security
+version=0.1

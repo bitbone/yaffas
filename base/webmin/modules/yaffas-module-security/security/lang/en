@@ -1,0 +1,45 @@
+lbl_apply=Apply
+lbl_edit=Edit
+lbl_delete=Delete
+lbl_add=Add
+lbl_activate=Activate
+lbl_deactivate=Deactivate
+lbl_update=Update
+
+lbl_really_disable=Do you really want to disable this service?
+lbl_really_enable=Do you really want to enable this service?
+
+lbl_policy=Policy
+lbl_policy_enable=Enable policy
+lbl_policy_disable=Disable policy
+lbl_dnsbl=DNSBL
+lbl_rhsbl=RHSBL
+lbl_host=Hostname
+lbl_hit=Hit score
+lbl_miss=Miss score
+lbl_log=Log name
+
+lbl_clamav=ClamAV
+lbl_clamav_activate=Activate clamav
+lbl_clamav_deactivate=Deactivate clamav
+lbl_archive=Scan archives
+lbl_maxlength=Maximum size of scannable objects in MB
+lbl_clam_update=Update the ClamAV signatures
+lbl_clam_configure=Configure clamav
+
+lbl_sa=Spamassassin
+lbl_sa_configure=Configure Spamassassin
+lbl_sa_enable=Activate spamassassin
+lbl_sa_disable=Deactivate spamassassin
+lbl_sa_update=Update the Spamassassin filters
+lbl_network=Network
+lbl_internal=Internal networks
+lbl_trusted=Trusted networks
+lbl_add_headers=Add spam detected headers at level
+
+lbl_whitelist=Whitelisting
+lbl_wl_desc=All hosts and addresses listed here are not checked for spam or viruses.
+lbl_address=Address
+lbl_wl_type=Type
+lbl_wl_from=Source
+lbl_wl_entry=Entry
