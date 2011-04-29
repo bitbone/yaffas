@@ -121,6 +121,11 @@ source BASE/base/webmin/modules/yaffas-module-saveconf/
 dest BASE
 </yaffas-module-saveconf>
 
+<yaffas-module-security>
+source BASE/base/webmin/modules/yaffas-module-security/
+dest BASE
+</yaffas-module-security>
+
 <yaffas-module-service>
 source BASE/base/webmin/modules/yaffas-module-service/
 dest BASE

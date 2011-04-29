@@ -80,13 +80,19 @@ Security.prototype.setupButtons = function() {
 
 	var av_submit = new YAHOO.widget.Button("av_submit");
 	av_submit.on("click", function() {
-		Yaffas.ui.submitURL('/security/clam_settings.cgi', {"archive": $("archive").checked, "max_length":$("max_length").value});
+		Yaffas.ui.submitURL('/security/clam_settings.cgi', {
+            "archive": $("archive").checked,
+            "max_length":$("max_length").value,
+            "virusalert": $("virusalert").value
+            });
 	}.bind(this));
 
+	/*
 	var av_update = new YAHOO.widget.Button("av_update");
 	av_update.on("click", function() {
 		Yaffas.ui.submitURL('/security/clam_update.cgi', {});
 	}.bind(this));
+	*/
 
 	var status_policy = new YAHOO.widget.Button("status_policy");
 	status_policy.on("click", function(){
@@ -190,9 +196,8 @@ Security.prototype.fillDialogs = function() {
 
 	this.sa_trusted_dialog = new YAHOO.widget.Dialog("sa_trusted_dialog", {
 		visible: false,
-		fixedcenter: true,
+		fixedcenter: false,
 		modal: false,
-		zIndex: 100,
 		buttons: [
 			{text:_("lbl_ok"), handler: function(){ 
 				Yaffas.ui.submitURL("/security/sa_trusted_add.cgi", {
@@ -204,16 +209,16 @@ Security.prototype.fillDialogs = function() {
 		]
 	});
 	this.sa_trusted_dialog.render();
+	this.sa_trusted_dialog.hide();
 
 	var sa_trusted_add = new YAHOO.widget.Button("sa_trusted_add");
-	sa_trusted_add.on("click", function(){ this.sa_trusted_dialog.show(); }.bind(this));
+	sa_trusted_add.on("click", function(){ this.sa_trusted_dialog.center(); this.sa_trusted_dialog.show(); }.bind(this));
 
 
 	this.whitelist_dialog = new YAHOO.widget.Dialog("whitelist_dialog", {
 		visible: false,
-		fixedcenter: true,
+		fixedcenter: false,
 		modal: false,
-		zIndex: 100,
 		buttons: [
 			{text:_("lbl_ok"), handler: function(){ 
 				Yaffas.ui.submitURL("/security/whitelist_add.cgi", {
@@ -225,9 +230,10 @@ Security.prototype.fillDialogs = function() {
 		]
 	});
 	this.whitelist_dialog.render();
+	this.whitelist_dialog.hide();
 	
 	var whitelist_add = new YAHOO.widget.Button("whitelist_add");
-	whitelist_add.on("click", function(){ this.whitelist_dialog.show(); }.bind(this));
+	whitelist_add.on("click", function(){ this.whitelist_dialog.center(); this.whitelist_dialog.show(); }.bind(this));
 }
 
 Security.prototype.fillTables = function() {
@@ -264,12 +270,18 @@ Security.prototype.fillTables = function() {
 		items: [
 			{text:_("lbl_delete"), onclick: {fn: function() {
 				var r = this.dnsbl.selectedRows();
-				Yaffas.ui.submitURL("/security/dnsbl_delete.cgi", {
-					host: r[0][0],
-					hit: r[0][1],
-					miss: r[0][2],
-					log: r[0][3]
-				});
+
+                if (r[0][0]) {
+                    var dlg = new Yaffas.Confirm(_("lbl_really_delete"), _("lbl_really_delete_msg"), function() {
+                        Yaffas.ui.submitURL("/security/dnsbl_delete.cgi", {
+                            host: r[0][0],
+                            hit: r[0][1],
+                            miss: r[0][2],
+                            log: r[0][3]
+                        });
+                    });
+                    dlg.show();
+                }
 			}.bind(this) } },
 		],
 	});
@@ -288,12 +300,18 @@ Security.prototype.fillTables = function() {
 		items: [
 			{text:_("lbl_delete"), onclick: {fn: function() {
 				var r = this.rhsbl.selectedRows();
-				Yaffas.ui.submitURL("/security/rhsbl_delete.cgi", {
-					host: r[0][0],
-					hit: r[0][1],
-					miss: r[0][2],
-					log: r[0][3]
-				});
+
+                if (r[0][0]) {
+                    var dlg = new Yaffas.Confirm(_("lbl_really_delete"), _("lbl_really_delete_msg"), function() {
+                        Yaffas.ui.submitURL("/security/rhsbl_delete.cgi", {
+                            host: r[0][0],
+                            hit: r[0][1],
+                            miss: r[0][2],
+                            log: r[0][3]
+                        });
+                    });
+                    dlg.show();
+                }
 			}.bind(this) } },
 		],
 	});
@@ -310,7 +328,12 @@ Security.prototype.fillTables = function() {
 		items: [
 			{text:_("lbl_delete"), onclick: {fn: function() {
 				var r = this.sa_trusted.selectedRows();
-				Yaffas.ui.submitURL("/security/sa_trusted_delete.cgi", { network: r[0][0] });
+                if (r[0][0]) {
+                    var dlg = new Yaffas.Confirm(_("lbl_really_delete"), _("lbl_really_delete_msg"), function() {
+                        Yaffas.ui.submitURL("/security/sa_trusted_delete.cgi", { network: r[0][0] });
+                    });
+                    dlg.show();
+                }
 			}.bind(this) } },
 		],
 	});
@@ -346,7 +369,14 @@ Security.prototype.fillTables = function() {
 		items: [
 			{text:_("lbl_delete"), onclick: {fn: function() {
 				var r = this.whitelist.selectedRows();
-				Yaffas.ui.submitURL("/security/whitelist_delete.cgi", { whitelist_entry: r[0][0] });
+
+                if (r[0][0]) {
+                    var dlg = new Yaffas.Confirm(_("lbl_really_delete"), _("lbl_really_delete_msg"), function() {
+                        Yaffas.ui.submitURL("/security/whitelist_delete.cgi", { whitelist_entry: r[0][0] });
+                    });
+                    dlg.show();
+                }
+
 			}.bind(this) } },
 		],
 	});

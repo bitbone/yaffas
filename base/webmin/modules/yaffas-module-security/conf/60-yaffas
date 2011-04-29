@@ -8,6 +8,7 @@ $sa_tag_level_deflt = undef;
 $sa_tag2_level_deflt = 6.31;
 $sa_kill_level_deflt = 6.31;
 $sa_dsn_cutoff_level = 10;
+$virus_admin = "postmaster@localhost";
 
 @whitelist_sender_maps = read_hash('/opt/yaffas/config/whitelist-amavis') if -e '/opt/yaffas/config/whitelist-amavis';
 

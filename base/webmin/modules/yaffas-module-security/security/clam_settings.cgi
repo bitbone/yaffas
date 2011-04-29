@@ -15,6 +15,7 @@ ReadParse();
 
 my $archive = $main::in{archive};
 my $max_length  = $main::in{max_length};
+my $virusalert  = $main::in{virusalert};
 
 try {
 	throw Yaffas::Exception("Undefined value for archive") unless defined $archive;
@@ -32,6 +33,9 @@ try {
 	if(Yaffas::Module::Security::clam_max_length() != $max_length){
 		Yaffas::Module::Security::clam_max_length($max_length);
 	}
+
+    Yaffas::Module::Security::amavis_virusalert($virusalert);
+
 
 	print Yaffas::UI::ok_box();
 }

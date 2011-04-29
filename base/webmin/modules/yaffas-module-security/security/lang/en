@@ -5,6 +5,8 @@ lbl_add=Add
 lbl_activate=Activate
 lbl_deactivate=Deactivate
 lbl_update=Update
+lbl_really_delete=Delete entry
+lbl_really_delete_msg=Do you really want to delete this entry?
 
 lbl_really_disable=Do you really want to disable this service?
 lbl_really_enable=Do you really want to enable this service?
@@ -23,6 +25,7 @@ lbl_clamav=ClamAV
 lbl_clamav_activate=Activate clamav
 lbl_clamav_deactivate=Deactivate clamav
 lbl_archive=Scan archives
+lbl_virusalert=Virus alert email
 lbl_maxlength=Maximum size of scannable objects in MB
 lbl_clam_update=Update the ClamAV signatures
 lbl_clam_configure=Configure clamav
@@ -43,3 +46,5 @@ lbl_address=Address
 lbl_wl_type=Type
 lbl_wl_from=Source
 lbl_wl_entry=Entry
+
+err_mail=Invalid e-mail address

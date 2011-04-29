@@ -8,7 +8,7 @@ Url:		http://www.yaffas.org
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-install-lib, perl, yaffas-core
+Requires:	yaffas-install-lib, perl, yaffas-core, yaffas-module-authsrv, yaffas-module-mailalias, yaffas-module-mailsrv
 AutoReqProv: no
 
 %description

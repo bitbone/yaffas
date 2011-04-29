@@ -36,7 +36,7 @@ sub _activator {
 		die "unknown module";
 	}
 
-	return $Cgi->button({-id => "status_$module", -value => $label});
+	return $Cgi->p($Cgi->button({-id => "status_$module", -value => $label}));
 }
 
 sub _policy_form {
@@ -66,7 +66,7 @@ sub policy(){
 				  $Cgi->div({-class=>'hd'}, $main::text{lbl_add}).
 				  $Cgi->div({-class=>'bd'}, _policy_form(@dnsbl_policy))
 				  ),
-		  $Cgi->button({-id => 'dnsbl_add', -value => $main::text{'lbl_add'}}),
+		  $Cgi->p($Cgi->button({-id => 'dnsbl_add', -value => $main::text{'lbl_add'}})),
 		  $Cgi->div({-id=>'dnsbl'}, ""),
 		  $Cgi->div({-id=>'dnsbl_menu'},""),
 		  $Cgi->h2($main::text{lbl_rhsbl}),
@@ -74,7 +74,7 @@ sub policy(){
 				  $Cgi->div({-class=>'hd'}, $main::text{lbl_add}).
 				  $Cgi->div({-class=>'bd'}, _policy_form(@rhsbl_policy))
 				  ),
-		  $Cgi->button({-id => 'rhsbl_add', -value => $main::text{'lbl_add'}}),
+		  $Cgi->p($Cgi->button({-id => 'rhsbl_add', -value => $main::text{'lbl_add'}})),
 		  $Cgi->div({-id=>'rhsbl'}, ""),
 		  $Cgi->end_div();
 
@@ -92,7 +92,7 @@ sub antispam(){
 	print $Cgi->hidden({-name=>'s_spam',-id=>'s_spam',-value=>($enabled ? 1 : 0)});
 	print $Cgi->start_div({-id=>'spam_show', -style => 'display:'. ($enabled ? 'block' : 'none') .';'});
 	print $Cgi->h2($main::text{'lbl_sa_update'}),
-		  $Cgi->button({-id=>'sa_update',-value => $main::text{'lbl_update'}});
+		  $Cgi->p($Cgi->button({-id=>'sa_update',-value => $main::text{'lbl_update'}}));
 
 	print $Cgi->h2($main::text{'lbl_sa_configure'});
 	print $Cgi->table(
@@ -100,7 +100,7 @@ sub antispam(){
 					$Cgi->td([$main::text{lbl_add_headers}, $Cgi->textfield({-id=>'spam_headers',-name=>'spam_headers',-value=>$spam_headers})])
 				])
 			),
-			$Cgi->button({-id=>'spam_submit',-value=>$main::text{'lbl_apply'}});
+			$Cgi->p($Cgi->button({-id=>'spam_submit',-value=>$main::text{'lbl_apply'}}));
 
 	print $Cgi->h2($main::text{'lbl_trusted'}),
 		  $Cgi->div({-id=>'sa_trusted_dialog'}, 
@@ -109,7 +109,7 @@ sub antispam(){
 					  $Cgi->table($Cgi->Tr($Cgi->td([$main::text{'lbl_network'}, $Cgi->textfield({-id => 'sa_trusted_net', -value=>''})])))
 				  )
 		  ),
-		  $Cgi->button({-id => 'sa_trusted_add', -value => $main::text{'lbl_add'}}),
+		  $Cgi->p($Cgi->button({-id => 'sa_trusted_add', -value => $main::text{'lbl_add'}})),
 		  $Cgi->div({-id=>'sa_trusted'}, ""),
 		  $Cgi->div({-id=>'sa_trusted_menu'},"");
 
@@ -122,6 +122,7 @@ sub antivirus(){
 	my $enabled = Yaffas::Module::Security::check_antivirus();
 	my $scan_archive = Yaffas::Module::Security::clam_scan_archive();
 	my $max_length = Yaffas::Module::Security::clam_max_length();
+	my $virusalert = Yaffas::Module::Security::amavis_virusalert();
 
 	print start_section($main::text{'lbl_clamav'});
 
@@ -134,28 +135,32 @@ sub antivirus(){
 	print $Cgi->table(
 				$Cgi->Tr([
 					$Cgi->td([$main::text{lbl_archive}, $Cgi->checkbox({-id=>'archive',-checked=>($scan_archive ? 1 : 0)})]),
-					$Cgi->td([$main::text{lbl_maxlength}, $Cgi->textfield({-id=>'max_length',-name=>'max_length',-value=>$max_length})])
+					$Cgi->td([$main::text{lbl_maxlength}, $Cgi->textfield({-id=>'max_length',-name=>'max_length',-value=>$max_length})]),
+					$Cgi->td([$main::text{lbl_virusalert}, $Cgi->textfield({-id=>'virusalert',-name=>'virusalert',-value=>$virusalert})])
 				])
 			),
-			$Cgi->button({-id=>'av_submit',-value=>$main::text{'lbl_apply'}}),
-			$Cgi->h2($main::text{'lbl_clam_update'}),
-			$Cgi->button({-id=>'av_update',-value=>$main::text{'lbl_update'}});
+			$Cgi->p($Cgi->button({-id=>'av_submit',-value=>$main::text{'lbl_apply'}}));
+			#$Cgi->h2($main::text{'lbl_clam_update'}),
+			#$Cgi->button({-id=>'av_update',-value=>$main::text{'lbl_update'}});
 
 	print $Cgi->end_div();
 	print end_section();
 }
 
 sub whitelist(){
-	print start_section($main::text{'lbl_whitelist'}),
-		  $Cgi->h2($main::text{'lbl_wl_desc'}),
-		  $Cgi->div({-id=>'whitelist_dialog'}, 
-				  $Cgi->div({-class=>'hd'}, $main::text{'lbl_add'}).
-				  $Cgi->div({-class=>'bd'}, _policy_form([$main::text{'lbl_wl_entry'},'whitelist_entry','']))
-				  ),
-		  $Cgi->button({-id => 'whitelist_add', -value => $main::text{'lbl_add'}}),
-		  $Cgi->div({-id=>'whitelist'}, ""),
-		  $Cgi->div({-id=>'whitelist_menu'},""),
-		  end_section();
+    print Yaffas::UI::section($main::text{'lbl_whitelist'},
+        $Cgi->div(
+            $Cgi->h2($main::text{'lbl_wl_desc'}),
+            $Cgi->p($Cgi->button({-id => 'whitelist_add', -value => $main::text{'lbl_add'}})),
+            $Cgi->div({-id=>'whitelist'}, ""),
+            $Cgi->div({-id=>'whitelist_menu'},""),
+        ),
+
+        $Cgi->div({-id=>'whitelist_dialog'}, 
+            $Cgi->div({-class=>'hd'}, $main::text{'lbl_add'}),
+            $Cgi->div({-class=>'bd'}, _policy_form([$main::text{'lbl_wl_entry'},'whitelist_entry','']))
+        ),
+    );
 }
 
 return 1;

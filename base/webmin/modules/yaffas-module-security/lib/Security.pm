@@ -118,7 +118,7 @@ sub enable_policy {
 
 	_set_postfix("smtpd_helo_required", "yes");
 	_set_postfix("smtpd_delay_reject", "yes");
-	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix-whitelist, check_policy_service inet:127.0.0.1:12525");
+	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
 
 	control(POSTFIX(), RESTART());
 }
@@ -133,8 +133,6 @@ Disables policyd-weight in postfix if it is enabled.
 sub disable_policy {
 	throw Yaffas::Exception("policy-weightd isn't enabled.") unless check_policy();
 
-	_set_postfix("smtpd_helo_required", "");
-	_set_postfix("smtpd_delay_reject", "");
 	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain");
 
 	control(POSTFIX(), RESTART());
@@ -399,18 +397,18 @@ sub clam_scan_archive {
 	my $y = Yaffas::File->new($conf_clamd) || throw Yaffas::Exception("Could not read '$conf_clamd': $!");
 
 	my $num = $y->search_line(qr/ScanArchive/);
-	unless($num){
+	unless($num >= 0){
 		$y->add_line(q/ScanArchive true/);
-		$num->search_line(qr/ScanArchive/);
-		throw Yaffas::Exception("ScanArchive not found") unless $num;
+		$num = $y->search_line(qr/ScanArchive/);
+		throw Yaffas::Exception("ScanArchive not found") unless $num >= 0;
 	}
 
 	unless(defined $set){
 		my $line = $y->get_content($num);
-		return undef unless $line =~ m#^ScanArchive\s*(true|false)#ix;
+		return undef unless $line =~ m#^ScanArchive\s*(true|false|yes|no)#ix;
 		my $ret=$1;
 
-		return 1 if $ret=~ m#^true\z#i;
+		return 1 if $ret=~ m#^(true|yes)\z#i;
 		return undef;
 	}
 
@@ -434,10 +432,10 @@ sub clam_max_length {
 	my $y = Yaffas::File->new($conf_clamd) || throw Yaffas::Exception("Could not read '$conf_clamd': $!");
 
 	my $num = $y->search_line(qr/StreamMaxLength/);
-	unless($num){
+	unless($num >= 0){
 		$y->add_line(q/StreamMaxLength 25M/);
-		$num->search_line(qr/StreamMaxLength/);
-		throw Yaffas::Exception("StreamMaxLength not found") unless $num;
+		$num = $y->search_line(qr/StreamMaxLength/);
+		throw Yaffas::Exception("StreamMaxLength not found") unless $num >= 0;
 	}
 
 	unless(defined $set){
@@ -503,11 +501,11 @@ or undef if trusted_networks is not set
 sub spam_trusted_networks {
 	my $y = Yaffas::File->new($conf_spam) || throw Yaffas::Exception("open '$conf_spam' failed: $!");
 	my $num = $y->search_line(qr/trusted_networks/);
-	return undef unless $num;
+	return () unless $num;
 
 	my $line = $y->get_content($num);
-	return undef if $line =~ m/#/;
-	return undef unless $line =~ m#\s*trusted_networks (.+)\z#;
+	return () if $line =~ m/#/;
+	return () unless $line =~ m#\s*trusted_networks\s+(.+)\z#;
 	my $hosts = $1;
 
 	my @ret = split(qr/\s+/, $hosts);
@@ -550,6 +548,7 @@ Delete the given host or net from the trusted_networks.
 
 sub spam_del_trusted_network {
 	my $host = shift;
+	chomp($host);
 	my $y = Yaffas::File->new($conf_spam) || throw Yaffas::Exception("open '$conf_spam' failed: $!");
 	my $num = $y->search_line(qr/trusted_networks/);
 	throw Yaffas::Exception("no section: trusted_networks") unless $num;
@@ -995,6 +994,23 @@ sub _set_postfix {
 	throw Yaffas::Exception('error in postconf -e') if $?;
 }
 
+sub amavis_virusalert {
+    my $set = shift;
+    my $y = Yaffas::File->new($conf_amavis) || throw Yaffas::Exception("$conf_amavis: $!");
+    my $num = $y->search_line('virus_admin');
+    my $line = $y->get_content($num);
+
+    if ($set) {
+        Yaffas::Check::email($set) or throw Yaffas::Exception("err_mail", $set);
+        $line = '$virus_admin = "' . $set . '";';
+        $y->splice_line($num, 1, $line);
+        $y->save();
+    }
+    else {
+        return undef unless $line =~ m#virus_admin\s*=\s*["'](.+)["']#;
+        return $1;
+    }
+}
 
 package Policy;
 use strict; 

@@ -18,6 +18,7 @@ use Yaffas::Auth;
 use Yaffas::Fax;
 use Text::Iconv;
 use JSON;
+use Yaffas::Module::Mailalias;
 
 ## prototypes ##
 sub _edit_user($$\@\@;$);
@@ -58,11 +59,8 @@ sub _edit_user($$\@\@;$){
 			$is_mailuser = _in_group($login, $mailusers);
 			$email = get_email($login);
 			$filetype = Yaffas::UGM::get_hylafax_filetype($login, 'u');
-			unless(Yaffas::Constant::OS eq 'RHEL5') {
-				require Yaffas::Module::Mailalias;
-				my $a = Yaffas::Module::Mailalias->new();
-				@aliases = $a->get_user_aliases($login);
-			}
+            my $a = Yaffas::Module::Mailalias->new();
+            @aliases = $a->get_user_aliases($login);
 			$zarafaquota = Yaffas::Mail::get_zarafa_quota($login);
 			$zarafaadmin = Yaffas::Module::Users::get_zarafa_admin($login);
 			$zarafashared = Yaffas::Module::Users::get_zarafa_shared($login);

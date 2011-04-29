@@ -30,11 +30,19 @@ case "$1" in
 	add_webmin_acl $MODULE
 	add_license $MODULE ""
 
-	if ! grep -q $MODULE /opt/yaffas/etc/webmin/hidden_modules; then
-		echo $MODULE >> /opt/yaffas/etc/webmin/hidden_modules
-	fi
-
 	[[ -e /etc/default/spamassassin ]] && sed -e 's/^ENABLED=0/ENABLED=1/' -i /etc/default/spamassassin
+
+    mv -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
+    cp -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
+    cp -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
+
+    if ! id amavis | grep -q "ldapread"; then
+            usermod -a -G ldapread amavis
+    fi
+
+    if ! id clamav | grep -q "amavis"; then
+            usermod -a -G amavis clamav
+    fi
 
     ;;
 
