@@ -8,6 +8,6 @@ Homepage: www.yaffas.org
 
 Package: yaffas
 Architecture: all
-Depends: yaffas-core, yaffas-theme, yaffas-yui, yaffas-lang, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-setup, yaffas-certificates
+Depends: yaffas-core, yaffas-theme, yaffas-yui, yaffas-lang, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-setup, yaffas-module-security, yaffas-certificates,
 Description: Meta-package for yaffas
  Meta-package for yaffas
