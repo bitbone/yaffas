@@ -328,8 +328,10 @@ sub ZARAFA_LICENSED(){ 41; }
 sub ZARAFA_DAGENT(){ 42; }
 
 sub POLICYD_WEIGHT(){ 43; }
+
 sub AMAVIS(){ 44; }
-sub CLAMAV(){ 45 }
+
+sub CLAMAV(){ 45; }
 
 =back
 
@@ -441,6 +443,9 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				MYSQL() => "/usr/sbin/mysqld",
 				POSTFIX() => "/usr/lib/postfix/master",
 				APACHE() => "/usr/sbin/apache2",
+				POSTGRESQL() => "/usr/lib/postgresql/8.3/bin/postgres",
+				WINBIND() => "winbindd",
+				EXIM() => "/usr/sbin/exim4",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -450,28 +455,28 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 POSTFIX() => "/sbin/service postfix",
 				 HYLAFAX() => "/sbin/service hylafax",
 				 NETWORK() => "/sbin/service network",
-#				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",
+				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",	# TODO: adapt for Red Hat
 				 LDAP()    => "/sbin/service ldap",
 				 NSCD()    => "/sbin/service nscd",
 				 SAMBA()   => "/sbin/service smb",
 				 CYRUS()   => "/sbin/service cyrus-imapd",
 				 SASLAUTHD() => "/sbin/service saslauthd",
-#				 INETD()   => "/etc/init.d/inetd",
+				 INETD()   => "/etc/init.d/inetd",	# TODO: adapt for Red Hat
 				 WEBMIN()  => "/sbin/service yaffas",
 				 USERMIN() => "/sbin/service bbusermin",
 				 XINETD()  => "/sbin/service xinetd",
-#				 CAPIINIT()  => "/usr/sbin/capiinit",
+				 CAPIINIT()  => "/usr/sbin/capiinit",	# TODO: adapt for Red Hat
 				 MYSQL()   => "/sbin/service mysqld",
-#				 CUPS()    => "/etc/init.d/cupsys",
-#				 KAV()     => "/etc/init.d/aveserver",
-#				 KAS()     => "/etc/init.d/ap-process-server",
-#				 GREYLIST() => "/etc/init.d/greylist",
-#				 FETCHMAIL() => "/etc/init.d/fetchmail",
+				 CUPS()    => "/etc/init.d/cupsys",	# TODO: adapt for Red Hat
+				 KAV()     => "/etc/init.d/aveserver",	# TODO: adapt for Red Hat
+				 KAS()     => "/etc/init.d/ap-process-server",	# TODO: adapt for Red Hat
+				 GREYLIST() => "/etc/init.d/greylist",	# TODO: adapt for Red Hat
+				 FETCHMAIL() => "/etc/init.d/fetchmail",	# TODO: adapt for Red Hat
 				 POSTGRESQL() => "/sbin/service postgresql",
-				 SPAMASSASSIN() => "/etc/init.d/spamassassin",
-				 POLICYD_WEIGHT() => "/etc/init.d/policyd-weight",
-				 AMAVIS() => "/etc/init.d/amavis",
-				 CLAMAV() => "/etc/init.d/clamav-daemon",
+				 SPAMASSASSIN() => "/sbin/service spamassassin",
+				 POLICYD_WEIGHT() => "/sbin/service policyd-weight",
+				 AMAVIS() => "/sbin/service amavisd",
+				 CLAMAV() => "/sbin/service clamd",
 				 WINBIND() => "/sbin/service winbind",
 				 SNMPD() => "/sbin/service snmpd",
 				 DIVAS() => "/usr/lib/eicon/divas/Start",
@@ -485,16 +490,20 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
 				 APACHE() => "/sbin/service httpd",
 				 SSHD() => "/sbin/service sshd",
-#				 MPPD() => "/etc/init.d/mppd",
-#				 MPPMANAGER() => "/etc/init.d/mppmanager",
-#				 SEARCHD() => "/etc/init.d/searchd",
-#				 BBLCD() => "/etc/init.d/bblcd",
+				 MPPD() => "/etc/init.d/mppd",	# TODO: adapt for Red Hat
+				 MPPMANAGER() => "/etc/init.d/mppmanager",	# TODO: adapt for Red Hat
+				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
+				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
+				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
 				);
 
 	%PROCESSES = (
 				MYSQL() => "/usr/libexec/mysqld",
 				POSTFIX(), => "/usr/libexec/postfix/master",
 				APACHE(), => "/usr/sbin/httpd",
+				POSTGRESQL() => "/usr/bin/postmaster",
+				WINBIND() => "/usr/sbin/winbindd",
+				EXIM() => "/usr/sbin/exim",
 				);
 }
 else {
@@ -528,11 +537,14 @@ sub installed_services(;$)
 		'network' 	=> { 'constant' => NETWORK(), 'allow' => [ 'restart' ] },
 		'ldap' 		=> { 'constant' => LDAP(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'nscd' 		=> { 'constant' => NSCD(), 'allow' => [ 'start', 'stop', 'restart' ] },
-		'webmin' 	=> { 'constant' => WEBMIN(), 'allow' => [ 'restart' ] }, 
+		'yaffas' 	=> { 'constant' => WEBMIN(), 'allow' => [ 'restart' ] }, 
 		'samba'		=> { 'constant' => SAMBA(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'winbind'	=> { 'constant' => WINBIND(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'sshd'		=> { 'constant' => SSHD(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'postfix'	=> { 'constant' => POSTFIX(), 'allow' => [ 'start', 'stop', 'restart' ] },
+		'clamav'	=> { 'constant' => CLAMAV(), 'allow' => [ 'start', 'stop', 'restart' ] },
+		'amavis'	=> { 'constant' => AMAVIS(), 'allow' => [ 'start', 'stop', 'restart' ] },
+		'policyd-weight'	=> { 'constant' => POLICYD_WEIGHT(), 'allow' => [ 'start', 'stop', 'restart' ] },
 	};
 
 #	if(Yaffas::Constant::OS eq 'RHEL5') {
@@ -869,11 +881,7 @@ sub _status($){
 	my $service = shift;
 
 	if ($service eq $Yaffas::Service::SERVICES{ EXIM() } ) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('/usr/sbin/exim');
-		} else {
-			return __check_process('/usr/sbin/exim4');
-		}
+		return __check_process($Yaffas::Service::PROCESSES{ EXIM() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SENDMAIL() }) {
 		return __check_process('/usr/sbin/sendmail');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTFIX() }) {
@@ -918,19 +926,9 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMASSASSIN() }) {
 		return __check_process('spamd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTGRESQL() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('/usr/bin/postmaster');
-		}
-		else {
-			return __check_process('/usr/lib/postgresql/8.3/bin/postgres');
-		}
+		return __check_process($Yaffas::Service::PROCESSES{ POSTGRESQL() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ WINBIND() }) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
-			return __check_process('winbindd');
-		}
-		else {
-			return __check_process('/usr/sbin/winbindd');
-		}
+		return __check_process($Yaffas::Service::PROCESSES{ WINBIND() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SNMPD() }) {
 		return __check_process('/usr/sbin/snmpd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ GOGGLETYKE() }) {
@@ -968,7 +966,12 @@ sub _status($){
 		return ((__check_process('/usr/bin/bblcdclient.pl'))&&(__check_process('/usr/bin/lcdproc')));
 	} elsif ($service eq $Yaffas::Service::SERVICES{ AMAVIS() }) {
 		return __check_process('amavisd');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ CLAMAV() }) {
+		return __check_process('clamd');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
+		return __check_process('policyd-weight');
 	}
+	
 	return undef;
 }
 
