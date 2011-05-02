@@ -40,6 +40,8 @@ case "$1" in
             usermod -a -G amavis clamav
     fi
 
+    postmap /opt/yaffas/config/whitelist-postfix
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
