@@ -667,7 +667,7 @@ sub wl_amavis_delete {
 	my $y = Yaffas::File->new($wl_amavis) || throw Yaffas::Exception("$wl_amavis: $!");
 	my $num = $y->search_line(qr/^$what\z/);
 
-	throw Yaffas::Exception('No entry found.') unless $num;
+	throw Yaffas::Exception('No entry found.') unless defined $num;
 
 	$y->splice_line($num, 1);
 	$y->save();
