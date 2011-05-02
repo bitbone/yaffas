@@ -487,6 +487,7 @@ sub spam_update {
 
 	my ($out, $err) = Yaffas::backquote_out_err(@cmd, "no-daemon");
 	push @$err, @$out;
+	control(SPAMD(), RELOAD());
 	return @$err;
 }
 
