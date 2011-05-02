@@ -35,10 +35,13 @@ add_license $MODULE ""
 
 %{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
 %{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
+%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
+%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
+mkdir -p /etc/amavis/conf.d/
 %{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-if ! id clamav | grep -q "amavis"; then
-    usermod -a -G amavis clamav
+if ! id clam | grep -q "amavis"; then
+    usermod -a -G amavis clam
 fi
 
 if ! grep -q "amavis" /etc/postfix/master.cf; then

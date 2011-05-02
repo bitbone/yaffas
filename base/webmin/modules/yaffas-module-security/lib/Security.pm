@@ -89,7 +89,7 @@ Returns 1 if spamassassin is active. Returns undef if not.
 
 sub check_spam {
 	my %amavis = _get_amavis();
-	return undef unless exists $amavis{'bypass_spam_checks_maps'};
+	return undef if exists $amavis{'bypass_spam_checks_maps'};
 
 	return 1;
 }
@@ -102,7 +102,7 @@ Returns 1 if clamav is active. Returns undef if not.
 
 sub check_antivirus {
 	my %amavis = _get_amavis();
-	return undef unless exists $amavis{'bypass_virus_checks_maps'};
+	return undef if exists $amavis{'bypass_virus_checks_maps'};
 
 	return 1;
 }
@@ -167,15 +167,15 @@ sub disable_amavis {
 }
 
 
-=item enable_spamassassin()
+=item disable_spamassassin()
 
-Enables spamassassin in amavis if it isn't already enabled.
+Disable spamassassin in amavis if it isn't already disabled.
 
 =cut
 
-sub enable_spamassassin {
-	enable_amavis() unless check_amavis();
-	throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
+sub disable_spamassassin {
+	disable_amavis() unless check_antivirus();
+	throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
 	
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("bypass_spam_checks_maps");
@@ -190,15 +190,15 @@ sub enable_spamassassin {
 }
 
 
-=item disable_spamassassin()
+=item enable_spamassassin()
 
-Disables spamassassin in amavis if it is enabled.
+Enable spamassassin in amavis if it is disabled.
 
 =cut
 
-sub disable_spamassassin {
-	disable_amavis() unless check_antivirus();
-	throw Yaffas::Exception("spamassassin is already enabled") unless check_spam();
+sub enable_spamassassin {
+	enable_amavis() unless check_amavis();
+	throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
 
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("bypass_spam_checks_maps");
@@ -213,15 +213,15 @@ sub disable_spamassassin {
 }
 
 
-=item enable_clamav()
+=item disable_clamav()
 
-Enables clamav in amavis if it isn't already enabled
+Disable clamav in amavis if it isn't already disabled
 
 =cut
 
-sub enable_clamav {
-	enable_amavis() unless check_amavis();
-	throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
+sub disable_clamav {
+	disable_amavis() unless check_spam();
+	throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
 	
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("bypass_virus_checks_maps");
@@ -235,15 +235,15 @@ sub enable_clamav {
 	control(AMAVIS(), RESTART());
 }
 
-=item disable_clamav()
+=item enable_clamav()
 
-Disables clamav in amavis if it is enabled.
+Enbale clamav in amavis if it is disabled.
 
 =cut
 
-sub disable_clamav {
-	disable_amavis() unless check_spam();
-	throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
+sub enable_clamav {
+	enable_amavis() unless check_amavis();
+	throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
 
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("bypass_virus_checks_maps");
@@ -1002,13 +1002,16 @@ sub amavis_virusalert {
 
     if ($set) {
         Yaffas::Check::email($set) or throw Yaffas::Exception("err_mail", $set);
+	$set =~ s/@/\\@/;
         $line = '$virus_admin = "' . $set . '";';
         $y->splice_line($num, 1, $line);
         $y->save();
     }
     else {
         return undef unless $line =~ m#virus_admin\s*=\s*["'](.+)["']#;
-        return $1;
+	my $address = $1;
+	$address =~ s/\\@/@/;
+        return $address;
     }
 }
 
