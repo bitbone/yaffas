@@ -1007,6 +1007,7 @@ sub amavis_virusalert {
         $line = '$virus_admin = "' . $set . '";';
         $y->splice_line($num, 1, $line);
         $y->save();
+		control(AMAVIS(), RESTART());
     }
     else {
         return undef unless $line =~ m#virus_admin\s*=\s*["'](.+)["']#;
