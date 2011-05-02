@@ -36,6 +36,11 @@ source BASE/base/conf/PACKAGE_NAME/
 dest BASE
 </yaffas-postfix>
 
+<yaffas-security>
+source BASE/base/conf/PACKAGE_NAME/
+dest BASE
+</yaffas-security>
+
 <yaffas-zarafa>
 source BASE/zarafa/conf/PACKAGE_NAME/
 dest BASE
