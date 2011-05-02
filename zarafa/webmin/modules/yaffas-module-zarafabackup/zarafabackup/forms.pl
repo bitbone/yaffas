@@ -30,7 +30,7 @@ sub show_index {
                     $Cgi->div({-class=>"hd", -id=>"restorehd"}, $main::text{lbl_restore_start}),
                     $Cgi->div({-class=>"bd", -id=>"restorebd"},
                         $Cgi->div({-id=>"restoreloading"}, ""),
-                        $Cgi->div({-id=>"restoremessage"}, "")
+                        $Cgi->div({-id=>"restoremessage"}, $main::text{lbl_restore_start_msg})
                     )
                 ),
     );

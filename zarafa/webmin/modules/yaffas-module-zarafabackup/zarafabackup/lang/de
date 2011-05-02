@@ -32,6 +32,7 @@ lbl_backup_dir=Sicherungs Verzeichnis
 lbl_remove=Entfernen
 lbl_preserve_time=Vollsicherung aufbewahren (in Tagen)
 lbl_clean_dir=Lösche Verzeichnis
+lbl_restore_start_msg=Mit einem Klick auf "Wiederherstellen" werden die ausgewählten Elemente wiederhergestellt.
 
 err_time=Zeitangabe nicht korrekt.
 err_preserve_time=Aufbewahrungsfrist ist nicht korrekt oder nicht angegeben.

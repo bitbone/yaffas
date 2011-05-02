@@ -180,7 +180,7 @@ sub add_cronjob {
 
     if (scalar @{$days}) {
         throw Yaffas::Exception("err_time") if ($hour eq "" || $hour > 24 || $hour < 0);
-        throw Yaffas::Exception("err_time") if ($min eq "" || $min > 24 || $min < 0);
+        throw Yaffas::Exception("err_time") if ($min eq "" || $min > 60 || $min < 0);
     }
 
     my $file = Yaffas::File->new( Yaffas::Constant::FILE->{'crontab'} )
