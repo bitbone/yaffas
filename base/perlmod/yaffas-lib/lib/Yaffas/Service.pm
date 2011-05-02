@@ -455,23 +455,23 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 POSTFIX() => "/sbin/service postfix",
 				 HYLAFAX() => "/sbin/service hylafax",
 				 NETWORK() => "/sbin/service network",
-#				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",
+				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",	# TODO: adapt for Red Hat
 				 LDAP()    => "/sbin/service ldap",
 				 NSCD()    => "/sbin/service nscd",
 				 SAMBA()   => "/sbin/service smb",
 				 CYRUS()   => "/sbin/service cyrus-imapd",
 				 SASLAUTHD() => "/sbin/service saslauthd",
-#				 INETD()   => "/etc/init.d/inetd",
+				 INETD()   => "/etc/init.d/inetd",	# TODO: adapt for Red Hat
 				 WEBMIN()  => "/sbin/service yaffas",
 				 USERMIN() => "/sbin/service bbusermin",
 				 XINETD()  => "/sbin/service xinetd",
-#				 CAPIINIT()  => "/usr/sbin/capiinit",
+				 CAPIINIT()  => "/usr/sbin/capiinit",	# TODO: adapt for Red Hat
 				 MYSQL()   => "/sbin/service mysqld",
-#				 CUPS()    => "/etc/init.d/cupsys",
-#				 KAV()     => "/etc/init.d/aveserver",
-#				 KAS()     => "/etc/init.d/ap-process-server",
-#				 GREYLIST() => "/etc/init.d/greylist",
-#				 FETCHMAIL() => "/etc/init.d/fetchmail",
+				 CUPS()    => "/etc/init.d/cupsys",	# TODO: adapt for Red Hat
+				 KAV()     => "/etc/init.d/aveserver",	# TODO: adapt for Red Hat
+				 KAS()     => "/etc/init.d/ap-process-server",	# TODO: adapt for Red Hat
+				 GREYLIST() => "/etc/init.d/greylist",	# TODO: adapt for Red Hat
+				 FETCHMAIL() => "/etc/init.d/fetchmail",	# TODO: adapt for Red Hat
 				 POSTGRESQL() => "/sbin/service postgresql",
 				 SPAMASSASSIN() => "/sbin/service spamassassin",
 				 POLICYD_WEIGHT() => "/sbin/service policyd-weight",
@@ -490,10 +490,11 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
 				 APACHE() => "/sbin/service httpd",
 				 SSHD() => "/sbin/service sshd",
-#				 MPPD() => "/etc/init.d/mppd",
-#				 MPPMANAGER() => "/etc/init.d/mppmanager",
-#				 SEARCHD() => "/etc/init.d/searchd",
-#				 BBLCD() => "/etc/init.d/bblcd",
+				 MPPD() => "/etc/init.d/mppd",	# TODO: adapt for Red Hat
+				 MPPMANAGER() => "/etc/init.d/mppmanager",	# TODO: adapt for Red Hat
+				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
+				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
+				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
 				);
 
 	%PROCESSES = (
@@ -878,6 +879,7 @@ sub _restart($$) {
 
 sub _status($){
 	my $service = shift;
+
 	if ($service eq $Yaffas::Service::SERVICES{ EXIM() } ) {
 		return __check_process($Yaffas::Service::PROCESSES{ EXIM() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SENDMAIL() }) {
@@ -969,6 +971,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
 		return __check_process('policyd-weight');
 	}
+	
 	return undef;
 }
 
