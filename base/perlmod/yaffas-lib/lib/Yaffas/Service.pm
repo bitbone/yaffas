@@ -16,7 +16,7 @@ sub BEGIN {
 						&DIVAS &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD
-						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV
+						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
 }
@@ -333,6 +333,8 @@ sub AMAVIS(){ 44; }
 
 sub CLAMAV(){ 45; }
 
+sub SPAMD(){ 46; }
+
 =back
 
 =head2 Constants for Actions
@@ -437,6 +439,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 BBLCD() => "/etc/init.d/bblcd",
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
+				 SPAMD() => "/etc/init.d/spamassassin",
 				);
 
 	%PROCESSES = (
@@ -446,6 +449,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				POSTGRESQL() => "/usr/lib/postgresql/8.3/bin/postgres",
 				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim4",
+				SPAMD() => "/usr/sbin/spamd",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -495,6 +499,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
 				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
+				 SPAMD() => "/sbin/service spamassassin",
 				);
 
 	%PROCESSES = (
@@ -504,6 +509,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				POSTGRESQL() => "/usr/bin/postmaster",
 				WINBIND() => "/usr/sbin/winbindd",
 				EXIM() => "/usr/sbin/exim",
+				SPAMD() => "/usr/bin/spamd",
 				);
 }
 else {
@@ -545,6 +551,7 @@ sub installed_services(;$)
 		'clamav'	=> { 'constant' => CLAMAV(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'amavis'	=> { 'constant' => AMAVIS(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'policyd-weight'	=> { 'constant' => POLICYD_WEIGHT(), 'allow' => [ 'start', 'stop', 'restart' ] },
+		'spamassassin'	=> { 'constant' => SPAMD(), 'allow' => [ 'start', 'stop', 'restart', 'reload' ] },
 	};
 
 #	if(Yaffas::Constant::OS eq 'RHEL5') {
@@ -970,6 +977,8 @@ sub _status($){
 		return __check_process('clamd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
 		return __check_process('policyd-weight');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMD() }) {
+		return __check_process($Yaffas::Service::PROCESSES{ SPAMD() });
 	}
 	
 	return undef;
