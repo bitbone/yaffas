@@ -8,6 +8,6 @@ Homepage: www.yaffas.org
 
 Package: yaffas-config
 Architecture: all
-Depends: yaffas-ldap, yaffas-postfix, yaffas-samba
+Depends: yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security
 Description: Meta-package for yaffas
  Meta-package for yaffas

@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba
+Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security
 
 %description
 Meta-package for yaffas
