@@ -37,10 +37,6 @@ add_license $MODULE ""
 %{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
 %{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-if ! id amavis | grep -q "ldapread"; then
-    usermod -a -G ldapread amavis
-fi
-
 if ! id clamav | grep -q "amavis"; then
     usermod -a -G amavis clamav
 fi
