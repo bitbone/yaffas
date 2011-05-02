@@ -333,8 +333,6 @@ sub AMAVIS(){ 44; }
 
 sub CLAMAV(){ 45; }
 
-sub SPAMD(){ 46; }
-
 =back
 
 =head2 Constants for Actions
@@ -439,7 +437,6 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 BBLCD() => "/etc/init.d/bblcd",
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
-				 SPAMD() => "/etc/init.d/spamassassin",
 				);
 
 	%PROCESSES = (
@@ -449,7 +446,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				POSTGRESQL() => "/usr/lib/postgresql/8.3/bin/postgres",
 				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim4",
-				SPAMD() => "/usr/sbin/spamd",
+				SPAMASSASSIN() => "/usr/sbin/spamd",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -499,7 +496,6 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
 				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
-				 SPAMD() => "/sbin/service spamassassin",
 				);
 
 	%PROCESSES = (
@@ -509,7 +505,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				POSTGRESQL() => "/usr/bin/postmaster",
 				WINBIND() => "/usr/sbin/winbindd",
 				EXIM() => "/usr/sbin/exim",
-				SPAMD() => "/usr/bin/spamd",
+				SPAMASSASSIN() => "/usr/bin/spamd",
 				);
 }
 else {
@@ -551,7 +547,7 @@ sub installed_services(;$)
 		'clamav'	=> { 'constant' => CLAMAV(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'amavis'	=> { 'constant' => AMAVIS(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'policyd-weight'	=> { 'constant' => POLICYD_WEIGHT(), 'allow' => [ 'start', 'stop', 'restart' ] },
-		'spamassassin'	=> { 'constant' => SPAMD(), 'allow' => [ 'start', 'stop', 'restart', 'reload' ] },
+		'spamassassin'	=> { 'constant' => SPAMASSASSIN(), 'allow' => [ 'start', 'stop', 'restart', 'reload' ] },
 	};
 
 #	if(Yaffas::Constant::OS eq 'RHEL5') {
@@ -931,7 +927,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ FETCHMAIL() }) {
 		return __check_process('/usr/bin/fetchmail');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMASSASSIN() }) {
-		return __check_process('spamd');
+		return __check_process($Yaffas::Service::PROCESSES{ SPAMASSASSIN() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTGRESQL() }) {
 		return __check_process($Yaffas::Service::PROCESSES{ POSTGRESQL() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ WINBIND() }) {
@@ -977,8 +973,6 @@ sub _status($){
 		return __check_process('clamd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
 		return __check_process('policyd-weight');
-	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMD() }) {
-		return __check_process($Yaffas::Service::PROCESSES{ SPAMD() });
 	}
 	
 	return undef;
