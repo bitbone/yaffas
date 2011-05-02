@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Yaffas qw(do_back_quote);
 use Yaffas::Exception;
-use Yaffas::Service qw(POSTFIX CLAMAV POLICYD_WEIGHT AMAVIS CLAMAV SPAMASSASSIN RESTART control);
+use Yaffas::Service qw(POSTFIX CLAMAV POLICYD_WEIGHT AMAVIS CLAMAV SPAMASSASSIN RESTART RELOAD control);
 use Yaffas::File;
 use Yaffas::Constant;
 use Yaffas::Conf;
@@ -487,7 +487,7 @@ sub spam_update {
 
 	my ($out, $err) = Yaffas::backquote_out_err(@cmd, "no-daemon");
 	push @$err, @$out;
-	control(SPAMD(), RELOAD());
+	control(SPAMASSASSIN(), RELOAD());
 	return @$err;
 }
 
