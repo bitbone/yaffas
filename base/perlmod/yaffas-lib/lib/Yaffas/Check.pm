@@ -31,11 +31,11 @@ Yaffas::Check - Functions for checking values
 
 =head1 SYNOPSIS
 
-use Yaffas::UGM
+use Yaffas::Check
 
 =head1 DESCRIPTION
 
-Yaffas::UGM provieds fuctions for checking values.
+Yaffas::Check provides fuctions for checking values.
 
 =head1 FUNCTIONS
 

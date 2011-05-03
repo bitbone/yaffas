@@ -89,7 +89,12 @@ Returns 1 if spamassassin is active. Returns undef if not.
 
 sub check_spam {
 	my %amavis = _get_amavis();
-	return undef if exists $amavis{'bypass_spam_checks_maps'};
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		return undef if exists $amavis{'bypass_spam_checks_maps'};
+	} else {
+		#for Ubuntu has inverted logic
+		return undef unless exists $amavis{'bypass_spam_checks_maps'};
+	}
 
 	return 1;
 }
@@ -102,7 +107,12 @@ Returns 1 if clamav is active. Returns undef if not.
 
 sub check_antivirus {
 	my %amavis = _get_amavis();
-	return undef if exists $amavis{'bypass_virus_checks_maps'};
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		return undef if exists $amavis{'bypass_virus_checks_maps'};
+	} else {
+		#for Ubuntu has inverted logic
+		return undef unless exists $amavis{'bypass_virus_checks_maps'};
+	}
 
 	return 1;
 }
@@ -181,7 +191,12 @@ sub disable_spamassassin {
 	my $num = $f->search_line("bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
-	$line =~ s/^#//;
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		$line =~ s/^#//;
+	} else {
+		#for Ubuntu has inverted logic
+		$line =~ s/^/#/;
+	}
 
 	$f->splice_line($num, 1, $line);
 	$f->write();
@@ -204,7 +219,12 @@ sub enable_spamassassin {
 	my $num = $f->search_line("bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
-	$line =~ s/^/#/;
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		$line =~ s/^/#/;
+	} else {
+		#for Ubuntu has inverted logic
+		$line =~ s/^#//;
+	}
 
 	$f->splice_line($num, 1, $line);
 	$f->write();
@@ -227,7 +247,12 @@ sub disable_clamav {
 	my $num = $f->search_line("bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
-	$line =~ s/^#//;
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		$line =~ s/^#//;
+	} else {
+		#for Ubuntu has inverted logic
+		$line =~ s/^/#/;
+	}
 
 	$f->splice_line($num, 1, $line);
 	$f->write();
@@ -249,7 +274,12 @@ sub enable_clamav {
 	my $num = $f->search_line("bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
-	$line =~ s/^/#/;
+	if(Yaffas::Constant::OS eq "RHEL5") {
+		$line =~ s/^/#/;
+	} else {
+		#for Ubuntu has inverted logic
+		$line =~ s/^#//;
+	}
 
 	$f->splice_line($num, 1, $line);
 	$f->write();
