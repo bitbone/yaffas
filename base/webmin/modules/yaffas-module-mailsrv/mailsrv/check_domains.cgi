@@ -7,6 +7,7 @@ use Yaffas::UI;
 use Yaffas::Check;
 use Yaffas::Exception;
 use Yaffas::Module::Mailsrv::Postfix qw(rm_accept_domains set_accept_domains);
+use Yaffas::Service qw(POSTFIX RESTART control);
 
 
 use Error qw(:try);
@@ -39,6 +40,7 @@ try {
 	foreach my $add(@add) {
 		set_accept_domains($add);
 	}
+	control(POSTFIX() ,RESTART());
 	print Yaffas::UI::ok_box();
 
 } catch Yaffas::Exception with {
