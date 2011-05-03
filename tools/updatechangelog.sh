@@ -12,6 +12,10 @@ cd ..
 
 pwd
 
-dch $*
+dch $1 $2 $3; shift; shift; shift
+
+for var in "$@"; do
+	dch "$var"
+done
 
 popd
