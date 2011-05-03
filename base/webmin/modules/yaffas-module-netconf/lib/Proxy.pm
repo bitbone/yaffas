@@ -118,15 +118,16 @@ sub set_proxy($$$$){
 			_set_yum($proxy, $port, $user, $pass);
 		}
 		_set_wget($entry);
+		_set_freshclam($user,$pass,$proxy,$port);
 
 		# muss funktionieren bei einem MAIL, GATE und MAILFAX.
 		if (Yaffas::Product::check_product("mailgate")) {
 			_set_kav($entry);
-			_set_freshclam($user,$pass,$proxy,$port);
 		}
 
 	} else {
 		# delmode
+		_del_freshclam();
 		if(Yaffas::Constant::get_os() eq "Ubuntu"){
 			_del_apt();
 		} else {
@@ -135,7 +136,6 @@ sub set_proxy($$$$){
 		_del_wget();
 		if (Yaffas::Product::check_product("mailgate")) {
 			_del_kav();
-			_del_freshclam();
 		}
 	}
 	1;

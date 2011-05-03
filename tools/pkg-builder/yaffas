@@ -36,6 +36,11 @@ source BASE/base/conf/PACKAGE_NAME/
 dest BASE
 </yaffas-postfix>
 
+<yaffas-security>
+source BASE/base/conf/PACKAGE_NAME/
+dest BASE
+</yaffas-security>
+
 <yaffas-zarafa>
 source BASE/zarafa/conf/PACKAGE_NAME/
 dest BASE
@@ -120,6 +125,11 @@ dest BASE
 source BASE/base/webmin/modules/yaffas-module-saveconf/
 dest BASE
 </yaffas-module-saveconf>
+
+<yaffas-module-security>
+source BASE/base/webmin/modules/yaffas-module-security/
+dest BASE
+</yaffas-module-security>
 
 <yaffas-module-service>
 source BASE/base/webmin/modules/yaffas-module-service/

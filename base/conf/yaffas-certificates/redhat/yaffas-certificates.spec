@@ -26,7 +26,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 set -e
 CERTDIR="/opt/yaffas/etc/ssl/certs/"
-CERTS="exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppserver"
+CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppserver"
 for i in $CERTS; do
 	ln -sf $CERTDIR/org/default.key $CERTDIR/$i.key
 	ln -sf $CERTDIR/org/default.crt $CERTDIR/$i.crt

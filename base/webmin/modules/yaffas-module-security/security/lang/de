@@ -1,0 +1,50 @@
+lbl_apply=Anwenden
+lbl_edit=Editieren
+lbl_delete=Löschen
+lbl_add=Hinzufügen
+lbl_activate=Aktivieren
+lbl_deactivate=Deaktivieren
+lbl_update=Update
+lbl_really_delete=Eintrag löschen
+lbl_really_delete_msg=Wollen Sie diesen Eintrag wirklich löschen?
+
+lbl_really_disable=Möchten Sie diesen Dienst wirklich deaktivieren?
+lbl_really_enable=Möchten Sie diesen Dienst wirklich aktivieren?
+
+lbl_policy=Policy
+lbl_policy_enable=Policy aktivieren
+lbl_policy_disable=Policy deaktivieren
+lbl_dnsbl=DNS Blacklisting
+lbl_rhsbl=RHSBL
+lbl_host=Hostname
+lbl_hit=Hit score
+lbl_miss=Miss score
+lbl_log=Logname
+
+lbl_clamav=ClamAV
+lbl_clamav_activate=ClamAV aktivieren
+lbl_clamav_deactivate=ClamAV deaktivieren
+lbl_archive=Archive scannen
+lbl_maxlength=Maximale Größe zum Scannen in MB
+lbl_virusalert=Benachrichtigungsadresse bei Viren
+lbl_clam_update=ClamAV-Signaturen aktualisieren
+lbl_clam_configure=Clamav konfigurieren
+
+lbl_sa=Spamassassin
+lbl_sa_configure=Spamassassin konfigurieren
+lbl_sa_enable=Spamassassin aktivieren
+lbl_sa_disable=Spamassassin deaktivieren
+lbl_sa_update=Spamassassin-Filter aktualisieren
+lbl_network=Netzwerk
+lbl_internal=Interne Netzwerke
+lbl_trusted=Vertrauenswürdige Netzwerke
+lbl_add_headers=Hinzufügen von "Spam-Headern" ab Level 
+
+lbl_whitelist=Whitelisting
+lbl_wl_desc=Die hier angegebenen Hosts und Adressen werden nicht auf Spam und Viren überprüft.
+lbl_address=Adresse
+lbl_wl_type=Art
+lbl_wl_from=Quelle
+lbl_wl_entry=Eintrag
+
+err_mail=Ungültige E-Mail Adresse
