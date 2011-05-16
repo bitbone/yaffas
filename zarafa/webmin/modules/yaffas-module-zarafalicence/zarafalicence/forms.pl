@@ -25,9 +25,28 @@ sub show_callicense_form() {
 	print $Cgi->end_form();
 }
 
+sub show_archiverlicense_form() {
+	print $Cgi->start_form({-action=>"index.cgi"});
+	print Yaffas::UI::section($main::text{lbl_install_archiverkey},
+							  $Cgi->p($Cgi->textfield('archiverlicense'))
+							 );
+	print Yaffas::UI::section_button($Cgi->submit({-value=>$main::text{'lbl_insert'}}));
+	print $Cgi->end_form();
+}
+
+sub show_acallicense_form() {
+	print $Cgi->start_form({-action=>"index.cgi"});
+	print Yaffas::UI::section($main::text{lbl_install_acalkey},
+							  $Cgi->p($Cgi->textfield('acallicense'))
+							 );
+	print Yaffas::UI::section_button($Cgi->submit({-value=>$main::text{'lbl_insert'}}));
+	print $Cgi->end_form();
+}
+
 sub show_installed_licences() {
 	$Yaffas::UI::Print_inner_div = 0;
 	my $base_serial = Yaffas::Module::ZarafaLicence::get_basekey();
+	my $archiver_serial = Yaffas::Module::ZarafaLicence::get_archiverkey();
 	print Yaffas::UI::start_section($main::text{lbl_installed_licences});
 	print $Cgi->h2($main::text{"lbl_base_key"});
 	print Yaffas::UI::table($Cgi->Tr(
@@ -35,6 +54,14 @@ sub show_installed_licences() {
 														$main::text{lbl_serial}.":&nbsp;"),
 									 $Cgi->td({style=>"width: 70%"},
 														$base_serial),
+									 )
+							);
+	print $Cgi->h2($main::text{"lbl_archiver_key"});
+	print Yaffas::UI::table($Cgi->Tr(
+									 $Cgi->td({style=>"width: 30%"},
+														$main::text{lbl_archiver_serial}.":&nbsp;"),
+									 $Cgi->td({style=>"width: 70%"},
+														$archiver_serial),
 									 )
 							);
 	print Yaffas::UI::end_section();

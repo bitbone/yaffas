@@ -7,3 +7,7 @@ lbl_base_key=Base key
 lbl_serial=Serial number
 lbl_log=Licence Log
 err_wrong_lic=This is not a valid zarafa serial
+lbl_archiver_key=Archiver key
+lbl_archiver_serial=Serial number
+lbl_install_archiverkey=Install new archiver key
+lbl_install_acalkey=Install new archiver client key
