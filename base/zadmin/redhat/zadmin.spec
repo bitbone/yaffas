@@ -1,7 +1,7 @@
 Name:		zadmin
 Version:	1.0.1
 Release:	1%{?dist}
-Summary:	Meta package for yaffas
+Summary:	Meta package for Z-Admin
 Group:		Applications/System
 License:	GPL
 URL:		http://www.yaffas.org
@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='yaffas|BASE v0.8'
+VALUE='Z-Admin|BASE v0.9'
 
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then
