@@ -499,14 +499,16 @@ sub search_attribute($$;$) {
 	my $ls_ref = $ls_file->get_cfg_values();
 	my $ldapuri = $ls_ref->{'LDAPURI'};
 	my $binddn = $ls_ref->{'BINDDN'};
-	my $searchbase = $ls_ref->{'USER_SEARCHBASE'};
-	$searchbase = $ls_ref->{'BASEDN'} if ((length $searchbase) < 1);
+	my $user_searchbase = $ls_ref->{'USER_SEARCHBASE'};
+	my $group_searchbase = $ls_ref->{'GROUP_SEARCHBASE'};
+	$user_searchbase = $ls_ref->{'BASEDN'} if ((length $user_searchbase) < 1);
+	$group_searchbase = $ls_ref->{'BASEDN'} if ((length $group_searchbase) < 1);
 	my $namefilter = $ls_ref->{'USERSEARCH'};
 	my $ldapsecret = $ls_ref->{'LDAPSECRET'};
 
 	$ldapuri = $1 if ($ldapuri =~ /^(ldaps?:\/\/.*)$/);
 	$binddn = $1 if ($binddn =~ /^(.*)$/);
-	$searchbase = $1 if ($searchbase =~ /^(.*)$/);
+	$user_searchbase = $1 if ($user_searchbase =~ /^(.*)$/);
 	$namefilter = $1 if ($namefilter =~ /^(\w*)$/);
 	$ldapsecret = $1 if ($ldapsecret =~ /^(.*)$/);
 	$name = $1 if ($name =~ /^(.*)$/);
@@ -518,7 +520,7 @@ sub search_attribute($$;$) {
 	if ($type eq "user") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 			"($namefilter=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
 	} elsif ($type eq "group") {
@@ -526,14 +528,14 @@ sub search_attribute($$;$) {
 		foreach my $user (@users) {
 			push @return_attribs, Yaffas::do_back_quote(
 				Yaffas::Constant::APPLICATION->{'ldapsearch'},
-				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 				"($namefilter=$user)", $attribute, "-w", $ldapsecret, "-LLL"
 				);
 		}
 	} elsif ($type eq "grouponly") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $group_searchbase,
 			"(cn=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
     } else {
