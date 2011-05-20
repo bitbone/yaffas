@@ -2,7 +2,7 @@
 use warnings;
 use strict;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::UGM qw(get_users get_groups);
+use Yaffas::UGM qw(get_users get_groups get_email);
 use Yaffas::UI qw(section $Cgi section_button);
 use Yaffas::UI::TablePaging qw(show_page);
 use Yaffas::Fax;
@@ -74,9 +74,8 @@ sub show_edit_groups {
     my $groups = shift;
     my %hash;
 
-    unless (Yaffas::Product::check_product("fax")) {
-		return;
-    }
+    my $email;
+    my @sendas;
 
     my $i = 0;
     print $Cgi->start_form({
@@ -87,10 +86,12 @@ sub show_edit_groups {
     $Yaffas::UI::Print_inner_div = 0;
     print section($main::text{lbl_edit}.": ".$groups->[0],
 		  map {
+              @sendas = Yaffas::UGM::get_send_as($_, "group");
+              $email = get_email($_, "group");
 		      #$Cgi->h2($main::text{lbl_groupname} . ": " . $_) .
 		      $Cgi->hidden("groups", $_) .
 		      $Cgi->table(
-				  $Cgi->Tr([ ( $Cgi->td([
+				  $Cgi->Tr([ Yaffas::Product::check_product("fax") ? ( $Cgi->td([
 							$main::text{lbl_filetype} . ":",
 							$Cgi->scrolling_list(
 									     {
@@ -108,8 +109,25 @@ sub show_edit_groups {
 									     }
 									    )
 						       ])
-					    )
-					   ])
+					    ) : undef, 
+                        $Cgi->td([
+                            $main::text{lbl_email}.":",
+                            $Cgi->input({-name=>"mail", -value => $email}),
+                            ]),
+                        $Cgi->td([
+                            $main::text{lbl_sendas}.":",
+                            $Cgi->scrolling_list(
+                                -name => "sendas",
+                                -id => "sendas",
+                                -size => 5,
+                                -values => [Yaffas::UGM::get_users()],
+                                -default => \@sendas,
+                                -multiple => 1,
+                                -style => "width: 20em",
+
+                            )
+                            ]),
+                        ]),
 				 );
 		  } @$groups
 		 );

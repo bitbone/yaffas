@@ -634,7 +634,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$postfix_settings->{query_filter} = '(zarafaAliases=%s)';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "aliases");
 
-		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("off");
+		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("file");
 
 	}
 	catch Yaffas::Exception with {
@@ -1050,7 +1050,7 @@ sub set_pdc( ;$$$$$$$$){
 		$postfix_settings->{special_result_attribute} = 'member';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "group");
 
-		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("on");
+		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("ldap");
 
 	}
 	catch Yaffas::Exception with {

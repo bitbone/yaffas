@@ -498,10 +498,10 @@ sub set_postfix_ldap($$) {
 
 sub toggle_distribution_groups($) {
 	my $toggle = shift;
-	if("on" eq lc $toggle) {
+	if("ldap" eq lc $toggle) {
 		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf, ldap:/etc/postfix/ldap-group.cf");
-	} elsif("off" eq lc $toggle) {
-		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf");
+	} elsif("file" eq lc $toggle) {
+		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf, hash:/etc/postfix/ldap-group.cf");
 	}
 }
 

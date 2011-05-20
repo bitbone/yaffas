@@ -4,6 +4,7 @@ use strict;
 use Yaffas;
 use Yaffas::UI;
 use Yaffas::Check;
+use Yaffas::UGM;
 use Yaffas::Module::Group;
 use Error qw(:try);
 use Yaffas::Exception;
@@ -26,6 +27,10 @@ try {
 	}
 	else {
 	    Yaffas::Module::Group::set_groups_filetype(@groups, @filetypes);
+        foreach my $g (@groups) {
+            Yaffas::UGM::set_email($g, $main::in{mail}, "group");
+            Yaffas::UGM::set_send_as($g, [split /\0/, $main::in{sendas}], "group");
+        }
 	    print Yaffas::UI::ok_box();
 	}
 } catch Yaffas::Exception with {

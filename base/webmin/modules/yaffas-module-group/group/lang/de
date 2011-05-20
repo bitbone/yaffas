@@ -21,6 +21,8 @@ lbl_done=fertig
 
 lbl_ask_delete=Wollen Sie diese Gruppen wirklich löschen?
 lbl_auth=Authentifizierung
+lbl_email=E-Mail
+lbl_sendas=Senden als erlauben
 
 
 err_input=Alle Felder müssen ausgefüllt sein!

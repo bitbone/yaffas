@@ -25,7 +25,6 @@ Groups.prototype.deleteGroup = function() {
 Groups.prototype.setupTable = function() {
     var menuitems = [];
 
-    if (Yaffas.PRODUCTS.include("fax")) {
         menuitems.push(
         {
             text: _("lbl_edit"),
@@ -34,7 +33,6 @@ Groups.prototype.setupTable = function() {
             }
         }
         );
-    }
 
 	if (auth_type() === "local LDAP") {
 		menuitems.push({
