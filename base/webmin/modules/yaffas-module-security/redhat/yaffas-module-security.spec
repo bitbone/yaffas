@@ -1,7 +1,7 @@
 Summary:    Module for configuration of mail security options
 Name:       yaffas-module-security
 Version:    0.9.0
-Release:    bb1
+Release:    1
 License:    AGPLv3
 Url:        http://www.yaffas.org
 Group:      Applications/System
