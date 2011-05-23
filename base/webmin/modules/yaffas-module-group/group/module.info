@@ -3,5 +3,5 @@ desc_de=Gruppenverwaltung
 desc_en=Group Management
 name=bbgroup
 category=accounts
-desc=Groupadministration
+desc=Group administration
 version=0.1

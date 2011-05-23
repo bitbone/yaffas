@@ -2,6 +2,6 @@ longdesc=Save configuration - Save conffile and LDAP-tree
 desc_de=Konfiguration sichern
 desc_en=Save configuration
 name=bbsaveconf
-category=maintainance
+category=maintenance
 desc=bbsaveconf
 version=0.1
