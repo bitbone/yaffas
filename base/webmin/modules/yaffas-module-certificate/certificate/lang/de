@@ -1,7 +1,7 @@
 c=Land (2-Buchstaben-Code)
 cn=Common Name (z.B. host.name.de)
 
-e_c=Ländername nicht korrekt.
+e_c=Landeskürzel nicht korrekt.
 e_cn=Common Name nicht korrekt oder nicht gesetzt.
 e_days=Tage nicht korrekt.
 e_emailAddress=E-Mail Adresse nicht korrekt.
@@ -35,7 +35,7 @@ import_title=Zertifikat Importieren
 import_del=Zertifikat Löschen
 import_delquestion=Soll das Zertifikat wirklich gelöscht werden?
 import_ok=Das Zertifikat wurde korrekt importiert!
-import_error=Beim Importierten tratt ein Fehler auf! Bitte überprüfen Sie ihre Zertifikatsdatei.
+import_error=Beim Importierten trat ein Fehler auf! Bitte überprüfen Sie ihre Zertifikatsdatei.
 
 index_header=Zertifikat / Schlüssel Verwaltung
 index_import=Zertifikat Importieren
@@ -43,7 +43,7 @@ index_gencert=Generiere selbst signierte Zertifikate und Schlüssel
 index_view=Verwalte installierte Zertifikate
 index_title=Zertifikats Manager
 
-keysize=Schlüsselgröße (in Bits)
+keysize=Schlüssellänge (in Bits)
 l=Örtlichkeit (z.B. Stadt)
 o=Organization Name (z.B. Firma)
 ou=Organization Unit Name (z.B. Abteilung)

@@ -1,4 +1,4 @@
-err_nothing_selected=Es muss eine Logdatei ausgewählt werden.
+err_nothing_selected=Es muss eine Log-Datei ausgewählt werden.
 err_not_permitted=Download der Datei nicht erlaubt.
 lbl_logfiles=Log Dateien
 lbl_download=Herunterladen
