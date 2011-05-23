@@ -145,13 +145,20 @@ case "$1" in
 		chown -R openldap:openldap /var/lib/ldap/
 		rm -f $DOMRENAME_FILE
 		rm $LDIF
+	
+		# generate password for LDAP
+		OURPASSWD=$(mkpasswd yaffas)
+
+		for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap/ldap.conf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+			sed -e 's/--OURPASSWD--/$OURPASSWD/g' -e $MYFILE
+		done
 
 		#write ldap.settings
 		echo "BASEDN=$BASE" >$LDAP_SETTINGS
 		echo "USERSEARCH=uid">>$LDAP_SETTINGS
 		echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
 		echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
-		echo "LDAPSECRET=ro%bitkit" >> $LDAP_SETTINGS
+		echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
 		echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
 		echo "EMAIL=mail" >> $LDAP_SETTINGS
 		

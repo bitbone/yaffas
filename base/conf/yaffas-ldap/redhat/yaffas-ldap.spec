@@ -8,7 +8,7 @@ URL:		http://www.yaffas.orgg
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common
+Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect
 
 %description
 Edits libnss-ldap.conf, pam-ldap.conf, nsswitch.conf
@@ -143,12 +143,19 @@ if [ "$1" = 1 ] ; then
 	rm -f $DOMRENAME_FILE
 	rm $LDIF
 
+	# generate password for LDAP
+	OURPASSWD=$(mkpasswd)
+
+for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap/ldap.conf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+	sed -e 's/--OURPASSWD--/$OURPASSWD/g' -e $MYFILE
+done
+
 	#write ldap.settings
 	echo "BASEDN=$BASE" >$LDAP_SETTINGS
 	echo "USERSEARCH=uid">>$LDAP_SETTINGS
 	echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
 	echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
-	echo "LDAPSECRET=ro%bitkit" >> $LDAP_SETTINGS
+	echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
 	echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
 	echo "EMAIL=mail" >> $LDAP_SETTINGS
 
