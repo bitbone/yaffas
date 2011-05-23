@@ -150,7 +150,7 @@ case "$1" in
 		OURPASSWD=$(mkpasswd yaffas)
 
 		for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap/ldap.conf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
-			sed -e 's/--OURPASSWD--/$OURPASSWD/g' -e $MYFILE
+			sed -e "s/--OURPASSWD--/$OURPASSWD/g" -i $MYFILE
 		done
 
 		#write ldap.settings
