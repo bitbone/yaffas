@@ -47,7 +47,7 @@ sub get_category_name ($$) {
 
 =item lang get_lang_name (void)
 
-returns the curretn active language
+returns the current active language
 
 =cut
 
@@ -62,6 +62,19 @@ sub get_lang_name () {
 		return $main::gconfig{lang} if defined $main::gconfig{lang};
 	}
 	return "en";
+}
+
+=item lang get_theme (void)
+
+returns the current theme
+
+=cut
+
+sub get_theme () {
+    my $theme = $main::gconfig{theme};
+    $theme =~ s/theme$//;
+    return $theme if $theme;
+    return "yaffas";
 }
 
 =item get_lang ( MODULE )

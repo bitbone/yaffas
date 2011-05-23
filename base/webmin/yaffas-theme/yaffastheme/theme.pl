@@ -18,7 +18,7 @@ sub theme_header() {
 
 	my @css;
 	if (!defined($ENV{REMOTE_USER}) or $ENV{'REMOTE_USER'} eq "") {
-		my $file = Yaffas::File->new("yaffastheme/yaffas.css");
+		my $file = Yaffas::File->new("yaffastheme/index.css");
 		@css = $file->get_content();
 		push @css, "body {display: block !important}";
 	}
@@ -61,7 +61,7 @@ sub theme_header() {
 	
 		$scripts = [
 		   (map { {-language => "JAVASCRIPT", -src=>"/yui/".( (m#/#) ? $_ : "$_/${_}${js_type}.js") } } @js),
-		   { -language=>"JAVASCRIPT", -src=>($main::remote_user) ? "/javascript/bitbone.js" : "/javascript/theme-login.js" },
+		   { -language=>"JAVASCRIPT", -src=>($main::remote_user) ? "/javascript/start.js" : "/javascript/theme-login.js" },
 		   { -language=>"JAVASCRIPT", -src=>($main::remote_user) ? "/globals.cgi" : "" },
 		   { -language=>"JAVASCRIPT", -src=>(! $main::remote_user) ? "/javascript/login.js" : "" },
 		   { -language=>"JAVASCRIPT", -src=>"/javascript/helper.js" },
@@ -89,7 +89,7 @@ sub theme_header() {
 			"/yui/assets/skins/yaffas/treeview.css",
 			"/yui/assets/skins/yaffas/layout.css",
 			"/yui/base/base-min.css",
-			"/yaffas.css",
+			"/index.css",
 			];
 
 	print $cgi->start_html(

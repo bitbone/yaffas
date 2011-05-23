@@ -7,6 +7,6 @@ Standards-Version: 3.5.2
 
 Package: yaffas-theme
 Architecture: all
-Depends: ${shlibs:Depends}, libjson-perl, libconfig-general-perl
-Description: Bitbone Theme for Webmin
- This is a theme for Webmin
+Depends: ${shlibs:Depends}, yaffas-theme-core, libjson-perl, libconfig-general-perl
+Description: Yaffas theme
+ Yaffas theme

@@ -33,6 +33,8 @@ if [ -f $config ]; then
 		echo "preroot=zadmintheme" >> $miniserv
 	fi
 
+    ln -sf /opt/yaffas/webmin/theme-core/* /opt/yaffas/webmin/zadmintheme/
+
 	echo "Restarting Webmin ..."
 	/opt/yaffas/etc/webmin/stop && /opt/yaffas/etc/webmin/start
 else
