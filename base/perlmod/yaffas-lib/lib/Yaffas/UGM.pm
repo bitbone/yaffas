@@ -37,6 +37,7 @@ use Yaffas::Mail::Mailalias;
 use Yaffas::File;
 use Yaffas::File::Config;
 use Yaffas::Postgres;
+use Yaffas::Product;
 use Text::Iconv;
 use File::Path;
 use File::Samba;
@@ -806,10 +807,14 @@ returns a List of all existings GID between 501 and 65000 plus admin groups (e.g
 =cut
 
 sub get_groups () {
+	my @admin_groups = ();
+	if (Yaffas::Product::check_product("PDF") || Yaffas::Product::check_product("FAX") || Yaffas::Product::check_product("FILE")) {
+		@admin_groups = @{Yaffas::Constant::MISC->{admin_groups}};
+	}
 	return grep {$_} map {(/^(.*):.*:(.*):.*$/ &&
-			       ($2 >= 501 &&  $2 < 65000) ||
-			       (grep {$1 eq $_} @{Yaffas::Constant::MISC->{admin_groups}}))
-			       ? $1 : undef} @{ getent("group") };
+				   ($2 >= 501 &&  $2 < 65000) ||
+				   (grep {$1 eq $_} @admin_groups))
+				   ? $1 : undef} @{ getent("group") };
 }
 
 =item get_all_groups_name ()

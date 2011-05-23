@@ -47,7 +47,9 @@ if ( $main::in{auth} ) {
 else {
 	status();
 	if ( Yaffas::Auth::get_auth_type() ne LOCAL_LDAP ) {
-		printops_group();
+		if (Yaffas::Product::check_product("PDF") || Yaffas::Product::check_product("FAX") || Yaffas::Product::check_product("FILE")) {
+			printops_group();
+		}
 	}
 	
 	choose_auth();
