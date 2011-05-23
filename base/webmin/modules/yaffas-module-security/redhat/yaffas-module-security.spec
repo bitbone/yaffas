@@ -40,9 +40,11 @@ add_license $MODULE ""
 mkdir -p /etc/amavis/conf.d/
 %{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-if ! id clam | grep -q "amavis"; then
-    usermod -a -G amavis clam
-fi
+echo "############### test #################"
+#if ! id clam | grep -q "amavis"; then
+#    usermod -a -G amavis clam
+#fi
+echo "############### end ##################"
 
 if ! grep -q "amavis" /etc/postfix/master.cf; then
     cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
