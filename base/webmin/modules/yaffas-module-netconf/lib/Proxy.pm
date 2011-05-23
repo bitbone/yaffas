@@ -9,6 +9,7 @@ use Yaffas::Check;
 use Yaffas::Exception;
 use Yaffas::Product;
 use Yaffas::Constant;
+use Yaffas::Service qw(CLAMAV_FRESHCLAM RESTART)
 
 our @ISA = ("Yaffas::Module");
 
@@ -33,7 +34,7 @@ On a RHEL machine it works with the yum.conf, of course.
 sub get_proxy {
 	my ($user, $proxy, $port);
 
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+	if(Yaffas::Constant::OS eq "Ubuntu"){
 		my $bkf = Yaffas::File->new($apt_cpath) or throw Yaffas::Exception("err_file_read", $apt_cpath);
 		my $line_nr = $bkf->search_line("Acquire::http::Proxy");
 		if (defined $line_nr) {
@@ -112,13 +113,14 @@ sub set_proxy($$$$){
 		$entry = $user  . ":" . $pass . "@" .  $entry if ($pass and $user);
 		$entry = $user  . "@" . $entry if ($user and !$pass);
 
-		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		if(Yaffas::Constant::OS eq "Ubuntu"){
 			_set_apt($entry);
+			# freshclam only runs as daemon on Ubuntu
+			_set_freshclam($user,$pass,$proxy,$port);
 		} else {
 			_set_yum($proxy, $port, $user, $pass);
 		}
 		_set_wget($entry);
-		_set_freshclam($user,$pass,$proxy,$port);
 
 		# muss funktionieren bei einem MAIL, GATE und MAILFAX.
 		if (Yaffas::Product::check_product("mailgate")) {
@@ -128,7 +130,7 @@ sub set_proxy($$$$){
 	} else {
 		# delmode
 		_del_freshclam();
-		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		if(Yaffas::Constant::OS eq "Ubuntu"){
 			_del_apt();
 		} else {
 			_del_yum();
@@ -283,9 +285,7 @@ sub _set_freshclam($){
 	}
 	$bkf->set_permissions("clamav","clamav",0600);
 	$bkf->write() or throw Yaffas::Exception('err_set_freshclam');
-	#FIXME in new Service.pm and then here
-	Yaffas::do_back_quote("/etc/init.d/clamav-freshclam", "restart");
-	throw Yaffas::Exception('err_restart_freshclam') unless $? == 0;
+	Yaffas::Service::control(CLAMAV_FRESHCLAM, RESTART);
 }
 
 # deletes the freshclam configuration

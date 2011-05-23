@@ -16,7 +16,7 @@ sub BEGIN {
 						&DIVAS &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD
-						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD
+						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD &CLAMAV_FRESHCLAM
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
 }
@@ -333,6 +333,8 @@ sub AMAVIS(){ 44; }
 
 sub CLAMAV(){ 45; }
 
+sub CLAMAV_FRESHCLAM(){ 46; }
+
 =back
 
 =head2 Constants for Actions
@@ -437,6 +439,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 BBLCD() => "/etc/init.d/bblcd",
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
+				 CLAMAV_FRESHCLAM() => "/etc/init.d/clamav-freshclam",
 				);
 
 	%PROCESSES = (
@@ -973,6 +976,8 @@ sub _status($){
 		return __check_process('clamd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
 		return __check_process('policyd-weight');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ CLAMAV_FRESHCLAM() }) {
+		return __check_process('clamav-freshclam');
 	}
 	
 	return undef;
