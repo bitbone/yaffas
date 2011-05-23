@@ -14,7 +14,7 @@ lbl_check_bbmailsrv_error=Please enter valid values!
 lbl_mailaliases=Mail aliases
 lbl_mailalias=Mail alias
 lbl_destination_dir=Folder
-lbl_destination_usr=User / e-mail address
+lbl_destination_usr=User
 
 lbl_del=Remove
 lbl_user=User
