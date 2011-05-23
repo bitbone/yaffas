@@ -23,8 +23,20 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 set -e
 
+DOMAIN=$(hostname -d 2> /dev/null || echo "")
+
+if [ -z "$DOMAIN" ]; then
+    DOMAIN="yaffas.local"
+fi
+
+if ! echo $DOMAIN | grep -q "\."; then
+    DOMAIN="$DOMAIN.local"
+fi
+
+echo "Using $DOMAIN for LDAP tree"
+
 function _get_base() {
-	ARRAY=(`hostname -d | cut -d. -f1- --output-delimiter=\ `)
+	ARRAY=(`echo ${DOMAIN} | cut -d. -f1- --output-delimiter=\ `)
 	COUNT=${#ARRAY[*]}
 	BASE=""
 	ORG=""
@@ -117,7 +129,6 @@ if [ "$1" = 1 ] ; then
 	echo "Removing old LDAP Database"
 	rm -rf /var/lib/ldap/*
 
-	DOMAIN=`hostname -d`
 	echo "Executing domrename.pl ... $DOMAIN $LDIF"
 	sed -e "s/NEWSID/$SID/" -i $LDIF
 	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
