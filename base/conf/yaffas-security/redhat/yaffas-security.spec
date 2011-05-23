@@ -1,5 +1,5 @@
 Name:		yaffas-security
-Version:	0.8.0
+Version:	0.9.0
 Release:	1%{?dist}
 Summary:	Config for yaffas security module
 Group:		Application/System
@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	yaffas-ldap
+Requires:	yaffas-ldap, yaffas-module-security
 
 %description
 Adds amavis user to ldapread group
