@@ -147,7 +147,7 @@ if [ "$1" = 1 ] ; then
 	OURPASSWD=$(mkpasswd)
 
 for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
-	sed -e "s/--OURPASSWD--/$OURPASSWD/g" -i $MYFILE
+	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
 done
 
 	#write ldap.settings
