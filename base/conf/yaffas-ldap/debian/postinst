@@ -81,7 +81,7 @@ case "$1" in
 	NSS="/etc/nsswitch.conf"
 	SLAPD="/etc/ldap/slapd.conf"
 	LDAPS="/etc/ldap.secret"
-	LDIF="/tmp/bitkit_base.ldif"
+	LDIF="/tmp/yaffas_base.ldif"
 	DOMRENAME_FILE="/tmp/slapcat.ldif"
 	LDAPCONF="/etc/ldap/ldap.conf"
 	SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
@@ -166,7 +166,7 @@ case "$1" in
 	fi
 
     # this can always be done...
-	/etc/init.d/slapd start
+#	/etc/init.d/slapd start
 
 	# wait max 5 seconds for ldap to coming up. else we try it anyway...
 	SLEEP_COUNT=0
@@ -183,11 +183,6 @@ case "$1" in
 	chown root:ldapread /etc/ldap.conf
 
 	rm -f $LDIF
-
-    if [ ! "$2" ]; then
-        # add group bkusers (needed at least for Yaffas::UGM::add_user)
-        smbldap-groupadd -g 500 -a bkusers
-    fi
 
 	;;
 

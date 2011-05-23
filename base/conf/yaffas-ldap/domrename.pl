@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-my @ldap_conffiles = ("/etc/pam_ldap.conf", "/etc/libnss-ldap.conf", "/etc/ldap/slapd.conf", "/etc/ldap/ldap.conf", "/etc/smbldap-tools/smbldap.conf", "/etc/samba/smb.conf", "/etc/smbldap-tools/smbldap_bind.conf", "/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist", "/etc/zarafa/ldap.cfg", "/etc/zarafa/ldap.bitkit.cfg", "/etc/ldap.settings", "/etc/ldap.conf");
+my @ldap_conffiles = ("/etc/pam_ldap.conf", "/etc/libnss-ldap.conf", "/etc/ldap/slapd.conf", "/etc/ldap/ldap.conf", "/etc/smbldap-tools/smbldap.conf", "/etc/samba/smb.conf", "/etc/smbldap-tools/smbldap_bind.conf", "/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist", "/etc/zarafa/ldap.cfg", "/etc/zarafa/ldap.yaffas.cfg", "/etc/ldap.settings", "/etc/ldap.conf");
 my @other_conffiles = ("/etc/hosts", "/etc/defaultdomain");
 my $old_domain;
 my $old_org;

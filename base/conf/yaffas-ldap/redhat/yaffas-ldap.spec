@@ -1,5 +1,5 @@
 Name:		yaffas-ldap
-Version:	0.7.0
+Version:	0.9.0
 Release:	1%{?dist}
 Summary:	Converts LDAP configuration
 Group:		Application/System
@@ -79,7 +79,7 @@ CONF="/etc/ldap.conf"
 NSS="/etc/nsswitch.conf"
 SLAPD="/etc/openldap/slapd.conf"
 LDAPS="/etc/ldap.secret"
-LDIF="/tmp/bitkit_base.ldif"
+LDIF="/tmp/yaffas_base.ldif"
 DOMRENAME_FILE="/tmp/slapcat.ldif"
 LDAPCONF="/etc/openldap/ldap.conf"
 SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
@@ -152,6 +152,7 @@ if [ "$1" = 1 ] ; then
 	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
 		if [ -f /etc/openldap/DB_CONFIG.example ]; then
 			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+			chown ldap:ldap /var/lib/ldap/DB_CONFIG
 		fi
 	fi
 
@@ -169,7 +170,7 @@ else
 fi
 
 # this can always be done...
-service ldap start
+#service ldap start
 
 # wait max 5 seconds for ldap to coming up. else we try it anyway...
 SLEEP_COUNT=0
@@ -183,14 +184,8 @@ chmod 440 $CONF
 chmod 640 $LDAPS
 chown root:ldapread $CONF
 chown root:ldapread $LDAPS
-chown root:ldapread /etc/ldap.conf
 
 rm -f $LDIF
-
-if [ "$1" = 1 ] ; then
-	# add group bkusers (needed at least for Yaffas::UGM::add_user)
-	smbldap-groupadd -g 500 -a bkusers
-fi
 
 # enabled ldap service
 chkconfig ldap on
@@ -225,6 +220,6 @@ rm -rf $RPM_BUILD_ROOT
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap.conf
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap_bind.conf
 %config %attr(750,root,root) /opt/yaffas/bin/domrename.pl
-/tmp/bitkit_base.ldif
+/tmp/yaffas_base.ldif
 
 %changelog

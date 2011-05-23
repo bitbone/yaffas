@@ -1,6 +1,6 @@
-Summary:	bitkit samba configuration
+Summary:	yaffas samba configuration
 Name:		yaffas-samba
-Version: 0.7.0
+Version: 0.9.0
 Release: 1
 License:	AGPLv3
 Url:		http://www.yaffas.org
@@ -8,10 +8,10 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	samba, yaffas-ldap
+Requires:	samba, yaffas-ldap, yaffas-core
 
 %description
-Samba configuration for bitkit.
+Samba configuration for yaffas.
 
 %build
 make %{?_smp_mflags}
@@ -105,6 +105,7 @@ else
 	fi
 fi
 
+service ldap restart
 service smb restart
 service winbind restart
 

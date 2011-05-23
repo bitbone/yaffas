@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: yaffas-samba
 Architecture: all
-Pre-Depends: samba, winbind, yaffas-ldap
+Pre-Depends: samba, winbind, yaffas-ldap, yaffas-core
 Replaces: samba
 Description: Samba Configuration for yaffas
  Samba Configuration for yaffas

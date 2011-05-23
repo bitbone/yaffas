@@ -13,7 +13,7 @@ install:
 	cp -r share/doc/example/$(ETC_LDAP) $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -r share/doc/example/etc/postfix $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -r share/doc/example/etc/smbldap-tools $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
-	cp bitkit_base.ldif $(DESTDIR)/tmp/
+	cp yaffas_base.ldif $(DESTDIR)/tmp/
 	cp domrename.pl $(DESTDIR)/$(YAFFAS_BIN)
 
 clean:

@@ -242,3 +242,14 @@ sambaSID: NEWSID-514
 sambaGroupType: 2
 displayName: Domain Guests
 description: Domain Unix group
+
+dn: cn=bkusers,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+cn: bkusers
+gidNumber: 500
+sambaSID: NEWSIDS-2001
+sambaGroupType: 2
+displayName: bkusers
+
