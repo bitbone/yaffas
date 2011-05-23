@@ -8,7 +8,7 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-core, perl(JSON)
+Requires:	yaffas-core, yaffas-theme-core, perl(JSON)
 AutoReqProv: no
 
 %description
@@ -54,6 +54,8 @@ if [ -f $config ]; then
 	else
 		echo "preroot=yaffastheme" >> $miniserv
 	fi
+
+    ln -sf /opt/yaffas/webmin/theme-core/* /opt/yaffas/webmin/yaffastheme/
 
 	echo "Restarting Webmin ..."
 	service yaffas restart
