@@ -181,6 +181,11 @@ source BASE/base/webmin/PACKAGE_NAME
 dest BASE
 </yaffas-yui>
 
+<yaffas-theme-core>
+source BASE/base/webmin/PACKAGE_NAME
+dest BASE
+</yaffas-theme-core>
+
 <yaffas-theme>
 source BASE/base/webmin/PACKAGE_NAME
 dest BASE
