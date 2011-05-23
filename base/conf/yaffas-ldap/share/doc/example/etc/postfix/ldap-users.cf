@@ -2,7 +2,7 @@ server_host = localhost
 search_base = ou=People,BASE
 bind = yes
 bind_dn = cn=ldapadmin,ou=People,BASE
-bind_pw = ro%bitkit
+bind_pw = --OURPASSWD--
 version = 3
 scope = sub
 query_filter = (mail=%s)

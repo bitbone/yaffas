@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:  noarch
-Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafabackup, mod_ssl
+Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap
 
 %description
 Additional yaffas configuration to make zarafa work
@@ -63,6 +63,8 @@ Yaffas::Module::ChangeLang::set_lang($lang);
 # a2enmod ssl
 # a2ensite zarafa-webaccess-ssl
 sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.yaffas.cfg
+OURPASSWD=$(cat /etc/ldap.secret)
+sed -e "s/--OURPASSWD--/$OURPASSWD/g" -i /etc/zarafa/ldap.yaffas.cfg
 # 
 # #if ! grep "Listen.*443" /etc/apache2/ports.conf &>/dev/null; then
 # #	echo "Listen 443" >> /etc/apache2/ports.conf
