@@ -80,6 +80,7 @@ fi
 
 %files
 /opt/yaffas/webmin/yaffastheme
+/opt/yaffas/webmin/yui
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}
 
