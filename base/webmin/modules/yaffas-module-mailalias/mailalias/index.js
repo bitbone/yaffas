@@ -43,11 +43,11 @@ Aliases.prototype.setupTable = function() {
         key: "user",
         label: _("lbl_user"),
         sortable: true,
-    }, {
+    }/*, {
         key: "folder",
         label: _("lbl_destination_dir"),
         sortable: true
-    }
+    }*/
 	];
 		
 	this.table = new Yaffas.Table({
@@ -92,7 +92,14 @@ Aliases.prototype.savedForm = function(url, args) {
 			break;
 		case "edit.cgi":
 			if (args["to"]) {
-				Yaffas.list.add("del_to", args.to, "/mailalias/edit.cgi");
+                if (YAHOO.lang.isArray(args.to)) {
+                    for (var i = 0; i < args.to.length; ++i) {
+                        Yaffas.list.add("del_to", args.to[i], "/mailalias/edit.cgi");
+                    }
+                }
+                else {
+                    Yaffas.list.add("del_to", args.to, "/mailalias/edit.cgi");
+                }
 				Yaffas.ui.resetTab();
 			}
 			else if (args["del_to"]) {
