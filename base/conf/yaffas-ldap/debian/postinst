@@ -153,6 +153,9 @@ case "$1" in
 			sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
 		done
 
+		MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
+		sed -e "s/--MYCRYPTPW--/$MYCRYPTPW/" -i /etc/ldap/slapd.conf
+
 		#write ldap.settings
 		echo "BASEDN=$BASE" >$LDAP_SETTINGS
 		echo "USERSEARCH=uid">>$LDAP_SETTINGS
