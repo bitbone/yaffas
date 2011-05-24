@@ -341,7 +341,7 @@ sub replace_entry($$$;$) {
 Works neaerly the same way like replace_entry(), but you'll have to pass the array reference CHANGES.
 Have a look at Net::LDAP::modify for examples of the CHANGES structure.
 
-Example: Bitkit::LDAP::replace_entries("sepp", [add => [faxNumber=>42], delete => [mail=>[]]])
+Example: Yaffas::LDAP::replace_entries("sepp", [add => [faxNumber=>42], delete => [mail=>[]]])
 
 =cut
 

@@ -80,7 +80,7 @@ sub get_proxy {
 =item set_proxy ( USER, PASS, PROXYIP / PROXYDOMAIN, PORT )
 
 set_proxy sets the Proxy Configuration in the apt configuration, wget configuration.
-if set_proxy is used on a bitkit/MAIL or bitkit/GATE it also sets the proxy for kav.
+if set_proxy is used on a yaffas/MAIL or yaffas/GATE it also sets the proxy for kav.
 
 throws exception on error.
 

@@ -252,7 +252,7 @@ sub is_free_product( $ ){
 
 =item _setup_key (FILE, PRODUCT)
 
-insert key in bitkit and set it up
+insert key in yaffas and set it up
 
 =cut
 

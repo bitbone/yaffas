@@ -856,7 +856,7 @@ sub auth_srv_ldap($)
 	
 	my $chash = $conf->get_cfg_values();
 	if ($auth eq 'activate') {
-		$chash->{$prod} = "bitkit|AUTH v1.00";
+		$chash->{$prod} = "yaffas|AUTH v1.00";
 	}
 	else {
 		delete $chash->{$prod};
@@ -1250,7 +1250,7 @@ CONFIG_HASH = hashref to config file parameters
  Should be empty for local LDAP.
  I<Must> contain necessary values for remote (ldap_bind_user, ldap_host).
  I<Must> contain ldap_bind_passwd for ADS.
- If the hashref does not contain searchbases, etc. for remote LDAP, same values as for bitkit LDAP are used.
+ If the hashref does not contain searchbases, etc. for remote LDAP, same values as for yaffas LDAP are used.
 
 =cut
 
@@ -1290,7 +1290,7 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_protocol'} = 'ldaps';
 	$cfg_values->{'ldap_port'} = '636';
 	$cfg_values->{'ldap_user_search_filter'} = '(&(objectClass=posixAccount)(objectClass=zarafa-user))';
-	$cfg_values->{'ldap_group_search_filter'} = '(&(objectClass=posixGroup)(!(|(cn=bitkitmail)(cn=bkusers)(cn=Domain Admins)(cn=Print Operators)(cn=Domain Users)(cn=Domain Computers)(cn=Domain Guests)(cn=Administrators)(cn=Account Operators)(cn=Backup Operators)(cn=Replicators)(cn=nogroup))))';
+	$cfg_values->{'ldap_group_search_filter'} = '(&(objectClass=posixGroup)(!(|(cn=yaffasmail)(cn=bkusers)(cn=Domain Admins)(cn=Print Operators)(cn=Domain Users)(cn=Domain Computers)(cn=Domain Guests)(cn=Administrators)(cn=Account Operators)(cn=Backup Operators)(cn=Replicators)(cn=nogroup))))';
 	$cfg_values->{'ldap_user_unique_attribute'} = 'uid';
 	$cfg_values->{'ldap_group_unique_attribute'} = 'cn';
 	$cfg_values->{'ldap_emailaddress_attribute'} = 'mail';

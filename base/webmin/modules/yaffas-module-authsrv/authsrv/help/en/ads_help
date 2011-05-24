@@ -1,6 +1,6 @@
 help_user=Explanation about additional user
  
- To be able to read entries from Active Directory, the bitkit server needs a user with sufficient privileges. This can be a simple user account.
+ To be able to read entries from Active Directory, the yaffas server needs a user with sufficient privileges. This can be a simple user account.
 
  If you change this uesr's password please remember to reenter the new data here, too.
 

@@ -124,7 +124,7 @@ sub get_lang ($) {
 
 =item load_modules_lang ()
 
-Loads language files for all loaded bitkit modules.
+Loads language files for all loaded yaffas modules.
 
 =cut
 

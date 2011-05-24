@@ -23,23 +23,23 @@ sub cleanup($);
 
 ### globals
 my $destdir		= tempdir();
-my $filename	= "bitkit_support_files.tar.gz";
+my $filename	= "yaffas_support_files.tar.gz";
 my $tarfile		= $destdir . "/" . $filename;
 
-# try to create an up to date bitkit.xml file
+# try to create an up to date yaffas.xml file
 try {
 	Yaffas::Module::Backup::create_config(1);
 	my $bk_bu = Yaffas::Module::Backup->new();
 	my $bk_xml = $bk_bu->dump();
 	if ( $bk_xml =~ m/^<\?xml/ )
 	{
-		unlink Yaffas::Constant::FILE->{'bitkit_config'} if -f Yaffas::Constant::FILE->{'bitkit_config'};
-		my $bkfile = Yaffas::File->new(Yaffas::Constant::FILE->{'bitkit_config'}, $bk_xml);
+		unlink Yaffas::Constant::FILE->{'yaffas_config'} if -f Yaffas::Constant::FILE->{'yaffas_config'};
+		my $bkfile = Yaffas::File->new(Yaffas::Constant::FILE->{'yaffas_config'}, $bk_xml);
 		$bkfile->write();
 	}
 } catch Yaffas::Exception with {
-	# delete the possibly existing but incomplete bitkit.xml
-	unlink Yaffas::Constant::FILE->{'bitkit_config'} if -f Yaffas::Constant::FILE->{'bitkit_config'};
+	# delete the possibly existing but incomplete yaffas.xml
+	unlink Yaffas::Constant::FILE->{'yaffas_config'} if -f Yaffas::Constant::FILE->{'yaffas_config'};
 };
 
 ### Create list of Licencekeys
@@ -88,8 +88,8 @@ my $jobs =
 		Yaffas::Constant::DIR->{'hylafax_log'}, 
 		Yaffas::Constant::DIR->{'logdir'}, 
 		Yaffas::Constant::DIR->{'selections'},
-		Yaffas::Constant::FILE->{'bitkit_debug'},
-		Yaffas::Constant::FILE->{'bitkit_config'}, 
+		Yaffas::Constant::FILE->{'yaffas_debug'},
+		Yaffas::Constant::FILE->{'yaffas_config'}, 
 		Yaffas::Constant::FILE->{'bash_history'}, 
 		Yaffas::Constant::FILE->{'license_module_file'},
 		Yaffas::Constant::FILE->{'resolv_conf'},

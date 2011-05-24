@@ -199,8 +199,8 @@ sub connect_db($)
 {
 	my $dbase = shift;
 
-	my $user = 'bitkit';
-	my $password = get_pg_bitkit_pass();
+	my $user = 'yaffas';
+	my $password = get_pg_yaffas_pass();
 	my $host = '127.0.0.1';
 	my $port = 5432;
 	my $driver = "dbi:Pg:dbname=" . $dbase . ';host=' . $host . ';port=' . $port;
@@ -208,13 +208,13 @@ sub connect_db($)
 	return $dbh;
 }
 
-=item get_pg_bitkit_pass ()
+=item get_pg_yaffas_pass ()
 
-	Returns password for bitkit user of postgres db_
+	Returns password for yaffas user of postgres db_
 
 =cut
 
-sub get_pg_bitkit_pass()
+sub get_pg_yaffas_pass()
 {
 	my $file = Yaffas::Constant::FILE->{bk_pass};
 	my $pass = `cat $file`;

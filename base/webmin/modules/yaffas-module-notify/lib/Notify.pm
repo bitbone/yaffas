@@ -21,7 +21,7 @@ Yaffas::Module::Notify
 
 =head1 DESCRIPTION
 
-bitkit Module for Notify
+yaffas Module for Notify
 
 =head1 FUNCTIONS
 

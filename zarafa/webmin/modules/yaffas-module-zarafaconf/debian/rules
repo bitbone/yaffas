@@ -62,7 +62,7 @@ binary-arch: build install
 	dh_testroot
 	dh_installchangelogs
 	dh_installdocs
-	dh_install -X .svn t/* /usr/share/bitkit-test/bbzarafaconf
+	dh_install -X .svn t/* /usr/share/yaffas-test/zarafaconf
 	dh_installexamples
 	dh_link
 	dh_strip

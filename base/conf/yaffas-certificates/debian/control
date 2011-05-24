@@ -8,5 +8,5 @@ Standards-Version: 3.6.1
 Package: yaffas-certificates
 Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends} yaffas-install-lib, yaffas-core
-Description: Default bitkit certificates
- Default bitkit certificates
+Description: Default yaffas certificates
+ Default yaffas certificates

@@ -12,7 +12,7 @@ Yaffas::init_webmin();
 
 chomp(my $tar = `./create_backup.pl`);
 
-unless(Yaffas::UI::download_to_client($tar, "bitkit_support_files.tar.gz")) {
+unless(Yaffas::UI::download_to_client($tar, "yaffas_support_files.tar.gz")) {
 	header();
 	Yaffas::UI::error_box("Cant find your support file");
 	footer();

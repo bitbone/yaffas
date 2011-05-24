@@ -1,9 +1,9 @@
-Summary: Default bitkit certificates
+Summary: Default yaffas certificates
 Name: yaffas-certificates
 Version: 1.2.1
 Release: 2
 License: Commercial
-Url: http://www.bitkit.com
+Url: http://www.yaffas.org
 Group: Applications/System
 Source: file://%{name}-%{version}.tar.gz
 BuildArch: noarch
@@ -11,7 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: yaffas-install-lib
 
 %description
-Default bitkit certificates
+Default yaffas certificates
 
 %build
 make %{?_smp_mflags}

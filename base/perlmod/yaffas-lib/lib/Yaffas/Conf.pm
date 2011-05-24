@@ -31,7 +31,7 @@ use Data::Dumper;
 
 our $TESTDIR = "";
 
-sub DEFAULT {Yaffas::Constant::FILE->{bitkit_config}};
+sub DEFAULT {Yaffas::Constant::FILE->{yaffas_config}};
 
 our $DEBUG = 1;
 
@@ -39,7 +39,7 @@ our $DEBUG = 1;
 
 =head1 NAME
 
-Yaffas::Conf is a interface to the bitkit configuration file
+Yaffas::Conf is a interface to the yaffas configuration file
 
 =head1 SYNOPSIS
 
@@ -200,7 +200,7 @@ sub _read_file {
 
 =item test_products
 
-This tests if the current xml conaints only the installed bitkit products and nothing less.
+This tests if the current xml conaints only the installed yaffas products and nothing less.
 
 =cut
 
@@ -500,7 +500,7 @@ sub _decode {
 
 This routine returns the requested information as a hashref.
 If you don't pass the optional parameters, it will return 
-a complete dump of bitkit.xml
+a complete dump of yaffas.xml
 
 =cut
 

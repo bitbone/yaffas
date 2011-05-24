@@ -1,7 +1,7 @@
-longdesc=Licensekey (Insert License in System and Shows Informations)
-desc_de=bitkit Lizenzschlüssel
-desc_en=bitkit Licence Key
-name=bblicencekey
+longdesc=Licensekey (Insert license in system and show Information)
+desc_de=yaffas Lizenzschlüsselverwaltung
+desc_en=yaffas license key management
+name=licensekey
 category=license
-desc=bitkit Licence Key
+desc=yaffas license key management
 version=0.1

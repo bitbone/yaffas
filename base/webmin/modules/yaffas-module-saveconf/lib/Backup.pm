@@ -50,7 +50,7 @@ use Yaffas::Module::Backup;
 
     new( )
     dump( )
-    restore( BITKIT_XML )
+    restore( YAFFAS_XML )
 
 =head1 DESCRIPTION
 
@@ -94,8 +94,8 @@ sub check_product_keys()
 
 =item dump( )
 
-This routine returns an array containing our bitkit.xml our user wants to download
-and the total size of bitkit.xml.
+This routine returns an array containing our yaffas.xml our user wants to download
+and the total size of yaffas.xml.
 
 =cut
 
@@ -113,7 +113,7 @@ sub dump()
 
 	my $back = "bkbackup";
 
-	create_config() unless (-r Yaffas::Constant::FILE->{bitkit_config});
+	create_config() unless (-r Yaffas::Constant::FILE->{yaffas_config});
 
 	## lets save the product version...
 	# first wie need a new section
@@ -135,7 +135,7 @@ sub dump()
 	}
 
 
-	# now we gonna fill /etc/bitkit.xml with the values of $self->{'backup'}
+	# now we gonna fill /etc/yaffas.xml with the values of $self->{'backup'}
 	# first we need a new section
 	my $bks = $bkc->section($back);
 
@@ -179,7 +179,7 @@ sub dump()
 
 	$bkc->save();
 
-	my $bkfile = Yaffas::File->new(Yaffas::Constant::FILE->{'bitkit_config'});
+	my $bkfile = Yaffas::File->new(Yaffas::Constant::FILE->{'yaffas_config'});
 	my $conffile = $bkfile->get_content_singleline();
 
 	### and now we return the config to it's original state again :)
@@ -191,8 +191,8 @@ sub dump()
 
 =item write_config( CONTENT )
 
-This routine writes the given content in our /etc/bitkit.xml. B<CONTENT> has to be
-the content of bitkit.xml given from the user. (NOT THE FILENAME - THE CONTENT!!!)
+This routine writes the given content in our /etc/yaffas.xml. B<CONTENT> has to be
+the content of yaffas.xml given from the user. (NOT THE FILENAME - THE CONTENT!!!)
 
 =cut
 
@@ -200,8 +200,8 @@ sub write_config {
 	my ($self, $backup) = @_;
 
 	# write the config
-	unlink Yaffas::Constant::FILE->{'bitkit_config'} if -f Yaffas::Constant::FILE->{'bitkit_config'};
-	open(FILE, ">", Yaffas::Constant::FILE->{'bitkit_config'} . ".upload");
+	unlink Yaffas::Constant::FILE->{'yaffas_config'} if -f Yaffas::Constant::FILE->{'yaffas_config'};
+	open(FILE, ">", Yaffas::Constant::FILE->{'yaffas_config'} . ".upload");
 	print FILE $backup;
 	close(FILE);
 
@@ -209,32 +209,32 @@ sub write_config {
 
 =item check_installed_products
 
-returns true if the installed products are the same as descripedd in Yaffas::Constant::FILE->{'bitkit_config'}
+returns true if the installed products are the same as descripedd in Yaffas::Constant::FILE->{'yaffas_config'}
 else false
 
 =cut
 
 sub check_installed_products{
-	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{'bitkit_config'} . ".upload" );
+	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{'yaffas_config'} . ".upload" );
 	return "notconf" unless (defined($bkc));  
 	return $bkc->test_products();
 }
 
 =item check_faxtype
 
-returns faxtype, defined in uploaded bitkit.xml
+returns faxtype, defined in uploaded yaffas.xml
 
 =cut
 
 sub check_faxtype{
-	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{'bitkit_config'} . ".upload" );
+	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{'yaffas_config'} . ".upload" );
 	return undef unless defined $bkc;
         return (defined($bkc->eicon_defined()))? "EICON" : "AVM";
 }
 
 =item B<restore( )>
 
-restores the settings of /etc/bitkit.xml to the system
+restores the settings of /etc/yaffas.xml to the system
 
 =cut
 
@@ -243,7 +243,7 @@ sub restore($)
 	my $self = shift;
 
 	# apply the config
-	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{bitkit_config} . ".upload");
+	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{yaffas_config} . ".upload");
 	return undef if (! defined($bkc) );
 	$bkc->apply();
 	$self->{'errors'} = $bkc->{'Errors'} if $bkc->{'Errors'};
@@ -534,11 +534,11 @@ sub _set_files
 sub create_config($) {
 	my $delete = shift;
 
-	return if(-r Yaffas::Constant::FILE->{bitkit_config} and $delete == 0); # file exists and should not be deleted.
-	unlink Yaffas::Constant::FILE->{bitkit_config} if ($delete);
+	return if(-r Yaffas::Constant::FILE->{yaffas_config} and $delete == 0); # file exists and should not be deleted.
+	unlink Yaffas::Constant::FILE->{yaffas_config} if ($delete);
 
 	my @files;
-	find(sub{push @files, $_ if /^\w*\.pm$/}, Yaffas::Constant::DIR->{bitkit_module});
+	find(sub{push @files, $_ if /^\w*\.pm$/}, Yaffas::Constant::DIR->{yaffas_module});
 	my $prefix = "Yaffas::Module";
 	my $bke = Yaffas::Exception->new();
 

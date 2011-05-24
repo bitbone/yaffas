@@ -1,7 +1,7 @@
 longdesc=Mail Queue
 desc_de=Mail Warteschlange
 desc_en=Mail Queue
-name=bbmailq
+name=mailq
 category=mailserver
 desc=Mail Queue
 version=0.1

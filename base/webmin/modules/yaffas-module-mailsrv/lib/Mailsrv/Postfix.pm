@@ -413,7 +413,7 @@ sub set_archive($) {
 	my $archive = shift;
 	if (defined($archive)) {
 	throw Yaffas::Exception("err_archive_name")
-		unless (grep {$_ eq $archive} Yaffas::UGM::get_users("bitkitmail") or Yaffas::Check::email($archive));
+		unless (grep {$_ eq $archive} Yaffas::UGM::get_users("yaffasmail") or Yaffas::Check::email($archive));
 	}
 	_set_value("always_bcc", $archive);
 }

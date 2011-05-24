@@ -68,10 +68,10 @@ nisMapName: netgroup.byhost
 objectClass: top
 objectClass: nisMap
 
-dn: cn=bitkitmail,ou=Group,BASE
+dn: cn=yaffasmail,ou=Group,BASE
 objectClass: posixGroup
 objectClass: top
-cn: bitkitmail
+cn: yaffasmail
 userPassword:: e2NyeXB0fXg=
 gidNumber: 80
 

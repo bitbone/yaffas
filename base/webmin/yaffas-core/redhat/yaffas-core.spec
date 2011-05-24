@@ -7,7 +7,7 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 Patch0:		multipart.patch
 Patch1:		session.patch
-Patch2:		bitkit.patch
+Patch2:		yaffas.patch
 Patch3:		login.patch
 BuildArch:	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot

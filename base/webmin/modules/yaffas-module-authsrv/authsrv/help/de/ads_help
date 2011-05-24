@@ -1,6 +1,6 @@
 help_user=Erklärung für zusätzlichen Benutzer
  
- Um Einträge aus dem Active Directory lesen zu können, benötigt der bitkit Server Zugangsdaten für ein Benutzerkonto. Dies kann ein einfacher Benutzer sein.
+ Um Einträge aus dem Active Directory lesen zu können, benötigt der yaffas Server Zugangsdaten für ein Benutzerkonto. Dies kann ein einfacher Benutzer sein.
 
  Bedenken Sie, dass Sie nach einer Passwortänderung des Benutzers auch hier die Daten erneut eingeben müssen.
 

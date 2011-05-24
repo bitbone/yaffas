@@ -12,7 +12,7 @@ Requires:	yaffas-install-lib, perl, yaffas-core, yaffas-module-authsrv, yaffas-m
 AutoReqProv: no
 
 %description
-Module for manageing users of bitkit.
+Module for managing yaffas users.
 
 %build
 make %{?_smp_mflags}

@@ -1,7 +1,7 @@
 longdesc=yaffas notification
 desc_de=Meldungen
 desc_en=Notification
-name=bbnotify
+name=notify
 category=maintenance
 desc=yaffas notification
 version=0.1

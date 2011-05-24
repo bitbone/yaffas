@@ -39,7 +39,7 @@ use Yaffas::Fax
 
 =head1 DESCRIPTION
 
-Yaffas::Fax provides functions for bitkit/FAX
+Yaffas::Fax provides functions for yaffas/FAX
 
 =head1 FUNCTIONS
 

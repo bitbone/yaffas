@@ -313,7 +313,7 @@ sub download_to_client ($$)
 		my @info = stat(DLFILE);
 		my $length = $info[7];
 		my $blksize = $info[11] || 16384;
-		print "Content-type: application/bitkit-filedownload\n";
+		print "Content-type: application/yaffas-filedownload\n";
 		print "Content-length: $length\n";
 		print "Content-Disposition: filename=$displayname\n\n";
 

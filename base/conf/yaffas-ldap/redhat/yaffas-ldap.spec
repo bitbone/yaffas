@@ -1,7 +1,7 @@
 Name:		yaffas-ldap
 Version:	0.9.0
 Release:	1%{?dist}
-Summary:	Converts LDAP configuration
+Summary:	LDAP configuration for yaffas
 Group:		Application/System
 License:	AGPL
 URL:		http://www.yaffas.orgg
@@ -144,7 +144,7 @@ if [ "$1" = 1 ] ; then
 	rm $LDIF
 
 	# generate password for LDAP
-	OURPASSWD="$(mkpasswd)"
+	OURPASSWD="$(mkpasswd -s 0)"
 
 for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
 	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
