@@ -9,7 +9,7 @@ use Yaffas::Check;
 use Yaffas::Exception;
 use Yaffas::Product;
 use Yaffas::Constant;
-use Yaffas::Service qw(CLAMAV_FRESHCLAM RESTART)
+use Yaffas::Service qw(CLAMAV_FRESHCLAM RESTART);
 
 our @ISA = ("Yaffas::Module");
 
