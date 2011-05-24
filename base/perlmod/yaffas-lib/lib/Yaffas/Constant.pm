@@ -91,6 +91,7 @@ use constant {
 		"wget_conf" => "/etc/wgetrc",
 		"kav_conf" => "/etc/kav/kav_updater.conf",
 		"passwd" => "/etc/passwd",
+		"group" => "/etc/group",
 		"crontab" => "/etc/crontab",
 		"smbldap_bind_conf" => "/etc/smbldap-tools/smbldap_bind.conf",
 		"ldap_secret" => "/etc/ldap.secret",

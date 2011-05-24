@@ -577,6 +577,8 @@ sub gecos($;$$) {
 
 =item user_exists_local
 
+Checks if user exists in local passdb
+
 =cut
 
 sub user_exists_local($){
@@ -591,6 +593,23 @@ sub user_exists_local($){
 	return exists $cfg->{$user};
 }
 
+=item group_exists_local
+
+Checks if group exists in local passdb
+
+=cut
+
+sub group_exists_local($){
+	my $group = shift;
+	my $file = Yaffas::File::Config->new( Yaffas::Constant::FILE()->{group},
+									 {
+									  -SplitPolicy => 'custom',
+									  -SplitDelimiter => ':',
+									 }
+								   );
+	my $cfg = $file->get_cfg_values();
+	return exists $cfg->{$group};
+}
 
 =item get_local_users
 
@@ -630,7 +649,7 @@ sub get_user_entries(;$) {
 			my $min_uid = 501;
 			$min_uid = 500 if Yaffas::Constant::OS eq 'RHEL5';
 
-			if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody") {
+			if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody" && !user_exists_local($username)) {
 				push (@theusers, $username);
 			}
 		}
@@ -743,7 +762,7 @@ sub get_user_entries_full {
 		my $min_uid = 501;
 		$min_uid = 500 if Yaffas::Constant::OS eq 'RHEL5';
 
-		if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody") {
+		if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody" && ! user_exists_local($username)) {
 			$theusers->{$username} = { uid => $uid, gid => $gid, gecos => $gecos };
 		}
 	}
@@ -812,7 +831,7 @@ sub get_groups () {
 		@admin_groups = @{Yaffas::Constant::MISC->{admin_groups}};
 	}
 	return grep {$_} map {(/^(.*):.*:(.*):.*$/ &&
-				   ($2 >= 501 &&  $2 < 65000) ||
+				   ($2 >= 501 &&  $2 < 65000) && !group_exists_local($1) ||
 				   (grep {$1 eq $_} @admin_groups))
 				   ? $1 : undef} @{ getent("group") };
 }
