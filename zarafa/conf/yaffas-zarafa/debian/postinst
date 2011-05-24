@@ -69,7 +69,14 @@ case "$1" in
 	#	echo "Listen 443" >> /etc/apache2/ports.conf
 	#fi
 
-    sed -e 's/DAGENT_ENABLED=no/DAGENT_ENABLED=yes/' -i /etc/default/zarafa-dagent
+    if [ -f /etc/default/zarafa-dagent ]; then
+        sed -e 's/DAGENT_ENABLED=no/DAGENT_ENABLED=yes/' -i /etc/default/zarafa-dagent
+    fi
+
+    # In Zarafa 7 this option is merged into a global config file
+    if [ -f /etc/default/zarafa ]; then
+        sed -e 's/DAGENT_ENABLED=no/DAGENT_ENABLED=yes/' -i /etc/default/zarafa
+    fi
 
 	# optimize memory
 
