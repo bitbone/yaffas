@@ -63,7 +63,7 @@ Users.prototype.setupMenu = function() {
 			}
 		}*/);
 	}
-	else if (auth_type() === "Active Directory") {
+	else if (auth_type() === "Active Directory" && Yaffas.PRODUCTS.indexOf("fax") >= 0) {
 		i.push({
 			text: _("lbl_filetype"),
 			onclick: {
