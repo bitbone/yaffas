@@ -5,6 +5,7 @@ use warnings;
 
 use Yaffas::Module::About;
 use Yaffas::UI;
+use Yaffas::UI::Webmin;
 use Yaffas::Exception;
 use Error qw(:try);
 
@@ -19,7 +20,7 @@ sub show_panels {
 			$Cgi->Tr(
 				[
 					$Cgi->td([
-						$Cgi->h2($main::text{lbl_index_header}),
+						$Cgi->h2($main::text{"lbl_about_".Yaffas::UI::Webmin::get_theme()}),
 						$Cgi->h2($main::text{loadavg_title})
 					]),
 					$Cgi->td(
