@@ -86,6 +86,12 @@ if [ "$1" = 1 ]; then
 	echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $((MEM/4))\n innodb_log_buffer_size = $((MEM/16))" >> /etc/my.cnf
 	%{__rm} -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
 	sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
+    if uname -m | grep -q "x86_64"; then
+        sed -e 's#^plugin_path=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
+    else
+        sed -e 's#^plugin_path=.*#plugin_path=/usr/lib/zarafa#' -i /etc/zarafa/server.cfg
+    fi
+
  
 	%{__mkdir} -p /data/zarafa/attachments/
 fi
