@@ -150,11 +150,11 @@ case "$1" in
 		OURPASSWD="$(mkpasswd yaffas)"
 
 		for MYFILE in /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap/ldap.conf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
-			sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
+			sed -e "s#--OURPASSWD--#$OURPASSWD#" -i $MYFILE
 		done
 
 		MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
-		sed -e "s/--MYCRYPTPW--/$MYCRYPTPW/" -i /etc/ldap/slapd.conf
+		sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/ldap/slapd.conf
 
 		#write ldap.settings
 		echo "BASEDN=$BASE" >$LDAP_SETTINGS
