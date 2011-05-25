@@ -7,7 +7,7 @@ Group:		Applications/System
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-install-lib, yaffas, yaffas-lib
+Requires:	yaffas-install-lib, yaffas-core, yaffas-lib
 AutoReqProv: no
 
 %description
