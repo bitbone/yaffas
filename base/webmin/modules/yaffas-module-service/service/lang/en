@@ -46,4 +46,4 @@ lbl_every=hourly
 lbl_daily=daily at 
 lbl_minute= minute
 lbl_hour= hour
-lbl_timeserver=Timeserver
+lbl_timeserver=Time Server
