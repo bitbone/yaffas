@@ -164,9 +164,9 @@ done
 
 	# set listening options
 	DEFAULT="/etc/sysconfig/ldap"
-	sed 's/.*SLAPD_LDAP.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
-#	sed 's/.*SLAPD_LDAPS.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPI.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
 	mkdir -p /opt/yaffas/config/
 	echo "method=ldap" > /opt/yaffas/config/alias.cfg
 
