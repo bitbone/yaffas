@@ -127,7 +127,7 @@ sub _set_verify_rcp_config($;$) {
 
 	my $bkc = Yaffas::Conf->new();
 	my $sec = $bkc->section("mailsrv-verify_rcp");
-	my $func = Yaffas::Conf::Function->new("verify_rcp", "Yaffas::Module::Mailsrv::set_verify_rcp");
+	my $func = Yaffas::Conf::Function->new("verify_rcp", "Yaffas::Module::Mailsrv::Postfix::set_verify_rcp");
 	$func->add_param({type => "scalar", param => $action},
 					 {type => "scalar", param => $mailadmin});
 	$sec->del_func("verify_rcp");
@@ -222,7 +222,7 @@ sub _set_smarthost_config($$$) {
 
 	my $bkc = Yaffas::Conf->new();
 	my $sec = $bkc->section("mailsrv-smarthost");
-	my $func = Yaffas::Conf::Function->new("smarthost", "Yaffas::Module::Mailsrv::set_smarthost");
+	my $func = Yaffas::Conf::Function->new("smarthost", "Yaffas::Module::Mailsrv::Postfix::set_smarthost");
 	$func->add_param({type => "scalar", param => $sh},
 					 {type => "scalar", param => $user},
 					 {type => "scalar", param => $pass});
@@ -268,7 +268,7 @@ sub _set_smarthost_routing_config($$) {
 
 	my $bkc = Yaffas::Conf->new();
 	my $sec = $bkc->section("mailsrv-smarthostroute");
-	my $func = Yaffas::Conf::Function->new("smarthost_routing", "Yaffas::Module::Mailsrv::set_smarthost_routing");
+	my $func = Yaffas::Conf::Function->new("smarthost_routing", "Yaffas::Module::Mailsrv::Postfix::set_smarthost_routing");
 	$func->add_param({type => "scalar", param => $route_all},
 					 {type => "scalar", param => $rewrite});
 	$sec->del_func("smarthost");
@@ -511,7 +511,7 @@ sub conf_dump() {
 
 	# Mailserver
 	my $m = get_mailserver();
-	_set_config("mailserver", "Yaffas::Module::Mailsrv::set_mailserver", $m) if ($m);
+	_set_config("mailserver", "Yaffas::Module::Mailsrv::Postfix::set_mailserver", $m) if ($m);
 
 	# Smarthost
 	my ($s, $u, $p) = get_smarthost();
@@ -522,21 +522,21 @@ sub conf_dump() {
 
 	# Accept Relay
 	foreach my $r (get_accept_relay()) {
-		_set_config("relay-$r", "Yaffas::Module::Mailsrv::set_accept_relay", $r);
+		_set_config("relay-$r", "Yaffas::Module::Mailsrv::Postfix::set_accept_relay", $r);
 	}
 
 	my $ms = get_mailsize();
-	_set_config("mailsize", "Yaffas::Module::Mailsrv::set_mailsize", $ms) if ($ms);
+	_set_config("mailsize", "Yaffas::Module::Mailsrv::Postfix::set_mailsize", $ms) if ($ms);
 
 	my $archive = get_archive();
-	_set_config("archive", "Yaffas::Module::Mailsrv::set_archive", $archive) if (defined($archive));
+	_set_config("archive", "Yaffas::Module::Mailsrv::Postfix::set_archive", $archive) if (defined($archive));
 
 	# Accept Domain
 	foreach my $dom (get_accept_domains()) {
-		_set_config("domains-$dom", "Yaffas::Module::Mailsrv::set_accept_domains", $dom) if ( $dom !~ m/^\s*$/);
+		_set_config("domains-$dom", "Yaffas::Module::Mailsrv::Postfix::set_accept_domains", $dom) if ( $dom !~ m/^\s*$/);
 	}
 	if(fetchmail_started() == 1){
-		_set_config("startfetchmail", "Yaffas::Module::Mailsrv::start_fetchmail" );
+		_set_config("startfetchmail", "Yaffas::Module::Mailsrv::Postfix::start_fetchmail" );
 	}
 
 }
