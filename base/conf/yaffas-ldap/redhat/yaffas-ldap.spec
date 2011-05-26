@@ -151,7 +151,7 @@ for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.c
 done
 
 	MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
-	sed -e "s/--MYCRYPTPW--/$MYCRYPTPW/" -i /etc/openldap/slapd.conf
+	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
 
 	#write ldap.settings
 	echo "BASEDN=$BASE" >$LDAP_SETTINGS
