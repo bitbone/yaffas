@@ -386,7 +386,7 @@ sub set_mppmanger_conf($) {
 
 sub get_mailsize() {
 	my $ms = _get_value("message_size_limit");
-	$ms = $ms / 1024 / 1024 if defined($ms);
+	$ms = int($ms / 1024 / 1024) if defined($ms);
 	return $ms;
 }
 
