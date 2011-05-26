@@ -38,7 +38,7 @@ lbl_month=Month
 lbl_date=Date
 lbl_hour=Hour
 lbl_year=Year
-lbl_setdatetime=Systemtime
+lbl_setdatetime=System time
 
 
 lbl_once=now

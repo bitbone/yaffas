@@ -1,7 +1,7 @@
-longdesc=Mailalias configuration
-desc_de=Mailalias Konfiguration
-desc_en=Mailalias configuration
+longdesc=Mail alias configuration
+desc_de=Mail Alias Konfiguration
+desc_en=Mail alias configuration
 name=mailalias
 category=mailserver
-desc=Mailalias configuration
+desc=Mail alias configuration
 version=0.1
