@@ -52,6 +52,14 @@ sub base_settings_form() {
 							)
 						]
 					),
+					$Cgi->td(
+						[
+						$main::text{lbl_mailsize} . ":",
+						$Cgi->textfield( 'mailsize', $cfg{mailsize},
+							15 )
+						. " MB",
+						]
+					),
 
 					check_product("mail")
 					? (
@@ -83,14 +91,6 @@ sub base_settings_form() {
 							[
 								$main::text{lbl_mailadmin} . ":",
 								$Cgi->textfield( 'mailadmin', $cfg{mailadmin} )
-							]
-						),
-						$Cgi->td(
-							[
-								$main::text{lbl_mailsize} . ":",
-								$Cgi->textfield( 'mailsize', $cfg{mailsize},
-									15 )
-								  . " MB",
 							]
 						),
 						$Cgi->td(

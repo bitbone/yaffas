@@ -538,16 +538,20 @@ sub create_config($) {
 	unlink Yaffas::Constant::FILE->{yaffas_config} if ($delete);
 
 	my @files;
-	find(sub{push @files, $_ if /^\w*\.pm$/}, Yaffas::Constant::DIR->{yaffas_module});
+    my $dir = Yaffas::Constant::DIR->{yaffas_module};
+	find(sub{push @files, $File::Find::name if /^\w*\.pm$/}, $dir);
 	my $prefix = "Yaffas::Module";
 	my $bke = Yaffas::Exception->new();
 
 	foreach my $file (@files) {
-		$file =~ s/.pm$//;
 
-		my $sub = "${prefix}::${file}::conf_dump";
-		my $pkg = "${prefix}::$file";
-		$pkg = "${prefix}::Mailsrv::$file" if $file eq 'Postfix';
+		my $pkg = $file;
+		$pkg =~ s/.pm$//;
+		$pkg =~ s/$dir//;
+		$pkg =~ s#/#::#g;
+		$pkg = $prefix."::".$pkg;
+
+		my $sub = $pkg."::conf_dump";
 
 		try {
 			no strict "refs";

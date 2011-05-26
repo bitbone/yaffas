@@ -511,6 +511,8 @@ sub get_zarafa_admin() {
 }
 
 sub conf_dump() {
+	# disable conf_dump function for now
+	return;
 	# Verify Recipient
 	_set_verify_rcp_config(get_verify_rcp());
 
