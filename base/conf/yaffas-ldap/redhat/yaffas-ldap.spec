@@ -8,7 +8,7 @@ URL:		http://www.yaffas.orgg
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect
+Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect, yaffas-certificates
 
 %description
 Edits libnss-ldap.conf, pam-ldap.conf, nsswitch.conf
