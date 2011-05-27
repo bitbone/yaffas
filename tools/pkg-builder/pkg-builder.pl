@@ -27,7 +27,7 @@ sub clean_source($);
 sub usage();
 
 my $source_base = "/home/christof/";
-my $dest_base = "/daten/devel/bitkit/enterprise/packages/";
+my $dest_base = "/daten/devel/yaffas/enterprise/packages/";
 
 my %packages = ();
 my %opts;

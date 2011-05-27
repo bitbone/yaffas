@@ -217,10 +217,10 @@ sub show_pdc_checks() {
 
 sub choose_auth()
 {
-	my @auth_methodes = ( "local_auth", "bitkit_ldap", "ldap", "ads" );
+	my @auth_methodes = ( "local_auth", "yaffas_ldap", "ldap", "ads" );
 
 	# TODO: implement other auth methods for RHEL5
-#	@auth_methodes = ( "files", "ads", "bitkit_ldap", "ldap" ) if Yaffas::Constant::OS eq 'RHEL5';
+#	@auth_methodes = ( "files", "ads", "yaffas_ldap", "ldap" ) if Yaffas::Constant::OS eq 'RHEL5';
 
 	# Figure out the current authentication mechanism and set it as default value of the popup menu
 	my $default;
@@ -238,7 +238,7 @@ sub choose_auth()
 											   -default => $default,
 											   -labels=>{
 												   local_auth=>$main::text{lbl_local_auth},
-											 	   bitkit_ldap=>$main::text{lbl_bk_ldap},
+											 	   yaffas_ldap=>$main::text{lbl_bk_ldap},
 											 	   ldap=>$main::text{lbl_ldap},
 												   pdc=>$main::text{lbl_samba_pdc},
 												   ads=>$main::text{lbl_ad},
@@ -291,7 +291,7 @@ sub remote_ldap(;$)
 
 
 	print $cgi->start_form( {-action=>"check_ldap.cgi"} );
-	print Yaffas::UI::section($method eq "bitkit" ? $main::text{lbl_bk_ldap} : $main::text{lbl_ldap},
+	print Yaffas::UI::section($method eq "yaffas" ? $main::text{lbl_bk_ldap} : $main::text{lbl_ldap},
 							  
 							  $Cgi->h2($main::text{lbl_info}),
 							  
@@ -338,7 +338,7 @@ sub remote_ldap(;$)
 												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_user_base} . ":"),
-												   $cgi->td($method ne "bitkit" ?
+												   $cgi->td($method ne "yaffas" ?
 															(
 															$cgi->textfield("userdn", $main::in{userdn} ? $main::in{userdn} : $values->{userdn}, 40, 150)
 															)
@@ -351,7 +351,7 @@ sub remote_ldap(;$)
 												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_user_attribute} . ":"),
-												   $cgi->td($method ne "bitkit" ?
+												   $cgi->td($method ne "yaffas" ?
 															(
 															 $cgi->textfield("usersearch",
 																			 $main::in{usersearch} ? $main::in{usersearch} : $values->{usersearch},
@@ -368,7 +368,7 @@ sub remote_ldap(;$)
 												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_email} . ":"),
-												   $cgi->td($method ne "bitkit" ?
+												   $cgi->td($method ne "yaffas" ?
 															(
 															 $cgi->textfield("email", $main::in{email} ? $main::in{email} : $values->{email}, 40, 150)
 															)
@@ -381,7 +381,7 @@ sub remote_ldap(;$)
 												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_group_base} . ":"),
-												   $cgi->td($method ne "bitkit" ?
+												   $cgi->td($method ne "yaffas" ?
 															(
 															$cgi->textfield("groupdn", $main::in{groupdn} ? $main::in{groupdn} : $values->{groupdn}, 40, 150)
 															)
@@ -395,7 +395,7 @@ sub remote_ldap(;$)
 										( Yaffas::Product::check_product("fax") || Yaffas::Product::check_product("pdf") ?
 											$cgi->Tr(
 												$cgi->td($main::text{lbl_printop_group}.":" ),
-												$cgi->td($method ne "bitkit" ?
+												$cgi->td($method ne "yaffas" ?
 													(
 														$cgi->textfield(
 															-name => "printop_group",
