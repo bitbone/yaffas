@@ -29,7 +29,7 @@ catch Yaffas::Exception with
 	print Yaffas::UI::all_error_box(shift);
 };
 
-footer("index.cgi?auth=1&auth_methode=bitkit_ldap", $main::text{lbl_bk_ldap});
+footer("index.cgi?auth=1&auth_methode=yaffas_ldap", $main::text{lbl_bk_ldap});
 
 =pod
 

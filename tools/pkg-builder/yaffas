@@ -268,20 +268,11 @@ dest BASE
 #dest BASE
 #</bbupdate-base>
 #
-##<bbbackup-client>
-##source BASE/tools/bitkit_backup
-##dest BASE
-##</bbbackup-client>
-#
 #<bbsvn-version>
 #source BASE/tools/PACKAGE_NAME/
 #dest BASE
 #</bbsvn-version>
 #
-#<bitkit-checklicence>
-#source BASE/base/PACKAGE_NAME/
-#dest BASE
-#</bitkit-checklicence>
 
 ## -------------------------------------------------------------------------- ##
 

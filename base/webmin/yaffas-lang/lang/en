@@ -25,7 +25,7 @@ err_file_rename=Could not rename the following files:
 err_file_symlink=Could not create symlink for the following files:
 err_file_write=Could not write the following files:
 err_user_exists=Could not find the following users:
-err_license_expired_text=Your bitkit license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use.
+err_license_expired_text=Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use.
 err_name_is_alias=There is already an alias with this name:
 err_alias_is_user=There is already a user with this name:
 
@@ -44,11 +44,11 @@ lbl_done=done
 lbl_apply_filter=Filter
 lbl_delete=delete
 
-lbl_product_mail=bitkit|MAIL
-lbl_product_fax=bitkit|FAX
-lbl_product_gate=bitkit|GATE
-lbl_product_pdf=bitkit|PDF
-lbl_product_fileserver=bitkit|FILE
+lbl_product_mail=yaffas|MAIL
+lbl_product_fax=yaffas|FAX
+lbl_product_gate=yaffas|GATE
+lbl_product_pdf=yaffas|PDF
+lbl_product_fileserver=yaffas|FILE
 
 longcategory_accounts=Modules for configuring the system accounts
 longcategory_appearance=Modules to customize the appearance
@@ -70,7 +70,6 @@ lbl_lang_de=German
 lbl_lang_en=English
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
-lbl_about_bitkit=About bitkit
 lbl_about_yaffas=About yaffas
 lbl_about_zadmin=About Z-Admin
 

@@ -23,8 +23,8 @@ if ( $main::in{auth} ) {
 	if ( $methode eq "ldap" ) {
 		remote_ldap();
 	}
-	elsif ( $methode eq "bitkit_ldap" ) {
-		remote_ldap("bitkit");
+	elsif ( $methode eq "yaffas_ldap" ) {
+		remote_ldap("yaffas");
 	}
 	elsif ( $methode eq "local_auth" ) {
 		local_ldap();
