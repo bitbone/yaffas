@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	yaffas-core, yaffas-install-lib
+Requires:	yaffas-core, yaffas-install-lib, zarafa-licensed
 AutoReqProv: no
 
 %description

@@ -96,14 +96,6 @@ if [ "$1" = 1 ]; then
 	%{__mkdir} -p /data/zarafa/attachments/
 fi
 
-##EVIL!!
-#set +e
-#service mysqld start
-#service ldap start
-#service zarafa-server start
-#service zarafa-dagent restart
-#service httpd restart
-
 if [ "$1" = 1 ] ; then
 	#only do this on install, not on upgrade
 	zarafa-admin -s
@@ -135,6 +127,12 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /etc/zarafa/ldap.yaffas.cfg
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
+
+# enable services
+for SERV in zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler; do
+	chkconfig $SERV on
+	service $SERV start
+done
 
 %postun
 for CFG in /etc/zarafa/*.cfg.yaffassave; do
