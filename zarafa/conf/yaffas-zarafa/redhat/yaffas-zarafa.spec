@@ -129,7 +129,7 @@ fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
 # enable services
-for SERV in mysqld zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler; do
+for SERV in mysqld zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
 	chkconfig $SERV on
 	service $SERV start
 done

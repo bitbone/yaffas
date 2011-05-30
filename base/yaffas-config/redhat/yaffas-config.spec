@@ -39,7 +39,7 @@ else
 fi
 
 # enable services
-for SERV in httpd amavisd clamd spamassassin; do
+for SERV in httpd amavisd clamd spamassassin policyd-weight; do
 	chkconfig $SERV on
 	service $SERV start
 done
