@@ -144,7 +144,7 @@ if [ "$1" = 1 ] ; then
 	rm $LDIF
 
 	# generate password for LDAP
-	OURPASSWD="$(mkpasswd -s 0 | sed -e 's#/#.#g')"
+	OURPASSWD="$(mkpasswd -s 0)"
 
 for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
 	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE

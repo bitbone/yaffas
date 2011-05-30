@@ -65,6 +65,7 @@ postmap /opt/yaffas/config/whitelist-postfix
 /opt/yaffas/config/whitelist-amavis
 /opt/yaffas/config/whitelist-postfix
 /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas
+/opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas-debian
 /opt/yaffas/share/doc/example/etc/policyd-weight.conf
 /opt/yaffas/share/doc/example/etc/amavis-master.cf
 /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf
