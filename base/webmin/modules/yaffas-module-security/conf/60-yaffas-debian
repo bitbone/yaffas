@@ -11,9 +11,9 @@ $policy_bank{'MYNETS'} = {   # mail originating from @mynetworks
   final_banned_destiny => D_PASS, # insure banned files pass
 };
 
-@bypass_virus_checks_maps = 1;
+@bypass_virus_checks_maps = (\%bypass_virus_checks, \@bypass_virus_checks_acl, \$bypass_virus_checks_re);
 
-@bypass_spam_checks_maps = 1;
+@bypass_spam_checks_maps = (\%bypass_spam_checks, \@bypass_spam_checks_acl, \$bypass_spam_checks_re);
 
 $sa_tag_level_deflt = undef;
 $sa_tag2_level_deflt = 6.31;
