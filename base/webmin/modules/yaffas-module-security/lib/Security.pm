@@ -188,7 +188,7 @@ sub disable_spamassassin {
 	throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
 	
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_spam_checks_maps");
+	my $num = $f->search_line("\@bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -216,7 +216,7 @@ sub enable_spamassassin {
 	throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
 
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_spam_checks_maps");
+	my $num = $f->search_line("\@bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -244,7 +244,7 @@ sub disable_clamav {
 	throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
 	
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_virus_checks_maps");
+	my $num = $f->search_line("\@bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -271,7 +271,7 @@ sub enable_clamav {
 	throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
 
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_virus_checks_maps");
+	my $num = $f->search_line("\@bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {

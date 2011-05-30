@@ -1,6 +1,6 @@
 Summary:    Module for configuration of mail security options
 Name:       yaffas-module-security
-Version:    0.9.0
+Version:    0.9.1
 Release:    1
 License:    AGPLv3
 Url:        http://www.yaffas.org
@@ -33,19 +33,21 @@ add_license $MODULE ""
 
 #[[ -e /etc/default/spamassassin ]] && sed -e 's/^ENABLED=0/ENABLED=1/' -i /etc/default/spamassassin
 
-%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
-%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
-mkdir -p /etc/amavis/conf.d/
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
+if [ "$1" = 1 ]; then
+	%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
+	%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
+	mkdir -p /etc/amavis/conf.d/
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-if ! id clam | grep -q "amavis"; then
-    usermod -a -G amavis clam
-fi
+	if ! id clam | grep -q "amavis"; then
+		usermod -a -G amavis clam
+	fi
 
-if ! grep -q "amavis" /etc/postfix/master.cf; then
-    cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
+	if ! grep -q "amavis" /etc/postfix/master.cf; then
+		cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
+	fi
 fi
 
 postmap /opt/yaffas/config/whitelist-postfix
