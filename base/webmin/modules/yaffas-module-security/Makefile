@@ -17,6 +17,7 @@ install:
 
 	mkdir -p $(DESTDIR)/etc/amavis/conf.d
 	cp conf/60-yaffas $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/amavis/conf.d/
+	cp conf/60-yaffas-debian $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/amavis/conf.d/
 	cp conf/policyd-weight.conf $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/
 	cp conf/amavis-master.cf $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/
 	cp conf/amavisd-redhat.conf $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/

@@ -759,8 +759,8 @@ sub whitelist_add {
 	if($type eq "email"){
 		wl_amavis_add($what),
 	} elsif($type eq "domain" || $type eq "ip") {
-		wl_amavis_add($what);
 		wl_postfix_add($what);
+		wl_amavis_add($what);
 	}
 }
 

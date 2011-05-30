@@ -34,7 +34,7 @@ case "$1" in
 
     test -f /etc/policyd-weight.conf && mv -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
     cp -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
-    cp -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
+    cp -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas-debian /etc/amavis/conf.d/60-yaffas
 
     if ! id clamav | grep -q "amavis"; then
             usermod -a -G amavis clamav
