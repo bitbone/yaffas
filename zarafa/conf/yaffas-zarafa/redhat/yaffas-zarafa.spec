@@ -64,7 +64,7 @@ Yaffas::Module::ChangeLang::set_lang($lang);
 # a2ensite zarafa-webaccess-ssl
 sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.yaffas.cfg
 OURPASSWD=$(cat /etc/ldap.secret)
-sed -e "s/--OURPASSWD--/$OURPASSWD/g" -i /etc/zarafa/ldap.yaffas.cfg
+sed -e "s#--OURPASSWD--#$OURPASSWD#g" -i /etc/zarafa/ldap.yaffas.cfg
 # 
 # #if ! grep "Listen.*443" /etc/apache2/ports.conf &>/dev/null; then
 # #	echo "Listen 443" >> /etc/apache2/ports.conf
