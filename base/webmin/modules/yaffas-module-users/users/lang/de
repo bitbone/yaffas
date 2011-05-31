@@ -13,6 +13,7 @@ err_alias_name=Der Alias ist ungültig.
 err_alias_mailbox=Um Aliase verwenden zu können, benötigt der User eine Mailbox.
 err_never_user=Der ausgewählte Benutzername ist bereits vom System reserviert.
 err_quota_number=Der Quotawert muss eine Zahl sein!
+err_quota_negative=Der Quotawert muss positiv sein!
 err_unknown_domain=Die Domäne ist in der Mailserver Konfiguration nicht als lokale Domäne definiert.
 err_mail_loc_host=Domänenanteil der E-Mail Adresse darf nicht localhost sein.
 lbl_usermanagment=Benutzerverwaltung
