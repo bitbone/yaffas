@@ -31,8 +31,6 @@ MODULE="security"
 add_webmin_acl $MODULE
 add_license $MODULE ""
 
-#[[ -e /etc/default/spamassassin ]] && sed -e 's/^ENABLED=0/ENABLED=1/' -i /etc/default/spamassassin
-
 if [ "$1" = 1 ]; then
 	%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
@@ -48,9 +46,13 @@ if [ "$1" = 1 ]; then
 	if ! grep -q "amavis" /etc/postfix/master.cf; then
 		cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
 	fi
+
+	touch /opt/yaffas/config/whitelist-amavis
+
+	chcon -R -t postfix_etc_t /opt/yaffas/config/postfix/
+	postmap /opt/yaffas/config/postfix/whitelist-postfix
 fi
 
-postmap /opt/yaffas/config/whitelist-postfix
 
 %postun
 %{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
@@ -62,8 +64,6 @@ postmap /opt/yaffas/config/whitelist-postfix
 /opt/yaffas/lib/perl5/Yaffas/Module/Security.pm
 /opt/yaffas/config/channels.cf
 /opt/yaffas/config/channels.keys
-/opt/yaffas/config/whitelist-amavis
-/opt/yaffas/config/whitelist-postfix
 /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas
 /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas-debian
 /opt/yaffas/share/doc/example/etc/policyd-weight.conf

@@ -128,7 +128,7 @@ sub enable_policy {
 
 	_set_postfix("smtpd_helo_required", "yes");
 	_set_postfix("smtpd_delay_reject", "yes");
-	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
+	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
 
 	control(POSTFIX(), RESTART());
 }

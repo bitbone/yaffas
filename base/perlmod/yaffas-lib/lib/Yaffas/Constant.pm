@@ -246,7 +246,7 @@ use constant {
 		"amavis_conf" => "/etc/amavis/conf.d/60-yaffas",
 		"channels_cf" => "/opt/yaffas/config/channels.cf",
 		"channels_keys" => "/opt/yaffas/config/channels.keys",
-		"wl_postfix" => "/opt/yaffas/config/whitelist-postfix",
+		"wl_postfix" => "/opt/yaffas/config/postfix/whitelist-postfix",
 		"wl_amavis" => "/opt/yaffas/config/whitelist-amavis",
 	}
 };
