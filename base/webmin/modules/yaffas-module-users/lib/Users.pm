@@ -135,13 +135,19 @@ sub get_zarafa_stores(){
 	my @stores;
 	if (Yaffas::Product::check_product('zarafa')) {
 		my @out = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'zarafa_admin'},"-l");
-		shift @out; # remove first line with heading
-		shift @out; # remove second line with heading
+		my $body = 0;
 		foreach my $line (@out) {
-			if ($line =~ m/\t(.+)\t\t.*/) {
-				my $val = $1;
-				Encode::from_to($val, "iso-8859-15", "utf-8");
-				push @stores, $val;
+			if($body) {
+				if ($line =~ m/^\s+([^\s]+)\s*/ && $body) {
+					my $val = $1;
+					Encode::from_to($val, "iso-8859-15", "utf-8");
+					push @stores, $val;
+				}
+			} else {
+				if ($line =~ m/^\s+-+$/) {
+					# end of header
+					$body = 1;
+				}
 			}
 		}
 	}
