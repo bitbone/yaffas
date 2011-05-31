@@ -65,6 +65,7 @@ try {
 		control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
 		control(GOGGLETYKE, START);
 		control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
+		system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 		control(USERMIN, RESTART);
 		control(POSTFIX, RESTART);
 
