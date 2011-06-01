@@ -68,12 +68,16 @@ Resources.prototype.setupTable = function(){
         onclick: {
             fn: this.editResource.bind(this)
         },
-    }, {
-        text: _("lbl_delresource"),
-        onclick: {
-            fn: this.deleteResource.bind(this)
-        },
     }];
+
+	if (auth_type() === "local LDAP") {
+		menuitems.push({
+			text: _("lbl_delresource"),
+			onclick: {
+				fn: this.deleteResource.bind(this)
+			},
+		});
+	}
     
     this.menu = new Yaffas.Menu({
         container: "menu",

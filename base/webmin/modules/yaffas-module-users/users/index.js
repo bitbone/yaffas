@@ -63,6 +63,14 @@ Users.prototype.setupMenu = function() {
 			}
 		}*/);
 	}
+	else if (auth_type() === "Active Directory") {
+	    i.push({
+			text: _("lbl_convert_to_zarafa_resource"),
+			onclick: {
+				fn: this.convertToZarafaResource.bind(this)
+			}
+		});
+	}
 	else if (auth_type() === "Active Directory" && Yaffas.PRODUCTS.indexOf("fax") >= 0) {
 		i.push({
 			text: _("lbl_filetype"),

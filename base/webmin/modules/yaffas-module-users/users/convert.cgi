@@ -21,8 +21,6 @@ Yaffas::init_webmin();
 header();
 ReadParse();
 
-print Yaffas::UI::error_box("Action disabled!");
-
 my @uids = split( /\0/, $main::in{user} );
 
 try {
