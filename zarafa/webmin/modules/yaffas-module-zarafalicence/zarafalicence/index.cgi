@@ -32,7 +32,7 @@ try {
 		push @footer, "", $main::text{BBMODULEDESC};
 	}
 	elsif (defined($main::in{archiverlicense})) {
-		Yaffas::Module::ZarafaLicence::install_archiverey($main::in{archiverlicense});
+		Yaffas::Module::ZarafaLicence::install_archiverkey($main::in{archiverlicense});
 		print Yaffas::UI::ok_box();
 		push @footer, "", $main::text{BBMODULEDESC};
 	}
