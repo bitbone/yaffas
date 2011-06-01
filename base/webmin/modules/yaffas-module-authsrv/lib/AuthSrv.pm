@@ -634,6 +634,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$postfix_settings->{query_filter} = '(zarafaAliases=%s)';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "aliases");
 
+		Yaffas::UGM::create_group_aliases();
+
 		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("file");
 
 	}
