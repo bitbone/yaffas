@@ -118,7 +118,7 @@ Users.prototype.setupUI = function(){
 
 Users.prototype.savedForm = function(f, args) {
     var u = args["login_"];
-    var e = $("sendas_");
+    var e = $("sendas_user_");
 	switch(f) {
 		case "check_newuser.cgi": {
             if (e !== undefined && u !== undefined) {

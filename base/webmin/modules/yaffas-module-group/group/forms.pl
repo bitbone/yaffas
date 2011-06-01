@@ -114,19 +114,20 @@ sub show_edit_groups {
                             $main::text{lbl_email}.":",
                             $Cgi->input({-name=>"mail", -value => $email}),
                             ]),
-                        $Cgi->td([
-                            $main::text{lbl_sendas}.":",
-                            $Cgi->scrolling_list(
-                                -name => "sendas",
-                                -id => "sendas",
-                                -size => 5,
-                                -values => [Yaffas::UGM::get_users()],
-                                -default => \@sendas,
-                                -multiple => 1,
-                                -style => "width: 20em",
+						# disable this for now until zarafa says if this is possible
+						#$Cgi->td([
+                        #    $main::text{lbl_sendas}.":",
+                        #    $Cgi->scrolling_list(
+                        #        -name => "sendas",
+                        #        -id => "sendas",
+                        #        -size => 5,
+                        #        -values => [Yaffas::UGM::get_users()],
+                        #        -default => \@sendas,
+                        #        -multiple => 1,
+                        #        -style => "width: 20em",
 
-                            )
-                            ]),
+                        #    )
+                        #    ]),
                         ]),
 				 );
 		  } @$groups

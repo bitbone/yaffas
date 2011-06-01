@@ -29,7 +29,7 @@ try {
 	    Yaffas::Module::Group::set_groups_filetype(@groups, @filetypes);
         foreach my $g (@groups) {
             Yaffas::UGM::set_email($g, $main::in{mail}, "group");
-            Yaffas::UGM::set_send_as($g, [split /\0/, $main::in{sendas}], "group");
+			#Yaffas::UGM::set_send_as($g, [split /\0/, $main::in{sendas}], "group");
         }
 	    print Yaffas::UI::ok_box();
 	}

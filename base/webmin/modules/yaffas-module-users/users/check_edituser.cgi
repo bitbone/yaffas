@@ -34,7 +34,8 @@ for (keys %main::in) {
 					 mailgroup => $main::in{'mailgroup_' . $uid},
 					 filetype => $main::in{'filetype_' . $uid},
 					 group => [ split(/\0/, $main::in{'group_' . $uid}) ],
-					 sendas => [ split(/\0/, $main::in{'sendas_' . $uid}) ],
+					 sendas_user => [ split(/\0/, $main::in{'sendas_user_' . $uid}) ],
+					 sendas_group => [ split(/\0/, $main::in{'sendas_group_' . $uid}) ],
 					 aliases => [ split /\s*,\s*/, $main::in{'alias_'.$uid} ],
 					 zarafaquota => $main::in{'zarafaquota_'.$uid},
 					 zarafaadmin => $main::in{'zarafaadmin_'.$uid},
@@ -160,13 +161,11 @@ try {
 			}
 		}
 
-        if (defined($info{$_}->{sendas})) {
             try {
-                Yaffas::UGM::set_send_as($login, $info{$_}->{sendas});
+                Yaffas::UGM::set_send_as($login, $info{$_}->{sendas_user}, $info{$_}->{sendas_group});
             } catch Yaffas::Exception with {
                 $e->append(shift);
             };
-        }
 
 		if (Yaffas::Product::check_product("zarafa") || Yaffas::Auth::is_auth_srv()) {
 			try {

@@ -35,12 +35,14 @@ my $givenname = $main::in{givenname_};
 my $surname = $main::in{surname_};
 my $filetype = $main::in{filetype_};
 my $group = $main::in{group_};
-my $sendas = $main::in{sendas_};
+my $sendas_user = $main::in{sendas_user_};
+my $sendas_group = $main::in{sendas_group_};
 my $delalias = $main::in{'delalias'};
 my $zarafaquota = $main::in{zarafaquota_};
 my $zarafaadmin = $main::in{zarafaadmin_};
 my $zarafashared = $main::in{zarafashared_};
-my @sendas = split /\0/, ($sendas || "");
+my @sendas_user = split /\0/, ($sendas_user || "");
+my @sendas_group = split /\0/, ($sendas_group || "");
 my @groups = split /\0/, ($group || "");
 my @aliases = split /\s*,\s*/, ($main::in{alias_} || "");
 my @never_users = @{ Yaffas::Constant::MISC->{"never_users"} };
@@ -143,7 +145,7 @@ try {
             }
         );
 
-        Yaffas::UGM::set_send_as($user, [@sendas]);
+        Yaffas::UGM::set_send_as($user, \@sendas_user, \@sendas_group);
 	} catch Yaffas::Exception with {
 		my $e = shift;
 		Yaffas::UGM::rm_user($user);

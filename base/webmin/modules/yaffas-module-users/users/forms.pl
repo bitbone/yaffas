@@ -91,7 +91,9 @@ sub _edit_user($$\@\@;$){
 	}
 
     my @users = Yaffas::UGM::get_users();
-    my @sendas = Yaffas::UGM::get_send_as($login);
+    my @groups = Yaffas::UGM::get_groups();
+
+    my ($sendas_users, $sendas_groups) = Yaffas::UGM::get_send_as($login);
 
 	print section(
 				  $msg,
@@ -175,19 +177,6 @@ sub _edit_user($$\@\@;$){
 												 ]),
                                          } sort keys %{$Yaffas::Module::Users::ADDITIONAL_VALUES}),
 										$Cgi->td([
-												  $main::text{lbl_sendas}.":",
-												  $Cgi->scrolling_list(
-																	   -name => "sendas_" . $uid,
-                                                                       -id => "sendas_",
-																	   -size => 5,
-																	   -values => [grep {$_ ne $login} @users],
-																	   -default => \@sendas,
-																	   -multiple => 1,
-																	   -style => "width: 20em",
-
-																	  )
-												 ]),
-										$Cgi->td([
 												  $main::text{lbl_groups}.":",
 												  $Cgi->scrolling_list(
 																	   -name => "group_" . $uid,
@@ -257,7 +246,38 @@ sub _edit_user($$\@\@;$){
 										) : "", ## end if
 									   ])
 							 ),
-				 );
+							 $Cgi->h2($main::text{lbl_sendas}),
+							 $Cgi->table(
+								 $Cgi->Tr([
+									 $Cgi->td([
+										 $main::text{lbl_sendas_user}.":",
+										 $Cgi->scrolling_list(
+											 -name => "sendas_user_" . $uid,
+											 -id => "sendas_user_",
+											 -size => 5,
+											 -values => [grep {$_ ne $login} @users],
+											 -default => $sendas_users,
+											 -multiple => 1,
+											 -style => "width: 20em",
+
+										 )
+										 ]),
+									 $Cgi->td([
+										 $main::text{lbl_sendas_group}.":",
+										 $Cgi->scrolling_list(
+											 -name => "sendas_group_" . $uid,
+											 -id => "sendas_group_",
+											 -size => 5,
+											 -values => \@groups,
+											 -default => $sendas_groups,
+											 -multiple => 1,
+											 -style => "width: 20em",
+
+										 )
+										 ]),
+									 ])
+							 ),
+						 );
 
 }
 

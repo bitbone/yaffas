@@ -1589,48 +1589,65 @@ sub get_additional_value {
     return (Yaffas::LDAP::search_attribute("user", $login, $key))[0];
 }
 
+=item get_send_as LOGIN
+
+Returns two array refs with all sendas users for specified LOGIN
+
+=cut
+
 sub get_send_as {
-    my $login = shift;
-    my $type = shift;
+	my $login = shift;
 
-    my @uids;
-    if ($type eq "group") {
-        @uids = Yaffas::LDAP::search_attribute("grouponly", $login, "zarafaSendAsPrivilege");
-    }
-    else {
-        @uids = Yaffas::LDAP::search_attribute("user", $login, "zarafaSendAsPrivilege");
-    }
-    my @ret;
+	my @dn = Yaffas::LDAP::search_attribute("user", $login, "zarafaSendAsPrivilege");
+	my @users;
+	my @groups;
 
-    foreach my $uid (@uids) {
-        push @ret, get_username_by_uid($uid);
-    }
-    return @ret;
+	foreach my $d (@dn) {
+		my $uid = (Yaffas::LDAP::search_entry_dn($d, "uid"))[0];
+
+		if (not defined $uid or $uid eq "") {
+			# search for group
+			my $name = (Yaffas::LDAP::search_entry_dn($d, "cn", "(objectClass=zarafa-group)"))[0];
+			push @groups, $name if defined $name;
+		}
+		else {
+			push @users, $uid;
+		}
+	}
+	return \@users, \@groups;
 }
 
+=item set_send_as LOGIN USERS GROUPS
+
+Sets the send as options for user LOGIN.
+
+=cut
+
 sub set_send_as {
-    my $login = shift;
-    my $values = shift;
-    my $type = shift;
+	my $login = shift;
+	my $users = shift;
+	my $groups = shift;
 
-    throw Yaffas::Exception("err_values") unless ref $values eq "ARRAY";
+	throw Yaffas::Exception("err_values") unless ref $users eq "ARRAY";
+	throw Yaffas::Exception("err_values") unless defined $groups or ref $groups eq "ARRAY";
 
-    my @idvals;
+	my @idvals;
 
-    for my $v (@{$values}) {
-        my $uid = get_uid_by_username($v);
-        push @idvals, $uid if ($uid >= 0);
-    }
+	for my $v (@{$users}) {
+		my $dn = (Yaffas::LDAP::search_attribute("user", $v, "dn"))[0];
+		push @idvals, $dn if (defined $dn);
+	}
 
-    if (Yaffas::Product::check_product("zarafa")) {
-        if ($type eq "group") {
-            Yaffas::LDAP::replace_entry($login, "zarafaSendAsPrivilege", \@idvals, "Group");
-        }
-        else {
-            Yaffas::LDAP::replace_entry($login, "zarafaSendAsPrivilege", \@idvals);
-        }
-        system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
-    }
+	for my $v (@{$groups}) {
+		my $dn = (Yaffas::LDAP::search_attribute("grouponly", $v, "dn"))[0];
+		push @idvals, $dn if (defined $dn);
+	}
+
+	if (Yaffas::Product::check_product("zarafa")) {
+		Yaffas::LDAP::replace_entry($login, "zarafaSendAsPrivilege", \@idvals);
+
+		system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
+	}
 }
 
 =item create_group_aliases
