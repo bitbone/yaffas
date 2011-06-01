@@ -516,7 +516,7 @@ sub spam_update {
 	my @cmd = (Yaffas::Constant::APPLICATION->{sa_update},
 			'--channelfile', Yaffas::Constant::FILE->{channels_cf},
 # 			'--gpgkeyfile',  Yaffas::Constant::FILE->{channels_keys},
-			'--nogpg', '-v');
+			'--nogpg');
 
 	my ($out, $err) = Yaffas::backquote_out_err(@cmd, "no-daemon");
 	push @$err, @$out;
