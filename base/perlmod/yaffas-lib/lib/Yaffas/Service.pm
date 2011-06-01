@@ -506,7 +506,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				POSTFIX(), => "/usr/libexec/postfix/master",
 				APACHE(), => "/usr/sbin/httpd",
 				POSTGRESQL() => "/usr/bin/postmaster",
-				WINBIND() => "/usr/sbin/winbindd",
+				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim",
 				SPAMASSASSIN() => "/usr/bin/spamd",
 				);
