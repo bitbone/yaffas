@@ -492,6 +492,11 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 				$conf->splice_line($linenr, 1, "$ip\t$hostname.$newdom\t$hostname");
 			}
 
+			$linenr = $conf->search_line(qr/^127.0.0.1\s+.*localhost/);
+			if (not $linenr) {
+				$conf->add_line("127.0.0.1 localhost.localdomain localhost");
+			}
+
 			$conf->write()
 				or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
 
