@@ -124,7 +124,6 @@ if [ "$1" = 1 ] ; then
 	semodule_package -o /tmp/zarafa.pp -m /tmp/zarafa.mod
 	semodule -i /tmp/zarafa.pp
 fi
-%{__rm} -f /etc/zarafa/ldap.yaffas.cfg
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
 # enable services
