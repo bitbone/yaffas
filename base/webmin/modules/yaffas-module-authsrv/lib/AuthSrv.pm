@@ -492,6 +492,11 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 				$conf->splice_line($linenr, 1, "$ip\t$hostname.$newdom\t$hostname");
 			}
 
+			$linenr = $conf->search_line(qr/^127.0.0.1\s+.*localhost/);
+			if (not $linenr) {
+				$conf->add_line("127.0.0.1 localhost.localdomain localhost");
+			}
+
 			$conf->write()
 				or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
 
@@ -633,6 +638,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 		$postfix_settings->{query_filter} = '(zarafaAliases=%s)';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "aliases");
+
+		Yaffas::UGM::create_group_aliases();
 
 		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("file");
 
@@ -1298,6 +1305,8 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_groupmembers_attribute_type'} = 'name';
 	$cfg_values->{'ldap_loginname_attribute'} = 'uid';
 	$cfg_values->{'ldap_bind_passwd'} = Yaffas::LDAP::get_passwd();
+	$cfg_values->{'ldap_sendas_attribute_type'} = "text";
+	$cfg_values->{'ldap_sendas_relation_attribute'} = "uidNumber";
 
 	if ($type eq LOCAL_LDAP) {
 		$basedn = Yaffas::LDAP::get_local_domain();
@@ -1344,6 +1353,8 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_search_base'} = $basedn;
 		$cfg_values->{'ldap_user_type_attribute_value'} = "user";
 		$cfg_values->{'ldap_group_type_attribute_value'} = "group";
+		$cfg_values->{'ldap_sendas_attribute_type'} = "dn";
+		$cfg_values->{'ldap_sendas_relation_attribute'} = "distinguishedName";
 
 	} else {
 		$exception->add("err_invalid_authtype", "$type");

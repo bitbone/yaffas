@@ -484,6 +484,12 @@ sub set_postfix_ldap($$) {
 										 ) or throw Yaffas::Exception("err_file_write");
 	my $ls_ref = $ls_file->get_cfg_values();
 
+	for (keys %{$ls_ref}) {
+		if(!defined $postfix_settings->{$_} || $postfix_settings->{$_} eq '') {
+			delete $ls_ref->{$_};
+		}
+	}
+
 	for (keys %{$postfix_settings}) {
 		if(!defined $postfix_settings->{$_} || $postfix_settings->{$_} eq '') {
 			delete $ls_ref->{$_};

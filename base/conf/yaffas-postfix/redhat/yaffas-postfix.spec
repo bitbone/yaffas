@@ -30,7 +30,7 @@ if [ "$1" = 1 ] ; then
 	%{__mv} -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
 	%{__mv} -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf /etc/postfix/master.cf
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 
 	CONF=/etc/postfix
@@ -75,5 +75,6 @@ service postfix restart
 /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf
 /opt/yaffas/share/doc/example/etc/postfix/main.cf
 /opt/yaffas/share/doc/example/etc/postfix/master.cf
+/opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf
 
 %changelog

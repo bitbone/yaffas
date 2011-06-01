@@ -309,6 +309,8 @@ sub sa_tag2_level {
 	$line = '$sa_tag2_level_deflt = ' . $set . ';';
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(AMAVIS(), RESTART());
 }
 
 
@@ -333,7 +335,8 @@ sub sa_kill_level {
 	$line = '$sa_kill_level_deflt = ' . $set . ';';
 	$y->splice_line($num, 1, $line);
 	$y->save();
-	
+
+	control(AMAVIS(), RESTART());
 }
 
 
@@ -513,7 +516,7 @@ sub spam_update {
 	my @cmd = (Yaffas::Constant::APPLICATION->{sa_update},
 			'--channelfile', Yaffas::Constant::FILE->{channels_cf},
 # 			'--gpgkeyfile',  Yaffas::Constant::FILE->{channels_keys},
-			'--nogpg', '-v');
+			'--nogpg');
 
 	my ($out, $err) = Yaffas::backquote_out_err(@cmd, "no-daemon");
 	push @$err, @$out;
@@ -568,6 +571,8 @@ sub spam_add_trusted_network {
 	$line .= " $host";
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(SPAMASSASSIN(), RESTART());
 }
 
 
@@ -589,6 +594,8 @@ sub spam_del_trusted_network {
 
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(SPAMASSASSIN(), RESTART());
 }
 
 
