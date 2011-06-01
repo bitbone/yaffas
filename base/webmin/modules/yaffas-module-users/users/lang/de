@@ -60,4 +60,6 @@ lbl_businessphone=Firmennummer
 lbl_location=Ort
 lbl_faxnumber=Fax
 lbl_department=Abteilung
-lbl_sendas=Senden als erlauben
+lbl_sendas=Senden als
+lbl_sendas_user=Für Benutzer erlauben
+lbl_sendas_group=Für Gruppe erlauben
