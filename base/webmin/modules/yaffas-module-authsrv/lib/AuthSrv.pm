@@ -1298,6 +1298,8 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_groupmembers_attribute_type'} = 'name';
 	$cfg_values->{'ldap_loginname_attribute'} = 'uid';
 	$cfg_values->{'ldap_bind_passwd'} = Yaffas::LDAP::get_passwd();
+	$cfg_values->{'ldap_sendas_attribute_type'} = "text";
+	$cfg_values->{'ldap_sendas_relation_attribute'} = "uidNumber";
 
 	if ($type eq LOCAL_LDAP) {
 		$basedn = Yaffas::LDAP::get_local_domain();
@@ -1344,6 +1346,8 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_search_base'} = $basedn;
 		$cfg_values->{'ldap_user_type_attribute_value'} = "user";
 		$cfg_values->{'ldap_group_type_attribute_value'} = "group";
+		$cfg_values->{'ldap_sendas_attribute_type'} = "dn";
+		$cfg_values->{'ldap_sendas_relation_attribute'} = "distinguishedName";
 
 	} else {
 		$exception->add("err_invalid_authtype", "$type");
