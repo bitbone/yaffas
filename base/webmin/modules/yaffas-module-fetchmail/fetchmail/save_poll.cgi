@@ -132,15 +132,17 @@ Yaffas::Service::control(Yaffas::Service::FETCHMAIL(), Yaffas::Service::RESTART(
 footer();
 
 sub enable_daemon() {
-	my $fetchmail_conf = Yaffas::File->new(Yaffas::Constant::FILE->{'fetchmail_default_conf'})
-                or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{'fetchmail_default_conf'});
+	if(Yaffas::Constant::OS eq "Ubuntu") {
+		my $fetchmail_conf = Yaffas::File->new(Yaffas::Constant::FILE->{'fetchmail_default_conf'})
+					or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{'fetchmail_default_conf'});
 
-        my $linenr = $fetchmail_conf->search_line(qr/^\s*START_DAEMON\s*=/);
-        if ( defined($linenr)) {
-                $fetchmail_conf->splice_line($linenr, 1, "START_DAEMON=yes");
-        	$fetchmail_conf->write();
-        } else {
-		throw Yaffas::Exception("err_enable_fetchmail");
+			my $linenr = $fetchmail_conf->search_line(qr/^\s*START_DAEMON\s*=/);
+			if ( defined($linenr)) {
+					$fetchmail_conf->splice_line($linenr, 1, "START_DAEMON=yes");
+				$fetchmail_conf->write();
+			} else {
+			throw Yaffas::Exception("err_enable_fetchmail");
+		}
 	}
 }
 
