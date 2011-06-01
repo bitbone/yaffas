@@ -224,7 +224,14 @@ Restore.prototype.setupTable = function() {
         }
     ];
 
-    var menu = new Yaffas.Menu({ container: "restoretablemenu", trigger: "lst_restore", items: i, multiselect: true });
+    this.restoremenu = new Yaffas.Menu({ container: "restoretablemenu", trigger: "lst_restore", items: i, multiselect: true });
+}
+
+Restore.prototype.cleanup = function() {
+	if (this.restoremenu) {
+		this.restoremenu.destroy();
+		this.restoremenu = null;
+	}
 }
 
 /* ------------------------------------------------------------------------ */
@@ -575,6 +582,11 @@ Backup.prototype.cleanup = function() {
         this.foldermenu.destroy();
         this.foldermenu = null;
     }
+	if (this.messagemenu) {
+        this.messagemenu.destroy();
+        this.messagemenu = null;
+	}
+	this.restore.cleanup();
 }
 
 Backup.prototype.savedForm = function(file) {

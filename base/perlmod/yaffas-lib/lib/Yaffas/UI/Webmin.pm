@@ -55,11 +55,13 @@ sub get_lang_name () {
 	my $bkcfgfile;
 	my $lang;
 
-	if ($main::gconfig{product} eq "webmin") {
-		return $main::gconfig{lang} if defined $main::gconfig{lang};
-	} else {
-		return $main::gconfig{"lang_".$ENV{REMOTE_USER}} if defined $main::gconfig{"lang_".$ENV{REMOTE_USER}};
-		return $main::gconfig{lang} if defined $main::gconfig{lang};
+	if (exists $main::gconfig{product}) {
+		if ($main::gconfig{product} eq "webmin") {
+			return $main::gconfig{lang} if defined $main::gconfig{lang};
+		} else {
+			return $main::gconfig{"lang_".$ENV{REMOTE_USER}} if defined $main::gconfig{"lang_".$ENV{REMOTE_USER}};
+			return $main::gconfig{lang} if defined $main::gconfig{lang};
+		}
 	}
 	return "en";
 }

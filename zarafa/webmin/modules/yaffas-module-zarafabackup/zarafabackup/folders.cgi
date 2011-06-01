@@ -18,7 +18,7 @@ my $s = Yaffas::Module::ZarafaBackup::Store->new($backup, $store);
 
 my $folders = $s->getFolders();
 
-print to_json({"Response" => $folders});
+print to_json({"Response" => $folders}, {latin1 => 1});
 
 =pod
 
