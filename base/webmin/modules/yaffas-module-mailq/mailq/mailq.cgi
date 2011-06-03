@@ -17,12 +17,10 @@ my $mailq = Yaffas::do_back_quote( Yaffas::Constant::APPLICATION->{mailq} );
 my $entries = Yaffas::Module::Mailq::parse_mailq($mailq);
 
 my @return_array;
-my $line;
-my $i = 0;
 
 if (ref $entries eq "ARRAY") {
 
-    foreach $line (@{$entries}) {
+    foreach my $line (@{$entries}) {
         my @recv = grep {!/\(.*\)/} @{$line->{remaining_rcpts}};
         my @err = grep {/\(.*\)/} @{$line->{remaining_rcpts}};
         push @return_array, {
