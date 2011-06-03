@@ -46,6 +46,9 @@ case "$1" in
 		touch /opt/yaffas/config/postfix/whitelist-postfix
 		postmap /opt/yaffas/config/postfix/whitelist-postfix
 
+		invoke-rc.d spamassassin restart
+		invoke-rc.d amavis restart
+
 	fi
 
     ;;
