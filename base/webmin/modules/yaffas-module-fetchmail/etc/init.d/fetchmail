@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# FETCHMAIL Control Script
+# chkconfig: 2345 99 01
+# Description: startup/shutdown script for RedHat systems
+#
+# processname: fetchmail
+# config: /etc/fetchmailrc
+#
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+# Source networking configuration.
+. /etc/sysconfig/network
+
+args="-f /etc/fetchmailrc -L /var/log/fetchmail.log"
+prog="fetchmail"
+RETVAL=0
+
+# Defining arguments.
+start() {
+    echo -n "Starting $prog: "
+    su fetchmail -s /bin/sh -c "$prog $args"
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+stop() {
+    echo -n "Stopping $prog: "
+    su fetchmail -s /bin/sh -c "fetchmail --quit"
+    RETVAL=$?
+    echo
+    return $RETVAL
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status $prog
+    ;;
+  restart|reload)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $prog {start|stop|restart|reload|status}"
+    exit 2
+esac
+
+exit $?
+

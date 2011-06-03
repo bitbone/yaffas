@@ -47,7 +47,7 @@ sub get_category_name ($$) {
 
 =item lang get_lang_name (void)
 
-returns the curretn active language
+returns the current active language
 
 =cut
 
@@ -55,13 +55,28 @@ sub get_lang_name () {
 	my $bkcfgfile;
 	my $lang;
 
-	if ($main::gconfig{product} eq "webmin") {
-		return $main::gconfig{lang} if defined $main::gconfig{lang};
-	} else {
-		return $main::gconfig{"lang_".$ENV{REMOTE_USER}} if defined $main::gconfig{"lang_".$ENV{REMOTE_USER}};
-		return $main::gconfig{lang} if defined $main::gconfig{lang};
+	if (exists $main::gconfig{product}) {
+		if ($main::gconfig{product} eq "webmin") {
+			return $main::gconfig{lang} if defined $main::gconfig{lang};
+		} else {
+			return $main::gconfig{"lang_".$ENV{REMOTE_USER}} if defined $main::gconfig{"lang_".$ENV{REMOTE_USER}};
+			return $main::gconfig{lang} if defined $main::gconfig{lang};
+		}
 	}
 	return "en";
+}
+
+=item lang get_theme (void)
+
+returns the current theme
+
+=cut
+
+sub get_theme () {
+    my $theme = $main::gconfig{theme};
+    $theme =~ s/theme$//;
+    return $theme if $theme;
+    return "yaffas";
 }
 
 =item get_lang ( MODULE )
@@ -111,7 +126,7 @@ sub get_lang ($) {
 
 =item load_modules_lang ()
 
-Loads language files for all loaded bitkit modules.
+Loads language files for all loaded yaffas modules.
 
 =cut
 

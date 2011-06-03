@@ -313,7 +313,7 @@ sub download_to_client ($$)
 		my @info = stat(DLFILE);
 		my $length = $info[7];
 		my $blksize = $info[11] || 16384;
-		print "Content-type: application/bitkit-filedownload\n";
+		print "Content-type: application/yaffas-filedownload\n";
 		print "Content-length: $length\n";
 		print "Content-Disposition: filename=$displayname\n\n";
 
@@ -399,6 +399,8 @@ sub small_form($) {
     my $input_label = $h->{-input_label} || $h->{input_label}  || "";
     my $input_value = $h->{-input_value} || $h->{input_value}  || "";
     my $hide_add = $h->{-hide_add} || $h->{hide_add} || 0;
+    my $input_field = $h->{-input_field} || $h->{input_field} || \&CGI::textfield;
+    my $input_options = $h->{-input_options} || $h->{input_options} || {};
 
     my @content;
     if ($h->{-content}) {
@@ -416,7 +418,7 @@ sub small_form($) {
 	    $Cgi->Tr([
 		      $Cgi->td([
 				$input_label,
-				$Cgi->textfield($input_name, $input_value),
+				&{$input_field}({ -name => $input_name, -value => $input_value, -values => $input_value, %{$input_options} }),
 				$hide_add ? undef : $Cgi->submit('submit', $main::text{lbl_add})
 			       ]),
 		     ]),

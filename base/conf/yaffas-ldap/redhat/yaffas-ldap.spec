@@ -1,14 +1,14 @@
 Name:		yaffas-ldap
-Version:	0.7.0
+Version:	0.9.0
 Release:	1%{?dist}
-Summary:	Converts LDAP configuration
+Summary:	LDAP configuration for yaffas
 Group:		Application/System
 License:	AGPL
 URL:		http://www.yaffas.orgg
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common
+Requires:	nscd, openldap-servers, nss_ldap, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect, yaffas-certificates
 
 %description
 Edits libnss-ldap.conf, pam-ldap.conf, nsswitch.conf
@@ -23,8 +23,20 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 set -e
 
+DOMAIN=$(hostname -d 2> /dev/null || echo "")
+
+if [ -z "$DOMAIN" ]; then
+    DOMAIN="yaffas.local"
+fi
+
+if ! echo $DOMAIN | grep -q "\."; then
+    DOMAIN="$DOMAIN.local"
+fi
+
+echo "Using $DOMAIN for LDAP tree"
+
 function _get_base() {
-	ARRAY=(`hostname -d | cut -d. -f1- --output-delimiter=\ `)
+	ARRAY=(`echo ${DOMAIN} | cut -d. -f1- --output-delimiter=\ `)
 	COUNT=${#ARRAY[*]}
 	BASE=""
 	ORG=""
@@ -79,7 +91,7 @@ CONF="/etc/ldap.conf"
 NSS="/etc/nsswitch.conf"
 SLAPD="/etc/openldap/slapd.conf"
 LDAPS="/etc/ldap.secret"
-LDIF="/tmp/bitkit_base.ldif"
+LDIF="/tmp/yaffas_base.ldif"
 DOMRENAME_FILE="/tmp/slapcat.ldif"
 LDAPCONF="/etc/openldap/ldap.conf"
 SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
@@ -117,7 +129,6 @@ if [ "$1" = 1 ] ; then
 	echo "Removing old LDAP Database"
 	rm -rf /var/lib/ldap/*
 
-	DOMAIN=`hostname -d`
 	echo "Executing domrename.pl ... $DOMAIN $LDIF"
 	sed -e "s/NEWSID/$SID/" -i $LDIF
 	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
@@ -132,26 +143,37 @@ if [ "$1" = 1 ] ; then
 	rm -f $DOMRENAME_FILE
 	rm $LDIF
 
+	# generate password for LDAP
+	OURPASSWD="$(mkpasswd -s 0)"
+
+for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
+done
+
+	MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
+	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
+
 	#write ldap.settings
 	echo "BASEDN=$BASE" >$LDAP_SETTINGS
 	echo "USERSEARCH=uid">>$LDAP_SETTINGS
 	echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
 	echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
-	echo "LDAPSECRET=ro%bitkit" >> $LDAP_SETTINGS
+	echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
 	echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
 	echo "EMAIL=mail" >> $LDAP_SETTINGS
 
 	# set listening options
 	DEFAULT="/etc/sysconfig/ldap"
-	sed 's/.*SLAPD_LDAP.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
-#	sed 's/.*SLAPD_LDAPS.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPI.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
+	sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
 	mkdir -p /opt/yaffas/config/
 	echo "method=ldap" > /opt/yaffas/config/alias.cfg
 
 	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
 		if [ -f /etc/openldap/DB_CONFIG.example ]; then
 			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+			chown ldap:ldap /var/lib/ldap/DB_CONFIG
 		fi
 	fi
 
@@ -169,7 +191,7 @@ else
 fi
 
 # this can always be done...
-service ldap start
+#service ldap start
 
 # wait max 5 seconds for ldap to coming up. else we try it anyway...
 SLEEP_COUNT=0
@@ -183,14 +205,8 @@ chmod 440 $CONF
 chmod 640 $LDAPS
 chown root:ldapread $CONF
 chown root:ldapread $LDAPS
-chown root:ldapread /etc/ldap.conf
 
 rm -f $LDIF
-
-if [ "$1" = 1 ] ; then
-	# add group bkusers (needed at least for Yaffas::UGM::add_user)
-	smbldap-groupadd -g 500 -a bkusers
-fi
 
 # enabled ldap service
 chkconfig ldap on
@@ -225,6 +241,6 @@ rm -rf $RPM_BUILD_ROOT
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap.conf
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap_bind.conf
 %config %attr(750,root,root) /opt/yaffas/bin/domrename.pl
-/tmp/bitkit_base.ldif
+/tmp/yaffas_base.ldif
 
 %changelog

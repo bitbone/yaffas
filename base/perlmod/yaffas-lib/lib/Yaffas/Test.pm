@@ -21,7 +21,7 @@ $Yaffas::Conf::TESTDIR = $testdir;
 
 =head1 NAME
 
-Yaffas::Test - Testing bitkit modules
+Yaffas::Test - Testing yaffat modules
 
 =head1 SYNOPSIS
 
@@ -32,7 +32,7 @@ Yaffas::Test - Testing bitkit modules
 
 =head1 DESCRIPTION
 
-Yaffas::Test is an module which helps you with testing bitkit modules.
+Yaffas::Test is an module which helps you with testing yaffas modules.
 It changes the root directory of Yaffas::File, so that you can safely apply changes to any file.
 
 =head1 METHODS

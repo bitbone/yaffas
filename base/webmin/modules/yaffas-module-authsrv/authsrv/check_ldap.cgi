@@ -9,7 +9,7 @@ use Yaffas::UI;
 use Yaffas::Exception;
 use Error qw(:try);
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX);
+use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN WEBMIN POSTFIX);
 use Yaffas::UGM;
 use Yaffas::Constant;
 
@@ -70,8 +70,23 @@ try {
 			Yaffas::Service::control(GOGGLETYKE, START);
 			Yaffas::Service::control(SAMBA, RESTART);
 			Yaffas::Service::control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
+			system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 			Yaffas::Service::control(USERMIN, RESTART);
 			Yaffas::Service::control(POSTFIX, RESTART);
+			# fork, because we have to restart webmin
+			my $pid = fork;
+			if ($pid == 0) {
+				# child
+				try {
+					Yaffas::Service::control(WEBMIN, RESTART);
+				} catch Yaffas::Exception with {
+					print Yaffas::UI::all_error_box(shift);
+				};
+			} else {
+				# parent
+				wait;
+			}
+
 			print Yaffas::UI::ok_box();
 		} else {
 			remote_ldap_confirm_sambasid ($sambasids_available);

@@ -5,8 +5,20 @@
 
 set -e
 
+DOMAIN=$(hostname -d 2> /dev/null || echo "")
+
+if [ -z "$DOMAIN" ]; then
+    DOMAIN="yaffas.local"
+fi
+
+if ! echo $DOMAIN | grep -q "\."; then
+    DOMAIN="$DOMAIN.local"
+fi
+
+echo "Using $DOMAIN for LDAP tree"
+
 function _get_base() {
-	ARRAY=(`hostname -d | cut -d. -f1- --output-delimiter=\ `)
+	ARRAY=(`echo $DOMAIN | cut -d. -f1- --output-delimiter=\ `)
 	COUNT=${#ARRAY[*]}
 	BASE=""
 	ORG=""
@@ -81,7 +93,7 @@ case "$1" in
 	NSS="/etc/nsswitch.conf"
 	SLAPD="/etc/ldap/slapd.conf"
 	LDAPS="/etc/ldap.secret"
-	LDIF="/tmp/bitkit_base.ldif"
+	LDIF="/tmp/yaffas_base.ldif"
 	DOMRENAME_FILE="/tmp/slapcat.ldif"
 	LDAPCONF="/etc/ldap/ldap.conf"
 	SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
@@ -120,7 +132,6 @@ case "$1" in
 		echo "Removing old LDAP Database"
 		rm -rf /var/lib/ldap/*
 
-		DOMAIN=`hostname -d`
 		echo "Executing domrename.pl ... $DOMAIN $LDIF"
 		sed -e "s/NEWSID/$SID/" -i $LDIF
 		/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
@@ -134,13 +145,23 @@ case "$1" in
 		chown -R openldap:openldap /var/lib/ldap/
 		rm -f $DOMRENAME_FILE
 		rm $LDIF
+	
+		# generate password for LDAP
+		OURPASSWD="$(mkpasswd yaffas)"
+
+		for MYFILE in /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap/ldap.conf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+			sed -e "s#--OURPASSWD--#$OURPASSWD#" -i $MYFILE
+		done
+
+		MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
+		sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/ldap/slapd.conf
 
 		#write ldap.settings
 		echo "BASEDN=$BASE" >$LDAP_SETTINGS
 		echo "USERSEARCH=uid">>$LDAP_SETTINGS
 		echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
 		echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
-		echo "LDAPSECRET=ro%bitkit" >> $LDAP_SETTINGS
+		echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
 		echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
 		echo "EMAIL=mail" >> $LDAP_SETTINGS
 		
@@ -166,7 +187,7 @@ case "$1" in
 	fi
 
     # this can always be done...
-	/etc/init.d/slapd start
+#	/etc/init.d/slapd start
 
 	# wait max 5 seconds for ldap to coming up. else we try it anyway...
 	SLEEP_COUNT=0
@@ -183,11 +204,6 @@ case "$1" in
 	chown root:ldapread /etc/ldap.conf
 
 	rm -f $LDIF
-
-    if [ ! "$2" ]; then
-        # add group bkusers (needed at least for Yaffas::UGM::add_user)
-        smbldap-groupadd -g 500 -a bkusers
-    fi
 
 	;;
 

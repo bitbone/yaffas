@@ -22,12 +22,12 @@ my $pass = $main::in{'pass'};
 header();
 
 try {
-	Yaffas::Module::Proxy::set_proxy($user, $pass, $proxy, $port);
+	Yaffas::Module::Proxy::set_proxy($proxy, $port, $user, $pass);
 	print Yaffas::UI::ok_box();
 } catch Yaffas::Exception with {
 	print Yaffas::UI::all_error_box (shift);
 
-	show_proxy($user, $pass, $proxy, $port);
+	show_proxy($proxy, $port, $user, $pass);
 };
 
 footer();

@@ -1,7 +1,7 @@
-longdesc=bitkit notification
+longdesc=yaffas notification
 desc_de=Meldungen
 desc_en=Notification
-name=bbnotify
-category=maintainance
-desc=bitkit notification
+name=notify
+category=maintenance
+desc=yaffas notification
 version=0.1

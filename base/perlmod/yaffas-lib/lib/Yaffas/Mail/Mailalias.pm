@@ -139,6 +139,10 @@ sub remove {
 	if (@names) {
 		$self->{ALIAS}->{$from} = join ", ", @names;
 	} else {
+		my @users = split /\s*,\s*/, $self->{ALIAS}->{$from};
+		foreach (@users) {
+			$self->{ALIAS_remove}->{$_} = $from;
+		}
 		delete $self->{ALIAS}->{$from};
 	}
 }
@@ -250,7 +254,7 @@ Saves all settings
 
 sub write {
 	my $self = shift;
-	_write($self->{MODE}, %{$self->{ALIAS}});
+	_write($self->{MODE}, $self->{ALIAS}, $self->{ALIAS_remove});
 }
 
 

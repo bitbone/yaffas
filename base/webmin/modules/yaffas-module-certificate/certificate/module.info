@@ -2,6 +2,6 @@ category=system
 desc=Certificate and Key Management
 desc_en=Certificate / Key Management
 desc_de=Zertifikat / Schlüssel Verwaltung
-name=bbcertificate
+name=certificate
 version=0.1
 

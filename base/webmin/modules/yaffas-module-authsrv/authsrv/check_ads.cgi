@@ -7,7 +7,7 @@ use Yaffas::UI qw(ok_box error_box all_error_box);
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Exception;
 use Yaffas::Module::AuthSrv;
-use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX);
+use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN WEBMIN POSTFIX);
 use Error qw(:try);
 use Yaffas::UGM;
 use Yaffas::Constant;
@@ -65,8 +65,23 @@ try {
 		control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
 		control(GOGGLETYKE, START);
 		control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
+		system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 		control(USERMIN, RESTART);
 		control(POSTFIX, RESTART);
+
+	# fork, because we have to restart webmin
+	my $pid = fork;
+	if ($pid == 0) {
+		# child
+		try {
+			Yaffas::Service::control(WEBMIN, RESTART);
+		} catch Yaffas::Exception with {
+			print Yaffas::UI::all_error_box(shift);
+		};
+	} else {
+		# parent
+		wait;
+	}
 
 		print Yaffas::UI::ok_box();
 	}

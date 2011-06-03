@@ -462,7 +462,7 @@ sub set_archive($) {
 	my $archive = shift;
 	if (defined($archive)) {
 	throw Yaffas::Exception("err_archive_name")
-		unless (grep {$_ eq $archive} Yaffas::UGM::get_users("bitkitmail") or Yaffas::Check::email($archive));
+		unless (grep {$_ eq $archive} Yaffas::UGM::get_users("yaffasmail") or Yaffas::Check::email($archive));
 	}
 	_set_value("mail_archive", $archive);
 }
@@ -511,6 +511,8 @@ sub get_zarafa_admin() {
 }
 
 sub conf_dump() {
+	# disable conf_dump function for now
+	return;
 	# Verify Recipient
 	_set_verify_rcp_config(get_verify_rcp());
 

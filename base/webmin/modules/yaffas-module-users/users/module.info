@@ -1,7 +1,7 @@
 longdesc=Authentication for SMB Users
 desc_de=Benutzerverwaltung
 desc_en=User Management
-name=bbusers
+name=users
 category=accounts
 desc=SMB Users
 version=0.1

@@ -4,9 +4,9 @@ lbl_delalias=Remove
 lbl_execute=Execute
 lbl_apply=Apply
 
-lbl_index_header=Mailalias Configuration
+lbl_index_header=Mail alias Configuration
 lbl_return_to_index=Index
-lbl_return_to_cat=Mailserver
+lbl_return_to_cat=Mail server
 
 lbl_delete_confirm=Do you really want to delete the alias(es)?
 lbl_check_bbmailsrv_error=Please enter valid values!
@@ -14,14 +14,14 @@ lbl_check_bbmailsrv_error=Please enter valid values!
 lbl_mailaliases=Mail aliases
 lbl_mailalias=Mail alias
 lbl_destination_dir=Folder
-lbl_destination_usr=User / e-mail address
+lbl_destination_usr=User
 
 lbl_del=Remove
 lbl_user=User
 lbl_or=or
 
 lbl_add=Add
-lbl_mailalias_ad=Configuration of mailaliases is done through active directory.
+lbl_mailalias_ad=Configuration of mail aliases is done through active directory.
 
 err_check_alias=The following usernames or e-mail addresses are not valid.
 err_already_exists=This alias already exists.
@@ -31,4 +31,4 @@ err_nothing=Nothing selected
 err_alias_is_user=Alias exists as user.
 err_select_only_one=An alias can only be set for user or folder.
 lbl_check_aliasesrm_error=Error while removing alias.
-lbl_no_zarafa_public_folders=You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mailserver/Configuration</a>.
+lbl_no_zarafa_public_folders=You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.

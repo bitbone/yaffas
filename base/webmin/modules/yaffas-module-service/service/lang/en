@@ -38,7 +38,7 @@ lbl_month=Month
 lbl_date=Date
 lbl_hour=Hour
 lbl_year=Year
-lbl_setdatetime=Systemtime
+lbl_setdatetime=System time
 
 
 lbl_once=now
@@ -46,4 +46,4 @@ lbl_every=hourly
 lbl_daily=daily at 
 lbl_minute= minute
 lbl_hour= hour
-lbl_timeserver=Timeserver
+lbl_timeserver=Time Server

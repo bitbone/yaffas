@@ -45,12 +45,6 @@ try {
 };
 
 try {
-	set_verify_rcp($verify_action,$mailadmin);
-} catch Yaffas::Exception with {
-	$bke->append(shift);
-};
-
-try {
 	set_mailsize($mailsize);
 } catch Yaffas::Exception with {
 	$bke->append(shift);
@@ -63,20 +57,6 @@ if (check_product("zarafa")) {
 		$bke->append(shift);
 	};
 }
-
-try {
-	my %status;
-	if (defined($client_tls)) {
-		$status{client} = 1;
-	}
-	if (defined($server_tls)) {
-		$status{server} = 1;
-	}
-	Yaffas::Module::Secconfig::set_tls_status(%status);
-	print Yaffas::UI::ok_box();
-} catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-};
 
 try {
 	throw $bke if $bke;

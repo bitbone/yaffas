@@ -69,6 +69,7 @@ try
 	Yaffas::Service::control(GOGGLETYKE, START);
 	Yaffas::Service::control(SAMBA, RESTART);
 	Yaffas::Service::control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
+	system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 	Yaffas::Service::control(USERMIN, RESTART);
 	Yaffas::Service::control(POSTFIX, RESTART);
 	Yaffas::File->new(Yaffas::Constant::FILE->{auth_wizard_lock}, 1)->save();

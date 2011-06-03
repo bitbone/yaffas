@@ -2,7 +2,7 @@ lbl_licensekey=Install New Key
 lbl_installed_keys=Existing Keys
 lbl_index_header=Licensekey
 lbl_index_return=System
-lbl_insert=Insert key
+lbl_insert=Apply key
 lbl_customer=Customer
 lbl_initial=Initial Key
 lbl_licensenr=Licensenumber
@@ -18,7 +18,7 @@ lbl_notepaper=Notepaper
 lbl_merge=Merge PDFs
 lbl_enabled=enabled
 lbl_disabled=disabled
-lbl_product_ep=bitkit Framework
+lbl_product_ep=yaffas base
 
 lbl_licensetype=Licensetype
 lbl_licensetype_0=Companylicense

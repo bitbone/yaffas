@@ -558,7 +558,7 @@ sub _clear_spool_dir($$) {
 	show_page(@header, @footer, @content, $page_nr, %param);
 
 This will display a simple pager without sorting or filter abilitys. For a more
-complex example you can have a look at the bitkit webmin usermanagment, groupmanagment or
+complex example you can have a look at the yaffas webmin usermanagment, groupmanagment or
 mailalias modules.
 
 =head1 COPYRIGHT

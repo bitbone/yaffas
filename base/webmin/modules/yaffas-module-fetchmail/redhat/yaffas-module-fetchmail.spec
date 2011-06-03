@@ -26,6 +26,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 set -e
+
+if [ ! -e %{_initrddir}/fetchmail ]; then
+	ln -s /opt/yaffas/etc/init.d/fetchmail %{_initrddir}/fetchmail
+fi
+
+# fetchmail runs as user fetchmail
+groupadd -r fetchmail
+useradd -r -m -g fetchmail -s /bin/false -c "Fetchmail" fetchmail
+touch /etc/fetchmailrc
+chown fetchmail:fetchmail /etc/fetchmailrc
+chmod 600 /etc/fetchmailrc
+
+/sbin/chkconfig --add fetchmail
+/sbin/chkconfig fetchmail on
+
 source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE=fetchmail
 add_webmin_acl $MODULE
@@ -34,6 +49,8 @@ add_webmin_acl $MODULE
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /opt/yaffas/webmin/fetchmail
-/opt/yaffas/etc/fetchmail/config
+/opt/yaffas/etc/init.d/fetchmail
+/opt/yaffas/etc/webmin/fetchmail/config
+
 
 %changelog

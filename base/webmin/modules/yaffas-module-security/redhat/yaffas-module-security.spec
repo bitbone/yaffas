@@ -1,6 +1,6 @@
 Summary:    Module for configuration of mail security options
 Name:       yaffas-module-security
-Version:    1.0.0
+Version:    0.9.1
 Release:    1
 License:    AGPLv3
 Url:        http://www.yaffas.org
@@ -31,24 +31,29 @@ MODULE="security"
 add_webmin_acl $MODULE
 add_license $MODULE ""
 
-#[[ -e /etc/default/spamassassin ]] && sed -e 's/^ENABLED=0/ENABLED=1/' -i /etc/default/spamassassin
+if [ "$1" = 1 ]; then
+	%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
+	%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
+	mkdir -p /etc/amavis/conf.d/
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
-%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
-mkdir -p /etc/amavis/conf.d/
-%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
+	if ! id clam | grep -q "amavis"; then
+		usermod -a -G amavis clam
+	fi
 
-if ! id clam | grep -q "amavis"; then
-    usermod -a -G amavis clam
+	if ! grep -q "amavis" /etc/postfix/master.cf; then
+		cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
+	fi
+
+	touch /opt/yaffas/config/whitelist-amavis
+	touch /opt/yaffas/config/postfix/whitelist-postfix
+
+	chcon -R -t postfix_etc_t /opt/yaffas/config/postfix/
+	postmap /opt/yaffas/config/postfix/whitelist-postfix
 fi
 
-if ! grep -q "amavis" /etc/postfix/master.cf; then
-    cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
-fi
-
-postmap /opt/yaffas/config/whitelist-postfix
 
 %postun
 %{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
@@ -60,12 +65,12 @@ postmap /opt/yaffas/config/whitelist-postfix
 /opt/yaffas/lib/perl5/Yaffas/Module/Security.pm
 /opt/yaffas/config/channels.cf
 /opt/yaffas/config/channels.keys
-/opt/yaffas/config/whitelist-amavis
-/opt/yaffas/config/whitelist-postfix
 /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas
+/opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas-debian
 /opt/yaffas/share/doc/example/etc/policyd-weight.conf
 /opt/yaffas/share/doc/example/etc/amavis-master.cf
 /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf
+%dir /opt/yaffas/config/postfix
 
 %changelog
 

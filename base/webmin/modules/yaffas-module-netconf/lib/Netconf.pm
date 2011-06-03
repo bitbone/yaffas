@@ -735,7 +735,7 @@ sub _exchange_samba_domain ($$) {
 
 =item set_configuration ( DOMAINNAME, HOSTNAME )
 
-	Helper function to set configuration from bitkit.xml
+	Helper function to set configuration from yaffas.xml
 
 =cut
 

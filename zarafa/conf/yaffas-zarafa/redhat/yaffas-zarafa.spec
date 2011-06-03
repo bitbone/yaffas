@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:  noarch
-Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafabackup, mod_ssl
+Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap
 
 %description
 Additional yaffas configuration to make zarafa work
@@ -63,6 +63,8 @@ Yaffas::Module::ChangeLang::set_lang($lang);
 # a2enmod ssl
 # a2ensite zarafa-webaccess-ssl
 sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.yaffas.cfg
+OURPASSWD=$(cat /etc/ldap.secret)
+sed -e "s#--OURPASSWD--#$OURPASSWD#g" -i /etc/zarafa/ldap.yaffas.cfg
 # 
 # #if ! grep "Listen.*443" /etc/apache2/ports.conf &>/dev/null; then
 # #	echo "Listen 443" >> /etc/apache2/ports.conf
@@ -84,17 +86,14 @@ if [ "$1" = 1 ]; then
 	echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $((MEM/4))\n innodb_log_buffer_size = $((MEM/16))" >> /etc/my.cnf
 	%{__rm} -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
 	sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
+
+	# fix plugin path
+	if [ "x86_64" = $(rpm -q --qf %{ARCH} zarafa-server) ]; then
+		sed -e 's#plugin_path\s*=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
+	fi
  
 	%{__mkdir} -p /data/zarafa/attachments/
 fi
-
-##EVIL!!
-#set +e
-#service mysqld start
-#service ldap start
-#service zarafa-server start
-#service zarafa-dagent restart
-#service httpd restart
 
 if [ "$1" = 1 ] ; then
 	#only do this on install, not on upgrade
@@ -125,8 +124,13 @@ if [ "$1" = 1 ] ; then
 	semodule_package -o /tmp/zarafa.pp -m /tmp/zarafa.mod
 	semodule -i /tmp/zarafa.pp
 fi
-%{__rm} -f /etc/zarafa/ldap.yaffas.cfg
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
+
+# enable services
+for SERV in mysqld zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
+	chkconfig $SERV on
+	service $SERV start
+done
 
 %postun
 for CFG in /etc/zarafa/*.cfg.yaffassave; do

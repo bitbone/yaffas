@@ -128,7 +128,7 @@ sub enable_policy {
 
 	_set_postfix("smtpd_helo_required", "yes");
 	_set_postfix("smtpd_delay_reject", "yes");
-	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
+	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
 
 	control(POSTFIX(), RESTART());
 }
@@ -188,7 +188,7 @@ sub disable_spamassassin {
 	throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
 	
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_spam_checks_maps");
+	my $num = $f->search_line("\@bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -216,7 +216,7 @@ sub enable_spamassassin {
 	throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
 
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_spam_checks_maps");
+	my $num = $f->search_line("\@bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -244,7 +244,7 @@ sub disable_clamav {
 	throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
 	
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_virus_checks_maps");
+	my $num = $f->search_line("\@bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -271,7 +271,7 @@ sub enable_clamav {
 	throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
 
 	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("bypass_virus_checks_maps");
+	my $num = $f->search_line("\@bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
 	if(Yaffas::Constant::OS eq "RHEL5") {
@@ -309,6 +309,8 @@ sub sa_tag2_level {
 	$line = '$sa_tag2_level_deflt = ' . $set . ';';
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(AMAVIS(), RESTART());
 }
 
 
@@ -333,7 +335,8 @@ sub sa_kill_level {
 	$line = '$sa_kill_level_deflt = ' . $set . ';';
 	$y->splice_line($num, 1, $line);
 	$y->save();
-	
+
+	control(AMAVIS(), RESTART());
 }
 
 
@@ -513,7 +516,7 @@ sub spam_update {
 	my @cmd = (Yaffas::Constant::APPLICATION->{sa_update},
 			'--channelfile', Yaffas::Constant::FILE->{channels_cf},
 # 			'--gpgkeyfile',  Yaffas::Constant::FILE->{channels_keys},
-			'--nogpg', '-v');
+			'--nogpg');
 
 	my ($out, $err) = Yaffas::backquote_out_err(@cmd, "no-daemon");
 	push @$err, @$out;
@@ -568,6 +571,8 @@ sub spam_add_trusted_network {
 	$line .= " $host";
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(SPAMASSASSIN(), RESTART());
 }
 
 
@@ -589,6 +594,8 @@ sub spam_del_trusted_network {
 
 	$y->splice_line($num, 1, $line);
 	$y->save();
+
+	control(SPAMASSASSIN(), RESTART());
 }
 
 
@@ -689,7 +696,7 @@ sub wl_amavis_add {
 
 =item wl_amavis_delete(String)
 
-Deletes the given entry from /opt/yaffas/config//opt/yaffas/config/whitelist-amavis.
+Deletes the given entry from /opt/yaffas/config/whitelist-amavis.
 
 =cut
 
@@ -759,8 +766,8 @@ sub whitelist_add {
 	if($type eq "email"){
 		wl_amavis_add($what),
 	} elsif($type eq "domain" || $type eq "ip") {
-		wl_amavis_add($what);
 		wl_postfix_add($what);
+		wl_amavis_add($what);
 	}
 }
 
@@ -787,8 +794,8 @@ sub whitelist_delete {
 	if($type eq 'email'){
 		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} } ;
 	} elsif($type eq 'domain' || $type eq 'ip'){
-		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} };
 		wl_postfix_delete($what) if grep { 'postfix' eq $_ } @{ $list{$what}->{from} };
+		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} };
 	}
 }
 

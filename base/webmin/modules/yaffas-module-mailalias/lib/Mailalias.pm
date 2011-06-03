@@ -115,7 +115,7 @@ sub _save_config {
 
 sub add_edit_alias {
 	my $from    = $main::in{from};
-	my @to      = split /\s*,\s*/, $main::in{to};
+	my @to      = split /\s*\0\s*/, $main::in{to};
 	my @del     = split /\0/, $main::in{del_to};
 	my @folders = split /\0/, $main::in{folders};
 

@@ -24,15 +24,17 @@ sub show_edit_zarafa_resource (@) {
 		@resources = (undef);
 		$create    = 1;
 	}
-	
+
+	my $is_local_auth = Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES;
+
+	return if ($create == 1 && ! $is_local_auth);
+
 	if ($create) {
 		print $Cgi->start_form ( "post", "create.cgi" );
 	}
 	else {
 		print $Cgi->start_form ( "post", "edit.cgi" );
 	}
-
-	my $is_local_auth = Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES;
 
 	foreach my $resource (@resources) {
 		my %details = (

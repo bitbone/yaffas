@@ -295,13 +295,6 @@ sub import_cert($$){
 
 sub get_services() {
 	my @services = qw(postfix webmin ldap all);
-	if (check_product("gate")) {
-		unshift @services, "exim";
-	} elsif (check_product("mail")) {
-		unshift @services, "exim", "cyrus", "usermin";
-	} else {
-		unshift @services, "usermin";
-	}
 	if (check_product("zarafa")) {
 		@services = grep {$_ ne "cyrus"} @services;
 		push @services, "zarafa-server", "zarafa-webaccess", "zarafa-gateway", "zarafa-ical";

@@ -16,7 +16,7 @@ sub BEGIN {
 						&DIVAS &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD
-						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD
+						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD &CLAMAV_FRESHCLAM
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
 }
@@ -333,6 +333,8 @@ sub AMAVIS(){ 44; }
 
 sub CLAMAV(){ 45; }
 
+sub CLAMAV_FRESHCLAM(){ 46; }
+
 =back
 
 =head2 Constants for Actions
@@ -437,6 +439,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				 BBLCD() => "/etc/init.d/bblcd",
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
+				 CLAMAV_FRESHCLAM() => "/etc/init.d/clamav-freshclam",
 				);
 
 	%PROCESSES = (
@@ -447,6 +450,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim4",
 				SPAMASSASSIN() => "/usr/sbin/spamd",
+				FETCHMAIL() => "/usr/bin/fetchmail",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -472,7 +476,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 KAV()     => "/etc/init.d/aveserver",	# TODO: adapt for Red Hat
 				 KAS()     => "/etc/init.d/ap-process-server",	# TODO: adapt for Red Hat
 				 GREYLIST() => "/etc/init.d/greylist",	# TODO: adapt for Red Hat
-				 FETCHMAIL() => "/etc/init.d/fetchmail",	# TODO: adapt for Red Hat
+				 FETCHMAIL() => "/sbin/service fetchmail",
 				 POSTGRESQL() => "/sbin/service postgresql",
 				 SPAMASSASSIN() => "/sbin/service spamassassin",
 				 POLICYD_WEIGHT() => "/sbin/service policyd-weight",
@@ -503,9 +507,10 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				POSTFIX(), => "/usr/libexec/postfix/master",
 				APACHE(), => "/usr/sbin/httpd",
 				POSTGRESQL() => "/usr/bin/postmaster",
-				WINBIND() => "/usr/sbin/winbindd",
+				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim",
 				SPAMASSASSIN() => "/usr/bin/spamd",
+				FETCHMAIL() => "fetchmail",
 				);
 }
 else {
@@ -548,6 +553,7 @@ sub installed_services(;$)
 		'amavis'	=> { 'constant' => AMAVIS(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'policyd-weight'	=> { 'constant' => POLICYD_WEIGHT(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'spamassassin'	=> { 'constant' => SPAMASSASSIN(), 'allow' => [ 'start', 'stop', 'restart', 'reload' ] },
+		'fetchmail'     => { 'constant' => FETCHMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
 	};
 
 #	if(Yaffas::Constant::OS eq 'RHEL5') {
@@ -925,7 +931,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CAPI4HYLAFAX() }) {
 		return __check_process('/usr/bin/c2faxrecv');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ FETCHMAIL() }) {
-		return __check_process('/usr/bin/fetchmail');
+		return __check_process($Yaffas::Service::PROCESSES{ FETCHMAIL() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMASSASSIN() }) {
 		return __check_process($Yaffas::Service::PROCESSES{ SPAMASSASSIN() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTGRESQL() }) {
@@ -973,6 +979,8 @@ sub _status($){
 		return __check_process('clamd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POLICYD_WEIGHT() }) {
 		return __check_process('policyd-weight');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ CLAMAV_FRESHCLAM() }) {
+		return __check_process('clamav-freshclam');
 	}
 	
 	return undef;

@@ -14,7 +14,7 @@ my %alias_file = (
 
 sub _write {
 	my $mode = shift;
-	my %data = @_;
+	my $data = shift;
 
 	my $bkc = Yaffas::File::Config->new($alias_file{$mode},
 										{
@@ -22,7 +22,7 @@ sub _write {
 										-SplitDelimiter => ':\s*',
 										-StoreDelimiter => ': ',
 										});
-	$bkc->get_cfg()->save_file($alias_file{$mode}, \%data);
+	$bkc->get_cfg()->save_file($alias_file{$mode}, $data);
 	return 1;
 }
 

@@ -492,6 +492,11 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 				$conf->splice_line($linenr, 1, "$ip\t$hostname.$newdom\t$hostname");
 			}
 
+			$linenr = $conf->search_line(qr/^127.0.0.1\s+.*localhost/);
+			if (not $linenr) {
+				$conf->add_line("127.0.0.1 localhost.localdomain localhost");
+			}
+
 			$conf->write()
 				or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
 
@@ -634,7 +639,9 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$postfix_settings->{query_filter} = '(zarafaAliases=%s)';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "aliases");
 
-		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("off");
+		Yaffas::UGM::create_group_aliases();
+
+		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("file");
 
 	}
 	catch Yaffas::Exception with {
@@ -856,7 +863,7 @@ sub auth_srv_ldap($)
 	
 	my $chash = $conf->get_cfg_values();
 	if ($auth eq 'activate') {
-		$chash->{$prod} = "bitkit|AUTH v1.00";
+		$chash->{$prod} = "yaffas|AUTH v1.00";
 	}
 	else {
 		delete $chash->{$prod};
@@ -1050,7 +1057,7 @@ sub set_pdc( ;$$$$$$$$){
 		$postfix_settings->{special_result_attribute} = 'member';
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "group");
 
-		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("on");
+		Yaffas::Module::Mailsrv::Postfix::toggle_distribution_groups("ldap");
 
 	}
 	catch Yaffas::Exception with {
@@ -1250,7 +1257,7 @@ CONFIG_HASH = hashref to config file parameters
  Should be empty for local LDAP.
  I<Must> contain necessary values for remote (ldap_bind_user, ldap_host).
  I<Must> contain ldap_bind_passwd for ADS.
- If the hashref does not contain searchbases, etc. for remote LDAP, same values as for bitkit LDAP are used.
+ If the hashref does not contain searchbases, etc. for remote LDAP, same values as for yaffas LDAP are used.
 
 =cut
 
@@ -1290,7 +1297,7 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_protocol'} = 'ldaps';
 	$cfg_values->{'ldap_port'} = '636';
 	$cfg_values->{'ldap_user_search_filter'} = '(&(objectClass=posixAccount)(objectClass=zarafa-user))';
-	$cfg_values->{'ldap_group_search_filter'} = '(&(objectClass=posixGroup)(!(|(cn=bitkitmail)(cn=bkusers)(cn=Domain Admins)(cn=Print Operators)(cn=Domain Users)(cn=Domain Computers)(cn=Domain Guests)(cn=Administrators)(cn=Account Operators)(cn=Backup Operators)(cn=Replicators)(cn=nogroup))))';
+	$cfg_values->{'ldap_group_search_filter'} = '(&(objectClass=posixGroup)(!(|(cn=yaffasmail)(cn=bkusers)(cn=Domain Admins)(cn=Print Operators)(cn=Domain Users)(cn=Domain Computers)(cn=Domain Guests)(cn=Administrators)(cn=Account Operators)(cn=Backup Operators)(cn=Replicators)(cn=nogroup))))';
 	$cfg_values->{'ldap_user_unique_attribute'} = 'uid';
 	$cfg_values->{'ldap_group_unique_attribute'} = 'cn';
 	$cfg_values->{'ldap_emailaddress_attribute'} = 'mail';
@@ -1298,6 +1305,8 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_groupmembers_attribute_type'} = 'name';
 	$cfg_values->{'ldap_loginname_attribute'} = 'uid';
 	$cfg_values->{'ldap_bind_passwd'} = Yaffas::LDAP::get_passwd();
+	$cfg_values->{'ldap_sendas_attribute_type'} = "dn";
+	$cfg_values->{'ldap_sendas_relation_attribute'} = "distinguishedName";
 
 	if ($type eq LOCAL_LDAP) {
 		$basedn = Yaffas::LDAP::get_local_domain();

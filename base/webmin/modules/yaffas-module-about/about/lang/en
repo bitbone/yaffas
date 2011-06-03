@@ -6,14 +6,14 @@ lbl_version=Version
 lbl_revision=Revision
 lbl_name=Product
 
-err_get_products=The informations cannot be read!
+err_get_products=The information cannot be read!
 
 index_title=System information
 written_by=Written by
 
 general_information=General information
 os_on_arch=on an
-uptime=Uptime of
+uptime=Up-time of
 uptime_days=days
 uptime_hours=hours
 uptime_minutes=minutes
@@ -86,16 +86,16 @@ network_unixsockets_state=State
 network_unixsockets_inode=I-node
 network_unixsockets_path=Path
 
-fs_stat=Filesytem statistics
-fs_mount=Mounted filesystem
+fs_stat=File system statistics
+fs_mount=Mounted file system
 fs_mount_device=Device
 fs_mount_dir=Directory
-fs_mount_type=Filesystem
+fs_mount_type=File system
 fs_mount_option=Mode
 
-df_title=Filesystem information
+df_title=File system information
 
-lbl_filesystem=Filesystem
+lbl_filesystem=File system
 lbl_size=Size
 lbl_used=Used
 lbl_available=Available

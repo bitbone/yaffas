@@ -13,7 +13,7 @@ err_file_read=Can't read following file(s):
 err_file_write=Can't write following file(s):
 
 err_root_password=Can not set the root password!
-err_domadmin_password=Can not set the domain-admintrator password!
+err_domadmin_password=Can not set the domain-administrator password!
 err_smbpasswd=Can not execute SMBPASSWD!
 err_license=This function is only available in the unlimited version
 err_execute=Can not execute following:

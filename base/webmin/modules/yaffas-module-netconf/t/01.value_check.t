@@ -38,7 +38,7 @@ lives_ok {$eth0->set_search("")} "remove search domain";
 dies_ok {$eth0->set_search("bla§")} "wrong search domain";
 dies_ok {$eth0->set_search(["bla.bitbone.de", "blub\$.bitbone.de"])} "wrong search domain";
 lives_ok {$eth0->set_search("technik.bitbone.de")} "search ok";
-lives_ok {$eth0->set_search(["technik.bitbone.de", "bitkit.com"])} "multiple search ok";
+lives_ok {$eth0->set_search(["technik.bitbone.de", "yaffas.org"])} "multiple search ok";
 
 dies_ok {$conf->hostname("")} "empty hostname";
 dies_ok {$conf->hostname("ho\$tname")} "wrong hostname";
@@ -58,4 +58,4 @@ is ($conf->workgroup(), "workgroup.de", "read workgroup");
 is ($eth0->get_ip(), "192.168.7.11", "read ip");
 is ($eth0->get_gateway(), "192.168.7.254", "read gateway");
 eq_array ($eth0->get_dns(), ["192.168.7.250", "192.168.7.251"], "read dns");
-eq_array ($eth0->get_search(), ["technik.bitbone.de", "bitkit.com"], "read search");
+eq_array ($eth0->get_search(), ["technik.bitbone.de", "yaffas.org"], "read search");

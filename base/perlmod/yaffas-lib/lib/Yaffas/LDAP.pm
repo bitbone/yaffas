@@ -184,6 +184,34 @@ sub search_entry($$;$)
         return @values;
 }
 
+sub search_entry_dn($$;$)
+{
+        my $base = shift;
+        my $attribut = shift;
+        my $filter = shift;
+
+        my ($domain, $passwd, $ldap, @values);
+
+        $filter = "(mail=*)" unless $filter;
+        _init(\$domain, \$passwd, \$ldap);
+
+        my $result = $ldap->search(
+                        base => $base,
+                        filter => $filter,
+                        attrs => [$attribut]
+                        );
+
+        $result->code && warn "failed to search entry: ", $result->error;
+
+        for my $i(0..$result->count()-1 ) {
+                my $entry = $result->entry($i);
+                push @values, map{$entry->get_value($_)} $entry->attributes;
+        }
+
+        $ldap->unbind;
+        return @values;
+}
+
 =item search_attributes_entries (FILTER, ATTRIBUTES, [ORG_UNIT]=
 
 searches in LDAP-Tree
@@ -313,7 +341,7 @@ sub replace_entry($$$;$) {
 Works neaerly the same way like replace_entry(), but you'll have to pass the array reference CHANGES.
 Have a look at Net::LDAP::modify for examples of the CHANGES structure.
 
-Example: Bitkit::LDAP::replace_entries("sepp", [add => [faxNumber=>42], delete => [mail=>[]]])
+Example: Yaffas::LDAP::replace_entries("sepp", [add => [faxNumber=>42], delete => [mail=>[]]])
 
 =cut
 
@@ -448,11 +476,11 @@ sub search_user_by_attribute($$) {
 
 =item search_attribute ( TYPE, NAME,[ ATTRIBUTE ] )
 
-returns attribute for given user or for all users in group
+returns attribute for given user, group or for all users in group
 
 It does I<not> return group attributes!
 
-	TYPE - must be user or group
+	TYPE - must be user, group, grouponly
 	NAME - user's or group's name
 	ATTRIBUTE - attribute to search (mail, if omitted; mail also is special, see /etc/ldap.settings)
 
@@ -471,14 +499,16 @@ sub search_attribute($$;$) {
 	my $ls_ref = $ls_file->get_cfg_values();
 	my $ldapuri = $ls_ref->{'LDAPURI'};
 	my $binddn = $ls_ref->{'BINDDN'};
-	my $searchbase = $ls_ref->{'USER_SEARCHBASE'};
-	$searchbase = $ls_ref->{'BASEDN'} if ((length $searchbase) < 1);
+	my $user_searchbase = $ls_ref->{'USER_SEARCHBASE'};
+	my $group_searchbase = $ls_ref->{'GROUP_SEARCHBASE'};
+	$user_searchbase = $ls_ref->{'BASEDN'} if ((length $user_searchbase) < 1);
+	$group_searchbase = $ls_ref->{'BASEDN'} if ((length $group_searchbase) < 1);
 	my $namefilter = $ls_ref->{'USERSEARCH'};
 	my $ldapsecret = $ls_ref->{'LDAPSECRET'};
 
 	$ldapuri = $1 if ($ldapuri =~ /^(ldaps?:\/\/.*)$/);
 	$binddn = $1 if ($binddn =~ /^(.*)$/);
-	$searchbase = $1 if ($searchbase =~ /^(.*)$/);
+	$user_searchbase = $1 if ($user_searchbase =~ /^(.*)$/);
 	$namefilter = $1 if ($namefilter =~ /^(\w*)$/);
 	$ldapsecret = $1 if ($ldapsecret =~ /^(.*)$/);
 	$name = $1 if ($name =~ /^(.*)$/);
@@ -490,7 +520,7 @@ sub search_attribute($$;$) {
 	if ($type eq "user") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 			"($namefilter=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
 	} elsif ($type eq "group") {
@@ -498,11 +528,17 @@ sub search_attribute($$;$) {
 		foreach my $user (@users) {
 			push @return_attribs, Yaffas::do_back_quote(
 				Yaffas::Constant::APPLICATION->{'ldapsearch'},
-				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 				"($namefilter=$user)", $attribute, "-w", $ldapsecret, "-LLL"
 				);
 		}
-	} else {
+	} elsif ($type eq "grouponly") {
+		@return_attribs = Yaffas::do_back_quote(
+			Yaffas::Constant::APPLICATION->{'ldapsearch'},
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $group_searchbase,
+			"(cn=$name)", $attribute, "-w", $ldapsecret, "-LLL"
+			);
+    } else {
 		die "unsupported value $type";
 	}
 	return (map {s/$attribute:\s*//i; if (/^: /) { s/^: (.*)/$1/; $_ = decode_base64($_) }; chomp; $_} grep(/$attribute:\s*/i,@return_attribs));

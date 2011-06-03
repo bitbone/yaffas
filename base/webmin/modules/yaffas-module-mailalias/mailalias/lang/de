@@ -4,24 +4,24 @@ lbl_delalias=Löschen
 lbl_execute=Ausführen
 lbl_apply=Anwenden
 
-lbl_index_header=Mailalias Konfiguration
+lbl_index_header=Mail Alias Konfiguration
 lbl_return_to_index=Index
 lbl_return_to_cat=Mailserver
 
-lbl_delete_confirm=Wollen Sie wirklich den Alias / die Aliase löschen?
+lbl_delete_confirm=Wollen Sie wirklich den Alias / die Aliasse löschen?
 lbl_check_bbmailsrv_error=Konnte den Alias nicht anlegen
 
-lbl_mailaliases=Mailaliase
-lbl_mailalias=Mailalias
+lbl_mailaliases=Maili Aliasse
+lbl_mailalias=Mail Alias
 lbl_destination_dir=Ordner
 lbl_destination_usr=Benutzer
 
 lbl_del=Löschen
-lbl_user=Benutzer / E-Mail Adresse
+lbl_user=Benutzer
 lbl_or=oder
 
 lbl_add=Hinzufügen
-lbl_mailalias_ad=Die Konfiguration der Mailaliase geschieht über das Active Directory.
+lbl_mailalias_ad=Die Konfiguration der Mail Aliasse geschieht über das Active Directory.
 
 err_check_alias=Die folgenden Usernamen oder E-Mail Adressen sind nicht korrekt.
 err_already_exists=Diese Alias existiert bereits.
@@ -30,5 +30,5 @@ err_no_alias=Kein Alias ausgewählt.
 err_nothing=Nichts ausgewählt
 err_alias_is_user=Der Alias existiert als Benutzer.
 err_select_only_one=Ein Alias darf nur entweder auf einen Benutzer oder Ordner gesetzt werden.
-lbl_check_aliasesrm_error=Fehler beim löschen des Aliases.
+lbl_check_aliasesrm_error=Fehler beim löschen des Aliase.
 lbl_no_zarafa_public_folders=Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">im Modul Mailserver/Konfiguration</a> konfiguriert haben.

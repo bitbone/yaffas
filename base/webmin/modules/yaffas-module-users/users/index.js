@@ -64,6 +64,14 @@ Users.prototype.setupMenu = function() {
 		}*/);
 	}
 	else if (auth_type() === "Active Directory") {
+	    i.push({
+			text: _("lbl_convert_to_zarafa_resource"),
+			onclick: {
+				fn: this.convertToZarafaResource.bind(this)
+			}
+		});
+	}
+	else if (auth_type() === "Active Directory" && Yaffas.PRODUCTS.indexOf("fax") >= 0) {
 		i.push({
 			text: _("lbl_filetype"),
 			onclick: {
@@ -110,7 +118,7 @@ Users.prototype.setupUI = function(){
 
 Users.prototype.savedForm = function(f, args) {
     var u = args["login_"];
-    var e = $("sendas_");
+    var e = $("sendas_user_");
 	switch(f) {
 		case "check_newuser.cgi": {
             if (e !== undefined && u !== undefined) {

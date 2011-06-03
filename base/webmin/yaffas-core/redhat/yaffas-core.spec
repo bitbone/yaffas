@@ -7,7 +7,7 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 Patch0:		multipart.patch
 Patch1:		session.patch
-Patch2:		bitkit.patch
+Patch2:		yaffas.patch
 Patch3:		login.patch
 BuildArch:	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -62,7 +62,7 @@ touch /opt/yaffas/etc/webmin/hidden_modules
 %{__chmod} 600 /opt/yaffas/etc/webmin/miniserv.*
 
 # set selinux context
-#/usr/bin/chcon -u system_u -r object_r -t initrc_exec_t %{_initrddir}/yaffas
+/usr/bin/chcon -t initrc_exec_t /opt/yaffas/etc/init.d/yaffas
 
 if [ ! -e %{_initrddir}/yaffas ]; then
 	ln -s /opt/yaffas/etc/init.d/yaffas %{_initrddir}/yaffas

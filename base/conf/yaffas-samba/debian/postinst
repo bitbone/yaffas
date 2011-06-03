@@ -103,6 +103,7 @@ case "$1" in
 
 	/etc/init.d/smbd restart
 	/etc/init.d/winbind restart
+	/etc/init.d/slapd restart
 
 	if [ ! "$2" ]; then
 		SECRET=$(cat /etc/ldap.secret)

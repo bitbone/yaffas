@@ -1,0 +1,255 @@
+dn: BASE
+ou: ORG
+objectClass: top
+objectClass: organization
+
+dn: ou=Hosts,BASE
+ou: Hosts
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Rpc,BASE
+ou: Rpc
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Services,BASE
+ou: Services
+objectClass: top
+objectClass: organizationalUnit
+
+dn: nisMapName=netgroup.byuser,BASE
+nisMapName: netgroup.byuser
+objectClass: top
+objectClass: nisMap
+
+dn: ou=Mounts,BASE
+ou: Mounts
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Networks,BASE
+ou: Networks
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=People,BASE
+ou: People
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Group,BASE
+ou: Group
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Netgroup,BASE
+ou: Netgroup
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Protocols,BASE
+ou: Protocols
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Aliases,BASE
+ou: Aliases
+objectClass: top
+objectClass: organizationalUnit
+
+dn: ou=Idmap,BASE
+objectClass: top
+objectClass: organizationalUnit
+ou: Idmap
+
+dn: nisMapName=netgroup.byhost,BASE
+nisMapName: netgroup.byhost
+objectClass: top
+objectClass: nisMap
+
+dn: cn=yaffasmail,ou=Group,BASE
+objectClass: posixGroup
+objectClass: top
+cn: yaffasmail
+userPassword:: e2NyeXB0fXg=
+gidNumber: 80
+
+dn: cn=ldapadmin,ou=People,BASE
+objectClass: top
+objectClass: inetOrgPerson
+cn: ldapadmin
+sn: ldapadmin
+uid: ldapadmin
+userPassword:: e0NSWVBUfWNyUlRHSTFkMTZQeUk=
+description: Ldap Administrator
+
+dn: cn=ldapread,ou=People,BASE
+objectClass: top
+objectClass: inetOrgPerson
+cn: ldapread
+sn: ldapread
+uid: ldapread
+userPassword:: e0NSWVBUfXhkT2tUdzI5eXM4T28=
+description: Ldap Reader
+
+dn: cn=NextFreeUnixId,BASE
+objectClass: inetOrgPerson
+objectClass: sambaUnixIdPool
+gidNumber: 501
+uidNumber: 1000
+cn: NextFreeUnixId
+sn: NextFreeUnixId
+
+dn: cn=Print Operators,ou=Group,BASE
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+cn: Print Operators
+displayName: Print Operators
+gidNumber: 250
+description: Print Operators
+sambaGroupType: 5
+sambaSID: S-1-5-32-550
+
+dn: cn=Domain Admins,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+cn: Domain Admins
+gidNumber: 251
+sambaSID: NEWSID-512
+sambaGroupType: 2
+displayName: Domain Admins
+description: Domain Unix group
+
+dn: cn=Domain Users,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 252
+cn: Domain Users
+description: Netbios Domain Users
+sambaSID: NEWSID-513
+sambaGroupType: 2
+displayName: Domain Users
+
+dn: cn=Domain Guests,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 253
+cn: Domain Guests
+description: Netbios Domain Guests Users
+sambaSID: NEWSID-514
+sambaGroupType: 2
+displayName: Domain Guests
+
+dn: cn=Domain Computers,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 254
+cn: Domain Computers
+description: Netbios Domain Computers accounts
+sambaSID: NEWSID-515
+sambaGroupType: 2
+displayName: Domain Computers
+
+dn: cn=Administrators,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 255
+cn: Administrators
+description: Netbios Domain Members can fully administer the computer/sambaDom
+ ainName
+sambaSID: S-1-5-32-544
+sambaGroupType: 5
+displayName: Administrators
+
+dn: cn=Account Operators,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 256
+cn: Account Operators
+description: Netbios Domain Users to manipulate users accounts
+sambaSID: S-1-5-32-548
+sambaGroupType: 5
+displayName: Account Operators
+
+dn: cn=Backup Operators,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 257
+cn: Backup Operators
+description: Netbios Domain Members can bypass file security to back up files
+sambaSID: S-1-5-32-551
+sambaGroupType: 5
+displayName: Backup Operators
+
+dn: cn=Replicators,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+gidNumber: 258
+cn: Replicators
+description: Netbios Domain Supports file replication in a sambaDomainName
+sambaSID: S-1-5-32-552
+sambaGroupType: 5
+displayName: Replicators
+
+dn: uid=nobody,ou=People,BASE
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+objectClass: sambaSamAccount
+cn: nobody
+sn: nobody
+givenName: nobody
+uid: nobody
+homeDirectory: /nonexistent
+loginShell: /bin/false
+gecos: System User
+userPassword:: e2NyeXB0fXg=
+sambaPwdLastSet: 0
+sambaLogonTime: 0
+sambaLogoffTime: 2147483647
+sambaKickoffTime: 2147483647
+sambaPwdCanChange: 0
+sambaPwdMustChange: 2147483647
+displayName: System User
+sambaAcctFlags: [UX]
+sambaSID: NEWSID-132066
+sambaLMPassword: XXX
+sambaNTPassword: XXX
+sambaHomeDrive: H:
+gidNumber: 65534
+uidNumber: 65534
+sambaPrimaryGroupSID: NEWSID-514
+
+dn: cn=nogroup,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+cn: nogroup
+gidNumber: 65534
+sambaSID: NEWSID-514
+sambaGroupType: 2
+displayName: Domain Guests
+description: Domain Unix group
+
+dn: cn=bkusers,ou=Group,BASE
+objectClass: top
+objectClass: posixGroup
+objectClass: sambaGroupMapping
+cn: bkusers
+gidNumber: 500
+sambaSID: NEWSIDS-2001
+sambaGroupType: 2
+displayName: bkusers
+

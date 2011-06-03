@@ -99,11 +99,13 @@ sub _display_alias_for {
 												 ]),
 										Yaffas::UI::small_form({
 																input_name => 'to',
-																input_value => $to,
+																input_value => [Yaffas::UGM::get_users()],
 																input_label => $main::text{lbl_destination_usr} . ":",
 																del_label => $main::text{lbl_del} . ": ",
 																del_name => "del_to",
 																content => \@user_alias,
+																input_field => \&CGI::scrolling_list,
+																input_options => {-size=>5, -multiple => 'true'},
 																hide_add => scalar @user_alias ? 0 : 1
 															   }),
 

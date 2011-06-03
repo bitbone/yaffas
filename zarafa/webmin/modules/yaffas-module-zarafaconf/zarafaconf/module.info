@@ -1,7 +1,7 @@
 longdesc=Konfiguration
 desc_de=Konfiguration
 desc_en=Configuration
-name=bbzarafaconf
+name=zarafaconf
 category=groupware
 desc=Zarafa Configuration
 version=1.0

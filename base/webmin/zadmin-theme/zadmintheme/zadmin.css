@@ -139,7 +139,7 @@ div.yui-dt-paginator:first-child {
 }
 
 .yui-layout-unit-left {
-	background-image: url(/images/mainbg2.png) !important;
+	background-image: url(/images/mainbg.png) !important;
 	background-repeat: repeat-x !important;
 	background-position: top left !important;
 	background-color: white !important;
@@ -151,6 +151,14 @@ div.yui-dt-paginator:first-child {
 	background-position: top left !important;
 	background-color: white !important;
 }
+
+.yui-layout-unit-left + .yui-layout-unit-center {
+	background-image: url(/images/mainbg.png) !important;
+	background-repeat: no-repeat !important;
+	background-position: -205px top !important;
+	background-color: white !important;
+}
+
 
 .debug {
 	position: fixed;
@@ -287,9 +295,6 @@ div#menubar .yuimenubaritem-selected, div.menubar .yuimenubaritem-selected {
 	height: 25px;
 	display: block;
 	width: 400px;
-	background-image: url(images/yet.gif) !important;
-	background-position: right !important;
-	background-repeat: no-repeat;
 }
 
 div.yui-layout-bd {

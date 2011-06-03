@@ -6,7 +6,7 @@ category_hardware=Hardware
 category_license=Lizenz
 category_mailbox=Mailbox
 category_mailserver=Mailserver
-category_maintainance=Wartung
+category_maintenance=Wartung
 category_security=Sicherheit
 category_pdf=PDF Drucker
 category_zarafa=Zarafa
@@ -25,7 +25,7 @@ err_file_rename=Konnte folgende Datei(en) nicht umbenennen:
 err_file_symlink=Konnte für folgende Datei(en) kein symlink erstellen:
 err_file_write=Konnte folgende Datei(en) nicht schreiben:
 err_user_exists=Konnte folgende Benutzer nicht finden:
-err_license_expired_text=Ihre bitkit Lizenz ist abgelaufen. Bitte installieren Sie eine neue Lizenzdatei oder kontaktieren Sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a> für eine weitere Nutzung.
+err_license_expired_text=Ihre Lizenz ist abgelaufen. Bitte installieren Sie eine neue Lizenzdatei oder kontaktieren Sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a> für eine weitere Nutzung.
 err_name_is_alias=Es existiert bereits ein Alias mit diesem Namen:
 err_alias_is_user=Es existiert bereits ein Benutzer mit diesem Namen:
 
@@ -44,16 +44,16 @@ lbl_done=fertig
 lbl_apply_filter=Filtern
 lbl_delete=löschen
 
-lbl_product_mail=bitkit|MAIL
-lbl_product_fax=bitkit|FAX
-lbl_product_gate=bitkit|GATE
-lbl_product_pdf=bitkit|PDF
-lbl_product_fileserver=bitkit|FILE
+lbl_product_mail=yaffas|MAIL
+lbl_product_fax=yaffas|FAX
+lbl_product_gate=yaffas|GATE
+lbl_product_pdf=yaffas|PDF
+lbl_product_fileserver=yaffas|FILE
 
-longcategory_accounts=Module um Systemaccounts verwalten zu können
+longcategory_accounts=Module um Systemkonten verwalten zu können
 longcategory_appearance=Module um die UI einstellen zu können
 longcategory_license=Module zum Verwalten der Lizenzen
-longcategory_fax=Module zur Faxconfiguration
+longcategory_fax=Module zur Faxkonfiguration
 longcategory_handbook=Handbücher zur Systemadministration
 longcategory_hardware=Module für Drucker-, Festplatten- und andere Hardware-Konfigurationen.
 longcategory_mailbox=Module zur Mailboxverwaltung
@@ -70,7 +70,6 @@ lbl_lang_de=Deutsch
 lbl_lang_en=Englisch
 
 lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
-lbl_about_bitkit=Über bitkit
 lbl_about_yaffas=Über yaffas
 lbl_about_zadmin=Über Z-Admin
 

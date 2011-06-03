@@ -1,3 +1,9 @@
+yaffas-core (1.0-beta1) lucid; urgency=low
+
+  * update to version 1.0-beta1
+
+ -- Package Builder <packages@yaffas.org>  Fri, 03 Jun 2011 14:59:23 +0200
+
 yaffas-core (0.9.0-1) lucid; urgency=low
 
   * update to version 0.9.0

@@ -1,7 +1,7 @@
-longdesc=Support for your bitkit Server
+longdesc=Support for your yaffas Server
 desc_de=Support
 desc_en=Support
-name=bbsupport
-category=maintainance
+name=support
+category=maintenance
 desc=Support
 version=0.1

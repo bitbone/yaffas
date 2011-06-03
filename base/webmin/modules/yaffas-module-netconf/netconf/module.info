@@ -1,4 +1,4 @@
-longdesc=Net-Conf (Hostname, Domainname, IP-Address, DNS-Server)
+longdesc=Net-Conf (Host name, Domain name, IP-Address, DNS-Server)
 desc_de=Konfiguration
 desc_en=Configuration
 name=net-conf

@@ -33,7 +33,14 @@ sub validate_serial($$$) {
 		if($kind eq "cal") {
 			if($version==20 || $version==30) { return $key =~ m/[0-9A-Z]{16}/;}
 		}
-	
+
+		if($kind eq "archiver") {
+			return $key =~ m/A[0-9A-Z]{24}/;
+		}
+
+		if($kind eq "acal") {
+			return $key =~ m/A[0-9A-Z]{16}/;
+		}
 	return 1;
 }
 
@@ -66,6 +73,40 @@ sub install_calkey($) {
 
 	my $filename = $dir."cal$i";
 	validate_serial("$key","cal",get_licence_version) or throw Yaffas::Exception("err_wrong_lic",$filename);
+
+	my $file = Yaffas::File->new($filename, $key) or throw Yaffas::Exception("err_file_write", $filename);
+	$file->write();
+	Yaffas::Service::control(ZARAFA_LICENSED(), RESTART());
+}
+
+sub install_archiverkey($) {
+	my $key = $_[0];
+	my $filename = Yaffas::Constant::DIR->{zarafa_licence}."archiver";
+	validate_serial("$key","archiver",get_licence_version) or throw Yaffas::Exception("err_wrong_lic",$filename);
+	my $file = Yaffas::File->new($filename, $key) or throw Yaffas::Exception("err_file_write", $filename);
+	$file->write();
+
+	Yaffas::Service::control(ZARAFA_LICENSED(), RESTART());
+}
+
+sub get_archiverkey {
+	my $filename = Yaffas::Constant::DIR->{zarafa_licence}."archiver";
+	my $file = Yaffas::File->new($filename) or throw Yaffas::Exception("err_file_read", $filename);
+	return $file->get_content_singleline();
+}
+
+sub install_acalkey($) {
+	my $key = $_[0];
+	my $dir = Yaffas::Constant::DIR->{zarafa_licence};
+	opendir DIR, $dir or throw Yaffas::Exception("err_file_read", $dir);
+	my @dirs = nsort grep(/^acal\d+$/, readdir DIR);
+	closedir DIR;
+
+	my $i = $#dirs <= 0 ? 1 : $#dirs;
+	$i++ while (-f $dir."acal$i");
+
+	my $filename = $dir."acal$i";
+	validate_serial("$key","acal",get_licence_version) or throw Yaffas::Exception("err_wrong_lic",$filename);
 
 	my $file = Yaffas::File->new($filename, $key) or throw Yaffas::Exception("err_file_write", $filename);
 	$file->write();

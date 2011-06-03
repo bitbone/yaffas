@@ -1,7 +1,7 @@
 longdesc=Restart various services
 desc_de=Dienste
 desc_en=Services
-name=bbservice
+name=service
 category=system
 desc=Service
 version=0.1

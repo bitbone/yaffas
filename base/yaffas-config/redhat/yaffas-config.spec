@@ -38,6 +38,12 @@ else
 	echo "$KEY=$VALUE" >> $CONF
 fi
 
+# enable services
+for SERV in httpd amavisd clamd spamassassin policyd-weight; do
+	chkconfig $SERV on
+	service $SERV start
+done
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}

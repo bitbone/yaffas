@@ -19,7 +19,7 @@ lbl_memory_optimize=Optimized for
 lbl_memory_optimize_header=Optimize memory
 lbl_unknown=unknown
 
-lbl_quota=Messages at reaching the quota
+lbl_quota=Quota e-mail templates
 lbl_quota_warn=Message at 80%
 lbl_quota_soft=Message at 90%
 lbl_quota_hard=Message at 100%

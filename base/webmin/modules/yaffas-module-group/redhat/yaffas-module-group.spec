@@ -4,7 +4,7 @@ Version: 1.1.36
 Release: 1
 License: Commercial
 Group: Applications/System
-Url: http://www.bitkit.com
+Url: http://www.yaffas.org
 Source: file://%{name}-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot

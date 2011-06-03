@@ -16,7 +16,7 @@ Yaffas::Test::create_dir("/etc/exim4/");
 # empty config
 lives_ok {Yaffas::Module::Mailsrv::conf_dump()} "conf_dump runs fine";
 
-is(-f Yaffas::Test::testdir()."/etc/bitkit.xml", 1, "was bitkit.xml created");
+is(-f Yaffas::Test::testdir()."/etc/yaffas.xml", 1, "was yaffas.xml created");
 
 # config with values
 lives_ok {Yaffas::Module::Mailsrv::set_verify_rcp('mailadmin','erwin@bitbone.de')} "set verify_rcp (mailadmin)";
@@ -28,7 +28,7 @@ lives_ok {Yaffas::Module::Mailsrv::set_archive('erwin@bitbone.de')} "set archive
 Yaffas::Test::create_file(Yaffas::Constant::FILE->{'fetchmail_pid'}, "1");
 Yaffas::Test::setup_file("exim.acceptdomains-conf_dump", Yaffas::Constant::FILE()->{exim_domains_conf});
 
-unlink(Yaffas::Test::testdir()."/etc/bitkit.xml");
+unlink(Yaffas::Test::testdir()."/etc/yaffas.xml");
 
 lives_ok {Yaffas::Module::Mailsrv::conf_dump()} "conf_dump runs fine";
-is(-f Yaffas::Test::testdir()."/etc/bitkit.xml", 1, "was bitkit.xml created");
+is(-f Yaffas::Test::testdir()."/etc/yaffas.xml", 1, "was yaffas.xml created");

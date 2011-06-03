@@ -31,9 +31,21 @@ try {
 		print Yaffas::UI::ok_box();
 		push @footer, "", $main::text{BBMODULEDESC};
 	}
+	elsif (defined($main::in{archiverlicense})) {
+		Yaffas::Module::ZarafaLicence::install_archiverkey($main::in{archiverlicense});
+		print Yaffas::UI::ok_box();
+		push @footer, "", $main::text{BBMODULEDESC};
+	}
+	elsif (defined($main::in{acallicense})) {
+		Yaffas::Module::ZarafaLicence::install_acalkey($main::in{acallicense});
+		print Yaffas::UI::ok_box();
+		push @footer, "", $main::text{BBMODULEDESC};
+	}
 	else {
 		show_baselicense_form();
 		show_callicense_form();
+		show_archiverlicense_form();
+		show_acallicense_form();
 		show_installed_licences();
 		show_log();
 	}
@@ -41,6 +53,8 @@ try {
 	print Yaffas::UI::all_error_box(shift);
 	show_baselicense_form() if (defined($main::in{baselicense}));
 	show_callicense_form() if (defined($main::in{callicense}));
+	show_archiverlicense_form() if (defined($main::in{archiverlicense}));
+	show_acallicense_form() if (defined($main::in{acallicense}));
 
 };
 

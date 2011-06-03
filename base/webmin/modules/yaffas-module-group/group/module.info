@@ -1,7 +1,7 @@
 longdesc=Group Management
 desc_de=Gruppenverwaltung
 desc_en=Group Management
-name=bbgroup
+name=group
 category=accounts
-desc=Groupadministration
+desc=Group administration
 version=0.1

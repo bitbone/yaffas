@@ -1,5 +1,5 @@
 Name:		yaffas
-Version:	1.0.1
+Version:	0.9
 Release:	1%{?dist}
 Summary:	Meta package for yaffas
 Group:		Applications/System
@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='yaffas|BASE v0.8'
+VALUE='yaffas|BASE v0.9'
 
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then
@@ -36,7 +36,6 @@ if [ -e $CONF ]; then
 else
 	echo "$KEY=$VALUE" >> $CONF
 fi
-
 
 %files
 %defattr(-,root,root,-)

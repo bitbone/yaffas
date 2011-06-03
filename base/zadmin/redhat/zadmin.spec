@@ -1,14 +1,14 @@
 Name:		zadmin
 Version:	1.0.1
 Release:	1%{?dist}
-Summary:	Meta package for yaffas
+Summary:	Meta package for Z-Admin
 Group:		Applications/System
 License:	GPL
 URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	yaffas-core, zadmin-theme, yaffas-yui, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-security, yaffas-config, yaffas-zarafa
+Requires:	yaffas-core, zadmin-theme, yaffas-yui, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-security, yaffas-module-setup, yaffas-config, yaffas-zarafa, yaffas-certificates, yaffas-lang
 
 %description
 This package is a meta package for all the zadmin modules. Install it to pull
@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='yaffas|BASE v0.8'
+VALUE='Z-Admin|BASE v0.9'
 
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then

@@ -1,8 +1,8 @@
-Summary:		perl bitkit library
+Summary:		perl yaffas library
 Name:			yaffas-lib
 Version:		1.0.0
 Release:		1
-License:		bitkit
+License:		yaffas
 Group:			Applications/System
 Url:			http://www.yaffas.org
 Source:			file://%{name}-%{version}.tar.gz

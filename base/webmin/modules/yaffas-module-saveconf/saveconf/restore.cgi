@@ -16,7 +16,7 @@ require './forms.pl';
 Yaffas::init_webmin();
 ReadParseMime();
 
-# we have recived a bitkit config file.
+# we have recived a yaffas config file.
 header();
 
 # all installed products have a correct licence key?!
