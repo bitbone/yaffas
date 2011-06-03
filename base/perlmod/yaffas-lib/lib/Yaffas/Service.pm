@@ -450,6 +450,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim4",
 				SPAMASSASSIN() => "/usr/sbin/spamd",
+				FETCHMAIL() => "/usr/bin/fetchmail",
 				);
 }
 elsif(Yaffas::Constant::OS eq 'RHEL5') {
@@ -475,7 +476,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				 KAV()     => "/etc/init.d/aveserver",	# TODO: adapt for Red Hat
 				 KAS()     => "/etc/init.d/ap-process-server",	# TODO: adapt for Red Hat
 				 GREYLIST() => "/etc/init.d/greylist",	# TODO: adapt for Red Hat
-				 FETCHMAIL() => "/etc/init.d/fetchmail",	# TODO: adapt for Red Hat
+				 FETCHMAIL() => "/sbin/service fetchmail",
 				 POSTGRESQL() => "/sbin/service postgresql",
 				 SPAMASSASSIN() => "/sbin/service spamassassin",
 				 POLICYD_WEIGHT() => "/sbin/service policyd-weight",
@@ -509,6 +510,7 @@ elsif(Yaffas::Constant::OS eq 'RHEL5') {
 				WINBIND() => "winbindd",
 				EXIM() => "/usr/sbin/exim",
 				SPAMASSASSIN() => "/usr/bin/spamd",
+				FETCHMAIL() => "fetchmail",
 				);
 }
 else {
@@ -929,7 +931,7 @@ sub _status($){
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CAPI4HYLAFAX() }) {
 		return __check_process('/usr/bin/c2faxrecv');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ FETCHMAIL() }) {
-		return __check_process('/usr/bin/fetchmail');
+		return __check_process($Yaffas::Service::PROCESSES{ FETCHMAIL() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SPAMASSASSIN() }) {
 		return __check_process($Yaffas::Service::PROCESSES{ SPAMASSASSIN() });
 	} elsif ($service eq $Yaffas::Service::SERVICES{ POSTGRESQL() }) {
