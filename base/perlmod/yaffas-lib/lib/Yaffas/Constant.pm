@@ -277,7 +277,7 @@ use constant {
 		"faxinfo" => "/usr/sbin/faxinfo",
 		"faxrm" => "/usr/bin/faxrm",
 		"hostname" => "/bin/hostname",
-		"domrename" => "/usr/sbin/domrename.pl",
+		"domrename" => "/opt/yaffas/bin/domrename.pl",
 		"dmesg" => "/bin/dmesg",
 		"lspci" => ( OS eq 'Ubuntu' ? "/usr/bin/lspci" : "/sbin/lspci" ),
 		"lshw" => ( OS eq 'Ubuntu' ? "/usr/bin/lshw" : "/usr/sbin/lshw" ),

@@ -489,7 +489,7 @@ sub _set_ldap($)
 	system(Yaffas::Constant::APPLICATION->{'domrename'}, $domain, $dn_new, $file);
 	return undef unless $? == 0;
 
-	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
+	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
 	return undef unless $? == 0;
 	
 	my $uid = Yaffas::UGM::get_uid_by_username("openldap");
