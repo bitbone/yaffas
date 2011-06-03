@@ -551,6 +551,7 @@ sub installed_services(;$)
 		'amavis'	=> { 'constant' => AMAVIS(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'policyd-weight'	=> { 'constant' => POLICYD_WEIGHT(), 'allow' => [ 'start', 'stop', 'restart' ] },
 		'spamassassin'	=> { 'constant' => SPAMASSASSIN(), 'allow' => [ 'start', 'stop', 'restart', 'reload' ] },
+		'fetchmail'     => { 'constant' => FETCHMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
 	};
 
 #	if(Yaffas::Constant::OS eq 'RHEL5') {
