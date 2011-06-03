@@ -696,7 +696,7 @@ sub wl_amavis_add {
 
 =item wl_amavis_delete(String)
 
-Deletes the given entry from /opt/yaffas/config//opt/yaffas/config/whitelist-amavis.
+Deletes the given entry from /opt/yaffas/config/whitelist-amavis.
 
 =cut
 
@@ -794,8 +794,8 @@ sub whitelist_delete {
 	if($type eq 'email'){
 		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} } ;
 	} elsif($type eq 'domain' || $type eq 'ip'){
-		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} };
 		wl_postfix_delete($what) if grep { 'postfix' eq $_ } @{ $list{$what}->{from} };
+		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} };
 	}
 }
 
