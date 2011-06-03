@@ -48,6 +48,7 @@ if [ "$1" = 1 ]; then
 	fi
 
 	touch /opt/yaffas/config/whitelist-amavis
+	touch /opt/yaffas/config/postfix/whitelist-postfix
 
 	chcon -R -t postfix_etc_t /opt/yaffas/config/postfix/
 	postmap /opt/yaffas/config/postfix/whitelist-postfix
