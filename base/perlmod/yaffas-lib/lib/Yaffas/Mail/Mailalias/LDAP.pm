@@ -15,13 +15,19 @@ sub BEGIN {
 
 sub _write {
    my $mode = shift;
-   my %data = @_;
+   my $data = shift;
+   my $remove = shift;
    my $clean = {};
 
-   while(my($k,$v) = each %data)
+   while(my($k,$v) = each %{$data})
    {
        my @users = split(/\s*,\s*/, $v);
        push @{ $clean->{ $_} }, $k for @users;
+   }
+
+   while(my($k,$v) = each %{$remove})
+   {
+        Yaffas::LDAP::replace_entries($k, ['replace' => [ 'zarafaAliases' => [] ]] );
    }
 
    while(my($uid, $aref) = each %$clean)
