@@ -2,6 +2,6 @@ longdesc=Sends a mail to all users in the mail group
 desc_de=Rundmail
 desc_en=Bulk mailing
 name=mailusers
-category=groupware
+category=mailserver
 desc=Bulk mailing
 version=0.1
