@@ -137,6 +137,7 @@ use constant {
 		"faxrcvd_opts" => "/data/fax/hylafax/etc/faxrcvd_opts",
 		"faxrcvd" => "/data/fax/hylafax/bin/faxrcvd",
 		"mysql_cnf" => ( OS eq 'Ubuntu' ? "/etc/mysql/my.cnf" : "/etc/my.cnf" ),
+		"zarafa_mysql_cnf" => ( OS eq 'Ubuntu' ? "/etc/mysql/conf.d/zarafa-innodb.cnf" : "/etc/my.cnf" ),
 		"exim_relay_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/exim.acceptrelay" : "/etc/exim/exim.acceptrelay" ),
 		"exim_domains_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/exim.acceptdomains" : "/etc/exim/exim.acceptdomains" ),
 		"bbexim_conf" => ( OS eq 'Ubuntu' ? "/etc/exim4/bbexim.conf" : "/etc/exim/bbexim.conf" ),

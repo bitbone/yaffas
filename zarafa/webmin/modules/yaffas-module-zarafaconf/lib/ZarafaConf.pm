@@ -163,7 +163,7 @@ sub optimized_memory_for(;$) {
 			$sort_key_size = $mem_optimized;
 		}
 
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{mysql_cnf});
+		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_mysql_cnf});
 		$file->get_content() or throw Yaffas::Exception("err_file_read", $file->name());
 		my $line = $file->search_line(qr/^innodb_buffer_pool_size\s*=\s*(\d+)$/);
 		if (defined $line) {
@@ -200,7 +200,7 @@ sub optimized_memory_for(;$) {
 		}
 	}
 	else {
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{mysql_cnf});
+		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_mysql_cnf});
 		$file->get_content() or throw Yaffas::Exception("err_file_read", $file->name());
 		my $line = $file->search_line(qr/^innodb_buffer_pool_size\s*=\s*(\d+)$/);
 		my $mem_mysql = 0;
@@ -220,7 +220,6 @@ sub optimized_memory_for(;$) {
 		$file->get_content() or throw Yaffas::Exception("err_file_read", $file->name());
 		$mem_zarafa = $file->get_cfg_values()->{cache_cell_size} * 4;
 
-		#if ($mem_mysql <= 0 || $mem_mysql != $mem_mysql) {
 		if ($mem_mysql <= 0 || $mem_zarafa != $mem_mysql) {
 			return -1, $mem_installed;
 		}
