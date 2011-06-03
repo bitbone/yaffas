@@ -49,7 +49,8 @@ add_webmin_acl $MODULE
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /opt/yaffas/webmin/fetchmail
-/opt/yaffas/etc/fetchmail/config
 /opt/yaffas/etc/init.d/fetchmail
+/opt/yaffas/etc/webmin/fetchmail/config
+
 
 %changelog
