@@ -37,8 +37,6 @@ else
 	echo "$KEY=$VALUE" >> $CONF
 fi
 
-service yaffas restart
-
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
