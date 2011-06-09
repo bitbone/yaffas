@@ -212,36 +212,6 @@ sub smarthost_form ($$) {
 				]
 			),
 		),
-		$Cgi->h2( $main::text{lbl_forward_all_mails_title} ),
-		$Cgi->table(
-			$Cgi->Tr(
-				[
-					$Cgi->td(
-						[
-							$main::text{lbl_forward_all_mails} . ":",
-							$Cgi->checkbox(
-								{
-									-name  => "route_all",
-									-label => "",
-									$routeing ? ( -checked => "checked" ) : (),
-								}
-							),
-						]
-					),
-					$Cgi->td(
-						[
-							$main::text{lbl_rewrite_domain} . ":",
-							$Cgi->textfield(
-								{
-									-name  => "rewrite_domain",
-									-value => $routeing ? $maildomain : "",
-								}
-							),
-						]
-					),
-				]
-			),
-		),
 		$Cgi->hidden( "old_smarthost", $smarthost ),
 	);
 	print section_button( $Cgi->submit( "submit", $main::text{lbl_save} ) );
