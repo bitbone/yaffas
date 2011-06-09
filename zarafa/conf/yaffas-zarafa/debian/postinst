@@ -114,7 +114,7 @@ case "$1" in
 		zarafa-admin -s
 	fi
 
-    echo "zarafa=yaffas|ZARAFA v6.40.5" > /opt/yaffas/etc/installed-products
+    echo "zarafa=Zarafa v6.40.5" > /opt/yaffas/etc/installed-products
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
