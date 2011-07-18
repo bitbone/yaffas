@@ -105,9 +105,9 @@ if [ "$1" = 1 ] ; then
 	# first add root to ldap (needed to grant privilege)
 	SID=$(net getlocalsid)
 	SID=${SID/*S/S}
-	sed -e "s/-thedn-/$BASE/g" -i /tmp/root.ldif
-	sed -e "s/-thesid-/$SID/g" -i /tmp/root.ldif
-	/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /tmp/root.ldif
+	sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+	sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+	/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
 	# set privileges for root
 
 	for i in $(seq 1 60); do
@@ -137,7 +137,7 @@ fi
 chkconfig smb on
 chkconfig winbind on
 
-rm -f /tmp/root.ldif
+rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
 %postun
 %{__mv} -f /etc/samba/smb.conf.yaffassave /etc/samba/smb.conf
