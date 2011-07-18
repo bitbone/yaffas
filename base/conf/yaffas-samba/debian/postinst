@@ -101,9 +101,9 @@ case "$1" in
 		# first add root to ldap (needed to grant privilege)
 		SID=$(net getlocalsid)
 		SID=${SID/*S/S}
-		sed -e "s/-thedn-/$BASE/g" -i /tmp/root.ldif
-		sed -e "s/-thesid-/$SID/g" -i /tmp/root.ldif
-		/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /tmp/root.ldif
+		sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+		sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+		/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
 		# set privileges for root
 
 		for i in $(seq 1 60); do
@@ -129,7 +129,7 @@ case "$1" in
 		/etc/init.d/winbind restart
 	fi
 
-	rm -f /tmp/root.ldif
+	rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
     ;;
 
