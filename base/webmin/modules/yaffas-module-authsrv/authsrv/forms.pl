@@ -326,17 +326,6 @@ sub remote_ldap(;$)
 													)
 												  ),
 										  $cgi->Tr(
-												   $cgi->td($main::text{lbl_binddn} . ":"),
-												   $cgi->td(
-												   		$cgi->textfield(
-															"binddn",
-															( $main::in{'binddn'} )?( $main::in{'binddn'} ):( $values->{binddn} ),
-															40,
-															150
-														)
-													)
-												  ),
-										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_user_base} . ":"),
 												   $cgi->td($method ne "yaffas" ?
 															(
@@ -414,6 +403,17 @@ sub remote_ldap(;$)
 													)
 												)
 										) : ''),
+										  $cgi->Tr(
+												   $cgi->td($main::text{lbl_binddn} . ":"),
+												   $cgi->td(
+												   		$cgi->textfield(
+															"binddn",
+															( $main::in{'binddn'} )?( $main::in{'binddn'} ):( $values->{binddn} ),
+															40,
+															150
+														)
+													)
+												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_bindpw} . ":"),
 												   $cgi->td($cgi->password_field("bindpw", '', 40, 150))
