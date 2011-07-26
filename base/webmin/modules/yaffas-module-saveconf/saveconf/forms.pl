@@ -9,15 +9,16 @@ our $cgi = $Yaffas::UI::Cgi;
 
 sub index_dlg()
 {
+	print $Cgi->start_form(-action => 'create.cgi', -method => 'post');
+	print section($main::text{'lbl_dump'}, '<iframe style="display: none" src="blank.html" id="createframe"></iframe>');
+	print section_button($Cgi->button({-id=>'create', -label=>$main::text{'save'}}));
+	print $Cgi->end_form();
+
 	print $Cgi->start_multipart_form(-action => 'restore.cgi', -method => 'post');
 	print section($main::text{'lbl_restore'}, $Cgi->filefield('backup'));
 	print section_button($Cgi->submit('restore', $main::text{'send'}));
 	print $Cgi->end_multipart_form();
 	
-	print $Cgi->start_form(-action => 'create.cgi', -method => 'post');
-	print section($main::text{'lbl_dump'}, '<iframe style="display: none" src="blank.html" id="createframe"></iframe>');
-	print section_button($Cgi->button({-id=>'create', -label=>$main::text{'save'}}));
-	print $Cgi->end_form();
 }
 =pod
 
