@@ -39,8 +39,13 @@ if [ "$1" = 1 ]; then
 	mkdir -p /etc/amavis/conf.d/
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
-	if ! id clam | grep -q "amavis"; then
-		usermod -a -G amavis clam
+	USER=$(getent passwd | awk -F: '/^clam/ { print $1 }')
+
+	if id $USER >/dev/null; then
+		# if user exists
+		if ! id $USER | grep -q "amavis"; then
+			usermod -a -G amavis $USER
+		fi
 	fi
 
 	if ! grep -q "amavis" /etc/postfix/master.cf; then
