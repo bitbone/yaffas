@@ -10,7 +10,7 @@ category_maintenance=Maintenance
 category_security=Security
 category_pdf=PDF Printers
 category_zarafa=Zarafa
-category_groupware=Groupware
+category_groupware=Zarafa
 
 err_db_connect=Could not connect to Postgres database.
 err_dir_exists=Could not find the following directories:
