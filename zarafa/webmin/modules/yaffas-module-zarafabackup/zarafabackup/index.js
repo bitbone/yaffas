@@ -286,11 +286,18 @@ Backup.prototype.fillBackupDates = function() {
                 var obj = r.Response;
 
                 var l = $("backupselect");
-                for (var i = 0; i < obj.length; ++i) {
-                    var o = new Option(obj[i].name, obj[i].value);
 
-                    l[l.length] = o;
-                }
+				if (obj.length === 0) {
+						var o = new Option(_("lbl_no_backup"), "");
+						l[0] = o;
+				}
+				else {
+					for (var i = 0; i < obj.length; ++i) {
+						var o = new Option(obj[i].name, obj[i].value);
+
+						l[l.length] = o;
+					}
+				}
 
                 YAHOO.util.Event.addListener("backupselect", "change", function(e) {
                         var e = $$('#backupselect option').find(function(ele){return !!ele.selected})

@@ -33,6 +33,7 @@ lbl_remove=Remove
 lbl_preserve_time=Preserve fullbackup (in days)
 lbl_clean_dir=Removing directory
 lbl_restore_start_msg=Click on "restore" to restore the selected messages.
+lbl_no_backup=No backup available
 
 err_time=Time not correct.
 err_preserve_time=Preserve time not set or not correct.
