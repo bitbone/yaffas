@@ -103,10 +103,10 @@ fi
 # register product
 CONF="/opt/yaffas/etc/installed-products"
 KEY="zarafa"
-VALUE='yaffas|ZARAFA'
+VALUE='Zarafa'
 
 if ZARAFAVERSION=$(/bin/rpm -q --qf %{VERSION} zarafa); then
-	VALUE="yaffas|ZARAFA v$ZARAFAVERSION"
+	VALUE="Zarafa v$ZARAFAVERSION"
 fi
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then

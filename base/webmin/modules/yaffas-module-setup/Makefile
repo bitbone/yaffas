@@ -9,5 +9,7 @@ clean:
 install: 
 	mkdir -p $(DESTDIR)/$(YAFFAS_WEBMIN)
 	mkdir -p $(DESTDIR)/$(YAFFAS_MODULE)
+	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)
 	cp -r  $(MODULE) $(DESTDIR)/$(YAFFAS_WEBMIN)/
 	cp -r  lib/* $(DESTDIR)/$(YAFFAS_MODULE)/
+	cp -r  example/* $(DESTDIR)/$(YAFFAS_EXAMPLE)/

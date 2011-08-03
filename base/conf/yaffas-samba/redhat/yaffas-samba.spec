@@ -42,21 +42,9 @@ chmod -R 777 /etc/samba/printer/
 
 # correct dn in smb.conf
 SMBCBB="/etc/samba/smb.conf"
-ARRAY=(`hostname -d | cut -d. -f1- --output-delimiter=\ `)
-COUNT=${#ARRAY[*]}
-BASE=""
-ORG=""
-for i in `seq 1 $COUNT`
-do
-	if [ $i -eq $COUNT ]; then
-		BASE="${BASE}c=${ARRAY[$(($i-1))]}"
-	elif [ $i -eq $(($COUNT-1)) ]; then
-		BASE="${BASE}o=${ARRAY[$(($i-1))]},"
-		ORG=${ARRAY[$(($i-1))]}
-	else
-		BASE="${BASE}ou=${ARRAY[$(($i-1))]},"
-	fi
-done
+
+BASE=$(grep "^BASEDN=" /etc/ldap.settings | cut -d= -f2-)
+
 sed -e "s/-thedn-/$BASE/" -i $SMBCBB
 
 # generate global conf for samba if no one is here
@@ -117,9 +105,9 @@ if [ "$1" = 1 ] ; then
 	# first add root to ldap (needed to grant privilege)
 	SID=$(net getlocalsid)
 	SID=${SID/*S/S}
-	sed -e "s/-thedn-/$BASE/g" -i /tmp/root.ldif
-	sed -e "s/-thesid-/$SID/g" -i /tmp/root.ldif
-	/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /tmp/root.ldif
+	sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+	sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+	/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
 	# set privileges for root
 
 	for i in $(seq 1 60); do
@@ -149,7 +137,7 @@ fi
 chkconfig smb on
 chkconfig winbind on
 
-rm -f /tmp/root.ldif
+rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
 %postun
 %{__mv} -f /etc/samba/smb.conf.yaffassave /etc/samba/smb.conf
@@ -162,7 +150,7 @@ rm -f /tmp/root.ldif
 %doc debian/{copyright,changelog}
 %config /opt/yaffas/share/doc/example/etc/samba/smb.conf
 %config /opt/yaffas/share/doc/example/etc/samba/smbopts.software
-/tmp/root.ldif
+/opt/yaffas/share/doc/example/tmp/root.ldif
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 0.7.0-1

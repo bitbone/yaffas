@@ -48,9 +48,6 @@ if [ "$1" = 1 ] ; then
 	chmod 600 $CONF/smtp_auth.cf
 	chmod 600 $CONF/smtp_auth.cf.db
 
-	H=$(/bin/hostname -f)
-	sed -e 's/HOSTNAME/'$H'/' -i $CONF/main.cf
-
 	/usr/bin/newaliases
 
 fi

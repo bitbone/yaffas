@@ -30,10 +30,6 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="about"
 add_webmin_acl $MODULE
 
-if ! grep -q $MODULE /opt/yaffas/etc/webmin/hidden_modules; then
-    echo $MODULE >> /opt/yaffas/etc/webmin/hidden_modules
-fi
-
 %postun
 
 %files

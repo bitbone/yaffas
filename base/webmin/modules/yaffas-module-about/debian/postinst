@@ -31,10 +31,6 @@ case "$1" in
 	add_webmin_acl $MODULE
 	add_license $MODULE ""
 
-	if ! grep -q $MODULE /opt/yaffas/etc/webmin/hidden_modules; then
-		echo $MODULE >> /opt/yaffas/etc/webmin/hidden_modules
-	fi
-
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

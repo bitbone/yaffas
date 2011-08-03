@@ -15,7 +15,8 @@ clean:
 install:
 	mkdir -p $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba
 	mkdir -p $(DESTDIR)/tmp
+	mkdir -p $(DESTDIR)$(YAFFAS_EXAMPLE)/tmp
 	$(INSTALL) -f conf/$(SMB_CONF) $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/smb.conf
 	$(INSTALL) -f conf/smbopts.software $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/
-	$(INSTALL) -f tmp/root.ldif $(DESTDIR)/tmp
+	$(INSTALL) -f tmp/root.ldif $(DESTDIR)$(YAFFAS_EXAMPLE)/tmp
 

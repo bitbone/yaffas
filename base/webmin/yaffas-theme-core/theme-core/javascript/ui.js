@@ -684,7 +684,13 @@ Yaffas.UI.prototype.openAbout = function() {
 }
 
 Yaffas.UI.prototype.openHelp = function() {
-	window.open("http://wiki.yaffas.org");
+	if (Yaffas.LANG["used"] === "en") {
+		window.open("http://wiki.yaffas.org/doku.php?id=en:start");
+	}
+	else {
+		window.open("http://wiki.yaffas.org");
+	}
+
 }
 
 Yaffas.UI.prototype.replaceValueForm = function() {

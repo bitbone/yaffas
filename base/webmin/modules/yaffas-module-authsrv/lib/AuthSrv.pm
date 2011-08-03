@@ -977,7 +977,7 @@ sub set_pdc( ;$$$$$$$$){
 		}
 		auth_srv_pdc ( 'deactivate' );
 
-		set_pdc_smb( $realm, $pdc, $workgroup, $type );
+		set_pdc_smb( $realm, $pdc, $workgroup, $type, $encryption );
 		set_pdc_krb( $realm, $domain, $pdc );
 
 
@@ -1128,8 +1128,8 @@ throws: Yaffas::Exception( 'err_writing_smb' )
 
 =cut
 
-sub set_pdc_smb($$$$){
-	my( $realm, $pdc, $workgroup, $type ) = @_;
+sub set_pdc_smb($$$$;$){
+	my( $realm, $pdc, $workgroup, $type, $encryption ) = @_;
 	my $smb = File::Samba->new( Yaffas::Constant::FILE->{'smb_includes_global'} )
 		or throw Yaffas::Exception( 'err_file_read', Yaffas::Constant::FILE->{'smb_includes_global'} );
 	$smb->version(3);
@@ -1163,6 +1163,12 @@ sub set_pdc_smb($$$$){
 	$smb->globalParameter('client use spnego', 'yes');
 	$smb->globalParameter('winbind enum users', 'yes');
 	$smb->globalParameter('winbind enum groups', 'yes');
+	if (defined $encryption) {
+		$smb->globalParameter('ldap ssl', 'start tls');
+	}
+	else {
+		$smb->globalParameter('ldap ssl', 'off');
+	}
 
 	$smb->save( Yaffas::Constant::FILE->{'smb_includes_global'} )
 		or throw Yaffas::Exception( 'err_file_write', Yaffas::Constant::FILE->{'smb_includes_global'} );

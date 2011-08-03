@@ -38,21 +38,9 @@ case "$1" in
 
 	# correct dn in smb.conf
 	SMBCBB="/etc/samba/smb.conf"
-	ARRAY=(`hostname -d | cut -d. -f1- --output-delimiter=\ `)
-	COUNT=${#ARRAY[*]}
-	BASE=""
-	ORG=""
-	for i in `seq 1 $COUNT`
-	do
-		if [ $i -eq $COUNT ]; then
-			BASE="${BASE}c=${ARRAY[$(($i-1))]}"
-		elif [ $i -eq $(($COUNT-1)) ]; then
-			BASE="${BASE}o=${ARRAY[$(($i-1))]},"
-			ORG=${ARRAY[$(($i-1))]}
-		else
-			BASE="${BASE}ou=${ARRAY[$(($i-1))]},"
-		fi
-	done
+
+	BASE=$(grep "^BASEDN=" /etc/ldap.settings | cut -d= -f2-)
+
 	sed -e "s/-thedn-/$BASE/" -i $SMBCBB
 
 	# generate global conf for samba if no one is here
@@ -113,9 +101,9 @@ case "$1" in
 		# first add root to ldap (needed to grant privilege)
 		SID=$(net getlocalsid)
 		SID=${SID/*S/S}
-		sed -e "s/-thedn-/$BASE/g" -i /tmp/root.ldif
-		sed -e "s/-thesid-/$SID/g" -i /tmp/root.ldif
-		/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /tmp/root.ldif
+		sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+		sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+		/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
 		# set privileges for root
 
 		for i in $(seq 1 60); do
@@ -141,7 +129,7 @@ case "$1" in
 		/etc/init.d/winbind restart
 	fi
 
-	rm -f /tmp/root.ldif
+	rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
     ;;
 

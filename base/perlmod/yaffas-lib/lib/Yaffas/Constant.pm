@@ -229,7 +229,7 @@ use constant {
 		"zarafa_quota_mail_warn" => "/etc/zarafa/quotamail/userwarning.mail",
 		"zarafa_quota_mail_soft" => "/etc/zarafa/quotamail/usersoft.mail",
 		"zarafa_quota_mail_hard" => "/etc/zarafa/quotamail/userhard.mail",
-		"freshclam_conf" => "/etc/clamav/freshclam.conf",
+		"freshclam_conf" => ( OS eq 'Ubuntu' ? "/etc/clamav/freshclam.conf" : "/etc/freshclam.conf" ),
 		"postfix_master" => "/etc/postfix/master.cf",
 		"postfix_main" => "/etc/postfix/main.cf",
 		"postfix_ldap_users" => "/etc/postfix/ldap-users.cf",

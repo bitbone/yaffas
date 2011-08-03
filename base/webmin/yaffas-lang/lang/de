@@ -10,7 +10,7 @@ category_maintenance=Wartung
 category_security=Sicherheit
 category_pdf=PDF Drucker
 category_zarafa=Zarafa
-category_groupware=Groupware
+category_groupware=Zarafa
 
 err_db_connect=Konnte nicht mit der Datenbank Postgres verbinden.
 err_dir_exists=Konnte folgende Verzeichnisse nicht finden:
