@@ -8,6 +8,7 @@ Yaffas.UI = function() {
 	this.errorDialog = null;
 
 	this.addCloseButton = false;
+	this.showHelpTooltip = true;
 }
 
 Yaffas.UI.prototype.setup = function(){
@@ -711,6 +712,52 @@ Yaffas.UI.prototype.replaceValueForm = function() {
 		}
 		
 	}
+}
+
+/**
+ * showHelp(e): Displays the help div after a delay of 500ms
+ */
+Yaffas.UI.prototype.showHelp = function(elem) {
+	this.showHelpTooltip = true;
+	var e = new YAHOO.util.Element(elem.children[0]);
+	e.addClass("show");
+
+	if (e.hasClass("hidden")) {
+		var func = function() {
+			if (e.hasClass("show")) {
+				e.removeClass("hidden");
+				e.removeClass("show");
+			}
+		}.bind(this);
+		func.delay(0.5);
+	}
+}
+
+/**
+ * cancelHelp(e): Cancel the help showing if delay has not been reached
+ */
+Yaffas.UI.prototype.cancelHelp = function(elem) {
+	this.showHelpTooltip = false;
+	var e = new YAHOO.util.Element(elem.children[0]);
+	e.removeClass("show");
+}
+
+
+/**
+ * toggleHelp(e): Toggles visibility on help element
+ */
+Yaffas.UI.prototype.toggleHelp = function(elem) {
+	var e = new YAHOO.util.Element(elem.children[0]);
+
+	if (e.hasClass("hidden")) {
+		e.removeClass("hidden");
+		e.removeClass("show");
+	}
+	else {
+		e.addClass("hidden");
+		e.removeClass("show");
+	}
+
 }
 
 Yaffas.UI.prototype.reloadGlobals = function() {

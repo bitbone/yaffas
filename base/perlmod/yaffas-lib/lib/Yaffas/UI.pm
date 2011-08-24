@@ -13,6 +13,7 @@ sub BEGIN {
 						section_button section start_section end_section
 						table start_table end_table small_form
 						value_add_del_form creating_cache_finish creating_cache_start
+						textfield password_field
 					   );
 	*CGI::start_form = \&CGI::startform;
 	$Cgi = CGI->new("");
@@ -20,6 +21,7 @@ sub BEGIN {
 
 our $Print_inner_div;
 our $Convert_nl;
+our %Help;
 $Print_inner_div = 1;
 $Convert_nl = 1;
 
@@ -467,6 +469,90 @@ sub creating_cache_finish() {
 	push @ret, $Cgi->end_p();
 	push @ret, "<script type='text/javascript'>document.getElementById('cache').style.display='none';</script>";
 	return @ret;
+}
+
+
+sub _load_help {
+	if (not scalar %Help) {
+		open F, "<", "help/en";
+		while (<F>) {
+			my @tmp = split /=/, $_;
+			$Help{$tmp[0]} = $tmp[1];
+		}
+		close F;
+	}
+}
+
+sub _get_help_button {
+	my $name = shift;
+
+	if (exists $Help{$name}) {
+		return $Cgi->div(
+			{-class=>'tooltip', onmouseover=>"Yaffas.ui.showHelp(this)", onclick=>"Yaffas.ui.toggleHelp(this)", onmouseout=>"Yaffas.ui.cancelHelp(this)"},
+			$Cgi->div({-class=>"hidden"}, exists $Help{$name} ? $Help{$name} : "No help available! name = $name")
+		);
+	}
+	return "";
+}
+
+sub textfield {
+	my $input;
+	my $name;
+	my $value;
+	my $size;
+
+	if (scalar @_ > 2) {
+		$name = shift;
+		$value = shift;
+		$size = shift;
+	}
+	else {
+		$input = shift;
+		$name = $input->{-name};
+	}
+
+	_load_help();
+
+	my $ret;
+
+	if (defined $input) {
+		$ret = $Cgi->textfield($input);
+	}
+	else {
+		$ret = $Cgi->textfield($name, $value, $size);
+	}
+
+	return $ret . _get_help_button($name);
+}
+
+sub password_field {
+	my $input;
+	my $name;
+	my $value;
+	my $size;
+
+	if (scalar @_ > 2) {
+		$name = shift;
+		$value = shift;
+		$size = shift;
+	}
+	else {
+		$input = shift;
+		$name = $input->{-name};
+	}
+
+	_load_help();
+
+	my $ret;
+
+	if (defined $input) {
+		$ret = $Cgi->password_field($input)
+	}
+	else {
+		$ret = $Cgi->password_field($name, $value, $size);
+	}
+
+	return $ret . _get_help_button($name);
 }
 
 1;
