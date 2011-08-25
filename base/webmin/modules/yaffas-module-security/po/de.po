@@ -1,0 +1,236 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#, no-wrap
+msgid "Apply"
+msgstr "Anwenden"
+
+#: en:2
+#, no-wrap
+msgid "Edit"
+msgstr "Editieren"
+
+#: en:3
+#, no-wrap
+msgid "Delete"
+msgstr "Löschen"
+
+#: en:4
+#, no-wrap
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: en:5
+#, no-wrap
+msgid "Activate"
+msgstr "Aktivieren"
+
+#: en:6
+#, no-wrap
+msgid "Deactivate"
+msgstr "Deaktivieren"
+
+#: en:7
+#, no-wrap
+msgid "Update"
+msgstr "Update"
+
+#: en:8
+#, no-wrap
+msgid "Delete entry"
+msgstr "Eintrag löschen"
+
+#: en:9
+#, no-wrap
+msgid "Do you really want to delete this entry?"
+msgstr "Wollen Sie diesen Eintrag wirklich löschen?"
+
+#: en:11
+#, no-wrap
+msgid "Do you really want to disable this service?"
+msgstr "Möchten Sie diesen Dienst wirklich deaktivieren?"
+
+#: en:12
+#, no-wrap
+msgid "Do you really want to enable this service?"
+msgstr "Möchten Sie diesen Dienst wirklich aktivieren?"
+
+#: en:14
+#, no-wrap
+msgid "Policy"
+msgstr "Policy"
+
+#: en:15
+#, no-wrap
+msgid "Enable policy"
+msgstr "Policy aktivieren"
+
+#: en:16
+#, no-wrap
+msgid "Disable policy"
+msgstr "Policy deaktivieren"
+
+#: en:17
+#, no-wrap
+msgid "DNSBL"
+msgstr "DNS Blacklisting"
+
+#: en:18
+#, no-wrap
+msgid "RHSBL"
+msgstr "RHSBL"
+
+#: en:19
+#, no-wrap
+msgid "Hostname"
+msgstr "Hostname"
+
+#: en:20
+#, no-wrap
+msgid "Hit score"
+msgstr "Hit score"
+
+#: en:21
+#, no-wrap
+msgid "Miss score"
+msgstr "Miss score"
+
+#: en:22
+#, no-wrap
+msgid "Log name"
+msgstr "Logname"
+
+#: en:24
+#, no-wrap
+msgid "ClamAV"
+msgstr "ClamAV"
+
+#: en:25
+#, no-wrap
+msgid "Activate clamav"
+msgstr "ClamAV aktivieren"
+
+#: en:26
+#, no-wrap
+msgid "Deactivate clamav"
+msgstr "ClamAV deaktivieren"
+
+#: en:27
+#, no-wrap
+msgid "Scan archives"
+msgstr "Archive scannen"
+
+#: en:28
+#, no-wrap
+msgid "Virus alert email"
+msgstr "Benachrichtigungsadresse bei Viren"
+
+#: en:29
+#, no-wrap
+msgid "Maximum size of scannable objects in MB"
+msgstr "Maximale Größe zum Scannen in MB"
+
+#: en:30
+#, no-wrap
+msgid "Update the ClamAV signatures"
+msgstr "ClamAV-Signaturen aktualisieren"
+
+#: en:31
+#, no-wrap
+msgid "Configure clamav"
+msgstr "Clamav konfigurieren"
+
+#: en:33
+#, no-wrap
+msgid "Spamassassin"
+msgstr "Spamassassin"
+
+#: en:34
+#, no-wrap
+msgid "Configure Spamassassin"
+msgstr "Spamassassin konfigurieren"
+
+#: en:35
+#, no-wrap
+msgid "Activate spamassassin"
+msgstr "Spamassassin aktivieren"
+
+#: en:36
+#, no-wrap
+msgid "Deactivate spamassassin"
+msgstr "Spamassassin deaktivieren"
+
+#: en:37
+#, no-wrap
+msgid "Update the Spamassassin filters"
+msgstr "Spamassassin-Filter aktualisieren"
+
+#: en:38
+#, no-wrap
+msgid "Network"
+msgstr "Netzwerk"
+
+#: en:39
+#, no-wrap
+msgid "Internal networks"
+msgstr "Interne Netzwerke"
+
+#: en:40
+#, no-wrap
+msgid "Trusted networks"
+msgstr "Vertrauenswürdige Netzwerke"
+
+#: en:41
+#, no-wrap
+msgid "Add spam detected headers at level"
+msgstr "Hinzufügen von \"Spam-Headern\" ab Level "
+
+#: en:43
+#, no-wrap
+msgid "Whitelisting"
+msgstr "Whitelisting"
+
+#: en:44
+#, no-wrap
+msgid "All hosts and addresses listed here are not checked for spam or viruses."
+msgstr "Die hier angegebenen Hosts und Adressen werden nicht auf Spam und Viren überprüft."
+
+#: en:45
+#, no-wrap
+msgid "Address"
+msgstr "Adresse"
+
+#: en:46
+#, no-wrap
+msgid "Type"
+msgstr "Art"
+
+#: en:47
+#, no-wrap
+msgid "Source"
+msgstr "Quelle"
+
+#: en:48
+#, no-wrap
+msgid "Entry"
+msgstr "Eintrag"
+
+#: en:50
+#, no-wrap
+msgid "Invalid e-mail address"
+msgstr "Ungültige E-Mail Adresse"

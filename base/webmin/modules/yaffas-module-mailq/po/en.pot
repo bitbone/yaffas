@@ -1,0 +1,181 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Email Queue"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Mailserver"
+msgstr ""
+
+#: en:3
+#, no-wrap
+msgid "ID"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Size"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Time"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Sender"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "Recipient"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Status"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "Attempt to deliver"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "Delete emails"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "Forward to postmaster"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Forward to special user"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "OK"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "All"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "None"
+msgstr ""
+
+#: en:16
+#, no-wrap
+msgid "Emails"
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid "Email address"
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid "Mail ID"
+msgstr ""
+
+#: en:19
+#, no-wrap
+msgid "forward to"
+msgstr ""
+
+#: en:20
+#, no-wrap
+msgid "Really remove the emails with this mail id`s?"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid "deleted"
+msgstr ""
+
+#: en:22
+#, no-wrap
+msgid "attemted to dequeue"
+msgstr ""
+
+#: en:23
+#, no-wrap
+msgid "forwarded to"
+msgstr ""
+
+#: en:24
+#, no-wrap
+msgid "Network"
+msgstr ""
+
+#: en:25
+#, no-wrap
+msgid "No emails selected."
+msgstr ""
+
+#: en:26
+#, no-wrap
+msgid "No mail IDs selected"
+msgstr ""
+
+#: en:27
+#, no-wrap
+msgid "Error while mark existing email addresses as delivered"
+msgstr ""
+
+#: en:28
+#, no-wrap
+msgid "Error while adding new recipient to the mailid"
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Error while force a delivery"
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "Error removing email"
+msgstr ""
+
+#: en:31
+#, no-wrap
+msgid "Error at dequeue attempt for email"
+msgstr ""
+
+#: en:32
+#, no-wrap
+msgid "No valid email address"
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "Display"
+msgstr ""

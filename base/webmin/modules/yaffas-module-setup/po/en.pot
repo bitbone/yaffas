@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Admin password"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Admin password (repeat)"
+msgstr ""
+
+#: en:3
+#, no-wrap
+msgid "MySQL database"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "MySQL server"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "MySQL username"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "MySQL password"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Setup finished"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "Setup was finished successfully. After relogin you can use all features."
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "Zarafa settings"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Basic settings"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "Could not connect to database."
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "The admin password is empty or does not match."
+msgstr ""

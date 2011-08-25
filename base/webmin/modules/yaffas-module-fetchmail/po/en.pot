@@ -1,0 +1,636 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 14:00+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Query"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Server to poll"
+msgstr ""
+
+#: en:3 en:31
+#, no-wrap
+msgid "Protocol"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Active?"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Remote and local users"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Add a new server"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "Check all servers"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Edit default settings"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "Unix user"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "Fetchmail configuration"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "Add Fetchmail server for user:"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Fetchmail configuration in $1"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "server list"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "Start Fetchmail Daemon"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "Stop Fetchmail Daemon"
+msgstr ""
+
+#: en:16
+#, no-wrap
+msgid ""
+"Click this button to start the fetchmail daemon on this server, and have it "
+"check for mail every $1 seconds. The daemon will run as user $2 and use the "
+"configuration above."
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid ""
+"Click this button to stop the fetchmail daemon currently running as user "
+"$1. Mail will no longer be automatically downloaded every $2 seconds."
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid ""
+"The fetchmail program $1 could not be found. Maybe fetchmail is not "
+"installed on your system, or your <a href='$2'>module configuration</a> is "
+"incorrect."
+msgstr ""
+
+#: en:19
+#, no-wrap
+msgid "No Unix users have <tt>.fetchmailrc</tt> files."
+msgstr ""
+
+#: en:20 en:104
+#, no-wrap
+msgid "Scheduled Checking"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid ""
+"Click this button to create, change or remove a Cron job to have Fetchmail "
+"run automatically on schedule to check for and download email using the "
+"configuration above."
+msgstr ""
+
+#: en:22
+#, no-wrap
+msgid "Fetchmail version $1"
+msgstr ""
+
+#: en:24 en:26
+#, no-wrap
+msgid "Add query"
+msgstr ""
+
+#: en:25
+#, no-wrap
+msgid "Edit query"
+msgstr ""
+
+#: en:27
+#, no-wrap
+msgid "Server name"
+msgstr ""
+
+#: en:28
+#, no-wrap
+msgid "Polling enabled?"
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Mail server to contact"
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "Same as server name"
+msgstr ""
+
+#: en:32
+#, no-wrap
+msgid "Server port"
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "Mail server user details"
+msgstr ""
+
+#: en:34
+#, no-wrap
+msgid "Remote user"
+msgstr ""
+
+#: en:35
+#, no-wrap
+msgid "Remote password"
+msgstr ""
+
+#: en:36
+#, no-wrap
+msgid "Local user(s)"
+msgstr ""
+
+#: en:37
+#, no-wrap
+msgid "Local user(s) or e-mail adresses"
+msgstr ""
+
+#: en:38
+#, no-wrap
+msgid "Leave messages on server?"
+msgstr ""
+
+#: en:39
+#, no-wrap
+msgid "Always fetch all messages?"
+msgstr ""
+
+#: en:40
+#, no-wrap
+msgid "Usually no"
+msgstr ""
+
+#: en:41
+#, no-wrap
+msgid "Connect in SSL mode?"
+msgstr ""
+
+#: en:42
+#, no-wrap
+msgid "Failed to save server"
+msgstr ""
+
+#: en:43
+#, no-wrap
+msgid "Missing or invalid server name"
+msgstr ""
+
+#: en:44
+#, no-wrap
+msgid "Invalid mail server name"
+msgstr ""
+
+#: en:45
+#, no-wrap
+msgid "Missing or invalid port number"
+msgstr ""
+
+#: en:46
+#, no-wrap
+msgid "Missing or invalid remote user name"
+msgstr ""
+
+#: en:47
+#, no-wrap
+msgid "Add another user"
+msgstr ""
+
+#: en:48
+#, no-wrap
+msgid "Check this server"
+msgstr ""
+
+#: en:49
+#, no-wrap
+msgid "Check condition"
+msgstr ""
+
+#: en:50
+#, no-wrap
+msgid "Always check"
+msgstr ""
+
+#: en:51
+#, no-wrap
+msgid "Only if interface is up"
+msgstr ""
+
+#: en:52
+#, no-wrap
+msgid "with address / netmask"
+msgstr ""
+
+#: en:53
+#, no-wrap
+msgid "Missing or invalid network interface"
+msgstr ""
+
+#: en:54
+#, no-wrap
+msgid "Missing or invalid address"
+msgstr ""
+
+#: en:55
+#, no-wrap
+msgid "Invalid address netmask"
+msgstr ""
+
+#: en:56
+#, no-wrap
+msgid "Command to run before connecting"
+msgstr ""
+
+#: en:57
+#, no-wrap
+msgid "Command to run after disconnecting"
+msgstr ""
+
+#: en:58
+#, no-wrap
+msgid "You are not allowed to edit this user's fetchmail config"
+msgstr ""
+
+#: en:59
+#, no-wrap
+msgid "Only users' fetchmail config files can be edited"
+msgstr ""
+
+#: en:60
+#, no-wrap
+msgid "Poll interval"
+msgstr ""
+
+#: en:61
+#, no-wrap
+msgid "Envelope"
+msgstr ""
+
+#: en:63
+#, no-wrap
+msgid "Failed to stop fetchmail"
+msgstr ""
+
+#: en:64
+#, no-wrap
+msgid "You are not allowed to stop fetchmail"
+msgstr ""
+
+#: en:65
+#, no-wrap
+msgid "Failed to start fetchmail"
+msgstr ""
+
+#: en:66
+#, no-wrap
+msgid "Missing or invalid checking interval"
+msgstr ""
+
+#: en:67
+#, no-wrap
+msgid "You are not allowed to start fetchmail"
+msgstr ""
+
+#: en:69
+#, no-wrap
+msgid "Checking Servers"
+msgstr ""
+
+#: en:70
+#, no-wrap
+msgid "Checking for mail on server(s) with command $1 .."
+msgstr ""
+
+#: en:71
+#, no-wrap
+msgid ".. checking complete."
+msgstr ""
+
+#: en:72
+#, no-wrap
+msgid ".. checking failed!"
+msgstr ""
+
+#: en:74
+#, no-wrap
+msgid "Settings"
+msgstr ""
+
+#: en:75
+#, no-wrap
+msgid "Default Settings"
+msgstr ""
+
+#: en:76
+#, no-wrap
+msgid "Default settings for all servers"
+msgstr ""
+
+#: en:77
+#, no-wrap
+msgid "Failed to save default settings"
+msgstr ""
+
+#: en:79
+#, no-wrap
+msgid "Added server $1 in file $2"
+msgstr ""
+
+#: en:80
+#, no-wrap
+msgid "Modified server $1 in file $2"
+msgstr ""
+
+#: en:81
+#, no-wrap
+msgid "Deleted server $1 in file $2"
+msgstr ""
+
+#: en:82
+#, no-wrap
+msgid "Added server $1 for user $2"
+msgstr ""
+
+#: en:83
+#, no-wrap
+msgid "Modified server $1 for user $2"
+msgstr ""
+
+#: en:84
+#, no-wrap
+msgid "Deleted server $1 for user $2"
+msgstr ""
+
+#: en:85
+#, no-wrap
+msgid "Checked all servers in file $1"
+msgstr ""
+
+#: en:86 en:89
+#, no-wrap
+msgid "Checked server $2 in file $1"
+msgstr ""
+
+#: en:87
+#, no-wrap
+msgid "Checked all servers for user $1"
+msgstr ""
+
+#: en:88
+#, no-wrap
+msgid "Checked server $2 for user $1"
+msgstr ""
+
+#: en:90
+#, no-wrap
+msgid "Changed global settings for user $1"
+msgstr ""
+
+#: en:91
+#, no-wrap
+msgid "Changed global settings in file $1"
+msgstr ""
+
+#: en:92
+#, no-wrap
+msgid "Started fetchmail daemon"
+msgstr ""
+
+#: en:93
+#, no-wrap
+msgid "Stopped fetchmail daemon"
+msgstr ""
+
+#: en:94
+#, no-wrap
+msgid "Enabled scheduled checking"
+msgstr ""
+
+#: en:95
+#, no-wrap
+msgid "Modified scheduled checking"
+msgstr ""
+
+#: en:96
+#, no-wrap
+msgid "Disabled scheduled checking"
+msgstr ""
+
+#: en:98
+#, no-wrap
+msgid "Can edit fetchmail config for"
+msgstr ""
+
+#: en:99
+#, no-wrap
+msgid "All users"
+msgstr ""
+
+#: en:100
+#, no-wrap
+msgid "Current webmin user"
+msgstr ""
+
+#: en:101
+#, no-wrap
+msgid "Only users"
+msgstr ""
+
+#: en:102
+#, no-wrap
+msgid "All except users"
+msgstr ""
+
+#: en:105
+#, no-wrap
+msgid ""
+"This page can be used to enable or disable a Cron job to check the mail "
+"servers in your Fetchmail configuration on a regular schedule. Using a Cron "
+"job superior to running the Fetchmail daemon, as it does not need to be "
+"re-started at boot time."
+msgstr ""
+
+#: en:106
+#, no-wrap
+msgid "Scheduled Fetchmail settings"
+msgstr ""
+
+#: en:107
+#, no-wrap
+msgid "Scheduled checking enabled?"
+msgstr ""
+
+#: en:108
+#, no-wrap
+msgid "Yes, at times configured below .."
+msgstr ""
+
+#: en:109
+#, no-wrap
+msgid "Destination for Fetchmail output"
+msgstr ""
+
+#: en:110
+#, no-wrap
+msgid "Write to file $1"
+msgstr ""
+
+#: en:111
+#, no-wrap
+msgid "Email to address $1"
+msgstr ""
+
+#: en:112
+#, no-wrap
+msgid "Discard"
+msgstr ""
+
+#: en:113
+#, no-wrap
+msgid "Output to cron"
+msgstr ""
+
+#: en:114
+#, no-wrap
+msgid "Run Fetchmail as user"
+msgstr ""
+
+#: en:115
+#, no-wrap
+msgid "Failed to save scheduled checking"
+msgstr ""
+
+#: en:116
+#, no-wrap
+msgid "Missing or invalid output filename"
+msgstr ""
+
+#: en:117
+#, no-wrap
+msgid "Missing or invalid email address"
+msgstr ""
+
+#: en:118
+#, no-wrap
+msgid "Missing or invalid Unix user"
+msgstr ""
+
+#: en:119
+#, no-wrap
+msgid "Scheduled checking is not available in this mode"
+msgstr ""
+
+#: en:121
+#, no-wrap
+msgid "Delete"
+msgstr ""
+
+#: en:122
+#, no-wrap
+msgid "Do you really want to delete this server?"
+msgstr ""
+
+#: en:123
+#, no-wrap
+msgid "Multidrop"
+msgstr ""
+
+#: en:124
+#, no-wrap
+msgid "Destination"
+msgstr ""
+
+#: en:125
+#, no-wrap
+msgid "Alias"
+msgstr ""
+
+#: en:126
+#, no-wrap
+msgid "User"
+msgstr ""
+
+#: en:128
+#, no-wrap
+msgid "Please provide a local and remote user."
+msgstr ""
+
+#: en:129
+#, no-wrap
+msgid "The given local username is invalid."
+msgstr ""
+
+#: en:130
+#, no-wrap
+msgid "The given alias is invalid."
+msgstr ""
+
+#: en:131
+#, no-wrap
+msgid "Please select \"user\", \"alias\" or \"multidrop\"."
+msgstr ""
+
+#: en:132
+#, no-wrap
+msgid "Please provide a valid mailserver user."
+msgstr ""
+
+#: en:133
+#, no-wrap
+msgid "Please provide a password for the mailserver user."
+msgstr ""
+
+#: en:134
+#, no-wrap
+msgid "Fetchmail daemon could not be enabled."
+msgstr ""

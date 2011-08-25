@@ -1,0 +1,221 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 14:18+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Stop"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Close"
+msgstr ""
+
+#: en:3 en:19
+#, no-wrap
+msgid "Restore"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Restoring folder $1..."
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Restoring element $1..."
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "done"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "failed"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Start restore"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "Restore was started"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "Restore running"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "Restore finished"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Subject"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "Sender"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "Date"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "Start"
+msgstr ""
+
+#: en:16
+#, no-wrap
+msgid "End"
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid "Select backup"
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid "Backup Overview"
+msgstr ""
+
+#: en:20
+#, no-wrap
+msgid "Clear"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid "Do you want to remove these elements from restore list?"
+msgstr ""
+
+#: en:22
+#, no-wrap
+msgid "Really clear?"
+msgstr ""
+
+#: en:23
+#, no-wrap
+msgid "Store"
+msgstr ""
+
+#: en:24 en:27
+#, no-wrap
+msgid "Backup time"
+msgstr ""
+
+#: en:25
+#, no-wrap
+msgid "Settings"
+msgstr ""
+
+#: en:26
+#, no-wrap
+msgid "Global settings"
+msgstr ""
+
+#: en:28
+#, no-wrap
+msgid "Full backup"
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Differential backup"
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "at"
+msgstr ""
+
+#: en:31
+#, no-wrap
+msgid "Backup directory"
+msgstr ""
+
+#: en:32
+#, no-wrap
+msgid "Remove"
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "Preserve fullbackup (in days)"
+msgstr ""
+
+#: en:34
+#, no-wrap
+msgid "Removing directory"
+msgstr ""
+
+#: en:35
+#, no-wrap
+msgid "Click on \"restore\" to restore the selected messages."
+msgstr ""
+
+#: en:36
+#, no-wrap
+msgid "No backup available"
+msgstr ""
+
+#: en:38
+#, no-wrap
+msgid "Time not correct."
+msgstr ""
+
+#: en:39
+#, no-wrap
+msgid "Preserve time not set or not correct."
+msgstr ""
+
+#: en:40
+#, no-wrap
+msgid "Could not open file."
+msgstr ""
+
+#: en:41
+#, no-wrap
+msgid "Could not find a full backup."
+msgstr ""
+
+#: en:42
+#, no-wrap
+msgid "Could not create directory."
+msgstr ""
+
+#: en:43
+#, no-wrap
+msgid "Error passing backup days."
+msgstr ""
+
+#: en:44
+#, no-wrap
+msgid "Could not open directory."
+msgstr ""

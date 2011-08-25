@@ -1,4 +1,5 @@
 lbl_insert=Schlüssel einspielen
+lbl_install_key=Install new key
 lbl_install_basekey=Neuen Basis-Schlüssel installieren
 lbl_install_calkey=Neuen Client-Schlüssel installieren
 lbl_installed_licences=Installierte Lizenzen

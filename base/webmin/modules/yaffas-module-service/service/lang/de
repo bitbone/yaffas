@@ -36,7 +36,7 @@ lbl_sure_reboot=Möchen Sie wirklich das System neu starten.
 lbl_day=Tag
 lbl_month=Monat
 lbl_date=Datum
-lbl_hour=Stunde
+lbl_hour= Stunde 
 lbl_year=Jahr
 lbl_setdatetime=Systemzeit
 

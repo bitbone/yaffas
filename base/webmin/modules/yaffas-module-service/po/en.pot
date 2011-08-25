@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Services"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Service"
+msgstr ""
+
+#: en:3
+#, no-wrap
+msgid "State"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Start Service on Boot"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Monitor"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Action"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "Execute"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Start"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "Stop"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "Restart"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Started"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "Stopped"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "Service has been started"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "Service must not be started"
+msgstr ""
+
+#: en:16
+#, no-wrap
+msgid "Service couldn't be started"
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid "Service has been stopped"
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid "Service must not be stopped"
+msgstr ""
+
+#: en:19
+#, no-wrap
+msgid "Service couldn't be stopped"
+msgstr ""
+
+#: en:20
+#, no-wrap
+msgid "Service has been restarted"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid "Service must not be restarted"
+msgstr ""
+
+#: en:22
+#, no-wrap
+msgid "Service couldn't be restarted"
+msgstr ""
+
+#: en:23
+#, no-wrap
+msgid "Stop service"
+msgstr ""
+
+#: en:24
+#, no-wrap
+msgid "Do you really want to stop this service?"
+msgstr ""
+
+#: en:27 en:28
+#, no-wrap
+msgid "Shutdown system"
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Reboot system"
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "System is shuting down."
+msgstr ""
+
+#: en:31
+#, no-wrap
+msgid "System is rebooting. In some minutes you can login again."
+msgstr ""
+
+#: en:32
+#, no-wrap
+msgid "Do you really want to halt the system."
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "Do you really want to reboot the system."
+msgstr ""
+
+#: en:36
+#, no-wrap
+msgid "Day"
+msgstr ""
+
+#: en:37
+#, no-wrap
+msgid "Month"
+msgstr ""
+
+#: en:38
+#, no-wrap
+msgid "Date"
+msgstr ""
+
+#: en:39
+#, no-wrap
+msgid "Hour"
+msgstr ""
+
+#: en:40
+#, no-wrap
+msgid "Year"
+msgstr ""
+
+#: en:41
+#, no-wrap
+msgid "System time"
+msgstr ""
+
+#: en:44
+#, no-wrap
+msgid "now"
+msgstr ""
+
+#: en:45
+#, no-wrap
+msgid "hourly"
+msgstr ""
+
+#: en:46
+#, no-wrap
+msgid "daily at "
+msgstr ""
+
+#: en:47
+#, no-wrap
+msgid " minute"
+msgstr ""
+
+#: en:48
+#, no-wrap
+msgid " hour"
+msgstr ""
+
+#: en:49
+#, no-wrap
+msgid "Time Server"
+msgstr ""

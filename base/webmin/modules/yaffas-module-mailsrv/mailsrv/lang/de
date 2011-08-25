@@ -64,6 +64,7 @@ err_password_missing=Das Passwort wurde nicht angegeben.
 err_user_not_zarafa_admin=Der Benutzer ist kein Zarafa-Administrator.
 err_user_password=Das Passwort des angegebenen Benutzers ist falsch.
 
+
 lbl_antivirus=Antivirus
 lbl_antispam=Antispam
 lbl_greylist=Greylist

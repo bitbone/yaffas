@@ -1,0 +1,146 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#, no-wrap
+msgid "Edit"
+msgstr "Bearbeiten "
+
+#: en:2
+#, no-wrap
+msgid "Add alias"
+msgstr "Alias hinzufügen"
+
+#: en:3 en:19
+#, no-wrap
+msgid "Remove"
+msgstr "Löschen"
+
+#: en:4
+#, no-wrap
+msgid "Execute"
+msgstr "Ausführen"
+
+#: en:5
+#, no-wrap
+msgid "Apply"
+msgstr "Anwenden"
+
+#: en:7
+#, no-wrap
+msgid "Mail alias Configuration"
+msgstr "Mail Alias Konfiguration"
+
+#: en:8
+#, no-wrap
+msgid "Index"
+msgstr "Index"
+
+#: en:9
+#, no-wrap
+msgid "Mail server"
+msgstr "Mailserver"
+
+#: en:11
+#, no-wrap
+msgid "Do you really want to delete the alias(es)?"
+msgstr "Wollen Sie wirklich den Alias / die Aliasse löschen?"
+
+#: en:12
+#, no-wrap
+msgid "Please enter valid values!"
+msgstr "Konnte den Alias nicht anlegen"
+
+#: en:14
+#, no-wrap
+msgid "Mail aliases"
+msgstr "Maili Aliasse"
+
+#: en:15
+#, no-wrap
+msgid "Mail alias"
+msgstr "Mail Alias"
+
+#: en:16
+#, no-wrap
+msgid "Folder"
+msgstr "Ordner"
+
+#: en:17 en:20
+#, no-wrap
+msgid "User"
+msgstr "Benutzer"
+
+#: en:21
+#, no-wrap
+msgid "or"
+msgstr "oder"
+
+#: en:23
+#, no-wrap
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: en:24
+#, no-wrap
+msgid "Configuration of mail aliases is done through active directory."
+msgstr "Die Konfiguration der Mail Aliasse geschieht über das Active Directory."
+
+#: en:26
+#, no-wrap
+msgid "The following usernames or e-mail addresses are not valid."
+msgstr "Die folgenden Usernamen oder E-Mail Adressen sind nicht korrekt."
+
+#: en:27
+#, no-wrap
+msgid "This alias already exists."
+msgstr "Diese Alias existiert bereits."
+
+#: en:28
+#, no-wrap
+msgid "This alias name is not valid."
+msgstr "Der Alias Name ist nicht gültig."
+
+#: en:29
+#, no-wrap
+msgid "No alias selected."
+msgstr "Kein Alias ausgewählt."
+
+#: en:30
+#, no-wrap
+msgid "Nothing selected"
+msgstr "Nichts ausgewählt"
+
+#: en:31
+#, no-wrap
+msgid "Alias exists as user."
+msgstr "Der Alias existiert als Benutzer."
+
+#: en:32
+#, no-wrap
+msgid "An alias can only be set for user or folder."
+msgstr "Ein Alias darf nur entweder auf einen Benutzer oder Ordner gesetzt werden."
+
+#: en:33
+#, no-wrap
+msgid "Error while removing alias."
+msgstr "Fehler beim löschen des Aliase."
+
+#: en:34
+#, no-wrap
+msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
+msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."

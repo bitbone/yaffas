@@ -1,0 +1,456 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1 en:11
+#, no-wrap
+msgid "System information"
+msgstr "System Information"
+
+#: en:2
+#, no-wrap
+msgid "About yaffas"
+msgstr "Über yaffas"
+
+#: en:3
+#, no-wrap
+msgid "System"
+msgstr "System"
+
+#: en:4
+#, no-wrap
+msgid "Versions"
+msgstr "Versionen"
+
+#: en:5
+#, no-wrap
+msgid "Version"
+msgstr "Version"
+
+#: en:6
+#, no-wrap
+msgid "Revision"
+msgstr "Revision"
+
+#: en:7
+#, no-wrap
+msgid "Product"
+msgstr "Produkt"
+
+#: en:9
+#, no-wrap
+msgid "The information cannot be read!"
+msgstr "Die Produktinformationen können nicht abgerufen werden!"
+
+#: en:12
+#, no-wrap
+msgid "Written by"
+msgstr "Geschrieben von"
+
+#: en:14
+#, no-wrap
+msgid "General information"
+msgstr "Allgemeine Informationen"
+
+#: en:15
+#, no-wrap
+msgid "on an"
+msgstr "auf einem"
+
+#: en:16
+#, no-wrap
+msgid "Up-time of"
+msgstr "Uptime von"
+
+#: en:17
+#, no-wrap
+msgid "days"
+msgstr "Tage"
+
+#: en:18
+#, no-wrap
+msgid "hours"
+msgstr "Stunden"
+
+#: en:19
+#, no-wrap
+msgid "minutes"
+msgstr "Minuten"
+
+#: en:20
+#, no-wrap
+msgid "Load average"
+msgstr "Durchschnitts Load"
+
+#: en:21
+#, no-wrap
+msgid "CPU load"
+msgstr "CPU Load"
+
+#: en:22
+#, no-wrap
+msgid "Overall load"
+msgstr "Gesamt Load"
+
+#: en:23
+#, no-wrap
+msgid "for the last minute"
+msgstr "in der letzten Minute"
+
+#: en:24
+#, no-wrap
+msgid "for the last 5 minutes"
+msgstr "in den letzten 5 Minuten"
+
+#: en:25
+#, no-wrap
+msgid "for the last 15 minutes"
+msgstr "in den letzten 15 Minuten"
+
+#: en:27
+#, no-wrap
+msgid "Memory usage"
+msgstr "Speicher Auslastung"
+
+#: en:28
+#, no-wrap
+msgid "Main memory"
+msgstr "Haupt Speicher"
+
+#: en:29
+#, no-wrap
+msgid "Swap memory"
+msgstr "Swap Speicher"
+
+#: en:30
+#, no-wrap
+msgid "Total"
+msgstr "Total"
+
+#: en:31 en:100
+#, no-wrap
+msgid "Used"
+msgstr "Benutzt"
+
+#: en:32 en:45
+#, no-wrap
+msgid "Free"
+msgstr "Frei"
+
+#: en:33
+#, no-wrap
+msgid "Shared"
+msgstr "Shared"
+
+#: en:34
+#, no-wrap
+msgid "Buffers"
+msgstr "Buffers"
+
+#: en:35
+#, no-wrap
+msgid "Cache"
+msgstr "Cache"
+
+#: en:36
+#, no-wrap
+msgid "Module"
+msgstr "Modul"
+
+#: en:37 en:99
+#, no-wrap
+msgid "Size"
+msgstr "Größe"
+
+#: en:38
+#, no-wrap
+msgid "Referring modules"
+msgstr "Abhängige Module"
+
+#: en:39
+#, no-wrap
+msgid "Modules currently in use"
+msgstr "Verwendete Module"
+
+#: en:40
+#, no-wrap
+msgid "Available Memory"
+msgstr "Verfügbarer Speicher"
+
+#: en:41
+#, no-wrap
+msgid "Usage Key:"
+msgstr "Usage Key:"
+
+#: en:43
+#, no-wrap
+msgid "In Use"
+msgstr "In Verwendung"
+
+#: en:44
+#, no-wrap
+msgid "Buffer"
+msgstr "Buffer"
+
+#: en:47
+#, no-wrap
+msgid "IRQ usage"
+msgstr "IRQ Verwendung"
+
+#: en:48 en:91
+#, no-wrap
+msgid "Device"
+msgstr "Gerät"
+
+#: en:49
+#, no-wrap
+msgid "IO usage"
+msgstr "IO Verwendung"
+
+#: en:51
+#, no-wrap
+msgid "Network statistics"
+msgstr "Netzwerk Statistik"
+
+#: en:52
+#, no-wrap
+msgid "Interface"
+msgstr "Interface"
+
+#: en:53
+#, no-wrap
+msgid "Receive"
+msgstr "Empfangen"
+
+#: en:54
+#, no-wrap
+msgid "Send"
+msgstr "Gesendet"
+
+#: en:55
+#, no-wrap
+msgid "Bytes"
+msgstr "Bytes"
+
+#: en:56
+#, no-wrap
+msgid "Errors"
+msgstr "Fehler"
+
+#: en:57
+#, no-wrap
+msgid "Dropped"
+msgstr "Dropped"
+
+#: en:58
+#, no-wrap
+msgid "Overruns"
+msgstr "Overruns"
+
+#: en:59
+#, no-wrap
+msgid "Frame"
+msgstr "Frame"
+
+#: en:60
+#, no-wrap
+msgid "Carrier"
+msgstr "Carrier"
+
+#: en:61
+#, no-wrap
+msgid "Collisions"
+msgstr "Kollisionen"
+
+#: en:62
+#, no-wrap
+msgid "Active connections"
+msgstr "Aktive Verbindingen"
+
+#: en:63 en:81
+#, no-wrap
+msgid "Protocol"
+msgstr "Protokol"
+
+#: en:64
+#, no-wrap
+msgid "Receive queue"
+msgstr "Empfangs Queue"
+
+#: en:65
+#, no-wrap
+msgid "Send queue"
+msgstr "Send Queue"
+
+#: en:66
+#, no-wrap
+msgid "Local"
+msgstr "Lokal"
+
+#: en:67
+#, no-wrap
+msgid "Foreign"
+msgstr "Ausgehende"
+
+#: en:68 en:85
+#, no-wrap
+msgid "State"
+msgstr "State"
+
+#: en:69
+#, no-wrap
+msgid "Who's logged"
+msgstr "Who's logged"
+
+#: en:70
+#, no-wrap
+msgid "User"
+msgstr "User"
+
+#: en:71
+#, no-wrap
+msgid "TTY"
+msgstr "TTY"
+
+#: en:72
+#, no-wrap
+msgid "From"
+msgstr "Von"
+
+#: en:73
+#, no-wrap
+msgid "Login@"
+msgstr "Login@"
+
+#: en:74
+#, no-wrap
+msgid "Idle"
+msgstr "Idle"
+
+#: en:75
+#, no-wrap
+msgid "Jcpu"
+msgstr "Jcpu"
+
+#: en:76
+#, no-wrap
+msgid "Pcpu"
+msgstr "Pcpu"
+
+#: en:77
+#, no-wrap
+msgid "Command"
+msgstr "Kommando"
+
+#: en:78
+#, no-wrap
+msgid "Listening sockets"
+msgstr "Listening sockets"
+
+#: en:79
+#, no-wrap
+msgid "Active sockets"
+msgstr "Aktive sockets"
+
+#: en:80
+#, no-wrap
+msgid "Unix sockets"
+msgstr "Unix sockets"
+
+#: en:82
+#, no-wrap
+msgid "RefCnt"
+msgstr "RefCnt"
+
+#: en:83
+#, no-wrap
+msgid "Flags"
+msgstr "Flags"
+
+#: en:84
+#, no-wrap
+msgid "Type"
+msgstr "Typ"
+
+#: en:86
+#, no-wrap
+msgid "I-node"
+msgstr "I-node"
+
+#: en:87
+#, no-wrap
+msgid "Path"
+msgstr "Pfad"
+
+#: en:89
+#, no-wrap
+msgid "File system statistics"
+msgstr "Dateisystem Statistik"
+
+#: en:90
+#, no-wrap
+msgid "Mounted file system"
+msgstr "Gemountete Dateisysteme"
+
+#: en:92
+#, no-wrap
+msgid "Directory"
+msgstr "Verzeichnis"
+
+#: en:93 en:98
+#, no-wrap
+msgid "File system"
+msgstr "Dateisystem"
+
+#: en:94
+#, no-wrap
+msgid "Mode"
+msgstr "Mode"
+
+#: en:96
+#, no-wrap
+msgid "File system information"
+msgstr "Dateisystem Informationen"
+
+#: en:101
+#, no-wrap
+msgid "Available"
+msgstr "Verfügbar"
+
+#: en:102
+#, no-wrap
+msgid "Used%"
+msgstr "Benutzt%"
+
+#: en:103
+#, no-wrap
+msgid "Mounted on"
+msgstr "Eingehängt auf"
+
+#: en:105
+#, no-wrap
+msgid "Time"
+msgstr "Zeit"
+
+#: en:106
+#, no-wrap
+msgid "Value"
+msgstr "Wert"
+
+#: en:108
+#, no-wrap
+msgid "Memory type"
+msgstr "Speichertyp"

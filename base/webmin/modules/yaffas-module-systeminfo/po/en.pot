@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "System information"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid "Written by"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "General information"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "on an"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Uptime of"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "days"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "hours"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "minutes"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "Load average"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "CPU load"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "Overall load"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "for the last minute"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "for the last 5 minutes"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "for the last 15 minutes"
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid "Memory usage"
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid "Main memory"
+msgstr ""
+
+#: en:19
+#, no-wrap
+msgid "Swap memory"
+msgstr ""
+
+#: en:20
+#, no-wrap
+msgid "Total"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid "Used"
+msgstr ""
+
+#: en:22 en:35
+#, no-wrap
+msgid "Free"
+msgstr ""
+
+#: en:23
+#, no-wrap
+msgid "Shared"
+msgstr ""
+
+#: en:24
+#, no-wrap
+msgid "Buffers"
+msgstr ""
+
+#: en:25
+#, no-wrap
+msgid "Cache"
+msgstr ""
+
+#: en:26
+#, no-wrap
+msgid "Module"
+msgstr ""
+
+#: en:27
+#, no-wrap
+msgid "Size"
+msgstr ""
+
+#: en:28
+#, no-wrap
+msgid "Referring modules"
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Modules currently in use"
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "Available Memory"
+msgstr ""
+
+#: en:31
+#, no-wrap
+msgid "Usage Key:"
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "In Use"
+msgstr ""
+
+#: en:34
+#, no-wrap
+msgid "Buffer"
+msgstr ""
+
+#: en:37
+#, no-wrap
+msgid "IRQ usage"
+msgstr ""
+
+#: en:38 en:81
+#, no-wrap
+msgid "Device"
+msgstr ""
+
+#: en:39
+#, no-wrap
+msgid "IO usage"
+msgstr ""
+
+#: en:41
+#, no-wrap
+msgid "Network statistics"
+msgstr ""
+
+#: en:42
+#, no-wrap
+msgid "Interface"
+msgstr ""
+
+#: en:43
+#, no-wrap
+msgid "Receive"
+msgstr ""
+
+#: en:44
+#, no-wrap
+msgid "Send"
+msgstr ""
+
+#: en:45
+#, no-wrap
+msgid "Bytes"
+msgstr ""
+
+#: en:46
+#, no-wrap
+msgid "Errors"
+msgstr ""
+
+#: en:47
+#, no-wrap
+msgid "Dropped"
+msgstr ""
+
+#: en:48
+#, no-wrap
+msgid "Overruns"
+msgstr ""
+
+#: en:49
+#, no-wrap
+msgid "Frame"
+msgstr ""
+
+#: en:50
+#, no-wrap
+msgid "Carrier"
+msgstr ""
+
+#: en:51
+#, no-wrap
+msgid "Collisions"
+msgstr ""
+
+#: en:52
+#, no-wrap
+msgid "Active connections"
+msgstr ""
+
+#: en:53 en:71
+#, no-wrap
+msgid "Protocol"
+msgstr ""
+
+#: en:54
+#, no-wrap
+msgid "Receive queue"
+msgstr ""
+
+#: en:55
+#, no-wrap
+msgid "Send queue"
+msgstr ""
+
+#: en:56
+#, no-wrap
+msgid "Local"
+msgstr ""
+
+#: en:57
+#, no-wrap
+msgid "Foreign"
+msgstr ""
+
+#: en:58 en:75
+#, no-wrap
+msgid "State"
+msgstr ""
+
+#: en:59
+#, no-wrap
+msgid "Who's logged"
+msgstr ""
+
+#: en:60
+#, no-wrap
+msgid "User"
+msgstr ""
+
+#: en:61
+#, no-wrap
+msgid "TTY"
+msgstr ""
+
+#: en:62
+#, no-wrap
+msgid "From"
+msgstr ""
+
+#: en:63
+#, no-wrap
+msgid "Login@"
+msgstr ""
+
+#: en:64
+#, no-wrap
+msgid "Idle"
+msgstr ""
+
+#: en:65
+#, no-wrap
+msgid "Jcpu"
+msgstr ""
+
+#: en:66
+#, no-wrap
+msgid "Pcpu"
+msgstr ""
+
+#: en:67
+#, no-wrap
+msgid "Command"
+msgstr ""
+
+#: en:68
+#, no-wrap
+msgid "Listening sockets"
+msgstr ""
+
+#: en:69
+#, no-wrap
+msgid "Active sockets"
+msgstr ""
+
+#: en:70
+#, no-wrap
+msgid "Unix sockets"
+msgstr ""
+
+#: en:72
+#, no-wrap
+msgid "RefCnt"
+msgstr ""
+
+#: en:73
+#, no-wrap
+msgid "Flags"
+msgstr ""
+
+#: en:74
+#, no-wrap
+msgid "Type"
+msgstr ""
+
+#: en:76
+#, no-wrap
+msgid "I-node"
+msgstr ""
+
+#: en:77
+#, no-wrap
+msgid "Path"
+msgstr ""
+
+#: en:79
+#, no-wrap
+msgid "Filesytem statistics"
+msgstr ""
+
+#: en:80
+#, no-wrap
+msgid "Mounted filesystem"
+msgstr ""
+
+#: en:82
+#, no-wrap
+msgid "Directory"
+msgstr ""
+
+#: en:83
+#, no-wrap
+msgid "Filesystem"
+msgstr ""
+
+#: en:84
+#, no-wrap
+msgid "Mode"
+msgstr ""
+
+#: en:86
+#, no-wrap
+msgid "Filesystem information"
+msgstr ""

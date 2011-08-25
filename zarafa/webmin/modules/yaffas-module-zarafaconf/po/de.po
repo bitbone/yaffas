@@ -1,0 +1,146 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 14:12+0300\n"
+"PO-Revision-Date: 2011-08-25 14:12+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#, no-wrap
+msgid "Userfilter"
+msgstr "Benutzer Filter"
+
+#: en:2
+#, no-wrap
+msgid "Filtertype"
+msgstr "Filtertyp"
+
+#: en:3
+#, no-wrap
+msgid "Group"
+msgstr "Gruppe"
+
+#: en:4
+#, no-wrap
+msgid "Default"
+msgstr "Standard (alle)"
+
+#: en:5
+#, no-wrap
+msgid "AD Plugin"
+msgstr "AD Plugin"
+
+#: en:6
+#, no-wrap
+msgid "AD Group"
+msgstr "AD Gruppe"
+
+#: en:7
+#, no-wrap
+msgid "Delete these zarafa stores?"
+msgstr "Löschen der Zarafa Stores?"
+
+#: en:8
+#, no-wrap
+msgid "With this step, the following zarafa stores would be deleted:"
+msgstr "Mit dem nächsten Schritt werden die folgenden Zarafa Stores gelöscht:"
+
+#: en:9
+#, no-wrap
+msgid "Could not find Group."
+msgstr "Konnte die angegebene Gruppe nicht finden."
+
+#: en:10
+#, no-wrap
+msgid "Could not find the rootDomainNamingContext in AD."
+msgstr "Konnte den rootDomainNamingContext im AD nicht finden."
+
+#: en:12
+#, no-wrap
+msgid "Size of attachments"
+msgstr "Größe von Anhängen"
+
+#: en:13
+#, no-wrap
+msgid "Size"
+msgstr "Größe"
+
+#: en:14
+#, no-wrap
+msgid "The value is not numeric."
+msgstr "Es sind nur Dezimalzahlen als Anhangsgröße erlaubt."
+
+#: en:16
+#, no-wrap
+msgid "Optimize"
+msgstr "Optimiere"
+
+#: en:17
+#, no-wrap
+msgid "Addressable memory"
+msgstr "Adressierbarer Speicher"
+
+#: en:18
+#, no-wrap
+msgid "Optimized for"
+msgstr "Optimiert für"
+
+#: en:19
+#, no-wrap
+msgid "Optimize memory"
+msgstr "Speicheroptimierung"
+
+#: en:20
+#, no-wrap
+msgid "unknown"
+msgstr "Unbekannt"
+
+#: en:22
+#, no-wrap
+msgid "Quota e-mail templates"
+msgstr "Meldungen bei überschreiten der Quota"
+
+#: en:23
+#, no-wrap
+msgid "Message at 80%"
+msgstr "Meldung bei 80%"
+
+#: en:24
+#, no-wrap
+msgid "Message at 90%"
+msgstr "Meldung bei 90%"
+
+#: en:25
+#, no-wrap
+msgid "Message at 100%"
+msgstr "Meldung bei 100%"
+
+#: en:27
+#, no-wrap
+msgid "Default quota"
+msgstr "Standard Quota"
+
+#: en:28
+#, no-wrap
+msgid "Default Quota"
+msgstr "Standard Quota"
+
+#: en:29
+#, no-wrap
+msgid "Off"
+msgstr "Aus"
+
+#: en:31
+#, no-wrap
+msgid "The quota value can only contain digits."
+msgstr "Der Wert des Quotas darf nur aus Zahlen bestehen."

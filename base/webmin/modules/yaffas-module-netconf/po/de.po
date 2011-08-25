@@ -1,0 +1,291 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#, no-wrap
+msgid "The IP address or netmask it not valid."
+msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."
+
+#: en:2
+#, no-wrap
+msgid "The DNS server address has to be a valid IP address."
+msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+
+#: en:3 en:11
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
+msgstr "Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens zwei Zeichen lang sein!"
+
+#: en:4
+#, no-wrap
+msgid "Could not rename domain."
+msgstr "Konnte die Domain nicht umbenennen."
+
+#: en:5
+#, no-wrap
+msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
+msgstr "Der Rechnername darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9) bestehen. Ausserdem sollte er mindestens zwei Zeichen lang sein!"
+
+#: en:6
+#, no-wrap
+msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
+msgstr "Die Workgroup darf nur aus Buchstaben (a-z und A-Z), Zahlen (0-9), '.', '_' und '-' bestehen."
+
+#: en:7
+#, no-wrap
+msgid "Could not copy the following file:"
+msgstr "Konnte die folgende Datei nicht kopieren:"
+
+#: en:9
+#, no-wrap
+msgid "You have to enable a least one network interface."
+msgstr "Es muss mindestens eine Netzwerkschnittstelle aktiviert sein."
+
+#: en:10
+#, no-wrap
+msgid "The gateway address has to be different to the server address."
+msgstr "Die Gateway Adresse muss sich von der Adresse des Server unterscheiden."
+
+#: en:12
+#, no-wrap
+msgid "The associated hardware interface has to be enabled."
+msgstr "Die zugehörige Hardware-Schnittstelle muss aktiviert sein."
+
+#: en:14
+#, no-wrap
+msgid "Error reading data for use with samba."
+msgstr "Fehler beim Lesen von Daten für Samba."
+
+#: en:15
+#, no-wrap
+msgid "Error writing data for use with samba."
+msgstr "Fehler beim Schreiben von Daten für Samba."
+
+#: en:16
+#, no-wrap
+msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
+msgstr "Der angegebene Rechnername (sambaDomain) ist mehrmals im LDAP vorhanden."
+
+#: en:18
+#, no-wrap
+msgid "This module is deactivated, because channel bonding is active."
+msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
+
+#: en:20
+#, no-wrap
+msgid "Configuration"
+msgstr "Konfiguration"
+
+#: en:21
+#, no-wrap
+msgid "Network Settings"
+msgstr "Netzwerk Einstellungen"
+
+#: en:23
+#, no-wrap
+msgid "Host name"
+msgstr "Rechnername"
+
+#: en:24
+#, no-wrap
+msgid "Domain name"
+msgstr "Domainname"
+
+#: en:25
+#, no-wrap
+msgid "Workgroup"
+msgstr "Arbeitsgruppe"
+
+#: en:26
+#, no-wrap
+msgid "IP address"
+msgstr "IP-Adresse"
+
+#: en:27
+#, no-wrap
+msgid "Netmask"
+msgstr "Netzmaske"
+
+#: en:28
+#, no-wrap
+msgid "Gateway (if available)"
+msgstr "Gateway (falls vorhanden)"
+
+#: en:29
+#, no-wrap
+msgid "Search domain"
+msgstr "Suchdomänen"
+
+#: en:30
+#, no-wrap
+msgid "DNS Server IP"
+msgstr "DNS Server IP-Adresse"
+
+#: en:31
+#, no-wrap
+msgid "Network"
+msgstr "Netzwerk"
+
+#: en:32
+#, no-wrap
+msgid "Delete"
+msgstr "Löschen"
+
+#: en:33
+#, no-wrap
+msgid "Interface"
+msgstr "Schnittstelle"
+
+#: en:34
+#, no-wrap
+msgid "Base settings"
+msgstr "Grundeinstellungen"
+
+#: en:36
+#, no-wrap
+msgid "enabled"
+msgstr "aktiviert"
+
+#: en:37
+#, no-wrap
+msgid "disabled"
+msgstr "deaktiviert"
+
+#: en:38
+#, no-wrap
+msgid "Status"
+msgstr "Status"
+
+#: en:39
+#, no-wrap
+msgid "New virtual IP address"
+msgstr "Neue virtuelle IP Adresse"
+
+#: en:40
+#, no-wrap
+msgid "Delete virtual IP address"
+msgstr "Virtuelle IP löschen"
+
+#: en:41
+#, no-wrap
+msgid "Do you really want to delete the following network interface?"
+msgstr "Wollen Sie die folgende Netzwerkschnittstelle löschen?"
+
+#: en:42
+#, no-wrap
+msgid "Create"
+msgstr "Erstellen"
+
+#: en:43
+#, no-wrap
+msgid "New virtual address on interface"
+msgstr "Neues virtuelle Adresse auf der Schnittstelle"
+
+#: en:47
+#, no-wrap
+msgid "HTTP Proxy"
+msgstr "HTTP Proxy"
+
+#: en:48
+#, no-wrap
+msgid "Proxy"
+msgstr "Proxy"
+
+#: en:49
+#, no-wrap
+msgid "Port"
+msgstr "Port"
+
+#: en:50
+#, no-wrap
+msgid "Authentication (optional)"
+msgstr "Authentifizierung (wenn nötig)"
+
+#: en:51
+#, no-wrap
+msgid "User"
+msgstr "Benutzer"
+
+#: en:52
+#, no-wrap
+msgid "Password"
+msgstr "Passwort"
+
+#: en:54
+#, no-wrap
+msgid "Proxyname not valid!"
+msgstr "Proxyname nicht gültig!"
+
+#: en:55
+#, no-wrap
+msgid "Port not valid!"
+msgstr "Der Port ist nicht gültig!"
+
+#: en:56
+#, no-wrap
+msgid "Username not valid!"
+msgstr "Der Benutzername ist nicht gültig!"
+
+#: en:57
+#, no-wrap
+msgid "Password not valid!"
+msgstr "Das Passwort ist nicht gültig!"
+
+#: en:58
+#, no-wrap
+msgid "Error while setting APT proxy!"
+msgstr "Fehler während des Setzens des APT Proxys!"
+
+#: en:59
+#, no-wrap
+msgid "Error while setting WGET proxy!"
+msgstr "Fehler während des Setzens des WGET Proxys!"
+
+#: en:60
+#, no-wrap
+msgid "Error while setting KAV proxy!"
+msgstr "Fehler während des Ssetzens des KAV Proxys!"
+
+#: en:61
+#, no-wrap
+msgid "Error while deleting APT proxy!"
+msgstr "Fehler während des Löschens des APT Proxys!"
+
+#: en:62
+#, no-wrap
+msgid "Error while deleting WGET proxy!"
+msgstr "Fehler während des Löschens des WGET Proxys!"
+
+#: en:63
+#, no-wrap
+msgid "Error while deleting KAVS proxy!"
+msgstr "Fehler während des Löschens des KAV Proxys!"
+
+#: en:64
+#, no-wrap
+msgid "Error while setting freshclam proxy!"
+msgstr "Fehler während des Setzens des freshclam Proxys!"
+
+#: en:65
+#, no-wrap
+msgid "Error while deleting freshclam proxy!"
+msgstr "Fehler während des Löschens des freshclam Proxys!"
+
+#: en:66
+#, no-wrap
+msgid "Error restarting freshclam!"
+msgstr "Fehler beim Neustart von freshclam!"

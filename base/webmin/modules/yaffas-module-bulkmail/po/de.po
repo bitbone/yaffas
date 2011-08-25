@@ -1,0 +1,51 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1 en:2
+#, no-wrap
+msgid "Bulk mailing"
+msgstr "Rundmail"
+
+#: en:3
+#, no-wrap
+msgid "From"
+msgstr "Von"
+
+#: en:4
+#, no-wrap
+msgid "Subject"
+msgstr "Betreff"
+
+#: en:5
+#, no-wrap
+msgid "Message"
+msgstr "Nachricht"
+
+#: en:6
+#, no-wrap
+msgid "Send"
+msgstr "Verschicken"
+
+#: en:8
+#, no-wrap
+msgid "Please complete all forms and check your e-mail address."
+msgstr "Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse."
+
+#: en:9
+#, no-wrap
+msgid "Your mails are queued for sending. This may take some time depending on your hardware."
+msgstr "Ihre Mails werden versendet. Dies kann, abhängig von Ihrer Hardware, etwas Zeit in Anspruch nehmen."

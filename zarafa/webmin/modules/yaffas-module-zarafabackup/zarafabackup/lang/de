@@ -1,6 +1,6 @@
 lbl_stop=Anhalten
 lbl_close=Schließen
-lbl_restore=Wiederherstellen
+lbl_restore=Wiederherstellung
 lbl_run_restoring_folder=Stelle Ordner $1 wieder her...
 lbl_run_restoring_element=Stelle Element $1 wieder her...
 lbl_done=fertig
@@ -21,7 +21,7 @@ lbl_clear=Leeren
 lbl_clear_msg=Möchten Sie die zu Wiederherstellung anstehenden Elemente entfernen?
 lbl_really_clear=Wirklich leeren?
 lbl_store=Store
-lbl_backup=Sicherung
+lbl_backup=Sicherungszeit
 lbl_settings_title=Einstellungen
 lbl_settings=Globale Einstellungen
 lbl_backup_date=Sicherungszeit
@@ -32,7 +32,7 @@ lbl_backup_dir=Sicherungs Verzeichnis
 lbl_remove=Entfernen
 lbl_preserve_time=Vollsicherung aufbewahren (in Tagen)
 lbl_clean_dir=Lösche Verzeichnis
-lbl_restore_start_msg=Mit einem Klick auf "Wiederherstellen" werden die ausgewählten Elemente wiederhergestellt.
+lbl_restore_start_msg=Click on "restore" to restore the selected messages.
 lbl_no_backup=Kein Backup zur Auswahl verfügbar
 
 err_time=Zeitangabe nicht korrekt.

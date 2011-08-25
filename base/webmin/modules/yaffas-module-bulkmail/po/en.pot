@@ -1,0 +1,53 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1 en:2
+#, no-wrap
+msgid "Bulk mailing"
+msgstr ""
+
+#: en:3
+#, no-wrap
+msgid "From"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Subject"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Message"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Send"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "Please complete all forms and check your e-mail address."
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid ""
+"Your mails are queued for sending. This may take some time depending on your "
+"hardware."
+msgstr ""

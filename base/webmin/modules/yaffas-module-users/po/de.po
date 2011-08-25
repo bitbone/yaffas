@@ -1,0 +1,331 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:56+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#, no-wrap
+msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
+msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
+
+#: en:2 en:3
+#, no-wrap
+msgid "Password not valid"
+msgstr "Passwort nicht gültig"
+
+#: en:4
+#, no-wrap
+msgid "E-mail address not valid"
+msgstr "E-Mail Adresse nicht gültig"
+
+#: en:5
+#, no-wrap
+msgid "No e-mail address specified"
+msgstr "Keine E-Mail Adresse angegeben."
+
+#: en:6
+#, no-wrap
+msgid "Groups not valid"
+msgstr "Gruppen nicht gültig"
+
+#: en:7
+#, no-wrap
+msgid "Passwords are not equal"
+msgstr "Passwörter nicht identisch"
+
+#: en:8
+#, no-wrap
+msgid "No user selected."
+msgstr "Kein Benutzer ausgewählt."
+
+#: en:9
+#, no-wrap
+msgid "Wrong filetype selected."
+msgstr "Falscher Dateityp ausgewählt."
+
+#: en:10
+#, no-wrap
+msgid "Could not change the login."
+msgstr "Konnte den Login nicht ändern."
+
+#: en:11
+#, no-wrap
+msgid "Could not read UIDs of the following users:"
+msgstr "Konnte die UIDs folgender Benutzer nicht auslesen:"
+
+#: en:12
+#, no-wrap
+msgid "The alias is not valid."
+msgstr "Der Alias ist ungültig."
+
+#: en:13
+#, no-wrap
+msgid "If you want to you use aliases for this user, you should activate his mailbox."
+msgstr "Um Aliase verwenden zu können, benötigt der User eine Mailbox."
+
+#: en:14
+#, no-wrap
+msgid "The selected username is already used by the system."
+msgstr "Der ausgewählte Benutzername ist bereits vom System reserviert."
+
+#: en:15
+#, no-wrap
+msgid "The quota value has to be a number."
+msgstr "Der Quotawert muss eine Zahl sein!"
+
+#: en:16
+#, no-wrap
+msgid "The quota value has to be positive."
+msgstr "Der Quotawert muss positiv sein!"
+
+#: en:17
+#, no-wrap
+msgid "The domain is not defined as local domain in your mailserver configuration."
+msgstr "Die Domäne ist in der Mailserver Konfiguration nicht als lokale Domäne definiert."
+
+#: en:18
+#, no-wrap
+msgid "You cannot use localhost as domain-part"
+msgstr "Domänenanteil der E-Mail Adresse darf nicht localhost sein."
+
+#: en:19
+#, no-wrap
+msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
+msgstr "Der Benutzername und der lokale Anteil unterscheiden sich. Damit Zarafa die angegebene E-Mailadresse verarbeiten kann, muss folgender E-Mail Alias angelegt werden:"
+
+#: en:20
+#, no-wrap
+msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
+msgstr "Der Benutzername und der lokale Anteil unterscheiden sich. Damit Zarafa die angegebene E-Mailadresse verarbeiten kann, muss folgender E-Mail Alias angelegt werden:"
+
+#: en:21
+#, no-wrap
+msgid "This user could not be added/edited."
+msgstr "Der Benutzer konnte nicht hinzugefügt/bearbeitet werden."
+
+#: en:22
+#, no-wrap
+msgid "This action is only supported with local authentification."
+msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
+
+#: en:23
+#, no-wrap
+msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
+msgstr "Der Benutzer wurde angelegt, doch es konnte kein Zarafa Konto angelegt werden. Das bedeutet sehr wahrscheinlich, dass ihre Zarafa Lizenz keine weiteren Benutzer erlaubt."
+
+#: en:24
+#, no-wrap
+msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
+msgstr "Der Benutzer wird für die Zustellung in Ordner verwendet. Sie müssen zuerst diese Einstellung ändern, bevor Sie den Benutzer löschen können."
+
+#: en:25
+#, no-wrap
+msgid "Usermanagment"
+msgstr "Benutzerverwaltung"
+
+#: en:26
+#, no-wrap
+msgid "Add user"
+msgstr "Benutzer hinzufügen"
+
+#: en:27 en:46
+#, no-wrap
+msgid "Printer operator"
+msgstr "Druckeroperator"
+
+#: en:28
+#, no-wrap
+msgid "Printer Administrator"
+msgstr "Drucker Administrator"
+
+#: en:29
+#, no-wrap
+msgid "Modified users"
+msgstr "Benutzer geändert"
+
+#: en:30
+#, no-wrap
+msgid "Modify user"
+msgstr "Benutzer ändern"
+
+#: en:31
+#, no-wrap
+msgid "Do You really want to delete the selected users?"
+msgstr "Wollen Sie die Benutzer wirklich löschen?"
+
+#: en:32
+#, no-wrap
+msgid "Remove user"
+msgstr "Benutzer löschen"
+
+#: en:33
+#, no-wrap
+msgid "E-mail address"
+msgstr "E-Mail Adresse"
+
+#: en:34
+#, no-wrap
+msgid "Name"
+msgstr "Name"
+
+#: en:35
+#, no-wrap
+msgid "Groups"
+msgstr "Gruppen"
+
+#: en:36
+#, no-wrap
+msgid "Enable e-mail account"
+msgstr "E-Mail Account aktivieren"
+
+#: en:37
+#, no-wrap
+msgid "No matter"
+msgstr "Egal"
+
+#: en:38
+#, no-wrap
+msgid "No printer operator"
+msgstr "Kein Druckeroperator"
+
+#: en:39
+#, no-wrap
+msgid "Username"
+msgstr "Username"
+
+#: en:40
+#, no-wrap
+msgid "Password"
+msgstr "Passwort"
+
+#: en:41
+#, no-wrap
+msgid "Repeat password"
+msgstr "Passwort wiederholen"
+
+#: en:42
+#, no-wrap
+msgid "User Management"
+msgstr "Benutzerverwaltung"
+
+#: en:43
+#, no-wrap
+msgid "Filetype for fax delivery"
+msgstr "Dateityp für Faxzustellung"
+
+#: en:44
+#, no-wrap
+msgid "E-mail alias"
+msgstr "E-Mail Alias"
+
+#: en:45
+#, no-wrap
+msgid "Authentification"
+msgstr "Authentifizierung"
+
+#: en:47
+#, no-wrap
+msgid "User"
+msgstr "Benutzer"
+
+#: en:48
+#, no-wrap
+msgid "Mailbox quota"
+msgstr "Mailbox-Quota"
+
+#: en:49
+#, no-wrap
+msgid "Zarafa administrator"
+msgstr "Zarafa Administrator"
+
+#: en:50
+#, no-wrap
+msgid "Zarafa shared store user"
+msgstr "Zarafa Gemeinschaftskonto"
+
+#: en:51
+#, no-wrap
+msgid "irreversible after activation"
+msgstr "nach Aktivierung unumkehrbar"
+
+#: en:52
+#, no-wrap
+msgid "Given name"
+msgstr "Vorname"
+
+#: en:53
+#, no-wrap
+msgid "Surname"
+msgstr "Nachname"
+
+#: en:54
+#, no-wrap
+msgid "Zarafa license"
+msgstr "Zarafa Lizenz"
+
+#: en:55
+#, no-wrap
+msgid "no Zarafa license"
+msgstr "keine Zarafa Lizenz"
+
+#: en:56
+#, no-wrap
+msgid "Convert into a zarafa resource"
+msgstr "In eine Zarafa Ressource umwandeln"
+
+#: en:57
+#, no-wrap
+msgid "Should the following users really be converted into zarafa resources?"
+msgstr "Sollen folgende Nutzer wirklich in Zarafa Ressourcen umgewandelt werden?"
+
+#: en:58
+#, no-wrap
+msgid "User created with following warnings"
+msgstr "Benutzer wurde mit folgenden Warnungen angelegt"
+
+#: en:59
+#, no-wrap
+msgid "Business Phone"
+msgstr "Firmennummer"
+
+#: en:60
+#, no-wrap
+msgid "Location"
+msgstr "Ort"
+
+#: en:61
+#, no-wrap
+msgid "Fax"
+msgstr "Fax"
+
+#: en:62
+#, no-wrap
+msgid "Department"
+msgstr "Abteilung"
+
+#: en:63
+#, no-wrap
+msgid "Allow send as"
+msgstr "Senden als"
+
+#: en:64
+#, no-wrap
+msgid "For user"
+msgstr "Für Benutzer erlauben"
+
+#: en:65
+#, no-wrap
+msgid "For group"
+msgstr "Für Gruppe erlauben"

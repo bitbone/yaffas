@@ -25,8 +25,8 @@ lbl_clamav=ClamAV
 lbl_clamav_activate=ClamAV aktivieren
 lbl_clamav_deactivate=ClamAV deaktivieren
 lbl_archive=Archive scannen
-lbl_maxlength=Maximale Größe zum Scannen in MB
 lbl_virusalert=Benachrichtigungsadresse bei Viren
+lbl_maxlength=Maximale Größe zum Scannen in MB
 lbl_clam_update=ClamAV-Signaturen aktualisieren
 lbl_clam_configure=Clamav konfigurieren
 

@@ -1,0 +1,68 @@
+# German translations for PACKAGE package
+# Copyright (C) 2011 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"PO-Revision-Date: 2011-08-25 13:59+0100\n"
+"Last-Translator: Christof Musik <musik@bitbone.de>\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: en:1
+#: en:2
+#, no-wrap
+msgid "Support"
+msgstr "Support"
+
+#: en:3
+#, no-wrap
+msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
+msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
+
+#: en:4
+#, no-wrap
+msgid "Download"
+msgstr "Download"
+
+#: en:5
+#, no-wrap
+msgid "System"
+msgstr "System"
+
+#: en:6
+#, no-wrap
+msgid "Please press download to get the available system and hardware informations."
+msgstr "Zum speichern der System- und Hardwareinformationen klicken Sie bitte auf Download."
+
+#: en:7
+#, no-wrap
+msgid "Hardware List"
+msgstr "Hardware Liste"
+
+#: en:8
+#, no-wrap
+msgid "Your system doesn't have the needed programm \"lshw\" installed."
+msgstr "Ihr System verfügt nicht über die benötigten Programme \"lshw\"!"
+
+#: en:9
+#, no-wrap
+msgid "Your system doesn't have the needed programm \"lspci\" installed."
+msgstr "Ihr System verfügt nicht über die benötigten Programme \"lspci\"!"
+
+#: en:10
+#, no-wrap
+msgid "An error occured while executing \"pspci\"."
+msgstr "Beim ausführen von \"pspci\" trat ein Fehler auf."
+
+#: en:11
+#, no-wrap
+msgid "An error occured while executing \"lshw\"."
+msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
+

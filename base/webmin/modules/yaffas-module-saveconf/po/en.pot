@@ -1,0 +1,191 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-08-25 14:10+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: en:1
+#, no-wrap
+msgid "Wrong Configfile Version"
+msgstr ""
+
+#: en:2
+#, no-wrap
+msgid ""
+"Your Configurationfile is not for this Product. Do You really want to apply "
+"it to the System?"
+msgstr ""
+
+#: en:3
+#, no-wrap
+msgid "Apply backupfile"
+msgstr ""
+
+#: en:4
+#, no-wrap
+msgid "Save backupfile"
+msgstr ""
+
+#: en:5
+#, no-wrap
+msgid "Backup"
+msgstr ""
+
+#: en:6
+#, no-wrap
+msgid "Success"
+msgstr ""
+
+#: en:7
+#, no-wrap
+msgid "Messages:"
+msgstr ""
+
+#: en:8
+#, no-wrap
+msgid "This is not a valid yaffas backupfile"
+msgstr ""
+
+#: en:9
+#, no-wrap
+msgid "please install your license-key first"
+msgstr ""
+
+#: en:10
+#, no-wrap
+msgid "cannot"
+msgstr ""
+
+#: en:11
+#, no-wrap
+msgid "touch"
+msgstr ""
+
+#: en:12
+#, no-wrap
+msgid "open file"
+msgstr ""
+
+#: en:13
+#, no-wrap
+msgid "execute"
+msgstr ""
+
+#: en:14
+#, no-wrap
+msgid "Can't create zipfile!"
+msgstr ""
+
+#: en:15
+#, no-wrap
+msgid "Can't create LDAP ldiffile!"
+msgstr ""
+
+#: en:16
+#, no-wrap
+msgid "Message"
+msgstr ""
+
+#: en:17
+#, no-wrap
+msgid "Continue"
+msgstr ""
+
+#: en:18
+#, no-wrap
+msgid "Cancel"
+msgstr ""
+
+#: en:19
+#, no-wrap
+msgid ""
+"You are about to plug in a yaffas configuration file smaller or equal to "
+"version 2.<br>This version can be converted to the actuall "
+"version. Nevertheless, many modules have radically changed in such a way "
+"that manually checking of configured values are strongly recomended!"
+msgstr ""
+
+#: en:20
+#, no-wrap
+msgid "Following list cant be converted:"
+msgstr ""
+
+#: en:21
+#, no-wrap
+msgid "Configured MSN's"
+msgstr ""
+
+#: en:22
+#, no-wrap
+msgid "User eMail adress"
+msgstr ""
+
+#: en:23
+#, no-wrap
+msgid ""
+"User password. Will be created as 'start123' and should be changed as soon "
+"as possible!"
+msgstr ""
+
+#: en:24
+#, no-wrap
+msgid "Restore Configuration"
+msgstr ""
+
+#: en:25
+#, no-wrap
+msgid "Save Configuration"
+msgstr ""
+
+#: en:26
+#, no-wrap
+msgid "Das Einspielen der Konfiguration schlug fehl."
+msgstr ""
+
+#: en:27
+#, no-wrap
+msgid "Error in configuration file"
+msgstr ""
+
+#: en:28
+#, no-wrap
+msgid ""
+"Please install all licence files for your installed products before you "
+"insert the configuration."
+msgstr ""
+
+#: en:29
+#, no-wrap
+msgid "Could not save config, because the LDAP service is not running."
+msgstr ""
+
+#: en:30
+#, no-wrap
+msgid "Could not restore user and groups."
+msgstr ""
+
+#: en:31
+#, no-wrap
+msgid "Your Configurationfile is not for this fax-card type."
+msgstr ""
+
+#: en:32
+#, no-wrap
+msgid "Errors occured."
+msgstr ""
+
+#: en:33
+#, no-wrap
+msgid "Would you like to save your incomplete Configuration?"
+msgstr ""
