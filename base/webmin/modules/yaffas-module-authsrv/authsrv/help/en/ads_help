@@ -1,8 +1,0 @@
-help_user=Explanation about additional user
- 
- To be able to read entries from Active Directory, the yaffas server needs a user with sufficient privileges. This can be a simple user account.
-
- If you change this uesr's password please remember to reenter the new data here, too.
-
- Autodetection: If your domain administrator is located in the standard users group ("Users") you simply can enter the username here and the DN of the user will be retrieved from the server. If the administrator is located elsewhere in the Active Directory you must enter the complete DN of the user here.
---

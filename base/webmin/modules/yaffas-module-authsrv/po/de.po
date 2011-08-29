@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-08-29 13:16+0300\n"
 "PO-Revision-Date: 2011-08-25 13:56+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,527 +15,567 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Authentication Server"
 msgstr "Authentifizierungsserver"
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Index"
 msgstr "Index"
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "Accounts"
 msgstr "Benutzerkonten"
 
-#: en:5 en:9
+#: lang/en:5 lang/en:9
 #, no-wrap
 msgid "Domain Controller"
 msgstr "Domain Controller"
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Local authentication"
 msgstr "Lokale Authentifizierung"
 
-#: en:7 en:59
+#: lang/en:7 lang/en:59
 #, no-wrap
 msgid "Local authentication (passwd/group)"
 msgstr "Lokale Authentifizierung (passwd/group)"
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "DC authentication"
 msgstr "DC Authentifizierung"
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "Authentication server"
 msgstr "Authentifizierungsserver"
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Select authentication"
 msgstr "Authentifizierung wählen"
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "yaffas LDAP server"
 msgstr "yaffas LDAP Server"
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "LDAP Server"
 msgstr "LDAP Server"
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Samba PDC"
 msgstr "Samba PDC"
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Active Directory"
 msgstr "Active Directory"
 
-#: en:16
+#: lang/en:16
 #, no-wrap
 msgid "Active Directory Service"
 msgstr "Active Directory Service"
 
-#: en:17
+#: lang/en:17
 #, no-wrap
 msgid "Local (/etc/passwd,/etc/group)"
 msgstr ""
 
-#: en:18
+#: lang/en:18
 #, no-wrap
 msgid "Add product"
 msgstr "Produkt hinzufügen"
 
-#: en:19
+#: lang/en:19
 #, no-wrap
 msgid "Server/IP"
 msgstr "Server/IP"
 
-#: en:20
+#: lang/en:20
 #, no-wrap
 msgid "Base DN"
 msgstr "Base DN"
 
-#: en:21
+#: lang/en:21
 #, no-wrap
 msgid "Bind DN"
 msgstr "Bind DN"
 
-#: en:22
+#: lang/en:22
 #, no-wrap
 msgid " Bind password"
 msgstr "Bind Passwort"
 
-#: en:23
+#: lang/en:23
 #, no-wrap
 msgid " Repeat bind password"
 msgstr "Bind Passwort wiederholen"
 
-#: en:24
+#: lang/en:24
 #, no-wrap
 msgid "Products"
 msgstr "Produkte"
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "Product"
 msgstr "Produkt"
 
-#: en:26
+#: lang/en:26
 #, no-wrap
 msgid "Version / IP"
 msgstr "Version / IP"
 
-#: en:27
+#: lang/en:27
 #, no-wrap
 msgid "Add produkt"
 msgstr "Produkt hinzufügen"
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "IP adress"
 msgstr "IP Adresse"
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "Allow authentication requests of remote clients via LDAP."
 msgstr "Authentifizierungsanfragen von entfernten Rechnern via LDAP zulassen."
 
-#: en:30
+#: lang/en:30
 #, no-wrap
 msgid "Allow authentication requests of remote clients via PDC."
 msgstr "Authentifizierungsanfragen von entfernten Rechnern via PDC zulassen."
 
-#: en:31
+#: lang/en:31
 #, no-wrap
 msgid "Domain administrator"
 msgstr "Domänenadministrator"
 
-#: en:32 en:58
+#: lang/en:32 lang/en:58
 #, no-wrap
 msgid "Password"
 msgstr "Passwort"
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid "Repeat password"
 msgstr "Passwort wiederholen"
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Test DC Connection"
 msgstr "DC Verbindung Testen"
 
-#: en:35
+#: lang/en:35
 #, no-wrap
 msgid "Ping Test"
 msgstr "Ping Test"
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "Trust Test"
 msgstr "Trust Test"
 
-#: en:37
+#: lang/en:37
 #, no-wrap
 msgid "DC Users"
 msgstr "DC Benutzer"
 
-#: en:38
+#: lang/en:38
 #, no-wrap
 msgid "Domain"
 msgstr "Domäne"
 
-#: en:39
+#: lang/en:39
 #, no-wrap
 msgid "Current Config"
 msgstr "Momentane Einstellung"
 
-#: en:40
+#: lang/en:40
 #, no-wrap
 msgid "Change"
 msgstr "Ändern"
 
-#: en:41
+#: lang/en:41
 #, no-wrap
 msgid "Type"
 msgstr "Typ"
 
-#: en:42
+#: lang/en:42
 #, no-wrap
 msgid "Search attribute group"
 msgstr "Suchattribut Gruppe"
 
-#: en:43
+#: lang/en:43
 #, no-wrap
 msgid "Base DN group"
 msgstr "Base DN Gruppe"
 
-#: en:44
+#: lang/en:44
 #, no-wrap
 msgid "Search attribute user"
 msgstr "Suchattribut Benutzer"
 
-#: en:45
+#: lang/en:45
 #, no-wrap
 msgid "Base DN user"
 msgstr "Base DN Benutzer"
 
-#: en:46
+#: lang/en:46
 #, no-wrap
 msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
 msgstr "Um diesen Server einbinden zu können, müssen Sie die folgende Schema Datei in Ihrem LDAP Server integriert haben."
 
-#: en:47
+#: lang/en:47
 #, no-wrap
 msgid "Caution!"
 msgstr "Achtung!"
 
-#: en:48
+#: lang/en:48
 #, no-wrap
 msgid "Active Directory User"
 msgstr "Active Directory Benutzer"
 
-#: en:49
+#: lang/en:49
 #, no-wrap
 msgid "User name or DN"
 msgstr "Benutzername oder DN"
 
-#: en:50
+#: lang/en:50
 #, no-wrap
 msgid "Join Domain without encryption?"
 msgstr "Beitritt ohne Verschlüsselung?"
 
-#: en:51
+#: lang/en:51
 #, no-wrap
 msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
 msgstr "Ihr Active Directory Server unterstütz keine Verschlüsselung der Daten (ldaps). Wollen Sie das Auslesen von Verzeichnisinformationen unverschlüsselt zulassen? Wenn Sie hier mit 'Nein' antworten wird auch kein Beitritt zur Domäne stattfinden."
 
-#: en:52
+#: lang/en:52
 #, no-wrap
 msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
 msgstr "Ihr LDAP Server unterstütz keine Verschlüsselung der Daten (ldaps). Wollen Sie das Auslesen von Verzeichnisinformationen unverschlüsselt zulassen? Wenn Sie hier mit 'Nein' antworten wird die Authentifizierung nicht umgestellt."
 
-#: en:53
+#: lang/en:53
 #, no-wrap
 msgid "Delete user fax configuration and PDF files"
 msgstr "Benutzer Faxkonfiguration und PDF-Dateien löschen"
 
-#: en:54
+#: lang/en:54
 #, no-wrap
 msgid "Delete all users' and groups' fax configurations and pdf users' files."
 msgstr "Faxkonfiguration und PDF-Dateien aller bisherigen Benutzer löschen?"
 
-#: en:55
+#: lang/en:55
 #, no-wrap
 msgid "Print operators group"
 msgstr "Drucker Operatoren Gruppe"
 
-#: en:56
+#: lang/en:56
 #, no-wrap
 msgid "Change print operators group"
 msgstr "Drucker Operatoren Gruppe ändern"
 
-#: en:57
+#: lang/en:57
 #, no-wrap
 msgid "Administrator"
 msgstr "Administrator"
 
-#: en:60
+#: lang/en:60
 #, no-wrap
 msgid "Email attribute"
 msgstr "E-Mail Attribut"
 
-#: en:61
+#: lang/en:61
 #, no-wrap
 msgid "Choose a domain's sambaSID"
 msgstr "SambaSID einer Domäne auswählen"
 
-#: en:63
+#: lang/en:63
 #, no-wrap
 msgid "Could not open the samba configuration file."
 msgstr "Konnte die Samba Konfiguration nicht öffnen."
 
-#: en:64
+#: lang/en:64
 #, no-wrap
 msgid "Could not restart the samba server."
 msgstr "Konnte den Samba Server nicht neu starten."
 
-#: en:65
+#: lang/en:65
 #, no-wrap
 msgid "No DC was given."
 msgstr "Es wurde kein DC angegeben."
 
-#: en:66
+#: lang/en:66
 #, no-wrap
 msgid "Invalid server name"
 msgstr "Ungültiger Servername"
 
-#: en:67
+#: lang/en:67
 #, no-wrap
 msgid "Invalid domain name"
 msgstr "Ungültiger Domänenname"
 
-#: en:68
+#: lang/en:68
 #, no-wrap
 msgid "Invalid base DN"
 msgstr "Es wurde keine BASEDN  angegeben."
 
-#: en:69
+#: lang/en:69
 #, no-wrap
 msgid "Invalid bind DN"
 msgstr "Ungültige Bind DN"
 
-#: en:70
+#: lang/en:70
 #, no-wrap
 msgid "Invalid password"
 msgstr "Ungültiges Passwort"
 
-#: en:71
+#: lang/en:71
 #, no-wrap
 msgid "Invalid IP adress"
 msgstr "Ungültige IP Adresse"
 
-#: en:72
+#: lang/en:72
 #, no-wrap
 msgid "Invalid product"
 msgstr "Ungültiges Produkt"
 
-#: en:73
+#: lang/en:73
 #, no-wrap
 msgid "Computer already authentication server."
 msgstr "Computer ist schon Authentifizierungsserver."
 
-#: en:74
+#: lang/en:74
 #, no-wrap
 msgid "Passwords are not equal"
 msgstr "Die beiden Passwörter sind unterschiedlich"
 
-#: en:75
+#: lang/en:75
 #, no-wrap
 msgid "Valid values are acitvate and deactivate."
 msgstr "Als Argument ist nur acitvate und deactivate erlaubt."
 
-#: en:76
+#: lang/en:76
 #, no-wrap
 msgid "Valid values are 'on' and 'off'."
 msgstr "Als Argument ist nur 'on' und 'off' erlaubt."
 
-#: en:77
+#: lang/en:77
 #, no-wrap
 msgid "Passwords are not equal."
 msgstr "Die beiden Passwörter sind unterschiedlich."
 
-#: en:78
+#: lang/en:78
 #, no-wrap
 msgid "Username contains ilegal characters."
 msgstr "Der Benutzer enthält ungültige Zeichen."
 
-#: en:79
+#: lang/en:79
 #, no-wrap
 msgid "Error reading file."
 msgstr "Fehler beim lesen der Datei."
 
-#: en:80
+#: lang/en:80
 #, no-wrap
 msgid "Error writing file."
 msgstr "Fehler beim schreiben der Datei."
 
-#: en:81
+#: lang/en:81
 #, no-wrap
 msgid "No files specified for rollback."
 msgstr "Es wurden keine Dateien für das Rollback angegeben."
 
-#: en:82
+#: lang/en:82
 #, no-wrap
 msgid "Could not delete backup files."
 msgstr "Konnte Backup nicht entfernen."
 
-#: en:83
+#: lang/en:83
 #, no-wrap
 msgid "Could not create backup files."
 msgstr "Konnte das Backup nicht anlegen."
 
-#: en:84
+#: lang/en:84
 #, no-wrap
 msgid "An error occured while joining the domain."
 msgstr "Fehler beim Domänenbeitritt"
 
-#: en:85
+#: lang/en:85
 #, no-wrap
 msgid "The search attribute for the user or group is not correct. You can only insert figures and characters from a-z and 0-9."
 msgstr "Das Suchattribut für den Benutzer oder die Gruppe besitzt nicht erlaubte Zeichen. Es sind nur Zahlen und Buchstaben von a-z und 0-9 erlaubt."
 
-#: en:86
+#: lang/en:86
 #, no-wrap
 msgid "Invalid authentication type."
 msgstr "Ungültiger Authentifizierungstyp."
 
-#: en:87
+#: lang/en:87
 #, no-wrap
 msgid "Could not get LDAP base DN."
 msgstr "Konnte die LDAP Base DN nicht ermitteln."
 
-#: en:88
+#: lang/en:88
 #, no-wrap
 msgid "Domain name is missing."
 msgstr "Es wurde kein Domänenname angegeben."
 
-#: en:89
+#: lang/en:89
 #, no-wrap
 msgid "Domain administrator is missing."
 msgstr "Es wurde kein Domänenadministrator angegeben."
 
-#: en:90
+#: lang/en:90
 #, no-wrap
 msgid "No password was specified."
 msgstr "Es wurde kein Passwort angegeben."
 
-#: en:91
+#: lang/en:91
 #, no-wrap
 msgid "No server address was specified."
 msgstr "Es wurde keine Serveradresse angegeben."
 
-#: en:92
+#: lang/en:92
 #, no-wrap
 msgid "No LDAP / Active Directory user was specified."
 msgstr "Es wurde kein LDAP / Active Directory Benutzer angegeben."
 
-#: en:93
+#: lang/en:93
 #, no-wrap
 msgid "Could not get DN of user"
 msgstr "Konnte die DN für den Benutzer nicht auslesen"
 
-#: en:94
+#: lang/en:94
 #, no-wrap
 msgid "Could not contact directory service on"
 msgstr "Konnte den Verzeichnisdienst auf folgendem Rechner nicht erreichen"
 
-#: en:95
+#: lang/en:95
 #, no-wrap
 msgid "This option is not possible with yaffas|ZARAFA."
 msgstr "Diese Einstellung ist mit yaffas|ZARAFA nicht möglich."
 
-#: en:96
+#: lang/en:96
 #, no-wrap
 msgid "No LDAP URI specified."
 msgstr ""
 
-#: en:97
+#: lang/en:97
 #, no-wrap
 msgid "No BASEDN  specified."
 msgstr "Es wurde keine BASEDN  angegeben."
 
-#: en:98
+#: lang/en:98
 #, no-wrap
 msgid "LDAP / Active Directory user could not bind to server"
 msgstr "LDAP / Active Directory Benutzer konnte sich nicht mit dem Server verbinden"
 
-#: en:99
+#: lang/en:99
 #, no-wrap
 msgid "No old users specified."
 msgstr "Keine alten Benutzer angegeben."
 
-#: en:100
+#: lang/en:100
 #, no-wrap
 msgid "No old groups specified."
 msgstr "Keine alten Gruppen angegeben."
 
-#: en:101
+#: lang/en:101
 #, no-wrap
 msgid "Cannot contact host"
 msgstr "Kann Rechner nicht erreichen"
 
-#: en:102
+#: lang/en:102
 #, no-wrap
 msgid "Could not change ownership of files."
 msgstr "Konnte den Besitzer der Dateien nicht Ãndern."
 
-#: en:103
+#: lang/en:103
 #, no-wrap
 msgid "Password not valid"
 msgstr "Passwort nicht erlaubt"
 
-#: en:104
+#: lang/en:104
 #, no-wrap
 msgid "Wrong Active Directory password for"
 msgstr "Falsches Active Directory Passwort für"
 
-#: en:105
+#: lang/en:105
 #, no-wrap
 msgid "Active Directory DN not correct"
 msgstr "Active Directory DN nicht korrekt"
 
-#: en:106
+#: lang/en:106
 #, no-wrap
 msgid "Error reading data for use with samba."
 msgstr "Fehler beim Lesen von Daten für Samba."
 
-#: en:107
+#: lang/en:107
 #, no-wrap
 msgid "Error writing data for use with samba."
 msgstr "Fehler beim Schreiben von Daten für Samba."
 
-#: en:108
+#: lang/en:108
 #, no-wrap
 msgid "The samba domain already exists in LDAP! Please rectify this."
 msgstr "Die Samba Domäne existiert bereits im LDAP! Bitte berichtigen Sie dies."
 
-#: en:109
+#: lang/en:109
 #, no-wrap
 msgid "<no matching Domain>"
 msgstr "<keine passende Domäne>"
 
-#: en:110
+#: lang/en:110
 #, no-wrap
 msgid "unknown postfix file"
 msgstr "Unbekannte Postfix Datei"
+
+#: help/en:1
+#, no-wrap
+msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "Attribute with users email address. Default: mail"
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "Name or IP adress of your domain controller."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Name of a domain administrator. This user should be created in users organizational unit."
+msgstr ""
+
+#: help/en:7
+#, no-wrap
+msgid "User for read only access. You can give the username or a full dn syntax."
+msgstr ""
+
+#: help/en:8
+#, no-wrap
+msgid "Hostname or IP address of the LDAP server."
+msgstr ""
