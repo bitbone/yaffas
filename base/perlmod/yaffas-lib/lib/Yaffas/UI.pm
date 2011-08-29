@@ -476,7 +476,7 @@ sub _load_help {
 	if (not scalar %Help) {
 		open F, "<", "help/en";
 		while (<F>) {
-			my @tmp = split /=/, $_;
+			my @tmp = split /=/, $_, 2;
 			$Help{$tmp[0]} = $tmp[1];
 		}
 		close F;
