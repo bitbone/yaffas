@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-08-29 15:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,283 +15,340 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "The IP address or netmask it not valid."
 msgstr ""
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "The DNS server address has to be a valid IP address."
 msgstr ""
 
-#: en:3 en:11
+#: lang/en:3 lang/en:11
 #, no-wrap
 msgid ""
 "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and "
 "'-'. It also has a minimum length of two."
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Could not rename domain."
 msgstr ""
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid ""
 "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and "
 "'-'. It also has a minimum length of two."
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid ""
 "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' "
 "and '-'."
 msgstr ""
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "Could not copy the following file:"
 msgstr ""
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "You have to enable a least one network interface."
 msgstr ""
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "The gateway address has to be different to the server address."
 msgstr ""
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "The associated hardware interface has to be enabled."
 msgstr ""
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Error reading data for use with samba."
 msgstr ""
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Error writing data for use with samba."
 msgstr ""
 
-#: en:16
+#: lang/en:16
 #, no-wrap
 msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
 msgstr ""
 
-#: en:18
+#: lang/en:18
 #, no-wrap
 msgid "This module is deactivated, because channel bonding is active."
 msgstr ""
 
-#: en:20
+#: lang/en:20
 #, no-wrap
 msgid "Configuration"
 msgstr ""
 
-#: en:21
+#: lang/en:21
 #, no-wrap
 msgid "Network Settings"
 msgstr ""
 
-#: en:23
+#: lang/en:23
 #, no-wrap
 msgid "Host name"
 msgstr ""
 
-#: en:24
+#: lang/en:24
 #, no-wrap
 msgid "Domain name"
 msgstr ""
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "Workgroup"
 msgstr ""
 
-#: en:26
+#: lang/en:26
 #, no-wrap
 msgid "IP address"
 msgstr ""
 
-#: en:27
+#: lang/en:27
 #, no-wrap
 msgid "Netmask"
 msgstr ""
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "Gateway (if available)"
 msgstr ""
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "Search domain"
 msgstr ""
 
-#: en:30
+#: lang/en:30
 #, no-wrap
 msgid "DNS Server IP"
 msgstr ""
 
-#: en:31
+#: lang/en:31
 #, no-wrap
 msgid "Network"
 msgstr ""
 
-#: en:32
+#: lang/en:32
 #, no-wrap
 msgid "Delete"
 msgstr ""
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid "Interface"
 msgstr ""
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Base settings"
 msgstr ""
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "enabled"
 msgstr ""
 
-#: en:37
+#: lang/en:37
 #, no-wrap
 msgid "disabled"
 msgstr ""
 
-#: en:38
+#: lang/en:38
 #, no-wrap
 msgid "Status"
 msgstr ""
 
-#: en:39
+#: lang/en:39
 #, no-wrap
 msgid "New virtual IP address"
 msgstr ""
 
-#: en:40
+#: lang/en:40
 #, no-wrap
 msgid "Delete virtual IP address"
 msgstr ""
 
-#: en:41
+#: lang/en:41
 #, no-wrap
 msgid "Do you really want to delete the following network interface?"
 msgstr ""
 
-#: en:42
+#: lang/en:42
 #, no-wrap
 msgid "Create"
 msgstr ""
 
-#: en:43
+#: lang/en:43
 #, no-wrap
 msgid "New virtual address on interface"
 msgstr ""
 
-#: en:47
+#: lang/en:47
 #, no-wrap
 msgid "HTTP Proxy"
 msgstr ""
 
-#: en:48
+#: lang/en:48
 #, no-wrap
 msgid "Proxy"
 msgstr ""
 
-#: en:49
+#: lang/en:49
 #, no-wrap
 msgid "Port"
 msgstr ""
 
-#: en:50
+#: lang/en:50
 #, no-wrap
 msgid "Authentication (optional)"
 msgstr ""
 
-#: en:51
+#: lang/en:51
 #, no-wrap
 msgid "User"
 msgstr ""
 
-#: en:52
+#: lang/en:52
 #, no-wrap
 msgid "Password"
 msgstr ""
 
-#: en:54
+#: lang/en:54
 #, no-wrap
 msgid "Proxyname not valid!"
 msgstr ""
 
-#: en:55
+#: lang/en:55
 #, no-wrap
 msgid "Port not valid!"
 msgstr ""
 
-#: en:56
+#: lang/en:56
 #, no-wrap
 msgid "Username not valid!"
 msgstr ""
 
-#: en:57
+#: lang/en:57
 #, no-wrap
 msgid "Password not valid!"
 msgstr ""
 
-#: en:58
+#: lang/en:58
 #, no-wrap
 msgid "Error while setting APT proxy!"
 msgstr ""
 
-#: en:59
+#: lang/en:59
 #, no-wrap
 msgid "Error while setting WGET proxy!"
 msgstr ""
 
-#: en:60
+#: lang/en:60
 #, no-wrap
 msgid "Error while setting KAV proxy!"
 msgstr ""
 
-#: en:61
+#: lang/en:61
 #, no-wrap
 msgid "Error while deleting APT proxy!"
 msgstr ""
 
-#: en:62
+#: lang/en:62
 #, no-wrap
 msgid "Error while deleting WGET proxy!"
 msgstr ""
 
-#: en:63
+#: lang/en:63
 #, no-wrap
 msgid "Error while deleting KAVS proxy!"
 msgstr ""
 
-#: en:64
+#: lang/en:64
 #, no-wrap
 msgid "Error while setting freshclam proxy!"
 msgstr ""
 
-#: en:65
+#: lang/en:65
 #, no-wrap
 msgid "Error while deleting freshclam proxy!"
 msgstr ""
 
-#: en:66
+#: lang/en:66
 #, no-wrap
 msgid "Error restarting freshclam!"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "e.g. hostname"
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "e.g. yaffas.org"
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "e.g. yaffas"
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "IP address for eth0<br>e.g. 192.168.0.100"
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "Netmask for eth0<br>e.g. 192.168.0.100"
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Gateway for your network. This must be an IPv4 address of this network."
+msgstr ""
+
+#: help/en:7
+#, no-wrap
+msgid "DNS server for resolving names into IP adresses."
+msgstr ""
+
+#: help/en:8
+#, no-wrap
+msgid ""
+"Append this value during resolving of short names.<br>To resolve the name "
+"\"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+msgstr ""
+
+#: help/en:9
+#, no-wrap
+msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
+msgstr ""
+
+#: help/en:10
+#, no-wrap
+msgid "Port of the HTTP proxy server."
+msgstr ""
+
+#: help/en:11
+#, no-wrap
+msgid "Optional username, if you have to authenticate against the proxy."
 msgstr ""

@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Yaffas;
-use Yaffas::UI qw(value_add_del_form $Cgi small_form);
+use Yaffas::UI qw(value_add_del_form $Cgi small_form textfield);
 use Yaffas::Module::Netconf;
 use Sort::Naturally;
 use Data::Dumper;
@@ -210,15 +210,15 @@ sub _input_td($$) {
 	return $Cgi->td(
 		[
 			$main::text{"lbl_$textname"} . ":",
-			$Cgi->textfield(
+			textfield(
 				{ -name => $name, -value => $values[0], @disabled }
 			),
 			( $textname eq "dns" or $textname eq "search" )
 			? (
-				$Cgi->textfield(
+				textfield(
 					{ -name => "$name-1", -value => $values[1], @disabled }
 				),
-				$Cgi->textfield(
+				textfield(
 					{ -name => "$name-2", -value => $values[2], @disabled }
 				)
 			  )
@@ -301,11 +301,11 @@ sub proxy_form() {
 							  $Cgi->Tr([
 										$Cgi->td([
 												  $main::text{lbl_proxy_ip} . ":" ,
-												  $Cgi->textfield("proxy", $proxy, 20),
+												  textfield("proxy", $proxy, 20),
 												 ]),
 										$Cgi->td([
 												  $main::text{lbl_proxy_port} . ":" ,
-												  $Cgi->textfield("port", $port, 4),
+												  textfield("port", $port, 4),
 												 ]),
 									   ])
 							 ),
@@ -314,7 +314,7 @@ sub proxy_form() {
 							  $Cgi->Tr([
 										$Cgi->td([
 												  $main::text{lbl_user} . ":" ,
-												  $Cgi->textfield("user", $user, 10),
+												  textfield("user", $user, 10),
 												 ]),
 										$Cgi->td([
 												  $main::text{lbl_pass} . ":" ,
