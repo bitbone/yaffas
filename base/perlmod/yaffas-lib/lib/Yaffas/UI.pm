@@ -486,6 +486,8 @@ sub _load_help {
 sub _get_help_button {
 	my $name = shift;
 
+	_load_help();
+
 	if (exists $Help{$name}) {
 		return $Cgi->div(
 			{-class=>'tooltip', onmouseover=>"Yaffas.ui.showHelp(this)", onclick=>"Yaffas.ui.toggleHelp(this)", onmouseout=>"Yaffas.ui.cancelHelp(this)"},
@@ -496,63 +498,17 @@ sub _get_help_button {
 }
 
 sub textfield {
-	my $input;
-	my $name;
-	my $value;
-	my $size;
+	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"]], @_);
+	my $name = $params[0];
 
-	if (scalar @_ > 2) {
-		$name = shift;
-		$value = shift;
-		$size = shift;
-	}
-	else {
-		$input = shift;
-		$name = $input->{-name};
-	}
-
-	_load_help();
-
-	my $ret;
-
-	if (defined $input) {
-		$ret = $Cgi->textfield($input);
-	}
-	else {
-		$ret = $Cgi->textfield($name, $value, $size);
-	}
-
-	return $ret . _get_help_button($name);
+	return $Cgi->textfield(@params) . _get_help_button($name);
 }
 
 sub password_field {
-	my $input;
-	my $name;
-	my $value;
-	my $size;
+	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"]], @_);
+	my $name = $params[0];
 
-	if (scalar @_ > 2) {
-		$name = shift;
-		$value = shift;
-		$size = shift;
-	}
-	else {
-		$input = shift;
-		$name = $input->{-name};
-	}
-
-	_load_help();
-
-	my $ret;
-
-	if (defined $input) {
-		$ret = $Cgi->password_field($input)
-	}
-	else {
-		$ret = $Cgi->password_field($name, $value, $size);
-	}
-
-	return $ret . _get_help_button($name);
+	return $Cgi->password_field(@params) . _get_help_button($name);
 }
 
 1;
