@@ -302,7 +302,7 @@ sub _get_ldap()
 			Yaffas::Constant::APPLICATION->{'ldapsearch'}, "-x", "-LLL", "-D", "cn=ldapadmin,ou=People,$domain",
 			"-b", $domain, "-w", $LDAP_PASS
 			);
-		throw Yaffas::Exception("err_no_ldap") if ($ldif =~ /^\s*$/);
+		throw Yaffas::Exception("err_no_ldif") if ($ldif =~ /^\s*$/);
 	} catch Yaffas::Exception with {
 		$bke->append( shift );
 	};
