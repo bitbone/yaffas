@@ -44,5 +44,6 @@ endif
 YAFFAS_OWNER=	root
 YAFFAS_GROUP=	root
 
-lang:
+.PHONY: .lang
+.lang:
 	cd $(MODULE) && PERLLIB=../../../../../tools/po4a/ po4a -k 0 -M utf8 -L utf8 --package-name "yaffas" --copyright-holder "bitbone AG" --package-version "1.0" -f ../../../../../conf/po4a-build.conf
