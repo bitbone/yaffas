@@ -215,7 +215,7 @@ sub clean_group_data($) {
 
 =item add_group ( GROUP )
 
-Adds group GROUP to system. On success returns 1 else C<undef>.
+Adds group GROUP to system. On success returns 1 otherwise it throws an exception.
 
 =cut
 

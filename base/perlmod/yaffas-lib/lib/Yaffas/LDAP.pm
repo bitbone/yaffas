@@ -46,7 +46,7 @@ returns the LDAP passwd from "/etc/libnss-ldap.conf" or undef on error
 =cut
 
 sub get_passwd () {
-	my $bkcf = Yaffas::File->new(Yaffas::Constant::FILE->{libnss_ldap_conf});
+	my $bkcf = Yaffas::File->new(Yaffas::Constant::FILE->{ldap_conf});
 
 	my @content = $bkcf->get_content();
 
