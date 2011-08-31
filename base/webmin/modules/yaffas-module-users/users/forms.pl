@@ -223,6 +223,10 @@ sub _edit_user($$\@\@;$){
 																  -value=>"yes",
 																  -label=>"",
 																  }),
+												 ]),
+										$Cgi->td([
+												  $main::text{lbl_zarafafeatures}.":",
+												  _features_table($uid)
 												 ])
 										) : "", ## end if
 										check_product("fax") ?
@@ -246,8 +250,8 @@ sub _edit_user($$\@\@;$){
 										) : "", ## end if
 									   ])
 							 ),
-							 $Cgi->h2($main::text{lbl_sendas}),
-							 $Cgi->table(
+							 $Cgi->h2({-onclick=>'$("sendas").toggleClassName("hidden")'}, $main::text{lbl_sendas}),
+							 $Cgi->table({-id => "sendas"},
 								 $Cgi->Tr([
 									 $Cgi->td([
 										 $main::text{lbl_sendas_user}.":",
@@ -440,6 +444,37 @@ sub set_user_filetype(@)
 
 	print section_button($Cgi->submit({-value => $main::text{lbl_save}}));
 	print $Cgi->end_form();
+}
+
+sub _features_table () {
+	my $uid = shift;
+
+	my $features = Yaffas::Module::Users::get_features($uid);
+	my $default = Yaffas::Module::Users::get_default_features();
+
+	return $Cgi->table($Cgi->Tr([
+			$Cgi->td([
+				"IMAP: ",
+				$Cgi->radio_group({
+						-name=>"zarafaimap_" . $uid,
+						-values=>[qw(on off default)],
+						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{imap} },
+						-default => $features->{imap}
+					})
+				]
+			),
+			$Cgi->td([
+				"POP3: ",
+				$Cgi->radio_group({
+						-name=>"zarafapop3_" . $uid,
+						-values=>[qw(on off default)],
+						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{pop3} },
+						-default => $features->{pop3}
+					})
+				]
+			)
+		])
+	);
 }
 
 return 1;

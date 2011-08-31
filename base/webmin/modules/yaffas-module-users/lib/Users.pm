@@ -154,6 +154,71 @@ sub get_zarafa_stores(){
 	return @stores;
 }
 
+sub get_default_features() {
+	my $f = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg},
+		{
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*'
+		}
+	);
+
+	my $values = $f->get_cfg_values();
+
+	my %ret;
+
+	if (exists $values->{disabled_features}) {
+		%ret = ("imap" => "on", "pop3" => "on");
+		foreach my $v (split /\s+/, $values->{disabled_features}) {
+			$ret{$v} = "off";
+		}
+	}
+	else {
+		%ret = ("imap" => "off", "pop3" => "off");
+	}
+
+	return \%ret;
+}
+
+sub get_features($) {
+	my $uid = shift;
+
+	my @enabled = Yaffas::LDAP::search_entry("uidNumber=$uid", "zarafaEnabledFeatures");
+	my @disabled = Yaffas::LDAP::search_entry("uidNumber=$uid", "zarafaDisabledFeatures");
+
+	my %ret = ("imap" => "default", "pop3" => "default");
+
+	foreach my $v (@enabled) {
+		$ret{$v} = "on";
+	}
+	foreach my $v (@disabled) {
+		$ret{$v} = "off";
+	}
+
+	return \%ret;
+}
+
+sub set_features($$) {
+	my $user = shift;
+	my $features = shift;
+
+	my @enabled;
+	my @disabled;
+
+	foreach my $v (keys %{$features}) {
+		if ($features->{$v} eq "on") {
+			push @enabled, $v;
+		}
+		elsif ($features->{$v} eq "off") {
+			push @disabled, $v;
+		}
+	}
+
+	Yaffas::LDAP::replace_entries($user, [replace => ["zarafaEnabledFeatures" => \@enabled]]);
+	Yaffas::LDAP::replace_entries($user, [replace => ["zarafaDisabledFeatures" => \@disabled]]);
+
+	system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
+}
+
 return 1;
 =head1 COPYRIGHT
 

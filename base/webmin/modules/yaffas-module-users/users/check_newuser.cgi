@@ -41,6 +41,8 @@ my $delalias = $main::in{'delalias'};
 my $zarafaquota = $main::in{zarafaquota_};
 my $zarafaadmin = $main::in{zarafaadmin_};
 my $zarafashared = $main::in{zarafashared_};
+my $zarafa_imap = $main::in{zarafaimap_};
+my $zarafa_pop3 = $main::in{zarafapop3_};
 my @sendas_user = split /\0/, ($sendas_user || "");
 my @sendas_group = split /\0/, ($sendas_group || "");
 my @groups = split /\0/, ($group || "");
@@ -135,6 +137,7 @@ try {
 			Yaffas::Mail::set_zarafa_quota($user, $zarafaquota);
 			Yaffas::Module::Users::set_zarafa_admin($user, $zarafaadmin);
 			Yaffas::Module::Users::set_zarafa_shared($user, $zarafashared);
+			Yaffas::Module::Users::set_features($user, { imap => $zarafa_imap, pop3 => $zarafa_pop3 });
 		}
 
         Yaffas::UGM::set_additional_values($user, {
