@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Yaffas::Module::ZarafaBackup;
-use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start);
+use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start textfield);
 
 sub show_index {
     print Yaffas::UI::section($main::text{lbl_overwiew_title},
@@ -64,8 +64,8 @@ sub show_index {
         $Cgi->h2($main::text{lbl_settings}),
         $Cgi->table(
             $Cgi->Tr([
-                $Cgi->td([$main::text{lbl_backup_dir}.":", $Cgi->input({-name=>"backup_dir", -value => $settings->{global}->{dir}})]),
-                $Cgi->td([$main::text{lbl_preserve_time}.":", $Cgi->input({-name=>"preserve_time", -value => $settings->{global}->{preserve_time}})]),
+                $Cgi->td([$main::text{lbl_backup_dir}.":", textfield({-name=>"backup_dir", -value => $settings->{global}->{dir}})]),
+                $Cgi->td([$main::text{lbl_preserve_time}.":", textfield({-name=>"preserve_time", -value => $settings->{global}->{preserve_time}})]),
                 ]
             )
         ),

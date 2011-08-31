@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 use Yaffas;
-use Yaffas::UI qw($Cgi);
+use Yaffas::UI qw($Cgi textfield);
 use Yaffas::UI::TablePaging qw(show_page);
 use Yaffas::Service qw(/.+/);
 use Yaffas::Module::Time;
@@ -150,9 +150,9 @@ sub timeserver_dlg {
 "if(this.checked == true) {document.forms['autoupdate'].elements['hour'].disabled=0;document.forms['autoupdate'].elements['minute'].disabled=0;}";
 
 	print $Cgi->start_form( { -action => "set_timeserver.cgi", -name => "autoupdate" } );
-	my $dlg =
+	my $dlg = 
 	  $main::text{lbl_timeserver} . " "
-	  . $Cgi->textfield(
+	  . textfield(
 		{
 			-name  => "timeserver",
 			-value => $timeserver
