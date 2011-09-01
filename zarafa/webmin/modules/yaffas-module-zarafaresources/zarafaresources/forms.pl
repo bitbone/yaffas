@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas::Module::About;
-use Yaffas::UI qw(section section_button textfield);
+use Yaffas::UI qw(section section_button textfield checkbox);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::ZarafaResources;
 use Sort::Naturally;
@@ -84,7 +84,7 @@ sub show_edit_zarafa_resource (@) {
 						$Cgi->td(
 							[
 								$main::text{lbl_decline_conflict} . ':',
-								$Cgi->checkbox(
+								checkbox(
 									-name => 'decline_conflict'
 									  . ( $create ? '' : '_' . $resource ),
 									-label   => '',
@@ -96,7 +96,7 @@ sub show_edit_zarafa_resource (@) {
 						$Cgi->td(
 							[
 								$main::text{lbl_decline_recurring} . ':',
-								$Cgi->checkbox(
+								checkbox(
 									-name => 'decline_recurring'
 									  . ( $create ? '' : '_' . $resource ),
 									-label   => '',
