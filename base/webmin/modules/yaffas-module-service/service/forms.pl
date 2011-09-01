@@ -150,16 +150,15 @@ sub timeserver_dlg {
 "if(this.checked == true) {document.forms['autoupdate'].elements['hour'].disabled=0;document.forms['autoupdate'].elements['minute'].disabled=0;}";
 
 	print $Cgi->start_form( { -action => "set_timeserver.cgi", -name => "autoupdate" } );
-	my $dlg = 
-	  $main::text{lbl_timeserver} . " "
-	  . textfield(
+	my $dlg = $Cgi->table($Cgi->Tr($Cgi->td([
+	  $main::text{lbl_timeserver} ,
+	  textfield(
 		{
 			-name  => "timeserver",
 			-value => $timeserver
 		}
-	  )
-	  . $Cgi->p(
-		$Cgi->input(
+	  )])))
+	 . $Cgi->input(
 			{
 				-type    => 'radio',
 				-name    => 'sync_freq',
@@ -191,7 +190,6 @@ sub timeserver_dlg {
 			},
 			$main::text{'lbl_daily'}
 		  )
-	  )
 	  . $Cgi->p(
 		$main::text{'lbl_hour'}
 		  . $Cgi->popup_menu(
