@@ -1,0 +1,4 @@
+spam_headers=This value defines at which score mails are handled as spam.
+sa_trusted_net=Define a host or network by its IP address or CIDR.
+max_length=ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned.
+virusalert=If ClamAV detects a suspicious object, it will send a mail to the specified address.

@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::UI qw($Cgi section start_section end_section section_button);
+use Yaffas::UI qw($Cgi section start_section end_section section_button textfield);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Security;
 
@@ -97,7 +97,7 @@ sub antispam(){
 	print $Cgi->h2($main::text{'lbl_sa_configure'});
 	print $Cgi->table(
 				$Cgi->Tr([
-					$Cgi->td([$main::text{lbl_add_headers}, $Cgi->textfield({-id=>'spam_headers',-name=>'spam_headers',-value=>$spam_headers})])
+					$Cgi->td([$main::text{lbl_add_headers}, textfield({-id=>'spam_headers',-name=>'spam_headers',-value=>$spam_headers})])
 				])
 			),
 			$Cgi->p($Cgi->button({-id=>'spam_submit',-value=>$main::text{'lbl_apply'}}));
@@ -106,7 +106,7 @@ sub antispam(){
 		  $Cgi->div({-id=>'sa_trusted_dialog'}, 
 				  $Cgi->div({-class=>'hd'}, $main::text{lbl_add}).
 				  $Cgi->div({-class=>'bd'}, 
-					  $Cgi->table($Cgi->Tr($Cgi->td([$main::text{'lbl_network'}, $Cgi->textfield({-id => 'sa_trusted_net', -value=>''})])))
+					  $Cgi->table($Cgi->Tr($Cgi->td([$main::text{'lbl_network'}, textfield({-id => 'sa_trusted_net', -name=>'sa_trusted_net', -value=>''})])))
 				  )
 		  ),
 		  $Cgi->p($Cgi->button({-id => 'sa_trusted_add', -value => $main::text{'lbl_add'}})),
@@ -135,8 +135,8 @@ sub antivirus(){
 	print $Cgi->table(
 				$Cgi->Tr([
 					$Cgi->td([$main::text{lbl_archive}, $Cgi->checkbox({-id=>'archive',-checked=>($scan_archive ? 1 : 0)})]),
-					$Cgi->td([$main::text{lbl_maxlength}, $Cgi->textfield({-id=>'max_length',-name=>'max_length',-value=>$max_length})]),
-					$Cgi->td([$main::text{lbl_virusalert}, $Cgi->textfield({-id=>'virusalert',-name=>'virusalert',-value=>$virusalert})])
+					$Cgi->td([$main::text{lbl_maxlength}, textfield({-id=>'max_length',-name=>'max_length',-value=>$max_length})]),
+					$Cgi->td([$main::text{lbl_virusalert}, textfield({-id=>'virusalert',-name=>'virusalert',-value=>$virusalert})])
 				])
 			),
 			$Cgi->p($Cgi->button({-id=>'av_submit',-value=>$main::text{'lbl_apply'}}));
