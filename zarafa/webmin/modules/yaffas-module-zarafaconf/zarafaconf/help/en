@@ -1,0 +1,2 @@
+size=Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess.
+limit=This limits the maximum disk usage for each user in MB.

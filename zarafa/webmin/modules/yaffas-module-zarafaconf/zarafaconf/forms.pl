@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Yaffas::UI;
+use Yaffas::UI qw/textfield/;
 use Yaffas::Auth::Type qw(:standard);
 use Yaffas::Mail;
 use Yaffas::Module::ZarafaConf;
@@ -85,9 +85,8 @@ sub show_attachment_size(;$) {
 							  $Cgi->table(
 										  $Cgi->Tr([
 												   $Cgi->td([
-															$main::text{lbl_size}.":",
-															$Cgi->textfield({-name=>"size", -value=>$value}),
-															"MB"
+															$main::text{lbl_size}."(MB):",
+															textfield({-name=>"size", -value=>$value})
 														   ]),
 												   ])
 										 )
@@ -189,26 +188,27 @@ sub defaultquota_form {
 	print Yaffas::UI::section(
 				  $main::text{'lbl_default_quota_header'},
 
-				  $Cgi->p($Cgi->input({
+				  $Cgi->p(
+				  $Cgi->table($Cgi->Tr([$Cgi->td(
+					  $Cgi->input({
 							   -type => 'radio',
 							   -name => 'quota',
 							   -value => 'noquota',
 							   (defined $quota ? () : (-checked => 'checked')),
-							  }),
-				  $main::text{lbl_no_quota},
+							  }).$main::text{lbl_no_quota}),
+					  $Cgi->td(
 
-				  $Cgi->br(),
 				  $Cgi->input({
 							   -type => 'radio',
 							   -name => 'quota',
 							   -value => 'yesquota',
 							   (defined $quota ? (-checked => 'checked') : ()),
-							  }),
-				  $Cgi->textfield(
+							  }) . 
+				  textfield(
 								  -name => 'limit',
 								  -default => (defined $quota?$quota:""),
-								 ),
-				  "MB",
+								 )
+					  )]))
 				 ));
 	print Yaffas::UI::section_button(
 						 $Cgi->submit({ -name => 'default_quota', -value => $main::text{lbl_save}} )
