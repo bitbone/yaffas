@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::UI qw($Cgi section start_section end_section section_button textfield);
+use Yaffas::UI qw($Cgi section start_section end_section section_button textfield checkbox);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Security;
 
@@ -134,7 +134,7 @@ sub antivirus(){
 	print $Cgi->h2($main::text{'lbl_clam_configure'});
 	print $Cgi->table(
 				$Cgi->Tr([
-					$Cgi->td([$main::text{lbl_archive}, $Cgi->checkbox({-id=>'archive',-checked=>($scan_archive ? 1 : 0)})]),
+					$Cgi->td([$main::text{lbl_archive}, checkbox({-id=>'archive',-name=>'archive',-checked=>($scan_archive ? 1 : 0)})]),
 					$Cgi->td([$main::text{lbl_maxlength}, textfield({-id=>'max_length',-name=>'max_length',-value=>$max_length})]),
 					$Cgi->td([$main::text{lbl_virusalert}, textfield({-id=>'virusalert',-name=>'virusalert',-value=>$virusalert})])
 				])
