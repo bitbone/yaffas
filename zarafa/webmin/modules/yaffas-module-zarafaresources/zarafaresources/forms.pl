@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas::Module::About;
-use Yaffas::UI qw(section section_button);
+use Yaffas::UI qw(section section_button textfield);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::ZarafaResources;
 use Sort::Naturally;
@@ -57,7 +57,7 @@ sub show_edit_zarafa_resource (@) {
 							[
 								$main::text{lbl_resource} . ':',
 								(
-									$create ? $Cgi->textfield(
+									$create ? textfield(
 										-name      => 'name',
 										-maxlength => 100
 									  )
@@ -70,7 +70,7 @@ sub show_edit_zarafa_resource (@) {
 								$main::text{lbl_description} . ':',
 								(
 								$is_local_auth ?
-								$Cgi->textfield(
+								textfield(
 												-name => 'description'
 												. ( $create ? '' : '_' . $resource ),
 												-default   => $details{description},
