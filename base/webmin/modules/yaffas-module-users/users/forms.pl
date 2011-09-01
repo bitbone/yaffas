@@ -10,6 +10,7 @@ use Yaffas::UGM qw(get_users get_groups gecos name get_uid_by_username get_usern
 use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::Users;
+use Yaffas::Module::ZarafaConf;
 use Yaffas::Product qw(check_product);
 use Carp qw(cluck);
 use Sort::Naturally;
@@ -250,8 +251,8 @@ sub _edit_user($$\@\@;$){
 										) : "", ## end if
 									   ])
 							 ),
-							 $Cgi->h2({-onclick=>'$("sendas").toggleClassName("hidden")'}, $main::text{lbl_sendas}),
-							 $Cgi->table({-id => "sendas"},
+							 $Cgi->h2($main::text{lbl_sendas}),
+							 $Cgi->table(
 								 $Cgi->Tr([
 									 $Cgi->td([
 										 $main::text{lbl_sendas_user}.":",
@@ -450,7 +451,7 @@ sub _features_table () {
 	my $uid = shift;
 
 	my $features = Yaffas::Module::Users::get_features($uid);
-	my $default = Yaffas::Module::Users::get_default_features();
+	my $default = Yaffas::Module::ZarafaConf::get_default_features();
 
 	return $Cgi->table($Cgi->Tr([
 			$Cgi->td([

@@ -1,42 +1,32 @@
 #!/usr/bin/perl
 
-use Yaffas;
-use Yaffas::UI;
-use Yaffas::Module::ZarafaLicence;
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use Yaffas::Exception;
-use Error qw(:try);
-
-Yaffas::init_webmin();
-
-require './forms.pl';
-
-use CGI::Carp qw(fatalsToBrowser);
 use strict;
 use warnings;
 
+use Yaffas;
+use Yaffas::Module::ZarafaConf;
+use JSON;
+
+Yaffas::init_webmin();
 ReadParse();
 
-header();
+Yaffas::json_header();
 
+if (defined $main::in{service}) {
+	Yaffas::Module::ZarafaConf::change_default_features(lc $main::in{service}, $main::in{value});
+}
+else {
+	my $f = Yaffas::Module::ZarafaConf::get_default_features();
 
-try {
-	show_userfilter();
-	show_attachment_size();
-	defaultquota_form();
-	show_features();
-	quota_message_forms();
+	my @features;
+
+	foreach (keys %{$f}) {
+		push @features, {"feature" => uc $_, state => $f->{$_} eq "on" ? 1 : 0};
+	}
+
+	print to_json({"Response" => \@features}, {latin1 => 1});
 }
-catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-}
-try {
-	show_memory_optimize();
-}
-catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-}
-footer();
+
 =pod
 
 =head1 COPYRIGHT

@@ -13,7 +13,7 @@ use Yaffas::Mail;
 use Yaffas::Auth;
 use Yaffas::Auth::Type qw(:standard);
 use Yaffas::LDAP;
-use Yaffas::Service qw(STOP START RESTART ZARAFA_SERVER ZARAFA_GATEWAY ZARAFA_SPOOLER MYSQL EXIM);
+use Yaffas::Service qw(control STOP START RESTART RELOAD ZARAFA_SERVER ZARAFA_GATEWAY ZARAFA_SPOOLER MYSQL EXIM);
 use Error qw(:try);
 use Sort::Naturally;
 use Data::Dumper;
@@ -255,6 +255,55 @@ sub set_default_quota {
 		$limit = -1;
 	}
 	Yaffas::Mail::set_default_quota($limit);
+}
+
+sub get_default_features() {
+	my $f = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg});
+
+	my $values = $f->get_cfg_values();
+
+	my %ret;
+
+	if (exists $values->{disabled_features}) {
+		%ret = ("imap" => "on", "pop3" => "on");
+		foreach my $v (split /\s+/, $values->{disabled_features}) {
+			$ret{$v} = "off";
+		}
+	}
+	else {
+		%ret = ("imap" => "off", "pop3" => "off");
+	}
+
+	return \%ret;
+}
+
+sub change_default_features {
+	my $feature = shift;
+	my $state = shift;
+
+	my $file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg},
+		{
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*',
+			-StoreDelimiter => ' = ',
+		}
+	);
+	my $cfg = $file->get_cfg_values();
+
+	my %values = map { $_ => 1 } split /\s+/, $cfg->{disabled_features};
+
+	if ($state == 1) {
+		delete $values{$feature};
+	}
+	else {
+		$values{$feature} = 1;
+	}
+
+	$cfg->{disabled_features} = join " ", keys %values;
+
+	$file->save();
+
+	control(ZARAFA_SERVER(), RELOAD());
 }
 
 sub conf_dump() {
