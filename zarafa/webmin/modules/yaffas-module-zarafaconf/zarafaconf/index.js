@@ -19,6 +19,36 @@ function ZarafaConf(){
     if (typeof s !== "undefined" && s) {
         toggle_filtergroup(s.innerHTML.strip());
     }
+	this.setupTable();
+}
+
+ZarafaConf.prototype.setupTable = function() {
+	var myColumnDefs = [
+    {
+        key: "feature",
+        label: _("lbl_feature"),
+        sortable: true,
+	}, {
+        key: "state",
+        label: _("lbl_state"),
+        sortable: true,
+		formatter: function(e, record, column, data){
+			var disabled = "";
+
+			e.innerHTML = "<input type='checkbox' "+((data === 1) ? "checked" : "")+" />";
+
+			YAHOO.util.Event.addListener(e.getElementsByTagName("input")[0], "click", function() {
+				console.log("clicked %s %s", this.checked, record.getData().name);
+				Yaffas.ui.submitURL("/zarafaconf/features.cgi", {service: record.getData().feature, value: this.checked ? "1" : "0"})
+			})
+    	}
+    }];
+	this.usertable = new Yaffas.Table({
+		container: "features",
+		columns: myColumnDefs,
+		url: "/zarafaconf/features.cgi",
+		sortColumn: 0
+	});
 }
 
 ZarafaConf.prototype.showDeleteUsers = function(){

@@ -154,31 +154,6 @@ sub get_zarafa_stores(){
 	return @stores;
 }
 
-sub get_default_features() {
-	my $f = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg},
-		{
-			-SplitPolicy => 'custom',
-			-SplitDelimiter => '\s*=\s*'
-		}
-	);
-
-	my $values = $f->get_cfg_values();
-
-	my %ret;
-
-	if (exists $values->{disabled_features}) {
-		%ret = ("imap" => "on", "pop3" => "on");
-		foreach my $v (split /\s+/, $values->{disabled_features}) {
-			$ret{$v} = "off";
-		}
-	}
-	else {
-		%ret = ("imap" => "off", "pop3" => "off");
-	}
-
-	return \%ret;
-}
-
 sub get_features($) {
 	my $uid = shift;
 

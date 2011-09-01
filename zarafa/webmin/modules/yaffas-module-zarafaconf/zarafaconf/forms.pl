@@ -95,6 +95,13 @@ sub show_attachment_size(;$) {
 	print $Cgi->end_form();
 }
 
+sub show_features() {
+	print Yaffas::UI::section($main::text{lbl_default_features},
+		$Cgi->div({-id=>"features"}, "")
+	);
+
+}
+
 sub show_memory_optimize {
 	my @values = Yaffas::Module::ZarafaConf::optimized_memory_for();
 

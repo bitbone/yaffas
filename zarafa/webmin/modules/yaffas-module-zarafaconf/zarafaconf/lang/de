@@ -28,4 +28,8 @@ lbl_default_quota=Standard Quota
 lbl_default_quota_header=Standard Quota
 lbl_no_quota=Aus
 
+lbl_default_features=Default features
+lbl_feature=Feature
+lbl_state=State
+
 err_quota_value=Der Wert des Quotas darf nur aus Zahlen bestehen.
