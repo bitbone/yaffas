@@ -249,6 +249,7 @@ use constant {
 		"channels_keys" => "/opt/yaffas/config/channels.keys",
 		"wl_postfix" => "/opt/yaffas/config/postfix/whitelist-postfix",
 		"wl_amavis" => "/opt/yaffas/config/whitelist-amavis",
+		"rhel5_network" => "/etc/sysconfig/network",
 	}
 };
 

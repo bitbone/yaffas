@@ -607,6 +607,13 @@ sub _save_hostname {
 		throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
 	}
 	else {
+		$file = Yaffas::File->new(Yaffas::Constant::FILE->{rhel5_network});
+		my $line = $file->search_line(qr/^HOSTNAME/);
+		$file->splice_line($line, 1, "HOSTNAME=$hostname");
+		$file->save();
+
+		system(Yaffas::Constant::APPLICATION->{hostname}, $hostname);
+
 		system(Yaffas::Constant::FILE->{'rhel_net'}, 'restart');
 	}
 }
