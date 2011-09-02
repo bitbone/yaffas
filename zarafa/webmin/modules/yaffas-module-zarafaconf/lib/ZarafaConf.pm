@@ -9,6 +9,7 @@ use Yaffas::Exception;
 use Yaffas::Constant;
 use Yaffas::Module::AuthSrv;
 use Yaffas::Module::Users;
+use Yaffas::Module::Mailsrv::Postfix;
 use Yaffas::Mail;
 use Yaffas::Auth;
 use Yaffas::Auth::Type qw(:standard);
@@ -41,12 +42,22 @@ sub zarafa_ldap_filter(;$$) {
 		if ($filter == FILTERTYPE->{DEFAULT}) {
 			delete $cfg->{ldap_user_search_filter};
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
 		}
 		if ($filter == FILTERTYPE->{ADPLUGIN} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
 			throw Yaffas::Exception("err_no_rootbasedn") unless $rootbasedn;
 			$cfg->{'ldap_user_search_filter'} = "(&(objectClass=person)(objectCategory=CN=Person,CN=Schema,CN=Configuration,$rootbasedn)(zarafaAccount=1))";
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s)(zarafaAccount=1))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
 		}
 		if ($filter == FILTERTYPE->{ADGROUP} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
@@ -56,6 +67,11 @@ sub zarafa_ldap_filter(;$$) {
 			throw Yaffas::Exception("err_no_group_found") unless scalar @group;
 			$cfg->{'ldap_user_search_filter'} = "(&(objectClass=person)(objectCategory=CN=Person,CN=Schema,CN=Configuration,$rootbasedn)(memberOf=$group[0]))";
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s)(memberOf='.$group[0].'))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
 		}
 	}
 	else {

@@ -1040,12 +1040,13 @@ sub set_pdc( ;$$$$$$$$){
 		# postfix
 		my $postfix_settings = {
 			'server_host' => $pdc,
-			'search_base' => 'cn=Users,'.(Yaffas::Auth::get_ads_basedn($pdc)),
+			'search_base' => Yaffas::Auth::get_ads_basedn($pdc),
 			'bind_dn' => $userdn,
 			'bind_pw' => $bindpw,
 			'bind' => 'yes',
-			'query_filter' => '(&(objectClass=person)(mail=%s)(zarafaAccount=1))',
+			'query_filter' => '(&(objectClass=person)(mail=%s))',
 			'result_attribute' => 'mail',
+			'version' => '3',
 		};
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
 
