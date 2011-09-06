@@ -609,10 +609,10 @@ sub _save_hostname {
 	else {
 		$file = Yaffas::File->new(Yaffas::Constant::FILE->{rhel5_network});
 		my $line = $file->search_line(qr/^HOSTNAME/);
-		$file->splice_line($line, 1, "HOSTNAME=$hostname");
+		$file->splice_line($line, 1, "HOSTNAME=$hostname.$dnsname");
 		$file->save();
 
-		system(Yaffas::Constant::APPLICATION->{hostname}, $hostname);
+		system(Yaffas::Constant::APPLICATION->{hostname}, "$hostname.$dnsname");
 
 		system(Yaffas::Constant::FILE->{'rhel_net'}, 'restart');
 	}
