@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,54 +15,54 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1 en:2
+#: lang/en:1 lang/en:2
 #, no-wrap
 msgid "Support"
 msgstr ""
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid ""
 "Click on download button and send the file to the bitbone support if you "
 "have any problems with your yaffas Server."
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Download"
 msgstr ""
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "System"
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Please press download to get the available system and hardware informations."
 msgstr ""
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "Hardware List"
 msgstr ""
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lshw\" installed."
 msgstr ""
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lspci\" installed."
 msgstr ""
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "An error occured while executing \"pspci\"."
 msgstr ""
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "An error occured while executing \"lshw\"."
 msgstr ""

@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 14:18+0300\n"
+"POT-Creation-Date: 2011-09-05 16:33+0300\n"
 "PO-Revision-Date: 2011-08-25 14:12+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,210 +15,220 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Stop"
 msgstr "Anhalten"
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Close"
 msgstr "Schließen"
 
-#: en:3 en:19
+#: lang/en:3 lang/en:19
 #, no-wrap
 msgid "Restore"
 msgstr "Wiederherstellung"
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Restoring folder $1..."
 msgstr "Stelle Ordner $1 wieder her..."
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "Restoring element $1..."
 msgstr "Stelle Element $1 wieder her..."
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "done"
 msgstr "fertig"
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "failed"
 msgstr "fehlgeschlagen"
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Start restore"
 msgstr "Wiederherstellung starten"
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "Restore was started"
 msgstr "Wiederherstellung wurde gestartet"
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "Restore running"
 msgstr "Wiederherstellung läuft"
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Restore finished"
 msgstr "Wiederherstellung beendet"
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Subject"
 msgstr "Betreff"
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "Sender"
 msgstr "Absender"
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Date"
 msgstr "Datum"
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Start"
 msgstr "Start"
 
-#: en:16
+#: lang/en:16
 #, no-wrap
 msgid "End"
 msgstr "Ende"
 
-#: en:17
+#: lang/en:17
 #, no-wrap
 msgid "Select backup"
 msgstr "Sicherungszeitpunkt auswählen"
 
-#: en:18
+#: lang/en:18
 #, no-wrap
 msgid "Backup Overview"
 msgstr "Sicherungsübersicht"
 
-#: en:20
+#: lang/en:20
 #, no-wrap
 msgid "Clear"
 msgstr "Leeren"
 
-#: en:21
+#: lang/en:21
 #, no-wrap
 msgid "Do you want to remove these elements from restore list?"
 msgstr "Möchten Sie die zu Wiederherstellung anstehenden Elemente entfernen?"
 
-#: en:22
+#: lang/en:22
 #, no-wrap
 msgid "Really clear?"
 msgstr "Wirklich leeren?"
 
-#: en:23
+#: lang/en:23
 #, no-wrap
 msgid "Store"
 msgstr "Store"
 
-#: en:24 en:27
+#: lang/en:24 lang/en:27
 #, no-wrap
 msgid "Backup time"
 msgstr "Sicherungszeit"
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: en:26
+#: lang/en:26
 #, no-wrap
 msgid "Global settings"
 msgstr "Globale Einstellungen"
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "Full backup"
 msgstr "Voll Sicherung"
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "Differential backup"
 msgstr "Differentielle Sicherung"
 
-#: en:30
+#: lang/en:30
 #, no-wrap
 msgid "at"
 msgstr "um"
 
-#: en:31
+#: lang/en:31
 #, no-wrap
 msgid "Backup directory"
 msgstr "Sicherungs Verzeichnis"
 
-#: en:32
+#: lang/en:32
 #, no-wrap
 msgid "Remove"
 msgstr "Entfernen"
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid "Preserve fullbackup (in days)"
 msgstr "Vollsicherung aufbewahren (in Tagen)"
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Removing directory"
 msgstr "Lösche Verzeichnis"
 
-#: en:35
+#: lang/en:35
 #, no-wrap
 msgid "Click on \"restore\" to restore the selected messages."
 msgstr ""
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "No backup available"
 msgstr "Kein Backup zur Auswahl verfügbar"
 
-#: en:38
+#: lang/en:38
 #, no-wrap
 msgid "Time not correct."
 msgstr "Zeitangabe nicht korrekt."
 
-#: en:39
+#: lang/en:39
 #, no-wrap
 msgid "Preserve time not set or not correct."
 msgstr "Aufbewahrungsfrist ist nicht korrekt oder nicht angegeben."
 
-#: en:40
+#: lang/en:40
 #, no-wrap
 msgid "Could not open file."
 msgstr "Konnte Datei nicht öffnen."
 
-#: en:41
+#: lang/en:41
 #, no-wrap
 msgid "Could not find a full backup."
 msgstr "Konnte keine Vollsicherung finden."
 
-#: en:42
+#: lang/en:42
 #, no-wrap
 msgid "Could not create directory."
 msgstr "Konnte das Verzeichnis nicht anlegen."
 
-#: en:43
+#: lang/en:43
 #, no-wrap
 msgid "Error passing backup days."
 msgstr "Fehler bei der Übergabe der Sicherungstage."
 
-#: en:44
+#: lang/en:44
 #, no-wrap
 msgid "Could not open directory."
 msgstr "Konnte das Verzeichnis nicht öffnen."
+
+#: help/en:1
+#, no-wrap
+msgid "In which directory should the backups be stored?"
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "How long should each backup be preserved?"
+msgstr ""
 
 #, fuzzy
 #~| msgid "Backup time"

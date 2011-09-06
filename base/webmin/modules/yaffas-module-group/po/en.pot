@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,154 +15,154 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Network"
 msgstr ""
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Create"
 msgstr ""
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "Edit"
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Create group"
 msgstr ""
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "Delete group(s)"
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Edit group(s)"
 msgstr ""
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "Create group(s)"
 msgstr ""
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Modify user"
 msgstr ""
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "Groupadministration"
 msgstr ""
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Groupname"
 msgstr ""
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Groups"
 msgstr ""
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "Group"
 msgstr ""
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "User"
 msgstr ""
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Filetype"
 msgstr ""
 
-#: en:17
+#: lang/en:17
 #, no-wrap
 msgid "Set Filetype"
 msgstr ""
 
-#: en:19
+#: lang/en:19
 #, no-wrap
 msgid "Creating cache"
 msgstr ""
 
-#: en:20
+#: lang/en:20
 #, no-wrap
 msgid "done"
 msgstr ""
 
-#: en:22
+#: lang/en:22
 #, no-wrap
 msgid "Do you really want to delete this groups?"
 msgstr ""
 
-#: en:23
+#: lang/en:23
 #, no-wrap
 msgid "Authentification"
 msgstr ""
 
-#: en:24
+#: lang/en:24
 #, no-wrap
 msgid "Email"
 msgstr ""
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "Allow send as for"
 msgstr ""
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "All input fields has to be filled!"
 msgstr ""
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "Creation of groups failed!"
 msgstr ""
 
-#: en:30
+#: lang/en:30
 #, no-wrap
 msgid "Deletion of groups failed!"
 msgstr ""
 
-#: en:31
+#: lang/en:31
 #, no-wrap
 msgid "Group doesn't exist!"
 msgstr ""
 
-#: en:32
+#: lang/en:32
 #, no-wrap
 msgid "Group exists already!"
 msgstr ""
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid ""
 "Group names have to consist of at least one (alphanumerical) character, "
 "beginning with a letter(no umlaut)."
 msgstr ""
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Wrong mode!"
 msgstr ""
 
-#: en:35
+#: lang/en:35
 #, no-wrap
 msgid "No group selected!"
 msgstr ""
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "This action is only supported with local authentification."
 msgstr ""

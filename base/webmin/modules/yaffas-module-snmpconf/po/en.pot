@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,32 +15,44 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Access for"
 msgstr ""
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Community (Password)"
 msgstr ""
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "Enable SNMP"
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "SNMP Configuration"
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "The access can only be set for IP-Addresses or networks."
 msgstr ""
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "Password for the SNMP access."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid ""
+"Enter a single IP address or a network in form of a CIDR ressource. Enter "
+"\"default\" to allow access only from the local machine."
 msgstr ""

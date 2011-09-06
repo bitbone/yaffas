@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:23+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,187 +15,187 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Install New Key"
 msgstr ""
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Existing Keys"
 msgstr ""
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "Licensekey"
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "System"
 msgstr ""
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "Apply key"
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Customer"
 msgstr ""
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "Initial Key"
 msgstr ""
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Licensenumber"
 msgstr ""
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "Incoming MSNs"
 msgstr ""
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "unlimited"
 msgstr ""
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Unlimited (only limited by telephone system)"
 msgstr ""
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Configurable controllers"
 msgstr ""
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "Valid from"
 msgstr ""
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Valid until"
 msgstr ""
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Configurable printers"
 msgstr ""
 
-#: en:16
+#: lang/en:16
 #, no-wrap
 msgid "PDF encryption"
 msgstr ""
 
-#: en:17
+#: lang/en:17
 #, no-wrap
 msgid "Notepaper"
 msgstr ""
 
-#: en:18
+#: lang/en:18
 #, no-wrap
 msgid "Merge PDFs"
 msgstr ""
 
-#: en:19
+#: lang/en:19
 #, no-wrap
 msgid "enabled"
 msgstr ""
 
-#: en:20
+#: lang/en:20
 #, no-wrap
 msgid "disabled"
 msgstr ""
 
-#: en:21
+#: lang/en:21
 #, no-wrap
 msgid "yaffas base"
 msgstr ""
 
-#: en:23
+#: lang/en:23
 #, no-wrap
 msgid "Licensetype"
 msgstr ""
 
-#: en:24
+#: lang/en:24
 #, no-wrap
 msgid "Companylicense"
 msgstr ""
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "1-10 User"
 msgstr ""
 
-#: en:26
+#: lang/en:26
 #, no-wrap
 msgid "11-50 User"
 msgstr ""
 
-#: en:27
+#: lang/en:27
 #, no-wrap
 msgid "51-100 User"
 msgstr ""
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "101-250 User"
 msgstr ""
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "251-500 User"
 msgstr ""
 
-#: en:31
+#: lang/en:31
 #, no-wrap
 msgid "Could not copy the key."
 msgstr ""
 
-#: en:32
+#: lang/en:32
 #, no-wrap
 msgid "The product for your key is not installed!"
 msgstr ""
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid "Can't create file!"
 msgstr ""
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Can't write file!"
 msgstr ""
 
-#: en:35
+#: lang/en:35
 #, no-wrap
 msgid "Invalid key location!"
 msgstr ""
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "Can't remove new key!"
 msgstr ""
 
-#: en:37
+#: lang/en:37
 #, no-wrap
 msgid "Wrong key version for installed product!"
 msgstr ""
 
-#: en:38
+#: lang/en:38
 #, no-wrap
 msgid "No key available!"
 msgstr ""
 
-#: en:39
+#: lang/en:39
 #, no-wrap
 msgid "Successfully saved licensekey!"
 msgstr ""

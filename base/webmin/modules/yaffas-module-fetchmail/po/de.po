@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-05 16:33+0300\n"
 "PO-Revision-Date: 2011-08-25 13:59+0100\n"
 "Last-Translator: Christof Musik <musik@bitbone.de>\n"
 "Language-Team: none\n"
@@ -15,612 +15,637 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Query"
 msgstr "Abholaufträge"
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Server to poll"
 msgstr "Abzufragender Server"
 
-#: en:3
-#: en:31
+#: lang/en:3 lang/en:31
 #, no-wrap
 msgid "Protocol"
 msgstr "Protokoll"
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Active?"
 msgstr "Aktiv?"
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "Remote and local users"
 msgstr "Entfernter und lokaler Anwender"
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Add a new server"
 msgstr "Hinzufügen eines neuen Servers"
 
-#: en:7
+#: lang/en:7
 #, no-wrap
 msgid "Check all servers"
 msgstr "Überprüfe alle Server"
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Edit default settings"
 msgstr "Bearbeitung der Standard-Einstellungen"
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "Unix user"
 msgstr "Unix-Anwender"
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "Fetchmail configuration"
 msgstr "Fetchmail-Konfiguration"
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Add Fetchmail server for user:"
 msgstr "Hinzufügen eines Fetchmail-Servers für den Benutzer:"
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Fetchmail configuration in $1"
 msgstr "Fetchmail-Konfiguration in $1"
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "server list"
 msgstr "Server-Liste"
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Start Fetchmail Daemon"
 msgstr "Starte Fetchmail-Dämon"
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "Stop Fetchmail Daemon"
 msgstr "Stoppe Fetchmail-Dämon"
 
-#: en:16
+#: lang/en:16
 #, no-wrap
 msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
 msgstr "Klicken Sie hier, um das Fetchmail-Programm auf diesem Rechner zu starten und alle $1 Sekunden nach Post zu sehen.<br>Das Programm wird als Benutzer $2 starten und die obige Konfiguration verwenden."
 
-#: en:17
+#: lang/en:17
 #, no-wrap
 msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
 msgstr "Klicken Sie hier, um das Fetchmail-Programm zu stoppen das momentan als Benutzer $1 arbeitet. Die Post wird dann nicht mehr alle $2 Sekunden abgeholt."
 
-#: en:18
+#: lang/en:18
 #, no-wrap
 msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
 msgstr "Das Fetchmail-Programm $1 konnte nicht gefunden werden. Vielleicht ist Fetchmail nicht auf dem System installiert, oder die <a href='$2'>Modul Konfiguration</a> stimmt nicht."
 
-#: en:19
+#: lang/en:19
 #, no-wrap
 msgid "No Unix users have <tt>.fetchmailrc</tt> files."
 msgstr "Keiner der Unix-Benutzer hat eine <tt>.fetchmailrc</tt> Datei."
 
-#: en:20
-#: en:104
+#: lang/en:20 lang/en:104
 #, no-wrap
 msgid "Scheduled Checking"
 msgstr ""
 
-#: en:21
+#: lang/en:21
 #, no-wrap
 msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
 msgstr ""
 
-#: en:22
+#: lang/en:22
 #, no-wrap
 msgid "Fetchmail version $1"
 msgstr ""
 
-#: en:24
-#: en:26
+#: lang/en:24 lang/en:26
 #, no-wrap
 msgid "Add query"
 msgstr "Abholauftrag hinzufügen"
 
-#: en:25
+#: lang/en:25
 #, no-wrap
 msgid "Edit query"
 msgstr "Abholauftrag bearbeiten"
 
-#: en:27
+#: lang/en:27
 #, no-wrap
 msgid "Server name"
 msgstr "Mailserver-Name"
 
-#: en:28
+#: lang/en:28
 #, no-wrap
 msgid "Polling enabled?"
 msgstr "Abholung aktiviert?"
 
-#: en:29
+#: lang/en:29
 #, no-wrap
 msgid "Mail server to contact"
 msgstr "Abzufragender Mailserver"
 
-#: en:30
+#: lang/en:30
 #, no-wrap
 msgid "Same as server name"
 msgstr "Identisch mit Mailserver-Name"
 
-#: en:32
+#: lang/en:32
 #, no-wrap
 msgid "Server port"
 msgstr "Mailserver-Port"
 
-#: en:33
+#: lang/en:33
 #, no-wrap
 msgid "Mail server user details"
 msgstr "Mailserver Benutzerdetails"
 
-#: en:34
+#: lang/en:34
 #, no-wrap
 msgid "Remote user"
 msgstr "Benutzername auf Mailserver"
 
-#: en:35
+#: lang/en:35
 #, no-wrap
 msgid "Remote password"
 msgstr "Passwort auf Mailserver"
 
-#: en:36
+#: lang/en:36
 #, no-wrap
 msgid "Local user(s)"
 msgstr "Lokaler Benutzer"
 
-#: en:37
+#: lang/en:37
 #, no-wrap
 msgid "Local user(s) or e-mail adresses"
 msgstr "Lokale Benutzer oder E-Mail Adressen"
 
-#: en:38
+#: lang/en:38
 #, no-wrap
 msgid "Leave messages on server?"
 msgstr "Nachrichten auf dem Server belassen?"
 
-#: en:39
+#: lang/en:39
 #, no-wrap
 msgid "Always fetch all messages?"
 msgstr "Immer alle Nachrichten abholen?"
 
-#: en:40
+#: lang/en:40
 #, no-wrap
 msgid "Usually no"
 msgstr ""
 
-#: en:41
+#: lang/en:41
 #, no-wrap
 msgid "Connect in SSL mode?"
 msgstr "Mit SSL verbinden"
 
-#: en:42
+#: lang/en:42
 #, no-wrap
 msgid "Failed to save server"
 msgstr "Konnte Server nicht speichern"
 
-#: en:43
+#: lang/en:43
 #, no-wrap
 msgid "Missing or invalid server name"
 msgstr "Der Servername fehlt oder stimmt nicht"
 
-#: en:44
+#: lang/en:44
 #, no-wrap
 msgid "Invalid mail server name"
 msgstr "Fehlender oder ungültiger Mailserver-Name"
 
-#: en:45
+#: lang/en:45
 #, no-wrap
 msgid "Missing or invalid port number"
 msgstr "Fehlende oder ungültige Portnummer"
 
-#: en:46
+#: lang/en:46
 #, no-wrap
 msgid "Missing or invalid remote user name"
 msgstr "Der lokale Benutzername fehlt oder stimmt nicht"
 
-#: en:47
+#: lang/en:47
 #, no-wrap
 msgid "Add another user"
 msgstr "Benutzer hinzufügen"
 
-#: en:48
+#: lang/en:48
 #, no-wrap
 msgid "Check this server"
 msgstr "Prüfe diesen Server"
 
-#: en:49
+#: lang/en:49
 #, no-wrap
 msgid "Check condition"
 msgstr "Prüfe Zustand"
 
-#: en:50
+#: lang/en:50
 #, no-wrap
 msgid "Always check"
 msgstr "Prüfe immer"
 
-#: en:51
+#: lang/en:51
 #, no-wrap
 msgid "Only if interface is up"
 msgstr "Nur wenn die Schnittstelle aktiviert ist"
 
-#: en:52
+#: lang/en:52
 #, no-wrap
 msgid "with address / netmask"
 msgstr "mit Adresse / Netzmaske"
 
-#: en:53
+#: lang/en:53
 #, no-wrap
 msgid "Missing or invalid network interface"
 msgstr "Fehlende oder ungültige Netzwerkschnittstelle"
 
-#: en:54
+#: lang/en:54
 #, no-wrap
 msgid "Missing or invalid address"
 msgstr "Fehlende oder ungültige Adresse"
 
-#: en:55
+#: lang/en:55
 #, no-wrap
 msgid "Invalid address netmask"
 msgstr "Die Netzmaske ist ungültig"
 
-#: en:56
+#: lang/en:56
 #, no-wrap
 msgid "Command to run before connecting"
 msgstr "Befehl, der vor dem Verbindungsaufbau ausgeführt werden soll"
 
-#: en:57
+#: lang/en:57
 #, no-wrap
 msgid "Command to run after disconnecting"
 msgstr "Befehl, der nach dem Verbindungsaufbau ausgeführt werden soll"
 
-#: en:58
+#: lang/en:58
 #, no-wrap
 msgid "You are not allowed to edit this user's fetchmail config"
 msgstr "Sie sind nicht berechtigt die Fetchmail-Konfiguration dieses Benutzers zu bearbeiten"
 
-#: en:59
+#: lang/en:59
 #, no-wrap
 msgid "Only users' fetchmail config files can be edited"
 msgstr "Nur die Fetchmail-Konfigurationsdateien des Benutzers können geändert werden"
 
-#: en:60
+#: lang/en:60
 #, no-wrap
 msgid "Poll interval"
 msgstr "Abholintervall"
 
-#: en:61
+#: lang/en:61
 #, no-wrap
 msgid "Envelope"
 msgstr "Envelope"
 
-#: en:63
+#: lang/en:63
 #, no-wrap
 msgid "Failed to stop fetchmail"
 msgstr "Konnte Fetchmail nicht anhalten"
 
-#: en:64
+#: lang/en:64
 #, no-wrap
 msgid "You are not allowed to stop fetchmail"
 msgstr ""
 
-#: en:65
+#: lang/en:65
 #, no-wrap
 msgid "Failed to start fetchmail"
 msgstr "Konnte Fetchmail nicht aktivieren"
 
-#: en:66
+#: lang/en:66
 #, no-wrap
 msgid "Missing or invalid checking interval"
 msgstr "Das Prüfintervall fehlt oder ist ungültig"
 
-#: en:67
+#: lang/en:67
 #, no-wrap
 msgid "You are not allowed to start fetchmail"
 msgstr ""
 
-#: en:69
+#: lang/en:69
 #, no-wrap
 msgid "Checking Servers"
 msgstr "Prüfe Server"
 
-#: en:70
+#: lang/en:70
 #, no-wrap
 msgid "Checking for mail on server(s) with command $1 .."
 msgstr "Prüfe Mails auf Server(n) mit dem Befehl $1 ..."
 
-#: en:71
+#: lang/en:71
 #, no-wrap
 msgid ".. checking complete."
 msgstr "... Prüfung vollständig."
 
-#: en:72
+#: lang/en:72
 #, no-wrap
 msgid ".. checking failed!"
 msgstr "... Prüfung gescheitert!"
 
-#: en:74
+#: lang/en:74
 #, no-wrap
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: en:75
+#: lang/en:75
 #, no-wrap
 msgid "Default Settings"
 msgstr ""
 
-#: en:76
+#: lang/en:76
 #, no-wrap
 msgid "Default settings for all servers"
 msgstr "Standard-Einstellungen für alle Server"
 
-#: en:77
+#: lang/en:77
 #, no-wrap
 msgid "Failed to save default settings"
 msgstr "Das Speichern der Standard-Einstellungen ist gescheitert"
 
-#: en:79
+#: lang/en:79
 #, no-wrap
 msgid "Added server $1 in file $2"
 msgstr "Server $1 wurde in der Datei $2 eingefügt"
 
-#: en:80
+#: lang/en:80
 #, no-wrap
 msgid "Modified server $1 in file $2"
 msgstr "Server $1 wurde in der Datei $2 bearbeitet"
 
-#: en:81
+#: lang/en:81
 #, no-wrap
 msgid "Deleted server $1 in file $2"
 msgstr "Server $1 wurde in der Datei $2 gelöscht"
 
-#: en:82
+#: lang/en:82
 #, no-wrap
 msgid "Added server $1 for user $2"
 msgstr "Server $1 wurde für Benutzer $2 eingefügt"
 
-#: en:83
+#: lang/en:83
 #, no-wrap
 msgid "Modified server $1 for user $2"
 msgstr "Server $1 wurde für Benutzer $2 bearbeitet"
 
-#: en:84
+#: lang/en:84
 #, no-wrap
 msgid "Deleted server $1 for user $2"
 msgstr "Server $1 wurde für benutzer $2 gelöscht"
 
-#: en:85
+#: lang/en:85
 #, no-wrap
 msgid "Checked all servers in file $1"
 msgstr "Alle Server der Datei $1 geprüft"
 
-#: en:86
-#: en:89
+#: lang/en:86 lang/en:89
 #, no-wrap
 msgid "Checked server $2 in file $1"
 msgstr "Server $2 der Datei $1 geprüft"
 
-#: en:87
+#: lang/en:87
 #, no-wrap
 msgid "Checked all servers for user $1"
 msgstr "Alle Server für Benutzer $1 geprüft"
 
-#: en:88
+#: lang/en:88
 #, no-wrap
 msgid "Checked server $2 for user $1"
 msgstr "Server $2 für Benutzer $1 geprüft"
 
-#: en:90
+#: lang/en:90
 #, no-wrap
 msgid "Changed global settings for user $1"
 msgstr "Allgemeine Einstellungen des Bentzers $1 geändert"
 
-#: en:91
+#: lang/en:91
 #, no-wrap
 msgid "Changed global settings in file $1"
 msgstr "Allgemeine Einstellungen in der Datei $1 geändert"
 
-#: en:92
+#: lang/en:92
 #, no-wrap
 msgid "Started fetchmail daemon"
 msgstr "Fetchmail-Programm gestartet"
 
-#: en:93
+#: lang/en:93
 #, no-wrap
 msgid "Stopped fetchmail daemon"
 msgstr "Fetchmail-Programm gestoppt"
 
-#: en:94
+#: lang/en:94
 #, no-wrap
 msgid "Enabled scheduled checking"
 msgstr ""
 
-#: en:95
+#: lang/en:95
 #, no-wrap
 msgid "Modified scheduled checking"
 msgstr ""
 
-#: en:96
+#: lang/en:96
 #, no-wrap
 msgid "Disabled scheduled checking"
 msgstr ""
 
-#: en:98
+#: lang/en:98
 #, no-wrap
 msgid "Can edit fetchmail config for"
 msgstr "Kann Fetchmail-Konfiguration bearbeiten für"
 
-#: en:99
+#: lang/en:99
 #, no-wrap
 msgid "All users"
 msgstr "Alle Benutzer"
 
-#: en:100
+#: lang/en:100
 #, no-wrap
 msgid "Current webmin user"
 msgstr "Aktuellen Webmin-Benutzer"
 
-#: en:101
+#: lang/en:101
 #, no-wrap
 msgid "Only users"
 msgstr "Nur Benutzer"
 
-#: en:102
+#: lang/en:102
 #, no-wrap
 msgid "All except users"
 msgstr "Alle Benutzer ausser"
 
-#: en:105
+#: lang/en:105
 #, no-wrap
 msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
 msgstr ""
 
-#: en:106
+#: lang/en:106
 #, no-wrap
 msgid "Scheduled Fetchmail settings"
 msgstr ""
 
-#: en:107
+#: lang/en:107
 #, no-wrap
 msgid "Scheduled checking enabled?"
 msgstr ""
 
-#: en:108
+#: lang/en:108
 #, no-wrap
 msgid "Yes, at times configured below .."
 msgstr ""
 
-#: en:109
+#: lang/en:109
 #, no-wrap
 msgid "Destination for Fetchmail output"
 msgstr ""
 
-#: en:110
+#: lang/en:110
 #, no-wrap
 msgid "Write to file $1"
 msgstr ""
 
-#: en:111
+#: lang/en:111
 #, no-wrap
 msgid "Email to address $1"
 msgstr ""
 
-#: en:112
+#: lang/en:112
 #, no-wrap
 msgid "Discard"
 msgstr ""
 
-#: en:113
+#: lang/en:113
 #, no-wrap
 msgid "Output to cron"
 msgstr ""
 
-#: en:114
+#: lang/en:114
 #, no-wrap
 msgid "Run Fetchmail as user"
 msgstr ""
 
-#: en:115
+#: lang/en:115
 #, no-wrap
 msgid "Failed to save scheduled checking"
 msgstr ""
 
-#: en:116
+#: lang/en:116
 #, no-wrap
 msgid "Missing or invalid output filename"
 msgstr ""
 
-#: en:117
+#: lang/en:117
 #, no-wrap
 msgid "Missing or invalid email address"
 msgstr ""
 
-#: en:118
+#: lang/en:118
 #, no-wrap
 msgid "Missing or invalid Unix user"
 msgstr ""
 
-#: en:119
+#: lang/en:119
 #, no-wrap
 msgid "Scheduled checking is not available in this mode"
 msgstr ""
 
-#: en:121
+#: lang/en:121
 #, no-wrap
 msgid "Delete"
 msgstr "Lösche"
 
-#: en:122
+#: lang/en:122
 #, no-wrap
 msgid "Do you really want to delete this server?"
 msgstr "Möchten sie diesen Server wirklich löschen?"
 
-#: en:123
+#: lang/en:123
 #, no-wrap
 msgid "Multidrop"
 msgstr "Multidrop"
 
-#: en:124
+#: lang/en:124
 #, no-wrap
 msgid "Destination"
 msgstr "Lokales Ziel"
 
-#: en:125
+#: lang/en:125
 #, no-wrap
 msgid "Alias"
 msgstr "Alias"
 
-#: en:126
+#: lang/en:126
 #, no-wrap
 msgid "User"
 msgstr "Benutzer"
 
-#: en:128
+#: lang/en:128
 #, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Bitte geben Sie lokalen und entfernten User an"
 
-#: en:129
+#: lang/en:129
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "Der angegebene lokale Benutzer ist ungültig."
 
-#: en:130
+#: lang/en:130
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "Der angegebene Alias ist ungültig."
 
-#: en:131
+#: lang/en:131
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Bitte wählen Sie als Ziel entweder \"Benutzer\", \"Alias\" oder \"Multidrop\""
 
-#: en:132
+#: lang/en:132
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Bitte geben Sie einen gültigen Mailserverbenutzer an."
 
-#: en:133
+#: lang/en:133
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Bitte geben Sie ein Passwort für den Mailserverbenutzer an."
 
-#: en:134
+#: lang/en:134
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 
+#: help/en:1
+#, no-wrap
+msgid "Specify the polling interval in seconds."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "The remote host name or IP address from which you want to receive mail."
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "The DNS name of the remote server. This setting overrides the server name."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "The TCP/IP port of the remote server."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "The header name of the envelope address (e.g. X-Envelope-To)."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Specify the login user from the remote machine."
+msgstr ""

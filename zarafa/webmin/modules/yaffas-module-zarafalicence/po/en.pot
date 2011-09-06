@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 14:12+0300\n"
+"POT-Creation-Date: 2011-09-06 13:25+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,62 +15,62 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Apply key"
 msgstr ""
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Install new key"
 msgstr ""
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "Install new base key"
 msgstr ""
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Install new client key"
 msgstr ""
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "Installed licenses"
 msgstr ""
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "Base key"
 msgstr ""
 
-#: en:7 en:11
+#: lang/en:7 lang/en:11
 #, no-wrap
 msgid "Serial number"
 msgstr ""
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "License Log"
 msgstr ""
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "This is not a valid Zarafa serial"
 msgstr ""
 
-#: en:10
+#: lang/en:10
 #, no-wrap
 msgid "Archiver key"
 msgstr ""
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Install new archiver key"
 msgstr ""
 
-#: en:13
+#: lang/en:13
 #, no-wrap
 msgid "Install new archiver client key"
 msgstr ""
