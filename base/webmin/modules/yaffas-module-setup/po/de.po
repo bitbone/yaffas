@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:21+0300\n"
 "PO-Revision-Date: 2011-08-25 13:56+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,62 +15,62 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Admin password"
 msgstr "Admin Passwort"
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "Admin password (repeat)"
 msgstr "Admin Passwort (Wiederholung)"
 
-#: en:3
+#: lang/en:3
 #, no-wrap
 msgid "MySQL database"
 msgstr "MySQL Datenbank"
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "MySQL server"
 msgstr "MySQL Server"
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "MySQL username"
 msgstr "MySQL Benutzername"
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "MySQL password"
 msgstr "MySQL Passwort"
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Setup finished"
 msgstr "Setup abgeschlossen"
 
-#: en:9
+#: lang/en:9
 #, no-wrap
 msgid "Setup was finished successfully. After relogin you can use all features."
 msgstr "Das Setup wurde erfolgreich abgeschlossen. Nach dem erneuten Login können Sie alle Funktionen nutzen."
 
-#: en:11
+#: lang/en:11
 #, no-wrap
 msgid "Zarafa settings"
 msgstr "Zarafa Einstellungen"
 
-#: en:12
+#: lang/en:12
 #, no-wrap
 msgid "Basic settings"
 msgstr "Grundeinstellungen"
 
-#: en:14
+#: lang/en:14
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Konnte die Datenbank nicht erreichen."
 
-#: en:15
+#: lang/en:15
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."

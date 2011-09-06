@@ -4,7 +4,23 @@ use lib '/opt/yaffas/lib/perl5';
 use Yaffas::Constant;
 use Yaffas::Service qw(control LDAP NSCD STOP START RESTART);
 
-my @ldap_conffiles = ("/etc/pam_ldap.conf", "/etc/libnss-ldap.conf", "/etc/ldap/slapd.conf", "/etc/openldap/slapd.conf", "/etc/ldap/ldap.conf", "/etc/smbldap-tools/smbldap.conf", "/etc/samba/smb.conf", "/etc/smbldap-tools/smbldap_bind.conf", "/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist", "/etc/zarafa/ldap.cfg", "/etc/zarafa/ldap.yaffas.cfg", "/etc/ldap.settings", "/etc/ldap.conf");
+my @ldap_conffiles = (
+	"/etc/pam_ldap.conf",
+	"/etc/libnss-ldap.conf",
+	"/etc/ldap/slapd.conf",
+	"/etc/openldap/slapd.conf",
+	"/etc/ldap/ldap.conf",
+	"/etc/smbldap-tools/smbldap.conf",
+	"/etc/samba/smb.conf",
+	"/etc/smbldap-tools/smbldap_bind.conf",
+	"/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist",
+	"/etc/zarafa/ldap.cfg",
+	"/etc/zarafa/ldap.yaffas.cfg",
+	"/etc/ldap.settings",
+	"/etc/ldap.conf",
+	"/etc/postfix/ldap-users.cf",
+	"/etc/postfix/ldap-aliases.cf",
+);
 my @other_conffiles = ("/etc/hosts", "/etc/defaultdomain");
 my $old_domain;
 my $old_org;

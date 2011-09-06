@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-25 13:56+0300\n"
+"POT-Creation-Date: 2011-09-06 13:21+0300\n"
 "PO-Revision-Date: 2011-08-25 13:56+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -15,32 +15,32 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: en:1
+#: lang/en:1
 #, no-wrap
 msgid "Change Language"
 msgstr "Sprache &auml;ndern"
 
-#: en:2
+#: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr "System"
 
-#: en:4
+#: lang/en:4
 #, no-wrap
 msgid "Choose Language"
 msgstr "Sprache w&auml;hlen"
 
-#: en:5
+#: lang/en:5
 #, no-wrap
 msgid "German"
 msgstr "Deutsch"
 
-#: en:6
+#: lang/en:6
 #, no-wrap
 msgid "English"
 msgstr "Englisch"
 
-#: en:8
+#: lang/en:8
 #, no-wrap
 msgid "Language not found!"
 msgstr "Sprache nicht gefunden!"
