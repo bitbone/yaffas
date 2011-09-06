@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-31 13:53+0300\n"
-"PO-Revision-Date: 2011-08-31 13:55+0100\n"
+"POT-Creation-Date: 2011-09-06 15:07+0300\n"
+"PO-Revision-Date: 2011-09-06 15:07+0100\n"
 "Last-Translator: Christof Musik <musik@bitbone.de>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -20,8 +20,7 @@ msgstr ""
 msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
 
-#: lang/en:2
-#: lang/en:3
+#: lang/en:2 lang/en:3
 #, no-wrap
 msgid "Password not valid"
 msgstr "Passwort nicht gültig"
@@ -141,8 +140,7 @@ msgstr "Benutzerverwaltung"
 msgid "Add user"
 msgstr "Benutzer hinzufügen"
 
-#: lang/en:27
-#: lang/en:46
+#: lang/en:27 lang/en:46
 #, no-wrap
 msgid "Printer operator"
 msgstr "Druckeroperator"
@@ -274,8 +272,8 @@ msgstr "Nachname"
 
 #: lang/en:54
 #, no-wrap
-msgid "Zarafa license"
-msgstr "Zarafa Lizenz"
+msgid "Zarafa store"
+msgstr "Zarafa Store"
 
 #: lang/en:55
 #, no-wrap
@@ -336,4 +334,3 @@ msgstr "Für Gruppe erlauben"
 #, no-wrap
 msgid "Features"
 msgstr "Funktionen"
-

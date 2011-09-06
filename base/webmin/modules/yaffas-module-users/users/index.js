@@ -100,7 +100,7 @@ Users.prototype.setupTable = function() {
         sortable: true,
     }, {
         key: "zarafa_license",
-        label: _("lbl_zarafa_license"),
+        label: _("lbl_zarafa_store"),
         sortable: true
     }];
 	this.usertable = new Yaffas.Table({
