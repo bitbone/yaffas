@@ -488,10 +488,11 @@ sub _get_help_button {
 
 	_load_help();
 
-	if (exists $Help{$name}) {
+	while(my ($k, $v) = each %Help) {
+		next unless $name =~ m/$k/;
 		return $Cgi->div(
 			{-class=>'tooltip', onmouseover=>"Yaffas.ui.showHelp(this)", onclick=>"Yaffas.ui.toggleHelp(this)", onmouseout=>"Yaffas.ui.cancelHelp(this)"},
-			$Cgi->div({-class=>"hidden"}, exists $Help{$name} ? $Help{$name} : "No help available! name = $name")
+			$Cgi->div({-class=>"hidden"}, $v ? $v : "No help available! name = $name")
 		);
 	}
 	return "";
