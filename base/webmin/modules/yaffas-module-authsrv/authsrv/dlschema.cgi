@@ -13,8 +13,8 @@ ReadParse();
 my $error = 1;
 
 if(exists($main::in{file}) && defined($main::in{file})) {
-	if ($main::in{file} eq "yaffas") {
-		$error = 0 unless Yaffas::UI::download_to_client(Yaffas::Constant::DIR->{ldap_schema}."bitbone.schema", "yaffas.schema");
+	if ($main::in{file} eq "zarafa") {
+		$error = 0 unless Yaffas::UI::download_to_client(Yaffas::Constant::DIR->{ldap_schema}."zarafa.schema", "zarafa.schema");
 	}
 	if ($main::in{file} eq "samba") {
 		$error = 0 unless Yaffas::UI::download_to_client(Yaffas::Constant::DIR->{ldap_schema}."samba.schema", "samba.schema");
