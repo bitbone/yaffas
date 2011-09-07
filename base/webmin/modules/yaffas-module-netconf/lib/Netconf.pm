@@ -349,10 +349,23 @@ sub _load_settings {
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
 		my $device = "";
-		my ($ip, $netmask, $gateway, $dns, $search) = "";
+		my ($ip, $netmask, $gateway) = "";
+		my ($dns, $search) = [];
 
 		my $i = 0;
 		my @lines = $interfaces->get_content();
+
+		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
+		my @content = $resolv->get_content();
+
+		foreach my $line (@content) {
+			if ($line =~ /^search\s+(.*)/) {
+				push @{$search}, split /\s+/, $1;
+			}
+			if ($line =~ /^nameserver\s+(.*)/) {
+				push @{$dns}, split /\s+/, $1;
+			}
+		}
 
 		foreach my $line (@lines) {
 			$i++;
@@ -367,14 +380,6 @@ sub _load_settings {
 
 			if ($line =~ /\s*gateway\s(.*)/) {
 				$gateway = $1;
-			}
-
-			if ($line =~ /\s*dns-search\s(.*)/) {
-				$search = [split /\s+/, $1];
-			}
-
-			if ($line =~ /\s*dns-nameservers\s(.*)/) {
-				$dns = [split /\s+/, $1];
 			}
 
 			if ($line =~ /^\s*auto\s+(.*)$/) {
@@ -642,11 +647,32 @@ sub _save_interfaces {
 		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces}, "");
 		$file or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{network_interfaces});
 
+		my (@dns, @search) = ();
+
 		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
 			$file->add_line($self->{DEVICES}->{$dev}->interface_dump());
+
+			if (ref $self->{DEVICES}->{$dev}->{DNS} eq "ARRAY") {
+				push @dns, @{$self->{DEVICES}->{$dev}->{DNS}};
+			}
+			else {
+				push @dns, $self->{DEVICES}->{$dev}->{DNS};
+			}
+
+			if (ref $self->{DEVICES}->{$dev}->{SEARCH} eq "ARRAY") {
+				push @search, @{$self->{DEVICES}->{$dev}->{SEARCH}};
+			}
+			else {
+				push @search, $self->{DEVICES}->{$dev}->{SEARCH};
+			}
 		}
 
 		$file->save();
+
+		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf}, "");
+		$resolv->add_line("nameserver ".join " ", @dns);
+		$resolv->add_line("search ".join " ", @search);
+		$resolv->save();
 	}
 	else {
 		foreach my $dev (nsort keys %{$self->{DEVICES}}){
@@ -998,20 +1024,6 @@ sub interface_dump {
 	push @lines, "\taddress ".$self->{IP} if ($self->{IP});
 	push @lines, "\tnetmask ".$self->{NETMASK} if ($self->{NETMASK});
 	push @lines, "\tgateway ".$self->{GATEWAY} if ($self->{GATEWAY});
-	if (ref $self->{DNS} eq "ARRAY") {
-		push @lines, "\tdns-nameservers ".join " ", @{$self->{DNS}} if (@{$self->{DNS}});
-	}
-	else {
-		push @lines, "\tdns-nameservers ".$self->{DNS} if ($self->{DNS});
-	}
-
-	if (ref $self->{SEARCH} eq "ARRAY") {
-		push @lines, "\tdns-search ".join " ", @{$self->{SEARCH}} if (@{$self->{SEARCH}});
-	}
-	else {
-		push @lines, "\tdns-search ".$self->{SEARCH} if ($self->{SEARCH});
-	}
-
 	push @lines, "";
 
 	return @lines;

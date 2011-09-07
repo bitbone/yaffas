@@ -80,13 +80,15 @@ sub net_conf_form () {
 								"$_-gateway", $dev->get_gateway(),
 								$dev->enabled()
 							),
-							_input_td(
-								"$_-dns", $dev->get_dns(), $dev->enabled()
-							),
-							_input_td(
-								"$_-search", $dev->get_search(),
-								$dev->enabled()
-							),
+							$_ !~ /^eth\d+:\d+$/ ? (
+								_input_td(
+									"$_-dns", $dev->get_dns(), $dev->enabled()
+								),
+								_input_td(
+									"$_-search", $dev->get_search(),
+									$dev->enabled()
+								),
+							) : "",
 							$Cgi->td(
 								  $_ =~ /^eth\d+$/
 								? $dev->enabled()
@@ -140,8 +142,6 @@ sub virtual_card_form ($) {
 					_input_td( "new-ipaddr",  "", 1 ),
 					_input_td( "new-netmask", "", 1 ),
 					_input_td( "new-gateway", "", 1 ),
-					_input_td( "new-dns",     "", 1 ),
-					_input_td( "new-search",  "", 1 ),
 				]
 			)
 		)

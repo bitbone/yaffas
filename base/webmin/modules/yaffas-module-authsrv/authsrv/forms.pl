@@ -298,7 +298,7 @@ sub remote_ldap(;$)
 							  $Cgi->p($main::text{lbl_need_schema},
 								  $cgi->ul(
 										   [
-										   $cgi->li($cgi->a({-href=>"/authsrv/dlschema.cgi?file=samba"}, "Samba Schema")),
+										   $cgi->li($cgi->a({-href=>"/authsrv/dlschema.cgi?file=zarafa"}, "Zarafa Schema")),
 										   ]
 										  )),
 							  
