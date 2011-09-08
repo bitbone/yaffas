@@ -1,8 +1,8 @@
-basedn=LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org
-email=Attribute with users email address. Default: mail
-binddn=User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org
-dom_name=Whole domainname of your Active Directory. e.g. yaffas.org
-pass_pdc=Name or IP adress of your domain controller.
-dom_adm=Name of a domain administrator. This user should be created in users organizational unit.
-ads_user=User for read only access. You can give the username or a full dn syntax.
-host=Hostname or IP address of the LDAP server.
+basedn=Die LDAP Base DN. Einträge werden von diesem Punkt aus gesucht. z.B. o=yaffas,c=org
+email=Das Attribut, das die E-Mail-Adressen der Benutzer enthält. Standard: mail
+binddn=Der Benutzer über den Alle abfragen laufen sollen. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org
+dom_name=Der Domainname Ihres Active Directories. z.B. yaffas.org
+pass_pdc=Hostname oder IP-Addresse ihres Domain Controllers.
+dom_adm=Name des Domain Administrators. Dieser Benutzer sollte in der Users Organizational Unit angelegt werden.
+ads_user=Benutzer mit Read-Only-Rechten. Sie können den Benutzernamen oder die volle DN-Syntax eintragen.
+host=Hostname oder IP-Adresse des LDAP-Servers.

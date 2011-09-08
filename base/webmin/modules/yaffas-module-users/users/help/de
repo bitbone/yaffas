@@ -1,0 +1,3 @@
+zarafaadmin_\d*=Ein Administrator kann die Stores anderer User öffnen.
+zarafashared_\d*=Der User wird keine Lizenz der aktiven Benutzer verbrauchen, aber sich auch nicht einloggen können. Andere Benutzer können seinen Store als Delegate öffnen.
+zarafaquota_\d*=Der User wird nur eingeschränkten Speicherplatz zugewiesen bekommen. Nähert sich der User dem Limit, wird er gewarnt. Erreicht er das Limit, so kann er keine weiteren E-Mails empfangen oder versenden.

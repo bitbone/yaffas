@@ -1,6 +1,6 @@
-interval=Specify the polling interval in seconds.
-poll=The remote host name or IP address from which you want to receive mail.
-via=The DNS name of the remote server. This setting overrides the server name.
-port=The TCP/IP port of the remote server.
-poll_envelope=The header name of the envelope address (e.g. X-Envelope-To).
-user=Specify the login user from the remote machine.
+interval=Abstand der einzelnen Abfragen in Sekunden.
+poll=Hostname oder IP-Adresse des Servers von dem Mails empfangen werden sollen.
+via=Der DNS-Name des Servers. Diese Einstellung überschreibt den Wert in der Servername-Einstellung.
+port=Der TCP/IP-Port des Dienstes von dem Mails empfangen werden sollen.
+poll_envelope=Der Headername der Envelope-Adresse (z.B. X-Envelope-To).
+user=Der Login über den sich der lokale Dienst anmelden soll.

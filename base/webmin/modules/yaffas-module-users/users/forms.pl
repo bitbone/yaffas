@@ -7,7 +7,7 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Sort::Naturally;
 
 use Yaffas::UGM qw(get_users get_groups gecos name get_uid_by_username get_username_by_uid get_suppl_groupnames get_email);
-use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start);
+use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start checkbox textfield);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::Users;
 use Yaffas::Module::ZarafaConf;
@@ -200,7 +200,7 @@ sub _edit_user($$\@\@;$){
 										(check_product("zarafa") || Yaffas::Auth::is_auth_srv()) ? (
 										$Cgi->td([
 												  $main::text{lbl_zarafaquota}.":",
-												  $Cgi->textfield({
+												  textfield({
 																  -name=>"zarafaquota_" . $uid,
 																  -value=>$zarafaquota,
 																  -maxlength=>5,
@@ -209,7 +209,7 @@ sub _edit_user($$\@\@;$){
 												 ]) ,
 										$Cgi->td([
 												  $main::text{lbl_zarafaadmin}.":",
-												  $Cgi->checkbox({
+												  checkbox({
 																  -name=>"zarafaadmin_" . $uid,
 																  -checked=>$zarafaadmin,
 																  -value=>"yes",
@@ -218,7 +218,7 @@ sub _edit_user($$\@\@;$){
 												 ]) ,
 										$Cgi->td([
 												  $main::text{lbl_zarafashared}.":",
-												  $Cgi->checkbox({
+												  checkbox({
 																  -name=>"zarafashared_" . $uid,
 																  -checked=>$zarafashared,
 																  -value=>"yes",
