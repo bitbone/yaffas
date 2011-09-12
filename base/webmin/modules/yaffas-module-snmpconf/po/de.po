@@ -48,7 +48,7 @@ msgstr "Der Community-String darf nur aus Zahlen (0-9) und Buchstaben (a-z, A-Z)
 #: help/en:1
 #, no-wrap
 msgid "Password for the SNMP access."
-msgstr ""
+msgstr "Das Passwort für den SNMP-Zugriff."
 
 #: help/en:2
 #, no-wrap

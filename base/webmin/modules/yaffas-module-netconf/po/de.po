@@ -294,38 +294,38 @@ msgstr "Fehler beim Neustart von freshclam!"
 #, fuzzy, no-wrap
 #| msgid "Host name"
 msgid "e.g. hostname"
-msgstr "Rechnername"
+msgstr "z.B. hostname"
 
 #: help/en:2
 #, no-wrap
 msgid "e.g. yaffas.org"
-msgstr ""
+msgstr "z.B. yaffas.org"
 
 #: help/en:3
 #, no-wrap
 msgid "e.g. yaffas"
-msgstr ""
+msgstr "z.B. yaffas"
 
 #: help/en:4
 #, no-wrap
 msgid "IP address for eth0<br>e.g. 192.168.0.100"
-msgstr ""
+msgstr "IP-Adresse für eth0<br>z.B. 192.168.0.100"
 
 #: help/en:5
 #, no-wrap
 msgid "Netmask for eth0<br>e.g. 192.168.0.100"
-msgstr ""
+msgstr "Netzmaske für eth0<br>z.B. 192.168.0.100"
 
 #: help/en:6
 #, no-wrap
 msgid "Gateway for your network. This must be an IPv4 address of this network."
-msgstr ""
+msgstr "Gateway für Ihr Netzwerk. Dieser Eintrag muss eine IPv4-Adresse des gleichen Netzwerks sein."
 
 #: help/en:7
 #, fuzzy, no-wrap
 #| msgid "The DNS server address has to be a valid IP address."
 msgid "DNS server for resolving names into IP adresses."
-msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+msgstr "DNS-Server für Namensauflösung. z.B. 4.4.4.4"
 
 #: help/en:8
 #, no-wrap
@@ -336,14 +336,14 @@ msgstr ""
 #, fuzzy, no-wrap
 #| msgid "The DNS server address has to be a valid IP address."
 msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
-msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+msgstr "Hostname oder IP-Adresse Ihres HTTP-Proxy-Servers."
 
 #: help/en:10
 #, no-wrap
 msgid "Port of the HTTP proxy server."
-msgstr ""
+msgstr "TCP-Port ihres Proxyservers."
 
 #: help/en:11
 #, no-wrap
 msgid "Optional username, if you have to authenticate against the proxy."
-msgstr ""
+msgstr "Optionaler Benutzername, falls Sie sich am Server authentifizieren müssen."

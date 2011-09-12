@@ -543,39 +543,39 @@ msgstr "Unbekannte Postfix Datei"
 #: help/en:1
 #, no-wrap
 msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
-msgstr ""
+msgstr "Die LDAP Base DN. Einträge werden von diesem Punkt aus gesucht. z.B. o=yaffas,c=org"
 
 #: help/en:2
 #, no-wrap
 msgid "Attribute with users email address. Default: mail"
-msgstr ""
+msgstr "Das Attribut, das die E-Mail-Adressen der Benutzer enthält. Standard: mail"
 
 #: help/en:3
 #, no-wrap
 msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
-msgstr ""
+msgstr "Der Benutzer über den Alle abfragen laufen sollen. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org"
 
 #: help/en:4
 #, no-wrap
 msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
-msgstr ""
+msgstr "Der Domainname Ihres Active Directories. z.B. yaffas.org"
 
 #: help/en:5
 #, no-wrap
 msgid "Name or IP adress of your domain controller."
-msgstr ""
+msgstr "Hostname oder IP-Addresse ihres Domain Controllers."
 
 #: help/en:6
 #, no-wrap
 msgid "Name of a domain administrator. This user should be created in users organizational unit."
-msgstr ""
+msgstr "Name des Domain Administrators. Dieser Benutzer sollte in der Users Organizational Unit angelegt werden."
 
 #: help/en:7
 #, no-wrap
 msgid "User for read only access. You can give the username or a full dn syntax."
-msgstr ""
+msgstr "Benutzer mit Read-Only-Rechten. Sie können den Benutzernamen oder die volle DN-Syntax eintragen."
 
 #: help/en:8
 #, no-wrap
 msgid "Hostname or IP address of the LDAP server."
-msgstr ""
+msgstr "Hostname oder IP-Adresse des LDAP-Servers."

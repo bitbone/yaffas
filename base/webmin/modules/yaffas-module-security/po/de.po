@@ -238,24 +238,24 @@ msgstr "UngÃ¼ltige E-Mail Adresse"
 #: help/en:1
 #, no-wrap
 msgid "This value defines at which score mails are handled as spam."
-msgstr ""
+msgstr "Dieser Wert legt fest, ab wieviel Punkten eine Mail als Spam behandelt wird."
 
 #: help/en:2
 #, no-wrap
 msgid "Define a host or network by its IP address or CIDR."
-msgstr ""
+msgstr "Tragen Sie einen Host oder ein Netzwerk (CIDR) ein. Alle Mails von diesem Eintrag werden nicht auf Spam geprüft."
 
 #: help/en:3
 #, no-wrap
 msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
-msgstr ""
+msgstr "ClamAV wird nur Objekte scannen, die kleiner sind als das angegebene Limit. Objekte die größer sind werden NICHT überprüft."
 
 #: help/en:4
 #, no-wrap
 msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
-msgstr ""
+msgstr "Falls ClamAV ein verdächtiges Objekt entdeckt wird eine Warnung an diese Adresse geschickt."
 
 #: help/en:5
 #, no-wrap
 msgid "Enable this to scan archives like RAR, ZIP, GZ..."
-msgstr ""
+msgstr "Diese Option erlaubt das überprüfen von Archiven wie RAR, ZIP, GZIP..."

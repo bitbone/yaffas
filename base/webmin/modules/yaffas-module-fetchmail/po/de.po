@@ -623,29 +623,29 @@ msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 #: help/en:1
 #, no-wrap
 msgid "Specify the polling interval in seconds."
-msgstr ""
+msgstr "Abstand der einzelnen Abfragen in Sekunden."
 
 #: help/en:2
 #, no-wrap
 msgid "The remote host name or IP address from which you want to receive mail."
-msgstr ""
+msgstr "Hostname oder IP-Adresse des Servers von dem Mails empfangen werden sollen."
 
 #: help/en:3
 #, no-wrap
 msgid "The DNS name of the remote server. This setting overrides the server name."
-msgstr ""
+msgstr "Der DNS-Name des Servers. Diese Einstellung überschreibt den Wert in der Servername-Einstellung."
 
 #: help/en:4
 #, no-wrap
 msgid "The TCP/IP port of the remote server."
-msgstr ""
+msgstr "Der TCP/IP-Port des Dienstes von dem Mails empfangen werden sollen."
 
 #: help/en:5
 #, no-wrap
 msgid "The header name of the envelope address (e.g. X-Envelope-To)."
-msgstr ""
+msgstr "Der Headername der Envelope-Adresse (z.B. X-Envelope-To)."
 
 #: help/en:6
 #, no-wrap
 msgid "Specify the login user from the remote machine."
-msgstr ""
+msgstr "Der Login über den sich der lokale Dienst anmelden soll."

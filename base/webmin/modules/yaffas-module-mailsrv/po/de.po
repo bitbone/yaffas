@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-05 16:35+0300\n"
+"POT-Creation-Date: 2011-09-12 16:13+0300\n"
 "PO-Revision-Date: 2011-08-25 13:56+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -394,3 +394,13 @@ msgstr "FÃ¼hren Sie ein KAS Update duch bevor Sie dieses Feature aktivieren!"
 #, no-wrap
 msgid "Please activate policy server in MPP interface first."
 msgstr "Bitte aktivieren Sie zuerst in der MPP OberflÃ¤che den Policyserver."
+
+#: help/en:1
+#, no-wrap
+msgid "This name will be sent to remote SMTP servers for outgoing mails."
+msgstr "Dieser Name wird anderen SMTP-Servern zugeschickt, wenn Mails versendet werden."
+
+#: help/en:2
+#, no-wrap
+msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
+msgstr "Dieser Wert beschränkt die Größe aller eingehenden und ausgehenden E-Mails. Wird hier kein Wert eingetragen, so wird der E-Mail-Server Mails mit unbegrenzter Größe versenden und empfangen."

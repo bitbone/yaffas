@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-06 13:22+0300\n"
+"POT-Creation-Date: 2011-09-12 16:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,4 +395,16 @@ msgstr ""
 #: lang/en:101
 #, no-wrap
 msgid "Please activate policy server in MPP interface first."
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "This name will be sent to remote SMTP servers for outgoing mails."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid ""
+"This limits the size of all incoming and outgoing mails. Leave it blank and "
+"the server will handle mails with unlimited size."
 msgstr ""
