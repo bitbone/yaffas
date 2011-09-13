@@ -112,9 +112,7 @@ msgstr ""
 
 #: lang/en:24
 #, no-wrap
-msgid ""
-"Password have to be at least on character long and must not contain a hash "
-"(#)."
+msgid "Password have to be at least on character long and must not contain a hash (#)."
 msgstr ""
 
 #: lang/en:25

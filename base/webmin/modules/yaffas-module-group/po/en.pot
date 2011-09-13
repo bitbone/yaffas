@@ -147,9 +147,7 @@ msgstr ""
 
 #: lang/en:33
 #, no-wrap
-msgid ""
-"Group names have to consist of at least one (alphanumerical) character, "
-"beginning with a letter(no umlaut)."
+msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
 msgstr ""
 
 #: lang/en:34

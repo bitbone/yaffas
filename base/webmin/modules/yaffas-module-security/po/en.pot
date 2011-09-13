@@ -247,16 +247,12 @@ msgstr ""
 
 #: help/en:3
 #, no-wrap
-msgid ""
-"ClamAV will scan only objects that are smaller than the specified "
-"amount. Larger objects will NOT be scanned."
+msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
 msgstr ""
 
 #: help/en:4
 #, no-wrap
-msgid ""
-"If ClamAV detects a suspicious object, it will send a mail to the specified "
-"address."
+msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
 msgstr ""
 
 #: help/en:5

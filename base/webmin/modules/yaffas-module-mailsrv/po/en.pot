@@ -217,9 +217,7 @@ msgstr ""
 
 #: lang/en:55
 #, no-wrap
-msgid ""
-"Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), "
-"'.' and '-'. It also has a minimum length of one."
+msgid "Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr ""
 
 #: lang/en:56
@@ -404,7 +402,5 @@ msgstr ""
 
 #: help/en:2
 #, no-wrap
-msgid ""
-"This limits the size of all incoming and outgoing mails. Leave it blank and "
-"the server will handle mails with unlimited size."
+msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
 msgstr ""

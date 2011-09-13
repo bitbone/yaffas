@@ -47,7 +47,5 @@ msgstr ""
 
 #: lang/en:9
 #, no-wrap
-msgid ""
-"Your mails are queued for sending. This may take some time depending on your "
-"hardware."
+msgid "Your mails are queued for sending. This may take some time depending on your hardware."
 msgstr ""

@@ -232,9 +232,7 @@ msgstr ""
 
 #: lang/en:46
 #, no-wrap
-msgid ""
-"To use this authentication method you need the following schema file. You "
-"have to include and use it in you LDAP server."
+msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
 msgstr ""
 
 #: lang/en:47
@@ -259,18 +257,12 @@ msgstr ""
 
 #: lang/en:51
 #, no-wrap
-msgid ""
-"Your Active Directory server does not support data encryption (ldaps). Do "
-"you accept that directory information will be transmitted unencrypted? If "
-"you choose 'no' here the yaffas server will not join the domain."
+msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
 msgstr ""
 
 #: lang/en:52
 #, no-wrap
-msgid ""
-"Your LDAP server does not support data encryption (ldaps). Do you accept "
-"that directory information will be transmitted unencrypted? If you choose "
-"'no' here the yaffas server will change current authentication type."
+msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
 msgstr ""
 
 #: lang/en:53
@@ -420,9 +412,7 @@ msgstr ""
 
 #: lang/en:85
 #, no-wrap
-msgid ""
-"The search attribute for the user or group is not correct. You can only "
-"insert figures and characters from a-z and 0-9."
+msgid "The search attribute for the user or group is not correct. You can only insert figures and characters from a-z and 0-9."
 msgstr ""
 
 #: lang/en:86
@@ -552,9 +542,7 @@ msgstr ""
 
 #: help/en:1
 #, no-wrap
-msgid ""
-"LDAP Search Base DN. LDAP entries are searched from that "
-"point. e.g. o=yaffas,c=org"
+msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
 msgstr ""
 
 #: help/en:2
@@ -579,9 +567,7 @@ msgstr ""
 
 #: help/en:6
 #, no-wrap
-msgid ""
-"Name of a domain administrator. This user should be created in users "
-"organizational unit."
+msgid "Name of a domain administrator. This user should be created in users organizational unit."
 msgstr ""
 
 #: help/en:7

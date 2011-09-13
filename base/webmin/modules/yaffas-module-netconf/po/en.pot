@@ -27,9 +27,7 @@ msgstr ""
 
 #: lang/en:3 lang/en:11
 #, no-wrap
-msgid ""
-"The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and "
-"'-'. It also has a minimum length of two."
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
 msgstr ""
 
 #: lang/en:4
@@ -39,16 +37,12 @@ msgstr ""
 
 #: lang/en:5
 #, no-wrap
-msgid ""
-"Hostname may only contain characters (a-z and A-Z), numbers (0-9) and "
-"'-'. It also has a minimum length of two."
+msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
 msgstr ""
 
 #: lang/en:6
 #, no-wrap
-msgid ""
-"Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' "
-"and '-'."
+msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
 msgstr ""
 
 #: lang/en:7
@@ -333,9 +327,7 @@ msgstr ""
 
 #: help/en:8
 #, no-wrap
-msgid ""
-"Append this value during resolving of short names.<br>To resolve the name "
-"\"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
 msgstr ""
 
 #: help/en:9

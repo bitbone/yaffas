@@ -17,9 +17,7 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid ""
-"Username not valid. Only lowercase characters, digits, dots and minus are "
-"valid."
+msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 msgstr ""
 
 #: lang/en:2 lang/en:3
@@ -74,9 +72,7 @@ msgstr ""
 
 #: lang/en:13
 #, no-wrap
-msgid ""
-"If you want to you use aliases for this user, you should activate his "
-"mailbox."
+msgid "If you want to you use aliases for this user, you should activate his mailbox."
 msgstr ""
 
 #: lang/en:14
@@ -106,16 +102,12 @@ msgstr ""
 
 #: lang/en:19
 #, no-wrap
-msgid ""
-"The username and the local-part are different. You must define an alias to "
-"localpart. Otherwise zarafa will not be able to deliver emails properly."
+msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
 msgstr ""
 
 #: lang/en:20
 #, no-wrap
-msgid ""
-"Username and e-mail local-part are different. To make Zarafa work with the "
-"given e-mail address you have to define the following e-mail alias:"
+msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
 msgstr ""
 
 #: lang/en:21
@@ -130,16 +122,12 @@ msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid ""
-"User was created but Zarafa store was not created. This means normally that "
-"your license does not allow any more users."
+msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 msgstr ""
 
 #: lang/en:24
 #, no-wrap
-msgid ""
-"This user is used for delivery in public folders. You have to select another "
-"user for this, then you can delete this one."
+msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
 msgstr ""
 
 #: lang/en:25

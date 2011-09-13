@@ -142,9 +142,5 @@ msgstr ""
 
 #: lang/en:34
 #, no-wrap
-msgid ""
-"You have no zarafa administrator defined or there was no folder "
-"created. Please define it in the module <a "
-"href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail "
-"Server/Configuration</a>."
+msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr ""

@@ -52,7 +52,5 @@ msgstr ""
 
 #: help/en:2
 #, no-wrap
-msgid ""
-"Enter a single IP address or a network in form of a CIDR ressource. Enter "
-"\"default\" to allow access only from the local machine."
+msgid "Enter a single IP address or a network in form of a CIDR ressource. Enter \"default\" to allow access only from the local machine."
 msgstr ""

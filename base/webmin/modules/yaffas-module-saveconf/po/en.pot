@@ -22,9 +22,7 @@ msgstr ""
 
 #: lang/en:2
 #, no-wrap
-msgid ""
-"Your Configurationfile is not for this Product. Do You really want to apply "
-"it to the System?"
+msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
 msgstr ""
 
 #: lang/en:3
@@ -109,11 +107,7 @@ msgstr ""
 
 #: lang/en:19
 #, no-wrap
-msgid ""
-"You are about to plug in a yaffas configuration file smaller or equal to "
-"version 2.<br>This version can be converted to the actuall "
-"version. Nevertheless, many modules have radically changed in such a way "
-"that manually checking of configured values are strongly recomended!"
+msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
 msgstr ""
 
 #: lang/en:20
@@ -133,9 +127,7 @@ msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid ""
-"User password. Will be created as 'start123' and should be changed as soon "
-"as possible!"
+msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr ""
 
 #: lang/en:24
@@ -160,9 +152,7 @@ msgstr ""
 
 #: lang/en:28
 #, no-wrap
-msgid ""
-"Please install all licence files for your installed products before you "
-"insert the configuration."
+msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr ""
 
 #: lang/en:29

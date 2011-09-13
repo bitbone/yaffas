@@ -22,9 +22,7 @@ msgstr ""
 
 #: lang/en:3
 #, no-wrap
-msgid ""
-"Click on download button and send the file to the bitbone support if you "
-"have any problems with your yaffas Server."
+msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
 msgstr ""
 
 #: lang/en:4
