@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-06 15:07+0300\n"
+"POT-Creation-Date: 2011-09-12 16:48+0300\n"
 "PO-Revision-Date: 2011-09-06 15:07+0100\n"
 "Last-Translator: Christof Musik <musik@bitbone.de>\n"
 "Language-Team: none\n"
@@ -334,3 +334,18 @@ msgstr "FÃ¼r Gruppe erlauben"
 #, no-wrap
 msgid "Features"
 msgstr "Funktionen"
+
+#: help/en:1
+#, no-wrap
+msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
+msgstr "Ein Administrator kann die Stores anderer User öffnen."
+
+#: help/en:2
+#, no-wrap
+msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
+msgstr "Der User wird keine Lizenz der aktiven Benutzer verbrauchen, aber sich auch nicht einloggen können. Andere Benutzer können seinen Store als Delegate öffnen."
+
+#: help/en:3
+#, no-wrap
+msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
+msgstr "Der User wird nur eingeschränkten Speicherplatz zugewiesen bekommen. Nähert sich der User dem Limit, wird er gewarnt. Erreicht er das Limit, so kann er keine weiteren E-Mails empfangen oder versenden."
