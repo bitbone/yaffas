@@ -9,6 +9,9 @@ case "$1" in
 	add_webmin_acl $MODULE
 	del_license $MODULE "all"
 	add_license $MODULE ""
+
+	# remove kerberos authentication from pam
+	pam-auth-update --remove krb5
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
