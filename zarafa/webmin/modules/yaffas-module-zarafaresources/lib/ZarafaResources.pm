@@ -38,7 +38,7 @@ Returns an array of all resources.
 =cut
 
 sub get_resources () {
-	return grep {
+	return map {chomp($_); $_} grep {
 		my @tmp =
 		  Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'zarafa_admin'},
@@ -96,6 +96,7 @@ sub delete_resource ($) {
 	throw Yaffas::Exception("err_no_local_auth") unless  Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES;
 
 	my $resource = shift;
+	chomp($resource);
 	Yaffas::UGM::rm_user($resource);
 }
 
