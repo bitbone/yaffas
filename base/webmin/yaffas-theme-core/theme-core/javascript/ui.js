@@ -62,6 +62,9 @@ Yaffas.UI.prototype.createTabBar = function() {
     this.tabs = new YAHOO.widget.TabView();
     this.tabs.appendTo("tabbar");
     YAHOO.util.Dom.addClass(this.tabs, "hidden");
+	this.tabs.addListener("beforeActiveIndexChange", function() {
+			$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
+			});
 }
 
 Yaffas.UI.prototype.createMenuBar = function() {
@@ -725,11 +728,12 @@ Yaffas.UI.prototype.showHelp = function(elem) {
 	if (e.hasClass("hidden")) {
 		var func = function() {
 			if (e.hasClass("show")) {
+				$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
 				e.removeClass("hidden");
 				e.removeClass("show");
 			}
 		}.bind(this);
-		func.delay(0.5);
+		func.delay(0.2);
 	}
 }
 
@@ -750,6 +754,7 @@ Yaffas.UI.prototype.toggleHelp = function(elem) {
 	var e = new YAHOO.util.Element(elem.children[0]);
 
 	if (e.hasClass("hidden")) {
+		$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
 		e.removeClass("hidden");
 		e.removeClass("show");
 	}
