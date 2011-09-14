@@ -37,6 +37,7 @@ sub show_edit_zarafa_resource (@) {
 	}
 
 	foreach my $resource (@resources) {
+		chomp($resource);
 		my %details = (
 			$create
 			? ()
@@ -73,7 +74,7 @@ sub show_edit_zarafa_resource (@) {
 								textfield(
 												-name => 'description'
 												. ( $create ? '' : '_' . $resource ),
-												-default   => $details{description},
+												-value   => $details{description},
 												-maxlength => 100
 											   )
 								:

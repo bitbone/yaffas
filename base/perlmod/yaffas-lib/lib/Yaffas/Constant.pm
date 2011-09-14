@@ -70,7 +70,7 @@ use constant {
 		"faxprint" => "/etc/samba/smbprinters/faxprint/",
 		"jpeg_dir" => "/etc/samba/smbprinters/faxprint/jpeg/",
 		"eps_dir" => "/etc/samba/smbprinters/faxprint/eps/",
-		"ldap_schema" => "/etc/ldap/schema/",
+		"ldap_schema" => (OS eq 'Ubuntu' ? "/etc/ldap/schema/" : "/etc/openldap/schema/"),
 		"zarafa_licence" => "/etc/zarafa/license/",
 		"selections" => "/selections",
 		"rhel5_devices" => "/etc/sysconfig/networking/devices/",
