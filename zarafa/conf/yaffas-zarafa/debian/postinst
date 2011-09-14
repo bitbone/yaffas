@@ -106,7 +106,9 @@ case "$1" in
 	set +e
 	/etc/init.d/mysql start
 	/etc/init.d/slapd start
-	/etc/init.d/zarafa-server start
+	/etc/init.d/zarafa-server stop
+	/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+	/etc/init.d/zarafa-server restart
 	/etc/init.d/zarafa-dagent restart
 	/etc/init.d/apache2 restart
 	if [ -z "$2" ]; then

@@ -126,8 +126,12 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
+service zarafa-server stop
+/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+service zarafa-server restart
+
 # enable services
-for SERV in mysqld zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
+for SERV in mysqld zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
 	chkconfig $SERV on
 	service $SERV start
 done
