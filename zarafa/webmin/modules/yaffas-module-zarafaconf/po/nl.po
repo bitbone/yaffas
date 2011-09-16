@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-06 13:25+0300\n"
+"PO-Revision-Date: 2011-09-16 09:11+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Userfilter"
+msgstr "Gebruikersfilter"
+
+#: lang/en:2
+#, no-wrap
+msgid "Filtertype"
+msgstr "Filtertype"
+
+#: lang/en:3
+#, no-wrap
+msgid "Group"
+msgstr "Groep"
+
+#: lang/en:4
+#, no-wrap
+msgid "Default"
+msgstr "Standaard"
+
+#: lang/en:5
+#, no-wrap
+msgid "AD Plugin"
+msgstr "AD Plug-in"
+
+#: lang/en:6
+#, no-wrap
+msgid "AD Group"
+msgstr "AD Groep"
+
+#: lang/en:7
+#, no-wrap
+msgid "Delete these zarafa stores?"
+msgstr "Deze Zarafa stores verwijderen?"
+
+#: lang/en:8
+#, no-wrap
+msgid "With this step, the following zarafa stores would be deleted:"
+msgstr "Met deze stap zullen de volgende Zarafa stores worden verwijderd:"
+
+#: lang/en:9
+#, no-wrap
+msgid "Could not find Group."
+msgstr "Kon Groep niet vinden."
+
+#: lang/en:10
+#, no-wrap
+msgid "Could not find the rootDomainNamingContext in AD."
+msgstr "Kon de rootDomainNamingContext niet vinden in AD."
+
+#: lang/en:12
+#, no-wrap
+msgid "Size of attachments"
+msgstr "Grootte van bijlagen"
+
+#: lang/en:13
+#, no-wrap
+msgid "Size"
+msgstr "Grootte"
+
+#: lang/en:14
+#, no-wrap
+msgid "The value is not numeric."
+msgstr "De waarde is niet numeriek."
+
+#: lang/en:16
+#, no-wrap
+msgid "Optimize"
+msgstr "Optimaliseer"
+
+#: lang/en:17
+#, no-wrap
+msgid "Addressable memory"
+msgstr "Adresseerbaar geheugen"
+
+#: lang/en:18
+#, no-wrap
+msgid "Optimized for"
+msgstr "Geoptimaliseerd voor"
+
+#: lang/en:19
+#, no-wrap
+msgid "Optimize memory"
+msgstr "Optimaliseer geheugen"
+
+#: lang/en:20
+#, no-wrap
+msgid "unknown"
+msgstr "onbekend"
+
+#: lang/en:22
+#, no-wrap
+msgid "Quota e-mail templates"
+msgstr "Quota-e-mailsjablonen"
+
+#: lang/en:23
+#, no-wrap
+msgid "Message at 80%"
+msgstr "Bericht op 80%"
+
+#: lang/en:24
+#, no-wrap
+msgid "Message at 90%"
+msgstr "Bericht op 90%"
+
+#: lang/en:25
+#, no-wrap
+msgid "Message at 100%"
+msgstr "Bericht op 100%"
+
+#: lang/en:27
+#, no-wrap
+msgid "Default quota"
+msgstr "Standaard quota"
+
+#: lang/en:28
+#, no-wrap
+msgid "Default Quota"
+msgstr "Standaard Quota"
+
+#: lang/en:29
+#, no-wrap
+msgid "Off"
+msgstr "Uit"
+
+#: lang/en:31
+#, no-wrap
+msgid "Default features"
+msgstr "Standaardfunctionaliteiten"
+
+#: lang/en:32
+#, no-wrap
+msgid "Feature"
+msgstr "Functionaliteit"
+
+#: lang/en:33
+#, no-wrap
+msgid "State"
+msgstr "Status"
+
+#: lang/en:35
+#, no-wrap
+msgid "The quota value can only contain digits."
+msgstr "De quotawaarde kan alleen cijfers bevatten."
+
+#: help/en:1
+#, no-wrap
+msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+
+#: help/en:2
+#, no-wrap
+msgid "This limits the maximum disk usage for each user in MB."
+msgstr ""
+
+#~ msgid "Apply key"
+#~ msgstr "Sleutel toepassen"
+
+#~ msgid "Install new key"
+#~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Install new base key"
+#~ msgstr "Nieuwe basissleutel toevoegen"
+
+#~ msgid "Install new client key"
+#~ msgstr "Nieuwe clientsleutel toevoegen"
+
+#~ msgid "Installed licenses"
+#~ msgstr "Geïnstalleerde licenties"
+
+#~ msgid "Base key"
+#~ msgstr "Basissleutel"
+
+#~ msgid "Serial number"
+#~ msgstr "Serienummer"
+
+#~ msgid "License Log"
+#~ msgstr "Licentielogboek"
+
+#~ msgid "This is not a valid Zarafa serial"
+#~ msgstr "Dit is geen geldige Zarafa-sleutel"
+
+#~ msgid "Archiver key"
+#~ msgstr "Archiversleutel"
+
+#~ msgid "Install new archiver key"
+#~ msgstr "Nieuwe Archiver-sleutel toevoegen"
+
+#~ msgid "Install new archiver client key"
+#~ msgstr "Nieuwe Archiver-clientsleutel toevoegen"
+
+# 83%
+#, fuzzy
+#~ msgid "Groups"
+#~ msgstr "Groep"
+
+# 80%
+#, fuzzy
+#~ msgid "Filetype"
+#~ msgstr "Filtertype"
+
+# 87%
+#, fuzzy
+#~ msgid "Features"
+#~ msgstr "Functionaliteit"
+
+# 86%
+#, fuzzy
+#~ msgid "Install New Key"
+#~ msgstr "Nieuwe sleutel toevoegen"

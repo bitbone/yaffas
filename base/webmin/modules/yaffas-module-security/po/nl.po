@@ -1,0 +1,409 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-06 13:22+0300\n"
+"PO-Revision-Date: 2011-09-16 09:11+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Apply"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Edit"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "Delete"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Add"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Activate"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "Deactivate"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Update"
+msgstr ""
+
+#: lang/en:8
+#, no-wrap
+msgid "Delete entry"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "Do you really want to delete this entry?"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "Do you really want to disable this service?"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Do you really want to enable this service?"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Policy"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Enable policy"
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Disable policy"
+msgstr ""
+
+#: lang/en:17
+#, no-wrap
+msgid "DNSBL"
+msgstr ""
+
+#: lang/en:18
+#, no-wrap
+msgid "RHSBL"
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "Hostname"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "Hit score"
+msgstr ""
+
+#: lang/en:21
+#, no-wrap
+msgid "Miss score"
+msgstr ""
+
+#: lang/en:22
+#, no-wrap
+msgid "Log name"
+msgstr ""
+
+#: lang/en:24
+#, no-wrap
+msgid "ClamAV"
+msgstr ""
+
+#: lang/en:25
+#, no-wrap
+msgid "Activate clamav"
+msgstr ""
+
+#: lang/en:26
+#, no-wrap
+msgid "Deactivate clamav"
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "Scan archives"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "Virus alert email"
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "Maximum size of scannable objects in MB"
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
+msgid "Update the ClamAV signatures"
+msgstr ""
+
+#: lang/en:31
+#, no-wrap
+msgid "Configure clamav"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid "Spamassassin"
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "Configure Spamassassin"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Activate spamassassin"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "Deactivate spamassassin"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "Update the Spamassassin filters"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "Network"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Internal networks"
+msgstr ""
+
+#: lang/en:40
+#, no-wrap
+msgid "Trusted networks"
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "Add spam detected headers at level"
+msgstr ""
+
+#: lang/en:43
+#, no-wrap
+msgid "Whitelisting"
+msgstr ""
+
+#: lang/en:44
+#, no-wrap
+msgid "All hosts and addresses listed here are not checked for spam or viruses."
+msgstr ""
+
+#: lang/en:45
+#, no-wrap
+msgid "Address"
+msgstr ""
+
+#: lang/en:46
+#, no-wrap
+msgid "Type"
+msgstr ""
+
+#: lang/en:47
+#, no-wrap
+msgid "Source"
+msgstr ""
+
+#: lang/en:48
+#, no-wrap
+msgid "Entry"
+msgstr ""
+
+#: lang/en:50
+#, no-wrap
+msgid "Invalid e-mail address"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "This value defines at which score mails are handled as spam."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "Define a host or network by its IP address or CIDR."
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "Enable this to scan archives like RAR, ZIP, GZ..."
+msgstr ""
+
+#~ msgid "Apply key"
+#~ msgstr "Sleutel toepassen"
+
+#~ msgid "Install new key"
+#~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Install new base key"
+#~ msgstr "Nieuwe basissleutel toevoegen"
+
+#~ msgid "Install new client key"
+#~ msgstr "Nieuwe clientsleutel toevoegen"
+
+#~ msgid "Installed licenses"
+#~ msgstr "Geïnstalleerde licenties"
+
+#~ msgid "Base key"
+#~ msgstr "Basissleutel"
+
+#~ msgid "Serial number"
+#~ msgstr "Serienummer"
+
+#~ msgid "License Log"
+#~ msgstr "Licentielogboek"
+
+#~ msgid "This is not a valid Zarafa serial"
+#~ msgstr "Dit is geen geldige Zarafa-sleutel"
+
+#~ msgid "Archiver key"
+#~ msgstr "Archiversleutel"
+
+#~ msgid "Install new archiver key"
+#~ msgstr "Nieuwe Archiver-sleutel toevoegen"
+
+#~ msgid "Install new archiver client key"
+#~ msgstr "Nieuwe Archiver-clientsleutel toevoegen"
+
+#~ msgid "Userfilter"
+#~ msgstr "Gebruikersfilter"
+
+#~ msgid "Filtertype"
+#~ msgstr "Filtertype"
+
+#~ msgid "Group"
+#~ msgstr "Groep"
+
+#~ msgid "Default"
+#~ msgstr "Standaard"
+
+#~ msgid "AD Plugin"
+#~ msgstr "AD Plug-in"
+
+#~ msgid "AD Group"
+#~ msgstr "AD Groep"
+
+#~ msgid "Delete these zarafa stores?"
+#~ msgstr "Deze Zarafa stores verwijderen?"
+
+#~ msgid "With this step, the following zarafa stores would be deleted:"
+#~ msgstr "Met deze stap zullen de volgende Zarafa stores worden verwijderd:"
+
+#~ msgid "Could not find Group."
+#~ msgstr "Kon Groep niet vinden."
+
+#~ msgid "Could not find the rootDomainNamingContext in AD."
+#~ msgstr "Kon de rootDomainNamingContext niet vinden in AD."
+
+#~ msgid "Size of attachments"
+#~ msgstr "Grootte van bijlagen"
+
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#~ msgid "The value is not numeric."
+#~ msgstr "De waarde is niet numeriek."
+
+#~ msgid "Optimize"
+#~ msgstr "Optimaliseer"
+
+#~ msgid "Addressable memory"
+#~ msgstr "Adresseerbaar geheugen"
+
+#~ msgid "Optimized for"
+#~ msgstr "Geoptimaliseerd voor"
+
+#~ msgid "Optimize memory"
+#~ msgstr "Optimaliseer geheugen"
+
+#~ msgid "unknown"
+#~ msgstr "onbekend"
+
+#~ msgid "Quota e-mail templates"
+#~ msgstr "Quota-e-mailsjablonen"
+
+#~ msgid "Message at 80%"
+#~ msgstr "Bericht op 80%"
+
+#~ msgid "Message at 90%"
+#~ msgstr "Bericht op 90%"
+
+#~ msgid "Message at 100%"
+#~ msgstr "Bericht op 100%"
+
+#~ msgid "Default quota"
+#~ msgstr "Standaard quota"
+
+#~ msgid "Default Quota"
+#~ msgstr "Standaard Quota"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Default features"
+#~ msgstr "Standaardfunctionaliteiten"
+
+#~ msgid "Feature"
+#~ msgstr "Functionaliteit"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#~ msgid "The quota value can only contain digits."
+#~ msgstr "De quotawaarde kan alleen cijfers bevatten."
+
+#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+
+# 83%
+#, fuzzy
+#~ msgid "Groups"
+#~ msgstr "Groep"
+
+# 80%
+#, fuzzy
+#~ msgid "Filetype"
+#~ msgstr "Filtertype"
+
+# 87%
+#, fuzzy
+#~ msgid "Features"
+#~ msgstr "Functionaliteit"
+
+# 86%
+#, fuzzy
+#~ msgid "Install New Key"
+#~ msgstr "Nieuwe sleutel toevoegen"
