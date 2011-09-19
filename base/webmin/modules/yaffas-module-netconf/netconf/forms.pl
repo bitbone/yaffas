@@ -36,10 +36,11 @@ sub net_conf_form () {
 				)
 			)
 		);
-		
+	
+        print $Cgi->hidden({-name => 'section', -value => '0'});	
 
 		print Yaffas::UI::section_button(
-			$Cgi->submit( { -value => $main::text{lbl_save} } ) );
+			$Cgi->submit( { -value => $main::text{lbl_save}} ) );
 		print $Cgi->end_form();
 		
 		proxy_form();
@@ -110,6 +111,7 @@ sub net_conf_form () {
 					)
 				),
 			  )
+              .$Cgi->hidden({-name => 'section', -value => '1'}) 
 			  . Yaffas::UI::section_button(
 				$Cgi->submit( { -value => $main::text{lbl_save} } ) )
 			  . $Cgi->end_form()

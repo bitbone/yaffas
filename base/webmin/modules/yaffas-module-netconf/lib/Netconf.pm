@@ -144,11 +144,6 @@ sub save {
 
 	return if $self->{TESTMODE};
 
-	$self->_save_domainname();
-	$self->_save_hostname();
-	$self->_save_iftab();
-	$self->_save_workgroup();
-
 	if(Yaffas::Constant::get_os() eq "Ubuntu"){
 		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
 	}
@@ -156,7 +151,19 @@ sub save {
 		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
 	}
 
-	$self->_save_interfaces();
+	if($self->{section} eq '0') {
+
+		$self->_save_domainname();
+		$self->_save_hostname();
+		$self->_save_iftab();
+		$self->_save_workgroup();
+	} elsif($self->{section} eq '1') {
+		$self->_save_domainname();
+		$self->_save_hostname();
+		$self->_save_iftab();
+		$self->_save_workgroup();
+		$self->_save_interfaces();
+	}
 
 	my $pid = fork();
 
