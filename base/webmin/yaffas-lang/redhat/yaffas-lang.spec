@@ -19,11 +19,11 @@ Language files for webmin
 %{__mkdir} -p $RPM_BUILD_ROOT/opt/yaffas/webmin/lang
 %{__mkdir} -p $RPM_BUILD_ROOT/tmp/yaffas-lang
 
-%{__install} -m 644 lang/de $RPM_BUILD_ROOT/tmp/yaffas-lang
-%{__install} -m 644 lang/en $RPM_BUILD_ROOT/tmp/yaffas-lang
+%{__install} -m 644 translations/lang/de $RPM_BUILD_ROOT/tmp/yaffas-lang
+%{__install} -m 644 translations/lang/en $RPM_BUILD_ROOT/tmp/yaffas-lang
 
 %post -p /usr/bin/perl
-my @langs = ("de", "en");
+my @langs = ("de", "en", "nl");
 my @path = qw(/opt/yaffas/webmin /opt/yaffas/usermin);
 
 foreach my $path (@path) {
