@@ -17,6 +17,8 @@ err_ldap_duplicate_sambadomain=The hostname (sambaDomain) does not exist exactly
 
 err_bonding_enabled=This module is deactivated, because channel bonding is active.
 
+err_no_ip=No IP address is set.
+
 lbl_index_header=Configuration
 lbl_data=Network Settings
 

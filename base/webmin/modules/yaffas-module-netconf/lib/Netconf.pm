@@ -52,11 +52,7 @@ sub new {
 
 	my $app = Yaffas::Constant::APPLICATION->{hostname};
 	chomp(my $hostname = `$app -s`);
-
-	$app = Yaffas::Constant::APPLICATION->{hostname};
 	chomp(my $domain = `$app -d`);
-
-
 
 	my $workgroup = "" ;
 	my $wgc = Yaffas::File->new(Yaffas::Constant::FILE->{smb_includes_global});
@@ -151,6 +147,8 @@ sub save {
 		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
 	}
 
+	try {	
+
 	if($self->{section} eq '0') {
 
 		$self->_save_domainname();
@@ -164,6 +162,25 @@ sub save {
 		$self->_save_workgroup();
 		$self->_save_interfaces();
 	}
+
+	} catch Yaffas::Exception with {
+		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+            Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
+        } else {
+            Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
+        }
+
+		my $exception = shift;
+		my $errors = $exception->get_errors();
+		my $new_exception = Yaffas::Exception->new();
+
+		for my $key(keys %$errors) {
+			$new_exception->add($key, $errors->{$key});
+		}
+
+		throw $new_exception;
+		
+	};
 
 	my $pid = fork();
 
@@ -358,6 +375,7 @@ sub _load_settings {
 		my $device = "";
 		my ($ip, $netmask, $gateway) = "";
 		my ($dns, $search) = [];
+		my $method = '';
 
 		my $i = 0;
 		my @lines = $interfaces->get_content();
@@ -398,7 +416,7 @@ sub _load_settings {
 					# create objects for settings
 
 					my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-					$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
+					$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
 
 					my $parent;
 					if ($device =~ /^(eth\d+):\d+$/) {
@@ -414,6 +432,7 @@ sub _load_settings {
 					$ip = $netmask = $gateway = $dns = $search = "";
 				}
 				$device = $1;
+				$method = $2;
 			}
 		}
 	} else {
@@ -595,6 +614,9 @@ sub _save_hostname {
 
 	# create new /etc/hosts
 	my $ip = $self->device("eth0")->get_ip();
+
+	throw Yaffas::Exception("err_no_ip") if $ip eq '';
+
 	my $dnsname = $self->{DOMAINNAME};
 
 	my $file = Yaffas::File->new(Yaffas::Constant::FILE->{hosts}, "") or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
@@ -820,6 +842,7 @@ sub new {
 	$self{GATEWAY} = "";
 	$self{DNS} = "";
 	$self{SEARCH} = "";
+	$self{METHOD} = "";
 	$self{ENABLED} = 0;
 	$self{VENDOR} = "";
 	$self{PRODUCT} = "";
@@ -835,13 +858,14 @@ sub new {
 
 sub set_all {
 	my $self = shift;
-	my ($ip, $netmask, $gateway, $dns, $search) = @_;
+	my ($ip, $netmask, $gateway, $dns, $search, $method) = @_;
 
 	$self->{IP} = $ip;
 	$self->{NETMASK} = $netmask;
 	$self->{GATEWAY} = $gateway;
 	$self->{DNS} = $dns;
 	$self->{SEARCH} = $search;
+	$self->{METHOD} = $method;
 }
 
 sub set_ip {

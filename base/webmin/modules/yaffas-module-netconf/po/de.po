@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-08-29 15:25+0300\n"
-"PO-Revision-Date: 2011-08-25 13:56+0300\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2011-09-19 15:40+0300\n"
+"PO-Revision-Date: 2011-09-19 15:39+0100\n"
+"Last-Translator: André Welter <welter@bitbone.de>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,214 +87,218 @@ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 
 #: lang/en:20
 #, no-wrap
+msgid "No IP address is set."
+msgstr "Es ist keine IP Adresse gesetzt."
+
+#: lang/en:22
+#, no-wrap
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: lang/en:21
+#: lang/en:23
 #, no-wrap
 msgid "Network Settings"
 msgstr "Netzwerk Einstellungen"
 
-#: lang/en:23
+#: lang/en:25
 #, no-wrap
 msgid "Host name"
 msgstr "Rechnername"
 
-#: lang/en:24
+#: lang/en:26
 #, no-wrap
 msgid "Domain name"
 msgstr "Domainname"
 
-#: lang/en:25
+#: lang/en:27
 #, no-wrap
 msgid "Workgroup"
 msgstr "Arbeitsgruppe"
 
-#: lang/en:26
+#: lang/en:28
 #, no-wrap
 msgid "IP address"
 msgstr "IP-Adresse"
 
-#: lang/en:27
+#: lang/en:29
 #, no-wrap
 msgid "Netmask"
 msgstr "Netzmaske"
 
-#: lang/en:28
+#: lang/en:30
 #, no-wrap
 msgid "Gateway (if available)"
 msgstr "Gateway (falls vorhanden)"
 
-#: lang/en:29
+#: lang/en:31
 #, no-wrap
 msgid "Search domain"
 msgstr "Suchdomänen"
 
-#: lang/en:30
+#: lang/en:32
 #, no-wrap
 msgid "DNS Server IP"
 msgstr "DNS Server IP-Adresse"
 
-#: lang/en:31
+#: lang/en:33
 #, no-wrap
 msgid "Network"
 msgstr "Netzwerk"
 
-#: lang/en:32
+#: lang/en:34
 #, no-wrap
 msgid "Delete"
 msgstr "Löschen"
 
-#: lang/en:33
+#: lang/en:35
 #, no-wrap
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: lang/en:34
+#: lang/en:36
 #, no-wrap
 msgid "Base settings"
 msgstr "Grundeinstellungen"
 
-#: lang/en:36
+#: lang/en:38
 #, no-wrap
 msgid "enabled"
 msgstr "aktiviert"
 
-#: lang/en:37
+#: lang/en:39
 #, no-wrap
 msgid "disabled"
 msgstr "deaktiviert"
 
-#: lang/en:38
+#: lang/en:40
 #, no-wrap
 msgid "Status"
 msgstr "Status"
 
-#: lang/en:39
+#: lang/en:41
 #, no-wrap
 msgid "New virtual IP address"
 msgstr "Neue virtuelle IP Adresse"
 
-#: lang/en:40
+#: lang/en:42
 #, no-wrap
 msgid "Delete virtual IP address"
 msgstr "Virtuelle IP löschen"
 
-#: lang/en:41
+#: lang/en:43
 #, no-wrap
 msgid "Do you really want to delete the following network interface?"
 msgstr "Wollen Sie die folgende Netzwerkschnittstelle löschen?"
 
-#: lang/en:42
+#: lang/en:44
 #, no-wrap
 msgid "Create"
 msgstr "Erstellen"
 
-#: lang/en:43
+#: lang/en:45
 #, no-wrap
 msgid "New virtual address on interface"
 msgstr "Neues virtuelle Adresse auf der Schnittstelle"
 
-#: lang/en:47
+#: lang/en:49
 #, no-wrap
 msgid "HTTP Proxy"
 msgstr "HTTP Proxy"
 
-#: lang/en:48
+#: lang/en:50
 #, no-wrap
 msgid "Proxy"
 msgstr "Proxy"
 
-#: lang/en:49
+#: lang/en:51
 #, no-wrap
 msgid "Port"
 msgstr "Port"
 
-#: lang/en:50
+#: lang/en:52
 #, no-wrap
 msgid "Authentication (optional)"
 msgstr "Authentifizierung (wenn nötig)"
 
-#: lang/en:51
+#: lang/en:53
 #, no-wrap
 msgid "User"
 msgstr "Benutzer"
 
-#: lang/en:52
+#: lang/en:54
 #, no-wrap
 msgid "Password"
 msgstr "Passwort"
 
-#: lang/en:54
+#: lang/en:56
 #, no-wrap
 msgid "Proxyname not valid!"
 msgstr "Proxyname nicht gültig!"
 
-#: lang/en:55
+#: lang/en:57
 #, no-wrap
 msgid "Port not valid!"
 msgstr "Der Port ist nicht gültig!"
 
-#: lang/en:56
+#: lang/en:58
 #, no-wrap
 msgid "Username not valid!"
 msgstr "Der Benutzername ist nicht gültig!"
 
-#: lang/en:57
+#: lang/en:59
 #, no-wrap
 msgid "Password not valid!"
 msgstr "Das Passwort ist nicht gültig!"
 
-#: lang/en:58
+#: lang/en:60
 #, no-wrap
 msgid "Error while setting APT proxy!"
 msgstr "Fehler während des Setzens des APT Proxys!"
 
-#: lang/en:59
+#: lang/en:61
 #, no-wrap
 msgid "Error while setting WGET proxy!"
 msgstr "Fehler während des Setzens des WGET Proxys!"
 
-#: lang/en:60
+#: lang/en:62
 #, no-wrap
 msgid "Error while setting KAV proxy!"
 msgstr "Fehler während des Ssetzens des KAV Proxys!"
 
-#: lang/en:61
+#: lang/en:63
 #, no-wrap
 msgid "Error while deleting APT proxy!"
 msgstr "Fehler während des Löschens des APT Proxys!"
 
-#: lang/en:62
+#: lang/en:64
 #, no-wrap
 msgid "Error while deleting WGET proxy!"
 msgstr "Fehler während des Löschens des WGET Proxys!"
 
-#: lang/en:63
+#: lang/en:65
 #, no-wrap
 msgid "Error while deleting KAVS proxy!"
 msgstr "Fehler während des Löschens des KAV Proxys!"
 
-#: lang/en:64
+#: lang/en:66
 #, no-wrap
 msgid "Error while setting freshclam proxy!"
 msgstr "Fehler während des Setzens des freshclam Proxys!"
 
-#: lang/en:65
+#: lang/en:67
 #, no-wrap
 msgid "Error while deleting freshclam proxy!"
 msgstr "Fehler während des Löschens des freshclam Proxys!"
 
-#: lang/en:66
+#: lang/en:68
 #, no-wrap
 msgid "Error restarting freshclam!"
 msgstr "Fehler beim Neustart von freshclam!"
 
 #: help/en:1
-#, fuzzy, no-wrap
-#| msgid "Host name"
+#, no-wrap
 msgid "e.g. hostname"
-msgstr "z.B. hostname"
+msgstr "z.B. Hostname"
 
 #: help/en:2
 #, no-wrap
@@ -322,10 +326,9 @@ msgid "Gateway for your network. This must be an IPv4 address of this network."
 msgstr "Gateway für Ihr Netzwerk. Dieser Eintrag muss eine IPv4-Adresse des gleichen Netzwerks sein."
 
 #: help/en:7
-#, fuzzy, no-wrap
-#| msgid "The DNS server address has to be a valid IP address."
+#, no-wrap
 msgid "DNS server for resolving names into IP adresses."
-msgstr "DNS-Server für Namensauflösung. z.B. 4.4.4.4"
+msgstr "DNS-Server für die Namensauflösung. z.B. 4.4.4.4"
 
 #: help/en:8
 #, no-wrap
