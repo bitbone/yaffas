@@ -2,6 +2,7 @@
 #
 
 YAFFAS_OS ?= $(shell lsb_release -si)
+SRCDIR=$(shell d=..;  while [ ! -d $$d/conf ]; do d=$$d/..; done; echo $$d)
 
 
 # Directory location definitions 
@@ -46,4 +47,4 @@ YAFFAS_GROUP=	root
 
 .PHONY: .lang
 .lang:
-	cd $(MODULE) && PERLLIB=../../../../../tools/po4a/ po4a -k 0 -M utf8 -L utf8 --package-name "yaffas" --copyright-holder "bitbone AG" --package-version "1.0" -f ../../../../../conf/po4a-build.conf
+	cd $(MODULE) && PERLLIB=$(SRCDIR)/../../tools/po4a/ po4a -k 0 -M utf8 -L utf8 --package-name "yaffas" --copyright-holder "bitbone AG" --package-version "1.0" -f $(SRCDIR)/../../conf/po4a-build.conf
