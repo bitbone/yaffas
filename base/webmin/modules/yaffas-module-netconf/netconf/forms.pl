@@ -261,10 +261,10 @@ sub _input_status($$) {
 	  . '-search-2");
 	for (var i = 0; i < fields.length; ++i) {
 		var e = document.getElementsByName(fields[i])[0];
-		if (e.style.color == "black") {
-			e.style.color="grey";
-		} else {
+		if (document.getElementsByName("'.$dev.'-enabled")[0].children[1].selected) {
 			e.style.color="black";
+		} else {
+			e.style.color="grey";
 		}
 	}';
 
