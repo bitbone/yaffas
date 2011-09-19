@@ -19,6 +19,8 @@ sub BEGIN {
 	$Cgi = CGI->new("");
 }
 
+use Yaffas::UI::Webmin;
+
 our $Print_inner_div;
 our $Convert_nl;
 our %Help;
@@ -473,8 +475,10 @@ sub creating_cache_finish() {
 
 
 sub _load_help {
+	my $lang = Yaffas::UI::Webmin::get_lang_name();
+
 	if (not scalar %Help) {
-		open F, "<", "help/en";
+		open F, "<", "help/$lang";
 		while (<F>) {
 			my @tmp = split /=/, $_, 2;
 			$Help{$tmp[0]} = $tmp[1];
@@ -488,11 +492,11 @@ sub _get_help_button {
 
 	_load_help();
 
-	while(my ($k, $v) = each %Help) {
+	foreach my $k (keys %Help) {
 		next unless $name =~ m/$k/;
 		return $Cgi->div(
 			{-class=>'tooltip', onmouseover=>"Yaffas.ui.showHelp(this)", onclick=>"Yaffas.ui.toggleHelp(this)", onmouseout=>"Yaffas.ui.cancelHelp(this)"},
-			$Cgi->div({-class=>"hidden"}, $v ? $v : "No help available! name = $name")
+			$Cgi->div({-class=>"hidden"}, $Help{$k} ? $Help{$k} : "No help available! name = $name")
 		);
 	}
 	return "";
