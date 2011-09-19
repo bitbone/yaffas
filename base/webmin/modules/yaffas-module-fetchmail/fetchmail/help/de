@@ -1,6 +1,6 @@
 interval=Abstand der einzelnen Abfragen in Sekunden.
 poll=Hostname oder IP-Adresse des Servers von dem Mails empfangen werden sollen.
-via=Der DNS-Name des Servers. Diese Einstellung überschreibt den Wert in der Servername-Einstellung.
+via=Der DNS-Name des Servers. Diese Einstellung Ã¼berschreibt den Wert in der Servername-Einstellung.
 port=Der TCP/IP-Port des Dienstes von dem Mails empfangen werden sollen.
 poll_envelope=Der Headername der Envelope-Adresse (z.B. X-Envelope-To).
-user=Der Login über den sich der lokale Dienst anmelden soll.
+user=Der Login Ã¼ber den sich der lokale Dienst anmelden soll.

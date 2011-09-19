@@ -1,2 +1,2 @@
 mailservername=Dieser Name wird anderen SMTP-Servern zugeschickt, wenn Mails versendet werden.
-mailsize=Dieser Wert beschränkt die Größe aller eingehenden und ausgehenden E-Mails. Wird hier kein Wert eingetragen, so wird der E-Mail-Server Mails mit unbegrenzter Größe versenden und empfangen.
+mailsize=Dieser Wert beschrÃ¤nkt die GrÃ¶ÃŸe aller eingehenden und ausgehenden E-Mails. Wird hier kein Wert eingetragen, so wird der E-Mail-Server Mails mit unbegrenzter GrÃ¶ÃŸe versenden und empfangen.
