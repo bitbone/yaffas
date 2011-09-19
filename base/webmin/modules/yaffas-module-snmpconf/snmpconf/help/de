@@ -1,2 +1,2 @@
 community=Das Passwort für den SNMP-Zugriff.
-network=Tragen Sie eine IP-Adresse oder ein Netzwerk in CIDR-Notation ein von dem aus auf den Dienst zugegriffen werden soll. "default" wird nur Zugriff von der lokalen Maschine erlauben.
+network=Enter a single IP address or a network in form of a CIDR ressource. Enter "default" to allow access only from the local machine.

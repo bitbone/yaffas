@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-06 13:22+0300\n"
+"POT-Creation-Date: 2011-09-19 14:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -92,17 +92,25 @@ msgstr ""
 
 #: lang/en:16
 #, no-wrap
-msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
+msgid ""
+"Click this button to start the fetchmail daemon on this server, and have it "
+"check for mail every $1 seconds. The daemon will run as user $2 and use the "
+"configuration above."
 msgstr ""
 
 #: lang/en:17
 #, no-wrap
-msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
+msgid ""
+"Click this button to stop the fetchmail daemon currently running as user "
+"$1. Mail will no longer be automatically downloaded every $2 seconds."
 msgstr ""
 
 #: lang/en:18
 #, no-wrap
-msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
+msgid ""
+"The fetchmail program $1 could not be found. Maybe fetchmail is not "
+"installed on your system, or your <a href='$2'>module configuration</a> is "
+"incorrect."
 msgstr ""
 
 #: lang/en:19
@@ -117,7 +125,10 @@ msgstr ""
 
 #: lang/en:21
 #, no-wrap
-msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
+msgid ""
+"Click this button to create, change or remove a Cron job to have Fetchmail "
+"run automatically on schedule to check for and download email using the "
+"configuration above."
 msgstr ""
 
 #: lang/en:22
@@ -482,7 +493,11 @@ msgstr ""
 
 #: lang/en:105
 #, no-wrap
-msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
+msgid ""
+"This page can be used to enable or disable a Cron job to check the mail "
+"servers in your Fetchmail configuration on a regular schedule. Using a Cron "
+"job superior to running the Fetchmail daemon, as it does not need to be "
+"re-started at boot time."
 msgstr ""
 
 #: lang/en:106

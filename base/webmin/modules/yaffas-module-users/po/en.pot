@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-12 16:48+0300\n"
+"POT-Creation-Date: 2011-09-19 14:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,9 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
+msgid ""
+"Username not valid. Only lowercase characters, digits, dots and minus are "
+"valid."
 msgstr ""
 
 #: lang/en:2 lang/en:3
@@ -72,7 +74,9 @@ msgstr ""
 
 #: lang/en:13
 #, no-wrap
-msgid "If you want to you use aliases for this user, you should activate his mailbox."
+msgid ""
+"If you want to you use aliases for this user, you should activate his "
+"mailbox."
 msgstr ""
 
 #: lang/en:14
@@ -102,12 +106,16 @@ msgstr ""
 
 #: lang/en:19
 #, no-wrap
-msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
+msgid ""
+"The username and the local-part are different. You must define an alias to "
+"localpart. Otherwise zarafa will not be able to deliver emails properly."
 msgstr ""
 
 #: lang/en:20
 #, no-wrap
-msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
+msgid ""
+"Username and e-mail local-part are different. To make Zarafa work with the "
+"given e-mail address you have to define the following e-mail alias:"
 msgstr ""
 
 #: lang/en:21
@@ -122,12 +130,16 @@ msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
+msgid ""
+"User was created but Zarafa store was not created. This means normally that "
+"your license does not allow any more users."
 msgstr ""
 
 #: lang/en:24
 #, no-wrap
-msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
+msgid ""
+"This user is used for delivery in public folders. You have to select another "
+"user for this, then you can delete this one."
 msgstr ""
 
 #: lang/en:25
@@ -337,15 +349,22 @@ msgstr ""
 
 #: help/en:1
 #, no-wrap
-msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
+msgid ""
+"When a user is administrator, the user will be allowed to open all Zarafa "
+"stores of any user."
 msgstr ""
 
 #: help/en:2
 #, no-wrap
-msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
+msgid ""
+"The user will not be able to login and he will not be added to the active "
+"users of your license. Other users can open this users store as a delegate."
 msgstr ""
 
 #: help/en:3
 #, no-wrap
-msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
+msgid ""
+"Enter the amount of disk space this user may take up. The user will be "
+"warned if he draws near that limit. After the limit is reached, the user "
+"will not be able to send and receive mails."
 msgstr ""

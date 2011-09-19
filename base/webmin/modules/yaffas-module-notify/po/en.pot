@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-06 13:22+0300\n"
+"POT-Creation-Date: 2011-09-19 14:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -122,7 +122,9 @@ msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
+msgid ""
+"This mail was sent to test the reachability of your given address. If you "
+"have received this mail, you will be informed about errors."
 msgstr ""
 
 #: lang/en:24
@@ -132,10 +134,20 @@ msgstr ""
 
 #: lang/en:26
 #, no-wrap
-msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
+msgid ""
+"This e-mail is used to check the reachability of the administrators "
+"address. If you received this e-mail you will be notified through this "
+"channel in the future should errors occur."
 msgstr ""
 
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid ""
+"Enter a valid email address to receive notifications about the status of the "
+"system."
 msgstr ""
