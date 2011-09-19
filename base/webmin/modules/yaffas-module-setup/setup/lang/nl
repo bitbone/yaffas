@@ -1,0 +1,16 @@
+lbl_admin_pw=Admin password
+lbl_admin_pw_repeat=Admin password (repeat)
+lbl_mysql_database=MySQL database
+lbl_mysql_host=MySQL server
+lbl_mysql_user=MySQL username
+lbl_mysql_password=MySQL password
+
+lbl_setup_finished=Setup finished
+lbl_setup_finished_msg=Setup was finished successfully. After relogin you can use all features.
+
+lbl_zarafa_settings=Zarafa settings
+lbl_basic_settings=Basic settings
+
+err_mysql_connect=Could not connect to database.
+err_password=The admin password is empty or does not match.
+

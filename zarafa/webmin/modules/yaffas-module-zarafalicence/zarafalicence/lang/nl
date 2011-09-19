@@ -1,0 +1,13 @@
+lbl_insert=Sleutel toepassen
+lbl_install_key=Nieuwe sleutel toevoegen
+lbl_install_basekey=Nieuwe basissleutel toevoegen
+lbl_install_calkey=Nieuwe clientsleutel toevoegen
+lbl_installed_licences=Geïnstalleerde licenties
+lbl_base_key=Basissleutel
+lbl_serial=Serienummer
+lbl_log=Licentielogboek
+err_wrong_lic=Dit is geen geldige Zarafa-sleutel
+lbl_archiver_key=Archiversleutel
+lbl_archiver_serial=Serienummer
+lbl_install_archiverkey=Nieuwe Archiver-sleutel toevoegen
+lbl_install_acalkey=Nieuwe Archiver-clientsleutel toevoegen

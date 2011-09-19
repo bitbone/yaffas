@@ -1,0 +1,87 @@
+index_title=System information
+written_by=Written by
+
+general_information=General information
+os_on_arch=on an
+uptime=Uptime of
+uptime_days=days
+uptime_hours=hours
+uptime_minutes=minutes
+loadavg_title=Load average
+loadavg_graph=CPU load
+loadavg_proc=Overall load
+loadavg_1=for the last minute
+loadavg_5=for the last 5 minutes
+loadavg_15=for the last 15 minutes
+
+memory_usage=Memory usage
+main_memory=Main memory
+swap_memory=Swap memory
+mem_total=Total
+mem_used=Used
+mem_free=Free
+mem_shared=Shared
+mem_buffers=Buffers
+mem_cache=Cache
+mem_module=Module
+mem_module_size=Grootte
+mem_module_depend=Referring modules
+mem_current_modules=Modules currently in use
+mem_avail=Available Memory
+mem_usagekey=Usage Key:
+
+memkey_inuse=In Use
+memkey_buffer=Buffer
+memkey_free=Free
+
+irq_usage=IRQ usage
+irq_device=Device
+irq_ioports=IO usage
+
+network_load=Network statistics
+network_nic=Interface
+network_receive=Receive
+network_send=Send
+network_bytes=Bytes
+network_errors=Errors
+network_dropped=Dropped
+network_overruns=Overruns
+network_frame=Frame
+network_carrier=Carrier
+network_collisions=Collisions
+network_connection=Active connections
+network_connection_protocol=Protocol
+network_connection_recvq=Receive queue
+network_connection_sendq=Send queue
+network_connection_localaddr=Local
+network_connection_foreignaddr=Foreign
+network_connection_state=Status
+network_who=Who's logged
+network_who_user=User
+network_who_tty=TTY
+network_who_from=From
+network_who_login=Login@
+network_who_idle=Idle
+network_who_jcpu=Jcpu
+network_who_pcpu=Pcpu
+network_who_what=Command
+network_opensockets=Listening sockets
+network_opensockets_active=Active sockets
+network_unixsockets=Unix sockets
+network_unixsockets_protocol=Protocol
+network_unixsockets_refcnt=RefCnt
+network_unixsockets_flags=Flags
+network_unixsockets_type=Type
+network_unixsockets_state=Status
+network_unixsockets_inode=I-node
+network_unixsockets_path=Path
+
+fs_stat=Filesytem statistics
+fs_mount=Mounted filesystem
+fs_mount_device=Device
+fs_mount_dir=Directory
+fs_mount_type=Filesystem
+fs_mount_option=Mode
+
+df_title=Filesystem information
+

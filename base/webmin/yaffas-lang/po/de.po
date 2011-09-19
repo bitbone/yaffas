@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
 "POT-Creation-Date: 2011-09-19 14:23+0300\n"
-"PO-Revision-Date: 2011-09-19 14:23+0300\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2011-09-19 14:42+0100\n"
+"Last-Translator: Christof Musik <musik@bitbone.de>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,7 +70,8 @@ msgstr "Sicherheit"
 msgid "PDF Printers"
 msgstr "PDF Drucker"
 
-#: lang/en:12 lang/en:13
+#: lang/en:12
+#: lang/en:13
 #, no-wrap
 msgid "Zarafa"
 msgstr "Zarafa"
@@ -328,7 +329,7 @@ msgstr "Englisch"
 #: lang/en:71
 #, no-wrap
 msgid "Dutch"
-msgstr "Englisch"
+msgstr "Niederländisch"
 
 #: lang/en:73
 #, no-wrap
@@ -399,3 +400,4 @@ msgstr "Filter anzeigen"
 #, no-wrap
 msgid "Could not connect to server!"
 msgstr "Konnte Verbindung zum Server nicht aufbauen!"
+
