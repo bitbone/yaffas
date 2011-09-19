@@ -68,7 +68,7 @@ lbl_achtung=Achtung!
 lbl_lang=Sprache
 lbl_lang_de=Deutsch
 lbl_lang_en=Englisch
-lbl_lang_en=Englisch
+lbl_lang_nl=Niederländisch
 
 lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
 lbl_about_yaffas=Über yaffas

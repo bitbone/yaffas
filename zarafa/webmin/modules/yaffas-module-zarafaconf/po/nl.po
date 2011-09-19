@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-06 13:25+0300\n"
+"POT-Creation-Date: 2011-09-19 14:35+0300\n"
 "PO-Revision-Date: 2011-09-16 09:11+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -159,6 +159,36 @@ msgstr "Status"
 
 #: lang/en:35
 #, no-wrap
+msgid "MySQL settings"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "Database"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "Server"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "Username"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Password"
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "Could not connect to database."
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "De quotawaarde kan alleen cijfers bevatten."
 
@@ -170,6 +200,21 @@ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worde
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB."
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "This is the password that is set on the database. You need to set this password manually."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
 msgstr ""
 
 #~ msgid "Apply key"

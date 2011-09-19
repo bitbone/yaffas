@@ -1,0 +1,4 @@
+name=This name will be shown in the global address book.
+description=You may want to add a description if the name of the resource isn't self-explanatory.
+decline_conflict=Check this box and the resource can only be booked once.
+decline_recurring=Check this box to disable recurring appointments for this resource.

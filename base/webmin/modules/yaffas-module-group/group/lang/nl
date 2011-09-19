@@ -1,0 +1,36 @@
+lbl_index_return=Network
+lbl_group_add=Create
+lbl_link_edit=Edit
+lbl_create_group_header=Create group
+lbl_delete=Delete group(s)
+lbl_edit=Edit group(s)
+lbl_create=Create group(s)
+lbl_changeuser=Modify user
+
+lbl_index_header=Groupadministration
+lbl_groupname=Groupname
+lbl_groups=Groups
+lbl_group=Groep
+lbl_user=User
+lbl_filetype=Filetype
+
+lbl_set_filetype=Set Filetype
+
+lbl_create_cache=Creating cache
+lbl_done=done
+
+lbl_ask_delete=Do you really want to delete this groups?
+lbl_auth=Authentification
+lbl_email=Email
+lbl_sendas=Allow send as for
+
+
+err_input=All input fields has to be filled!
+err_create=Creation of groups failed!
+err_delete=Deletion of groups failed!
+err_group_not_exist=Group doesn't exist!
+err_group_already_exists=Group exists already!
+err_newgroup_name=Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut).
+err_mode=Wrong mode!
+err_no_group_selected=No group selected!
+err_no_local_auth=This action is only supported with local authentification.

@@ -1,0 +1,65 @@
+c=Country (2 letter code)
+cn=Common Name (e.g. host.name.de)
+
+e_c=Country not correct.
+e_cn=Common Name not correct or not set.
+e_days=Days are not correct.
+e_emailAddress=E-mail Adress not correct.
+e_genfailed=Generation not successful
+e_l=Localizty not correct
+e_o=Organization Name not correct.
+e_ou=Organization Unit not correct.
+e_service=Please select A service.
+e_st=State or province not correct.
+
+err_cert_param=Parameters not correct.
+err_cert_not_valid=Certificate not valid.
+err_fork=Fork missgl�ckt
+err_cert_creation=Certificate wasn't created.
+err_nothing_selected=No certificate selected.
+
+emailAddress=E-mail address (e.g. webmaster@company.com)
+
+gencert_days=Certificate valid for (days)
+gencert_generate=Generate key
+gencert_header=Generate Self Signed Certificate and Key
+gencert_service=Service
+gencert_title=Generate Certificate & Key
+gencert_e_linkerror=Symlink Error
+
+import_cert_file=Certificate:
+import_cert_service=Service:
+import_upload_cert=Upload Certificate
+import_upload_cert_s=Upload certificate
+import_title=Import Certificate
+import_del=Delete Certificate
+import_delquestion=Should this Certificate really be deleted?
+import_ok=The Certificate was imported successfully!
+import_error=An error occured during importing! Please check your certificate file.
+
+index_header=Certificate / Key Management
+index_import=Import Key or Signed Certificate
+index_gencert=Generate Self Signed Certificate and Key
+index_view=Manage/View Installed Certificates and Keys
+index_title=Certificate Manager
+
+keysize=Keysize (in bits)
+l=Locality (e.g. city)
+o=Organization Name (e.g. company)
+ou=Organization Unit Name (e.g. division)
+
+st=State or province (full name)
+
+view_begin=Begin Date
+view_delete=Delete
+view_deleted=File deleted sucessfully
+view_name=Name
+view_end=Expires on
+view_cert_not_valid=Certificate not valid!
+view_header=Manage Installed Certificates
+
+restart_service=The services are going to be restarted!
+
+yes=yes
+no=no
+succsess=Succsess
