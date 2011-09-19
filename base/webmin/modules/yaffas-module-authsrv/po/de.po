@@ -543,17 +543,17 @@ msgstr "Unbekannte Postfix Datei"
 #: help/en:1
 #, no-wrap
 msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
-msgstr "Die LDAP Base DN. Einträge werden von diesem Punkt aus gesucht. z.B. o=yaffas,c=org"
+msgstr "Die LDAP Base DN. EintrÃ¤ge werden von diesem Punkt aus gesucht. z.B. o=yaffas,c=org"
 
 #: help/en:2
 #, no-wrap
 msgid "Attribute with users email address. Default: mail"
-msgstr "Das Attribut, das die E-Mail-Adressen der Benutzer enthält. Standard: mail"
+msgstr "Das Attribut, das die E-Mail-Adressen der Benutzer enthÃ¤lt. Standard: mail"
 
 #: help/en:3
 #, no-wrap
 msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
-msgstr "Der Benutzer über den Alle abfragen laufen sollen. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org"
+msgstr "Der Benutzer Ã¼ber den Alle abfragen laufen sollen. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org"
 
 #: help/en:4
 #, no-wrap
@@ -573,7 +573,7 @@ msgstr "Name des Domain Administrators. Dieser Benutzer sollte in der Users Orga
 #: help/en:7
 #, no-wrap
 msgid "User for read only access. You can give the username or a full dn syntax."
-msgstr "Benutzer mit Read-Only-Rechten. Sie können den Benutzernamen oder die volle DN-Syntax eintragen."
+msgstr "Benutzer mit Read-Only-Rechten. Sie kÃ¶nnen den Benutzernamen oder die volle DN-Syntax eintragen."
 
 #: help/en:8
 #, no-wrap

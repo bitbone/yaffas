@@ -138,7 +138,7 @@ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
 #: help/en:2
 #, no-wrap
 msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-msgstr "Fügen Sie eine Beschreibung hinzu, falls der Name nicht selbsterklärend sein sollte."
+msgstr "FÃ¼gen Sie eine Beschreibung hinzu, falls der Name nicht selbsterklÃ¤rend sein sollte."
 
 #: help/en:3
 #, no-wrap
@@ -148,4 +148,4 @@ msgstr "Durch diese Option kann eine Resource nicht von mehreren Benutzern gleic
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
-msgstr "Durch diese Option kann eine Resource nicht für wiederkehrende Ereignisse gebucht werden."
+msgstr "Durch diese Option kann eine Resource nicht fÃ¼r wiederkehrende Ereignisse gebucht werden."

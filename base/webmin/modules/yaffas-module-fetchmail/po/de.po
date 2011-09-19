@@ -633,7 +633,7 @@ msgstr "Hostname oder IP-Adresse des Servers von dem Mails empfangen werden soll
 #: help/en:3
 #, no-wrap
 msgid "The DNS name of the remote server. This setting overrides the server name."
-msgstr "Der DNS-Name des Servers. Diese Einstellung überschreibt den Wert in der Servername-Einstellung."
+msgstr "Der DNS-Name des Servers. Diese Einstellung Ã¼berschreibt den Wert in der Servername-Einstellung."
 
 #: help/en:4
 #, no-wrap
@@ -648,4 +648,4 @@ msgstr "Der Headername der Envelope-Adresse (z.B. X-Envelope-To)."
 #: help/en:6
 #, no-wrap
 msgid "Specify the login user from the remote machine."
-msgstr "Der Login über den sich der lokale Dienst anmelden soll."
+msgstr "Der Login Ã¼ber den sich der lokale Dienst anmelden soll."

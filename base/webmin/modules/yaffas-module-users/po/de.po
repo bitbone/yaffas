@@ -338,14 +338,14 @@ msgstr "Funktionen"
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
-msgstr "Ein Administrator kann die Stores anderer User öffnen."
+msgstr "Ein Administrator kann die Stores anderer User Ã¶ffnen."
 
 #: help/en:2
 #, no-wrap
 msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
-msgstr "Der User wird keine Lizenz der aktiven Benutzer verbrauchen, aber sich auch nicht einloggen können. Andere Benutzer können seinen Store als Delegate öffnen."
+msgstr "Der User wird keine Lizenz der aktiven Benutzer verbrauchen, aber sich auch nicht einloggen kÃ¶nnen. Andere Benutzer kÃ¶nnen seinen Store als Delegate Ã¶ffnen."
 
 #: help/en:3
 #, no-wrap
 msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
-msgstr "Der User wird nur eingeschränkten Speicherplatz zugewiesen bekommen. Nähert sich der User dem Limit, wird er gewarnt. Erreicht er das Limit, so kann er keine weiteren E-Mails empfangen oder versenden."
+msgstr "Der User wird nur eingeschrÃ¤nkten Speicherplatz zugewiesen bekommen. NÃ¤hert sich der User dem Limit, wird er gewarnt. Erreicht er das Limit, so kann er keine weiteren E-Mails empfangen oder versenden."

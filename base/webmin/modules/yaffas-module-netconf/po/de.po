@@ -309,23 +309,23 @@ msgstr "z.B. yaffas"
 #: help/en:4
 #, no-wrap
 msgid "IP address for eth0<br>e.g. 192.168.0.100"
-msgstr "IP-Adresse für eth0<br>z.B. 192.168.0.100"
+msgstr "IP-Adresse fÃ¼r eth0<br>z.B. 192.168.0.100"
 
 #: help/en:5
 #, no-wrap
 msgid "Netmask for eth0<br>e.g. 192.168.0.100"
-msgstr "Netzmaske für eth0<br>z.B. 192.168.0.100"
+msgstr "Netzmaske fÃ¼r eth0<br>z.B. 192.168.0.100"
 
 #: help/en:6
 #, no-wrap
 msgid "Gateway for your network. This must be an IPv4 address of this network."
-msgstr "Gateway für Ihr Netzwerk. Dieser Eintrag muss eine IPv4-Adresse des gleichen Netzwerks sein."
+msgstr "Gateway fÃ¼r Ihr Netzwerk. Dieser Eintrag muss eine IPv4-Adresse des gleichen Netzwerks sein."
 
 #: help/en:7
 #, fuzzy, no-wrap
 #| msgid "The DNS server address has to be a valid IP address."
 msgid "DNS server for resolving names into IP adresses."
-msgstr "DNS-Server für Namensauflösung. z.B. 4.4.4.4"
+msgstr "DNS-Server fÃ¼r NamensauflÃ¶sung. z.B. 4.4.4.4"
 
 #: help/en:8
 #, no-wrap
@@ -346,4 +346,4 @@ msgstr "TCP-Port ihres Proxyservers."
 #: help/en:11
 #, no-wrap
 msgid "Optional username, if you have to authenticate against the proxy."
-msgstr "Optionaler Benutzername, falls Sie sich am Server authentifizieren müssen."
+msgstr "Optionaler Benutzername, falls Sie sich am Server authentifizieren mÃ¼ssen."
