@@ -223,6 +223,36 @@ sub defaultquota_form {
 	print $Cgi->end_form();
 }
 
+sub database_settings {
+	my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
+	use Data::Dumper;
+	print Dumper $settings;
+
+	print $Cgi->start_form({-action=>"zarafadb.cgi", -method=>"post"});
+	print Yaffas::UI::section($main::text{lbl_database_settings},
+		$Cgi->table(
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_user}.":"),
+				$Cgi->td(textfield({-name=>"mysql_user", -value => $settings->{user}}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_password}.":"),
+				$Cgi->td(textfield({-name=>"mysql_password", -value => ""}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_host}.":"),
+				$Cgi->td(textfield({-name=>"mysql_host", -value => $settings->{host}}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_database}.":"),
+				$Cgi->td(textfield({-name=>"mysql_database", -value => $settings->{database}}))
+			)
+		)
+	);
+	print Yaffas::UI::section_button($Cgi->submit({-value=>$main::text{'lbl_save'}}));
+	print $Cgi->end_form();
+}
+
 return 1;
 =pod
 

@@ -24,7 +24,8 @@ try {
     Yaffas::Module::ChangePW::change_admin_password($pw1);
 
     if (Yaffas::Product::check_product("zarafa")) {
-        Yaffas::Module::Setup::set_zarafa_database($main::in{mysql_host}, $main::in{mysql_database}, $main::in{mysql_user}, $main::in{mysql_password});
+        eval "use Yaffas::Module::ZarafaConf;";
+        Yaffas::Module::ZarafaConf::set_zarafa_database($main::in{mysql_host}, $main::in{mysql_database}, $main::in{mysql_user}, $main::in{mysql_password});
     }
 
     Yaffas::Module::Setup::hide();
