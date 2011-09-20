@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 16:20+0300\n"
-"PO-Revision-Date: 2011-09-20 16:38+0200\n"
+"POT-Creation-Date: 2011-09-20 16:39+0300\n"
+"PO-Revision-Date: 2011-09-20 16:42+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -50,33 +50,33 @@ msgstr "Lizenz"
 #: lang/en:7
 #, no-wrap
 msgid "Mailbox"
-msgstr ""
+msgstr "Mailbox"
 
 # 90%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Mail Server"
 msgstr "Mailserver"
 
 #: lang/en:9
 #, no-wrap
 msgid "Maintenance"
-msgstr ""
+msgstr "Wartung"
 
 #: lang/en:10
 #, no-wrap
 msgid "Security"
-msgstr ""
+msgstr "Sicherheit"
 
 #: lang/en:11
 #, no-wrap
 msgid "PDF Printers"
-msgstr ""
+msgstr "PDF Drucker"
 
 #: lang/en:12 lang/en:13
 #, no-wrap
 msgid "Zarafa"
-msgstr ""
+msgstr "Zarafa"
 
 # 76%
 #: lang/en:15
@@ -164,12 +164,12 @@ msgstr ""
 #: lang/en:29
 #, no-wrap
 msgid "There is already an alias with this name:"
-msgstr ""
+msgstr "Es gibt bereits einen Alias mit diesem Namen:"
 
 #: lang/en:30
 #, no-wrap
 msgid "There is already a user with this name:"
-msgstr ""
+msgstr "Es gibt bereits einen Benutzer mit diesem Namen:"
 
 #: lang/en:32
 #, no-wrap
@@ -184,7 +184,7 @@ msgstr "Abbrechen"
 #: lang/en:34
 #, no-wrap
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: lang/en:35
 #, no-wrap
@@ -194,22 +194,22 @@ msgstr "OK"
 #: lang/en:36
 #, no-wrap
 msgid "Show all"
-msgstr ""
+msgstr "Alle anzeigen"
 
 #: lang/en:37
 #, no-wrap
 msgid "Next"
-msgstr ""
+msgstr "Weiter"
 
 #: lang/en:38
 #, no-wrap
 msgid "Previous"
-msgstr ""
+msgstr "Zurück"
 
 #: lang/en:39
 #, no-wrap
 msgid "Go to"
-msgstr ""
+msgstr "Gehe zu"
 
 #: lang/en:40
 #, no-wrap
@@ -219,7 +219,7 @@ msgstr "Speichern"
 #: lang/en:41
 #, no-wrap
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: lang/en:42
 #, no-wrap
@@ -234,13 +234,13 @@ msgstr "fertig"
 #: lang/en:44
 #, no-wrap
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 # 85%
 #: lang/en:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "delete"
-msgstr "gelöscht"
+msgstr "löschen"
 
 #: lang/en:47
 #, no-wrap
@@ -350,7 +350,7 @@ msgstr ""
 #: lang/en:73
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
-msgstr ""
+msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
 #: lang/en:74
 #, no-wrap
@@ -360,7 +360,7 @@ msgstr "Über yaffas"
 #: lang/en:75
 #, no-wrap
 msgid "About Z-Admin"
-msgstr ""
+msgstr "Über Z-Admin"
 
 #: lang/en:77
 #, no-wrap

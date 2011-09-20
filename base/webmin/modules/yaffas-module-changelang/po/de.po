@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 16:20+0300\n"
-"PO-Revision-Date: 2011-09-20 16:38+0200\n"
+"POT-Creation-Date: 2011-09-20 16:39+0300\n"
+"PO-Revision-Date: 2011-09-20 16:42+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -2915,10 +2915,24 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "License"
 #~ msgstr "Lizenz"
 
+#~ msgid "Mailbox"
+#~ msgstr "Mailbox"
+
 # 90%
-#, fuzzy
 #~ msgid "Mail Server"
 #~ msgstr "Mailserver"
+
+#~ msgid "Maintenance"
+#~ msgstr "Wartung"
+
+#~ msgid "Security"
+#~ msgstr "Sicherheit"
+
+#~ msgid "PDF Printers"
+#~ msgstr "PDF Drucker"
+
+#~ msgid "Zarafa"
+#~ msgstr "Zarafa"
 
 # 76%
 #, fuzzy
@@ -2973,10 +2987,42 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Could not find the following users:"
 #~ msgstr "Konnte die folgende Datei nicht kopieren:"
 
+#~ msgid "There is already an alias with this name:"
+#~ msgstr "Es gibt bereits einen Alias mit diesem Namen:"
+
+#~ msgid "There is already a user with this name:"
+#~ msgstr "Es gibt bereits einen Benutzer mit diesem Namen:"
+
+#~ msgid "No"
+#~ msgstr "Nein"
+
+#~ msgid "Show all"
+#~ msgstr "Alle anzeigen"
+
+#~ msgid "Next"
+#~ msgstr "Weiter"
+
+#~ msgid "Previous"
+#~ msgstr "Zurück"
+
+#~ msgid "Go to"
+#~ msgstr "Gehe zu"
+
+#~ msgid "Yes"
+#~ msgstr "Ja"
+
+#~ msgid "Filter"
+#~ msgstr "Filter"
+
 # 85%
-#, fuzzy
 #~ msgid "delete"
-#~ msgstr "gelöscht"
+#~ msgstr "löschen"
+
+#~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
+#~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
+
+#~ msgid "About Z-Admin"
+#~ msgstr "Über Z-Admin"
 
 # 83%
 #, fuzzy

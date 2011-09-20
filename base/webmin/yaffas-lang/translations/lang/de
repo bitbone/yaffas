@@ -5,10 +5,10 @@ category_manual=Handbuch
 category_hardware=Hardware
 category_license=Lizenz
 category_mailbox=Mailbox
-category_mailserver=Mail Server
-category_maintenance=Maintenance
-category_security=Security
-category_pdf=PDF Printers
+category_mailserver=Mailserver
+category_maintenance=Wartung
+category_security=Sicherheit
+category_pdf=PDF Drucker
 category_zarafa=Zarafa
 category_groupware=Zarafa
 
@@ -26,23 +26,23 @@ err_file_symlink=Could not create symlink for the following files:
 err_file_write=Could not write the following files:
 err_user_exists=Could not find the following users:
 err_license_expired_text=Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use.
-err_name_is_alias=There is already an alias with this name:
-err_alias_is_user=There is already a user with this name:
+err_name_is_alias=Es gibt bereits einen Alias mit diesem Namen:
+err_alias_is_user=Es gibt bereits einen Benutzer mit diesem Namen:
 
 lbl_apply=Anwenden
 lbl_cancel=Abbrechen
-lbl_no=No
+lbl_no=Nein
 lbl_ok=OK
-lbl_paging_all=Show all
-lbl_paging_next=Next
-lbl_paging_previous=Previous
-lbl_paging_goto=Go to
+lbl_paging_all=Alle anzeigen
+lbl_paging_next=Weiter
+lbl_paging_previous=Zurück
+lbl_paging_goto=Gehe zu
 lbl_save=Speichern
-lbl_yes=Yes
+lbl_yes=Ja
 lbl_create_cache=Erzeuge Zwischenspeicher
 lbl_done=fertig
 lbl_apply_filter=Filter
-lbl_delete=delete
+lbl_delete=löschen
 
 lbl_product_mail=yaffas|MAIL
 lbl_product_fax=yaffas|FAX
@@ -70,9 +70,9 @@ lbl_lang_de=Deutsch
 lbl_lang_en=Englisch
 lbl_lang_nl=Dutch
 
-lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
+lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
 lbl_about_yaffas=Über yaffas
-lbl_about_zadmin=About Z-Admin
+lbl_about_zadmin=Über Z-Admin
 
 lbl_logged_out=Logged out
 lbl_logged_out_msg=Another administrator logged in. You have to log in again.
