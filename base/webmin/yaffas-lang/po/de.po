@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 16:11+0300\n"
-"PO-Revision-Date: 2011-09-20 16:16+0200\n"
+"POT-Creation-Date: 2011-09-20 16:20+0300\n"
+"PO-Revision-Date: 2011-09-20 16:38+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Benutzerkonten"
 #: lang/en:2
 #, no-wrap
 msgid "Appearance"
-msgstr ""
+msgstr "Erscheinungsbild"
 
 #: lang/en:3
 #, no-wrap
@@ -35,17 +35,17 @@ msgstr "Fax"
 #: lang/en:4
 #, no-wrap
 msgid "Manual"
-msgstr ""
+msgstr "Handbuch"
 
 #: lang/en:5
 #, no-wrap
 msgid "Hardware"
-msgstr ""
+msgstr "Hardware"
 
 #: lang/en:6
 #, no-wrap
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 #: lang/en:7
 #, no-wrap
@@ -1243,6 +1243,9 @@ msgstr ""
 #~ msgid "Please activate policy server in MPP interface first."
 #~ msgstr "Bitte aktivieren Sie zuerst in der MPP Oberfläche den Policyserver."
 
+#~ msgid "This name will be sent to remote SMTP servers for outgoing mails."
+#~ msgstr "Dieser Name wird bei ausgehenden E-Mails an den SMTP Server übergeben."
+
 #~ msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
 #~ msgstr "Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie das Feld leer lassen, wird der Server E-Mail mit beliebiger Größe verarbeiten."
 
@@ -1370,15 +1373,8 @@ msgstr ""
 #~ msgstr "Empfangen"
 
 # 75%
-#, fuzzy
 #~ msgid "Sent"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Verschicken\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet"
+#~ msgstr "Gesendet"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
@@ -1659,6 +1655,9 @@ msgstr ""
 #~ msgid "Certificate not valid."
 #~ msgstr "Zertifikat ungültig."
 
+#~ msgid "Fork failed"
+#~ msgstr "Fork fehlgeschlagen"
+
 #~ msgid "Certificate wasn't created."
 #~ msgstr "Zertifikat wurde nicht erstellt."
 
@@ -1757,6 +1756,12 @@ msgstr ""
 
 #~ msgid "The services are going to be restarted!"
 #~ msgstr "Die Dienste werden neu gestartet!"
+
+#~ msgid "yes"
+#~ msgstr "ja"
+
+#~ msgid "no"
+#~ msgstr "nein"
 
 #~ msgid "Succsess"
 #~ msgstr "Erfolgt"
@@ -2101,14 +2106,12 @@ msgstr ""
 #~ msgstr "Alle Benutzer ausser"
 
 # 81%
-#, fuzzy
 #~ msgid "Missing or invalid email address"
-#~ msgstr "Fehlende oder ungültige Adresse"
+#~ msgstr "Fehlende oder ungültige E-Mail Adresse"
 
 # 76%
-#, fuzzy
 #~ msgid "Missing or invalid Unix user"
-#~ msgstr "Fehlende oder ungültige Portnummer"
+#~ msgstr "Fehlende oder ungültiger Unix Benutzer"
 
 #~ msgid "Do you really want to delete this server?"
 #~ msgstr "Möchten sie diesen Server wirklich löschen?"
@@ -2146,13 +2149,8 @@ msgstr ""
 #~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 #~ msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
 
-#, fuzzy
 #~ msgid "Password not valid"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Passwort nicht erlaubt\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Passwort nicht gültig"
+#~ msgstr "Passwort nicht gültig"
 
 #~ msgid "E-mail address not valid"
 #~ msgstr "E-Mail Adresse nicht gültig"
@@ -2163,13 +2161,8 @@ msgstr ""
 #~ msgid "Groups not valid"
 #~ msgstr "Gruppen nicht gültig"
 
-#, fuzzy
 #~ msgid "Passwords are not equal"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Die beiden Passwörter sind unterschiedlich\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Passwörter nicht identisch"
+#~ msgstr "Die beiden Passwörter sind unterschiedlich"
 
 #~ msgid "No user selected."
 #~ msgstr "Kein Benutzer ausgewählt."
@@ -2486,23 +2479,11 @@ msgstr ""
 #~ msgid "Bulk mailing"
 #~ msgstr "Rundmail"
 
-#, fuzzy
 #~ msgid "Message"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Nachricht\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Meldung"
+#~ msgstr "Nachricht"
 
-#, fuzzy
 #~ msgid "Send"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Verschicken\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet"
+#~ msgstr "Senden"
 
 #~ msgid "Please complete all forms and check your e-mail address."
 #~ msgstr "Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse."
@@ -2522,13 +2503,8 @@ msgstr ""
 #~ msgid "Action"
 #~ msgstr "Aktion"
 
-#, fuzzy
 #~ msgid "Configuration"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Konfiguration\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Konfigurieren"
+#~ msgstr "Konfiguration"
 
 #~ msgid "Restart"
 #~ msgstr "Neustart"
@@ -2767,6 +2743,9 @@ msgstr ""
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 
+#~ msgid "No IP address is set."
+#~ msgstr "Keine IP Adresse gesetzt."
+
 #~ msgid "Network Settings"
 #~ msgstr "Netzwerk Einstellungen"
 
@@ -2860,9 +2839,11 @@ msgstr ""
 #~ msgid "Error restarting freshclam!"
 #~ msgstr "Fehler beim Neustart von freshclam!"
 
-#, fuzzy
 #~ msgid "e.g. hostname"
-#~ msgstr "Rechnername"
+#~ msgstr "z.B. rechnername"
+
+#~ msgid "e.g. yaffas.org"
+#~ msgstr "z.B. yaffas.org"
 
 #~ msgid "e.g. yaffas"
 #~ msgstr "z.B. yaffas"
@@ -2870,19 +2851,26 @@ msgstr ""
 #~ msgid "IP address for eth0<br>e.g. 192.168.0.100"
 #~ msgstr "IP Adresse für eth0<br>z.B. 192.168.0.100"
 
-#, fuzzy
+#~ msgid "Netmask for eth0<br>e.g. 255.255.255.0"
+#~ msgstr "Netzmaske für eth0<br>z.B. 255.255.255.0"
+
+#~ msgid "Gateway for your network. This must be an IPv4 address of this network."
+#~ msgstr "Gateway ihres Netzwerks. Dies muss eine IPv4 Adresse des Netzwerks sein."
+
 #~ msgid "DNS server for resolving names into IP adresses."
-#~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+#~ msgstr "DNS Server zum Auflösen von Namen zu IP Adressen."
 
 #~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
 #~ msgstr "Dieser Wert wird bei der Namensauflösung an kurze Namen angehängt.<br>Um den Namen \"server\" aufzulösen wird dieser Wert angehängt, z.B. yaffas.org -> server.yaffas.org"
 
-#, fuzzy
 #~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
-#~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+#~ msgstr "HTTP Proxy Server Adresse. Dies kann eine IPv4 Adresse oder ein Hostname sein."
 
 #~ msgid "Port of the HTTP proxy server."
 #~ msgstr "Port des HTTP Proxy Servers."
+
+#~ msgid "Optional username, if you have to authenticate against the proxy."
+#~ msgstr "Optionale Benutzername wenn eine Authentifizierung gegen den Proxy nötig ist."
 
 #~ msgid "Authentication Server"
 #~ msgstr "Authentifizierungsserver"
@@ -2919,6 +2907,9 @@ msgstr ""
 
 #~ msgid "Active Directory Service"
 #~ msgstr "Active Directory Service"
+
+#~ msgid "Local (/etc/passwd,/etc/group)"
+#~ msgstr "Lokal (/etc/passwd, /etc/group)"
 
 #~ msgid "Add product"
 #~ msgstr "Produkt hinzufügen"
@@ -3130,6 +3121,9 @@ msgstr ""
 #~ msgid "This option is not possible with yaffas|ZARAFA."
 #~ msgstr "Diese Einstellung ist mit yaffas|ZARAFA nicht möglich."
 
+#~ msgid "No LDAP URI specified."
+#~ msgstr "Keine LDAP URI angegeben."
+
 #~ msgid "No BASEDN  specified."
 #~ msgstr "Es wurde keine BASEDN  angegeben."
 
@@ -3163,8 +3157,32 @@ msgstr ""
 #~ msgid "unknown postfix file"
 #~ msgstr "Unbekannte Postfix Datei"
 
+#~ msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
+#~ msgstr "LDAP Such Basis DN. LDAP Einträge werden ab diesem Punkt gesucht. z.B. o=yaffas,c=org"
+
+#~ msgid "Attribute with users email address. Default: mail"
+#~ msgstr "Attribut in dem E-Mail Adresse vorgehalten wird. Standard: mail"
+
+#~ msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
+#~ msgstr "Benutzer mit dem die Verbindung hergestellt wird. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org"
+
+#~ msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
+#~ msgstr "Vollständiger Domänenname des Active Directory. z.B. yaffas.org"
+
+#~ msgid "Name or IP adress of your domain controller."
+#~ msgstr "Name oder IP Adresse des Domänen Controllers."
+
+#~ msgid "Name of a domain administrator. This user should be created in users organizational unit."
+#~ msgstr "Name des Domänen Administrators. Dieser Benutzer muss in der Users Organisationseinheit erstellt sein."
+
+#~ msgid "User for read only access. You can give the username or a full dn syntax."
+#~ msgstr "Benutzer für lesenden Zugriff. Sie können den Benutzernamen oder die Volle DN Syntax eingeben."
+
+#~ msgid "Hostname or IP address of the LDAP server."
+#~ msgstr "Hostname oder IP Adresse des LDAP Servers."
+
 #~ msgid "Change Password"
-#~ msgstr "Passwort &auml;ndern"
+#~ msgstr "Passwort ändern"
 
 #~ msgid "Password:"
 #~ msgstr "Passwort:"

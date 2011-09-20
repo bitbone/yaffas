@@ -114,8 +114,8 @@ cron_cron=Output to cron
 cron_user=Run Fetchmail as user
 cron_err=Failed to save scheduled checking
 cron_efile=Missing or invalid output filename
-cron_email=Missing or invalid email address
-cron_euser=Missing or invalid Unix user
+cron_email=Fehlende oder ungültige E-Mail Adresse
+cron_euser=Fehlende oder ungültiger Unix Benutzer
 cron_ecannot=Scheduled checking is not available in this mode
 
 lbl_delete=Löschen

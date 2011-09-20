@@ -1,10 +1,10 @@
 err_username=Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt.
-err_change_password=Password not valid
-err_password=Password not valid
+err_change_password=Passwort nicht gültig
+err_password=Passwort nicht gültig
 err_email=E-Mail Adresse nicht gültig
 err_no_email=Keine E-Mail Adresse angegeben.
 err_groups=Gruppen nicht gültig
-err_password_equal=Passwords are not equal
+err_password_equal=Die beiden Passwörter sind unterschiedlich
 err_no_user_selected=Kein Benutzer ausgewählt.
 err_bad_ft=Falscher Dateityp ausgewählt.
 err_rename_login=Konnte den Login nicht ändern.

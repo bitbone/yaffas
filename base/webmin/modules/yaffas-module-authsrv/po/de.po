@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 16:11+0300\n"
-"PO-Revision-Date: 2011-09-20 16:16+0200\n"
+"POT-Creation-Date: 2011-09-20 16:21+0300\n"
+"PO-Revision-Date: 2011-09-20 16:38+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "Active Directory Service"
 #: lang/en:17
 #, no-wrap
 msgid "Local (/etc/passwd,/etc/group)"
-msgstr ""
+msgstr "Lokal (/etc/passwd, /etc/group)"
 
 #: lang/en:18
 #, no-wrap
@@ -358,13 +358,9 @@ msgid "Computer already authentication server."
 msgstr "Computer ist schon Authentifizierungsserver."
 
 #: lang/en:74
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Passwords are not equal"
-msgstr ""
-"#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-"Die beiden Passwörter sind unterschiedlich\n"
-"#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-"Passwörter nicht identisch"
+msgstr "Die beiden Passwörter sind unterschiedlich"
 
 #: lang/en:75
 #, no-wrap
@@ -474,7 +470,7 @@ msgstr "Diese Einstellung ist mit yaffas|ZARAFA nicht möglich."
 #: lang/en:96
 #, no-wrap
 msgid "No LDAP URI specified."
-msgstr ""
+msgstr "Keine LDAP URI angegeben."
 
 #: lang/en:97
 #, no-wrap
@@ -507,13 +503,9 @@ msgid "Could not change ownership of files."
 msgstr "Konnte den Besitzer der Dateien nicht Ãndern."
 
 #: lang/en:103
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Password not valid"
-msgstr ""
-"#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-"Passwort nicht erlaubt\n"
-"#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-"Passwort nicht gültig"
+msgstr "Passwort nicht gültig"
 
 #: lang/en:104
 #, no-wrap
@@ -553,42 +545,42 @@ msgstr "Unbekannte Postfix Datei"
 #: help/en:1
 #, no-wrap
 msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
-msgstr ""
+msgstr "LDAP Such Basis DN. LDAP Einträge werden ab diesem Punkt gesucht. z.B. o=yaffas,c=org"
 
 #: help/en:2
 #, no-wrap
 msgid "Attribute with users email address. Default: mail"
-msgstr ""
+msgstr "Attribut in dem E-Mail Adresse vorgehalten wird. Standard: mail"
 
 #: help/en:3
 #, no-wrap
 msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
-msgstr ""
+msgstr "Benutzer mit dem die Verbindung hergestellt wird. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org"
 
 #: help/en:4
 #, no-wrap
 msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
-msgstr ""
+msgstr "Vollständiger Domänenname des Active Directory. z.B. yaffas.org"
 
 #: help/en:5
 #, no-wrap
 msgid "Name or IP adress of your domain controller."
-msgstr ""
+msgstr "Name oder IP Adresse des Domänen Controllers."
 
 #: help/en:6
 #, no-wrap
 msgid "Name of a domain administrator. This user should be created in users organizational unit."
-msgstr ""
+msgstr "Name des Domänen Administrators. Dieser Benutzer muss in der Users Organisationseinheit erstellt sein."
 
 #: help/en:7
 #, no-wrap
 msgid "User for read only access. You can give the username or a full dn syntax."
-msgstr ""
+msgstr "Benutzer für lesenden Zugriff. Sie können den Benutzernamen oder die Volle DN Syntax eingeben."
 
 #: help/en:8
 #, no-wrap
 msgid "Hostname or IP address of the LDAP server."
-msgstr ""
+msgstr "Hostname oder IP Adresse des LDAP Servers."
 
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
@@ -1427,6 +1419,9 @@ msgstr ""
 #~ msgid "Please activate policy server in MPP interface first."
 #~ msgstr "Bitte aktivieren Sie zuerst in der MPP Oberfläche den Policyserver."
 
+#~ msgid "This name will be sent to remote SMTP servers for outgoing mails."
+#~ msgstr "Dieser Name wird bei ausgehenden E-Mails an den SMTP Server übergeben."
+
 #~ msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
 #~ msgstr "Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie das Feld leer lassen, wird der Server E-Mail mit beliebiger Größe verarbeiten."
 
@@ -1554,15 +1549,8 @@ msgstr ""
 #~ msgstr "Empfangen"
 
 # 75%
-#, fuzzy
 #~ msgid "Sent"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Verschicken\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet"
+#~ msgstr "Gesendet"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
@@ -1843,6 +1831,9 @@ msgstr ""
 #~ msgid "Certificate not valid."
 #~ msgstr "Zertifikat ungültig."
 
+#~ msgid "Fork failed"
+#~ msgstr "Fork fehlgeschlagen"
+
 #~ msgid "Certificate wasn't created."
 #~ msgstr "Zertifikat wurde nicht erstellt."
 
@@ -1941,6 +1932,12 @@ msgstr ""
 
 #~ msgid "The services are going to be restarted!"
 #~ msgstr "Die Dienste werden neu gestartet!"
+
+#~ msgid "yes"
+#~ msgstr "ja"
+
+#~ msgid "no"
+#~ msgstr "nein"
 
 #~ msgid "Succsess"
 #~ msgstr "Erfolgt"
@@ -2288,14 +2285,12 @@ msgstr ""
 #~ msgstr "Alle Benutzer ausser"
 
 # 81%
-#, fuzzy
 #~ msgid "Missing or invalid email address"
-#~ msgstr "Fehlende oder ungültige Adresse"
+#~ msgstr "Fehlende oder ungültige E-Mail Adresse"
 
 # 76%
-#, fuzzy
 #~ msgid "Missing or invalid Unix user"
-#~ msgstr "Fehlende oder ungültige Portnummer"
+#~ msgstr "Fehlende oder ungültiger Unix Benutzer"
 
 #~ msgid "Do you really want to delete this server?"
 #~ msgstr "Möchten sie diesen Server wirklich löschen?"
@@ -2654,23 +2649,11 @@ msgstr ""
 #~ msgid "Bulk mailing"
 #~ msgstr "Rundmail"
 
-#, fuzzy
 #~ msgid "Message"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Nachricht\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Meldung"
+#~ msgstr "Nachricht"
 
-#, fuzzy
 #~ msgid "Send"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Verschicken\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet"
+#~ msgstr "Senden"
 
 #~ msgid "Please complete all forms and check your e-mail address."
 #~ msgstr "Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse."
@@ -2690,13 +2673,8 @@ msgstr ""
 #~ msgid "Action"
 #~ msgstr "Aktion"
 
-#, fuzzy
 #~ msgid "Configuration"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Konfiguration\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Konfigurieren"
+#~ msgstr "Konfiguration"
 
 #~ msgid "Restart"
 #~ msgstr "Neustart"
@@ -2935,6 +2913,9 @@ msgstr ""
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 
+#~ msgid "No IP address is set."
+#~ msgstr "Keine IP Adresse gesetzt."
+
 #~ msgid "Network Settings"
 #~ msgstr "Netzwerk Einstellungen"
 
@@ -3028,9 +3009,11 @@ msgstr ""
 #~ msgid "Error restarting freshclam!"
 #~ msgstr "Fehler beim Neustart von freshclam!"
 
-#, fuzzy
 #~ msgid "e.g. hostname"
-#~ msgstr "Rechnername"
+#~ msgstr "z.B. rechnername"
+
+#~ msgid "e.g. yaffas.org"
+#~ msgstr "z.B. yaffas.org"
 
 #~ msgid "e.g. yaffas"
 #~ msgstr "z.B. yaffas"
@@ -3038,22 +3021,29 @@ msgstr ""
 #~ msgid "IP address for eth0<br>e.g. 192.168.0.100"
 #~ msgstr "IP Adresse für eth0<br>z.B. 192.168.0.100"
 
-#, fuzzy
+#~ msgid "Netmask for eth0<br>e.g. 255.255.255.0"
+#~ msgstr "Netzmaske für eth0<br>z.B. 255.255.255.0"
+
+#~ msgid "Gateway for your network. This must be an IPv4 address of this network."
+#~ msgstr "Gateway ihres Netzwerks. Dies muss eine IPv4 Adresse des Netzwerks sein."
+
 #~ msgid "DNS server for resolving names into IP adresses."
-#~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+#~ msgstr "DNS Server zum Auflösen von Namen zu IP Adressen."
 
 #~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
 #~ msgstr "Dieser Wert wird bei der Namensauflösung an kurze Namen angehängt.<br>Um den Namen \"server\" aufzulösen wird dieser Wert angehängt, z.B. yaffas.org -> server.yaffas.org"
 
-#, fuzzy
 #~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
-#~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+#~ msgstr "HTTP Proxy Server Adresse. Dies kann eine IPv4 Adresse oder ein Hostname sein."
 
 #~ msgid "Port of the HTTP proxy server."
 #~ msgstr "Port des HTTP Proxy Servers."
 
+#~ msgid "Optional username, if you have to authenticate against the proxy."
+#~ msgstr "Optionale Benutzername wenn eine Authentifizierung gegen den Proxy nötig ist."
+
 #~ msgid "Change Password"
-#~ msgstr "Passwort &auml;ndern"
+#~ msgstr "Passwort ändern"
 
 #~ msgid "Password:"
 #~ msgstr "Passwort:"
@@ -3126,6 +3116,18 @@ msgstr ""
 
 #~ msgid "File"
 #~ msgstr "Datei"
+
+#~ msgid "Appearance"
+#~ msgstr "Erscheinungsbild"
+
+#~ msgid "Manual"
+#~ msgstr "Handbuch"
+
+#~ msgid "Hardware"
+#~ msgstr "Hardware"
+
+#~ msgid "License"
+#~ msgstr "Lizenz"
 
 # 90%
 #, fuzzy
