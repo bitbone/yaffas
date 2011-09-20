@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 14:54+0300\n"
-"PO-Revision-Date: 2011-09-20 15:07+0200\n"
+"POT-Creation-Date: 2011-09-20 16:11+0300\n"
+"PO-Revision-Date: 2011-09-20 16:16+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -349,7 +349,7 @@ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
 #: help/en:10
 #, no-wrap
 msgid "Port of the HTTP proxy server."
-msgstr ""
+msgstr "Port des HTTP Proxy Servers."
 
 #: help/en:11
 #, no-wrap
@@ -1306,6 +1306,17 @@ msgstr ""
 
 #~ msgid "Receive"
 #~ msgstr "Empfangen"
+
+# 75%
+#, fuzzy
+#~ msgid "Sent"
+#~ msgstr ""
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Verschicken\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"

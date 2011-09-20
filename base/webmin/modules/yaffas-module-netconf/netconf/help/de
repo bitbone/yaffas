@@ -7,5 +7,5 @@ eth0-gateway=Gateway for your network. This must be an IPv4 address of this netw
 eth0-dns=DNS server for resolving names into IP adresses.
 eth0-search=Dieser Wert wird bei der Namensauflösung an kurze Namen angehängt.<br>Um den Namen "server" aufzulösen wird dieser Wert angehängt, z.B. yaffas.org -> server.yaffas.org
 proxy=HTTP proxy server address. This can be an IPv4 address or a hostname.
-port=Port of the HTTP proxy server.
+port=Port des HTTP Proxy Servers.
 user=Optional username, if you have to authenticate against the proxy.

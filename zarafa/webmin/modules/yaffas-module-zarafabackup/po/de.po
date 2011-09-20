@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 12:25+0300\n"
-"PO-Revision-Date: 2011-09-20 15:07+0200\n"
+"POT-Creation-Date: 2011-09-20 16:11+0300\n"
+"PO-Revision-Date: 2011-09-20 16:16+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1074,6 +1074,17 @@ msgstr "Wie lange soll jede Sicherung aufbewahrt werden?"
 
 #~ msgid "Receive"
 #~ msgstr "Empfangen"
+
+# 75%
+#, fuzzy
+#~ msgid "Sent"
+#~ msgstr ""
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Verschicken\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
@@ -2587,6 +2598,9 @@ msgstr "Wie lange soll jede Sicherung aufbewahrt werden?"
 #, fuzzy
 #~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
 #~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+
+#~ msgid "Port of the HTTP proxy server."
+#~ msgstr "Port des HTTP Proxy Servers."
 
 #~ msgid "Authentication Server"
 #~ msgstr "Authentifizierungsserver"

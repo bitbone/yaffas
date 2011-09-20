@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 14:05+0300\n"
+"POT-Creation-Date: 2011-09-20 16:11+0300\n"
 "PO-Revision-Date: 2011-09-20 10:14+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -654,6 +654,11 @@ msgstr ""
 #~ msgid "Receive"
 #~ msgstr "Ontvangen"
 
+# 75%
+#, fuzzy
+#~ msgid "Sent"
+#~ msgstr "Verzenden"
+
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
 
@@ -707,6 +712,12 @@ msgstr ""
 
 #~ msgid "Command"
 #~ msgstr "Commando"
+
+# 77%
+# 95%
+#, fuzzy
+#~ msgid "File system information"
+#~ msgstr "Systeeminformatie"
 
 # 80%
 #, fuzzy
