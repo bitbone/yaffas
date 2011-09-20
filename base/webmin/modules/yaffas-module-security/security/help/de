@@ -1,5 +1,5 @@
-spam_headers=Dieser Wert legt fest, ab wieviel Punkten eine Mail als Spam behandelt wird.
-sa_trusted_net=Tragen Sie einen Host oder ein Netzwerk (CIDR) ein. Alle Mails von diesem Eintrag werden nicht auf Spam geprüft.
-max_length=ClamAV wird nur Objekte scannen, die kleiner sind als das angegebene Limit. Objekte die größer sind werden NICHT überprüft.
-virusalert=Falls ClamAV ein verdächtiges Objekt entdeckt wird eine Warnung an diese Adresse geschickt.
-archive=Diese Option erlaubt das überprüfen von Archiven wie RAR, ZIP, GZIP...
+spam_headers=This value defines at which score mails are handled as spam.
+sa_trusted_net=Define a host or network by its IP address or CIDR.
+max_length=ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned.
+virusalert=If ClamAV detects a suspicious object, it will send a mail to the specified address.
+archive=Enable this to scan archives like RAR, ZIP, GZ...

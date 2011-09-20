@@ -1,1 +1,1 @@
-timeserver=Tragen Sie hier den Hostnamen oder die IP-Adresse Ihres NTP-Dienstes ein.
+timeserver=Enter the hostname or IP address of the time server to be used for NTP.

@@ -1,9 +1,9 @@
 lbl_index_header=Mail Warteschlange
 lbl_index_return=Mailserver
 lbl_id=ID
-lbl_size=Grösse
+lbl_size=Größe
 lbl_time=Zeit
-lbl_sender=Sender
+lbl_sender=Absender
 lbl_recipient=Empfänger
 lbl_status=Status
 lbl_dequeue=Versuch auszuliefern

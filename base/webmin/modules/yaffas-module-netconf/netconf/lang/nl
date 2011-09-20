@@ -51,7 +51,7 @@ lbl_proxy_ip=Proxy
 lbl_proxy_port=Port
 lbl_authentication=Authentication (optional)
 lbl_user=User
-lbl_pass=Password
+lbl_pass=Wachtwoord
 
 err_proxy=Proxyname not valid!
 err_port=Port not valid!

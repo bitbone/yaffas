@@ -1,7 +1,7 @@
 err_nothing_selected=Es muss eine Log-Datei ausgewählt werden.
 err_not_permitted=Download der Datei nicht erlaubt.
 lbl_logfiles=Log Dateien
-lbl_download=Herunterladen
+lbl_download=Download
 lbl_show_old_logs=Alte Log Dateien betrachten
 lbl_show_new_logs=Neue Log Dateien betrachten
 lbl_size=Größe

@@ -32,11 +32,11 @@ lbl_default_features=Standaardfunctionaliteiten
 lbl_feature=Functionaliteit
 lbl_state=Status
 
-lbl_database_settings=MySQL settings
+lbl_database_settings=MySQL-instellingen
 lbl_mysql_database=Database
 lbl_mysql_host=Server
-lbl_mysql_user=Username
-lbl_mysql_password=Password
+lbl_mysql_user=Gebruikersnaam
+lbl_mysql_password=Wachtwoord
 
-err_mysql_connect=Could not connect to database.
+err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_quota_value=De quotawaarde kan alleen cijfers bevatten.

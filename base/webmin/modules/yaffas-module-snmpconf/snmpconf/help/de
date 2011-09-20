@@ -1,2 +1,2 @@
-community=Das Passwort für den SNMP-Zugriff.
+community=Password for the SNMP access.
 network=Enter a single IP address or a network in form of a CIDR ressource. Enter "default" to allow access only from the local machine.
