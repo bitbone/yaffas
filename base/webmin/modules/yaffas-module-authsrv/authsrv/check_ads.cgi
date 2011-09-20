@@ -83,6 +83,7 @@ try {
 		wait;
 	}
 
+		sleep(3);
 		print Yaffas::UI::ok_box();
 	}
 }
@@ -93,7 +94,7 @@ catch Yaffas::Exception with {
 	ads();
 };
 
-footer("ads_help");
+footer();
 =pod
 
 =head1 COPYRIGHT
