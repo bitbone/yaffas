@@ -6,16 +6,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-06 13:23+0300\n"
-"PO-Revision-Date: 2011-08-25 13:56+0300\n"
-"Last-Translator: Automatically generated\n"
+"POT-Creation-Date: 2011-09-20 12:38+0300\n"
+"PO-Revision-Date: 2011-09-20 12:38+0100\n"
+"Last-Translator: André Welter <welter@bitbone.de>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: lang/en:1 lang/en:11
+#: lang/en:1
+#: lang/en:11
 #, no-wrap
 msgid "System information"
 msgstr "System Information"
@@ -140,12 +141,14 @@ msgstr "Swap Speicher"
 msgid "Total"
 msgstr "Total"
 
-#: lang/en:31 lang/en:100
+#: lang/en:31
+#: lang/en:100
 #, no-wrap
 msgid "Used"
 msgstr "Benutzt"
 
-#: lang/en:32 lang/en:45
+#: lang/en:32
+#: lang/en:45
 #, no-wrap
 msgid "Free"
 msgstr "Frei"
@@ -170,7 +173,8 @@ msgstr "Cache"
 msgid "Module"
 msgstr "Modul"
 
-#: lang/en:37 lang/en:99
+#: lang/en:37
+#: lang/en:99
 #, no-wrap
 msgid "Size"
 msgstr "Größe"
@@ -210,7 +214,8 @@ msgstr "Buffer"
 msgid "IRQ usage"
 msgstr "IRQ Verwendung"
 
-#: lang/en:48 lang/en:91
+#: lang/en:48
+#: lang/en:91
 #, no-wrap
 msgid "Device"
 msgstr "Gerät"
@@ -237,7 +242,8 @@ msgstr "Empfangen"
 
 #: lang/en:54
 #, no-wrap
-msgid "Send"
+#| msgid "Send"
+msgid "Sent"
 msgstr "Gesendet"
 
 #: lang/en:55
@@ -280,7 +286,8 @@ msgstr "Kollisionen"
 msgid "Active connections"
 msgstr "Aktive Verbindingen"
 
-#: lang/en:63 lang/en:81
+#: lang/en:63
+#: lang/en:81
 #, no-wrap
 msgid "Protocol"
 msgstr "Protokol"
@@ -305,7 +312,8 @@ msgstr "Lokal"
 msgid "Foreign"
 msgstr "Ausgehende"
 
-#: lang/en:68 lang/en:85
+#: lang/en:68
+#: lang/en:85
 #, no-wrap
 msgid "State"
 msgstr "State"
@@ -410,7 +418,8 @@ msgstr "Gemountete Dateisysteme"
 msgid "Directory"
 msgstr "Verzeichnis"
 
-#: lang/en:93 lang/en:98
+#: lang/en:93
+#: lang/en:98
 #, no-wrap
 msgid "File system"
 msgstr "Dateisystem"
@@ -454,3 +463,4 @@ msgstr "Wert"
 #, no-wrap
 msgid "Memory type"
 msgstr "Speichertyp"
+
