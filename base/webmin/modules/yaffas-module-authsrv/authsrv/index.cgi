@@ -15,21 +15,21 @@ require './forms.pl';
 
 Yaffas::init_webmin();
 ReadParse();
-my $methode = $main::in{auth};
+my $method = $main::in{auth};
 
 header();
 
 if ( $main::in{auth} ) {
-	if ( $methode eq "ldap" ) {
+	if ( $method eq "ldap" ) {
 		remote_ldap();
 	}
-	elsif ( $methode eq "yaffas_ldap" ) {
+	elsif ( $method eq "yaffas_ldap" ) {
 		remote_ldap("yaffas");
 	}
-	elsif ( $methode eq "local_auth" ) {
+	elsif ( $method eq "local_auth" ) {
 		local_ldap();
 	}
-	elsif ( $methode eq "pdc" ) {
+	elsif ( $method eq "pdc" ) {
 		if ( Yaffas::Product::check_product("zarafa") ) {
 			print Yaffas::UI::error_box( $main::text{'err_with_zarafa'} );
 		}
@@ -37,10 +37,10 @@ if ( $main::in{auth} ) {
 			pdc();
 		}
 	}
-	elsif ( $methode eq "ads" ) {
+	elsif ( $method eq "ads" ) {
 		ads();
 	}
-	elsif ( $methode eq "files" ) {
+	elsif ( $method eq "files" ) {
 		files();
 	}
 }

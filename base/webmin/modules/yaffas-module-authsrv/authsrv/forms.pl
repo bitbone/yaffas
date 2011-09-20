@@ -501,6 +501,18 @@ sub status(){
 				)
 			);
 		}
+		elsif( $authtype eq NOTSET) {
+			print(
+				Yaffas::UI::section(
+					$main::text{lbl_status},
+					$cgi->table(
+						$cgi->Tr(
+							$cgi->td( $main::text{lbl_not_set_auth} ),
+						),
+					)
+				)
+			);
+		}
 		elsif( $authtype eq REMOTE_LDAP ){
 			my $info = Yaffas::Auth::get_bk_ldap_auth();
 			print( 
