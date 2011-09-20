@@ -88,5 +88,5 @@ lbl_no_data=Keine Einträge vorhanden.
 lbl_filter_header=Filterdaten
 lbl_filter_show=Filter anzeigen
 
-err_connection_failed=Konnte Verbindung zum Server nicht aufbauen!
+err_connection_failed=Konnte Verbindung zum Backend nicht aufbauen!
 

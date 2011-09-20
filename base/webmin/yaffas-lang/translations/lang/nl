@@ -88,5 +88,5 @@ lbl_no_data=No records found.
 lbl_filter_header=Filter data
 lbl_filter_show=Show filter
 
-err_connection_failed=Could not connect to server!
+err_connection_failed=Could not connect to backend!
 
