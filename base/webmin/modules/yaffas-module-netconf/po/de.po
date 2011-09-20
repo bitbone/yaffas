@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-19 15:40+0300\n"
-"PO-Revision-Date: 2011-09-20 12:12+0100\n"
+"POT-Creation-Date: 2011-09-20 14:32+0300\n"
+"PO-Revision-Date: 2011-09-20 14:32+0100\n"
 "Last-Translator: André Welter <welter@bitbone.de>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -25,8 +25,7 @@ msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."
 msgid "The DNS server address has to be a valid IP address."
 msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
 
-#: lang/en:3
-#: lang/en:11
+#: lang/en:3 lang/en:11
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
 msgstr "Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens zwei Zeichen lang sein!"
@@ -318,8 +317,8 @@ msgstr "IP-Adresse für eth0<br>z.B. 192.168.0.100"
 
 #: help/en:5
 #, no-wrap
-msgid "Netmask for eth0<br>e.g. 192.168.0.100"
-msgstr "Netzmaske für eth0<br>z.B. 192.168.0.100"
+msgid "Netmask for eth0<br>e.g. 255.255.255.0"
+msgstr "Netzmaske für eth0<br>z.B. 255.255.255.0"
 
 #: help/en:6
 #, no-wrap
@@ -338,7 +337,6 @@ msgstr ""
 
 #: help/en:9
 #, no-wrap
-#| msgid "The DNS server address has to be a valid IP address."
 msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
 msgstr "Hostname oder IP-Adresse Ihres HTTP-Proxy-Servers."
 
@@ -351,4 +349,3 @@ msgstr "TCP-Port ihres Proxyservers."
 #, no-wrap
 msgid "Optional username, if you have to authenticate against the proxy."
 msgstr "Optionaler Benutzername, falls Sie sich am Server authentifizieren müssen."
-
