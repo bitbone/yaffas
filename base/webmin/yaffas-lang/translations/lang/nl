@@ -40,7 +40,7 @@ lbl_paging_goto=Go to
 lbl_save=Save
 lbl_yes=Yes
 lbl_create_cache=Creating cache
-lbl_done=done
+lbl_done=klaar
 lbl_apply_filter=Filter
 lbl_delete=delete
 
@@ -71,7 +71,7 @@ lbl_lang_en=English
 lbl_lang_nl=Dutch
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
-lbl_about_yaffas=About yaffas
+lbl_about_yaffas=Over yaffas
 lbl_about_zadmin=About Z-Admin
 
 lbl_logged_out=Logged out

@@ -1,6 +1,6 @@
 index_title=Abholaufträge
 index_poll=Abzufragender Server
-index_proto=Protokoll
+index_proto=Protocol
 index_active=Aktiv?
 index_users=Entfernter und lokaler Anwender
 index_add=Hinzufügen eines neuen Servers
@@ -28,7 +28,7 @@ poll_poll=Mailserver-Name
 poll_skip=Abholung aktiviert?
 poll_via=Abzufragender Mailserver
 poll_via_def=Identisch mit Mailserver-Name
-poll_proto=Protokoll
+poll_proto=Protocol
 poll_port=Mailserver-Port
 poll_uheader=Mailserver Benutzerdetails
 poll_user=Benutzername auf Mailserver
@@ -118,7 +118,7 @@ cron_email=Missing or invalid email address
 cron_euser=Missing or invalid Unix user
 cron_ecannot=Scheduled checking is not available in this mode
 
-lbl_delete=Lösche
+lbl_delete=Löschen
 lbl_really_delete=Möchten sie diesen Server wirklich löschen?
 lbl_multidrop=Multidrop
 lbl_target=Lokales Ziel

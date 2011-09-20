@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-06 13:23+0300\n"
-"PO-Revision-Date: 2011-09-16 09:11+0200\n"
+"POT-Creation-Date: 2011-09-19 14:35+0300\n"
+"PO-Revision-Date: 2011-09-20 10:14+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -247,11 +247,116 @@ msgstr ""
 #~ msgid "State"
 #~ msgstr "Status"
 
+#~ msgid "MySQL settings"
+#~ msgstr "MySQL-instellingen"
+
+#~ msgid "Database"
+#~ msgstr "Database"
+
+#~ msgid "Server"
+#~ msgstr "Server"
+
+#~ msgid "Username"
+#~ msgstr "Gebruikersnaam"
+
+#~ msgid "Password"
+#~ msgstr "Wachtwoord"
+
+#~ msgid "Could not connect to database."
+#~ msgstr "Kan geen verbinding krijgen met de database."
+
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "De quotawaarde kan alleen cijfers bevatten."
 
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+
+#~ msgid "This limits the maximum disk usage for each user in MB."
+#~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the password that is set on the database. You need to set this password manually."
+#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "Close"
+#~ msgstr "Sluit"
+
+#~ msgid "Restore"
+#~ msgstr "Herstel"
+
+#~ msgid "Restoring folder $1..."
+#~ msgstr "Map $1 herstellen..."
+
+#~ msgid "Restoring element $1..."
+#~ msgstr "Element $1 herstellen..."
+
+#~ msgid "done"
+#~ msgstr "klaar"
+
+#~ msgid "failed"
+#~ msgstr "mislukt"
+
+#~ msgid "Start restore"
+#~ msgstr "Begin herstellen"
+
+#~ msgid "Restore was started"
+#~ msgstr "Herstellen is begonnen"
+
+#~ msgid "Restore running"
+#~ msgstr "Herstellen wordt uitgevoerd"
+
+#~ msgid "Restore finished"
+#~ msgstr "Herstellen is afgerond"
+
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#~ msgid "Sender"
+#~ msgstr "Afzender"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Start"
+#~ msgstr "Begin"
+
+#~ msgid "End"
+#~ msgstr "Einde"
+
+#~ msgid "Select backup"
+#~ msgstr "Selecteer reservekopie"
+
+#~ msgid "Backup Overview"
+#~ msgstr "Overzicht reservekopieen"
+
+#~ msgid "Clear"
+#~ msgstr "Wissen"
+
+#~ msgid "Do you want to remove these elements from restore list?"
+#~ msgstr "Wilt u deze elementen verwijderen van de herstellijst?"
+
+#~ msgid "Really clear?"
+#~ msgstr "Echt wissen?"
+
+#~ msgid "Backup time"
+#~ msgstr "Tijd van reservekopie"
+
+#~ msgid "Settings"
+#~ msgstr "Instellingen"
+
+#~ msgid "Global settings"
+#~ msgstr "Globale instellingen"
+
+#~ msgid "Full backup"
+#~ msgstr "Volledige reservekopie"
+
+#~ msgid "at"
+#~ msgstr "op"
 
 # 83%
 #, fuzzy
@@ -262,6 +367,189 @@ msgstr ""
 #, fuzzy
 #~ msgid "Filetype"
 #~ msgstr "Filtertype"
+
+#~ msgid "System information"
+#~ msgstr "Systeeminformatie"
+
+#~ msgid "About yaffas"
+#~ msgstr "Over yaffas"
+
+#~ msgid "Versions"
+#~ msgstr "Versies"
+
+#~ msgid "Version"
+#~ msgstr "Versie"
+
+#~ msgid "Revision"
+#~ msgstr "Revisie"
+
+#~ msgid "Product"
+#~ msgstr "Product"
+
+#~ msgid "The information cannot be read!"
+#~ msgstr "De informatie kon niet worden gelezen!"
+
+#~ msgid "Written by"
+#~ msgstr "Geschreven door"
+
+#~ msgid "General information"
+#~ msgstr "Algemene informatie"
+
+#~ msgid "on an"
+#~ msgstr "op een"
+
+#~ msgid "Up-time of"
+#~ msgstr "Uptime van"
+
+#~ msgid "days"
+#~ msgstr "dagen"
+
+#~ msgid "hours"
+#~ msgstr "uren"
+
+#~ msgid "minutes"
+#~ msgstr "minuten"
+
+#~ msgid "Load average"
+#~ msgstr "Gemiddelde belasting"
+
+#~ msgid "CPU load"
+#~ msgstr "CPU-belasting"
+
+#~ msgid "Overall load"
+#~ msgstr "Totale belasting"
+
+#~ msgid "for the last minute"
+#~ msgstr "over de laatste minuut"
+
+#~ msgid "for the last 5 minutes"
+#~ msgstr "over de laatste 5 minuten"
+
+#~ msgid "for the last 15 minutes"
+#~ msgstr "over de laatste 15 minuten"
+
+#~ msgid "Memory usage"
+#~ msgstr "Geheugengebruik"
+
+#~ msgid "Main memory"
+#~ msgstr "Hoofdgeheugen"
+
+#~ msgid "Swap memory"
+#~ msgstr "Wisselgeheugen"
+
+#~ msgid "Total"
+#~ msgstr "Totaal"
+
+#~ msgid "Used"
+#~ msgstr "Gebruikt"
+
+#~ msgid "Free"
+#~ msgstr "Vrij"
+
+#~ msgid "Shared"
+#~ msgstr "Gedeeld"
+
+#~ msgid "Buffers"
+#~ msgstr "Buffers"
+
+#~ msgid "Cache"
+#~ msgstr "Cache"
+
+#~ msgid "Module"
+#~ msgstr "Module"
+
+#~ msgid "Referring modules"
+#~ msgstr "Verwijzende modules"
+
+#~ msgid "Modules currently in use"
+#~ msgstr "Modules nu in gebruik"
+
+#~ msgid "Available Memory"
+#~ msgstr "Beschikbaar Geheugen"
+
+#~ msgid "Usage Key:"
+#~ msgstr "Legenda Gebruik:"
+
+#~ msgid "In Use"
+#~ msgstr "In Gebruik"
+
+#~ msgid "Buffer"
+#~ msgstr "Buffer"
+
+#~ msgid "IRQ usage"
+#~ msgstr "IRQ-gebruik"
+
+#~ msgid "Device"
+#~ msgstr "Apparaat"
+
+#~ msgid "IO usage"
+#~ msgstr "IO-gebruik"
+
+#~ msgid "Network statistics"
+#~ msgstr "Netwerkstatistieken"
+
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgid "Receive"
+#~ msgstr "Ontvangen"
+
+#~ msgid "Send"
+#~ msgstr "Verzenden"
+
+#~ msgid "Bytes"
+#~ msgstr "Bytes"
+
+#~ msgid "Errors"
+#~ msgstr "Fouten"
+
+#~ msgid "Dropped"
+#~ msgstr "Genegeerd"
+
+#~ msgid "Overruns"
+#~ msgstr "Overloop"
+
+#~ msgid "Frame"
+#~ msgstr "Frame"
+
+#~ msgid "Active connections"
+#~ msgstr "Actieve verbindingen"
+
+#~ msgid "Protocol"
+#~ msgstr "Protocol"
+
+#~ msgid "Receive queue"
+#~ msgstr "Ontvangstwachtrij"
+
+#~ msgid "Send queue"
+#~ msgstr "Verzendwachtrij"
+
+#~ msgid "Local"
+#~ msgstr "Lokaal"
+
+#~ msgid "Who's logged"
+#~ msgstr "Wie"
+
+#~ msgid "TTY"
+#~ msgstr "TTY"
+
+#~ msgid "From"
+#~ msgstr "Van"
+
+#~ msgid "Login@"
+#~ msgstr "Aangemeld op"
+
+#~ msgid "Idle"
+#~ msgstr "Inactief"
+
+#~ msgid "Jcpu"
+#~ msgstr "Jcpu"
+
+#~ msgid "Pcpu"
+#~ msgstr "Pcpu"
+
+#~ msgid "Command"
+#~ msgstr "Commando"
 
 # 87%
 #, fuzzy

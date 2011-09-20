@@ -1,5 +1,5 @@
 size=Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess.
-limit=This limits the maximum disk usage for each user in MB.
-mysql_database=This database will be created if it doesn't exists. To do this the user needs the right permissions.
-mysql_password=This is the password that is set on the database. You need to set this password manually.
+limit=Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB.
+mysql_database=De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig.
+mysql_password=Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen.
 mysql_user=This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database.

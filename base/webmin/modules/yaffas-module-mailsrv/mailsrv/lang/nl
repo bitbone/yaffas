@@ -10,8 +10,8 @@ lbl_ip=IP
 
 lbl_smarthost=Smarthost
 lbl_smarthost_name=Smarthost server
-lbl_username=Username
-lbl_password=Password
+lbl_username=Gebruikersnaam
+lbl_password=Wachtwoord
 
 lbl_del_add_question=Do you really want to edit the these entries?
 lbl_edit_question=Do you really want to edit this entries?
@@ -78,9 +78,9 @@ lbl_disabled=Disabled
 
 lbl_status=Status
 lbl_service=Service
-lbl_feature=Feature
+lbl_feature=Functionaliteit
 
-lbl_start=Start
+lbl_start=Begin
 lbl_stop=Stop
 
 lbl_started=Running

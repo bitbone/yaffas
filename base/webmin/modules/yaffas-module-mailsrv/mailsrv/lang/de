@@ -49,7 +49,7 @@ err_no_rewrite=Es muss eine gültige Domain angegeben werden.
 err_no_entrys=Keine Einträge.
 err_smarthost=Smarthost nicht gültig.
 err_username=Benutzername nicht gültig.
-err_password=Password nicht gültig.
+err_password=Passwort nicht gültig.
 err_maildomain=Maildomain nicht gültig.
 err_ip_entry=IP Addresse oder IP Bereich nicht gültig.
 err_domainname=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens ein Zeichen lang sein!
@@ -80,8 +80,8 @@ lbl_status=Status
 lbl_service=Dienst
 lbl_feature=Funktion
 
-lbl_start=Aktivieren
-lbl_stop=Deaktivieren
+lbl_start=Start
+lbl_stop=Anhalten
 
 lbl_started=Gestartet
 lbl_stopped=Gestoppt

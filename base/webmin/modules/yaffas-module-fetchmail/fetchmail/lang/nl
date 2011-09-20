@@ -71,7 +71,7 @@ check_exec=Checking for mail on server(s) with command $1 ..
 check_ok=.. checking complete.
 check_failed=.. checking failed!
 
-lbl_settings=Settings
+lbl_settings=Instellingen
 global_title=Default Settings
 global_header=Default settings for all servers
 global_err=Failed to save default settings

@@ -23,7 +23,7 @@ emailAddress=E-Mail Adresse (z.B. webmaster@company.com)
 gencert_days=Zertifikat gültig für (Tage)
 gencert_generate=Generiere Schlüssel
 gencert_header=Generiere selbst signierte Zertifikate und Schlüssel
-gencert_service=Service
+gencert_service=Dienst
 gencert_title=Generiere Zertifikat und Schlüssel
 gencert_e_linkerror=Symlink Fehler
 

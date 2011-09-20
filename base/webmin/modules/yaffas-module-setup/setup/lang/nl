@@ -11,6 +11,6 @@ lbl_setup_finished_msg=Setup was finished successfully. After relogin you can us
 lbl_zarafa_settings=Zarafa settings
 lbl_basic_settings=Basic settings
 
-err_mysql_connect=Could not connect to database.
+err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_password=The admin password is empty or does not match.
 

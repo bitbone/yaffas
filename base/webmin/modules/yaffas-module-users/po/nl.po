@@ -1,19 +1,21 @@
-# Dutch translations for PACKAGE package
-# Copyright (C) 2011 bitbone AG
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
 # This file is distributed under the same license as the yaffas package.
-# Automatically generated, 2011.
-#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: yaffas 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-19 14:35+0300\n"
-"PO-Revision-Date: 2011-09-19 14:35+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2011-09-20 10:14+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -180,10 +182,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+# 83%
 #: lang/en:35
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Groups"
-msgstr ""
+msgstr "Groep"
 
 #: lang/en:36
 #, no-wrap
@@ -203,12 +206,12 @@ msgstr ""
 #: lang/en:39
 #, no-wrap
 msgid "Username"
-msgstr ""
+msgstr "Gebruikersnaam"
 
 #: lang/en:40
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "Wachtwoord"
 
 #: lang/en:41
 #, no-wrap
@@ -330,10 +333,11 @@ msgstr ""
 msgid "For group"
 msgstr ""
 
+# 87%
 #: lang/en:66
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Features"
-msgstr ""
+msgstr "Functionaliteit"
 
 #: help/en:1
 #, no-wrap
@@ -349,3 +353,421 @@ msgstr ""
 #, no-wrap
 msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
 msgstr ""
+
+#~ msgid "Apply key"
+#~ msgstr "Sleutel toepassen"
+
+#~ msgid "Install new key"
+#~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Install new base key"
+#~ msgstr "Nieuwe basissleutel toevoegen"
+
+#~ msgid "Install new client key"
+#~ msgstr "Nieuwe clientsleutel toevoegen"
+
+#~ msgid "Installed licenses"
+#~ msgstr "Geïnstalleerde licenties"
+
+#~ msgid "Base key"
+#~ msgstr "Basissleutel"
+
+#~ msgid "Serial number"
+#~ msgstr "Serienummer"
+
+#~ msgid "License Log"
+#~ msgstr "Licentielogboek"
+
+#~ msgid "This is not a valid Zarafa serial"
+#~ msgstr "Dit is geen geldige Zarafa-sleutel"
+
+#~ msgid "Archiver key"
+#~ msgstr "Archiversleutel"
+
+#~ msgid "Install new archiver key"
+#~ msgstr "Nieuwe Archiver-sleutel toevoegen"
+
+#~ msgid "Install new archiver client key"
+#~ msgstr "Nieuwe Archiver-clientsleutel toevoegen"
+
+#~ msgid "Userfilter"
+#~ msgstr "Gebruikersfilter"
+
+#~ msgid "Filtertype"
+#~ msgstr "Filtertype"
+
+#~ msgid "Group"
+#~ msgstr "Groep"
+
+#~ msgid "Default"
+#~ msgstr "Standaard"
+
+#~ msgid "AD Plugin"
+#~ msgstr "AD Plug-in"
+
+#~ msgid "AD Group"
+#~ msgstr "AD Groep"
+
+#~ msgid "Delete these zarafa stores?"
+#~ msgstr "Deze Zarafa stores verwijderen?"
+
+#~ msgid "With this step, the following zarafa stores would be deleted:"
+#~ msgstr "Met deze stap zullen de volgende Zarafa stores worden verwijderd:"
+
+#~ msgid "Could not find Group."
+#~ msgstr "Kon Groep niet vinden."
+
+#~ msgid "Could not find the rootDomainNamingContext in AD."
+#~ msgstr "Kon de rootDomainNamingContext niet vinden in AD."
+
+#~ msgid "Size of attachments"
+#~ msgstr "Grootte van bijlagen"
+
+#~ msgid "Size"
+#~ msgstr "Grootte"
+
+#~ msgid "The value is not numeric."
+#~ msgstr "De waarde is niet numeriek."
+
+#~ msgid "Optimize"
+#~ msgstr "Optimaliseer"
+
+#~ msgid "Addressable memory"
+#~ msgstr "Adresseerbaar geheugen"
+
+#~ msgid "Optimized for"
+#~ msgstr "Geoptimaliseerd voor"
+
+#~ msgid "Optimize memory"
+#~ msgstr "Optimaliseer geheugen"
+
+#~ msgid "unknown"
+#~ msgstr "onbekend"
+
+#~ msgid "Quota e-mail templates"
+#~ msgstr "Quota-e-mailsjablonen"
+
+#~ msgid "Message at 80%"
+#~ msgstr "Bericht op 80%"
+
+#~ msgid "Message at 90%"
+#~ msgstr "Bericht op 90%"
+
+#~ msgid "Message at 100%"
+#~ msgstr "Bericht op 100%"
+
+#~ msgid "Default quota"
+#~ msgstr "Standaard quota"
+
+#~ msgid "Default Quota"
+#~ msgstr "Standaard Quota"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Default features"
+#~ msgstr "Standaardfunctionaliteiten"
+
+#~ msgid "Feature"
+#~ msgstr "Functionaliteit"
+
+#~ msgid "State"
+#~ msgstr "Status"
+
+#~ msgid "MySQL settings"
+#~ msgstr "MySQL-instellingen"
+
+#~ msgid "Database"
+#~ msgstr "Database"
+
+#~ msgid "Server"
+#~ msgstr "Server"
+
+#~ msgid "Could not connect to database."
+#~ msgstr "Kan geen verbinding krijgen met de database."
+
+#~ msgid "The quota value can only contain digits."
+#~ msgstr "De quotawaarde kan alleen cijfers bevatten."
+
+#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+
+#~ msgid "This limits the maximum disk usage for each user in MB."
+#~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the password that is set on the database. You need to set this password manually."
+#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "Close"
+#~ msgstr "Sluit"
+
+#~ msgid "Restore"
+#~ msgstr "Herstel"
+
+#~ msgid "Restoring folder $1..."
+#~ msgstr "Map $1 herstellen..."
+
+#~ msgid "Restoring element $1..."
+#~ msgstr "Element $1 herstellen..."
+
+#~ msgid "done"
+#~ msgstr "klaar"
+
+#~ msgid "failed"
+#~ msgstr "mislukt"
+
+#~ msgid "Start restore"
+#~ msgstr "Begin herstellen"
+
+#~ msgid "Restore was started"
+#~ msgstr "Herstellen is begonnen"
+
+#~ msgid "Restore running"
+#~ msgstr "Herstellen wordt uitgevoerd"
+
+#~ msgid "Restore finished"
+#~ msgstr "Herstellen is afgerond"
+
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#~ msgid "Sender"
+#~ msgstr "Afzender"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Start"
+#~ msgstr "Begin"
+
+#~ msgid "End"
+#~ msgstr "Einde"
+
+#~ msgid "Select backup"
+#~ msgstr "Selecteer reservekopie"
+
+#~ msgid "Backup Overview"
+#~ msgstr "Overzicht reservekopieen"
+
+#~ msgid "Clear"
+#~ msgstr "Wissen"
+
+#~ msgid "Do you want to remove these elements from restore list?"
+#~ msgstr "Wilt u deze elementen verwijderen van de herstellijst?"
+
+#~ msgid "Really clear?"
+#~ msgstr "Echt wissen?"
+
+#~ msgid "Backup time"
+#~ msgstr "Tijd van reservekopie"
+
+#~ msgid "Settings"
+#~ msgstr "Instellingen"
+
+#~ msgid "Global settings"
+#~ msgstr "Globale instellingen"
+
+#~ msgid "Full backup"
+#~ msgstr "Volledige reservekopie"
+
+#~ msgid "at"
+#~ msgstr "op"
+
+# 80%
+#, fuzzy
+#~ msgid "Filetype"
+#~ msgstr "Filtertype"
+
+#~ msgid "System information"
+#~ msgstr "Systeeminformatie"
+
+#~ msgid "About yaffas"
+#~ msgstr "Over yaffas"
+
+#~ msgid "Versions"
+#~ msgstr "Versies"
+
+#~ msgid "Version"
+#~ msgstr "Versie"
+
+#~ msgid "Revision"
+#~ msgstr "Revisie"
+
+#~ msgid "Product"
+#~ msgstr "Product"
+
+#~ msgid "The information cannot be read!"
+#~ msgstr "De informatie kon niet worden gelezen!"
+
+#~ msgid "Written by"
+#~ msgstr "Geschreven door"
+
+#~ msgid "General information"
+#~ msgstr "Algemene informatie"
+
+#~ msgid "on an"
+#~ msgstr "op een"
+
+#~ msgid "Up-time of"
+#~ msgstr "Uptime van"
+
+#~ msgid "days"
+#~ msgstr "dagen"
+
+#~ msgid "hours"
+#~ msgstr "uren"
+
+#~ msgid "minutes"
+#~ msgstr "minuten"
+
+#~ msgid "Load average"
+#~ msgstr "Gemiddelde belasting"
+
+#~ msgid "CPU load"
+#~ msgstr "CPU-belasting"
+
+#~ msgid "Overall load"
+#~ msgstr "Totale belasting"
+
+#~ msgid "for the last minute"
+#~ msgstr "over de laatste minuut"
+
+#~ msgid "for the last 5 minutes"
+#~ msgstr "over de laatste 5 minuten"
+
+#~ msgid "for the last 15 minutes"
+#~ msgstr "over de laatste 15 minuten"
+
+#~ msgid "Memory usage"
+#~ msgstr "Geheugengebruik"
+
+#~ msgid "Main memory"
+#~ msgstr "Hoofdgeheugen"
+
+#~ msgid "Swap memory"
+#~ msgstr "Wisselgeheugen"
+
+#~ msgid "Total"
+#~ msgstr "Totaal"
+
+#~ msgid "Used"
+#~ msgstr "Gebruikt"
+
+#~ msgid "Free"
+#~ msgstr "Vrij"
+
+#~ msgid "Shared"
+#~ msgstr "Gedeeld"
+
+#~ msgid "Buffers"
+#~ msgstr "Buffers"
+
+#~ msgid "Cache"
+#~ msgstr "Cache"
+
+#~ msgid "Module"
+#~ msgstr "Module"
+
+#~ msgid "Referring modules"
+#~ msgstr "Verwijzende modules"
+
+#~ msgid "Modules currently in use"
+#~ msgstr "Modules nu in gebruik"
+
+#~ msgid "Available Memory"
+#~ msgstr "Beschikbaar Geheugen"
+
+#~ msgid "Usage Key:"
+#~ msgstr "Legenda Gebruik:"
+
+#~ msgid "In Use"
+#~ msgstr "In Gebruik"
+
+#~ msgid "Buffer"
+#~ msgstr "Buffer"
+
+#~ msgid "IRQ usage"
+#~ msgstr "IRQ-gebruik"
+
+#~ msgid "Device"
+#~ msgstr "Apparaat"
+
+#~ msgid "IO usage"
+#~ msgstr "IO-gebruik"
+
+#~ msgid "Network statistics"
+#~ msgstr "Netwerkstatistieken"
+
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgid "Receive"
+#~ msgstr "Ontvangen"
+
+#~ msgid "Send"
+#~ msgstr "Verzenden"
+
+#~ msgid "Bytes"
+#~ msgstr "Bytes"
+
+#~ msgid "Errors"
+#~ msgstr "Fouten"
+
+#~ msgid "Dropped"
+#~ msgstr "Genegeerd"
+
+#~ msgid "Overruns"
+#~ msgstr "Overloop"
+
+#~ msgid "Frame"
+#~ msgstr "Frame"
+
+#~ msgid "Active connections"
+#~ msgstr "Actieve verbindingen"
+
+#~ msgid "Protocol"
+#~ msgstr "Protocol"
+
+#~ msgid "Receive queue"
+#~ msgstr "Ontvangstwachtrij"
+
+#~ msgid "Send queue"
+#~ msgstr "Verzendwachtrij"
+
+#~ msgid "Local"
+#~ msgstr "Lokaal"
+
+#~ msgid "Who's logged"
+#~ msgstr "Wie"
+
+#~ msgid "TTY"
+#~ msgstr "TTY"
+
+#~ msgid "From"
+#~ msgstr "Van"
+
+#~ msgid "Login@"
+#~ msgstr "Aangemeld op"
+
+#~ msgid "Idle"
+#~ msgstr "Inactief"
+
+#~ msgid "Jcpu"
+#~ msgstr "Jcpu"
+
+#~ msgid "Pcpu"
+#~ msgstr "Pcpu"
+
+#~ msgid "Command"
+#~ msgstr "Commando"
+
+# 86%
+#, fuzzy
+#~ msgid "Install New Key"
+#~ msgstr "Nieuwe sleutel toevoegen"

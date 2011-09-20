@@ -5,7 +5,7 @@ lbl_service_on_boot=Start Service on Boot
 lbl_watchme=Monitor
 lbl_action=Action
 lbl_execute=Execute
-lbl_start=Start
+lbl_start=Begin
 lbl_stop=Stop
 lbl_config=Configuration
 lbl_restart=Restart
@@ -35,7 +35,7 @@ lbl_sure_reboot=Do you really want to reboot the system.
 
 lbl_day=Day
 lbl_month=Month
-lbl_date=Date
+lbl_date=Datum
 lbl_hour=Hour
 lbl_year=Year
 lbl_setdatetime=System time

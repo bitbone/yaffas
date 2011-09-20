@@ -17,7 +17,7 @@ lbl_filetype=Filetype
 lbl_set_filetype=Set Filetype
 
 lbl_create_cache=Creating cache
-lbl_done=done
+lbl_done=klaar
 
 lbl_ask_delete=Do you really want to delete this groups?
 lbl_auth=Authentification

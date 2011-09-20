@@ -1,29 +1,31 @@
-# Dutch translations for PACKAGE package
-# Copyright (C) 2011 bitbone AG
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
 # This file is distributed under the same license as the yaffas package.
-# Automatically generated, 2011.
-#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: yaffas 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-19 14:35+0300\n"
-"PO-Revision-Date: 2011-09-19 14:35+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2011-09-20 10:14+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1 lang/en:11
 #, no-wrap
 msgid "System information"
-msgstr ""
+msgstr "Systeeminformatie"
 
 #: lang/en:2
 #, no-wrap
 msgid "About yaffas"
-msgstr ""
+msgstr "Over yaffas"
 
 #: lang/en:3
 #, no-wrap
@@ -33,237 +35,237 @@ msgstr ""
 #: lang/en:4
 #, no-wrap
 msgid "Versions"
-msgstr ""
+msgstr "Versies"
 
 #: lang/en:5
 #, no-wrap
 msgid "Version"
-msgstr ""
+msgstr "Versie"
 
 #: lang/en:6
 #, no-wrap
 msgid "Revision"
-msgstr ""
+msgstr "Revisie"
 
 #: lang/en:7
 #, no-wrap
 msgid "Product"
-msgstr ""
+msgstr "Product"
 
 #: lang/en:9
 #, no-wrap
 msgid "The information cannot be read!"
-msgstr ""
+msgstr "De informatie kon niet worden gelezen!"
 
 #: lang/en:12
 #, no-wrap
 msgid "Written by"
-msgstr ""
+msgstr "Geschreven door"
 
 #: lang/en:14
 #, no-wrap
 msgid "General information"
-msgstr ""
+msgstr "Algemene informatie"
 
 #: lang/en:15
 #, no-wrap
 msgid "on an"
-msgstr ""
+msgstr "op een"
 
 #: lang/en:16
 #, no-wrap
 msgid "Up-time of"
-msgstr ""
+msgstr "Uptime van"
 
 #: lang/en:17
 #, no-wrap
 msgid "days"
-msgstr ""
+msgstr "dagen"
 
 #: lang/en:18
 #, no-wrap
 msgid "hours"
-msgstr ""
+msgstr "uren"
 
 #: lang/en:19
 #, no-wrap
 msgid "minutes"
-msgstr ""
+msgstr "minuten"
 
 #: lang/en:20
 #, no-wrap
 msgid "Load average"
-msgstr ""
+msgstr "Gemiddelde belasting"
 
 #: lang/en:21
 #, no-wrap
 msgid "CPU load"
-msgstr ""
+msgstr "CPU-belasting"
 
 #: lang/en:22
 #, no-wrap
 msgid "Overall load"
-msgstr ""
+msgstr "Totale belasting"
 
 #: lang/en:23
 #, no-wrap
 msgid "for the last minute"
-msgstr ""
+msgstr "over de laatste minuut"
 
 #: lang/en:24
 #, no-wrap
 msgid "for the last 5 minutes"
-msgstr ""
+msgstr "over de laatste 5 minuten"
 
 #: lang/en:25
 #, no-wrap
 msgid "for the last 15 minutes"
-msgstr ""
+msgstr "over de laatste 15 minuten"
 
 #: lang/en:27
 #, no-wrap
 msgid "Memory usage"
-msgstr ""
+msgstr "Geheugengebruik"
 
 #: lang/en:28
 #, no-wrap
 msgid "Main memory"
-msgstr ""
+msgstr "Hoofdgeheugen"
 
 #: lang/en:29
 #, no-wrap
 msgid "Swap memory"
-msgstr ""
+msgstr "Wisselgeheugen"
 
 #: lang/en:30
 #, no-wrap
 msgid "Total"
-msgstr ""
+msgstr "Totaal"
 
 #: lang/en:31 lang/en:100
 #, no-wrap
 msgid "Used"
-msgstr ""
+msgstr "Gebruikt"
 
 #: lang/en:32 lang/en:45
 #, no-wrap
 msgid "Free"
-msgstr ""
+msgstr "Vrij"
 
 #: lang/en:33
 #, no-wrap
 msgid "Shared"
-msgstr ""
+msgstr "Gedeeld"
 
 #: lang/en:34
 #, no-wrap
 msgid "Buffers"
-msgstr ""
+msgstr "Buffers"
 
 #: lang/en:35
 #, no-wrap
 msgid "Cache"
-msgstr ""
+msgstr "Cache"
 
 #: lang/en:36
 #, no-wrap
 msgid "Module"
-msgstr ""
+msgstr "Module"
 
 #: lang/en:37 lang/en:99
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "Grootte"
 
 #: lang/en:38
 #, no-wrap
 msgid "Referring modules"
-msgstr ""
+msgstr "Verwijzende modules"
 
 #: lang/en:39
 #, no-wrap
 msgid "Modules currently in use"
-msgstr ""
+msgstr "Modules nu in gebruik"
 
 #: lang/en:40
 #, no-wrap
 msgid "Available Memory"
-msgstr ""
+msgstr "Beschikbaar Geheugen"
 
 #: lang/en:41
 #, no-wrap
 msgid "Usage Key:"
-msgstr ""
+msgstr "Legenda Gebruik:"
 
 #: lang/en:43
 #, no-wrap
 msgid "In Use"
-msgstr ""
+msgstr "In Gebruik"
 
 #: lang/en:44
 #, no-wrap
 msgid "Buffer"
-msgstr ""
+msgstr "Buffer"
 
 #: lang/en:47
 #, no-wrap
 msgid "IRQ usage"
-msgstr ""
+msgstr "IRQ-gebruik"
 
 #: lang/en:48 lang/en:91
 #, no-wrap
 msgid "Device"
-msgstr ""
+msgstr "Apparaat"
 
 #: lang/en:49
 #, no-wrap
 msgid "IO usage"
-msgstr ""
+msgstr "IO-gebruik"
 
 #: lang/en:51
 #, no-wrap
 msgid "Network statistics"
-msgstr ""
+msgstr "Netwerkstatistieken"
 
 #: lang/en:52
 #, no-wrap
 msgid "Interface"
-msgstr ""
+msgstr "Interface"
 
 #: lang/en:53
 #, no-wrap
 msgid "Receive"
-msgstr ""
+msgstr "Ontvangen"
 
 #: lang/en:54
 #, no-wrap
 msgid "Send"
-msgstr ""
+msgstr "Verzenden"
 
 #: lang/en:55
 #, no-wrap
 msgid "Bytes"
-msgstr ""
+msgstr "Bytes"
 
 #: lang/en:56
 #, no-wrap
 msgid "Errors"
-msgstr ""
+msgstr "Fouten"
 
 #: lang/en:57
 #, no-wrap
 msgid "Dropped"
-msgstr ""
+msgstr "Genegeerd"
 
 #: lang/en:58
 #, no-wrap
 msgid "Overruns"
-msgstr ""
+msgstr "Overloop"
 
 #: lang/en:59
 #, no-wrap
 msgid "Frame"
-msgstr ""
+msgstr "Frame"
 
 #: lang/en:60
 #, no-wrap
@@ -278,27 +280,27 @@ msgstr ""
 #: lang/en:62
 #, no-wrap
 msgid "Active connections"
-msgstr ""
+msgstr "Actieve verbindingen"
 
 #: lang/en:63 lang/en:81
 #, no-wrap
 msgid "Protocol"
-msgstr ""
+msgstr "Protocol"
 
 #: lang/en:64
 #, no-wrap
 msgid "Receive queue"
-msgstr ""
+msgstr "Ontvangstwachtrij"
 
 #: lang/en:65
 #, no-wrap
 msgid "Send queue"
-msgstr ""
+msgstr "Verzendwachtrij"
 
 #: lang/en:66
 #, no-wrap
 msgid "Local"
-msgstr ""
+msgstr "Lokaal"
 
 #: lang/en:67
 #, no-wrap
@@ -308,12 +310,12 @@ msgstr ""
 #: lang/en:68 lang/en:85
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "Status"
 
 #: lang/en:69
 #, no-wrap
 msgid "Who's logged"
-msgstr ""
+msgstr "Wie"
 
 #: lang/en:70
 #, no-wrap
@@ -323,37 +325,37 @@ msgstr ""
 #: lang/en:71
 #, no-wrap
 msgid "TTY"
-msgstr ""
+msgstr "TTY"
 
 #: lang/en:72
 #, no-wrap
 msgid "From"
-msgstr ""
+msgstr "Van"
 
 #: lang/en:73
 #, no-wrap
 msgid "Login@"
-msgstr ""
+msgstr "Aangemeld op"
 
 #: lang/en:74
 #, no-wrap
 msgid "Idle"
-msgstr ""
+msgstr "Inactief"
 
 #: lang/en:75
 #, no-wrap
 msgid "Jcpu"
-msgstr ""
+msgstr "Jcpu"
 
 #: lang/en:76
 #, no-wrap
 msgid "Pcpu"
-msgstr ""
+msgstr "Pcpu"
 
 #: lang/en:77
 #, no-wrap
 msgid "Command"
-msgstr ""
+msgstr "Commando"
 
 #: lang/en:78
 #, no-wrap
@@ -454,3 +456,248 @@ msgstr ""
 #, no-wrap
 msgid "Memory type"
 msgstr ""
+
+#~ msgid "Apply key"
+#~ msgstr "Sleutel toepassen"
+
+#~ msgid "Install new key"
+#~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Install new base key"
+#~ msgstr "Nieuwe basissleutel toevoegen"
+
+#~ msgid "Install new client key"
+#~ msgstr "Nieuwe clientsleutel toevoegen"
+
+#~ msgid "Installed licenses"
+#~ msgstr "Geïnstalleerde licenties"
+
+#~ msgid "Base key"
+#~ msgstr "Basissleutel"
+
+#~ msgid "Serial number"
+#~ msgstr "Serienummer"
+
+#~ msgid "License Log"
+#~ msgstr "Licentielogboek"
+
+#~ msgid "This is not a valid Zarafa serial"
+#~ msgstr "Dit is geen geldige Zarafa-sleutel"
+
+#~ msgid "Archiver key"
+#~ msgstr "Archiversleutel"
+
+#~ msgid "Install new archiver key"
+#~ msgstr "Nieuwe Archiver-sleutel toevoegen"
+
+#~ msgid "Install new archiver client key"
+#~ msgstr "Nieuwe Archiver-clientsleutel toevoegen"
+
+#~ msgid "Userfilter"
+#~ msgstr "Gebruikersfilter"
+
+#~ msgid "Filtertype"
+#~ msgstr "Filtertype"
+
+#~ msgid "Group"
+#~ msgstr "Groep"
+
+#~ msgid "Default"
+#~ msgstr "Standaard"
+
+#~ msgid "AD Plugin"
+#~ msgstr "AD Plug-in"
+
+#~ msgid "AD Group"
+#~ msgstr "AD Groep"
+
+#~ msgid "Delete these zarafa stores?"
+#~ msgstr "Deze Zarafa stores verwijderen?"
+
+#~ msgid "With this step, the following zarafa stores would be deleted:"
+#~ msgstr "Met deze stap zullen de volgende Zarafa stores worden verwijderd:"
+
+#~ msgid "Could not find Group."
+#~ msgstr "Kon Groep niet vinden."
+
+#~ msgid "Could not find the rootDomainNamingContext in AD."
+#~ msgstr "Kon de rootDomainNamingContext niet vinden in AD."
+
+#~ msgid "Size of attachments"
+#~ msgstr "Grootte van bijlagen"
+
+#~ msgid "The value is not numeric."
+#~ msgstr "De waarde is niet numeriek."
+
+#~ msgid "Optimize"
+#~ msgstr "Optimaliseer"
+
+#~ msgid "Addressable memory"
+#~ msgstr "Adresseerbaar geheugen"
+
+#~ msgid "Optimized for"
+#~ msgstr "Geoptimaliseerd voor"
+
+#~ msgid "Optimize memory"
+#~ msgstr "Optimaliseer geheugen"
+
+#~ msgid "unknown"
+#~ msgstr "onbekend"
+
+#~ msgid "Quota e-mail templates"
+#~ msgstr "Quota-e-mailsjablonen"
+
+#~ msgid "Message at 80%"
+#~ msgstr "Bericht op 80%"
+
+#~ msgid "Message at 90%"
+#~ msgstr "Bericht op 90%"
+
+#~ msgid "Message at 100%"
+#~ msgstr "Bericht op 100%"
+
+#~ msgid "Default quota"
+#~ msgstr "Standaard quota"
+
+#~ msgid "Default Quota"
+#~ msgstr "Standaard Quota"
+
+#~ msgid "Off"
+#~ msgstr "Uit"
+
+#~ msgid "Default features"
+#~ msgstr "Standaardfunctionaliteiten"
+
+#~ msgid "Feature"
+#~ msgstr "Functionaliteit"
+
+#~ msgid "MySQL settings"
+#~ msgstr "MySQL-instellingen"
+
+#~ msgid "Database"
+#~ msgstr "Database"
+
+#~ msgid "Server"
+#~ msgstr "Server"
+
+#~ msgid "Username"
+#~ msgstr "Gebruikersnaam"
+
+#~ msgid "Password"
+#~ msgstr "Wachtwoord"
+
+#~ msgid "Could not connect to database."
+#~ msgstr "Kan geen verbinding krijgen met de database."
+
+#~ msgid "The quota value can only contain digits."
+#~ msgstr "De quotawaarde kan alleen cijfers bevatten."
+
+#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+
+#~ msgid "This limits the maximum disk usage for each user in MB."
+#~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the password that is set on the database. You need to set this password manually."
+#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
+
+#~ msgid "Stop"
+#~ msgstr "Stop"
+
+#~ msgid "Close"
+#~ msgstr "Sluit"
+
+#~ msgid "Restore"
+#~ msgstr "Herstel"
+
+#~ msgid "Restoring folder $1..."
+#~ msgstr "Map $1 herstellen..."
+
+#~ msgid "Restoring element $1..."
+#~ msgstr "Element $1 herstellen..."
+
+#~ msgid "done"
+#~ msgstr "klaar"
+
+#~ msgid "failed"
+#~ msgstr "mislukt"
+
+#~ msgid "Start restore"
+#~ msgstr "Begin herstellen"
+
+#~ msgid "Restore was started"
+#~ msgstr "Herstellen is begonnen"
+
+#~ msgid "Restore running"
+#~ msgstr "Herstellen wordt uitgevoerd"
+
+#~ msgid "Restore finished"
+#~ msgstr "Herstellen is afgerond"
+
+#~ msgid "Subject"
+#~ msgstr "Onderwerp"
+
+#~ msgid "Sender"
+#~ msgstr "Afzender"
+
+#~ msgid "Date"
+#~ msgstr "Datum"
+
+#~ msgid "Start"
+#~ msgstr "Begin"
+
+#~ msgid "End"
+#~ msgstr "Einde"
+
+#~ msgid "Select backup"
+#~ msgstr "Selecteer reservekopie"
+
+#~ msgid "Backup Overview"
+#~ msgstr "Overzicht reservekopieen"
+
+#~ msgid "Clear"
+#~ msgstr "Wissen"
+
+#~ msgid "Do you want to remove these elements from restore list?"
+#~ msgstr "Wilt u deze elementen verwijderen van de herstellijst?"
+
+#~ msgid "Really clear?"
+#~ msgstr "Echt wissen?"
+
+#~ msgid "Backup time"
+#~ msgstr "Tijd van reservekopie"
+
+#~ msgid "Settings"
+#~ msgstr "Instellingen"
+
+#~ msgid "Global settings"
+#~ msgstr "Globale instellingen"
+
+#~ msgid "Full backup"
+#~ msgstr "Volledige reservekopie"
+
+#~ msgid "at"
+#~ msgstr "op"
+
+# 83%
+#, fuzzy
+#~ msgid "Groups"
+#~ msgstr "Groep"
+
+# 80%
+#, fuzzy
+#~ msgid "Filetype"
+#~ msgstr "Filtertype"
+
+# 87%
+#, fuzzy
+#~ msgid "Features"
+#~ msgstr "Functionaliteit"
+
+# 86%
+#, fuzzy
+#~ msgid "Install New Key"
+#~ msgstr "Nieuwe sleutel toevoegen"
