@@ -1,2 +1,2 @@
-backup_dir=In which directory should the backups be stored?
-preserve_time=How long should each backup be preserved?
+backup_dir=In welchem Verzeichnis sollen die Sicherungen gespeichert werden?
+preserve_time=Wie lange soll jede Sicherung aufbewahrt werden?

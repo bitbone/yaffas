@@ -1,4 +1,4 @@
-name=This name will be shown in the global address book.
-description=You may want to add a description if the name of the resource isn't self-explanatory.
-decline_conflict=Check this box and the resource can only be booked once.
-decline_recurring=Check this box to disable recurring appointments for this resource.
+name=Dieser Name wird im globalen Adressbuch angezeigt.
+description=Sie können eine Beschreibung hinzufügen, falls der Name der Ressource nicht selbsterklärend ist.
+decline_conflict=Wenn dieser Kasten markiert ist, kann die Ressource nur einfach gebucht werden.
+decline_recurring=Markieren sie diesen Kasten um wiederkehrende Termine für diese Ressource zu verbieten.

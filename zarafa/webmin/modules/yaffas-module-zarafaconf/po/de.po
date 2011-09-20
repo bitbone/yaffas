@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-19 14:35+0300\n"
-"PO-Revision-Date: 2011-09-20 12:23+0200\n"
+"POT-Creation-Date: 2011-09-20 12:25+0300\n"
+"PO-Revision-Date: 2011-09-20 15:07+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -143,9 +143,9 @@ msgid "Off"
 msgstr "Aus"
 
 #: lang/en:31
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Default features"
-msgstr "Standard Quota"
+msgstr "Standardfunktionen"
 
 #: lang/en:32
 #, no-wrap
@@ -160,17 +160,17 @@ msgstr "State"
 #: lang/en:35
 #, no-wrap
 msgid "MySQL settings"
-msgstr ""
+msgstr "MySQL Einstellungen"
 
 #: lang/en:36
 #, no-wrap
 msgid "Database"
-msgstr ""
+msgstr "Datenbank"
 
 #: lang/en:37
 #, no-wrap
 msgid "Server"
-msgstr ""
+msgstr "Server"
 
 #: lang/en:38
 #, no-wrap
@@ -200,22 +200,22 @@ msgstr "Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Web
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB."
-msgstr ""
+msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
 
 #: help/en:3
 #, no-wrap
 msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr ""
+msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
 
 #: help/en:4
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
-msgstr ""
+msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden."
 
 #: help/en:5
 #, no-wrap
 msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-msgstr ""
+msgstr "Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen."
 
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
@@ -349,6 +349,9 @@ msgstr ""
 #~ msgid "Removing directory"
 #~ msgstr "Lösche Verzeichnis"
 
+#~ msgid "Click on \"restore\" to restore the selected messages."
+#~ msgstr "Klicken sie auf \"Wiederherstellen\" um die ausgewählten Nachrichten wiederherzustellen."
+
 #~ msgid "No backup available"
 #~ msgstr "Kein Backup zur Auswahl verfügbar"
 
@@ -372,6 +375,12 @@ msgstr ""
 
 #~ msgid "Could not open directory."
 #~ msgstr "Konnte das Verzeichnis nicht öffnen."
+
+#~ msgid "In which directory should the backups be stored?"
+#~ msgstr "In welchem Verzeichnis sollen die Sicherungen gespeichert werden?"
+
+#~ msgid "How long should each backup be preserved?"
+#~ msgstr "Wie lange soll jede Sicherung aufbewahrt werden?"
 
 #~ msgid "Manage resources"
 #~ msgstr "Ressourcen verwalten"
@@ -441,6 +450,18 @@ msgstr ""
 
 #~ msgid "No local mail domains configured."
 #~ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
+
+#~ msgid "This name will be shown in the global address book."
+#~ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
+
+#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
+#~ msgstr "Sie können eine Beschreibung hinzufügen, falls der Name der Ressource nicht selbsterklärend ist."
+
+#~ msgid "Check this box and the resource can only be booked once."
+#~ msgstr "Wenn dieser Kasten markiert ist, kann die Ressource nur einfach gebucht werden."
+
+#~ msgid "Check this box to disable recurring appointments for this resource."
+#~ msgstr "Markieren sie diesen Kasten um wiederkehrende Termine für diese Ressource zu verbieten."
 
 #~ msgid "Admin password"
 #~ msgstr "Admin Passwort"
@@ -624,6 +645,21 @@ msgstr ""
 
 #~ msgid "Invalid e-mail address"
 #~ msgstr "Ungültige E-Mail Adresse"
+
+#~ msgid "This value defines at which score mails are handled as spam."
+#~ msgstr "Dieser Wert gibt an, ab welcher Punktzahl E-Mails als Spam behandelt werden."
+
+#~ msgid "Define a host or network by its IP address or CIDR."
+#~ msgstr "Geben Sie einen Host oder ein Netzwerk als IP Adresse oder CIDR an."
+
+#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
+#~ msgstr "ClamAV wird nur Objekte scannen, die kleiner sind als die angegebene Größe. Größere Objekte werden NICHT gescannt werden."
+
+#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
+#~ msgstr "Wenn ClamAV ein verdächtiges Objekt entdeckt, sendet es eine E-Mail an die angegebene Adresse."
+
+#~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
+#~ msgstr "Aktivieren sie dies um Archive wie RAR, ZIP und GZ zu scannen."
 
 #~ msgid "Create"
 #~ msgstr "Erstellen"
@@ -904,6 +940,9 @@ msgstr ""
 #~ msgid "Please activate policy server in MPP interface first."
 #~ msgstr "Bitte aktivieren Sie zuerst in der MPP Oberfläche den Policyserver."
 
+#~ msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
+#~ msgstr "Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie das Feld leer lassen, wird der Server E-Mail mit beliebiger Größe verarbeiten."
+
 #~ msgid "System information"
 #~ msgstr "System Information"
 
@@ -1024,28 +1063,11 @@ msgstr ""
 #~ msgid "Network statistics"
 #~ msgstr "Netzwerk Statistik"
 
-#, fuzzy
 #~ msgid "Interface"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Interface\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Schnittstelle\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Interface"
+#~ msgstr "Schnittstelle"
 
 #~ msgid "Receive"
 #~ msgstr "Empfangen"
-
-#, fuzzy
-#~ msgid "Send"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Verschicken\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Gesendet"
 
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
@@ -1071,15 +1093,8 @@ msgstr ""
 #~ msgid "Active connections"
 #~ msgstr "Aktive Verbindingen"
 
-#, fuzzy
 #~ msgid "Protocol"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Protokol\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Protokoll\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Protokol"
+#~ msgstr "Protokoll"
 
 #~ msgid "Receive queue"
 #~ msgstr "Empfangs Queue"
@@ -1192,19 +1207,17 @@ msgstr ""
 #~ msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
 #~ msgstr "Der Community-String darf nur aus Zahlen (0-9) und Buchstaben (a-z, A-Z) bestehen."
 
+#~ msgid "Password for the SNMP access."
+#~ msgstr "Passwort für den SNMP-Zugriff."
+
 #~ msgid "Support"
 #~ msgstr "Support"
 
 #~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
 #~ msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
 
-#, fuzzy
 #~ msgid "Download"
-#~ msgstr ""
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Herunterladen\n"
-#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
-#~ "Download"
+#~ msgstr "Herunterladen"
 
 #~ msgid "Please press download to get the available system and hardware informations."
 #~ msgstr "Zum speichern der System- und Hardwareinformationen klicken Sie bitte auf Download."
@@ -1290,6 +1303,9 @@ msgstr ""
 #~ msgid "Have fun with yaffas"
 #~ msgstr "Viel Spaß mit yaffas"
 
+#~ msgid "Enter a valid email address to receive notifications about the status of the system."
+#~ msgstr "Geben sie eine gültige E-Mail Adresse ein, um Benachrichtigungen über den Zustand des Systems zu erhalten."
+
 #~ msgid "Country (2 letter code)"
 #~ msgstr "Land (2-Buchstaben-Code)"
 
@@ -1325,6 +1341,9 @@ msgstr ""
 
 #~ msgid "State or province not correct."
 #~ msgstr "Staat oder Provinz nicht korrekt."
+
+#~ msgid "Parameters not correct."
+#~ msgstr "Die Parameter sind nicht korrekt."
 
 #~ msgid "Certificate not valid."
 #~ msgstr "Zertifikat ungültig."
@@ -1566,6 +1585,12 @@ msgstr ""
 #~ msgid "No Unix users have <tt>.fetchmailrc</tt> files."
 #~ msgstr "Keiner der Unix-Benutzer hat eine <tt>.fetchmailrc</tt> Datei."
 
+#~ msgid "Scheduled Checking"
+#~ msgstr "Geplante Überprüfung"
+
+#~ msgid "Fetchmail version $1"
+#~ msgstr "Fetchmail Version $1"
+
 #~ msgid "Add query"
 #~ msgstr "Abholauftrag hinzufügen"
 
@@ -1607,6 +1632,9 @@ msgstr ""
 
 #~ msgid "Always fetch all messages?"
 #~ msgstr "Immer alle Nachrichten abholen?"
+
+#~ msgid "Usually no"
+#~ msgstr "Üblicherweise nicht"
 
 #~ msgid "Connect in SSL mode?"
 #~ msgstr "Mit SSL verbinden"
@@ -1674,11 +1702,17 @@ msgstr ""
 #~ msgid "Failed to stop fetchmail"
 #~ msgstr "Konnte Fetchmail nicht anhalten"
 
+#~ msgid "You are not allowed to stop fetchmail"
+#~ msgstr "Sie haben keine Berechtigung fetchmail zu stoppen"
+
 #~ msgid "Failed to start fetchmail"
 #~ msgstr "Konnte Fetchmail nicht aktivieren"
 
 #~ msgid "Missing or invalid checking interval"
 #~ msgstr "Das Prüfintervall fehlt oder ist ungültig"
+
+#~ msgid "You are not allowed to start fetchmail"
+#~ msgstr "Sie haben keine Berechtigung fetchmail zu starten"
 
 #~ msgid "Checking Servers"
 #~ msgstr "Prüfe Server"
@@ -1691,6 +1725,9 @@ msgstr ""
 
 #~ msgid ".. checking failed!"
 #~ msgstr "... Prüfung gescheitert!"
+
+#~ msgid "Default Settings"
+#~ msgstr "Standardeinstellungen"
 
 #~ msgid "Default settings for all servers"
 #~ msgstr "Standard-Einstellungen für alle Server"
@@ -2152,6 +2189,16 @@ msgstr ""
 #~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
 #~ "Meldung"
 
+#, fuzzy
+#~ msgid "Send"
+#~ msgstr ""
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Verschicken\n"
+#~ "#-#-#-#-#  de.po (yaffas 1.0)  #-#-#-#-#\n"
+#~ "Gesendet"
+
 #~ msgid "Please complete all forms and check your e-mail address."
 #~ msgstr "Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse."
 
@@ -2527,6 +2574,9 @@ msgstr ""
 #, fuzzy
 #~ msgid "DNS server for resolving names into IP adresses."
 #~ msgstr "Die DNS Server Adresse muss eine IP-Adresse sein."
+
+#~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+#~ msgstr "Dieser Wert wird bei der Namensauflösung an kurze Namen angehängt.<br>Um den Namen \"server\" aufzulösen wird dieser Wert angehängt, z.B. yaffas.org -> server.yaffas.org"
 
 #, fuzzy
 #~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."

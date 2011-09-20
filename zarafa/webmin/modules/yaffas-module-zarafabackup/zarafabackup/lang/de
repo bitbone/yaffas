@@ -32,7 +32,7 @@ lbl_backup_dir=Sicherungs Verzeichnis
 lbl_remove=Entfernen
 lbl_preserve_time=Vollsicherung aufbewahren (in Tagen)
 lbl_clean_dir=Lösche Verzeichnis
-lbl_restore_start_msg=Click on "restore" to restore the selected messages.
+lbl_restore_start_msg=Klicken sie auf "Wiederherstellen" um die ausgewählten Nachrichten wiederherzustellen.
 lbl_no_backup=Kein Backup zur Auswahl verfügbar
 
 err_time=Zeitangabe nicht korrekt.

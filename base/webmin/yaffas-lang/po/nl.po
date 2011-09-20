@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-20 12:11+0300\n"
+"POT-Creation-Date: 2011-09-20 12:25+0300\n"
 "PO-Revision-Date: 2011-09-20 10:14+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,10 +77,11 @@ msgstr ""
 msgid "Zarafa"
 msgstr ""
 
+# 76%
 #: lang/en:15
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Could not connect to Postgres database."
-msgstr ""
+msgstr "Kan geen verbinding krijgen met de database."
 
 #: lang/en:16
 #, no-wrap
@@ -362,10 +363,11 @@ msgstr ""
 msgid "Loading please wait..."
 msgstr ""
 
+# 83%
 #: lang/en:81
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Error"
-msgstr ""
+msgstr "Fouten"
 
 #: lang/en:82
 #, no-wrap
@@ -635,6 +637,11 @@ msgstr ""
 #~ msgid "Groups"
 #~ msgstr "Groep"
 
+# 75%
+#, fuzzy
+#~ msgid "User"
+#~ msgstr "Gebruikt"
+
 # 80%
 #, fuzzy
 #~ msgid "Filetype"
@@ -763,9 +770,6 @@ msgstr ""
 #~ msgid "Receive"
 #~ msgstr "Ontvangen"
 
-#~ msgid "Send"
-#~ msgstr "Verzenden"
-
 #~ msgid "Bytes"
 #~ msgstr "Bytes"
 
@@ -820,6 +824,16 @@ msgstr ""
 #~ msgid "Command"
 #~ msgstr "Commando"
 
+# 80%
+#, fuzzy
+#~ msgid "Used%"
+#~ msgstr "Gebruikt"
+
+# 75%
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "klaar"
+
 # 87%
 #, fuzzy
 #~ msgid "Features"
@@ -829,3 +843,26 @@ msgstr ""
 #, fuzzy
 #~ msgid "Install New Key"
 #~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Send"
+#~ msgstr "Verzenden"
+
+# 90%
+#, fuzzy
+#~ msgid "Uptime of"
+#~ msgstr "Uptime van"
+
+# 77%
+#, fuzzy
+#~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 87%
+#, fuzzy
+#~ msgid "Products"
+#~ msgstr "Product"
+
+# 88%
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Wachtwoord"

@@ -28,12 +28,12 @@ lbl_default_quota=Standard Quota
 lbl_default_quota_header=Standard Quota
 lbl_no_quota=Aus
 
-lbl_default_features=Default features
+lbl_default_features=Standardfunktionen
 lbl_feature=Funktion
 lbl_state=State
 
-lbl_database_settings=MySQL settings
-lbl_mysql_database=Database
+lbl_database_settings=MySQL Einstellungen
+lbl_mysql_database=Datenbank
 lbl_mysql_host=Server
 lbl_mysql_user=Benutzername
 lbl_mysql_password=Passwort

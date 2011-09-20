@@ -1,6 +1,6 @@
 index_title=Abholaufträge
 index_poll=Abzufragender Server
-index_proto=Protocol
+index_proto=Protokoll
 index_active=Aktiv?
 index_users=Entfernter und lokaler Anwender
 index_add=Hinzufügen eines neuen Servers
@@ -17,9 +17,9 @@ index_startmsg=Klicken Sie hier, um das Fetchmail-Programm auf diesem Rechner zu
 index_stopmsg=Klicken Sie hier, um das Fetchmail-Programm zu stoppen das momentan als Benutzer $1 arbeitet. Die Post wird dann nicht mehr alle $2 Sekunden abgeholt.
 index_efetchmail=Das Fetchmail-Programm $1 konnte nicht gefunden werden. Vielleicht ist Fetchmail nicht auf dem System installiert, oder die <a href='$2'>Modul Konfiguration</a> stimmt nicht.
 index_none=Keiner der Unix-Benutzer hat eine <tt>.fetchmailrc</tt> Datei.
-index_cron=Scheduled Checking
+index_cron=Geplante Überprüfung
 index_crondesc=Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above.
-index_version=Fetchmail version $1
+index_version=Fetchmail Version $1
 
 poll_create=Abholauftrag hinzufügen
 poll_edit=Abholauftrag bearbeiten
@@ -28,7 +28,7 @@ poll_poll=Mailserver-Name
 poll_skip=Abholung aktiviert?
 poll_via=Abzufragender Mailserver
 poll_via_def=Identisch mit Mailserver-Name
-poll_proto=Protocol
+poll_proto=Protokoll
 poll_port=Mailserver-Port
 poll_uheader=Mailserver Benutzerdetails
 poll_user=Benutzername auf Mailserver
@@ -37,7 +37,7 @@ poll_is=Lokaler Benutzer
 poll_is_gate=Lokale Benutzer oder E-Mail Adressen
 poll_keep=Nachrichten auf dem Server belassen?
 poll_fetchall=Immer alle Nachrichten abholen?
-poll_usually=Usually no
+poll_usually=Üblicherweise nicht
 poll_ssl=Mit SSL verbinden
 poll_err=Konnte Server nicht speichern
 poll_epoll=Der Servername fehlt oder stimmt nicht
@@ -61,10 +61,10 @@ poll_interval=Abholintervall
 poll_envelope=Envelope
 
 stop_err=Konnte Fetchmail nicht anhalten
-stop_ecannot=You are not allowed to stop fetchmail
+stop_ecannot=Sie haben keine Berechtigung fetchmail zu stoppen
 start_err=Konnte Fetchmail nicht aktivieren
 start_einterval=Das Prüfintervall fehlt oder ist ungültig
-start_ecannot=You are not allowed to start fetchmail
+start_ecannot=Sie haben keine Berechtigung fetchmail zu starten
 
 check_title=Prüfe Server
 check_exec=Prüfe Mails auf Server(n) mit dem Befehl $1 ...
@@ -72,7 +72,7 @@ check_ok=... Prüfung vollständig.
 check_failed=... Prüfung gescheitert!
 
 lbl_settings=Einstellungen
-global_title=Default Settings
+global_title=Standardeinstellungen
 global_header=Standard-Einstellungen für alle Server
 global_err=Das Speichern der Standard-Einstellungen ist gescheitert
 
@@ -101,7 +101,7 @@ acl_this=Aktuellen Webmin-Benutzer
 acl_only=Nur Benutzer
 acl_except=Alle Benutzer ausser
 
-cron_title=Scheduled Checking
+cron_title=Geplante Überprüfung
 cron_desc=This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time.
 cron_header=Scheduled Fetchmail settings
 cron_enabled=Scheduled checking enabled?

@@ -32,7 +32,7 @@ lbl_search=Suchdomänen
 lbl_dns=DNS Server IP-Adresse
 lbl_index_return=Netzwerk
 lbl_delete=Löschen
-lbl_interface=Interface
+lbl_interface=Schnittstelle
 lbl_base_settings=Grundeinstellungen
 
 lbl_enabled=aktiviert
