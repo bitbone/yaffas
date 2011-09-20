@@ -1,0 +1,93 @@
+== Mailserver
+
+
+
+=== Fetchmail
+
+Fetchmail wird benutzt um E-Mails von externen Postfächern abzuholen. Über den Reiter  _"Abholauftrag hinzufügen"_ können Sie einen neuen Eintrag für fetchmail vornehmen.
+
+Der  _"Mailserver-Name"_ ist die Bezeichnung, unter der die Einstellungen gespeichert werden. Wenn dieser gleichzeitig dem tatsächlichen Namen des Mailservers entspricht, können Sie in der Zeile darunter die entsprechende Option aktivieren. Falls nicht, so muss der tatsächliche Name eingetragen werden. Über die Option  _"Abholung aktiviert"_ stellen Sie ein, ob von diesem Mailserver E-Mails geholt werden sollen oder nicht. Über das Protokoll-Feld wird der Typ des Protokolls angegeben. Sollte ihr Maildienst nicht auf dem Standardport für das jeweilige Protokoll laufen, so könnnen Sie im Feld  _"Port"_ eine andere Portnummer angeben.
+
+In den Benutzerdetails können Sie Einstellungen vornehmen, die den Benutzer betreffen unter dessen Kennung die Mails abgeholt werden.  _"Benutzername"_ und  _"Passwort"_ sind die Daten, welche dem Mailserver übermittelt werden. Als  _"Lokales Ziel"_ können Sie festlegen, wohin die abgeholten Mails weitergeleitet werden sollen. Hier können Sie entweder eine lokale Mailbox, einen angelegten Mailalias oder " _Multidrop_  wählen. 
+
+Im  _Multidrop_ Modus wird jeweils der  _"localpart"_ (links vom @-Zeichen) der Empfängeradresse ausgewertet und nach einem lokalen Benutzer oder Alias gleichen Namens gesucht, an den die Mail dann zugestellt wird. Alle weiteren Felder sind optional und können den eigenen Bedürfnissen angepasst werden. 
+
+
+
+=== Mailserver Konfiguration
+
+
+==== Grundkonfiguration
+Über den Reiter  _"Grundkonfiguration"_ können Sie die Konfiguration Ihres Mailservers anpassen. Der  _"Mailserver Name"_ ist der Name, der bei ausgehenden E-Mails an den entfernten SMTP-Server gesendet wird. Diese Einstellung ist optional.
+
+Mit der maximalen Mailgröße kann die Größe ein- und ausgehender Mails begrenzt werden. Die Eingabe erfolgt in MB. Ohne diese Option können Mails unbegrenzter Größe gesendet werden. 
+
+
+
+
+==== Lokale Domänen
+Über  _"Lokale Domänen"_ können die Domains festgelegt werden für die sich der Mail-Server zuständig fühlen soll. E-Mails an diese Domains werden dann angenommen und lokal zugestellt.
+
+
+
+
+==== Smarthost
+Unter dem Reiter  _"Smarthost"_ tragen Sie die IP-Adresse des Mailservers Ihrer Firma oder des Providers ein. Dieser Server ist dann für die Auslieferung von externen E-Mails zuständig. Sollte dieser Mailserver eine Authentifizierung verlangen, so tragen Sie die erforderlichen Daten bei  _"Benutzername"_ und  _"Passwort"_ ein. Der Benutzername muss mindestens zwei Zeichen lang sein!
+
+
+
+
+==== Open Relay Subnetze
+Für alle unter dem Reiter  _"Open-Relay Subnetze"_ aufgeführten Adressen ist ein externer Mailversand ohne Anmeldung möglich. Hier sollten also alle Netze (IP-Subnetze) und Rechner (einzelne IP-Adressen) eingetragen werden, denen der externe Mailversand ohne Authentifizierung erlaubt werden soll. 
+
+Immer möglich ist dagegen der Mailversand an Domains für die der Mailserver zuständig ist. Ein Beispiel für das Freischalten eines Subnetzes wäre der Eintrag _"192.168.0.0/24"_, wobei _"/24"_ die Anzahl der gesetzten Bits in der Netzmaske angibt. Die Netzmaske würde also in diesem Fall _"255.255.255.0"_ lauten. 
+
+
+
+=== Mail-Warteschlange
+
+In der Mail-Warteschlange befinden sich alle E-Mails, die nicht versendet werden konnten.
+Über einen Rechtsklick kann man die ausgewählte E-Mail löschen, versuchen sie auszuliefern, sie an den Postmaster oder einen beliebigen User weiterleiten oder anzeigen. 
+
+
+
+=== Mailalias Konfiguration
+Durch das Mailalias-Modul werden alle gesetzten Mailaliase - sowohl die Aliase des Systems, als auch eigene Aliase - angezeigt. 
+
+[TIP]
+==============
+Beim Hinzufügen eines Mailaliases ist zu beachten, dass die Aliasprüfung **vor** der Mailboxzuweisung abgearbeitet wird. Somit kann es passieren, dass E-Mails einem anderen Benutzer zugewiesen werden obwohl der betreffende Benutzer eine Mailbox auf dem Server hat. Prüfen Sie also in einem solchen Fall alle gesetztenMailaliase.
+==============
+
+Über den Reiter  _"Alias hinzufügen"_ können neue Aliase definiert werden. Durch Komma getrennt können einem Alias auch mehrere Benutzer als Ziel zugewiesen werden. Als Ziel kann ein Benutzer der {product} Installation oder eine E-Mail-Adresse angegeben werden.
+
+Wollen Sie einen Alias entfernen, klicken Sie in der Übersicht mit der rechten Maustaste auf den entsprechenden Eintrag und wählen Sie den Eintrag  _"Löschen"_ 
+
+
+
+=== Sicherheit
+
+[IMPORTANT]
+==============
+
+Die Dienste spamassassin und clamav müssen über das Dienste Modul separat gestartet werden, bevor diese vom Sicherheitsmodul genutzt werden können. Ein reines Aktivieren im Sicherheitsmodul genügt nicht. Haben Sie diese Dienste nach dem Aktivieren im Sicherheitsmodul gestartet, so muss der Dienst amavis ebenfalls neu gestartet werden.
+
+==============
+
+[TIP]
+==============
+
+Falls der clamav Dienst sich nicht starten lässt, so hat dieser möglicherweise noch keine Virensignaturen. Diese bezieht der freshclam Dienst automatisch, benötigt dafür aber eine Internetverbindung. Sollte bei Ihnen hierfür ein Proxy Server nötig sein, so tragen Sie diesen entsprechend unter Netzwerkkonfiguration ein. Dadurch wird eine erneute Aktualisierung der Signaturen mittels freshclam ausgelöst.
+
+==============
+
+
+
+=== Rundmail
+Sie können über das  _Rundmail_ Modul eine E-Mail an alle Benutzer schicken. Tragen Sie hierzu bitte Ihre Absender E-Mail Adresse, den Betreff und die Nachricht ein. Nach einem Klick auf Verschicken wird die E-Mail versendet.
+
+[NOTE]
+==============
+Beachten Sie, dass es ein paar Minuten dauern kann, bis alle E-Mails in die Mailboxen verteilt worden sind.
+==============
+

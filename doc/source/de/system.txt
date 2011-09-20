@@ -1,0 +1,60 @@
+== System
+
+=== Dienste
+
+==== Dienste starten und beenden
+
+Über den Menüpunkt  _"Dienste"_ kann der Status der einzelnen Systemdienste abgerufen werden. Soll ein Dienst gestartet, gestoppt oder ein Neustart durchgeführt werden, so kann sich die gewünschte Aktion per Rechtsklick auf den entsprechenden Dienst auswählen lassen. Zusätzlich kann noch enigestellt werden, ob der Dienst bereits beim Booten gestartet werden soll und ob der Dienst überwacht werden soll. Bei  _"Überwachung"_ des Dienstes erhält der Admin eine Benachrichtigung per E-Mail falls der Dienst ausfällt.
+
+
+
+==== Systemzeit
+Unter diesem Reiter lässt sich die Systemzeit manuell ändern. Dazu wird die gewünschte Zeit über Drop-Down-Feldern eingestellt und anschließend übernommen. Soll die Systemuhr auf die Hardware-Zeit (BIOS) gestellt werden, so kann dies über "Synchronisiere Systemzeit mit Hardware-Zeit" vorgenommen werden.
+
+
+
+==== Zeitserver
+Zusätzlich kann die Zeit mit einem Zeitserver synchronisiert werden. Dies ist einmalig oder in stündlichen bzw. täglichen Intervallen möglich. Dazu wird die IP-Adresse oder der Hostname des Zeitservers in das entsprechende Feld eingetragen und der gewünschte Intervall gesetzt.
+
+Beispielsweise können die im folgenden aufgelisteten Zeitserver verwendet werden. Voraussetzung dafür ist, dass ein gültiger DNS-Server konfiguriert wurde.
+
+  * time.fu-berlin.de
+  * ntp0.fau.de
+  * ntp1.ptb.de
+
+
+
+==== Neustart / Herunterfahren
+Der Server lässt sich über den Reiter  _"System herunterfahren"_ wahlweise neustarten oder ausschalten. 
+
+
+
+=== Zertifikat / Schlüssel Verwaltung 
+
+Um die Kommunikation mit dem Webinterface und den Mailverkehr zu verschlüsseln werden Zertifikate und Schlüssel benötigt. Diese garantieren die Authentizität, Vertraulichkeit und Integrität der Daten gegenüber Dritten. Kostenlos signierte SSL-Zertifikate sind unter der Adresse <http://www.cacert.org> erhältlich.
+
+Über den Menüpunkt "Zertifikat / Schlüssel Verwaltung" lassen sich diese verwalten. Hier können Sie selbst Zertifikate erstellen und diese mit Ihrem eigenen Schlüssel signieren. Sie können auch bereits erstellte Zertifikate importieren oder Zertifikate vom System löschen.
+
+
+==== Zertifikate verwalten
+Über den Reiter  _"Verwalte installierte Zertifikate"_ werden alle auf dem System vorhandenen Zertifikate angezeigt. Wenn Sie ein Zertifikat löschen mochten, so setzen Sie den Haken vor dem Zertifikat und klicken Sie auf den Button  _Löschen_  Das Defaultzertifikat default.crt, welches für alle Dienste des Systems verwendet wird, kann nicht gelöscht werden.
+
+[TIP]
+==============
+Wenn Sie  _"default.crt"_ austauschen möchten, so müssen Sie entweder ein neues Zertifikat für alle Dienste erstellen, oder ein vorhandenes Zertifikat importieren.
+==============
+
+
+==== Eigene Zertifikate erstellen
+Um selbst ein Zertifikat zu erstellen, klicken Sie auf den Reiter  _"Generiere Selbst Signierte Zertifikate und Schlüssel"_  füllen alle Felder aus und erstellen das Zertifikat mit einem Klick auf "Generiere Schlüssel". Sollten Sie bei Service  _"all"_ ausgewählt haben, dann haben Sie das Default-zertifikat erstellt. Dieses wird immer dann verwendet, wenn keine anderen Zertifikate speziell für einen Service vorhanden sind. Alle anderen Werte für  _Service_ erstellen ein Zertifikat für den entsprechenden Dienst.
+
+
+==== Zertifikate importieren
+Möchten Sie ein vorhandenes Zertifikat hochladen, so klicken Sie auf den Reiter  _"Zertifikat hochladen"_ und auf Durchsuchen um die Datei auf Ihrer Festplatte auszuwählen.
+Wählen Sie die Datei mit dem Zertifikat aus und klicken Sie auf Öffnen. Nun schließt sich der Dialog und Sie müssen noch den Service auswählen, für den Ihr Zertifikat gelten soll. Nach dem Import sollten Sie eventuell die noch vorhandenen doppelten Zertifikate für andere Dienste löschen.
+
+[IMPORTANT]
+==============
+
+Um ein Zertifikat erfolgreich zu importieren, müssen sich der Key und das Zertifikat zusammen in einer Datei befinden. Dabei ist zu beachten, dass der Key an **erster** Stelle steht und die Datei **nicht** verschlüsselt ist.
+==============

@@ -1,0 +1,58 @@
+== System
+
+=== Services
+
+==== Start and Stop Services
+
+By selecting the menu item "services" the state of each system service can be shown. If you right click on a service, you can start, stop or re-start the service. Furthermore, you can choose to start the service by booting the system and to monitor the service. Then the admin will receive an email notification if the service fails.
+
+
+==== System Time
+At this tab you can manually set the system time. Time can be set with drop-down fields and be saved afterwards. If the system time shall be provided by the hardware time (BIOS), this can be done on "Synchronizing System Time with Hardware Time".
+
+
+==== Time Server
+Additionally, time can be synchronized with a time server. This is possible once or in hourly or daily intervals. For this purpose enter the IP address or the hostname of the time server and choose an interval.
+
+For example, the below listed time servers can be used. The precondition is that a valid DNS server is configured.
+
+   * time.fu-berlin.de
+   * ntp0.fau.de
+   * ntp1.ptb.de
+
+
+
+==== Restart / Shutdown
+At the tab "Shutdown System" you can reboot or shut down the system.
+
+
+
+=== Certificate / Key Management
+
+Certificates and keys are required to encrypt communications with the web interface as well as the mail traffic. They guarantee the authenticity, confidentiality and integrity of the data to third parties. Free signed SSL certificates are available at <http://www.cacert.org>.
+
+Under the menu item "Certificate / Key Management" they can be managed. You can even create certificates and sign it with your own key. You can also import or delete existing certificates.
+
+
+==== Manage Certificates
+Using the tab "Manage Installed Certificates" all certificates existing on the system are displayed. If you want to delete a certificate, tick the box on the left of the certificate and click on the button "delete". The default certificate "default.crt", which is used for all services of the system, cannot be deleted.
+
+[TIP]
+==============
+If you want to replace "default.crt", you must either create a new certificate for all services or import an existing certificate.
+==============
+
+
+==== Create Own Certificates
+To create a certificate yourself, click on the tab "Generate Self Signed Certificate and Key", fill in all fields and create the certificate by clicking on "Generate Key". If you choose "all" at the drop-down field "Service", you can create a default certificate. This is always used if no other certificates are available specific to a service. All other choices ​​for "Service" create a certificate for the respective service.
+
+
+==== Upload Certificates
+If you want to upload an existing certificate, click on the tab "Upload Certificate" and click on "Browse" to choose the file from your hard disk.
+Select the file with the certificate and click "Open". After the dialog closed itself you have to select the service to which your certificate shall apply. Finally, you should delete any remaining duplicates.
+
+[IMPORTANT]
+==============
+
+The key and the certificate must be contained together in one file to successfully import a certificate. Please note that the key should come **first** and the file **must not be** encrypted.
+==============

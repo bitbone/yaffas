@@ -1,0 +1,46 @@
+== Network
+
+=== Configuration
+
+==== Basic Configuration
+Basic network configurations can be set under the menu item "Networking" -> "Configuration" at the tab "Base Settings".
+
+[NOTE]
+==============
+Type the name of the computer into the field "Host Name". With this name the computer will be reachable in the network. The name is also the name in the Windows network.
+The "Domain Name" must be formatted as required in http://www.ietf.org/rfc/rfc1034.txt[RFC 1034] (e. g. "bitbone.de").
+The "Workgroup" is required for Windows networks.
+==============
+
+
+
+==== Proxy Settings
+The settings for HTTP proxy are required for downloading {product} updates if your network doesn't have a direct internet access.
+
+Please type the IP address into the field "Proxy" and and the port of your HTTP proxy server into the second field. If your proxy needs user authentication, enter the required data in "User" and "Password". Confirm with "Save".
+
+==== Interface Configuration
+Each available interface has an own tab for it's basic settings at the "Interface" tabs.
+
+If your network contains multiple network areas and the mail server or individual workstations are located in a different network, the default gateway must be specified. In this case the address of your DNS server must be entered in the field "DNS Server IP". You can also enter several search domains, which are used for resolving host names if a full name is not provided.
+
+The settings for each interface are only active when the interface is activated. If multiple interfaces are activated simultaneously, the settings for all interfaces can be processed.
+
+By clicking the button "New Virtual IP Address" you can configure an additional IP address for the associated interface. For this virtual interface you can use the same values as used for a usual interface.
+
+
+
+=== SNMP
+
+Click the checkbox under the menu item "Networking -> SNMP Configuration" to enable access via SNMP protocol. You can set the password for SNMP access in the field "Community".
+
+[IMPORTANT]
+==============
+Using SNMP data is generally transmitted unencrypted via network.
+For your own safety, please choose another password than "root" or the administrator's password!
+==============
+
+The field "Access For" defines who has access to the SNMP agent. The entry "default" means, that only requests from the local machine are allowed.
+
+You can enter a single IP address or a subnet following the http://tools.ietf.org/html/rfc4632[CIDR]-pattern _address/mask_ (e. g. 192.168.0.1/24).
+

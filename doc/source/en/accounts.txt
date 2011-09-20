@@ -1,0 +1,181 @@
+== Accounts
+
+===  Authentication Server
+
+The menu topic  _"Accounts->Authentication Server"_ leads to a page for configuring the source for authentication.
+
+After installation of {product} this has to be configured first because other services depend on it. Users and groups can only be created after selecting an authentication type.
+
+
+
+{product} can use a local LDAP, a remote {product} LDAP or a Microsoft Windows Active Directory domain for authentication.
+
+When using the local LDAP for authentication the server can also be used as (LDAP) authentication server for other remote systems.
+
+[WARNING]
+==============
+When changing the authentication type all settings that apply to users will be deleted. Those settings have to be re-applied after the change.
+
+{product} tried to find existing users in the new authentication source. Data from users that can not be found will be deleted.
+==============
+
+
+
+To select a type of authentication choose the tab  _"Select authentication"_ below the menu topic  _"Accounts->Authentication Server"_ 
+
+
+====  Local Authentication
+When choosing these method a local LDAP will be used for storing users and groups. You can optionally choose to let this server be used by other servers as authentication source.. 
+
+
+
+
+
+==== {product} LDAP Server
+If you already use another {product} server with local LDAP authentication you can enter it's connection details here. Users and groups on the remote system can then be used on the local server. 
+
+[NOTE]
+==============
+A {product} server which authenticates it's users against a remote server can not act itself as an authentication server. Should this option be active it will automatically be deactivated.
+==============
+
+The following values have to be configured to run the LDAP server:
+[options="header"]
+|======
+| Value | Function 
+| Server/IP | DNS name or IP address of the remote {product} server. The remote side has to be configured to accept authentication requests. 
+| Base DN | The base DN defines at which point in the LDAP-Tree a search for a certain object should be started. 
+| Bind DN | The bind DN and the bind password are used for authentication against the remote LDAP server. 
+| Bind password | The password for LDAP authentication. I case of problems with the authentication try using a CRYPT-hashed password. 
+|======
+
+
+====  Remote LDAP Authentication
+You can use {product} together with any remote LDAP server. Only the schema as to be installed on the remote LDAP server. 
+
+[options="header"]
+|======
+| Value | Function 
+| Server/IP | Enter the remote LDAP server's IP. 
+| Base DN | Insert the same value as in the remote server. 
+| Bind DN | Insert the same value as in the remote server. 
+| Base DN user | Insert the same value as in the remote server. 
+| Base DN group | Insert the same value as in the remote server. 
+| Bind password | Insert the same value as in the remote server. 
+| Search attribute user | Enter the attribute where user and group information should be searched for. 
+|======
+////
+/*
+ * | Drucker Operatoren Gruppe | Tragen Sie hier bitte ein, welche Benutzergruppe die Berechtigung haben soll Druckertreiber auf den Server hochzuladen. |
+*/
+////
+
+
+////
+/*
+*====  PDC Authentifizierung ====
+*Mit Hilfe dieses Authentifizierungsmechanismus, können Sie {product} einer bestehenden Windows Domäne beitreten lassen. Anschließend stehen alle Benutzer und Gruppen der Domäne - mit ihren Passwörtern - auf dem {product} zu Verfügung. 
+
+*<note>Beim Aktivieren von PDC- oder AD-Authentifizierung wird automatisch die verwendete Arbeitsgruppe auf den Kurznamen der Domäne gesetzt. Dies ist für die Funktionalität notwendig. Der Arbeitsgruppenname ist daher auch für Änderungen gesperrt.
+
+*Am Windows Server selbst müssen keinerlei Änderungen durchgeführt werden. Es wird lediglich ein Computerkonto für den {product} Server erzeugt.
+
+*Stellen Sie sicher, dass die Systemuhr des {product}-Servers nicht mehr als 5 Minuten von der Zeit des PDC abweicht; andernfalls kann es zu Problemen bei der Benutzerauthentifizierung kommen.
+==============
+
+*^ Feld ^ Funktion ^
+*| Primary Domain Controller | Rechnername bzw. IP-Adresse des Windows *ActiveDirectory Servers. |
+*| Domäne | Fully Qualified Name der Domäne (z.B. bitbone.local) |
+*| Domänenadministrator | Loginname eines Benutzers mit Domänenadministrator Rechten. |
+*| Bind Passwort | Passwort des Benutzers. |
+*| Drucker Operatoren Gruppe | Tragen Sie hier bitte ein, welche Benutzergruppe die Berechtigung haben soll Druckertreiber auf den Server hochzuladen. |
+*
+*/
+////
+
+
+
+==== Active Directory
+When using this type of authentication {product} can join an Active Directory domain. All users and groups of this domain will be available in {product}. 
+
+
+[NOTE]
+==============
+When using Active Directory authentication it is advisable to enter the domain controller as first DNS server in the network configuration.
+==============
+
+[options="header"]
+|======
+| field | function 
+| Domain Controller | Name or IP address of the Active Directory server. 
+| Domain | Name of the AD domain. 
+| Domain administrator | Username of an account with administrator privileges. Used for joining the domain. This user is searched in the cn=users organization unit.
+|======
+////
+/*
+*| Drucker Operatoren Gruppe | Tragen Sie hier bitte ein, welche Benutzergruppe die Berechtigung haben soll Druckertreiber auf den Server hochzuladen.| 
+*/
+////
+
+For simple queries to the domain controller a standard user account is sufficient. Please enter the account information for this.
+
+[WARNING]
+==============
+If you change the active directory user, his password or the DN of your server, you have to change those in the authentication module too!
+==============
+
+
+
+=== User Management
+
+In the UI under  _Accounts->User management_ all existing users are shown. When you have a lot of users the sort and filter options can be useful. To edit or delete an existing user you have to right-click on that user's entry.
+
+
+
+==== Adding new users
+To create a new user open the  _"Add user"_ tab. The username, given name, surname and password fields are required. Setting group memberships is optional. Selecting multiple groups or removing a group from the selection can be achieved by pressing <CTRL> while clicking. 
+
+[NOTE]
+==============
+special case {product} & ZARAFA:
+
+The field  _"E-mail address"_ is used for sending e-mails but not for receiving. If the local part of the e-mail address is different from the username the e-mail address has to be inserted into the  _"E-mail alias"_ field. Otherwise e-mails can not be received.
+
+
+==============
+
+The field  _"E-mail alias"_ can be used to add e-mail aliases for this user.
+
+[NOTE]
+==============
+A mailbox will only be created after the first incoming e-mail or after the first login. This means that settings for default quota and default folders can be different from the time the user was created.
+
+If you want a user's mailbox to be created you could send him an e-mail or log in as that user. If there is a large number of users the bulk mailing feature can be used to make this task easier.
+==============
+
+
+
+
+=== Group Management
+The menu topic  _"Group Management"_ will show an overview of the available groups.
+
+New groups can be created on the tab  _"Create group"_  After entering a name for the new group and clicking on "create" the new group will be created.
+
+[TIP]
+==============
+If you want to create multiple groups enter them separated by comma.
+==============
+
+Existing groups can be edited by right-clicking on their entry.
+
+
+
+
+=== Admin password
+The admin password for the {product} Web-UI can be changed after selecting this this menu topic. The password has to be entered twice before clicking on "Save". 
+
+[TIP]
+==============
+Passwords should not contain user related strings, dictionary words or  _"simple"_ combinations of characters (e.g. characters next to each other on the keyboard).
+==============
+

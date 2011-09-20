@@ -1,0 +1,143 @@
+== Zarafa
+
+=== Zarafa Licence Key
+In this module you can extend the numbers of users with Outlook access to Zarafa. Three users have access via Outlook without any licence key. If you want more users to have access you may buy a licence pack. 
+The licence key has two components: a basis key and an additional user key. 
+Please insert the key into the specific (basis or user) field an click the button.  _"key upload"_ 
+
+At the tab  _"Installed Licences"_ all licences are shown. You will get more information at the tab  _"Licence Log"_ 
+
+
+
+=== Groupware Configuration
+In this module you can optimize memory (RAM) for Zarafa, define the size of attachments or the content of quota emails for users.
+
+Click  _"Optimize"_ to optimize the memory settings on your system. This is only necessary if the size of the RAM changes. The RAM will be optimized for Zarafa. 
+
+You can also set the maximum size of attachments uploadable via the Zarafa Webaccess Interface. 
+
+[TIP]
+==============
+This limitation does **not** overwrite the setting of the mailserver. If there is a smaller size of attachments allowed, the mailserver settings are valid.
+==============
+
+At the tab  _"Messages At Reaching Quota"_ you can customize the messages for reaching limits. The description of variables is available at the online help. 
+
+The following variables are available:
+
+[options="header"]
+|======
+| Variable | Meaning 
+| $\{ZARAFA_QUOTA_NAME} | name of the Zarafa account 
+| $\{ZARAFA_QUOTA_STORE_SIZE} | current size of the account 
+| $\{ZARAFA_QUOTA_WARN_SIZE} | limit for a warning 
+| $\{ZARAFA_QUOTA_SOFT_SIZE} | limit for a transmission lock of the account  
+| $\{ZARAFA_QUOTA_HARD_SIZE} | limit for a transmission AND reception lock of the account 
+|======
+
+
+=== Resources
+In this module you can create and delete resources. For deleting or modifying right-click on an existing resource and choose an action. 
+
+Please note at the creation of a new resource: A resource needs a name - this name is shown in the global adressbook - and a description.
+You may decide whether a resource can be booked once - ( _"Decline Conflicts"_  and whether recurring appointments are permitted.
+
+[IMPORTANT]
+==============
+If you want to change resource settings, you may change the properties but not the name!
+==============
+
+
+
+=== Zarafa Setup
+
+The configuration of {product} & ZARAFA is done via the known interface. There are some specifics to explain:
+
+As a matter of principle each user account in {product} is also a Zarafa user. Please pay attention that you have a corresponding license of {product} AND of Zarafa. If you have less Zarafa user licences than {product} users, only the users with the lowest UIDs have access to Zarafa. 
+
+
+===  Allocation of Email Addresses
+Please pay attention that during the creation of an user account the entry in the field  _"Email Address"_ is formatted as follows:  _"username@configured_maildomain"_  Otherwise, mail reception is not possible. If you want to use a different email address for reception, please insert it at  _"Email Alias"_ .
+
+The registered address at  _"Email Address"_ is also used as sender for all mails sent via web access. For a proper function please set the local domain(s) on the mailserver at first(menu Mailserver-> Configuration -> Local Domains). 
+
+
+
+=== Zarafa Web Access
+Insert the URL into your browser, e.g. https://zarafaserver.local/webaccess.
+Alternatively, you can choose name or IP address of {product} without mentioning a port number. (e.g. http://zarafaserver.local)
+
+A complete manual and current documentation of Zarafa Web Access can be downloaded here: http://www.zarafaserver.com/doc.
+
+
+
+=== Microsoft Outlook Connection
+
+The client you need for connecting Microsoft Outlook is in   _"software"_ at the directory  _"zarafa"_ on your {product} system. Please use exactly this version of the client, because it is matched with the Zarafa version used in {product}. After updating {product} you should always take the current version of the client out of this directory.
+
+First, install the client on the Windows computer by double-clicking on  _"zarafaclient.exe"_  Please note: You must have administration permissions.
+
+Start Outlook and choose the topic  _"Email Accounts"_ from menu  _"Extras"_  Create a new email account. 
+
+image:media/en/zarafa/guides_zarafa_connect1.png[]
+
+
+
+Server type must be  _"Additional Servers"_  
+
+image:media/en/zarafa/guides_zarafa_connect2.png[]
+
+
+
+If you installed zarafaclient.exe from CD, you must now choose  _"Zarafa Server"_  If you are not able to choose "Zarafa Server", please install the Zarafa client first. 
+
+image:media/en/zarafa/guides_zarafa_connect3.png[]
+
+
+
+Please insert the data of your {product} & ZARAFA server. You can use port 237 for an encrypted transmission (standard) or port 236 for an unencrypted connection. Use username and password like set in {product}.
+
+image:media/en/zarafa/guides_zarafa_connect4.png[]
+
+
+Please make sure that the following setting is made for the new account:  _"New Messages Send to"_ must match  _"Inbox User"_  Close Outlook and start it again. Now you can access your store and use mail, calendar or contacts... . 
+
+[NOTE]
+==============
+Please understand that we are not able to give support to any issue of using, configuring or installing Microsoft Outlook!
+==============
+
+
+
+=== Backup Path
+At this point we show an unspecific way to backup the data of the server. For a successful recovery of the data the {product} server must be on the same level of version and patches!
+
+the paths for the backup of {product} & ZARAFA are:
+[options="header"]
+|======
+| path | entry 
+| /var/log/ | log-files 
+| /data/mail/ | mail boxes and Sieve filter scripts 
+| /var/lib/fetchmail/.fetchmail-UIDL-cache | if fetchmail is used with POP3 
+| Database MySQL (mysqldump) | all data of the Zarafa Server 
+| /data/zarafa/ | email attachments 
+|======
+
+**Procedure for backup of data:**
+
+  - backup of configuration via system -> save configuration
+  - init 1 -> change to single user mode
+  - backup of single paths in a temporary directory
+  - init 2 -> normal mode of use
+  - backup of data to an external data medium
+
+
+**Procedure for recovery of data:**
+
+  - recovery of configuration via system -> save configuration 
+  - copy the data into a temporary directory
+  - init 1 -> change to single user mode
+  - delete all files below the named paths
+  - restore of single paths out of the temporary directory
+  - init 2 -> normal mode of use
+
