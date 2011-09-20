@@ -14,7 +14,7 @@ e_st=Staat oder Provinz nicht korrekt.
 
 err_cert_param=Parameters not correct.
 err_cert_not_valid=Zertifikat ungültig.
-err_fork=Fork missgl�ckt
+err_fork=Fork missglückt
 err_cert_creation=Zertifikat wurde nicht erstellt.
 err_nothing_selected=Es wurde nichts ausgewählt.
 
@@ -60,6 +60,6 @@ view_header=Verwalte installierte Zertifikate
 
 restart_service=Die Dienste werden neu gestartet!
 
-yes=yes
-no=no
+yes=ja
+no=nein
 succsess=Erfolgt

@@ -14,7 +14,7 @@ e_st=State or province not correct.
 
 err_cert_param=Parameters not correct.
 err_cert_not_valid=Certificate not valid.
-err_fork=Fork missglückt
+err_fork=Fork failed
 err_cert_creation=Certificate wasn't created.
 err_nothing_selected=No certificate selected.
 
