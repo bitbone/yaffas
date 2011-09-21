@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-21 00:12+0300\n"
-"PO-Revision-Date: 2011-09-20 16:42+0200\n"
-"Last-Translator: Christof <musik@bitbone.de>\n"
+"POT-Creation-Date: 2011-09-21 01:14+0300\n"
+"PO-Revision-Date: 2011-09-21 09:40+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1305,6 +1305,9 @@ msgstr "Dateisystem Informationen"
 #~ msgid "Password for the SNMP access."
 #~ msgstr "Passwort für den SNMP-Zugriff."
 
+#~ msgid "Enter a single IP address or a network in form of a CIDR ressource. Enter \"default\" to allow access only from the local machine."
+#~ msgstr "Geben sie eine einzelne IP Adresse oder ein Netzwerk in Form einer CIDR Ressource an. Geben sie \"default\" ein, um einen Zugriff nur von der lokalen Maschine zu erlauben."
+
 #~ msgid "Support"
 #~ msgstr "Support"
 
@@ -1692,6 +1695,9 @@ msgstr "Dateisystem Informationen"
 #~ msgid "Scheduled Checking"
 #~ msgstr "Geplante Überprüfung"
 
+#~ msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
+#~ msgstr "Klicken sie hier, um einen Cron-Job zu erzeugen, ändern oder entfernen, der Fetchmail automatisch zu einem geplanten Zeitpunkt E-Mails abrufen lässt. Dazu wird die oben stehende Konfiguration verwendet."
+
 #~ msgid "Fetchmail version $1"
 #~ msgstr "Fetchmail Version $1"
 
@@ -1881,6 +1887,15 @@ msgstr "Dateisystem Informationen"
 #~ msgid "Stopped fetchmail daemon"
 #~ msgstr "Fetchmail-Programm gestoppt"
 
+#~ msgid "Enabled scheduled checking"
+#~ msgstr "Geplantes Abholen aktivieren."
+
+#~ msgid "Modified scheduled checking"
+#~ msgstr "Geplantes Abholen ändern"
+
+#~ msgid "Disabled scheduled checking"
+#~ msgstr "Geplantes Abholen abschalten"
+
 #~ msgid "Can edit fetchmail config for"
 #~ msgstr "Kann Fetchmail-Konfiguration bearbeiten für"
 
@@ -1896,6 +1911,42 @@ msgstr "Dateisystem Informationen"
 #~ msgid "All except users"
 #~ msgstr "Alle Benutzer ausser"
 
+#~ msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
+#~ msgstr "Auf dieser Seite kann ein Cronjob für Fetchmail aktiviert oder deaktiviert werden, um die Mailserver in ihrer Fetchmail-Konfiguration regelmäßig abzufragen. Die Verwendung eines Cronjobs anstatt des Fetchmail-Dienstes hat den Vorteil, dass er nicht beim Boot neu gestartet werden muss."
+
+#~ msgid "Scheduled Fetchmail settings"
+#~ msgstr "Fetchmail Einstellungen für die geplante Abholung."
+
+#~ msgid "Scheduled checking enabled?"
+#~ msgstr "Geplante Abholung aktiviert?"
+
+#~ msgid "Yes, at times configured below .."
+#~ msgstr "Ja, zu den unten stehenden Zeiten ..."
+
+#~ msgid "Destination for Fetchmail output"
+#~ msgstr "Ziel für die Fetchmail Ausgabe"
+
+#~ msgid "Write to file $1"
+#~ msgstr "Schreibe in Datei $1"
+
+#~ msgid "Email to address $1"
+#~ msgstr "E-Mail an Adresse $1"
+
+#~ msgid "Discard"
+#~ msgstr "Verwerfen"
+
+#~ msgid "Output to cron"
+#~ msgstr "Ausgabe an cron"
+
+#~ msgid "Run Fetchmail as user"
+#~ msgstr "Fetchmail als Benutzer ausführen"
+
+#~ msgid "Failed to save scheduled checking"
+#~ msgstr "Speichern der geplanten Abholung fehlgeschlagen"
+
+#~ msgid "Missing or invalid output filename"
+#~ msgstr "Fehlender oder ungültiger Name für die Ausgabedatei"
+
 # 81%
 #~ msgid "Missing or invalid email address"
 #~ msgstr "Fehlende oder ungültige E-Mail Adresse"
@@ -1903,6 +1954,9 @@ msgstr "Dateisystem Informationen"
 # 76%
 #~ msgid "Missing or invalid Unix user"
 #~ msgstr "Fehlende oder ungültiger Unix Benutzer"
+
+#~ msgid "Scheduled checking is not available in this mode"
+#~ msgstr "Die geplante Abholung ist in diesem Modus nicht verfügbar"
 
 #~ msgid "Do you really want to delete this server?"
 #~ msgstr "Möchten sie diesen Server wirklich löschen?"
@@ -1936,6 +1990,24 @@ msgstr "Dateisystem Informationen"
 
 #~ msgid "Fetchmail daemon could not be enabled."
 #~ msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
+
+#~ msgid "Specify the polling interval in seconds."
+#~ msgstr "Geben sie das Abrufintervall in Sekunden an."
+
+#~ msgid "The remote host name or IP address from which you want to receive mail."
+#~ msgstr "Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen wollen."
+
+#~ msgid "The DNS name of the remote server. This setting overrides the server name."
+#~ msgstr "Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen."
+
+#~ msgid "The TCP/IP port of the remote server."
+#~ msgstr "Der TCP/IP Port des entfernten Servers."
+
+#~ msgid "The header name of the envelope address (e.g. X-Envelope-To)."
+#~ msgstr "Der Kopfzeilenname der Umschlagadresse (z.B. X-Envelope-To)."
+
+#~ msgid "Specify the login user from the remote machine."
+#~ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 #~ msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
@@ -2101,6 +2173,15 @@ msgstr "Dateisystem Informationen"
 
 #~ msgid "Features"
 #~ msgstr "Funktionen"
+
+#~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
+#~ msgstr "Wenn ein Benutzer Administrator ist, kann er alle Zarafa Stores aller Benutzer öffnen."
+
+#~ msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
+#~ msgstr "Der Benutzer kann sich nicht anmelden und wird nicht zu den aktiven Benutzern ihrer Lizenz hinzugezählt. Andere Benutzer können den Store dieses Benutzers als Vertreter öffnen."
+
+#~ msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
+#~ msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen darf. Der Benutzer wird gewarnt, wenn er sich diesem Limit nähert. Nachdem das Limit erreicht ist, kann er keine E-Mails mehr senden oder empfangen."
 
 #~ msgid "Add alias"
 #~ msgstr "Alias hinzufügen"
@@ -2386,6 +2467,9 @@ msgstr "Dateisystem Informationen"
 
 #~ msgid "Time Server"
 #~ msgstr "Zeit-Server"
+
+#~ msgid "Enter the hostname or IP address of the time server to be used for NTP."
+#~ msgstr "Geben sie den Hostnamen oder die IP-Adresse des Zeitservers, der für NTP verwendet werden soll, ein."
 
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Falsche Version der Konfigurationsdatei"
@@ -3073,57 +3157,56 @@ msgstr "Dateisystem Informationen"
 #~ msgstr "Zarafa"
 
 # 76%
-#, fuzzy
 #~ msgid "Could not connect to Postgres database."
-#~ msgstr "Konnte die Datenbank nicht erreichen."
+#~ msgstr "Konnte die Postgres-Datenbank nicht erreichen."
 
 # 85%
 # 80%
-#, fuzzy
 #~ msgid "Could not find the following directories:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Verzeichnisse nicht finden:"
 
 # 85%
 # 80%
-#, fuzzy
 #~ msgid "Could not read the following directories:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Verzeichnisse nicht lesen:"
 
 # 81%
-#, fuzzy
 #~ msgid "Could not delete the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Dateien nicht löschen:"
 
 # 81%
-#, fuzzy
 #~ msgid "Could not execute the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Dateien nicht ausführen:"
 
 # 85%
-#, fuzzy
 #~ msgid "Could not find the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Dateien nicht finden:"
+
+#~ msgid "Could not create hard link for the following files:"
+#~ msgstr "Konnte keinen Hardlink für die folgenden Dateien anlegen:"
 
 # 85%
-#, fuzzy
 #~ msgid "Could not read the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Dateien nicht lesen:"
 
 # 81%
-#, fuzzy
 #~ msgid "Could not rename the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Dateien nicht umbenennen:"
+
+#~ msgid "Could not create symlink for the following files:"
+#~ msgstr "Konnte keinen symbolischen Link für die folgenden Dateien anlegen:"
 
 # 83%
-#, fuzzy
 #~ msgid "Could not write the following files:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte in die folgenden Dateien nicht schreiben:"
 
 # 85%
 # 88%
-#, fuzzy
 #~ msgid "Could not find the following users:"
-#~ msgstr "Konnte die folgende Datei nicht kopieren:"
+#~ msgstr "Konnte die folgenden Benutzer nicht finden:"
+
+#~ msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
+#~ msgstr "Ihre Lizenz ist abgelaufen. Bitte installieren sie eine neue Lizenzdatei oder kontaktieren sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a>, um das System weiter nutzen zu können."
 
 #~ msgid "There is already an alias with this name:"
 #~ msgstr "Es gibt bereits einen Alias mit diesem Namen:"
@@ -3156,13 +3239,99 @@ msgstr "Dateisystem Informationen"
 #~ msgid "delete"
 #~ msgstr "löschen"
 
+#~ msgid "yaffas|MAIL"
+#~ msgstr "yaffas|MAIL"
+
+#~ msgid "yaffas|FAX"
+#~ msgstr "yaffas|FAX"
+
+#~ msgid "yaffas|GATE"
+#~ msgstr "yaffas|GATE"
+
+#~ msgid "yaffas|PDF"
+#~ msgstr "yaffas|PDF"
+
+#~ msgid "yaffas|FILE"
+#~ msgstr "yaffas|FILE"
+
+#~ msgid "Modules for configuring the system accounts"
+#~ msgstr "Module für die Konfiguration der Systemkonten"
+
+#~ msgid "Modules to customize the appearance"
+#~ msgstr "Module für die Anpassung des Erscheinungsbildes"
+
+#~ msgid "Modules for the license management"
+#~ msgstr "Module für das Lizenzmanagement"
+
+#~ msgid "Modules for configuring the fax system"
+#~ msgstr "Module für die Konfiguration des Faxsystems"
+
+#~ msgid "Handbooks for system administration"
+#~ msgstr "Handbücher für die Systemadministration"
+
+#~ msgid "Modules for printer, disk and other hardware configuration"
+#~ msgstr "Module für die Drucker-, Festplatten- und andere Hardwarekonfigurationen"
+
+#~ msgid "Modules for configuring mailboxes"
+#~ msgstr "Module für die Konfiguration von E-Mail Postfächern"
+
+#~ msgid "Modules for configuring the MTA"
+#~ msgstr "Module für die Konfiguration des MTA"
+
+#~ msgid "Modules for configuring security options"
+#~ msgstr "Module für die Konfiguration der Sicherheitseinstellungen"
+
+#~ msgid "Can not open $1 : $2"
+#~ msgstr "Kann $1 nicht öffnen: $2"
+
+#~ msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
+#~ msgstr "Bitte drücken sie den 'Anwenden' Knopf in der Fax Konfiguration. Die Konfiguration wurde geändert."
+
+#~ msgid "Attention!"
+#~ msgstr "Achtung!"
+
+#~ msgid "Language"
+#~ msgstr "Sprache"
+
+#~ msgid "Dutch"
+#~ msgstr "Niederländisch"
+
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
 #~ msgid "About Z-Admin"
 #~ msgstr "Über Z-Admin"
 
+#~ msgid "Logged out"
+#~ msgstr "Abgemeldet"
+
+#~ msgid "Another administrator logged in. You have to log in again."
+#~ msgstr "Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden."
+
+#~ msgid "Loading please wait..."
+#~ msgstr "Lade, bitte warten..."
+
 # 83%
-#, fuzzy
 #~ msgid "Error"
 #~ msgstr "Fehler"
+
+#~ msgid "Help"
+#~ msgstr "Hilfe"
+
+#~ msgid "Loading..."
+#~ msgstr "Lade..."
+
+#~ msgid "Data error."
+#~ msgstr "Datenfehler."
+
+#~ msgid "No records found."
+#~ msgstr "Keine Einträge gefunden."
+
+#~ msgid "Filter data"
+#~ msgstr "Daten filtern"
+
+#~ msgid "Show filter"
+#~ msgstr "Filter anzeigen"
+
+#~ msgid "Could not connect to backend!"
+#~ msgstr "Konnte nicht zum Backend verbinden!"

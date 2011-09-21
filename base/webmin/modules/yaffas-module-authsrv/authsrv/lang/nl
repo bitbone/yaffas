@@ -5,6 +5,7 @@ lbl_return_to_cat=Accounts
 lbl_pdc_server=Domain Controller
 lbl_local_auth=Local authentication
 lbl_files_auth=Local authentication (passwd/group)
+lbl_not_set_auth=No authentication method configured
 lbl_pdc_auth=DC authentication
 lbl_pdc=Domain Controller
 lbl_auth_srv=Authentication server

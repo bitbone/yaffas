@@ -12,20 +12,20 @@ category_pdf=PDF Drucker
 category_zarafa=Zarafa
 category_groupware=Zarafa
 
-err_db_connect=Could not connect to Postgres database.
-err_dir_exists=Could not find the following directories:
-err_dir_read=Could not read the following directories:
+err_db_connect=Konnte die Postgres-Datenbank nicht erreichen.
+err_dir_exists=Konnte die folgenden Verzeichnisse nicht finden:
+err_dir_read=Konnte die folgenden Verzeichnisse nicht lesen:
 err_file_copy=Konnte die folgende Datei nicht kopieren:
-err_file_delete=Could not delete the following files:
-err_file_execute=Could not execute the following files:
-err_file_exists=Could not find the following files:
-err_file_hardlink=Could not create hard link for the following files:
-err_file_read=Could not read the following files:
-err_file_rename=Could not rename the following files:
-err_file_symlink=Could not create symlink for the following files:
-err_file_write=Could not write the following files:
-err_user_exists=Could not find the following users:
-err_license_expired_text=Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use.
+err_file_delete=Konnte die folgenden Dateien nicht löschen:
+err_file_execute=Konnte die folgenden Dateien nicht ausführen:
+err_file_exists=Konnte die folgenden Dateien nicht finden:
+err_file_hardlink=Konnte keinen Hardlink für die folgenden Dateien anlegen:
+err_file_read=Konnte die folgenden Dateien nicht lesen:
+err_file_rename=Konnte die folgenden Dateien nicht umbenennen:
+err_file_symlink=Konnte keinen symbolischen Link für die folgenden Dateien anlegen:
+err_file_write=Konnte in die folgenden Dateien nicht schreiben:
+err_user_exists=Konnte die folgenden Benutzer nicht finden:
+err_license_expired_text=Ihre Lizenz ist abgelaufen. Bitte installieren sie eine neue Lizenzdatei oder kontaktieren sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a>, um das System weiter nutzen zu können.
 err_name_is_alias=Es gibt bereits einen Alias mit diesem Namen:
 err_alias_is_user=Es gibt bereits einen Benutzer mit diesem Namen:
 
@@ -50,43 +50,43 @@ lbl_product_gate=yaffas|GATE
 lbl_product_pdf=yaffas|PDF
 lbl_product_fileserver=yaffas|FILE
 
-longcategory_accounts=Modules for configuring the system accounts
-longcategory_appearance=Modules to customize the appearance
-longcategory_license=Modules for the license management
-longcategory_fax=Modules for configuring the fax system
-longcategory_handbook=Handbooks for system administration
-longcategory_hardware=Modules for printer, disk and other hardware configuration
-longcategory_mailbox=Modules for configuring mailboxes
-longcategory_mailserver=Modules for configuring the MTA
-longcategory_security=Modules for configuring security options
+longcategory_accounts=Module für die Konfiguration der Systemkonten
+longcategory_appearance=Module für die Anpassung des Erscheinungsbildes
+longcategory_license=Module für das Lizenzmanagement
+longcategory_fax=Module für die Konfiguration des Faxsystems
+longcategory_handbook=Handbücher für die Systemadministration
+longcategory_hardware=Module für die Drucker-, Festplatten- und andere Hardwarekonfigurationen
+longcategory_mailbox=Module für die Konfiguration von E-Mail Postfächern
+longcategory_mailserver=Module für die Konfiguration des MTA
+longcategory_security=Module für die Konfiguration der Sicherheitseinstellungen
 
-efileopen=Can not open $1 : $2
+efileopen=Kann $1 nicht öffnen: $2
 
-lbl_faxtakeover=Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed.
-lbl_achtung=Attention!
+lbl_faxtakeover=Bitte drücken sie den 'Anwenden' Knopf in der Fax Konfiguration. Die Konfiguration wurde geändert.
+lbl_achtung=Achtung!
 
-lbl_lang=Language
+lbl_lang=Sprache
 lbl_lang_de=Deutsch
 lbl_lang_en=Englisch
-lbl_lang_nl=Dutch
+lbl_lang_nl=Niederländisch
 
 lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
 lbl_about_yaffas=Über yaffas
 lbl_about_zadmin=Über Z-Admin
 
-lbl_logged_out=Logged out
-lbl_logged_out_msg=Another administrator logged in. You have to log in again.
+lbl_logged_out=Abgemeldet
+lbl_logged_out_msg=Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden.
 
-lbl_loading=Loading please wait...
-lbl_error=Error
-lbl_help=Help
+lbl_loading=Lade, bitte warten...
+lbl_error=Fehler
+lbl_help=Hilfe
 
-lbl_loading_data=Loading...
-lbl_error_data=Data error.
-lbl_no_data=No records found.
+lbl_loading_data=Lade...
+lbl_error_data=Datenfehler.
+lbl_no_data=Keine Einträge gefunden.
 
-lbl_filter_header=Filter data
-lbl_filter_show=Show filter
+lbl_filter_header=Daten filtern
+lbl_filter_show=Filter anzeigen
 
-err_connection_failed=Could not connect to backend!
+err_connection_failed=Konnte nicht zum Backend verbinden!
 

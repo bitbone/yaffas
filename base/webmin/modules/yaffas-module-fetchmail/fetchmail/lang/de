@@ -18,7 +18,7 @@ index_stopmsg=Klicken Sie hier, um das Fetchmail-Programm zu stoppen das momenta
 index_efetchmail=Das Fetchmail-Programm $1 konnte nicht gefunden werden. Vielleicht ist Fetchmail nicht auf dem System installiert, oder die <a href='$2'>Modul Konfiguration</a> stimmt nicht.
 index_none=Keiner der Unix-Benutzer hat eine <tt>.fetchmailrc</tt> Datei.
 index_cron=Geplante Überprüfung
-index_crondesc=Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above.
+index_crondesc=Klicken sie hier, um einen Cron-Job zu erzeugen, ändern oder entfernen, der Fetchmail automatisch zu einem geplanten Zeitpunkt E-Mails abrufen lässt. Dazu wird die oben stehende Konfiguration verwendet.
 index_version=Fetchmail Version $1
 
 poll_create=Abholauftrag hinzufügen
@@ -91,9 +91,9 @@ log_global_user=Allgemeine Einstellungen des Bentzers $1 geändert
 log_global_file=Allgemeine Einstellungen in der Datei $1 geändert
 log_start=Fetchmail-Programm gestartet
 log_stop=Fetchmail-Programm gestoppt
-log_create_cron=Enabled scheduled checking
-log_update_cron=Modified scheduled checking
-log_delete_cron=Disabled scheduled checking
+log_create_cron=Geplantes Abholen aktivieren.
+log_update_cron=Geplantes Abholen ändern
+log_delete_cron=Geplantes Abholen abschalten
 
 acl_users=Kann Fetchmail-Konfiguration bearbeiten für
 acl_all=Alle Benutzer
@@ -102,21 +102,21 @@ acl_only=Nur Benutzer
 acl_except=Alle Benutzer ausser
 
 cron_title=Geplante Überprüfung
-cron_desc=This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time.
-cron_header=Scheduled Fetchmail settings
-cron_enabled=Scheduled checking enabled?
-cron_yes=Yes, at times configured below ..
-cron_output=Destination for Fetchmail output
-cron_file=Write to file $1
-cron_mail=Email to address $1
-cron_throw=Discard
-cron_cron=Output to cron
-cron_user=Run Fetchmail as user
-cron_err=Failed to save scheduled checking
-cron_efile=Missing or invalid output filename
+cron_desc=Auf dieser Seite kann ein Cronjob für Fetchmail aktiviert oder deaktiviert werden, um die Mailserver in ihrer Fetchmail-Konfiguration regelmäßig abzufragen. Die Verwendung eines Cronjobs anstatt des Fetchmail-Dienstes hat den Vorteil, dass er nicht beim Boot neu gestartet werden muss.
+cron_header=Fetchmail Einstellungen für die geplante Abholung.
+cron_enabled=Geplante Abholung aktiviert?
+cron_yes=Ja, zu den unten stehenden Zeiten ...
+cron_output=Ziel für die Fetchmail Ausgabe
+cron_file=Schreibe in Datei $1
+cron_mail=E-Mail an Adresse $1
+cron_throw=Verwerfen
+cron_cron=Ausgabe an cron
+cron_user=Fetchmail als Benutzer ausführen
+cron_err=Speichern der geplanten Abholung fehlgeschlagen
+cron_efile=Fehlender oder ungültiger Name für die Ausgabedatei
 cron_email=Fehlende oder ungültige E-Mail Adresse
 cron_euser=Fehlende oder ungültiger Unix Benutzer
-cron_ecannot=Scheduled checking is not available in this mode
+cron_ecannot=Die geplante Abholung ist in diesem Modus nicht verfügbar
 
 lbl_delete=Löschen
 lbl_really_delete=Möchten sie diesen Server wirklich löschen?
