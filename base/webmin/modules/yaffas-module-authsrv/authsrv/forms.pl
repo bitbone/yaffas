@@ -501,7 +501,7 @@ sub status(){
 				)
 			);
 		}
-		elsif( $authtype eq NOTSET) {
+		elsif( $authtype eq NOT_SET) {
 			print(
 				Yaffas::UI::section(
 					$main::text{lbl_status},

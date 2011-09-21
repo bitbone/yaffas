@@ -44,7 +44,7 @@ e.g. C<if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::ADS)>
 
 *get_auth_type = \&auth_type;
 sub auth_type() {
-	return NOTSET if is_local_files_only_auth ();
+	return NOT_SET if is_local_files_only_auth ();
 	my $dc_info = get_pdc_info();
 	if ((scalar keys %{$dc_info}) > 0) {
 		return ADS if (defined $dc_info->{'type'} && $dc_info->{'type'} eq 'win');

@@ -541,7 +541,9 @@ sub _save_domainname ($) {
 	my $olddom = $self->{OLD_DOMAINNAME};
 
 	if ($newdom ne $olddom) {
-		if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP) {
+		my $auth_type = Yaffas::Auth::get_auth_type();
+		if ($auth_type eq Yaffas::Auth::Type::LOCAL_LDAP ||
+		    $auth_type eq Yaffas::Auth::Type::NOT_SET) {
 			my $ret = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{domrename}, $olddom, $newdom);
 			if ($?) {
 				throw Yaffas::Exception("err_domain_rename", $ret);
