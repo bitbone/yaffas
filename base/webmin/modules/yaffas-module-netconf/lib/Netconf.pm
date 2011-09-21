@@ -140,29 +140,15 @@ sub save {
 
 	return if $self->{TESTMODE};
 
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
-		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
-	}
-	else {
-		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
-	}
-
 	try {	
-
-	if($self->{section} eq '0') {
-
 		$self->_save_domainname();
 		$self->_save_hostname();
 		$self->_save_iftab();
 		$self->_save_workgroup();
-	} elsif($self->{section} eq '1') {
-		$self->_save_domainname();
-		$self->_save_hostname();
-		$self->_save_iftab();
-		$self->_save_workgroup();
-		$self->_save_interfaces();
-	}
-
+		_stop_network();
+		if($self->{section} eq '1') {
+			$self->_save_interfaces();
+		}
 	} catch Yaffas::Exception with {
 		if(Yaffas::Constant::get_os() eq "Ubuntu"){
             Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
@@ -825,6 +811,15 @@ sub conf_dump () {
 	$conf->save();
 
 	1;
+}
+
+sub _stop_network {
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
+	}
+	else {
+		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
+	}
 }
 
 package Yaffas::Module::Netconf::Device;
