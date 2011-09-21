@@ -474,7 +474,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			my $hostname = $netconf->hostname();
 			my $ip = Yaffas::Network::get_ip("eth0");
 			my $olddom = $netconf->domainname();
-			my $newdom = _dn_to_name($basedn);
+			my $newdom = Yaffas::LDAP::dn_to_name($basedn);
 
 			# /etc/defaultdomain
 			my $ddconf = Yaffas::File->new(Yaffas::Constant::FILE->{default_domain}, $newdom)
@@ -770,30 +770,6 @@ sub set_local_auth(){
 
 		set_bk_ldap_auth( $host, $basedn, $binddn, $pass, $userdn, $groupdn, "uid", "mail", undef);
 	}
-}
-
-=item _dn_to_name( DN )
-
-converts ldap BASEDN to sytem DN
-e.g ou=bitbone,c=de to bitbone.de
-
-=cut
-
-sub _dn_to_name($)
-{
-	my $dn = shift;
-	return undef unless (defined $dn);
-
-	my $dom = "";
-	foreach ( split(/,/,$dn) )
-	{
-		my $dn_part = $_;
-		$dn_part =~ s/^[^=]+=//;
-		$dom .= "${dn_part}."
-	}
-	$dom =~ s/\.$//;
-
-	return (defined ($dom)) ? $dom : undef;
 }
 
 =item auth_srv_pdc ( [ AUTH ] )

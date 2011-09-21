@@ -16,6 +16,7 @@ use Yaffas::Auth;
 use Yaffas::Conf;
 use Yaffas::Conf::Function;
 use Yaffas::Check;
+use Yaffas::LDAP;
 use Sort::Naturally;
 use File::Copy;
 use Net::LDAP;
@@ -544,6 +545,9 @@ sub _save_domainname ($) {
 		my $auth_type = Yaffas::Auth::get_auth_type();
 		if ($auth_type eq Yaffas::Auth::Type::LOCAL_LDAP ||
 		    $auth_type eq Yaffas::Auth::Type::NOT_SET) {
+			if($olddom eq '') {
+				$olddom = Yaffas::LDAP::dn_to_name(Yaffas::LDAP::get_local_domain());
+			}
 			my $ret = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{domrename}, $olddom, $newdom);
 			if ($?) {
 				throw Yaffas::Exception("err_domain_rename", $ret);
