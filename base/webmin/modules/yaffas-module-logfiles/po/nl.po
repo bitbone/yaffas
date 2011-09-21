@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-19 14:35+0300\n"
+"POT-Creation-Date: 2011-09-21 00:12+0300\n"
 "PO-Revision-Date: 2011-09-20 10:14+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -290,6 +290,11 @@ msgstr ""
 #~ msgid "Groups"
 #~ msgstr "Groep"
 
+# 75%
+#, fuzzy
+#~ msgid "User"
+#~ msgstr "Gebruikt"
+
 # 80%
 #, fuzzy
 #~ msgid "Filetype"
@@ -421,7 +426,9 @@ msgstr ""
 #~ msgid "Receive"
 #~ msgstr "Ontvangen"
 
-#~ msgid "Send"
+# 75%
+#, fuzzy
+#~ msgid "Sent"
 #~ msgstr "Verzenden"
 
 #~ msgid "Bytes"
@@ -478,6 +485,22 @@ msgstr ""
 #~ msgid "Command"
 #~ msgstr "Commando"
 
+# 77%
+# 95%
+#, fuzzy
+#~ msgid "File system information"
+#~ msgstr "Systeeminformatie"
+
+# 80%
+#, fuzzy
+#~ msgid "Used%"
+#~ msgstr "Gebruikt"
+
+# 75%
+#, fuzzy
+#~ msgid "None"
+#~ msgstr "klaar"
+
 # 87%
 #, fuzzy
 #~ msgid "Features"
@@ -487,3 +510,36 @@ msgstr ""
 #, fuzzy
 #~ msgid "Install New Key"
 #~ msgstr "Nieuwe sleutel toevoegen"
+
+#~ msgid "Send"
+#~ msgstr "Verzenden"
+
+# 90%
+#, fuzzy
+#~ msgid "Uptime of"
+#~ msgstr "Uptime van"
+
+# 77%
+#, fuzzy
+#~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 87%
+#, fuzzy
+#~ msgid "Products"
+#~ msgstr "Product"
+
+# 88%
+#, fuzzy
+#~ msgid "Password:"
+#~ msgstr "Wachtwoord"
+
+# 76%
+#, fuzzy
+#~ msgid "Could not connect to Postgres database."
+#~ msgstr "Kan geen verbinding krijgen met de database."
+
+# 83%
+#, fuzzy
+#~ msgid "Error"
+#~ msgstr "Fouten"
