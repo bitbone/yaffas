@@ -306,7 +306,7 @@ sub is_local_files_only_auth() {
 
 	$passwd =~ m/^\s*passwd:\s*(.*)\s*$/;
 	my @ns = split /\s+/, $1;
-	return 1 unless grep { $_ ne 'files' } @ns;
+	return 1 unless grep { $_ ne 'files' && $_ ne 'compat' } @ns;
 	return 0;
 }
 
