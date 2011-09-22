@@ -109,3 +109,13 @@ Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet u
 Damit die Namen der Ordner in Zarafa in der richtigen Sprache angelegt werden, muss die gewünschte Sprache in der {product} UI eingestellt sein. Dies sollte vor dem Anlegen von Benutzern durchgeführt werden.
 
 ==============
+
+=== Zusätzliche Schritte
+
+Wenn die supporteten Zarafa Pakete verwendet werden gibt es zwei zusätzliche Pakete:
+
+* zarafa-webaccess-muc
+* zarafa-backup
+
+Diese müssen manuell installiert werden, damit die entsprechenden Funktionen zur Verfügung stehen.
+

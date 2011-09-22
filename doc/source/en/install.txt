@@ -111,3 +111,12 @@ The language in the {product} UI has to be set for the folders in Zarafa to be c
 
 ==============
 
+=== Additional Steps
+
+When using the supported zarafa packages there will be two more packages available:
+
+* zarafa-webaccess-muc
+* zarafa-backup
+
+These have to be installed manually for the corresponding functionality to be available.
+
