@@ -5,6 +5,7 @@ use warnings;
 
 use Yaffas;
 use Yaffas::Exception;
+use Yaffas::Module::ZarafaBackup qw(is_installed);
 use Error qw(:try);
 
 require './forms.pl';
@@ -14,7 +15,11 @@ ReadParse();
 
 header();
 
-show_index();
+if(Yaffas::Module::ZarafaBackup::is_installed) {
+	show_index();
+} else {
+	not_installed();
+}
 
 footer();
 

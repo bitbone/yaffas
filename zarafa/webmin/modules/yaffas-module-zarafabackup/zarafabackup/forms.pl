@@ -101,6 +101,14 @@ sub show_select_time {
     return $Cgi->input({-name => "hour_$type", -size => 2, -value => $hour }).":".$Cgi->input({-name => "min_$type", -size => 2, -value => $min });
 }
 
+sub not_installed {
+	print $Cgi->start_form();
+	print Yaffas::UI::section($main::text{lbl_not_installed_title},
+		$Cgi->p($main::text{lbl_not_installed}),
+	);
+	print $Cgi->end_form();
+}
+
 1;
 
 =pod

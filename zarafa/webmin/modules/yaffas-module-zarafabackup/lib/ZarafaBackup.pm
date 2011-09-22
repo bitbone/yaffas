@@ -325,6 +325,14 @@ sub cleanup {
     }
 }
 
+sub is_installed {
+    if( -x "/usr/bin/zarafa-backup") {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
 1;
 
 =pod
