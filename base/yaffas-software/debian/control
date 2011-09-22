@@ -1,0 +1,13 @@
+Source: yaffas-software
+Section: yaffas
+Priority: extra
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.8.3
+Homepage: www.yaffas.org
+
+Package: yaffas-software
+Architecture: all
+Depends: yaffas-samba
+Description: Includes software into the samba share
+ Includes software into the samba share

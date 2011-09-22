@@ -13,6 +13,7 @@ Requires:	perl, yaffas-core
 Language files for webmin
 
 %build
+make %{?_smp_mflags}
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
