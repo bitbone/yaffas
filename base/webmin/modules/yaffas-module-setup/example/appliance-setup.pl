@@ -7,6 +7,7 @@ use lib '/opt/yaffas/lib/perl5';
 
 use Yaffas;
 use Yaffas::Module::Setup;
+use Yaffas::Module::ZarafaConf;
 use Yaffas::Module::ChangePW;
 use Yaffas::Module::AuthSrv;
 use Yaffas::UI;
@@ -27,7 +28,7 @@ my $mysql_user = "root";
 my $mysql_password = "";
 
 Yaffas::Module::ChangePW::change_admin_password($password);
-Yaffas::Module::Setup::set_zarafa_database($mysql_host, $mysql_database, $mysql_user, $mysql_password);
+Yaffas::Module::ZarafaConf::set_zarafa_database($mysql_host, $mysql_database, $mysql_user, $mysql_password);
 Yaffas::Module::Setup::hide();
 
 try
