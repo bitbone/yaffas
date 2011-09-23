@@ -2,4 +2,4 @@ size=Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden g
 limit=Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB.
 mysql_database=De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig.
 mysql_password=Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen.
-mysql_user=This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database.
+mysql_user=Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken.

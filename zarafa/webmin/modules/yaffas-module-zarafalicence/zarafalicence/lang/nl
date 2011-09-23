@@ -9,5 +9,5 @@ lbl_log=Licentielogboek
 err_wrong_lic=Dit is geen geldige Zarafa-sleutel
 lbl_archiver_key=Archiversleutel
 lbl_archiver_serial=Serienummer
-lbl_install_archiverkey=Nieuwe Archiver-sleutel toevoegen
-lbl_install_acalkey=Nieuwe Archiver-clientsleutel toevoegen
+lbl_install_archiverkey=Nieuwe archiver-sleutel toevoegen
+lbl_install_acalkey=Nieuwe archiver-clientsleutel toevoegen

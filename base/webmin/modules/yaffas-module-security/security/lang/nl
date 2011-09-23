@@ -1,11 +1,11 @@
-lbl_apply=Apply
-lbl_edit=Edit
-lbl_delete=Delete
-lbl_add=Add
-lbl_activate=Activate
-lbl_deactivate=Deactivate
-lbl_update=Update
-lbl_really_delete=Delete entry
+lbl_apply=Toepassen
+lbl_edit=Bewerken
+lbl_delete=Verwijder
+lbl_add=Voeg toe
+lbl_activate=Activeer
+lbl_deactivate=Deactiveer
+lbl_update=Ververs
+lbl_really_delete=Verwijder item
 lbl_really_delete_msg=Do you really want to delete this entry?
 
 lbl_really_disable=Do you really want to disable this service?
