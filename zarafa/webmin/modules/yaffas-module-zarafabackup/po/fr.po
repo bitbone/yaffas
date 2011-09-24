@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 00:13+0300\n"
+"POT-Creation-Date: 2011-09-24 00:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -186,37 +186,47 @@ msgstr ""
 msgid "No backup available"
 msgstr ""
 
-#: lang/en:38
+#: lang/en:37
 #, no-wrap
-msgid "Time not correct."
+msgid "Zarafa Backup"
 msgstr ""
 
-#: lang/en:39
+#: lang/en:38
 #, no-wrap
-msgid "Preserve time not set or not correct."
+msgid "Zarafa Backup is not installed"
 msgstr ""
 
 #: lang/en:40
 #, no-wrap
-msgid "Could not open file."
+msgid "Time not correct."
 msgstr ""
 
 #: lang/en:41
 #, no-wrap
-msgid "Could not find a full backup."
+msgid "Preserve time not set or not correct."
 msgstr ""
 
 #: lang/en:42
 #, no-wrap
-msgid "Could not create directory."
+msgid "Could not open file."
 msgstr ""
 
 #: lang/en:43
 #, no-wrap
-msgid "Error passing backup days."
+msgid "Could not find a full backup."
 msgstr ""
 
 #: lang/en:44
+#, no-wrap
+msgid "Could not create directory."
+msgstr ""
+
+#: lang/en:45
+#, no-wrap
+msgid "Error passing backup days."
+msgstr ""
+
+#: lang/en:46
 #, no-wrap
 msgid "Could not open directory."
 msgstr ""

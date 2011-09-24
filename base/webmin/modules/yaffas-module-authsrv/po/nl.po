@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 00:13+0300\n"
+"POT-Creation-Date: 2011-09-24 00:13+0300\n"
 "PO-Revision-Date: 2011-09-23 15:39+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1153,14 +1153,29 @@ msgstr ""
 #~ msgid "Filesystem information"
 #~ msgstr "Systeeminformatie"
 
+# 85%
+#, fuzzy
+#~ msgid "Base settings"
+#~ msgstr "Basis-instellingen"
+
 # 88%
 #~ msgid "Password:"
 #~ msgstr "Wachtwoord:"
+
+# 85%
+#, fuzzy
+#~ msgid "Admin-Password"
+#~ msgstr "Admin-wachtwoord"
 
 # 76%
 #, fuzzy
 #~ msgid "Could not connect to Postgres database."
 #~ msgstr "Kan geen verbinding krijgen met de database."
+
+# 83%
+#, fuzzy
+#~ msgid "delete"
+#~ msgstr "Verwijder"
 
 # 83%
 #, fuzzy
