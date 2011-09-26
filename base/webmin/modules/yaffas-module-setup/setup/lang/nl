@@ -1,16 +1,16 @@
-lbl_admin_pw=Admin password
-lbl_admin_pw_repeat=Admin password (repeat)
-lbl_mysql_database=MySQL database
-lbl_mysql_host=MySQL server
-lbl_mysql_user=MySQL username
-lbl_mysql_password=MySQL password
+lbl_admin_pw=Admin-wachtwoord
+lbl_admin_pw_repeat=Admin-wachtwoord (opnieuw)
+lbl_mysql_database=MySQL-database
+lbl_mysql_host=MySQL-server
+lbl_mysql_user=MySQL-gebruikersnaam
+lbl_mysql_password=MySQL-wachtwoord
 
-lbl_setup_finished=Setup finished
-lbl_setup_finished_msg=Setup was finished successfully. After relogin you can use all features.
+lbl_setup_finished=Instellen afgerond
+lbl_setup_finished_msg=Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken.
 
-lbl_zarafa_settings=Zarafa settings
-lbl_basic_settings=Basic settings
+lbl_zarafa_settings=Zarafa instellingen
+lbl_basic_settings=Basis-instellingen
 
 err_mysql_connect=Kan geen verbinding krijgen met de database.
-err_password=The admin password is empty or does not match.
+err_password=Het admin-wachtwoord is leeg of komt niet overeen.
 

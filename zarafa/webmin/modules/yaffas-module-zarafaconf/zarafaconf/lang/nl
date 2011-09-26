@@ -4,8 +4,8 @@ lbl_filtergroup=Groep
 lbl_ldapfilter_type_0=Standaard
 lbl_ldapfilter_type_1=AD Plug-in
 lbl_ldapfilter_type_2=AD Groep
-lbl_confirm_filter_save=Deze Zarafa stores verwijderen?
-lbl_confirm_msg=Met deze stap zullen de volgende Zarafa stores worden verwijderd:
+lbl_confirm_filter_save=Deze zarafa stores verwijderen?
+lbl_confirm_msg=Met deze stap zullen de volgende zarafa stores worden verwijderd:
 err_no_group_found=Kon Groep niet vinden.
 err_no_rootbasedn=Kon de rootDomainNamingContext niet vinden in AD.
 

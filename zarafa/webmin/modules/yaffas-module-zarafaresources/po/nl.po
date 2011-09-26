@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-22 02:04+0300\n"
-"PO-Revision-Date: 2011-09-20 10:14+0200\n"
+"POT-Creation-Date: 2011-09-25 00:12+0300\n"
+"PO-Revision-Date: 2011-09-23 15:39+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -183,10 +183,10 @@ msgstr ""
 #~ msgstr "Archiversleutel"
 
 #~ msgid "Install new archiver key"
-#~ msgstr "Nieuwe Archiver-sleutel toevoegen"
+#~ msgstr "Nieuwe archiver-sleutel toevoegen"
 
 #~ msgid "Install new archiver client key"
-#~ msgstr "Nieuwe Archiver-clientsleutel toevoegen"
+#~ msgstr "Nieuwe archiver-clientsleutel toevoegen"
 
 #~ msgid "Userfilter"
 #~ msgstr "Gebruikersfilter"
@@ -207,10 +207,10 @@ msgstr ""
 #~ msgstr "AD Groep"
 
 #~ msgid "Delete these zarafa stores?"
-#~ msgstr "Deze Zarafa stores verwijderen?"
+#~ msgstr "Deze zarafa stores verwijderen?"
 
 #~ msgid "With this step, the following zarafa stores would be deleted:"
-#~ msgstr "Met deze stap zullen de volgende Zarafa stores worden verwijderd:"
+#~ msgstr "Met deze stap zullen de volgende zarafa stores worden verwijderd:"
 
 #~ msgid "Could not find Group."
 #~ msgstr "Kon Groep niet vinden."
@@ -305,6 +305,9 @@ msgstr ""
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
 
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
+
 #~ msgid "Stop"
 #~ msgstr "Stop"
 
@@ -368,6 +371,9 @@ msgstr ""
 #~ msgid "Really clear?"
 #~ msgstr "Echt wissen?"
 
+#~ msgid "Store"
+#~ msgstr "Store"
+
 #~ msgid "Backup time"
 #~ msgstr "Tijd van reservekopie"
 
@@ -382,6 +388,102 @@ msgstr ""
 
 #~ msgid "at"
 #~ msgstr "op"
+
+#~ msgid "Backup directory"
+#~ msgstr "Reservekopie-directory"
+
+#~ msgid "Remove"
+#~ msgstr "Verwijder"
+
+#~ msgid "Preserve fullbackup (in days)"
+#~ msgstr "Behoud volledige reservekopie (in dagen)"
+
+#~ msgid "Removing directory"
+#~ msgstr "Verwijderen van directory"
+
+#~ msgid "Click on \"restore\" to restore the selected messages."
+#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+
+#~ msgid "No backup available"
+#~ msgstr "Geen reservekopie beschikbaar"
+
+#~ msgid "Time not correct."
+#~ msgstr "Tijd niet correct."
+
+#~ msgid "Admin password"
+#~ msgstr "Admin-wachtwoord"
+
+#~ msgid "Admin password (repeat)"
+#~ msgstr "Admin-wachtwoord (opnieuw)"
+
+#~ msgid "MySQL database"
+#~ msgstr "MySQL-database"
+
+#~ msgid "MySQL server"
+#~ msgstr "MySQL-server"
+
+#~ msgid "MySQL username"
+#~ msgstr "MySQL-gebruikersnaam"
+
+#~ msgid "MySQL password"
+#~ msgstr "MySQL-wachtwoord"
+
+#~ msgid "Setup finished"
+#~ msgstr "Instellen afgerond"
+
+#~ msgid "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
+
+#~ msgid "Zarafa settings"
+#~ msgstr "Zarafa instellingen"
+
+#~ msgid "Basic settings"
+#~ msgstr "Basis-instellingen"
+
+#~ msgid "The admin password is empty or does not match."
+#~ msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
+
+#~ msgid "Change Language"
+#~ msgstr "Verander Taal"
+
+#~ msgid "System"
+#~ msgstr "Systeem"
+
+#~ msgid "Choose Language"
+#~ msgstr "Kies Taal"
+
+#~ msgid "German"
+#~ msgstr "Duits"
+
+#~ msgid "English"
+#~ msgstr "Engels"
+
+#~ msgid "Language not found!"
+#~ msgstr "Taal niet gevonden!"
+
+#~ msgid "Apply"
+#~ msgstr "Toepassen"
+
+#~ msgid "Edit"
+#~ msgstr "Bewerken"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijder"
+
+#~ msgid "Add"
+#~ msgstr "Voeg toe"
+
+#~ msgid "Activate"
+#~ msgstr "Activeer"
+
+#~ msgid "Deactivate"
+#~ msgstr "Deactiveer"
+
+#~ msgid "Update"
+#~ msgstr "Ververs"
+
+#~ msgid "Delete entry"
+#~ msgstr "Verwijder item"
 
 # 83%
 #, fuzzy
@@ -595,9 +697,14 @@ msgstr ""
 #~ msgstr "Gebruikt"
 
 # 75%
-#, fuzzy
 #~ msgid "None"
-#~ msgstr "klaar"
+#~ msgstr "Geen"
+
+# 83%
+# 85%
+#, fuzzy
+#~ msgid "deleted"
+#~ msgstr "Verwijder"
 
 # 87%
 #, fuzzy
@@ -622,20 +729,34 @@ msgstr ""
 #~ msgid "Filesystem information"
 #~ msgstr "Systeeminformatie"
 
+# 85%
+#, fuzzy
+#~ msgid "Base settings"
+#~ msgstr "Basis-instellingen"
+
 # 87%
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
 
 # 88%
-#, fuzzy
 #~ msgid "Password:"
-#~ msgstr "Wachtwoord"
+#~ msgstr "Wachtwoord:"
+
+# 85%
+#, fuzzy
+#~ msgid "Admin-Password"
+#~ msgstr "Admin-wachtwoord"
 
 # 76%
 #, fuzzy
 #~ msgid "Could not connect to Postgres database."
 #~ msgstr "Kan geen verbinding krijgen met de database."
+
+# 83%
+#, fuzzy
+#~ msgid "delete"
+#~ msgstr "Verwijder"
 
 # 83%
 #, fuzzy

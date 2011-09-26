@@ -1,8 +1,8 @@
-lbl_index_header=Change Language
-lbl_index_return=System
+lbl_index_header=Verander Taal
+lbl_index_return=Systeem
 
-lbl_choose_lang=Choose Language
-lbl_deutsch=German
-lbl_english=English
+lbl_choose_lang=Kies Taal
+lbl_deutsch=Duits
+lbl_english=Engels
 
-err_lang=Language not found!
+err_lang=Taal niet gevonden!
