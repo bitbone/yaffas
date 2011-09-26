@@ -416,7 +416,7 @@ sub _load_settings {
 						$settings{$device} = $d_obj;
 					}
 
-					$ip = $netmask = $gateway = $dns = $search = "";
+					$ip = $netmask = $gateway = $search = "";
 				}
 				$device = $1;
 				$method = $2;
