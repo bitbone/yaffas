@@ -991,6 +991,11 @@ sub set_pdc( ;$$$$$$$$){
 		Yaffas::Service::control(WINBIND, RESTART);
 		Yaffas::Service::control(USERMIN, RESTART);
 
+		# for RedHat
+		mod_pam("winbind");
+
+		mod_nsswitch("files winbind");
+
 		if (Yaffas::Product::check_product("zarafa") && ($type eq "win")) {
 			my $zarafa_settings = {
 				'ldap_bind_user' => $userdn,
@@ -1005,11 +1010,6 @@ sub set_pdc( ;$$$$$$$$){
 			Yaffas::Service::control(ZARAFA_SERVER, RESTART);
 			system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
 		}
-
-		# for RedHat
-		mod_pam("winbind");
-
-		mod_nsswitch("files winbind");
 
 		_create_builtin_admins($domain, $admin);
 
