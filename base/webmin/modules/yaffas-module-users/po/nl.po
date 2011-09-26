@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 17:07+0300\n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
 "PO-Revision-Date: 2011-09-26 16:17+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,10 +32,11 @@ msgstr ""
 msgid "E-mail address not valid"
 msgstr ""
 
+# 96%
 #: lang/en:5
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No e-mail address specified"
-msgstr ""
+msgstr "Geen e-mailadres opgegeven."
 
 #: lang/en:6
 #, no-wrap
@@ -97,10 +98,11 @@ msgstr ""
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
 
+# 97%
 #: lang/en:18
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "You cannot use localhost as domain-part"
-msgstr ""
+msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
 #: lang/en:19
 #, no-wrap
@@ -950,6 +952,11 @@ msgstr ""
 #~ msgid "deleted"
 #~ msgstr "Verwijder"
 
+# 81%
+#, fuzzy
+#~ msgid "Do you really want to delete this server?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 # 86%
 #, fuzzy
 #~ msgid "Install New Key"
@@ -957,6 +964,11 @@ msgstr ""
 
 #~ msgid "Send"
 #~ msgstr "Verzenden"
+
+# 86%
+#, fuzzy
+#~ msgid "Do you really want to stop this service?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
 
 # 90%
 #, fuzzy
@@ -967,6 +979,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Filesystem information"
 #~ msgstr "Systeeminformatie"
+
+# 88%
+#, fuzzy
+#~ msgid "Host name"
+#~ msgstr "Hostnaam"
 
 # 85%
 #, fuzzy

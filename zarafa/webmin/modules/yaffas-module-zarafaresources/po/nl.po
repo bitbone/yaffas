@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 17:07+0300\n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
 "PO-Revision-Date: 2011-09-26 16:17+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -745,6 +745,21 @@ msgstr ""
 #~ msgid "deleted"
 #~ msgstr "Verwijder"
 
+# 81%
+#, fuzzy
+#~ msgid "Do you really want to delete this server?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 96%
+#, fuzzy
+#~ msgid "No e-mail address specified"
+#~ msgstr "Geen e-mailadres opgegeven."
+
+# 97%
+#, fuzzy
+#~ msgid "You cannot use localhost as domain-part"
+#~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
+
 # 87%
 #, fuzzy
 #~ msgid "Features"
@@ -758,6 +773,11 @@ msgstr ""
 #~ msgid "Send"
 #~ msgstr "Verzenden"
 
+# 86%
+#, fuzzy
+#~ msgid "Do you really want to stop this service?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 # 90%
 #, fuzzy
 #~ msgid "Uptime of"
@@ -767,6 +787,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Filesystem information"
 #~ msgstr "Systeeminformatie"
+
+# 88%
+#, fuzzy
+#~ msgid "Host name"
+#~ msgstr "Hostnaam"
 
 # 85%
 #, fuzzy
