@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 00:12+0300\n"
-"PO-Revision-Date: 2011-09-23 15:39+0200\n"
+"POT-Creation-Date: 2011-09-26 17:07+0300\n"
+"PO-Revision-Date: 2011-09-26 16:17+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -90,27 +90,27 @@ msgstr ""
 #: lang/en:16
 #, no-wrap
 msgid "No e-mail address specified."
-msgstr ""
+msgstr "Geen e-mailadres opgegeven."
 
 #: lang/en:17
 #, no-wrap
 msgid "You cannot use localhost as domain-part."
-msgstr ""
+msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
 #: lang/en:18
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
-msgstr ""
+msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
 
 #: lang/en:19
 #, no-wrap
 msgid "Local-part of e-mail address must be identical with name."
-msgstr ""
+msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
 
 #: lang/en:20
 #, no-wrap
 msgid "The e-mail address is not valid."
-msgstr ""
+msgstr "Het e-mailadres is niet geldig."
 
 #: lang/en:21
 #, no-wrap
@@ -130,12 +130,12 @@ msgstr ""
 #: lang/en:24
 #, no-wrap
 msgid "No local mail domains configured."
-msgstr ""
+msgstr "Geen lokale e-maildomeinen geconfigureerd."
 
 #: help/en:1
 #, no-wrap
 msgid "This name will be shown in the global address book."
-msgstr ""
+msgstr "Deze naam wordt getoond in het globale adresboek."
 
 #: help/en:2
 #, no-wrap
@@ -484,6 +484,45 @@ msgstr ""
 
 #~ msgid "Delete entry"
 #~ msgstr "Verwijder item"
+
+#~ msgid "Do you really want to disable this service?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
+#~ msgid "Do you really want to enable this service?"
+#~ msgstr "Wilt u deze service echt inschakelen?"
+
+#~ msgid "Policy"
+#~ msgstr "Beleid"
+
+#~ msgid "Enable policy"
+#~ msgstr "Beleid inschakelen"
+
+#~ msgid "Disable policy"
+#~ msgstr "Beleid uitschakelen"
+
+#~ msgid "DNSBL"
+#~ msgstr "DNSBL"
+
+#~ msgid "RHSBL"
+#~ msgstr "RHSBL"
+
+#~ msgid "Hostname"
+#~ msgstr "Hostnaam"
+
+#~ msgid "Log name"
+#~ msgstr "Logboeknaam"
+
+#~ msgid "ClamAV"
+#~ msgstr "ClamAV"
+
+#~ msgid "Activate clamav"
+#~ msgstr "Clamav inschakelen"
+
+#~ msgid "Deactivate clamav"
+#~ msgstr "Clamav uitschakelen"
+
+#~ msgid "Scan archives"
+#~ msgstr "Archieven scannen"
 
 # 83%
 #, fuzzy

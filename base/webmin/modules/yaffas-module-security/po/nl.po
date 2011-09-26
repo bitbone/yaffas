@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 00:12+0300\n"
-"PO-Revision-Date: 2011-09-23 15:39+0200\n"
+"POT-Creation-Date: 2011-09-26 17:07+0300\n"
+"PO-Revision-Date: 2011-09-26 16:17+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,42 +65,42 @@ msgstr ""
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to disable this service?"
-msgstr ""
+msgstr "Wilt u deze service echt uitschakelen?"
 
 #: lang/en:12
 #, no-wrap
 msgid "Do you really want to enable this service?"
-msgstr ""
+msgstr "Wilt u deze service echt inschakelen?"
 
 #: lang/en:14
 #, no-wrap
 msgid "Policy"
-msgstr ""
+msgstr "Beleid"
 
 #: lang/en:15
 #, no-wrap
 msgid "Enable policy"
-msgstr ""
+msgstr "Beleid inschakelen"
 
 #: lang/en:16
 #, no-wrap
 msgid "Disable policy"
-msgstr ""
+msgstr "Beleid uitschakelen"
 
 #: lang/en:17
 #, no-wrap
 msgid "DNSBL"
-msgstr ""
+msgstr "DNSBL"
 
 #: lang/en:18
 #, no-wrap
 msgid "RHSBL"
-msgstr ""
+msgstr "RHSBL"
 
 #: lang/en:19
 #, no-wrap
 msgid "Hostname"
-msgstr ""
+msgstr "Hostnaam"
 
 #: lang/en:20
 #, no-wrap
@@ -115,27 +115,27 @@ msgstr ""
 #: lang/en:22
 #, no-wrap
 msgid "Log name"
-msgstr ""
+msgstr "Logboeknaam"
 
 #: lang/en:24
 #, no-wrap
 msgid "ClamAV"
-msgstr ""
+msgstr "ClamAV"
 
 #: lang/en:25
 #, no-wrap
 msgid "Activate clamav"
-msgstr ""
+msgstr "Clamav inschakelen"
 
 #: lang/en:26
 #, no-wrap
 msgid "Deactivate clamav"
-msgstr ""
+msgstr "Clamav uitschakelen"
 
 #: lang/en:27
 #, no-wrap
 msgid "Scan archives"
-msgstr ""
+msgstr "Archieven scannen"
 
 #: lang/en:28
 #, no-wrap
@@ -519,6 +519,27 @@ msgstr ""
 
 #~ msgid "Time not correct."
 #~ msgstr "Tijd niet correct."
+
+#~ msgid "No e-mail address specified."
+#~ msgstr "Geen e-mailadres opgegeven."
+
+#~ msgid "You cannot use localhost as domain-part."
+#~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
+
+#~ msgid "The domain is not defined as local domain in your mailserver configuration."
+#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
+
+#~ msgid "Local-part of e-mail address must be identical with name."
+#~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
+
+#~ msgid "The e-mail address is not valid."
+#~ msgstr "Het e-mailadres is niet geldig."
+
+#~ msgid "No local mail domains configured."
+#~ msgstr "Geen lokale e-maildomeinen geconfigureerd."
+
+#~ msgid "This name will be shown in the global address book."
+#~ msgstr "Deze naam wordt getoond in het globale adresboek."
 
 #~ msgid "Admin password"
 #~ msgstr "Admin-wachtwoord"
