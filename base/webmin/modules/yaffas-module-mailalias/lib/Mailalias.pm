@@ -90,12 +90,16 @@ sub add_alias($$) {
 ## -------------------------------------------------------------------------- ##
 
 sub conf_dump() {
-	my %aliases = list_alias();
-	my $aliases;
+	if(Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP) {
+		my %aliases = list_alias();
+		my $aliases;
 
-	for my $mode (qw(DIR USER)) {
-		$aliases = Yaffas::Mail::Mailalias->new($mode);
-		_save_config($mode, $aliases->get_all);
+		for my $mode (qw(DIR USER)) {
+			$aliases = Yaffas::Mail::Mailalias->new($mode);
+			_save_config($mode, $aliases->get_all);
+		}
+	} else {
+		return 1;
 	}
 }
 
