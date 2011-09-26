@@ -126,6 +126,7 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
+chkconfig zarafa-server on
 service zarafa-server stop
 /usr/bin/zarafa-server --ignore-attachment-storage-conflict
 service zarafa-server restart
