@@ -62,7 +62,7 @@ touch /opt/yaffas/etc/webmin/hidden_modules
 %{__chmod} 600 /opt/yaffas/etc/webmin/miniserv.*
 
 # set selinux context
-/usr/bin/chcon -t initrc_exec_t /opt/yaffas/etc/init.d/yaffas
+/usr/bin/chcon system_u:object_r:initrc_exec_t /opt/yaffas/etc/init.d/yaffas
 
 if [ ! -e %{_initrddir}/yaffas ]; then
 	ln -s /opt/yaffas/etc/init.d/yaffas %{_initrddir}/yaffas
