@@ -28,8 +28,8 @@ lbl_save=Save
 lbl_return=Mailserv
 lbl_category=Mailserver
 
-lbl_add=Add
-lbl_del=Delete
+lbl_add=Voeg toe
+lbl_del=Verwijder
 lbl_mailsize=Maximum mail size
 
 lbl_forward_all_mails_title=E-Mail forwarding

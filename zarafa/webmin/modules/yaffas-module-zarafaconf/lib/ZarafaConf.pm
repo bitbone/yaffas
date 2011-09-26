@@ -306,7 +306,15 @@ sub change_default_features {
 	);
 	my $cfg = $file->get_cfg_values();
 
-	my %values = map { $_ => 1 } split /\s+/, $cfg->{disabled_features};
+	my %values;
+
+	if (exists $cfg->{disabled_features}) {
+		%values = map { $_ => 1 } split /\s+/, $cfg->{disabled_features};
+	}
+	else {
+		# config not set - all features are disabled
+		%values = ( imap => 1, pop3 => 1);
+	}
 
 	if ($state == 1) {
 		delete $values{$feature};

@@ -118,7 +118,7 @@ cron_email=Missing or invalid email address
 cron_euser=Missing or invalid Unix user
 cron_ecannot=Scheduled checking is not available in this mode
 
-lbl_delete=Delete
+lbl_delete=Verwijder
 lbl_really_delete=Do you really want to delete this server?
 lbl_multidrop=Multidrop
 lbl_target=Destination

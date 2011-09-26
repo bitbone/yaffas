@@ -51,7 +51,7 @@ ou=Organization Unit Name (e.g. division)
 st=State or province (full name)
 
 view_begin=Begin Date
-view_delete=Delete
+view_delete=Verwijder
 view_deleted=File deleted sucessfully
 view_name=Name
 view_end=Expires on

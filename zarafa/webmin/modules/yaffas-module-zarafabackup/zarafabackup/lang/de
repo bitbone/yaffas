@@ -34,6 +34,8 @@ lbl_preserve_time=Vollsicherung aufbewahren (in Tagen)
 lbl_clean_dir=Lösche Verzeichnis
 lbl_restore_start_msg=Klicken sie auf "Wiederherstellen" um die ausgewählten Nachrichten wiederherzustellen.
 lbl_no_backup=Kein Backup zur Auswahl verfügbar
+lbl_not_installed_title=Zarafa Backup
+lbl_not_installed=Zarafa Backup is not installed
 
 err_time=Zeitangabe nicht korrekt.
 err_preserve_time=Aufbewahrungsfrist ist nicht korrekt oder nicht angegeben.

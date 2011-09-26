@@ -29,7 +29,7 @@ err_license_expired_text=Your license expired. Please install a new license file
 err_name_is_alias=There is already an alias with this name:
 err_alias_is_user=There is already a user with this name:
 
-lbl_apply=Apply
+lbl_apply=Toepassen
 lbl_cancel=Cancel
 lbl_no=No
 lbl_ok=OK
@@ -66,8 +66,8 @@ lbl_faxtakeover=Please press the 'Apply' Button in the Fax Configuration. The Co
 lbl_achtung=Attention!
 
 lbl_lang=Language
-lbl_lang_de=German
-lbl_lang_en=English
+lbl_lang_de=Duits
+lbl_lang_en=Engels
 lbl_lang_nl=Dutch
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page

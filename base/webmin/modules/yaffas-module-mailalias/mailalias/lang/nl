@@ -1,8 +1,8 @@
-lbl_changealias=Edit
+lbl_changealias=Bewerken
 lbl_addalias=Add alias
-lbl_delalias=Remove
+lbl_delalias=Verwijder
 lbl_execute=Execute
-lbl_apply=Apply
+lbl_apply=Toepassen
 
 lbl_index_header=Mail alias Configuration
 lbl_return_to_index=Index
@@ -16,11 +16,11 @@ lbl_mailalias=Mail alias
 lbl_destination_dir=Folder
 lbl_destination_usr=User
 
-lbl_del=Remove
+lbl_del=Verwijder
 lbl_user=User
 lbl_or=or
 
-lbl_add=Add
+lbl_add=Voeg toe
 lbl_mailalias_ad=Configuration of mail aliases is done through active directory.
 
 err_check_alias=The following usernames or e-mail addresses are not valid.
