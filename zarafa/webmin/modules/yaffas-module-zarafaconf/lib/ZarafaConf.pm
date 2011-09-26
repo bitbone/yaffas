@@ -46,7 +46,7 @@ sub zarafa_ldap_filter(;$$) {
 			my $postfix_settings = {
 				'query_filter' => '(&(objectClass=person)(mail=%s))',
 			};
-			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADPLUGIN} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
@@ -57,7 +57,7 @@ sub zarafa_ldap_filter(;$$) {
 			my $postfix_settings = {
 				'query_filter' => '(&(objectClass=person)(mail=%s)(zarafaAccount=1))',
 			};
-			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADGROUP} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
@@ -71,7 +71,7 @@ sub zarafa_ldap_filter(;$$) {
 			my $postfix_settings = {
 				'query_filter' => '(&(objectClass=person)(mail=%s)(memberOf='.$group[0].'))',
 			};
-			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 	}
 	else {
