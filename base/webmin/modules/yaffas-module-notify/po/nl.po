@@ -405,6 +405,12 @@ msgstr ""
 #~ msgid "Time not correct."
 #~ msgstr "Tijd niet correct."
 
+# 81%
+# 82%
+#, fuzzy
+#~ msgid "Do you really want to delete these resources?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 #~ msgid "No e-mail address specified."
 #~ msgstr "Geen e-mailadres opgegeven."
 
@@ -498,6 +504,12 @@ msgstr ""
 #~ msgid "Delete entry"
 #~ msgstr "Verwijder item"
 
+# 81%
+# 87%
+#, fuzzy
+#~ msgid "Do you really want to delete this entry?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 #~ msgid "Do you really want to disable this service?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
 
@@ -551,6 +563,24 @@ msgstr ""
 #, fuzzy
 #~ msgid "Filetype"
 #~ msgstr "Filtertype"
+
+# 81%
+# 85%
+#, fuzzy
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 81%
+# 78%
+#, fuzzy
+#~ msgid "Do you really want to edit this entries?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 81%
+# 88%
+#, fuzzy
+#~ msgid "Do you really want to delete this entries?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
 
 #~ msgid "System information"
 #~ msgstr "Systeeminformatie"
@@ -774,6 +804,12 @@ msgstr ""
 #, fuzzy
 #~ msgid "Features"
 #~ msgstr "Functionaliteit"
+
+# 81%
+# 76%
+#, fuzzy
+#~ msgid "Do you really want to delete the alias(es)?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
 
 # 86%
 #, fuzzy
