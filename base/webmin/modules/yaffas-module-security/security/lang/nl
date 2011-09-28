@@ -8,23 +8,23 @@ lbl_update=Ververs
 lbl_really_delete=Verwijder item
 lbl_really_delete_msg=Do you really want to delete this entry?
 
-lbl_really_disable=Do you really want to disable this service?
-lbl_really_enable=Do you really want to enable this service?
+lbl_really_disable=Wilt u deze service echt uitschakelen?
+lbl_really_enable=Wilt u deze service echt inschakelen?
 
-lbl_policy=Policy
-lbl_policy_enable=Enable policy
-lbl_policy_disable=Disable policy
+lbl_policy=Beleid
+lbl_policy_enable=Beleid inschakelen
+lbl_policy_disable=Beleid uitschakelen
 lbl_dnsbl=DNSBL
 lbl_rhsbl=RHSBL
-lbl_host=Hostname
+lbl_host=Hostnaam
 lbl_hit=Hit score
 lbl_miss=Miss score
-lbl_log=Log name
+lbl_log=Logboeknaam
 
 lbl_clamav=ClamAV
-lbl_clamav_activate=Activate clamav
-lbl_clamav_deactivate=Deactivate clamav
-lbl_archive=Scan archives
+lbl_clamav_activate=Clamav inschakelen
+lbl_clamav_deactivate=Clamav uitschakelen
+lbl_archive=Archieven scannen
 lbl_virusalert=Virus alert email
 lbl_maxlength=Maximum size of scannable objects in MB
 lbl_clam_update=Update the ClamAV signatures
