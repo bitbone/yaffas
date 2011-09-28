@@ -26,7 +26,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 set -e
-if [ $1 -eq 1]; then
+if [ $1 -eq 1 ]; then
 	# set selinux context
 	/usr/bin/chcon system_u:object_r:initrc_exec_t /opt/yaffas/etc/init.d/fetchmail
 
