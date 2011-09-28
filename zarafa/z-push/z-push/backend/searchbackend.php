@@ -1,10 +1,12 @@
 <?php
 /***********************************************
-* File      :   version.php
+* File      :   searchbackend.php
 * Project   :   Z-Push
-* Descr     :   version number
+* Descr     :   The searchbackend can be used to
+*               implement an alternative way to
+*               use the GAL search funtionality.
 *
-* Created   :   18.04.2008
+* Created   :   03.08.2010
 *
 * Copyright 2007 - 2010 Zarafa Deutschland GmbH
 *
@@ -41,5 +43,30 @@
 * Consult LICENSE file for details
 ************************************************/
 
-$zpush_version = "1.5.5-790";
+/*
+ * The SearchBackend is a stub to implement own search funtionality
+ * By default it just calls the getSearchResults of the initialized main backend
+ *
+ * If you wish to implement an alternative search method, you should extend this class
+ * like the SearchLDAP backend
+ */
+
+class SearchBackend {
+    var $_backend;
+
+    function initialize($backend) {
+        $this->backend = $backend;
+    }
+
+    function getSearchResults($searchquery, $searchrange) {
+        if (isset($this->_backend))
+            return $this->_backend->getSearchResults($searchquery, $searchrange);
+        else
+            return false;
+    }
+
+    function disconnect() {
+        return true;
+    }
+}
 ?>

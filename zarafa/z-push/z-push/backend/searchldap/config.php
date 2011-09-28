@@ -1,10 +1,11 @@
 <?php
 /***********************************************
-* File      :   version.php
+* File      :   searchldap/config.php
 * Project   :   Z-Push
-* Descr     :   version number
+* Descr     :   configuration file for the
+*               SearchLDAP backend.
 *
-* Created   :   18.04.2008
+* Created   :   03.08.2010
 *
 * Copyright 2007 - 2010 Zarafa Deutschland GmbH
 *
@@ -41,5 +42,34 @@
 * Consult LICENSE file for details
 ************************************************/
 
-$zpush_version = "1.5.5-790";
+// LDAP host and port
+define("LDAP_HOST", "ldap://127.0.0.1/");
+define("LDAP_PORT", "389");
+
+// Set USER and PASSWORD if not using anonymous bind
+define("ANONYMOUS_BIND", true);
+define("LDAP_BIND_USER", "cn=searchuser,dc=test,dc=net");
+define("LDAP_BIND_PASSWORD", "");
+
+// Search base & filter
+// the SEARCHVALUE string is substituded by the value inserted into the search field
+define("LDAP_SEARCH_BASE", "ou=global,dc=test,dc=net");
+define("LDAP_SEARCH_FILTER", "(|(cn=*SEARCHVALUE*)(mail=*SEARCHVALUE*))");
+
+// LDAP field mapping.
+// values correspond to an inetOrgPerson class
+global $ldap_field_map;
+$ldap_field_map = array(
+                    SYNC_GAL_DISPLAYNAME    => 'cn',
+                    SYNC_GAL_PHONE          => 'telephonenumber',
+                    SYNC_GAL_OFFICE         => '',
+                    SYNC_GAL_TITLE          => 'title',
+                    SYNC_GAL_COMPANY        => 'ou',
+                    SYNC_GAL_ALIAS          => 'uid',
+                    SYNC_GAL_FIRSTNAME      => 'givenname',
+                    SYNC_GAL_LASTNAME       => 'sn',
+                    SYNC_GAL_HOMEPHONE      => 'homephone',
+                    SYNC_GAL_MOBILEPHONE    => 'mobile',
+                    SYNC_GAL_EMAILADDRESS   => 'mail',
+                );
 ?>

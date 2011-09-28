@@ -13,8 +13,38 @@
 *
 * Created   :   01.10.2007
 *
-*  Zarafa Deutschland GmbH, www.zarafaserver.de
-* This file is distributed under GPL v2.
+* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License, version 3,
+* as published by the Free Software Foundation with the following additional
+* term according to sec. 7:
+*
+* According to sec. 7 of the GNU Affero General Public License, version 3,
+* the terms of the AGPL are supplemented with the following terms:
+*
+* "Zarafa" is a registered trademark of Zarafa B.V.
+* "Z-Push" is a registered trademark of Zarafa Deutschland GmbH
+* The licensing of the Program under the AGPL does not imply a trademark license.
+* Therefore any rights, title and interest in our trademarks remain entirely with us.
+*
+* However, if you propagate an unmodified version of the Program you are
+* allowed to use the term "Z-Push" to indicate that you distribute the Program.
+* Furthermore you may use our trademarks where it is necessary to indicate
+* the intended purpose of a product or service provided you use it in accordance
+* with honest practices in industrial or commercial matters.
+* If you want to propagate modified versions of the Program under the name "Z-Push",
+* you may only do so if you have a written permission by Zarafa Deutschland GmbH
+* (to acquire a permission please contact Zarafa at trademark@zarafa.com).
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
 * Consult LICENSE file for details
 ************************************************/
 
@@ -200,7 +230,7 @@ function HandleFolderSync($backend, $protocolversion) {
 
     // additional information about already seen folders
     $sfolderstate = $statemachine->getSyncState("s".$synckey);
-    
+
     if (!$sfolderstate) {
         $foldercache = array();
         if ($sfolderstate === false)
@@ -216,11 +246,11 @@ function HandleFolderSync($backend, $protocolversion) {
     		$foldercache = $tmp;
     	}
     }
-        
+
     // We will be saving the sync state under 'newsynckey'
     $newsynckey = $statemachine->getNewSyncKey($synckey);
     $changes = false;
-    
+
     if($decoder->getElementStartTag(SYNC_FOLDERHIERARCHY_CHANGES)) {
         // Ignore <Count> if present
         if($decoder->getElementStartTag(SYNC_FOLDERHIERARCHY_COUNT)) {
@@ -257,7 +287,7 @@ function HandleFolderSync($backend, $protocolversion) {
                     $serverid = $importer->ImportFolderDeletion($folder);
                     $changes = true;
                     // remove folder from the folderchache
-                    if (array_key_exists($serverid, $foldercache)) 
+                    if (array_key_exists($serverid, $foldercache))
                         unset($foldercache[$serverid]);
                     break;
             }
@@ -315,10 +345,10 @@ function HandleFolderSync($backend, $protocolversion) {
                 	// send a modify flag if the folder is already known on the device
                 	if (isset($folder->serverid) && array_key_exists($folder->serverid, $foldercache) !== false)
                         $encoder->startTag(SYNC_FOLDERHIERARCHY_UPDATE);
-                	else 
+                	else
                         $encoder->startTag(SYNC_FOLDERHIERARCHY_ADD);
                     $foldercache[$folder->serverid] = $folder;
-                    
+
                     $folder->encode($encoder);
                     $encoder->endTag();
                 }
@@ -333,7 +363,7 @@ function HandleFolderSync($backend, $protocolversion) {
                     $encoder->endTag();
 
                     // remove folder from the folderchache
-                    if (array_key_exists($folder, $foldercache)) 
+                    if (array_key_exists($folder, $foldercache))
                         unset($foldercache[$folder]);
                 }
             }
@@ -465,14 +495,25 @@ function HandleSync($backend, $protocolversion, $devid) {
             }
         }
 
+        // limit items to be synchronized to the mobiles if configured
+        if (defined('SYNC_FILTERTIME_MAX') && SYNC_FILTERTIME_MAX > SYNC_FILTERTYPE_ALL &&
+            (!isset($collection["filtertype"]) || $collection["filtertype"] > SYNC_FILTERTIME_MAX)) {
+                $collection["filtertype"] = SYNC_FILTERTIME_MAX;
+        }
+
         // compatibility mode - get folderid from the state directory
         if (!isset($collection["collectionid"])) {
             $collection["collectionid"] = _getFolderID($devid, $collection["class"]);
         }
 
-        // compatibility mode - set default conflict behavior if no conflict resolution algorithm is set (OVERWRITE_PIM)
+        // set default conflict behavior from config if the device doesn't send a conflict resolution parameter
         if (!isset($collection["conflict"])) {
-            $collection["conflict"] = 1;
+            $collection["conflict"] = (defined('SYNC_CONFLICT_DEFAULT'))? SYNC_CONFLICT_DEFAULT : SYNC_CONFLICT_OVERWRITE_PIM ;
+        }
+
+        //compatibility mode - set maxitems if the client doesn't send it as it breaks some devices
+        if (!isset($collection["maxitems"])) {
+            $collection["maxitems"] = 100;
         }
 
         // Get our sync state for this collection
@@ -491,6 +532,11 @@ function HandleSync($backend, $protocolversion, $devid) {
                     $decoder->ungetElement($element);
                     break;
                 }
+
+                // before importing the first change, load potential conflicts
+                // for the current state
+                if ($nchanges == 0)
+                    $importer->LoadConflicts($collection["class"], (isset($collection["filtertype"])) ? $collection["filtertype"] : false, $collection["syncstate"]);
 
                 $nchanges++;
 
@@ -610,9 +656,9 @@ function HandleSync($backend, $protocolversion, $devid) {
         $encoder->startTag(SYNC_FOLDERS);
         {
             foreach($collections as $collection) {
-            	// initialize exporter to get changecount
-            	$changecount = 0;
-            	if(isset($collection["getchanges"])) {
+                // initialize exporter to get changecount
+                $changecount = 0;
+                if(isset($collection["getchanges"]) || $collection["synckey"] == "0") {
                     // Use the state from the importer, as changes may have already happened
                     $exporter = $backend->GetExporter($collection["collectionid"]);
 
@@ -621,7 +667,7 @@ function HandleSync($backend, $protocolversion, $devid) {
 
                     $changecount = $exporter->GetChangeCount();
             	}
-            	
+
                 // Get a new sync key to output to the client if any changes have been requested or will be send
                 if (isset($collection["importedchanges"]) || $changecount > 0 || $collection["synckey"] == "0")
                     $collection["newsynckey"] = $statemachine->getNewSyncKey($collection["synckey"]);
@@ -727,7 +773,7 @@ function HandleSync($backend, $protocolversion, $devid) {
                     if (isset($exporter) && $exporter)
                         $state = $exporter->GetState();
 
-                    // nothing exported, but possible imported
+                    // nothing exported, but possibly imported
                     else if (isset($importer) && $importer)
                         $state = $importer->GetState();
 
@@ -884,7 +930,7 @@ function HandlePing($backend, $devid) {
     $lifetime = 0;
 
     // Get previous defaults if they exist
-    $file = BASE_PATH . STATE_DIR . "/" . $devid;
+    $file = STATE_DIR . "/" . $devid;
     if (file_exists($file)) {
         $ping = unserialize(file_get_contents($file));
         $collections = $ping["collections"];
@@ -907,16 +953,22 @@ function HandlePing($backend, $devid) {
             while($decoder->getElementStartTag(SYNC_PING_FOLDER)) {
                 $collection = array();
 
-                if($decoder->getElementStartTag(SYNC_PING_SERVERENTRYID)) {
-                    $collection["serverid"] = $decoder->getElementContent();
-                    $decoder->getElementEndTag();
-                }
-                if($decoder->getElementStartTag(SYNC_PING_FOLDERTYPE)) {
-                    $collection["class"] = $decoder->getElementContent();
-                    $decoder->getElementEndTag();
-                }
+                while(1) {
+                    if($decoder->getElementStartTag(SYNC_PING_SERVERENTRYID)) {
+                        $collection["serverid"] = $decoder->getElementContent();
+                        $decoder->getElementEndTag();
+                    }
+                    if($decoder->getElementStartTag(SYNC_PING_FOLDERTYPE)) {
+                        $collection["class"] = $decoder->getElementContent();
+                        $decoder->getElementEndTag();
+                    }
 
-                $decoder->getElementEndTag();
+                    $e = $decoder->peek();
+                    if($e[EN_TYPE] == EN_TYPE_ENDTAG) {
+                        $decoder->getElementEndTag();
+                        break;
+                    }
+                }
 
                 // initialize empty state
                 $collection["state"] = "";
@@ -1036,7 +1088,7 @@ function HandlePing($backend, $devid) {
     $encoder->endTag();
 
     // Save the ping request state for this device
-    file_put_contents(BASE_PATH . "/" . STATE_DIR . "/" . $devid, serialize(array("lifetime" => $lifetime, "collections" => $collections)));
+    file_put_contents( STATE_DIR . "/" . $devid, serialize(array("lifetime" => $lifetime, "collections" => $collections)));
 
     return true;
 }
@@ -1348,6 +1400,8 @@ function HandleProvision($backend, $devid, $protocolversion) {
     global $output, $input;
 
     $status = SYNC_PROVISION_STATUS_SUCCESS;
+    $rwstatus = $backend->getDeviceRWStatus($user, $auth_pw, $devid);
+    $rwstatusWiped = false;
 
     $phase2 = true;
 
@@ -1369,8 +1423,10 @@ function HandleProvision($backend, $devid, $protocolversion) {
 
         if(!$decoder->getElementEndTag())
             return false;
-    }
 
+        $phase2 = false;
+        $rwstatusWiped = true;
+    }
     else {
 
         if(!$decoder->getElementStartTag(SYNC_PROVISION_POLICIES))
@@ -1425,6 +1481,8 @@ function HandleProvision($backend, $devid, $protocolversion) {
 
             if(!$decoder->getElementEndTag())
                 return false;
+
+            $rwstatusWiped = true;
         }
     }
     if(!$decoder->getElementEndTag()) //provision
@@ -1433,10 +1491,24 @@ function HandleProvision($backend, $devid, $protocolversion) {
     $encoder->StartWBXML();
 
     //set the new final policy key in the backend
-    if (!$phase2) {
-        $policykey = $backend->generatePolicyKey();
-        $backend->setPolicyKey($policykey, $devid);
+    // START ADDED dw2412 Android provisioning fix
+    //in case the send one does not match the one already in backend. If it matches, we
+    //just return the already defined key. (This helps at least the RoadSync 5.0 Client to sync)
+    if ($backend->CheckPolicy($policykey,$devid) == SYNC_PROVISION_STATUS_SUCCESS) {
+        debugLog("Policykey is OK! Will not generate a new one!");
     }
+    else {
+        if (!$phase2) {
+            $policykey = $backend->generatePolicyKey();
+            //android sends "validate" as deviceid, it does not need to be added to the device list
+            if (strcasecmp("validate", $devid) != 0) $backend->setPolicyKey($policykey, $devid);
+        }
+        else {
+            // just create a temporary key (i.e. iPhone OS4 Beta does not like policykey 0 in response)
+            $policykey = $backend->generatePolicyKey();
+        }
+    }
+    // END ADDED dw2412 Android provisioning fix
 
     $encoder->startTag(SYNC_PROVISION_PROVISION);
     {
@@ -1447,9 +1519,11 @@ function HandleProvision($backend, $devid, $protocolversion) {
         $encoder->startTag(SYNC_PROVISION_POLICIES);
             $encoder->startTag(SYNC_PROVISION_POLICY);
 
-            $encoder->startTag(SYNC_PROVISION_POLICYTYPE);
-                   $encoder->content($policytype);
-            $encoder->endTag();
+            if(isset($policytype)) {
+                $encoder->startTag(SYNC_PROVISION_POLICYTYPE);
+                    $encoder->content($policytype);
+                $encoder->endTag();
+            }
 
             $encoder->startTag(SYNC_PROVISION_STATUS);
                 $encoder->content($status);
@@ -1474,14 +1548,12 @@ function HandleProvision($backend, $devid, $protocolversion) {
             $encoder->endTag();//policy
         $encoder->endTag(); //policies
     }
-    $rwstatus = $backend->getDeviceRWStatus($user, $auth_pw, $devid);
 
 
     //wipe data if status is pending or wiped
     if ($rwstatus == SYNC_PROVISION_RWSTATUS_PENDING || $rwstatus == SYNC_PROVISION_RWSTATUS_WIPED) {
         $encoder->startTag(SYNC_PROVISION_REMOTEWIPE, false, true);
-        $backend->setDeviceRWStatus($user, $auth_pw, $devid, SYNC_PROVISION_RWSTATUS_WIPED);
-        //$rwstatus = SYNC_PROVISION_RWSTATUS_WIPED;
+        $backend->setDeviceRWStatus($user, $auth_pw, $devid, ($rwstatusWiped)?SYNC_PROVISION_RWSTATUS_WIPED:SYNC_PROVISION_RWSTATUS_PENDING);
     }
 
     $encoder->endTag();//provision
@@ -1544,8 +1616,17 @@ function HandleSearch($backend, $devid, $protocolversion) {
         debugLog("Searchtype $searchname is not supported");
         return false;
     }
+
     //get search results from backend
-    $rows = $backend->getSearchResults($searchquery, $searchrange);
+    if (defined('SEARCH_PROVIDER') && @constant('SEARCH_PROVIDER') != "" && class_exists(SEARCH_PROVIDER)) {
+        $searchClass = constant('SEARCH_PROVIDER');
+        $searchbackend = new $searchClass();
+        $searchbackend->initialize($backend);
+        $rows = $searchbackend->getSearchResults($searchquery, $searchrange);
+        $searchbackend->disconnect();
+    }
+    else
+        $rows = $backend->getSearchResults($searchquery, $searchrange);
 
     $encoder->startWBXML();
 
@@ -1565,48 +1646,84 @@ function HandleSearch($backend, $devid, $protocolversion) {
                 if (is_array($rows) && !empty($rows)) {
                     $searchrange = $rows['range'];
                     unset($rows['range']);
+                    $searchtotal = $rows['searchtotal'];
+                    unset($rows['searchtotal']);
                     foreach ($rows as $u) {
                         $encoder->startTag(SYNC_SEARCH_RESULT);
                             $encoder->startTag(SYNC_SEARCH_PROPERTIES);
 
                                 $encoder->startTag(SYNC_GAL_DISPLAYNAME);
-                                $encoder->content($u["fullname"]);
+                                $encoder->content((isset($u[SYNC_GAL_DISPLAYNAME]))?$u[SYNC_GAL_DISPLAYNAME]:"No name");
                                 $encoder->endTag();
 
-                                $encoder->startTag(SYNC_GAL_PHONE);
-                                $encoder->content($u["businessphone"]);
-                                $encoder->endTag();
+                                if (isset($u[SYNC_GAL_PHONE])) {
+                                    $encoder->startTag(SYNC_GAL_PHONE);
+                                    $encoder->content($u[SYNC_GAL_PHONE]);
+                                    $encoder->endTag();
+                                }
 
-                                $encoder->startTag(SYNC_GAL_ALIAS);
-                                $encoder->content($u["username"]);
-                                $encoder->endTag();
+                                if (isset($u[SYNC_GAL_OFFICE])) {
+                                    $encoder->startTag(SYNC_GAL_OFFICE);
+                                    $encoder->content($u[SYNC_GAL_OFFICE]);
+                                    $encoder->endTag();
+                                }
 
-                                //it's not possible not get first and last name of an user
-                                //from the gab and user functions, so we just set fullname
-                                //to lastname and leave firstname empty because nokia needs
-                                //first and lastname in order to display the search result
+                                if (isset($u[SYNC_GAL_TITLE])) {
+                                    $encoder->startTag(SYNC_GAL_TITLE);
+                                    $encoder->content($u[SYNC_GAL_TITLE]);
+                                    $encoder->endTag();
+                                }
+
+                                if (isset($u[SYNC_GAL_COMPANY])) {
+                                    $encoder->startTag(SYNC_GAL_COMPANY);
+                                    $encoder->content($u[SYNC_GAL_COMPANY]);
+                                    $encoder->endTag();
+                                }
+
+                                if (isset($u[SYNC_GAL_ALIAS])) {
+                                    $encoder->startTag(SYNC_GAL_ALIAS);
+                                    $encoder->content($u[SYNC_GAL_ALIAS]);
+                                    $encoder->endTag();
+                                }
+
+                                // Always send the firstname, even empty. Nokia needs this to display the entry
                                 $encoder->startTag(SYNC_GAL_FIRSTNAME);
-                                $encoder->content("");
+                                $encoder->content((isset($u[SYNC_GAL_FIRSTNAME]))?$u[SYNC_GAL_FIRSTNAME]:"");
                                 $encoder->endTag();
 
                                 $encoder->startTag(SYNC_GAL_LASTNAME);
-                                $encoder->content($u["fullname"]);
+                                $encoder->content((isset($u[SYNC_GAL_LASTNAME]))?$u[SYNC_GAL_LASTNAME]:"No name");
                                 $encoder->endTag();
 
+                                if (isset($u[SYNC_GAL_HOMEPHONE])) {
+                                    $encoder->startTag(SYNC_GAL_HOMEPHONE);
+                                    $encoder->content($u[SYNC_GAL_HOMEPHONE]);
+                                    $encoder->endTag();
+                                }
+
+                                if (isset($u[SYNC_GAL_MOBILEPHONE])) {
+                                    $encoder->startTag(SYNC_GAL_MOBILEPHONE);
+                                    $encoder->content($u[SYNC_GAL_MOBILEPHONE]);
+                                    $encoder->endTag();
+                                }
+
                                 $encoder->startTag(SYNC_GAL_EMAILADDRESS);
-                                $encoder->content($u["emailaddress"]);
+                                $encoder->content((isset($u[SYNC_GAL_EMAILADDRESS]))?$u[SYNC_GAL_EMAILADDRESS]:"");
                                 $encoder->endTag();
 
                             $encoder->endTag();//result
                         $encoder->endTag();//properties
                     }
-                    $encoder->startTag(SYNC_SEARCH_RANGE);
-                    $encoder->content($searchrange);
-                    $encoder->endTag();
 
-                    $encoder->startTag(SYNC_SEARCH_TOTAL);
-                    $encoder->content(count($rows));
-                    $encoder->endTag();
+                    if ($searchtotal > 0) {
+                        $encoder->startTag(SYNC_SEARCH_RANGE);
+                        $encoder->content($searchrange);
+                        $encoder->endTag();
+
+                        $encoder->startTag(SYNC_SEARCH_TOTAL);
+                        $encoder->content($searchtotal);
+                        $encoder->endTag();
+                    }
                 }
 
             $encoder->endTag();//store

@@ -8,8 +8,38 @@
 *
 * Created   :   01.10.2007
 *
-*  Zarafa Deutschland GmbH, www.zarafaserver.de
-* This file is distributed under GPL v2.
+* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License, version 3,
+* as published by the Free Software Foundation with the following additional
+* term according to sec. 7:
+*
+* According to sec. 7 of the GNU Affero General Public License, version 3,
+* the terms of the AGPL are supplemented with the following terms:
+*
+* "Zarafa" is a registered trademark of Zarafa B.V.
+* "Z-Push" is a registered trademark of Zarafa Deutschland GmbH
+* The licensing of the Program under the AGPL does not imply a trademark license.
+* Therefore any rights, title and interest in our trademarks remain entirely with us.
+*
+* However, if you propagate an unmodified version of the Program you are
+* allowed to use the term "Z-Push" to indicate that you distribute the Program.
+* Furthermore you may use our trademarks where it is necessary to indicate
+* the intended purpose of a product or service provided you use it in accordance
+* with honest practices in industrial or commercial matters.
+* If you want to propagate modified versions of the Program under the name "Z-Push",
+* you may only do so if you have a written permission by Zarafa Deutschland GmbH
+* (to acquire a permission please contact Zarafa at trademark@zarafa.com).
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
 * Consult LICENSE file for details
 ************************************************/
 
@@ -27,25 +57,25 @@ include_once("version.php");
 ini_set('max_execution_time', SCRIPT_TIMEOUT);
 set_time_limit(SCRIPT_TIMEOUT);
 
-debugLog("Start");
-debugLog("Z-Push version: $zpush_version");
-debugLog("Client IP: ". $_SERVER['REMOTE_ADDR']);
-
 $input = fopen("php://input", "r");
 $output = fopen("php://output", "w+");
 
 // The script must always be called with authorisation info
 if(!isset($_SERVER['PHP_AUTH_PW'])) {
+    debugLog("Start");
+    debugLog("Z-Push version: $zpush_version");
+    debugLog("Client IP: ". $_SERVER['REMOTE_ADDR']);
     header("WWW-Authenticate: Basic realm=\"ZPush\"");
     header("HTTP/1.1 401 Unauthorized");
-    print("Access denied. Please send authorisation information");
+    printZPushLegal("Access denied. Please send authorisation information");
     debugLog("Access denied: no password sent.");
-	debugLog("end");
-	debugLog("--------");
+    debugLog("end");
+    debugLog("--------");
     return;
 }
 
 // split username & domain if received as one
+global $auth_user;
 $pos = strrpos($_SERVER['PHP_AUTH_USER'], '\\');
 if($pos === false){
     $auth_user = $_SERVER['PHP_AUTH_USER'];
@@ -55,6 +85,10 @@ if($pos === false){
     $auth_user = substr($_SERVER['PHP_AUTH_USER'],$pos+1);
 }
 $auth_pw = $_SERVER['PHP_AUTH_PW'];
+
+debugLog("Start");
+debugLog("Z-Push version: $zpush_version");
+debugLog("Client IP: ". $_SERVER['REMOTE_ADDR']);
 
 $cmd = $user = $devid = $devtype = "";
 
@@ -76,47 +110,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Get the request headers so we can see the versions
-$requestheaders = apache_request_headers();
-if (isset($requestheaders["Ms-Asprotocolversion"])) $requestheaders["MS-ASProtocolVersion"] = $requestheaders["Ms-Asprotocolversion"];
-if(isset($requestheaders["MS-ASProtocolVersion"])) {
-    global $protocolversion;
+// Get the request headers so we can get the AS headers
+$requestheaders = array_change_key_case(apache_request_headers(), CASE_LOWER);
 
-    $protocolversion = $requestheaders["MS-ASProtocolVersion"];
-    debugLog("Client supports version " . $protocolversion);
-} else {
-    global $protocolversion;
+global $protocolversion, $policykey, $useragent;
+$protocolversion = (isset($requestheaders["ms-asprotocolversion"]))? $requestheaders["ms-asprotocolversion"] : "1.0";
+$policykey = (isset($requestheaders["x-ms-policykey"]))? $requestheaders["x-ms-policykey"] : 0;
+$useragent = (isset($requestheaders["user-agent"]))? $requestheaders["user-agent"] : "unknown";
 
-    $protocolversion = "1.0";
-}
-
-if (isset($requestheaders["X-Ms-Policykey"])) $requestheaders["X-MS-PolicyKey"] = $requestheaders["X-Ms-Policykey"];
-if (isset($requestheaders["X-MS-PolicyKey"])) {
-    global $policykey;
-    $policykey = $requestheaders["X-MS-PolicyKey"];
-
-} else {
-    global $policykey;
-    $policykey = 0;
-}
-
-//get user agent
-if (isset($requestheaders["User-Agent"])) {
-    global $useragent;
-    $useragent = $requestheaders["User-Agent"];
-} else {
-    global $useragent;
-    $useragent = "unknown";
-}
+debugLog("Client supports version " . $protocolversion);
 
 // Load our backend driver
 $backend_dir = opendir(BASE_PATH . "/backend");
 while($entry = readdir($backend_dir)) {
-    if(substr($entry,0,1) == "." || substr($entry,-3) != "php")
+    $subdirfile = BASE_PATH . "/backend/" . $entry . "/" . $entry . ".php";
+
+    if(substr($entry,0,1) == "." || (substr($entry,-3) != "php" && !is_file($subdirfile)))
         continue;
 
+    // do not load Zarafa backend if PHP-MAPI is unavailable
     if (!function_exists("mapi_logon") && ($entry == "ics.php"))
         continue;
+
+    // do not load Kolab backend if not a Kolab system
+    if (! file_exists('Horde/Kolab/Kolab_Zpush/lib/kolabActivesyncData.php') && ($entry == "kolab"))
+        continue;
+
+    if (is_file($subdirfile))
+        $entry = $entry . "/" . $entry . ".php";
 
     include_once(BASE_PATH . "/backend/" . $entry);
 }
@@ -127,7 +148,7 @@ $backend = new $BACKEND_PROVIDER();
 if($backend->Logon($auth_user, $auth_domain, $auth_pw) == false) {
     header("HTTP/1.1 401 Unauthorized");
     header("WWW-Authenticate: Basic realm=\"ZPush\"");
-    print("Access denied. Username or password incorrect.");
+    printZPushLegal("Access denied. Username or password incorrect.");
     debugLog("Access denied: backend logon failed.");
     debugLog("end");
     debugLog("--------");
@@ -139,19 +160,19 @@ if($backend->Logon($auth_user, $auth_domain, $auth_pw) == false) {
 if($backend->Setup($user, $devid, $protocolversion) == false) {
     header("HTTP/1.1 401 Unauthorized");
     header("WWW-Authenticate: Basic realm=\"ZPush\"");
-    print("Access denied or user '$user' unknown.");
+    printZPushLegal("Access denied or user '$user' unknown.");
     debugLog("Access denied: backend setup failed.");
     debugLog("end");
     debugLog("--------");
     return;
 }
 
-// check policy header 
-if (PROVISIONING === true && $_SERVER["REQUEST_METHOD"] != 'OPTIONS' && $cmd != 'Ping' && $cmd != 'Provision' && 
+// check policy header
+if (PROVISIONING === true && $_SERVER["REQUEST_METHOD"] == 'POST' && $cmd != 'Ping' && $cmd != 'Provision' &&
     $backend->CheckPolicy($policykey, $devid) != SYNC_PROVISION_STATUS_SUCCESS &&
     (LOOSE_PROVISIONING === false ||
-    (LOOSE_PROVISIONING === true && isset($requestheaders["X-MS-PolicyKey"])))) {    	
-    	
+    (LOOSE_PROVISIONING === true && isset($requestheaders["x-ms-policykey"])))) {
+
     header("HTTP/1.1 449 Retry after sending a PROVISION command");
     header("MS-Server-ActiveSync: 6.5.7638.1");
     header("MS-ASProtocolVersions: 1.0,2.0,2.1,2.5");
@@ -179,24 +200,13 @@ switch($_SERVER["REQUEST_METHOD"]) {
             // Request failed. Try to output some kind of error information. We can only do this if
             // output had not started yet. If it has started already, we can't show the user the error, and
             // the device will give its own (useless) error message.
-            if(!headers_sent()) {
-                header("Content-type: text/html");
-                print("<BODY>\n");
-                print("<h3>Error</h3><p>\n");
-                print("There was a problem processing the <i>$cmd</i> command from your PDA.\n");
-                print("<p>Here is the debug output:<p><pre>\n");
-                print(getDebugInfo());
-                print("</pre>\n");
-                print("</BODY>\n");
-            }
+            if(!headers_sent())
+                printZPushLegal("Error rocessing command <i>$cmd</i> from your PDA.", "Here is the debug output:<br><pre>". getDebugInfo() . "</pre>");
         }
         break;
     case 'GET':
-        header("Content-type: text/html");
-        print("<BODY>\n");
-        print("<h3>GET not supported</h3><p>\n");
-        print("This is the z-push location and can only be accessed by Microsoft ActiveSync-capable devices.");
-        print("</BODY>\n");
+        debugLog("GET request from agent: ". $useragent);
+        printZPushLegal("GET not supported", "This is the z-push location and can only be accessed by Microsoft ActiveSync-capable devices.");
         break;
 }
 

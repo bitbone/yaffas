@@ -6,8 +6,38 @@
 *
 * Created   :   01.12.2008
 *
-* Zarafa Deutschland GmbH, www.zarafaserver.de
-* This file is distributed under GPL v2.
+* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License, version 3,
+* as published by the Free Software Foundation with the following additional
+* term according to sec. 7:
+*
+* According to sec. 7 of the GNU Affero General Public License, version 3,
+* the terms of the AGPL are supplemented with the following terms:
+*
+* "Zarafa" is a registered trademark of Zarafa B.V.
+* "Z-Push" is a registered trademark of Zarafa Deutschland GmbH
+* The licensing of the Program under the AGPL does not imply a trademark license.
+* Therefore any rights, title and interest in our trademarks remain entirely with us.
+*
+* However, if you propagate an unmodified version of the Program you are
+* allowed to use the term "Z-Push" to indicate that you distribute the Program.
+* Furthermore you may use our trademarks where it is necessary to indicate
+* the intended purpose of a product or service provided you use it in accordance
+* with honest practices in industrial or commercial matters.
+* If you want to propagate modified versions of the Program under the name "Z-Push",
+* you may only do so if you have a written permission by Zarafa Deutschland GmbH
+* (to acquire a permission please contact Zarafa at trademark@zarafa.com).
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
 * Consult LICENSE file for details
 ************************************************/
 
@@ -29,24 +59,22 @@ class ZPush_ical{
             "REQ-PARTICIPANT"   => array("class" => "IPM.Schedule.Meeting.Request", "icon" => 0x404), //nokia
         );
 
-        $aical = array_map("rtrim", preg_split("/[\n]/", $ical));
+        $aical = preg_split("/[\n]/", $ical);
         $elemcount = count($aical);
         $i=0;
         $nextline = $aical[0];
         //last element is empty
         while ($i < $elemcount - 1) {
             $line = $nextline;
-            //if a line starts with a space or a tab it belongs to the previous line
             $nextline = $aical[$i+1];
-            if (strlen($nextline) == 0) {
-                $i++;
-                continue;
-            }
 
-            while ($nextline{0} == " " || $nextline{0} == "\t") {
-                $line .= substr($nextline, 1);
+            //if a line starts with a space or a tab it belongs to the previous line
+            while (strlen($nextline) > 0 && ($nextline{0} == " " || $nextline{0} == "\t")) {
+                $line = rtrim($line) . substr($nextline, 1);
                 $nextline = $aical[++$i + 1];
             }
+            $line = rtrim($line);
+
             switch (strtoupper($line)) {
                 case "BEGIN:VCALENDAR":
                 case "BEGIN:VEVENT":
@@ -89,7 +117,7 @@ class ZPush_ical{
                             case 'UID':
                                 $goid = GetPropIDFromString($this->_store, "PT_BINARY:{6ED8DA90-450B-101B-98DA-00AA003F1305}:0x3");
                                 $goid2 = GetPropIDFromString($this->_store, "PT_BINARY:{6ED8DA90-450B-101B-98DA-00AA003F1305}:0x23");
-                                $mapiprops[$goid] = $mapiprops[$goid2] = hex2bin($data);
+                                $mapiprops[$goid] = $mapiprops[$goid2] = getOLUidFromICalUid($data);
                                 break;
 
                             case 'ATTENDEE':
@@ -118,7 +146,7 @@ class ZPush_ical{
                                     $mapiprops[PR_ICON_INDEX] = $aClassMap[$role]['icon'];
                                 }
                                 // END ADDED dw2412 to support meeting requests on HTC Android Mail App
-                                if (!isset($cn)) $cn = ""; 
+                                if (!isset($cn)) $cn = "";
                                 $data         = str_replace ("MAILTO:", "", $data);
                                 $attendee[] = array ('name' => stripslashes($cn), 'email' => stripslashes($data));
                                 break;
@@ -164,6 +192,11 @@ class ZPush_ical{
         if ($regs[1] < 1970) {
             $regs[1] = '1971';
         }
+
+        if (!isset($regs[4]) || !is_numeric($regs[4])) $regs[4] = 0;
+        if (!isset($regs[5]) || !is_numeric($regs[5])) $regs[5] = 0;
+        if (!isset($regs[6]) || !is_numeric($regs[6])) $regs[6] = 0;
+
         return gmmktime($regs[4], $regs[5], $regs[6], $regs[2], $regs[3], $regs[1]);
     }
 }
