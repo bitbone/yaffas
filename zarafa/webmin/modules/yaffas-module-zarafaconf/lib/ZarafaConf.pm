@@ -385,7 +385,7 @@ sub conf_dump() {
 
 	$sec = $bkc->section("mailboxconf");
 	$func = Yaffas::Conf::Function->new("quota", "Yaffas::Module::ZarafaConf::set_default_quota");
-	$func->add_param({type => "scalar", param => Yaffas::Mail::get_default_quota()});
+	$func->add_param({type => "scalar", param => (Yaffas::Mail::get_default_quota()/1024)});
 	$sec->del_func("quota");
 	$sec->add_func($func);
 
