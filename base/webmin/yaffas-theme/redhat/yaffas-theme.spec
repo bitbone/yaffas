@@ -74,9 +74,11 @@ else
 fi
 
 %postun
-%{__rm} -f /opt/yaffas/usermin/images
-%{__rm} -f /opt/yaffas/usermin/yaffastheme
-%{__rm} -f /opt/yaffas/etc/webmin/config.dpkg-old
+if [ $1 -eq 0 ]; then
+	%{__rm} -f /opt/yaffas/usermin/images
+	%{__rm} -f /opt/yaffas/usermin/yaffastheme
+	%{__rm} -f /opt/yaffas/etc/webmin/config.dpkg-old
+fi
 
 %files
 /opt/yaffas/webmin/yaffastheme

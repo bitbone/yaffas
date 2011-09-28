@@ -140,10 +140,12 @@ chkconfig winbind on
 rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
 %postun
-%{__mv} -f /etc/samba/smb.conf.yaffassave /etc/samba/smb.conf
-%{__rm} -f /etc/samba/smbopts.software
-%{__rm} -f /etc/samba/includes.smb
-%{__rm} -f /etc/samba/smbopts.global
+if [ $1 -eq 0 ]; then
+	%{__mv} -f /etc/samba/smb.conf.yaffassave /etc/samba/smb.conf
+	%{__rm} -f /etc/samba/smbopts.software
+	%{__rm} -f /etc/samba/includes.smb
+	%{__rm} -f /etc/samba/smbopts.global
+fi
 
 %files
 %defattr(-,root,root)

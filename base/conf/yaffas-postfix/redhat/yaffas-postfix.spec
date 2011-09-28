@@ -62,9 +62,11 @@ chkconfig postfix on
 service postfix restart
 
 %postun
-%{__rm} -f /etc/postfix/dynamicmaps.cf
-%{__mv} -f /etc/postfix/main.cf.yaffassave /etc/postfix/main.cf
-%{__mv} -f /etc/postfix/master.cf.yaffassave /etc/postfix/master.cf
+if [ $1 -eq 0 ]; then
+	%{__rm} -f /etc/postfix/dynamicmaps.cf
+	%{__mv} -f /etc/postfix/main.cf.yaffassave /etc/postfix/main.cf
+	%{__mv} -f /etc/postfix/master.cf.yaffassave /etc/postfix/master.cf
+fi
 
 %files
 %defattr(-,root,root,-)

@@ -138,9 +138,11 @@ for SERV in mysqld zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zar
 done
 
 %postun
-for CFG in /etc/zarafa/*.cfg.yaffassave; do
-	%{__mv} -f $CFG ${CFG/.yaffassave/}
-done
+if [ $1 -eq 0 ]; then
+	for CFG in /etc/zarafa/*.cfg.yaffassave; do
+		%{__mv} -f $CFG ${CFG/.yaffassave/}
+	done
+fi
 
 %files
 %defattr(-,root,root,-)

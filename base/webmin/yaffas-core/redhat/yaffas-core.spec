@@ -76,9 +76,9 @@ fi
 if [ $1 -eq 0 ]; then
 	/sbin/service yaffas stop &>/dev/null || :
 	/sbin/chkconfig --del yaffas
+	%{__rm} -f /opt/yaffas/etc/webmin/miniserv.users
+	%{__rm} -f /opt/yaffas/etc/webmin/webmin.acl
 fi
-%{__rm} -f /opt/yaffas/etc/webmin/miniserv.users
-%{__rm} -f /opt/yaffas/etc/webmin/webmin.acl
 
 %postun
 #/sbin/service yaffas condrestart &>/dev/null || :

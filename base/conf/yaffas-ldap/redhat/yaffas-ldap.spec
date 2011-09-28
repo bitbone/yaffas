@@ -203,15 +203,17 @@ rm -f $LDIF
 chkconfig ldap on
 
 %postun
-%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
-%{__rm} -f /etc/ldap.settings
-%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
-%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
-%{__rm} -f /etc/ldap.secret
-%{__rm} -f /etc/postfix/ldap-users.cf
-%{__rm} -f /etc/postfix/ldap-aliases.cf
-%{__mv} -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
-%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
+if [ $1 -eq 0 ]; then
+	%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
+	%{__rm} -f /etc/ldap.settings
+	%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
+	%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
+	%{__rm} -f /etc/ldap.secret
+	%{__rm} -f /etc/postfix/ldap-users.cf
+	%{__rm} -f /etc/postfix/ldap-aliases.cf
+	%{__mv} -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
+	%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT

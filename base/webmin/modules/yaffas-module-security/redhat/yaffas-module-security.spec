@@ -61,7 +61,9 @@ fi
 
 
 %postun
-%{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
+if [ $1 -eq 0 ]; then
+	%{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
+fi
 
 %files
 %defattr(-,root,root)
