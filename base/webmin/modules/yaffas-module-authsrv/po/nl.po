@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-26 16:17+0200\n"
+"PO-Revision-Date: 2011-09-28 16:31+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1013,6 +1013,13 @@ msgstr ""
 
 # 81%
 # 78%
+# 86%
+#, fuzzy
+#~ msgid "Do you really want to edit the these entries?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 81%
+# 78%
 #, fuzzy
 #~ msgid "Do you really want to edit this entries?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
@@ -1232,14 +1239,19 @@ msgstr ""
 #~ msgstr "Wilt u deze service echt uitschakelen?"
 
 # 96%
-#, fuzzy
 #~ msgid "No e-mail address specified"
-#~ msgstr "Geen e-mailadres opgegeven."
+#~ msgstr "Geen e-mailadres opgegeven"
 
 # 97%
-#, fuzzy
 #~ msgid "You cannot use localhost as domain-part"
-#~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
+#~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel"
+
+# 81%
+# 82%
+# 77%
+#, fuzzy
+#~ msgid "Do You really want to delete the selected users?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
 
 # 87%
 #, fuzzy
