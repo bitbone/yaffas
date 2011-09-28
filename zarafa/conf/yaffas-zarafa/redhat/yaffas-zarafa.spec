@@ -24,11 +24,13 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{__rm} -rf $RPM_BUILD_ROOT
 
 %post
-YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
-for CFG in /etc/zarafa/*.cfg; do
-	%{__cp} -f $CFG ${CFG}.yaffassave
-done
-%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+if [ "$1" = 1 ] ; then
+	YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
+	for CFG in /etc/zarafa/*.cfg; do
+		%{__cp} -f $CFG ${CFG}.yaffassave
+	done
+	%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+fi
 
 # PHPINI=/etc/php5/apache2/php.ini
 # PHPCLIINI=/etc/php5/cli/php.ini
