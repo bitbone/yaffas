@@ -1,5 +1,11 @@
 yaffas-software (1.0-beta3) lucid; urgency=low
 
+  * update to version 1.0-beta3
+
+ -- Package Builder <packages@yaffas.org>  Wed, 28 Sep 2011 15:45:08 +0200
+
+yaffas-software (1.0-beta3) lucid; urgency=low
+
   * initial version
 
  -- André Welter <welter@bitbone.de>  Thu, 22 Sep 2011 11:44:32 +0200
