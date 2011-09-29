@@ -21,15 +21,18 @@ set -e
 case "$1" in
     configure)
 
-	if [ -e /etc/postfix/main.cf ]; then
-		mv -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
-	fi
-	if [ -e /etc/postfix/master.cf ]; then
-		mv -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
-	fi
-	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
-	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
-	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
+		if [ -z "$2" ]; then
+			# copy files only on new installation
+			if [ -e /etc/postfix/main.cf ]; then
+				mv -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
+			fi
+			if [ -e /etc/postfix/master.cf ]; then
+				mv -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
+			fi
+			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
+			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
+			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
+		fi
 
 		CONF=/etc/postfix
 		mkdir -p $CONF
