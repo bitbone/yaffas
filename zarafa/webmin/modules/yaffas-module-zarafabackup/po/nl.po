@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-28 16:31+0200\n"
+"PO-Revision-Date: 2011-09-29 10:46+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -190,12 +190,12 @@ msgstr "Geen reservekopie beschikbaar"
 #: lang/en:37
 #, no-wrap
 msgid "Zarafa Backup"
-msgstr ""
+msgstr "Zarafa Backup"
 
 #: lang/en:38
 #, no-wrap
 msgid "Zarafa Backup is not installed"
-msgstr ""
+msgstr "Zarafa Backup is niet geïnstalleerd"
 
 #: lang/en:40
 #, no-wrap
@@ -210,7 +210,7 @@ msgstr ""
 #: lang/en:42
 #, no-wrap
 msgid "Could not open file."
-msgstr ""
+msgstr "Kon bestand niet openen."
 
 #: lang/en:43
 #, no-wrap
