@@ -148,6 +148,7 @@ sub virtual_card_form ($) {
 			)
 		)
 	);
+        print $Cgi->hidden({-name => 'section', -value => '4'});
 	print Yaffas::UI::section_button(
 		$Cgi->submit( { -value => $main::text{lbl_create} } ) );
 	print $Cgi->end_form();

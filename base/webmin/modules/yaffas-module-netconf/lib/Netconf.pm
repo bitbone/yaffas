@@ -147,7 +147,7 @@ sub save {
 		$self->_save_iftab();
 		$self->_save_workgroup();
 		_stop_network();
-		if($self->{section} eq '1') {
+		if($self->{section} eq '1' || $self->{section} eq '4') {
 			$self->_save_interfaces();
 		}
 	} catch Yaffas::Exception with {
@@ -398,29 +398,16 @@ sub _load_settings {
 				push @enabled_interfaces, split /\s+/, $1;
 			}
 
-			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/ or $i == scalar @lines) {
+			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
 				if ($device ne "") {
-					# create objects for settings
-
-					my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-					$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
-
-					my $parent;
-					if ($device =~ /^(eth\d+):\d+$/) {
-						$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
-					}
-
-					if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
-						$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
-						$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
-						$settings{$device} = $d_obj;
-					}
-
-					$ip = $netmask = $gateway = $search = "";
+					%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 				}
 				$device = $1;
 				$method = $2;
 			}
+		}
+		if($device ne "") {
+			%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 		}
 	} else {
 		my ($ip, $netmask, $gateway);
@@ -496,6 +483,28 @@ sub _load_settings {
 	}
 
 	return \%settings;
+}
+
+sub _create_objects_for_settings() {
+	my ($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings) = @_;
+	# create objects for settings
+
+	my $d_obj = Yaffas::Module::Netconf::Device->new($device);
+	$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
+
+	my $parent;
+	if ($device =~ /^(eth\d+):\d+$/) {
+	$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
+	}
+
+	if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
+	$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
+	$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
+	$settings{$device} = $d_obj;
+	}
+
+	$ip = $netmask = $gateway = $search = $device = $method = "";
+	return %settings;
 }
 
 # helper function which returns all available devices
