@@ -1,7 +1,5 @@
 == Mailserver
 
-
-
 === Fetchmail Mail Retrieval
 Fetchmail is used for retrieving emails from external email accounts. You can make a new entry for fetchmail at the tab "Add Query".
 
@@ -14,19 +12,22 @@ At "Mailserver User Details" you can enter settings for the user, whose mails sh
 All other fields are optional and can be customized. 
 
 
-
 === Mailserver Configuration
-
 
 ==== Base Configuration
 At the tab "Base Configuration" you can customize the configuration of your mailserver. "Mail Server Name " is the name that is sent on outgoing emails to the remote SMTP server. This setting is optional.
 
-With the maximum mail size, the size of incoming and outgoing mails can be limited. The entry is in MB. Without this option mails of unlimited size can be sent.
+With the maximum mail size, the size in MB of incoming and outgoing mails can be limited. Without this option mails of unlimited size can be sent.
+
+[NOTE]
+============
+The maximum size is calculated after applying the Base64 conversion of attachments. This means that about one third of the size has to be added to that value. e.g. To send a 10 MB attachment you need to enter 14 MB.
+============
 
 
 ==== Local Domains
-At "Local Domains" you can set domains for which the mailserver will be responsible for. Emails to these domains will be accepted and delivered locally.
-
+At "Local Domains" you can set domains for which the mailserver will be responsible for.
+Emails to these domains will be accepted and delivered locally to the users store.
 
 ==== Smarthost
 Enter the IP address of the mailserver of your company or the provider at the tab "Smarthost". This server will be responsible for the delivery of external emails. If this mailserver requires authentication, enter the required data in "Username" and "Password". The username must contain at least two characters!
@@ -37,6 +38,10 @@ For all addresses listed at the tab "Open Relay Subnets" external mail sending w
 
 However, sending mails to domains for which the mailserver is responsible is always possible. Example entry for activating a subnet: _"192.168.0.0/24"_ - _"/24"_ indicates the number of bits set in the netmask. The netmask would be _"255.255.255.0"_ in this case.
 
+[NOTE]
+============
+Be very careful with this option. A wrong setting could allow everyone to use you mailserver to send messages. Every spammer would be happy about a wrong setting here.
+============
 
 
 === Mail Queue
@@ -55,26 +60,31 @@ At "Mail Alias" all set mail aliases - both the aliases of the system, as well a
 When adding a mail alias please consider that the alias test is executed ** before ** the mailbox allocation. It may happen that emails will be assigned to another user although that user has a mailbox on the server. In such cases please check all set mail aliases.
 ==============
 
-New aliases can be defined using the tab "Add Alias". An alias can be assigned to multiple users if you separate them by commas. A user of the {product} installation or an email address can be specified as a target.
+New aliases can be defined using the tab _"Add Alias"_. An alias can be assigned to multiple users if you select them by using <CTRL>. A user of the {product} installation or an email address can be specified as a target.
 
 If you want to delete an alias, please right-click on the entry in the overview at "Mail Alias" and choose "Remove".
 
 
-
 === Security
+
+This module allows you to configure security settings for this mailserver.
+You can enable a virus and spam check.
+There is also support for the policy sever that allows you to reject emails during smtp time.
+
+==== Policy Server
+==== SpamAssassin
+==== ClamAV
 
 [IMPORTANT]
 ==============
-
-The services SpamAssassin and ClamAV have to be started separately from the service module before they can be used by the security module. Activating the security services at the security module is not sufficient. If you started these services after activating them at the security module, the service "amavis" has to be restarted.
-
+The services SpamAssassin and ClamAV have to be started separately from the service module before they can be used by the security module.
+Activating the security services at the security module is not sufficient.
+If you started these services after activating them at the security module, the service "amavis" has to be restarted.
 ==============
 
 [TIP]
 ==============
-
 If the ClamAV service will not start, it may have no virus signatures. The freshclam service draws them automatically, but requires an internet connection. A proxy server can be configured at Network Configuration if necessary. This will cause an update of the signatures via freshclam.
-
 ==============
 
 

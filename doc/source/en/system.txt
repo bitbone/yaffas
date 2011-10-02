@@ -4,12 +4,14 @@
 
 ==== Start and Stop Services
 
-By selecting the menu item "services" the state of each system service can be shown. If you right click on a service, you can start, stop or re-start the service. Furthermore, you can choose to start the service by booting the system and to monitor the service. Then the admin will receive an email notification if the service fails.
-
+By selecting the menu item "services" the state of each system service can be shown.
+If you right click on a service, you can start, stop or re-start the service.
+Furthermore, you can choose to start the service by booting the system and to monitor the service.
+Then the admin will receive an email notification if the service fails to start.
 
 ==== System Time
-At this tab you can manually set the system time. Time can be set with drop-down fields and be saved afterwards. If the system time shall be provided by the hardware time (BIOS), this can be done on "Synchronizing System Time with Hardware Time".
-
+At this tab you can manually set the system time.
+Time can be set with drop-down fields and be saved afterwards.
 
 ==== Time Server
 Additionally, time can be synchronized with a time server. This is possible once or in hourly or daily intervals. For this purpose enter the IP address or the hostname of the time server and choose an interval.
@@ -20,12 +22,8 @@ For example, the below listed time servers can be used. The precondition is that
    * ntp0.fau.de
    * ntp1.ptb.de
 
-
-
 ==== Restart / Shutdown
 At the tab "Shutdown System" you can reboot or shut down the system.
-
-
 
 === Certificate / Key Management
 
@@ -44,8 +42,8 @@ If you want to replace "default.crt", you must either create a new certificate f
 
 
 ==== Create Own Certificates
-To create a certificate yourself, click on the tab "Generate Self Signed Certificate and Key", fill in all fields and create the certificate by clicking on "Generate Key". If you choose "all" at the drop-down field "Service", you can create a default certificate. This is always used if no other certificates are available specific to a service. All other choices ​​for "Service" create a certificate for the respective service.
-
+To create a certificate yourself, click on the tab "Generate Self Signed Certificate and Key", fill in all fields and create the certificate by clicking on "Generate Key".
+If you choose "all" at the drop-down field "service", you can create a default certificate. This is always used if no other certificates are available specific to a service. All other choices for "service" create a certificate for the respective service.
 
 ==== Upload Certificates
 If you want to upload an existing certificate, click on the tab "Upload Certificate" and click on "Browse" to choose the file from your hard disk.
@@ -53,6 +51,5 @@ Select the file with the certificate and click "Open". After the dialog closed i
 
 [IMPORTANT]
 ==============
-
 The key and the certificate must be contained together in one file to successfully import a certificate. Please note that the key should come **first** and the file **must not be** encrypted.
 ==============

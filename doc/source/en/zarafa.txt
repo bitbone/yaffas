@@ -2,21 +2,21 @@
 
 === Zarafa Licence Key
 In this module you can extend the numbers of users with Outlook access to Zarafa. Three users have access via Outlook without any licence key. If you want more users to have access you may buy a licence pack. 
-The licence key has two components: a basis key and an additional user key. 
-Please insert the key into the specific (basis or user) field an click the button.  _"key upload"_ 
+The licence key has two components: a basis key and an additional user key.
+Please insert the key into the specific (basis or user) field an click the button _"key upload"_.
 
-At the tab  _"Installed Licences"_ all licences are shown. You will get more information at the tab  _"Licence Log"_ 
-
+At the tab  _"Installed Licences"_ all licences are shown. You will get more information at the tab _"Licence Log"_.
 
 
 === Groupware Configuration
 In this module you can optimize memory (RAM) for Zarafa, define the size of attachments or the content of quota emails for users.
 
-Click  _"Optimize"_ to optimize the memory settings on your system. This is only necessary if the size of the RAM changes. The RAM will be optimized for Zarafa. 
+Click _"Optimize"_ to optimize the memory settings on your system. This is only necessary if the size of the RAM changes.
+The RAM settings will be optimized for Zarafa and MySQL.
 
-You can also set the maximum size of attachments uploadable via the Zarafa Webaccess Interface. 
+You can also set the maximum size of attachments uploadable via the Zarafa Webaccess Interface.
 
-[TIP]
+[NOTE]
 ==============
 This limitation does **not** overwrite the setting of the mailserver. If there is a smaller size of attachments allowed, the mailserver settings are valid.
 ==============
@@ -40,20 +40,18 @@ The following variables are available:
 In this module you can create and delete resources. For deleting or modifying right-click on an existing resource and choose an action. 
 
 Please note at the creation of a new resource: A resource needs a name - this name is shown in the global adressbook - and a description.
-You may decide whether a resource can be booked once - ( _"Decline Conflicts"_  and whether recurring appointments are permitted.
+You may decide whether a resource can be booked once (_"Decline Conflicts"_)  and whether recurring appointments are permitted.
 
 [IMPORTANT]
 ==============
-If you want to change resource settings, you may change the properties but not the name!
+If you want to change resource settings, you may change the properties and description but not the name!
 ==============
-
-
 
 === Zarafa Setup
 
 The configuration of {product} & ZARAFA is done via the known interface. There are some specifics to explain:
 
-As a matter of principle each user account in {product} is also a Zarafa user. Please pay attention that you have a corresponding license of {product} AND of Zarafa. If you have less Zarafa user licences than {product} users, only the users with the lowest UIDs have access to Zarafa. 
+As a matter of principle each user account in {product} is also a Zarafa user. Please pay attention that you have a corresponding license of {product} and of Zarafa. If you have less Zarafa user licences than {product} users, only the users with the lowest UIDs have access to Zarafa. 
 
 
 ===  Allocation of Email Addresses
@@ -71,9 +69,12 @@ A complete manual and current documentation of Zarafa Web Access can be download
 
 
 
+////
 === Microsoft Outlook Connection
 
-The client you need for connecting Microsoft Outlook is in   _"software"_ at the directory  _"zarafa"_ on your {product} system. Please use exactly this version of the client, because it is matched with the Zarafa version used in {product}. After updating {product} you should always take the current version of the client out of this directory.
+The client you need for connecting Microsoft Outlook is in  _"software"_ at the directory _"zarafa"_ on your {product} system.
+Please use exactly this version of the client, because it is matched with the Zarafa version used in {product}.
+After updating {product} you should always take the current version of the client out of this directory.
 
 First, install the client on the Windows computer by double-clicking on  _"zarafaclient.exe"_  Please note: You must have administration permissions.
 
@@ -106,6 +107,8 @@ Please make sure that the following setting is made for the new account:  _"New 
 ==============
 Please understand that we are not able to give support to any issue of using, configuring or installing Microsoft Outlook!
 ==============
+
+////
 
 
 

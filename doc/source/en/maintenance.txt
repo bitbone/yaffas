@@ -10,27 +10,24 @@ At this menu item you can restore a saved configuration or save the current conf
 Remember to save configurations regularly!
 ==============
 
-
-
 ==== Restore Configuration
+If you have to use this option, install the server with a fresh operating system, install {product} and then select the authentication method that was uses before.
 After selecting a configuration file, click on the button "Apply Backupfile" and the configuration file will be uploaded. This may take a few minutes.
 
 [WARNING]
 ==============
 Please consider that the following items will not be restored:
 
-  * portal data for updates
   * network configuration
   * admin and root password
   * settings for authentication server
+  * alias settings if you use a remote authentication server
 
 ==============
 
-
-
 ===  Log file viewer
 
-The log file viewer enable the administrator to download log files for analysis. Just right click on the log file you wish to download and select  _"download"_  After download and saving of the selected log file it can be viewed with any text editor (e.g. Wordpad).
+The log file viewer enable the administrator to download log files for analysis. Just right click on the log file you wish to download and select _"download"_. After download and saving of the selected log file it can be viewed with any text editor (e.g. Wordpad).
 
 Examples of log files are:
 
@@ -41,18 +38,14 @@ Examples of log files are:
 | /var/log/messages | less important kernel messages. 
 | /var/log/samba/log.nmbd | messages from the NetBIOS service 
 | /var/log/samba/log.smbd | samba server log messages
-| /var/log/zarafa
+| /var/log/zarafa | This directory contains zarafa logs for every component.
 |======
 
 
 === Notification
 Error messages (disk full, license issues) from the {product} server will be sent to this e-mail address. A local or remote address can be used. This e-mail account should be checked on a regular basis.
 
-[WARNING]
-==============
-
 Please enter a valid e-mail address, so critical messages can reach an administrator and the system can be kept running.
-==============
 
 [TIP]
 ==============
@@ -60,9 +53,8 @@ If you would like to enter multiple recipients you can enter an alias as recipie
 ==============
 
 
-
 === Support
-The menu topic  _Support_ offers the option to download a file which can assist in solving problems and speed up searching for bugs.
+The menu topic _Support_ offers the option to download a file which can assist in solving problems and speed up searching for bugs.
 
 {product} is a free community project, so no support is included. Support can be performed by anybody who knows his way around {product} and linux.
 
