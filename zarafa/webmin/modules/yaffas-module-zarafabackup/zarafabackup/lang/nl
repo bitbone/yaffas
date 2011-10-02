@@ -35,11 +35,11 @@ lbl_clean_dir=Verwijderen van directory
 lbl_restore_start_msg=Klik op "zet terug" om de geselecteerde berichten terug te zetten.
 lbl_no_backup=Geen reservekopie beschikbaar
 lbl_not_installed_title=Zarafa Backup
-lbl_not_installed=Zarafa Backup is not installed
+lbl_not_installed=Zarafa Backup is niet geïnstalleerd
 
 err_time=Tijd niet correct.
 err_preserve_time=Preserve time not set or not correct.
-err_file_open=Could not open file.
+err_file_open=Kon bestand niet openen.
 err_no_full_found=Could not find a full backup.
 err_mkdir=Could not create directory.
 err_days=Error passing backup days.
