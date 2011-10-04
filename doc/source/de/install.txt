@@ -103,6 +103,8 @@ Nach dem ersten Login sollte zunächst der Authentifizerungsserver ausgewählt w
 
 Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet und zum automatischen Start beim Booten eingestellt werden. Dies ist unter dem Menüpunkt "System->Dienste" möglich. Da unter RHEL standardmäßig eine iptables-Firewall aktiv ist, müssen die Ports für die benötigten Dienste nachträglich manuell geöffnet werden.
 
+Der nächste Schritt sollte das Konfigurieren des Mailservers sein. Ohne eine funktionierende Mailserverkonfiguration werden einige Teile des Systems nicht funktionieren. Es wird auch nicht möglich sein Ressourcen für Zarafa anzulegen, ohne das eine lokale Domäne für den Mailserver eingerichtet ist.
+
 [IMPORTANT]
 ==============
 

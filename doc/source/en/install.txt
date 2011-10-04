@@ -104,6 +104,8 @@ After the first login an authentication server should be selected in Accounts ->
 
 On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services". Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.
 
+The next step should be to configure the mail server. Without a working mail server configuration some parts of the system will not work. It will also not be possible to create resources for Zarafa when no local domain is set for the mail server.
+
 [IMPORTANT]
 ==============
 
