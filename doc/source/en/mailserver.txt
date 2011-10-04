@@ -29,6 +29,11 @@ The maximum size is calculated after applying the Base64 conversion of attachmen
 At "Local Domains" you can set domains for which the mailserver will be responsible for.
 Emails to these domains will be accepted and delivered locally to the users store.
 
+[NOTE]
+============
+To be able to create resources for Zarafa at least one local domain other than "localhost" has to be defined.
+============
+
 ==== Smarthost
 Enter the IP address of the mailserver of your company or the provider at the tab "Smarthost". This server will be responsible for the delivery of external emails. If this mailserver requires authentication, enter the required data in "Username" and "Password". The username must contain at least two characters!
 
