@@ -8,6 +8,7 @@ use Yaffas::Service qw(POSTFIX CLAMAV POLICYD_WEIGHT AMAVIS CLAMAV SPAMASSASSIN 
 use Yaffas::File;
 use Yaffas::Constant;
 use Yaffas::Conf;
+use Yaffas::Conf::Function;
 use Yaffas::Check;
 use Yaffas::Module::Proxy;
 use Error qw(:try);
@@ -124,13 +125,7 @@ Enables policy-weightd in postfix if it isn't already enabled.
 =cut 
 
 sub enable_policy { 
-	throw Yaffas::Exception("policy-weightd is already enabled.") if check_policy();
-
-	_set_postfix("smtpd_helo_required", "yes");
-	_set_postfix("smtpd_delay_reject", "yes");
-	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
-
-	control(POSTFIX(), RESTART());
+	save_policy_state(1);
 }
 
 
@@ -141,11 +136,27 @@ Disables policyd-weight in postfix if it is enabled.
 =cut
 
 sub disable_policy {
-	throw Yaffas::Exception("policy-weightd isn't enabled.") unless check_policy();
+	save_policy_state(0);
+}
 
-	_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain");
+sub save_policy_state {
+	my $state = shift;
 
-	control(POSTFIX(), RESTART());
+	if ($state) {
+		throw Yaffas::Exception("policy-weightd is already enabled.") if check_policy();
+
+		_set_postfix("smtpd_helo_required", "yes");
+		_set_postfix("smtpd_delay_reject", "yes");
+		_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
+
+		control(POSTFIX(), RESTART());
+	}
+	else {
+
+		throw Yaffas::Exception("policy-weightd isn't enabled.") unless check_policy();
+		_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain");
+		control(POSTFIX(), RESTART());
+	}
 }
 
 
@@ -184,24 +195,7 @@ Disable spamassassin in amavis if it isn't already disabled.
 =cut
 
 sub disable_spamassassin {
-	disable_amavis() unless check_antivirus();
-	throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
-	
-	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("\@bypass_spam_checks_maps");
-
-	my $line = $f->get_content($num);
-	if(Yaffas::Constant::OS eq "RHEL5") {
-		$line =~ s/^#//;
-	} else {
-		#for Ubuntu has inverted logic
-		$line =~ s/^/#/;
-	}
-
-	$f->splice_line($num, 1, $line);
-	$f->write();
-
-	control(AMAVIS(), RESTART());
+	save_spamassassin_state(0);
 }
 
 
@@ -212,24 +206,49 @@ Enable spamassassin in amavis if it is disabled.
 =cut
 
 sub enable_spamassassin {
-	enable_amavis() unless check_amavis();
-	throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
+	save_spamassassin_state(1);
+}
+
+sub save_spamassassin_state {
+	my $state = shift;
+
+	if ($state) {
+		enable_amavis() unless check_amavis();
+		throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
+	}
+	else {
+		disable_amavis() unless check_antivirus();
+		throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
+	}
 
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("\@bypass_spam_checks_maps");
 
 	my $line = $f->get_content($num);
-	if(Yaffas::Constant::OS eq "RHEL5") {
-		$line =~ s/^/#/;
-	} else {
-		#for Ubuntu has inverted logic
-		$line =~ s/^#//;
+
+	if ($state) {
+		if(Yaffas::Constant::OS eq "RHEL5") {
+			$line =~ s/^/#/;
+		} else {
+			#for Ubuntu has inverted logic
+			$line =~ s/^#//;
+		}
+	}
+	else {
+		my $line = $f->get_content($num);
+		if(Yaffas::Constant::OS eq "RHEL5") {
+			$line =~ s/^#//;
+		} else {
+			#for Ubuntu has inverted logic
+			$line =~ s/^/#/;
+		}
 	}
 
 	$f->splice_line($num, 1, $line);
 	$f->write();
 
 	control(AMAVIS(), RESTART());
+
 }
 
 
@@ -240,24 +259,7 @@ Disable clamav in amavis if it isn't already disabled
 =cut
 
 sub disable_clamav {
-	disable_amavis() unless check_spam();
-	throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
-	
-	my $f = Yaffas::File->new($conf_amavis);
-	my $num = $f->search_line("\@bypass_virus_checks_maps");
-
-	my $line = $f->get_content($num);
-	if(Yaffas::Constant::OS eq "RHEL5") {
-		$line =~ s/^#//;
-	} else {
-		#for Ubuntu has inverted logic
-		$line =~ s/^/#/;
-	}
-
-	$f->splice_line($num, 1, $line);
-	$f->write();
-
-	control(AMAVIS(), RESTART());
+	save_clamav_state(0);
 }
 
 =item enable_clamav()
@@ -267,18 +269,41 @@ Enbale clamav in amavis if it is disabled.
 =cut
 
 sub enable_clamav {
-	enable_amavis() unless check_amavis();
-	throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
+	save_clamav_state(1);
+}
+
+sub save_clamav_state {
+	my $state = shift;
+
+	if ($state) {
+		enable_amavis() unless check_amavis();
+		throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
+	}
+	else {
+		disable_amavis() unless check_spam();
+		throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
+	}
+
 
 	my $f = Yaffas::File->new($conf_amavis);
 	my $num = $f->search_line("\@bypass_virus_checks_maps");
 
 	my $line = $f->get_content($num);
-	if(Yaffas::Constant::OS eq "RHEL5") {
-		$line =~ s/^/#/;
-	} else {
-		#for Ubuntu has inverted logic
-		$line =~ s/^#//;
+	if ($state) {
+		if(Yaffas::Constant::OS eq "RHEL5") {
+			$line =~ s/^/#/;
+		} else {
+			#for Ubuntu has inverted logic
+			$line =~ s/^#//;
+		}
+	}
+	else {
+		if(Yaffas::Constant::OS eq "RHEL5") {
+			$line =~ s/^#//;
+		} else {
+			#for Ubuntu has inverted logic
+			$line =~ s/^/#/;
+		}
 	}
 
 	$f->splice_line($num, 1, $line);
@@ -286,7 +311,6 @@ sub enable_clamav {
 
 	control(AMAVIS(), RESTART());
 }
-
 
 =item sa_tag2_level([level])
 
@@ -557,6 +581,7 @@ will add or uncomment it.
 
 sub spam_add_trusted_network {
 	my $host = shift;
+	my $restart = shift;
 	throw Yaffas::Exception('Invalid input') if $host !~ m#^[0-9./!]+\z#;
 
 	my $y = Yaffas::File->new($conf_spam) || throw Yaffas::Exception("open '$conf_spam' failed: $!");
@@ -572,7 +597,9 @@ sub spam_add_trusted_network {
 	$y->splice_line($num, 1, $line);
 	$y->save();
 
-	control(SPAMASSASSIN(), RESTART());
+	if ($restart == undef) {
+		control(SPAMASSASSIN(), RESTART());
+	}
 }
 
 
@@ -584,6 +611,8 @@ Delete the given host or net from the trusted_networks.
 
 sub spam_del_trusted_network {
 	my $host = shift;
+	my $restart = shift;
+
 	chomp($host);
 	my $y = Yaffas::File->new($conf_spam) || throw Yaffas::Exception("open '$conf_spam' failed: $!");
 	my $num = $y->search_line(qr/trusted_networks/);
@@ -595,8 +624,25 @@ sub spam_del_trusted_network {
 	$y->splice_line($num, 1, $line);
 	$y->save();
 
+	if ($restart == undef) {
+		control(SPAMASSASSIN(), RESTART());
+	}
+}
+
+sub spam_reset_trusted_network {
+	my @new_trusted = @_;
+	my @trusted = spam_trusted_networks();
+
+	foreach my $t (@trusted) {
+		spam_del_trusted_network($t, 1);
+	}
+
+	foreach my $t (@new_trusted) {
+		spam_add_trusted_network($t, 1);
+	}
 	control(SPAMASSASSIN(), RESTART());
 }
+
 
 
 =item wl_postfix() 
@@ -800,8 +846,18 @@ sub whitelist_delete {
 }
 
 
-# for Yaffas::Module
-sub conf_dump {
+sub whitelist_reset {
+	my @new_whitelist = @_;
+
+	my @whitelist = whitelist();
+
+	foreach my $w (@whitelist) {
+		whitelist_delete($w);
+	}
+
+	foreach my $w (@new_whitelist) {
+		whitelist_add($w);
+	}
 }
 
 
@@ -1054,9 +1110,65 @@ sub amavis_virusalert {
     }
 }
 
-package Policy;
-use strict; 
-use warnings;
+# for Yaffas::Module
+sub conf_dump {
+	my $conf = Yaffas::Conf->new();
+	my $section = $conf->section("security");
+	my $function = Yaffas::Conf::Function->new("clamav-state", "Yaffas::Module::Security::save_clamav_state");
+	$function->add_param({type=>"scalar", param=>check_antivirus()});
+	$section->del_func("clamav-state");
+	$section->add_func($function);
+
+	if (check_antivirus()) {
+		$function = Yaffas::Conf::Function->new("clamav-scanarchive", "Yaffas::Module::Security::clam_scan_archive");
+		$function->add_param({type=>"scalar", param=>clam_scan_archive()});
+		$section->del_func("clamav-scanarchive");
+		$section->add_func($function);
+
+		$function = Yaffas::Conf::Function->new("clamav-maxlength", "Yaffas::Module::Security::clam_max_length");
+		$function->add_param({type=>"scalar", param=>clam_max_length()});
+		$section->del_func("clamav-maxlength");
+		$section->add_func($function);
+
+		$function = Yaffas::Conf::Function->new("clamav-virusalert", "Yaffas::Module::Security::amavis_virusalert");
+		$function->add_param({type=>"scalar", param=>amavis_virusalert()});
+		$section->del_func("clamav-virusalert");
+		$section->add_func($function);
+	}
+
+	$function = Yaffas::Conf::Function->new("spamassassin-state", "Yaffas::Module::Security::save_spamassassin_state");
+	$function->add_param({type=>"scalar", param=>check_spam()});
+	$section->del_func("spamassassin-state");
+	$section->add_func($function);
+
+	if (check_spam()) {
+		$function = Yaffas::Conf::Function->new("spamassassin-score", "Yaffas::Module::Security::sa_tag2_level");
+		$function->add_param({type=>"scalar", param=>sa_tag2_level()});
+		$section->del_func("spamassassin-score");
+		$section->add_func($function);
+
+		$function = Yaffas::Conf::Function->new("spamassassin-trusted-net", "Yaffas::Module::Security::spam_reset_trusted_network");
+		my @trusted = spam_trusted_networks();
+		$function->add_param({type=>"array", param=>\@trusted});
+		$section->del_func("spamassassin-trusted-net");
+		$section->add_func($function);
+	}
+
+	$function = Yaffas::Conf::Function->new("policy-state", "Yaffas::Module::Security::save_spamassassin_state");
+	$function->add_param({type=>"scalar", param=>check_policy()});
+	$section->del_func("policy-state");
+	$section->add_func($function);
+
+
+	$function = Yaffas::Conf::Function->new("whitelist", "Yaffas::Module::Security::whitelist_reset");
+	my @whitelist = whitelist();
+	$function->add_param({type=>"array", param=>\@whitelist});
+	$section->del_func("whitelist");
+	$section->add_func($function);
+
+
+	$conf->save();
+}
 
 
 =back
