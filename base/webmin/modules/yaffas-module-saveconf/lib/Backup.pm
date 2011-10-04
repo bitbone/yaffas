@@ -258,8 +258,8 @@ sub restore($)
 		control(CYRUS, RESTART);
 	}
 
-	# mail or gate
-	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate')) 
+	# mail or gate or zarafa
+	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate') or Yaffas::Product::check_product('zarafa')) 
 	{
 		my $fetchmailrc = Yaffas::Constant::FILE->{'fetchmailrc'};
 		my $mode = 0600;
@@ -357,7 +357,7 @@ sub _get_files()
 	#
 	# Please make sure to remove abandoned/deprecated entries, if you find some.
 	#
-	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate')) {
+	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate') or Yaffas::Product::check_product('zarafa')) {
 		push @files,  Yaffas::Constant::FILE->{'fetchmailrc'};
 	}
 
