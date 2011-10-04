@@ -293,6 +293,14 @@ sub get_default_features() {
 	return \%ret;
 }
 
+sub set_default_features() {
+	my %featues = @_;
+
+	foreach my $f (keys %featues) {
+		change_default_features($f, $featues{$f} eq "on" ? 1 : 0);
+	}
+}
+
 sub change_default_features {
 	my $feature = shift;
 	my $state = shift;
@@ -388,6 +396,21 @@ sub conf_dump() {
 	$func->add_param({type => "scalar", param => (Yaffas::Mail::get_default_quota()/1024)});
 	$sec->del_func("quota");
 	$sec->add_func($func);
+
+	$sec = $bkc->section("zarafafeatures");
+	$func = Yaffas::Conf::Function->new("setfeatures", "Yaffas::Module::ZarafaConf::set_default_features");
+	$func->add_param({type => "hash", param => Yaffas::Module::ZarafaConf::get_default_features()});
+	$sec->del_func("setfeatures");
+	$sec->add_func($func);
+
+	$sec = $bkc->section("zarafaquota");
+	for my $type (qw(warn soft hard)) {
+		$func = Yaffas::Conf::Function->new("quota-msg-$type", "Yaffas::Module::ZarafaConf::set_quota_message");
+		$func->add_param({type => "scalar", param => $type});
+		$func->add_param({type => "scalar", param => get_quota_message($type)});
+		$sec->del_func("quota-msg-$type");
+		$sec->add_func($func);
+	}
 
 	$bkc->save();
 	return 1;
