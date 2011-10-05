@@ -36,7 +36,7 @@ else
 	}
 	else
 	{
-		print Yaffas::UI::ok_box("$mailids: $main::text{'suc_deleted'}");
+		print Yaffas::UI::ok_box();
 	}
 }
 
