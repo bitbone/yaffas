@@ -143,8 +143,6 @@ sub save_policy_state {
 	my $state = shift;
 
 	if ($state) {
-		throw Yaffas::Exception("policy-weightd is already enabled.") if check_policy();
-
 		_set_postfix("smtpd_helo_required", "yes");
 		_set_postfix("smtpd_delay_reject", "yes");
 		_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain, check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix, check_policy_service inet:127.0.0.1:12525");
@@ -152,8 +150,6 @@ sub save_policy_state {
 		control(POSTFIX(), RESTART());
 	}
 	else {
-
-		throw Yaffas::Exception("policy-weightd isn't enabled.") unless check_policy();
 		_set_postfix("smtpd_recipient_restrictions", "permit_mynetworks, permit_sasl_authenticated, reject_unauth_destination, reject_unknown_recipient_domain");
 		control(POSTFIX(), RESTART());
 	}
@@ -167,8 +163,6 @@ Enables amavis in postfix if it isn't already enabled.
 =cut
 
 sub enable_amavis {
-	throw Yaffas::Exception("amavis is already enabled.") if check_amavis();
-
 	_set_postfix("content_filter", "amavis:[127.0.0.1]:10024");
 	control(POSTFIX(), RESTART());
 }
@@ -181,8 +175,6 @@ Disables amavis in postfix if it is enabled
 =cut
 
 sub disable_amavis {
-	throw Yaffas::Exception("amavis isn't enabled.") unless check_amavis();
-
 	_set_postfix("content_filter", "");
 	control(POSTFIX(), RESTART());
 }
@@ -214,11 +206,9 @@ sub save_spamassassin_state {
 
 	if ($state) {
 		enable_amavis() unless check_amavis();
-		throw Yaffas::Exception("spamassassin is already enabled") if check_spam();
 	}
 	else {
 		disable_amavis() unless check_antivirus();
-		throw Yaffas::Exception("spamassassin is already disabled") unless check_spam();
 	}
 
 	my $f = Yaffas::File->new($conf_amavis);
@@ -277,11 +267,9 @@ sub save_clamav_state {
 
 	if ($state) {
 		enable_amavis() unless check_amavis();
-		throw Yaffas::Exception("clamav is already enabled") if check_antivirus();
 	}
 	else {
 		disable_amavis() unless check_spam();
-		throw Yaffas::Exception("clamav is already enabled") unless check_antivirus();
 	}
 
 
@@ -410,6 +398,28 @@ sub policy_delete_dnsbl {
 	control(POLICYD_WEIGHT(), RESTART());
 }
 
+sub policy_reset_dnsbl {
+	my @values = @_;
+
+	my @dnsbl = policy_dnsbl();
+	my @dnsbl_content;
+
+	for my $i (1 .. (@dnsbl / 4)){
+		push @dnsbl_content, [splice(@dnsbl, 0, 4)];
+	}
+
+	foreach my $i (@dnsbl_content) {
+		_delete_dnsbl($i->[0], $i->[1], $i->[2], $i->[3]);
+	}
+
+	while (@values) {
+		my @v = splice @values, 0, 4;
+
+		_policy_dnsbl(@v);
+	}
+	control(POLICYD_WEIGHT(), RESTART());
+}
+
 
 =item policy_rhsbl(host, hit, miss, log)
 
@@ -437,6 +447,28 @@ note that they have to occur in the exact order.
 
 sub policy_delete_rhsbl {
 	_delete_rhsbl(@_);
+	control(POLICYD_WEIGHT(), RESTART());
+}
+
+sub policy_reset_rhsbl {
+	my @values = @_;
+
+	my @rhsbl = policy_rhsbl();
+	my @rhsbl_content;
+
+	for my $i (1 .. (@rhsbl / 4)){
+		push @rhsbl_content, [splice(@rhsbl, 0, 4)];
+	}
+
+	foreach my $i (@rhsbl_content) {
+		_delete_rhsbl($i->[0], $i->[1], $i->[2], $i->[3]);
+	}
+
+	while (@values) {
+		my @v = splice @values, 0, 4;
+
+		_policy_rhsbl(@v);
+	}
 	control(POLICYD_WEIGHT(), RESTART());
 }
 
@@ -849,7 +881,8 @@ sub whitelist_delete {
 sub whitelist_reset {
 	my @new_whitelist = @_;
 
-	my @whitelist = whitelist();
+	my %whitelist = whitelist();
+	my @whitelist = keys %whitelist;
 
 	foreach my $w (@whitelist) {
 		whitelist_delete($w);
@@ -902,7 +935,7 @@ sub _delete_dnsbl {
 		}
 	}
 
-	throw Yaffas::Exception("Given combination not found") unless $where;
+	throw Yaffas::Exception("Given combination not found") unless defined($where);
 	splice(@current, $where, 4);
 
 	_write_policy_conf(dnsbl_score => \@current);
@@ -913,7 +946,13 @@ sub _policy_dnsbl {
 	my @set = @_;
 	my $ref = {_get_policy_conf()};
 
-	return @{ $ref->{dnsbl_score} } unless @set;
+	if (not @set) {
+		if ($ref->{dnsbl_score}) {
+			return @{ $ref->{dnsbl_score} };
+		}
+		return ();
+	}
+
 
 	throw Yaffas::Exception("Invalid content provided") if scalar @set != 4;
 	foreach(@set){
@@ -921,9 +960,15 @@ sub _policy_dnsbl {
 	}
 
 	my %conf = _get_policy_conf();
-	my @new = (@{$conf{dnsbl_score}}, @set);
+	my @new;
 
- 	_write_policy_conf(dnsbl_score => \@new);
+	if (ref $conf{dnsbl_score} eq "ARRAY") {
+		@new = @{$conf{dnsbl_score}};
+	}
+
+	push @new, @set;
+
+	_write_policy_conf(dnsbl_score => \@new);
 }
 
 sub _delete_rhsbl {
@@ -947,11 +992,10 @@ sub _delete_rhsbl {
 		}
 	}
 
-	throw Yaffas::Exception("Given combination not found") unless $where;
+	throw Yaffas::Exception("Given combination not found") unless defined($where);
 	splice(@current, $where, 4);
 
 	_write_policy_conf(rhsbl_score => \@current);
-
 }
 
 
@@ -959,7 +1003,12 @@ sub _policy_rhsbl {
 	my @set = @_;
 	my $ref = {_get_policy_conf()};
 
-	return @{ $ref->{rhsbl_score} } unless @set;
+	if (not @set) {
+		if ($ref->{rhsbl_score}) {
+			return @{ $ref->{rhsbl_score} };
+		}
+		return ();
+	}
 
 	throw Yaffas::Exception("Invalid content provided") if scalar @set != 4;
 	foreach(@set){
@@ -967,7 +1016,13 @@ sub _policy_rhsbl {
 	}
 
 	my %conf = _get_policy_conf();
-	my @new = (@{$conf{rhsbl_score}}, @set);
+	my @new;
+
+	if (ref $conf{rhsbl_score} eq "ARRAY") {
+		@new = @{$conf{rhsbl_score}};
+	}
+
+	push @new, @set;
 
 	_write_policy_conf(rhsbl_score => \@new);
 }
@@ -1154,14 +1209,28 @@ sub conf_dump {
 		$section->add_func($function);
 	}
 
-	$function = Yaffas::Conf::Function->new("policy-state", "Yaffas::Module::Security::save_spamassassin_state");
+	$function = Yaffas::Conf::Function->new("policy-state", "Yaffas::Module::Security::save_policy_state");
 	$function->add_param({type=>"scalar", param=>check_policy()});
 	$section->del_func("policy-state");
 	$section->add_func($function);
 
+	if (check_policy()) {
+		$function = Yaffas::Conf::Function->new("policy-dnsbl", "Yaffas::Module::Security::policy_reset_dnsbl");
+		my @dnsbl = policy_dnsbl();
+		$function->add_param({type=>"array", param=>\@dnsbl});
+		$section->del_func("policy-dnsbl");
+		$section->add_func($function);
+
+		$function = Yaffas::Conf::Function->new("policy-rhsbl", "Yaffas::Module::Security::policy_reset_rhsbl");
+		my @rhsbl = policy_rhsbl();
+		$function->add_param({type=>"array", param=>\@rhsbl});
+		$section->del_func("policy-rhsbl");
+		$section->add_func($function);
+	}
 
 	$function = Yaffas::Conf::Function->new("whitelist", "Yaffas::Module::Security::whitelist_reset");
-	my @whitelist = whitelist();
+	my %whitelist = whitelist();
+	my @whitelist = keys %whitelist;
 	$function->add_param({type=>"array", param=>\@whitelist});
 	$section->del_func("whitelist");
 	$section->add_func($function);
