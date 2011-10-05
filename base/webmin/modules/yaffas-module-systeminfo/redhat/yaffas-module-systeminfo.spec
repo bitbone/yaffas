@@ -32,6 +32,13 @@ if ! grep -q $MODULE /opt/yaffas/etc/webmin/hidden_modules; then
     echo $MODULE >> /opt/yaffas/etc/webmin/hidden_modules
 fi
 
+%postun
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="systeminfo"
+	del_webmin_acl $MODULE
+fi
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT

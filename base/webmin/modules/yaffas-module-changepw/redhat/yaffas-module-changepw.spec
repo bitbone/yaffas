@@ -28,6 +28,13 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="changepw"
 add_webmin_acl $MODULE
 
+%postun
+if [ "$1" = "0" ]; then
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="changepw"
+	del_webmin_acl $MODULE
+fi
+
 %files
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}

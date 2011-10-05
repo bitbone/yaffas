@@ -49,6 +49,13 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE=fetchmail
 add_webmin_acl $MODULE
 
+%postun
+if [ "$1" = "0" ]; then
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE=fetchmail
+	del_webmin_acl $MODULE
+fi
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}

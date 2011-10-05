@@ -33,6 +33,14 @@ fi
 
 service smb reload
 
+%postun
+INCLUDES="/etc/samba/includes.smb"
+if [ -e $INCLUDES ]; then
+	if ( grep -q "smbopts.software" $INCLUDES ); then
+		sed '/smbopts.software/d' -i $INCLUDES
+	fi
+fi
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}

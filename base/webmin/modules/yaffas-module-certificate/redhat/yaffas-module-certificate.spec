@@ -32,10 +32,12 @@ MODULE=certificate
 add_webmin_acl $MODULE
 
 %postun
-set -e
-source /opt/yaffas/lib/bbinstall-lib.sh
-MODULE=certificate
-del_webmin_acl $MODULE
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE=certificate
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root)

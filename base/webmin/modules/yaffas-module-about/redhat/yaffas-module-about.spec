@@ -1,3 +1,4 @@
+%define module			about
 Summary:	Shows informations about installed yaffas versions
 Name:		yaffas-module-about
 Version:	1.0.0
@@ -27,10 +28,14 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 set -e
 source /opt/yaffas/lib/bbinstall-lib.sh
-MODULE="about"
-add_webmin_acl $MODULE
+add_webmin_acl %{module}
 
 %postun
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	del_webmin_acl %{module}
+fi
 
 %files
 %defattr(-,root,root)

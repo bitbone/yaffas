@@ -27,6 +27,14 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="mailsrv"
 add_webmin_acl $MODULE
 
+%postun
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="mailsrv"
+	del_webmin_acl $MODULE
+fi
+
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 

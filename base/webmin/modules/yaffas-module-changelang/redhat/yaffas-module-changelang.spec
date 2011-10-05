@@ -32,6 +32,12 @@ if ! grep -q $MODULE /opt/yaffas/etc/webmin/hidden_modules; then
     echo $MODULE >> /opt/yaffas/etc/webmin/hidden_modules
 fi
 
+%postun
+if [ "$1" = "0" ]; then
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="changelang"
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root)
