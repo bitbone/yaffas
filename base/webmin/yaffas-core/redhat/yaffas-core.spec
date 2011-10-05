@@ -89,7 +89,7 @@ fi
 %doc debian/{copyright,changelog}
 
 #%{_localstatedir}/yaffas
-/opt/yaffas/etc/webmin/*
+%config(noreplace) /opt/yaffas/etc/webmin/*
 /opt/yaffas/webmin/Webmin
 /opt/yaffas/webmin/proc
 /opt/yaffas/webmin/acl
