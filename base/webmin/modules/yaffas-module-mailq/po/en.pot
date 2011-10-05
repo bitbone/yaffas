@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-06 00:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -112,70 +112,55 @@ msgstr ""
 
 #: lang/en:20
 #, no-wrap
-msgid "Really remove the emails with this mail id`s?"
+msgid "Really remove the emails with this mail ids?"
 msgstr ""
 
 #: lang/en:21
 #, no-wrap
-msgid "deleted"
+msgid "Network"
 msgstr ""
 
 #: lang/en:22
 #, no-wrap
-msgid "attemted to dequeue"
+msgid "No emails selected."
 msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid "forwarded to"
+msgid "No mail IDs selected"
 msgstr ""
 
 #: lang/en:24
 #, no-wrap
-msgid "Network"
+msgid "Error marking email addresses as delivered"
 msgstr ""
 
 #: lang/en:25
 #, no-wrap
-msgid "No emails selected."
+msgid "Error while adding new recipient to the mailid"
 msgstr ""
 
 #: lang/en:26
 #, no-wrap
-msgid "No mail IDs selected"
+msgid "Error while force a delivery"
 msgstr ""
 
 #: lang/en:27
 #, no-wrap
-msgid "Error while mark existing email addresses as delivered"
+msgid "Error removing email"
 msgstr ""
 
 #: lang/en:28
 #, no-wrap
-msgid "Error while adding new recipient to the mailid"
+msgid "Error at dequeue attempt for email"
 msgstr ""
 
 #: lang/en:29
 #, no-wrap
-msgid "Error while force a delivery"
-msgstr ""
-
-#: lang/en:30
-#, no-wrap
-msgid "Error removing email"
-msgstr ""
-
-#: lang/en:31
-#, no-wrap
-msgid "Error at dequeue attempt for email"
-msgstr ""
-
-#: lang/en:32
-#, no-wrap
 msgid "No valid email address"
 msgstr ""
 
-#: lang/en:33
+#: lang/en:30
 #, no-wrap
 msgid "Display"
 msgstr ""

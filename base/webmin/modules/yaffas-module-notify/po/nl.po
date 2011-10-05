@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-28 16:31+0200\n"
+"POT-Creation-Date: 2011-10-06 00:13+0300\n"
+"PO-Revision-Date: 2011-09-29 10:46+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: lang/en:15
 #, no-wrap
-msgid "Type can only be: always, errors und never."
+msgid "Type can only be: always, errors or never."
 msgstr ""
 
 #: lang/en:16
@@ -288,20 +288,37 @@ msgstr ""
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "De quotawaarde kan alleen cijfers bevatten."
 
-#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
-#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+#~ msgid ""
+#~ "Specify the maximum size of attachments for each mail in MB to be "
+#~ "uploaded via the Webaccess."
+#~ msgstr ""
+#~ "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden "
+#~ "geüpload via de Webaccess."
 
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+#~ msgid ""
+#~ "This database will be created if it doesn't exists. To do this the user "
+#~ "needs the right permissions."
+#~ msgstr ""
+#~ "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft "
+#~ "de gebruiker de juiste permissies nodig."
 
-#~ msgid "This is the password that is set on the database. You need to set this password manually."
-#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
+#~ msgid ""
+#~ "This is the password that is set on the database. You need to set this "
+#~ "password manually."
+#~ msgstr ""
+#~ "Dit is het wachtwoord dat op de database is ingesteld. U moet het "
+#~ "wachtwoord met de hand instellen."
 
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
+#~ msgid ""
+#~ "This is the username that will be used for connecting to database. The "
+#~ "user has to be created and have the permissions to use the given database."
+#~ msgstr ""
+#~ "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de "
+#~ "database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om "
+#~ "de opgegeven database te kunnen gebruiken."
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
@@ -397,13 +414,23 @@ msgstr ""
 #~ msgstr "Verwijderen van directory"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+#~ msgstr ""
+#~ "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
 
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
 
+#~ msgid "Zarafa Backup"
+#~ msgstr "Zarafa Backup"
+
+#~ msgid "Zarafa Backup is not installed"
+#~ msgstr "Zarafa Backup is niet geïnstalleerd"
+
 #~ msgid "Time not correct."
 #~ msgstr "Tijd niet correct."
+
+#~ msgid "Could not open file."
+#~ msgstr "Kon bestand niet openen."
 
 # 81%
 # 82%
@@ -417,8 +444,12 @@ msgstr ""
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid "The domain is not defined as local domain in your mailserver configuration."
-#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
+#~ msgid ""
+#~ "The domain is not defined as local domain in your mailserver "
+#~ "configuration."
+#~ msgstr ""
+#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
+#~ "configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -453,8 +484,11 @@ msgstr ""
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
+#~ msgid ""
+#~ "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr ""
+#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
+#~ "functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"
@@ -568,25 +602,6 @@ msgstr ""
 # 85%
 #, fuzzy
 #~ msgid "Do you really want to delete this groups?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 78%
-# 86%
-#, fuzzy
-#~ msgid "Do you really want to edit the these entries?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 78%
-#, fuzzy
-#~ msgid "Do you really want to edit this entries?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 88%
-#, fuzzy
-#~ msgid "Do you really want to delete this entries?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
 
 #~ msgid "System information"
@@ -785,12 +800,6 @@ msgstr ""
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
-
-# 83%
-# 85%
-#, fuzzy
-#~ msgid "deleted"
-#~ msgstr "Verwijder"
 
 # 81%
 #, fuzzy

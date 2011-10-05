@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-28 16:31+0200\n"
+"PO-Revision-Date: 2011-09-29 10:46+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -906,8 +906,17 @@ msgstr ""
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
 
+#~ msgid "Zarafa Backup"
+#~ msgstr "Zarafa Backup"
+
+#~ msgid "Zarafa Backup is not installed"
+#~ msgstr "Zarafa Backup is niet geïnstalleerd"
+
 #~ msgid "Time not correct."
 #~ msgstr "Tijd niet correct."
+
+#~ msgid "Could not open file."
+#~ msgstr "Kon bestand niet openen."
 
 # 81%
 # 82%
@@ -1067,25 +1076,6 @@ msgstr ""
 # 85%
 #, fuzzy
 #~ msgid "Do you really want to delete this groups?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 78%
-# 86%
-#, fuzzy
-#~ msgid "Do you really want to edit the these entries?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 78%
-#, fuzzy
-#~ msgid "Do you really want to edit this entries?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
-
-# 81%
-# 88%
-#, fuzzy
-#~ msgid "Do you really want to delete this entries?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
 
 #~ msgid "System information"
@@ -1284,12 +1274,6 @@ msgstr ""
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
-
-# 83%
-# 85%
-#, fuzzy
-#~ msgid "deleted"
-#~ msgstr "Verwijder"
 
 # 96%
 #~ msgid "No e-mail address specified"

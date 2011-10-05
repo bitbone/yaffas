@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-06 00:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,317 +82,302 @@ msgstr ""
 
 #: lang/en:16
 #, no-wrap
-msgid "Do you really want to edit the these entries?"
-msgstr ""
-
-#: lang/en:17
-#, no-wrap
-msgid "Do you really want to edit this entries?"
+msgid "Do you really want to delete these entries?"
 msgstr ""
 
 #: lang/en:18
 #, no-wrap
-msgid "Do you really want to delete this entries?"
-msgstr ""
-
-#: lang/en:19
-#, no-wrap
-msgid "Edit Entries"
-msgstr ""
-
-#: lang/en:22
-#, no-wrap
 msgid "Local Domains"
 msgstr ""
 
-#: lang/en:24
+#: lang/en:20
 #, no-wrap
 msgid "Open Relay Subnets"
 msgstr ""
 
-#: lang/en:26
+#: lang/en:22
 #, no-wrap
 msgid "Save"
 msgstr ""
 
-#: lang/en:28
+#: lang/en:24
 #, no-wrap
 msgid "Mailserv"
 msgstr ""
 
-#: lang/en:29
+#: lang/en:25
 #, no-wrap
 msgid "Mailserver"
 msgstr ""
 
-#: lang/en:31
+#: lang/en:27
 #, no-wrap
 msgid "Add"
 msgstr ""
 
-#: lang/en:32
+#: lang/en:28
 #, no-wrap
 msgid "Delete"
 msgstr ""
 
-#: lang/en:33
+#: lang/en:29
 #, no-wrap
 msgid "Maximum mail size"
 msgstr ""
 
-#: lang/en:35
+#: lang/en:31
 #, no-wrap
 msgid "E-Mail forwarding"
 msgstr ""
 
-#: lang/en:36
+#: lang/en:32
 #, no-wrap
 msgid "Forward all e-mail"
 msgstr ""
 
-#: lang/en:37
+#: lang/en:33
 #, no-wrap
 msgid "Rewrite local domain"
 msgstr ""
 
-#: lang/en:39
+#: lang/en:35
 #, no-wrap
 msgid "Enable archival storage"
 msgstr ""
 
-#: lang/en:40
+#: lang/en:36
 #, no-wrap
 msgid "Destination of archival storage"
 msgstr ""
 
-#: lang/en:41
+#: lang/en:37
 #, no-wrap
 msgid "Archival Storage"
 msgstr ""
 
-#: lang/en:43
+#: lang/en:39
 #, no-wrap
 msgid "Zarafa administrator for delivery into public folders"
 msgstr ""
 
-#: lang/en:45
+#: lang/en:41
 #, no-wrap
 msgid "The destination have to be a local user or an e-mail address!"
 msgstr ""
 
-#: lang/en:47
+#: lang/en:43
 #, no-wrap
 msgid "You have to insert a valid domainname."
 msgstr ""
 
-#: lang/en:49
+#: lang/en:45
 #, no-wrap
 msgid "No Entries."
 msgstr ""
 
-#: lang/en:50
+#: lang/en:46
 #, no-wrap
 msgid "Smarthost not valid."
 msgstr ""
 
-#: lang/en:51
+#: lang/en:47
 #, no-wrap
 msgid "Username not valid."
 msgstr ""
 
-#: lang/en:52
+#: lang/en:48
 #, no-wrap
 msgid "Password not valid."
 msgstr ""
 
-#: lang/en:53
+#: lang/en:49
 #, no-wrap
 msgid "Maildomain not valid."
 msgstr ""
 
-#: lang/en:54
+#: lang/en:50
 #, no-wrap
 msgid "IP adress or IP range not valid."
 msgstr ""
 
-#: lang/en:55
+#: lang/en:51
 #, no-wrap
 msgid ""
 "Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), "
 "'.' and '-'. It also has a minimum length of one."
 msgstr ""
 
-#: lang/en:56
+#: lang/en:52
 #, no-wrap
 msgid "Mailadmin not valid."
 msgstr ""
 
-#: lang/en:57
+#: lang/en:53
 #, no-wrap
 msgid "Mailserver not valid."
 msgstr ""
 
-#: lang/en:58
+#: lang/en:54
 #, no-wrap
 msgid "The mail size has to be a number."
 msgstr ""
 
-#: lang/en:59
+#: lang/en:55
 #, no-wrap
-msgid "Invalid value for recepient verification"
+msgid "Invalid value for recipient verification"
 msgstr ""
 
-#: lang/en:61
+#: lang/en:57
 #, no-wrap
 msgid "Zarafa is not installed."
 msgstr ""
 
-#: lang/en:62
+#: lang/en:58
 #, no-wrap
 msgid "This user does not exists on this system."
 msgstr ""
 
-#: lang/en:63
+#: lang/en:59
 #, no-wrap
 msgid "No password given."
 msgstr ""
 
-#: lang/en:64
+#: lang/en:60
 #, no-wrap
 msgid "This user is not an zarafa administrator."
 msgstr ""
 
-#: lang/en:65
+#: lang/en:61
 #, no-wrap
 msgid "The password is not correct."
 msgstr ""
 
-#: lang/en:68
+#: lang/en:64
 #, no-wrap
 msgid "Antivirus"
 msgstr ""
 
-#: lang/en:69
+#: lang/en:65
 #, no-wrap
 msgid "Antispam"
 msgstr ""
 
-#: lang/en:70
+#: lang/en:66
 #, no-wrap
 msgid "Greylist"
 msgstr ""
 
-#: lang/en:71
+#: lang/en:67
 #, no-wrap
 msgid "Quarantine"
 msgstr ""
 
-#: lang/en:72
+#: lang/en:68
 #, no-wrap
 msgid "Mail Security"
 msgstr ""
 
-#: lang/en:73
+#: lang/en:69
 #, no-wrap
 msgid "Spamassassin"
 msgstr ""
 
-#: lang/en:74
+#: lang/en:70
 #, no-wrap
 msgid "MPP Policyserver"
 msgstr ""
 
-#: lang/en:76
+#: lang/en:72
 #, no-wrap
 msgid "Enabled"
 msgstr ""
 
-#: lang/en:77
+#: lang/en:73
 #, no-wrap
 msgid "Disabled"
 msgstr ""
 
-#: lang/en:79
+#: lang/en:75
 #, no-wrap
 msgid "Status"
 msgstr ""
 
-#: lang/en:80
+#: lang/en:76
 #, no-wrap
 msgid "Service"
 msgstr ""
 
-#: lang/en:81
+#: lang/en:77
 #, no-wrap
 msgid "Feature"
 msgstr ""
 
-#: lang/en:83
+#: lang/en:79
 #, no-wrap
 msgid "Start"
 msgstr ""
 
-#: lang/en:84
+#: lang/en:80
 #, no-wrap
 msgid "Stop"
 msgstr ""
 
-#: lang/en:86
+#: lang/en:82
 #, no-wrap
 msgid "Running"
 msgstr ""
 
-#: lang/en:87
+#: lang/en:83
 #, no-wrap
 msgid "Stopped"
 msgstr ""
 
-#: lang/en:89
+#: lang/en:85
 #, no-wrap
 msgid "E-mail"
 msgstr ""
 
-#: lang/en:90
+#: lang/en:86
 #, no-wrap
 msgid "Virus found notification"
 msgstr ""
 
-#: lang/en:92
+#: lang/en:88
 #, no-wrap
 msgid "Disabled TLS/SSL"
 msgstr ""
 
-#: lang/en:93
+#: lang/en:89
 #, no-wrap
 msgid "Disable TLS/SSL to smarthost"
 msgstr ""
 
-#: lang/en:94
+#: lang/en:90
 #, no-wrap
 msgid "Disable TLS/SSL to mailclient"
 msgstr ""
 
-#: lang/en:96
+#: lang/en:92
 #, no-wrap
 msgid "You submitted e-mail address is not correct!"
 msgstr ""
 
-#: lang/en:98
+#: lang/en:94
 #, no-wrap
 msgid "Your KAV key is expired or not valid!"
 msgstr ""
 
-#: lang/en:99
+#: lang/en:95
 #, no-wrap
 msgid "You have to update your KAV before you activate this feature."
 msgstr ""
 
-#: lang/en:100
+#: lang/en:96
 #, no-wrap
 msgid "You have to update your KAS before you activate this feature."
 msgstr ""
 
-#: lang/en:101
+#: lang/en:97
 #, no-wrap
 msgid "Please activate policy server in MPP interface first."
 msgstr ""
