@@ -11,7 +11,7 @@ Remember to save configurations regularly!
 ==============
 
 ==== Restore Configuration
-If you have to use this option, install the server with a fresh operating system, install {product} and then select the authentication method that was uses before.
+If you have to use this option, install the server with a fresh operating system, install {product} and then select the authentication method that was used before.
 After selecting a configuration file, click on the button "Apply Backupfile" and the configuration file will be uploaded. This may take a few minutes.
 
 [WARNING]
