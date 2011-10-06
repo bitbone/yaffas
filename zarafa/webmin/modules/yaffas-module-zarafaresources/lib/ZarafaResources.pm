@@ -176,6 +176,7 @@ sub conf_dump() {
 			{ type => 'scalar', param => $details{decline_recurring} } );
 		$section->add_func($func);
 	}
+	$section->add_require("bkbackup");
 	$bkconf->save();
 }
 
