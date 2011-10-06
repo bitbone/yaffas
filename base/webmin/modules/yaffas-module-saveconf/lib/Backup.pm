@@ -154,6 +154,13 @@ sub dump()
 
 	chomp(my $dom = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'hostname'}, "-d"));
 
+	if ($dom !~ /\./) {
+		$dom = Yaffas::LDAP::dn_to_name(Yaffas::LDAP::get_local_domain());
+	}
+	if ($dom !~ /\./) {
+		$dom = "yaffas.local";
+	}
+
 	# FIXME bkprint2fax is a wrong name. also base attributes in this db!
 	# add a pgsql function to dump bkprint2fax
 	my $func_pgsql_bkprint2fax = Yaffas::Conf::Function->new('pgsql-bkprint2fax', "Yaffas::Module::Backup::_set_pgsql");
@@ -446,6 +453,7 @@ sub _set_ldap($)
 	my $domain = shift;
 	my $ldap = shift;
 
+	throw Yaffas::Exception("err_no_domain") if ($domain =~ /^\s*$/);
 	throw Yaffas::Exception("err_no_user") if ($ldap =~ /^\s*$/);
 
 	# clear the ldap thingy
@@ -487,10 +495,10 @@ sub _set_ldap($)
 	chomp(my $dn_new = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'hostname'}, "-d"));
 
 	system(Yaffas::Constant::APPLICATION->{'domrename'}, $domain, $dn_new, $file);
-	return undef unless $? == 0;
+	throw Yaffas::Exception("err_domrename", $?) unless $? == 0;
 
 	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
-	return undef unless $? == 0;
+	throw Yaffas::Exception("err_ldap_add", $?) unless $? == 0;
 	
 	my $uid = Yaffas::UGM::get_uid_by_username("openldap");
 	my $gid = Yaffas::UGM::get_gid_by_groupname("openldap");
