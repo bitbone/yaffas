@@ -352,23 +352,25 @@ Yaffas.UI.prototype.openTabs = function(o) {
 			}
 
             var inputs = n.getElementsByTagName("input");
-            
             var items = [];
             for (var j = 0; j < inputs.length; ++j) {
                 if (inputs[j].getAttribute("type") === "submit") {
                     inputs[j].id = YAHOO.util.Dom.generateId();
-                    items.push(inputs[j].id);
+                    items.push({
+                                id: inputs[j].id,
+                          disabled: (inputs[j].getAttribute("disabled") === "disabled" ? true : false)
+                    });
                 }
             }
+
             if (n.tagName === "FORM") {
                 n.id = YAHOO.util.Dom.generateId();
                 YAHOO.util.Event.addListener(n.id, "submit", this.submitForm.bind(this));
             }
-            
+
             for (var j = 0; j < items.length; ++j) {
-                new YAHOO.widget.Button(items[j]);
+                new YAHOO.widget.Button(items[j].id, items[j]);
             }
-            
         }
         section.style.display = "none";
     }

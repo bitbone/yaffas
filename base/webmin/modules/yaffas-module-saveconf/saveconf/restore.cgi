@@ -10,6 +10,7 @@ use Data::Dumper;
 use Error qw(:try);
 use Yaffas::Exception;
 use Yaffas::Fax;
+use Yaffas::Auth;
 
 require './forms.pl';
 
@@ -18,6 +19,13 @@ ReadParseMime();
 
 # we have recived a yaffas config file.
 header();
+
+if(Yaffas::Auth::auth_type eq Yaffas::Auth::Type::NOT_SET) {
+	print error_box($main::text{'err_auth_not_set'});
+	index_dlg();
+	footer();
+	exit;
+}
 
 # all installed products have a correct licence key?!
 unless ( $main::in{'backup'} ) {

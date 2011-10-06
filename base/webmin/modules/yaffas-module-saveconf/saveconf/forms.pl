@@ -4,6 +4,7 @@ use strict;
 use warnings;
 use Yaffas;
 use Yaffas::UI qw(section ok_box error_box section_button);
+use Yaffas::Auth;
 
 our $cgi = $Yaffas::UI::Cgi;
 
@@ -16,7 +17,11 @@ sub index_dlg()
 
 	print $Cgi->start_multipart_form(-action => 'restore.cgi', -method => 'post');
 	print section($main::text{'lbl_restore'}, $Cgi->filefield('backup'));
-	print section_button($Cgi->submit('restore', $main::text{'send'}));
+	if(Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::NOT_SET) {
+		print section_button($Cgi->submit( { -name => 'restore', -label => $main::text{'send'}, -disabled => 'disabled'}));
+	} else {
+		print section_button($Cgi->submit( { -name => 'restore', -label => $main::text{'send'}}));
+	}
 	print $Cgi->end_multipart_form();
 	
 }

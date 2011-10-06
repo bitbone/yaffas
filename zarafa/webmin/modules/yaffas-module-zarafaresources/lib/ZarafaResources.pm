@@ -161,7 +161,7 @@ sub get_resource_details ($) {
 
 sub conf_dump() {
 	my $bkconf  = Yaffas::Conf->new();
-	my $section = $bkconf->section('bbzarafaresources');
+	my $section = $bkconf->section('zarafaresources');
 	foreach my $resource ( get_resources() ) {
 		$section->del_func( 'modify_resource_' . $resource );
 		my $func = Yaffas::Conf::Function->new( 'modify_resource_' . $resource,

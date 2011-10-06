@@ -249,6 +249,10 @@ sub restore($)
 {
 	my $self = shift;
 
+	if(Yaffas::Auth::auth_type eq Yaffas::Auth::Type::NOT_SET) {
+		throw Yaffas::Exception("err_auth_not_set");
+	}
+
 	# apply the config
 	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{yaffas_config} . ".upload");
 	return undef if (! defined($bkc) );
