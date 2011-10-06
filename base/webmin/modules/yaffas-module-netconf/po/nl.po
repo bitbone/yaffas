@@ -779,6 +779,13 @@ msgstr ""
 #~ msgid "Do you really want to delete this groups?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
 
+# 81%
+# 88%
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these entries?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 #~ msgid "System information"
 #~ msgstr "Systeeminformatie"
 
