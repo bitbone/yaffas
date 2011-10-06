@@ -500,9 +500,16 @@ sub _set_ldap($)
 	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
 	throw Yaffas::Exception("err_ldap_add", $?) unless $? == 0;
 	
-	my $uid = Yaffas::UGM::get_uid_by_username("openldap");
-	my $gid = Yaffas::UGM::get_gid_by_groupname("openldap");
-	
+	my $uid;
+	my $gid;
+	if(Yaffas::Constant::OS eq 'Ubuntu') {
+		$uid = Yaffas::UGM::get_uid_by_username("openldap");
+		$gid = Yaffas::UGM::get_gid_by_groupname("openldap");
+	} else {
+		$uid = Yaffas::UGM::get_uid_by_username("ldap");
+		$gid = Yaffas::UGM::get_gid_by_groupname("ldap");
+	}
+
 	find(sub{chown $uid, $gid, $File::Find::name}, Yaffas::Constant::DIR->{ldap_data});
 
 	control(LDAP, RESTART);
