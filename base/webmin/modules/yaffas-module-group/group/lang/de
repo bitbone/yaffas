@@ -34,3 +34,4 @@ err_newgroup_name=Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zah
 err_mode=Falscher Modus ausgewählt!
 err_no_group_selected=Keine Gruppe ausgewählt!
 err_no_local_auth=Diese Aktion wird nur bei lokaler Authentifizierung unterstützt.
+moduletitle=Group Management

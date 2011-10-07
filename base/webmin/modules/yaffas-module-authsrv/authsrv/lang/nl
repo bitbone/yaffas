@@ -109,3 +109,4 @@ err_set_sambasid=Error writing data for use with samba.
 err_ldap_duplicate_sambadomain=The samba domain already exists in LDAP! Please rectify this.
 err_no_domain_found=<no matching Domain>
 err_unknown_postfix_file=unknown postfix file
+moduletitle=Authentication Server

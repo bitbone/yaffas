@@ -4,3 +4,5 @@ desc_en=Backup
 name=zarafabackup
 category=groupware
 version=1.0
+desc_nl=Backup
+desc_fr=Sauvegarde

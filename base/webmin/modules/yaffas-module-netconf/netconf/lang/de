@@ -66,3 +66,4 @@ err_10=Fehler während des Löschens des KAV Proxys!
 err_set_freshclam=Fehler während des Setzens des freshclam Proxys!
 err_del_freshclam=Fehler während des Löschens des freshclam Proxys!
 err_restart_freshclam=Fehler beim Neustart von freshclam!
+moduletitle=Konfiguration

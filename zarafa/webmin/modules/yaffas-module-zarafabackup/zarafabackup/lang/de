@@ -44,3 +44,4 @@ err_no_full_found=Konnte keine Vollsicherung finden.
 err_mkdir=Konnte das Verzeichnis nicht anlegen.
 err_days=Wert für den Backup Zeitpunkt ist nicht korrekt
 err_read_dir=Konnte das Verzeichnis nicht öffnen.
+moduletitle=Backup

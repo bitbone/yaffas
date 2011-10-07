@@ -1,7 +1,9 @@
 longdesc=Group Management
-desc_de=Gruppenverwaltung
+desc_de=Group Management
 desc_en=Group Management
 name=group
 category=accounts
 desc=Group administration
 version=0.1
+desc_nl=Group Management
+desc_fr=Group Management

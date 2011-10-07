@@ -32,3 +32,4 @@ err_alias_is_user=L'alias existe déjà comme utilisateur.
 err_select_only_one=Un alias ne peu être défini que pour un utilisateur ou un dossier.
 lbl_check_aliasesrm_error=Une erreur s'est produite lors de la suppression de l'alias.
 lbl_no_zarafa_public_folders=Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.
+moduletitle=Mail alias configuration

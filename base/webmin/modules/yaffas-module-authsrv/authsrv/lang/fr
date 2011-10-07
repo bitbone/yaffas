@@ -109,3 +109,4 @@ err_set_sambasid=Une erreur s'est produite lors de l'écriture des données deva
 err_ldap_duplicate_sambadomain=Le domaine Samba existe déjà dans LDAP ! Veuillez corriger ceci.
 err_no_domain_found=<aucun domaine correspondant>
 err_unknown_postfix_file=Fichier Postfix inconnu
+moduletitle=Serveur d'authentification

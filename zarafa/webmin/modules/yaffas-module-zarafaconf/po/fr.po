@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: 2011-10-06 12:13+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,6 +192,11 @@ msgstr "Impossible de se connecter à la base de données"
 msgid "The quota value can only contain digits."
 msgstr "La valeur du quota ne peut contenir que des chiffres."
 
+#: lang/en:43
+#, no-wrap
+msgid "Configuration"
+msgstr "Configuration"
+
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
@@ -350,7 +355,8 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Suppression de répertoire"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr "Cliquer sur \"Restaurer\" afin de restaurer les messages sélectionnés."
+#~ msgstr ""
+#~ "Cliquer sur \"Restaurer\" afin de restaurer les messages sélectionnés."
 
 #~ msgid "No backup available"
 #~ msgstr "Aucune sauvegarde disponible"
@@ -381,6 +387,9 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 
 #~ msgid "Could not open directory."
 #~ msgstr "Impossible d'ouvrir le répertoire."
+
+#~ msgid "Backup"
+#~ msgstr "Sauvegarde"
 
 #~ msgid "In which directory should the backups be stored?"
 #~ msgstr "Dans quel répertoire les sauvegardes devront-elles être stockées ?"
@@ -418,8 +427,13 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Do you really want to delete these resources?"
 #~ msgstr "Désirez-vous vraiment supprimer ces ressources ?"
 
-#~ msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
-#~ msgstr "Ne pas oublier d'attribuer les autorisations adéquates aux utilisateurs devant utiliser cette ressource dans les paramètres d'agenda de cette ressource."
+#~ msgid ""
+#~ "Do not forget to give appropriate permissions to users that need to book "
+#~ "this resource in the calendar setting for this resource."
+#~ msgstr ""
+#~ "Ne pas oublier d'attribuer les autorisations adéquates aux utilisateurs "
+#~ "devant utiliser cette ressource dans les paramètres d'agenda de cette "
+#~ "ressource."
 
 #~ msgid "The name of the resource contains illegal characters."
 #~ msgstr "Le nom de cette ressource contient des caractères invalides."
@@ -428,7 +442,8 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Le nom de cette ressource provient d'un utilisateur spécial."
 
 #~ msgid "The description of the resource contains illegal characters."
-#~ msgstr "La description de cette ressource contient des caractères invalides."
+#~ msgstr ""
+#~ "La description de cette ressource contient des caractères invalides."
 
 #~ msgid "No e-mail address specified."
 #~ msgstr "Aucun courriel n'a été spécifié."
@@ -436,11 +451,16 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "Vous ne pouvez pas utiliser l'hôte local comme partie de domaine."
 
-#~ msgid "The domain is not defined as local domain in your mailserver configuration."
-#~ msgstr "Le domaine n'est pas défini comme domaine local dans la configuration de votre serveur de courriel."
+#~ msgid ""
+#~ "The domain is not defined as local domain in your mailserver "
+#~ "configuration."
+#~ msgstr ""
+#~ "Le domaine n'est pas défini comme domaine local dans la configuration de "
+#~ "votre serveur de courriel."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
-#~ msgstr "La partie locale de l'adresse électronique doit être identique au nom."
+#~ msgstr ""
+#~ "La partie locale de l'adresse électronique doit être identique au nom."
 
 #~ msgid "The e-mail address is not valid."
 #~ msgstr "L'adresse électronique est invalide."
@@ -460,14 +480,22 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Ce nom sera affiché dans le carnet d'adresse global."
 
-#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-#~ msgstr "Il peut être judicieux d'ajouter une description si le nom de la ressource n'est pas explicatif."
+#~ msgid ""
+#~ "You may want to add a description if the name of the resource isn't self-"
+#~ "explanatory."
+#~ msgstr ""
+#~ "Il peut être judicieux d'ajouter une description si le nom de la "
+#~ "ressource n'est pas explicatif."
 
 #~ msgid "Check this box and the resource can only be booked once."
-#~ msgstr "Cocher cette case afin que la ressource ne puisse être réservée qu'une seule fois."
+#~ msgstr ""
+#~ "Cocher cette case afin que la ressource ne puisse être réservée qu'une "
+#~ "seule fois."
 
 #~ msgid "Check this box to disable recurring appointments for this resource."
-#~ msgstr "Cocher cette case afin que de désactiver les utilisations récurrentes de cette ressource."
+#~ msgstr ""
+#~ "Cocher cette case afin que de désactiver les utilisations récurrentes de "
+#~ "cette ressource."
 
 #~ msgid "Admin password"
 #~ msgstr "Mot de passe administrateur"
@@ -490,8 +518,11 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Setup finished"
 #~ msgstr "Configuration achevée"
 
-#~ msgid "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr "La configuration s'est achevée avec succès. Vous pourrez utiliser toutes les fonctionnalités lors de votre prochaine connexion."
+#~ msgid ""
+#~ "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr ""
+#~ "La configuration s'est achevée avec succès. Vous pourrez utiliser toutes "
+#~ "les fonctionnalités lors de votre prochaine connexion."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Paramètres Zarafa"
@@ -634,8 +665,11 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Whitelisting"
 #~ msgstr "Liste blanche"
 
-#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
-#~ msgstr "Tous les hôtes et les adresses contenus dans cette liste ne seront pas inspectés pour spam ou virus."
+#~ msgid ""
+#~ "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr ""
+#~ "Tous les hôtes et les adresses contenus dans cette liste ne seront pas "
+#~ "inspectés pour spam ou virus."
 
 #~ msgid "Address"
 #~ msgstr "Adresse"
@@ -652,17 +686,30 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Invalid e-mail address"
 #~ msgstr "Adresse électronique invalide"
 
+#~ msgid "Security"
+#~ msgstr "Sécurité"
+
 #~ msgid "This value defines at which score mails are handled as spam."
-#~ msgstr "Cette valeur défini le niveau à partir duquel les courriels sont considérés comme spam."
+#~ msgstr ""
+#~ "Cette valeur défini le niveau à partir duquel les courriels sont "
+#~ "considérés comme spam."
 
 #~ msgid "Define a host or network by its IP address or CIDR."
 #~ msgstr "Définir un hôte ou un réseau par son adresse IP ou CIDR."
 
-#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
-#~ msgstr "ClamAV scannera uniquement les objets qui ne dépassent pas la taille indiquée. Les objets plus larges ne seront PAS scannés."
+#~ msgid ""
+#~ "ClamAV will scan only objects that are smaller than the specified amount. "
+#~ "Larger objects will NOT be scanned."
+#~ msgstr ""
+#~ "ClamAV scannera uniquement les objets qui ne dépassent pas la taille "
+#~ "indiquée. Les objets plus larges ne seront PAS scannés."
 
-#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
-#~ msgstr "Si ClamAV détecte un objet suspect, un courriel sera envoyé à l'adresse indiquée."
+#~ msgid ""
+#~ "If ClamAV detects a suspicious object, it will send a mail to the "
+#~ "specified address."
+#~ msgstr ""
+#~ "Si ClamAV détecte un objet suspect, un courriel sera envoyé à l'adresse "
+#~ "indiquée."
 
 #~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
 #~ msgstr "Permettre l'inspection des archives de type RAR, ZIP, GZ..."
@@ -730,8 +777,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Group exists already!"
 #~ msgstr "Le groupe existe déjà !"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
+#~ msgid ""
+#~ "Group names have to consist of at least one (alphanumerical) character, "
+#~ "beginning with a letter(no umlaut)."
+#~ msgstr ""
+#~ "Les noms de groupes doivent comporter au moins un caractère "
+#~ "(alphanumérique), commençant par une lettre (pas d'umlaut)."
 
 #~ msgid "Wrong mode!"
 #~ msgstr "Mode inapproprié !"
@@ -815,10 +866,14 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Stockage des archives"
 
 #~ msgid "Zarafa administrator for delivery into public folders"
-#~ msgstr "Administrateur Zarafa en charge de la distribution vers les dossiers publics"
+#~ msgstr ""
+#~ "Administrateur Zarafa en charge de la distribution vers les dossiers "
+#~ "publics"
 
 #~ msgid "The destination have to be a local user or an e-mail address!"
-#~ msgstr "La destination doit être un utilisateur local ou une adresse électronique !"
+#~ msgstr ""
+#~ "La destination doit être un utilisateur local ou une adresse "
+#~ "électronique !"
 
 #~ msgid "You have to insert a valid domainname."
 #~ msgstr "Vous devez saisir un nom de domaine valide."
@@ -841,8 +896,13 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "IP adress or IP range not valid."
 #~ msgstr "Adresse IP ou zone IP invalide."
 
-#~ msgid "Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
-#~ msgstr "Erreur : Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins un caractère."
+#~ msgid ""
+#~ "Error: The domain may only contain characters (a-z and A-Z), numbers (0-"
+#~ "9), '.' and '-'. It also has a minimum length of one."
+#~ msgstr ""
+#~ "Erreur : Le domaine ne peut comporter que des lettres (a-z et A-Z), des "
+#~ "chiffres (0-9), '.' et '-'. Il doit également contenir au moins un "
+#~ "caractère."
 
 #~ msgid "Mailadmin not valid."
 #~ msgstr "L'administrateur de courrier est invalide."
@@ -929,19 +989,27 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Votre clé KAV est expirée ou invalide !"
 
 #~ msgid "You have to update your KAV before you activate this feature."
-#~ msgstr "Vous devez mettre à jour votre KAV avant d'activer cette fonctionnalité."
+#~ msgstr ""
+#~ "Vous devez mettre à jour votre KAV avant d'activer cette fonctionnalité."
 
 #~ msgid "You have to update your KAS before you activate this feature."
-#~ msgstr "Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalité."
+#~ msgstr ""
+#~ "Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalité."
 
 #~ msgid "Please activate policy server in MPP interface first."
-#~ msgstr "Veuillez tout d'abord activer le serveur de règle dans l'interface MPP."
+#~ msgstr ""
+#~ "Veuillez tout d'abord activer le serveur de règle dans l'interface MPP."
 
 #~ msgid "This name will be sent to remote SMTP servers for outgoing mails."
-#~ msgstr "Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants"
+#~ msgstr ""
+#~ "Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants"
 
-#~ msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
-#~ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisser vide afin que le serveur gère les courriels sans aucune limite de taille."
+#~ msgid ""
+#~ "This limits the size of all incoming and outgoing mails. Leave it blank "
+#~ "and the server will handle mails with unlimited size."
+#~ msgstr ""
+#~ "Ceci limite la taille de tous les courriels entrants et sortants. Laisser "
+#~ "vide afin que le serveur gère les courriels sans aucune limite de taille."
 
 #~ msgid "System information"
 #~ msgstr "Information système"
@@ -1205,37 +1273,57 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Configuration SNMP"
 
 #~ msgid "The access can only be set for IP-Addresses or networks."
-#~ msgstr "L'accès ne peut être configuré que pour des adresses IP ou des réseaux"
+#~ msgstr ""
+#~ "L'accès ne peut être configuré que pour des adresses IP ou des réseaux"
 
-#~ msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
-#~ msgstr "La suite de caractère  communautaire ne peut contenir que des chiffres (0-9) et des lettres (a-z, A-Z)."
+#~ msgid ""
+#~ "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
+#~ msgstr ""
+#~ "La suite de caractère  communautaire ne peut contenir que des chiffres (0-"
+#~ "9) et des lettres (a-z, A-Z)."
 
 #~ msgid "Password for the SNMP access."
 #~ msgstr "Mot de passe pour l'accès SNMP."
 
-#~ msgid "Enter a single IP address or a network in form of a CIDR ressource. Enter \"default\" to allow access only from the local machine."
-#~ msgstr "Saisir une seule adresse IP ou un réseau sous la forme d'une ressource CIDR. Saisir \"default\" afin de permettre l'accès uniquement à partir de la machine locale."
+#~ msgid ""
+#~ "Enter a single IP address or a network in form of a CIDR ressource. Enter "
+#~ "\"default\" to allow access only from the local machine."
+#~ msgstr ""
+#~ "Saisir une seule adresse IP ou un réseau sous la forme d'une ressource "
+#~ "CIDR. Saisir \"default\" afin de permettre l'accès uniquement à partir de "
+#~ "la machine locale."
 
 #~ msgid "Support"
 #~ msgstr "Support technique"
 
-#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
-#~ msgstr "Cliquer sur le bouton de téléchargement et envoyer le ficher au support bitbone si vous rencontrez un problème quelconque avec votre serveur yaffas."
+#~ msgid ""
+#~ "Click on download button and send the file to the bitbone support if you "
+#~ "have any problems with your yaffas Server."
+#~ msgstr ""
+#~ "Cliquer sur le bouton de téléchargement et envoyer le ficher au support "
+#~ "bitbone si vous rencontrez un problème quelconque avec votre serveur "
+#~ "yaffas."
 
 #~ msgid "Download"
 #~ msgstr "Téléchargement"
 
-#~ msgid "Please press download to get the available system and hardware informations."
-#~ msgstr "Veuillez cliquer sur Téléchargement afin d'obtenir des informations sur le matériel et le système disponible."
+#~ msgid ""
+#~ "Please press download to get the available system and hardware "
+#~ "informations."
+#~ msgstr ""
+#~ "Veuillez cliquer sur Téléchargement afin d'obtenir des informations sur "
+#~ "le matériel et le système disponible."
 
 #~ msgid "Hardware List"
 #~ msgstr "Liste de matériel"
 
 #~ msgid "Your system doesn't have the needed programm \"lshw\" installed."
-#~ msgstr "Votre système ne dispose pas du programme \"lshw\" qui doit être installé."
+#~ msgstr ""
+#~ "Votre système ne dispose pas du programme \"lshw\" qui doit être installé."
 
 #~ msgid "Your system doesn't have the needed programm \"lspci\" installed."
-#~ msgstr "Votre système ne dispose pas du programme \"lspci qui doit être installé."
+#~ msgstr ""
+#~ "Votre système ne dispose pas du programme \"lspci qui doit être installé."
 
 #~ msgid "An error occured while executing \"pspci\"."
 #~ msgstr "Une erreur s'est produite lors de l'exécution de \"pspci\"."
@@ -1261,8 +1349,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Test your e-mail address"
 #~ msgstr "Vérifier votre adresse électronique"
 
-#~ msgid "Click the button below to send a mail to your previously set e-mail address."
-#~ msgstr "Cliquer sur le bouton ci-dessous afin d'envoyer un courriel à l'adresse électronique que vous venez de définir."
+#~ msgid ""
+#~ "Click the button below to send a mail to your previously set e-mail "
+#~ "address."
+#~ msgstr ""
+#~ "Cliquer sur le bouton ci-dessous afin d'envoyer un courriel à l'adresse "
+#~ "électronique que vous venez de définir."
 
 #~ msgid "Test"
 #~ msgstr "Vérifier"
@@ -1274,7 +1366,9 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Impossible de modifier le paramétrage."
 
 #~ msgid "Error writing configuration file."
-#~ msgstr "Une erreur s'est produite lors de l'enregistrement du fichier de configuration."
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de l'enregistrement du fichier de "
+#~ "configuration."
 
 #~ msgid "Type can only be: always, errors or never."
 #~ msgstr "Le type ne peut être que : toujours, erreurs ou jamais."
@@ -1288,8 +1382,11 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Could not send a mail to your address."
 #~ msgstr "Impossible d'envoyer un courriel à votre adresse."
 
-#~ msgid "An e-mail has been sent to your given address. Please check your mailbox."
-#~ msgstr "Un courriel a été envoyé à l'adresse indiquée. Veuillez vérifier votre boîte aux lettres."
+#~ msgid ""
+#~ "An e-mail has been sent to your given address. Please check your mailbox."
+#~ msgstr ""
+#~ "Un courriel a été envoyé à l'adresse indiquée. Veuillez vérifier votre "
+#~ "boîte aux lettres."
 
 #~ msgid "Successfully set adress for system messages."
 #~ msgstr "L'adresse pour les messages système a été configurée avec succès."
@@ -1297,20 +1394,36 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Test - yaffas notify"
 #~ msgstr "Vérification - notification yaffas"
 
-#~ msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
-#~ msgstr "Ce courriel a été envoyé afin de vérifier l'accessibilité de l'adresse électronique que vous avez indiquée Si vous avez bien reçu ce courriel, vous serez ensuite tenu informé de toute erreur venant à se produire."
+#~ msgid ""
+#~ "This mail was sent to test the reachability of your given address. If you "
+#~ "have received this mail, you will be informed about errors."
+#~ msgstr ""
+#~ "Ce courriel a été envoyé afin de vérifier l'accessibilité de l'adresse "
+#~ "électronique que vous avez indiquée Si vous avez bien reçu ce courriel, "
+#~ "vous serez ensuite tenu informé de toute erreur venant à se produire."
 
 #~ msgid "E-mail address test"
 #~ msgstr "Vérifier l'adresse électronique"
 
-#~ msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
-#~ msgstr "Ce courriel est utilisé pour vérifier l'accessibilité de l'adresse des administrateurs. À partir du moment où vous avez reçu ce courrier, vous recevrez ensuite à la même adresse la notification de toute erreur venant à se produire."
+#~ msgid ""
+#~ "This e-mail is used to check the reachability of the administrators "
+#~ "address. If you received this e-mail you will be notified through this "
+#~ "channel in the future should errors occur."
+#~ msgstr ""
+#~ "Ce courriel est utilisé pour vérifier l'accessibilité de l'adresse des "
+#~ "administrateurs. À partir du moment où vous avez reçu ce courrier, vous "
+#~ "recevrez ensuite à la même adresse la notification de toute erreur venant "
+#~ "à se produire."
 
 #~ msgid "Have fun with yaffas"
 #~ msgstr "Nous espérons que yaffas saura vous satisfaire."
 
-#~ msgid "Enter a valid email address to receive notifications about the status of the system."
-#~ msgstr "Saisir une adresse électronique valide afin de recevoir des notifications à propos de l'état du système."
+#~ msgid ""
+#~ "Enter a valid email address to receive notifications about the status of "
+#~ "the system."
+#~ msgstr ""
+#~ "Saisir une adresse électronique valide afin de recevoir des notifications "
+#~ "à propos de l'état du système."
 
 #~ msgid "Country (2 letter code)"
 #~ msgstr "Pays (code à 2 lettres)"
@@ -1405,8 +1518,11 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "The Certificate was imported successfully!"
 #~ msgstr "Le certificat a été importé avec succès !"
 
-#~ msgid "An error occured during importing! Please check your certificate file."
-#~ msgstr "Une erreur s'est produite lors de l'importation ! Veuillez vérifier le fichier de votre certificat."
+#~ msgid ""
+#~ "An error occured during importing! Please check your certificate file."
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de l'importation ! Veuillez vérifier le "
+#~ "fichier de votre certificat."
 
 #~ msgid "Certificate / Key Management"
 #~ msgstr "Gestion Certificat / Clé"
@@ -1517,10 +1633,14 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Aucune ID de courriel sélectionnée"
 
 #~ msgid "Error marking email addresses as delivered"
-#~ msgstr "Une erreur s'est produite lorsque le courriel a été marqué comme étant distribué"
+#~ msgstr ""
+#~ "Une erreur s'est produite lorsque le courriel a été marqué comme étant "
+#~ "distribué"
 
 #~ msgid "Error while adding new recipient to the mailid"
-#~ msgstr "Une erreur s'est produite lors de l'ajout d'un nouveau destinataire au courriel"
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de l'ajout d'un nouveau destinataire au "
+#~ "courriel"
 
 #~ msgid "Error while force a delivery"
 #~ msgstr "Une erreur s'est produite en forçant la distribution"
@@ -1529,7 +1649,9 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Une erreur s'est produite lors de la suppression du courriel"
 
 #~ msgid "Error at dequeue attempt for email"
-#~ msgstr "Une erreur s'est produite lors de la tentative de suppression du courriel de la queue"
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de la tentative de suppression du courriel "
+#~ "de la queue"
 
 #~ msgid "No valid email address"
 #~ msgstr "Aucune adresse électronique valide"
@@ -1579,23 +1701,49 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Stop Fetchmail Daemon"
 #~ msgstr "Arrêter le daemon Fetchmail"
 
-#~ msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
-#~ msgstr "Cliquer sur ce bouton pour démarrer le daemon Fetchmail sur ce serveur, afin qu'il vérifie le courrier toutes les $1 secondes. Ce daemon sera exécuté en tant que l'utilisateur $2 et utilisera la configuration ci-dessus."
+#~ msgid ""
+#~ "Click this button to start the fetchmail daemon on this server, and have "
+#~ "it check for mail every $1 seconds. The daemon will run as user $2 and "
+#~ "use the configuration above."
+#~ msgstr ""
+#~ "Cliquer sur ce bouton pour démarrer le daemon Fetchmail sur ce serveur, "
+#~ "afin qu'il vérifie le courrier toutes les $1 secondes. Ce daemon sera "
+#~ "exécuté en tant que l'utilisateur $2 et utilisera la configuration ci-"
+#~ "dessus."
 
-#~ msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
-#~ msgstr "Cliquer sur ce bouton pour arrêter le daemon Fetchmail présentement exécuté en tant que l'utilisateur $1. Le courriel ne sera plus automatiquement téléchargé toutes les $2 secondes."
+#~ msgid ""
+#~ "Click this button to stop the fetchmail daemon currently running as user "
+#~ "$1. Mail will no longer be automatically downloaded every $2 seconds."
+#~ msgstr ""
+#~ "Cliquer sur ce bouton pour arrêter le daemon Fetchmail présentement "
+#~ "exécuté en tant que l'utilisateur $1. Le courriel ne sera plus "
+#~ "automatiquement téléchargé toutes les $2 secondes."
 
-#~ msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
-#~ msgstr "Impossible de trouver le programme Fetchmail $1. Il se peut que Fetchmail ne soit pas installé sur votre système, ou bien que le <a href='$2'>configuration du module</a> soit incorrecte."
+#~ msgid ""
+#~ "The fetchmail program $1 could not be found. Maybe fetchmail is not "
+#~ "installed on your system, or your <a href='$2'>module configuration</a> "
+#~ "is incorrect."
+#~ msgstr ""
+#~ "Impossible de trouver le programme Fetchmail $1. Il se peut que Fetchmail "
+#~ "ne soit pas installé sur votre système, ou bien que le <a "
+#~ "href='$2'>configuration du module</a> soit incorrecte."
 
 #~ msgid "No Unix users have <tt>.fetchmailrc</tt> files."
-#~ msgstr "Aucun utilisateur Unix ne possède de fichiers <tt>.fetchmailrc</tt>."
+#~ msgstr ""
+#~ "Aucun utilisateur Unix ne possède de fichiers <tt>.fetchmailrc</tt>."
 
 #~ msgid "Scheduled Checking"
 #~ msgstr "Vérification régulière"
 
-#~ msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
-#~ msgstr "Cliquer sur ce bouton pour créer, modifier ou supprimer une tâche cron permettant à Fetchmail de s'exécuter automatiquement et régulièrement pour vérifier et télécharger le courriel à l'aide de la configuration ci-dessus."
+#~ msgid ""
+#~ "Click this button to create, change or remove a Cron job to have "
+#~ "Fetchmail run automatically on schedule to check for and download email "
+#~ "using the configuration above."
+#~ msgstr ""
+#~ "Cliquer sur ce bouton pour créer, modifier ou supprimer une tâche cron "
+#~ "permettant à Fetchmail de s'exécuter automatiquement et régulièrement "
+#~ "pour vérifier et télécharger le courriel à l'aide de la configuration ci-"
+#~ "dessus."
 
 #~ msgid "Fetchmail version $1"
 #~ msgstr "Fetchmail version $1"
@@ -1697,10 +1845,14 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Commande devant être exécutée après la connexion"
 
 #~ msgid "You are not allowed to edit this user's fetchmail config"
-#~ msgstr "Vous n'êtes pas autorisé à modifier la configuration Fetchmail de cet utilisateur"
+#~ msgstr ""
+#~ "Vous n'êtes pas autorisé à modifier la configuration Fetchmail de cet "
+#~ "utilisateur"
 
 #~ msgid "Only users' fetchmail config files can be edited"
-#~ msgstr "Seuls les fichiers de configuration Fetchmail des utilisateurs peuvent être modifiés"
+#~ msgstr ""
+#~ "Seuls les fichiers de configuration Fetchmail des utilisateurs peuvent "
+#~ "être modifiés"
 
 #~ msgid "Poll interval"
 #~ msgstr "Intervalle de vérification"
@@ -1727,7 +1879,9 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Vérification des serveurs"
 
 #~ msgid "Checking for mail on server(s) with command $1 .."
-#~ msgstr "Vérification du courriel sur le(s) serveur(s) à l'aide de la commande $1 .."
+#~ msgstr ""
+#~ "Vérification du courriel sur le(s) serveur(s) à l'aide de la commande "
+#~ "$1 .."
 
 #~ msgid ".. checking complete."
 #~ msgstr ".. Vérification terminée"
@@ -1810,8 +1964,17 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "All except users"
 #~ msgstr "Tous sauf les utilisateurs"
 
-#~ msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
-#~ msgstr "Cette page permet d'activer ou de désactiver une tâche Cron qui vérifie les serveurs de courrier dans votre configuration Fetchmail à intervalles réguliers. Il est préférable de recourir à une tâche Cron plutôt qu'au daemon Fetchmail, car il est inutile de la réinitialiser à chaque démarrage du serveur."
+#~ msgid ""
+#~ "This page can be used to enable or disable a Cron job to check the mail "
+#~ "servers in your Fetchmail configuration on a regular schedule. Using a "
+#~ "Cron job superior to running the Fetchmail daemon, as it does not need to "
+#~ "be re-started at boot time."
+#~ msgstr ""
+#~ "Cette page permet d'activer ou de désactiver une tâche Cron qui vérifie "
+#~ "les serveurs de courrier dans votre configuration Fetchmail à intervalles "
+#~ "réguliers. Il est préférable de recourir à une tâche Cron plutôt qu'au "
+#~ "daemon Fetchmail, car il est inutile de la réinitialiser à chaque "
+#~ "démarrage du serveur."
 
 #~ msgid "Scheduled Fetchmail settings"
 #~ msgstr "Configuration de la programmation de Fetchmail"
@@ -1883,7 +2046,8 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Veuillez saisir un nom d'utilisateur du serveur de courrier valide."
 
 #~ msgid "Please provide a password for the mailserver user."
-#~ msgstr "Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier."
+#~ msgstr ""
+#~ "Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier."
 
 #~ msgid "Fetchmail daemon could not be enabled."
 #~ msgstr "Impossible d'activer le daemon Fetchmail."
@@ -1891,23 +2055,33 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Specify the polling interval in seconds."
 #~ msgstr "Spécifier l'intervalle de vérification en secondes."
 
-#~ msgid "The remote host name or IP address from which you want to receive mail."
-#~ msgstr "Le nom de l'hôte distant ou l'adresse IP à partir desquels vous voulez recevoir du courriel."
+#~ msgid ""
+#~ "The remote host name or IP address from which you want to receive mail."
+#~ msgstr ""
+#~ "Le nom de l'hôte distant ou l'adresse IP à partir desquels vous voulez "
+#~ "recevoir du courriel."
 
-#~ msgid "The DNS name of the remote server. This setting overrides the server name."
-#~ msgstr "Le nom DNS du serveur distant. Ce paramètre écrase le nom du serveur."
+#~ msgid ""
+#~ "The DNS name of the remote server. This setting overrides the server name."
+#~ msgstr ""
+#~ "Le nom DNS du serveur distant. Ce paramètre écrase le nom du serveur."
 
 #~ msgid "The TCP/IP port of the remote server."
 #~ msgstr "Le port TCP/IP du serveur distant."
 
 #~ msgid "The header name of the envelope address (e.g. X-Envelope-To)."
-#~ msgstr "Le nom d'entête de l'adresse de l'enveloppe (p. ex. X-Enveloppe-Pour)."
+#~ msgstr ""
+#~ "Le nom d'entête de l'adresse de l'enveloppe (p. ex. X-Enveloppe-Pour)."
 
 #~ msgid "Specify the login user from the remote machine."
 #~ msgstr "Spécifier l'identifiant de connexion à la machine distante."
 
-#~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
-#~ msgstr "Nom d'utilisateur invalide. Seuls les lettres minuscules, les chiffres, le point et le signe moins sont des caractères valides."
+#~ msgid ""
+#~ "Username not valid. Only lowercase characters, digits, dots and minus are "
+#~ "valid."
+#~ msgstr ""
+#~ "Nom d'utilisateur invalide. Seuls les lettres minuscules, les chiffres, "
+#~ "le point et le signe moins sont des caractères valides."
 
 #~ msgid "Password not valid"
 #~ msgstr "Mot de passe invalide"
@@ -1939,8 +2113,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "The alias is not valid."
 #~ msgstr "L'alias est invalide."
 
-#~ msgid "If you want to you use aliases for this user, you should activate his mailbox."
-#~ msgstr "Si vous désirez utiliser un alias pour cet utilisateur, vous devez activer sa boîte aux lettres."
+#~ msgid ""
+#~ "If you want to you use aliases for this user, you should activate his "
+#~ "mailbox."
+#~ msgstr ""
+#~ "Si vous désirez utiliser un alias pour cet utilisateur, vous devez "
+#~ "activer sa boîte aux lettres."
 
 #~ msgid "The selected username is already used by the system."
 #~ msgstr "Le nom d'utilisateur sélectionné est déjà utilisé par le système."
@@ -1954,20 +2132,41 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "You cannot use localhost as domain-part"
 #~ msgstr "Vous ne pouvez pas utiliser l'hôte local comme partie de domaine."
 
-#~ msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
-#~ msgstr "Le nom d'utilisateur et la partie locale sont différents. Vous devez définir un alias pour la partie locale. Autrement Zarafa ne sera pas en mesure de distribuer le courrier correctement."
+#~ msgid ""
+#~ "The username and the local-part are different. You must define an alias "
+#~ "to localpart. Otherwise zarafa will not be able to deliver emails "
+#~ "properly."
+#~ msgstr ""
+#~ "Le nom d'utilisateur et la partie locale sont différents. Vous devez "
+#~ "définir un alias pour la partie locale. Autrement Zarafa ne sera pas en "
+#~ "mesure de distribuer le courrier correctement."
 
-#~ msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
-#~ msgstr "Le nom d'utilisateur et la partie locale sont différents. Pour que Zarafa puisse fonctionner l'adresse électronique donnée, il faut définir l'alias de l'adresse suivante :"
+#~ msgid ""
+#~ "Username and e-mail local-part are different. To make Zarafa work with "
+#~ "the given e-mail address you have to define the following e-mail alias:"
+#~ msgstr ""
+#~ "Le nom d'utilisateur et la partie locale sont différents. Pour que Zarafa "
+#~ "puisse fonctionner l'adresse électronique donnée, il faut définir l'alias "
+#~ "de l'adresse suivante :"
 
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Impossible d'ajouter ou de modifier l'utilisateur."
 
-#~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
-#~ msgstr "L'utilisateur a été créé, mais pas la base de stockage Zarafa. Généralement cela signifie que votre licence ne permet plus d'ajouter de nouveaux utilisateurs."
+#~ msgid ""
+#~ "User was created but Zarafa store was not created. This means normally "
+#~ "that your license does not allow any more users."
+#~ msgstr ""
+#~ "L'utilisateur a été créé, mais pas la base de stockage Zarafa. "
+#~ "Généralement cela signifie que votre licence ne permet plus d'ajouter de "
+#~ "nouveaux utilisateurs."
 
-#~ msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
-#~ msgstr "Cet utilisateur est utilisé pour la distribution dans les dossiers publics. Vous devez sélectionner un autre utilisateur pour cela, ensuite vous pourrez supprimer celui-là."
+#~ msgid ""
+#~ "This user is used for delivery in public folders. You have to select "
+#~ "another user for this, then you can delete this one."
+#~ msgstr ""
+#~ "Cet utilisateur est utilisé pour la distribution dans les dossiers "
+#~ "publics. Vous devez sélectionner un autre utilisateur pour cela, ensuite "
+#~ "vous pourrez supprimer celui-là."
 
 #~ msgid "Usermanagment"
 #~ msgstr "Gestion des utilisateurs"
@@ -2041,8 +2240,11 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Convert into a zarafa resource"
 #~ msgstr "Convertir en ressource Zarafa"
 
-#~ msgid "Should the following users really be converted into zarafa resources?"
-#~ msgstr "Désirez-vous vraiment que les utilisateurs suivants soient convertis en ressources Zarafa ?"
+#~ msgid ""
+#~ "Should the following users really be converted into zarafa resources?"
+#~ msgstr ""
+#~ "Désirez-vous vraiment que les utilisateurs suivants soient convertis en "
+#~ "ressources Zarafa ?"
 
 #~ msgid "User created with following warnings"
 #~ msgstr "Utilisateurs créés avec les avertissements suivants"
@@ -2071,14 +2273,32 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Features"
 #~ msgstr "Fonctionnalités"
 
-#~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
-#~ msgstr "Si un utilisateur est administrateur, il aura la possibilité d'ouvrir les bases Zarafa de n'importe quel autre utilisateur."
+#~ msgid ""
+#~ "When a user is administrator, the user will be allowed to open all Zarafa "
+#~ "stores of any user."
+#~ msgstr ""
+#~ "Si un utilisateur est administrateur, il aura la possibilité d'ouvrir les "
+#~ "bases Zarafa de n'importe quel autre utilisateur."
 
-#~ msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
-#~ msgstr "L'utilisateur ne pourra pas se connecter et ne sera pas ajouté à la liste des utilisateurs actifs de votre licence. Les autres utilisateurs pourront accéder à la base de stockage de cet utilisateur en tant que délégués."
+#~ msgid ""
+#~ "The user will not be able to login and he will not be added to the active "
+#~ "users of your license. Other users can open this users store as a "
+#~ "delegate."
+#~ msgstr ""
+#~ "L'utilisateur ne pourra pas se connecter et ne sera pas ajouté à la liste "
+#~ "des utilisateurs actifs de votre licence. Les autres utilisateurs "
+#~ "pourront accéder à la base de stockage de cet utilisateur en tant que "
+#~ "délégués."
 
-#~ msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
-#~ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. L'utilisateur sera averti si il s'approche de cette limite. Une fois la limite atteinte, l'utilisateur ne pourra plus envoyer ou recevoir de courriel."
+#~ msgid ""
+#~ "Enter the amount of disk space this user may take up. The user will be "
+#~ "warned if he draws near that limit. After the limit is reached, the user "
+#~ "will not be able to send and receive mails."
+#~ msgstr ""
+#~ "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. "
+#~ "L'utilisateur sera averti si il s'approche de cette limite. Une fois la "
+#~ "limite atteinte, l'utilisateur ne pourra plus envoyer ou recevoir de "
+#~ "courriel."
 
 #~ msgid "Add alias"
 #~ msgstr "Ajouter un alias"
@@ -2114,10 +2334,14 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "ou"
 
 #~ msgid "Configuration of mail aliases is done through active directory."
-#~ msgstr "La configuration des alias de courriel s'effectue à l'aide de Active Directory."
+#~ msgstr ""
+#~ "La configuration des alias de courriel s'effectue à l'aide de Active "
+#~ "Directory."
 
 #~ msgid "The following usernames or e-mail addresses are not valid."
-#~ msgstr "Les noms d'utilisateur ou les adresses électroniques suivantes sont invalides."
+#~ msgstr ""
+#~ "Les noms d'utilisateur ou les adresses électroniques suivantes sont "
+#~ "invalides."
 
 #~ msgid "This alias already exists."
 #~ msgstr "Cet alias existe déjà."
@@ -2140,8 +2364,14 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Error while removing alias."
 #~ msgstr "Une erreur s'est produite lors de la suppression de l'alias."
 
-#~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
-#~ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
+#~ msgid ""
+#~ "You have no zarafa administrator defined or there was no folder created. "
+#~ "Please define it in the module <a href=\"javascript:Yaffas.ui.openPage"
+#~ "('bbmailsrv-4')\">Mail Server/Configuration</a>."
+#~ msgstr ""
+#~ "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a "
+#~ "été créé. Veuillez le configurer dans le module <a href=\"javascript:"
+#~ "Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 
 #~ msgid "Install New Key"
 #~ msgstr "Installer une nouvelle clé"
@@ -2258,10 +2488,16 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Envoyer"
 
 #~ msgid "Please complete all forms and check your e-mail address."
-#~ msgstr "Veuillez compléter tous les formulaire et vérifier votre adresse électronique."
+#~ msgstr ""
+#~ "Veuillez compléter tous les formulaire et vérifier votre adresse "
+#~ "électronique."
 
-#~ msgid "Your mails are queued for sending. This may take some time depending on your hardware."
-#~ msgstr "Vos courriers ont été ajouté à la queue d'envoi. Ceci peut prendre un certain temps selon la puissance de votre machine."
+#~ msgid ""
+#~ "Your mails are queued for sending. This may take some time depending on "
+#~ "your hardware."
+#~ msgstr ""
+#~ "Vos courriers ont été ajouté à la queue d'envoi. Ceci peut prendre un "
+#~ "certain temps selon la puissance de votre machine."
 
 #~ msgid "Services"
 #~ msgstr "Services"
@@ -2274,9 +2510,6 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 
 #~ msgid "Action"
 #~ msgstr "Action"
-
-#~ msgid "Configuration"
-#~ msgstr "Configuration"
 
 #~ msgid "Restart"
 #~ msgstr "Redémarrer"
@@ -2327,7 +2560,9 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Le système va s'arrêter"
 
 #~ msgid "System is rebooting. In some minutes you can login again."
-#~ msgstr "Le système va redémarrer. Dans quelques minutes vous pourrez à nouveau vous connecter."
+#~ msgstr ""
+#~ "Le système va redémarrer. Dans quelques minutes vous pourrez à nouveau "
+#~ "vous connecter."
 
 #~ msgid "Do you really want to halt the system."
 #~ msgstr "Désirez-vous vraiment arrêter le système ?"
@@ -2368,8 +2603,10 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Time Server"
 #~ msgstr "Serveur de temps"
 
-#~ msgid "Enter the hostname or IP address of the time server to be used for NTP."
-#~ msgstr "Saisir le nom d'hôte ou l'adresse IP du serveur de temps utilisé par NTP."
+#~ msgid ""
+#~ "Enter the hostname or IP address of the time server to be used for NTP."
+#~ msgstr ""
+#~ "Saisir le nom d'hôte ou l'adresse IP du serveur de temps utilisé par NTP."
 
 #~ msgid "Uptime of"
 #~ msgstr "Uptime de"
@@ -2389,17 +2626,18 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Version de fichier de configuration erronée"
 
-#~ msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
-#~ msgstr "Votre fichier de configuration ne s'applique pas à ce produit. Désirez-vous vraiment l'appliquer au système ?"
+#~ msgid ""
+#~ "Your Configurationfile is not for this Product. Do You really want to "
+#~ "apply it to the System?"
+#~ msgstr ""
+#~ "Votre fichier de configuration ne s'applique pas à ce produit. Désirez-"
+#~ "vous vraiment l'appliquer au système ?"
 
 #~ msgid "Apply backupfile"
 #~ msgstr "Appliquer le fichier de sauvegarde"
 
 #~ msgid "Save backupfile"
 #~ msgstr "Enregistrer le fichier de sauvegarde"
-
-#~ msgid "Backup"
-#~ msgstr "Sauvegarde"
 
 #~ msgid "Messages:"
 #~ msgstr "Messages :"
@@ -2434,8 +2672,17 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Cancel"
 #~ msgstr "Annuler"
 
-#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subit des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
+#~ msgid ""
+#~ "You are about to plug in a yaffas configuration file smaller or equal to "
+#~ "version 2.<br>This version can be converted to the actuall version. "
+#~ "Nevertheless, many modules have radically changed in such a way that "
+#~ "manually checking of configured values are strongly recomended!"
+#~ msgstr ""
+#~ "Vous êtes sur le point d'insérer un fichier de configuration yaffas "
+#~ "inférieur ou égal à la version 2.<br>Cette version peut être convertie à "
+#~ "la version actuelle. Cependant, de nombreux modules ont subit des "
+#~ "modifications si importantes qu'une vérification manuelle des valeurs "
+#~ "paramétrées est fortement recommandée."
 
 #~ msgid "Following list cant be converted:"
 #~ msgstr "La liste suivante peut être convertie :"
@@ -2446,8 +2693,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "User eMail adress"
 #~ msgstr "Adresse électronique de l'utilisateur"
 
-#~ msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
-#~ msgstr "Mot de passe de l'utilisateur. Sera créé en tant que 'start123' et devra être changé dès que possible !"
+#~ msgid ""
+#~ "User password. Will be created as 'start123' and should be changed as "
+#~ "soon as possible!"
+#~ msgstr ""
+#~ "Mot de passe de l'utilisateur. Sera créé en tant que 'start123' et devra "
+#~ "être changé dès que possible !"
 
 #~ msgid "Restore Configuration"
 #~ msgstr "Restaurer la configuration"
@@ -2461,17 +2712,25 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erreur dans le fichier de configuration"
 
-#~ msgid "Please install all licence files for your installed products before you insert the configuration."
-#~ msgstr "Veuillez installer tous les fichiers de licence pour vos produits installés avant d'insérer la configuration."
+#~ msgid ""
+#~ "Please install all licence files for your installed products before you "
+#~ "insert the configuration."
+#~ msgstr ""
+#~ "Veuillez installer tous les fichiers de licence pour vos produits "
+#~ "installés avant d'insérer la configuration."
 
 #~ msgid "Could not save config, because the LDAP service is not running."
-#~ msgstr "Impossible d'enregistrer la configuration parce que le service LDAP n'est pas en cours d'exécution."
+#~ msgstr ""
+#~ "Impossible d'enregistrer la configuration parce que le service LDAP n'est "
+#~ "pas en cours d'exécution."
 
 #~ msgid "Could not restore user and groups."
 #~ msgstr "Impossible de restaurer les utilisateurs et groupes."
 
 #~ msgid "Your Configurationfile is not for this fax-card type."
-#~ msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
+#~ msgstr ""
+#~ "Votre fichier de configuration n'est pas applicable pour ce type de carte "
+#~ "fax."
 
 #~ msgid "Errors occured."
 #~ msgstr "Des erreurs se sont produites."
@@ -2485,17 +2744,30 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "The DNS server address has to be a valid IP address."
 #~ msgstr "L'adresse du serveur DNS doit être une adresse IP valide."
 
-#~ msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
-#~ msgstr "Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères."
+#~ msgid ""
+#~ "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' "
+#~ "and '-'. It also has a minimum length of two."
+#~ msgstr ""
+#~ "Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres "
+#~ "(0-9), '.' et '-'. Il doit également contenir au moins deux caractères."
 
 #~ msgid "Could not rename domain."
 #~ msgstr "Impossible de renommer le domaine."
 
-#~ msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
-#~ msgstr "Un nom d'hôte ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères."
+#~ msgid ""
+#~ "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and "
+#~ "'-'. It also has a minimum length of two."
+#~ msgstr ""
+#~ "Un nom d'hôte ne peut comporter que des lettres (a-z et A-Z), des "
+#~ "chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux "
+#~ "caractères."
 
-#~ msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
-#~ msgstr "Un groupe de travail ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'."
+#~ msgid ""
+#~ "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', "
+#~ "'_' and '-'."
+#~ msgstr ""
+#~ "Un groupe de travail ne peut comporter que des lettres (a-z et A-Z), des "
+#~ "chiffres (0-9), '.' et '-'."
 
 #~ msgid "Could not copy the following file:"
 #~ msgstr "Impossible d'enregistrer le fichier suivant :"
@@ -2504,19 +2776,26 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Vous devez activer au moins une interface de réseau."
 
 #~ msgid "The gateway address has to be different to the server address."
-#~ msgstr "L'adresse de la passerelle doit être différente que l'adresse du serveur."
+#~ msgstr ""
+#~ "L'adresse de la passerelle doit être différente que l'adresse du serveur."
 
 #~ msgid "The associated hardware interface has to be enabled."
 #~ msgstr "L'interface matérielle associée doit être activée."
 
 #~ msgid "Error reading data for use with samba."
-#~ msgstr "Une erreur s'est produite lors de la lecture des données devant être utilisées par Samba."
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de la lecture des données devant être "
+#~ "utilisées par Samba."
 
 #~ msgid "Error writing data for use with samba."
-#~ msgstr "Une erreur s'est produite lors de l'écriture des données devant être utilisées par Samba."
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de l'écriture des données devant être "
+#~ "utilisées par Samba."
 
 #~ msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
-#~ msgstr "Il n'y as pas exactement un seul exemplaire du nom d'hôte (sambaDomain) dans LDAP."
+#~ msgstr ""
+#~ "Il n'y as pas exactement un seul exemplaire du nom d'hôte (sambaDomain) "
+#~ "dans LDAP."
 
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
@@ -2609,10 +2888,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Une erreur s'est produite lors de la suppression du proxy KAVS !"
 
 #~ msgid "Error while setting freshclam proxy!"
-#~ msgstr "Une erreur s'est produite lors de la configuration du proxy freshclam !"
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de la configuration du proxy freshclam !"
 
 #~ msgid "Error while deleting freshclam proxy!"
-#~ msgstr "Une erreur s'est produite lors de la suppression du proxy freshclam !"
+#~ msgstr ""
+#~ "Une erreur s'est produite lors de la suppression du proxy freshclam !"
 
 #~ msgid "Error restarting freshclam!"
 #~ msgstr "Une erreur s'est produite lors du redémarrage de freshclam !"
@@ -2632,23 +2913,36 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Netmask for eth0<br>e.g. 255.255.255.0"
 #~ msgstr "Masque réseau pour eth0<br>p.ex. 255.255.255.0"
 
-#~ msgid "Gateway for your network. This must be an IPv4 address of this network."
-#~ msgstr "Passerelle pour votre réseau. Ceci doit être une adresse IPv4 de ce réseau."
+#~ msgid ""
+#~ "Gateway for your network. This must be an IPv4 address of this network."
+#~ msgstr ""
+#~ "Passerelle pour votre réseau. Ceci doit être une adresse IPv4 de ce "
+#~ "réseau."
 
 #~ msgid "DNS server for resolving names into IP adresses."
 #~ msgstr "Serveur DNS pour la résolution des noms en adresses IP."
 
-#~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
-#~ msgstr "Joindre cette valeur lors de la résolution des noms courts.<br>Pour convertir le nom \"serveur\" cette valeur est mise en suffixe. p. ex. yaffas.org -> serveur.yaffas.org"
+#~ msgid ""
+#~ "Append this value during resolving of short names.<br>To resolve the name "
+#~ "\"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+#~ msgstr ""
+#~ "Joindre cette valeur lors de la résolution des noms courts.<br>Pour "
+#~ "convertir le nom \"serveur\" cette valeur est mise en suffixe. p. ex. "
+#~ "yaffas.org -> serveur.yaffas.org"
 
-#~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
-#~ msgstr "Adresse du serveur proxy HTTP. Ceci peut être une adresse IPv4 ou un nom d'hôte."
+#~ msgid ""
+#~ "HTTP proxy server address. This can be an IPv4 address or a hostname."
+#~ msgstr ""
+#~ "Adresse du serveur proxy HTTP. Ceci peut être une adresse IPv4 ou un nom "
+#~ "d'hôte."
 
 #~ msgid "Port of the HTTP proxy server."
 #~ msgstr "Port du serveur proxy HTTP."
 
 #~ msgid "Optional username, if you have to authenticate against the proxy."
-#~ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accéder au proxy."
+#~ msgstr ""
+#~ "Nom d'utilisateur facultatif, si vous devez vous authentifier pour "
+#~ "accéder au proxy."
 
 #~ msgid "Authentication Server"
 #~ msgstr "Serveur d'authentification"
@@ -2726,10 +3020,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Adresse IP"
 
 #~ msgid "Allow authentication requests of remote clients via LDAP."
-#~ msgstr "Permettre les requêtes d'authentification des clients distants via LDAP."
+#~ msgstr ""
+#~ "Permettre les requêtes d'authentification des clients distants via LDAP."
 
 #~ msgid "Allow authentication requests of remote clients via PDC."
-#~ msgstr "Permettre les requêtes d'authentification des clients distants via PDC."
+#~ msgstr ""
+#~ "Permettre les requêtes d'authentification des clients distants via PDC."
 
 #~ msgid "Domain administrator"
 #~ msgstr "Administrateur du domaine"
@@ -2767,8 +3063,13 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Base DN user"
 #~ msgstr "Utilisateur Base DN"
 
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposez du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
+#~ msgid ""
+#~ "To use this authentication method you need the following schema file. You "
+#~ "have to include and use it in you LDAP server."
+#~ msgstr ""
+#~ "Pour utiliser cette méthode d'authentification, vous devez disposez du "
+#~ "fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre "
+#~ "serveur LDAP."
 
 #~ msgid "Caution!"
 #~ msgstr "Attention !"
@@ -2782,17 +3083,34 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Join Domain without encryption?"
 #~ msgstr "Joindre le domaine sans chiffrement ?"
 
-#~ msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
-#~ msgstr "Votre serveur Active Directory ne gère pas le chiffrement des données (ldaps). Acceptez-vous que les données soient transmises en clair ? Si vous sélectionner 'non', le serveur yaffas ne pourra pas joindre le domaine."
+#~ msgid ""
+#~ "Your Active Directory server does not support data encryption (ldaps). Do "
+#~ "you accept that directory information will be transmitted unencrypted? If "
+#~ "you choose 'no' here the yaffas server will not join the domain."
+#~ msgstr ""
+#~ "Votre serveur Active Directory ne gère pas le chiffrement des données "
+#~ "(ldaps). Acceptez-vous que les données soient transmises en clair ? Si "
+#~ "vous sélectionner 'non', le serveur yaffas ne pourra pas joindre le "
+#~ "domaine."
 
-#~ msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
-#~ msgstr "Votre serveur LDAP ne gère pas le chiffrement des données (ldaps). Acceptez-vous que les données soient transmises en clair ? Si vous sélectionner 'non', le serveur yaffas modifiera le mode actuel d'authentification."
+#~ msgid ""
+#~ "Your LDAP server does not support data encryption (ldaps). Do you accept "
+#~ "that directory information will be transmitted unencrypted? If you choose "
+#~ "'no' here the yaffas server will change current authentication type."
+#~ msgstr ""
+#~ "Votre serveur LDAP ne gère pas le chiffrement des données (ldaps). "
+#~ "Acceptez-vous que les données soient transmises en clair ? Si vous "
+#~ "sélectionner 'non', le serveur yaffas modifiera le mode actuel "
+#~ "d'authentification."
 
 #~ msgid "Delete user fax configuration and PDF files"
 #~ msgstr "Supprimer configuration utilisateur de fax et fichiers PDF"
 
-#~ msgid "Delete all users' and groups' fax configurations and pdf users' files."
-#~ msgstr "Supprimer toutes les configurations utilisateurs et configurations groupes de fax et les fichiers PDF des utilisateurs"
+#~ msgid ""
+#~ "Delete all users' and groups' fax configurations and pdf users' files."
+#~ msgstr ""
+#~ "Supprimer toutes les configurations utilisateurs et configurations "
+#~ "groupes de fax et les fichiers PDF des utilisateurs"
 
 #~ msgid "Print operators group"
 #~ msgstr "Groupe d'opérateurs d'imprimante"
@@ -2872,8 +3190,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "An error occured while joining the domain."
 #~ msgstr "Une erreur s'est produite en joignant le domaine."
 
-#~ msgid "The search attribute for the user or group is not correct. You can only insert figures and characters from a-z and 0-9."
-#~ msgstr "L'attribut de recherche pour l'utilisateur ou le groupe est erroné. Vous ne pouvez saisir que des lettres ou des chiffres de a-z ou de 0-9."
+#~ msgid ""
+#~ "The search attribute for the user or group is not correct. You can only "
+#~ "insert figures and characters from a-z and 0-9."
+#~ msgstr ""
+#~ "L'attribut de recherche pour l'utilisateur ou le groupe est erroné. Vous "
+#~ "ne pouvez saisir que des lettres ou des chiffres de a-z ou de 0-9."
 
 #~ msgid "Invalid authentication type."
 #~ msgstr "Type d'authentification invalide."
@@ -2941,14 +3263,21 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "unknown postfix file"
 #~ msgstr "Fichier Postfix inconnu"
 
-#~ msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
-#~ msgstr "Recherche LDAP Base DN. Les données LDAP seront recherchées à partir de ce point. p. ex. o=yaffas,c=org"
+#~ msgid ""
+#~ "LDAP Search Base DN. LDAP entries are searched from that point. e.g. "
+#~ "o=yaffas,c=org"
+#~ msgstr ""
+#~ "Recherche LDAP Base DN. Les données LDAP seront recherchées à partir de "
+#~ "ce point. p. ex. o=yaffas,c=org"
 
 #~ msgid "Attribute with users email address. Default: mail"
-#~ msgstr "Attribut avec l'adresse électronique des utilisateurs. Par défaut: mail"
+#~ msgstr ""
+#~ "Attribut avec l'adresse électronique des utilisateurs. Par défaut: mail"
 
 #~ msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
-#~ msgstr "Utilisateur avec lequel joindre. p. ex. cn=ldapadmin,ou=People,o=yaffas,c=org"
+#~ msgstr ""
+#~ "Utilisateur avec lequel joindre. p. ex. cn=ldapadmin,ou=People,o=yaffas,"
+#~ "c=org"
 
 #~ msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
 #~ msgstr "Nom de domaine complet de votre Active Directory. p. ex. yaffas.org"
@@ -2956,11 +3285,18 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Name or IP adress of your domain controller."
 #~ msgstr "Nom ou adresse IP  de votre contrôleur de domaine."
 
-#~ msgid "Name of a domain administrator. This user should be created in users organizational unit."
-#~ msgstr "Nom de l'administrateur du domaine. Cet utilisateur devrait être créé dans l'Organizational Unit des utilisateurs."
+#~ msgid ""
+#~ "Name of a domain administrator. This user should be created in users "
+#~ "organizational unit."
+#~ msgstr ""
+#~ "Nom de l'administrateur du domaine. Cet utilisateur devrait être créé "
+#~ "dans l'Organizational Unit des utilisateurs."
 
-#~ msgid "User for read only access. You can give the username or a full dn syntax."
-#~ msgstr "Utilisateur pour accès en lecture uniquement. Vous pouvez fournir le nom d'utilisateur ou la syntaxe DN complète."
+#~ msgid ""
+#~ "User for read only access. You can give the username or a full dn syntax."
+#~ msgstr ""
+#~ "Utilisateur pour accès en lecture uniquement. Vous pouvez fournir le nom "
+#~ "d'utilisateur ou la syntaxe DN complète."
 
 #~ msgid "Hostname or IP address of the LDAP server."
 #~ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
@@ -2996,7 +3332,8 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgstr "Impossible de configurer le mot de passe root !"
 
 #~ msgid "Can not set the domain-administrator password!"
-#~ msgstr "Impossible de configurer le mot de passe administrateur du domaine !"
+#~ msgstr ""
+#~ "Impossible de configurer le mot de passe administrateur du domaine !"
 
 #~ msgid "Can not execute SMBPASSWD!"
 #~ msgstr "Impossible d'exécuter SMBPASSWD !"
@@ -3016,8 +3353,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Can not copy following file(s):"
 #~ msgstr "Impossible de copier le(s) fichier(s) suivant(s) :"
 
-#~ msgid "Password have to be at least on character long and must not contain a hash (#)."
-#~ msgstr "Le mot de passe doit comporter au moins un caractère et ne doit pas comporter le caractère dièse (#)."
+#~ msgid ""
+#~ "Password have to be at least on character long and must not contain a "
+#~ "hash (#)."
+#~ msgstr ""
+#~ "Le mot de passe doit comporter au moins un caractère et ne doit pas "
+#~ "comporter le caractère dièse (#)."
 
 #~ msgid "Both passwords have to be identical."
 #~ msgstr "Les deux mots de passe doivent être identiques."
@@ -3061,9 +3402,6 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Maintenance"
 #~ msgstr "Maintenance"
 
-#~ msgid "Security"
-#~ msgstr "Sécurité"
-
 #~ msgid "PDF Printers"
 #~ msgstr "Imprimantes PDF"
 
@@ -3106,8 +3444,13 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Could not find the following users:"
 #~ msgstr "Impossible de localiser les utilisateurs suivants :"
 
-#~ msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
-#~ msgstr "Votre licence est expirée. Veuillez installer un nouveau fichier de licence ou contacter <a href='mailto:info@bitbone.de'>info@bitbone.de</a> pour la renouveler."
+#~ msgid ""
+#~ "Your license expired. Please install a new license file or contact <a "
+#~ "href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
+#~ msgstr ""
+#~ "Votre licence est expirée. Veuillez installer un nouveau fichier de "
+#~ "licence ou contacter <a href='mailto:info@bitbone.de'>info@bitbone.de</a> "
+#~ "pour la renouveler."
 
 #~ msgid "There is already an alias with this name:"
 #~ msgstr "Un alias existe déjà avec ce nom :"
@@ -3184,8 +3527,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Can not open $1 : $2"
 #~ msgstr "Impossible d'ouvrir $1 : $2"
 
-#~ msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-#~ msgstr "Veuillez cliquer sur le bouton 'Appliquer' dans la configuration Fax. La configuration a été modifiée."
+#~ msgid ""
+#~ "Please press the 'Apply' Button in the Fax Configuration. The "
+#~ "Configuration has been changed."
+#~ msgstr ""
+#~ "Veuillez cliquer sur le bouton 'Appliquer' dans la configuration Fax. La "
+#~ "configuration a été modifiée."
 
 #~ msgid "Attention!"
 #~ msgstr "Attention !"
@@ -3196,8 +3543,12 @@ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la 
 #~ msgid "Dutch"
 #~ msgstr "Néerlandais"
 
-#~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
-#~ msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page"
+#~ msgid ""
+#~ "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per "
+#~ "page"
+#~ msgstr ""
+#~ "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par "
+#~ "page"
 
 #~ msgid "About Z-Admin"
 #~ msgstr "À propos de Z-Admin"

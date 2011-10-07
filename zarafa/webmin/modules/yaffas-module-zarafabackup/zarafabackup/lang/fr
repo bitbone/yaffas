@@ -44,3 +44,4 @@ err_no_full_found=Impossible de trouver une sauvegarde complète.
 err_mkdir=Impossible de créer le répertoire.
 err_days=Valeur invalide pour les dates de sauvegarde
 err_read_dir=Impossible d'ouvrir le répertoire.
+moduletitle=Sauvegarde

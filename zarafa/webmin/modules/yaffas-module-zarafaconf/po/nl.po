@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-29 10:46+0200\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"PO-Revision-Date: 2011-10-07 09:22+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -192,6 +192,11 @@ msgstr "Kan geen verbinding krijgen met de database."
 msgid "The quota value can only contain digits."
 msgstr "De quotawaarde kan alleen cijfers bevatten."
 
+#: lang/en:43
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
@@ -331,6 +336,9 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Full backup"
 #~ msgstr "Volledige reservekopie"
 
+#~ msgid "Differential backup"
+#~ msgstr "Differentiële reservekopie"
+
 #~ msgid "at"
 #~ msgstr "op"
 
@@ -347,7 +355,8 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgstr "Verwijderen van directory"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+#~ msgstr ""
+#~ "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
 
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
@@ -376,8 +385,12 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid "The domain is not defined as local domain in your mailserver configuration."
-#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
+#~ msgid ""
+#~ "The domain is not defined as local domain in your mailserver "
+#~ "configuration."
+#~ msgstr ""
+#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
+#~ "configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -412,8 +425,11 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
+#~ msgid ""
+#~ "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr ""
+#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
+#~ "functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"

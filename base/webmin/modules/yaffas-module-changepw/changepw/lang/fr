@@ -24,3 +24,4 @@ err_copy_file=Impossible de copier le(s) fichier(s) suivant(s) :
 err_password=Le mot de passe doit comporter au moins un caractère et ne doit pas comporter le caractère dièse (#).
 err_password_equal=Les deux mots de passe doivent être identiques.
 err_change_password=Mot de passe invalide.
+moduletitle=Mot de passe administrateur

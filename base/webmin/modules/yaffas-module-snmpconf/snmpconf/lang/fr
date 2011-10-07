@@ -5,3 +5,4 @@ lbl_snmp_config=Configuration SNMP
 
 err_network_string=L'accès ne peut être configuré que pour des adresses IP ou des réseaux
 err_community_string=La suite de caractère  communautaire ne peut contenir que des chiffres (0-9) et des lettres (a-z, A-Z).
+moduletitle=Configuration SNMP

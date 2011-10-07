@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -334,72 +334,77 @@ msgstr ""
 msgid "Dutch"
 msgstr ""
 
-#: lang/en:73
+#: lang/en:72
 #, no-wrap
-msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
+msgid "French"
 msgstr ""
 
 #: lang/en:74
 #, no-wrap
-msgid "About yaffas"
+msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 msgstr ""
 
 #: lang/en:75
 #, no-wrap
-msgid "About Z-Admin"
+msgid "About yaffas"
 msgstr ""
 
-#: lang/en:77
+#: lang/en:76
 #, no-wrap
-msgid "Logged out"
+msgid "About Z-Admin"
 msgstr ""
 
 #: lang/en:78
 #, no-wrap
-msgid "Another administrator logged in. You have to log in again."
+msgid "Logged out"
 msgstr ""
 
-#: lang/en:80
+#: lang/en:79
 #, no-wrap
-msgid "Loading please wait..."
+msgid "Another administrator logged in. You have to log in again."
 msgstr ""
 
 #: lang/en:81
 #, no-wrap
-msgid "Error"
+msgid "Loading please wait..."
 msgstr ""
 
 #: lang/en:82
 #, no-wrap
-msgid "Help"
+msgid "Error"
 msgstr ""
 
-#: lang/en:84
+#: lang/en:83
 #, no-wrap
-msgid "Loading..."
+msgid "Help"
 msgstr ""
 
 #: lang/en:85
 #, no-wrap
-msgid "Data error."
+msgid "Loading..."
 msgstr ""
 
 #: lang/en:86
 #, no-wrap
-msgid "No records found."
+msgid "Data error."
 msgstr ""
 
-#: lang/en:88
+#: lang/en:87
 #, no-wrap
-msgid "Filter data"
+msgid "No records found."
 msgstr ""
 
 #: lang/en:89
 #, no-wrap
+msgid "Filter data"
+msgstr ""
+
+#: lang/en:90
+#, no-wrap
 msgid "Show filter"
 msgstr ""
 
-#: lang/en:91
+#: lang/en:92
 #, no-wrap
 msgid "Could not connect to backend!"
 msgstr ""

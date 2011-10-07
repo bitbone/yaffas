@@ -66,3 +66,4 @@ err_10=Une erreur s'est produite lors de la suppression du proxy KAVS !
 err_set_freshclam=Une erreur s'est produite lors de la configuration du proxy freshclam !
 err_del_freshclam=Une erreur s'est produite lors de la suppression du proxy freshclam !
 err_restart_freshclam=Une erreur s'est produite lors du redémarrage de freshclam !
+moduletitle=Configuration

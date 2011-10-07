@@ -14,3 +14,4 @@ lbl_basic_settings=Basis-instellingen
 err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_password=Het admin-wachtwoord is leeg of komt niet overeen.
 
+moduletitle=Setup

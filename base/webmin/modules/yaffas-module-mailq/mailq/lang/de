@@ -28,3 +28,4 @@ err_exim_delete=Fehler beim Löschen der E-Mail
 err_exim_dequeued=Fehler beim Versuch neu auszuliefern der E-Mail
 err_no_good_mail=Ungültige E-Mail Adresse
 lbl_show=Anzeigen
+moduletitle=Mail Queue

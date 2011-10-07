@@ -63,3 +63,4 @@ restart_service=Les services vont être redémarrés !
 yes=oui
 no=non
 succsess=Succès
+moduletitle=Gestion Certificat / Clé

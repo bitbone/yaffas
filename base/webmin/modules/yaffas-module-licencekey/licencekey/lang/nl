@@ -37,3 +37,4 @@ err_cant_rm_newkey=Can't remove new key!
 err_wrong_kv=Wrong key version for installed product!
 err_no_key=No key available!
 suc_license=Successfully saved licensekey!
+moduletitle=yaffas license key management

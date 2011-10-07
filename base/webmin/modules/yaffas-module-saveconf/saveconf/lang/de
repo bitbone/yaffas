@@ -29,5 +29,7 @@ err_keys=Bitte installieren Sie vor dem Einspielen der Konfiguration alle Lizenz
 err_no_ldif=Konnte Konfiguration nicht sichern, da der LDAP Dienst nicht läuft.
 err_no_user=Konnte User und Gruppen nicht zurückspielen.
 err_faxtype=Die Konfigurationsdatei ist nicht für diesen Fax-Karte Typ.
+err_auth_not_set=No authentication type is configured.
 lbl_errors=Es sind Fehler aufgetreten
 lbl_errors_question=Wollen Sie die Datei trotzdem herunterladen?
+moduletitle=Save configuration

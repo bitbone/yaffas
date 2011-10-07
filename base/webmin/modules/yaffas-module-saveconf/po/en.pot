@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -182,10 +182,20 @@ msgstr ""
 
 #: lang/en:32
 #, no-wrap
-msgid "Errors occured."
+msgid "No authentication type is configured."
 msgstr ""
 
 #: lang/en:33
 #, no-wrap
+msgid "Errors occured."
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Save configuration"
 msgstr ""

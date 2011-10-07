@@ -5,3 +5,5 @@ desc_de=Zertifikat / Schlüssel Verwaltung
 name=certificate
 version=0.1
 
+desc_nl=Certificate / Key Management
+desc_fr=Gestion Certificat / Clé
