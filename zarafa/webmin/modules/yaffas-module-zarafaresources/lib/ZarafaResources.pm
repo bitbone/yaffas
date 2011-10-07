@@ -112,7 +112,7 @@ sub modify_resource ($$$$) {
 	if (Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES) {
 		Yaffas::Module::Users::set_zarafa_shared( $resource, 1 );
 		Yaffas::UGM::gecos( $resource, 'resource', $description );
-		my $pass = map{("a".."z","A".."Z",0..9)[int(rand(62))]}(1..26);
+		my $pass = join "", map{("a".."z","A".."Z",0..9)[int(rand(62))]}(1..26);
 		Yaffas::UGM::password($resource, $pass);
 		Yaffas::UGM::set_suppl_groups($resource, "");
 	}
