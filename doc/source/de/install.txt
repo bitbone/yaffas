@@ -30,6 +30,8 @@ Yaffas kann direkt aus den unten angegebenen Repositories installiert werden.
 
 Dies installiert die {product} Basismodule und Zarafa.
 
+Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
+
 **Optional: Installation der Konfiguration**
 
 Diese Paket und seine Abhängigkeiten dienen dazu, ein frisch installiertes System mit {product} administrierbar zu machen. Ohne yaffas-config müssen eine Reihe von manuellen Anpassungen an Konfigurationsdateien vorgenommen werden, damit die Administrationsoberfläche vollständig funktionieren kann.
