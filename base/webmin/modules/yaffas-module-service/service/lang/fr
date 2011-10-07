@@ -1,0 +1,49 @@
+index_header=Services
+lbl_service=Service
+lbl_status=État
+lbl_service_on_boot=Exécuter le service au démarrage
+lbl_watchme=Moniteur
+lbl_action=Action
+lbl_execute=Exécuter
+lbl_start=Démarrer
+lbl_stop=Annuler
+lbl_config=Configuration
+lbl_restart=Redémarrer
+lbl_started=Démarré
+lbl_stopped=À l'arrêt
+suc_start=Le service a été démarré
+dis_start=Le service ne doit pas être démarré
+err_start=Impossible de démarrer le service
+suc_stop=Le service a été arrêté
+dis_stop=Le service doit être arrêté
+err_stop=Impossible d'arrêter le service
+suc_restart=Le service a été redémarré
+dis_restart=Le service ne doit pas être redémarré
+err_restart=Impossible de redémarrer le service
+lbl_really_stop_title=Arrêter le service
+lbl_really_stop=Désirez-vous vraiment arrêter le service ?
+
+
+lbl_shutdown=Arrêt du système
+lbl_halt=Arrêt du système
+lbl_reboot=Redémarrage du système
+lbl_halting=Le système va s'arrêter
+lbl_rebooting=Le système va redémarrer. Dans quelques minutes vous pourrez à nouveau vous connecter.
+lbl_sure_halt=Désirez-vous vraiment arrêter le système ?
+lbl_sure_reboot=Désirez-vous vraiment redémarrer le système ?
+
+
+lbl_day=Jour
+lbl_month=Mois
+lbl_date=Date
+lbl_hour=Heure
+lbl_year=Anné
+lbl_setdatetime=Heure du système
+
+
+lbl_once=maintenant
+lbl_every=toutes les heures
+lbl_daily=tous les jours à 
+lbl_minute= minute
+lbl_hour= heure
+lbl_timeserver=Serveur de temps

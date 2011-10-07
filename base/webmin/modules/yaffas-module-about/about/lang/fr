@@ -1,3 +1,13 @@
+lbl_index_title=Information système
+lbl_index_header=À propos de yaffas
+lbl_index_return=Système
+lbl_versions=Versions
+lbl_version=Version
+lbl_revision=Révision
+lbl_name=Produit
+
+err_get_products=Cette information ne peut pas être lue !
+
 index_title=Information système
 written_by=Écrit par
 
@@ -41,7 +51,7 @@ irq_ioports=Utilisation IO
 network_load=Statistique réseau
 network_nic=Interface
 network_receive=Recevoir
-network_send=Envoyer
+network_send=Envoyé
 network_bytes=Octets
 network_errors=Erreurs
 network_dropped=Abandonné
@@ -80,8 +90,19 @@ fs_stat=Statistique système de fichier
 fs_mount=Système de fichier monté
 fs_mount_device=Périphérique
 fs_mount_dir=Répertoire
-fs_mount_type=Système de fichiers
+fs_mount_type=Système de fichier
 fs_mount_option=Mode
 
 df_title=Information système de fichier
 
+lbl_filesystem=Système de fichier
+lbl_size=Taille
+lbl_used=Utilisé
+lbl_available=Disponible
+lbl_used_percent=Utilisé%
+lbl_mount=Mounté sur
+
+lbl_time=Heure
+lbl_value=Valeur
+
+lbl_mem_type=Type de mémoire

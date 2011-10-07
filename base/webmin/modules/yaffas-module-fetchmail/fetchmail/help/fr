@@ -1,0 +1,6 @@
+interval=Spécifier l'intervalle de vérification en secondes.
+poll=Le nom de l'hôte distant ou l'adresse IP à partir desquels vous voulez recevoir du courriel.
+via=Le nom DNS du serveur distant. Ce paramètre écrase le nom du serveur.
+port=Le port TCP/IP du serveur distant.
+poll_envelope=Le nom d'entête de l'adresse de l'enveloppe (p. ex. X-Enveloppe-Pour).
+user=Spécifier l'identifiant de connexion à la machine distante.

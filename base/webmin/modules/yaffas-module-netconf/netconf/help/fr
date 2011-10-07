@@ -1,0 +1,11 @@
+hostname=p. ex. hostname
+domain=p. ex. yaffas.org
+workgroup=p. ex. yaffas
+eth0-ipaddr=Adresse IP pour eth0<br>p .ex. 192.168.0.100
+eth0-netmask=Masque réseau pour eth0<br>p.ex. 255.255.255.0
+eth0-gateway=Passerelle pour votre réseau. Ceci doit être une adresse IPv4 de ce réseau.
+eth0-dns=Serveur DNS pour la résolution des noms en adresses IP.
+eth0-search=Joindre cette valeur lors de la résolution des noms courts.<br>Pour convertir le nom "serveur" cette valeur est mise en suffixe. p. ex. yaffas.org -> serveur.yaffas.org
+proxy=Adresse du serveur proxy HTTP. Ceci peut être une adresse IPv4 ou un nom d'hôte.
+port=Port du serveur proxy HTTP.
+user=Nom d'utilisateur facultatif, si vous devez vous authentifier pour accéder au proxy.

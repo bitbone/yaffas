@@ -1,0 +1,65 @@
+c=Pays (code à 2 lettres)
+cn=Nom commun (p. ex.. nom.hote.fr)
+
+e_c=Le pays est invalide.
+e_cn=Le nom commun est invalide ou n'a pas été défini.
+e_days=La date est invalide.
+e_emailAddress=L'adresse électronique est invalide.
+e_genfailed=L'opération a échoué
+e_l=La localité est invalide
+e_o=Le nom de l'organisation est invalide.
+e_ou=L'unité organisationnelle est invalide
+e_service=Veuillez sélectionner un service.
+e_st=État ou province invalide
+
+err_cert_param=Paramètres invalides
+err_cert_not_valid=Certificat invalide
+err_fork=Échec du processus de fork
+err_cert_creation=Le certificat n'as pas été créé.
+err_nothing_selected=Aucun certificat sélectionné.
+
+emailAddress=Adresse électronique (p. ex.. webmestre@compagnie.fr)
+
+gencert_days=Le certificat est valide pour (jours)
+gencert_generate=Générer une clé
+gencert_header=Générer un certificat auto-signé et une clé
+gencert_service=Service
+gencert_title=Générer certificat et clé
+gencert_e_linkerror=Erreur de lien symbolique
+
+import_cert_file=Certificat :
+import_cert_service=Service :
+import_upload_cert=Télécharger un certificat
+import_upload_cert_s=Télécharger un certificat
+import_title=Importer un certificat
+import_del=Supprimer un certificat
+import_delquestion=Désirez-vous vraiment supprimer ce certificat ?
+import_ok=Le certificat a été importé avec succès !
+import_error=Une erreur s'est produite lors de l'importation ! Veuillez vérifier le fichier de votre certificat.
+
+index_header=Gestion Certificat / Clé
+index_import=Importer une clé ou un certificat signé
+index_gencert=Générer un certificat auto-signé et une clé
+index_view=Gérer/Afficher les certificats et les clés installés
+index_title=Gestionnaire de certificat
+
+keysize=Taille de la clé (in octets)
+l=Localité (p. ex. ville)
+o=Nom Organisation (p. ex. compagnie)
+ou=Nom Unité Organisationnelle (p. ex. division)
+
+st=État ou province (nom complet)
+
+view_begin=Date de début
+view_delete=Supprimer
+view_deleted=Fichier supprimé avec succès
+view_name=Nom
+view_end=Expire le
+view_cert_not_valid=Certificat invalide !
+view_header=Gérer les certificats installés
+
+restart_service=Les services vont être redémarrés !
+
+yes=oui
+no=non
+succsess=Succès

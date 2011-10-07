@@ -1,0 +1,97 @@
+lbl_baseconfig=Configuration de base
+lbl_mailserver_name=Nom du serveur de courrier
+lbl_unknown_rcp=Destinataire inconnu
+lbl_refuse_mail=Refuser le courriel
+lbl_delete_mail=Supprimer le courriel
+lbl_sendto_mailadmin=Envoyer à l'administrateur de courrier
+lbl_mailadmin=Administrateur de courrier
+lbl_maildomain=Domaine de courrier
+lbl_ip=IP
+
+lbl_smarthost=Smarthost
+lbl_smarthost_name=Serveur smarthost
+lbl_username=Nom d'utilisateur
+lbl_password=Mot de passe
+
+lbl_del_question=Désirez-vous vraiment supprimer ces données ?
+
+lbl_acceptdomains=Domaines locaux
+
+lbl_acceptrelay=Sous-réseau de relais ouvert
+
+lbl_save=Enregistrer
+
+lbl_return=Mailserv
+lbl_category=Serveur de courrier
+
+lbl_add=Ajouter
+lbl_del=Supprimer
+lbl_mailsize=Taille maximale du courriel
+
+lbl_forward_all_mails_title=Transfert du courriel
+lbl_forward_all_mails=Transférer tout le courriel
+lbl_rewrite_domain=Réécrire le domaine local
+
+lbl_enable_archive=Activer le stockage des archives
+lbl_archive_destination=Destination du stockage des archives
+lbl_archive=Stockage des archives
+
+lbl_only_for_public=Administrateur Zarafa en charge de la distribution vers les dossiers publics
+
+err_archive_name=La destination doit être un utilisateur local ou une adresse électronique !
+
+err_no_rewrite=Vous devez saisir un nom de domaine valide.
+
+err_no_entrys=Aucune saisie.
+err_smarthost=Smarthost invalide.
+err_username=Nom d'utilisateur invalide.
+err_password=Mot de passe invalide.
+err_maildomain=Domaine de courrier invalide.
+err_ip_entry=Adresse IP ou zone IP invalide.
+err_domainname=Erreur : Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins un caractère.
+err_mailadmin=L'administrateur de courrier est invalide.
+err_mailserver=Le serveur de courrier est invalide.
+err_size=La taille du courrier doit être un nombre.
+err_verify_value=Valeur invalide pour la vérification du destinataire
+
+err_zarafa_not_installed=Zarafa n'est pas installé.
+err_user_not_exists=Cet utilisateur n'existe pas sur ce système.
+err_password_missing=Aucun mot de passe n'a été fourni.
+err_user_not_zarafa_admin=Cet utilisateur n'est pas un administrateur Zarafa.
+err_user_password=Le mot de passe n'est pas correct.
+
+
+lbl_antivirus=Antivirus
+lbl_antispam=Antispam
+lbl_greylist=Liste grise
+lbl_quarantine=Quarantaine
+lbl_mailsec=Sécurité du courriel
+lbl_spamassassin=Spamassassin
+lbl_policyserver=Serveur de règle MPP
+
+lbl_active=Activé
+lbl_disabled=Désactivé
+
+lbl_status=État
+lbl_service=Service
+lbl_feature=Fonctionnalité
+
+lbl_start=Démarrer
+lbl_stop=Annuler
+
+lbl_started=En cours d'exécution
+lbl_stopped=À l'arrêt
+
+lbl_email=Courriel
+lbl_virus_notify=Notification de détection de Virus
+
+lbl_disable_tls=TLS/SSL désactivé
+lbl_disable_client_tls=Désactiver TLS/SSL vers le smarthost
+lbl_disable_server_tls=Désactiver TLS/SSL vers le client de courriel
+
+err_email_wrong=Vous avez saisi une adresse électronique invalide !
+
+err_kav_licence=Votre clé KAV est expirée ou invalide !
+err_kav_update=Vous devez mettre à jour votre KAV avant d'activer cette fonctionnalité.
+err_kas_update=Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalité.
+err_activate_policyserver=Veuillez tout d'abord activer le serveur de règle dans l'interface MPP.

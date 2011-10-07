@@ -1,0 +1,24 @@
+lbl_resourcemanagement=Gestion des ressources
+lbl_resource=Ressource
+lbl_description=Description
+lbl_email=Courriel
+lbl_decline_conflict=Décliner les conflits
+lbl_decline_recurring=Décliner les réunions récurrentes
+lbl_newresource=Nouvelle ressource
+lbl_editresource=Modifier une ressource
+lbl_delresource=Supprimer une ressource
+lbl_delresource_question=Désirez-vous vraiment supprimer ces ressources ?
+lbl_remind_perms=Ne pas oublier d'attribuer les autorisations adéquates aux utilisateurs devant utiliser cette ressource dans les paramètres d'agenda de cette ressource.
+
+err_username=Le nom de cette ressource contient des caractères invalides.
+err_never_user=Le nom de cette ressource provient d'un utilisateur spécial.
+err_gecos=La description de cette ressource contient des caractères invalides.
+err_no_email=Aucun courriel n'a été spécifié.
+err_mail_loc_host=Vous ne pouvez pas utiliser l'hôte local comme partie de domaine.
+err_unknown_domain=Le domaine n'est pas défini comme domaine local dans la configuration de votre serveur de courriel.
+err_missing_alias=La partie locale de l'adresse électronique doit être identique au nom.
+err_email=L'adresse électronique est invalide.
+err_user_exists_allready=Le nom de la ressource provient d'un utilisateur.
+err_name_is_alias=Le nom de la ressource provient de l'alias d'un utilisateur.
+err_user_doesnt_exist=La ressource demandée n'existe pas.
+err_no_domains=Aucun domaine local de courriel n'a été configuré.

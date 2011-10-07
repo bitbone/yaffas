@@ -1,0 +1,34 @@
+lbl_changealias=Édition
+lbl_addalias=Ajouter un alias
+lbl_delalias=Supprimer
+lbl_execute=Exécuter
+lbl_apply=Appliquer
+
+lbl_index_header=Configuration de l'alias de courriel
+lbl_return_to_index=Index
+lbl_return_to_cat=Serveur de courrier
+
+lbl_delete_confirm=Désirez-vous vraiment supprimer cet ou ces alias ?
+lbl_check_bbmailsrv_error=Veuillez saisir une valeur valide !
+
+lbl_mailaliases=Alias courriel
+lbl_mailalias=Alias courriel
+lbl_destination_dir=Dossier
+lbl_destination_usr=Utilisateur
+
+lbl_del=Supprimer
+lbl_user=Utilisateur
+lbl_or=ou
+
+lbl_add=Ajouter
+lbl_mailalias_ad=La configuration des alias de courriel s'effectue à l'aide de Active Directory.
+
+err_check_alias=Les noms d'utilisateur ou les adresses électroniques suivantes sont invalides.
+err_already_exists=Cet alias existe déjà.
+err_alias_name=Ce nom d'alias est invalide
+err_no_alias=Aucun alias sélectionné.
+err_nothing=Aucune sélection
+err_alias_is_user=L'alias existe déjà comme utilisateur.
+err_select_only_one=Un alias ne peu être défini que pour un utilisateur ou un dossier.
+lbl_check_aliasesrm_error=Une erreur s'est produite lors de la suppression de l'alias.
+lbl_no_zarafa_public_folders=Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.

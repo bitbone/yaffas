@@ -1,0 +1,16 @@
+lbl_admin_pw=Mot de passe administrateur
+lbl_admin_pw_repeat=Mot de passe administrateur (à nouveau)
+lbl_mysql_database=Base de données MySQL
+lbl_mysql_host=Serveur MySQL
+lbl_mysql_user=Nom d'utilisateur MySQL
+lbl_mysql_password=mot de passe MySQL
+
+lbl_setup_finished=Configuration achevée
+lbl_setup_finished_msg=La configuration s'est achevée avec succès. Vous pourrez utiliser toutes les fonctionnalités lors de votre prochaine connexion.
+
+lbl_zarafa_settings=Paramètres Zarafa
+lbl_basic_settings=Paramètres de base
+
+err_mysql_connect=Impossible de se connecter à la base de données
+err_password=Le mot de passe de l'administrateur est vide ou ne correspond pas.
+
