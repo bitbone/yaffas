@@ -35,12 +35,12 @@ lbl_clean_dir=Lösche Verzeichnis
 lbl_restore_start_msg=Klicken sie auf "Wiederherstellen" um die ausgewählten Nachrichten wiederherzustellen.
 lbl_no_backup=Kein Backup zur Auswahl verfügbar
 lbl_not_installed_title=Zarafa Backup
-lbl_not_installed=Zarafa Backup is not installed
+lbl_not_installed=Zarafa Backup ist nicht installiert
 
 err_time=Zeitangabe nicht korrekt.
 err_preserve_time=Aufbewahrungsfrist ist nicht korrekt oder nicht angegeben.
 err_file_open=Konnte Datei nicht öffnen.
 err_no_full_found=Konnte keine Vollsicherung finden.
 err_mkdir=Konnte das Verzeichnis nicht anlegen.
-err_days=Value for backup days incorrect.
+err_days=Wert für den Backup Zeitpunkt ist nicht korrekt
 err_read_dir=Konnte das Verzeichnis nicht öffnen.

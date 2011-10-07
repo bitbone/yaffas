@@ -577,6 +577,13 @@ msgstr ""
 #~ msgid "Scan archives"
 #~ msgstr "Archieven scannen"
 
+# 81%
+# 88%
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these entries?"
+#~ msgstr "Wilt u deze service echt uitschakelen?"
+
 #~ msgid "System information"
 #~ msgstr "Systeeminformatie"
 

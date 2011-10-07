@@ -13,7 +13,7 @@ lbl_smarthost_name=Smarthost Server
 lbl_username=Benutzername
 lbl_password=Passwort
 
-lbl_del_question=Do you really want to delete these entries?
+lbl_del_question=Möchten Sie diese Einträge wirklich löschen?
 
 lbl_acceptdomains=Lokale Domänen
 
@@ -52,7 +52,7 @@ err_domainname=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahle
 err_mailadmin=Mailadmin nicht gültig.
 err_mailserver=Mailserver nicht gültig.
 err_size=Die Mailgröße muss eine Zahl sein.
-err_verify_value=Invalid value for recipient verification
+err_verify_value=Ungültiger Wert für Empfänger Verifizierung
 
 err_zarafa_not_installed=Zarafa ist nicht installiert.
 err_user_not_exists=Der Benutzer existiert nicht.

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 00:12+0300\n"
-"PO-Revision-Date: 2011-09-22 09:53+0200\n"
-"Last-Translator: André <welter@bitbone.de>\n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"PO-Revision-Date: 2011-10-06 09:36+0200\n"
+"Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -305,6 +305,12 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "No backup available"
 #~ msgstr "Kein Backup zur Auswahl verfügbar"
 
+#~ msgid "Zarafa Backup"
+#~ msgstr "Zarafa Backup"
+
+#~ msgid "Zarafa Backup is not installed"
+#~ msgstr "Zarafa Backup ist nicht installiert"
+
 #~ msgid "Time not correct."
 #~ msgstr "Zeitangabe nicht korrekt."
 
@@ -320,8 +326,8 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Could not create directory."
 #~ msgstr "Konnte das Verzeichnis nicht anlegen."
 
-#~ msgid "Error passing backup days."
-#~ msgstr "Fehler bei der Übergabe der Sicherungstage."
+#~ msgid "Value for backup days incorrect."
+#~ msgstr "Wert für den Backup Zeitpunkt ist nicht korrekt"
 
 #~ msgid "Could not open directory."
 #~ msgstr "Konnte das Verzeichnis nicht öffnen."
@@ -701,17 +707,9 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Smarthost server"
 #~ msgstr "Smarthost Server"
 
-#~ msgid "Do you really want to edit the these entries?"
-#~ msgstr "Möchten Sie diese Einträge wirklich ändern?"
-
-#~ msgid "Do you really want to edit this entries?"
-#~ msgstr "Möchten Sie diese Einträge wirklich editieren?"
-
-#~ msgid "Do you really want to delete this entries?"
+# 95%
+#~ msgid "Do you really want to delete these entries?"
 #~ msgstr "Möchten Sie diese Einträge wirklich löschen?"
-
-#~ msgid "Edit Entries"
-#~ msgstr "Einträge ändern"
 
 #~ msgid "Local Domains"
 #~ msgstr "Lokale Domänen"
@@ -788,7 +786,8 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "The mail size has to be a number."
 #~ msgstr "Die Mailgröße muss eine Zahl sein."
 
-#~ msgid "Invalid value for recepient verification"
+# 97%
+#~ msgid "Invalid value for recipient verification"
 #~ msgstr "Ungültiger Wert für Empfänger Verifizierung"
 
 #~ msgid "Zarafa is not installed."
@@ -1212,8 +1211,9 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Error writing configuration file."
 #~ msgstr "Fehler beim schreiben der Konfigurationsdatei."
 
-#~ msgid "Type can only be: always, errors und never."
-#~ msgstr "Der Type kann nur folgende Werte annehmen: always, error und never."
+# 93%
+#~ msgid "Type can only be: always, errors or never."
+#~ msgstr "Der Type kann nur folgende Werte annehmen: always, error oder never."
 
 #~ msgid "Line not found in configuration file."
 #~ msgstr "Die Zeile wurde in der Konfigurationsdatei nicht gefunden."
@@ -1269,8 +1269,9 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Generation not successful"
 #~ msgstr "Fehler bei der Generierung"
 
-#~ msgid "Localizty not correct"
-#~ msgstr "Örtlichkeit nicht korrekt."
+# 95%
+#~ msgid "Locality not correct"
+#~ msgstr "Örtlichkeit nicht korrekt"
 
 #~ msgid "Organization Name not correct."
 #~ msgstr "Organizationen Name nicht korrekt."
@@ -1398,8 +1399,8 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "no"
 #~ msgstr "nein"
 
-#~ msgid "Succsess"
-#~ msgstr "Erfolgt"
+#~ msgid "Success"
+#~ msgstr "Erfolgreich"
 
 #~ msgid "Email Queue"
 #~ msgstr "Mail Warteschlange"
@@ -1443,17 +1444,9 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "forward to"
 #~ msgstr "weiterleiten an"
 
-#~ msgid "Really remove the emails with this mail id`s?"
-#~ msgstr "Die E-Mails mit den folgenden Mail ID`s wirklich löschen?"
-
-#~ msgid "deleted"
-#~ msgstr "gelöscht"
-
-#~ msgid "attemted to dequeue"
-#~ msgstr "wurde versucht neu auszuliefern"
-
-#~ msgid "forwarded to"
-#~ msgstr "weitergeleitet an"
+# 97%
+#~ msgid "Really remove the emails with this mail ids?"
+#~ msgstr "Die E-Mails mit den folgenden Mail ID's wirklich löschen?"
 
 #~ msgid "No emails selected."
 #~ msgstr "Keine E-Mails ausgewÃhlt"
@@ -1461,7 +1454,8 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "No mail IDs selected"
 #~ msgstr "Keine Mail IDs ausgewählt"
 
-#~ msgid "Error while mark existing email addresses as delivered"
+# 77%
+#~ msgid "Error marking email addresses as delivered"
 #~ msgstr "Fehler beim markieren vorhandener E-Mail Adressen"
 
 #~ msgid "Error while adding new recipient to the mailid"
@@ -2348,9 +2342,6 @@ msgstr "Sprache nicht gefunden!"
 #~ msgid "Backup"
 #~ msgstr "Backup"
 
-#~ msgid "Success"
-#~ msgstr "Erfolgreich"
-
 #~ msgid "Messages:"
 #~ msgstr "Meldungen:"
 
@@ -3200,3 +3191,45 @@ msgstr "Sprache nicht gefunden!"
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Konnte nicht zum Backend verbinden!"
+
+#~ msgid "Error passing backup days."
+#~ msgstr "Fehler bei der Übergabe der Sicherungstage."
+
+#~ msgid "Do you really want to edit the these entries?"
+#~ msgstr "Möchten Sie diese Einträge wirklich ändern?"
+
+#~ msgid "Do you really want to edit this entries?"
+#~ msgstr "Möchten Sie diese Einträge wirklich editieren?"
+
+#~ msgid "Do you really want to delete this entries?"
+#~ msgstr "Möchten Sie diese Einträge wirklich löschen?"
+
+#~ msgid "Edit Entries"
+#~ msgstr "Einträge ändern"
+
+#~ msgid "Invalid value for recepient verification"
+#~ msgstr "Ungültiger Wert für Empfänger Verifizierung"
+
+#~ msgid "Type can only be: always, errors und never."
+#~ msgstr "Der Type kann nur folgende Werte annehmen: always, error und never."
+
+#~ msgid "Localizty not correct"
+#~ msgstr "Örtlichkeit nicht korrekt."
+
+#~ msgid "Succsess"
+#~ msgstr "Erfolgt"
+
+#~ msgid "Really remove the emails with this mail id`s?"
+#~ msgstr "Die E-Mails mit den folgenden Mail ID`s wirklich löschen?"
+
+#~ msgid "deleted"
+#~ msgstr "gelöscht"
+
+#~ msgid "attemted to dequeue"
+#~ msgstr "wurde versucht neu auszuliefern"
+
+#~ msgid "forwarded to"
+#~ msgstr "weitergeleitet an"
+
+#~ msgid "Error while mark existing email addresses as delivered"
+#~ msgstr "Fehler beim markieren vorhandener E-Mail Adressen"
