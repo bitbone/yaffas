@@ -184,6 +184,7 @@ sub dump()
 
 	$bks->add_func($func_ldap) if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP);
 	$bks->add_func($func_files);
+	$bks->add_require("netconf");
 
 	$bkc->save();
 
