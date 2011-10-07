@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-06 00:13+0300\n"
-"PO-Revision-Date: 2011-09-29 10:46+0200\n"
+"PO-Revision-Date: 2011-10-07 09:22+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -150,7 +150,7 @@ msgstr "Volledige reservekopie"
 #: lang/en:29
 #, no-wrap
 msgid "Differential backup"
-msgstr ""
+msgstr "Differentiële reservekopie"
 
 #: lang/en:30
 #, no-wrap
