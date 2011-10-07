@@ -23,6 +23,7 @@ Beim Einspielen einer vorhandenen Konfiguration ist folgendes zu beachten:
   * die Netzwerk-Konfiguration,
   * das admin und root-Passwort,
   * die Einstellungen zum Authentifzierungsserver
+  * die UI-Sprache
 
 werden nicht zurückgesichert
 ==============

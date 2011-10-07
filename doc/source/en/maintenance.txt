@@ -22,6 +22,7 @@ Please consider that the following items will not be restored:
   * admin and root password
   * settings for authentication server
   * alias settings if you use a remote authentication server
+  * UI language
 
 ==============
 
