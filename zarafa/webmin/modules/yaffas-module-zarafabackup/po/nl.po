@@ -233,9 +233,9 @@ msgid "Could not open directory."
 msgstr ""
 
 #: lang/en:47
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Backup"
-msgstr "Tijd van reservekopie"
+msgstr ""
 
 #: help/en:1
 #, no-wrap
@@ -388,37 +388,20 @@ msgstr ""
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "De quotawaarde kan alleen cijfers bevatten."
 
-#~ msgid ""
-#~ "Specify the maximum size of attachments for each mail in MB to be "
-#~ "uploaded via the Webaccess."
-#~ msgstr ""
-#~ "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden "
-#~ "geüpload via de Webaccess."
+#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
 
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid ""
-#~ "This database will be created if it doesn't exists. To do this the user "
-#~ "needs the right permissions."
-#~ msgstr ""
-#~ "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft "
-#~ "de gebruiker de juiste permissies nodig."
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
 
-#~ msgid ""
-#~ "This is the password that is set on the database. You need to set this "
-#~ "password manually."
-#~ msgstr ""
-#~ "Dit is het wachtwoord dat op de database is ingesteld. U moet het "
-#~ "wachtwoord met de hand instellen."
+#~ msgid "This is the password that is set on the database. You need to set this password manually."
+#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
 
-#~ msgid ""
-#~ "This is the username that will be used for connecting to database. The "
-#~ "user has to be created and have the permissions to use the given database."
-#~ msgstr ""
-#~ "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de "
-#~ "database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om "
-#~ "de opgegeven database te kunnen gebruiken."
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
 # 81%
 # 82%
@@ -432,12 +415,8 @@ msgstr ""
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid ""
-#~ "The domain is not defined as local domain in your mailserver "
-#~ "configuration."
-#~ msgstr ""
-#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
-#~ "configuratie."
+#~ msgid "The domain is not defined as local domain in your mailserver configuration."
+#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -472,11 +451,8 @@ msgstr ""
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid ""
-#~ "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr ""
-#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
-#~ "functionaliteit te gebruiken."
+#~ msgid "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"
@@ -854,6 +830,11 @@ msgstr ""
 # 77%
 #, fuzzy
 #~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 94%
+#, fuzzy
+#~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
 # 88%

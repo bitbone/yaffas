@@ -355,8 +355,7 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgstr "Verwijderen van directory"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr ""
-#~ "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
 
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
@@ -385,12 +384,8 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid ""
-#~ "The domain is not defined as local domain in your mailserver "
-#~ "configuration."
-#~ msgstr ""
-#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
-#~ "configuratie."
+#~ msgid "The domain is not defined as local domain in your mailserver configuration."
+#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -425,11 +420,8 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid ""
-#~ "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr ""
-#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
-#~ "functionaliteit te gebruiken."
+#~ msgid "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"
@@ -807,6 +799,11 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 # 77%
 #, fuzzy
 #~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 94%
+#, fuzzy
+#~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
 # 88%
