@@ -132,3 +132,4 @@ err_no_selection=Please select "user", "alias" or "multidrop".
 err_remote_user=Please provide a valid mailserver user.
 err_remote_passwd=Please provide a password for the mailserver user.
 err_enable_fetchmail=Fetchmail daemon could not be enabled.
+moduletitle=Fetchmail Mail Retrieval

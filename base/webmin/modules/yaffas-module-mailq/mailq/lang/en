@@ -28,3 +28,4 @@ err_exim_delete=Error removing email
 err_exim_dequeued=Error at dequeue attempt for email
 err_no_good_mail=No valid email address
 lbl_show=Display
+moduletitle=Mail Queue

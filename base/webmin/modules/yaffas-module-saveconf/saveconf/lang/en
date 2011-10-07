@@ -32,3 +32,4 @@ err_faxtype=Your Configurationfile is not for this fax-card type.
 err_auth_not_set=No authentication type is configured.
 lbl_errors=Errors occured.
 lbl_errors_question=Would you like to save your incomplete Configuration?
+moduletitle=Save configuration

@@ -22,3 +22,4 @@ err_user_exists_allready=The name of the resource is taken from a user.
 err_name_is_alias=The name of the resource is taken from a user's alias.
 err_user_doesnt_exist=The given resource doesn't exist.
 err_no_domains=No local mail domains configured.
+moduletitle=Resources

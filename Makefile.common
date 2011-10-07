@@ -48,3 +48,4 @@ YAFFAS_GROUP=	root
 .PHONY: .lang
 .lang:
 	cd $(MODULE) && PERLLIB=$(SRCDIR)/../../tools/po4a/ po4a -k 0 -M utf8 -L utf8 --package-name "yaffas" --copyright-holder "bitbone AG" --package-version "1.0" -f $(SRCDIR)/../../conf/po4a-build.conf
+	cd $(MODULE) && $(SRCDIR)/../../tools/update-module-title.sh
