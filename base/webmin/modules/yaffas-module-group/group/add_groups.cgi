@@ -16,29 +16,20 @@ Yaffas::init_webmin();
 header($main::text{'check_newgroup_header'}, "");
 ReadParse();
 
-my @groups = split /,/, $main::in{groupname};
+my $groupname = $main::in{groupname};
 my $filetype = $main::in{filetype};
 
 try {
 	Yaffas::Exception->throw('err_no_local_auth') unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP or
 							       Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
 
-	Yaffas::Module::Group::add_groups($filetype, @groups);
+	Yaffas::Module::Group::add_groups($filetype, $groupname);
+	if ($groupname) {
+		Yaffas::UGM::set_email($groupname, $main::in{mail}, "group");
+	}
 	print Yaffas::UI::ok_box();
 } catch Yaffas::Exception with {
-	my $exception = shift;
-	print Yaffas::UI::all_error_box($exception);
-
-	my @wrong_name;
-	my @exists;
-
-	@exists = @{$exception->get_errors()->{err_group_already_exists}} if ($exception->get_errors()->{err_group_already_exists});
-	@wrong_name = @{$exception->get_errors()->{err_newgroup_name}} if ($exception->get_errors()->{err_newgroup_name});
-
-	my %groups;
-	$groups{$_} = "" foreach (@wrong_name, @exists);
-
-	add_group_form(sort keys %groups);
+	print Yaffas::UI::all_error_box(shift);
 };
 
 footer();

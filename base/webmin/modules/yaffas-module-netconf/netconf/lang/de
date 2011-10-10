@@ -17,6 +17,8 @@ err_ldap_duplicate_sambadomain=Der angegebene Rechnername (sambaDomain) ist mehr
 
 err_bonding_enabled=Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde.
 
+err_no_ip=Keine IP Adresse gesetzt.
+
 lbl_index_header=Konfiguration
 lbl_data=Netzwerk Einstellungen
 

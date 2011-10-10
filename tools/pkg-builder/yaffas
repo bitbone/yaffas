@@ -26,6 +26,11 @@ source BASE/base/conf/yaffas-samba/
 dest BASE
 </yaffas-samba>
 
+<yaffas-software>
+source BASE/base/PACKAGE_NAME/
+dest BASE
+</yaffas-software>
+
 <yaffas-certificates>
 source BASE/base/conf/PACKAGE_NAME/
 dest BASE

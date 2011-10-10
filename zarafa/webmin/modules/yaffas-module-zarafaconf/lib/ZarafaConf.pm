@@ -9,11 +9,12 @@ use Yaffas::Exception;
 use Yaffas::Constant;
 use Yaffas::Module::AuthSrv;
 use Yaffas::Module::Users;
+use Yaffas::Module::Mailsrv::Postfix;
 use Yaffas::Mail;
 use Yaffas::Auth;
 use Yaffas::Auth::Type qw(:standard);
 use Yaffas::LDAP;
-use Yaffas::Service qw(STOP START RESTART ZARAFA_SERVER ZARAFA_GATEWAY ZARAFA_SPOOLER MYSQL EXIM);
+use Yaffas::Service qw(control STOP START RESTART RELOAD ZARAFA_SERVER ZARAFA_GATEWAY ZARAFA_SPOOLER MYSQL EXIM);
 use Error qw(:try);
 use Sort::Naturally;
 use Data::Dumper;
@@ -41,12 +42,22 @@ sub zarafa_ldap_filter(;$$) {
 		if ($filter == FILTERTYPE->{DEFAULT}) {
 			delete $cfg->{ldap_user_search_filter};
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADPLUGIN} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
 			throw Yaffas::Exception("err_no_rootbasedn") unless $rootbasedn;
 			$cfg->{'ldap_user_search_filter'} = "(&(objectClass=person)(objectCategory=CN=Person,CN=Schema,CN=Configuration,$rootbasedn)(zarafaAccount=1))";
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s)(zarafaAccount=1))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADGROUP} && $auth eq ADS) {
 			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
@@ -56,6 +67,11 @@ sub zarafa_ldap_filter(;$$) {
 			throw Yaffas::Exception("err_no_group_found") unless scalar @group;
 			$cfg->{'ldap_user_search_filter'} = "(&(objectClass=person)(objectCategory=CN=Person,CN=Schema,CN=Configuration,$rootbasedn)(memberOf=$group[0]))";
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
+
+			my $postfix_settings = {
+				'query_filter' => '(&(objectClass=person)(mail=%s)(memberOf='.$group[0].'))',
+			};
+			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 	}
 	else {
@@ -257,6 +273,116 @@ sub set_default_quota {
 	Yaffas::Mail::set_default_quota($limit);
 }
 
+sub get_default_features() {
+	my $f = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg});
+
+	my $values = $f->get_cfg_values();
+
+	my %ret;
+
+	if (exists $values->{disabled_features}) {
+		%ret = ("imap" => "on", "pop3" => "on");
+		foreach my $v (split /\s+/, $values->{disabled_features}) {
+			$ret{$v} = "off";
+		}
+	}
+	else {
+		%ret = ("imap" => "off", "pop3" => "off");
+	}
+
+	return \%ret;
+}
+
+sub set_default_features() {
+	my %featues = @_;
+
+	foreach my $f (keys %featues) {
+		change_default_features($f, $featues{$f} eq "on" ? 1 : 0);
+	}
+}
+
+sub change_default_features {
+	my $feature = shift;
+	my $state = shift;
+
+	my $file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg},
+		{
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*',
+			-StoreDelimiter => ' = ',
+		}
+	);
+	my $cfg = $file->get_cfg_values();
+
+	my %values;
+
+	if (exists $cfg->{disabled_features}) {
+		%values = map { $_ => 1 } split /\s+/, $cfg->{disabled_features};
+	}
+	else {
+		# config not set - all features are disabled
+		%values = ( imap => 1, pop3 => 1);
+	}
+
+	if ($state == 1) {
+		delete $values{$feature};
+	}
+	else {
+		$values{$feature} = 1;
+	}
+
+	$cfg->{disabled_features} = join " ", keys %values;
+
+	$file->save();
+
+	control(ZARAFA_SERVER(), RELOAD());
+}
+
+sub get_zarafa_database() {
+	print Yaffas::Constant::FILE->{zarafa_server_cfg};
+	my $file = new Yaffas::File::Config(Yaffas::Constant::FILE->{zarafa_server_cfg},
+		{
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*',
+			-StoreDelimiter => "=",
+		});
+
+	return {
+		host => $file->get_cfg_values()->{mysql_host},
+		user => $file->get_cfg_values()->{mysql_user},
+		password => $file->get_cfg_values()->{mysql_password},
+		database => $file->get_cfg_values()->{mysql_database}
+	};
+}
+
+sub set_zarafa_database($$$$) {
+	my $host = shift;
+	my $database = shift;
+	my $user = shift;
+	my $password = shift;
+
+	throw Yaffas::Exception("err_syntax") if ($host =~ /;/ or $database =~ /;/);
+
+	my $db = DBI->connect("dbi:mysql:host=$host", $user, $password);
+
+	throw Yaffas::Exception("err_mysql_connect") unless defined $db;
+
+	my $file = new Yaffas::File::Config(Yaffas::Constant::FILE->{zarafa_server_cfg},
+		{
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*',
+			-StoreDelimiter => "=",
+		});
+	$file->get_cfg_values()->{mysql_user} = $user;
+	$file->get_cfg_values()->{mysql_password} = $password;
+	$file->get_cfg_values()->{mysql_database} = $database;
+	$file->get_cfg_values()->{mysql_host} = $host;
+
+	$file->save();
+
+	Yaffas::Service::control(ZARAFA_SERVER(), RESTART());
+}
+
 sub conf_dump() {
 	my $bkc = Yaffas::Conf->new();
 	my $sec = $bkc->section("zarafaconf");
@@ -267,9 +393,24 @@ sub conf_dump() {
 
 	$sec = $bkc->section("mailboxconf");
 	$func = Yaffas::Conf::Function->new("quota", "Yaffas::Module::ZarafaConf::set_default_quota");
-	$func->add_param({type => "scalar", param => Yaffas::Mail::get_default_quota()});
+	$func->add_param({type => "scalar", param => (Yaffas::Mail::get_default_quota()/1024)});
 	$sec->del_func("quota");
 	$sec->add_func($func);
+
+	$sec = $bkc->section("zarafafeatures");
+	$func = Yaffas::Conf::Function->new("setfeatures", "Yaffas::Module::ZarafaConf::set_default_features");
+	$func->add_param({type => "hash", param => Yaffas::Module::ZarafaConf::get_default_features()});
+	$sec->del_func("setfeatures");
+	$sec->add_func($func);
+
+	$sec = $bkc->section("zarafaquota");
+	for my $type (qw(warn soft hard)) {
+		$func = Yaffas::Conf::Function->new("quota-msg-$type", "Yaffas::Module::ZarafaConf::set_quota_message");
+		$func->add_param({type => "scalar", param => $type});
+		$func->add_param({type => "scalar", param => get_quota_message($type)});
+		$sec->del_func("quota-msg-$type");
+		$sec->add_func($func);
+	}
 
 	$bkc->save();
 	return 1;

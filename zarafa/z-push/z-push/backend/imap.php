@@ -8,8 +8,38 @@
 *
 * Created   :   10.10.2007
 *
-* � Zarafa Deutschland GmbH, www.zarafaserver.de
-* This file is distributed under GPL v2.
+* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License, version 3,
+* as published by the Free Software Foundation with the following additional
+* term according to sec. 7:
+*
+* According to sec. 7 of the GNU Affero General Public License, version 3,
+* the terms of the AGPL are supplemented with the following terms:
+*
+* "Zarafa" is a registered trademark of Zarafa B.V.
+* "Z-Push" is a registered trademark of Zarafa Deutschland GmbH
+* The licensing of the Program under the AGPL does not imply a trademark license.
+* Therefore any rights, title and interest in our trademarks remain entirely with us.
+*
+* However, if you propagate an unmodified version of the Program you are
+* allowed to use the term "Z-Push" to indicate that you distribute the Program.
+* Furthermore you may use our trademarks where it is necessary to indicate
+* the intended purpose of a product or service provided you use it in accordance
+* with honest practices in industrial or commercial matters.
+* If you want to propagate modified versions of the Program under the name "Z-Push",
+* you may only do so if you have a written permission by Zarafa Deutschland GmbH
+* (to acquire a permission please contact Zarafa at trademark@zarafa.com).
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
 * Consult LICENSE file for details
 ************************************************/
 
@@ -43,7 +73,7 @@ class BackendIMAP extends BackendDiff {
             $this->_username = $username;
             $this->_domain = $domain;
             // set serverdelimiter
-             $this->_serverdelimiter = $this->getServerDelimiter();
+            $this->_serverdelimiter = $this->getServerDelimiter();
             return true;
         }
         else {
@@ -91,23 +121,25 @@ class BackendIMAP extends BackendDiff {
      * the new message as any other new message in a folder.
      */
     function SendMail($rfc822, $forward = false, $reply = false, $parent = false) {
-        debugLog("IMAP-SendMail: " . $rfc822 . "for: $forward   reply: $reply   parent: $parent" );
+        debugLog("IMAP-SendMail: for: $forward   reply: $reply   parent: $parent  RFC822:  \n". $rfc822 );
 
         $mobj = new Mail_mimeDecode($rfc822);
-        $message = $mobj->decode(array('decode_headers' => false, 'decode_bodies' => true, 'include_bodies' => true, 'input' => $rfc822, 'crlf' => "\n", 'charset' => 'utf-8'));
+        $message = $mobj->decode(array('decode_headers' => false, 'decode_bodies' => true, 'include_bodies' => true, 'charset' => 'utf-8'));
 
+        $Mail_RFC822 = new Mail_RFC822();
         $toaddr = $ccaddr = $bccaddr = "";
         if(isset($message->headers["to"]))
-            $toaddr = $this->parseAddr(Mail_RFC822::parseAddressList($message->headers["to"]));
+            $toaddr = $this->parseAddr($Mail_RFC822->parseAddressList($message->headers["to"]));
         if(isset($message->headers["cc"]))
-            $ccaddr = $this->parseAddr(Mail_RFC822::parseAddressList($message->headers["cc"]));
+            $ccaddr = $this->parseAddr($Mail_RFC822->parseAddressList($message->headers["cc"]));
         if(isset($message->headers["bcc"]))
-            $bccaddr = $this->parseAddr(Mail_RFC822::parseAddressList($message->headers["bcc"]));
+            $bccaddr = $this->parseAddr($Mail_RFC822->parseAddressList($message->headers["bcc"]));
 
         // save some headers when forwarding mails (content type & transfer-encoding)
         $headers = "";
         $forward_h_ct = "";
         $forward_h_cte = "";
+        $envelopefrom = "";
 
         $use_orgbody = false;
 
@@ -117,13 +149,21 @@ class BackendIMAP extends BackendDiff {
         $returnPathSet = false;
         $body_base64 = false;
         $org_charset = "";
+        $org_boundary = false;
+        $multipartmixed = false;
         foreach($message->headers as $k => $v) {
             if ($k == "subject" || $k == "to" || $k == "cc" || $k == "bcc")
                 continue;
 
             if ($k == "content-type") {
+                // if the message is a multipart message, then we should use the sent body
+                if (preg_match("/multipart/i", $v)) {
+                    $use_orgbody = true;
+                    $org_boundary = $message->ctype_parameters["boundary"];
+                }
+
                 // save the original content-type header for the body part when forwarding
-                if ($forward) {
+                if ($forward && !$use_orgbody) {
                     $forward_h_ct = $v;
                     continue;
                 }
@@ -144,17 +184,18 @@ class BackendIMAP extends BackendDiff {
                 }
             }
 
-            // if the message is a multipart message, then we should use the sent body
-            if (!$forward && $k == "content-type" && preg_match("/multipart/i", $v)) {
-                $use_orgbody = true;
-            }
-
-            // check if "from"-header is set
-            if ($k == "from" && ! trim($v) && IMAP_DEFAULTFROM) {
-                $changedfrom = true;
-                if      (IMAP_DEFAULTFROM == 'username') $v = $this->_username;
-                else if (IMAP_DEFAULTFROM == 'domain')   $v = $this->_domain;
-                else $v = $this->_username . IMAP_DEFAULTFROM;
+            // check if "from"-header is set, do nothing if it's set
+            // else set it to IMAP_DEFAULTFROM
+            if ($k == "from") {
+                if (trim($v)) {
+                    $changedfrom = true;
+                } elseif (! trim($v) && IMAP_DEFAULTFROM) {
+                    $changedfrom = true;
+                    if      (IMAP_DEFAULTFROM == 'username') $v = $this->_username;
+                    else if (IMAP_DEFAULTFROM == 'domain')   $v = $this->_domain;
+                    else $v = $this->_username . IMAP_DEFAULTFROM;
+                    $envelopefrom = "-f$v";
+                }
             }
 
             // check if "Return-Path"-header is set
@@ -179,6 +220,7 @@ class BackendIMAP extends BackendDiff {
             else $v = $this->_username . IMAP_DEFAULTFROM;
             if ($headers) $headers .= "\n";
             $headers .= 'From: '.$v;
+            $envelopefrom = "-f$v";
         }
 
         // set "Return-Path" header if not set on the device
@@ -193,51 +235,182 @@ class BackendIMAP extends BackendDiff {
         // if this is a multipart message with a boundary, we must use the original body
         if ($use_orgbody) {
             list(,$body) = $mobj->_splitBodyHeader($rfc822);
+            $repl_body = $this->getBody($message);
         }
         else
             $body = $this->getBody($message);
 
         // reply
-        if (isset($reply) && isset($parent) &&  $reply && $parent) {
+        if ($reply && $parent) {
             $this->imap_reopenFolder($parent);
             // receive entire mail (header + body) to decode body correctly
-            $origmail = @imap_fetchheader($this->_mbox, $reply, FT_PREFETCHTEXT | FT_UID) . @imap_body($this->_mbox, $reply, FT_PEEK | FT_UID);
+            $origmail = @imap_fetchheader($this->_mbox, $reply, FT_UID) . @imap_body($this->_mbox, $reply, FT_PEEK | FT_UID);
             $mobj2 = new Mail_mimeDecode($origmail);
             // receive only body
-            $body .= $this->getBody($mobj2->decode(array('decode_headers' => false, 'decode_bodies' => true, 'include_bodies' => true, 'input' => $origmail, 'crlf' => "\n", 'charset' => 'utf-8')));
+            $body .= $this->getBody($mobj2->decode(array('decode_headers' => false, 'decode_bodies' => true, 'include_bodies' => true, 'charset' => 'utf-8')));
             // unset mimedecoder & origmail - free memory
             unset($mobj2);
             unset($origmail);
         }
 
         // encode the body to base64 if it was sent originally in base64 by the pda
-        // the encoded body is included in the forward
-        if ($body_base64) $body = base64_encode($body);
+        // contrib - chunk base64 encoded body
+        if ($body_base64 && !$forward) $body = chunk_split(base64_encode($body));
 
 
         // forward
-        if (isset($forward) && isset($parent) && $forward && $parent) {
+        if ($forward && $parent) {
             $this->imap_reopenFolder($parent);
             // receive entire mail (header + body)
-            $origmail = @imap_fetchheader($this->_mbox, $forward, FT_PREFETCHTEXT | FT_UID) . @imap_body($this->_mbox, $forward, FT_PEEK | FT_UID);
+            $origmail = @imap_fetchheader($this->_mbox, $forward, FT_UID) . @imap_body($this->_mbox, $forward, FT_PEEK | FT_UID);
 
-            // build a new mime message, forward entire old mail as file
-            list($aheader, $body) = $this->mail_attach("forwarded_message.eml",strlen($origmail),$origmail, $body, $forward_h_ct, $forward_h_cte);
+            if (!defined('IMAP_INLINE_FORWARD') || IMAP_INLINE_FORWARD === false) {
+                // contrib - chunk base64 encoded body
+                if ($body_base64) $body = chunk_split(base64_encode($body));
+                //use original boundary if it's set
+                $boundary = ($org_boundary) ? $org_boundary : false;
+                // build a new mime message, forward entire old mail as file
+                list($aheader, $body) = $this->mail_attach("forwarded_message.eml",strlen($origmail),$origmail, $body, $forward_h_ct, $forward_h_cte,$boundary);
+                // add boundary headers
+                $headers .= "\n" . $aheader;
+
+            }
+            else {
+                $mobj2 = new Mail_mimeDecode($origmail);
+                $mess2 = $mobj2->decode(array('decode_headers' => true, 'decode_bodies' => true, 'include_bodies' => true, 'charset' => 'utf-8'));
+
+                if (!$use_orgbody)
+                    $nbody = $body;
+                else
+                    $nbody = $repl_body;
+
+                $nbody .= "\r\n\r\n";
+                $nbody .= "-----Original Message-----\r\n";
+                if(isset($mess2->headers['from']))
+                    $nbody .= "From: " . $mess2->headers['from'] . "\r\n";
+                if(isset($mess2->headers['to']) && strlen($mess2->headers['to']) > 0)
+                    $nbody .= "To: " . $mess2->headers['to'] . "\r\n";
+                if(isset($mess2->headers['cc']) && strlen($mess2->headers['cc']) > 0)
+                    $nbody .= "Cc: " . $mess2->headers['cc'] . "\r\n";
+                if(isset($mess2->headers['date']))
+                    $nbody .= "Sent: " . $mess2->headers['date'] . "\r\n";
+                if(isset($mess2->headers['subject']))
+                    $nbody .= "Subject: " . $mess2->headers['subject'] . "\r\n";
+                $nbody .= "\r\n";
+                $nbody .= $this->getBody($mess2);
+
+                if ($body_base64) {
+                    // contrib - chunk base64 encoded body
+                    $nbody = chunk_split(base64_encode($nbody));
+                    if ($use_orgbody)
+                    // contrib - chunk base64 encoded body
+                        $repl_body = chunk_split(base64_encode($repl_body));
+                }
+
+                if ($use_orgbody) {
+                    debugLog("-------------------");
+                    debugLog("old:\n'$repl_body'\nnew:\n'$nbody'\nund der body:\n'$body'");
+                    //$body is quoted-printable encoded while $repl_body and $nbody are plain text,
+                    //so we need to decode $body in order replace to take place
+                    $body = str_replace($repl_body, $nbody, quoted_printable_decode($body));
+                }
+                else
+                    $body = $nbody;
+
+
+                if(isset($mess2->parts)) {
+                    $attached = false;
+
+                    if ($org_boundary) {
+                        $att_boundary = $org_boundary;
+                        // cut end boundary from body
+                        $body = substr($body, 0, strrpos($body, "--$att_boundary--"));
+                    }
+                    else {
+                        $att_boundary = strtoupper(md5(uniqid(time())));
+                        // add boundary headers
+                        $headers .= "\n" . "Content-Type: multipart/mixed; boundary=$att_boundary";
+                        $multipartmixed = true;
+                    }
+
+                    foreach($mess2->parts as $part) {
+                        if(isset($part->disposition) && ($part->disposition == "attachment" || $part->disposition == "inline")) {
+
+                            if(isset($part->d_parameters['filename']))
+                                $attname = $part->d_parameters['filename'];
+                            else if(isset($part->ctype_parameters['name']))
+                                $attname = $part->ctype_parameters['name'];
+                            else if(isset($part->headers['content-description']))
+                                $attname = $part->headers['content-description'];
+                            else $attname = "unknown attachment";
+
+                            // ignore html content
+                            if ($part->ctype_primary == "text" && $part->ctype_secondary == "html") {
+                                continue;
+                            }
+                            //
+                            if ($use_orgbody || $attached) {
+                                $body .= $this->enc_attach_file($att_boundary, $attname, strlen($part->body),$part->body, $part->ctype_primary ."/". $part->ctype_secondary);
+                            }
+                            // first attachment
+                            else {
+                                $encmail = $body;
+                                $attached = true;
+                                $body = $this->enc_multipart($att_boundary, $body, $forward_h_ct, $forward_h_cte);
+                                $body .= $this->enc_attach_file($att_boundary, $attname, strlen($part->body),$part->body, $part->ctype_primary ."/". $part->ctype_secondary);
+                            }
+                        }
+                    }
+                    if ($multipartmixed && strpos(strtolower($mess2->headers['content-type']), "alternative") !== false) {
+                        //this happens if a multipart/alternative message is forwarded
+                        //then it's a multipart/mixed message which consists of:
+                        //1. text/plain part which was written on the mobile
+                        //2. multipart/alternative part which is the original message
+                        $body = "This is a message with multiple parts in MIME format.\n--".
+                                $att_boundary.
+                                "\nContent-Type: $forward_h_ct\nContent-Transfer-Encoding: $forward_h_cte\n\n".
+                                (($body_base64) ? chunk_split(base64_encode($message->body)) : rtrim($message->body)).
+                                "\n--".$att_boundary.
+                                "\nContent-Type: {$mess2->headers['content-type']}\n\n".
+                                @imap_body($this->_mbox, $forward, FT_PEEK | FT_UID)."\n\n";
+                    }
+
+                    $body .= "--$att_boundary--\n\n";
+                }
+
+                unset($mobj2);
+            }
 
             // unset origmail - free memory
             unset($origmail);
 
-            // add boundary headers
-            $headers .= "\n" . $aheader;
         }
 
+        // remove carriage-returns from body
+        $body = str_replace("\r\n", "\n", $body);
+
+        if (!$multipartmixed) {
+            if (!empty($forward_h_ct)) $headers .= "\nContent-Type: $forward_h_ct";
+            if (!empty($forward_h_cte)) $headers .= "\nContent-Transfer-Encoding: $forward_h_cte";
+            //if body was quoted-printable, convert it again
+            if (isset($message->headers["content-transfer-encoding"]) && strtolower($message->headers["content-transfer-encoding"]) == "quoted-printable") {
+                $body = quoted_printable_encode($body);
+            }
+        }
         //advanced debugging
         //debugLog("IMAP-SendMail: parsed message: ". print_r($message,1));
         //debugLog("IMAP-SendMail: headers: $headers");
         //debugLog("IMAP-SendMail: subject: {$message->headers["subject"]}");
         //debugLog("IMAP-SendMail: body: $body");
 
-        $send =  @imap_mail ( $toaddr, $message->headers["subject"], $body, $headers, $ccaddr, $bccaddr);
+        if (!defined('IMAP_USE_IMAPMAIL') || IMAP_USE_IMAPMAIL == true) {
+            $send =  @imap_mail ( $toaddr, $message->headers["subject"], $body, $headers, $ccaddr, $bccaddr);
+        }
+        else {
+            if (!empty($ccaddr))  $headers .= "\nCc: $ccaddr";
+            if (!empty($bccaddr)) $headers .= "\nBcc: $bccaddr";
+            $send =  @mail ( $toaddr, $message->headers["subject"], $body, $headers, $envelopefrom );
+        }
 
         // email sent?
         if (!$send) {
@@ -246,31 +419,35 @@ class BackendIMAP extends BackendDiff {
 
         // add message to the sent folder
         // build complete headers
-        $cheaders  = "To: " . $toaddr. "\n";
-        $cheaders .= "Subject: " . $message->headers["subject"] . "\n";
-        $cheaders .= "Cc: " . $ccaddr . "\n";
-        $cheaders .= $headers;
+        $headers .= "\nTo: $toaddr";
+        $headers .= "\nSubject: " . $message->headers["subject"];
+
+        if (!defined('IMAP_USE_IMAPMAIL') || IMAP_USE_IMAPMAIL == true) {
+            if (!empty($ccaddr))  $headers .= "\nCc: $ccaddr";
+            if (!empty($bccaddr)) $headers .= "\nBcc: $bccaddr";
+        }
+        //debugLog("IMAP-SendMail: complete headers: $headers");
 
         $asf = false;
         if ($this->_sentID) {
-            $asf = $this->addSentMessage($this->_sentID, $cheaders, $body);
+            $asf = $this->addSentMessage($this->_sentID, $headers, $body);
         }
         else if (IMAP_SENTFOLDER) {
-            $asf = $this->addSentMessage(IMAP_SENTFOLDER, $cheaders, $body);
+            $asf = $this->addSentMessage(IMAP_SENTFOLDER, $headers, $body);
             debugLog("IMAP-SendMail: Outgoing mail saved in configured 'Sent' folder '".IMAP_SENTFOLDER."': ". (($asf)?"success":"failed"));
         }
         // No Sent folder set, try defaults
         else {
             debugLog("IMAP-SendMail: No Sent mailbox set");
-            if($this->addSentMessage("INBOX.Sent", $cheaders, $body)) {
+            if($this->addSentMessage("INBOX.Sent", $headers, $body)) {
                 debugLog("IMAP-SendMail: Outgoing mail saved in 'INBOX.Sent'");
                 $asf = true;
             }
-            else if ($this->addSentMessage("Sent", $cheaders, $body)) {
+            else if ($this->addSentMessage("Sent", $headers, $body)) {
                 debugLog("IMAP-SendMail: Outgoing mail saved in 'Sent'");
                 $asf = true;
             }
-            else if ($this->addSentMessage("Sent Items", $cheaders, $body)) {
+            else if ($this->addSentMessage("Sent Items", $headers, $body)) {
                 debugLog("IMAP-SendMail: Outgoing mail saved in 'Sent Items'");
                 $asf = true;
             }
@@ -287,6 +464,16 @@ class BackendIMAP extends BackendDiff {
      * are always handled as real deletes and will be sent to your importer as a DELETE
      */
     function GetWasteBasket() {
+        if ($this->_wasteID == false) {
+            //try to get the waste basket without doing complete hierarchy sync
+            $wastebaskt = @imap_getmailboxes($this->_mbox, $this->_server, "Trash");
+            if (isset($wastebaskt[0])) {
+                $this->_wasteID = imap_utf7_decode(substr($wastebaskt[0]->name, strlen($this->_server)));
+                return $this->_wasteID;
+            }
+            //try get waste id from hierarchy if it wasn't possible with above for some reason
+            $this->GetHierarchy();
+        }
         return $this->_wasteID;
     }
 
@@ -323,7 +510,7 @@ class BackendIMAP extends BackendDiff {
                 $vars = get_object_vars($overview);
                 if (array_key_exists( "date", $vars)) {
                     // message is out of range for cutoffdate, ignore it
-                    if(strtotime($overview->date) < $cutoffdate) continue;
+                    if ($this->cleanupDate($overview->date) < $cutoffdate) continue;
                     $date = $overview->date;
                 }
 
@@ -358,26 +545,20 @@ class BackendIMAP extends BackendDiff {
         if (is_array($list)) {
             // reverse list to obtain folders in right order
             $list = array_reverse($list);
+
             foreach ($list as $val) {
                 $box = array();
-
                 // cut off serverstring
-                $box["id"] = imap_utf7_decode(substr($val->name, strlen($this->_server)));
+                $box["id"] = substr($val->name, strlen($this->_server));
 
-                // always use "." as folder delimiter
-                $box["id"] = imap_utf7_encode(str_replace($val->delimiter, ".", $box["id"]));
-
-                // explode hierarchies
-                $fhir = explode(".", $box["id"]);
+                $fhir = explode($val->delimiter, $box["id"]);
                 if (count($fhir) > 1) {
-                    $box["mod"] = imap_utf7_encode(array_pop($fhir)); // mod is last part of path
-                    $box["parent"] = imap_utf7_encode(implode(".", $fhir)); // parent is all previous parts of path
+                    $this->getModAndParentNames($fhir, $box["mod"], $box["parent"]);
                 }
                 else {
-                    $box["mod"] = imap_utf7_encode($box["id"]);
+                    $box["mod"] = $box["id"];
                     $box["parent"] = "0";
                 }
-
                 $folders[]=$box;
             }
         }
@@ -397,7 +578,7 @@ class BackendIMAP extends BackendDiff {
         $folder->serverid = $id;
 
         // explode hierarchy
-          $fhir = explode(".", $id);
+        $fhir = explode($this->_serverdelimiter, $id);
 
         // compare on lowercase strings
         $lid = strtolower($id);
@@ -425,19 +606,19 @@ class BackendIMAP extends BackendDiff {
             $folder->type = SYNC_FOLDER_TYPE_SENTMAIL;
             $this->_sentID = $id;
         }
-        // courier-imap outputs
-        else if($lid == "inbox.drafts") {
+        // courier-imap and cyrus-imapd outputs
+        else if($lid == "inbox.drafts" || $lid == "inbox/drafts") {
             $folder->parentid = $fhir[0];
             $folder->displayname = "Drafts";
             $folder->type = SYNC_FOLDER_TYPE_DRAFTS;
         }
-        else if($lid == "inbox.trash") {
+        else if($lid == "inbox.trash" || $lid == "inbox/trash") {
             $folder->parentid = $fhir[0];
             $folder->displayname = "Trash";
             $folder->type = SYNC_FOLDER_TYPE_WASTEBASKET;
             $this->_wasteID = $id;
         }
-        else if($lid == "inbox.sent") {
+        else if($lid == "inbox.sent" || $lid == "inbox/sent") {
             $folder->parentid = $fhir[0];
             $folder->displayname = "Sent";
             $folder->type = SYNC_FOLDER_TYPE_SENTMAIL;
@@ -446,14 +627,14 @@ class BackendIMAP extends BackendDiff {
 
         // define the rest as other-folders
         else {
-               if (count($fhir) > 1) {
-                   $folder->displayname = windows1252_to_utf8(imap_utf7_decode(array_pop($fhir)));
-                   $folder->parentid = implode(".", $fhir);
-               }
-               else {
-                $folder->displayname = windows1252_to_utf8(imap_utf7_decode($id));
+            if (count($fhir) > 1) {
+                $this->getModAndParentNames($fhir, $folder->displayname, $folder->parentid);
+                $folder->displayname = zp_utf7_to_utf8(zp_utf7_iconv_decode($folder->displayname));
+            }
+            else {
+                $folder->displayname = zp_utf7_to_utf8(zp_utf7_iconv_decode($id));
                 $folder->parentid = "0";
-               }
+            }
             $folder->type = SYNC_FOLDER_TYPE_OTHER;
         }
 
@@ -497,7 +678,8 @@ class BackendIMAP extends BackendDiff {
         $this->imap_reopenFolder($folderid);
 
         // build name for new mailbox
-        $newname = $this->_server . str_replace(".", $this->_serverdelimiter, $folderid) . $this->_serverdelimiter . $displayname;
+        $displayname = zp_utf7_iconv_encode(zp_utf8_to_utf7($displayname));
+        $newname = $this->_server . $folderid . $this->_serverdelimiter . $displayname;
 
         $csts = false;
         // if $id is set => rename mailbox, otherwise create
@@ -510,7 +692,7 @@ class BackendIMAP extends BackendDiff {
             $csts = @imap_createmailbox($this->_mbox, $newname);
         }
         if ($csts) {
-            return $this->StatFolder($folderid . "." . $displayname);
+            return $this->StatFolder($folderid . $this->_serverdelimiter . $displayname);
         }
         else
             return false;
@@ -526,10 +708,10 @@ class BackendIMAP extends BackendDiff {
         list($folderid, $id, $part) = explode(":", $attname);
 
         $this->imap_reopenFolder($folderid);
-        $mail = @imap_fetchheader($this->_mbox, $id, FT_PREFETCHTEXT | FT_UID) . @imap_body($this->_mbox, $id, FT_PEEK | FT_UID);
+        $mail = @imap_fetchheader($this->_mbox, $id, FT_UID) . @imap_body($this->_mbox, $id, FT_PEEK | FT_UID);
 
         $mobj = new Mail_mimeDecode($mail);
-        $message = $mobj->decode(array('decode_headers' => true, 'decode_bodies' => true, 'include_bodies' => true, 'input' => $mail, 'crlf' => "\n", 'charset' => 'utf-8'));
+        $message = $mobj->decode(array('decode_headers' => true, 'decode_bodies' => true, 'include_bodies' => true, 'charset' => 'utf-8'));
 
         if (isset($message->parts[$part]->body))
             print $message->parts[$part]->body;
@@ -597,14 +779,16 @@ class BackendIMAP extends BackendDiff {
 
         if ($stat) {
             $this->imap_reopenFolder($folderid);
-            $mail = @imap_fetchheader($this->_mbox, $id, FT_PREFETCHTEXT | FT_UID) . @imap_body($this->_mbox, $id, FT_PEEK | FT_UID);
+            $mail = @imap_fetchheader($this->_mbox, $id, FT_UID) . @imap_body($this->_mbox, $id, FT_PEEK | FT_UID);
 
             $mobj = new Mail_mimeDecode($mail);
-            $message = $mobj->decode(array('decode_headers' => true, 'decode_bodies' => true, 'include_bodies' => true, 'input' => $mail, 'crlf' => "\n", 'charset' => 'utf-8'));
+            $message = $mobj->decode(array('decode_headers' => true, 'decode_bodies' => true, 'include_bodies' => true, 'charset' => 'utf-8'));
 
             $output = new SyncMail();
 
             $body = $this->getBody($message);
+            $output->bodysize = strlen($body);
+
             // truncate body, if requested
             if(strlen($body) > $truncsize) {
                 $body = utf8_truncate($body, $truncsize);
@@ -615,9 +799,8 @@ class BackendIMAP extends BackendDiff {
             }
             $body = str_replace("\n","\r\n", str_replace("\r","",$body));
 
-            $output->bodysize = strlen($body);
             $output->body = $body;
-            $output->datereceived = isset($message->headers["date"]) ? strtotime($message->headers["date"]) : null;
+            $output->datereceived = isset($message->headers["date"]) ? $this->cleanupDate($message->headers["date"]) : null;
             $output->displayto = isset($message->headers["to"]) ? $message->headers["to"] : null;
             $output->importance = isset($message->headers["x-priority"]) ? preg_replace("/\D+/", "", $message->headers["x-priority"]) : null;
             $output->messageclass = "IPM.Note";
@@ -629,10 +812,19 @@ class BackendIMAP extends BackendDiff {
             $output->reply_to = isset($message->headers["reply-to"]) ? $message->headers["reply-to"] : null;
 
             // Attachments are only searched in the top-level part
-            $n = 0;
             if(isset($message->parts)) {
-                foreach($message->parts as $part) {
-                    if(isset($part->disposition) && ($part->disposition == "attachment" || $part->disposition == "inline")) {
+                $mparts = $message->parts;
+                for ($i=0; $i<count($mparts); $i++) {
+                    $part = $mparts[$i];
+                    //recursively add parts
+                    if($part->ctype_primary == "multipart" && ($part->ctype_secondary == "mixed" || $part->ctype_secondary == "alternative"  || $part->ctype_secondary == "related")) {
+                        foreach($part->parts as $spart)
+                            $mparts[] = $spart;
+                        continue;
+                    }
+                    //add part as attachment if it's disposition indicates so or if it is not a text part
+                    if ((isset($part->disposition) && ($part->disposition == "attachment" || $part->disposition == "inline")) ||
+                        (isset($part->ctype_primary) && $part->ctype_primary != "text")) {
                         $attachment = new SyncAttachment();
 
                         if (isset($part->body))
@@ -647,12 +839,12 @@ class BackendIMAP extends BackendDiff {
                         else $attname = "unknown attachment";
 
                         $attachment->displayname = $attname;
-                        $attachment->attname = $folderid . ":" . $id . ":" . $n;
+                        $attachment->attname = $folderid . ":" . $id . ":" . $i;
                         $attachment->attmethod = 1;
                         $attachment->attoid = isset($part->headers['content-id']) ? $part->headers['content-id'] : "";
                         array_push($output->attachments, $attachment);
                     }
-                    $n++;
+
                 }
             }
             // unset mimedecoder & mail
@@ -737,8 +929,16 @@ class BackendIMAP extends BackendDiff {
             return false;
         }
         else {
+            // get next UID for destination folder
+            // when moving a message we have to announce through ActiveSync the new messageID in the
+            // destination folder. This is a "guessing" mechanism as IMAP does not inform that value.
+            // when lots of simultaneous operations happen in the destination folder this could fail.
+            // in the worst case the moved message is displayed twice on the mobile.
+            $destStatus = imap_status($this->_mbox, $this->_server . $newfolderid, SA_ALL);
+            $newid = $destStatus->uidnext;
+
             // move message
-            $s1 = imap_mail_move($this->_mbox, $id, str_replace(".", $this->_serverdelimiter, $newfolderid), FT_UID);
+            $s1 = imap_mail_move($this->_mbox, $id, $newfolderid, CP_UID);
 
             // delete message in from-folder
             $s2 = imap_expunge($this->_mbox);
@@ -747,16 +947,17 @@ class BackendIMAP extends BackendDiff {
             $this->imap_reopenFolder($newfolderid);
 
             // remove all flags
-            $s3 = @imap_clearflag_full ($this->_mbox, $id, "\\Seen \\Answered \\Flagged \\Deleted \\Draft", FT_UID);
+            $s3 = @imap_clearflag_full ($this->_mbox, $newid, "\\Seen \\Answered \\Flagged \\Deleted \\Draft", FT_UID);
             $newflags = "";
             if ($overview[0]->seen) $newflags .= "\\Seen";
             if ($overview[0]->flagged) $newflags .= " \\Flagged";
             if ($overview[0]->answered) $newflags .= " \\Answered";
-            $s4 = @imap_setflag_full ($this->_mbox, $id, $newflags, FT_UID);
+            $s4 = @imap_setflag_full ($this->_mbox, $newid, $newflags, FT_UID);
 
-            debugLog("MoveMessage: (" . $folderid . "->" . $newfolderid . ") s-move: $s1   s-expunge: $s2    unset-Flags: $s3    set-Flags: $s4");
+            debugLog("MoveMessage: (" . $folderid . "->" . $newfolderid . ":". $newid. ") s-move: $s1   s-expunge: $s2    unset-Flags: $s3    set-Flags: $s4");
 
-            return ($s1 && $s2 && $s3 && $s4);
+            // return the new id "as string""
+            return $newid . "";
         }
     }
 
@@ -774,7 +975,7 @@ class BackendIMAP extends BackendDiff {
         // courier-imap only cleares the status cache after checking
         @imap_check($this->_mbox);
 
-        $status = imap_status($this->_mbox, $this->_server . str_replace(".", $this->_serverdelimiter, $folderid), SA_ALL);
+        $status = imap_status($this->_mbox, $this->_server . $folderid, SA_ALL);
         if (!$status) {
             debugLog("AlterPingChanges: could not stat folder $folderid : ". imap_last_error());
             return false;
@@ -805,7 +1006,7 @@ class BackendIMAP extends BackendDiff {
 
         $this->getBodyRecursive($message, "plain", $body);
 
-        if(!isset($body) || $body === "") {
+        if($body === "") {
             $this->getBodyRecursive($message, "html", $body);
             // remove css-style tags
             $body = preg_replace("/<style.*?<\/style>/is", "", $body);
@@ -848,7 +1049,7 @@ class BackendIMAP extends BackendDiff {
     function imap_reopenFolder($folderid, $force = false) {
         // to see changes, the folder has to be reopened!
            if ($this->_mboxFolder != $folderid || $force) {
-               $s = @imap_reopen($this->_mbox, $this->_server . str_replace(".", $this->_serverdelimiter, $folderid));
+               $s = @imap_reopen($this->_mbox, $this->_server . $folderid);
                if (!$s) debugLog("failed to change folder: ". implode(", ", imap_errors()));
             $this->_mboxFolder = $folderid;
         }
@@ -856,29 +1057,43 @@ class BackendIMAP extends BackendDiff {
 
 
     // build a multipart email, embedding body and one file (for attachments)
-    function mail_attach($filenm,$filesize,$file_cont,$body, $body_ct, $body_cte) {
+    function mail_attach($filenm,$filesize,$file_cont,$body, $body_ct, $body_cte, $boundary = false) {
+        if (!$boundary) $boundary = strtoupper(md5(uniqid(time())));
 
-        $boundary = strtoupper(md5(uniqid(time())));
+        //remove the ending boundary because we will add it at the end
+        $body = str_replace("--$boundary--", "", $body);
 
         $mail_header = "Content-Type: multipart/mixed; boundary=$boundary\n";
 
         // build main body with the sumitted type & encoding from the pda
-        $mail_body  = "This is a multi-part message in MIME format\n\n";
+        $mail_body  = $this->enc_multipart($boundary, $body, $body_ct, $body_cte);
+        $mail_body .= $this->enc_attach_file($boundary, $filenm, $filesize, $file_cont);
+
+        $mail_body .= "--$boundary--\n\n";
+        return array($mail_header, $mail_body);
+    }
+
+    function enc_multipart($boundary, $body, $body_ct, $body_cte) {
+        $mail_body = "This is a multi-part message in MIME format\n\n";
         $mail_body .= "--$boundary\n";
-        $mail_body .= "Content-Type:$body_ct\n";
-        $mail_body .= "Content-Transfer-Encoding:$body_cte\n\n";
+        $mail_body .= "Content-Type: $body_ct\n";
+        $mail_body .= "Content-Transfer-Encoding: $body_cte\n\n";
         $mail_body .= "$body\n\n";
 
-        $mail_body .= "--$boundary\n";
-        $mail_body .= "Content-Type: text/plain; name=\"$filenm\"\n";
+        return $mail_body;
+    }
+
+    function enc_attach_file($boundary, $filenm, $filesize, $file_cont, $content_type = "") {
+        if (!$content_type) $content_type = "text/plain";
+        $mail_body = "--$boundary\n";
+        $mail_body .= "Content-Type: $content_type; name=\"$filenm\"\n";
         $mail_body .= "Content-Transfer-Encoding: base64\n";
         $mail_body .= "Content-Disposition: attachment; filename=\"$filenm\"\n";
         $mail_body .= "Content-Description: $filenm\n\n";
-        $mail_body .= base64_encode($file_cont) . "\n\n";
+        //contrib - chunk base64 encoded attachments
+        $mail_body .= chunk_split(base64_encode($file_cont)) . "\n\n";
 
-        $mail_body .= "--$boundary--\n\n";
-
-        return array($mail_header, $mail_body);
+        return $mail_body;
     }
 
     // adds a message as seen to a specified folder (used for saving sent mails)
@@ -901,6 +1116,42 @@ class BackendIMAP extends BackendDiff {
         return $addr_string;
     }
 
-};
+
+    //recursive way to get mod and parent - repeat until only one part is left
+    //or the folder is identified as an IMAP folder
+    function getModAndParentNames($fhir, &$displayname, &$parent) {
+
+        //if mod is already set add the previous part to it as it might be a folder which has
+        //delimiter in its name
+        $displayname = (isset($displayname) && strlen($displayname) > 0) ? $displayname = array_pop($fhir).$this->_serverdelimiter.$displayname : array_pop($fhir);
+        $parent = implode($this->_serverdelimiter, $fhir);
+
+        if (count($fhir) == 1 || $this->checkIfIMAPFolder($parent)) {
+            return;
+        }
+        //recursion magic
+        $this->getModAndParentNames($fhir, $displayname, $parent);
+    }
+
+
+    function checkIfIMAPFolder($folderName) {
+        $parent = imap_list($this->_mbox, $this->_server, $folderName);
+        if ($parent === false) return false;
+        return true;
+    }
+
+    //if received date has parenthesis (comments) strtotime will return false
+    //the function removes them from the date string
+    function cleanupDate($receiveddate) {
+        $receiveddate = strtotime(preg_replace("/\(.*\)/", "", $receiveddate));
+        if ($receiveddate == false || $receiveddate == -1) {
+            debugLog("Received date is false. Message might be broken.");
+            return null;
+        }
+
+        return $receiveddate;
+    }
+
+}
 
 ?>

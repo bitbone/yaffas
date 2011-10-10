@@ -11,5 +11,6 @@ lbl_setup_finished_msg=Das Setup wurde erfolgreich abgeschlossen. Nach dem erneu
 lbl_zarafa_settings=Zarafa Einstellungen
 lbl_basic_settings=Grundeinstellungen
 
-err_mysql_connect=Konnte die Datenbank nicht erreichen.
+err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_password=Die Admin Passwörter stimmen nicht überein oder sind leer.
+

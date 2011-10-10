@@ -306,7 +306,7 @@ sub get_services() {
 		push @services, "cups";
 	}
 
-	return @services;
+	return sort @services;
 }
 
 sub check_cert($){

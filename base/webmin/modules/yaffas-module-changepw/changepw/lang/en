@@ -24,3 +24,4 @@ err_copy_file=Can not copy following file(s):
 err_password=Password have to be at least on character long and must not contain a hash (#).
 err_password_equal=Both passwords have to be identical.
 err_change_password=Password not valid.
+moduletitle=Admin password

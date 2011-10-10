@@ -1,0 +1,50 @@
+lbl_apply=Appliquer
+lbl_edit=Édition
+lbl_delete=Supprimer
+lbl_add=Ajouter
+lbl_activate=Activer
+lbl_deactivate=Désactiver
+lbl_update=Actualiser
+lbl_really_delete=Supprimer la saisie
+lbl_really_delete_msg=Désirez-vous vraiment supprimer cette saisie ?
+
+lbl_really_disable=Désirez-vous vraiment désactiver ce service ?
+lbl_really_enable=Désirez-vous vraiment activer ce service ?
+
+lbl_policy=Règle
+lbl_policy_enable=Activer le règle
+lbl_policy_disable=Désactiver la règle
+lbl_dnsbl=DNSBL
+lbl_rhsbl=RHSBL
+lbl_host=Nom d'hôte
+lbl_hit=Taux de réussite
+lbl_miss=Taux d'échec
+lbl_log=Identifiant de connexion
+
+lbl_clamav=ClamAV
+lbl_clamav_activate=Activer clamav
+lbl_clamav_deactivate=Désactiver clamav
+lbl_archive=Scanner les archives
+lbl_virusalert=Courriel d'alerte Virus
+lbl_maxlength=Taille maximale en Mo des éléments pouvant être scannés.
+lbl_clam_update=Mettre à jour les signatures ClamAV
+lbl_clam_configure=Configurer clamav
+
+lbl_sa=Spamassassin
+lbl_sa_configure=Configurer Spamassassin
+lbl_sa_enable=Activer Spamassassin
+lbl_sa_disable=Désactiver Spamassassin
+lbl_sa_update=Mettre à jour les filtres Spamassassin
+lbl_network=Réseau
+lbl_internal=Réseaux internes
+lbl_trusted=Réseaux de confiance
+lbl_add_headers=Ajouter 'spam detected' dans les entêtes à partir du niveau
+
+lbl_whitelist=Liste blanche
+lbl_wl_desc=Tous les hôtes et les adresses contenus dans cette liste ne seront pas inspectés pour spam ou virus.
+lbl_address=Adresse
+lbl_wl_type=Type
+lbl_wl_from=Source
+lbl_wl_entry=Saisie
+
+err_mail=Adresse électronique invalide

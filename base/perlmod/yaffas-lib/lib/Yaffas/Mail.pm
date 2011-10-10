@@ -761,6 +761,8 @@ sub set_default_quota($) {
 			$quota = 0;
 		}
 		$hashref->{quota_hard} = $quota/1024;
+		$hashref->{quota_soft} = $quota*0.9/1024;
+		$hashref->{quota_warn} = $quota*0.8/1024;
 		$bkc->save();
 		Yaffas::Service::control( Yaffas::Service::ZARAFA_SERVER(), Yaffas::Service::RESTART() );
 	}

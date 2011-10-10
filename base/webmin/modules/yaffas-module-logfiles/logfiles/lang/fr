@@ -1,0 +1,8 @@
+err_nothing_selected=Un fichier de journalisation doit être sélectionné.
+err_not_permitted=Il n'est pas permis de télécharger ce fichier
+lbl_logfiles=Fichiers de journalisation
+lbl_download=Téléchargement
+lbl_show_old_logs=Afficher les anciens fichiers de journalisation
+lbl_show_new_logs=Afficher les nouveaux fichiers de journalisation
+lbl_size=Taille
+lbl_file=Fichier

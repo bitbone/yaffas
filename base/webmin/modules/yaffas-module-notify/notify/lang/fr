@@ -1,0 +1,31 @@
+lbl_status=Adresse pour les message système
+lbl_index_header=Notification
+lbl_index_return=Système
+lbl_mail=Courriel
+lbl_send_mail=Envoyer un courriel
+lbl_always=Toujours
+lbl_errors=Erreur critique
+lbl_never=Erreurs
+lbl_test=Vérifier votre adresse électronique
+lbl_test_desc=Cliquer sur le bouton ci-dessous afin d'envoyer un courriel à l'adresse électronique que vous venez de définir.
+lbl_test_button=Vérifier
+err_mail=Ceci n'est pas une adresse électronique valide
+err_modify_file=Impossible de modifier le paramétrage.
+err_write_file=Une erreur s'est produite lors de l'enregistrement du fichier de configuration.
+err_type=Le type ne peut être que : toujours, erreurs ou jamais.
+err_found_line=Impossible de trouver la ligne dans le fichier de configuration.
+err_test=Veuillez tout d'abord renseigner l'adresse électronique.
+err_send_test=Impossible d'envoyer un courriel à votre adresse.
+suc_test=Un courriel a été envoyé à l'adresse indiquée. Veuillez vérifier votre boîte aux lettres.
+suc_set_mail=L'adresse pour les messages système a été configurée avec succès.
+
+lbl_test_mail_subject=Vérification - notification yaffas
+lbl_test_mail_body=Ce courriel a été envoyé afin de vérifier l'accessibilité de l'adresse électronique que vous avez indiquée Si vous avez bien reçu ce courriel, vous serez ensuite tenu informé de toute erreur venant à se produire.
+lbl_test_mail_body1=Vérifier l'adresse électronique
+lbl_test_mail_body2=
+lbl_test_mail_body3=Ce courriel est utilisé pour vérifier l'accessibilité de l'adresse des administrateurs. À partir du moment où vous avez reçu ce courrier, vous recevrez ensuite à la même adresse la notification de toute erreur venant à se produire.
+lbl_test_mail_body4=
+lbl_test_mail_body5=Nous espérons que yaffas saura vous satisfaire.
+lbl_test_mail_body6=
+lbl_test_mail_body7=
+

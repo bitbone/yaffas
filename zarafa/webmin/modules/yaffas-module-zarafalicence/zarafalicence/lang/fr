@@ -1,0 +1,13 @@
+lbl_insert=Touche Appliquer
+lbl_install_key=Touche Nouvelle installation
+lbl_install_basekey=Touche Installer une nouvelle base
+lbl_install_calkey=Touche Installer un nouveau client
+lbl_installed_licences=Licences installées
+lbl_base_key=Touche Base
+lbl_serial=Numéro de série
+lbl_log=Fichier journal de licence
+err_wrong_lic=Ceci n'est pas un numéro de série Zarafa valide
+lbl_archiver_key=Touche Archivage
+lbl_archiver_serial=Numéro de série
+lbl_install_archiverkey=Touche Installer un nouveau gestionnaire d'archivage
+lbl_install_acalkey=Touche Installer un nouveau client d'archivage

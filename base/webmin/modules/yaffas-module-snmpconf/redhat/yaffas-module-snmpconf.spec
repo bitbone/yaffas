@@ -31,6 +31,13 @@ if cat /etc/snmp/snmpd.conf| grep com2sec | grep paranoid >/dev/null; then
 	/sbin/chkconfig --del confd
 fi
 
+%postun
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="snmpconf"
+	del_webmin_acl $MODULE
+fi
 
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT

@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: lang/en:1
+#, no-wrap
+msgid "Network"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Create"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "Edit"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Create group"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Delete group(s)"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "Edit group(s)"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Create group(s)"
+msgstr ""
+
+#: lang/en:8
+#, no-wrap
+msgid "Modify user"
+msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "Groupadministration"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "Groupname"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Groups"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Group"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "User"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Filetype"
+msgstr ""
+
+#: lang/en:17
+#, no-wrap
+msgid "Set Filetype"
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "Creating cache"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "done"
+msgstr ""
+
+#: lang/en:22
+#, no-wrap
+msgid "Do you really want to delete this groups?"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "Authentification"
+msgstr ""
+
+#: lang/en:24
+#, no-wrap
+msgid "Email"
+msgstr ""
+
+#: lang/en:25
+#, no-wrap
+msgid "Allow send as for"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "All input fields has to be filled!"
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "Creation of groups failed!"
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
+msgid "Deletion of groups failed!"
+msgstr ""
+
+#: lang/en:31
+#, no-wrap
+msgid "Group doesn't exist!"
+msgstr ""
+
+#: lang/en:32
+#, no-wrap
+msgid "Group exists already!"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid ""
+"Group names have to consist of at least one (alphanumerical) character, "
+"beginning with a letter(no umlaut)."
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "Wrong mode!"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "No group selected!"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "This action is only supported with local authentification."
+msgstr ""

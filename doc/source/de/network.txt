@@ -1,0 +1,50 @@
+== Netzwerk
+
+
+
+=== Konfiguration
+
+==== Grundeinstellungen
+Unter dem Menüpunkt  _Netzwerk->Konfiguration_ werden unter dem  _Grundeinstellungen_ Reitern die grundlegenden Netzwerkeinstellungen festgelegt. 
+
+[NOTE]
+==============
+Im Feld "Rechnername" geben Sie den Namen ein, unter dem der Rechner im Netzwerk erreichbar sein soll. Dieser Rechnername dient gleichzeitig auch als Name im Windows-Netzwerk.
+Der Domainname muss im Format wie in http://www.ietf.org/rfc/rfc1034.txt[RFC 1034] vorgeschrieben eingeben werden (z.B. „bitbone.de“).
+Die Windowsarbeitsgruppe wird für die Windows Netzwerkumgebung benötigt.
+==============
+
+
+
+==== Proxykonfiguration
+Die Einstellungen für den HTTP-Proxy werden benötigt, falls in Ihrem Firmennetzwerk kein direkter Internetzugang besteht, um die aktuellen {product}-Updates herunterzuladen. 
+
+Tragen Sie dazu in das oberste Feld die IP-Adresse und in das zweite Feld den Port Ihres HTTP-Proxy-Servers ein. Verlangt Ihr Proxy eine Benutzerauthentifizierung, so tragen Sie die erforderlichen Daten bei "Benutzer" und "Passwort" ein. Bestätigen Sie den Vorgang mit Speichern
+
+
+
+==== Schnittstellen-Konfiguration
+In den  _Schnittstellen_ Reitern werden die grundlegenden Einstellungen für jede verfügbare Schnittstelle festgelegt. Jede Schnittstelle besitzt einen eigenen Reiter über den sie sich konfigurieren lässt.
+
+Sind in Ihrem Netzwerk mehrere Netzwerkbereiche vorhanden und befinden sich Mailserver oder einzelne Arbeitsstationen in einem anderen Netz, so muss das Standardgateway angegeben werden. Im Feld  _DNS Server IP-Adresse_ wird dann die Adresse des DNS-Servers eingetragen. Weiterhin können Sie mehrere Suchdomänen eintragen. Diese werden beim Auflösen von Rechnernamen verwendet, falls kein vollständiger Name angegeben wird.
+
+Die Einstellungen pro Schnittstelle sind nur aktiv wenn die Schnittstelle aktivert wird. Sind mehrere Schnittstellen gleichzeitig aktiviert, so werden auch die Einstellungen aller Schnittstellen verwendet. 
+
+Über den Button  _Neue virtuelle IP Adresse_ können Sie auf der zugehörigen Schnittstelle eine weitere IP Adresse konfigurieren. Für diese virtuelle Schnittstelle können Sie dann die gleichen Werte wie für eine normale Schnittstelle vergeben.
+
+
+
+=== SNMP
+Um den Zugriff via SNMP-Protokoll zu aktivieren, setzen Sie den Haken im entsprechenden Feld unter dem Menüpunkt  _Netzwerk->SNMP_ 
+
+In dem Feld  _"Community"_ können Sie das Passwort für den SNMP-Zugriff festlegen.
+
+[IMPORTANT]
+==============
+Bei SNMP werden Daten generell unverschlüsselt über das Netzwerk übertragen. Wählen Sie daher zu ihrer eigenen Sicherheit ein anderes als das root- oder Administratorpasswort aus!
+==============
+
+Das Feld  _"Zugriff für"_ definiert wer Zugriff zum SNMP-Agenten bekommt. Der Eintrag "default" bedeutet, dass lediglich vom lokalen Rechner aus Zugriffe erlaubt sind.
+
+Sie können hier eine einzelne IP-Adresse oder ein Subnetz nach dem http://tools.ietf.org/html/rfc4632[CIDR]-Muster _Adresse/Maske_ (z.B. 192.168.0.1/24) eintragen.
+

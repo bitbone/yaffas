@@ -5,3 +5,4 @@ lbl_snmp_config=SNMP Configuration
 
 err_network_string=The access can only be set for IP-Addresses or networks.
 err_community_string=The community-string can only contain digits (0-9) and chars (a-z, A-Z).
+moduletitle=SNMP Configuration

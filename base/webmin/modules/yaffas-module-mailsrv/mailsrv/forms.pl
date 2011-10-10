@@ -9,7 +9,7 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Module::Mailsrv::Postfix
   qw(get_accept_domains get_accept_relay get_smarthost get_mailserver
   get_verify_rcp get_mailsize get_smarthost_routing get_archive get_zarafa_admin);
-use Yaffas::UI qw($Cgi section section_button value_add_del_form);
+use Yaffas::UI qw($Cgi section section_button value_add_del_form textfield);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Users;
 use Yaffas::UGM;
@@ -47,7 +47,7 @@ sub base_settings_form() {
 					$Cgi->td(
 						[
 							$main::text{lbl_mailserver_name} . ":",
-							$Cgi->textfield(
+							textfield(
 								'mailservername', $cfg{mailservername}
 							)
 						]
@@ -55,7 +55,7 @@ sub base_settings_form() {
 					$Cgi->td(
 						[
 						$main::text{lbl_mailsize} . ":",
-						$Cgi->textfield( 'mailsize', $cfg{mailsize},
+						textfield( 'mailsize', $cfg{mailsize},
 							15 )
 						. " MB",
 						]

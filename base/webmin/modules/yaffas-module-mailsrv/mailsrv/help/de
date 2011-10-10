@@ -1,0 +1,2 @@
+mailservername=Dieser Name wird bei ausgehenden E-Mails an den SMTP Server übergeben.
+mailsize=Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie das Feld leer lassen, wird der Server E-Mail mit beliebiger Größe verarbeiten.

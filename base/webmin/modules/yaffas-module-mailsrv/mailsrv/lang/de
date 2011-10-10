@@ -13,11 +13,7 @@ lbl_smarthost_name=Smarthost Server
 lbl_username=Benutzername
 lbl_password=Passwort
 
-lbl_del_add_question=Möchten Sie diese Einträge wirklich ändern?
-lbl_edit_question=Möchten Sie diese Einträge wirklich editieren?
 lbl_del_question=Möchten Sie diese Einträge wirklich löschen?
-lbl_del_add_title=Einträge ändern
-
 
 lbl_acceptdomains=Lokale Domänen
 
@@ -49,7 +45,7 @@ err_no_rewrite=Es muss eine gültige Domain angegeben werden.
 err_no_entrys=Keine Einträge.
 err_smarthost=Smarthost nicht gültig.
 err_username=Benutzername nicht gültig.
-err_password=Password nicht gültig.
+err_password=Passwort nicht gültig.
 err_maildomain=Maildomain nicht gültig.
 err_ip_entry=IP Addresse oder IP Bereich nicht gültig.
 err_domainname=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens ein Zeichen lang sein!
@@ -63,6 +59,7 @@ err_user_not_exists=Der Benutzer existiert nicht.
 err_password_missing=Das Passwort wurde nicht angegeben.
 err_user_not_zarafa_admin=Der Benutzer ist kein Zarafa-Administrator.
 err_user_password=Das Passwort des angegebenen Benutzers ist falsch.
+
 
 lbl_antivirus=Antivirus
 lbl_antispam=Antispam
@@ -79,8 +76,8 @@ lbl_status=Status
 lbl_service=Dienst
 lbl_feature=Funktion
 
-lbl_start=Aktivieren
-lbl_stop=Deaktivieren
+lbl_start=Start
+lbl_stop=Anhalten
 
 lbl_started=Gestartet
 lbl_stopped=Gestoppt

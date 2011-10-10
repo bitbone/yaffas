@@ -1,0 +1,136 @@
+== Zarafa
+
+
+
+=== Konfiguration
+In diesem Modul können Sie den Speicher für Zarafa optimieren, die Größe von Dateianhängen festlegen und den Inhalt von Quota E-Mails definieren. 
+
+Klicken Sie hier auf  _"Optimiere"_ um die Speichereinstellungen auf Ihrem System optimieren zu lassen. Dies ist nur nötig wenn sich die Größe Ihres Arbeitsspeichers geändert hat. Der Arbeitsspeicher wird dementsprechend für Zarafa optimiert. 
+
+Auch können Sie hier die Maximalgröße für Dateianhänge festlegen, die über die Zarafa Webaccess Oberfläche hochgeladen werden dürfen. 
+
+[TIP]
+==============
+Diese Beschränkung überschreibt **nicht** die des Mailservers. Ist dort eine geringere Größe erlaubt, so hat diese Vorrang.
+==============
+
+Unter dem  _"Meldungen"_ Reiter können Sie die Texte der Quota E-Mails anpassen. Die Variablenbeschreibung erhalten Sie über die Online Hilfe. 
+
+Sie können folgende Variablen zum erstellen des Textes verwenden:
+
+[options="header"]
+|======
+| Variable | Bedeutung 
+| $\{ZARAFA_QUOTA_NAME} | der Name des Zarafakontos 
+| $\{ZARAFA_QUOTA_STORE_SIZE} | die aktuelle Größe des Kontos 
+| $\{ZARAFA_QUOTA_WARN_SIZE} | das Limit für eine Warnung 
+| $\{ZARAFA_QUOTA_SOFT_SIZE} | das Limit für eine Sendesperre des Kontos 
+| $\{ZARAFA_QUOTA_HARD_SIZE} | das Limit für eine Sende- und Empfangssperre des Kontos 
+|======
+
+
+=== Ressourcen
+In diesem Modul können Sie neue Ressourcen anlegen oder löschen. Markieren Sie hierzu eine Ressource mit der rechten Maustaste und wählen Sie die gewünschte Aktion. 
+
+Beachten Sie beim Anlegen: Eine Ressource benötigt einen Namen - unter diesem erscheint sie im globalen Adressbuch - und eine eine Beschreibung.
+Sie können außerdem festlegen, ob eine Ressource nur einmal pro Zeitraum gebucht werden darf ( _"Konflikte verbieten"_  und ob Wiederholungstermine abgelehnt werden sollen. 
+
+[IMPORTANT]
+==============
+Beim Bearbeiten einer Ressource können Sie die Eigenschaften einer Ressource ändern, nicht aber deren Namen.
+==============
+
+
+
+=== Zarafa Einrichten
+
+Die Konfiguration von {product} & ZARAFA erfolgt über die bekannte Oberfläche. Es sind einige Besonderheiten zu beachten, die wir Ihnen an dieser Stelle kurz erklären werden.
+
+Prinzipiell ist jeder im {product} angelegte Benutzer auch ein Zarafa-Benutzer. Bitte achten Sie darauf, dass Sie eine entsprechende Lizenz sowohl für {product} als auch für Zarafa besitzen. Sollten Sie weniger Zarafa-Userlizenzen haben als {product}-User, so werden nur die User mit den niedrigsten UIDs Zugriff auf Zarafa haben. 
+
+
+
+===  Zuordnung der E-Mailadressen
+Beachten Sie bitte, dass beim Anlegen eines neuen Benutzers die, im Feld  _"E-Mail Adresse"_ eingetragene Adresse dem Format  _"benutzername@konfigurierte_maildomain"_ entsprechen muss, damit der Mailempfang möglich ist. Soll als Empfangsmailadresse eine andere verwendet werden, so tragen Sie diese bitte gleich im Feld  _"E-Mail Alias"_ mit ein.
+
+Die unter  _"E-Mail Adresse"_ eingetragene Adresse wird auch als Absenderadresse für alle Mails, die via WebAccess versandt werden, verwendet. Damit eine einwandfreie Zurdnung gewährleistet ist, konfigurieren Sie bitte zuerst die lokale(n) Domain(s) auf dem Mailserver (Menu Mailserver -> Konfiguration -> Lokale Domains). 
+
+
+
+=== Zarafa Webaccess
+Zugriff via WebAccess erhalten Sie über die Eingabe der URL in die Adressleiste des Browsers mit einem angehängten  _"webaccess"_  z.B. https://zarafaserver.lokal/webaccess - Weitere Alternativen sehen Sie, wenn Sie das {product} über den Namen bzw. die IP-Adresse ansprechen, ohne Angabe eines Ports. (z.B. http://zarafaserver.local)
+
+Eine komplette Anleitung und aktuelle Dokumentationen für den Zarafa WebAccess können Sie unter http://www.zarafaserver.de/doc herunterladen.
+
+
+
+=== Anbindung von Microsoft Outlook
+
+Der zur Anbindung von Microsoft Outlook benötige Client liegt in der Freigabe  _"Software"_ im Verzeichnis  _"zarafa"_ auf Ihrem {product}. Bitte verwenden Sie ausschließlich diese Version, da sie auf die in {product} integrierte Version von Zarafa abgestimmt ist. Bei einem Update sollten Sie auch immer die aktuelle Version aus diesen Verzeichnis installieren.
+
+Installieren Sie nun zunächst den Client auf dem Windows-Rechner durch einen Doppelklick auf  _"zarafaclient.exe"_  Beachten Sie bitte, dass Sie zur Installation Administratorrechte benötigen.
+
+Starten Sie Outlook und wählen Sie aus dem Menü  _"Extras"_ den punkt  _"E-Mail-Konten"_  Erstellen Sie ein neues E-Mail-Konto. 
+
+image:media/de/zarafa/guides_zarafa_connect1.png[]
+
+
+
+Als Servertyp wählen Sie bitte  _"Zusätzliche Servertypen"_ aus, und klicken auf weiter. 
+
+image:media/de/zarafa/guides_zarafa_connect2.png[]
+
+
+
+Wenn Sie wie oben beschrieben die zarafaclient.exe von der CD installiert haben, können Sie hier  _"Zarafa-Server"_ auswählen. Sollte das nicht der Fall sein, dann installieren Sie zunächst bitte den Zarafaclient. 
+
+image:media/de/zarafa/guides_zarafa_connect3.png[]
+
+
+
+Tragen Sie nun die Daten ihres {product} & ZARAFA-Servers ein. Sie können wahlweise Port 237 für verschlüsselte Übertragung (Standard) oder Port 236 für eine unverschlüsselte Verbindung benutzen. Den Benutzernamen und das Passwort verwenden Sie wie im {product} konfiguriert. 
+
+image:media/de/zarafa/guides_zarafa_connect4.png[]
+
+
+Stellen Sie bitte sicher, dass für das erstellte Konto der Punkt  _"Neue Nachrichten übermitteln an"_ auf  _"Inbox - Benutzer"_ gesetzt ist. Schließen Sie nun Outlook und öffnen Sie es erneut - Sie sollten nun Zugriff auf ihren Store haben und können mailen, Termine verwalten, Kontakte pflegen, etc. 
+
+[NOTE]
+==============
+Bitte haben Sie Verständnis, dass wir keinen Support für die Benutzung, Konfiguration oder Installation von Microsoft Outlook leisten können!
+==============
+
+
+
+=== Backup Pfade
+An dieser Stelle möchten wir Ihnen eine unspezifische Vorgehensweise aufzeigen wie die Daten des Servers gesichert werden können. Bei der Rücksicherung der Daten sollte beachtet werden, dass sich der {product}-Server auf dem gleichen Versionsstand befindet.
+
+Die zu sichernden Pfade für {product} & ZARAFA lauten:
+[options="header"]
+|======
+| Pfad | Eintrag 
+| /var/log/ | Log-Dateien 
+| /data/mail/ | Mailboxen und Sieve Filterskripte 
+| /var/lib/fetchmail/.fetchmail-UIDL-cache | falls fetchmail mit POP3 verwendet wird 
+| Datenbank MySQL (mysqldump) | Gesamte Daten des Zarafa Servers 
+| /data/zarafa/ | E-Mail Anhänge 
+|======
+
+**Vorgehensweise zur Sicherung der Daten:**
+
+  - Sicherung der Konfiguration über System -> Konfiguration sichern
+  - init 1 -> Wechseln in den Single-User Modus
+  - Sicherung der einzelnen Pfade in ein temporäres Verzeichnis
+  - init 2 -> Normaler Betriebsmodus
+  - Sicherung der Daten auf einen externen Datenträger
+
+
+**Vorgehensweise zur Rücksicherung der Daten:**
+
+  - Rücksicherung der Konfiguration über System -> Konfiguration sichern
+  - Zurückkopieren der Daten in ein temporäres Verzeichnis
+  - init 1 -> Wechseln in den Single-User Modus
+  - Löschen aller Dateien unterhalb der genannten Pfade
+  - Rücksicherung der einzelnen Pfade aus dem temporäres Verzeichnis
+  - init 2 -> Normaler Betriebsmodus
+

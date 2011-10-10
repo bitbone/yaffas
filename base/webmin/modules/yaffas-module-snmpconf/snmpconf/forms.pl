@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Yaffas::UI;
+use Yaffas::UI qw/textfield/;
 use Yaffas::Module::SNMPConf;
 
 sub show_snmp_conf() {
@@ -26,11 +26,11 @@ sub show_snmp_conf() {
 							     ]),
 						    $Cgi->td([
 							      $main::text{lbl_community}.":",
-							      $Cgi->textfield({-name=>"community", -value=>$community})
+							      textfield({-name=>"community", -value=>$community})
 							     ]),
 						    $Cgi->td([
 							      $main::text{lbl_network}.":",
-							      $Cgi->textfield({-name=>"network", -value=>$network})
+							      textfield({-name=>"network", -value=>$network})
 							     ]),
 						   ]),
 					 ),

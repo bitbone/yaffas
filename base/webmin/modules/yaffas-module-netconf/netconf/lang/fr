@@ -1,0 +1,68 @@
+err_ip=L'adresse IP ou le masque réseau est invalide.
+err_dns=L'adresse du serveur DNS doit être une adresse IP valide.
+err_domain=Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères.
+err_domain_rename=Impossible de renommer le domaine.
+err_hostname=Un nom d'hôte ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères.
+err_workgroup_check=Un groupe de travail ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'.
+err_copy_file=Impossible d'enregistrer le fichier suivant :
+
+err_one_enabled=Vous devez activer au moins une interface de réseau.
+err_gateway_eq_ip=L'adresse de la passerelle doit être différente que l'adresse du serveur.
+err_search=Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères.
+err_parent_enable=L'interface matérielle associée doit être activée.
+
+err_get_sambasid=Une erreur s'est produite lors de la lecture des données devant être utilisées par Samba.
+err_set_sambasid=Une erreur s'est produite lors de l'écriture des données devant être utilisées par Samba.
+err_ldap_duplicate_sambadomain=Il n'y as pas exactement un seul exemplaire du nom d'hôte (sambaDomain) dans LDAP.
+
+err_bonding_enabled=Ce module est désactivé parce qu'un 'channel bonding' est activé.
+
+err_no_ip=Aucune adesse IP n'a été définie.
+
+lbl_index_header=Configuration
+lbl_data=Configuration du réseau
+
+lbl_hostname=Nom d'hôte
+lbl_domain=Nom de domaine
+lbl_workgroup=Groupe de travail
+lbl_ipaddr=Adresse IP
+lbl_netmask=Masque de réseau
+lbl_gateway=Passerelle (si disponible)
+lbl_search=Domaine de recherche
+lbl_dns=IP Serveur DNS
+lbl_index_return=Réseau
+lbl_delete=Supprimer
+lbl_interface=Interface
+lbl_base_settings=Configuration de base
+
+lbl_enabled=activé
+lbl_disabled=désactivé
+lbl_status=État
+lbl_new_ip=Nouvelle adresse IP virtuelle
+lbl_delete_device=Supprimer l'adresse IP virtuelle
+lbl_really_delete=Désirez-vous vraiment supprimer l'interface réseau suivante ?
+lbl_create=Créer
+lbl_new_interface=Nouvelle adresse virtuelle sur interface
+
+
+
+lbl_proxy_conf=Proxy HTTP
+lbl_proxy_ip=Proxy
+lbl_proxy_port=Port
+lbl_authentication=Authentification (facultative)
+lbl_user=Utilisateur
+lbl_pass=Mot de passe
+
+err_proxy=Nom proxy invalide !
+err_port=Port invalide !
+err_username=Nom d'utilisateur invalide !
+err_password=Mot de passe invalide
+err_set_apt=Une erreur s'est produite lors de la configuration du proxy APT !
+err_set_wget=Une erreur s'est produite lors de la configuration du proxy WGET !
+err_set_kav=Une erreur s'est produite lors de la configuration du proxy KAV !
+err_del_apt=Une erreur s'est produite lors de la suppression du proxy APT !
+err_del_wget=Une erreur s'est produite lors de la suppression du proxy WGET !
+err_10=Une erreur s'est produite lors de la suppression du proxy KAVS !
+err_set_freshclam=Une erreur s'est produite lors de la configuration du proxy freshclam !
+err_del_freshclam=Une erreur s'est produite lors de la suppression du proxy freshclam !
+err_restart_freshclam=Une erreur s'est produite lors du redémarrage de freshclam !

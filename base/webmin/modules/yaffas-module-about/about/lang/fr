@@ -1,0 +1,108 @@
+lbl_index_title=Information système
+lbl_index_header=À propos de yaffas
+lbl_index_return=Système
+lbl_versions=Versions
+lbl_version=Version
+lbl_revision=Révision
+lbl_name=Produit
+
+err_get_products=Cette information ne peut pas être lue !
+
+index_title=Information système
+written_by=Écrit par
+
+general_information=Information générale
+os_on_arch=sur un
+uptime=Uptime de
+uptime_days=jours
+uptime_hours=heures
+uptime_minutes=minutes
+loadavg_title=Utilisation moyenne
+loadavg_graph=Utilisation CPU
+loadavg_proc=Utilisation globale
+loadavg_1=pour la dernière minute
+loadavg_5=pour les 5 dernières minutes
+loadavg_15=pour les 15 dernières minutes
+
+memory_usage=Utilisation de la mémoire
+main_memory=Mémoire principale
+swap_memory=Mémoire swap
+mem_total=Total
+mem_used=Utilisé
+mem_free=Libre
+mem_shared=Partagé
+mem_buffers=Tampons
+mem_cache=Cache
+mem_module=Module
+mem_module_size=Taille
+mem_module_depend=Modules de référence
+mem_current_modules=Modules en cours d'utilisation
+mem_avail=Mémoire disponible
+mem_usagekey=Clé d'utilisation :
+
+memkey_inuse=Utilisé
+memkey_buffer=Tampon
+memkey_free=Libre
+
+irq_usage=Utilisation IRQ
+irq_device=Périphérique
+irq_ioports=Utilisation IO
+
+network_load=Statistique réseau
+network_nic=Interface
+network_receive=Recevoir
+network_send=Envoyé
+network_bytes=Octets
+network_errors=Erreurs
+network_dropped=Abandonné
+network_overruns=Dépassements
+network_frame=1.2.3. Trame  4. Cadre
+network_carrier=Porteur
+network_collisions=Collisions
+network_connection=Connexions active
+network_connection_protocol=Protocole
+network_connection_recvq=Queue de réception
+network_connection_sendq=Queue d'envoi
+network_connection_localaddr=Local
+network_connection_foreignaddr=Extérieur
+network_connection_state=État
+network_who=Qui est connecté
+network_who_user=Utilisateur
+network_who_tty=TTY
+network_who_from=De
+network_who_login=Login@
+network_who_idle=Inactif
+network_who_jcpu=Jcpu
+network_who_pcpu=Pcpu
+network_who_what=Commande
+network_opensockets=Sockets d'écoute
+network_opensockets_active=Sockets actives
+network_unixsockets=Sockets UNIX
+network_unixsockets_protocol=Protocole
+network_unixsockets_refcnt=RefCnt
+network_unixsockets_flags=Indicateurs
+network_unixsockets_type=Type
+network_unixsockets_state=État
+network_unixsockets_inode=I-node
+network_unixsockets_path=Chemin
+
+fs_stat=Statistique système de fichier
+fs_mount=Système de fichier monté
+fs_mount_device=Périphérique
+fs_mount_dir=Répertoire
+fs_mount_type=Système de fichier
+fs_mount_option=Mode
+
+df_title=Information système de fichier
+
+lbl_filesystem=Système de fichier
+lbl_size=Taille
+lbl_used=Utilisé
+lbl_available=Disponible
+lbl_used_percent=Utilisé%
+lbl_mount=Mounté sur
+
+lbl_time=Heure
+lbl_value=Valeur
+
+lbl_mem_type=Type de mémoire

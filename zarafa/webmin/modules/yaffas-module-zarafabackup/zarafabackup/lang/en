@@ -34,11 +34,14 @@ lbl_preserve_time=Preserve fullbackup (in days)
 lbl_clean_dir=Removing directory
 lbl_restore_start_msg=Click on "restore" to restore the selected messages.
 lbl_no_backup=No backup available
+lbl_not_installed_title=Zarafa Backup
+lbl_not_installed=Zarafa Backup is not installed
 
 err_time=Time not correct.
 err_preserve_time=Preserve time not set or not correct.
 err_file_open=Could not open file.
 err_no_full_found=Could not find a full backup.
 err_mkdir=Could not create directory.
-err_days=Error passing backup days.
+err_days=Value for backup days incorrect.
 err_read_dir=Could not open directory.
+moduletitle=Backup

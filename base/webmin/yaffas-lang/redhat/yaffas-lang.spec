@@ -13,17 +13,14 @@ Requires:	perl, yaffas-core
 Language files for webmin
 
 %build
+make %{?_smp_mflags}
 
 %install
 %{__rm} -rf $RPM_BUILD_ROOT
-%{__mkdir} -p $RPM_BUILD_ROOT/opt/yaffas/webmin/lang
-%{__mkdir} -p $RPM_BUILD_ROOT/tmp/yaffas-lang
-
-%{__install} -m 644 lang/de $RPM_BUILD_ROOT/tmp/yaffas-lang
-%{__install} -m 644 lang/en $RPM_BUILD_ROOT/tmp/yaffas-lang
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %post -p /usr/bin/perl
-my @langs = ("de", "en");
+my @langs = ("de", "en", "nl", "fr");
 my @path = qw(/opt/yaffas/webmin /opt/yaffas/usermin);
 
 foreach my $path (@path) {

@@ -20,15 +20,17 @@ set -e
 case "$1" in
     configure)
 
-	YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
-	for CFG in /etc/zarafa/*.cfg; do
-		cp -f $CFG ${CFG}.yaffassave
-	done
-	cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
-	if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
-		mv -f /etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available/zarafa-webaccess-ssl.yaffassave
+	if [ -z "$2" ]; then
+		YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
+		for CFG in /etc/zarafa/*.cfg; do
+			cp -f $CFG ${CFG}.yaffassave
+		done
+		cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+		if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
+			mv -f /etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available/zarafa-webaccess-ssl.yaffassave
+		fi
+		cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
 	fi
-	cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
 
 	PHPINI=/etc/php5/apache2/php.ini
 	PHPCLIINI=/etc/php5/cli/php.ini
@@ -106,7 +108,9 @@ case "$1" in
 	set +e
 	/etc/init.d/mysql start
 	/etc/init.d/slapd start
-	/etc/init.d/zarafa-server start
+	/etc/init.d/zarafa-server stop
+	/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+	/etc/init.d/zarafa-server restart
 	/etc/init.d/zarafa-dagent restart
 	/etc/init.d/apache2 restart
 	if [ -z "$2" ]; then
@@ -114,7 +118,7 @@ case "$1" in
 		zarafa-admin -s
 	fi
 
-    echo "zarafa=Zarafa v6.40.5" > /opt/yaffas/etc/installed-products
+    echo "zarafa=Zarafa v7.0.1" > /opt/yaffas/etc/installed-products
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

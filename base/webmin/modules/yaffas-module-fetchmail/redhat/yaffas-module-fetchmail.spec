@@ -26,27 +26,35 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 set -e
+if [ $1 -eq 1 ]; then
+	# set selinux context
+	/usr/bin/chcon system_u:object_r:initrc_exec_t /opt/yaffas/etc/init.d/fetchmail
 
-# set selinux context
-/usr/bin/chcon -t initrc_exec_t /opt/yaffas/etc/init.d/fetchmail
+	if [ ! -e %{_initrddir}/fetchmail ]; then
+		ln -s /opt/yaffas/etc/init.d/fetchmail %{_initrddir}/fetchmail
+	fi
 
-if [ ! -e %{_initrddir}/fetchmail ]; then
-	ln -s /opt/yaffas/etc/init.d/fetchmail %{_initrddir}/fetchmail
+	# fetchmail runs as user fetchmail
+	groupadd -r fetchmail
+	useradd -r -m -g fetchmail -s /bin/false -c "Fetchmail" fetchmail
+	touch /etc/fetchmailrc
+	chown fetchmail:fetchmail /etc/fetchmailrc
+	chmod 600 /etc/fetchmailrc
+
+	/sbin/chkconfig --add fetchmail
+	/sbin/chkconfig fetchmail on
 fi
-
-# fetchmail runs as user fetchmail
-groupadd -r fetchmail
-useradd -r -m -g fetchmail -s /bin/false -c "Fetchmail" fetchmail
-touch /etc/fetchmailrc
-chown fetchmail:fetchmail /etc/fetchmailrc
-chmod 600 /etc/fetchmailrc
-
-/sbin/chkconfig --add fetchmail
-/sbin/chkconfig fetchmail on
 
 source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE=fetchmail
 add_webmin_acl $MODULE
+
+%postun
+if [ "$1" = "0" ]; then
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE=fetchmail
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root,-)

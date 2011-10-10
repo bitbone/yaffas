@@ -461,9 +461,10 @@ sub get_zarafa_admin() {
 	return _get_value("zarafa_admin");
 }
 
-sub set_postfix_ldap($$) {
+sub set_postfix_ldap {
 	my $postfix_settings = shift;
 	my $file = shift;
+	my $replace_only = shift || 0;
 
 	my $filename;
 
@@ -484,9 +485,11 @@ sub set_postfix_ldap($$) {
 										 ) or throw Yaffas::Exception("err_file_write");
 	my $ls_ref = $ls_file->get_cfg_values();
 
-	for (keys %{$ls_ref}) {
-		if(!defined $postfix_settings->{$_} || $postfix_settings->{$_} eq '') {
-			delete $ls_ref->{$_};
+	if(!$replace_only) {
+		for (keys %{$ls_ref}) {
+			if(!defined $postfix_settings->{$_} || $postfix_settings->{$_} eq '') {
+				delete $ls_ref->{$_};
+			}
 		}
 	}
 

@@ -1,0 +1,3200 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"PO-Revision-Date: 2011-10-06 12:13+0200\n"
+"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Change Password"
+msgstr "Modifier le mot de passe"
+
+#: lang/en:2
+#, no-wrap
+msgid "System"
+msgstr "Système"
+
+#: lang/en:4
+#, no-wrap
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: lang/en:5
+#, no-wrap
+msgid "Repeat password:"
+msgstr "Renouveler la saisie du mot de passe :"
+
+#: lang/en:6
+#, no-wrap
+msgid "Save"
+msgstr "Enregistrer"
+
+#: lang/en:7
+#, no-wrap
+msgid "Admin-Password"
+msgstr "Mot de passe administrateur"
+
+#: lang/en:8
+#, no-wrap
+msgid "Root-Password"
+msgstr "Mot de passe root"
+
+#: lang/en:9
+#, no-wrap
+msgid "Domain-Administrator-Password"
+msgstr "Mot de passe administrateur du domaine"
+
+#: lang/en:11
+#, no-wrap
+msgid "Could not set MySQL password!"
+msgstr "Impossible de configurer le mot de passe MySQL !"
+
+#: lang/en:12
+#, no-wrap
+msgid "Can't read following file(s):"
+msgstr "Impossible de lire le(s) fichier(s) suivant(s) :"
+
+#: lang/en:13
+#, no-wrap
+msgid "Can't write following file(s):"
+msgstr "Impossible d'enregistrer le(s) fichier(s) suivant(s) :"
+
+#: lang/en:15
+#, no-wrap
+msgid "Can not set the root password!"
+msgstr "Impossible de configurer le mot de passe root !"
+
+#: lang/en:16
+#, no-wrap
+msgid "Can not set the domain-administrator password!"
+msgstr "Impossible de configurer le mot de passe administrateur du domaine !"
+
+#: lang/en:17
+#, no-wrap
+msgid "Can not execute SMBPASSWD!"
+msgstr "Impossible d'exécuter SMBPASSWD !"
+
+#: lang/en:18
+#, no-wrap
+msgid "This function is only available in the unlimited version"
+msgstr "Cette fonctionnalité n'est disponible que dans la version illimitée"
+
+#: lang/en:19
+#, no-wrap
+msgid "Can not execute following:"
+msgstr "Impossible d'exécuter ce qui suit :"
+
+#: lang/en:20
+#, no-wrap
+msgid "Can not execute LDAP Modify!"
+msgstr "Impossible d'exécuter ldapmodify !"
+
+#: lang/en:21
+#, no-wrap
+msgid "Can not delete following file(s):"
+msgstr "Impossible de supprimer le(s) fichier(s) suivant(s) :"
+
+#: lang/en:22
+#, no-wrap
+msgid "Can not copy following file(s):"
+msgstr "Impossible de copier le(s) fichier(s) suivant(s) :"
+
+#: lang/en:24
+#, no-wrap
+msgid "Password have to be at least on character long and must not contain a hash (#)."
+msgstr "Le mot de passe doit comporter au moins un caractère et ne doit pas comporter le caractère dièse (#)."
+
+#: lang/en:25
+#, no-wrap
+msgid "Both passwords have to be identical."
+msgstr "Les deux mots de passe doivent être identiques."
+
+#: lang/en:26
+#, no-wrap
+msgid "Password not valid."
+msgstr "Mot de passe invalide."
+
+#~ msgid "Apply key"
+#~ msgstr "Touche Appliquer"
+
+#~ msgid "Install new key"
+#~ msgstr "Touche Nouvelle installation"
+
+#~ msgid "Install new base key"
+#~ msgstr "Touche Installer une nouvelle base"
+
+#~ msgid "Install new client key"
+#~ msgstr "Touche Installer un nouveau client"
+
+#~ msgid "Installed licenses"
+#~ msgstr "Licences installées"
+
+#~ msgid "Base key"
+#~ msgstr "Touche Base"
+
+#~ msgid "Serial number"
+#~ msgstr "Numéro de série"
+
+#~ msgid "License Log"
+#~ msgstr "Fichier journal de licence"
+
+#~ msgid "This is not a valid Zarafa serial"
+#~ msgstr "Ceci n'est pas un numéro de série Zarafa valide"
+
+#~ msgid "Archiver key"
+#~ msgstr "Touche Archivage"
+
+#~ msgid "Install new archiver key"
+#~ msgstr "Touche Installer un nouveau gestionnaire d'archivage"
+
+#~ msgid "Install new archiver client key"
+#~ msgstr "Touche Installer un nouveau client d'archivage"
+
+#~ msgid "Userfilter"
+#~ msgstr "Filtre utilisateur"
+
+#~ msgid "Filtertype"
+#~ msgstr "Type de filtre"
+
+#~ msgid "Group"
+#~ msgstr "Groupe"
+
+#~ msgid "Default"
+#~ msgstr "Par défaut"
+
+#~ msgid "AD Plugin"
+#~ msgstr "Plugin AD"
+
+#~ msgid "AD Group"
+#~ msgstr "Groupe AD"
+
+#~ msgid "Delete these zarafa stores?"
+#~ msgstr "Supprimer ces bases de stockage Zarafa ?"
+
+#~ msgid "With this step, the following zarafa stores would be deleted:"
+#~ msgstr "Avec cette action, les bases de stockage Zarafa suivantes seraient supprimées :"
+
+#~ msgid "Could not find Group."
+#~ msgstr "Impossible de trouver le groupe."
+
+#~ msgid "Could not find the rootDomainNamingContext in AD."
+#~ msgstr "Impossible de trouver le rootDomainNamingContext dans l'AD."
+
+#~ msgid "Size of attachments"
+#~ msgstr "Taille des pièces jointes"
+
+#~ msgid "Size"
+#~ msgstr "Taille"
+
+#~ msgid "The value is not numeric."
+#~ msgstr "Ce n'est pas une valeur numérique."
+
+#~ msgid "Optimize"
+#~ msgstr "Optimiser"
+
+#~ msgid "Addressable memory"
+#~ msgstr "Mémoire adressable"
+
+#~ msgid "Optimized for"
+#~ msgstr "Optimisé pour"
+
+#~ msgid "Optimize memory"
+#~ msgstr "Optimiser la mémoire"
+
+#~ msgid "unknown"
+#~ msgstr "inconnu"
+
+#~ msgid "Quota e-mail templates"
+#~ msgstr "Modèles de quota de courriel"
+
+#~ msgid "Message at 80%"
+#~ msgstr "Message à 80%"
+
+#~ msgid "Message at 90%"
+#~ msgstr "Message à 90%"
+
+#~ msgid "Message at 100%"
+#~ msgstr "Message à 100%"
+
+#~ msgid "Default quota"
+#~ msgstr "Quota par défaut"
+
+#~ msgid "Default Quota"
+#~ msgstr "Quota par défaut"
+
+#~ msgid "Off"
+#~ msgstr "Désactivé"
+
+#~ msgid "Default features"
+#~ msgstr "Fonctionnalités courantes"
+
+#~ msgid "Feature"
+#~ msgstr "Fonctionnalité"
+
+#~ msgid "State"
+#~ msgstr "État"
+
+#~ msgid "MySQL settings"
+#~ msgstr "Paramètres MySQL"
+
+#~ msgid "Database"
+#~ msgstr "Base de données"
+
+#~ msgid "Server"
+#~ msgstr "Serveur"
+
+#~ msgid "Username"
+#~ msgstr "Nom d'utilisateur"
+
+#~ msgid "Password"
+#~ msgstr "Mot de passe"
+
+#~ msgid "Could not connect to database."
+#~ msgstr "Impossible de se connecter à la base de données"
+
+#~ msgid "The quota value can only contain digits."
+#~ msgstr "La valeur du quota ne peut contenir que des chiffres."
+
+#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+#~ msgstr "Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess."
+
+#~ msgid "This limits the maximum disk usage for each user in MB."
+#~ msgstr "Ceci limite l'utilisation disque maximale de chaque utilisateur en Mo."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Cette base de données sera créée si elle n'existe pas encore. Pour cela, l'utilisateur doit posséder les autorisations adéquates."
+
+#~ msgid "This is the password that is set on the database. You need to set this password manually."
+#~ msgstr "Ceci est le mot de passe défini sur la base de données. Vous devez définir ce mot de passe manuellement."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question."
+
+#~ msgid "Stop"
+#~ msgstr "Annuler"
+
+#~ msgid "Close"
+#~ msgstr "Fermer"
+
+#~ msgid "Restore"
+#~ msgstr "Restaurer"
+
+#~ msgid "Restoring folder $1..."
+#~ msgstr "Restauration du fichier $1..."
+
+#~ msgid "Restoring element $1..."
+#~ msgstr "Restauration de l'élément $1..."
+
+#~ msgid "done"
+#~ msgstr "achevé"
+
+#~ msgid "failed"
+#~ msgstr "échoué"
+
+#~ msgid "Start restore"
+#~ msgstr "Démarrer la restauration"
+
+#~ msgid "Restore was started"
+#~ msgstr "La restauration a été initiée"
+
+#~ msgid "Restore running"
+#~ msgstr "La restauration est en cours"
+
+#~ msgid "Restore finished"
+#~ msgstr "La restauration est achevée"
+
+#~ msgid "Subject"
+#~ msgstr "Objet"
+
+#~ msgid "Sender"
+#~ msgstr "Expéditeur"
+
+#~ msgid "Date"
+#~ msgstr "Date"
+
+#~ msgid "Start"
+#~ msgstr "Démarrer"
+
+#~ msgid "End"
+#~ msgstr "Fin"
+
+#~ msgid "Select backup"
+#~ msgstr "Sélectionner la sauvegarde"
+
+#~ msgid "Backup Overview"
+#~ msgstr "Aperçu de la sauvegarde"
+
+#~ msgid "Clear"
+#~ msgstr "Effacer"
+
+#~ msgid "Do you want to remove these elements from restore list?"
+#~ msgstr "Désirez-vous retirer ces éléments de la liste de restauration ?"
+
+#~ msgid "Really clear?"
+#~ msgstr "Êtes-vous certain de vouloir effacer ?"
+
+#~ msgid "Store"
+#~ msgstr "Stocker"
+
+#~ msgid "Backup time"
+#~ msgstr "Heure de la sauvegarde"
+
+#~ msgid "Settings"
+#~ msgstr "Paramètres"
+
+#~ msgid "Global settings"
+#~ msgstr "Paramètres globaux"
+
+#~ msgid "Full backup"
+#~ msgstr "Sauvegarde complète"
+
+#~ msgid "Differential backup"
+#~ msgstr "Sauvegarde différentielle"
+
+#~ msgid "at"
+#~ msgstr "à"
+
+#~ msgid "Backup directory"
+#~ msgstr "Dossier de sauvegarde"
+
+#~ msgid "Remove"
+#~ msgstr "Supprimer"
+
+#~ msgid "Preserve fullbackup (in days)"
+#~ msgstr "Conserver une sauvegarde complète (en jours)"
+
+#~ msgid "Removing directory"
+#~ msgstr "Suppression de répertoire"
+
+#~ msgid "Click on \"restore\" to restore the selected messages."
+#~ msgstr "Cliquer sur \"Restaurer\" afin de restaurer les messages sélectionnés."
+
+#~ msgid "No backup available"
+#~ msgstr "Aucune sauvegarde disponible"
+
+#~ msgid "Zarafa Backup"
+#~ msgstr "Sauvegarde Zarafa"
+
+#~ msgid "Zarafa Backup is not installed"
+#~ msgstr "Le gestionnaire de sauvegarde Zarafa n'est pas installé"
+
+#~ msgid "Time not correct."
+#~ msgstr "L'heure est incorrecte."
+
+#~ msgid "Preserve time not set or not correct."
+#~ msgstr "L'heure de conservation n'es pas définie ou est incorrecte."
+
+#~ msgid "Could not open file."
+#~ msgstr "Impossible d'ouvrir le fichier."
+
+#~ msgid "Could not find a full backup."
+#~ msgstr "Impossible de trouver une sauvegarde complète."
+
+#~ msgid "Could not create directory."
+#~ msgstr "Impossible de créer le répertoire."
+
+#~ msgid "Value for backup days incorrect."
+#~ msgstr "Valeur invalide pour les dates de sauvegarde"
+
+#~ msgid "Could not open directory."
+#~ msgstr "Impossible d'ouvrir le répertoire."
+
+#~ msgid "In which directory should the backups be stored?"
+#~ msgstr "Dans quel répertoire les sauvegardes devront-elles être stockées ?"
+
+#~ msgid "How long should each backup be preserved?"
+#~ msgstr "Combien de temps chaque sauvegarde devra-elle être conservée ?"
+
+#~ msgid "Manage resources"
+#~ msgstr "Gestion des ressources"
+
+#~ msgid "Resource"
+#~ msgstr "Ressource"
+
+#~ msgid "Description"
+#~ msgstr "Description"
+
+#~ msgid "Email"
+#~ msgstr "Courriel"
+
+#~ msgid "Decline conflicts"
+#~ msgstr "Décliner les conflits"
+
+#~ msgid "Decline recurrent meetings"
+#~ msgstr "Décliner les réunions récurrentes"
+
+#~ msgid "New resource"
+#~ msgstr "Nouvelle ressource"
+
+#~ msgid "Modify resource"
+#~ msgstr "Modifier une ressource"
+
+#~ msgid "Delete resource"
+#~ msgstr "Supprimer une ressource"
+
+#~ msgid "Do you really want to delete these resources?"
+#~ msgstr "Désirez-vous vraiment supprimer ces ressources ?"
+
+#~ msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
+#~ msgstr "Ne pas oublier d'attribuer les autorisations adéquates aux utilisateurs devant utiliser cette ressource dans les paramètres d'agenda de cette ressource."
+
+#~ msgid "The name of the resource contains illegal characters."
+#~ msgstr "Le nom de cette ressource contient des caractères invalides."
+
+#~ msgid "The name of the resource is taken from a special user."
+#~ msgstr "Le nom de cette ressource provient d'un utilisateur spécial."
+
+#~ msgid "The description of the resource contains illegal characters."
+#~ msgstr "La description de cette ressource contient des caractères invalides."
+
+#~ msgid "No e-mail address specified."
+#~ msgstr "Aucun courriel n'a été spécifié."
+
+#~ msgid "You cannot use localhost as domain-part."
+#~ msgstr "Vous ne pouvez pas utiliser l'hôte local comme partie de domaine."
+
+#~ msgid "The domain is not defined as local domain in your mailserver configuration."
+#~ msgstr "Le domaine n'est pas défini comme domaine local dans la configuration de votre serveur de courriel."
+
+#~ msgid "Local-part of e-mail address must be identical with name."
+#~ msgstr "La partie locale de l'adresse électronique doit être identique au nom."
+
+#~ msgid "The e-mail address is not valid."
+#~ msgstr "L'adresse électronique est invalide."
+
+#~ msgid "The name of the resource is taken from a user."
+#~ msgstr "Le nom de la ressource provient d'un utilisateur."
+
+#~ msgid "The name of the resource is taken from a user's alias."
+#~ msgstr "Le nom de la ressource provient de l'alias d'un utilisateur."
+
+#~ msgid "The given resource doesn't exist."
+#~ msgstr "La ressource demandée n'existe pas."
+
+#~ msgid "No local mail domains configured."
+#~ msgstr "Aucun domaine local de courriel n'a été configuré."
+
+#~ msgid "This name will be shown in the global address book."
+#~ msgstr "Ce nom sera affiché dans le carnet d'adresse global."
+
+#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
+#~ msgstr "Il peut être judicieux d'ajouter une description si le nom de la ressource n'est pas explicatif."
+
+#~ msgid "Check this box and the resource can only be booked once."
+#~ msgstr "Cocher cette case afin que la ressource ne puisse être réservée qu'une seule fois."
+
+#~ msgid "Check this box to disable recurring appointments for this resource."
+#~ msgstr "Cocher cette case afin que de désactiver les utilisations récurrentes de cette ressource."
+
+#~ msgid "Admin password"
+#~ msgstr "Mot de passe administrateur"
+
+#~ msgid "Admin password (repeat)"
+#~ msgstr "Mot de passe administrateur (à nouveau)"
+
+#~ msgid "MySQL database"
+#~ msgstr "Base de données MySQL"
+
+#~ msgid "MySQL server"
+#~ msgstr "Serveur MySQL"
+
+#~ msgid "MySQL username"
+#~ msgstr "Nom d'utilisateur MySQL"
+
+#~ msgid "MySQL password"
+#~ msgstr "mot de passe MySQL"
+
+#~ msgid "Setup finished"
+#~ msgstr "Configuration achevée"
+
+#~ msgid "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr "La configuration s'est achevée avec succès. Vous pourrez utiliser toutes les fonctionnalités lors de votre prochaine connexion."
+
+#~ msgid "Zarafa settings"
+#~ msgstr "Paramètres Zarafa"
+
+#~ msgid "Basic settings"
+#~ msgstr "Paramètres de base"
+
+#~ msgid "The admin password is empty or does not match."
+#~ msgstr "Le mot de passe de l'administrateur est vide ou ne correspond pas."
+
+#~ msgid "Change Language"
+#~ msgstr "Changer la langue"
+
+#~ msgid "Choose Language"
+#~ msgstr "Sélectionner la langue"
+
+#~ msgid "German"
+#~ msgstr "Allemand"
+
+#~ msgid "English"
+#~ msgstr "Anglais"
+
+#~ msgid "Language not found!"
+#~ msgstr "Impossible de trouver la langue !"
+
+#~ msgid "Apply"
+#~ msgstr "Appliquer"
+
+#~ msgid "Edit"
+#~ msgstr "Édition"
+
+#~ msgid "Delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "Add"
+#~ msgstr "Ajouter"
+
+#~ msgid "Activate"
+#~ msgstr "Activer"
+
+#~ msgid "Deactivate"
+#~ msgstr "Désactiver"
+
+#~ msgid "Update"
+#~ msgstr "Actualiser"
+
+#~ msgid "Delete entry"
+#~ msgstr "Supprimer la saisie"
+
+#~ msgid "Do you really want to delete this entry?"
+#~ msgstr "Désirez-vous vraiment supprimer cette saisie ?"
+
+#~ msgid "Do you really want to disable this service?"
+#~ msgstr "Désirez-vous vraiment désactiver ce service ?"
+
+#~ msgid "Do you really want to enable this service?"
+#~ msgstr "Désirez-vous vraiment activer ce service ?"
+
+#~ msgid "Policy"
+#~ msgstr "Règle"
+
+#~ msgid "Enable policy"
+#~ msgstr "Activer le règle"
+
+#~ msgid "Disable policy"
+#~ msgstr "Désactiver la règle"
+
+#~ msgid "DNSBL"
+#~ msgstr "DNSBL"
+
+#~ msgid "RHSBL"
+#~ msgstr "RHSBL"
+
+#~ msgid "Hostname"
+#~ msgstr "Nom d'hôte"
+
+#~ msgid "Hit score"
+#~ msgstr "Taux de réussite"
+
+#~ msgid "Miss score"
+#~ msgstr "Taux d'échec"
+
+#~ msgid "Log name"
+#~ msgstr "Identifiant de connexion"
+
+#~ msgid "ClamAV"
+#~ msgstr "ClamAV"
+
+#~ msgid "Activate clamav"
+#~ msgstr "Activer clamav"
+
+#~ msgid "Deactivate clamav"
+#~ msgstr "Désactiver clamav"
+
+#~ msgid "Scan archives"
+#~ msgstr "Scanner les archives"
+
+#~ msgid "Virus alert email"
+#~ msgstr "Courriel d'alerte Virus"
+
+#~ msgid "Maximum size of scannable objects in MB"
+#~ msgstr "Taille maximale en Mo des éléments pouvant être scannés."
+
+#~ msgid "Update the ClamAV signatures"
+#~ msgstr "Mettre à jour les signatures ClamAV"
+
+#~ msgid "Configure clamav"
+#~ msgstr "Configurer clamav"
+
+#~ msgid "Spamassassin"
+#~ msgstr "Spamassassin"
+
+#~ msgid "Configure Spamassassin"
+#~ msgstr "Configurer Spamassassin"
+
+#~ msgid "Activate spamassassin"
+#~ msgstr "Activer Spamassassin"
+
+#~ msgid "Deactivate spamassassin"
+#~ msgstr "Désactiver Spamassassin"
+
+#~ msgid "Update the Spamassassin filters"
+#~ msgstr "Mettre à jour les filtres Spamassassin"
+
+#~ msgid "Network"
+#~ msgstr "Réseau"
+
+#~ msgid "Internal networks"
+#~ msgstr "Réseaux internes"
+
+#~ msgid "Trusted networks"
+#~ msgstr "Réseaux de confiance"
+
+#~ msgid "Add spam detected headers at level"
+#~ msgstr "Ajouter 'spam detected' dans les entêtes à partir du niveau"
+
+#~ msgid "Whitelisting"
+#~ msgstr "Liste blanche"
+
+#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr "Tous les hôtes et les adresses contenus dans cette liste ne seront pas inspectés pour spam ou virus."
+
+#~ msgid "Address"
+#~ msgstr "Adresse"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Source"
+#~ msgstr "Source"
+
+#~ msgid "Entry"
+#~ msgstr "Saisie"
+
+#~ msgid "Invalid e-mail address"
+#~ msgstr "Adresse électronique invalide"
+
+#~ msgid "This value defines at which score mails are handled as spam."
+#~ msgstr "Cette valeur défini le niveau à partir duquel les courriels sont considérés comme spam."
+
+#~ msgid "Define a host or network by its IP address or CIDR."
+#~ msgstr "Définir un hôte ou un réseau par son adresse IP ou CIDR."
+
+#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
+#~ msgstr "ClamAV scannera uniquement les objets qui ne dépassent pas la taille indiquée. Les objets plus larges ne seront PAS scannés."
+
+#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
+#~ msgstr "Si ClamAV détecte un objet suspect, un courriel sera envoyé à l'adresse indiquée."
+
+#~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
+#~ msgstr "Permettre l'inspection des archives de type RAR, ZIP, GZ..."
+
+#~ msgid "Create"
+#~ msgstr "Créer"
+
+#~ msgid "Create group"
+#~ msgstr "Créer un groupe"
+
+#~ msgid "Delete group(s)"
+#~ msgstr "Supprimer le(s) groupe(s)"
+
+#~ msgid "Edit group(s)"
+#~ msgstr "Modifier le(s) groupe(s)"
+
+#~ msgid "Create group(s)"
+#~ msgstr "Créer le(s) groupe(s)"
+
+#~ msgid "Modify user"
+#~ msgstr "Modifier un utilisateur"
+
+#~ msgid "Groupadministration"
+#~ msgstr "Administration des groupes"
+
+#~ msgid "Groupname"
+#~ msgstr "Nom de groupe"
+
+#~ msgid "Groups"
+#~ msgstr "Groupes"
+
+#~ msgid "User"
+#~ msgstr "Utilisateur"
+
+#~ msgid "Filetype"
+#~ msgstr "Type de fichier"
+
+#~ msgid "Set Filetype"
+#~ msgstr "Définir le type de fichier"
+
+#~ msgid "Creating cache"
+#~ msgstr "Création d'un cache"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
+
+#~ msgid "Authentification"
+#~ msgstr "Authentification"
+
+#~ msgid "Allow send as for"
+#~ msgstr "Permettre 'Envoyer en tant que' pour"
+
+#~ msgid "All input fields has to be filled!"
+#~ msgstr "Tous les champs de saisie doivent être remplis !"
+
+#~ msgid "Creation of groups failed!"
+#~ msgstr "Échec le la création des groupes !"
+
+#~ msgid "Deletion of groups failed!"
+#~ msgstr "Échec le la suppression des groupes !"
+
+#~ msgid "Group doesn't exist!"
+#~ msgstr "Le groupe n'existe pas !"
+
+#~ msgid "Group exists already!"
+#~ msgstr "Le groupe existe déjà !"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
+
+#~ msgid "Wrong mode!"
+#~ msgstr "Mode inapproprié !"
+
+#~ msgid "No group selected!"
+#~ msgstr "Aucun groupe sélectionné !"
+
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+
+#~ msgid "Base Configuration"
+#~ msgstr "Configuration de base"
+
+#~ msgid "Mail server name"
+#~ msgstr "Nom du serveur de courrier"
+
+#~ msgid "Unknown recipient"
+#~ msgstr "Destinataire inconnu"
+
+#~ msgid "Refuse Mail"
+#~ msgstr "Refuser le courriel"
+
+#~ msgid "Delete Mail"
+#~ msgstr "Supprimer le courriel"
+
+#~ msgid "Send to mailadmin"
+#~ msgstr "Envoyer à l'administrateur de courrier"
+
+#~ msgid "Mail administrator"
+#~ msgstr "Administrateur de courrier"
+
+#~ msgid "Mail domain"
+#~ msgstr "Domaine de courrier"
+
+#~ msgid "IP"
+#~ msgstr "IP"
+
+#~ msgid "Smarthost"
+#~ msgstr "Smarthost"
+
+#~ msgid "Smarthost server"
+#~ msgstr "Serveur smarthost"
+
+#~ msgid "Do you really want to delete these entries?"
+#~ msgstr "Désirez-vous vraiment supprimer ces données ?"
+
+#~ msgid "Local Domains"
+#~ msgstr "Domaines locaux"
+
+#~ msgid "Open Relay Subnets"
+#~ msgstr "Sous-réseau de relais ouvert"
+
+#~ msgid "Mailserv"
+#~ msgstr "Mailserv"
+
+#~ msgid "Mailserver"
+#~ msgstr "Serveur de courrier"
+
+#~ msgid "Maximum mail size"
+#~ msgstr "Taille maximale du courriel"
+
+#~ msgid "E-Mail forwarding"
+#~ msgstr "Transfert du courriel"
+
+#~ msgid "Forward all e-mail"
+#~ msgstr "Transférer tout le courriel"
+
+#~ msgid "Rewrite local domain"
+#~ msgstr "Réécrire le domaine local"
+
+#~ msgid "Enable archival storage"
+#~ msgstr "Activer le stockage des archives"
+
+#~ msgid "Destination of archival storage"
+#~ msgstr "Destination du stockage des archives"
+
+#~ msgid "Archival Storage"
+#~ msgstr "Stockage des archives"
+
+#~ msgid "Zarafa administrator for delivery into public folders"
+#~ msgstr "Administrateur Zarafa en charge de la distribution vers les dossiers publics"
+
+#~ msgid "The destination have to be a local user or an e-mail address!"
+#~ msgstr "La destination doit être un utilisateur local ou une adresse électronique !"
+
+#~ msgid "You have to insert a valid domainname."
+#~ msgstr "Vous devez saisir un nom de domaine valide."
+
+#~ msgid "No Entries."
+#~ msgstr "Aucune saisie."
+
+#~ msgid "Smarthost not valid."
+#~ msgstr "Smarthost invalide."
+
+#~ msgid "Username not valid."
+#~ msgstr "Nom d'utilisateur invalide."
+
+#~ msgid "Maildomain not valid."
+#~ msgstr "Domaine de courrier invalide."
+
+#~ msgid "IP adress or IP range not valid."
+#~ msgstr "Adresse IP ou zone IP invalide."
+
+#~ msgid "Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+#~ msgstr "Erreur : Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins un caractère."
+
+#~ msgid "Mailadmin not valid."
+#~ msgstr "L'administrateur de courrier est invalide."
+
+#~ msgid "Mailserver not valid."
+#~ msgstr "Le serveur de courrier est invalide."
+
+#~ msgid "The mail size has to be a number."
+#~ msgstr "La taille du courrier doit être un nombre."
+
+#~ msgid "Invalid value for recipient verification"
+#~ msgstr "Valeur invalide pour la vérification du destinataire"
+
+#~ msgid "Zarafa is not installed."
+#~ msgstr "Zarafa n'est pas installé."
+
+#~ msgid "This user does not exists on this system."
+#~ msgstr "Cet utilisateur n'existe pas sur ce système."
+
+#~ msgid "No password given."
+#~ msgstr "Aucun mot de passe n'a été fourni."
+
+#~ msgid "This user is not an zarafa administrator."
+#~ msgstr "Cet utilisateur n'est pas un administrateur Zarafa."
+
+#~ msgid "The password is not correct."
+#~ msgstr "Le mot de passe n'est pas correct."
+
+#~ msgid "Antivirus"
+#~ msgstr "Antivirus"
+
+#~ msgid "Antispam"
+#~ msgstr "Antispam"
+
+#~ msgid "Greylist"
+#~ msgstr "Liste grise"
+
+#~ msgid "Quarantine"
+#~ msgstr "Quarantaine"
+
+#~ msgid "Mail Security"
+#~ msgstr "Sécurité du courriel"
+
+#~ msgid "MPP Policyserver"
+#~ msgstr "Serveur de règle MPP"
+
+#~ msgid "Enabled"
+#~ msgstr "Activé"
+
+#~ msgid "Disabled"
+#~ msgstr "Désactivé"
+
+#~ msgid "Status"
+#~ msgstr "État"
+
+#~ msgid "Service"
+#~ msgstr "Service"
+
+#~ msgid "Running"
+#~ msgstr "En cours d'exécution"
+
+#~ msgid "Stopped"
+#~ msgstr "À l'arrêt"
+
+#~ msgid "E-mail"
+#~ msgstr "Courriel"
+
+#~ msgid "Virus found notification"
+#~ msgstr "Notification de détection de Virus"
+
+#~ msgid "Disabled TLS/SSL"
+#~ msgstr "TLS/SSL désactivé"
+
+#~ msgid "Disable TLS/SSL to smarthost"
+#~ msgstr "Désactiver TLS/SSL vers le smarthost"
+
+#~ msgid "Disable TLS/SSL to mailclient"
+#~ msgstr "Désactiver TLS/SSL vers le client de courriel"
+
+#~ msgid "You submitted e-mail address is not correct!"
+#~ msgstr "Vous avez saisi une adresse électronique invalide !"
+
+#~ msgid "Your KAV key is expired or not valid!"
+#~ msgstr "Votre clé KAV est expirée ou invalide !"
+
+#~ msgid "You have to update your KAV before you activate this feature."
+#~ msgstr "Vous devez mettre à jour votre KAV avant d'activer cette fonctionnalité."
+
+#~ msgid "You have to update your KAS before you activate this feature."
+#~ msgstr "Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalité."
+
+#~ msgid "Please activate policy server in MPP interface first."
+#~ msgstr "Veuillez tout d'abord activer le serveur de règle dans l'interface MPP."
+
+#~ msgid "This name will be sent to remote SMTP servers for outgoing mails."
+#~ msgstr "Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants"
+
+#~ msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
+#~ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisser vide afin que le serveur gère les courriels sans aucune limite de taille."
+
+#~ msgid "System information"
+#~ msgstr "Information système"
+
+#~ msgid "About yaffas"
+#~ msgstr "À propos de yaffas"
+
+#~ msgid "Versions"
+#~ msgstr "Versions"
+
+#~ msgid "Version"
+#~ msgstr "Version"
+
+#~ msgid "Revision"
+#~ msgstr "Révision"
+
+#~ msgid "Product"
+#~ msgstr "Produit"
+
+#~ msgid "The information cannot be read!"
+#~ msgstr "Cette information ne peut pas être lue !"
+
+#~ msgid "Written by"
+#~ msgstr "Écrit par"
+
+#~ msgid "General information"
+#~ msgstr "Information générale"
+
+#~ msgid "on an"
+#~ msgstr "sur un"
+
+#~ msgid "Up-time of"
+#~ msgstr "Uptime de"
+
+#~ msgid "days"
+#~ msgstr "jours"
+
+#~ msgid "hours"
+#~ msgstr "heures"
+
+#~ msgid "minutes"
+#~ msgstr "minutes"
+
+#~ msgid "Load average"
+#~ msgstr "Utilisation moyenne"
+
+#~ msgid "CPU load"
+#~ msgstr "Utilisation CPU"
+
+#~ msgid "Overall load"
+#~ msgstr "Utilisation globale"
+
+#~ msgid "for the last minute"
+#~ msgstr "pour la dernière minute"
+
+#~ msgid "for the last 5 minutes"
+#~ msgstr "pour les 5 dernières minutes"
+
+#~ msgid "for the last 15 minutes"
+#~ msgstr "pour les 15 dernières minutes"
+
+#~ msgid "Memory usage"
+#~ msgstr "Utilisation de la mémoire"
+
+#~ msgid "Main memory"
+#~ msgstr "Mémoire principale"
+
+#~ msgid "Swap memory"
+#~ msgstr "Mémoire swap"
+
+#~ msgid "Total"
+#~ msgstr "Total"
+
+#~ msgid "Used"
+#~ msgstr "Utilisé"
+
+#~ msgid "Free"
+#~ msgstr "Libre"
+
+#~ msgid "Shared"
+#~ msgstr "Partagé"
+
+#~ msgid "Buffers"
+#~ msgstr "Tampons"
+
+#~ msgid "Cache"
+#~ msgstr "Cache"
+
+#~ msgid "Module"
+#~ msgstr "Module"
+
+#~ msgid "Referring modules"
+#~ msgstr "Modules de référence"
+
+#~ msgid "Modules currently in use"
+#~ msgstr "Modules en cours d'utilisation"
+
+#~ msgid "Available Memory"
+#~ msgstr "Mémoire disponible"
+
+#~ msgid "Usage Key:"
+#~ msgstr "Clé d'utilisation :"
+
+#~ msgid "In Use"
+#~ msgstr "Utilisé"
+
+#~ msgid "Buffer"
+#~ msgstr "Tampon"
+
+#~ msgid "IRQ usage"
+#~ msgstr "Utilisation IRQ"
+
+#~ msgid "Device"
+#~ msgstr "Périphérique"
+
+#~ msgid "IO usage"
+#~ msgstr "Utilisation IO"
+
+#~ msgid "Network statistics"
+#~ msgstr "Statistique réseau"
+
+#~ msgid "Interface"
+#~ msgstr "Interface"
+
+#~ msgid "Receive"
+#~ msgstr "Recevoir"
+
+#~ msgid "Sent"
+#~ msgstr "Envoyé"
+
+#~ msgid "Bytes"
+#~ msgstr "Octets"
+
+#~ msgid "Errors"
+#~ msgstr "Erreurs"
+
+#~ msgid "Dropped"
+#~ msgstr "Abandonné"
+
+#~ msgid "Overruns"
+#~ msgstr "Dépassements"
+
+#~ msgid "Frame"
+#~ msgstr "1.2.3. Trame  4. Cadre"
+
+#~ msgid "Carrier"
+#~ msgstr "Porteur"
+
+#~ msgid "Collisions"
+#~ msgstr "Collisions"
+
+#~ msgid "Active connections"
+#~ msgstr "Connexions active"
+
+#~ msgid "Protocol"
+#~ msgstr "Protocole"
+
+#~ msgid "Receive queue"
+#~ msgstr "Queue de réception"
+
+#~ msgid "Send queue"
+#~ msgstr "Queue d'envoi"
+
+#~ msgid "Local"
+#~ msgstr "Local"
+
+#~ msgid "Foreign"
+#~ msgstr "Extérieur"
+
+#~ msgid "Who's logged"
+#~ msgstr "Qui est connecté"
+
+#~ msgid "TTY"
+#~ msgstr "TTY"
+
+#~ msgid "From"
+#~ msgstr "De"
+
+#~ msgid "Login@"
+#~ msgstr "Login@"
+
+#~ msgid "Idle"
+#~ msgstr "Inactif"
+
+#~ msgid "Jcpu"
+#~ msgstr "Jcpu"
+
+#~ msgid "Pcpu"
+#~ msgstr "Pcpu"
+
+#~ msgid "Command"
+#~ msgstr "Commande"
+
+#~ msgid "Listening sockets"
+#~ msgstr "Sockets d'écoute"
+
+#~ msgid "Active sockets"
+#~ msgstr "Sockets actives"
+
+#~ msgid "Unix sockets"
+#~ msgstr "Sockets UNIX"
+
+#~ msgid "RefCnt"
+#~ msgstr "RefCnt"
+
+#~ msgid "Flags"
+#~ msgstr "Indicateurs"
+
+#~ msgid "I-node"
+#~ msgstr "I-node"
+
+#~ msgid "Path"
+#~ msgstr "Chemin"
+
+#~ msgid "File system statistics"
+#~ msgstr "Statistique système de fichier"
+
+#~ msgid "Mounted file system"
+#~ msgstr "Système de fichier monté"
+
+#~ msgid "Directory"
+#~ msgstr "Répertoire"
+
+#~ msgid "File system"
+#~ msgstr "Système de fichier"
+
+#~ msgid "Mode"
+#~ msgstr "Mode"
+
+#~ msgid "File system information"
+#~ msgstr "Information système de fichier"
+
+#~ msgid "Available"
+#~ msgstr "Disponible"
+
+#~ msgid "Used%"
+#~ msgstr "Utilisé%"
+
+#~ msgid "Mounted on"
+#~ msgstr "Mounté sur"
+
+#~ msgid "Time"
+#~ msgstr "Heure"
+
+#~ msgid "Value"
+#~ msgstr "Valeur"
+
+#~ msgid "Memory type"
+#~ msgstr "Type de mémoire"
+
+#~ msgid "Access for"
+#~ msgstr "Accès pour"
+
+#~ msgid "Community (Password)"
+#~ msgstr "Communauté (Mot de passe)"
+
+#~ msgid "Enable SNMP"
+#~ msgstr "Activer SNMP"
+
+#~ msgid "SNMP Configuration"
+#~ msgstr "Configuration SNMP"
+
+#~ msgid "The access can only be set for IP-Addresses or networks."
+#~ msgstr "L'accès ne peut être configuré que pour des adresses IP ou des réseaux"
+
+#~ msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
+#~ msgstr "La suite de caractère  communautaire ne peut contenir que des chiffres (0-9) et des lettres (a-z, A-Z)."
+
+#~ msgid "Password for the SNMP access."
+#~ msgstr "Mot de passe pour l'accès SNMP."
+
+#~ msgid "Enter a single IP address or a network in form of a CIDR ressource. Enter \"default\" to allow access only from the local machine."
+#~ msgstr "Saisir une seule adresse IP ou un réseau sous la forme d'une ressource CIDR. Saisir \"default\" afin de permettre l'accès uniquement à partir de la machine locale."
+
+#~ msgid "Support"
+#~ msgstr "Support technique"
+
+#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
+#~ msgstr "Cliquer sur le bouton de téléchargement et envoyer le ficher au support bitbone si vous rencontrez un problème quelconque avec votre serveur yaffas."
+
+#~ msgid "Download"
+#~ msgstr "Téléchargement"
+
+#~ msgid "Please press download to get the available system and hardware informations."
+#~ msgstr "Veuillez cliquer sur Téléchargement afin d'obtenir des informations sur le matériel et le système disponible."
+
+#~ msgid "Hardware List"
+#~ msgstr "Liste de matériel"
+
+#~ msgid "Your system doesn't have the needed programm \"lshw\" installed."
+#~ msgstr "Votre système ne dispose pas du programme \"lshw\" qui doit être installé."
+
+#~ msgid "Your system doesn't have the needed programm \"lspci\" installed."
+#~ msgstr "Votre système ne dispose pas du programme \"lspci qui doit être installé."
+
+#~ msgid "An error occured while executing \"pspci\"."
+#~ msgstr "Une erreur s'est produite lors de l'exécution de \"pspci\"."
+
+#~ msgid "An error occured while executing \"lshw\"."
+#~ msgstr "Une erreur s'est produite lors de l'exécution de \"lshw\"."
+
+#~ msgid "Address for System Messages"
+#~ msgstr "Adresse pour les message système"
+
+#~ msgid "Notification"
+#~ msgstr "Notification"
+
+#~ msgid "Send e-mail"
+#~ msgstr "Envoyer un courriel"
+
+#~ msgid "Always"
+#~ msgstr "Toujours"
+
+#~ msgid "Critical errors"
+#~ msgstr "Erreur critique"
+
+#~ msgid "Test your e-mail address"
+#~ msgstr "Vérifier votre adresse électronique"
+
+#~ msgid "Click the button below to send a mail to your previously set e-mail address."
+#~ msgstr "Cliquer sur le bouton ci-dessous afin d'envoyer un courriel à l'adresse électronique que vous venez de définir."
+
+#~ msgid "Test"
+#~ msgstr "Vérifier"
+
+#~ msgid "This is not a valid mail address"
+#~ msgstr "Ceci n'est pas une adresse électronique valide"
+
+#~ msgid "Can not modify configuration entry."
+#~ msgstr "Impossible de modifier le paramétrage."
+
+#~ msgid "Error writing configuration file."
+#~ msgstr "Une erreur s'est produite lors de l'enregistrement du fichier de configuration."
+
+#~ msgid "Type can only be: always, errors or never."
+#~ msgstr "Le type ne peut être que : toujours, erreurs ou jamais."
+
+#~ msgid "Line not found in configuration file."
+#~ msgstr "Impossible de trouver la ligne dans le fichier de configuration."
+
+#~ msgid "Please set an e-mail address first."
+#~ msgstr "Veuillez tout d'abord renseigner l'adresse électronique."
+
+#~ msgid "Could not send a mail to your address."
+#~ msgstr "Impossible d'envoyer un courriel à votre adresse."
+
+#~ msgid "An e-mail has been sent to your given address. Please check your mailbox."
+#~ msgstr "Un courriel a été envoyé à l'adresse indiquée. Veuillez vérifier votre boîte aux lettres."
+
+#~ msgid "Successfully set adress for system messages."
+#~ msgstr "L'adresse pour les messages système a été configurée avec succès."
+
+#~ msgid "Test - yaffas notify"
+#~ msgstr "Vérification - notification yaffas"
+
+#~ msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
+#~ msgstr "Ce courriel a été envoyé afin de vérifier l'accessibilité de l'adresse électronique que vous avez indiquée Si vous avez bien reçu ce courriel, vous serez ensuite tenu informé de toute erreur venant à se produire."
+
+#~ msgid "E-mail address test"
+#~ msgstr "Vérifier l'adresse électronique"
+
+#~ msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
+#~ msgstr "Ce courriel est utilisé pour vérifier l'accessibilité de l'adresse des administrateurs. À partir du moment où vous avez reçu ce courrier, vous recevrez ensuite à la même adresse la notification de toute erreur venant à se produire."
+
+#~ msgid "Have fun with yaffas"
+#~ msgstr "Nous espérons que yaffas saura vous satisfaire."
+
+#~ msgid "Enter a valid email address to receive notifications about the status of the system."
+#~ msgstr "Saisir une adresse électronique valide afin de recevoir des notifications à propos de l'état du système."
+
+#~ msgid "Country (2 letter code)"
+#~ msgstr "Pays (code à 2 lettres)"
+
+#~ msgid "Common Name (e.g. host.name.de)"
+#~ msgstr "Nom commun (p. ex.. nom.hote.fr)"
+
+#~ msgid "Country not correct."
+#~ msgstr "Le pays est invalide."
+
+#~ msgid "Common Name not correct or not set."
+#~ msgstr "Le nom commun est invalide ou n'a pas été défini."
+
+#~ msgid "Days are not correct."
+#~ msgstr "La date est invalide."
+
+#~ msgid "E-mail Adress not correct."
+#~ msgstr "L'adresse électronique est invalide."
+
+#~ msgid "Generation not successful"
+#~ msgstr "L'opération a échoué"
+
+#~ msgid "Locality not correct"
+#~ msgstr "La localité est invalide"
+
+#~ msgid "Organization Name not correct."
+#~ msgstr "Le nom de l'organisation est invalide."
+
+#~ msgid "Organization Unit not correct."
+#~ msgstr "L'unité organisationnelle est invalide"
+
+#~ msgid "Please select A service."
+#~ msgstr "Veuillez sélectionner un service."
+
+#~ msgid "State or province not correct."
+#~ msgstr "État ou province invalide"
+
+#~ msgid "Parameters not correct."
+#~ msgstr "Paramètres invalides"
+
+#~ msgid "Certificate not valid."
+#~ msgstr "Certificat invalide"
+
+#~ msgid "Fork failed"
+#~ msgstr "Échec du processus de fork"
+
+#~ msgid "Certificate wasn't created."
+#~ msgstr "Le certificat n'as pas été créé."
+
+#~ msgid "No certificate selected."
+#~ msgstr "Aucun certificat sélectionné."
+
+#~ msgid "E-mail address (e.g. webmaster@company.com)"
+#~ msgstr "Adresse électronique (p. ex.. webmestre@compagnie.fr)"
+
+#~ msgid "Certificate valid for (days)"
+#~ msgstr "Le certificat est valide pour (jours)"
+
+#~ msgid "Generate key"
+#~ msgstr "Générer une clé"
+
+#~ msgid "Generate Self Signed Certificate and Key"
+#~ msgstr "Générer un certificat auto-signé et une clé"
+
+#~ msgid "Generate Certificate & Key"
+#~ msgstr "Générer certificat et clé"
+
+#~ msgid "Symlink Error"
+#~ msgstr "Erreur de lien symbolique"
+
+#~ msgid "Certificate:"
+#~ msgstr "Certificat :"
+
+#~ msgid "Service:"
+#~ msgstr "Service :"
+
+#~ msgid "Upload Certificate"
+#~ msgstr "Télécharger un certificat"
+
+#~ msgid "Upload certificate"
+#~ msgstr "Télécharger un certificat"
+
+#~ msgid "Import Certificate"
+#~ msgstr "Importer un certificat"
+
+#~ msgid "Delete Certificate"
+#~ msgstr "Supprimer un certificat"
+
+#~ msgid "Should this Certificate really be deleted?"
+#~ msgstr "Désirez-vous vraiment supprimer ce certificat ?"
+
+#~ msgid "The Certificate was imported successfully!"
+#~ msgstr "Le certificat a été importé avec succès !"
+
+#~ msgid "An error occured during importing! Please check your certificate file."
+#~ msgstr "Une erreur s'est produite lors de l'importation ! Veuillez vérifier le fichier de votre certificat."
+
+#~ msgid "Certificate / Key Management"
+#~ msgstr "Gestion Certificat / Clé"
+
+#~ msgid "Import Key or Signed Certificate"
+#~ msgstr "Importer une clé ou un certificat signé"
+
+#~ msgid "Manage/View Installed Certificates and Keys"
+#~ msgstr "Gérer/Afficher les certificats et les clés installés"
+
+#~ msgid "Certificate Manager"
+#~ msgstr "Gestionnaire de certificat"
+
+#~ msgid "Keysize (in bits)"
+#~ msgstr "Taille de la clé (in octets)"
+
+#~ msgid "Locality (e.g. city)"
+#~ msgstr "Localité (p. ex. ville)"
+
+#~ msgid "Organization Name (e.g. company)"
+#~ msgstr "Nom Organisation (p. ex. compagnie)"
+
+#~ msgid "Organization Unit Name (e.g. division)"
+#~ msgstr "Nom Unité Organisationnelle (p. ex. division)"
+
+#~ msgid "State or province (full name)"
+#~ msgstr "État ou province (nom complet)"
+
+#~ msgid "Begin Date"
+#~ msgstr "Date de début"
+
+#~ msgid "File deleted sucessfully"
+#~ msgstr "Fichier supprimé avec succès"
+
+#~ msgid "Name"
+#~ msgstr "Nom"
+
+#~ msgid "Expires on"
+#~ msgstr "Expire le"
+
+#~ msgid "Certificate not valid!"
+#~ msgstr "Certificat invalide !"
+
+#~ msgid "Manage Installed Certificates"
+#~ msgstr "Gérer les certificats installés"
+
+#~ msgid "The services are going to be restarted!"
+#~ msgstr "Les services vont être redémarrés !"
+
+#~ msgid "yes"
+#~ msgstr "oui"
+
+#~ msgid "no"
+#~ msgstr "non"
+
+#~ msgid "Success"
+#~ msgstr "Succès"
+
+#~ msgid "Email Queue"
+#~ msgstr "Queue de courriel"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Recipient"
+#~ msgstr "Destinataire"
+
+#~ msgid "Attempt to deliver"
+#~ msgstr "Tentative de distribution"
+
+#~ msgid "Delete emails"
+#~ msgstr "Supprimer des courriels"
+
+#~ msgid "Forward to postmaster"
+#~ msgstr "Transférer à l'administrateur de courrier"
+
+#~ msgid "Forward to special user"
+#~ msgstr "Transférer à l'utilisateur spécial"
+
+#~ msgid "OK"
+#~ msgstr "Confirmer"
+
+#~ msgid "All"
+#~ msgstr "Tous"
+
+#~ msgid "None"
+#~ msgstr "Aucun"
+
+#~ msgid "Emails"
+#~ msgstr "Courriels"
+
+#~ msgid "Email address"
+#~ msgstr "Adresse électronique"
+
+#~ msgid "Mail ID"
+#~ msgstr "ID du courriel"
+
+#~ msgid "forward to"
+#~ msgstr "transférer à"
+
+#~ msgid "Really remove the emails with this mail ids?"
+#~ msgstr "Désirez-vous vraiment supprimer les courriels comportant cette ID ?"
+
+#~ msgid "No emails selected."
+#~ msgstr "Aucun courriel sélectionné."
+
+#~ msgid "No mail IDs selected"
+#~ msgstr "Aucune ID de courriel sélectionnée"
+
+#~ msgid "Error marking email addresses as delivered"
+#~ msgstr "Une erreur s'est produite lorsque le courriel a été marqué comme étant distribué"
+
+#~ msgid "Error while adding new recipient to the mailid"
+#~ msgstr "Une erreur s'est produite lors de l'ajout d'un nouveau destinataire au courriel"
+
+#~ msgid "Error while force a delivery"
+#~ msgstr "Une erreur s'est produite en forçant la distribution"
+
+#~ msgid "Error removing email"
+#~ msgstr "Une erreur s'est produite lors de la suppression du courriel"
+
+#~ msgid "Error at dequeue attempt for email"
+#~ msgstr "Une erreur s'est produite lors de la tentative de suppression du courriel de la queue"
+
+#~ msgid "No valid email address"
+#~ msgstr "Aucune adresse électronique valide"
+
+#~ msgid "Display"
+#~ msgstr "1. Affichage (n) 2. Afficher (v)"
+
+#~ msgid "Query"
+#~ msgstr "Requête"
+
+#~ msgid "Server to poll"
+#~ msgstr "Interrogation du serveur"
+
+#~ msgid "Active?"
+#~ msgstr "Actif ?"
+
+#~ msgid "Remote and local users"
+#~ msgstr "Utilisateur distants et locaux"
+
+#~ msgid "Add a new server"
+#~ msgstr "Ajouter un nouvel utilisateur"
+
+#~ msgid "Check all servers"
+#~ msgstr "Vérifier tous les serveurs"
+
+#~ msgid "Edit default settings"
+#~ msgstr "Modifier les paramètres par défaut"
+
+#~ msgid "Unix user"
+#~ msgstr "Utilisateur Unix"
+
+#~ msgid "Fetchmail configuration"
+#~ msgstr "Configuration Fetchmail"
+
+#~ msgid "Add Fetchmail server for user:"
+#~ msgstr "Ajouter le serveur Fetchmail pour l'utilisateur :"
+
+#~ msgid "Fetchmail configuration in $1"
+#~ msgstr "Configuration Fetchmail dans $1"
+
+#~ msgid "server list"
+#~ msgstr "Liste serveur"
+
+#~ msgid "Start Fetchmail Daemon"
+#~ msgstr "Démarrer le daemon Fetchmail"
+
+#~ msgid "Stop Fetchmail Daemon"
+#~ msgstr "Arrêter le daemon Fetchmail"
+
+#~ msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
+#~ msgstr "Cliquer sur ce bouton pour démarrer le daemon Fetchmail sur ce serveur, afin qu'il vérifie le courrier toutes les $1 secondes. Ce daemon sera exécuté en tant que l'utilisateur $2 et utilisera la configuration ci-dessus."
+
+#~ msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
+#~ msgstr "Cliquer sur ce bouton pour arrêter le daemon Fetchmail présentement exécuté en tant que l'utilisateur $1. Le courriel ne sera plus automatiquement téléchargé toutes les $2 secondes."
+
+#~ msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
+#~ msgstr "Impossible de trouver le programme Fetchmail $1. Il se peut que Fetchmail ne soit pas installé sur votre système, ou bien que le <a href='$2'>configuration du module</a> soit incorrecte."
+
+#~ msgid "No Unix users have <tt>.fetchmailrc</tt> files."
+#~ msgstr "Aucun utilisateur Unix ne possède de fichiers <tt>.fetchmailrc</tt>."
+
+#~ msgid "Scheduled Checking"
+#~ msgstr "Vérification régulière"
+
+#~ msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
+#~ msgstr "Cliquer sur ce bouton pour créer, modifier ou supprimer une tâche cron permettant à Fetchmail de s'exécuter automatiquement et régulièrement pour vérifier et télécharger le courriel à l'aide de la configuration ci-dessus."
+
+#~ msgid "Fetchmail version $1"
+#~ msgstr "Fetchmail version $1"
+
+#~ msgid "Add query"
+#~ msgstr "Ajouter une requête"
+
+#~ msgid "Edit query"
+#~ msgstr "Modifier une requête"
+
+#~ msgid "Server name"
+#~ msgstr "Nom du serveur"
+
+#~ msgid "Polling enabled?"
+#~ msgstr "Vérification activée ?"
+
+#~ msgid "Mail server to contact"
+#~ msgstr "Serveur de courrier devant être contacté"
+
+#~ msgid "Same as server name"
+#~ msgstr "Identique au nom de serveur"
+
+#~ msgid "Server port"
+#~ msgstr "Port du serveur"
+
+#~ msgid "Mail server user details"
+#~ msgstr "Données de l'utilisateur du serveur de courrier"
+
+#~ msgid "Remote user"
+#~ msgstr "Utilisateur distant"
+
+#~ msgid "Remote password"
+#~ msgstr "Mot de passe distant"
+
+#~ msgid "Local user(s)"
+#~ msgstr "Utilisateur(s) local/locaux"
+
+#~ msgid "Local user(s) or e-mail adresses"
+#~ msgstr "Utilisateur(s) local/locaux ou adresses électroniques"
+
+#~ msgid "Leave messages on server?"
+#~ msgstr "Laisser les messages sur le serveur ?"
+
+#~ msgid "Always fetch all messages?"
+#~ msgstr "Toujours récupérer tous les messages?"
+
+#~ msgid "Usually no"
+#~ msgstr "Généralement non"
+
+#~ msgid "Connect in SSL mode?"
+#~ msgstr "Connexion en mode SSL ?"
+
+#~ msgid "Failed to save server"
+#~ msgstr "Impossible d'enregistrer le serveur"
+
+#~ msgid "Missing or invalid server name"
+#~ msgstr "Nom du serveur manquant ou invalide"
+
+#~ msgid "Invalid mail server name"
+#~ msgstr "Nom du serveur de courrier invalide"
+
+#~ msgid "Missing or invalid port number"
+#~ msgstr "Numéro de port manquant ou invalide"
+
+#~ msgid "Missing or invalid remote user name"
+#~ msgstr "nom d'utilisateur manquant ou invalide"
+
+#~ msgid "Add another user"
+#~ msgstr "Ajouter un autre utilisateur"
+
+#~ msgid "Check this server"
+#~ msgstr "Vérifier ce serveur"
+
+#~ msgid "Check condition"
+#~ msgstr "Vérifier condition"
+
+#~ msgid "Always check"
+#~ msgstr "Toujours vérifier"
+
+#~ msgid "Only if interface is up"
+#~ msgstr "Seulement si l'interface est ouverte"
+
+#~ msgid "with address / netmask"
+#~ msgstr "avec adresse / masque réseau"
+
+#~ msgid "Missing or invalid network interface"
+#~ msgstr "Interface réseau manquante ou invalide"
+
+#~ msgid "Missing or invalid address"
+#~ msgstr "adresse manquante ou invalide"
+
+#~ msgid "Invalid address netmask"
+#~ msgstr "Adresse masque réseau invalide"
+
+#~ msgid "Command to run before connecting"
+#~ msgstr "Commande devant être exécutée avant la connexion"
+
+#~ msgid "Command to run after disconnecting"
+#~ msgstr "Commande devant être exécutée après la connexion"
+
+#~ msgid "You are not allowed to edit this user's fetchmail config"
+#~ msgstr "Vous n'êtes pas autorisé à modifier la configuration Fetchmail de cet utilisateur"
+
+#~ msgid "Only users' fetchmail config files can be edited"
+#~ msgstr "Seuls les fichiers de configuration Fetchmail des utilisateurs peuvent être modifiés"
+
+#~ msgid "Poll interval"
+#~ msgstr "Intervalle de vérification"
+
+#~ msgid "Envelope"
+#~ msgstr "Enveloppe"
+
+#~ msgid "Failed to stop fetchmail"
+#~ msgstr "Impossible d'arrêter Fetchmail"
+
+#~ msgid "You are not allowed to stop fetchmail"
+#~ msgstr "Vous n'êtes pas autorisés à arrêter Fetchmail"
+
+#~ msgid "Failed to start fetchmail"
+#~ msgstr "Impossible d'arrêter Fetchmail"
+
+#~ msgid "Missing or invalid checking interval"
+#~ msgstr "Intervalle de vérification manquant ou invalide"
+
+#~ msgid "You are not allowed to start fetchmail"
+#~ msgstr "Vous n'êtes pas autorisé à démarrer Fetchmail"
+
+#~ msgid "Checking Servers"
+#~ msgstr "Vérification des serveurs"
+
+#~ msgid "Checking for mail on server(s) with command $1 .."
+#~ msgstr "Vérification du courriel sur le(s) serveur(s) à l'aide de la commande $1 .."
+
+#~ msgid ".. checking complete."
+#~ msgstr ".. Vérification terminée"
+
+#~ msgid ".. checking failed!"
+#~ msgstr ".. Échec de la vérification !"
+
+#~ msgid "Default Settings"
+#~ msgstr "Paramètres par défaut"
+
+#~ msgid "Default settings for all servers"
+#~ msgstr "Paramètres par défaut pour tous les serveurs"
+
+#~ msgid "Failed to save default settings"
+#~ msgstr "Impossible d'enregistrer les paramètres par défaut"
+
+#~ msgid "Added server $1 in file $2"
+#~ msgstr "Serveur $1 ajouté dans le fichier $2"
+
+#~ msgid "Modified server $1 in file $2"
+#~ msgstr "Serveur $1 modifié dans le fichier $2"
+
+#~ msgid "Deleted server $1 in file $2"
+#~ msgstr "Serveur $1 supprimé dans le fichier $2"
+
+#~ msgid "Added server $1 for user $2"
+#~ msgstr "Serveur $1 ajouté pour l'utilisateur $2"
+
+#~ msgid "Modified server $1 for user $2"
+#~ msgstr "Serveur $1 modifié pour l'utilisateur $2"
+
+#~ msgid "Deleted server $1 for user $2"
+#~ msgstr "Serveur $1 supprimé pour l'utilisateur $2"
+
+#~ msgid "Checked all servers in file $1"
+#~ msgstr "Tous les serveurs ont été vérifiés dans le fichier $1"
+
+#~ msgid "Checked server $2 in file $1"
+#~ msgstr "Serveur $2 vérifié dans le fichier $1"
+
+#~ msgid "Checked all servers for user $1"
+#~ msgstr "Tous les serveurs ont été vérifiés pour l'utilisateur $1"
+
+#~ msgid "Checked server $2 for user $1"
+#~ msgstr "Serveur $2 vérifié pour l'utilisateur $1"
+
+#~ msgid "Changed global settings for user $1"
+#~ msgstr "Les paramètres globaux ont été modifiés pour l'utilisateur $1"
+
+#~ msgid "Changed global settings in file $1"
+#~ msgstr "Modification des paramètres globaux dans le fichier $1"
+
+#~ msgid "Started fetchmail daemon"
+#~ msgstr "Démarrage du daemon Fetchmail"
+
+#~ msgid "Stopped fetchmail daemon"
+#~ msgstr "Arrêt du daemon Fetchmail"
+
+#~ msgid "Enabled scheduled checking"
+#~ msgstr "La vérification régulière a été activée"
+
+#~ msgid "Modified scheduled checking"
+#~ msgstr "La vérification régulière a été modifiée"
+
+#~ msgid "Disabled scheduled checking"
+#~ msgstr "La vérification régulière a été désactivée"
+
+#~ msgid "Can edit fetchmail config for"
+#~ msgstr "Possibilité de modifier la configuration Fetchmail pour"
+
+#~ msgid "All users"
+#~ msgstr "Tous les utilisateurs"
+
+#~ msgid "Current webmin user"
+#~ msgstr "L'utilisateur Webmin actuel"
+
+#~ msgid "Only users"
+#~ msgstr "Seulement les utilisateurs"
+
+#~ msgid "All except users"
+#~ msgstr "Tous sauf les utilisateurs"
+
+#~ msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
+#~ msgstr "Cette page permet d'activer ou de désactiver une tâche Cron qui vérifie les serveurs de courrier dans votre configuration Fetchmail à intervalles réguliers. Il est préférable de recourir à une tâche Cron plutôt qu'au daemon Fetchmail, car il est inutile de la réinitialiser à chaque démarrage du serveur."
+
+#~ msgid "Scheduled Fetchmail settings"
+#~ msgstr "Configuration de la programmation de Fetchmail"
+
+#~ msgid "Scheduled checking enabled?"
+#~ msgstr "Vérification régulière activée ?"
+
+#~ msgid "Yes, at times configured below .."
+#~ msgstr "Oui, selon les intervalles configurés ci-dessous .."
+
+#~ msgid "Destination for Fetchmail output"
+#~ msgstr "Destination des messages Fetchmail"
+
+#~ msgid "Write to file $1"
+#~ msgstr "Consigner sur le fichier $1"
+
+#~ msgid "Email to address $1"
+#~ msgstr "Envoyer par courriel à l'adresse $1"
+
+#~ msgid "Discard"
+#~ msgstr "Abandonner"
+
+#~ msgid "Output to cron"
+#~ msgstr "Sortie Cron"
+
+#~ msgid "Run Fetchmail as user"
+#~ msgstr "Exécuter Fetchmail en tant qu'utilisateur"
+
+#~ msgid "Failed to save scheduled checking"
+#~ msgstr "Impossible d'enregistrer la vérification régulière"
+
+#~ msgid "Missing or invalid output filename"
+#~ msgstr "Nom du fichier manquant ou invalide"
+
+#~ msgid "Missing or invalid email address"
+#~ msgstr "Adresse électronique manquante ou invalide"
+
+#~ msgid "Missing or invalid Unix user"
+#~ msgstr "Utilisateur Unix manquant ou invalide"
+
+#~ msgid "Scheduled checking is not available in this mode"
+#~ msgstr "La vérification régulière n'est pas disponible sous ce mode"
+
+#~ msgid "Do you really want to delete this server?"
+#~ msgstr "Désirez-vous vraiment supprimer ce serveur ?"
+
+#~ msgid "Multidrop"
+#~ msgstr "Multidrop"
+
+#~ msgid "Destination"
+#~ msgstr "Destination"
+
+#~ msgid "Alias"
+#~ msgstr "Alias"
+
+#~ msgid "Please provide a local and remote user."
+#~ msgstr "Veuillez saisir le nom d'un utilisateur local ou distant."
+
+#~ msgid "The given local username is invalid."
+#~ msgstr "Le nom de l'utilisateur local donné est invalide"
+
+#~ msgid "The given alias is invalid."
+#~ msgstr "L'alias donné est invalide."
+
+#~ msgid "Please select \"user\", \"alias\" or \"multidrop\"."
+#~ msgstr "Veuillez sélectionner \"utilisateur\", \"alias\" ou \"multidrop\"."
+
+#~ msgid "Please provide a valid mailserver user."
+#~ msgstr "Veuillez saisir un nom d'utilisateur du serveur de courrier valide."
+
+#~ msgid "Please provide a password for the mailserver user."
+#~ msgstr "Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier."
+
+#~ msgid "Fetchmail daemon could not be enabled."
+#~ msgstr "Impossible d'activer le daemon Fetchmail."
+
+#~ msgid "Specify the polling interval in seconds."
+#~ msgstr "Spécifier l'intervalle de vérification en secondes."
+
+#~ msgid "The remote host name or IP address from which you want to receive mail."
+#~ msgstr "Le nom de l'hôte distant ou l'adresse IP à partir desquels vous voulez recevoir du courriel."
+
+#~ msgid "The DNS name of the remote server. This setting overrides the server name."
+#~ msgstr "Le nom DNS du serveur distant. Ce paramètre écrase le nom du serveur."
+
+#~ msgid "The TCP/IP port of the remote server."
+#~ msgstr "Le port TCP/IP du serveur distant."
+
+#~ msgid "The header name of the envelope address (e.g. X-Envelope-To)."
+#~ msgstr "Le nom d'entête de l'adresse de l'enveloppe (p. ex. X-Enveloppe-Pour)."
+
+#~ msgid "Specify the login user from the remote machine."
+#~ msgstr "Spécifier l'identifiant de connexion à la machine distante."
+
+#~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
+#~ msgstr "Nom d'utilisateur invalide. Seuls les lettres minuscules, les chiffres, le point et le signe moins sont des caractères valides."
+
+#~ msgid "Password not valid"
+#~ msgstr "Mot de passe invalide"
+
+#~ msgid "E-mail address not valid"
+#~ msgstr "Adresse électronique invalide"
+
+#~ msgid "No e-mail address specified"
+#~ msgstr "Aucune adresse électronique n'a été spécifiée"
+
+#~ msgid "Groups not valid"
+#~ msgstr "Groupes invalides"
+
+#~ msgid "Passwords are not equal"
+#~ msgstr "Les mots de passe ne correspondent pas"
+
+#~ msgid "No user selected."
+#~ msgstr "Aucun utilisateur sélectionné"
+
+#~ msgid "Wrong filetype selected."
+#~ msgstr "Mauvais type de fichier sélectionné"
+
+#~ msgid "Could not change the login."
+#~ msgstr "Impossible de modifier l'identifiant"
+
+#~ msgid "Could not read UIDs of the following users:"
+#~ msgstr "Impossible de lire les UIDs des utilisateurs suivants :"
+
+#~ msgid "The alias is not valid."
+#~ msgstr "L'alias est invalide."
+
+#~ msgid "If you want to you use aliases for this user, you should activate his mailbox."
+#~ msgstr "Si vous désirez utiliser un alias pour cet utilisateur, vous devez activer sa boîte aux lettres."
+
+#~ msgid "The selected username is already used by the system."
+#~ msgstr "Le nom d'utilisateur sélectionné est déjà utilisé par le système."
+
+#~ msgid "The quota value has to be a number."
+#~ msgstr "La valeur du quota doit être un nombre."
+
+#~ msgid "The quota value has to be positive."
+#~ msgstr "La valeur du quota doit être positive."
+
+#~ msgid "You cannot use localhost as domain-part"
+#~ msgstr "Vous ne pouvez pas utiliser l'hôte local comme partie de domaine."
+
+#~ msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
+#~ msgstr "Le nom d'utilisateur et la partie locale sont différents. Vous devez définir un alias pour la partie locale. Autrement Zarafa ne sera pas en mesure de distribuer le courrier correctement."
+
+#~ msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
+#~ msgstr "Le nom d'utilisateur et la partie locale sont différents. Pour que Zarafa puisse fonctionner l'adresse électronique donnée, il faut définir l'alias de l'adresse suivante :"
+
+#~ msgid "This user could not be added/edited."
+#~ msgstr "Impossible d'ajouter ou de modifier l'utilisateur."
+
+#~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
+#~ msgstr "L'utilisateur a été créé, mais pas la base de stockage Zarafa. Généralement cela signifie que votre licence ne permet plus d'ajouter de nouveaux utilisateurs."
+
+#~ msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
+#~ msgstr "Cet utilisateur est utilisé pour la distribution dans les dossiers publics. Vous devez sélectionner un autre utilisateur pour cela, ensuite vous pourrez supprimer celui-là."
+
+#~ msgid "Usermanagment"
+#~ msgstr "Gestion des utilisateurs"
+
+#~ msgid "Add user"
+#~ msgstr "Ajouter un utilisateur"
+
+#~ msgid "Printer operator"
+#~ msgstr "Opérateur imprimante"
+
+#~ msgid "Printer Administrator"
+#~ msgstr "Administrateur imprimante"
+
+#~ msgid "Modified users"
+#~ msgstr "Utilisateurs modifiés"
+
+#~ msgid "Do You really want to delete the selected users?"
+#~ msgstr "Désirez-vous vraiment supprimer les utilisateurs sélectionnés ?"
+
+#~ msgid "Remove user"
+#~ msgstr "Retirer un utilisateur"
+
+#~ msgid "E-mail address"
+#~ msgstr "Adresse électronique"
+
+#~ msgid "Enable e-mail account"
+#~ msgstr "Activer un compte de courriel"
+
+#~ msgid "No matter"
+#~ msgstr "Peu importe"
+
+#~ msgid "No printer operator"
+#~ msgstr "Aucun opérateur imprimante"
+
+#~ msgid "Repeat password"
+#~ msgstr "Renouveler la saisie du mot de passe"
+
+#~ msgid "User Management"
+#~ msgstr "Gestion des utilisateurs"
+
+#~ msgid "Filetype for fax delivery"
+#~ msgstr "Type de fichier pour la distribution de fax"
+
+#~ msgid "E-mail alias"
+#~ msgstr "Alias courriel"
+
+#~ msgid "Mailbox quota"
+#~ msgstr "Quota boîte aux lettres"
+
+#~ msgid "Zarafa administrator"
+#~ msgstr "Administrateur Zarafa"
+
+#~ msgid "Zarafa shared store user"
+#~ msgstr "Utilisateur de la  base de stockage partagée Zarafa"
+
+#~ msgid "irreversible after activation"
+#~ msgstr "irréversible après l'activation"
+
+#~ msgid "Given name"
+#~ msgstr "Prénom"
+
+#~ msgid "Surname"
+#~ msgstr "Nom"
+
+#~ msgid "Zarafa store"
+#~ msgstr "Base de stockage Zarafa"
+
+#~ msgid "no Zarafa license"
+#~ msgstr "Aucune licence Zarafa"
+
+#~ msgid "Convert into a zarafa resource"
+#~ msgstr "Convertir en ressource Zarafa"
+
+#~ msgid "Should the following users really be converted into zarafa resources?"
+#~ msgstr "Désirez-vous vraiment que les utilisateurs suivants soient convertis en ressources Zarafa ?"
+
+#~ msgid "User created with following warnings"
+#~ msgstr "Utilisateurs créés avec les avertissements suivants"
+
+#~ msgid "Business Phone"
+#~ msgstr "Téléphone professionnel"
+
+#~ msgid "Location"
+#~ msgstr "Emplacement"
+
+#~ msgid "Fax"
+#~ msgstr "Fax"
+
+#~ msgid "Department"
+#~ msgstr "Service"
+
+#~ msgid "Allow send as"
+#~ msgstr "Permettre 'Envoyer en tant que'"
+
+#~ msgid "For user"
+#~ msgstr "Pour l'utilisateur"
+
+#~ msgid "For group"
+#~ msgstr "Pour le groupe"
+
+#~ msgid "Features"
+#~ msgstr "Fonctionnalités"
+
+#~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
+#~ msgstr "Si un utilisateur est administrateur, il aura la possibilité d'ouvrir les bases Zarafa de n'importe quel autre utilisateur."
+
+#~ msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
+#~ msgstr "L'utilisateur ne pourra pas se connecter et ne sera pas ajouté à la liste des utilisateurs actifs de votre licence. Les autres utilisateurs pourront accéder à la base de stockage de cet utilisateur en tant que délégués."
+
+#~ msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
+#~ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. L'utilisateur sera averti si il s'approche de cette limite. Une fois la limite atteinte, l'utilisateur ne pourra plus envoyer ou recevoir de courriel."
+
+#~ msgid "Add alias"
+#~ msgstr "Ajouter un alias"
+
+#~ msgid "Execute"
+#~ msgstr "Exécuter"
+
+#~ msgid "Mail alias Configuration"
+#~ msgstr "Configuration de l'alias de courriel"
+
+#~ msgid "Index"
+#~ msgstr "Index"
+
+#~ msgid "Mail server"
+#~ msgstr "Serveur de courrier"
+
+#~ msgid "Do you really want to delete the alias(es)?"
+#~ msgstr "Désirez-vous vraiment supprimer cet ou ces alias ?"
+
+#~ msgid "Please enter valid values!"
+#~ msgstr "Veuillez saisir une valeur valide !"
+
+#~ msgid "Mail aliases"
+#~ msgstr "Alias courriel"
+
+#~ msgid "Mail alias"
+#~ msgstr "Alias courriel"
+
+#~ msgid "Folder"
+#~ msgstr "Dossier"
+
+#~ msgid "or"
+#~ msgstr "ou"
+
+#~ msgid "Configuration of mail aliases is done through active directory."
+#~ msgstr "La configuration des alias de courriel s'effectue à l'aide de Active Directory."
+
+#~ msgid "The following usernames or e-mail addresses are not valid."
+#~ msgstr "Les noms d'utilisateur ou les adresses électroniques suivantes sont invalides."
+
+#~ msgid "This alias already exists."
+#~ msgstr "Cet alias existe déjà."
+
+#~ msgid "This alias name is not valid."
+#~ msgstr "Ce nom d'alias est invalide"
+
+#~ msgid "No alias selected."
+#~ msgstr "Aucun alias sélectionné."
+
+#~ msgid "Nothing selected"
+#~ msgstr "Aucune sélection"
+
+#~ msgid "Alias exists as user."
+#~ msgstr "L'alias existe déjà comme utilisateur."
+
+#~ msgid "An alias can only be set for user or folder."
+#~ msgstr "Un alias ne peu être défini que pour un utilisateur ou un dossier."
+
+#~ msgid "Error while removing alias."
+#~ msgstr "Une erreur s'est produite lors de la suppression de l'alias."
+
+#~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
+#~ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
+
+#~ msgid "Install New Key"
+#~ msgstr "Installer une nouvelle clé"
+
+#~ msgid "Existing Keys"
+#~ msgstr "Clés existantes"
+
+#~ msgid "Licensekey"
+#~ msgstr "Clé de licence"
+
+#~ msgid "Customer"
+#~ msgstr "Client"
+
+#~ msgid "Initial Key"
+#~ msgstr "Clé initiale"
+
+#~ msgid "Licensenumber"
+#~ msgstr "Numéro de licence"
+
+#~ msgid "Incoming MSNs"
+#~ msgstr "MSNs entrants"
+
+#~ msgid "unlimited"
+#~ msgstr "Illimité"
+
+#~ msgid "Unlimited (only limited by telephone system)"
+#~ msgstr "Illimité (uniquement limité par le système de téléphonie)"
+
+#~ msgid "Configurable controllers"
+#~ msgstr "Contrôleurs paramétrables"
+
+#~ msgid "Valid from"
+#~ msgstr "Valide depuis"
+
+#~ msgid "Valid until"
+#~ msgstr "Valide jusqu'à"
+
+#~ msgid "Configurable printers"
+#~ msgstr "Imprimantes paramétrables"
+
+#~ msgid "PDF encryption"
+#~ msgstr "Chiffrement PDF"
+
+#~ msgid "Notepaper"
+#~ msgstr "Note papier"
+
+#~ msgid "Merge PDFs"
+#~ msgstr "Fusionner les PDFs"
+
+#~ msgid "enabled"
+#~ msgstr "activé"
+
+#~ msgid "disabled"
+#~ msgstr "désactivé"
+
+#~ msgid "yaffas base"
+#~ msgstr "Base yaffas"
+
+#~ msgid "Licensetype"
+#~ msgstr "Type de licence"
+
+#~ msgid "Companylicense"
+#~ msgstr "Licence entreprise"
+
+#~ msgid "1-10 User"
+#~ msgstr "1-10 utilisateurs"
+
+#~ msgid "11-50 User"
+#~ msgstr "11-50 utilisateurs"
+
+#~ msgid "51-100 User"
+#~ msgstr "51-100 utilisateurs"
+
+#~ msgid "101-250 User"
+#~ msgstr "101-250 utilisateurs"
+
+#~ msgid "251-500 User"
+#~ msgstr "251-500 utilisateurs"
+
+#~ msgid "Could not copy the key."
+#~ msgstr "Impossible d'enregistrer la clé"
+
+#~ msgid "The product for your key is not installed!"
+#~ msgstr "Le produit pour votre clé n'est pas installé !"
+
+#~ msgid "Can't create file!"
+#~ msgstr "Impossible de créer le fichier !"
+
+#~ msgid "Can't write file!"
+#~ msgstr "Impossible d'écrire le fichier !"
+
+#~ msgid "Invalid key location!"
+#~ msgstr "Emplacement de la clé invalide !"
+
+#~ msgid "Can't remove new key!"
+#~ msgstr "Impossible de supprimer la nouvelle clé!"
+
+#~ msgid "Wrong key version for installed product!"
+#~ msgstr "Mauvaise version de la clé pour le produit installé !"
+
+#~ msgid "No key available!"
+#~ msgstr "Aucune clé disponible!"
+
+#~ msgid "Successfully saved licensekey!"
+#~ msgstr "La clé de licence a été enregistrée avec succès !"
+
+#~ msgid "Bulk mailing"
+#~ msgstr "Envoi groupé"
+
+#~ msgid "Message"
+#~ msgstr "Message"
+
+#~ msgid "Send"
+#~ msgstr "Envoyer"
+
+#~ msgid "Please complete all forms and check your e-mail address."
+#~ msgstr "Veuillez compléter tous les formulaire et vérifier votre adresse électronique."
+
+#~ msgid "Your mails are queued for sending. This may take some time depending on your hardware."
+#~ msgstr "Vos courriers ont été ajouté à la queue d'envoi. Ceci peut prendre un certain temps selon la puissance de votre machine."
+
+#~ msgid "Services"
+#~ msgstr "Services"
+
+#~ msgid "Start Service on Boot"
+#~ msgstr "Exécuter le service au démarrage"
+
+#~ msgid "Monitor"
+#~ msgstr "Moniteur"
+
+#~ msgid "Action"
+#~ msgstr "Action"
+
+#~ msgid "Configuration"
+#~ msgstr "Configuration"
+
+#~ msgid "Restart"
+#~ msgstr "Redémarrer"
+
+#~ msgid "Started"
+#~ msgstr "Démarré"
+
+#~ msgid "Service has been started"
+#~ msgstr "Le service a été démarré"
+
+#~ msgid "Service must not be started"
+#~ msgstr "Le service ne doit pas être démarré"
+
+#~ msgid "Service couldn't be started"
+#~ msgstr "Impossible de démarrer le service"
+
+#~ msgid "Service has been stopped"
+#~ msgstr "Le service a été arrêté"
+
+#~ msgid "Service must not be stopped"
+#~ msgstr "Le service doit être arrêté"
+
+#~ msgid "Service couldn't be stopped"
+#~ msgstr "Impossible d'arrêter le service"
+
+#~ msgid "Service has been restarted"
+#~ msgstr "Le service a été redémarré"
+
+#~ msgid "Service must not be restarted"
+#~ msgstr "Le service ne doit pas être redémarré"
+
+#~ msgid "Service couldn't be restarted"
+#~ msgstr "Impossible de redémarrer le service"
+
+#~ msgid "Stop service"
+#~ msgstr "Arrêter le service"
+
+#~ msgid "Do you really want to stop this service?"
+#~ msgstr "Désirez-vous vraiment arrêter le service ?"
+
+#~ msgid "Shutdown system"
+#~ msgstr "Arrêt du système"
+
+#~ msgid "Reboot system"
+#~ msgstr "Redémarrage du système"
+
+#~ msgid "System is shuting down."
+#~ msgstr "Le système va s'arrêter"
+
+#~ msgid "System is rebooting. In some minutes you can login again."
+#~ msgstr "Le système va redémarrer. Dans quelques minutes vous pourrez à nouveau vous connecter."
+
+#~ msgid "Do you really want to halt the system."
+#~ msgstr "Désirez-vous vraiment arrêter le système ?"
+
+#~ msgid "Do you really want to reboot the system."
+#~ msgstr "Désirez-vous vraiment redémarrer le système ?"
+
+#~ msgid "Day"
+#~ msgstr "Jour"
+
+#~ msgid "Month"
+#~ msgstr "Mois"
+
+#~ msgid "Hour"
+#~ msgstr "Heure"
+
+#~ msgid "Year"
+#~ msgstr "Anné"
+
+#~ msgid "System time"
+#~ msgstr "Heure du système"
+
+#~ msgid "now"
+#~ msgstr "maintenant"
+
+#~ msgid "hourly"
+#~ msgstr "toutes les heures"
+
+#~ msgid "daily at "
+#~ msgstr "tous les jours à "
+
+#~ msgid " minute"
+#~ msgstr " minute"
+
+#~ msgid " hour"
+#~ msgstr " heure"
+
+#~ msgid "Time Server"
+#~ msgstr "Serveur de temps"
+
+#~ msgid "Enter the hostname or IP address of the time server to be used for NTP."
+#~ msgstr "Saisir le nom d'hôte ou l'adresse IP du serveur de temps utilisé par NTP."
+
+#~ msgid "Uptime of"
+#~ msgstr "Uptime de"
+
+#~ msgid "Filesytem statistics"
+#~ msgstr "Statistique système de fichier"
+
+#~ msgid "Mounted filesystem"
+#~ msgstr "Système de fichier monté"
+
+#~ msgid "Filesystem"
+#~ msgstr "Système de fichiers"
+
+#~ msgid "Filesystem information"
+#~ msgstr "Information système de fichier"
+
+#~ msgid "Wrong Configfile Version"
+#~ msgstr "Version de fichier de configuration erronée"
+
+#~ msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
+#~ msgstr "Votre fichier de configuration ne s'applique pas à ce produit. Désirez-vous vraiment l'appliquer au système ?"
+
+#~ msgid "Apply backupfile"
+#~ msgstr "Appliquer le fichier de sauvegarde"
+
+#~ msgid "Save backupfile"
+#~ msgstr "Enregistrer le fichier de sauvegarde"
+
+#~ msgid "Backup"
+#~ msgstr "Sauvegarde"
+
+#~ msgid "Messages:"
+#~ msgstr "Messages :"
+
+#~ msgid "This is not a valid yaffas backupfile"
+#~ msgstr "Ceci n'est pas un fichier de sauvegarde yaffas valide"
+
+#~ msgid "please install your license-key first"
+#~ msgstr "Veuillez d'abord installer votre clé de licence"
+
+#~ msgid "cannot"
+#~ msgstr "impossible"
+
+#~ msgid "touch"
+#~ msgstr "touch"
+
+#~ msgid "open file"
+#~ msgstr "ouvrir le fichier"
+
+#~ msgid "execute"
+#~ msgstr "exécuter"
+
+#~ msgid "Can't create zipfile!"
+#~ msgstr "Impossible de créer le fichier Zip !"
+
+#~ msgid "Can't create LDAP ldiffile!"
+#~ msgstr "Impossible de créer le fichier ID pour LDAP !"
+
+#~ msgid "Continue"
+#~ msgstr "Continuer"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subit des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
+
+#~ msgid "Following list cant be converted:"
+#~ msgstr "La liste suivante peut être convertie :"
+
+#~ msgid "Configured MSN's"
+#~ msgstr "MSN's configurés"
+
+#~ msgid "User eMail adress"
+#~ msgstr "Adresse électronique de l'utilisateur"
+
+#~ msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
+#~ msgstr "Mot de passe de l'utilisateur. Sera créé en tant que 'start123' et devra être changé dès que possible !"
+
+#~ msgid "Restore Configuration"
+#~ msgstr "Restaurer la configuration"
+
+#~ msgid "Save Configuration"
+#~ msgstr "Enregistrer la configuration"
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
+
+#~ msgid "Error in configuration file"
+#~ msgstr "Erreur dans le fichier de configuration"
+
+#~ msgid "Please install all licence files for your installed products before you insert the configuration."
+#~ msgstr "Veuillez installer tous les fichiers de licence pour vos produits installés avant d'insérer la configuration."
+
+#~ msgid "Could not save config, because the LDAP service is not running."
+#~ msgstr "Impossible d'enregistrer la configuration parce que le service LDAP n'est pas en cours d'exécution."
+
+#~ msgid "Could not restore user and groups."
+#~ msgstr "Impossible de restaurer les utilisateurs et groupes."
+
+#~ msgid "Your Configurationfile is not for this fax-card type."
+#~ msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
+
+#~ msgid "Errors occured."
+#~ msgstr "Des erreurs se sont produites."
+
+#~ msgid "Would you like to save your incomplete Configuration?"
+#~ msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
+
+#~ msgid "The IP address or netmask it not valid."
+#~ msgstr "L'adresse IP ou le masque réseau est invalide."
+
+#~ msgid "The DNS server address has to be a valid IP address."
+#~ msgstr "L'adresse du serveur DNS doit être une adresse IP valide."
+
+#~ msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
+#~ msgstr "Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères."
+
+#~ msgid "Could not rename domain."
+#~ msgstr "Impossible de renommer le domaine."
+
+#~ msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
+#~ msgstr "Un nom d'hôte ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères."
+
+#~ msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
+#~ msgstr "Un groupe de travail ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'."
+
+#~ msgid "Could not copy the following file:"
+#~ msgstr "Impossible d'enregistrer le fichier suivant :"
+
+#~ msgid "You have to enable a least one network interface."
+#~ msgstr "Vous devez activer au moins une interface de réseau."
+
+#~ msgid "The gateway address has to be different to the server address."
+#~ msgstr "L'adresse de la passerelle doit être différente que l'adresse du serveur."
+
+#~ msgid "The associated hardware interface has to be enabled."
+#~ msgstr "L'interface matérielle associée doit être activée."
+
+#~ msgid "Error reading data for use with samba."
+#~ msgstr "Une erreur s'est produite lors de la lecture des données devant être utilisées par Samba."
+
+#~ msgid "Error writing data for use with samba."
+#~ msgstr "Une erreur s'est produite lors de l'écriture des données devant être utilisées par Samba."
+
+#~ msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
+#~ msgstr "Il n'y as pas exactement un seul exemplaire du nom d'hôte (sambaDomain) dans LDAP."
+
+#~ msgid "This module is deactivated, because channel bonding is active."
+#~ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
+
+#~ msgid "No IP address is set."
+#~ msgstr "Aucune adesse IP n'a été définie."
+
+#~ msgid "Network Settings"
+#~ msgstr "Configuration du réseau"
+
+#~ msgid "Host name"
+#~ msgstr "Nom d'hôte"
+
+#~ msgid "Domain name"
+#~ msgstr "Nom de domaine"
+
+#~ msgid "Workgroup"
+#~ msgstr "Groupe de travail"
+
+#~ msgid "IP address"
+#~ msgstr "Adresse IP"
+
+#~ msgid "Netmask"
+#~ msgstr "Masque de réseau"
+
+#~ msgid "Gateway (if available)"
+#~ msgstr "Passerelle (si disponible)"
+
+#~ msgid "Search domain"
+#~ msgstr "Domaine de recherche"
+
+#~ msgid "DNS Server IP"
+#~ msgstr "IP Serveur DNS"
+
+#~ msgid "Base settings"
+#~ msgstr "Configuration de base"
+
+#~ msgid "New virtual IP address"
+#~ msgstr "Nouvelle adresse IP virtuelle"
+
+#~ msgid "Delete virtual IP address"
+#~ msgstr "Supprimer l'adresse IP virtuelle"
+
+#~ msgid "Do you really want to delete the following network interface?"
+#~ msgstr "Désirez-vous vraiment supprimer l'interface réseau suivante ?"
+
+#~ msgid "New virtual address on interface"
+#~ msgstr "Nouvelle adresse virtuelle sur interface"
+
+#~ msgid "HTTP Proxy"
+#~ msgstr "Proxy HTTP"
+
+#~ msgid "Proxy"
+#~ msgstr "Proxy"
+
+#~ msgid "Port"
+#~ msgstr "Port"
+
+#~ msgid "Authentication (optional)"
+#~ msgstr "Authentification (facultative)"
+
+#~ msgid "Proxyname not valid!"
+#~ msgstr "Nom proxy invalide !"
+
+#~ msgid "Port not valid!"
+#~ msgstr "Port invalide !"
+
+#~ msgid "Username not valid!"
+#~ msgstr "Nom d'utilisateur invalide !"
+
+#~ msgid "Password not valid!"
+#~ msgstr "Mot de passe invalide"
+
+#~ msgid "Error while setting APT proxy!"
+#~ msgstr "Une erreur s'est produite lors de la configuration du proxy APT !"
+
+#~ msgid "Error while setting WGET proxy!"
+#~ msgstr "Une erreur s'est produite lors de la configuration du proxy WGET !"
+
+#~ msgid "Error while setting KAV proxy!"
+#~ msgstr "Une erreur s'est produite lors de la configuration du proxy KAV !"
+
+#~ msgid "Error while deleting APT proxy!"
+#~ msgstr "Une erreur s'est produite lors de la suppression du proxy APT !"
+
+#~ msgid "Error while deleting WGET proxy!"
+#~ msgstr "Une erreur s'est produite lors de la suppression du proxy WGET !"
+
+#~ msgid "Error while deleting KAVS proxy!"
+#~ msgstr "Une erreur s'est produite lors de la suppression du proxy KAVS !"
+
+#~ msgid "Error while setting freshclam proxy!"
+#~ msgstr "Une erreur s'est produite lors de la configuration du proxy freshclam !"
+
+#~ msgid "Error while deleting freshclam proxy!"
+#~ msgstr "Une erreur s'est produite lors de la suppression du proxy freshclam !"
+
+#~ msgid "Error restarting freshclam!"
+#~ msgstr "Une erreur s'est produite lors du redémarrage de freshclam !"
+
+#~ msgid "e.g. hostname"
+#~ msgstr "p. ex. hostname"
+
+#~ msgid "e.g. yaffas.org"
+#~ msgstr "p. ex. yaffas.org"
+
+#~ msgid "e.g. yaffas"
+#~ msgstr "p. ex. yaffas"
+
+#~ msgid "IP address for eth0<br>e.g. 192.168.0.100"
+#~ msgstr "Adresse IP pour eth0<br>p .ex. 192.168.0.100"
+
+#~ msgid "Netmask for eth0<br>e.g. 255.255.255.0"
+#~ msgstr "Masque réseau pour eth0<br>p.ex. 255.255.255.0"
+
+#~ msgid "Gateway for your network. This must be an IPv4 address of this network."
+#~ msgstr "Passerelle pour votre réseau. Ceci doit être une adresse IPv4 de ce réseau."
+
+#~ msgid "DNS server for resolving names into IP adresses."
+#~ msgstr "Serveur DNS pour la résolution des noms en adresses IP."
+
+#~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+#~ msgstr "Joindre cette valeur lors de la résolution des noms courts.<br>Pour convertir le nom \"serveur\" cette valeur est mise en suffixe. p. ex. yaffas.org -> serveur.yaffas.org"
+
+#~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
+#~ msgstr "Adresse du serveur proxy HTTP. Ceci peut être une adresse IPv4 ou un nom d'hôte."
+
+#~ msgid "Port of the HTTP proxy server."
+#~ msgstr "Port du serveur proxy HTTP."
+
+#~ msgid "Optional username, if you have to authenticate against the proxy."
+#~ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accéder au proxy."
+
+#~ msgid "Authentication Server"
+#~ msgstr "Serveur d'authentification"
+
+#~ msgid "Accounts"
+#~ msgstr "Comptes"
+
+#~ msgid "Domain Controller"
+#~ msgstr "Controlleur de domaine"
+
+#~ msgid "Local authentication"
+#~ msgstr "Authentification locale"
+
+#~ msgid "Local authentication (passwd/group)"
+#~ msgstr "Authentification locale (passwd/group)"
+
+#~ msgid "No authentication method configured"
+#~ msgstr "Aucune méthode d'authentification n'a été configurée"
+
+#~ msgid "DC authentication"
+#~ msgstr "Authentification DC"
+
+#~ msgid "Authentication server"
+#~ msgstr "Serveur d'authentification"
+
+#~ msgid "Select authentication"
+#~ msgstr "Sélectionner une authentification"
+
+#~ msgid "yaffas LDAP server"
+#~ msgstr "Serveur LDAP yaffas"
+
+#~ msgid "LDAP Server"
+#~ msgstr "Serveur LDAP"
+
+#~ msgid "Samba PDC"
+#~ msgstr "PDC Samba"
+
+#~ msgid "Active Directory"
+#~ msgstr "Active Directory"
+
+#~ msgid "Active Directory Service"
+#~ msgstr "Service Active Directory"
+
+#~ msgid "Local (/etc/passwd,/etc/group)"
+#~ msgstr "Local (/etc/passwd,/etc/group)"
+
+#~ msgid "Add product"
+#~ msgstr "Ajouter un produit"
+
+#~ msgid "Server/IP"
+#~ msgstr "Serveur/IP"
+
+#~ msgid "Base DN"
+#~ msgstr "Base DN"
+
+#~ msgid "Bind DN"
+#~ msgstr "Bind DN"
+
+#~ msgid " Bind password"
+#~ msgstr " Mot de passe Bind"
+
+#~ msgid " Repeat bind password"
+#~ msgstr " Renouveler la saisie du mot de passe Bind"
+
+#~ msgid "Products"
+#~ msgstr "Produits"
+
+#~ msgid "Version / IP"
+#~ msgstr "Version / IP"
+
+#~ msgid "Add produkt"
+#~ msgstr "Ajouter un produit"
+
+#~ msgid "IP adress"
+#~ msgstr "Adresse IP"
+
+#~ msgid "Allow authentication requests of remote clients via LDAP."
+#~ msgstr "Permettre les requêtes d'authentification des clients distants via LDAP."
+
+#~ msgid "Allow authentication requests of remote clients via PDC."
+#~ msgstr "Permettre les requêtes d'authentification des clients distants via PDC."
+
+#~ msgid "Domain administrator"
+#~ msgstr "Administrateur du domaine"
+
+#~ msgid "Test DC Connection"
+#~ msgstr "Tester la connexion DC"
+
+#~ msgid "Ping Test"
+#~ msgstr "Tester le ping"
+
+#~ msgid "Trust Test"
+#~ msgstr "Tester le niveau de confiance"
+
+#~ msgid "DC Users"
+#~ msgstr "Utilisateurs DC"
+
+#~ msgid "Domain"
+#~ msgstr "Domaine"
+
+#~ msgid "Current Config"
+#~ msgstr "Configuration actuelle"
+
+#~ msgid "Change"
+#~ msgstr "Modification"
+
+#~ msgid "Search attribute group"
+#~ msgstr "Recherche attribut groupe"
+
+#~ msgid "Base DN group"
+#~ msgstr "Groupe base DN"
+
+#~ msgid "Search attribute user"
+#~ msgstr "Recherche attribut utilisateur"
+
+#~ msgid "Base DN user"
+#~ msgstr "Utilisateur Base DN"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposez du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
+
+#~ msgid "Caution!"
+#~ msgstr "Attention !"
+
+#~ msgid "Active Directory User"
+#~ msgstr "Utilisateur Active Directory"
+
+#~ msgid "User name or DN"
+#~ msgstr "Nom d'utilisateur ou DN"
+
+#~ msgid "Join Domain without encryption?"
+#~ msgstr "Joindre le domaine sans chiffrement ?"
+
+#~ msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
+#~ msgstr "Votre serveur Active Directory ne gère pas le chiffrement des données (ldaps). Acceptez-vous que les données soient transmises en clair ? Si vous sélectionner 'non', le serveur yaffas ne pourra pas joindre le domaine."
+
+#~ msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
+#~ msgstr "Votre serveur LDAP ne gère pas le chiffrement des données (ldaps). Acceptez-vous que les données soient transmises en clair ? Si vous sélectionner 'non', le serveur yaffas modifiera le mode actuel d'authentification."
+
+#~ msgid "Delete user fax configuration and PDF files"
+#~ msgstr "Supprimer configuration utilisateur de fax et fichiers PDF"
+
+#~ msgid "Delete all users' and groups' fax configurations and pdf users' files."
+#~ msgstr "Supprimer toutes les configurations utilisateurs et configurations groupes de fax et les fichiers PDF des utilisateurs"
+
+#~ msgid "Print operators group"
+#~ msgstr "Groupe d'opérateurs d'imprimante"
+
+#~ msgid "Change print operators group"
+#~ msgstr "Modifier le groupe d'opérateurs d'imprimante"
+
+#~ msgid "Administrator"
+#~ msgstr "Administrateur"
+
+#~ msgid "Email attribute"
+#~ msgstr "Attribut courriel"
+
+#~ msgid "Choose a domain's sambaSID"
+#~ msgstr "Choisir un sambaSID de domaine"
+
+#~ msgid "Could not open the samba configuration file."
+#~ msgstr "Impossible d'ouvrir le fichier de configuration Samba :"
+
+#~ msgid "Could not restart the samba server."
+#~ msgstr "Impossible de redémarrer le serveur Samba."
+
+#~ msgid "No DC was given."
+#~ msgstr "Aucun DC n'a été fourni."
+
+#~ msgid "Invalid server name"
+#~ msgstr "Nom de serveur invalide"
+
+#~ msgid "Invalid domain name"
+#~ msgstr "Nom de domaine invalide"
+
+#~ msgid "Invalid base DN"
+#~ msgstr "Base DN invalide"
+
+#~ msgid "Invalid bind DN"
+#~ msgstr "Bind DN invalide"
+
+#~ msgid "Invalid password"
+#~ msgstr "Mot de passe invalide"
+
+#~ msgid "Invalid IP adress"
+#~ msgstr "Adresse IP invalide"
+
+#~ msgid "Invalid product"
+#~ msgstr "Produit invalide"
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computer already authentication server."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
+
+#~ msgid "Valid values are 'on' and 'off'."
+#~ msgstr "Les valeurs valides sont 'on' ou 'off'."
+
+#~ msgid "Passwords are not equal."
+#~ msgstr "Les mots de passe ne correspondent pas"
+
+#~ msgid "Username contains ilegal characters."
+#~ msgstr "Le nom d'utilisateur comporte des caractères non autorisés."
+
+#~ msgid "Error reading file."
+#~ msgstr "Une erreur s'est produite lors de la lecture du fichier."
+
+#~ msgid "Error writing file."
+#~ msgstr "Une erreur s'est produite lors de l'enregistrement du fichier."
+
+#~ msgid "No files specified for rollback."
+#~ msgstr "Aucun fichier de sauvegarde spécifié pour un retour en arrière."
+
+#~ msgid "Could not delete backup files."
+#~ msgstr "Impossible de supprimer les fichiers de sauvegarde."
+
+#~ msgid "Could not create backup files."
+#~ msgstr "Impossible de créer les fichiers de sauvegarde."
+
+#~ msgid "An error occured while joining the domain."
+#~ msgstr "Une erreur s'est produite en joignant le domaine."
+
+#~ msgid "The search attribute for the user or group is not correct. You can only insert figures and characters from a-z and 0-9."
+#~ msgstr "L'attribut de recherche pour l'utilisateur ou le groupe est erroné. Vous ne pouvez saisir que des lettres ou des chiffres de a-z ou de 0-9."
+
+#~ msgid "Invalid authentication type."
+#~ msgstr "Type d'authentification invalide."
+
+#~ msgid "Could not get LDAP base DN."
+#~ msgstr "Impossible d'obtenir LDAP base DN."
+
+#~ msgid "Domain name is missing."
+#~ msgstr "Le nom de domaine est introuvable."
+
+#~ msgid "Domain administrator is missing."
+#~ msgstr "L'administrateur du domaine est introuvable."
+
+#~ msgid "No password was specified."
+#~ msgstr "Aucun mot de passe n'a été spécifié."
+
+#~ msgid "No server address was specified."
+#~ msgstr "Aucune adresse de serveur n'a été spécifiée."
+
+#~ msgid "No LDAP / Active Directory user was specified."
+#~ msgstr "Aucun utilisateur LDAP / Active Directory n'a été spécifié."
+
+#~ msgid "Could not get DN of user"
+#~ msgstr "Impossible d'obtenir le DN de l'utilisateur."
+
+#~ msgid "Could not contact directory service on"
+#~ msgstr "Impossible de contacter le service de répertoire"
+
+#~ msgid "This option is not possible with yaffas|ZARAFA."
+#~ msgstr "Cette option est impossible avec yaffas|ZARAFA."
+
+#~ msgid "No LDAP URI specified."
+#~ msgstr "Aucun URI  LDAP n'a été spécifié."
+
+#~ msgid "No BASEDN  specified."
+#~ msgstr "Aucun BASEDN n'a été spécifié."
+
+#~ msgid "LDAP / Active Directory user could not bind to server"
+#~ msgstr "L'utilisateur LDAP / Active Directory n'a pas pu joindre le serveur"
+
+#~ msgid "No old users specified."
+#~ msgstr "Aucun ancien utilisateur n'a été spécifié."
+
+#~ msgid "No old groups specified."
+#~ msgstr "Aucun ancien groupe n'a été spécifié."
+
+#~ msgid "Cannot contact host"
+#~ msgstr "Impossible de contacter l'hôte"
+
+#~ msgid "Could not change ownership of files."
+#~ msgstr "Impossible de modifier le propriétaire des fichier."
+
+#~ msgid "Wrong Active Directory password for"
+#~ msgstr "Mot de passe Active Directory erroné pour"
+
+#~ msgid "Active Directory DN not correct"
+#~ msgstr "DN Active Directory erroné"
+
+#~ msgid "The samba domain already exists in LDAP! Please rectify this."
+#~ msgstr "Le domaine Samba existe déjà dans LDAP ! Veuillez corriger ceci."
+
+#~ msgid "<no matching Domain>"
+#~ msgstr "<aucun domaine correspondant>"
+
+#~ msgid "unknown postfix file"
+#~ msgstr "Fichier Postfix inconnu"
+
+#~ msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
+#~ msgstr "Recherche LDAP Base DN. Les données LDAP seront recherchées à partir de ce point. p. ex. o=yaffas,c=org"
+
+#~ msgid "Attribute with users email address. Default: mail"
+#~ msgstr "Attribut avec l'adresse électronique des utilisateurs. Par défaut: mail"
+
+#~ msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
+#~ msgstr "Utilisateur avec lequel joindre. p. ex. cn=ldapadmin,ou=People,o=yaffas,c=org"
+
+#~ msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
+#~ msgstr "Nom de domaine complet de votre Active Directory. p. ex. yaffas.org"
+
+#~ msgid "Name or IP adress of your domain controller."
+#~ msgstr "Nom ou adresse IP  de votre contrôleur de domaine."
+
+#~ msgid "Name of a domain administrator. This user should be created in users organizational unit."
+#~ msgstr "Nom de l'administrateur du domaine. Cet utilisateur devrait être créé dans l'Organizational Unit des utilisateurs."
+
+#~ msgid "User for read only access. You can give the username or a full dn syntax."
+#~ msgstr "Utilisateur pour accès en lecture uniquement. Vous pouvez fournir le nom d'utilisateur ou la syntaxe DN complète."
+
+#~ msgid "Hostname or IP address of the LDAP server."
+#~ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
+
+#~ msgid "A logfile must be selected."
+#~ msgstr "Un fichier de journalisation doit être sélectionné."
+
+#~ msgid "It is not allowed to download this file."
+#~ msgstr "Il n'est pas permis de télécharger ce fichier"
+
+#~ msgid "Logfiles"
+#~ msgstr "Fichiers de journalisation"
+
+#~ msgid "Show old logfiles"
+#~ msgstr "Afficher les anciens fichiers de journalisation"
+
+#~ msgid "Show new logfiles"
+#~ msgstr "Afficher les nouveaux fichiers de journalisation"
+
+#~ msgid "File"
+#~ msgstr "Fichier"
+
+#~ msgid "Appearance"
+#~ msgstr "Apparence"
+
+#~ msgid "Manual"
+#~ msgstr "Manuel"
+
+#~ msgid "Hardware"
+#~ msgstr "Matériel"
+
+#~ msgid "License"
+#~ msgstr "Licence"
+
+#~ msgid "Mailbox"
+#~ msgstr "Boîte aux lettres"
+
+#~ msgid "Mail Server"
+#~ msgstr "Serveur de courrier"
+
+#~ msgid "Maintenance"
+#~ msgstr "Maintenance"
+
+#~ msgid "Security"
+#~ msgstr "Sécurité"
+
+#~ msgid "PDF Printers"
+#~ msgstr "Imprimantes PDF"
+
+#~ msgid "Zarafa"
+#~ msgstr "Zarafa"
+
+#~ msgid "Could not connect to Postgres database."
+#~ msgstr "Impossible de se connecter à la base de données Postgres."
+
+#~ msgid "Could not find the following directories:"
+#~ msgstr "Impossible de localiser les répertoires suivants :"
+
+#~ msgid "Could not read the following directories:"
+#~ msgstr "Impossible de lire les répertoires suivants :"
+
+#~ msgid "Could not delete the following files:"
+#~ msgstr "Impossible de supprimer les fichiers suivants :"
+
+#~ msgid "Could not execute the following files:"
+#~ msgstr "Impossible d'exécuter les fichiers suivants :"
+
+#~ msgid "Could not find the following files:"
+#~ msgstr "Impossible de localiser les fichiers suivants :"
+
+#~ msgid "Could not create hard link for the following files:"
+#~ msgstr "Impossible de créer un lien matériel pour les fichiers suivants :"
+
+#~ msgid "Could not read the following files:"
+#~ msgstr "Impossible de lire les fichiers suivants :"
+
+#~ msgid "Could not rename the following files:"
+#~ msgstr "Impossible de renommer les fichiers suivants :"
+
+#~ msgid "Could not create symlink for the following files:"
+#~ msgstr "Impossible de créer un lien symbolique pour les fichiers suivants :"
+
+#~ msgid "Could not write the following files:"
+#~ msgstr "Impossible d'enregistrer les fichiers suivants :"
+
+#~ msgid "Could not find the following users:"
+#~ msgstr "Impossible de localiser les utilisateurs suivants :"
+
+#~ msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
+#~ msgstr "Votre licence est expirée. Veuillez installer un nouveau fichier de licence ou contacter <a href='mailto:info@bitbone.de'>info@bitbone.de</a> pour la renouveler."
+
+#~ msgid "There is already an alias with this name:"
+#~ msgstr "Un alias existe déjà avec ce nom :"
+
+#~ msgid "There is already a user with this name:"
+#~ msgstr "Un utilisateur existe déjà avec ce nom :"
+
+#~ msgid "No"
+#~ msgstr "Non"
+
+#~ msgid "Show all"
+#~ msgstr "Tout afficher"
+
+#~ msgid "Next"
+#~ msgstr "Suivant"
+
+#~ msgid "Previous"
+#~ msgstr "Précédant"
+
+#~ msgid "Go to"
+#~ msgstr "Aller vers"
+
+#~ msgid "Yes"
+#~ msgstr "Oui"
+
+#~ msgid "Filter"
+#~ msgstr "Filtre"
+
+#~ msgid "delete"
+#~ msgstr "Supprimer"
+
+#~ msgid "yaffas|MAIL"
+#~ msgstr "yaffas|MAIL"
+
+#~ msgid "yaffas|FAX"
+#~ msgstr "yaffas|FAX"
+
+#~ msgid "yaffas|GATE"
+#~ msgstr "yaffas|GATE"
+
+#~ msgid "yaffas|PDF"
+#~ msgstr "yaffas|PDF"
+
+#~ msgid "yaffas|FILE"
+#~ msgstr "yaffas|FILE"
+
+#~ msgid "Modules for configuring the system accounts"
+#~ msgstr "Modules pour configurer les comptes systèmes"
+
+#~ msgid "Modules to customize the appearance"
+#~ msgstr "Modules pour personnaliser l'apparence"
+
+#~ msgid "Modules for the license management"
+#~ msgstr "Modules pour la gestion de licence"
+
+#~ msgid "Modules for configuring the fax system"
+#~ msgstr "Modules pour configurer le système fax"
+
+#~ msgid "Handbooks for system administration"
+#~ msgstr "Guide pour l'administration système"
+
+#~ msgid "Modules for printer, disk and other hardware configuration"
+#~ msgstr "Modules pour imprimante, disque et autre configuration matérielle"
+
+#~ msgid "Modules for configuring mailboxes"
+#~ msgstr "Modules pour configurer les boîtes aux lettres"
+
+#~ msgid "Modules for configuring the MTA"
+#~ msgstr "Modules pour configurer le MTA"
+
+#~ msgid "Modules for configuring security options"
+#~ msgstr "Modules pour configurer les options de sécurité"
+
+#~ msgid "Can not open $1 : $2"
+#~ msgstr "Impossible d'ouvrir $1 : $2"
+
+#~ msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
+#~ msgstr "Veuillez cliquer sur le bouton 'Appliquer' dans la configuration Fax. La configuration a été modifiée."
+
+#~ msgid "Attention!"
+#~ msgstr "Attention !"
+
+#~ msgid "Language"
+#~ msgstr "Langue"
+
+#~ msgid "Dutch"
+#~ msgstr "Néerlandais"
+
+#~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
+#~ msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page"
+
+#~ msgid "About Z-Admin"
+#~ msgstr "À propos de Z-Admin"
+
+#~ msgid "Logged out"
+#~ msgstr "Déconnecté"
+
+#~ msgid "Another administrator logged in. You have to log in again."
+#~ msgstr "Un autre administrateur est connecté. Vous devez vous reconnecté."
+
+#~ msgid "Loading please wait..."
+#~ msgstr "Chargement, veuillez patienter..."
+
+#~ msgid "Error"
+#~ msgstr "Erreur"
+
+#~ msgid "Help"
+#~ msgstr "Aide"
+
+#~ msgid "Loading..."
+#~ msgstr "Chargement..."
+
+#~ msgid "Data error."
+#~ msgstr "Erreur de données."
+
+#~ msgid "No records found."
+#~ msgstr "Aucune donnée n'a été trouvée."
+
+#~ msgid "Filter data"
+#~ msgstr "Filtrer les données"
+
+#~ msgid "Show filter"
+#~ msgstr "Appliquer le filtre"
+
+#~ msgid "Could not connect to backend!"
+#~ msgstr "Impossible de se connecter au moteur !"

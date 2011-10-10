@@ -1,0 +1,93 @@
+category_accounts=Accounts
+category_appearance=Appearance
+category_fax=Fax
+category_manual=Manual
+category_hardware=Hardware
+category_license=License
+category_mailbox=Mailbox
+category_mailserver=Mail Server
+category_maintenance=Maintenance
+category_security=Security
+category_pdf=PDF Printers
+category_zarafa=Zarafa
+category_groupware=Zarafa
+
+err_db_connect=Could not connect to Postgres database.
+err_dir_exists=Could not find the following directories:
+err_dir_read=Could not read the following directories:
+err_file_copy=Could not copy the following file:
+err_file_delete=Could not delete the following files:
+err_file_execute=Could not execute the following files:
+err_file_exists=Could not find the following files:
+err_file_hardlink=Could not create hard link for the following files:
+err_file_read=Could not read the following files:
+err_file_rename=Could not rename the following files:
+err_file_symlink=Could not create symlink for the following files:
+err_file_write=Could not write the following files:
+err_user_exists=Could not find the following users:
+err_license_expired_text=Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use.
+err_name_is_alias=There is already an alias with this name:
+err_alias_is_user=There is already a user with this name:
+
+lbl_apply=Apply
+lbl_cancel=Cancel
+lbl_no=No
+lbl_ok=OK
+lbl_paging_all=Show all
+lbl_paging_next=Next
+lbl_paging_previous=Previous
+lbl_paging_goto=Go to
+lbl_save=Save
+lbl_yes=Yes
+lbl_create_cache=Creating cache
+lbl_done=done
+lbl_apply_filter=Filter
+lbl_delete=delete
+
+lbl_product_mail=yaffas|MAIL
+lbl_product_fax=yaffas|FAX
+lbl_product_gate=yaffas|GATE
+lbl_product_pdf=yaffas|PDF
+lbl_product_fileserver=yaffas|FILE
+
+longcategory_accounts=Modules for configuring the system accounts
+longcategory_appearance=Modules to customize the appearance
+longcategory_license=Modules for the license management
+longcategory_fax=Modules for configuring the fax system
+longcategory_handbook=Handbooks for system administration
+longcategory_hardware=Modules for printer, disk and other hardware configuration
+longcategory_mailbox=Modules for configuring mailboxes
+longcategory_mailserver=Modules for configuring the MTA
+longcategory_security=Modules for configuring security options
+
+efileopen=Can not open $1 : $2
+
+lbl_faxtakeover=Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed.
+lbl_achtung=Attention!
+
+lbl_lang=Language
+lbl_lang_de=German
+lbl_lang_en=English
+lbl_lang_nl=Dutch
+lbl_lang_fr=French
+
+lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
+lbl_about_yaffas=About yaffas
+lbl_about_zadmin=About Z-Admin
+
+lbl_logged_out=Logged out
+lbl_logged_out_msg=Another administrator logged in. You have to log in again.
+
+lbl_loading=Loading please wait...
+lbl_error=Error
+lbl_help=Help
+
+lbl_loading_data=Loading...
+lbl_error_data=Data error.
+lbl_no_data=No records found.
+
+lbl_filter_header=Filter data
+lbl_filter_show=Show filter
+
+err_connection_failed=Could not connect to backend!
+

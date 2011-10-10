@@ -1,0 +1,42 @@
+lbl_userfilter=Filtre utilisateur
+lbl_filtertype=Type de filtre
+lbl_filtergroup=Groupe
+lbl_ldapfilter_type_0=Par défaut
+lbl_ldapfilter_type_1=Plugin AD
+lbl_ldapfilter_type_2=Groupe AD
+lbl_confirm_filter_save=Supprimer ces bases de stockage Zarafa ?
+lbl_confirm_msg=Avec cette action, les bases de stockage Zarafa suivantes seraient supprimées :
+err_no_group_found=Impossible de trouver le groupe.
+err_no_rootbasedn=Impossible de trouver le rootDomainNamingContext dans l'AD.
+
+lbl_attachment_size=Taille des pièces jointes
+lbl_size=Taille
+err_not_numeric=Ce n'est pas une valeur numérique.
+
+lbl_optimize=Optimiser
+lbl_memory_installed=Mémoire adressable
+lbl_memory_optimize=Optimisé pour
+lbl_memory_optimize_header=Optimiser la mémoire
+lbl_unknown=inconnu
+
+lbl_quota=Modèles de quota de courriel
+lbl_quota_warn=Message à 80%
+lbl_quota_soft=Message à 90%
+lbl_quota_hard=Message à 100%
+
+lbl_default_quota=Quota par défaut
+lbl_default_quota_header=Quota par défaut
+lbl_no_quota=Désactivé
+
+lbl_default_features=Fonctionnalités courantes
+lbl_feature=Fonctionnalité
+lbl_state=État
+
+lbl_database_settings=Paramètres MySQL
+lbl_mysql_database=Base de données
+lbl_mysql_host=Serveur
+lbl_mysql_user=Nom d'utilisateur
+lbl_mysql_password=Mot de passe
+
+err_mysql_connect=Impossible de se connecter à la base de données
+err_quota_value=La valeur du quota ne peut contenir que des chiffres.

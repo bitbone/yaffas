@@ -421,3 +421,29 @@ div.yui-layout-bd {
 #filter_form td {
 	border: 0;
 }
+
+.tooltip {
+	float: right;
+	background-image: url(/images/help-hint-grey.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	background-color: transparent;
+	height: 22px;
+	width: 22px;
+}
+
+.tooltip:hover {
+	background-image: url(/images/help-hint.png);
+}
+
+.tooltip div {
+	float: none;
+	width: 200px;
+	margin-left: 25px;
+	border: 1px solid black;
+	background-color: #ffffab;
+	z-index: 100;
+	position: relative;
+	padding: 5px;
+}
+

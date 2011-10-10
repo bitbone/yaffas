@@ -38,7 +38,7 @@ Returns an array of all resources.
 =cut
 
 sub get_resources () {
-	return grep {
+	return map {chomp($_); $_} grep {
 		my @tmp =
 		  Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'zarafa_admin'},
@@ -96,6 +96,7 @@ sub delete_resource ($) {
 	throw Yaffas::Exception("err_no_local_auth") unless  Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES;
 
 	my $resource = shift;
+	chomp($resource);
 	Yaffas::UGM::rm_user($resource);
 }
 
@@ -111,7 +112,7 @@ sub modify_resource ($$$$) {
 	if (Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES) {
 		Yaffas::Module::Users::set_zarafa_shared( $resource, 1 );
 		Yaffas::UGM::gecos( $resource, 'resource', $description );
-		my $pass = map{("a".."z","A".."Z",0..9)[int(rand(62))]}(1..26);
+		my $pass = join "", map{("a".."z","A".."Z",0..9)[int(rand(62))]}(1..26);
 		Yaffas::UGM::password($resource, $pass);
 		Yaffas::UGM::set_suppl_groups($resource, "");
 	}
@@ -160,7 +161,7 @@ sub get_resource_details ($) {
 
 sub conf_dump() {
 	my $bkconf  = Yaffas::Conf->new();
-	my $section = $bkconf->section('bbzarafaresources');
+	my $section = $bkconf->section('zarafaresources');
 	foreach my $resource ( get_resources() ) {
 		$section->del_func( 'modify_resource_' . $resource );
 		my $func = Yaffas::Conf::Function->new( 'modify_resource_' . $resource,
@@ -175,6 +176,7 @@ sub conf_dump() {
 			{ type => 'scalar', param => $details{decline_recurring} } );
 		$section->add_func($func);
 	}
+	$section->add_require("bkbackup");
 	$bkconf->save();
 }
 

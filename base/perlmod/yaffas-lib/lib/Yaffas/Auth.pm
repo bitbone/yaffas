@@ -44,7 +44,7 @@ e.g. C<if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::ADS)>
 
 *get_auth_type = \&auth_type;
 sub auth_type() {
-	return FILES if is_local_files_only_auth ();
+	return NOT_SET if is_local_files_only_auth ();
 	my $dc_info = get_pdc_info();
 	if ((scalar keys %{$dc_info}) > 0) {
 		return ADS if (defined $dc_info->{'type'} && $dc_info->{'type'} eq 'win');
@@ -300,15 +300,13 @@ Note: this method only works on RedHat at the moment. On other systems it will a
 =cut
 
 sub is_local_files_only_auth() {
-	return 0 unless Yaffas::Constant::OS eq 'RHEL5'; # only needed on redhat systems at this moment
-
 	my $nsswitch_conf = Yaffas::File->new (Yaffas::Constant::FILE->{'nsswitch'});
 	my $passwd_line = $nsswitch_conf->search_line ("^\\s*passwd:");
 	my $passwd = $nsswitch_conf->get_content ($passwd_line);
 
 	$passwd =~ m/^\s*passwd:\s*(.*)\s*$/;
 	my @ns = split /\s+/, $1;
-	return 1 unless grep { $_ ne 'files' } @ns;
+	return 1 unless grep { $_ ne 'files' && $_ ne 'compat' } @ns;
 	return 0;
 }
 

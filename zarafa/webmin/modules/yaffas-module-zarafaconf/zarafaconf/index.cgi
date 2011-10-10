@@ -22,8 +22,10 @@ header();
 
 try {
 	show_userfilter();
+	database_settings();
 	show_attachment_size();
 	defaultquota_form();
+	show_features();
 	quota_message_forms();
 }
 catch Yaffas::Exception with {

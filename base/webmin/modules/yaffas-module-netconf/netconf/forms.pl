@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Yaffas;
-use Yaffas::UI qw(value_add_del_form $Cgi small_form);
+use Yaffas::UI qw(value_add_del_form $Cgi small_form textfield);
 use Yaffas::Module::Netconf;
 use Sort::Naturally;
 use Data::Dumper;
@@ -36,10 +36,11 @@ sub net_conf_form () {
 				)
 			)
 		);
-		
+	
+        print $Cgi->hidden({-name => 'section', -value => '0'});	
 
 		print Yaffas::UI::section_button(
-			$Cgi->submit( { -value => $main::text{lbl_save} } ) );
+			$Cgi->submit( { -value => $main::text{lbl_save}} ) );
 		print $Cgi->end_form();
 		
 		proxy_form();
@@ -80,13 +81,15 @@ sub net_conf_form () {
 								"$_-gateway", $dev->get_gateway(),
 								$dev->enabled()
 							),
-							_input_td(
-								"$_-dns", $dev->get_dns(), $dev->enabled()
-							),
-							_input_td(
-								"$_-search", $dev->get_search(),
-								$dev->enabled()
-							),
+							$_ !~ /^eth\d+:\d+$/ ? (
+								_input_td(
+									"$_-dns", $dev->get_dns(), $dev->enabled()
+								),
+								_input_td(
+									"$_-search", $dev->get_search(),
+									$dev->enabled()
+								),
+							) : "",
 							$Cgi->td(
 								  $_ =~ /^eth\d+$/
 								? $dev->enabled()
@@ -108,6 +111,7 @@ sub net_conf_form () {
 					)
 				),
 			  )
+              .$Cgi->hidden({-name => 'section', -value => '1'}) 
 			  . Yaffas::UI::section_button(
 				$Cgi->submit( { -value => $main::text{lbl_save} } ) )
 			  . $Cgi->end_form()
@@ -140,12 +144,11 @@ sub virtual_card_form ($) {
 					_input_td( "new-ipaddr",  "", 1 ),
 					_input_td( "new-netmask", "", 1 ),
 					_input_td( "new-gateway", "", 1 ),
-					_input_td( "new-dns",     "", 1 ),
-					_input_td( "new-search",  "", 1 ),
 				]
 			)
 		)
 	);
+        print $Cgi->hidden({-name => 'section', -value => '4'});
 	print Yaffas::UI::section_button(
 		$Cgi->submit( { -value => $main::text{lbl_create} } ) );
 	print $Cgi->end_form();
@@ -210,15 +213,15 @@ sub _input_td($$) {
 	return $Cgi->td(
 		[
 			$main::text{"lbl_$textname"} . ":",
-			$Cgi->textfield(
+			textfield(
 				{ -name => $name, -value => $values[0], @disabled }
 			),
 			( $textname eq "dns" or $textname eq "search" )
 			? (
-				$Cgi->textfield(
+				textfield(
 					{ -name => "$name-1", -value => $values[1], @disabled }
 				),
-				$Cgi->textfield(
+				textfield(
 					{ -name => "$name-2", -value => $values[2], @disabled }
 				)
 			  )
@@ -259,10 +262,10 @@ sub _input_status($$) {
 	  . '-search-2");
 	for (var i = 0; i < fields.length; ++i) {
 		var e = document.getElementsByName(fields[i])[0];
-		if (e.style.color == "black") {
-			e.style.color="grey";
-		} else {
+		if (document.getElementsByName("'.$dev.'-enabled")[0].children[1].selected) {
 			e.style.color="black";
+		} else {
+			e.style.color="grey";
 		}
 	}';
 
@@ -301,11 +304,11 @@ sub proxy_form() {
 							  $Cgi->Tr([
 										$Cgi->td([
 												  $main::text{lbl_proxy_ip} . ":" ,
-												  $Cgi->textfield("proxy", $proxy, 20),
+												  textfield("proxy", $proxy, 20),
 												 ]),
 										$Cgi->td([
 												  $main::text{lbl_proxy_port} . ":" ,
-												  $Cgi->textfield("port", $port, 4),
+												  textfield("port", $port, 4),
 												 ]),
 									   ])
 							 ),
@@ -314,7 +317,7 @@ sub proxy_form() {
 							  $Cgi->Tr([
 										$Cgi->td([
 												  $main::text{lbl_user} . ":" ,
-												  $Cgi->textfield("user", $user, 10),
+												  textfield("user", $user, 10),
 												 ]),
 										$Cgi->td([
 												  $main::text{lbl_pass} . ":" ,

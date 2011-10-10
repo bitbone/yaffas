@@ -29,7 +29,6 @@ set -e
 source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="security"
 add_webmin_acl $MODULE
-add_license $MODULE ""
 
 if [ "$1" = 1 ]; then
 	%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
@@ -55,13 +54,19 @@ if [ "$1" = 1 ]; then
 	touch /opt/yaffas/config/whitelist-amavis
 	touch /opt/yaffas/config/postfix/whitelist-postfix
 
-	chcon -R -t postfix_etc_t /opt/yaffas/config/postfix/
+	chcon -R system_u:object_r:postfix_etc_t /opt/yaffas/config/postfix/
 	postmap /opt/yaffas/config/postfix/whitelist-postfix
 fi
 
 
 %postun
-%{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
+if [ $1 -eq 0 ]; then
+	%{__mv} -f /etc/policyd-weight.conf.yaffassave /etc/policyd-weight.conf
+
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="security"
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root)

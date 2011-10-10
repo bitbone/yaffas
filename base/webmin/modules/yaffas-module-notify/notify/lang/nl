@@ -1,0 +1,31 @@
+lbl_status=Address for System Messages
+lbl_index_header=Notification
+lbl_index_return=Systeem
+lbl_mail=E-mail
+lbl_send_mail=Send e-mail
+lbl_always=Always
+lbl_errors=Critical errors
+lbl_never=Fouten
+lbl_test=Test your e-mail address
+lbl_test_desc=Click the button below to send a mail to your previously set e-mail address.
+lbl_test_button=Test
+err_mail=This is not a valid mail address
+err_modify_file=Can not modify configuration entry.
+err_write_file=Error writing configuration file.
+err_type=Type can only be: always, errors or never.
+err_found_line=Line not found in configuration file.
+err_test=Please set an e-mail address first.
+err_send_test=Could not send a mail to your address.
+suc_test=An e-mail has been sent to your given address. Please check your mailbox.
+suc_set_mail=Successfully set adress for system messages.
+
+lbl_test_mail_subject=Test - yaffas notify
+lbl_test_mail_body=This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors.
+lbl_test_mail_body1=E-mail address test
+lbl_test_mail_body2=
+lbl_test_mail_body3=This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur.
+lbl_test_mail_body4=
+lbl_test_mail_body5=Have fun with yaffas
+lbl_test_mail_body6=
+lbl_test_mail_body7=
+

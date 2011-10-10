@@ -1,7 +1,7 @@
 index_title=Abholaufträge
-index_active=Aktiv?
 index_poll=Abzufragender Server
 index_proto=Protokoll
+index_active=Aktiv?
 index_users=Entfernter und lokaler Anwender
 index_add=Hinzufügen eines neuen Servers
 index_run=Überprüfe alle Server
@@ -17,6 +17,9 @@ index_startmsg=Klicken Sie hier, um das Fetchmail-Programm auf diesem Rechner zu
 index_stopmsg=Klicken Sie hier, um das Fetchmail-Programm zu stoppen das momentan als Benutzer $1 arbeitet. Die Post wird dann nicht mehr alle $2 Sekunden abgeholt.
 index_efetchmail=Das Fetchmail-Programm $1 konnte nicht gefunden werden. Vielleicht ist Fetchmail nicht auf dem System installiert, oder die <a href='$2'>Modul Konfiguration</a> stimmt nicht.
 index_none=Keiner der Unix-Benutzer hat eine <tt>.fetchmailrc</tt> Datei.
+index_cron=Geplante Überprüfung
+index_crondesc=Klicken sie hier, um einen Cron-Job zu erzeugen, ändern oder entfernen, der Fetchmail automatisch zu einem geplanten Zeitpunkt E-Mails abrufen lässt. Dazu wird die oben stehende Konfiguration verwendet.
+index_version=Fetchmail Version $1
 
 poll_create=Abholauftrag hinzufügen
 poll_edit=Abholauftrag bearbeiten
@@ -34,6 +37,8 @@ poll_is=Lokaler Benutzer
 poll_is_gate=Lokale Benutzer oder E-Mail Adressen
 poll_keep=Nachrichten auf dem Server belassen?
 poll_fetchall=Immer alle Nachrichten abholen?
+poll_usually=Üblicherweise nicht
+poll_ssl=Mit SSL verbinden
 poll_err=Konnte Server nicht speichern
 poll_epoll=Der Servername fehlt oder stimmt nicht
 poll_evia=Fehlender oder ungültiger Mailserver-Name
@@ -52,13 +57,14 @@ poll_preconnect=Befehl, der vor dem Verbindungsaufbau ausgeführt werden soll
 poll_postconnect=Befehl, der nach dem Verbindungsaufbau ausgeführt werden soll
 poll_ecannot=Sie sind nicht berechtigt die Fetchmail-Konfiguration dieses Benutzers zu bearbeiten
 poll_efile=Nur die Fetchmail-Konfigurationsdateien des Benutzers können geändert werden
-poll_ssl=Mit SSL verbinden
 poll_interval=Abholintervall
 poll_envelope=Envelope
 
 stop_err=Konnte Fetchmail nicht anhalten
+stop_ecannot=Sie haben keine Berechtigung fetchmail zu stoppen
 start_err=Konnte Fetchmail nicht aktivieren
 start_einterval=Das Prüfintervall fehlt oder ist ungültig
+start_ecannot=Sie haben keine Berechtigung fetchmail zu starten
 
 check_title=Prüfe Server
 check_exec=Prüfe Mails auf Server(n) mit dem Befehl $1 ...
@@ -66,6 +72,7 @@ check_ok=... Prüfung vollständig.
 check_failed=... Prüfung gescheitert!
 
 lbl_settings=Einstellungen
+global_title=Standardeinstellungen
 global_header=Standard-Einstellungen für alle Server
 global_err=Das Speichern der Standard-Einstellungen ist gescheitert
 
@@ -84,6 +91,9 @@ log_global_user=Allgemeine Einstellungen des Bentzers $1 geändert
 log_global_file=Allgemeine Einstellungen in der Datei $1 geändert
 log_start=Fetchmail-Programm gestartet
 log_stop=Fetchmail-Programm gestoppt
+log_create_cron=Geplantes Abholen aktivieren.
+log_update_cron=Geplantes Abholen ändern
+log_delete_cron=Geplantes Abholen abschalten
 
 acl_users=Kann Fetchmail-Konfiguration bearbeiten für
 acl_all=Alle Benutzer
@@ -91,7 +101,24 @@ acl_this=Aktuellen Webmin-Benutzer
 acl_only=Nur Benutzer
 acl_except=Alle Benutzer ausser
 
-lbl_delete=Lösche
+cron_title=Geplante Überprüfung
+cron_desc=Auf dieser Seite kann ein Cronjob für Fetchmail aktiviert oder deaktiviert werden, um die Mailserver in ihrer Fetchmail-Konfiguration regelmäßig abzufragen. Die Verwendung eines Cronjobs anstatt des Fetchmail-Dienstes hat den Vorteil, dass er nicht beim Boot neu gestartet werden muss.
+cron_header=Fetchmail Einstellungen für die geplante Abholung.
+cron_enabled=Geplante Abholung aktiviert?
+cron_yes=Ja, zu den unten stehenden Zeiten ...
+cron_output=Ziel für die Fetchmail Ausgabe
+cron_file=Schreibe in Datei $1
+cron_mail=E-Mail an Adresse $1
+cron_throw=Verwerfen
+cron_cron=Ausgabe an cron
+cron_user=Fetchmail als Benutzer ausführen
+cron_err=Speichern der geplanten Abholung fehlgeschlagen
+cron_efile=Fehlender oder ungültiger Name für die Ausgabedatei
+cron_email=Fehlende oder ungültige E-Mail Adresse
+cron_euser=Fehlende oder ungültiger Unix Benutzer
+cron_ecannot=Die geplante Abholung ist in diesem Modus nicht verfügbar
+
+lbl_delete=Löschen
 lbl_really_delete=Möchten sie diesen Server wirklich löschen?
 lbl_multidrop=Multidrop
 lbl_target=Lokales Ziel

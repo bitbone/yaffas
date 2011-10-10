@@ -12,7 +12,7 @@ lbl_test_button=Test
 err_mail=Diese E-Mail Adresse ist nicht gültig
 err_modify_file=Konfigurationseintrag konnte nicht geändert werden.
 err_write_file=Fehler beim schreiben der Konfigurationsdatei.
-err_type=Der Type kann nur folgende Werte annehmen: always, error und never.
+err_type=Der Type kann nur folgende Werte annehmen: always, error oder never.
 err_found_line=Die Zeile wurde in der Konfigurationsdatei nicht gefunden.
 err_test=Um die Erreichbarkeit Ihrer E-Mail-Adresse zu testen, müssen Sie erst eine Adresse angeben.
 err_send_test=Konnte keine E-Mail an Ihre Adresse schicken.
@@ -28,3 +28,4 @@ lbl_test_mail_body4=
 lbl_test_mail_body5=Viel Spaß mit yaffas
 lbl_test_mail_body6=
 lbl_test_mail_body7=
+

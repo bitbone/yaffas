@@ -13,6 +13,7 @@ use MIME::Base64;
 ## prototypes ##
 sub get_passwd ();
 sub get_domain ();
+sub dn_to_name ($);
 sub get_host ();
 sub search_entry($$;$);
 sub search_attributes_entries($$;$);
@@ -46,7 +47,7 @@ returns the LDAP passwd from "/etc/libnss-ldap.conf" or undef on error
 =cut
 
 sub get_passwd () {
-	my $bkcf = Yaffas::File->new(Yaffas::Constant::FILE->{libnss_ldap_conf});
+	my $bkcf = Yaffas::File->new(Yaffas::Constant::FILE->{ldap_conf});
 
 	my @content = $bkcf->get_content();
 
@@ -116,6 +117,31 @@ sub get_local_domain() {
 		return undef;
 	}
 }
+
+=item dn_to_name( DN )
+
+converts ldap BASEDN to sytem DN
+e.g ou=bitbone,c=de to bitbone.de
+
+=cut
+
+sub dn_to_name($)
+{
+        my $dn = shift;
+        return undef unless (defined $dn);
+
+        my $dom = "";
+        foreach ( split(/,/,$dn) )
+        {
+                my $dn_part = $_;
+                $dn_part =~ s/^[^=]+=//;
+                $dom .= "${dn_part}."
+        }
+        $dom =~ s/\.$//;
+
+        return (defined ($dom)) ? $dom : undef;
+}
+
 
 =item get_host ()
 

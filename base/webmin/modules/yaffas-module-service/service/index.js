@@ -40,7 +40,7 @@ YAHOO.widget.DataTable.Formatter["startOnBootColumn"] = function(e, record, colu
 	
 	switch(record.getData().name) {
 		case "network":
-		case "webmin":
+		case "yaffas":
 			disabled = "disabled";
 	}
 	

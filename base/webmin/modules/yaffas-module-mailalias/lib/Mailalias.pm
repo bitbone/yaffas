@@ -90,26 +90,6 @@ sub add_alias($$) {
 ## -------------------------------------------------------------------------- ##
 
 sub conf_dump() {
-	my %aliases = list_alias();
-	my $aliases;
-
-	for my $mode (qw(DIR USER)) {
-		$aliases = Yaffas::Mail::Mailalias->new($mode);
-		_save_config($mode, $aliases->get_all);
-	}
-}
-
-sub _save_config {
-	my $mode = shift;
-	my %data = @_;
-	my $bkc = Yaffas::Conf->new();
-	my $sec = $bkc->section("mailalias");
-	my $func = Yaffas::Conf::Function->new("mailalias-$mode", "Yaffas::Mail::Mailalias::_write");
-	$func->add_param({type => "scalar", param => $mode});
-	$func->add_param({type => "hash", param => \%data});
-	$sec->del_func("mailalias-$mode");
-	$sec->add_func($func);
-	$bkc->save();
 	return 1;
 }
 
@@ -120,7 +100,6 @@ sub add_edit_alias {
 	my @folders = split /\0/, $main::in{folders};
 
 	my $e           = Yaffas::Exception->new();
-	my $sf          = Yaffas::Constant::MISC()->{sharedfolder};
 	my $useralias   = Yaffas::Mail::Mailalias->new();
 	my $folderalias = Yaffas::Mail::Mailalias->new("DIR");
 

@@ -1,0 +1,6 @@
+interval=Specify the polling interval in seconds.
+poll=The remote host name or IP address from which you want to receive mail.
+via=The DNS name of the remote server. This setting overrides the server name.
+port=The TCP/IP port of the remote server.
+poll_envelope=The header name of the envelope address (e.g. X-Envelope-To).
+user=Specify the login user from the remote machine.

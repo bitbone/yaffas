@@ -1,7 +1,7 @@
 #use strict;
 
 use Yaffas;
-use Yaffas::UI qw(start_section end_section section_button);
+use Yaffas::UI qw(start_section end_section section_button textfield);
 use Yaffas::Product;
 use Yaffas::Mail::Mailalias;
 use Sort::Naturally;
@@ -40,7 +40,7 @@ sub show_global_settings {
 					$Cgi->td(
 						[
 							$main::text{poll_interval} . ":",
-							$Cgi->textfield(
+							textfield(
 								{
 									-name  => "interval",
 									-value => $interval
@@ -99,7 +99,7 @@ sub show_edit {
 				$Cgi->td(
 					[
 						$main::text{'poll_poll'},
-						$Cgi->textfield( 'poll', $poll->{'poll'} )
+						textfield( 'poll', $poll->{'poll'} )
 					]
 				),
 				$Cgi->td(
@@ -146,7 +146,7 @@ sub show_edit {
 								)
 							}
 						  )
-						  . $Cgi->textfield( 'via', $poll->{'via'} )
+						  . textfield( 'via', $poll->{'via'} )
 					]
 				),
 				$Cgi->td(
@@ -199,13 +199,13 @@ sub show_edit {
 								)
 							}
 						  )
-						  . $Cgi->textfield( 'port', $poll->{'port'} )
+						  . textfield( 'port', $poll->{'port'} )
 					]
 				),
 				$Cgi->td(
 					[
 						$main::text{'poll_envelope'},
-						$Cgi->textfield( 'poll_envelope', $poll->{'envelope'} )
+						textfield( 'poll_envelope', $poll->{'envelope'} )
 					]
 				),
 			]
@@ -245,7 +245,7 @@ sub show_edit {
 			$Cgi->Tr(
 				{ -style => 'vertical-align: top;' },
 				$Cgi->td( $main::text{'poll_user'} ),
-				$Cgi->td( $Cgi->textfield( "user_$i", $u->{'user'} ) ),
+				$Cgi->td( textfield( "user_$i", $u->{'user'} ) ),
 			),
 			$Cgi->Tr(
 				{ -style => 'vertical-align: top;' },

@@ -60,32 +60,6 @@ function _get_org() {
 	echo `echo $1 | sed -e 's/.*o=\(.*\),.*/\1/g'`
 }
 
-# create group which allows users to read from ldap
-groupadd -f -r ldapread
-
-# save existing config files and
-# copy our config files to default locations
-YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-%{__mv} -f /etc/ldap.conf /etc/ldap.conf.yaffassave
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
-# leave nsswitch.conf will be change by setting authentication
-#%{__mv} -f /etc/nsswitch.conf /etc/nsswitch.conf.yaffassave
-#%{__cp} -f ${YAFFAS_EXAMPLE}/etc/nsswitch.conf /etc
-%{__mv} -f /etc/openldap/slapd.conf /etc/openldap/slapd.conf.yaffassave
-%{__cp} -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
-%{__mv} -f /etc/openldap/ldap.conf /etc/openldap/ldap.conf.yaffassave
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
-%{__mv} -f /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap.conf.yaffassave
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools/smbldap_bind.conf.yaffassave
-%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
-
 # some defines
 CONF="/etc/ldap.conf"
 NSS="/etc/nsswitch.conf"
@@ -99,32 +73,59 @@ SMBLDAP_BIND="/etc/smbldap-tools/smbldap_bind.conf"
 LDAP_SETTINGS="/etc/ldap.settings"
 SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
 
-service ldap stop
-sleep 1
-
-# kill ldap if it is still running
-if pgrep slapd; then
-	killall -9 slapd
-fi
-
-BASE=`_get_base`
-ORG=`_get_org $BASE`
-
-sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
-sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-aliases.cf
-
-echo "Using base $BASE ..."
-echo "Changing configfiles..."
-
-sed -e "s/BASE/$BASE/" -i $CONF
-sed -e "s/BASE/$BASE/" -i $SLAPD
-sed -e "s/BASE/$BASE/" -i $LDAPCONF
-sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
-sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
-sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
-
 # only on first installation, if no ldap tree is present
 if [ "$1" = 1 ] ; then
+
+	# create group which allows users to read from ldap
+	groupadd -f -r ldapread
+
+	# save existing config files and
+	# copy our config files to default locations
+	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+	%{__mv} -f /etc/ldap.conf /etc/ldap.conf.yaffassave
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
+	# leave nsswitch.conf will be change by setting authentication
+	#%{__mv} -f /etc/nsswitch.conf /etc/nsswitch.conf.yaffassave
+	#%{__cp} -f ${YAFFAS_EXAMPLE}/etc/nsswitch.conf /etc
+	%{__mv} -f /etc/openldap/slapd.conf /etc/openldap/slapd.conf.yaffassave
+	%{__cp} -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
+	%{__mv} -f /etc/openldap/ldap.conf /etc/openldap/ldap.conf.yaffassave
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+	%{__mv} -f /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap.conf.yaffassave
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
+	%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools/smbldap_bind.conf.yaffassave
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
+
+	service ldap stop
+	sleep 1
+
+	# kill ldap if it is still running
+	if pgrep slapd; then
+		killall -9 slapd
+	fi
+
+	BASE=`_get_base`
+	ORG=`_get_org $BASE`
+
+	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
+	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-aliases.cf
+
+	echo "Using base $BASE ..."
+	echo "Changing configfiles..."
+
+	sed -e "s/BASE/$BASE/" -i $CONF
+	sed -e "s/BASE/$BASE/" -i $SLAPD
+	sed -e "s/BASE/$BASE/" -i $LDAPCONF
+	sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
+	sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
+	sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
+
 
 	echo "Removing old LDAP Database"
 	rm -rf /var/lib/ldap/*
@@ -190,16 +191,6 @@ else
 
 fi
 
-# this can always be done...
-#service ldap start
-
-# wait max 5 seconds for ldap to coming up. else we try it anyway...
-SLEEP_COUNT=0
-while [ ! "`pgrep slapd`" ] && [ $SLEEP_COUNT -lt 5 ]; do
-	sleep 1
-	SLEEP_COUNT=$((SLEEP_COUNT+1))
-done
-
 # fix permissions
 chmod 440 $CONF
 chmod 640 $LDAPS
@@ -212,15 +203,17 @@ rm -f $LDIF
 chkconfig ldap on
 
 %postun
-%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
-%{__rm} -f /etc/ldap.settings
-%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
-%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
-%{__rm} -f /etc/ldap.secret
-%{__rm} -f /etc/postfix/ldap-users.cf
-%{__rm} -f /etc/postfix/ldap-aliases.cf
-%{__mv} -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
-%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
+if [ $1 -eq 0 ]; then
+	%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
+	%{__rm} -f /etc/ldap.settings
+	%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
+	%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
+	%{__rm} -f /etc/ldap.secret
+	%{__rm} -f /etc/postfix/ldap-users.cf
+	%{__rm} -f /etc/postfix/ldap-aliases.cf
+	%{__mv} -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
+	%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT

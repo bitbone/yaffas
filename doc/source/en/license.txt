@@ -1,0 +1,10 @@
+== License
+
+=== Zarafa Licence Key
+In this module you can extend the numbers of users with Outlook access to Zarafa. Three users have access via Outlook without any licence key. If you want more users to have access you may buy a licence pack. 
+The licence key has two components: a basis key and an additional user key. 
+Please insert the key into the specific (basis or user) field an click the button.  _"key upload"_ 
+
+At the tab  _"Installed Licences"_ all licences are shown. You will get more information at the tab  _"Licence Log"_ 
+
+

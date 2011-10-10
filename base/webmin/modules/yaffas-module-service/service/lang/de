@@ -1,13 +1,13 @@
 index_header=Dienste
 lbl_service=Dienst
-lbl_status=Status
+lbl_status=State
 lbl_service_on_boot=Service starten beim Booten
 lbl_watchme=Überwachen
 lbl_action=Aktion
 lbl_execute=Ausführen
 lbl_start=Start
-lbl_stop=Stop
-lbl_config=Konfigurieren
+lbl_stop=Anhalten
+lbl_config=Konfiguration
 lbl_restart=Neustart
 lbl_started=Gestartet
 lbl_stopped=Gestoppt
@@ -36,7 +36,7 @@ lbl_sure_reboot=Möchen Sie wirklich das System neu starten.
 lbl_day=Tag
 lbl_month=Monat
 lbl_date=Datum
-lbl_hour=Stunde
+lbl_hour= Stunde 
 lbl_year=Jahr
 lbl_setdatetime=Systemzeit
 

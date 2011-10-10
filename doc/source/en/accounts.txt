@@ -1,0 +1,126 @@
+== Accounts
+
+===  Authentication Server
+
+The menu topic  _"Accounts->Authentication Server"_ leads to a page for configuring the source for authentication.
+
+After installation of {product} this has to be configured first because other services depend on it. Users and groups can only be created after selecting an authentication type.
+
+{product} can use a local LDAP, a remote {product} LDAP or a Microsoft Windows Active Directory domain for authentication.
+
+When using the local LDAP for authentication the server can also be used as (LDAP) authentication server for other remote systems.
+
+[WARNING]
+==============
+When changing the authentication type all settings that apply to users will be deleted. Those settings have to be re-applied after the change.
+
+{product} tried to find existing users in the new authentication source. Data from users that can not be found will be deleted.
+==============
+
+To select a type of authentication choose the tab  _"Select authentication"_ below the menu topic  _"Accounts->Authentication Server"_
+
+====  Local Authentication
+When choosing these method a local LDAP will be used for storing users and groups. You can optionally choose to let this server be used by other servers as authentication source.
+
+==== {product} LDAP Server
+If you already use another {product} server with local LDAP authentication you can enter it's connection details here. Users and groups on the remote system can then be used on the local server. 
+
+[NOTE]
+==============
+A {product} server which authenticates it's users against a remote server can not act itself as an authentication server. Should this option be active it will automatically be deactivated.
+==============
+
+The following values have to be configured to run the LDAP server:
+[options="header"]
+|======
+| Value | Function 
+| Server/IP | DNS name or IP address of the remote {product} server. The remote side has to be configured to accept authentication requests. 
+| Base DN | The base DN defines at which point in the LDAP-Tree a search for a certain object should be started. 
+| Bind DN | The bind DN and the bind password are used for authentication against the remote LDAP server. 
+| Bind password | The password for LDAP authentication. I case of problems with the authentication try using a CRYPT-hashed password. 
+|======
+
+
+====  Remote LDAP Authentication
+You can use {product} together with any remote LDAP server. Only the schema as to be installed on the remote LDAP server. 
+
+[options="header"]
+|======
+| Value | Function 
+| Server/IP | Enter the remote LDAP server's IP. 
+| Base DN | Enter the searchbase of you LDAP server. e.g. o=yaffas,c=org
+| Bind DN | Enter the user dn that should be used for authentication against LDAP. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org
+| Base DN user | Enter the part of the users subtree. e.g. ou=People
+| Base DN group | Enter the part of the groups subtree. e.g. ou=Groups
+| Bind password | Enter the password of the Bind DN user.
+| Search attribute user | Enter the attribute where user and group information should be searched for. 
+|======
+
+==== Active Directory
+When using this type of authentication {product} can join an Active Directory domain. All users and groups of this domain will be available in {product}. 
+
+[NOTE]
+==============
+When using Active Directory authentication it is advisable to enter the domain controller as first DNS server in the network configuration.
+==============
+
+[options="header"]
+|======
+| Field | Function 
+| Domain Controller | Name or IP address of the Active Directory server.
+| Domain | Name of the AD domain.
+| Domain administrator | Username of an account with administrator privileges. Used for joining the domain. This user is searched in the cn=users organization unit.
+| Username | User for readonly queries. Only this information will be saved. The domain administrator settings are only needed for joining the domain.
+|======
+
+For simple queries to the domain controller a standard user account is sufficient. Please enter the account information for this.
+
+[WARNING]
+==============
+If you change the active directory user, his password or the DN of your server, you have to change those in the authentication module too!
+==============
+
+
+
+=== User Management
+
+In the UI under  _Accounts->User management_ all existing users are shown. When you have a lot of users the sort and filter options can be useful. To edit or delete an existing user you have to right-click on that user's entry.
+
+[NOTE]
+==============
+The options for editing are only avaliable if you use local LDAP.
+==============
+
+==== Adding and editing users
+To create a new user open the _"Add user"_ tab. To edit a user right click on it and select _"Edit user"_.
+
+The username, given name, surname and password fields are required.
+During editing you can not change the username.
+Setting group memberships is optional. Selecting multiple groups or removing a group from the selection can be achieved by pressing <CTRL> while clicking.
+
+You can select which features (right now only IMAP and POP3) should be enabled or disabled for the user.
+The sendas configuration is needed if you want to allow other users or groups to send in the name of this user.
+
+Shared accounts are a special accounts that are not allowed to login. You have to give permissions for other users to this store to work with it.
+This account type will also not use a whole license.
+A zarafa administrator is a special user who has the permission to open and edit stores of other users. Please use this option with care!
+
+The field  _"email alias"_ can be used to add e-mail aliases for this user. You have to insert a whole email adress as alias.
+
+=== Group Management
+The menu topic  _"Group Management"_ will show an overview of the available groups.
+
+New groups can be created on the tab _"Create group"_. After entering a name for the new group and clicking on "create" the new group will be created.
+Optionally a group can also have an email adress.
+Every account that is member of this group will receive this message.
+
+Existing groups can be edited by right-clicking on their entry and selecting _"Edit group"_.
+
+=== Admin password
+The admin password for the {product} Web-UI can be changed after selecting this this menu topic. The password has to be entered twice before clicking on "Save". 
+
+[TIP]
+==============
+Passwords should not contain user related strings, dictionary words or  _"simple"_ combinations of characters (e.g. characters next to each other on the keyboard).
+==============
+

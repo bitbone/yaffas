@@ -1,0 +1,5 @@
+size=Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Webaccess hochgeladen werden können.
+limit=Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)
+mysql_database=Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen.
+mysql_password=Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden.
+mysql_user=Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen.

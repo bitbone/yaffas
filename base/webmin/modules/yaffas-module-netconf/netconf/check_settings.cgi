@@ -123,6 +123,8 @@ try {
 
 	print $Cgi->pre(Dumper $conf) if ($DEBUG);
 
+	$conf->{section} = $main::in{section};
+
 	$conf->save();
 
 	print Yaffas::UI::ok_box();

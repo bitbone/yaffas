@@ -1,0 +1,11 @@
+lbl_index_header=Support technique
+lbl_support=Support technique
+lbl_klick_dl=Cliquer sur le bouton de téléchargement et envoyer le ficher au support bitbone si vous rencontrez un problème quelconque avec votre serveur yaffas.
+lbl_download=Téléchargement
+lbl_index_return=Système
+lbl_lshw_text=Veuillez cliquer sur Téléchargement afin d'obtenir des informations sur le matériel et le système disponible.
+lbl_lshw=Liste de matériel
+err_no_lshw=Votre système ne dispose pas du programme "lshw" qui doit être installé.
+err_no_lspci=Votre système ne dispose pas du programme "lspci qui doit être installé.
+err_executing_lspci=Une erreur s'est produite lors de l'exécution de "pspci".
+err_executing_lshw=Une erreur s'est produite lors de l'exécution de "lshw".

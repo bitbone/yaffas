@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas::Module::Notify;
-use Yaffas::UI qw(section section_button);
+use Yaffas::UI qw(section section_button textfield);
 
 sub notify_mail() {
 	my $notify_mail = shift || Yaffas::Module::Notify::_get_notify_mail();
@@ -15,7 +15,7 @@ sub notify_mail() {
 										  $Cgi->Tr(
 												   $Cgi->td($main::text{lbl_mail}.":"),
 												   $Cgi->td(
-															$Cgi->textfield(-name=>'email',
+															textfield(-name=>'email',
 																			-value=>$notify_mail,
 																			-size=>30,
 																			-maxlength=>200),

@@ -19,8 +19,8 @@ package Yaffas::Auth::Type;
 sub BEGIN {
 	use Exporter;
 	our @ISA= qw(Exporter);
-	our @EXPORT_OK = qw(LOCAL_LDAP REMOTE_LDAP PDC ADS FILES);
-	our %EXPORT_TAGS = (standard => [qw( LOCAL_LDAP REMOTE_LDAP PDC ADS FILES)]);
+	our @EXPORT_OK = qw(LOCAL_LDAP REMOTE_LDAP PDC ADS FILES NOT_SET);
+	our %EXPORT_TAGS = (standard => [qw( LOCAL_LDAP REMOTE_LDAP PDC ADS FILES NOT_SET)]);
 }
 
 =head1 CONSTANTS
@@ -42,6 +42,7 @@ use constant {
 	PDC         => 'Primary Domain Controller',
 	ADS         => 'Active Directory',
 	FILES       => 'local files',
+	NOT_SET      => 'not_set',
 };
 
 return 1;

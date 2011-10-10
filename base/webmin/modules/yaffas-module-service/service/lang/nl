@@ -1,0 +1,49 @@
+index_header=Services
+lbl_service=Service
+lbl_status=Status
+lbl_service_on_boot=Start Service on Boot
+lbl_watchme=Monitor
+lbl_action=Action
+lbl_execute=Execute
+lbl_start=Begin
+lbl_stop=Stop
+lbl_config=Configuration
+lbl_restart=Restart
+lbl_started=Started
+lbl_stopped=Stopped
+suc_start=Service has been started
+dis_start=Service must not be started
+err_start=Service couldn't be started
+suc_stop=Service has been stopped
+dis_stop=Service must not be stopped
+err_stop=Service couldn't be stopped
+suc_restart=Service has been restarted
+dis_restart=Service must not be restarted
+err_restart=Service couldn't be restarted
+lbl_really_stop_title=Stop service
+lbl_really_stop=Do you really want to stop this service?
+
+
+lbl_shutdown=Shutdown system
+lbl_halt=Shutdown system
+lbl_reboot=Reboot system
+lbl_halting=System is shuting down.
+lbl_rebooting=System is rebooting. In some minutes you can login again.
+lbl_sure_halt=Do you really want to halt the system.
+lbl_sure_reboot=Do you really want to reboot the system.
+
+
+lbl_day=Day
+lbl_month=Month
+lbl_date=Datum
+lbl_hour=Hour
+lbl_year=Year
+lbl_setdatetime=System time
+
+
+lbl_once=now
+lbl_every=hourly
+lbl_daily=daily at 
+lbl_minute= minute
+lbl_hour= hour
+lbl_timeserver=Time Server

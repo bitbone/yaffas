@@ -1,9 +1,9 @@
-lbl_index_header=Passwort &auml;ndern
+lbl_index_header=Passwort ändern
 lbl_index_return=System
 
 lbl_pass=Passwort:
 lbl_pass2=Passwort wiederholen:
-lbl_save=Sichern
+lbl_save=Speichern
 lbl_adminpass=Admin-Passwort
 lbl_rootpass=Root-Passwort
 lbl_domadminpass=Domänen-Administrator-Passwort
@@ -23,4 +23,4 @@ err_copy_file=Kann folgende Datei(en) nicht kopieren:
 
 err_password=Das Passwort muss mindestens ein Zeichen lang sein und darf keine Raute (#) enthalten.
 err_password_equal=Beide Passw&ouml;rter m&uuml;ssen identisch sein.
-err_change_password=Das Passwort nicht gültig.
+err_change_password=Passwort nicht gültig.

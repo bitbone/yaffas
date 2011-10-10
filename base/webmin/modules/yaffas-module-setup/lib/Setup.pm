@@ -9,34 +9,6 @@ use Yaffas::Constant;
 use Yaffas::Service qw/ZARAFA_SERVER RESTART/;
 use Yaffas::File::Config;
 
-sub set_zarafa_database($$$$) {
-    my $host = shift;
-    my $database = shift;
-    my $user = shift;
-    my $password = shift;
-
-    throw Yaffas::Exception("err_syntax") if ($host =~ /;/ or $database =~ /;/);
-
-    my $db = DBI->connect("dbi:mysql:host=$host", $user, $password);
-
-    throw Yaffas::Exception("err_mysql_connect") unless defined $db;
-
-    my $file = new Yaffas::File::Config(Yaffas::Constant::FILE->{zarafa_server_cfg},
-        {
-            -SplitPolicy => 'custom',
-            -SplitDelimiter => '\s*=\s*',
-            -StoreDelimiter => "=",
-        });
-    $file->get_cfg_values()->{mysql_user} = $user;
-    $file->get_cfg_values()->{mysql_password} = $password;
-    $file->get_cfg_values()->{mysql_database} = $database;
-    $file->get_cfg_values()->{mysql_host} = $host;
-
-    $file->save();
-
-    Yaffas::Service::control(ZARAFA_SERVER(), RESTART());
-}
-
 sub hide() {
     my $f = Yaffas::Constant::FILE->{webmin_acl};
     unlink $f;

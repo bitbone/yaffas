@@ -6,15 +6,15 @@ e_cn=Common Name nicht korrekt oder nicht gesetzt.
 e_days=Tage nicht korrekt.
 e_emailAddress=E-Mail Adresse nicht korrekt.
 e_genfailed=Fehler bei der Generierung
-e_l=Örtlichkeit nicht korrekt.
+e_l=Örtlichkeit nicht korrekt
 e_o=Organizationen Name nicht korrekt.
 e_ou=Organization Unit nicht korrekt.
 e_service=Service nicht korrekt.
 e_st=Staat oder Provinz nicht korrekt.
 
-err_param=Parameter nicht korrekt.
+err_cert_param=Die Parameter sind nicht korrekt.
 err_cert_not_valid=Zertifikat ungültig.
-err_fork=Fork missglückt
+err_fork=Fork fehlgeschlagen
 err_cert_creation=Zertifikat wurde nicht erstellt.
 err_nothing_selected=Es wurde nichts ausgewählt.
 
@@ -22,8 +22,8 @@ emailAddress=E-Mail Adresse (z.B. webmaster@company.com)
 
 gencert_days=Zertifikat gültig für (Tage)
 gencert_generate=Generiere Schlüssel
-gencert_header=Generiere Selbst Signierte Zertifikate und Schlüssel
-gencert_service=Service
+gencert_header=Generiere selbst signierte Zertifikate und Schlüssel
+gencert_service=Dienst
 gencert_title=Generiere Zertifikat und Schlüssel
 gencert_e_linkerror=Symlink Fehler
 
@@ -60,5 +60,6 @@ view_header=Verwalte installierte Zertifikate
 
 restart_service=Die Dienste werden neu gestartet!
 
-
-succsess=Erfolgt
+yes=ja
+no=nein
+succsess=Erfolgreich

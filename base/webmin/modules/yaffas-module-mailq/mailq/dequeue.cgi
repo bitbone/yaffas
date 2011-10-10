@@ -30,7 +30,7 @@ else {
 		print Yaffas::UI::error_box("$mailids: $main::text{'err_exim_dequeued'}");
 	}
 	else {
-		print Yaffas::UI::ok_box("$mailids: $main::text{'suc_dequeued'}");
+		print Yaffas::UI::ok_box();
 	}
 }
 

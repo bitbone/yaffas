@@ -474,7 +474,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			my $hostname = $netconf->hostname();
 			my $ip = Yaffas::Network::get_ip("eth0");
 			my $olddom = $netconf->domainname();
-			my $newdom = _dn_to_name($basedn);
+			my $newdom = Yaffas::LDAP::dn_to_name($basedn);
 
 			# /etc/defaultdomain
 			my $ddconf = Yaffas::File->new(Yaffas::Constant::FILE->{default_domain}, $newdom)
@@ -772,30 +772,6 @@ sub set_local_auth(){
 	}
 }
 
-=item _dn_to_name( DN )
-
-converts ldap BASEDN to sytem DN
-e.g ou=bitbone,c=de to bitbone.de
-
-=cut
-
-sub _dn_to_name($)
-{
-	my $dn = shift;
-	return undef unless (defined $dn);
-
-	my $dom = "";
-	foreach ( split(/,/,$dn) )
-	{
-		my $dn_part = $_;
-		$dn_part =~ s/^[^=]+=//;
-		$dom .= "${dn_part}."
-	}
-	$dom =~ s/\.$//;
-
-	return (defined ($dom)) ? $dom : undef;
-}
-
 =item auth_srv_pdc ( [ AUTH ] )
 
 AUTH can be 'activate' or 'deactivate'.
@@ -1015,6 +991,11 @@ sub set_pdc( ;$$$$$$$$){
 		Yaffas::Service::control(WINBIND, RESTART);
 		Yaffas::Service::control(USERMIN, RESTART);
 
+		# for RedHat
+		mod_pam("winbind");
+
+		mod_nsswitch("files winbind");
+
 		if (Yaffas::Product::check_product("zarafa") && ($type eq "win")) {
 			my $zarafa_settings = {
 				'ldap_bind_user' => $userdn,
@@ -1030,22 +1011,18 @@ sub set_pdc( ;$$$$$$$$){
 			system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
 		}
 
-		# for RedHat
-		mod_pam("winbind");
-
-		mod_nsswitch("files winbind");
-
 		_create_builtin_admins($domain, $admin);
 
 		# postfix
 		my $postfix_settings = {
 			'server_host' => $pdc,
-			'search_base' => 'cn=Users,'.(Yaffas::Auth::get_ads_basedn($pdc)),
+			'search_base' => Yaffas::Auth::get_ads_basedn($pdc),
 			'bind_dn' => $userdn,
 			'bind_pw' => $bindpw,
 			'bind' => 'yes',
-			'query_filter' => '(&(objectClass=person)(mail=%s)(zarafaAccount=1))',
+			'query_filter' => '(&(objectClass=person)(mail=%s))',
 			'result_attribute' => 'mail',
+			'version' => '3',
 		};
 		Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users");
 

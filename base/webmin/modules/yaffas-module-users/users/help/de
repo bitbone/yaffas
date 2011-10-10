@@ -1,0 +1,3 @@
+zarafaadmin_\d*=Wenn ein Benutzer Administrator ist, kann er alle Zarafa Stores aller Benutzer öffnen.
+zarafashared_\d*=Der Benutzer kann sich nicht anmelden und wird nicht zu den aktiven Benutzern ihrer Lizenz hinzugezählt. Andere Benutzer können den Store dieses Benutzers als Vertreter öffnen.
+zarafaquota_\d*=Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen darf. Der Benutzer wird gewarnt, wenn er sich diesem Limit nähert. Nachdem das Limit erreicht ist, kann er keine E-Mails mehr senden oder empfangen.

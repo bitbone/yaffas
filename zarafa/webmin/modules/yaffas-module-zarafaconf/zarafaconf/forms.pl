@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Yaffas::UI;
+use Yaffas::UI qw/textfield/;
 use Yaffas::Auth::Type qw(:standard);
 use Yaffas::Mail;
 use Yaffas::Module::ZarafaConf;
@@ -85,15 +85,21 @@ sub show_attachment_size(;$) {
 							  $Cgi->table(
 										  $Cgi->Tr([
 												   $Cgi->td([
-															$main::text{lbl_size}.":",
-															$Cgi->textfield({-name=>"size", -value=>$value}),
-															"MB"
+															$main::text{lbl_size}."(MB):",
+															textfield({-name=>"size", -value=>$value})
 														   ]),
 												   ])
 										 )
 							 );
 	print Yaffas::UI::section_button($Cgi->submit({-name=>"attachment_size", -value=>$main::text{'lbl_save'}}));
 	print $Cgi->end_form();
+}
+
+sub show_features() {
+	print Yaffas::UI::section($main::text{lbl_default_features},
+		$Cgi->div({-id=>"features"}, "")
+	);
+
 }
 
 sub show_memory_optimize {
@@ -189,30 +195,61 @@ sub defaultquota_form {
 	print Yaffas::UI::section(
 				  $main::text{'lbl_default_quota_header'},
 
-				  $Cgi->p($Cgi->input({
+				  $Cgi->p(
+				  $Cgi->table($Cgi->Tr([$Cgi->td(
+					  $Cgi->input({
 							   -type => 'radio',
 							   -name => 'quota',
 							   -value => 'noquota',
 							   (defined $quota ? () : (-checked => 'checked')),
-							  }),
-				  $main::text{lbl_no_quota},
+							  }).$main::text{lbl_no_quota}),
+					  $Cgi->td(
 
-				  $Cgi->br(),
 				  $Cgi->input({
 							   -type => 'radio',
 							   -name => 'quota',
 							   -value => 'yesquota',
 							   (defined $quota ? (-checked => 'checked') : ()),
-							  }),
-				  $Cgi->textfield(
+							  }) . 
+				  textfield(
 								  -name => 'limit',
 								  -default => (defined $quota?$quota:""),
-								 ),
-				  "MB",
+								 )
+					  )]))
 				 ));
 	print Yaffas::UI::section_button(
 						 $Cgi->submit({ -name => 'default_quota', -value => $main::text{lbl_save}} )
 						);
+	print $Cgi->end_form();
+}
+
+sub database_settings {
+	my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
+	use Data::Dumper;
+	print Dumper $settings;
+
+	print $Cgi->start_form({-action=>"zarafadb.cgi", -method=>"post"});
+	print Yaffas::UI::section($main::text{lbl_database_settings},
+		$Cgi->table(
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_user}.":"),
+				$Cgi->td(textfield({-name=>"mysql_user", -value => $settings->{user}}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_password}.":"),
+				$Cgi->td(textfield({-name=>"mysql_password", -value => ""}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_host}.":"),
+				$Cgi->td(textfield({-name=>"mysql_host", -value => $settings->{host}}))
+			),
+			$Cgi->Tr(
+				$Cgi->td($main::text{lbl_mysql_database}.":"),
+				$Cgi->td(textfield({-name=>"mysql_database", -value => $settings->{database}}))
+			)
+		)
+	);
+	print Yaffas::UI::section_button($Cgi->submit({-value=>$main::text{'lbl_save'}}));
 	print $Cgi->end_form();
 }
 

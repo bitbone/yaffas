@@ -1,0 +1,26 @@
+lbl_index_header=Modifier le mot de passe
+lbl_index_return=Système
+
+lbl_pass=Mot de passe :
+lbl_pass2=Renouveler la saisie du mot de passe :
+lbl_save=Enregistrer
+lbl_adminpass=Mot de passe administrateur
+lbl_rootpass=Mot de passe root
+lbl_domadminpass=Mot de passe administrateur du domaine
+
+err_mysql_password=Impossible de configurer le mot de passe MySQL !
+err_file_read=Impossible de lire le(s) fichier(s) suivant(s) :
+err_file_write=Impossible d'enregistrer le(s) fichier(s) suivant(s) :
+
+err_root_password=Impossible de configurer le mot de passe root !
+err_domadmin_password=Impossible de configurer le mot de passe administrateur du domaine !
+err_smbpasswd=Impossible d'exécuter SMBPASSWD !
+err_license=Cette fonctionnalité n'est disponible que dans la version illimitée
+err_execute=Impossible d'exécuter ce qui suit :
+err_ldapmodify=Impossible d'exécuter ldapmodify !
+err_delete_file=Impossible de supprimer le(s) fichier(s) suivant(s) :
+err_copy_file=Impossible de copier le(s) fichier(s) suivant(s) :
+
+err_password=Le mot de passe doit comporter au moins un caractère et ne doit pas comporter le caractère dièse (#).
+err_password_equal=Les deux mots de passe doivent être identiques.
+err_change_password=Mot de passe invalide.

@@ -13,8 +13,38 @@
 *
 * Created   :   01.10.2007
 *
-* � Zarafa Deutschland GmbH, www.zarafaserver.de
-* This file is distributed under GPL v2.
+* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU Affero General Public License, version 3,
+* as published by the Free Software Foundation with the following additional
+* term according to sec. 7:
+*
+* According to sec. 7 of the GNU Affero General Public License, version 3,
+* the terms of the AGPL are supplemented with the following terms:
+*
+* "Zarafa" is a registered trademark of Zarafa B.V.
+* "Z-Push" is a registered trademark of Zarafa Deutschland GmbH
+* The licensing of the Program under the AGPL does not imply a trademark license.
+* Therefore any rights, title and interest in our trademarks remain entirely with us.
+*
+* However, if you propagate an unmodified version of the Program you are
+* allowed to use the term "Z-Push" to indicate that you distribute the Program.
+* Furthermore you may use our trademarks where it is necessary to indicate
+* the intended purpose of a product or service provided you use it in accordance
+* with honest practices in industrial or commercial matters.
+* If you want to propagate modified versions of the Program under the name "Z-Push",
+* you may only do so if you have a written permission by Zarafa Deutschland GmbH
+* (to acquire a permission please contact Zarafa at trademark@zarafa.com).
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+* GNU Affero General Public License for more details.
+*
+* You should have received a copy of the GNU Affero General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*
 * Consult LICENSE file for details
 ************************************************/
 include_once("zpushdtd.php");
@@ -51,7 +81,9 @@ class Streamer {
             if($entity[EN_TYPE] == EN_TYPE_STARTTAG) {
                 if(! ($entity[EN_FLAGS] & EN_FLAGS_CONTENT)) {
                     $map = $this->_mapping[$entity[EN_TAG]];
-                    if(!isset($map[STREAMER_TYPE])) {
+                    if (isset($map[STREAMER_ARRAY])) {
+                        $this->$map[STREAMER_VAR] = array();
+                    } else if(!isset($map[STREAMER_TYPE])) {
                         $this->$map[STREAMER_VAR] = "";
                     } else if ($map[STREAMER_TYPE] == STREAMER_TYPE_DATE || $map[STREAMER_TYPE] == STREAMER_TYPE_DATE_DASHES ) {
                         $this->$map[STREAMER_VAR] = "";
@@ -116,8 +148,9 @@ class Streamer {
                             $decoded = $decoder->getElementContent();
 
                             if($decoded === false) {
-                                debug("Unable to get content for " . $entity[EN_TAG]);
-                                return false;
+                                // the tag is declared to have content, but no content is available.
+                                // set an empty content
+                                $decoded = "";
                             }
 
                             if(!$decoder->getElementEndTag()) {
@@ -215,14 +248,19 @@ class Streamer {
     }
 
     function parseDate($ts) {
-        if(preg_match("/(\d{4})[^0-9]*(\d{2})[^0-9]*(\d{2})T(\d{2})[^0-9]*(\d{2})[^0-9]*(\d{2})(.\d+)?Z/", $ts, $matches)) {
+        if(preg_match("/(\d{4})[^0-9]*(\d{2})[^0-9]*(\d{2})(T(\d{2})[^0-9]*(\d{2})[^0-9]*(\d{2})(.\d+)?Z){0,1}$/", $ts, $matches)) {
             if ($matches[1] >= 2038){
                 $matches[1] = 2038;
                 $matches[2] = 1;
                 $matches[3] = 18;
-                $matches[4] = $matches[5] = $matches[6] = 0;
+                $matches[5] = $matches[6] = $matches[7] = 0;
             }
-            return gmmktime($matches[4], $matches[5], $matches[6], $matches[2], $matches[3], $matches[1]);
+
+            if (!isset($matches[5])) $matches[5] = 0;
+            if (!isset($matches[6])) $matches[6] = 0;
+            if (!isset($matches[7])) $matches[7] = 0;
+
+            return gmmktime($matches[5], $matches[6], $matches[7], $matches[2], $matches[3], $matches[1]);
         }
         return 0;
     }

@@ -1,0 +1,2 @@
+mailservername=Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants
+mailsize=Ceci limite la taille de tous les courriels entrants et sortants. Laisser vide afin que le serveur gère les courriels sans aucune limite de taille.

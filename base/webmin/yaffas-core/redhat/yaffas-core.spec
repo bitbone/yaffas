@@ -62,7 +62,7 @@ touch /opt/yaffas/etc/webmin/hidden_modules
 %{__chmod} 600 /opt/yaffas/etc/webmin/miniserv.*
 
 # set selinux context
-/usr/bin/chcon -t initrc_exec_t /opt/yaffas/etc/init.d/yaffas
+/usr/bin/chcon system_u:object_r:initrc_exec_t /opt/yaffas/etc/init.d/yaffas
 
 if [ ! -e %{_initrddir}/yaffas ]; then
 	ln -s /opt/yaffas/etc/init.d/yaffas %{_initrddir}/yaffas
@@ -76,9 +76,9 @@ fi
 if [ $1 -eq 0 ]; then
 	/sbin/service yaffas stop &>/dev/null || :
 	/sbin/chkconfig --del yaffas
+	%{__rm} -f /opt/yaffas/etc/webmin/miniserv.users
+	%{__rm} -f /opt/yaffas/etc/webmin/webmin.acl
 fi
-%{__rm} -f /opt/yaffas/etc/webmin/miniserv.users
-%{__rm} -f /opt/yaffas/etc/webmin/webmin.acl
 
 %postun
 #/sbin/service yaffas condrestart &>/dev/null || :
@@ -89,7 +89,7 @@ fi
 %doc debian/{copyright,changelog}
 
 #%{_localstatedir}/yaffas
-/opt/yaffas/etc/webmin
+%config(noreplace) /opt/yaffas/etc/webmin/*
 /opt/yaffas/webmin/Webmin
 /opt/yaffas/webmin/proc
 /opt/yaffas/webmin/acl

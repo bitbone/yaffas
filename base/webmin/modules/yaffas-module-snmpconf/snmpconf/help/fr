@@ -1,0 +1,2 @@
+community=Mot de passe pour l'accès SNMP.
+network=Saisir une seule adresse IP ou un réseau sous la forme d'une ressource CIDR. Saisir "default" afin de permettre l'accès uniquement à partir de la machine locale.

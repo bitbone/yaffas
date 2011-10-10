@@ -55,7 +55,11 @@ sub add_group_form(@) {
 					 # else ... nothing
 					 ""
 					),
-				       ]),
+					$Cgi->td([
+						$main::text{lbl_email}.":",
+						$Cgi->input({-name=>"mail", -value => ""}),
+						]),
+					]),
 			     ),
 		 );
     print section_button($Cgi->submit("submit", $main::text{lbl_group_add}));

@@ -30,9 +30,11 @@ MODULE="zarafalicence"
 add_webmin_acl $MODULE
 
 %postun
-source /opt/yaffas/lib/bbinstall-lib.sh
-MODULE="zarafalicence"
-del_webmin_acl $MODULE
+if [ "$1" = "0" ]; then
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE="zarafalicence"
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root,-)

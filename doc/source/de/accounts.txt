@@ -1,0 +1,170 @@
+== Benutzerkonten
+
+===  Authentifizierungsserver
+
+Über den Menüpunkt  _Benutzerverwaltung->Authentifizierungsserver_ lässt sich die Art der Authentifizierung über die Benutzernamen und Passwörter bezogen werden, festlegen.
+
+Nach der Installation von {product} muss dies als erstes konfiguriert werden da einige Dienste davon abhängig sind. Benutzer und Gruppen können erst angelegt werden nachdem eine Authentifizierungsmethode ausgewählt wurde.
+
+
+
+{product} kann die Benutzer gegen die lokale Datenbank, einen entfernten {product} Authentifizierungsserver oder eine Microsoft Windows ActiveDirectory Domäne authentifizieren.
+
+Bei Verwendung der lokalen Benutzerdatenbank kann der lokale Server auch als Authentifizierungsserver für andere {product}-Produkte dienen.
+
+[WARNING]
+==============
+Wird die Art der Authentifizierung umgestellt, so werden alle Einstellungen zurückgesetzt, die Benutzer und Gruppen betreffen (z.B. MSN-Zuordnungen, gewählter Dateityp, Gruppe). Diese Einstellungen müssen nach einer Umstellung erneut festgelegt werden.
+
+Bei der Umstellung der Authentifizierung versucht {product} vorhandene Benutzer im neuen Authentifizierungs-Modus zu finden und zu übernehmen. Benutzerdaten die nicht zugeordnet werden können, werden gelöscht.
+==============
+
+
+
+Um eine Art der Authentifizierung festzulegen, wählen Sie im Menüpunkt  _Benutzerkonten->Authentifizierungsserver_ den Reiter  _Authentifizierung wählen_ 
+
+
+====  Lokale Authentifizierung
+Hier können Sie einstellen, dass die Benutzerdatenbank lokal gepflegt wird. Zusätzlich können Sie hier noch die Funktion als Authentifizierungsserver aktivieren. Dadurch wird es anderen {product} Installationen ermöglicht, diesen Server zur Authentifizierung zu verwenden. 
+
+
+
+==== {product} LDAP Server
+Falls Sie bereits ein {product}-Produkt mit aktivem LDAP Dienst einsetzen, können Sie hier die LDAP Konfiguration des entfernten Servers eintragen. Die dort gepflegten Benutzer können so auch auf diesem System verwendet werden. 
+
+[NOTE]
+==============
+Ein {product}, das sich gegen einen entfernten Server authentifiziert, kann nicht selbst als Authentifizierungsserver fungieren. Sollte diese Funktion aktiv sein, wird sie an dieser Stelle automatisch deaktiviert.
+==============
+
+Folgende Parameter müssen für den Betrieb mit einem LDAP-Server konfiguriert werden:
+[options="header"]
+|======
+| Parameter | Funktion 
+| Server/IP | Rechnername bzw. IP-Adresse des entfernten {product} Authentifizierungs-Servers. Dabei ist zu beachten, dass vom entfernten Server Authentifizierungsanfragen akzeptiert werden. 
+| Base DN | Die Base DN definiert, ab welcher Stelle im Verzeichnisbaum abwärts die Suche nach bestimmten Objekten gestartet werden soll. 
+| Bind DN | Die Bind DN und das Bind Passwort dient der Authentifizierung gegen den LDAP-Server. 
+| Bind Passwort | Das Passwort zur LDAP-Authentifizierung. Sollte es Probleme bei der Authentifizierung geben, dann verwenden Sie bitte auf dem LDAP-Server ein CRYPT-verschlüsseltes Passwort. 
+|======
+
+
+====  Remote-LDAP-Authentifizierung
+Sie können {product} gegen einen entfernten LDAP-Server authentifizieren lassen. Dort müssen lediglich die Schema-Datei hinterlegt werden und die benötigten Daten eingetragen werden. 
+
+[options="header"]
+|======
+| Parameter | Funktion 
+| Server/IP | Tragen Sie hier bitte die IP des LDAP-Servers ein. 
+| Base DN | Tragen Sie hier die im LDAP-Server konfigurierten Werte ein. 
+| Bind DN | Tragen Sie hier die im LDAP-Server konfigurierten Werte ein. 
+| Base DN Benutzer | Tragen Sie hier die im LDAP-Server konfigurierten Werte ein. 
+| Base DN Gruppe | Tragen Sie hier die im LDAP-Server konfigurierten Werte ein. 
+| Bind Passwort | Tragen Sie hier die im LDAP-Server konfigurierten Werte ein. 
+| Suchattribut Benutzer und Gruppe | Geben Sie hier bitte an, unter welchem Attribut die Benutzer- bzw. Gruppeninformationen gesucht werden sollen. 
+|======
+
+
+
+
+////
+
+====  PDC Authentifizierung
+Mit Hilfe dieses Authentifizierungsmechanismus, können Sie {product} einer bestehenden Windows Domäne beitreten lassen. Anschließend stehen alle Benutzer und Gruppen der Domäne - mit ihren Passwörtern - auf dem {product} zu Verfügung. 
+
+[NOTE]
+==============
+Beim Aktivieren von PDC- oder AD-Authentifizierung wird automatisch die verwendete Arbeitsgruppe auf den Kurznamen der Domäne gesetzt. Dies ist für die Funktionalität notwendig. Der Arbeitsgruppenname ist daher auch für Änderungen gesperrt.
+
+Am Windows Server selbst müssen keinerlei Änderungen durchgeführt werden. Es wird lediglich ein Computerkonto für den {product} Server erzeugt.
+
+Stellen Sie sicher, dass die Systemuhr des {product}-Servers nicht mehr als 5 Minuten von der Zeit des PDC abweicht; andernfalls kann es zu Problemen bei der Benutzerauthentifizierung kommen.
+==============
+
+[options="header"]
+|======
+| Parameter | Funktion 
+| Primary Domain Controller | Rechnername bzw. IP-Adresse des Windows ActiveDirectory Servers. 
+| Domäne | Fully Qualified Name der Domäne (z.B. bitbone.local) 
+| Domänenadministrator | Loginname eines Benutzers mit Domänenadministrator Rechten. 
+| Bind Passwort | Passwort des Benutzers. 
+|======
+
+////
+
+
+
+==== Active Directory Authentifizierung
+Durch diese Art der Authentifizierung können Sie das {product} einer bestehenden ActiveDirectory-Domäne beitreten lassen. Anschließend stehen alle Benutzer und Gruppen der Domäne - mit ihren Passwörtern - auf dem {product} zu Verfügung. 
+
+[NOTE]
+==============
+Bei der Verwendung der AD-Authentifizierung raten wir dazu, den Domänencontroller gleichzeitig als ersten DNS-Server einzutragen.
+==============
+
+[options="header"]
+|======
+| Feld | Funktion 
+| Domänencontroller | Rechnername bzw. IP-Adresse des Windows ActiveDirectory Servers. 
+| Domain | Tragen Sie hier bitte den Namen der AD-Domäne ein. 
+| Domänenadministrator | Für den einmaligen Beitritt zur Domäne wird der Domänenadministrator benötigt. Der Benutzer wird in der cn=Users Organistationseinheit gesucht.
+|======
+
+
+Für die regulären Anfragen an den Domänencontroller genügt ein Benutzeraccount. Geben Sie dazu bitte die passenden Benutzerdaten an. Sie können, müssen aber nicht, hier wiederum den Administrator verwenden. 
+
+[WARNING]
+==============
+Falls Sie den Active Directory User, sein Passwort oder die DN Ihres Servers ändern, so müssen Sie diese Änderungen auch im Authentifizierungsmodul vornehmen!
+==============
+
+
+
+=== Benutzerverwaltung
+Unter dem Menüpunkt  _Benutzerkonten->Benutzerverwaltung_ werden alle existierenden Benutzer angezeigt. Bei einer großen Anzahl von Benutzern können die Sortier- und Filterfunktion sehr hilfreich sein. Um einen vorhandenen Benutzer zu editieren oder zu löschen, klicken Sie mit der rechten Maustaste auf den entsprechenden Benutzer.
+
+
+
+==== Neuen Benutzer hinzufügen
+Um einen neuen Benutzer anzulegen, wählen Sie den Reiter  _"Benutzer hinzufügen"_ aus. Hierfür benötigen Sie Username, Vorname, Nachname und die zweimalige Eingabe eines Passwortes. Optional können eine oder mehrere Gruppenmitgliedschaften gesetzt werden. Die Auswahl mehrerer Gruppen und das Entfernen einer Gruppenzugehörigkeit ist dabei mit gedrückter STRG-Taste möglich. 
+
+[NOTE]
+==============
+Sonderfall {product} & ZARAFA:
+
+Bitte beachten Sie, dass das Feld  _"E-Mail Adresse"_ zum Versand benötigt wird, aber nicht für den Empfang verwendet wird. Sollte sich der lokale Teil der E-Mail-Adresse vom Benutzernamen unterscheiden, so tragen Sie die Mailadresse bitte unbedingt bei den  _Aliasen_ ein, da sonst kein Mailempfang möglich ist!
+==============
+
+Über den Punkt E-Mail Alias lassen sich weitere E-Mail Aliase für den Benutzer anlegen.
+
+[NOTE]
+==============
+Eine Mailbox und deren Unterordner werden erst nach dem ersten Empfang einer Email oder nach dem ersten Login angelegt. Das heisst die Einstellungen für Standard-Quota und Standard-Ordner können dann anders sein, als zu dem Zeitpunkt an dem der User angelegt wurde.
+
+Wenn Sie möchten, dass die Mailbox eines Users angelegt wird, dann können Sie diesem User eine Mail senden oder sich unter dessen Namen anmelden. Bei mehreren Usern empfiehlt sich die Verwendung der Rundmail-Funktion.
+==============
+
+
+
+=== Gruppenverwaltung
+Über den Menüpunkt Gruppenverwaltung gelangen Sie zur Übersicht der aktuell im System angelegten Gruppen.
+
+Neue Gruppen können über den Reiter  _"Gruppe erstellen"_ angelegt werden. Nach dem Eintrag der neuen Gruppe im Feld Gruppenname wird diese über den Button Erstellen im System angelegt.
+
+[TIP]
+==============
+Wenn Sie mehrere Gruppen auf einmal anlegen wollen, so geben Sie diese durch Komma getrennt an.
+==============
+
+Vorhandene Gruppen können per Rechtsklick editiert/gelöscht werden.
+
+
+
+
+=== Admin Passwort
+Über diesen Dialog kann das Passwort für die Web-Oberfläche geändert werden. Hierzu ist eine zweimalige Eingabe des Passwortes mit anschließendem Klick auf Sichern erforderlich. 
+
+[TIP]
+==============
+Passwörter sollten keine benutzerbezogenen Daten, keine bekannten Wörter und keine  _"einfachen"_ Tastaturkombinationen beinhalten (z.B. nebeneinander liegende Tasten).
+==============
+

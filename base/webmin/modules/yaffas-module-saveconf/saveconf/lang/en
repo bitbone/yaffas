@@ -29,5 +29,7 @@ err_keys=Please install all licence files for your installed products before you
 err_no_ldif=Could not save config, because the LDAP service is not running.
 err_no_user=Could not restore user and groups.
 err_faxtype=Your Configurationfile is not for this fax-card type.
+err_auth_not_set=No authentication type is configured.
 lbl_errors=Errors occured.
 lbl_errors_question=Would you like to save your incomplete Configuration?
+moduletitle=Save configuration

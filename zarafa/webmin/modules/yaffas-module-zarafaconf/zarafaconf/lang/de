@@ -28,4 +28,15 @@ lbl_default_quota=Standard Quota
 lbl_default_quota_header=Standard Quota
 lbl_no_quota=Aus
 
-err_quota_value=Der Wert des Quotas darf nur aus Zahlen bestehen.
+lbl_default_features=Standardfunktionen
+lbl_feature=Funktion
+lbl_state=State
+
+lbl_database_settings=MySQL Einstellungen
+lbl_mysql_database=Datenbank
+lbl_mysql_host=Server
+lbl_mysql_user=Benutzername
+lbl_mysql_password=Passwort
+
+err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
+err_quota_value=Der Wert des Quotas darf nur aus Ziffern bestehen.

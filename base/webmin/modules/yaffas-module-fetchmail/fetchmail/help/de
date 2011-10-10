@@ -1,0 +1,6 @@
+interval=Geben sie das Abrufintervall in Sekunden an.
+poll=Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen wollen.
+via=Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen.
+port=Der TCP/IP Port des entfernten Servers.
+poll_envelope=Der Kopfzeilenname der Umschlagadresse (z.B. X-Envelope-To).
+user=Geben sie den Login-Benutzer der entfernten Maschine an.

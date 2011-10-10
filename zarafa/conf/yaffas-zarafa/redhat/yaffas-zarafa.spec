@@ -24,11 +24,13 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{__rm} -rf $RPM_BUILD_ROOT
 
 %post
-YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
-for CFG in /etc/zarafa/*.cfg; do
-	%{__cp} -f $CFG ${CFG}.yaffassave
-done
-%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+if [ "$1" = 1 ] ; then
+	YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
+	for CFG in /etc/zarafa/*.cfg; do
+		%{__cp} -f $CFG ${CFG}.yaffassave
+	done
+	%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+fi
 
 # PHPINI=/etc/php5/apache2/php.ini
 # PHPCLIINI=/etc/php5/cli/php.ini
@@ -126,16 +128,23 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
+chkconfig zarafa-server on
+service zarafa-server stop
+/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+service zarafa-server restart
+
 # enable services
-for SERV in mysqld zarafa-server zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
+for SERV in mysqld zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
 	chkconfig $SERV on
 	service $SERV start
 done
 
 %postun
-for CFG in /etc/zarafa/*.cfg.yaffassave; do
-	%{__mv} -f $CFG ${CFG/.yaffassave/}
-done
+if [ $1 -eq 0 ]; then
+	for CFG in /etc/zarafa/*.cfg.yaffassave; do
+		%{__mv} -f $CFG ${CFG/.yaffassave/}
+	done
+fi
 
 %files
 %defattr(-,root,root,-)

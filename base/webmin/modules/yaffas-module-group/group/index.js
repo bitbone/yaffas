@@ -52,10 +52,6 @@ Groups.prototype.setupTable = function() {
         key: "users",
         label: _("lbl_user"),
         sortable: true,
-    }, {
-        key: "filetype",
-        label: _("lbl_filetype"),
-        sortable: true
     }
 	];
 		

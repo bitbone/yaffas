@@ -13,13 +13,17 @@ sub BEGIN {
 						section_button section start_section end_section
 						table start_table end_table small_form
 						value_add_del_form creating_cache_finish creating_cache_start
+						textfield password_field checkbox
 					   );
 	*CGI::start_form = \&CGI::startform;
 	$Cgi = CGI->new("");
 }
 
+use Yaffas::UI::Webmin;
+
 our $Print_inner_div;
 our $Convert_nl;
+our %Help;
 $Print_inner_div = 1;
 $Convert_nl = 1;
 
@@ -467,6 +471,56 @@ sub creating_cache_finish() {
 	push @ret, $Cgi->end_p();
 	push @ret, "<script type='text/javascript'>document.getElementById('cache').style.display='none';</script>";
 	return @ret;
+}
+
+
+sub _load_help {
+	my $lang = Yaffas::UI::Webmin::get_lang_name();
+
+	if (not scalar %Help) {
+		open F, "<", "help/$lang";
+		while (<F>) {
+			my @tmp = split /=/, $_, 2;
+			$Help{$tmp[0]} = $tmp[1];
+		}
+		close F;
+	}
+}
+
+sub _get_help_button {
+	my $name = shift;
+
+	_load_help();
+
+	foreach my $k (keys %Help) {
+		next unless $name =~ m/$k/;
+		return $Cgi->div(
+			{-class=>'tooltip', onmouseover=>"Yaffas.ui.showHelp(this)", onclick=>"Yaffas.ui.toggleHelp(this)", onmouseout=>"Yaffas.ui.cancelHelp(this)"},
+			$Cgi->div({-class=>"hidden"}, $Help{$k} ? $Help{$k} : "No help available! name = $name")
+		);
+	}
+	return "";
+}
+
+sub textfield {
+	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"],"TABINDEX"], @_);
+	my $name = $params[0];
+
+	return $Cgi->textfield(@params) . _get_help_button($name);
+}
+
+sub password_field {
+	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"],"TABINDEX"], @_);
+	my $name = $params[0];
+
+	return $Cgi->password_field(@params) . _get_help_button($name);
+}
+
+sub checkbox {
+	my @params = CGI::Util::rearrange(["NAME",["CHECKED","SELECTED","ON"],"VALUE","LABEL",["OVERRIDE","FORCE"],"TABINDEX"], @_);
+	my $name = $params[0];
+
+	return $Cgi->checkbox(@params) . _get_help_button($name);
 }
 
 1;

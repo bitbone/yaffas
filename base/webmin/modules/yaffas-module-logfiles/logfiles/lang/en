@@ -6,3 +6,4 @@ lbl_show_old_logs=Show old logfiles
 lbl_show_new_logs=Show new logfiles
 lbl_size=Size
 lbl_file=File
+moduletitle=Log file viewer

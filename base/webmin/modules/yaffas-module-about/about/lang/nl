@@ -1,0 +1,108 @@
+lbl_index_title=Systeeminformatie
+lbl_index_header=Over yaffas
+lbl_index_return=Systeem
+lbl_versions=Versies
+lbl_version=Versie
+lbl_revision=Revisie
+lbl_name=Product
+
+err_get_products=De informatie kon niet worden gelezen!
+
+index_title=Systeeminformatie
+written_by=Geschreven door
+
+general_information=Algemene informatie
+os_on_arch=op een
+uptime=Uptime van
+uptime_days=dagen
+uptime_hours=uren
+uptime_minutes=minuten
+loadavg_title=Gemiddelde belasting
+loadavg_graph=CPU-belasting
+loadavg_proc=Totale belasting
+loadavg_1=over de laatste minuut
+loadavg_5=over de laatste 5 minuten
+loadavg_15=over de laatste 15 minuten
+
+memory_usage=Geheugengebruik
+main_memory=Hoofdgeheugen
+swap_memory=Wisselgeheugen
+mem_total=Totaal
+mem_used=Gebruikt
+mem_free=Vrij
+mem_shared=Gedeeld
+mem_buffers=Buffers
+mem_cache=Cache
+mem_module=Module
+mem_module_size=Grootte
+mem_module_depend=Verwijzende modules
+mem_current_modules=Modules nu in gebruik
+mem_avail=Beschikbaar Geheugen
+mem_usagekey=Legenda Gebruik:
+
+memkey_inuse=In Gebruik
+memkey_buffer=Buffer
+memkey_free=Vrij
+
+irq_usage=IRQ-gebruik
+irq_device=Apparaat
+irq_ioports=IO-gebruik
+
+network_load=Netwerkstatistieken
+network_nic=Interface
+network_receive=Ontvangen
+network_send=Sent
+network_bytes=Bytes
+network_errors=Fouten
+network_dropped=Genegeerd
+network_overruns=Overloop
+network_frame=Frame
+network_carrier=Carrier
+network_collisions=Collisions
+network_connection=Actieve verbindingen
+network_connection_protocol=Protocol
+network_connection_recvq=Ontvangstwachtrij
+network_connection_sendq=Verzendwachtrij
+network_connection_localaddr=Lokaal
+network_connection_foreignaddr=Foreign
+network_connection_state=Status
+network_who=Wie
+network_who_user=User
+network_who_tty=TTY
+network_who_from=Van
+network_who_login=Aangemeld op
+network_who_idle=Inactief
+network_who_jcpu=Jcpu
+network_who_pcpu=Pcpu
+network_who_what=Commando
+network_opensockets=Listening sockets
+network_opensockets_active=Active sockets
+network_unixsockets=Unix sockets
+network_unixsockets_protocol=Protocol
+network_unixsockets_refcnt=RefCnt
+network_unixsockets_flags=Flags
+network_unixsockets_type=Type
+network_unixsockets_state=Status
+network_unixsockets_inode=I-node
+network_unixsockets_path=Path
+
+fs_stat=File system statistics
+fs_mount=Mounted file system
+fs_mount_device=Apparaat
+fs_mount_dir=Directory
+fs_mount_type=File system
+fs_mount_option=Mode
+
+df_title=File system information
+
+lbl_filesystem=File system
+lbl_size=Grootte
+lbl_used=Gebruikt
+lbl_available=Available
+lbl_used_percent=Used%
+lbl_mount=Mounted on
+
+lbl_time=Time
+lbl_value=Value
+
+lbl_mem_type=Memory type

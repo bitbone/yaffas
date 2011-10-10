@@ -31,6 +31,12 @@ MODULE=mailalias
 add_webmin_acl $MODULE
 
 %postun
+if [ "$1" = "0" ]; then
+	set -e
+	source /opt/yaffas/lib/bbinstall-lib.sh
+	MODULE=mailalias
+	del_webmin_acl $MODULE
+fi
 
 %files
 %defattr(-,root,root)

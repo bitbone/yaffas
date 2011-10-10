@@ -16,6 +16,7 @@ use Yaffas::Auth;
 use Yaffas::Conf;
 use Yaffas::Conf::Function;
 use Yaffas::Check;
+use Yaffas::LDAP;
 use Sort::Naturally;
 use File::Copy;
 use Net::LDAP;
@@ -52,11 +53,7 @@ sub new {
 
 	my $app = Yaffas::Constant::APPLICATION->{hostname};
 	chomp(my $hostname = `$app -s`);
-
-	$app = Yaffas::Constant::APPLICATION->{hostname};
 	chomp(my $domain = `$app -d`);
-
-
 
 	my $workgroup = "" ;
 	my $wgc = Yaffas::File->new(Yaffas::Constant::FILE->{smb_includes_global});
@@ -144,19 +141,33 @@ sub save {
 
 	return if $self->{TESTMODE};
 
-	$self->_save_domainname();
-	$self->_save_hostname();
-	$self->_save_iftab();
-	$self->_save_workgroup();
+	try {	
+		$self->_save_domainname();
+		$self->_save_hostname();
+		$self->_save_iftab();
+		$self->_save_workgroup();
+		_stop_network();
+		if($self->{section} eq '1' || $self->{section} eq '4') {
+			$self->_save_interfaces();
+		}
+	} catch Yaffas::Exception with {
+		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+            Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
+        } else {
+            Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
+        }
 
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
-		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
-	}
-	else {
-		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
-	}
+		my $exception = shift;
+		my $errors = $exception->get_errors();
+		my $new_exception = Yaffas::Exception->new();
 
-	$self->_save_interfaces();
+		for my $key(keys %$errors) {
+			$new_exception->add($key, $errors->{$key});
+		}
+
+		throw $new_exception;
+		
+	};
 
 	my $pid = fork();
 
@@ -349,10 +360,24 @@ sub _load_settings {
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
 		my $device = "";
-		my ($ip, $netmask, $gateway, $dns, $search) = "";
+		my ($ip, $netmask, $gateway) = "";
+		my ($dns, $search) = [];
+		my $method = '';
 
 		my $i = 0;
 		my @lines = $interfaces->get_content();
+
+		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
+		my @content = $resolv->get_content();
+
+		foreach my $line (@content) {
+			if ($line =~ /^search\s+(.*)/) {
+				push @{$search}, split /\s+/, $1;
+			}
+			if ($line =~ /^nameserver\s+(.*)/) {
+				push @{$dns}, split /\s+/, $1;
+			}
+		}
 
 		foreach my $line (@lines) {
 			$i++;
@@ -369,40 +394,20 @@ sub _load_settings {
 				$gateway = $1;
 			}
 
-			if ($line =~ /\s*dns-search\s(.*)/) {
-				$search = [split /\s+/, $1];
-			}
-
-			if ($line =~ /\s*dns-nameservers\s(.*)/) {
-				$dns = [split /\s+/, $1];
-			}
-
 			if ($line =~ /^\s*auto\s+(.*)$/) {
 				push @enabled_interfaces, split /\s+/, $1;
 			}
 
-			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/ or $i == scalar @lines) {
+			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
 				if ($device ne "") {
-					# create objects for settings
-
-					my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-					$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
-
-					my $parent;
-					if ($device =~ /^(eth\d+):\d+$/) {
-						$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
-					}
-
-					if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
-						$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
-						$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
-						$settings{$device} = $d_obj;
-					}
-
-					$ip = $netmask = $gateway = $dns = $search = "";
+					%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 				}
 				$device = $1;
+				$method = $2;
 			}
+		}
+		if($device ne "") {
+			%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 		}
 	} else {
 		my ($ip, $netmask, $gateway);
@@ -480,6 +485,28 @@ sub _load_settings {
 	return \%settings;
 }
 
+sub _create_objects_for_settings() {
+	my ($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings) = @_;
+	# create objects for settings
+
+	my $d_obj = Yaffas::Module::Netconf::Device->new($device);
+	$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
+
+	my $parent;
+	if ($device =~ /^(eth\d+):\d+$/) {
+	$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
+	}
+
+	if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
+	$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
+	$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
+	$settings{$device} = $d_obj;
+	}
+
+	$ip = $netmask = $gateway = $search = $device = $method = "";
+	return %settings;
+}
+
 # helper function which returns all available devices
 sub _get_all_devices() {
 	opendir DIR, "/sys/class/net";
@@ -524,7 +551,12 @@ sub _save_domainname ($) {
 	my $olddom = $self->{OLD_DOMAINNAME};
 
 	if ($newdom ne $olddom) {
-		if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP) {
+		my $auth_type = Yaffas::Auth::get_auth_type();
+		if ($auth_type eq Yaffas::Auth::Type::LOCAL_LDAP ||
+		    $auth_type eq Yaffas::Auth::Type::NOT_SET) {
+			if($olddom eq '') {
+				$olddom = Yaffas::LDAP::dn_to_name(Yaffas::LDAP::get_local_domain());
+			}
 			my $ret = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{domrename}, $olddom, $newdom);
 			if ($?) {
 				throw Yaffas::Exception("err_domain_rename", $ret);
@@ -583,6 +615,9 @@ sub _save_hostname {
 
 	# create new /etc/hosts
 	my $ip = $self->device("eth0")->get_ip();
+
+	throw Yaffas::Exception("err_no_ip") if $ip eq '';
+
 	my $dnsname = $self->{DOMAINNAME};
 
 	my $file = Yaffas::File->new(Yaffas::Constant::FILE->{hosts}, "") or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
@@ -607,6 +642,13 @@ sub _save_hostname {
 		throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
 	}
 	else {
+		$file = Yaffas::File->new(Yaffas::Constant::FILE->{rhel5_network});
+		my $line = $file->search_line(qr/^HOSTNAME/);
+		$file->splice_line($line, 1, "HOSTNAME=$hostname.$dnsname");
+		$file->save();
+
+		system(Yaffas::Constant::APPLICATION->{hostname}, "$hostname.$dnsname");
+
 		system(Yaffas::Constant::FILE->{'rhel_net'}, 'restart');
 	}
 }
@@ -635,11 +677,32 @@ sub _save_interfaces {
 		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces}, "");
 		$file or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{network_interfaces});
 
+		my (@dns, @search) = ();
+
 		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
 			$file->add_line($self->{DEVICES}->{$dev}->interface_dump());
+
+			if (ref $self->{DEVICES}->{$dev}->{DNS} eq "ARRAY") {
+				push @dns, @{$self->{DEVICES}->{$dev}->{DNS}};
+			}
+			else {
+				push @dns, $self->{DEVICES}->{$dev}->{DNS};
+			}
+
+			if (ref $self->{DEVICES}->{$dev}->{SEARCH} eq "ARRAY") {
+				push @search, @{$self->{DEVICES}->{$dev}->{SEARCH}};
+			}
+			else {
+				push @search, $self->{DEVICES}->{$dev}->{SEARCH};
+			}
 		}
 
 		$file->save();
+
+		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf}, "");
+		$resolv->add_line("nameserver ".join " ", @dns);
+		$resolv->add_line("search ".join " ", @search);
+		$resolv->save();
 	}
 	else {
 		foreach my $dev (nsort keys %{$self->{DEVICES}}){
@@ -765,6 +828,15 @@ sub conf_dump () {
 	1;
 }
 
+sub _stop_network {
+	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
+	}
+	else {
+		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
+	}
+}
+
 package Yaffas::Module::Netconf::Device;
 
 use Yaffas::File;
@@ -780,6 +852,7 @@ sub new {
 	$self{GATEWAY} = "";
 	$self{DNS} = "";
 	$self{SEARCH} = "";
+	$self{METHOD} = "";
 	$self{ENABLED} = 0;
 	$self{VENDOR} = "";
 	$self{PRODUCT} = "";
@@ -795,13 +868,14 @@ sub new {
 
 sub set_all {
 	my $self = shift;
-	my ($ip, $netmask, $gateway, $dns, $search) = @_;
+	my ($ip, $netmask, $gateway, $dns, $search, $method) = @_;
 
 	$self->{IP} = $ip;
 	$self->{NETMASK} = $netmask;
 	$self->{GATEWAY} = $gateway;
 	$self->{DNS} = $dns;
 	$self->{SEARCH} = $search;
+	$self->{METHOD} = $method;
 }
 
 sub set_ip {
@@ -991,20 +1065,6 @@ sub interface_dump {
 	push @lines, "\taddress ".$self->{IP} if ($self->{IP});
 	push @lines, "\tnetmask ".$self->{NETMASK} if ($self->{NETMASK});
 	push @lines, "\tgateway ".$self->{GATEWAY} if ($self->{GATEWAY});
-	if (ref $self->{DNS} eq "ARRAY") {
-		push @lines, "\tdns-nameservers ".join " ", @{$self->{DNS}} if (@{$self->{DNS}});
-	}
-	else {
-		push @lines, "\tdns-nameservers ".$self->{DNS} if ($self->{DNS});
-	}
-
-	if (ref $self->{SEARCH} eq "ARRAY") {
-		push @lines, "\tdns-search ".join " ", @{$self->{SEARCH}} if (@{$self->{SEARCH}});
-	}
-	else {
-		push @lines, "\tdns-search ".$self->{SEARCH} if ($self->{SEARCH});
-	}
-
 	push @lines, "";
 
 	return @lines;

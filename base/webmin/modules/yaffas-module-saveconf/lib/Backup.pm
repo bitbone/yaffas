@@ -13,6 +13,7 @@ use Yaffas::Product;
 use Yaffas::Service qw(control START STOP RESTART LDAP NSCD MYSQL HYLAFAX CAPI4HYLAFAX SAMBA CYRUS POSTFIX);
 use Yaffas::LDAP;
 use Yaffas::Exception;
+use Yaffas::UGM;
 use Error qw(:try);
 
 use File::Temp qw(tempdir tempfile);
@@ -154,6 +155,13 @@ sub dump()
 
 	chomp(my $dom = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'hostname'}, "-d"));
 
+	if ($dom !~ /\./) {
+		$dom = Yaffas::LDAP::dn_to_name(Yaffas::LDAP::get_local_domain());
+	}
+	if ($dom !~ /\./) {
+		$dom = "yaffas.local";
+	}
+
 	# FIXME bkprint2fax is a wrong name. also base attributes in this db!
 	# add a pgsql function to dump bkprint2fax
 	my $func_pgsql_bkprint2fax = Yaffas::Conf::Function->new('pgsql-bkprint2fax', "Yaffas::Module::Backup::_set_pgsql");
@@ -176,6 +184,7 @@ sub dump()
 
 	$bks->add_func($func_ldap) if (Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP);
 	$bks->add_func($func_files);
+	$bks->add_require("netconf");
 
 	$bkc->save();
 
@@ -242,6 +251,10 @@ sub restore($)
 {
 	my $self = shift;
 
+	if(Yaffas::Auth::auth_type eq Yaffas::Auth::Type::NOT_SET) {
+		throw Yaffas::Exception("err_auth_not_set");
+	}
+
 	# apply the config
 	my $bkc = Yaffas::Conf->new( Yaffas::Constant::FILE->{yaffas_config} . ".upload");
 	return undef if (! defined($bkc) );
@@ -258,8 +271,8 @@ sub restore($)
 		control(CYRUS, RESTART);
 	}
 
-	# mail or gate
-	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate')) 
+	# mail or gate or zarafa
+	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate') or Yaffas::Product::check_product('zarafa')) 
 	{
 		my $fetchmailrc = Yaffas::Constant::FILE->{'fetchmailrc'};
 		my $mode = 0600;
@@ -302,7 +315,7 @@ sub _get_ldap()
 			Yaffas::Constant::APPLICATION->{'ldapsearch'}, "-x", "-LLL", "-D", "cn=ldapadmin,ou=People,$domain",
 			"-b", $domain, "-w", $LDAP_PASS
 			);
-		throw Yaffas::Exception("err_no_ldap") if ($ldif =~ /^\s*$/);
+		throw Yaffas::Exception("err_no_ldif") if ($ldif =~ /^\s*$/);
 	} catch Yaffas::Exception with {
 		$bke->append( shift );
 	};
@@ -357,7 +370,7 @@ sub _get_files()
 	#
 	# Please make sure to remove abandoned/deprecated entries, if you find some.
 	#
-	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate')) {
+	if (Yaffas::Product::check_product('mail') or Yaffas::Product::check_product('gate') or Yaffas::Product::check_product('zarafa')) {
 		push @files,  Yaffas::Constant::FILE->{'fetchmailrc'};
 	}
 
@@ -446,6 +459,7 @@ sub _set_ldap($)
 	my $domain = shift;
 	my $ldap = shift;
 
+	throw Yaffas::Exception("err_no_domain") if ($domain =~ /^\s*$/);
 	throw Yaffas::Exception("err_no_user") if ($ldap =~ /^\s*$/);
 
 	# clear the ldap thingy
@@ -487,18 +501,21 @@ sub _set_ldap($)
 	chomp(my $dn_new = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'hostname'}, "-d"));
 
 	system(Yaffas::Constant::APPLICATION->{'domrename'}, $domain, $dn_new, $file);
-	return undef unless $? == 0;
+	throw Yaffas::Exception("err_domrename", $?) unless $? == 0;
 
 	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
-	return undef unless $? == 0;
-	
-	my $uid = Yaffas::UGM::get_uid_by_username("openldap");
-	my $gid = Yaffas::UGM::get_gid_by_groupname("openldap");
-	
-	find(sub{chown $uid, $gid, $File::Find::name}, Yaffas::Constant::DIR->{ldap_data});
+	throw Yaffas::Exception("err_ldap_add", $?) unless $? == 0;
+
+	if(Yaffas::Constant::OS eq 'Ubuntu') {
+		system("/bin/chown", "-R", "openldap:openldap", Yaffas::Constant::DIR->{ldap_data});
+	} else {
+		system("/bin/chown", "-R", "ldap:ldap", Yaffas::Constant::DIR->{ldap_data});
+	}
 
 	control(LDAP, RESTART);
 	control(NSCD, RESTART);
+
+	Yaffas::UGM::clear_cache();
 
 	unlink $file;
 	return 1;

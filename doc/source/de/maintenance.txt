@@ -1,0 +1,71 @@
+== Wartung
+
+=== Konfiguration sichern
+
+==== Konfiguration sichern
+Mit diesem Formular kann eine gespeicherte Konfiguration eingespielt oder die aktuelle Konfiguration gesichert werden. Über den Button  _"Sichern"_ wird die aktuelle Konfiguration auf einen Datenträger gesichert.
+
+[NOTE]
+==============
+Denken sie daran, regelmäßig die Konfiguration zu sichern!
+==============
+
+
+
+==== Konfiguration einspielen
+Hier können Sie eine Konfigurationsdatei auswählen. Mit dem Button  _"Einspielen"_ wird die Konfigurationsdatei auf das {product} geladen. Dieser Prozess kann einige Minuten in Anspruch nehmen.
+
+[WARNING]
+==============
+Beim Einspielen einer vorhandenen Konfiguration ist folgendes zu beachten:
+
+  * Die Portaldaten für Updates,
+  * die Netzwerk-Konfiguration,
+  * das admin und root-Passwort,
+  * die Einstellungen zum Authentifzierungsserver
+  * die UI-Sprache
+
+werden nicht zurückgesichert
+==============
+
+
+
+===  Logdateien Betrachter
+Über den Logdateien Betrachter ist es möglich die Logdateien einzelner Dienste für eine spätere Auswertung herunterzuladen. Wählen Sie hierzu die entsprechende Datei aus der Liste mit einem Rechtsklick aus und klicken Sie anschließend auf den Dialog  _"Herunterladen"_  Nach dem erfolgreichen Herunterladen und Speichern der Logdatei kann diese dann mit jedem beliebigen Texteditor (z.B. Wordpad) eingesehen werden.
+
+Beispiele für Logdateien sind:
+[options="header"]
+|======
+| Datei | Funktion 
+| /var/log/maillog | Logfile des Postfix-Mailservers. Hierin sind Daten über ein- und ausgehende Mails enthalten. 
+| /var/log/messages | Hier werden weniger wichtige Meldungen des Kernels gespeichert. 
+| /var/log/mail.info | Hier werden Meldungen des Typs "warn" des Mailservers gespeichert. Diese Meldungen gefährden nicht den laufenden Betrieb. 
+| /var/log/samba/log.nmbd | Informationen des Samba-Servers und dessen NetBIOS-Namensdiensten. 
+| /var/log/samba/log.smbd | Informationen im laufenden Betrieb des Samba-Dienstes.
+| /var/log/zarafa
+|======
+
+
+=== Meldungen
+An die hier angegebene E-Mail-Adresse werden die Fehlermeldungen des Systems gesendet (zu geringer Plattenplatz, Lizenzablauf). Für diesen Zweck kann eine lokale oder eine externe E-Mail-Adresse verwendet werden. Dieses Postfach sollte in regelmäßigen Abständen auf Meldungen des Servers überprüft werden. Mit Speichern  wird die Adresse im System gespeichert.
+
+[WARNING]
+==============
+
+Bitte tragen Sie an dieser Stelle eine gültige E-Mailadresse ein. Kritische Meldungen können so an den Administrator gemeldet werden um die Funktionsfähigkeit von {product} zu gewährleisten.
+==============
+
+[TIP]
+==============
+Wenn Sie mehrere Empfänger informieren wollen, dann tragen Sie als Adresse ein Alias ein, z.B. "admins@localhost". In der Mailalias-Verwaltung tragen Sie dann  _"admins"_ als Alias ein und setzen dort die Mailadressen der Empfänger ein.
+==============
+
+
+
+=== Support
+Über den Menüpunkt  _Support_ erhalten Sie eine Binärdatei, die man bei Problemen verwenden kann, um eine schnelle Fehlersuche zu bewerkstelligen.
+
+{product} ist ein freies Community-Projekt, weshalb standardmäßig kein Support enthalten ist. Support kann von jedem angeboten werden, der sich mit {product} auskennt.
+
+Die bitbone AG bietet mit den bitkit|SOLUTIONS weiterhin die kommerzielle und supportete Variante an.
+

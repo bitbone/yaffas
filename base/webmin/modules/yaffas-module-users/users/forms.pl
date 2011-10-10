@@ -7,9 +7,10 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Sort::Naturally;
 
 use Yaffas::UGM qw(get_users get_groups gecos name get_uid_by_username get_username_by_uid get_suppl_groupnames get_email);
-use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start);
+use Yaffas::UI qw($Cgi section section_button table yn_confirm creating_cache_finish creating_cache_start checkbox textfield);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::Users;
+use Yaffas::Module::ZarafaConf;
 use Yaffas::Product qw(check_product);
 use Carp qw(cluck);
 use Sort::Naturally;
@@ -199,7 +200,7 @@ sub _edit_user($$\@\@;$){
 										(check_product("zarafa") || Yaffas::Auth::is_auth_srv()) ? (
 										$Cgi->td([
 												  $main::text{lbl_zarafaquota}.":",
-												  $Cgi->textfield({
+												  textfield({
 																  -name=>"zarafaquota_" . $uid,
 																  -value=>$zarafaquota,
 																  -maxlength=>5,
@@ -208,7 +209,7 @@ sub _edit_user($$\@\@;$){
 												 ]) ,
 										$Cgi->td([
 												  $main::text{lbl_zarafaadmin}.":",
-												  $Cgi->checkbox({
+												  checkbox({
 																  -name=>"zarafaadmin_" . $uid,
 																  -checked=>$zarafaadmin,
 																  -value=>"yes",
@@ -217,12 +218,16 @@ sub _edit_user($$\@\@;$){
 												 ]) ,
 										$Cgi->td([
 												  $main::text{lbl_zarafashared}.":",
-												  $Cgi->checkbox({
+												  checkbox({
 																  -name=>"zarafashared_" . $uid,
 																  -checked=>$zarafashared,
 																  -value=>"yes",
 																  -label=>"",
 																  }),
+												 ]),
+										$Cgi->td([
+												  $main::text{lbl_zarafafeatures}.":",
+												  _features_table($uid)
 												 ])
 										) : "", ## end if
 										check_product("fax") ?
@@ -440,6 +445,37 @@ sub set_user_filetype(@)
 
 	print section_button($Cgi->submit({-value => $main::text{lbl_save}}));
 	print $Cgi->end_form();
+}
+
+sub _features_table () {
+	my $uid = shift;
+
+	my $features = Yaffas::Module::Users::get_features($uid);
+	my $default = Yaffas::Module::ZarafaConf::get_default_features();
+
+	return $Cgi->table($Cgi->Tr([
+			$Cgi->td([
+				"IMAP: ",
+				$Cgi->radio_group({
+						-name=>"zarafaimap_" . $uid,
+						-values=>[qw(on off default)],
+						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{imap} },
+						-default => $features->{imap}
+					})
+				]
+			),
+			$Cgi->td([
+				"POP3: ",
+				$Cgi->radio_group({
+						-name=>"zarafapop3_" . $uid,
+						-values=>[qw(on off default)],
+						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{pop3} },
+						-default => $features->{pop3}
+					})
+				]
+			)
+		])
+	);
 }
 
 return 1;

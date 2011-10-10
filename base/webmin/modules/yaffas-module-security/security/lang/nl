@@ -1,0 +1,50 @@
+lbl_apply=Toepassen
+lbl_edit=Bewerken
+lbl_delete=Verwijder
+lbl_add=Voeg toe
+lbl_activate=Activeer
+lbl_deactivate=Deactiveer
+lbl_update=Ververs
+lbl_really_delete=Verwijder item
+lbl_really_delete_msg=Do you really want to delete this entry?
+
+lbl_really_disable=Wilt u deze service echt uitschakelen?
+lbl_really_enable=Wilt u deze service echt inschakelen?
+
+lbl_policy=Beleid
+lbl_policy_enable=Beleid inschakelen
+lbl_policy_disable=Beleid uitschakelen
+lbl_dnsbl=DNSBL
+lbl_rhsbl=RHSBL
+lbl_host=Hostnaam
+lbl_hit=Hit score
+lbl_miss=Miss score
+lbl_log=Logboeknaam
+
+lbl_clamav=ClamAV
+lbl_clamav_activate=Clamav inschakelen
+lbl_clamav_deactivate=Clamav uitschakelen
+lbl_archive=Archieven scannen
+lbl_virusalert=Virus alert email
+lbl_maxlength=Maximum size of scannable objects in MB
+lbl_clam_update=Update the ClamAV signatures
+lbl_clam_configure=Configure clamav
+
+lbl_sa=Spamassassin
+lbl_sa_configure=Configure Spamassassin
+lbl_sa_enable=Activate spamassassin
+lbl_sa_disable=Deactivate spamassassin
+lbl_sa_update=Update the Spamassassin filters
+lbl_network=Network
+lbl_internal=Internal networks
+lbl_trusted=Trusted networks
+lbl_add_headers=Add spam detected headers at level
+
+lbl_whitelist=Whitelisting
+lbl_wl_desc=All hosts and addresses listed here are not checked for spam or viruses.
+lbl_address=Address
+lbl_wl_type=Type
+lbl_wl_from=Source
+lbl_wl_entry=Entry
+
+err_mail=Invalid e-mail address

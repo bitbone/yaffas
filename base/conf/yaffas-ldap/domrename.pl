@@ -1,5 +1,26 @@
 #!/usr/bin/perl -w
-my @ldap_conffiles = ("/etc/pam_ldap.conf", "/etc/libnss-ldap.conf", "/etc/ldap/slapd.conf", "/etc/ldap/ldap.conf", "/etc/smbldap-tools/smbldap.conf", "/etc/samba/smb.conf", "/etc/smbldap-tools/smbldap_bind.conf", "/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist", "/etc/zarafa/ldap.cfg", "/etc/zarafa/ldap.yaffas.cfg", "/etc/ldap.settings", "/etc/ldap.conf");
+
+use lib '/opt/yaffas/lib/perl5';
+use Yaffas::Constant;
+use Yaffas::Service qw(control LDAP NSCD STOP START RESTART);
+
+my @ldap_conffiles = (
+	"/etc/pam_ldap.conf",
+	"/etc/libnss-ldap.conf",
+	"/etc/ldap/slapd.conf",
+	"/etc/openldap/slapd.conf",
+	"/etc/ldap/ldap.conf",
+	"/etc/smbldap-tools/smbldap.conf",
+	"/etc/samba/smb.conf",
+	"/etc/smbldap-tools/smbldap_bind.conf",
+	"/var/lib/opengroupware.org/.libFoundation/Defaults/NSGlobalDomain.plist",
+	"/etc/zarafa/ldap.cfg",
+	"/etc/zarafa/ldap.yaffas.cfg",
+	"/etc/ldap.settings",
+	"/etc/ldap.conf",
+	"/etc/postfix/ldap-users.cf",
+	"/etc/postfix/ldap-aliases.cf",
+);
 my @other_conffiles = ("/etc/hosts", "/etc/defaultdomain");
 my $old_domain;
 my $old_org;
@@ -66,7 +87,8 @@ if ($ldif_file eq "") {
 
 if ($ldif_file eq "") {
 	print "Processing slapcat ...\n";
-	@ldif = `slapcat`;
+	my $cmd = "slapcat -f ".Yaffas::Constant::FILE->{slapd_conf};
+	@ldif = `$cmd`;
 } else {
 	print "Opening file $ldif_file ...\n";
 	open LDIF, "< $ldif_file" or die "Couldn't open file $ldif_file";
@@ -81,24 +103,31 @@ open OUTFILE, "> /tmp/slapcat.ldif";
 print OUTFILE @ldif;
 close OUTFILE;
 
+if (Yaffas::Constant::get_os() eq "RHEL5") {
+	`chcon -u system_u -t slapd_db_t /tmp/slapcat.ldif`;
+}
+
 if ($ldif_file eq "") {
 	print "Stopping slapd ...\n";
-	`/etc/init.d/slapd stop`;
+	control(LDAP(), STOP());
 	`rm -rf /var/lib/ldap/*`;
 
 	print "Executing slapadd ...\n";
-	`slapadd -vl /tmp/slapcat.ldif`;
-	`chown -R openldap:openldap /var/lib/ldap/`;
+	my $cmd = Yaffas::Constant::APPLICATION->{slapadd}." -vl /tmp/slapcat.ldif -f ".Yaffas::Constant::FILE->{slapd_conf};
+	print `$cmd`;
+
+	if (Yaffas::Constant::get_os() eq "RHEL5") {
+		`chown -R ldap:ldap /var/lib/ldap/`;
+	}
+	else {
+		`chown -R openldap:openldap /var/lib/ldap/`;
+	}
+
 	print "Starting slapd ...\n";
-	`/etc/init.d/slapd start`;
+	control(LDAP(), START());
 
 	print "Restarting nscd ...\n";
-	`/etc/init.d/nscd restart`;
-
-	if (-x "/etc/init.d/opengroupware.org.org") {
-		print "Restarting opengroupware.org ...\n";
-		`/etc/init.d/opengroupware.org restart`;
-	}
+	control(NSCD(), RESTART());
 
 	open LDAP, "< /etc/ldap.secret";
 	@ldap = <LDAP>;

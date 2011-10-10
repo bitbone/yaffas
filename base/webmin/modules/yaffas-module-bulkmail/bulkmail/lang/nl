@@ -1,0 +1,10 @@
+index_bulk=Bulk mailing
+index_return=Bulk mailing
+index_from=Van
+index_subject=Onderwerp
+index_message=Message
+index_send=Verzenden
+
+err_error=Please complete all forms and check your e-mail address.
+lbl_send_success=Your mails are queued for sending. This may take some time depending on your hardware.
+

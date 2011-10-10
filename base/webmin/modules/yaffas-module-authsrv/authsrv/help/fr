@@ -1,0 +1,8 @@
+basedn=Recherche LDAP Base DN. Les données LDAP seront recherchées à partir de ce point. p. ex. o=yaffas,c=org
+email=Attribut avec l'adresse électronique des utilisateurs. Par défaut: mail
+binddn=Utilisateur avec lequel joindre. p. ex. cn=ldapadmin,ou=People,o=yaffas,c=org
+dom_name=Nom de domaine complet de votre Active Directory. p. ex. yaffas.org
+pass_pdc=Nom ou adresse IP  de votre contrôleur de domaine.
+dom_adm=Nom de l'administrateur du domaine. Cet utilisateur devrait être créé dans l'Organizational Unit des utilisateurs.
+ads_user=Utilisateur pour accès en lecture uniquement. Vous pouvez fournir le nom d'utilisateur ou la syntaxe DN complète.
+host=Nom d'hôte ou adresse IP du serveur LDAP.

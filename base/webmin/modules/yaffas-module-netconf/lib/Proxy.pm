@@ -48,6 +48,7 @@ sub get_proxy {
 				}
 
 				my ($url, $port) = split /:/, $url_port;
+				$port =~ s/[^\d]//g;
 				my ($usr, $pass) = split /:/, $usr_pass;
 				return ($usr, $pass, $url, $port);
 			}
@@ -61,6 +62,7 @@ sub get_proxy {
 			if(m#^proxy\s?=\s?http://(.+)\z#ix){
 				my $what = $1;
 				($proxy, $port) = split(":", $what, 2);
+				$port =~ s/[^\d]//g;
 			}
 			elsif(m#^proxy_username\s?=\s?(.*)\z#ix){
 				$user = $1;

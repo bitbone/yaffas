@@ -1,0 +1,125 @@
+== Installation
+
+
+=== Systemvorausetzungen
+
+  * Ubuntu oder Red Hat Enterprise Linux
+  * ca. 22 MB zusätzlicher Festplattenplatz
+
+
+=== Vorgehen
+
+Yaffas kann direkt aus den unten angegebenen Repositories installiert werden.
+
+
+==== Ubuntu 10.04.2 LTS
+
+**Hinzufügen der benötigten Repositories**
+
+  echo "deb http://repo.yaffas.org/ubuntu ./" >> /etc/apt/sources.list
+  echo "deb http://archive.canonical.com/ubuntu lucid partner" >> /etc/apt/sources.list
+
+**Importieren des Paketkeys**
+
+  wget -O - http://repo.yaffas.org/ubuntu/repo.key | apt-key add -
+
+**Installation der Pakete**
+
+  apt-get update
+  apt-get install yaffas yaffas-zarafa
+
+Dies installiert die {product} Basismodule und Zarafa.
+
+Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
+
+**Optional: Installation der Konfiguration**
+
+Diese Paket und seine Abhängigkeiten dienen dazu, ein frisch installiertes System mit {product} administrierbar zu machen. Ohne yaffas-config müssen eine Reihe von manuellen Anpassungen an Konfigurationsdateien vorgenommen werden, damit die Administrationsoberfläche vollständig funktionieren kann.
+
+  apt-get install yaffas-config
+
+Auf die Fragen des Installationssystems, ob Konfigurationsdateien ersetzt werden sollen, sollte mit "ja" geantwortet werden.
+
+[WARNING]
+==============
+
+Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden folgende Einstellungen und Daten gelöscht oder überschrieben:
+
+  * bestehender LDAP-Baum
+  * slapd Konfiguration
+  * Samba Konfiguration
+  * smbldap-tools Konfiguration
+  * postfix Konfiguration
+  * zarafa Konfiguration (wenn yaffas-zarafa installiert wurde)
+  * MySQL Konfiguration (Optimierungen für Zarafa werden eingetragen)
+
+
+==============
+
+
+==== Red Hat Enterprise Linux 5
+
+Die Installation unter Red Hat Enterprise Linux verläuft ähnlich der Installation unter Ubuntu.
+
+[WARNING]
+==============
+
+Das Paket yaffas-config überschreibt hier ebenfalls die oben genannten Konfigurationen.
+
+==============
+
+**Hinzufügen der benötigten Repositories**
+
+Vor der Installation von {product} müssen die Pakete für Zarafa von http://www.zarafa.com/download-release heruntergeladen und installiert werden.
+
+Um alle Abhängigkeiten automatisch auflösen zu können, sollten die http://fedoraproject.org/wiki/EPEL[EPEL] und http://rpmrepo.org/RPMforge[RPMforge] Repositories eingebunden werden.
+
+Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
+----
+[yaffas]
+name = Yaffas $releasever
+baseurl = http://repo.yaffas.org/rhel/
+enabled = 1
+protect = 0
+gpgcheck = 0
+----
+
+**Importieren des Paketkeys**
+
+  rpm --import http://repo.yaffas.org/rhel.key
+
+**Installation der Pakete**
+
+  yum install yaffas yaffas-zarafa yaffas-config
+
+
+=== Erste Schritte
+
+Nach der Installation ist das {product} Webinterface unter folgender URL zu erreichen: `https://<ip-des-servers>:10000`
+
+Der Benutzername ist "admin" und das Passwort "yaffas".
+
+Im folgenden Setup-Dialog muss das Admin-Passwort geändert werden. Außerdem muss der Benutzer einen MySQL Benutzer angeben, der die Berechtigung hat auf einem MySQL-Server eine Datenbank für Zarafa anzulegen.
+
+Nach dem ersten Login sollte zunächst der Authentifizerungsserver ausgewählt werden. Zur Auswahl stehen hier Active Directory, lokale Authentifizerung am lokalen LDAP und die Anbindung an einen externen LDAP. Bitte beachten Sie, dass für diesen Schritt momentan noch die Konfigurationsdateien (yaffas-config) installiert sein müssen.
+
+Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet und zum automatischen Start beim Booten eingestellt werden. Dies ist unter dem Menüpunkt "System->Dienste" möglich. Da unter RHEL standardmäßig eine iptables-Firewall aktiv ist, müssen die Ports für die benötigten Dienste nachträglich manuell geöffnet werden.
+
+Der nächste Schritt sollte das Konfigurieren des Mailservers sein. Ohne eine funktionierende Mailserverkonfiguration werden einige Teile des Systems nicht funktionieren. Es wird auch nicht möglich sein Ressourcen für Zarafa anzulegen, ohne das eine lokale Domäne für den Mailserver eingerichtet ist.
+
+[IMPORTANT]
+==============
+
+Damit die Namen der Ordner in Zarafa in der richtigen Sprache angelegt werden, muss die gewünschte Sprache in der {product} UI eingestellt sein. Dies sollte vor dem Anlegen von Benutzern durchgeführt werden.
+
+==============
+
+=== Zusätzliche Schritte
+
+Wenn die supporteten Zarafa Pakete verwendet werden gibt es zwei zusätzliche Pakete:
+
+* zarafa-webaccess-muc
+* zarafa-backup
+
+Diese müssen manuell installiert werden, damit die entsprechenden Funktionen zur Verfügung stehen.
+

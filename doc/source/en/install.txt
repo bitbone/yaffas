@@ -1,0 +1,126 @@
+== Installation
+
+
+=== System requirements
+
+  * Ubuntu or Red Hat Enterprise Linux
+  * about 22 MB of additional disk space
+
+
+=== Procedure
+
+Yaffas can be installed from the repositories described below.
+
+
+==== Ubuntu 10.04.2 LTS
+
+**Adding required repositories**
+
+  echo "deb http://repo.yaffas.org/ubuntu ./" >> /etc/apt/sources.list
+  echo "deb http://archive.canonical.com/ubuntu lucid partner" >> /etc/apt/sources.list
+
+**Import package key**
+
+  wget -O - http://repo.yaffas.org/ubuntu/repo.key | apt-key add -
+
+**Install the packages**
+
+  apt-get update
+  apt-get install yaffas yaffas-zarafa
+
+This will install {product} base modules and zarafa.
+
+The package manager will usually ask questions for some packages. You can skip all of these by pressing "enter" when the dialog pops up. Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
+
+**Optional: installing the configuration packages**
+
+This package and its dependencies are used to make a freshly installed system manageable with {product}. Without yaffas-config, a number of manual adjustments to configuration files need to be made so the admin interface can function properly.
+
+  apt-get install yaffas-config
+
+Answer "yes" if the installation system asks to replace configuration files.
+
+[WARNING]
+==============
+
+When installing the **yaffas-config** package and its dependencies, the
+following settings and data will be deleted or overwritten:
+ 
+  * existing LDAP tree
+  * slapd configuration
+  * Samba configuration
+  * smbldap-tools configuration
+  * postfix configuration
+  * zarafa configuration
+  * MySQL configuration (optimizations for Zarafa will be made)
+
+
+==============
+
+
+==== Red Hat Enterprise Linux 5
+
+The installation on Red Hat Enterprise Linux is similar.
+
+[WARNING]
+==============
+
+The package yaffas-config will overwrite the same configuration files as mentioned above.
+
+==============
+
+**Adding the required repositories**
+
+Prior to the installation of {product} Zarafa packages have to be installed. Otherwise the open source packages included in the EPEL repository will be used. Packages can  be downloaded from http://www.zarafa.com/download-release.
+
+For automatic dependency resolution the http://fedoraproject.org/wiki/EPEL[EPEL] and http://rpmrepo.org/RPMforge[RPMforge] repositories should be included into the yum configuration.
+
+Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
+----
+[yaffas]
+name = Yaffas $releasever
+baseurl = http://repo.yaffas.org/rhel/
+enabled = 1
+protect = 0
+gpgcheck = 1
+----
+
+**Import GPG keys**
+
+  rpm --import http://repo.yaffas.org/rhel.key
+
+**Packages installation**
+
+  yum install yaffas yaffas-zarafa yaffas-config
+
+
+=== First steps
+
+After installation, the {product} web interface is accessible at the following URL: `https://<your-server's-ip>:10000`
+
+The username is "admin" and password is "yaffas".
+
+On first log in the admin password has to be changed. If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
+
+After the first login an authentication server should be selected in Accounts -> Authentication. Choices are Active Directory, remote LDAP and local authentication. Please note that currently the configuration files (yaffas-config) have to be installed for this step.
+
+On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services". Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.
+
+The next step should be to configure the mail server. Without a working mail server configuration some parts of the system will not work. It will also not be possible to create resources for Zarafa when no local domain is set for the mail server.
+
+[IMPORTANT]
+==============
+
+The language in the {product} UI has to be set for the folders in Zarafa to be created in the right language. This should be done prior to the creation of users.
+
+==============
+
+=== Additional Steps
+
+When using the supported zarafa packages there will be two more packages available:
+
+* zarafa-webaccess-muc
+* zarafa-backup
+
+These have to be installed manually for the corresponding functionality to be available.
+

@@ -1,0 +1,2 @@
+community=Passwort für den SNMP-Zugriff.
+network=Geben sie eine einzelne IP Adresse oder ein Netzwerk in Form einer CIDR Ressource an. Geben sie "default" ein, um einen Zugriff nur von der lokalen Maschine zu erlauben.

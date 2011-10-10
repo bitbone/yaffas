@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	yaffas-core, zadmin-theme, yaffas-yui, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-security, yaffas-module-setup, yaffas-config, yaffas-zarafa, yaffas-certificates, yaffas-lang
+Requires:	yaffas-core, zadmin-theme, yaffas-yui, yaffas-module-about, yaffas-module-changelang, yaffas-module-systeminfo, yaffas-module-changepw, yaffas-module-logfiles, yaffas-module-snmpconf, yaffas-module-authsrv, yaffas-module-support, yaffas-module-users, yaffas-module-certificate, yaffas-module-fetchmail, yaffas-module-notify, yaffas-module-mailalias, yaffas-module-mailq, yaffas-module-service, yaffas-module-bulkmail, yaffas-module-group, yaffas-module-saveconf, yaffas-module-netconf, yaffas-module-mailsrv, yaffas-module-security, yaffas-module-setup, yaffas-config, yaffas-zarafa, yaffas-certificates, yaffas-lang, yaffas-software
 
 %description
 This package is a meta package for all the zadmin modules. Install it to pull

@@ -1,6 +1,6 @@
-lbl_changealias=Bearbeiten 
+lbl_changealias=Bearbeiten
 lbl_addalias=Alias hinzufügen
-lbl_delalias=Löschen
+lbl_delalias=Entfernen
 lbl_execute=Ausführen
 lbl_apply=Anwenden
 
@@ -16,7 +16,7 @@ lbl_mailalias=Mail Alias
 lbl_destination_dir=Ordner
 lbl_destination_usr=Benutzer
 
-lbl_del=Löschen
+lbl_del=Entfernen
 lbl_user=Benutzer
 lbl_or=oder
 

@@ -8,6 +8,7 @@ Yaffas.UI = function() {
 	this.errorDialog = null;
 
 	this.addCloseButton = false;
+	this.showHelpTooltip = true;
 }
 
 Yaffas.UI.prototype.setup = function(){
@@ -61,6 +62,9 @@ Yaffas.UI.prototype.createTabBar = function() {
     this.tabs = new YAHOO.widget.TabView();
     this.tabs.appendTo("tabbar");
     YAHOO.util.Dom.addClass(this.tabs, "hidden");
+	this.tabs.addListener("beforeActiveIndexChange", function() {
+			$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
+			});
 }
 
 Yaffas.UI.prototype.createMenuBar = function() {
@@ -97,7 +101,19 @@ Yaffas.UI.prototype.createMenuBar = function() {
 				onclick: {
 					fn: this.setLanguage.bind(this, "en")
 				}
+            }, {
+                text: _("lbl_lang_nl", "global"),
+				onclick: {
+					fn: this.setLanguage.bind(this, "nl")
+				}
+            }, {
+                text: _("lbl_lang_fr", "global"),
+				onclick: {
+					fn: this.setLanguage.bind(this, "fr")
+				}
             }
+
+
 			]
         }
 		}, {
@@ -342,23 +358,25 @@ Yaffas.UI.prototype.openTabs = function(o) {
 			}
 
             var inputs = n.getElementsByTagName("input");
-            
             var items = [];
             for (var j = 0; j < inputs.length; ++j) {
                 if (inputs[j].getAttribute("type") === "submit") {
                     inputs[j].id = YAHOO.util.Dom.generateId();
-                    items.push(inputs[j].id);
+                    items.push({
+                                id: inputs[j].id,
+                          disabled: (inputs[j].getAttribute("disabled") === "disabled" ? true : false)
+                    });
                 }
             }
+
             if (n.tagName === "FORM") {
                 n.id = YAHOO.util.Dom.generateId();
                 YAHOO.util.Event.addListener(n.id, "submit", this.submitForm.bind(this));
             }
-            
+
             for (var j = 0; j < items.length; ++j) {
-                new YAHOO.widget.Button(items[j]);
+                new YAHOO.widget.Button(items[j].id, items[j]);
             }
-            
         }
         section.style.display = "none";
     }
@@ -711,6 +729,54 @@ Yaffas.UI.prototype.replaceValueForm = function() {
 		}
 		
 	}
+}
+
+/**
+ * showHelp(e): Displays the help div after a delay of 500ms
+ */
+Yaffas.UI.prototype.showHelp = function(elem) {
+	this.showHelpTooltip = true;
+	var e = new YAHOO.util.Element(elem.children[0]);
+	e.addClass("show");
+
+	if (e.hasClass("hidden")) {
+		var func = function() {
+			if (e.hasClass("show")) {
+				$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
+				e.removeClass("hidden");
+				e.removeClass("show");
+			}
+		}.bind(this);
+		func.delay(0.2);
+	}
+}
+
+/**
+ * cancelHelp(e): Cancel the help showing if delay has not been reached
+ */
+Yaffas.UI.prototype.cancelHelp = function(elem) {
+	this.showHelpTooltip = false;
+	var e = new YAHOO.util.Element(elem.children[0]);
+	e.removeClass("show");
+}
+
+
+/**
+ * toggleHelp(e): Toggles visibility on help element
+ */
+Yaffas.UI.prototype.toggleHelp = function(elem) {
+	var e = new YAHOO.util.Element(elem.children[0]);
+
+	if (e.hasClass("hidden")) {
+		$$(".tooltip div:not(.hidden)").each(function(a) { a.addClassName("hidden") });
+		e.removeClass("hidden");
+		e.removeClass("show");
+	}
+	else {
+		e.addClass("hidden");
+		e.removeClass("show");
+	}
+
 }
 
 Yaffas.UI.prototype.reloadGlobals = function() {

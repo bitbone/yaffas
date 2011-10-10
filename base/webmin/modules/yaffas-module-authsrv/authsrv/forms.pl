@@ -5,7 +5,7 @@ use strict;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Constant;
 use Yaffas::UI::TablePaging qw(show_page match);
-use Yaffas::UI qw(section section_button all_error_box start_section end_section );
+use Yaffas::UI qw(section section_button all_error_box start_section end_section textfield password_field);
 use Yaffas::Product qw(check_product);
 use Yaffas::Exception;
 use Error qw(:try);
@@ -33,7 +33,7 @@ sub pdc()
 			$cgi->Tr(
 				$cgi->td( $main::text{'lbl_pdc_server'}.":" ),
 				$cgi->td(
-					$cgi->textfield(
+					textfield(
 						-name => 'pass_pdc',
 						-size => 20,
 						-value => ( $main::in{'pass_pdc'} )?( $main::in{'pass_pdc'} ):( $info->{host} ),
@@ -43,7 +43,7 @@ sub pdc()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_name}.":" ),
 				$cgi->td( 
-					$cgi->textfield(
+					textfield(
 						-name => 'dom_name',
 						-size => 20,
 						-value => ( $main::in{'dom_name'} )?( $main::in{'dom_name'} ):( $info->{domain} )
@@ -53,7 +53,7 @@ sub pdc()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_adm}.":" ),
 				$cgi->td( 
-					$cgi->textfield(
+					textfield(
 						-name => 'dom_adm',
 						-size => 20,
 						-value => $main::in{'dom_adm'}
@@ -63,7 +63,7 @@ sub pdc()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_pass1}.":" ),
 				$cgi->td( 
-					$cgi->password_field(
+					password_field(
 					-name => 'dom_pass1',
 					-size => 20,
 					),
@@ -73,7 +73,7 @@ sub pdc()
 				$cgi->Tr(
 					$cgi->td( $main::text{lbl_printop_group}.":" ),
 					$cgi->td(
-						$cgi->textfield(
+						textfield(
 						-name => 'printop_group',
 						-size => 20,
 						-value => ( $main::in{'printop_group'} ? $main::in{'printop_group'} : get_print_operators_group() )
@@ -110,7 +110,7 @@ sub ads()
 			$cgi->Tr(
 				$cgi->td( $main::text{'lbl_pdc_server'}.":" ),
 				$cgi->td( 
-					$cgi->textfield(
+					textfield(
 						-name => 'pass_pdc', 
 						-size => 20,
 						-value => ( $main::in{'pass_pdc'} )?( $main::in{'pass_pdc'} ):( $info->{host} ),
@@ -120,7 +120,7 @@ sub ads()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_name}.":" ),
 				$cgi->td( 
-					$cgi->textfield(
+					textfield(
 						-name => 'dom_name',
 						-size => 20,
 						-value => ( $main::in{'dom_name'} )?( $main::in{'dom_name'} ):( $info->{domain} )
@@ -130,7 +130,7 @@ sub ads()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_adm}.":" ),
 				$cgi->td( 
-					$cgi->textfield(
+					textfield(
 						-name => 'dom_adm',
 						-size => 20,
 						-value => $main::in{'dom_adm'}
@@ -140,7 +140,7 @@ sub ads()
 			$cgi->Tr(
 				$cgi->td( $main::text{lbl_dom_pass1}.":" ),
 				$cgi->td( 
-					$cgi->password_field(
+					password_field(
 					-name => 'dom_pass1',
 					-size => 20,
 					),
@@ -150,7 +150,7 @@ sub ads()
 				$cgi->Tr(
 					$cgi->td( $main::text{lbl_printop_group}.":" ),
 					$cgi->td(
-						$cgi->textfield(
+						textfield(
 						-name => 'printop_group',
 						-size => 20,
 						-value => ( $main::in{'printop_group'} ? $main::in{'printop_group'} : get_print_operators_group() )
@@ -165,7 +165,7 @@ sub ads()
 				$cgi->Tr(
 					$cgi->td( $main::text{'lbl_username_dn'}.":" ),
 					$cgi->td( 
-						$cgi->textfield(
+						textfield(
 							-name => 'ads_user', 
 							-size => 60,
 							-value => ( $ads_user )?( $ads_user ): ""
@@ -175,7 +175,7 @@ sub ads()
 				$cgi->Tr(
 					$cgi->td( $main::text{lbl_dom_pass1}.":" ),
 					$cgi->td( 
-						$cgi->password_field(
+						password_field(
 							-name => 'ads_user_pass1',
 							-size => 20,
 						),
@@ -298,7 +298,7 @@ sub remote_ldap(;$)
 							  $Cgi->p($main::text{lbl_need_schema},
 								  $cgi->ul(
 										   [
-										   $cgi->li($cgi->a({-href=>"/authsrv/dlschema.cgi?file=samba"}, "Samba Schema")),
+										   $cgi->li($cgi->a({-href=>"/authsrv/dlschema.cgi?file=zarafa"}, "Zarafa Schema")),
 										   ]
 										  )),
 							  
@@ -306,7 +306,7 @@ sub remote_ldap(;$)
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_host} . ":"),
 												   $cgi->td( 
-												   		$cgi->textfield(
+												   		textfield(
 															"host",
 															( $main::in{'host'} )?( $main::in{'host'} ):( $values->{host} ),
 															40,
@@ -317,7 +317,7 @@ sub remote_ldap(;$)
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_basedn} . ":"),
 												   $cgi->td(
-														$cgi->textfield(
+														textfield(
 															"basedn",
 															( $main::in{'basedn'} )?( $main::in{'basedn'} ):( $values->{base} ),
 															40,
@@ -329,7 +329,7 @@ sub remote_ldap(;$)
 												   $cgi->td($main::text{lbl_user_base} . ":"),
 												   $cgi->td($method ne "yaffas" ?
 															(
-															$cgi->textfield("userdn", $main::in{userdn} ? $main::in{userdn} : $values->{userdn}, 40, 150)
+															textfield("userdn", $main::in{userdn} ? $main::in{userdn} : $values->{userdn}, 40, 150)
 															)
 															:
 															(
@@ -342,7 +342,7 @@ sub remote_ldap(;$)
 												   $cgi->td($main::text{lbl_user_attribute} . ":"),
 												   $cgi->td($method ne "yaffas" ?
 															(
-															 $cgi->textfield("usersearch",
+															 textfield("usersearch",
 																			 $main::in{usersearch} ? $main::in{usersearch} : $values->{usersearch},
 																			 40,
 																			 150
@@ -359,7 +359,7 @@ sub remote_ldap(;$)
 												   $cgi->td($main::text{lbl_email} . ":"),
 												   $cgi->td($method ne "yaffas" ?
 															(
-															 $cgi->textfield("email", $main::in{email} ? $main::in{email} : $values->{email}, 40, 150)
+															 textfield("email", $main::in{email} ? $main::in{email} : $values->{email}, 40, 150)
 															)
 															:
 															(
@@ -372,7 +372,7 @@ sub remote_ldap(;$)
 												   $cgi->td($main::text{lbl_group_base} . ":"),
 												   $cgi->td($method ne "yaffas" ?
 															(
-															$cgi->textfield("groupdn", $main::in{groupdn} ? $main::in{groupdn} : $values->{groupdn}, 40, 150)
+															textfield("groupdn", $main::in{groupdn} ? $main::in{groupdn} : $values->{groupdn}, 40, 150)
 															)
 															:
 															(
@@ -386,7 +386,7 @@ sub remote_ldap(;$)
 												$cgi->td($main::text{lbl_printop_group}.":" ),
 												$cgi->td($method ne "yaffas" ?
 													(
-														$cgi->textfield(
+														textfield(
 															-name => "printop_group",
 															-value => ($main::in{'printop_group'} ? $main::in{'printop_group'} : get_print_operators_group()),
 															-size => 40,
@@ -406,7 +406,7 @@ sub remote_ldap(;$)
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_binddn} . ":"),
 												   $cgi->td(
-												   		$cgi->textfield(
+												   		textfield(
 															"binddn",
 															( $main::in{'binddn'} )?( $main::in{'binddn'} ):( $values->{binddn} ),
 															40,
@@ -416,7 +416,7 @@ sub remote_ldap(;$)
 												  ),
 										  $cgi->Tr(
 												   $cgi->td($main::text{lbl_bindpw} . ":"),
-												   $cgi->td($cgi->password_field("bindpw", '', 40, 150))
+												   $cgi->td(password_field("bindpw", '', 40, 150))
 												  ),
 											),
 										choose_del_faxconf()
@@ -497,6 +497,18 @@ sub status(){
 						$cgi->Tr(
 							$cgi->td([$main::text{lbl_printop_group} . ":", get_print_operators_group()])
 						)
+					)
+				)
+			);
+		}
+		elsif( $authtype eq NOT_SET) {
+			print(
+				Yaffas::UI::section(
+					$main::text{lbl_status},
+					$cgi->table(
+						$cgi->Tr(
+							$cgi->td( $main::text{lbl_not_set_auth} ),
+						),
 					)
 				)
 			);
@@ -624,7 +636,7 @@ sub printops_group {
 				$cgi->Tr(
 					$cgi->td( $main::text{'lbl_admin'}.":" ),
 					$cgi->td(
-						$cgi->textfield(
+						textfield(
 							-name => 'admin',
 							-size => 20,
 							-default => $admin,
@@ -634,7 +646,7 @@ sub printops_group {
 				$cgi->Tr(
 					$cgi->td( $main::text{'lbl_adminpw'}.":" ),
 					$cgi->td(
-						$cgi->password_field(
+						password_field(
 							-name => 'adminpw',
 							-size => 20,
 						),

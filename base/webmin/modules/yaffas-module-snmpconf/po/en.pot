@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING"
+
+#: lang/en:1
+#, no-wrap
+msgid "Access for"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Community (Password)"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "Enable SNMP"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "SNMP Configuration"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "The access can only be set for IP-Addresses or networks."
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "Password for the SNMP access."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid ""
+"Enter a single IP address or a network in form of a CIDR ressource. Enter "
+"\"default\" to allow access only from the local machine."
+msgstr ""
