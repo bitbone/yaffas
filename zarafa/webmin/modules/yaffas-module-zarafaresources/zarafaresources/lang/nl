@@ -1,9 +1,9 @@
 lbl_resourcemanagement=Manage resources
 lbl_resource=Resource
-lbl_description=Description
-lbl_email=Email
-lbl_decline_conflict=Decline conflicts
-lbl_decline_recurring=Decline recurrent meetings
+lbl_description=Omschrijving
+lbl_email=E-mail
+lbl_decline_conflict=Weiger conflicten
+lbl_decline_recurring=Weiger herhalende afspraken
 lbl_newresource=New resource
 lbl_editresource=Modify resource
 lbl_delresource=Delete resource

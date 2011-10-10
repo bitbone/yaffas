@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-07 09:22+0200\n"
+"PO-Revision-Date: 2011-10-10 15:54+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -65,7 +65,7 @@ msgstr "Stop"
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
-msgstr ""
+msgstr "Configuratie"
 
 #: lang/en:11
 #, no-wrap
@@ -268,6 +268,9 @@ msgstr ""
 
 #~ msgid "Install new archiver client key"
 #~ msgstr "Nieuwe archiver-clientsleutel toevoegen"
+
+#~ msgid "Zarafa License Key"
+#~ msgstr "Zarafa Licentiesleutel"
 
 #~ msgid "Userfilter"
 #~ msgstr "Gebruikersfilter"
@@ -490,6 +493,39 @@ msgstr ""
 
 #~ msgid "Could not open file."
 #~ msgstr "Kon bestand niet openen."
+
+#~ msgid "Could not find a full backup."
+#~ msgstr "Kon geen volledige reservekopie vinden."
+
+#~ msgid "Could not create directory."
+#~ msgstr "Kon directory niet aanmaken."
+
+#~ msgid "Value for backup days incorrect."
+#~ msgstr "Waarde voor reservekopie-dagen incorrect."
+
+#~ msgid "Could not open directory."
+#~ msgstr "Kon directory niet openen."
+
+#~ msgid "Backup"
+#~ msgstr "Reservekopie"
+
+#~ msgid "In which directory should the backups be stored?"
+#~ msgstr "In welke directory moeten reservekopieën worden opgeslagen?"
+
+#~ msgid "How long should each backup be preserved?"
+#~ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
+
+#~ msgid "Description"
+#~ msgstr "Omschrijving"
+
+#~ msgid "Email"
+#~ msgstr "E-mail"
+
+#~ msgid "Decline conflicts"
+#~ msgstr "Weiger conflicten"
+
+#~ msgid "Decline recurrent meetings"
+#~ msgstr "Weiger herhalende afspraken"
 
 # 81%
 # 82%
