@@ -5,3 +5,5 @@ name=zarafaconf
 category=groupware
 desc=Zarafa Configuration
 version=1.0
+desc_nl=Configuratie
+desc_fr=Configuration

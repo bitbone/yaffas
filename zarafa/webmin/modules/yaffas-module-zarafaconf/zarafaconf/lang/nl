@@ -40,3 +40,4 @@ lbl_mysql_password=Wachtwoord
 
 err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_quota_value=De quotawaarde kan alleen cijfers bevatten.
+moduletitle=Configuratie

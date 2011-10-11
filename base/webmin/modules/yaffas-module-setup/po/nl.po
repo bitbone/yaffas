@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-29 10:46+0200\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"PO-Revision-Date: 2011-10-07 09:22+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -76,6 +76,11 @@ msgstr "Kan geen verbinding krijgen met de database."
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
+
+#: lang/en:17
+#, no-wrap
+msgid "Setup"
+msgstr ""
 
 #~ msgid "Apply key"
 #~ msgstr "Sleutel toepassen"
@@ -307,6 +312,9 @@ msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
 
 #~ msgid "Full backup"
 #~ msgstr "Volledige reservekopie"
+
+#~ msgid "Differential backup"
+#~ msgstr "Differentiële reservekopie"
 
 #~ msgid "at"
 #~ msgstr "op"
@@ -735,6 +743,11 @@ msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
 # 77%
 #, fuzzy
 #~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 94%
+#, fuzzy
+#~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
 # 88%

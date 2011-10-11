@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: 2011-10-06 12:13+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -332,72 +332,77 @@ msgstr "Anglais"
 msgid "Dutch"
 msgstr "Néerlandais"
 
-#: lang/en:73
+#: lang/en:72
+#, no-wrap
+msgid "French"
+msgstr ""
+
+#: lang/en:74
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page"
 
-#: lang/en:74
+#: lang/en:75
 #, no-wrap
 msgid "About yaffas"
 msgstr "À propos de yaffas"
 
-#: lang/en:75
+#: lang/en:76
 #, no-wrap
 msgid "About Z-Admin"
 msgstr "À propos de Z-Admin"
 
-#: lang/en:77
+#: lang/en:78
 #, no-wrap
 msgid "Logged out"
 msgstr "Déconnecté"
 
-#: lang/en:78
+#: lang/en:79
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
 msgstr "Un autre administrateur est connecté. Vous devez vous reconnecté."
 
-#: lang/en:80
+#: lang/en:81
 #, no-wrap
 msgid "Loading please wait..."
 msgstr "Chargement, veuillez patienter..."
 
-#: lang/en:81
+#: lang/en:82
 #, no-wrap
 msgid "Error"
 msgstr "Erreur"
 
-#: lang/en:82
+#: lang/en:83
 #, no-wrap
 msgid "Help"
 msgstr "Aide"
 
-#: lang/en:84
+#: lang/en:85
 #, no-wrap
 msgid "Loading..."
 msgstr "Chargement..."
 
-#: lang/en:85
+#: lang/en:86
 #, no-wrap
 msgid "Data error."
 msgstr "Erreur de données."
 
-#: lang/en:86
+#: lang/en:87
 #, no-wrap
 msgid "No records found."
 msgstr "Aucune donnée n'a été trouvée."
 
-#: lang/en:88
+#: lang/en:89
 #, no-wrap
 msgid "Filter data"
 msgstr "Filtrer les données"
 
-#: lang/en:89
+#: lang/en:90
 #, no-wrap
 msgid "Show filter"
 msgstr "Appliquer le filtre"
 
-#: lang/en:91
+#: lang/en:92
 #, no-wrap
 msgid "Could not connect to backend!"
 msgstr "Impossible de se connecter au moteur !"
@@ -543,6 +548,9 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "La valeur du quota ne peut contenir que des chiffres."
 
+#~ msgid "Configuration"
+#~ msgstr "Configuration"
+
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess."
 
@@ -684,6 +692,9 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "Could not open directory."
 #~ msgstr "Impossible d'ouvrir le répertoire."
 
+#~ msgid "Backup"
+#~ msgstr "Sauvegarde"
+
 #~ msgid "In which directory should the backups be stored?"
 #~ msgstr "Dans quel répertoire les sauvegardes devront-elles être stockées ?"
 
@@ -758,6 +769,11 @@ msgstr "Impossible de se connecter au moteur !"
 
 #~ msgid "No local mail domains configured."
 #~ msgstr "Aucun domaine local de courriel n'a été configuré."
+
+# 88%
+#, fuzzy
+#~ msgid "Resources"
+#~ msgstr "Ressource"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Ce nom sera affiché dans le carnet d'adresse global."
@@ -1818,6 +1834,11 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "Display"
 #~ msgstr "1. Affichage (n) 2. Afficher (v)"
 
+# 81%
+#, fuzzy
+#~ msgid "Mail Queue"
+#~ msgstr "Queue de courriel"
+
 #~ msgid "Query"
 #~ msgstr "Requête"
 
@@ -2421,6 +2442,11 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 #~ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 
+# 95%
+#, fuzzy
+#~ msgid "Mail alias configuration"
+#~ msgstr "Configuration de l'alias de courriel"
+
 #~ msgid "Install New Key"
 #~ msgstr "Installer une nouvelle clé"
 
@@ -2553,9 +2579,6 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "Action"
 #~ msgstr "Action"
 
-#~ msgid "Configuration"
-#~ msgstr "Configuration"
-
 #~ msgid "Restart"
 #~ msgstr "Redémarrer"
 
@@ -2664,6 +2687,11 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "Filesystem information"
 #~ msgstr "Information système de fichier"
 
+# 94%
+#, fuzzy
+#~ msgid "System Information"
+#~ msgstr "Information système"
+
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Version de fichier de configuration erronée"
 
@@ -2675,9 +2703,6 @@ msgstr "Impossible de se connecter au moteur !"
 
 #~ msgid "Save backupfile"
 #~ msgstr "Enregistrer le fichier de sauvegarde"
-
-#~ msgid "Backup"
-#~ msgstr "Sauvegarde"
 
 #~ msgid "Messages:"
 #~ msgstr "Messages :"
@@ -2748,11 +2773,21 @@ msgstr "Impossible de se connecter au moteur !"
 #~ msgid "Your Configurationfile is not for this fax-card type."
 #~ msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
 
+# 78%
+#, fuzzy
+#~ msgid "No authentication type is configured."
+#~ msgstr "Aucune méthode d'authentification n'a été configurée"
+
 #~ msgid "Errors occured."
 #~ msgstr "Des erreurs se sont produites."
 
 #~ msgid "Would you like to save your incomplete Configuration?"
 #~ msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
+
+# 94%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Enregistrer la configuration"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "L'adresse IP ou le masque réseau est invalide."

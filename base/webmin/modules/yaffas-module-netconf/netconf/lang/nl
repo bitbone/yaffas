@@ -19,7 +19,7 @@ err_bonding_enabled=This module is deactivated, because channel bonding is activ
 
 err_no_ip=No IP address is set.
 
-lbl_index_header=Configuration
+lbl_index_header=Configuratie
 lbl_data=Network Settings
 
 lbl_hostname=Host name
@@ -66,3 +66,4 @@ err_10=Error while deleting KAVS proxy!
 err_set_freshclam=Error while setting freshclam proxy!
 err_del_freshclam=Error while deleting freshclam proxy!
 err_restart_freshclam=Error restarting freshclam!
+moduletitle=Configuratie

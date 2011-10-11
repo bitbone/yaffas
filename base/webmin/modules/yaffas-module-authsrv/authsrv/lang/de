@@ -109,3 +109,4 @@ err_set_sambasid=Fehler beim Schreiben von Daten für Samba.
 err_ldap_duplicate_sambadomain=Die Samba Domäne existiert bereits im LDAP! Bitte berichtigen Sie dies.
 err_no_domain_found=<keine passende Domäne>
 err_unknown_postfix_file=Unbekannte Postfix Datei
+moduletitle=Authentifizierungsserver

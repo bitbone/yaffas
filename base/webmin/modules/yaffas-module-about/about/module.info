@@ -1,7 +1,9 @@
 longdesc=About yaffas
-desc_de=Informationen
+desc_de=Information
 desc_en=Information
 name=about
 category=system
 desc=About yaffas
 version=0.1
+desc_nl=Information
+desc_fr=Information

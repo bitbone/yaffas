@@ -5,3 +5,5 @@ name=changepw
 category=accounts
 desc=Set Password
 version=0.1
+desc_nl=Admin-wachtwoord
+desc_fr=Mot de passe administrateur

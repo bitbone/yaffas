@@ -24,3 +24,4 @@ err_copy_file=Kann folgende Datei(en) nicht kopieren:
 err_password=Das Passwort muss mindestens ein Zeichen lang sein und darf keine Raute (#) enthalten.
 err_password_equal=Beide Passw&ouml;rter m&uuml;ssen identisch sein.
 err_change_password=Passwort nicht gültig.
+moduletitle=Admin Passwort

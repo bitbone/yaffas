@@ -5,3 +5,5 @@ name=snmpconf
 category=net
 desc=SNMP Configuration
 version=1.0
+desc_nl=SNMP Configuration
+desc_fr=Configuration SNMP

@@ -5,3 +5,5 @@ name=setup
 category=system
 desc=Setup
 version=1.0.0
+desc_nl=Setup
+desc_fr=Setup

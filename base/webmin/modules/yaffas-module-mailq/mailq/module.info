@@ -1,7 +1,9 @@
 longdesc=Mail Queue
-desc_de=Mail Warteschlange
+desc_de=Mail Queue
 desc_en=Mail Queue
 name=mailq
 category=mailserver
 desc=Mail Queue
 version=0.1
+desc_nl=Mail Queue
+desc_fr=Mail Queue

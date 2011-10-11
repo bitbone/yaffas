@@ -5,3 +5,5 @@ name=service
 category=system
 desc=Service
 version=0.1
+desc_nl=Services
+desc_fr=Services

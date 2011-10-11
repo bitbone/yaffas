@@ -9,3 +9,4 @@ err_no_lshw=Your system doesn't have the needed programm "lshw" installed.
 err_no_lspci=Your system doesn't have the needed programm "lspci" installed.
 err_executing_lspci=An error occured while executing "pspci".
 err_executing_lshw=An error occured while executing "lshw".
+moduletitle=Support

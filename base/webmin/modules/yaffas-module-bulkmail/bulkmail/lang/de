@@ -8,3 +8,4 @@ index_send=Senden
 err_error=Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse.
 lbl_send_success=Ihre Mails werden versendet. Dies kann, abhängig von Ihrer Hardware, etwas Zeit in Anspruch nehmen.
 
+moduletitle=Rundmail

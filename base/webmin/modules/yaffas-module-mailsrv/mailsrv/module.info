@@ -5,3 +5,5 @@ name=mailsrv
 category=mailserver
 desc=configuration
 version=0.1
+desc_nl=Configuratie
+desc_fr=Configuration

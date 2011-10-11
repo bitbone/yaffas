@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
-"PO-Revision-Date: 2011-09-29 10:46+0200\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"PO-Revision-Date: 2011-10-07 09:22+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.5\n"
 
-#: lang/en:1
+#: lang/en:1 lang/en:112
 #, no-wrap
 msgid "Authentication Server"
 msgstr ""
@@ -819,6 +819,9 @@ msgstr ""
 #~ msgid "Full backup"
 #~ msgstr "Volledige reservekopie"
 
+#~ msgid "Differential backup"
+#~ msgstr "Differentiële reservekopie"
+
 #~ msgid "at"
 #~ msgstr "op"
 
@@ -1276,6 +1279,11 @@ msgstr ""
 # 77%
 #, fuzzy
 #~ msgid "Filesystem information"
+#~ msgstr "Systeeminformatie"
+
+# 94%
+#, fuzzy
+#~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
 # 88%

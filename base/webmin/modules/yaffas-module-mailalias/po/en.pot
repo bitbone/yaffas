@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -147,4 +147,9 @@ msgid ""
 "created. Please define it in the module <a "
 "href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail "
 "Server/Configuration</a>."
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Mail alias configuration"
 msgstr ""

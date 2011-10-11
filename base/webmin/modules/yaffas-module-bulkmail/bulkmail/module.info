@@ -5,3 +5,5 @@ name=mailusers
 category=mailserver
 desc=Bulk mailing
 version=0.1
+desc_nl=Bulk mailing
+desc_fr=Envoi groupé

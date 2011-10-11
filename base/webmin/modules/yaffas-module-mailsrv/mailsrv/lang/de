@@ -95,3 +95,4 @@ err_kav_licence=Ihr KAV Lizenzschlüssel ist abgelaufen oder ungültig!
 err_kav_update=Führen Sie ein KAV Update duch bevor Sie dieses Feature aktivieren!
 err_kas_update=Führen Sie ein KAS Update duch bevor Sie dieses Feature aktivieren!
 err_activate_policyserver=Bitte aktivieren Sie zuerst in der MPP Oberfläche den Policyserver.
+moduletitle=Konfiguration

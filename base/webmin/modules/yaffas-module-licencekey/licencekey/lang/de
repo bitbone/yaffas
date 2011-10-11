@@ -37,3 +37,4 @@ err_cant_rm_newkey=Kann neuen Key nicht löschen!
 err_wrong_kv=Falsche Keyversion für dieses Produkt!
 err_no_key=Kein Key vorhanden.
 suc_license=Lizenzkey erfolgreich gespeichert!
+moduletitle=yaffas license key management

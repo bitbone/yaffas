@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 00:13+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: 2011-10-06 09:36+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,6 +169,12 @@ msgstr "Ungültige E-Mail Adresse"
 msgid "Display"
 msgstr "Anzeigen"
 
+# 81%
+#: lang/en:31
+#, fuzzy, no-wrap
+msgid "Mail Queue"
+msgstr "Mail Warteschlange"
+
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
 
@@ -306,6 +312,9 @@ msgstr "Anzeigen"
 
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "Der Wert des Quotas darf nur aus Ziffern bestehen."
+
+#~ msgid "Configuration"
+#~ msgstr "Konfiguration"
 
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Webaccess hochgeladen werden können."
@@ -448,6 +457,9 @@ msgstr "Anzeigen"
 #~ msgid "Could not open directory."
 #~ msgstr "Konnte das Verzeichnis nicht öffnen."
 
+#~ msgid "Backup"
+#~ msgstr "Backup"
+
 #~ msgid "In which directory should the backups be stored?"
 #~ msgstr "In welchem Verzeichnis sollen die Sicherungen gespeichert werden?"
 
@@ -522,6 +534,11 @@ msgstr "Anzeigen"
 
 #~ msgid "No local mail domains configured."
 #~ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
+
+# 88%
+#, fuzzy
+#~ msgid "Resources"
+#~ msgstr "Ressource"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
@@ -714,6 +731,9 @@ msgstr "Anzeigen"
 
 #~ msgid "Invalid e-mail address"
 #~ msgstr "Ungültige E-Mail Adresse"
+
+#~ msgid "Security"
+#~ msgstr "Sicherheit"
 
 #~ msgid "This value defines at which score mails are handled as spam."
 #~ msgstr "Dieser Wert gibt an, ab welcher Punktzahl E-Mails als Spam behandelt werden."
@@ -2132,6 +2152,11 @@ msgstr "Anzeigen"
 #~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 #~ msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
+# 95%
+#, fuzzy
+#~ msgid "Mail alias configuration"
+#~ msgstr "Mail Alias Konfiguration"
+
 #~ msgid "Install New Key"
 #~ msgstr "Installiere Neuen Lizenzschlüssel"
 
@@ -2264,9 +2289,6 @@ msgstr "Anzeigen"
 #~ msgid "Action"
 #~ msgstr "Aktion"
 
-#~ msgid "Configuration"
-#~ msgstr "Konfiguration"
-
 #~ msgid "Restart"
 #~ msgstr "Neustart"
 
@@ -2375,6 +2397,11 @@ msgstr "Anzeigen"
 #~ msgid "Filesystem information"
 #~ msgstr "Dateisystem Informationen"
 
+# 94%
+#, fuzzy
+#~ msgid "System Information"
+#~ msgstr "System Information"
+
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Falsche Version der Konfigurationsdatei"
 
@@ -2386,9 +2413,6 @@ msgstr "Anzeigen"
 
 #~ msgid "Save backupfile"
 #~ msgstr "Sichern"
-
-#~ msgid "Backup"
-#~ msgstr "Backup"
 
 #~ msgid "Messages:"
 #~ msgstr "Meldungen:"
@@ -2462,11 +2486,21 @@ msgstr "Anzeigen"
 #~ msgid "Your Configurationfile is not for this fax-card type."
 #~ msgstr "Die Konfigurationsdatei ist nicht für diesen Fax-Karte Typ."
 
+# 78%
+#, fuzzy
+#~ msgid "No authentication type is configured."
+#~ msgstr "Es ist keine Authentifizierungsmethode eingestellt"
+
 #~ msgid "Errors occured."
 #~ msgstr "Es sind Fehler aufgetreten"
 
 #~ msgid "Would you like to save your incomplete Configuration?"
 #~ msgstr "Wollen Sie die Datei trotzdem herunterladen?"
+
+# 94%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Konfiguration Speichern"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."
@@ -3050,9 +3084,6 @@ msgstr "Anzeigen"
 
 #~ msgid "Maintenance"
 #~ msgstr "Wartung"
-
-#~ msgid "Security"
-#~ msgstr "Sicherheit"
 
 #~ msgid "PDF Printers"
 #~ msgstr "PDF Drucker"

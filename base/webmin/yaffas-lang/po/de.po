@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-26 15:50+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: 2011-10-06 09:36+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -347,73 +347,78 @@ msgstr "Englisch"
 msgid "Dutch"
 msgstr "Niederländisch"
 
-#: lang/en:73
+#: lang/en:72
+#, no-wrap
+msgid "French"
+msgstr ""
+
+#: lang/en:74
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
-#: lang/en:74
+#: lang/en:75
 #, no-wrap
 msgid "About yaffas"
 msgstr "Über yaffas"
 
-#: lang/en:75
+#: lang/en:76
 #, no-wrap
 msgid "About Z-Admin"
 msgstr "Über Z-Admin"
 
-#: lang/en:77
+#: lang/en:78
 #, no-wrap
 msgid "Logged out"
 msgstr "Abgemeldet"
 
-#: lang/en:78
+#: lang/en:79
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
 msgstr "Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden."
 
-#: lang/en:80
+#: lang/en:81
 #, no-wrap
 msgid "Loading please wait..."
 msgstr "Lade, bitte warten..."
 
 # 83%
-#: lang/en:81
+#: lang/en:82
 #, no-wrap
 msgid "Error"
 msgstr "Fehler"
 
-#: lang/en:82
+#: lang/en:83
 #, no-wrap
 msgid "Help"
 msgstr "Hilfe"
 
-#: lang/en:84
+#: lang/en:85
 #, no-wrap
 msgid "Loading..."
 msgstr "Lade..."
 
-#: lang/en:85
+#: lang/en:86
 #, no-wrap
 msgid "Data error."
 msgstr "Datenfehler."
 
-#: lang/en:86
+#: lang/en:87
 #, no-wrap
 msgid "No records found."
 msgstr "Keine Einträge gefunden."
 
-#: lang/en:88
+#: lang/en:89
 #, no-wrap
 msgid "Filter data"
 msgstr "Daten filtern"
 
-#: lang/en:89
+#: lang/en:90
 #, no-wrap
 msgid "Show filter"
 msgstr "Filter anzeigen"
 
-#: lang/en:91
+#: lang/en:92
 #, no-wrap
 msgid "Could not connect to backend!"
 msgstr "Konnte nicht zum Backend verbinden!"
@@ -559,6 +564,9 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "Der Wert des Quotas darf nur aus Ziffern bestehen."
 
+#~ msgid "Configuration"
+#~ msgstr "Konfiguration"
+
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Webaccess hochgeladen werden können."
 
@@ -700,6 +708,9 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "Could not open directory."
 #~ msgstr "Konnte das Verzeichnis nicht öffnen."
 
+#~ msgid "Backup"
+#~ msgstr "Backup"
+
 #~ msgid "In which directory should the backups be stored?"
 #~ msgstr "In welchem Verzeichnis sollen die Sicherungen gespeichert werden?"
 
@@ -774,6 +785,11 @@ msgstr "Konnte nicht zum Backend verbinden!"
 
 #~ msgid "No local mail domains configured."
 #~ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
+
+# 88%
+#, fuzzy
+#~ msgid "Resources"
+#~ msgstr "Ressource"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
@@ -1841,6 +1857,11 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "Display"
 #~ msgstr "Anzeigen"
 
+# 81%
+#, fuzzy
+#~ msgid "Mail Queue"
+#~ msgstr "Mail Warteschlange"
+
 #~ msgid "Query"
 #~ msgstr "Abholaufträge"
 
@@ -2446,6 +2467,11 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 #~ msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
+# 95%
+#, fuzzy
+#~ msgid "Mail alias configuration"
+#~ msgstr "Mail Alias Konfiguration"
+
 #~ msgid "Install New Key"
 #~ msgstr "Installiere Neuen Lizenzschlüssel"
 
@@ -2578,9 +2604,6 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "Action"
 #~ msgstr "Aktion"
 
-#~ msgid "Configuration"
-#~ msgstr "Konfiguration"
-
 #~ msgid "Restart"
 #~ msgstr "Neustart"
 
@@ -2689,6 +2712,11 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "Filesystem information"
 #~ msgstr "Dateisystem Informationen"
 
+# 94%
+#, fuzzy
+#~ msgid "System Information"
+#~ msgstr "System Information"
+
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Falsche Version der Konfigurationsdatei"
 
@@ -2700,9 +2728,6 @@ msgstr "Konnte nicht zum Backend verbinden!"
 
 #~ msgid "Save backupfile"
 #~ msgstr "Sichern"
-
-#~ msgid "Backup"
-#~ msgstr "Backup"
 
 #~ msgid "Messages:"
 #~ msgstr "Meldungen:"
@@ -2773,11 +2798,21 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #~ msgid "Your Configurationfile is not for this fax-card type."
 #~ msgstr "Die Konfigurationsdatei ist nicht für diesen Fax-Karte Typ."
 
+# 78%
+#, fuzzy
+#~ msgid "No authentication type is configured."
+#~ msgstr "Es ist keine Authentifizierungsmethode eingestellt"
+
 #~ msgid "Errors occured."
 #~ msgstr "Es sind Fehler aufgetreten"
 
 #~ msgid "Would you like to save your incomplete Configuration?"
 #~ msgstr "Wollen Sie die Datei trotzdem herunterladen?"
+
+# 94%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Konfiguration Speichern"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."

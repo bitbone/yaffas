@@ -1,7 +1,9 @@
 longdesc=Licensekey (Insert license in system and show Information)
-desc_de=yaffas Lizenzschlüsselverwaltung
+desc_de=yaffas license key management
 desc_en=yaffas license key management
 name=licensekey
 category=license
 desc=yaffas license key management
 version=0.1
+desc_nl=yaffas license key management
+desc_fr=yaffas license key management

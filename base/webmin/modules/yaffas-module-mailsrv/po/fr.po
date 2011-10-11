@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-06 00:13+0300\n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
 "PO-Revision-Date: 2011-10-06 12:13+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -382,6 +382,11 @@ msgstr "Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalit�
 msgid "Please activate policy server in MPP interface first."
 msgstr "Veuillez tout d'abord activer le serveur de règle dans l'interface MPP."
 
+#: lang/en:98
+#, no-wrap
+msgid "Configuration"
+msgstr "Configuration"
+
 #: help/en:1
 #, no-wrap
 msgid "This name will be sent to remote SMTP servers for outgoing mails."
@@ -662,6 +667,9 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "Could not open directory."
 #~ msgstr "Impossible d'ouvrir le répertoire."
 
+#~ msgid "Backup"
+#~ msgstr "Sauvegarde"
+
 #~ msgid "In which directory should the backups be stored?"
 #~ msgstr "Dans quel répertoire les sauvegardes devront-elles être stockées ?"
 
@@ -736,6 +744,11 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 
 #~ msgid "No local mail domains configured."
 #~ msgstr "Aucun domaine local de courriel n'a été configuré."
+
+# 88%
+#, fuzzy
+#~ msgid "Resources"
+#~ msgstr "Ressource"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Ce nom sera affiché dans le carnet d'adresse global."
@@ -922,6 +935,9 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 
 #~ msgid "Invalid e-mail address"
 #~ msgstr "Adresse électronique invalide"
+
+#~ msgid "Security"
+#~ msgstr "Sécurité"
 
 #~ msgid "This value defines at which score mails are handled as spam."
 #~ msgstr "Cette valeur défini le niveau à partir duquel les courriels sont considérés comme spam."
@@ -1607,6 +1623,11 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "Display"
 #~ msgstr "1. Affichage (n) 2. Afficher (v)"
 
+# 81%
+#, fuzzy
+#~ msgid "Mail Queue"
+#~ msgstr "Queue de courriel"
+
 #~ msgid "Query"
 #~ msgstr "Requête"
 
@@ -2213,6 +2234,11 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 #~ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 
+# 95%
+#, fuzzy
+#~ msgid "Mail alias configuration"
+#~ msgstr "Configuration de l'alias de courriel"
+
 #~ msgid "Install New Key"
 #~ msgstr "Installer une nouvelle clé"
 
@@ -2345,9 +2371,6 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "Action"
 #~ msgstr "Action"
 
-#~ msgid "Configuration"
-#~ msgstr "Configuration"
-
 #~ msgid "Restart"
 #~ msgstr "Redémarrer"
 
@@ -2456,6 +2479,11 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "Filesystem information"
 #~ msgstr "Information système de fichier"
 
+# 94%
+#, fuzzy
+#~ msgid "System Information"
+#~ msgstr "Information système"
+
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Version de fichier de configuration erronée"
 
@@ -2467,9 +2495,6 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 
 #~ msgid "Save backupfile"
 #~ msgstr "Enregistrer le fichier de sauvegarde"
-
-#~ msgid "Backup"
-#~ msgstr "Sauvegarde"
 
 #~ msgid "Messages:"
 #~ msgstr "Messages :"
@@ -2543,11 +2568,21 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 #~ msgid "Your Configurationfile is not for this fax-card type."
 #~ msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
 
+# 78%
+#, fuzzy
+#~ msgid "No authentication type is configured."
+#~ msgstr "Aucune méthode d'authentification n'a été configurée"
+
 #~ msgid "Errors occured."
 #~ msgstr "Des erreurs se sont produites."
 
 #~ msgid "Would you like to save your incomplete Configuration?"
 #~ msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
+
+# 94%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Enregistrer la configuration"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "L'adresse IP ou le masque réseau est invalide."
@@ -3130,9 +3165,6 @@ msgstr "Ceci limite la taille de tous les courriels entrants et sortants. Laisse
 
 #~ msgid "Maintenance"
 #~ msgstr "Maintenance"
-
-#~ msgid "Security"
-#~ msgstr "Sécurité"
 
 #~ msgid "PDF Printers"
 #~ msgstr "Imprimantes PDF"

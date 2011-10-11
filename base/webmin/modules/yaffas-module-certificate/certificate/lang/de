@@ -63,3 +63,4 @@ restart_service=Die Dienste werden neu gestartet!
 yes=ja
 no=nein
 succsess=Erfolgreich
+moduletitle=Zertifikat / Schlüssel Verwaltung

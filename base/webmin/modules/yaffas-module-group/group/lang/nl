@@ -21,7 +21,7 @@ lbl_done=klaar
 
 lbl_ask_delete=Do you really want to delete this groups?
 lbl_auth=Authentification
-lbl_email=Email
+lbl_email=E-mail
 lbl_sendas=Allow send as for
 
 
@@ -34,3 +34,4 @@ err_newgroup_name=Group names have to consist of at least one (alphanumerical) c
 err_mode=Wrong mode!
 err_no_group_selected=No group selected!
 err_no_local_auth=This action is only supported with local authentification.
+moduletitle=Group Management

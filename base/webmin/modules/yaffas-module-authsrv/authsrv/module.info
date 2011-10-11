@@ -5,3 +5,5 @@ name=authsrv
 category=accounts
 desc=Authentication Server
 version=0.1
+desc_nl=Authentication Server
+desc_fr=Serveur d'authentification

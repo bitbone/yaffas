@@ -34,3 +34,4 @@ err_newgroup_name=Les noms de groupes doivent comporter au moins un caractère (
 err_mode=Mode inapproprié !
 err_no_group_selected=Aucun groupe sélectionné !
 err_no_local_auth=Cette action n'est permise qu'avec une authentification locale.
+moduletitle=Group Management
