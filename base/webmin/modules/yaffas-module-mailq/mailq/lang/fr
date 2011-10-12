@@ -28,4 +28,4 @@ err_exim_delete=Une erreur s'est produite lors de la suppression du courriel
 err_exim_dequeued=Une erreur s'est produite lors de la tentative de suppression du courriel de la queue
 err_no_good_mail=Aucune adresse électronique valide
 lbl_show=1. Affichage (n) 2. Afficher (v)
-moduletitle=Mail Queue
+moduletitle=File d'attente des courriels

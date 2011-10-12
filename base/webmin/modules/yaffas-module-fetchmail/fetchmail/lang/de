@@ -132,4 +132,4 @@ err_no_selection=Bitte wählen Sie als Ziel entweder "Benutzer", "Alias" oder "M
 err_remote_user=Bitte geben Sie einen gültigen Mailserverbenutzer an.
 err_remote_passwd=Bitte geben Sie ein Passwort für den Mailserverbenutzer an.
 err_enable_fetchmail=Der fetchmail Dienst konnte nicht aktiviert werden.
-moduletitle=Fetchmail Mail Retrieval
+moduletitle=Fetchmail-Konfiguration

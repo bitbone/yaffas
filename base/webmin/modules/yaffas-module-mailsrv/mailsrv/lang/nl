@@ -95,4 +95,4 @@ err_kav_licence=Your KAV key is expired or not valid!
 err_kav_update=You have to update your KAV before you activate this feature.
 err_kas_update=You have to update your KAS before you activate this feature.
 err_activate_policyserver=Please activate policy server in MPP interface first.
-moduletitle=Configuration
+moduletitle=Configuratie

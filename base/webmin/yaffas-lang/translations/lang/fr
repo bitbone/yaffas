@@ -69,7 +69,7 @@ lbl_lang=Langue
 lbl_lang_de=Allemand
 lbl_lang_en=Anglais
 lbl_lang_nl=Néerlandais
-lbl_lang_fr=French
+lbl_lang_fr=Français
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page
 lbl_about_yaffas=À propos de yaffas

@@ -6,7 +6,7 @@ lbl_activate=Activeer
 lbl_deactivate=Deactiveer
 lbl_update=Ververs
 lbl_really_delete=Verwijder item
-lbl_really_delete_msg=Do you really want to delete this entry?
+lbl_really_delete_msg=Wilt u dit item echt verwijderen?
 
 lbl_really_disable=Wilt u deze service echt uitschakelen?
 lbl_really_enable=Wilt u deze service echt inschakelen?
@@ -17,8 +17,8 @@ lbl_policy_disable=Beleid uitschakelen
 lbl_dnsbl=DNSBL
 lbl_rhsbl=RHSBL
 lbl_host=Hostnaam
-lbl_hit=Hit score
-lbl_miss=Miss score
+lbl_hit=Hit-score
+lbl_miss=Miss-score
 lbl_log=Logboeknaam
 
 lbl_clamav=ClamAV
