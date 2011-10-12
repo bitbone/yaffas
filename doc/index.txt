@@ -1,0 +1,9 @@
+:product: yaffas
+
+= {product} documentation
+
+[width="50%"]
+|=======================
+| Deutsch | http://doc.yaffas.org/de_DE.chunked[html] | http://doc.yaffas.org/de_DE.html[html-single]
+| English | http://doc.yaffas.org/en_EN.chunked[html] | http://doc.yaffas.org/en_EN.html[html-single]
+|=======================

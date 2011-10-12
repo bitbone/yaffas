@@ -77,8 +77,18 @@ You can enable a virus and spam check.
 There is also support for the policy sever that allows you to reject emails during smtp time.
 
 ==== Policy Server
+
+The policy server can decide during smtp time if a message should be accepted based on reputation of the sender.
+
 ==== SpamAssassin
+
+Spamassassin can classify your emails based on internal rules if a message is spam or not.
+Every message will get points for special attributes which will get summed up.
+If a certain level of pointes is reached the message will get marked as spam.
+
 ==== ClamAV
+
+ClamAV scans emails for viruses. If a message contains a virus it will not be delivered to the user.
 
 [IMPORTANT]
 ==============

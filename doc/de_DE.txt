@@ -1,6 +1,6 @@
 :product: yaffas
 
-= {product} documentation
+= {product} Dokumentation
 
 include::source/de/install.txt[]
 include::source/de/system.txt[]
