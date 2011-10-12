@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-06 09:36+0200\n"
-"Last-Translator: Christof <musik@bitbone.de>\n"
+"PO-Revision-Date: 2011-10-11 09:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -174,7 +174,7 @@ msgstr "Die Konfigurationsdatei ist nicht für diesen Fax-Karte Typ."
 
 # 78%
 #: lang/en:32
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "No authentication type is configured."
 msgstr "Es ist keine Authentifizierungsmethode eingestellt"
 
@@ -190,9 +190,9 @@ msgstr "Wollen Sie die Datei trotzdem herunterladen?"
 
 # 94%
 #: lang/en:35
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Save configuration"
-msgstr "Konfiguration Speichern"
+msgstr "Konfiguration sichern"
 
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
@@ -229,6 +229,9 @@ msgstr "Konfiguration Speichern"
 
 #~ msgid "Install new archiver client key"
 #~ msgstr "Neuen Archiver Client Schlüssel installieren"
+
+#~ msgid "Zarafa License Key"
+#~ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "Userfilter"
 #~ msgstr "Benutzer Filter"
@@ -558,9 +561,8 @@ msgstr "Konfiguration Speichern"
 #~ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
 
 # 88%
-#, fuzzy
 #~ msgid "Resources"
-#~ msgstr "Ressource"
+#~ msgstr "Ressourcen"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
@@ -607,6 +609,9 @@ msgstr "Konfiguration Speichern"
 #~ msgid "The admin password is empty or does not match."
 #~ msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."
 
+#~ msgid "Setup"
+#~ msgstr "Setup"
+
 #~ msgid "Change Language"
 #~ msgstr "Sprache &auml;ndern"
 
@@ -624,6 +629,9 @@ msgstr "Konfiguration Speichern"
 
 #~ msgid "Language not found!"
 #~ msgstr "Sprache nicht gefunden!"
+
+#~ msgid "Set Language"
+#~ msgstr "Sprache auswählen"
 
 #~ msgid "Apply"
 #~ msgstr "Anwenden"
@@ -849,6 +857,9 @@ msgstr "Konfiguration Speichern"
 
 #~ msgid "This action is only supported with local authentification."
 #~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
+
+#~ msgid "Group Management"
+#~ msgstr "Gruppenverwaltung"
 
 #~ msgid "Base Configuration"
 #~ msgstr "Grundkonfiguration"
@@ -1303,6 +1314,9 @@ msgstr "Konfiguration Speichern"
 #~ msgid "Memory type"
 #~ msgstr "Speichertyp"
 
+#~ msgid "Information"
+#~ msgstr "Information"
+
 #~ msgid "Access for"
 #~ msgstr "Zugriff für"
 
@@ -1650,9 +1664,8 @@ msgstr "Konfiguration Speichern"
 #~ msgstr "Anzeigen"
 
 # 81%
-#, fuzzy
 #~ msgid "Mail Queue"
-#~ msgstr "Mail Warteschlange"
+#~ msgstr "Mail-Warteschlange"
 
 #~ msgid "Query"
 #~ msgstr "Abholaufträge"
@@ -2007,6 +2020,9 @@ msgstr "Konfiguration Speichern"
 #~ msgid "Fetchmail daemon could not be enabled."
 #~ msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 
+#~ msgid "Fetchmail Mail Retrieval"
+#~ msgstr "Fetchmail-Konfiguration"
+
 #~ msgid "Specify the polling interval in seconds."
 #~ msgstr "Geben sie das Abrufintervall in Sekunden an."
 
@@ -2263,9 +2279,8 @@ msgstr "Konfiguration Speichern"
 #~ msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
 # 95%
-#, fuzzy
 #~ msgid "Mail alias configuration"
-#~ msgstr "Mail Alias Konfiguration"
+#~ msgstr "Mailalias-Konfiguration"
 
 #~ msgid "Install New Key"
 #~ msgstr "Installiere Neuen Lizenzschlüssel"
@@ -2371,6 +2386,9 @@ msgstr "Konfiguration Speichern"
 
 #~ msgid "Successfully saved licensekey!"
 #~ msgstr "Lizenzkey erfolgreich gespeichert!"
+
+#~ msgid "yaffas license key management"
+#~ msgstr "yaffas Lizenzschlüsselverwaltung"
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Rundmail"
@@ -2505,9 +2523,8 @@ msgstr "Konfiguration Speichern"
 #~ msgstr "Dateisystem Informationen"
 
 # 94%
-#, fuzzy
 #~ msgid "System Information"
-#~ msgstr "System Information"
+#~ msgstr "Systeminformation"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."
@@ -3070,6 +3087,9 @@ msgstr "Konfiguration Speichern"
 #~ msgid "File"
 #~ msgstr "Datei"
 
+#~ msgid "Log file viewer"
+#~ msgstr "Logdateienbetrachter"
+
 #~ msgid "Appearance"
 #~ msgstr "Erscheinungsbild"
 
@@ -3237,6 +3257,9 @@ msgstr "Konfiguration Speichern"
 
 #~ msgid "Dutch"
 #~ msgstr "Niederländisch"
+
+#~ msgid "French"
+#~ msgstr "Französisch"
 
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"

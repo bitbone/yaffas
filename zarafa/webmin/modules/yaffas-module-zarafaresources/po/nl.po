@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-10 15:54+0200\n"
+"PO-Revision-Date: 2011-10-11 10:51+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Manage resources"
-msgstr ""
+msgstr "Beheer resources"
 
 #: lang/en:2
 #, no-wrap
 msgid "Resource"
-msgstr ""
+msgstr "Resource"
 
 #: lang/en:3
 #, no-wrap
@@ -50,44 +50,44 @@ msgstr "Weiger herhalende afspraken"
 #: lang/en:7
 #, no-wrap
 msgid "New resource"
-msgstr ""
+msgstr "Nieuwe resource"
 
 #: lang/en:8
 #, no-wrap
 msgid "Modify resource"
-msgstr ""
+msgstr "Wijzig resource"
 
 #: lang/en:9
 #, no-wrap
 msgid "Delete resource"
-msgstr ""
+msgstr "Verwijder resource"
 
 # 81%
 # 82%
 #: lang/en:10
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Do you really want to delete these resources?"
-msgstr "Wilt u deze service echt uitschakelen?"
+msgstr "Wilt u deze resources echt verwijderen?"
 
 #: lang/en:11
 #, no-wrap
 msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
-msgstr ""
+msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die deze resource moeten kunnen boeken in de kalender-instelling voor deze resource."
 
 #: lang/en:13
 #, no-wrap
 msgid "The name of the resource contains illegal characters."
-msgstr ""
+msgstr "De naam van de resource bevat ongeldige tekens."
 
 #: lang/en:14
 #, no-wrap
 msgid "The name of the resource is taken from a special user."
-msgstr ""
+msgstr "De naam van de resource is bezet door een speciale gebruiker."
 
 #: lang/en:15
 #, no-wrap
 msgid "The description of the resource contains illegal characters."
-msgstr ""
+msgstr "De omschrijving van de resource bevat ongeldige tekens."
 
 #: lang/en:16
 #, no-wrap
@@ -117,17 +117,17 @@ msgstr "Het e-mailadres is niet geldig."
 #: lang/en:21
 #, no-wrap
 msgid "The name of the resource is taken from a user."
-msgstr ""
+msgstr "De naam van de resource is bezet door een gebruiker."
 
 #: lang/en:22
 #, no-wrap
 msgid "The name of the resource is taken from a user's alias."
-msgstr ""
+msgstr "De naam van de resource is bezet door een alias van een gebruiker."
 
 #: lang/en:23
 #, no-wrap
 msgid "The given resource doesn't exist."
-msgstr ""
+msgstr "De opgegeven resource bestaat niet."
 
 #: lang/en:24
 #, no-wrap
@@ -137,7 +137,7 @@ msgstr "Geen lokale e-maildomeinen geconfigureerd."
 #: lang/en:25
 #, no-wrap
 msgid "Resources"
-msgstr ""
+msgstr "Resources"
 
 #: help/en:1
 #, no-wrap
@@ -147,17 +147,17 @@ msgstr "Deze naam wordt getoond in het globale adresboek."
 #: help/en:2
 #, no-wrap
 msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-msgstr ""
+msgstr "U kunt een omschrijving toevoegen als de naam van de resource niet uit zichzelf duidelijk is."
 
 #: help/en:3
 #, no-wrap
 msgid "Check this box and the resource can only be booked once."
-msgstr ""
+msgstr "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
 
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
-msgstr ""
+msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 
 #~ msgid "Apply key"
 #~ msgstr "Sleutel toepassen"
@@ -489,6 +489,9 @@ msgstr ""
 #~ msgid "The admin password is empty or does not match."
 #~ msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
 
+#~ msgid "Setup"
+#~ msgstr "Instellen"
+
 #~ msgid "Change Language"
 #~ msgstr "Verander Taal"
 
@@ -506,6 +509,9 @@ msgstr ""
 
 #~ msgid "Language not found!"
 #~ msgstr "Taal niet gevonden!"
+
+#~ msgid "Set Language"
+#~ msgstr "Taal Instellen"
 
 #~ msgid "Apply"
 #~ msgstr "Toepassen"
@@ -533,9 +539,8 @@ msgstr ""
 
 # 81%
 # 87%
-#, fuzzy
 #~ msgid "Do you really want to delete this entry?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
+#~ msgstr "Wilt u dit item echt verwijderen?"
 
 #~ msgid "Do you really want to disable this service?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
@@ -560,6 +565,12 @@ msgstr ""
 
 #~ msgid "Hostname"
 #~ msgstr "Hostnaam"
+
+#~ msgid "Hit score"
+#~ msgstr "Hit-score"
+
+#~ msgid "Miss score"
+#~ msgstr "Miss-score"
 
 #~ msgid "Log name"
 #~ msgstr "Logboeknaam"
@@ -603,6 +614,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Do you really want to delete these entries?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 83%
+#, fuzzy
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
 
 #~ msgid "System information"
 #~ msgstr "Systeeminformatie"
@@ -803,6 +819,11 @@ msgstr ""
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
+
+# 83%
+#, fuzzy
+#~ msgid "Emails"
+#~ msgstr "E-mail"
 
 # 81%
 #, fuzzy

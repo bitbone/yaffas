@@ -37,4 +37,4 @@ err_cant_rm_newkey=Impossible de supprimer la nouvelle clé!
 err_wrong_kv=Mauvaise version de la clé pour le produit installé !
 err_no_key=Aucune clé disponible!
 suc_license=La clé de licence a été enregistrée avec succès !
-moduletitle=yaffas license key management
+moduletitle=Gestion de clé de licence yaffas

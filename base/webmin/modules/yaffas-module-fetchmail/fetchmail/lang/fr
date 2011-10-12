@@ -132,4 +132,4 @@ err_no_selection=Veuillez sélectionner "utilisateur", "alias" ou "multidrop".
 err_remote_user=Veuillez saisir un nom d'utilisateur du serveur de courrier valide.
 err_remote_passwd=Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier.
 err_enable_fetchmail=Impossible d'activer le daemon Fetchmail.
-moduletitle=Fetchmail Mail Retrieval
+moduletitle=Récupération du courrier par Fetchmail

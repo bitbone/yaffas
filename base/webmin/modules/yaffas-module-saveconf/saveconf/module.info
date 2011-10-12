@@ -1,9 +1,9 @@
 longdesc=Save configuration - Save conffile and LDAP-tree
-desc_de=Save configuration
+desc_de=Konfiguration sichern
 desc_en=Save configuration
 name=saveconf
 category=maintenance
 desc=saveconf
 version=0.1
 desc_nl=Save configuration
-desc_fr=Save configuration
+desc_fr=Enregistrer la configuration

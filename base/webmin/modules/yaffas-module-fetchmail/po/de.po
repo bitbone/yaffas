@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-06 09:36+0200\n"
-"Last-Translator: Christof <musik@bitbone.de>\n"
+"PO-Revision-Date: 2011-10-11 09:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -627,7 +627,7 @@ msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 #: lang/en:135
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
-msgstr ""
+msgstr "Fetchmail-Konfiguration"
 
 #: help/en:1
 #, no-wrap
@@ -694,6 +694,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "Install new archiver client key"
 #~ msgstr "Neuen Archiver Client Schlüssel installieren"
+
+#~ msgid "Zarafa License Key"
+#~ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "Userfilter"
 #~ msgstr "Benutzer Filter"
@@ -1023,9 +1026,8 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
 
 # 88%
-#, fuzzy
 #~ msgid "Resources"
-#~ msgstr "Ressource"
+#~ msgstr "Ressourcen"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Dieser Name wird im globalen Adressbuch angezeigt."
@@ -1072,6 +1074,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgid "The admin password is empty or does not match."
 #~ msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."
 
+#~ msgid "Setup"
+#~ msgstr "Setup"
+
 #~ msgid "Change Language"
 #~ msgstr "Sprache &auml;ndern"
 
@@ -1089,6 +1094,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "Language not found!"
 #~ msgstr "Sprache nicht gefunden!"
+
+#~ msgid "Set Language"
+#~ msgstr "Sprache auswählen"
 
 #~ msgid "Apply"
 #~ msgstr "Anwenden"
@@ -1308,6 +1316,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "This action is only supported with local authentification."
 #~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
+
+#~ msgid "Group Management"
+#~ msgstr "Gruppenverwaltung"
 
 #~ msgid "Base Configuration"
 #~ msgstr "Grundkonfiguration"
@@ -1759,6 +1770,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgid "Memory type"
 #~ msgstr "Speichertyp"
 
+#~ msgid "Information"
+#~ msgstr "Information"
+
 #~ msgid "Access for"
 #~ msgstr "Zugriff für"
 
@@ -2109,9 +2123,8 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Anzeigen"
 
 # 81%
-#, fuzzy
 #~ msgid "Mail Queue"
-#~ msgstr "Mail Warteschlange"
+#~ msgstr "Mail-Warteschlange"
 
 #~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 #~ msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
@@ -2351,9 +2364,8 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
 # 95%
-#, fuzzy
 #~ msgid "Mail alias configuration"
-#~ msgstr "Mail Alias Konfiguration"
+#~ msgstr "Mailalias-Konfiguration"
 
 #~ msgid "Install New Key"
 #~ msgstr "Installiere Neuen Lizenzschlüssel"
@@ -2459,6 +2471,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "Successfully saved licensekey!"
 #~ msgstr "Lizenzkey erfolgreich gespeichert!"
+
+#~ msgid "yaffas license key management"
+#~ msgstr "yaffas Lizenzschlüsselverwaltung"
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Rundmail"
@@ -2596,9 +2611,8 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Dateisystem Informationen"
 
 # 94%
-#, fuzzy
 #~ msgid "System Information"
-#~ msgstr "System Information"
+#~ msgstr "Systeminformation"
 
 #~ msgid "Wrong Configfile Version"
 #~ msgstr "Falsche Version der Konfigurationsdatei"
@@ -2685,7 +2699,6 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Die Konfigurationsdatei ist nicht für diesen Fax-Karte Typ."
 
 # 78%
-#, fuzzy
 #~ msgid "No authentication type is configured."
 #~ msgstr "Es ist keine Authentifizierungsmethode eingestellt"
 
@@ -2696,9 +2709,8 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgstr "Wollen Sie die Datei trotzdem herunterladen?"
 
 # 94%
-#, fuzzy
 #~ msgid "Save configuration"
-#~ msgstr "Konfiguration Speichern"
+#~ msgstr "Konfiguration sichern"
 
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "Die IP-Adresse oder Netzmaske ist nicht gültig."
@@ -3261,6 +3273,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 #~ msgid "File"
 #~ msgstr "Datei"
 
+#~ msgid "Log file viewer"
+#~ msgstr "Logdateienbetrachter"
+
 #~ msgid "Appearance"
 #~ msgstr "Erscheinungsbild"
 
@@ -3428,6 +3443,9 @@ msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
 
 #~ msgid "Dutch"
 #~ msgstr "Niederländisch"
+
+#~ msgid "French"
+#~ msgstr "Französisch"
 
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"

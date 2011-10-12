@@ -14,4 +14,4 @@ lbl_basic_settings=Paramètres de base
 err_mysql_connect=Impossible de se connecter à la base de données
 err_password=Le mot de passe de l'administrateur est vide ou ne correspond pas.
 
-moduletitle=Setup
+moduletitle=Configuration

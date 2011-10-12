@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-06 12:13+0200\n"
+"PO-Revision-Date: 2011-10-11 14:27+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -388,6 +388,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgid "Install new archiver client key"
 #~ msgstr "Touche Installer un nouveau client d'archivage"
 
+#~ msgid "Zarafa License Key"
+#~ msgstr "Clé de licence Zarafa"
+
 #~ msgid "Userfilter"
 #~ msgstr "Filtre utilisateur"
 
@@ -713,9 +716,8 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "Aucun domaine local de courriel n'a été configuré."
 
 # 88%
-#, fuzzy
 #~ msgid "Resources"
-#~ msgstr "Ressource"
+#~ msgstr "Ressources"
 
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Ce nom sera affiché dans le carnet d'adresse global."
@@ -762,6 +764,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgid "The admin password is empty or does not match."
 #~ msgstr "Le mot de passe de l'administrateur est vide ou ne correspond pas."
 
+#~ msgid "Setup"
+#~ msgstr "Configuration"
+
 #~ msgid "Change Language"
 #~ msgstr "Changer la langue"
 
@@ -779,6 +784,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 
 #~ msgid "Language not found!"
 #~ msgstr "Impossible de trouver la langue !"
+
+#~ msgid "Set Language"
+#~ msgstr "Configurer la langue"
 
 #~ msgid "Apply"
 #~ msgstr "Appliquer"
@@ -992,6 +1000,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 
 #~ msgid "This action is only supported with local authentification."
 #~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+
+#~ msgid "Group Management"
+#~ msgstr "Gestion des groupes"
 
 #~ msgid "Base Configuration"
 #~ msgstr "Configuration de base"
@@ -1437,6 +1448,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgid "Memory type"
 #~ msgstr "Type de mémoire"
 
+#~ msgid "Information"
+#~ msgstr "Information"
+
 #~ msgid "Access for"
 #~ msgstr "Accès pour"
 
@@ -1783,9 +1797,8 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "1. Affichage (n) 2. Afficher (v)"
 
 # 81%
-#, fuzzy
 #~ msgid "Mail Queue"
-#~ msgstr "Queue de courriel"
+#~ msgstr "File d'attente des courriels"
 
 #~ msgid "Query"
 #~ msgstr "Requête"
@@ -2138,6 +2151,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgid "Fetchmail daemon could not be enabled."
 #~ msgstr "Impossible d'activer le daemon Fetchmail."
 
+#~ msgid "Fetchmail Mail Retrieval"
+#~ msgstr "Récupération du courrier par Fetchmail"
+
 #~ msgid "Specify the polling interval in seconds."
 #~ msgstr "Spécifier l'intervalle de vérification en secondes."
 
@@ -2394,7 +2410,6 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire n'a été créé. Veuillez le configurer dans le module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 
 # 95%
-#, fuzzy
 #~ msgid "Mail alias configuration"
 #~ msgstr "Configuration de l'alias de courriel"
 
@@ -2496,6 +2511,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 
 #~ msgid "Successfully saved licensekey!"
 #~ msgstr "La clé de licence a été enregistrée avec succès !"
+
+#~ msgid "yaffas license key management"
+#~ msgstr "Gestion de clé de licence yaffas"
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Envoi groupé"
@@ -2633,7 +2651,6 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "Information système de fichier"
 
 # 94%
-#, fuzzy
 #~ msgid "System Information"
 #~ msgstr "Information système"
 
@@ -2722,9 +2739,8 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
 
 # 78%
-#, fuzzy
 #~ msgid "No authentication type is configured."
-#~ msgstr "Aucune méthode d'authentification n'a été configurée"
+#~ msgstr "Aucun type d'authentification n'a été configuré"
 
 #~ msgid "Errors occured."
 #~ msgstr "Des erreurs se sont produites."
@@ -2733,7 +2749,6 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
 
 # 94%
-#, fuzzy
 #~ msgid "Save configuration"
 #~ msgstr "Enregistrer la configuration"
 
@@ -3127,6 +3142,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 #~ msgid "File"
 #~ msgstr "Fichier"
 
+#~ msgid "Log file viewer"
+#~ msgstr "Visionneuse de fichier de journalisation"
+
 #~ msgid "Appearance"
 #~ msgstr "Apparence"
 
@@ -3279,6 +3297,9 @@ msgstr "Nom d'utilisateur facultatif, si vous devez vous authentifier pour accé
 
 #~ msgid "Dutch"
 #~ msgstr "Néerlandais"
+
+#~ msgid "French"
+#~ msgstr "Français"
 
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page"

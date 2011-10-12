@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-10 15:54+0200\n"
+"PO-Revision-Date: 2011-10-11 10:51+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -409,6 +409,12 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 #~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
 #~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
+#~ msgid "Manage resources"
+#~ msgstr "Beheer resources"
+
+#~ msgid "Resource"
+#~ msgstr "Resource"
+
 #~ msgid "Description"
 #~ msgstr "Omschrijving"
 
@@ -421,11 +427,31 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 #~ msgid "Decline recurrent meetings"
 #~ msgstr "Weiger herhalende afspraken"
 
+#~ msgid "New resource"
+#~ msgstr "Nieuwe resource"
+
+#~ msgid "Modify resource"
+#~ msgstr "Wijzig resource"
+
+#~ msgid "Delete resource"
+#~ msgstr "Verwijder resource"
+
 # 81%
 # 82%
-#, fuzzy
 #~ msgid "Do you really want to delete these resources?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
+#~ msgstr "Wilt u deze resources echt verwijderen?"
+
+#~ msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
+#~ msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die deze resource moeten kunnen boeken in de kalender-instelling voor deze resource."
+
+#~ msgid "The name of the resource contains illegal characters."
+#~ msgstr "De naam van de resource bevat ongeldige tekens."
+
+#~ msgid "The name of the resource is taken from a special user."
+#~ msgstr "De naam van de resource is bezet door een speciale gebruiker."
+
+#~ msgid "The description of the resource contains illegal characters."
+#~ msgstr "De omschrijving van de resource bevat ongeldige tekens."
 
 #~ msgid "No e-mail address specified."
 #~ msgstr "Geen e-mailadres opgegeven."
@@ -442,11 +468,32 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 #~ msgid "The e-mail address is not valid."
 #~ msgstr "Het e-mailadres is niet geldig."
 
+#~ msgid "The name of the resource is taken from a user."
+#~ msgstr "De naam van de resource is bezet door een gebruiker."
+
+#~ msgid "The name of the resource is taken from a user's alias."
+#~ msgstr "De naam van de resource is bezet door een alias van een gebruiker."
+
+#~ msgid "The given resource doesn't exist."
+#~ msgstr "De opgegeven resource bestaat niet."
+
 #~ msgid "No local mail domains configured."
 #~ msgstr "Geen lokale e-maildomeinen geconfigureerd."
 
+#~ msgid "Resources"
+#~ msgstr "Resources"
+
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Deze naam wordt getoond in het globale adresboek."
+
+#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
+#~ msgstr "U kunt een omschrijving toevoegen als de naam van de resource niet uit zichzelf duidelijk is."
+
+#~ msgid "Check this box and the resource can only be booked once."
+#~ msgstr "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
+
+#~ msgid "Check this box to disable recurring appointments for this resource."
+#~ msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 
 #~ msgid "Admin password"
 #~ msgstr "Admin-wachtwoord"
@@ -481,6 +528,9 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 #~ msgid "The admin password is empty or does not match."
 #~ msgstr "Het admin-wachtwoord is leeg of komt niet overeen."
 
+#~ msgid "Setup"
+#~ msgstr "Instellen"
+
 #~ msgid "Change Language"
 #~ msgstr "Verander Taal"
 
@@ -498,6 +548,9 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 
 #~ msgid "Language not found!"
 #~ msgstr "Taal niet gevonden!"
+
+#~ msgid "Set Language"
+#~ msgstr "Taal Instellen"
 
 #~ msgid "Apply"
 #~ msgstr "Toepassen"
@@ -525,9 +578,8 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 
 # 81%
 # 87%
-#, fuzzy
 #~ msgid "Do you really want to delete this entry?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
+#~ msgstr "Wilt u dit item echt verwijderen?"
 
 #~ msgid "Do you really want to disable this service?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
@@ -552,6 +604,12 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 
 #~ msgid "Hostname"
 #~ msgstr "Hostnaam"
+
+#~ msgid "Hit score"
+#~ msgstr "Hit-score"
+
+#~ msgid "Miss score"
+#~ msgstr "Miss-score"
 
 #~ msgid "Log name"
 #~ msgstr "Logboeknaam"
@@ -595,6 +653,11 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 #, fuzzy
 #~ msgid "Do you really want to delete these entries?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 83%
+#, fuzzy
+#~ msgid "E-mail"
+#~ msgstr "E-mail"
 
 #~ msgid "System information"
 #~ msgstr "Systeeminformatie"
@@ -795,6 +858,11 @@ msgstr "Hoe lang moet elke reservekopie worden bewaard?"
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
+
+# 83%
+#, fuzzy
+#~ msgid "Emails"
+#~ msgstr "E-mail"
 
 # 81%
 #, fuzzy

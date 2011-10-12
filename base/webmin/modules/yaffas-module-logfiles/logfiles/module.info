@@ -1,9 +1,9 @@
 longdesc=Log file download module
-desc_de=Log file viewer
+desc_de=Logdateienbetrachter
 desc_en=Log file viewer
 name=logfile
 category=maintenance
 desc=Logfile download module
 version=1.0
 desc_nl=Log file viewer
-desc_fr=Log file viewer
+desc_fr=Visionneuse de fichier de journalisation
