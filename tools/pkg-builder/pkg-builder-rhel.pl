@@ -159,8 +159,8 @@ foreach my $name (@todo) {
 
 		rm_package( $name, $pkg{dest} );
 		foreach my $pfile (@package_file) {
-			print "Signing $pfile...\n";
-# 			sign_package($pfile);
+			# print "Signing $pfile...\n";
+			# sign_package($pfile);
 			print "Copying $pfile to $pkg{dest}\n";
 			copy_package( $pfile, $pkg{dest} );
 		}
