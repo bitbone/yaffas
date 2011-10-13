@@ -1094,7 +1094,7 @@ sub set_email($$;$) {
         || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
 
     unless (Yaffas::Check::email($email)) {
-        throw Yaffas::Exception("err_email");
+        throw Yaffas::Exception("err_invalid_email");
     }
 
     my $r;
@@ -1113,7 +1113,7 @@ sub set_email($$;$) {
         else {
             $r = Yaffas::LDAP::replace_entry($user, "mail", $email);
         }
-        throw Yaffas::Exception("err_email", $r) if $r;
+        throw Yaffas::Exception("err_change_email", $r) if $r;
     }
     else {
         if ($type eq "group") {
@@ -1122,7 +1122,7 @@ sub set_email($$;$) {
         else {
             $r = Yaffas::LDAP::add_entry($user, "mail", $email);
         }
-        throw Yaffas::Exception("err_email", $r) if $r;
+        throw Yaffas::Exception("err_add_email", $r) if $r;
     }
 }
 
