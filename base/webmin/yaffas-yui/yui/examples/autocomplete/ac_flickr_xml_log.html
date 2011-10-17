@@ -98,7 +98,9 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	<h1>AutoComplete Control: Find Photos on Flickr</h1>
 	
 	<div class="exampleIntro">
-	<p>This example uses AutoComplete to find images by tag from the Flickr webservice. A simple PHP proxy is used to access the remote server via XHR. The <code>generateRequest()</code> method has been customized in order send additional required parameters to the Flickr application. The <code>formatResult()</code> method has been customized in order to display images in the results container, and the default CSS has been enhanced so the results container can scroll. Finally, a <code>itemSelectEvent</code> handler has been defined to collect selected images in a separate container.
+	<p>This example uses AutoComplete to find images by tag from the Flickr webservice. A simple PHP proxy is used to access the remote server via XHR. The <code>generateRequest()</code> method has been customized in order send additional required parameters to the Flickr application. The <code>formatResult()</code> method has been customized in order to display images in the results container, and the default CSS has been enhanced so the results container can scroll. Finally, a <code>itemSelectEvent</code> handler has been defined to collect selected images in a separate container.</p>
+
+<p>Implementers who are working with data from third-party sources, user input data, or otherwise untrustworthy sources should be sure to read the <a href="http://developer.yahoo.com/yui/autocomplete/#security">Security Considerations</a> section of the AutoComplete user guide.</p>
 			
 	</div>	
 					
@@ -124,46 +126,55 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	
 <script type="text/javascript">
 YAHOO.example.ACFlickr = function() {
-    // Set up a local proxy to the Flickr webservice
-    var myDS = new YAHOO.util.XHRDataSource("assets/php/flickr_proxy.php");
+    // Set up a local proxy to YQL
+    var myDS = new YAHOO.util.XHRDataSource("assets/php/yql_proxy.php?format=xml&q=select%20*%20from%20flickr.photos.search");
     myDS.responseSchema = {
         resultNode: "photo",
         fields: ["title", "id", "owner", "secret", "server"]
     };
     myDS.responseType = YAHOO.util.XHRDataSource.TYPE_XML;
     myDS.maxCacheEntries = 100;
-    
+
     // Instantiate AutoComplete
     var myAC = new YAHOO.widget.AutoComplete("flickrinput","flickrcontainer", myDS);
     myAC.resultTypeList = false;
     myAC.suppressInputUpdate = true;
     myAC.generateRequest = function(sQuery) {
-        return "?method=flickr.photos.search&tags="+sQuery;
+        return "%20where%20tags%3D%22"+sQuery+"%22";
     };
-    var getImgUrl = function(oPhoto, sSize) {
-        var sId = oPhoto.id;
-        var sSecret = oPhoto.secret;
-        var sServer = oPhoto.server;
-        var sUrl = "http://static.flickr.com/" +
-            sServer +
-            "/" +
-            sId +
-            "_" +
-            sSecret +
-            "_"+ (sSize || "s") +".jpg";
-        return "<img src='" + sUrl + "' class='flickrImg'>";
-    }
     
+    // Helper function to generate the img tag
+    var getImgMarkup = function(oPhoto, sSize) {
+        var sUrl = "http://static.flickr.com/" +
+            oPhoto.server +
+            "/" +
+            oPhoto.id +
+            "_" +
+            oPhoto.secret +
+            "_"+ (sSize || "s") +".jpg";
+        return '<img src="' + sUrl + '" class="flickrImg" alt="' + oPhoto.title + '">';
+    };
+    
+    // Helper function to generate the link tag
+    var getImgLink = function(oPhoto) {
+        return '<a href="http://www.flickr.com/photos/' + oPhoto.owner + "/" + oPhoto.id + '">';
+    };
+    
+    // Custom formatting to display photos in the suggestions container
     myAC.formatResult = function(oResultItem, sQuery) {
         // This was defined by the schema array of the data source
-        var sTitle = oResultItem.title;
-        var sMarkup = getImgUrl(oResultItem) + " " + sTitle;
+        var sTitle = oResultItem.title,
+            sMarkup = getImgMarkup(oResultItem) + " " + sTitle;
         return (sMarkup);
     };
+    
+    // Selecting a photo adds it to the selections area
     myAC.itemSelectEvent.subscribe(function(sType, aArgs){
         var oPhoto = aArgs[2];
         YAHOO.util.Dom.get("photos").innerHTML = 
-            "<p>"+getImgUrl(oPhoto, "m")+"</p>"+YAHOO.util.Dom.get("photos").innerHTML
+            '<p>' + getImgLink(oPhoto) +
+                getImgMarkup(oPhoto, "m")+'</a></p>'+
+                YAHOO.util.Dom.get("photos").innerHTML;
     });
     
     return {
@@ -232,48 +243,57 @@ YAHOO.example.ACFlickr = function() {
 
 <textarea name="code" class="JScript" cols="60" rows="1">
 YAHOO.example.ACFlickr = function() {
-    // Set up a local proxy to the Flickr webservice
-    var myDS = new YAHOO.util.XHRDataSource("assets/php/flickr_proxy.php");
+    // Set up a local proxy to YQL
+    var myDS = new YAHOO.util.XHRDataSource("assets/php/yql_proxy.php?format=xml&q=select%20*%20from%20flickr.photos.search");
     myDS.responseSchema = {
         resultNode: "photo",
         fields: ["title", "id", "owner", "secret", "server"]
     };
     myDS.responseType = YAHOO.util.XHRDataSource.TYPE_XML;
     myDS.maxCacheEntries = 100;
-    
+
     // Instantiate AutoComplete
     var myAC = new YAHOO.widget.AutoComplete("flickrinput","flickrcontainer", myDS);
     myAC.resultTypeList = false;
     myAC.suppressInputUpdate = true;
     myAC.generateRequest = function(sQuery) {
-        return "?method=flickr.photos.search&tags="+sQuery;
+        return "%20where%20tags%3D%22"+sQuery+"%22";
     };
-    var getImgUrl = function(oPhoto, sSize) {
-        var sId = oPhoto.id;
-        var sSecret = oPhoto.secret;
-        var sServer = oPhoto.server;
+
+    // Helper function to generate the img tag
+    var getImgMarkup = function(oPhoto, sSize) {
         var sUrl = "http://static.flickr.com/" +
-            sServer +
+            oPhoto.server +
             "/" +
-            sId +
+            oPhoto.id +
             "_" +
-            sSecret +
+            oPhoto.secret +
             "_"+ (sSize || "s") +".jpg";
-        return "<img src='" + sUrl + "' class='flickrImg'>";
-    }
-    
+        return '<img src="' + sUrl + '" class="flickrImg" alt="' + oPhoto.title + '">';
+    };
+
+    // Helper function to generate the link tag
+    var getImgLink = function(oPhoto) {
+        return '<a href="http://www.flickr.com/photos/' + oPhoto.owner + "/" + oPhoto.id + '">';
+    };
+
+    // Custom formatting to display photos in the suggestions container
     myAC.formatResult = function(oResultItem, sQuery) {
         // This was defined by the schema array of the data source
-        var sTitle = oResultItem.title;
-        var sMarkup = getImgUrl(oResultItem) + " " + sTitle;
+        var sTitle = oResultItem.title,
+            sMarkup = getImgMarkup(oResultItem) + " " + sTitle;
         return (sMarkup);
     };
+
+    // Selecting a photo adds it to the selections area
     myAC.itemSelectEvent.subscribe(function(sType, aArgs){
         var oPhoto = aArgs[2];
-        YAHOO.util.Dom.get("photos").innerHTML = 
-            "<p>"+getImgUrl(oPhoto, "m")+"</p>"+YAHOO.util.Dom.get("photos").innerHTML
+        YAHOO.util.Dom.get("photos").innerHTML =
+            '<p>' + getImgLink(oPhoto) +
+                getImgMarkup(oPhoto, "m")+'</a></p>'+
+                YAHOO.util.Dom.get("photos").innerHTML;
     });
-    
+
     return {
         oDS: myDS,
         oAC: myAC
@@ -334,13 +354,14 @@ YAHOO.example.ACFlickr = function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

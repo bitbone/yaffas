@@ -28,6 +28,7 @@
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/paginator/paginator-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-debug.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-debug.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 
@@ -71,7 +72,9 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	
 	<div class="exampleIntro">
 	<p>This example enables server-side sorting and pagination for data that is
-dynamic in nature.</p>
+dynamic in nature. The <code>generateRequest</code> config and
+<code>doBeforeLoadData()</code> method allow tight integration with changing
+values on the server.</p>
 			
 	</div>	
 					
@@ -83,7 +86,8 @@ dynamic in nature.</p>
 		
 	<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
 	
-	<div id="dynamicdata"></div>
+	<p>Total records (between 0 and 1000): <input type="text" id="total" value="1000"> <input type="button" id="update" value="Update"></p>
+<div id="dynamicdata"></div>
 
 <script type="text/javascript">
 YAHOO.example.DynamicData = function() {
@@ -97,9 +101,10 @@ YAHOO.example.DynamicData = function() {
     ];
 
     // Custom parser
-    var stringToDate = function(sData) {
-        var array = sData.split("-");
-        return new Date(array[1] + " " + array[0] + ", " + array[2]);
+    var timestampToDate = function(oData) {
+        // timestamp comes from server in seconds
+        // JS needs it in milliseconds
+        return new Date(oData*1000);
     };
     
     // DataSource instance
@@ -110,18 +115,46 @@ YAHOO.example.DynamicData = function() {
         fields: [
             {key:"id", parser:"number"},
             {key:"name"},
-            {key:"date", parser:stringToDate},
+            {key:"date", parser:timestampToDate},
             {key:"price",parser:"number"},
             {key:"number",parser:"number"}
         ],
+        // Access to values in the server response
         metaFields: {
-            totalRecords: "totalRecords" // Access to value in the server response
+            totalRecords: "totalRecords", 
+            startIndex: "startIndex"
         }
     };
     
+    // Customize request sent to server to be able to set total # of records
+    var generateRequest = function(oState, oSelf) {
+        // Get states or use defaults
+        oState = oState || { pagination: null, sortedBy: null };
+        var sort = (oState.sortedBy) ? oState.sortedBy.key : "id";
+        var dir = (oState.sortedBy && oState.sortedBy.dir === YAHOO.widget.DataTable.CLASS_DESC) ? "desc" : "asc";
+        var startIndex = (oState.pagination) ? oState.pagination.recordOffset : 0;
+        var results = (oState.pagination) ? oState.pagination.rowsPerPage : 25;
+
+        var total = YAHOO.util.Dom.get("total").value *1;
+        // Validate input
+        if(!YAHOO.lang.isNumber(total) || total < 0 || total > 1000) {
+            YAHOO.util.Dom.get("total").value = 0;
+            total = 0;
+            alert("Total must be between 0 and 1000.");
+        }
+
+        // Build custom request
+        return  "sort=" + sort +
+                "&dir=" + dir +
+                "&startIndex=" + startIndex +
+                "&results=" + (startIndex + results) +
+                "&total=" + total;
+    };
+
     // DataTable configuration
     var myConfigs = {
-        initialRequest: "sort=id&dir=asc&startIndex=0&results=25", // Initial request for first page of data
+        generateRequest: generateRequest,
+        initialRequest: generateRequest(), // Initial request for first page of data
         dynamicData: true, // Enables dynamic server-driven data
         sortedBy : {key:"id", dir:YAHOO.widget.DataTable.CLASS_ASC}, // Sets UI initial sort arrow
         paginator: new YAHOO.widget.Paginator({ rowsPerPage:25 }) // Enables pagination 
@@ -129,12 +162,22 @@ YAHOO.example.DynamicData = function() {
     
     // DataTable instance
     var myDataTable = new YAHOO.widget.DataTable("dynamicdata", myColumnDefs, myDataSource, myConfigs);
-    // Update totalRecords on the fly with value from server
-    myDataTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+    // Update totalRecords on the fly with values from server
+    myDataTable.doBeforeLoadData = function(oRequest, oResponse, oPayload) {
         oPayload.totalRecords = oResponse.meta.totalRecords;
+        oPayload.pagination.recordOffset = oResponse.meta.startIndex;
         return oPayload;
-    }
-    
+    };
+
+    YAHOO.util.Event.addListener("update", "click", function() {
+        myDataSource.sendRequest(generateRequest(), {
+            success : myDataTable.onDataReturnSetRows,
+            failure : myDataTable.onDataReturnSetRows,
+            scope : myDataTable,
+            argument: myDataTable.getState() // data payload that will be returned to the callback function
+        });
+    });
+
     return {
         ds: myDataSource,
         dt: myDataTable
@@ -195,6 +238,7 @@ in the following JSON format:</p>
 <h2>The markup</h2>
 
 <textarea name="code" class="HTML" cols="60" rows="1">
+&lt;p&gt;Total records (between 0 and 1000): &lt;input type="text" id="total" value="1000"&gt; &lt;input type="button" id="update" value="Update"&gt;&lt;/p&gt;
 &lt;div id="dynamicdata"&gt;&lt;/div&gt;
 </textarea>
 
@@ -212,11 +256,12 @@ YAHOO.example.DynamicData = function() {
     ];
 
     // Custom parser
-    var stringToDate = function(sData) {
-        var array = sData.split("-");
-        return new Date(array[1] + " " + array[0] + ", " + array[2]);
+    var timestampToDate = function(oData) {
+        // timestamp comes from server in seconds
+        // JS needs it in milliseconds
+        return new Date(oData*1000);
     };
-    
+
     // DataSource instance
     var myDataSource = new YAHOO.util.DataSource("assets/php/json_proxy.php?");
     myDataSource.responseType = YAHOO.util.DataSource.TYPE_JSON;
@@ -225,18 +270,46 @@ YAHOO.example.DynamicData = function() {
         fields: [
             {key:"id", parser:"number"},
             {key:"name"},
-            {key:"date", parser:stringToDate},
+            {key:"date", parser:timestampToDate},
             {key:"price",parser:"number"},
             {key:"number",parser:"number"}
         ],
+        // Access to values in the server response
         metaFields: {
-            totalRecords: "totalRecords" // Access to value in the server response
+            totalRecords: "totalRecords",
+            startIndex: "startIndex"
         }
     };
     
+    // Customize request sent to server to be able to set total # of records
+    var generateRequest = function(oState, oSelf) {
+        // Get states or use defaults
+        oState = oState || { pagination: null, sortedBy: null };
+        var sort = (oState.sortedBy) ? oState.sortedBy.key : "id";
+        var dir = (oState.sortedBy && oState.sortedBy.dir === YAHOO.widget.DataTable.CLASS_DESC) ? "desc" : "asc";
+        var startIndex = (oState.pagination) ? oState.pagination.recordOffset : 0;
+        var results = (oState.pagination) ? oState.pagination.rowsPerPage : 25;
+
+        var total = YAHOO.util.Dom.get("total").value *1;
+        // Validate input
+        if(!YAHOO.lang.isNumber(total) || total < 0 || total > 1000) {
+            YAHOO.util.Dom.get("total").value = 0;
+            total = 0;
+            alert("Total must be between 0 and 1000.");
+        }
+
+        // Build custom request
+        return  "sort=" + sort +
+                "&dir=" + dir +
+                "&startIndex=" + startIndex +
+                "&results=" + (startIndex + results) +
+                "&total=" + total;
+    };
+
     // DataTable configuration
     var myConfigs = {
-        initialRequest: "sort=id&dir=asc&startIndex=0&results=25", // Initial request for first page of data
+        generateRequest: generateRequest,
+        initialRequest: generateRequest(), // Initial request for first page of data
         dynamicData: true, // Enables dynamic server-driven data
         sortedBy : {key:"id", dir:YAHOO.widget.DataTable.CLASS_ASC}, // Sets UI initial sort arrow
         paginator: new YAHOO.widget.Paginator({ rowsPerPage:25 }) // Enables pagination 
@@ -244,12 +317,13 @@ YAHOO.example.DynamicData = function() {
     
     // DataTable instance
     var myDataTable = new YAHOO.widget.DataTable("dynamicdata", myColumnDefs, myDataSource, myConfigs);
-    // Update totalRecords on the fly with value from server
-    myDataTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+    // Update totalRecords on the fly with values from server
+    myDataTable.doBeforeLoadData = function(oRequest, oResponse, oPayload) {
         oPayload.totalRecords = oResponse.meta.totalRecords;
+        oPayload.pagination.recordOffset = oResponse.meta.startIndex;
         return oPayload;
-    }
-    
+    };
+
     return {
         ds: myDataSource,
         dt: myDataTable
@@ -281,7 +355,7 @@ YAHOO.example.DynamicData = function() {
 	
 						<div id="exampleToc">
 							<ul>
-								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li class='selected'><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
+								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li class='selected'><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_quickedit.html'>Quick Edit</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
 						</div>
 					</div>
 					
@@ -312,13 +386,14 @@ YAHOO.example.DynamicData = function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

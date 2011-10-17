@@ -198,7 +198,7 @@ YAHOO.example.loaderinit = function() {
 		
 	<h2 class="first">Introducing Additional YUI Components into a Page On-demand</h2>
 
-<p>Our task here is to use the <a href="http://developer.yahoo.com/yui/loader/">YUI Loader Utility</a> to introduce a new YUI component, the <a href="http://developer.yahoo.com/yui/tabview/">TabView Control</a>, onto a page that already has some YUI content loaded on it (in this case, the <a href="http://developer.yahoo.com/yui/button/">Button Control</a> and the <a href="http://developer.yahoo.com/yui/logger/">Logger Control</a>).  This pattern is one that can be useful any time you want to perform on-demand loading &mdash; loading of components only when their need is actuated by a specific user behavior.</p>
+<p>Our task here is to use the <a href="http://developer.yahoo.com/yui/yuiloader/">YUI Loader Utility</a> to introduce a new YUI component, the <a href="http://developer.yahoo.com/yui/tabview/">TabView Control</a>, onto a page that already has some YUI content loaded on it (in this case, the <a href="http://developer.yahoo.com/yui/button/">Button Control</a> and the <a href="http://developer.yahoo.com/yui/logger/">Logger Control</a>).  This pattern is one that can be useful any time you want to perform on-demand loading &mdash; loading of components only when their need is actuated by a specific user behavior.</p>
 
 <p>Our "user behavior" in this example will be the click of a YUI Button.  That button, when clicked, should disappear and give way to a TabView instance that we'll construct on the fly.  Before we construct it, though, we'll have to load TabView onto the page; it's not loaded as part of the initial page load.</p>
 
@@ -365,13 +365,14 @@ YAHOO.example.tabviewinit = function( ){
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

@@ -65,8 +65,8 @@ body {
 <div id="uiElements" style="display:inline;">
 		<div id="postVars">
 		Set custom values for a couple POST vars:<br/>
-		var1: <input type="text" id="var1Value" value="var1 default value" /><br/>
-		var2: <input type="text" id="var2Value" value="var2 default value" /><br/><br/>
+		var1: <input type="text" id="var1Value" value="var1 default value" autocomplete="off" /><br/>
+		var2: <input type="text" id="var2Value" value="var2 default value" autocomplete="off" /><br/><br/>
 		</div>
 		<div id="uploaderContainer">
 			<div id="uploaderOverlay" style="position:absolute; z-index:2"></div>
@@ -74,7 +74,7 @@ body {
 		</div>
 		<div id="uploadFilesLink"><a id="uploadLink" onClick="upload(); return false;" href="#">Upload File</a></div><br/>
 		<div id="selectedFileDisplay">
-		Progress: <input type="text" cols="50" id="progressReport" value="" readonly /><br/><br/>
+		Progress: <input type="text" cols="50" id="progressReport" value="" autocomplete="off" readonly /><br/><br/>
 		</div>
 		<div id="returnedDataDisplay">
 		Data returned by the server:<br/>

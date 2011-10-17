@@ -81,7 +81,7 @@ This example builds upon the <a href="events.html">Events</a> example, by demons
                     YAHOO.example.calendar.cal1.cfg.setProperty("pagedate", (firstDate.getMonth()+1) + "/" + firstDate.getFullYear());
                     YAHOO.example.calendar.cal1.render();
                 } else {
-                    alert("Cannot select a date before 1/1/2006 or after 12/31/2010");
+                    alert("Cannot select a date before 1/1/2009 or after 12/31/2013");
                 }
                 
             }
@@ -94,8 +94,8 @@ This example builds upon the <a href="events.html">Events</a> example, by demons
         }
         
         YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container", 
-                                                                    { mindate:"1/1/2006",
-                                                                      maxdate:"12/31/2010" });
+                                                                    { mindate:"1/1/2009",
+                                                                      maxdate:"12/31/2013" });
         YAHOO.example.calendar.cal1.selectEvent.subscribe(handleSelect, YAHOO.example.calendar.cal1, true);
         YAHOO.example.calendar.cal1.render();
 

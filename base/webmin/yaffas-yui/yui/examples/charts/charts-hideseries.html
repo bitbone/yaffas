@@ -100,14 +100,14 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 <div id="chart">Unable to load Flash content. The YUI Charts Control requires Flash Player 9.0.45 or higher. You can download the latest version of Flash Player from the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player Download Center</a>.</p></div>
 
 <table>
-	<tr>
-		<td>Show Expenses Data:</td>
-		<td><input id="checkbutton1" type="checkbox" name="series1" value="1" checked="true" onclick='mychart.setSeriesStylesByIndex(0,{visibility:this.checked?"visible":"hidden"});'></td>
-	</tr>
-	<tr>
- 		<td>Show Revenue Data:</td>
-		<td><input id="checkbutton2" type="checkbox" name="series2" value="2" checked="true" onclick='mychart.setSeriesStylesByIndex(1,{visibility:this.checked?"visible":"hidden"});'></td>
-	</tr>
+    <tr>
+        <td>Show Revenue Data:</td>
+        <td><input id="checkbutton1" type="checkbox" name="series1" value="1" checked="true" onclick='mychart.setSeriesStylesByIndex(0,{visibility:this.checked?"visible":"hidden"});'></td>
+    </tr>
+    <tr>
+        <td>Show Expenses Data:</td>
+        <td><input id="checkbutton2" type="checkbox" name="series2" value="2" checked="true" onclick='mychart.setSeriesStylesByIndex(1,{visibility:this.checked?"visible":"hidden"});'></td>
+    </tr>
 </table>
 
 <script type="text/javascript">
@@ -253,7 +253,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 			}
 		}		
 
-</script>	
+</script>
+	
 	<!--END SOURCE CODE FOR EXAMPLE =============================== -->
 	
 		
@@ -265,17 +266,17 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 		
 	<h2 class="first">Add checkboxes for toggling visibility.</h2>
 <p>First, we'll add two checkboxes, one for each series in the chart. These will be used to toggle the visibility of each series. Listening for the checkboxes' <code>onclick</code> events, we'll use the Chart's <code>setSeriesStylesByIndex</code> method to update the visibility style of each series.</p>
-<textarea name="code" class="JScript" cols="60" rows="10">
-	<table>
-		<tr>
-			<td>Show Expenses Data:</td>
-			<td><input id="checkbutton1" type="checkbox" name="series1" value="1" checked="true" onclick='mychart.setSeriesStylesByIndex(0,{visibility:this.checked?"visible":"hidden"});'></td>
-		</tr>
-		<tr>
-	 		<td>Show Revenue Data:</td>
-			<td><input id="checkbutton2" type="checkbox" name="series2" value="2" checked="true" onclick='mychart.setSeriesStylesByIndex(1,{visibility:this.checked?"visible":"hidden"});'></td>
-		</tr>
-	</table>		
+<textarea name="code" class="HTML" cols="60" rows="10">
+<table>
+    <tr>
+        <td>Show Revenue Data:</td>
+        <td><input id="checkbutton1" type="checkbox" name="series1" value="1" checked="true" onclick='mychart.setSeriesStylesByIndex(0,{visibility:this.checked?"visible":"hidden"});'></td>
+    </tr>
+    <tr>
+        <td>Show Expenses Data:</td>
+        <td><input id="checkbutton2" type="checkbox" name="series2" value="2" checked="true" onclick='mychart.setSeriesStylesByIndex(1,{visibility:this.checked?"visible":"hidden"});'></td>
+    </tr>
+</table>
 </textarea>
 <h2>Create a DataSource</h2>
 
@@ -501,13 +502,14 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

@@ -82,6 +82,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	
 	<div class="exampleIntro">
 	<p>This AutoComplete interaction uses the <code>alwaysShowContainer</code> feature to allow users to find and select tags. Showing the set of previously used tags as a visual enhancement discourages unneccessary duplication of similar tags. As is common for tagging, comma- and semi-colon delimiters have also been enabled. Note that an initial query is needed on page load to get the container to display the first time with the full set of data. Since the container is meant to stay open, CSS is used to give it proper real estate on the page, including scrolling to show a potentially long list of tags.</p>
+
+<p>Implementers who are working with data from third-party sources, user input data, or otherwise untrustworthy sources should be sure to read the <a href="http://developer.yahoo.com/yui/autocomplete/#security">Security Considerations</a> section of the AutoComplete user guide.</p>
 			
 	</div>	
 					
@@ -262,13 +264,14 @@ YAHOO.example.TagsAlwaysShow = function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

@@ -32,7 +32,11 @@
 <!--begin custom header content for this example-->
 <style type="text/css">
   #container { position: relative; padding: 6px; background-color: #eeeeee; width: 420px; height:220px; }
+  #container .yui-picker-controls li {
+    list-style: none;
+  }
 </style>
+
 <!--end custom header content for this example-->
 
 
@@ -108,7 +112,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 Copyright (c) 2007, Yahoo! Inc. All rights reserved.
 Code licensed under the BSD License:
 http://developer.yahoo.net/yui/license.txt
-version: 2.8.0r4*/
+version: 2.9.0*/
 
 .yui-picker-panel {
     background: #e3e3e3;
@@ -253,13 +257,14 @@ left: -2px;
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

@@ -203,7 +203,7 @@ body {
 	
 	CustomGraph.prototype.drawChart = function(myDiv)
 	{
-		var myAtts = {xField:"month", version:9.28, expressInstall: "assets/expressinstall.swf"};
+		var myAtts = {xField:"month", version:9.28};
 		myAtts.dataTipFunction = {func:this.dataTipFunction, scope:this};
 		myAtts.series = this.getSeriesDefs();
 		myAtts.yAxis = this.getVerticalAxis();
@@ -216,6 +216,7 @@ body {
 	
 
 </script>
+
 <!--END SOURCE CODE FOR EXAMPLE =============================== -->
 
 </body>

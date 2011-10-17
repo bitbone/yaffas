@@ -24,6 +24,7 @@
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/paginator/paginator-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 
@@ -207,7 +208,7 @@ Ex.config = {
     // Define the innerHTML of the container(s) using placeholders
     // to identify where the controls will be located
     template :
-        '<h3>Now showing:</h3>' +
+        '<h3>Now showing page: {JumpToPageDropdown}</h3>' +
         '<p>{CurrentPageReport}</p>' +
         '<p class="pg-nav">' +
             '{FirstPageLink} {PreviousPageLink} ' +
@@ -230,18 +231,22 @@ Ex.config = {
     // Options for FirstPageLink component
     firstPageLinkLabel : "&lt;&lt;",
     firstPageLinkClass : "yui-pg-first", // default
+    firstPageLinkTitle : "First Page",   // default
 
     // Options for LastPageLink component
     lastPageLinkLabel : "&gt;&gt;",
     lastPageLinkClass : "yui-pg-last", // default
+    lastPageLinkTitle : "Last Page",   // default
 
     // Options for PreviousPageLink component
     previousPageLinkLabel : "&lt; previous",
     previousPageLinkClass : "yui-pg-previous", // default
+    previousPageLinkTitle : "Previous Page",   // default
 
     // Options for NextPageLink component
-    nextPageLinkLabel : "next &gt;", // default
+    nextPageLinkLabel : "next &gt;",
     nextPageLinkClass : "yui-pg-next", // default
+    nextPageLinkTitle : "Next Page",   // default
 
     // Options for PageLinks component
     pageLinksContainerClass : 'yui-pg-pages',        // default
@@ -255,6 +260,11 @@ Ex.config = {
     // Create custom page link labels
     pageLabelBuilder        : function (page,paginator) {
         return Ex.buildPageLabel(paginator.getPageRecords(page));
+    },
+
+    // Create custom page link titles (for accessibility)
+    pageTitleBuilder        : function (page, paginator) {
+        return "Show content for page " + page;
     },
 
     // Options for RowsPerPageDropdown component
@@ -467,7 +477,7 @@ Ex.config = {
     // Define the innerHTML of the container(s) using placeholders
     // to identify where the controls will be located
     template :
-        '<h3>Now showing:</h3>' +
+        '<h3>Now showing page: {JumpToPageDropdown}</h3>' +
         '<p>{CurrentPageReport}</p>' +
         '<p class="pg-nav">' +
             '{FirstPageLink} {PreviousPageLink} ' +
@@ -490,18 +500,22 @@ Ex.config = {
     // Options for FirstPageLink component
     firstPageLinkLabel : "&lt;&lt;",
     firstPageLinkClass : "yui-pg-first", // default
+    firstPageLinkTitle : "First Page",   // default
 
     // Options for LastPageLink component
     lastPageLinkLabel : "&gt;&gt;",
     lastPageLinkClass : "yui-pg-last", // default
+    lastPageLinkTitle : "Last Page",   // default
 
     // Options for PreviousPageLink component
     previousPageLinkLabel : "&lt; previous",
     previousPageLinkClass : "yui-pg-previous", // default
+    previousPageLinkTitle : "Previous Page",   // default
 
     // Options for NextPageLink component
-    nextPageLinkLabel : "next &gt;", // default
+    nextPageLinkLabel : "next &gt;",
     nextPageLinkClass : "yui-pg-next", // default
+    nextPageLinkTitle : "Next Page",   // default
 
     // Options for PageLinks component
     pageLinksContainerClass : 'yui-pg-pages',        // default
@@ -515,6 +529,11 @@ Ex.config = {
     // Create custom page link labels
     pageLabelBuilder        : function (page,paginator) {
         return Ex.buildPageLabel(paginator.getPageRecords(page));
+    },
+
+    // Create custom page link titles (for accessibility)
+    pageTitleBuilder        : function (page, paginator) {
+        return "Show content for page " + page;
     },
 
     // Options for RowsPerPageDropdown component
@@ -672,13 +691,14 @@ Ex.dataTable = new YAHOO.widget.DataTable('tbl',
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

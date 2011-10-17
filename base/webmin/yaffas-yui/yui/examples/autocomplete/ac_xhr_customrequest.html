@@ -81,6 +81,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	
 	<div class="exampleIntro">
 	<p>This AutoComplete implementation points to the Yahoo! Search webservice using an XHRDataSource. Since the third-party API requires certain application-specific paramaters to be passed in, the generateRequest() method has been redefined to append these special values. The <code>queryDelay</code> paramater has been increased to account for the large data payload returned by the Yahoo! Search webservice, so as to reduce throttle client-side processing.</p>
+
+<p>Implementers who are working with data from third-party sources, user input data, or otherwise untrustworthy sources should be sure to read the <a href="http://developer.yahoo.com/yui/autocomplete/#security">Security Considerations</a> section of the AutoComplete user guide.</p>
 			
 	</div>	
 					
@@ -267,13 +269,14 @@ YAHOO.example.RemoteCustomRequest = function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

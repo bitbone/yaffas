@@ -98,17 +98,17 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 
 <p>This example has the following dependencies:</p>
 
-<textarea name="code" class="HTML" cols="60" rows="1"><link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/container/assets/skins/sam/container.css"> 
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/menu/assets/skins/sam/menu.css"> 
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0r4/build/profilerviewer/assets/skins/sam/profilerviewer.css">
+<textarea name="code" class="HTML" cols="60" rows="1"><link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/container/assets/skins/sam/container.css"> 
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/menu/assets/skins/sam/menu.css"> 
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/profilerviewer/assets/skins/sam/profilerviewer.css">
 
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/utilities/utilities.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/element/element-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/container/container-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/menu/menu.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yuiloader/yuiloader-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/profiler/profiler-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/profilerviewer/profilerviewer-min.js"></script></textarea>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/utilities/utilities.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/menu/menu.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/yuiloader/yuiloader-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/profiler/profiler-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/profilerviewer/profilerviewer-min.js"></script></textarea>
 
 
 <p>Here are some of the key features of this example:</p>
@@ -144,7 +144,7 @@ YAHOO.tool.Profiler.registerObject("YAHOO.util.Event", true);</textarea>
 
 <textarea name="code" class="JScript" cols="60" rows="1">// Instantiate ProfilerViewer, using its API to customize it a bit:
 var pv = new YAHOO.widget.ProfilerViewer("profiler", {
-    base: "http://yui.yahooapis.com/2.8.0r4/build/",
+    base: "http://yui.yahooapis.com/2.9.0/build/",
     visible: false, //default is false; this means only the
                     //ProfilerViewer launchbar will be displayed
                     //on initial render, and the rest of the console
@@ -162,7 +162,7 @@ var pv = new YAHOO.widget.ProfilerViewer("profiler", {
     //it takes up on the page:
     maxChartFunctions:8,
     tableHeight:"25em", //default: 15em
-    swfUrl:"http://yui.yahooapis.com/2.8.0r4/build/charts/assets/charts.swf"
+    swfUrl:"http://yui.yahooapis.com/2.9.0/build/charts/assets/charts.swf"
 });</textarea>
 
 <h3>3.  Use one of ProfilerViewer's "interesting moments" (custom events) to further customize the interaction</h3>
@@ -240,7 +240,7 @@ YAHOO.util.Event.onContentReady("productsandservices", function () {
     
     // Instantiate ProfilerViewer, using its API to customize it a bit:
     var pv = new YAHOO.widget.ProfilerViewer("profiler", {
-        base: "http://yui.yahooapis.com/2.8.0r4/build/",
+        base: "http://yui.yahooapis.com/2.9.0/build/",
         visible: false, //default is false; this means only the
                         //ProfilerViewer launchbar will be displayed
                         //on initial render, and the rest of the console
@@ -258,7 +258,7 @@ YAHOO.util.Event.onContentReady("productsandservices", function () {
         //it takes up on the page:
         maxChartFunctions:8,
         tableHeight:"25em", //default: 15em
-        swfUrl:"http://yui.yahooapis.com/2.8.0r4/build/charts/assets/charts.swf"
+        swfUrl:"http://yui.yahooapis.com/2.9.0/build/charts/assets/charts.swf"
     });
             
     //You can subscribe to "interesting moments" in the ProfilerViewer
@@ -368,13 +368,14 @@ YAHOO.util.Event.onContentReady("productsandservices", function () {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

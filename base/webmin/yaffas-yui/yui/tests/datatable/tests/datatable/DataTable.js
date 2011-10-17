@@ -75,11 +75,30 @@
         this.datasource = null;
     };
 
-    DataTableTestCase.prototype.createInstance = function(oDT, oConfig) {
+    DataTableTestCase.prototype.createInstance = function(oDT, oConfig, aColumns) {
         oDT = oDT || DataTable;
-        this.datatable = new oDT(this.container, this.columns, this.datasource, oConfig);
+        aColumns = aColumns || this.columns;
+        this.datatable = new oDT(this.container, aColumns, this.datasource, oConfig);
         gCount++;
         return this.datatable;
+    };
+
+    DataTableTestCase.prototype.expandRows = function(oDT) {
+        var allRows = oDT.getTbodyEl().rows,
+            i=allRows.length-1,
+            d   = document,
+            tr  = d.createElement('tr'),
+            td  = d.createElement('td'),
+            clone;
+            
+        td.colSpan = 3;
+        tr.appendChild(td);
+
+        for(; i>-1; i--) {
+            clone = tr.cloneNode(true);
+            clone.firstChild.innerHTML = "expando " + i;
+            YAHOO.util.Dom.insertAfter(clone, allRows[i]);
+        }
     };
 
     /**
@@ -443,6 +462,62 @@
     /**
      *
      *
+     * Tests data load APIs.
+     *
+     *
+     */
+    var dtDataLoadTemplate = YAHOO.lang.merge(dtBaseTemplate, {
+        name: "DataTable Data Load Tests",
+
+        testDefaults: function() {
+            var dt = this.createInstance();
+            Assert.areSame(true, dt.get("initialLoad"), "Expected initialLoad default value");
+            Assert.areSame(null, dt.get("initialRequest"), "Expected initialRequest default value");
+            Assert.areNotSame(0, dt.getRecordSet().getLength(), "Expected non-empty RecordSet");
+        },
+
+        testNoLoad: function() {
+            var dt = this.createInstance(null,{initialLoad:false});
+            Assert.areSame(false, dt.get("initialLoad"), "Expected initialLoad false");
+            Assert.areSame(null, dt.get("initialRequest"), "Expected initialRequest default value");
+            Assert.areSame(0, dt.getRecordSet().getLength(), "Expected emtpy RecordSet");
+        },
+
+        testNonInitialLoad: function() {
+            var dt = this.createInstance(null,{initialLoad:false});
+            Assert.areSame(0, dt.getRecordSet().getLength(), "Expected empty RecordSet to start");
+            
+            this.datasource.liveData = [{a:"4a",b:"4b",c:"4c"}];
+            this.datasource.sendRequest(null, {
+                success: dt.onDataReturnInitializeTable,
+                failure: dt.onDataReturnInitializeTable,
+                scope: dt
+            });
+            Assert.areSame(1, dt.getRecordSet().getLength(), "RecordSet should now have 1 Record");
+        },
+        
+        testLoad: function() {
+            var dt = this.createInstance(null,{initialLoad:false});
+            dt.load();
+            Assert.areSame(4, dt.getRecordSet().getLength(), "Expected 4 Records");
+
+            var newDS = new YAHOO.util.LocalDataSource([[{a:"4a",b:"4b",c:"4c"}]]);
+            dt.load({
+                datasource:newDS,
+                callback:{
+                    success:dt.onDataReturnAppendRows,
+                    failure:dt.onDataReturnAppendRows,
+                    scope:dt
+                }
+            });
+            Assert.areSame(5, dt.getRecordSet().getLength(), "Expected 5 Records");
+        }
+    });
+    var dtDataLoadTest = new DataTableTestCase(dtDataLoadTemplate);
+
+    /**
+     *
+     *
      * Tests row mutation APIs.
      *
      *
@@ -615,6 +690,14 @@
 
             oData = dt._oRecordSet._records[0].getData();
             Assert.areSame(newData.a, oData.a, "Failed to update by TR el reference");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
 
         testUpdateInvalidRow: function() {
@@ -647,6 +730,14 @@
                 oTestData = oTestRecords[i].getData();
                 Assert.areNotSame(oData.a, oTestData.a, "Out of range Record "+i+"should not have updated");
             }
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
 
         testUpdateRows: function() {
@@ -666,6 +757,14 @@
             Assert.areSame(newData[0].a, oData.a, "Failed to update by Record index (0)");
             oData = dt._oRecordSet._records[4].getData();
             Assert.areSame(newData[1].a, oData.a, "Failed to update by Record index (0)");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
 
         testUpdateInvalidRows: function() {
@@ -686,7 +785,15 @@
             for(i=0; i<oTestRecords.length; i++) {
                 oTestData = oTestRecords[i].getData();
                 Assert.areNotSame(newData[0].a, oTestData.a, "Out of range Record "+i+" should not have updated");
-            }            
+            }
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
 
         testUpdateRowsRenderLoopSize: function() {
@@ -706,6 +813,22 @@
             Assert.areSame(newData[0].a, oData.a, "Failed to update by Record index (0)");
             oData = dt._oRecordSet._records[4].getData();
             Assert.areSame(newData[1].a, oData.a, "Failed to update by Record index (0)");
+            
+            dt.on("postRenderEvent", function() {
+                this.resume(function(){
+                    var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+                    Assert.areSame(1, aFirstRows.length, "Expected one first row");
+                    Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+                    var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+                    Assert.areSame(1, aLastRows.length, "Expected one last row");
+                    Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
+                });
+
+            }, this, true);
+
+
+            this.wait(1000);
         },
         
         testUpdateRowsPaginated: function() {
@@ -726,7 +849,36 @@
             Assert.areSame(newData[0].a, oData.a, "Failed to update by Record index (0)");
             oData = dt._oRecordSet._records[4].getData();
             Assert.areSame(newData[1].a, oData.a, "Failed to update by Record index (0)");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
+
+        testUpdateAddRow: function() {
+            var dt = this.createInstance();
+            dt.addRow({a:"4a",b:"4b",c:"4c"}, 0);
+            dt.updateRow(0, {a:"5a",b:"5b",c:"5c"});
+            dt.addRow({a:"5a",b:"5b",c:"5c"}, 0);
+
+            var oTestRecord = dt._oRecordSet._records[0];
+            var elRow = dt.getFirstTrEl();
+            Assert.areSame(oTestRecord.getId(), elRow.id, "Unexpected DOM ID");
+            DataTableAssert.areSameRow(elRow, oTestRecord, dt, "Expected row and Record to be in sync");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
+        },
+
 
         testDeleteRow: function() {
             //TODO: Test all the arg sigs of deleteRow() method
@@ -1052,6 +1204,14 @@
             nTrElsLength = dt.getTbodyEl().rows.length;
             Assert.areSame(4, nRecordsLength, "Expected 4 Records left");
             Assert.areSame(4, nTrElsLength, "Expected 4 TR els left");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         },
         
         testDeleteInvalidRows: function() {
@@ -1075,10 +1235,71 @@
             nRecordsLength = dt.getRecordSet().getLength();
             nTrElsLength = dt.getTbodyEl().rows.length;
             Assert.areSame(4, nRecordsLength, "Expected 4 Records left");
-            Assert.areSame(4, nTrElsLength, "Expected 4 TR els left");        
+            Assert.areSame(4, nTrElsLength, "Expected 4 TR els left");
+
+            var aFirstRows = Dom.getElementsByClassName("yui-dt-first", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aFirstRows.length, "Expected one first row");
+            Assert.areSame(0, aFirstRows[0].sectionRowIndex, "Expected row in first position");
+
+            var aLastRows = Dom.getElementsByClassName("yui-dt-last", "tr", dt.getTbodyEl());
+            Assert.areSame(1, aLastRows.length, "Expected one last row");
+            Assert.areSame(dt.getTbodyEl().rows.length-1, aLastRows[0].sectionRowIndex, "Expected row in last position");
         }
     });
     var dtRowMutationTest = new DataTableTestCase(dtRowMutationTemplate);
+
+    /**
+     *
+     *
+     * Tests APIsfrom within formatters
+     *
+     *
+     */
+    var dtFormatterTemplate = YAHOO.lang.merge(dtBaseTemplate, {
+        name: "DataTable Formatter Tests",
+        
+        testCellFormatter: function() {
+            this.createInstance(null, null, [{key:"a"},{key:"b", formatter:function(el, record, column){
+                var tr = this.getTrEl(el);
+                Assert.areSame("tr", tr.nodeName.toLowerCase(), "Expected tr element");
+                
+                var td = this.getFirstTdEl(tr);
+                Assert.areSame(0, this.getCellIndex(td), "Expected td from first column");
+
+                td = this.getNextTdEl(td);
+                Assert.areSame(1, this.getCellIndex(td), "Expected td from second column");
+
+                td = this.getLastTdEl(tr);
+                Assert.areSame(2, this.getCellIndex(td), "Expected td from last column");
+
+                td = this.getPreviousTdEl(td);
+                Assert.areSame(1, this.getCellIndex(td), "Expected td from last column");
+                
+                var tr = this.getTrEl(el);
+                Assert.areSame("tr", tr.nodeName.toLowerCase(), "Expected tr");
+                Assert.areSame(true, YAHOO.util.Dom.isAncestor(tr, el), "Expected tr to be parent");
+                }
+            },{key:"c"}]);
+        },
+
+        testRowFormatter: function() {
+            this.createInstance(null, {formatter:function(elTr, oRecord) {
+                var td = this.getFirstTdEl(elTr);
+                Assert.areSame(0, this.getCellIndex(td), "Expected td from first column");
+
+                td = this.getNextTdEl(elTr);
+                Assert.areSame(1, this.getCellIndex(td), "Expected td from second column");
+
+                td = this.getLastTdEl(elTr);
+                Assert.areSame(3, this.getCellIndex(td), "Expected td from last column");
+
+                td = this.getPreviousTdEl(elTr);
+                Assert.areSame(2, this.getCellIndex(td), "Expected td from last column");
+            }
+        });
+        }
+    });
+    var dtFormatterTest = new DataTableTestCase(dtFormatterTemplate);
 
     /**
      *
@@ -1910,6 +2131,871 @@
     /**
      *
      *
+     * Tests the APIs when there are non-primary rows.
+     *
+     *
+     */
+    var dtRowExpansionTemplate = YAHOO.lang.merge(dtBaseTemplate, {
+        name: "DataTable Row Expansion Tests",
+        
+        testGetTdEl: function() {
+            var dt = this.createInstance(),
+                allRows = dt.getTbodyEl().rows;
+
+            // Element, ID, Record/Column
+            var td = dt.getTdEl(allRows[0].childNodes[0].firstChild);
+            Assert.areSame("0a", td.firstChild.innerHTML, "Element unexpanded: Expected first row primary cell still");
+
+            td.id="test0";
+            td = dt.getTdEl("test0");
+            Assert.areSame("0a", td.firstChild.innerHTML, "ID unexpanded: Expected first row primary cell still");
+
+            td = dt.getTdEl({record:dt.getRecord(0), column:dt.getColumn(0)});
+            Assert.areSame("0a", td.firstChild.innerHTML, "Record/Column unexpanded: Expected first row primary cell still");
+
+            td = dt.getTdEl(allRows[1].childNodes[0].firstChild);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Element unexpanded: Expected second row primary cell");
+
+            td.id="test1";
+            td = dt.getTdEl("test1");
+            Assert.areSame("1a", td.firstChild.innerHTML, "ID unexpanded: Expected second row primary cell");
+
+            td = dt.getTdEl({record:dt.getRecord(1), column:dt.getColumn(0)});
+            Assert.areSame("1a", td.firstChild.innerHTML, "Record/Column unexpanded: Expected second row primary cell");
+
+            td = dt.getTdEl(allRows[3].childNodes[2].firstChild);
+            Assert.areSame("3c", td.firstChild.innerHTML, "Element unexpanded: Expected fourth row primary cell");
+
+            td.id="test2";
+            td = dt.getTdEl("test2");
+            Assert.areSame("3c", td.firstChild.innerHTML, "ID unexpanded: Expected fourth row primary cell");
+
+            td = dt.getTdEl({record:dt.getRecord(3), column:dt.getColumn(0)});
+            Assert.areSame("3a", td.firstChild.innerHTML, "Record/Column unexpanded: Expected fourth row primary cell");
+
+            td = dt.getTdEl("foo");
+            Assert.areSame(null, td, "ID unexpanded: Expected null");
+
+            this.expandRows(dt);
+
+            // Element, ID, Record/Column
+            td = dt.getTdEl(allRows[0].childNodes[0].firstChild);
+            Assert.areSame("0a", td.firstChild.innerHTML, "Element: Expected first row primary cell still");
+
+            td.id="test0";
+            td = dt.getTdEl("test0");
+            Assert.areSame("0a", td.firstChild.innerHTML, "ID: Expected first row primary cell still");
+
+            td = dt.getTdEl({record:dt.getRecord(0), column:dt.getColumn(0)});
+            Assert.areSame("0a", td.firstChild.innerHTML, "Record/Column: Expected first row primary cell still");
+
+            td = dt.getTdEl(allRows[2].childNodes[0].firstChild);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Element: Expected second row primary cell");
+
+            td.id="test1";
+            td = dt.getTdEl("test1");
+            Assert.areSame("1a", td.firstChild.innerHTML, "ID: Expected second row primary cell");
+
+            td = dt.getTdEl({record:dt.getRecord(1), column:dt.getColumn(0)});
+            Assert.areSame("1a", td.firstChild.innerHTML, "Record/Column: Expected second row primary cell");
+
+            td = dt.getTdEl(allRows[6].childNodes[0].firstChild);
+            Assert.areSame("3a", td.firstChild.innerHTML, "Element: Expected fourth row primary cell");
+
+            td.id="test2";
+            td = dt.getTdEl("test2");
+            Assert.areSame("3a", td.firstChild.innerHTML, "ID: Expected fourth row primary cell");
+
+            td = dt.getTdEl({record:dt.getRecord(3), column:dt.getColumn(0)});
+            Assert.areSame("3a", td.firstChild.innerHTML, "Record/Column: Expected fourth row primary cell");
+
+            td = dt.getTdEl("foo");
+            Assert.areSame(null, td, "ID: Expected null");
+        },
+
+        testGetTrEl: function() {
+            var dt = this.createInstance(),
+                allRows = dt.getTbodyEl().rows;
+
+            // Element, ID, Page index, Record
+            var tr = dt.getTrEl(allRows[0].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element unexpanded: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Element unexpanded: Expected first row primary cell");
+
+            tr = dt.getTrEl(allRows[0].id);
+            Assert.areSame(3, tr.childNodes.length, "ID unexpanded: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "ID unexpanded: Expected first row primary cell");
+
+            tr = dt.getTrEl(0);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex unexpanded: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Pageindex unexpanded: Expected first row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(0));
+            Assert.areSame(3, tr.childNodes.length, "Record unexpanded: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Record unexpanded: Expected first row primary cell");
+
+            tr = dt.getTrEl(allRows[1].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element unexpanded: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Element unexpanded: Expected second row primary cell");
+
+            tr = dt.getTrEl(allRows[1].id);
+            Assert.areSame(3, tr.childNodes.length, "ID unexpanded: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "ID unexpanded: Expected second row primary cell");
+
+            tr = dt.getTrEl(1);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex unexpanded: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Pageindex unexpanded: Expected second row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(1));
+            Assert.areSame(3, tr.childNodes.length, "Record unexpanded: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Record unexpanded: Expected second row primary cell");
+
+            tr = dt.getTrEl(allRows[3].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element unexpanded: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Element unexpanded: Expected fourth row primary cell");
+
+            tr = dt.getTrEl(allRows[3].id);
+            Assert.areSame(3, tr.childNodes.length, "ID unexpanded: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "ID unexpanded: Expected fourth row primary cell");
+
+            tr = dt.getTrEl(3);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex unexpanded: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Pageindex unexpanded: Expected fourth row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(3));
+            Assert.areSame(3, tr.childNodes.length, "Record unexpanded: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Record unexpanded: Expected fourth row primary cell");
+
+            tr = dt.getTrEl(allRows[4]);
+            Assert.areSame(null, tr, "Element unexpanded: Expected null");
+
+            tr = dt.getTrEl("foo");
+            Assert.areSame(null, tr, "ID unexpanded: Expected null");
+
+            tr = dt.getTrEl(4);
+            Assert.areSame(null, tr, "Pageindex unexpanded: Expected null");
+
+            this.expandRows(dt);
+
+            // Element, ID, Page index, Record
+            tr = dt.getTrEl(allRows[0].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Expected first row primary cell");
+
+            tr = dt.getTrEl(allRows[0].id);
+            Assert.areSame(3, tr.childNodes.length, "ID: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Expected first row primary cell");
+
+            tr = dt.getTrEl(0);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Expected first row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(0));
+            Assert.areSame(3, tr.childNodes.length, "Record: Expected first row primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Expected first row primary cell");
+
+            tr = dt.getTrEl(allRows[2].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Expected second row primary cell");
+
+            tr = dt.getTrEl(allRows[2].id);
+            Assert.areSame(3, tr.childNodes.length, "ID: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Expected second row primary cell");
+
+            tr = dt.getTrEl(1);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Expected second row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(1));
+            Assert.areSame(3, tr.childNodes.length, "Record: Expected second row primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Expected second row primary cell");
+
+            tr = dt.getTrEl(allRows[6].childNodes[0]);
+            Assert.areSame(3, tr.childNodes.length, "Element: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Expected fourth row primary cell");
+
+            tr = dt.getTrEl(allRows[6].id);
+            Assert.areSame(3, tr.childNodes.length, "ID: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Expected fourth row primary cell");
+
+            tr = dt.getTrEl(3);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Expected fourth row primary cell");
+
+            tr = dt.getTrEl(dt.getRecord(3));
+            Assert.areSame(3, tr.childNodes.length, "Record: Expected fourth row primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Expected fourth row primary cell");
+
+            tr = dt.getTrEl(allRows[8]);
+            Assert.areSame(null, tr, "Element: Expected null");
+
+            tr = dt.getTrEl("foo");
+            Assert.areSame(null, tr, "ID: Expected null");
+
+            tr = dt.getTrEl(7);
+            Assert.areSame(null, tr, "Pageindex: Expected null");
+        },
+
+        testGetFirstTrEl: function() {
+            var dt = this.createInstance();
+            var tr = dt.getFirstTrEl();
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Expected primary cell");
+
+            this.expandRows(dt);
+
+            tr = dt.getFirstTrEl();
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("0a", tr.childNodes[0].firstChild.innerHTML, "Expected primary cell");
+        },
+        
+        testGetLastTrEl: function() {
+            var dt = this.createInstance();
+            var tr = dt.getLastTrEl();
+            Assert.areSame(3, tr.childNodes.length, "Unexpected: Expected primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Unexpected: Expected primary cell");
+
+            this.expandRows(dt);
+
+            tr = dt.getLastTrEl();
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("3a", tr.childNodes[0].firstChild.innerHTML, "Expected primary cell");
+        },
+        
+        testGetPreviousTrEl: function() {
+            var dt = this.createInstance();
+
+            // Element, ID, pageindex, Record
+            var tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Element unexpanded: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr.id);
+            Assert.areSame(null, tr, "ID unexpanded: Expected null");
+
+            tr = 0;
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Pageindex unexpanded: Expected null");
+
+            tr = dt.getRecord(0);
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Record unexpanded: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Element unexpanded: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr.id, true);
+            Assert.areSame(null, tr, "ID unexpanded: Expected null");
+
+            tr = 0;
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Pageindex unexpanded: Expected null");
+
+            tr = dt.getRecord(0);
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Record unexpanded: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Element unexpanded: Expected third row");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Element unexpanded: Expected third row cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr.id);
+            Assert.areSame(3, tr.childNodes.length, "ID unexpanded: Expected third row");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "ID unexpanded: Expected third row cell");
+
+            tr = 3;
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex unexpanded: Expected second row");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Pageindex unexpanded: Expected third row cell");
+
+            tr = dt.getRecord(3);
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Record unexpanded: Expected third row");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Record unexpanded: Expected third row cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Element unexpanded: Expected third row");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Element unexpanded: Expected third row  cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr.id, true);
+            Assert.areSame(3, tr.childNodes.length, "ID unexpanded: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "ID unexpanded: Expected primary cell");
+
+            tr = 3;
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex unexpanded: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Pageindex unexpanded: Expected primary cell");
+
+            tr = dt.getRecord(3);
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Record unexpanded: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Record unexpanded: Expected primary cell");
+
+            this.expandRows(dt);
+
+            // Element, ID, pageindex, Record
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Element: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr.id);
+            Assert.areSame(null, tr, "ID: Expected null");
+            
+            tr = 0;
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Pageindex: Expected null");
+
+            tr = dt.getRecord(0);
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(null, tr, "Record: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Element: Expected null");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getPreviousTrEl(tr.id, true);
+            Assert.areSame(null, tr, "ID: Expected null");
+
+            tr = 0;
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Pageindex: Expected null");
+
+            tr = dt.getRecord(0);
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(null, tr, "Record: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Element: Expected expansion");
+            Assert.areSame("expando 2", tr.childNodes[0].innerHTML, "Element: Expected expansion cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr.id);
+            Assert.areSame(1, tr.childNodes.length, "ID: Expected expansion");
+            Assert.areSame("expando 2", tr.childNodes[0].innerHTML, "ID: Expected expansion cell");
+
+            tr = 3;
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Pageindex: Expected expansion");
+            Assert.areSame("expando 2", tr.childNodes[0].innerHTML, "Pageindex: Expected expansion cell");
+
+            tr = dt.getRecord(3);
+            tr = dt.getPreviousTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Record: Expected expansion");
+            Assert.areSame("expando 2", tr.childNodes[0].innerHTML, "Record: Expected expansion cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Element: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Element: Expected primary cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getPreviousTrEl(tr.id, true);
+            Assert.areSame(3, tr.childNodes.length, "ID: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "ID: Expected primary cell");
+
+            tr = 3;
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Pageindex: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Pageindex: Expected primary cell");
+
+            tr = dt.getRecord(3);
+            tr = dt.getPreviousTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Record: Expected primary");
+            Assert.areSame("2a", tr.childNodes[0].firstChild.innerHTML, "Record: Expected primary cell");
+        },
+
+        testGetNextTrEl: function() {
+            var dt = this.createInstance();
+
+            // Element, ID, page index, Record
+            var tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Element: Expected second row cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr.id);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: ID: Expected second row cell");
+
+            tr = 0;
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Pageindex: Expected second row cell");
+
+            tr = dt.getRecord(0);
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Record: Expected second row cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Element: Expected second row cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr.id, true);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected second row");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: ID: Expected second row cell");
+
+            tr = 0;
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Pageindex: Expected second row cell");
+
+            tr = dt.getRecord(0);
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Unexpanded: Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Unexpanded: Record: Expected second row cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(null, tr, "Unexpanded: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr.id);
+            Assert.areSame(null, tr, "Unexpanded: Expected null");
+
+            tr = 3;
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(null, tr, "Unexpanded: Expected null");
+
+            tr = dt.getRecord(3);
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(null, tr, "Unexpanded: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Unexpanded: Element: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr.id, true);
+            Assert.areSame(null, tr, "Unexpanded: ID: Expected null");
+
+            tr = 3;
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Unexpanded: Pageindex: Expected null");
+
+            tr = dt.getRecord(3);
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Unexpanded: Record: Expected null");
+
+            this.expandRows(dt);
+
+            // Element, ID, page index, Record
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 0", tr.childNodes[0].innerHTML, "Element: Expected expansion cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr.id);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 0", tr.childNodes[0].innerHTML, "ID: Expected expansion cell");
+
+            tr = 0;
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 0", tr.childNodes[0].innerHTML, "Pageindex: Expected expansion cell");
+
+            tr = dt.getRecord(0);
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 0", tr.childNodes[0].innerHTML, "Record: Expected expansion cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Element: Expected primary cell");
+
+            tr = dt.getFirstTrEl();
+            tr = dt.getNextTrEl(tr.id, true);
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "ID: Expected primary cell");
+
+            tr = 0;
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Pageindex: Expected primary cell");
+
+            tr = dt.getRecord(0);
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(3, tr.childNodes.length, "Expected primary");
+            Assert.areSame("1a", tr.childNodes[0].firstChild.innerHTML, "Record: Expected primary cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 3", tr.childNodes[0].innerHTML, "Element: Expected expansion cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr.id);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 3", tr.childNodes[0].innerHTML, "ID: Expected expansion cell");
+
+            tr = 3;
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 3", tr.childNodes[0].innerHTML, "Pageindex: Expected expansion cell");
+
+            tr = dt.getRecord(3);
+            tr = dt.getNextTrEl(tr);
+            Assert.areSame(1, tr.childNodes.length, "Expected expansion");
+            Assert.areSame("expando 3", tr.childNodes[0].innerHTML, "Record: Expected expansion cell");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Element: Expected null");
+
+            tr = dt.getLastTrEl();
+            tr = dt.getNextTrEl(tr.id, true);
+            Assert.areSame(null, tr, "ID: Expected null");
+
+            tr = 3;
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Pageindex: Expected null");
+
+            tr = dt.getRecord(3);
+            tr = dt.getNextTrEl(tr, true);
+            Assert.areSame(null, tr, "Record: Expected null");
+        },
+
+        testGetFirstTdEl: function() {
+            var dt = this.createInstance();
+            
+            var td = dt.getFirstTdEl();
+            Assert.areSame("0a", td.firstChild.innerHTML, "Expected primary cell");
+
+            td = dt.getFirstTdEl(3);
+            Assert.areSame("3a", td.firstChild.innerHTML, "Expected relative cell, primary");
+
+            td = dt.getFirstTdEl(4);
+            Assert.areSame(null, td, "Expected null");
+
+            this.expandRows(dt);
+
+            td = dt.getFirstTdEl();
+            Assert.areSame("0a", td.firstChild.innerHTML, "Expected primary cell");
+
+            td = dt.getFirstTdEl(3);
+            Assert.areSame("3a", td.firstChild.innerHTML, "Expected relative cell, primary");
+
+            td = dt.getFirstTdEl(4);
+            Assert.areSame(null, td, "Expected null");
+        },
+
+        testGetLastTdEl: function() {
+            var dt = this.createInstance();
+            
+            var td = dt.getLastTdEl();
+            Assert.areSame("3c", td.firstChild.innerHTML, "Expected last primary cell");
+
+            td = dt.getLastTdEl(0);
+            Assert.areSame("0c", td.firstChild.innerHTML, "Expected first relative cell, primary");
+
+            td = dt.getLastTdEl(1);
+            Assert.areSame("1c", td.firstChild.innerHTML, "Expected first relative cell, expansion");
+
+            td = dt.getLastTdEl(4);
+            Assert.areSame(null, td, "Expected null");
+
+            this.expandRows(dt);
+
+            td = dt.getLastTdEl();
+            Assert.areSame("3c", td.firstChild.innerHTML, "Expected last primary cell");
+            
+            td = dt.getLastTdEl(0);
+            Assert.areSame("0c", td.firstChild.innerHTML, "Expected first relative cell, primary");
+
+            td = dt.getLastTdEl(1);
+            Assert.areSame("1c", td.firstChild.innerHTML, "Expected first relative cell, expansion");
+
+            td = dt.getLastTdEl(4);
+            Assert.areSame(null, td, "Expected null");
+        },
+
+        testGetAboveTdEl: function() {
+            var dt = this.createInstance();
+
+            // Element, ID, {Record, Column}
+            var td = dt.getFirstTdEl();
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Unexpanded: Element: Expected null");
+
+            td = dt.getFirstTdEl();
+            td.id = "test0";
+            td = dt.getAboveTdEl(td.id);
+            Assert.areSame(null, td, "Unexpanded: ID: Expected null");
+
+            td = {record:dt.getRecord(0), column:dt.getColumn(0)};
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Unexpanded: Record/Column: Expected null");
+
+            td = dt.getLastTdEl();
+            td = dt.getAboveTdEl(td);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: Element: Expected cell");
+
+            td = dt.getLastTdEl();
+            td.id = "test1";
+            td = dt.getAboveTdEl(td.id);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: ID: Expected cell");
+
+            td = {record:dt.getRecord(3), column:dt.getColumn(2)};
+            td = dt.getAboveTdEl(td);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: Record/Column: Expected cell");
+
+            td = dt.getLastTdEl();
+            td = dt.getAboveTdEl(td, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: Element: Expected above primary cell");
+
+            td = dt.getLastTdEl();
+            td.id = "test2";
+            td = dt.getAboveTdEl(td.id, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: ID: Expected above primary cell");
+
+            td = {record:dt.getRecord(3), column:dt.getColumn(2)};
+            td = dt.getAboveTdEl(td, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Unexpanded: Record/Column: Expected above primary cell");
+
+            this.expandRows(dt);
+
+            // Element, ID, {Record, Column}
+            td = dt.getFirstTdEl();
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Element: Expected null");
+            
+            td = dt.getFirstTdEl();
+            td.id = "test0";
+            td = dt.getAboveTdEl(td.id);
+            Assert.areSame(null, td, "ID: Expected null");
+            
+            td = {record:dt.getRecord(0), column:dt.getColumn(0)};
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Record/Column: Expected null");
+
+            td = dt.getLastTdEl();
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Element: Expected no corresponding cell");
+
+            td = dt.getLastTdEl();
+            td.id = "test1";
+            td = dt.getAboveTdEl(td.id);
+            Assert.areSame(null, td, "ID: Expected no corresponding cell");
+
+            td = {record:dt.getRecord(3), column:dt.getColumn(2)};
+            td = dt.getAboveTdEl(td);
+            Assert.areSame(null, td, "Record/Column: Expected no corresponding cell");
+
+            td = dt.getLastTdEl();
+            td = dt.getAboveTdEl(td, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Element: Expected above primary cell");
+
+            td = dt.getLastTdEl();
+            td.id = "test2";
+            td = dt.getAboveTdEl(td.id, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "ID: Expected above primary cell");
+
+            td = {record:dt.getRecord(3), column:dt.getColumn(2)};
+            td = dt.getAboveTdEl(td, true);
+            Assert.areSame("2c", td.firstChild.innerHTML, "Record/Column: Expected above primary cell");
+        },
+
+        testGetBelowTdEl: function() {
+            var dt = this.createInstance();
+
+            // Element, ID, {Record, Column}
+            var td = dt.getLastTdEl();
+            td = dt.getBelowTdEl(td);
+            Assert.areSame(null, td, "Unexpanded Element: Expected null");
+
+            td = dt.getLastTdEl();
+            td.id = "test0";
+            td = dt.getBelowTdEl(td.id);
+            Assert.areSame(null, td, "Unexpanded ID: Expected null");
+
+            td = {record: dt.getRecord(3), column: dt.getColumn(2)};
+            td = dt.getBelowTdEl(td);
+            Assert.areSame(null, td, "Unexpanded Record/Column: Expected null");
+
+            td = dt.getFirstTdEl();
+            td = dt.getBelowTdEl(td);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded Element: Expected cell");
+
+            td = dt.getFirstTdEl();
+            td.id="test1";
+            td = dt.getBelowTdEl(td.id);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded ID: Expected cell");
+
+            td = {record: dt.getRecord(0), column: dt.getColumn(0)};
+            td = dt.getBelowTdEl(td);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded Record/Column: Expected cell");
+
+            td = dt.getFirstTdEl();
+            td = dt.getBelowTdEl(td, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded Element: Expected below primary cell");
+
+            td = dt.getFirstTdEl();
+            td.id = "test2";
+            td = dt.getBelowTdEl(td.id, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded ID: Expected below primary cell");
+
+            td = {record: dt.getRecord(0), column: dt.getColumn(0)};
+            td = dt.getBelowTdEl(td, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Unexpanded Record/Column: Expected below primary cell");
+
+            this.expandRows(dt);
+
+            // Element, ID, {Record, Column}
+            td = dt.getLastTdEl();
+            td = dt.getBelowTdEl(td);
+            Assert.areSame(null, td, "Element: Expected null");
+
+            td = dt.getLastTdEl();
+            td.id = "test0";
+            td = dt.getBelowTdEl(td.id);
+            Assert.areSame(null, td, "ID: Expected null");
+
+            td = {record: dt.getRecord(3), column: dt.getColumn(2)};
+            td = dt.getBelowTdEl(td);
+            Assert.areSame(null, td, "Record/Column: Expected null");
+
+            td = dt.getFirstTdEl();
+            td = dt.getBelowTdEl(td);
+            Assert.areSame("expando 0", td.innerHTML, "Element: Expected expansion cell");
+
+            td = dt.getFirstTdEl();
+            td.id="test1";
+            td = dt.getBelowTdEl(td.id);
+            Assert.areSame("expando 0", td.innerHTML, "ID: Expected expansion cell");
+
+            td = {record: dt.getRecord(0), column: dt.getColumn(0)};
+            td = dt.getBelowTdEl(td);
+            Assert.areSame("expando 0", td.innerHTML, "Record/Column: Expected expansion cell");
+
+            td = dt.getFirstTdEl();
+            td = dt.getBelowTdEl(td, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Element: Expected below primary cell");
+
+            td = dt.getFirstTdEl();
+            td.id = "test2";
+            td = dt.getBelowTdEl(td.id, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "ID: Expected below primary cell");
+
+            td = {record: dt.getRecord(0), column: dt.getColumn(0)};
+            td = dt.getBelowTdEl(td, true);
+            Assert.areSame("1a", td.firstChild.innerHTML, "Record/Column: Expected below primary cell");
+        },
+
+        testGetTrIndex: function() {
+            var dt = this.createInstance(),
+                tbody = dt.getTbodyEl();
+
+            // Element, ID, Record, Record index
+            var index = dt.getTrIndex(tbody.rows[0]);
+            Assert.areSame(0, index, "Unexpanded: Element: Expected first primary row");
+
+            index = dt.getTrIndex(tbody.rows[1]);
+            Assert.areSame(1, index, "Unexpanded: Element: Expected second row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-2]);
+            Assert.areSame(2, index, "Unexpanded: Element: Expected third row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-1]);
+            Assert.areSame(3, index, "Unexpanded: Element: Expected last row");
+
+            index = dt.getTrIndex(tbody.rows[0].id);
+            Assert.areSame(0, index, "Unexpanded: ID: Expected first primary row");
+
+            index = dt.getTrIndex(tbody.rows[1].id);
+            Assert.areSame(1, index, "Unexpanded: ID: Expected second row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-2].id);
+            Assert.areSame(2, index, "Unexpanded: ID: Expected second row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-1].id);
+            Assert.areSame(3, index, "Unexpanded: ID: Expected last row");
+
+            index = dt.getTrIndex(dt.getRecord(0));
+            Assert.areSame(0, index, "Unexpanded: Record: Expected first primary row");
+
+            index = dt.getTrIndex(dt.getRecord(1));
+            Assert.areSame(1, index, "Unexpanded: Record: Expected second primary row");
+
+            index = dt.getTrIndex(dt.getRecord(3));
+            Assert.areSame(3, index, "Unexpanded: Record: Expected last primary row");
+
+            index = dt.getTrIndex(0);
+            Assert.areSame(0, index, "Unexpanded: Record index: Expected first primary row");
+
+            index = dt.getTrIndex(1);
+            Assert.areSame(1, index, "Unexpanded: Record index: Expected second primary row");
+
+            index = dt.getTrIndex(3);
+            Assert.areSame(3, index, "Unexpanded: Record index: Expected last primary row");
+
+            this.expandRows(dt);
+
+            // Element, ID, Record, Record index
+            index = dt.getTrIndex(tbody.rows[0]);
+            Assert.areSame(0, index, "Element: Expected first primary row");
+
+            index = dt.getTrIndex(tbody.rows[1]);
+            Assert.areSame(null, index, "Element: Not a primary row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-2]);
+            Assert.areSame(6, index, "Element: Expected last primary row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-1]);
+            Assert.areSame(null, index, "Element: Not a primary row");
+            
+            index = dt.getTrIndex(tbody.rows[0].id);
+            Assert.areSame(0, index, "ID: Expected first primary row");
+
+            index = dt.getTrIndex(tbody.rows[1].id);
+            Assert.areSame(null, index, "ID: Not a primary row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-2].id);
+            Assert.areSame(6, index, "ID: Expected last primary row");
+
+            index = dt.getTrIndex(tbody.rows[tbody.rows.length-1].id);
+            Assert.areSame(null, index, "ID: Not a primary row");
+
+            index = dt.getTrIndex(dt.getRecord(0));
+            Assert.areSame(0, index, "Record: Expected first primary row");
+
+            index = dt.getTrIndex(dt.getRecord(1));
+            Assert.areSame(2, index, "Record: Expected second primary row");
+
+            index = dt.getTrIndex(dt.getRecord(3));
+            Assert.areSame(6, index, "Record: Expected last primary row");
+
+            index = dt.getTrIndex(0);
+            Assert.areSame(0, index, "Record index: Expected first primary row");
+
+            index = dt.getTrIndex(1);
+            Assert.areSame(2, index, "Record index: Expected second primary row");
+
+            index = dt.getTrIndex(3);
+            Assert.areSame(6, index, "Record index: Expected last primary row");
+        }
+
+    });
+
+    var dtRowExpansionTest = new DataTableTestCase(dtRowExpansionTemplate);
+
+    /**
+     *
+     *
      * Runs tests.
      *
      *
@@ -1918,12 +3004,16 @@
         var datatablesuite = new TestSuite("DataTable Test Suite");
         datatablesuite.add(dtConstructionTest);
         datatablesuite.add(dtDomAccessorsTest);
+        datatablesuite.add(dtDataLoadTest);
         datatablesuite.add(dtRowMutationTest);
+        datatablesuite.add(dtFormatterTest);
         datatablesuite.add(dtSortingTest);
         datatablesuite.add(dtRowSelectionTest);
         datatablesuite.add(dtCellSelectionTest);
         datatablesuite.add(dtPaginationTest);
         datatablesuite.add(dtCloneObjectTest);
+        datatablesuite.add(dtRowExpansionTest);
+
         
         TestRunner.add(datatablesuite);
     });

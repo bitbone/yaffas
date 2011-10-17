@@ -31,6 +31,9 @@
 #slider-bg {
     background:url(../slider/assets/bg-fader.gif) 5px 0 no-repeat;
 }
+#slider-thumb {
+    left: 0;
+}
 </style>
 
 <!--end custom header content for this example-->
@@ -249,7 +252,10 @@ value.  These techniques can help inform assistive technologies
 <p>CSS:</p>
 <textarea name="code" class="CSS" cols="60" rows="1">
 #slider-bg {
-    background:url(http://yui.yahooapis.com/2.8.0r4/build/slider/assets/bg-fader.gif) 5px 0 no-repeat;
+    background:url(http://yui.yahooapis.com/2.9.0/build/slider/assets/bg-fader.gif) 5px 0 no-repeat;
+}
+#slider-thumb {
+    left: 0;
 }
 </textarea>
 
@@ -257,7 +263,7 @@ value.  These techniques can help inform assistive technologies
 <textarea name="code" class="HTML" cols="60" rows="1">
 
 <div id="slider-bg" class="yui-h-slider" tabindex="-1" title="Slider">
-    <div id="slider-thumb" class="yui-slider-thumb"><img src="http://yui.yahooapis.com/2.8.0r4/build/slider/assets/thumb-n.gif"></div>
+    <div id="slider-thumb" class="yui-slider-thumb"><img src="http://yui.yahooapis.com/2.9.0/build/slider/assets/thumb-n.gif"></div>
 </div>
 
 <p>Pixel value: <span id="slider-value">0</span></p>
@@ -396,7 +402,7 @@ value.  These techniques can help inform assistive technologies
 	
 						<div id="exampleToc">
 							<ul>
-								<li><a href='../slider/slider-simple.html'>Basic Vertical Slider</a></li><li class='selected'><a href='../slider/slider-ticks.html'>Horizontal Slider with Tick Marks</a></li><li><a href='../slider/slider-rgb.html'>RBG Slider Control</a></li><li><a href='../slider/slider_vert_swapped.html'>Bottom to top Vertical Slider</a></li><li><a href='../slider/slider_dual_thumb.html'>Horizontal Slider with two thumbs</a></li><li><a href='../slider/slider_dual_with_highlight.html'>Dual-thumb Slider with range highlight</a></li><li><a href='../progressbar/pb_basic.html'>Basic Features (included with examples for ProgressBar Control)</a></li><li><a href='../progressbar/pb_events.html'>Events (included with examples for ProgressBar Control)</a></li><li><a href='../button/btn_example14.html'>Slider Button (included with examples for Button Control)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
+								<li><a href='../slider/slider-simple.html'>Basic Vertical Slider</a></li><li class='selected'><a href='../slider/slider-ticks.html'>Horizontal Slider with Tick Marks</a></li><li><a href='../slider/slider-rgb.html'>RGB Slider Control</a></li><li><a href='../slider/slider_vert_swapped.html'>Bottom to top Vertical Slider</a></li><li><a href='../slider/slider_dual_thumb.html'>Horizontal Slider with two thumbs</a></li><li><a href='../slider/slider_dual_with_highlight.html'>Dual-thumb Slider with range highlight</a></li><li><a href='../progressbar/pb_basic.html'>Basic Features (included with examples for ProgressBar Control)</a></li><li><a href='../progressbar/pb_events.html'>Events (included with examples for ProgressBar Control)</a></li><li><a href='../button/btn_example14.html'>Slider Button (included with examples for Button Control)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
 						</div>
 					</div>
 					
@@ -427,13 +433,14 @@ value.  These techniques can help inform assistive technologies
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

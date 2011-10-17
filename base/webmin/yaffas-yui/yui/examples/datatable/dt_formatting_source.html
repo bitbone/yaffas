@@ -45,8 +45,9 @@ loader.insert({
             YAHOO.widget.DataTable.Formatter.myCustom = myCustomFormatter;
 
             // Override the built-in formatter
+            // Be sure to HTML-escape any untrustworthy data
             YAHOO.widget.DataTable.formatEmail = function(elLiner, oRecord, oColumn, oData) {
-                var user = oData;
+                var user = YAHOO.lang.escapeHTML(oData);
                 elLiner.innerHTML = "<a href=\"mailto:" + user + "@mycompany.com\">" + user + "</a>";
             };
             

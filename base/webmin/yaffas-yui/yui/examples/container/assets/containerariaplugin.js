@@ -427,45 +427,33 @@
 			},			
 			
 			configRole: function (type, args) {
-			
 				var sRole = args[0],
 					oBody,
 					oHeader,
 					sID;
-		
 	
 				if (sRole) {
-
 					switch (sRole) {
-						
 						case _ALERT_DIALOG:
-
 							oBody = this.body;
-
-							sID = oBody.id || Dom.generateId(oBody);
-
-							this.cfg.setProperty(_DESCRIBED_BY, sID);
-						
+							if (oBody) {
+								sID = oBody.id || Dom.generateId(oBody);
+								this.cfg.setProperty(_DESCRIBED_BY, sID);
+							}
 						break;
-						
+				
 						case _DIALOG:
-
 							oHeader = this.header;
-
-							sID = oHeader.id || Dom.generateId(oHeader);
-
-							this.cfg.setProperty(_LABELLED_BY, sID);
-
+							if (oHeader) {
+								sID = oHeader.id || Dom.generateId(oHeader);
+								this.cfg.setProperty(_LABELLED_BY, sID);
+							}
 						break;
-						
 					}
 
 					setARIARole(this.innerElement, sRole);
-					
 					setRoleForCloseButton.call(this);
-		
 				}
-			
 			},
 		
 		
@@ -567,7 +555,7 @@
 
 	var unregisterContextElements = function () {
 
-		var sId = this.element.id,
+		var sId = (this.element) ? this.element.id : this.id,
 			aContextElements = m_oContextElements[sId];
 
 		Dom.batch(aContextElements, unregisterContextElement, this, true);

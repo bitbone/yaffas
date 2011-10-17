@@ -262,17 +262,22 @@ YAHOO.util.Event.onAvailable('flickr_search', function() {
         }
     }, myEditor, true);
     YAHOO.log('Create the Auto Complete Control', 'info', 'example');
-    oACDS = new YAHOO.widget.DS_XHR("assets/flickr_proxy.php",
-        ["photo", "title", "id", "owner", "secret", "server"]);
-    oACDS.scriptQueryParam = "tags";
+    var oACDS = new YAHOO.util.XHRDataSource("assets/yql_proxy.php?format=xml&q=select%20*%20from%20flickr.photos.search");
+    oACDS.responseSchema = {
+        resultNode: "photo",
+        fields: ["title", "id", "owner", "secret", "server"]
+    };
     oACDS.responseType = YAHOO.widget.DS_XHR.TYPE_XML;
-    oACDS.maxCacheEntries = 0;
-    oACDS.scriptQueryAppend = "method=flickr.photos.search";
+    oACDS.maxCacheEntries = 100;
 
     // Instantiate AutoComplete
     oAutoComp = new YAHOO.widget.AutoComplete('flickr_search','flickr_results', oACDS);
     oAutoComp.autoHighlight = false;
     oAutoComp.alwaysShowContainer = true; 
+    oAutoComp.suppressInputUpdate = true;
+    oAutoComp.generateRequest = function(sQuery) {
+        return "%20where%20tags%3D%22"+sQuery+"%22";
+    };
     oAutoComp.formatResult = function(oResultItem, sQuery) {
         // This was defined by the schema array of the data source
         var sTitle = oResultItem[0];

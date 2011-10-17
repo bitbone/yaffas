@@ -141,11 +141,11 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 <p>First, include the following JS source files:</p>	
 <textarea name="code" class="html" cols="60" rows="5">
 <!-- Dependencies -->
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/yahoo-dom-event/yahoo-dom-event.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/element/element-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
 
 <!-- Source files -->
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0r4/build/swf/swf-min.js"></script>
+<script type="text/javascript" src="http://yui.yahooapis.com/2.9.0/build/swf/swf-min.js"></script>
 </textarea>
 
 <p>Next, create a container where the SWF will be placed. The size of the container will be the size of the SWF (in this case, we set it to 400 by 200 pixels). The current content of the container is what will be displayed if there is no Flash installed on the user's machine, or if the version of the Flash player installed does not match the minimum required.</p>
@@ -226,9 +226,7 @@ function testFlash () {
 						<ul>
 							<li><a href="http://developer.yahoo.com/yui/swf/">User's Guide</a> (external)</li>
 						<li><a href="../../docs/module_swf.html">API Documentation</a></li>
-                            
-                            
-							<li><a href="http://yuiblog.com/assets/pdf/cheatsheets/swf.pdf">Cheat Sheet PDF</a> (external)</li></ul>
+</ul>
 					</div>
 			  </div>
 		</div>
@@ -248,13 +246,14 @@ function testFlash () {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

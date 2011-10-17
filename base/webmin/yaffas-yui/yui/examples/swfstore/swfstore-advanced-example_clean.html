@@ -24,6 +24,7 @@ body {
 <script type="text/javascript" src="../../build/yahoo-dom-event/yahoo-dom-event.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 <script type="text/javascript" src="../../build/cookie/cookie-min.js"></script>
@@ -32,7 +33,7 @@ body {
 
 
 <!--begin custom header content for this example-->
-<STYLE type="text/css">
+<style type="text/css">
 
 #controls label  
 {
@@ -46,7 +47,7 @@ body {
 	width: 24em; 
 }
 
-</STYLE>
+</style>
 
 <!--end custom header content for this example-->
 
@@ -59,6 +60,7 @@ body {
 
 <div class="exampleIntro">
 	<p>This example shows how to get, set, and remove items from storage using the <a href="http://developer.yahoo.com/yui/swfstore/">YUI SWFStore Utility</a> and how to display stored data using a <a href="http://developer.yahoo.com/yui/datatable/">YUI DataTable</a>.</p>
+<p>Note that in cases where Flash is missing on the user's machine, the content of the Flash container does not get overwritten, and since the container is sized down to 0, additional logic (not demonstrated in this example) would be necessary to inform the user that no Flash is installed.</p>
 			
 </div>
 

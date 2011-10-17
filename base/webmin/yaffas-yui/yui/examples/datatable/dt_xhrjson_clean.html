@@ -25,6 +25,7 @@ body {
 <script type="text/javascript" src="../../build/json/json-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 
 <!--there is no custom header content for this example-->
@@ -53,12 +54,16 @@ YAHOO.util.Event.addListener(window, "load", function() {
         var formatUrl = function(elCell, oRecord, oColumn, sData) {
             elCell.innerHTML = "<a href='" + oRecord.getData("ClickUrl") + "' target='_blank'>" + sData + "</a>";
         };
+        
+        var formatRating = function(elCell, oRecord, oColumn, sData) {
+            elCell.innerHTML = (sData === null) ? "N/A" : YAHOO.util.Number.format(sData);
+        };
 
         var myColumnDefs = [
             {key:"Title", label:"Name", sortable:true, formatter:formatUrl},
             {key:"Phone"},
             {key:"City"},
-            {key:"Rating.AverageRating", label:"Rating", formatter:YAHOO.widget.DataTable.formatNumber, sortable:true}
+            {key:"Rating.AverageRating", label:"Rating", formatter:formatRating, sortable:true}
         ];
 
         var myDataSource = new YAHOO.util.DataSource("assets/php/ylocal_proxy.php?");

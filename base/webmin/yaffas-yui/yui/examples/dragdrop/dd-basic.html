@@ -140,31 +140,28 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 <p>For this example, we will enable drag and drop for the three <code>&lt;div&gt;</code> elements.</p>
 <p>Create the <code>demo</code> elements:</p>
 
-<textarea name="code" class="JScript" cols="60" rows="1">
-
-<div id="dd-demo-1" class="dd-demo"></div>
+<div id="syntax1" class="yui-syntax-highlight"><div class="numbers"><pre class="html4strict" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-1&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-2&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li><li class="li1"><div class="de1"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-3&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="html4strict" style="font-family:monospace;"><span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-1&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-2&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span>
+<span class="sc2">&lt;<span class="kw2">div</span> <span class="kw3">id</span><span class="sy0">=</span><span class="st0">&quot;dd-demo-3&quot;</span> <span class="kw3">class</span><span class="sy0">=</span><span class="st0">&quot;dd-demo&quot;</span>&gt;&lt;<span class="sy0">/</span><span class="kw2">div</span>&gt;</span></pre></div><textarea id="syntax1-plain"><div id="dd-demo-1" class="dd-demo"></div>
 <div id="dd-demo-2" class="dd-demo"></div>
-<div id="dd-demo-3" class="dd-demo"></div>
-
-</textarea>
-
+<div id="dd-demo-3" class="dd-demo"></div></textarea></div>
 <p>Now we create the instances of <code>YAHOO.util.DD</code>, passing the element ids or references for our demo elements.</p>
 
-<textarea name="code" class="JScript" cols="60" rows="1">
-
-<script type="text/javascript">
-    (function() {
-        var dd, dd2, dd3;
-        YAHOO.util.Event.onDOMReady(function() {
-            dd = new YAHOO.util.DD("dd-demo-1");
-            dd2 = new YAHOO.util.DD("dd-demo-2");
-            dd3 = new YAHOO.util.DD("dd-demo-3");
-        });
-    })();
-</script>
-
-</textarea>
-
+<div id="syntax2" class="yui-syntax-highlight"><div class="numbers"><pre class="javascript" style="font-family:monospace;"><ol><li class="li1"><div class="de1"><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">    <span class="kw2">var</span> dd<span class="sy0">,</span> dd2<span class="sy0">,</span> dd3<span class="sy0">;</span></div></li><li class="li1"><div class="de1">    YAHOO.<span class="me1">util</span>.<span class="me1">Event</span>.<span class="me1">onDOMReady</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span></div></li><li class="li1"><div class="de1">        dd <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-1&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li2"><div class="de2">        dd2 <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-2&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">        dd3 <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-3&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1">    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li><li class="li1"><div class="de1"><span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></div></li></ol></pre></div><div class="nonumbers"><pre class="javascript" style="font-family:monospace;"><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+    <span class="kw2">var</span> dd<span class="sy0">,</span> dd2<span class="sy0">,</span> dd3<span class="sy0">;</span>
+    YAHOO.<span class="me1">util</span>.<span class="me1">Event</span>.<span class="me1">onDOMReady</span><span class="br0">&#40;</span><span class="kw2">function</span><span class="br0">&#40;</span><span class="br0">&#41;</span> <span class="br0">&#123;</span>
+        dd <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-1&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        dd2 <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-2&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+        dd3 <span class="sy0">=</span> <span class="kw2">new</span> YAHOO.<span class="me1">util</span>.<span class="me1">DD</span><span class="br0">&#40;</span><span class="st0">&quot;dd-demo-3&quot;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+    <span class="br0">&#125;</span><span class="br0">&#41;</span><span class="sy0">;</span>
+<span class="br0">&#125;</span><span class="br0">&#41;</span><span class="br0">&#40;</span><span class="br0">&#41;</span><span class="sy0">;</span></pre></div><textarea id="syntax2-plain">(function() {
+    var dd, dd2, dd3;
+    YAHOO.util.Event.onDOMReady(function() {
+        dd = new YAHOO.util.DD("dd-demo-1");
+        dd2 = new YAHOO.util.DD("dd-demo-2");
+        dd3 = new YAHOO.util.DD("dd-demo-3");
+    });
+})();</textarea></div>
 <h2>Configuration for This Example</h2>
 
 <p>You can load the necessary JavaScript and CSS for this example from Yahoo's servers.  <a href="http://developer.yahoo.com/yui/articles/hosting/?dragdrop&MIN#configure">Click here to load the YUI Dependency Configurator with all of this example's dependencies preconfigured</a>.</p>
@@ -216,13 +213,14 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

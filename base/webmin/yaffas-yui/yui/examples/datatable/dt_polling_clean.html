@@ -24,6 +24,7 @@ body {
 <script type="text/javascript" src="../../build/dragdrop/dragdrop-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 
 <!--there is no custom header content for this example-->
@@ -55,7 +56,7 @@ YAHOO.util.Event.addListener(window, "load", function() {
                 count:counter, 
                 description:"At the tone the time will be: ", 
                 time: YAHOO.util.Date.format(new Date(), {format:"%I:%M:%S %p"})
-            }]
+            }];
         };
 
         var myColumnDefs = [
@@ -80,8 +81,8 @@ YAHOO.util.Event.addListener(window, "load", function() {
                 YAHOO.log("Polling failure", "error");
             },
             scope: myDataTable
-        }
-        myDataSource.setInterval(5000, null, myCallback)
+        };
+        myDataSource.setInterval(5000, null, myCallback);
                 
         return {
             oDS: myDataSource,

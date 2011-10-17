@@ -75,6 +75,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	
 	<div class="exampleIntro">
 	<p>This example is designed to allow you to experiment with the various configuration properties provided by AutoComplete and to explore their impact on the interaction.  The first field after the AutoComplete input textbox is a select element that allows you to test for bleed-through on Internet Explorer when the AutoComplete suggestion container descends to cover it.  The remaining form fields allow you to change property settings on the AutoComplete instance and to see immediately how those changes look and feel in the browser.</p>
+
+<p>Implementers who are working with data from third-party sources, user input data, or otherwise untrustworthy sources should be sure to read the <a href="http://developer.yahoo.com/yui/autocomplete/#security">Security Considerations</a> section of the AutoComplete user guide.</p>
 			
 	</div>	
 					
@@ -415,7 +417,7 @@ YAHOO.util.Event.addListener(this,'load',YAHOO.example.Dashboard.init, YAHOO.exa
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 

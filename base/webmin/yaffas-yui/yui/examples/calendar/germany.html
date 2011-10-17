@@ -141,6 +141,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	<li><strong>WEEKDAYS_SHORT</strong> - The short weekday labels for the current locale. Default: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]</li>
 	<li><strong>WEEKDAYS_MEDIUM</strong> - The medium weekday labels for the current locale. Default: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]</li>
 	<li><strong>WEEKDAYS_LONG</strong> - The long weekday labels for the current locale. Default: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]</li>
+    
+    <li><strong>START_WEEKDAY</strong> - The weekday the week begins on. Default is 0 (Sunday = 0, Monday = 1 ... Saturday = 6).</li>
 </ul>
 
 <p>In addition, the Calendar provides special configuration properties for determining how incoming dates and date ranges should be formatted. By default, the date format for input to the Calendar is mm/dd/yyyy. Ranges are separated by a dash ("-") and lists of dates are delimited using a comma (","). Using these properties, the initial formatting of date can be easily modified:</p>
@@ -162,7 +164,9 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	<li><strong>MY_YEAR_POSITION</strong> - The position of the year in a month/year date string. Default: 2</li>
 </ul>
 
-<p>In our tutorial, we will create a German Calendar that is set up both to accept dates in the standard German format (dd.mm.yyyy) and present the labels in German. Note that all of our date label values will contain special characters in Unicode notation. Also, we will present the weekday labels in the "short" format, which will amount to 2 characters in this example.</p>
+<p>In our tutorial, we will create a German Calendar that is set up both to accept dates in the standard German format (dd.mm.yyyy) and present the labels in German. 
+Note that all of our date label values will contain special characters in Unicode notation. 
+Also, we will present the weekday labels in the "short" format, which will amount to 2 characters in this example and specify that the week should start on a Monday, using the <code>START_WEEKDAY</code> property.</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">
 		YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container",
@@ -244,13 +248,14 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

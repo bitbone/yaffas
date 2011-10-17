@@ -1,4 +1,5 @@
 <?php
+
 include('state_data.php');
 include('state_cols.php');
 
@@ -45,6 +46,7 @@ foreach ($state_cols as $key => $name) {
 $return = array_slice($return, $startIndex, $results);
 
 //var_export($return);
+header('Content-type: application/json');
 echo json_encode(array(
 	"recordsReturned" => count($return),
     "totalRecords" => count($state_cols),

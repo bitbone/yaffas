@@ -162,7 +162,32 @@ video demonstrates this example running in Firefox 3, using the JAWS screen
 reader.  In this video, the user navigates amongst each of the landmarks 
 on the page, then cycles back to specific sections of interest.
 </p>
-<div><object width="512" height="322"><param name="movie" value="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.34" /><param name="allowFullScreen" value="true" /><param name="AllowScriptAccess" VALUE="always" /><param name="bgcolor" value="#000000" /><param name="flashVars" value="id=12214507&vid=4561284&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/7558/80857405.jpeg&embed=1" /><embed src="http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.34" type="application/x-shockwave-flash" width="512" height="322" allowFullScreen="true" AllowScriptAccess="always" bgcolor="#000000" flashVars="id=12214507&vid=4561284&lang=en-us&intl=us&thumbUrl=http%3A//us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/7558/80857405.jpeg&embed=1" ></embed></object><br /><a href="http://video.yahoo.com/watch/4561284/12214507">Example Page Using YUI Grids And ARIA Landmark Roles</a> @ <a href="http://video.yahoo.com" >Yahoo! Video</a></div>
+<div>
+<div id="yuiVideoContent" style="width:512px;height:322px"></div>
+<br /><a href="http://video.yahoo.com/watch/4561284/12214507">Example Page Using YUI Grids And ARIA Landmark Roles</a> @ <a href="http://video.yahoo.com" >Yahoo! Video</a></div>
+<script src="http://yui.yahooapis.com/2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/element/element-min.js"></script>
+<script src="http://yui.yahooapis.com/2.9.0/build/swf/swf-min.js"></script>
+<script type="text/javascript">
+var params = {
+        version: 9.115,
+        useExpressInstall: false,
+        fixedAttributes: {
+            allowScriptAccess: "always",
+            allowFullScreen: "true"
+        },
+        flashVars: {
+            id: "12214507",
+            vid: "4561284",
+            lang: "en-us",
+            intl: "us",
+            thumbUrl: "http://us.i1.yimg.com/us.yimg.com/p/i/bcst/videosearch/7558/80857405.jpeg"
+        }
+    },
+    swfURL = "http://d.yimg.com/static.video.yahoo.com/yep/YV_YEP.swf?ver=2.2.34",
+    newswf = new YAHOO.widget.SWF("yuiVideoContent", swfURL, params);
+</script>    
+
 <h2>Configuration for This Example</h2>
 
 <p>You can load the necessary JavaScript and CSS for this example from Yahoo's servers.  <a href="http://developer.yahoo.com/yui/articles/hosting/?reset&fonts&grids&MIN#configure">Click here to load the YUI Dependency Configurator with all of this example's dependencies preconfigured</a>.</p>
@@ -206,13 +231,14 @@ on the page, then cycles back to specific sections of interest.
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

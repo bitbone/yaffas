@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<title>YUI Library Examples: Uploader Control (beta): Advanced Uploader Example With Additional POST Variables and Server Data Return</title>
+	<title>YUI Library Examples: Uploader Control: Advanced Uploader Example With Additional POST Variables and Server Data Return</title>
     
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -50,7 +50,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 		</div>
 		</form>	</div>
 	<div id="ygma"><a href="../../"><img src="../../assets/yui.gif"  border="0" height="38"></a></div>
-	<div id="pagetitle"><h1>YUI Library Examples: Uploader Control (beta): Advanced Uploader Example With Additional POST Variables and Server Data Return</h1></div>
+	<div id="pagetitle"><h1>YUI Library Examples: Uploader Control: Advanced Uploader Example With Additional POST Variables and Server Data Return</h1></div>
 </div>
 <div id="bd">
 	
@@ -61,7 +61,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 
     
 	<div class="promo">
-	<h1>Uploader Control (beta): Advanced Uploader Example With Additional POST Variables and Server Data Return</h1>
+	<h1>Uploader Control: Advanced Uploader Example With Additional POST Variables and Server Data Return</h1>
 	
 	<div class="exampleIntro">
 	<p>This example demonstrates how the <a href="http://developer.yahoo.com/yui/uploader/">YUI Uploader Control</a> can be rendered as a transparent layer on top of your own UI and how custom variables can be added to the upload's POST request. In this example, the server-side script also echoes the POST variables accompanying the upload; we retrieve the data returned by the server and display it to the user.</p>
@@ -102,8 +102,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 <div id="uiElements" style="display:inline;">
 		<div id="postVars">
 		Set custom values for a couple POST vars:<br/>
-		var1: <input type="text" id="var1Value" value="var1 default value" /><br/>
-		var2: <input type="text" id="var2Value" value="var2 default value" /><br/><br/>
+		var1: <input type="text" id="var1Value" value="var1 default value" autocomplete="off" /><br/>
+		var2: <input type="text" id="var2Value" value="var2 default value" autocomplete="off" /><br/><br/>
 		</div>
 		<div id="uploaderContainer">
 			<div id="uploaderOverlay" style="position:absolute; z-index:2"></div>
@@ -111,7 +111,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 		</div>
 		<div id="uploadFilesLink"><a id="uploadLink" onClick="upload(); return false;" href="#">Upload File</a></div><br/>
 		<div id="selectedFileDisplay">
-		Progress: <input type="text" cols="50" id="progressReport" value="" readonly /><br/><br/>
+		Progress: <input type="text" cols="50" id="progressReport" value="" autocomplete="off" readonly /><br/><br/>
 		</div>
 		<div id="returnedDataDisplay">
 		Data returned by the server:<br/>
@@ -300,8 +300,8 @@ Because of security changes in Flash Player 10, the UI for invoking the "Browse"
 	<div id="uiElements" style="display:inline;">
 			<div id="postVars">
 			Set custom values for a couple POST vars:<br/>
-			var1: <input type="text" id="var1Value" value="var1 default value" /><br/>
-			var2: <input type="text" id="var2Value" value="var2 default value" /><br/><br/>
+			var1: <input type="text" id="var1Value" value="var1 default value" autocomplete="off" /><br/>
+			var2: <input type="text" id="var2Value" value="var2 default value" autocomplete="off" /><br/><br/>
 			</div>
 			<div id="uploaderContainer">
 				<div id="uploaderOverlay" style="position:absolute; z-index:2"></div>
@@ -309,7 +309,7 @@ Because of security changes in Flash Player 10, the UI for invoking the "Browse"
 			</div>
 			<div id="uploadFilesLink"><a id="uploadLink" onClick="upload(); return false;" href="#">Upload File</a></div><br/>
 			<div id="selectedFileDisplay">
-			Progress: <input type="text" cols="50" id="progressReport" value="" readonly /><br/><br/>
+			Progress: <input type="text" cols="50" id="progressReport" value="" autocomplete="off" readonly /><br/><br/>
 			</div>
 			<div id="returnedDataDisplay">
 			Data returned by the server:<br/>
@@ -468,7 +468,7 @@ provided text area:</p>
 					
 				
 					<div id="examples">
-						<h3>Uploader Control (beta) Examples:</h3>
+						<h3>Uploader Control Examples:</h3>
 	
 						<div id="exampleToc">
 							<ul>
@@ -477,7 +477,7 @@ provided text area:</p>
 					</div>
 					
 					<div id="module">
-						<h3>More Uploader Control (beta) Resources:</h3>
+						<h3>More Uploader Control Resources:</h3>
 						<ul>
 							<li><a href="http://developer.yahoo.com/yui/uploader/">User's Guide</a> (external)</li>
 						<li><a href="../../docs/module_uploader.html">API Documentation</a></li>
@@ -503,13 +503,14 @@ provided text area:</p>
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

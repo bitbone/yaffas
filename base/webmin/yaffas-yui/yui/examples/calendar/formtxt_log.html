@@ -119,7 +119,7 @@ This example builds upon the <a href="events.html">Events</a> example, by demons
                     YAHOO.example.calendar.cal1.cfg.setProperty("pagedate", (firstDate.getMonth()+1) + "/" + firstDate.getFullYear());
                     YAHOO.example.calendar.cal1.render();
                 } else {
-                    alert("Cannot select a date before 1/1/2006 or after 12/31/2010");
+                    alert("Cannot select a date before 1/1/2009 or after 12/31/2013");
                 }
                 
             }
@@ -132,8 +132,8 @@ This example builds upon the <a href="events.html">Events</a> example, by demons
         }
         
         YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container", 
-                                                                    { mindate:"1/1/2006",
-                                                                      maxdate:"12/31/2010" });
+                                                                    { mindate:"1/1/2009",
+                                                                      maxdate:"12/31/2013" });
         YAHOO.example.calendar.cal1.selectEvent.subscribe(handleSelect, YAHOO.example.calendar.cal1, true);
         YAHOO.example.calendar.cal1.render();
 
@@ -157,13 +157,13 @@ This example builds upon the <a href="events.html">Events</a> example, by demons
 		
 	<h2 class="first">Setting up the Calendar</h2>
 
-<p>In this example, we will build a Calendar that can accept selections on any date from 1/1/2006 to 12/31/2010, and we will set up a text field that will be updated whenever the Calendar's selected date is changed. In addition, we will provide a button that can be used to update the Calendar with whatever date the user types into a text field provided on the page.</p>
+<p>In this example, we will build a Calendar that can accept selections on any date from 1/1/2009 to 12/31/2013, and we will set up a text field that will be updated whenever the Calendar's selected date is changed. In addition, we will provide a button that can be used to update the Calendar with whatever date the user types into a text field provided on the page.</p>
 <p>First, we will construct the Calendar with the minimum and maximum dates specified:</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">
 		YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container",
-																	{ mindate:"1/1/2006",
-																	  maxdate:"12/31/2010" });
+																	{ mindate:"1/1/2009",
+																	  maxdate:"12/31/2013" });
 </textarea>
 
 <p>Next, we will place our markup, which includes a standard container for the Calendar, and the form with a text field and button:</p>
@@ -213,7 +213,7 @@ Note that on <em>line 7</em> we test whether or not any dates are actually selec
 					YAHOO.example.calendar.cal1.cfg.setProperty("pagedate", (firstDate.getMonth()+1) + "/" + firstDate.getFullYear());
 					YAHOO.example.calendar.cal1.render();
 				} else {
-					alert("Cannot select a date before 1/1/2006 or after 12/31/2010");
+					alert("Cannot select a date before 1/1/2009 or after 12/31/2013");
 				}
 				
 			}
@@ -275,13 +275,14 @@ Note that on <em>line 7</em> we test whether or not any dates are actually selec
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

@@ -35,10 +35,9 @@ body {
 
 <div class="exampleIntro">
 	<p>One of the major limitations of the Flash-based uploader is that it cannot use browser cookies to authenticate file uploads. In this example, we provide sample code that demonstrates how to attach the page cookie as a variable in the body of the upload POST request, rather than in the header. The code will generate a cookie with a username and the last uploaded file name, and send the value along with the file that needs to be uploaded. We also provide a sample backend script that accepts the file upload and echoes the POST variables accompanying the upload (thus ascertaining that the cookie data was received by the server).  We show how we can retrieve the data returned by the server and display it to the user.</p>
-<p><strong>Note:</strong> This is a static example, which means that you will not be able to try it out on our server. You will need to set up the code on your own server in order to run it.</p>
 <p><strong>Note:</strong> The YUI Uploader Control requires Flash Player 9.0.45 or higher. The latest version of Flash Player is available at the <a href="http://www.adobe.com/go/getflashplayer">Adobe Flash Player Download Center</a>.</p>
 <p><strong>Note:</strong> The YUI Uploader Control requires the uploader.swf Flash file that is distributed as part of the YUI package, in the uploader/assets folder. Copy the uploader.swf to your server and set the YAHOO.Uploader.SWFURL variable to its full path.</p>
-<p><strong>Note: </strong>this example is <strong>static</strong>, which means that it will not work properly on this page. To try it, you will need to download its source code and set it up on your own server. To do so, click "View example in new window", and save the source of that page.</p>			
+<p style="color:red;"><strong>ATTENTION:</strong> This example <strong>WILL NOT WORK</strong> on this page. It is merely provided here as a convenience — you will need to set it up on your own server to run it.</p>			
 </div>
 
 <!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
@@ -69,7 +68,7 @@ body {
 		</div>
 		<div id="uploadFilesLink"><a id="uploadLink" onClick="upload(); return false;" href="#">Upload File</a></div><br/>
 		<div id="selectedFileDisplay">
-		Progress: <input type="text" cols="50" id="progressReport" value="" readonly /><br/><br/>
+		Progress: <input type="text" cols="50" id="progressReport" value="" autocomplete="off" readonly /><br/><br/>
 		</div>
 		<div id="returnedDataDisplay">
 		Data returned by the server:<br/>

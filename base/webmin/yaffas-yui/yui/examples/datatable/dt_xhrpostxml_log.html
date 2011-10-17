@@ -25,6 +25,7 @@
 <script type="text/javascript" src="../../build/connection/connection-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-debug.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-debug.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 
@@ -69,6 +70,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	<div class="exampleIntro">
 	<p>This examples makes a POST query to the Yahoo! Local webservice to populate
 a DataTable.</p>
+
+<p>Please note: XML is not currently supported on Android devices.</p>
 			
 	</div>	
 					
@@ -89,11 +92,15 @@ YAHOO.util.Event.addListener(window, "load", function() {
             elCell.innerHTML = "<a href='" + oRecord.getData("ClickUrl") + "' target='_blank'>" + sData + "</a>";
         };
 
+        var formatRating = function(elCell, oRecord, oColumn, sData) {
+            elCell.innerHTML = (sData === null) ? "N/A" : YAHOO.util.Number.format(sData);
+        };
+
         var myColumnDefs = [
             {key:"Title", label:"Name", sortable:true, formatter:formatUrl},
             {key:"Phone"},
             {key:"City"},
-            {key:"AverageRating", label:"Rating",formatter:YAHOO.widget.DataTable.formatNumber, sortable:true}
+            {key:"AverageRating", label:"Rating",formatter:formatRating, sortable:true}
         ];
 
         var myDataSource = new YAHOO.util.DataSource("assets/php/ylocal_proxy.php?");
@@ -169,29 +176,38 @@ YAHOO.util.Event.addListener(window, "load", function() {
 <p>JavaScript:</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">YAHOO.util.Event.addListener(window, "load", function() {
-    YAHOO.example.XHR_XML = new function() {
-        this.formatUrl = function(elCell, oRecord, oColumn, sData) {
+    YAHOO.example.XHR_XML = function() {
+        var formatUrl = function(elCell, oRecord, oColumn, sData) {
             elCell.innerHTML = "<a href='" + oRecord.getData("ClickUrl") + "' target='_blank'>" + sData + "</a>";
         };
 
+        var formatRating = function(elCell, oRecord, oColumn, sData) {
+            elCell.innerHTML = (sData === null) ? "N/A" : YAHOO.util.Number.format(sData);
+        };
+
         var myColumnDefs = [
-            {key:"Title", label:"Name", sortable:true, formatter:this.formatUrl},
+            {key:"Title", label:"Name", sortable:true, formatter:formatUrl},
             {key:"Phone"},
             {key:"City"},
-            {key:"AverageRating", label:"Rating",formatter:YAHOO.widget.DataTable.formatNumber, sortable:true}
+            {key:"AverageRating", label:"Rating",formatter:formatRating, sortable:true}
         ];
 
-        this.myDataSource = new YAHOO.util.DataSource("assets/php/ylocal_proxy.php?");
-        this.myDataSource.connMethodPost = true;
-        this.myDataSource.responseType = YAHOO.util.DataSource.TYPE_XML;
-        this.myDataSource.responseSchema = {
+        var myDataSource = new YAHOO.util.DataSource("assets/php/ylocal_proxy.php?");
+        myDataSource.connMethodPost = true;
+        myDataSource.responseType = YAHOO.util.DataSource.TYPE_XML;
+        myDataSource.responseSchema = {
             resultNode: "Result",
             fields: ["Title","Phone","City",{key:"AverageRating",parser:"number"},"ClickUrl"]
         };
 
-        this.myDataTable = new YAHOO.widget.DataTable("xml", myColumnDefs,
-                this.myDataSource, {initialRequest:"query=pizza&zip=94089&results=10"});
-    };
+        var myDataTable = new YAHOO.widget.DataTable("xml", myColumnDefs,
+                myDataSource, {initialRequest:"query=pizza&zip=94089&results=10"});
+
+        return {
+            oDS: myDataSource,
+            oDT: myDataTable
+        };
+    }();
 });
 </textarea>
 
@@ -217,7 +233,7 @@ YAHOO.util.Event.addListener(window, "load", function() {
 	
 						<div id="exampleToc">
 							<ul>
-								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li class='selected'><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
+								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li class='selected'><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_quickedit.html'>Quick Edit</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
 						</div>
 					</div>
 					
@@ -248,13 +264,14 @@ YAHOO.util.Event.addListener(window, "load", function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

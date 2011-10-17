@@ -25,6 +25,7 @@
 <script type="text/javascript" src="../../build/dragdrop/dragdrop-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-debug.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-debug.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 
@@ -116,109 +117,116 @@ YAHOO.util.Event.addListener(window, "load", function() {
                 {responseSchema: {fields: ["id","date","quantity","amount","title"]}}
             ),
             myDataTable = new YAHOO.widget.DataTable("datatable", myColumnDefs, myDataSource, {caption:"YUI Datatable/DragDrop"}),
-            myDTDrags = {};
+            myDTDTargets = {},
+            onRowSelect = function(ev) {
+                    var par = myDataTable.getTrEl(Event.getTarget(ev)),
+                        srcData,
+                        srcIndex,
+                        tmpIndex = null,
+                        ddRow = new YAHOO.util.DDProxy(par.id);
+
+                    ddRow.handleMouseDown(ev.event);
+
+
+                    /**
+                    * Once we start dragging a row, we make the proxyEl look like the src Element. We get also cache all the data related to the
+                    * @return void
+                    * @static
+                    * @method startDrag
+                    */
+                    ddRow.startDrag = function () {
+                        proxyEl  = this.getDragEl();
+                        srcEl = this.getEl();
+                        srcData = myDataTable.getRecord(srcEl).getData();
+                        srcIndex = srcEl.sectionRowIndex;
+                        // Make the proxy look like the source element
+                        Dom.setStyle(srcEl, "visibility", "hidden");
+                        proxyEl.innerHTML = "<table><tbody>"+srcEl.innerHTML+"</tbody></table>";
+                    };
+
+                    /**
+                    * Once we end dragging a row, we swap the proxy with the real element.
+                    * @param x : The x Coordinate
+                    * @param y : The y Coordinate
+                    * @return void
+                    * @static
+                    * @method endDrag
+                    */
+                    ddRow.endDrag = function(x,y) {
+                        Dom.setStyle(proxyEl, "visibility", "hidden");
+                        Dom.setStyle(srcEl, "visibility", "");
+                    };
+
+
+                    /**
+                    * This is the function that does the trick of swapping one row with another.
+                    * @param e : The drag event
+                    * @param id : The id of the row being dragged
+                    * @return void
+                    * @static
+                    * @method onDragOver
+                    */
+                    ddRow.onDragOver = function(e, id) {
+                        // Reorder rows as user drags
+
+                        var destEl = Dom.get(id),
+                            destIndex = destEl.sectionRowIndex;
+
+
+
+                        if (destEl.nodeName.toLowerCase() === "tr") {
+                            if(tmpIndex !==null) {
+                                myDataTable.deleteRow(tmpIndex);
+                            }
+                            else {
+                                myDataTable.deleteRow(srcIndex);
+                            }
+
+                        myDataTable.addRow(srcData, destIndex);
+                        tmpIndex = destIndex;
+
+
+                        DDM.refreshCache();
+                        }
+                    };
+            };
+
+
+            myDataTable.subscribe('cellMousedownEvent', onRowSelect);
+
+
+
+
 
         //////////////////////////////////////////////////////////////////////////////
-        // Custom drag and drop class
-        //////////////////////////////////////////////////////////////////////////////
-        YAHOO.example.DDRows = function(id, sGroup, config) {
-            YAHOO.example.DDRows.superclass.constructor.call(this, id, sGroup, config);
-            Dom.addClass(this.getDragEl(),"custom-class");
-            this.goingUp = false;
-            this.lastY = 0;
-        };
-
-        //////////////////////////////////////////////////////////////////////////////
-        // DDRows extends DDProxy
-        //////////////////////////////////////////////////////////////////////////////
-        YAHOO.extend(YAHOO.example.DDRows, YAHOO.util.DDProxy, {
-            proxyEl: null,
-            srcEl:null,
-            srcData:null,
-            srcIndex: null,
-            tmpIndex:null,
-
-            startDrag: function(x, y) {
-                var    proxyEl = this.proxyEl = this.getDragEl(),
-                    srcEl = this.srcEl = this.getEl();
-
-                this.srcData = myDataTable.getRecord(this.srcEl).getData();
-                this.srcIndex = srcEl.sectionRowIndex;
-                // Make the proxy look like the source element
-                Dom.setStyle(srcEl, "visibility", "hidden");
-                proxyEl.innerHTML = "<table><tbody>"+srcEl.innerHTML+"</tbody></table>";
-            },
-
-            endDrag: function(x,y) {
-                var position,
-                    srcEl = this.srcEl;
-
-                Dom.setStyle(this.proxyEl, "visibility", "hidden");
-                Dom.setStyle(srcEl, "visibility", "");
-            },
-
-             onDrag: function(e) {
-                // Keep track of the direction of the drag for use during onDragOver
-                var y = Event.getPageY(e);
-                
-                if (y < this.lastY) {
-                    this.goingUp = true;
-                } else if (y > this.lastY) {
-                    this.goingUp = false;
-                }
-
-                this.lastY = y;
-           },
-
-            onDragOver: function(e, id) {
-                // Reorder rows as user drags
-                var srcIndex = this.srcIndex,
-                    destEl = Dom.get(id),
-                    destIndex = destEl.sectionRowIndex,
-                    tmpIndex = this.tmpIndex;
-
-                if (destEl.nodeName.toLowerCase() === "tr") {
-                    if(tmpIndex !== null) {
-                        myDataTable.deleteRow(tmpIndex);
-                    }
-                    else {
-                        myDataTable.deleteRow(this.srcIndex);
-                    }
-
-                    myDataTable.addRow(this.srcData, destIndex);
-                    this.tmpIndex = destIndex;
-
-                    DDM.refreshCache();
-                }
-            }
-        });
-
-        //////////////////////////////////////////////////////////////////////////////
-        // Create DDRows instances when DataTable is initialized
+        // Create DDTarget instances when DataTable is initialized
         //////////////////////////////////////////////////////////////////////////////
         myDataTable.subscribe("initEvent", function() {
+
             var i, id,
                 allRows = this.getTbodyEl().rows;
+
 
             for(i=0; i<allRows.length; i++) {
                 id = allRows[i].id;
                 // Clean up any existing Drag instances
-                if (myDTDrags[id]) {
-                     myDTDrags[id].unreg();
-                     delete myDTDrags[id];
+                if (myDTDTargets[id]) {
+                     myDTDTargets[id].unreg();
+                     delete myDTDTargets[id];
                 }
                 // Create a Drag instance for each row
-                myDTDrags[id] = new YAHOO.example.DDRows(id);
+                myDTDTargets[id] = new YAHOO.util.DDTarget(id);
             }
         });
 
         //////////////////////////////////////////////////////////////////////////////
-        // Create DDRows instances when new row is added
+        // Create DDTarget instances when new row is added
         //////////////////////////////////////////////////////////////////////////////
         myDataTable.subscribe("rowAddEvent",function(e){
             var id = e.record.getId();
-            myDTDrags[id] = new YAHOO.example.DDRows(id);
-        })
+
+            myDTDTargets[id] = new YAHOO.util.DDTarget(id);
+        });
     }();
 });
 </script>
@@ -234,66 +242,67 @@ YAHOO.util.Event.addListener(window, "load", function() {
 		
 	<h2 class="first">Re-orderable table rows</h2>
 
-<p>The DDRows class defined in this example allows users to easily re-order table rows. There are some cases where the initial ordering of rows doesn't produce the desired output. By using this DDRows class, users can manually order data by simply dragging and dropping to rearrange the rows.</p>
+<p>This example shows users how to combine the Drag and Drop Utility with the Datatable widget to easily re-order table rows. There are some cases where the initial ordering of rows doesn't produce the desired output, but with this example we illustrate how users can manually order data by simply dragging and dropping to rearrange the rows.</p>
 
-<h2>The DDRows class</h2>
+<h2>Making your rows draggable</h2>
 
-<p>The DDrows class extends the DDProxy class, so that it can will use proxy elements for all the dragging operations.</p>
+<p>In order to make your rows draggable, the only thing you need to do is to subscribe to the <code>cellMousedownEvent</code>, then operate on the target row with a custom handler. In this case, <code>onRowSelect</code> is the function we have defined to do all the row dragging.</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">
-YAHOO.example.DDRows = function(id, sGroup, config) {
-    YAHOO.example.DDRows.superclass.constructor.call(this, id, sGroup, config);
-    Dom.addClass(this.getDragEl(),"custom-class");
-};
-
-//////////////////////////////////////////////////////////////////////////////
-// DDRows extends DDProxy
-//////////////////////////////////////////////////////////////////////////////
-YAHOO.extend(YAHOO.example.DDRows, YAHOO.util.DDProxy, {
-          ..........
-}
+myDataTable.subscribe('cellMousedownEvent', onRowSelect);
 </textarea>
 
-<h2>Initializing draggability</h2>
+<p>Our function, <code>onRowSelect</code>, will create a DDProxy for each row we are trying to drag. We define the custom action for all the predefined DD interesting moments: <code>startDrag</code>, <code>endDrag</code> and <code>onDragOver</code>.</p>
 
-<p>A custom init event handler is attached to make a DataTable's rows draggable:</p>
+
+<h2>Interesting DD moments</h2>
+
+<dl>
+<dt>startDrag:</dt> <dd>This is when the proxy element gets created and the source element we're dragging gets cached.</dd>
+<dt>endDrag:</dt> <dd>We adjust the visibility of the proxy and drag elements.</dd>
+<dt>onDrag:</dt> <dd>Determine the direction the drag element is going.</dd>
+<dt>onDragOver:</dt> <dd>This is when row and data order manipulation happens. As a table row is dragged over another table row, the two elements and underlying data get swapped.</dd>
+</dl>
+
+<h2>Defining your targets</h2>
+
+<p>A custom <code>init</code> event handler is attached to make a DataTable's rows drag targets:</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">
+//////////////////////////////////////////////////////////////////////////////
+// Create DDRows instances when DataTable is initialized
+//////////////////////////////////////////////////////////////////////////////
 myDataTable.subscribe("initEvent", function() {
+
     var i, id,
         allRows = this.getTbodyEl().rows;
 
     for(i=0; i<allRows.length; i++) {
         id = allRows[i].id;
         // Clean up any existing Drag instances
-        if (myDTDrags[id]) {
-             myDTDrags[id].unreg();
-             delete myDTDrags[id];
+        if (myDTDTargets[id]) {
+            myDTDTargets[id].unreg();
+            delete myDTDTargets[id];
         }
         // Create a Drag instance for each row
-        myDTDrags[id] = new YAHOO.example.DDRows(id);
+        myDTDTargets[id] = new YAHOO.util.DDTarget(id);
     }
 });
 </textarea>
 
-<p>Also, it’s important to know that whenever a drag/drop operation occurs, DataTable fires a "rowAddEvent" event, which is used to re-attach the dragdrop object to the newly created table row.</p>
+<p>Also, it's important to know that whenever a drag/drop operation occurs, DataTable fires a "rowAddEvent" event, which is used to trigger the creation of that new row as a drag target:</p>
 
 <textarea name="code" class="JScript" cols="60" rows="1">
+//////////////////////////////////////////////////////////////////////////////
+// Create DDRows instances when new row is added
+//////////////////////////////////////////////////////////////////////////////
 myDataTable.subscribe("rowAddEvent",function(e){
     var id = e.record.getId();
-    myDTDrags[id] = new YAHOO.example.DDRows(id);
-});
+
+    myDTDTargets[id] = new YAHOO.util.DDTarget(id);
+})
+
 </textarea>
-
-
-<h2>Interesting DD moments</h2>
-
-<dl>
-<dt>startDrag:</dt> <dd>This is when the proxy element gets created and the source element we’re dragging gets cached.</dd>
-<dt>endDrag:</dt> <dd>We adjust the visibility of the proxy and drag elements.</dd>
-<dt>onDrag:</dt> <dd>Determine the direction the drag element is going.</dd>
-<dt>onDragOver:</dt> <dd>This is when row and data order manipulation happens. As a table row is dragged over another table row, the two elements and underlying data get swapped.</dd>
-</dl>
 
 <h2>Sample Code for this Example</h2>
 
@@ -348,109 +357,116 @@ YAHOO.util.Event.addListener(window, "load", function() {
                 {responseSchema: {fields: ["id","date","quantity","amount","title"]}}
             ),
             myDataTable = new YAHOO.widget.DataTable("datatable", myColumnDefs, myDataSource, {caption:"YUI Datatable/DragDrop"}),
-            myDTDrags = {};
+            myDTDTargets = {},
+            onRowSelect = function(ev) {
+                    var par = myDataTable.getTrEl(Event.getTarget(ev)),
+                        srcData,
+                        srcIndex,
+                        tmpIndex = null,
+                        ddRow = new YAHOO.util.DDProxy(par.id);
+
+                    ddRow.handleMouseDown(ev.event);
+
+
+                    /**
+                    * Once we start dragging a row, we make the proxyEl look like the src Element. We get also cache all the data related to the
+                    * @return void
+                    * @static
+                    * @method startDrag
+                    */
+                    ddRow.startDrag = function () {
+                        proxyEl  = this.getDragEl();
+                        srcEl = this.getEl();
+                        srcData = myDataTable.getRecord(srcEl).getData();
+                        srcIndex = srcEl.sectionRowIndex;
+                        // Make the proxy look like the source element
+                        Dom.setStyle(srcEl, "visibility", "hidden");
+                        proxyEl.innerHTML = "<table><tbody>"+srcEl.innerHTML+"</tbody></table>";
+                    };
+
+                    /**
+                    * Once we end dragging a row, we swap the proxy with the real element.
+                    * @param x : The x Coordinate
+                    * @param y : The y Coordinate
+                    * @return void
+                    * @static
+                    * @method endDrag
+                    */
+                    ddRow.endDrag = function(x,y) {
+                        Dom.setStyle(proxyEl, "visibility", "hidden");
+                        Dom.setStyle(srcEl, "visibility", "");
+                    };
+
+
+                    /**
+                    * This is the function that does the trick of swapping one row with another.
+                    * @param e : The drag event
+                    * @param id : The id of the row being dragged
+                    * @return void
+                    * @static
+                    * @method onDragOver
+                    */
+                    ddRow.onDragOver = function(e, id) {
+                        // Reorder rows as user drags
+
+                        var destEl = Dom.get(id),
+                            destIndex = destEl.sectionRowIndex;
+
+
+
+                        if (destEl.nodeName.toLowerCase() === "tr") {
+                            if(tmpIndex !==null) {
+                                myDataTable.deleteRow(tmpIndex);
+                            }
+                            else {
+                                myDataTable.deleteRow(srcIndex);
+                            }
+
+                        myDataTable.addRow(srcData, destIndex);
+                        tmpIndex = destIndex;
+
+
+                        DDM.refreshCache();
+                        }
+                    };
+            };
+
+
+            myDataTable.subscribe('cellMousedownEvent', onRowSelect);
+
+
+
+
 
         //////////////////////////////////////////////////////////////////////////////
-        // Custom drag and drop class
-        //////////////////////////////////////////////////////////////////////////////
-        YAHOO.example.DDRows = function(id, sGroup, config) {
-            YAHOO.example.DDRows.superclass.constructor.call(this, id, sGroup, config);
-            Dom.addClass(this.getDragEl(),"custom-class");
-            this.goingUp = false;
-            this.lastY = 0;
-        };
-
-        //////////////////////////////////////////////////////////////////////////////
-        // DDRows extends DDProxy
-        //////////////////////////////////////////////////////////////////////////////
-        YAHOO.extend(YAHOO.example.DDRows, YAHOO.util.DDProxy, {
-            proxyEl: null,
-            srcEl:null,
-            srcData:null,
-            srcIndex: null,
-            tmpIndex:null,
-
-            startDrag: function(x, y) {
-                var    proxyEl = this.proxyEl = this.getDragEl(),
-                    srcEl = this.srcEl = this.getEl();
-
-                this.srcData = myDataTable.getRecord(this.srcEl).getData();
-                this.srcIndex = srcEl.sectionRowIndex;
-                // Make the proxy look like the source element
-                Dom.setStyle(srcEl, "visibility", "hidden");
-                proxyEl.innerHTML = "<table><tbody>"+srcEl.innerHTML+"</tbody></table>";
-            },
-
-            endDrag: function(x,y) {
-                var position,
-                    srcEl = this.srcEl;
-
-                Dom.setStyle(this.proxyEl, "visibility", "hidden");
-                Dom.setStyle(srcEl, "visibility", "");
-            },
-
-             onDrag: function(e) {
-                // Keep track of the direction of the drag for use during onDragOver
-                var y = Event.getPageY(e);
-
-                if (y < this.lastY) {
-                    this.goingUp = true;
-                } else if (y > this.lastY) {
-                    this.goingUp = false;
-                }
-
-                this.lastY = y;
-           },
-
-            onDragOver: function(e, id) {
-                // Reorder rows as user drags
-                var srcIndex = this.srcIndex,
-                    destEl = Dom.get(id),
-                    destIndex = destEl.sectionRowIndex,
-                    tmpIndex = this.tmpIndex;
-
-                if (destEl.nodeName.toLowerCase() === "tr") {
-                    if(tmpIndex !== null) {
-                        myDataTable.deleteRow(tmpIndex);
-                    }
-                    else {
-                        myDataTable.deleteRow(this.srcIndex);
-                    }
-
-                    myDataTable.addRow(this.srcData, destIndex);
-                    this.tmpIndex = destIndex;
-
-                    DDM.refreshCache();
-                }
-            }
-        });
-
-        //////////////////////////////////////////////////////////////////////////////
-        // Create DDRows instances when DataTable is initialized
+        // Create DDTarget instances when DataTable is initialized
         //////////////////////////////////////////////////////////////////////////////
         myDataTable.subscribe("initEvent", function() {
+
             var i, id,
                 allRows = this.getTbodyEl().rows;
+
 
             for(i=0; i<allRows.length; i++) {
                 id = allRows[i].id;
                 // Clean up any existing Drag instances
-                if (myDTDrags[id]) {
-                     myDTDrags[id].unreg();
-                     delete myDTDrags[id];
+                if (myDTDTargets[id]) {
+                     myDTDTargets[id].unreg();
+                     delete myDTDTargets[id];
                 }
                 // Create a Drag instance for each row
-                myDTDrags[id] = new YAHOO.example.DDRows(id);
+                myDTDTargets[id] = new YAHOO.util.DDTarget(id);
             }
         });
 
         //////////////////////////////////////////////////////////////////////////////
-        // Create DDRows instances when new row is added
+        // Create DDTarget instances when new row is added
         //////////////////////////////////////////////////////////////////////////////
         myDataTable.subscribe("rowAddEvent",function(e){
             var id = e.record.getId();
-            myDTDrags[id] = new YAHOO.example.DDRows(id);
-        })
+
+            myDTDTargets[id] = new YAHOO.util.DDTarget(id);
+        });
     }();
 });
 </textarea>
@@ -477,7 +493,7 @@ YAHOO.util.Event.addListener(window, "load", function() {
 	
 						<div id="exampleToc">
 							<ul>
-								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li class='selected'><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
+								<li><a href='../datatable/dt_basic.html'>Basic Example</a></li><li><a href='../datatable/dt_enhanced.html'>Progressive Enhancement</a></li><li><a href='../datatable/dt_formatting.html'>Custom Cell Formatting</a></li><li><a href='../datatable/dt_row_coloring.html'>Conditional row coloring</a></li><li><a href='../datatable/dt_nestedheaders.html'>Nested Headers</a></li><li><a href='../datatable/dt_xhrjson.html'>JSON Data Over XHR</a></li><li><a href='../datatable/dt_xhrpostxml.html'>XML Data Over XHR With POST</a></li><li><a href='../datatable/dt_xpath.html'>XML Data with XPath</a></li><li><a href='../datatable/dt_xhrtext.html'>Textual Data Over XHR</a></li><li><a href='../datatable/dt_polling.html'>Polling the DataSource</a></li><li><a href='../datatable/dt_rowdatamod.html'>Adding, Updating, and Deleting Rows</a></li><li><a href='../datatable/dt_clientpagination.html'>Client-side Pagination</a></li><li><a href='../datatable/dt_clientsorting.html'>Client-side Sorting</a></li><li><a href='../datatable/dt_dynamicdata.html'>Server-side Pagination and Sorting for Dynamic Data</a></li><li><a href='../datatable/dt_bhm.html'>Integrating Browser History Manager with Server-side Pagination and Sorting</a></li><li><a href='../datatable/dt_fixedscroll.html'>XY-scrolling, Y-scrolling, and X-scrolling</a></li><li><a href='../datatable/dt_rowselect.html'>Row Selection</a></li><li><a href='../datatable/dt_cellselect.html'>Cell Selection</a></li><li><a href='../datatable/dt_cellediting.html'>Inline Cell Editing</a></li><li><a href='../datatable/dt_colshowhide.html'>Showing, Hiding, and Reordering Columns.</a></li><li><a href='../datatable/dt_highlighting.html'>Highlighting Cells, Rows, or Columns</a></li><li class='selected'><a href='../datatable/dt_ddrows.html'>Reorder Rows with Drag and Drop</a></li><li><a href='../datatable/dt_quickedit.html'>Quick Edit</a></li><li><a href='../datatable/dt_rowexp_basic.html'>Row Expansion</a></li><li><a href='../datatable/dt_contextmenu.html'>Context Menu Integration</a></li><li><a href='../paginator/pag_configuration.html'>Configuring the Paginator (included with examples for Paginator)</a></li><li><a href='../datatable/dt_tabview.html'>TabView Integration</a></li><li><a href='../datatable/dt_complex.html'>Complex Example of Multiple Features</a></li><li><a href='../datatable/dt_localfilter.html'>Client-side Filtering of Local Data</a></li><li><a href='../datatable/dt_dynamicfilter.html'>Filtering of Dynamic Data</a></li><li><a href='../datatable/dt_autocomplete.html'>Datatable with Autocomplete</a></li><li><a href='../datatable/dt_skinning.html'>Skinning Model</a></li><li><a href='../progressbar/pb_ratings.html'>Ratings (included with examples for ProgressBar Control)</a></li><li><a href='../datasource/datasource_yql.html'>YQLDataSource (included with examples for DataSource Utility)</a></li><li><a href='../layout/adv_layout.html'>Complex Application (included with examples for Layout Manager)</a></li>							</ul>
 						</div>
 					</div>
 					
@@ -508,13 +524,14 @@ YAHOO.util.Event.addListener(window, "load", function() {
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

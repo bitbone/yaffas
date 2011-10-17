@@ -197,12 +197,11 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 		yAxis: currencyAxis,
 		xAxis: categoryAxis,
 		style: styleDef,
-		dataTipFunction: YAHOO.example.getDataTipText,
-		//only needed for flash player express install
-		expressInstall: "assets/expressinstall.swf"
+		dataTipFunction: YAHOO.example.getDataTipText
 	});
 
-</script>	
+</script>
+	
 	<!--END SOURCE CODE FOR EXAMPLE =============================== -->
 	
 		
@@ -321,12 +320,11 @@ var mychart = new YAHOO.widget.ColumnChart( "chart", myDataSource,
 	yAxis: currencyAxis,
 	xAxis: categoryAxis,
 	style: styleDef,
-	dataTipFunction: YAHOO.example.getDataTipText,
-	//only needed for flash player express install
-	expressInstall: "assets/expressinstall.swf"
+	dataTipFunction: YAHOO.example.getDataTipText
 });
 </textarea>
 <p>There are even more styles available for the axes than we've covered in this tutorial. For full details about the axes styles, read the <a href="http://developer.yahoo.com/yui/charts/">Charts Control User's Guide</a>.
+
 <h2>Configuration for This Example</h2>
 
 <p>You can load the necessary JavaScript and CSS for this example from Yahoo's servers.  <a href="http://developer.yahoo.com/yui/articles/hosting/?yahoo&dom&event&json&element&datasource&swf&charts&MIN#configure">Click here to load the YUI Dependency Configurator with all of this example's dependencies preconfigured</a>.</p>
@@ -380,13 +378,14 @@ var mychart = new YAHOO.widget.ColumnChart( "chart", myDataSource,
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

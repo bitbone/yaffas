@@ -24,6 +24,7 @@ body {
 <script type="text/javascript" src="../../build/connection/connection-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 
 <!--there is no custom header content for this example-->
@@ -38,6 +39,8 @@ body {
 <div class="exampleIntro">
 	<p>This examples makes a POST query to the Yahoo! Local webservice to populate
 a DataTable.</p>
+
+<p>Please note: XML is not currently supported on Android devices.</p>
 			
 </div>
 
@@ -52,11 +55,15 @@ YAHOO.util.Event.addListener(window, "load", function() {
             elCell.innerHTML = "<a href='" + oRecord.getData("ClickUrl") + "' target='_blank'>" + sData + "</a>";
         };
 
+        var formatRating = function(elCell, oRecord, oColumn, sData) {
+            elCell.innerHTML = (sData === null) ? "N/A" : YAHOO.util.Number.format(sData);
+        };
+
         var myColumnDefs = [
             {key:"Title", label:"Name", sortable:true, formatter:formatUrl},
             {key:"Phone"},
             {key:"City"},
-            {key:"AverageRating", label:"Rating",formatter:YAHOO.widget.DataTable.formatNumber, sortable:true}
+            {key:"AverageRating", label:"Rating",formatter:formatRating, sortable:true}
         ];
 
         var myDataSource = new YAHOO.util.DataSource("assets/php/ylocal_proxy.php?");

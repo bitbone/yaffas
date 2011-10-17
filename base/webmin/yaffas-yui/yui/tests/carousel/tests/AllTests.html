@@ -37,13 +37,14 @@
         <script type="text/javascript"
             src="../../../build/element/element-min.js"></script>
         <script type="text/javascript"
-            src="../../../build/carousel/carousel-min.js"></script>
+            src="../../../build/carousel/carousel-debug.js"></script>
         <script type="text/javascript"
             src="../../../build/yuitest/yuitest-min.js"></script>
         <!-- Carousel Test Cases -->
         <script type="text/javascript" src="markupTests.js"></script>
         <script type="text/javascript" src="scriptTests.js"></script>
         <script type="text/javascript" src="protectedMethodTests.js"></script>
+        <script type="text/javascript" src="bugTests.js"></script>
         <script type="text/javascript">
             (function () {
                 YAHOO.util.Event.onDOMReady(function () {
@@ -53,6 +54,7 @@
                     YAHOO.tool.TestRunner.add(tests.markupTests);
                     YAHOO.tool.TestRunner.add(tests.scriptTests);
                     YAHOO.tool.TestRunner.add(tests.protectedMethodTests);
+                    YAHOO.tool.TestRunner.add(tests.bugTests);
                     YAHOO.tool.TestRunner.run();
                 });
             })();
@@ -76,5 +78,6 @@
         </div>
         <div id="container4"></div>
         <div id="container5"></div>
+        <div id="bug-container"></div>
     </body>
 </html>

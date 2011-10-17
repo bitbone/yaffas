@@ -279,12 +279,11 @@ YAHOO.widget.Chart.SWFURL = "../../build/charts/assets/charts.swf";
 		xField: "date",
 		xAxis: myTimeAxis,
 		yAxis: myCurrencyAxis,
-		dataTipFunction:YAHOO.example.formatDataTipText,
-		//only needed for flash player express install
-		expressInstall: "assets/expressinstall.swf"
+		dataTipFunction:YAHOO.example.formatDataTipText
 	});
 
-</script>	
+</script>
+	
 	<!--END SOURCE CODE FOR EXAMPLE =============================== -->
 	
 		
@@ -492,9 +491,7 @@ var mychart = new YAHOO.widget.LineChart("chart", myDataSource,
 	xField: "date",
 	xAxis: myTimeAxis,
 	yAxis: myCurrencyAxis,
-	dataTipFunction:YAHOO.example.formatDataTipText,
-	//only needed for flash player express install
-	expressInstall: "assets/expressinstall.swf"
+	dataTipFunction:YAHOO.example.formatDataTipText
 });
 </textarea>
 
@@ -554,13 +551,14 @@ var mychart = new YAHOO.widget.LineChart("chart", myDataSource,
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

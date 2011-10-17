@@ -28,13 +28,14 @@
 <script type="text/javascript" src="../../build/swfstore/swfstore-min.js"></script>
 <script type="text/javascript" src="../../build/button/button-min.js"></script>
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 <script type="text/javascript" src="../../build/storage/storage-debug.js"></script>
 
 
 <!--begin custom header content for this example-->
 <style type="text/css">
-#controls label  
+label.left
 {
 	clear: left;
 	float: left;
@@ -97,32 +98,34 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
 	<!--Input Controls-->
 
 <div id="controls"> 
-<label for="nameField">Storage name:</label> 
-
-<input id="nameField" type="text" value=""/>
-<input id="save-button" name="save-button" type="Button" value="Save" /> <input id="remove-button" name="remove-button" type="Button" value="Remove" />
+    <label for="nameField" class="left">Storage name:</label> 
+    <input id="nameField" type="text" value=""/>
+    <input id="save-button" name="save-button" type="Button" value="Save" /> <input id="remove-button" name="remove-button" type="Button" value="Remove" />
      
-<br/>
+    <br/>
  
-<label for="valueField">Text to store:</label>
-<textarea cols="30" id="valueField" rows="5"></textarea>
-<br/>   <br/>
+    <label for="valueField" class="left">Text to store:</label>
+    <textarea cols="30" id="valueField" rows="5"></textarea>
+    <br/>   <br/>
     
     <fieldset id="checkboxOptions">
         <legend>Additional Options:</legend>
         <div id="engineGroup" class="inline">
             <input id="html5-button" name="html5-button" type="radio" value="Use HTML5" checked="checked" /> 
             <input id="gears-button" name="gears-button" type="radio" value="Use Gears"/> 
-      <input id="swf-button" name="swf-button" type="radio" value="Use SWF"/>
-        <input id="session-button" name="session-button" type="Button" value="Use Session"/>  
-      <input id="purge-button" name="purge-button" type="Button" value="Purge All Local Data" />
+            <input id="swf-button" name="swf-button" type="radio" value="Use SWF"/>
+            <input id="purge-button" name="purge-button" type="button" value="Purge All Local Data" />
         </div>
-  </fieldset>
 
-<br/><br/>
+        <br/>
+        <input id="session-checkbox" type="checkbox"/>
+        <label for="session-checkbox">Session storage only</label>
+    </fieldset>
+
+    <br/><br/>
 
 
-<div id="datatableContainer"></div> 
+    <div id="datatableContainer"></div> 
 </div>
 
 <!--Always include gears_init.js when you want to support Google Gears: -->
@@ -145,6 +148,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
     var saveButton;
     var purgeButton;
     var removeButton;
+    var sessionCheckbox = document.getElementById('session-checkbox');
     
     var gearsCheckbox, engineRadio;
 
@@ -155,7 +159,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
         // evaluate and create the Storage instance
         var engineBtn = engineRadio.get("checkedButton");
         var engineType = engineBtn.get("value");
-        var useSession = sessionCheckbox.get("checked");
+        var useSession = sessionCheckbox.checked;
         var location;
 
         location = YAHOO.util.StorageManager[useSession ? 'LOCATION_SESSION' : 'LOCATION_LOCAL'];
@@ -191,8 +195,6 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
         engineRadio._buttons[1].set("disabled", ! YAHOO.util.StorageEngineGears.isAvailable()); 
         engineRadio._buttons[2].set("disabled", ! YAHOO.util.StorageEngineSWF.isAvailable());
         
-        sessionCheckbox.set("disabled", false);
-
         storage.unsubscribe(storage.CE_READY, onContentReady);
 
         load();
@@ -329,12 +331,11 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
  * Called when the buttons are ready to be initialized
  */ 
     function onButtonsReady() {
-    saveButton = new YAHOO.widget.Button("save-button");
+        saveButton = new YAHOO.widget.Button("save-button");
         purgeButton = new YAHOO.widget.Button("purge-button");
         removeButton = new YAHOO.widget.Button("remove-button");
         
         engineRadio = new YAHOO.widget.ButtonGroup("engineGroup");
-        sessionCheckbox = new YAHOO.widget.Button("session-button", {type:"checkbox",value:"0",checked:false});
         
         engineRadio._buttons[0].set("value", YAHOO.util.StorageEngineHTML5.ENGINE_NAME); 
         engineRadio._buttons[1].set("value", YAHOO.util.StorageEngineGears.ENGINE_NAME); 
@@ -343,7 +344,8 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
         saveButton.on("click", save); 
         purgeButton.on("click", purge); 
         removeButton.on("click", remove);
-        sessionCheckbox.on("checkedChange", initialize);
+
+        YAHOO.util.Event.addListener(sessionCheckbox, "click", initialize);
         engineRadio.on("checkedButtonChange", initialize);
         
         //initialize
@@ -374,7 +376,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
         // evaluate and create the Storage instance
         var engineBtn = engineRadio.get("checkedButton");
         var engineType = engineBtn.get("value");
-        var useSession = sessionCheckbox.get("checked");
+        var useSession = sessionCheckbox.checked;
         var location;
 
         location = YAHOO.util.StorageManager[useSession ? 'LOCATION_SESSION' : 'LOCATION_LOCAL'];
@@ -412,8 +414,6 @@ The <code>load</code> function is called on page initialization and each time yo
         engineRadio._buttons[1].set("disabled", ! YAHOO.util.StorageEngineGears.isAvailable()); 
         engineRadio._buttons[2].set("disabled", ! YAHOO.util.StorageEngineSWF.isAvailable());
         
-        sessionCheckbox.set("disabled", false);
-
         storage.unsubscribe(storage.CE_READY, onContentReady);
 
         load();
@@ -440,7 +440,7 @@ The <code>load</code> function is called on page initialization and each time yo
         // only initialize the datatable once
         if (! datatable)
         {
-            var datasource = new Yahoo.util.LocalDataSource(arr); 
+            var datasource = new YAHOO.util.LocalDataSource(arr); 
 
             datasource.responseSchema = {fields : ["name", "value"]};
         
@@ -596,13 +596,14 @@ Using the info property of the event, we can determine what type of change occur
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

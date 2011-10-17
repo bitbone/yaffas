@@ -1,38 +1,10 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
-<head>
-
-
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-<title>SWFStore Settings Example</title>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<html> 
+<head> 
+<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+<title>SWFStore Settings Example</title> 
 
 <style type="text/css">
-/*margin and padding on body element
-  can introduce errors in determining
-  element position and are not recommended;
-  we turn them off as a foundation for YUI
-  CSS treatments. */
-body {
-	margin:0;
-	padding:0;
-}
-</style>
-
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0/build/fonts/fonts-min.css" />
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.0/build/button/assets/skins/sam/button.css" />
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
-
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/animation/animation-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/element/element-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/button/button-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/cookie/cookie-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/swf/swf-min.js"></script>
-<script type="text/javascript" src="http://yui.yahooapis.com/2.8.0/build/swfstore/swfstore-min.js"></script>
-
-
-<!--begin custom header content for this example-->
-<STYLE type="text/css">
-
 #controls label  
 {
 	clear: left;
@@ -49,25 +21,26 @@ input[type="text"]
 {
 	padding-bottom: 2px;
 }
+</style>
 
 
-</STYLE>
-
-<!--end custom header content for this example-->
-
+<link rel="stylesheet" type="text/css" href="../../build/fonts/fonts-min.css" /> 
+<link rel="stylesheet" type="text/css" href="../../build/button/assets/skins/sam/button.css" /> 
+<script type="text/javascript" src="../../build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="../../build/animation/animation-min.js"></script>
+<script type="text/javascript" src="../../build/element/element-min.js"></script> 
+<script type="text/javascript" src="../../build/button/button-min.js"></script>
+<script type="text/javascript" src="../../build/cookie/cookie-min.js"></script> 
+<script type="text/javascript" src="../../build/swf/swf-min.js"></script> 
+<script type="text/javascript" src="../../build/swfstore/swfstore-min.js"></script>
 </head>
 
 <body class="yui-skin-sam">
-
-
 <h1>SWFStore Settings Example</h1>
 
 <div class="exampleIntro">
 	<p>This example shows what can happen if storage capacity is exceeded, and how to deal with it effectively. By default, you're allowed 100k per domain. If a larger amount of data is attempted to be stored, an exception will occur. This shows how to deal with that exception and how to enable more storage.</p>			
 </div>
-
-<!--BEGIN SOURCE CODE FOR EXAMPLE =============================== -->
-
 
 
 <!--Placeholder for SWF, will be replaced with embedded SWF if proper Flash Player is installed-->
@@ -329,9 +302,5 @@ input[type="text"]
 	YAHOO.util.Event.onContentReady("controls", onButtonsReady);
 	
 </script>
-
-<!--END SOURCE CODE FOR EXAMPLE =============================== -->
-
 </body>
 </html>
-

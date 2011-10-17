@@ -116,7 +116,7 @@ if ((typeof YAHOO !== "undefined") && (YAHOO.util) && (YAHOO.util.Event)) {
         <li id="get1"><a href="foo.html">get('demo')</a></li>
         <li id="get2"><a href="foo.html">get(['demo', 'demoList'])</a></li>
         <li id="getAncestorByTagName"><a href="foo.html">getAncestorByTagName('one', 'div')</a></li>
-        <li id="getAncestorByClassName"><a href="foo.html">getAncestorByClassName('listItem')</a></li>
+        <li id="getAncestorByClassName"><a href="foo.html">getAncestorByClassName('one', 'parent')</a></li>
         <li id="getChildren"><a href="foo.html">getChildren('demoList')</a></li>
 
         <li id="getElementsBy"><a href="foo.html">getElementsBy(<em>getElementsByClassName('specialItems')</em>, 'li', 'demo')</a></li>
@@ -291,21 +291,23 @@ setView('defaultView');
 
 function setView(viewName) {   
 	// update sourceView
-	views['sourceView'].innerHTML = renderCode(views[viewName].source());
-	
-	// update renderView
-	var code = views[viewName].source().join('');
-	code = code.replace(',', '');
-	views['renderView'].innerHTML = code;   
+    if (views[viewName]) {
+        views['sourceView'].innerHTML = renderCode(views[viewName].source());
+        
+        // update renderView
+        var code = views[viewName].source().join('');
+        code = code.replace(',', '');
+        views['renderView'].innerHTML = code;   
 
-	var output = views[viewName].output;
-	views['outputView'].innerHTML = '';
-	var pre = document.createElement('pre');
-	for (var i = 0; output[i]; i++) {
-		pre.appendChild(document.createTextNode(output[i]));
-		pre.appendChild(document.createTextNode('\n'));                
-		views['outputView'].appendChild(pre);
-	}
+        var output = views[viewName].output;
+        views['outputView'].innerHTML = '';
+        var pre = document.createElement('pre');
+        for (var i = 0; output[i]; i++) {
+            pre.appendChild(document.createTextNode(output[i]));
+            pre.appendChild(document.createTextNode('\n'));                
+            views['outputView'].appendChild(pre);
+        }
+    }
 }
 
 
@@ -397,13 +399,14 @@ function encode(str){
 	</div><!--closes bd-->
 
 	<div id="ft">
-        <p class="first">Copyright &copy; 2009 Yahoo! Inc. All rights reserved.</p>
+        <p class="first">Copyright &copy; 2011 Yahoo! Inc. All rights reserved.</p>
         <p><a href="http://privacy.yahoo.com/privacy/us/devel/index.html">Privacy Policy</a> - 
             <a href="http://docs.yahoo.com/info/terms/">Terms of Service</a> - 
             <a href="http://docs.yahoo.com/info/copyright/copyright.html">Copyright Policy</a> - 
             <a href="http://careers.yahoo.com/">Job Openings</a></p>
 	</div>
 </div>
+<script src="../../assets/syntax.js"></script>
 <script src="../../assets/dpSyntaxHighlighter.js"></script>
 <script language="javascript"> 
 dp.SyntaxHighlighter.HighlightAll('code'); 

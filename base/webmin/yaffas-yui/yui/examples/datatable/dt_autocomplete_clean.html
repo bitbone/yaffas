@@ -27,6 +27,7 @@ body {
 <script type="text/javascript" src="../../build/datasource/datasource-min.js"></script>
 <script type="text/javascript" src="../../build/autocomplete/autocomplete-min.js"></script>
 <script type="text/javascript" src="../../build/element/element-min.js"></script>
+<script type="text/javascript" src="../../build/event-delegate/event-delegate-min.js"></script>
 <script type="text/javascript" src="../../build/datatable/datatable-min.js"></script>
 
 <!--there is no custom header content for this example-->
@@ -39,7 +40,7 @@ body {
 <h1>Datatable with Autocomplete</h1>
 
 <div class="exampleIntro">
-	<p>This example uses two <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete Controls</a> to populate a DataTable with data received via XHR from the Yahoo! Local webservice.</p>
+	<p>This example uses two <a href="http://developer.yahoo.com/yui/autocomplete/">AutoComplete Controls</a> to populate a DataTable with data received via XHR from the Yahoo! Local webservice. Each AutoComplete is tied to a FunctionDataSource that do not themselves fetch data, but process the user's input string to generate a request to the DataTable's DataSource, which ultimately makes the webservice request for data.</p>
 			
 </div>
 
@@ -89,12 +90,20 @@ body {
             Dom.get('dt_input_zip').value = zip;
             YAHOO.log('Invalid zip code, must be a number', 'warn', 'example');
         }
-        myDataSource.sendRequest('datatable=yes&zip=' + query + '&query=' + Dom.get('dt_input').value + queryString,
-            myDataTable.onDataReturnInitializeTable, myDataTable);        
+        myDataSource.sendRequest('datatable=yes&zip=' + query + '&query=' + Dom.get('dt_input').value + queryString, {
+            success: myDataTable.onDataReturnInitializeTable,
+            failure: myDataTable.onDataReturnInitializeTable,
+            scope: myDataTable
+        });
+        return null;
     };
     var getTerms = function(query) {
-        myDataSource.sendRequest('datatable=yes&query=' + query + '&zip=' + Dom.get('dt_input_zip').value + queryString,
-        myDataTable.onDataReturnInitializeTable, myDataTable);
+        myDataSource.sendRequest('datatable=yes&query=' + query + '&zip=' + Dom.get('dt_input_zip').value + queryString, {
+            success: myDataTable.onDataReturnInitializeTable,
+            failure: myDataTable.onDataReturnInitializeTable,
+            scope: myDataTable
+        });
+        return null;
     };
 
     Event.onDOMReady(function() {
@@ -115,6 +124,10 @@ body {
             elCell.innerHTML = "<a href='" + oRecord.getData("ClickUrl") + "' target='_blank'>" + sData + "</a>";
         };
 
+        var formatRating = function(elCell, oRecord, oColumn, sData) {
+            elCell.innerHTML = (sData === null) ? "N/A" : YAHOO.util.Number.format(sData);
+        };
+
         var myColumnDefs = [
             { key:"Title",
                 label:"Name",
@@ -125,7 +138,7 @@ body {
             { key:"City" },
             { key:"Rating.AverageRating",
                 label:"Rating",
-                formatter:YAHOO.widget.DataTable.formatNumber, 
+                formatter:formatRating,
                 sortable:true
             }
         ];

@@ -101,11 +101,11 @@ body {
 
     <select name="selYear" id="selYear">
         <option value="" selected> </option>
-        <option value="2006">2006</option>
-        <option value="2007">2007</option>
-        <option value="2008">2008</option>
         <option value="2009">2009</option>
         <option value="2010">2010</option>
+        <option value="2011">2011</option>
+        <option value="2012">2012</option>
+        <option value="2013">2013</option>
     </select>
 </form>
 
@@ -153,8 +153,8 @@ body {
         }
 
         YAHOO.example.calendar.cal1 = new YAHOO.widget.Calendar("cal1","cal1Container", 
-                                                                    { mindate:"1/1/2006",
-                                                                      maxdate:"12/31/2010" });
+                                                                    { mindate:"1/1/2009",
+                                                                      maxdate:"12/31/2013" });
         YAHOO.example.calendar.cal1.selectEvent.subscribe(handleSelect, YAHOO.example.calendar.cal1, true);
         YAHOO.example.calendar.cal1.render();
 
