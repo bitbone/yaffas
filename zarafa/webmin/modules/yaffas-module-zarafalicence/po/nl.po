@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-11 10:51+0200\n"
+"PO-Revision-Date: 2011-10-18 19:27+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -557,26 +557,157 @@ msgstr "Zarafa Licentiesleutel"
 #~ msgid "Scan archives"
 #~ msgstr "Archieven scannen"
 
+#~ msgid "Network"
+#~ msgstr "Netwerk"
+
+#~ msgid "Internal networks"
+#~ msgstr "Interne netwerken"
+
+#~ msgid "Trusted networks"
+#~ msgstr "Vertrouwde netwerken"
+
+#~ msgid "Add spam detected headers at level"
+#~ msgstr "Voeg spamheaders toe vanaf niveau"
+
+#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
+
+#~ msgid "Address"
+#~ msgstr "Adres"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Source"
+#~ msgstr "Bron"
+
+#~ msgid "Entry"
+#~ msgstr "Item"
+
+#~ msgid "Invalid e-mail address"
+#~ msgstr "Ongeldig e-mailadres"
+
+#~ msgid "Security"
+#~ msgstr "Beveiliging"
+
+#~ msgid "This value defines at which score mails are handled as spam."
+#~ msgstr "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
+
+#~ msgid "Define a host or network by its IP address or CIDR."
+#~ msgstr "Geef een host of netwerk op met een IP-adres of CIDR."
+
+#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
+#~ msgstr "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven afmeting. Grotere objecten worden NIET gescand."
+
+#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
+#~ msgstr "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het opgegeven adres."
+
+#~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
+#~ msgstr "Zet dit aan om archieven zoals RAR, ZIP, GZ, ... te scannen."
+
+#~ msgid "Create"
+#~ msgstr "Maak aan"
+
+#~ msgid "Create group"
+#~ msgstr "Groep aanmaken"
+
+#~ msgid "Delete group(s)"
+#~ msgstr "Groep(en) verwijderen"
+
+#~ msgid "Edit group(s)"
+#~ msgstr "Groep(en) bewerken"
+
+#~ msgid "Create group(s)"
+#~ msgstr "Groep(en) aanmaken"
+
+#~ msgid "Modify user"
+#~ msgstr "Gebruiker bewerken"
+
+#~ msgid "Groupadministration"
+#~ msgstr "Groepenbeheer"
+
+#~ msgid "Groupname"
+#~ msgstr "Groepnaam"
+
 # 83%
-#, fuzzy
 #~ msgid "Groups"
-#~ msgstr "Groep"
+#~ msgstr "Groepen"
 
 # 75%
-#, fuzzy
 #~ msgid "User"
-#~ msgstr "Gebruikt"
+#~ msgstr "Gebruiker"
 
 # 80%
-#, fuzzy
 #~ msgid "Filetype"
-#~ msgstr "Filtertype"
+#~ msgstr "Bestandstype"
+
+#~ msgid "Set Filetype"
+#~ msgstr "Bestandstype instellen"
+
+#~ msgid "Creating cache"
+#~ msgstr "Cache wordt aangemaakt"
 
 # 81%
 # 85%
-#, fuzzy
 #~ msgid "Do you really want to delete this groups?"
-#~ msgstr "Wilt u deze service echt uitschakelen?"
+#~ msgstr "Wilt u deze groepen echt verwijderen?"
+
+#~ msgid "Authentification"
+#~ msgstr "Authenticatie"
+
+#~ msgid "Allow send as for"
+#~ msgstr "Sta toe om te verzenden als"
+
+#~ msgid "All input fields has to be filled!"
+#~ msgstr "Alle velden moeten worden ingevuld!"
+
+#~ msgid "Creation of groups failed!"
+#~ msgstr "Aanmaken van groepen is mislukt!"
+
+#~ msgid "Deletion of groups failed!"
+#~ msgstr "Verwijderen van groepen is mislukt!"
+
+#~ msgid "Group doesn't exist!"
+#~ msgstr "Groep bestaat niet!"
+
+#~ msgid "Group exists already!"
+#~ msgstr "Groep bestaat al!"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+
+#~ msgid "Wrong mode!"
+#~ msgstr "Verkeerde modus!"
+
+#~ msgid "No group selected!"
+#~ msgstr "Geen groep geselecteerd!"
+
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
+
+#~ msgid "Group Management"
+#~ msgstr "Groepbeheer"
+
+#~ msgid "Base Configuration"
+#~ msgstr "Basisconfiguratie"
+
+#~ msgid "Mail server name"
+#~ msgstr "E-Mailservernaam"
+
+#~ msgid "Unknown recipient"
+#~ msgstr "Onbekende ontvanger"
+
+#~ msgid "Refuse Mail"
+#~ msgstr "Weiger E-Mail"
+
+#~ msgid "Delete Mail"
+#~ msgstr "Verwijder e-mail"
+
+#~ msgid "Send to mailadmin"
+#~ msgstr "Verzend naar e-mailbeheerder"
+
+#~ msgid "Mail administrator"
+#~ msgstr "E-mailbeheerder"
 
 # 81%
 # 88%

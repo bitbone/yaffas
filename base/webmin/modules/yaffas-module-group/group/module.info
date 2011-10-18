@@ -5,5 +5,5 @@ name=group
 category=accounts
 desc=Group administration
 version=0.1
-desc_nl=Group Management
+desc_nl=Groepbeheer
 desc_fr=Gestion des groupes

@@ -1,10 +1,10 @@
-lbl_baseconfig=Base Configuration
-lbl_mailserver_name=Mail server name
-lbl_unknown_rcp=Unknown recipient
-lbl_refuse_mail=Refuse Mail
-lbl_delete_mail=Delete Mail
-lbl_sendto_mailadmin=Send to mailadmin
-lbl_mailadmin=Mail administrator
+lbl_baseconfig=Basisconfiguratie
+lbl_mailserver_name=E-Mailservernaam
+lbl_unknown_rcp=Onbekende ontvanger
+lbl_refuse_mail=Weiger E-Mail
+lbl_delete_mail=Verwijder e-mail
+lbl_sendto_mailadmin=Verzend naar e-mailbeheerder
+lbl_mailadmin=E-mailbeheerder
 lbl_maildomain=Mail domain
 lbl_ip=IP
 

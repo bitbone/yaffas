@@ -123,7 +123,7 @@ lbl_really_delete=Do you really want to delete this server?
 lbl_multidrop=Multidrop
 lbl_target=Destination
 lbl_local_alias=Alias
-lbl_local_user=User
+lbl_local_user=Gebruiker
 
 err_user=Please provide a local and remote user.
 err_local_user=The given local username is invalid.
