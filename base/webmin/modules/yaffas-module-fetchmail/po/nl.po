@@ -1520,6 +1520,16 @@ msgstr ""
 #~ msgid "Used%"
 #~ msgstr "Gebruikt"
 
+# 77%
+#, fuzzy
+#~ msgid "SNMP Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 76%
+#, fuzzy
+#~ msgid "Delete emails"
+#~ msgstr "Verwijder e-mail"
+
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
@@ -1528,6 +1538,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Emails"
 #~ msgstr "E-mail"
+
+# 81%
+#, fuzzy
+#~ msgid "No valid email address"
+#~ msgstr "Ongeldig e-mailadres"
 
 # 96%
 #~ msgid "No e-mail address specified"
@@ -1543,6 +1558,16 @@ msgstr ""
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 75%
+#, fuzzy
+#~ msgid "Zarafa administrator"
+#~ msgstr "E-mailbeheerder"
+
+# 76%
+#, fuzzy
+#~ msgid "Allow send as"
+#~ msgstr "Sta toe om te verzenden als"
 
 # 87%
 #, fuzzy
@@ -1583,6 +1608,21 @@ msgstr ""
 #~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
+# 76%
+#, fuzzy
+#~ msgid "Restore Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 88%
+#, fuzzy
+#~ msgid "Save Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 83%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Basisconfiguratie"
+
 # 88%
 #, fuzzy
 #~ msgid "Host name"
@@ -1597,6 +1637,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
+
+# 80%
+#, fuzzy
+#~ msgid "Domain administrator"
+#~ msgstr "E-mailbeheerder"
 
 # 88%
 #~ msgid "Password:"

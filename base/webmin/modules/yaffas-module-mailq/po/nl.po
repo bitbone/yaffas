@@ -62,10 +62,11 @@ msgstr ""
 msgid "Attempt to deliver"
 msgstr ""
 
+# 76%
 #: lang/en:10
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Delete emails"
-msgstr ""
+msgstr "Verwijder e-mail"
 
 #: lang/en:11
 #, no-wrap
@@ -159,10 +160,11 @@ msgstr ""
 msgid "Error at dequeue attempt for email"
 msgstr ""
 
+# 81%
 #: lang/en:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No valid email address"
-msgstr ""
+msgstr "Ongeldig e-mailadres"
 
 #: lang/en:30
 #, no-wrap
@@ -1039,6 +1041,11 @@ msgstr ""
 #~ msgid "Used%"
 #~ msgstr "Gebruikt"
 
+# 77%
+#, fuzzy
+#~ msgid "SNMP Configuration"
+#~ msgstr "Basisconfiguratie"
+
 # 81%
 #, fuzzy
 #~ msgid "Do you really want to delete this server?"
@@ -1058,6 +1065,16 @@ msgstr ""
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 75%
+#, fuzzy
+#~ msgid "Zarafa administrator"
+#~ msgstr "E-mailbeheerder"
+
+# 76%
+#, fuzzy
+#~ msgid "Allow send as"
+#~ msgstr "Sta toe om te verzenden als"
 
 # 87%
 #, fuzzy
@@ -1098,6 +1115,21 @@ msgstr ""
 #~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
+# 76%
+#, fuzzy
+#~ msgid "Restore Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 88%
+#, fuzzy
+#~ msgid "Save Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 83%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Basisconfiguratie"
+
 # 88%
 #, fuzzy
 #~ msgid "Host name"
@@ -1112,6 +1144,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
+
+# 80%
+#, fuzzy
+#~ msgid "Domain administrator"
+#~ msgstr "E-mailbeheerder"
 
 # 88%
 #~ msgid "Password:"

@@ -132,15 +132,17 @@ msgstr ""
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr ""
 
+# 76%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Restore Configuration"
-msgstr ""
+msgstr "Basisconfiguratie"
 
+# 88%
 #: lang/en:25
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save Configuration"
-msgstr ""
+msgstr "Basisconfiguratie"
 
 #: lang/en:26
 #, no-wrap
@@ -187,10 +189,11 @@ msgstr ""
 msgid "Would you like to save your incomplete Configuration?"
 msgstr ""
 
+# 83%
 #: lang/en:35
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save configuration"
-msgstr ""
+msgstr "Basisconfiguratie"
 
 #~ msgid "Apply key"
 #~ msgstr "Sleutel toepassen"
@@ -1063,6 +1066,16 @@ msgstr ""
 #~ msgid "Used%"
 #~ msgstr "Gebruikt"
 
+# 77%
+#, fuzzy
+#~ msgid "SNMP Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 76%
+#, fuzzy
+#~ msgid "Delete emails"
+#~ msgstr "Verwijder e-mail"
+
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
@@ -1071,6 +1084,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Emails"
 #~ msgstr "E-mail"
+
+# 81%
+#, fuzzy
+#~ msgid "No valid email address"
+#~ msgstr "Ongeldig e-mailadres"
 
 # 81%
 #, fuzzy
@@ -1091,6 +1109,16 @@ msgstr ""
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 75%
+#, fuzzy
+#~ msgid "Zarafa administrator"
+#~ msgstr "E-mailbeheerder"
+
+# 76%
+#, fuzzy
+#~ msgid "Allow send as"
+#~ msgstr "Sta toe om te verzenden als"
 
 # 87%
 #, fuzzy
@@ -1145,6 +1173,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
+
+# 80%
+#, fuzzy
+#~ msgid "Domain administrator"
+#~ msgstr "E-mailbeheerder"
 
 # 88%
 #~ msgid "Password:"
