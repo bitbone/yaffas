@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-11 10:51+0200\n"
+"PO-Revision-Date: 2011-10-18 19:27+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "Netwerk"
 
 #: lang/en:2
 #, no-wrap
 msgid "Create"
-msgstr ""
+msgstr "Maak aan"
 
 #: lang/en:3
 #, no-wrap
@@ -35,43 +35,43 @@ msgstr "Bewerken"
 #: lang/en:4
 #, no-wrap
 msgid "Create group"
-msgstr ""
+msgstr "Groep aanmaken"
 
 #: lang/en:5
 #, no-wrap
 msgid "Delete group(s)"
-msgstr ""
+msgstr "Groep(en) verwijderen"
 
 #: lang/en:6
 #, no-wrap
 msgid "Edit group(s)"
-msgstr ""
+msgstr "Groep(en) bewerken"
 
 #: lang/en:7
 #, no-wrap
 msgid "Create group(s)"
-msgstr ""
+msgstr "Groep(en) aanmaken"
 
 #: lang/en:8
 #, no-wrap
 msgid "Modify user"
-msgstr ""
+msgstr "Gebruiker bewerken"
 
 #: lang/en:10
 #, no-wrap
 msgid "Groupadministration"
-msgstr ""
+msgstr "Groepenbeheer"
 
 #: lang/en:11
 #, no-wrap
 msgid "Groupname"
-msgstr ""
+msgstr "Groepnaam"
 
 # 83%
 #: lang/en:12
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Groups"
-msgstr "Groep"
+msgstr "Groepen"
 
 #: lang/en:13
 #, no-wrap
@@ -80,25 +80,25 @@ msgstr "Groep"
 
 # 75%
 #: lang/en:14
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "User"
-msgstr "Gebruikt"
+msgstr "Gebruiker"
 
 # 80%
 #: lang/en:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Filetype"
-msgstr "Filtertype"
+msgstr "Bestandstype"
 
 #: lang/en:17
 #, no-wrap
 msgid "Set Filetype"
-msgstr ""
+msgstr "Bestandstype instellen"
 
 #: lang/en:19
 #, no-wrap
 msgid "Creating cache"
-msgstr ""
+msgstr "Cache wordt aangemaakt"
 
 #: lang/en:20
 #, no-wrap
@@ -108,14 +108,14 @@ msgstr "klaar"
 # 81%
 # 85%
 #: lang/en:22
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Do you really want to delete this groups?"
-msgstr "Wilt u deze service echt uitschakelen?"
+msgstr "Wilt u deze groepen echt verwijderen?"
 
 #: lang/en:23
 #, no-wrap
 msgid "Authentification"
-msgstr ""
+msgstr "Authenticatie"
 
 #: lang/en:24
 #, no-wrap
@@ -125,57 +125,57 @@ msgstr "E-mail"
 #: lang/en:25
 #, no-wrap
 msgid "Allow send as for"
-msgstr ""
+msgstr "Sta toe om te verzenden als"
 
 #: lang/en:28
 #, no-wrap
 msgid "All input fields has to be filled!"
-msgstr ""
+msgstr "Alle velden moeten worden ingevuld!"
 
 #: lang/en:29
 #, no-wrap
 msgid "Creation of groups failed!"
-msgstr ""
+msgstr "Aanmaken van groepen is mislukt!"
 
 #: lang/en:30
 #, no-wrap
 msgid "Deletion of groups failed!"
-msgstr ""
+msgstr "Verwijderen van groepen is mislukt!"
 
 #: lang/en:31
 #, no-wrap
 msgid "Group doesn't exist!"
-msgstr ""
+msgstr "Groep bestaat niet!"
 
 #: lang/en:32
 #, no-wrap
 msgid "Group exists already!"
-msgstr ""
+msgstr "Groep bestaat al!"
 
 #: lang/en:33
 #, no-wrap
 msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-msgstr ""
+msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
 
 #: lang/en:34
 #, no-wrap
 msgid "Wrong mode!"
-msgstr ""
+msgstr "Verkeerde modus!"
 
 #: lang/en:35
 #, no-wrap
 msgid "No group selected!"
-msgstr ""
+msgstr "Geen groep geselecteerd!"
 
 #: lang/en:36
 #, no-wrap
 msgid "This action is only supported with local authentification."
-msgstr ""
+msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
 
 #: lang/en:37
 #, no-wrap
 msgid "Group Management"
-msgstr ""
+msgstr "Groepbeheer"
 
 #~ msgid "Apply key"
 #~ msgstr "Sleutel toepassen"
@@ -679,6 +679,72 @@ msgstr ""
 #~ msgid "Scan archives"
 #~ msgstr "Archieven scannen"
 
+#~ msgid "Internal networks"
+#~ msgstr "Interne netwerken"
+
+#~ msgid "Trusted networks"
+#~ msgstr "Vertrouwde netwerken"
+
+#~ msgid "Add spam detected headers at level"
+#~ msgstr "Voeg spamheaders toe vanaf niveau"
+
+#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
+
+#~ msgid "Address"
+#~ msgstr "Adres"
+
+#~ msgid "Type"
+#~ msgstr "Type"
+
+#~ msgid "Source"
+#~ msgstr "Bron"
+
+#~ msgid "Entry"
+#~ msgstr "Item"
+
+#~ msgid "Invalid e-mail address"
+#~ msgstr "Ongeldig e-mailadres"
+
+#~ msgid "Security"
+#~ msgstr "Beveiliging"
+
+#~ msgid "This value defines at which score mails are handled as spam."
+#~ msgstr "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
+
+#~ msgid "Define a host or network by its IP address or CIDR."
+#~ msgstr "Geef een host of netwerk op met een IP-adres of CIDR."
+
+#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
+#~ msgstr "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven afmeting. Grotere objecten worden NIET gescand."
+
+#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
+#~ msgstr "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het opgegeven adres."
+
+#~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
+#~ msgstr "Zet dit aan om archieven zoals RAR, ZIP, GZ, ... te scannen."
+
+#~ msgid "Base Configuration"
+#~ msgstr "Basisconfiguratie"
+
+#~ msgid "Mail server name"
+#~ msgstr "E-Mailservernaam"
+
+#~ msgid "Unknown recipient"
+#~ msgstr "Onbekende ontvanger"
+
+#~ msgid "Refuse Mail"
+#~ msgstr "Weiger E-Mail"
+
+#~ msgid "Delete Mail"
+#~ msgstr "Verwijder e-mail"
+
+#~ msgid "Send to mailadmin"
+#~ msgstr "Verzend naar e-mailbeheerder"
+
+#~ msgid "Mail administrator"
+#~ msgstr "E-mailbeheerder"
+
 # 81%
 # 88%
 # 95%
@@ -887,6 +953,16 @@ msgstr ""
 #~ msgid "Used%"
 #~ msgstr "Gebruikt"
 
+# 77%
+#, fuzzy
+#~ msgid "SNMP Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 76%
+#, fuzzy
+#~ msgid "Delete emails"
+#~ msgstr "Verwijder e-mail"
+
 # 75%
 #~ msgid "None"
 #~ msgstr "Geen"
@@ -895,6 +971,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Emails"
 #~ msgstr "E-mail"
+
+# 81%
+#, fuzzy
+#~ msgid "No valid email address"
+#~ msgstr "Ongeldig e-mailadres"
 
 # 81%
 #, fuzzy
@@ -915,6 +996,16 @@ msgstr ""
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 75%
+#, fuzzy
+#~ msgid "Zarafa administrator"
+#~ msgstr "E-mailbeheerder"
+
+# 76%
+#, fuzzy
+#~ msgid "Allow send as"
+#~ msgstr "Sta toe om te verzenden als"
 
 # 87%
 #, fuzzy
@@ -955,6 +1046,21 @@ msgstr ""
 #~ msgid "System Information"
 #~ msgstr "Systeeminformatie"
 
+# 76%
+#, fuzzy
+#~ msgid "Restore Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 88%
+#, fuzzy
+#~ msgid "Save Configuration"
+#~ msgstr "Basisconfiguratie"
+
+# 83%
+#, fuzzy
+#~ msgid "Save configuration"
+#~ msgstr "Basisconfiguratie"
+
 # 88%
 #, fuzzy
 #~ msgid "Host name"
@@ -969,6 +1075,11 @@ msgstr ""
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
+
+# 80%
+#, fuzzy
+#~ msgid "Domain administrator"
+#~ msgstr "E-mailbeheerder"
 
 # 88%
 #~ msgid "Password:"

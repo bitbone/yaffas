@@ -35,17 +35,17 @@ lbl_sa_configure=Configure Spamassassin
 lbl_sa_enable=Activate spamassassin
 lbl_sa_disable=Deactivate spamassassin
 lbl_sa_update=Update the Spamassassin filters
-lbl_network=Network
-lbl_internal=Internal networks
-lbl_trusted=Trusted networks
-lbl_add_headers=Add spam detected headers at level
+lbl_network=Netwerk
+lbl_internal=Interne netwerken
+lbl_trusted=Vertrouwde netwerken
+lbl_add_headers=Voeg spamheaders toe vanaf niveau
 
 lbl_whitelist=Whitelisting
-lbl_wl_desc=All hosts and addresses listed here are not checked for spam or viruses.
-lbl_address=Address
+lbl_wl_desc=Al deze hosts en adressen worden niet gecontroleerd op spam of virussen.
+lbl_address=Adres
 lbl_wl_type=Type
-lbl_wl_from=Source
-lbl_wl_entry=Entry
+lbl_wl_from=Bron
+lbl_wl_entry=Item
 
-err_mail=Invalid e-mail address
-moduletitle=Security
+err_mail=Ongeldig e-mailadres
+moduletitle=Beveiliging

@@ -5,5 +5,5 @@ name=security
 category=mailserver
 desc=security
 version=0.1
-desc_nl=Security
+desc_nl=Beveiliging
 desc_fr=Sécurité
