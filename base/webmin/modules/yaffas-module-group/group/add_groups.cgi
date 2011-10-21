@@ -18,14 +18,20 @@ ReadParse();
 
 my $groupname = $main::in{groupname};
 my $filetype = $main::in{filetype};
+my $mail = $main::in{mail};
 
 try {
 	Yaffas::Exception->throw('err_no_local_auth') unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP or
 							       Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
 
-	Yaffas::Module::Group::add_groups($filetype, $groupname);
-	if ($groupname) {
+	if (defined $mail && $mail ne '') {
+		unless (Yaffas::Check::email($mail)) {
+			throw Yaffas::Exception("err_invalid_email");
+		}
+		Yaffas::Module::Group::add_groups($filetype, $groupname);
 		Yaffas::UGM::set_email($groupname, $main::in{mail}, "group");
+	} else {
+		Yaffas::Module::Group::add_groups($filetype, $groupname);
 	}
 	print Yaffas::UI::ok_box();
 } catch Yaffas::Exception with {
