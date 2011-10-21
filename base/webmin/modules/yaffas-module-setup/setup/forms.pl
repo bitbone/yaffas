@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Yaffas::UI;
+use Yaffas::UI qw/textfield/;
 use Yaffas::Exception;
 use Yaffas::Product;
 use Error qw(:try);
@@ -27,19 +27,19 @@ sub show_setup() {
                 $Cgi->table(
                     $Cgi->Tr(
                         $Cgi->td($main::text{lbl_mysql_user}.":"),
-                        $Cgi->td($Cgi->input({-name=>"mysql_user"}))
+                        $Cgi->td(textfield({-name=>"mysql_user"}))
                     ),
                     $Cgi->Tr(
                         $Cgi->td($main::text{lbl_mysql_password}.":"),
-                        $Cgi->td($Cgi->input({-name=>"mysql_password"}))
+                        $Cgi->td(textfield({-name=>"mysql_password"}))
                     ),
                     $Cgi->Tr(
                         $Cgi->td($main::text{lbl_mysql_host}.":"),
-                        $Cgi->td($Cgi->input({-name=>"mysql_host"}))
+                        $Cgi->td(textfield({-name=>"mysql_host"}))
                     ),
                     $Cgi->Tr(
                         $Cgi->td($main::text{lbl_mysql_database}.":"),
-                        $Cgi->td($Cgi->input({-name=>"mysql_database"}))
+                        $Cgi->td(textfield({-name=>"mysql_database"}))
                     ),
                 )
             ) : ()
