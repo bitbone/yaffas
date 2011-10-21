@@ -101,7 +101,7 @@ Checks if all groups or groupids in array GROUPS are valid.
 sub groupname(@) {
 	foreach my $group (@_) {
 		return 1 if grep {$group eq $_} @{Yaffas::Constant::MISC->{admin_groups}};
-		if ($group !~ /^[a-zA-Z][a-zA-Z0-9]*$/g ||length($group) <= 0 || length($group) > 1024) {
+		if ($group !~ /^[a-zA-Z][a-zA-Z0-9\._-]*$/g ||length($group) <= 0 || length($group) > 1024) {
 			return 0;
 		}
 	}
