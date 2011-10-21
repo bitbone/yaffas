@@ -364,7 +364,6 @@ sub _load_settings {
 		my ($dns, $search) = [];
 		my $method = '';
 
-		my $i = 0;
 		my @lines = $interfaces->get_content();
 
 		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
@@ -379,8 +378,9 @@ sub _load_settings {
 			}
 		}
 
-		foreach my $line (@lines) {
-			$i++;
+		my @revLines = reverse(@lines);
+
+		foreach my $line (@revLines) {
 
 			if ($line =~ /\s*address\s(.*)/) {
 				$ip = $1;
@@ -399,15 +399,16 @@ sub _load_settings {
 			}
 
 			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
-				if ($device ne "") {
-					%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
-				}
 				$device = $1;
 				$method = $2;
+				unless($ip && $netmask) {
+					my $iface = IO::Interface::Simple->new($device);
+					$ip = $iface->address();
+					$netmask = $iface->netmask();
+				}
+				%settings = _create_objects_for_settings(
+					$ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 			}
-		}
-		if($device ne "") {
-			%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 		}
 	} else {
 		my ($ip, $netmask, $gateway);
@@ -1003,6 +1004,11 @@ sub get_dns {
 sub get_search {
 	my $self = shift;
 	return $self->{SEARCH};
+}
+
+sub get_method {
+	my $self = shift;
+	return $self->{METHOD}
 }
 
 sub vendor {

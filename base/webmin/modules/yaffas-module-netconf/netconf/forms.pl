@@ -57,15 +57,15 @@ sub net_conf_form () {
 
 							$_ =~ /^eth\d+$/
 							? (
-								$Cgi->td("MAC Adresse:")
+								$Cgi->td($main::text{lbl_mac}.":")
 								  . $Cgi->td( { -colspan => 3 }, $dev->{MAC} ),
-								$Cgi->td("Hersteller:")
+								$Cgi->td($main::text{lbl_vendor}.":")
 								  . $Cgi->td( { -colspan => 3 },
 									$dev->{VENDOR} ),
-								$Cgi->td("Produkt:")
+								$Cgi->td($main::text{lbl_product}.":")
 								  . $Cgi->td(
 									{ -colspan => 3 }, $dev->{PRODUCT}
-								  )
+								  ),
 							  )
 							: "",
 							_input_status( "$_-enabled", $dev->enabled() ),

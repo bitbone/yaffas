@@ -34,6 +34,10 @@ lbl_index_return=Network
 lbl_delete=Delete
 lbl_interface=Interface
 lbl_base_settings=Base settings
+lbl_method=Mode
+lbl_vendor=Vendor
+lbl_mac=MAC address
+lbl_product=Product
 
 lbl_enabled=enabled
 lbl_disabled=disabled
