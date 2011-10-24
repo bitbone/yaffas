@@ -1,0 +1,69 @@
+err_ip=Endereço IP ou máscara de rede invalida.
+err_dns=The DNS server address has to be a valid IP address.
+err_domain=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
+err_domain_rename=Could not rename domain.
+err_hostname=Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two.
+err_workgroup_check=Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'.
+err_copy_file=Could not copy the following file:
+
+err_one_enabled=You have to enable a least one network interface.
+err_gateway_eq_ip=The gateway address has to be different to the server address.
+err_search=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
+err_parent_enable=The associated hardware interface has to be enabled.
+
+err_get_sambasid=Error reading data for use with samba.
+err_set_sambasid=Error writing data for use with samba.
+err_ldap_duplicate_sambadomain=The hostname (sambaDomain) does not exist exactly one time in LDAP.
+
+err_bonding_enabled=This module is deactivated, because channel bonding is active.
+
+err_no_ip=Nenhum endereço IP definido.
+
+lbl_index_header=Configuração
+lbl_data=Configurações de Rede
+
+lbl_hostname=Nome da máquina (host)
+lbl_domain=Nome do Domínio
+lbl_workgroup=Grupo de trabalho (workgroup)
+lbl_ipaddr=Endereço IP
+lbl_netmask=Máscara de rede (netmask)
+lbl_gateway=Gateway (se disponível)
+lbl_search=Domínio de pesquisa
+lbl_dns=IP servidor DNS
+lbl_index_return=Rede
+lbl_delete=Remover
+lbl_interface=Interface
+lbl_base_settings=Configurações básicas
+
+lbl_enabled=enabled
+lbl_disabled=desabilitado
+lbl_status=Estado
+lbl_new_ip=Novo endereço IP virtual
+lbl_delete_device=Remover endereço IP virtual
+lbl_really_delete=Do you really want to delete the following network interface?
+lbl_create=Criar
+lbl_new_interface=New virtual address on interface
+
+
+
+lbl_proxy_conf=Proxy HTTP
+lbl_proxy_ip=Proxy
+lbl_proxy_port=Porta
+lbl_authentication=Autenticação (opcional)
+lbl_user=Usuário
+lbl_pass=Senha
+
+err_proxy=Nome do proxy inválido!
+err_port=Porta inválida!
+err_username=Nome do usuário inválido!
+err_password=Senha inválida!
+err_set_apt=Erro ao definir proxy APT!
+err_set_wget=Erro ao definir proxy WGET!
+err_set_kav=Erro ao definir proxy KAV!
+err_del_apt=Erro ao remover proxy APT!
+err_del_wget=Erro ao remover proxy WGET!
+err_10=Erro ao remover proxy KAVS!
+err_set_freshclam=Erro ao definir proxy freshclam!
+err_del_freshclam=Erro ao remover proxy freshclam!
+err_restart_freshclam=Erro ao reiniciar freshclam!
+moduletitle=Configuração

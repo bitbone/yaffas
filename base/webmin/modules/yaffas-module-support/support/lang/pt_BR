@@ -1,0 +1,12 @@
+lbl_index_header=Suporte
+lbl_support=Suporte
+lbl_klick_dl_yaffas=Click on download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@yaffas.org">support@yaffas.org</a> for support. You might be asked for parts of the config file data.
+lbl_klick_dl_zadmin=Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
+lbl_download=Download
+lbl_index_return=Sistema
+lbl_lshw_text=Pressionar download para obter informações disponíveis sobre o sistema e hardware.
+lbl_lshw=Lista de Hardware
+err_no_lshw=Seu sistema no possui o programa necessário "lshw" instalado.
+err_no_lspci=Seu sistema no possui o programa necessário "lspci" instalado.
+err_executing_lspci=Ocorreu um erro durante a execução "pspci".
+err_executing_lshw=Ocorreu um erro durante a execução "lshw".

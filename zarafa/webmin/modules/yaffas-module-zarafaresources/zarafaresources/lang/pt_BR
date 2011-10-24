@@ -1,0 +1,25 @@
+lbl_resourcemanagement=Gerenciar recursos
+lbl_resource=Recurso
+lbl_description=Descrição
+lbl_email=E-mail
+lbl_decline_conflict=Recusar conflitos
+lbl_decline_recurring=Recusar agendamentos recorrentes
+lbl_newresource=Novo recurso
+lbl_editresource=Modificar recurso
+lbl_delresource=Remover recurso
+lbl_delresource_question=Realmente deseja remover estes recursos?
+lbl_remind_perms=As permissões adequadas para os usuários que poderão reservar este recurso precisam ser definidos na configuração de permissão do calendário deste recurso.
+
+err_username=O nome do recurso contém caracteres inválidos.
+err_never_user=The name of the resource is taken from a special user.
+err_gecos=A descrição do recurso contém caracteres inválidos.
+err_no_email=Endereço de e-mail não especificado.
+err_mail_loc_host=Localhost não pode ser usado como parte do domínio.
+err_unknown_domain=O domínio não está definido como domínio local na configuração do servidor de e-mail.
+err_missing_alias=A parte local do endereço de e-mail tem que ser igual ao nome.
+err_email=Endereço de e-mail inválido.
+err_user_exists_allready=O nome do recurso já está sendo usado por um usuário.
+err_name_is_alias=O nome do recurso já está sendo usado como alias de um usuário.
+err_user_doesnt_exist=O recurso informado não existe.
+err_no_domains=Nenhum domínio local configurado.
+moduletitle=Recursos

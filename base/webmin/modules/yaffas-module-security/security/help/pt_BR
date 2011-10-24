@@ -1,0 +1,5 @@
+spam_headers=Este valor define em qual nível e-mails serão tratados como spam.
+sa_trusted_net=Definir um host ou rede via endereço de IP ou CIDR.
+max_length=ClamAV vai escanear somente objetos que são menores que o valor especificado. Objetos majores não serão escaneados.
+virusalert=Se o ClamAV detectar um objeto suspeito, um e-mail será enviado para o endereço de e-mail especificado.
+archive=Habilitar o scan em arquivos como RAR, ZIP, GZ...

@@ -1,0 +1,17 @@
+lbl_admin_pw=Senha do Administrador
+lbl_admin_pw_repeat=Senha do Administrador (confirmar)
+lbl_mysql_database=Banco de dados MySQL
+lbl_mysql_host=Servidor MySQL
+lbl_mysql_user=Nome do usuário MySQL
+lbl_mysql_password=Senha MySQL
+
+lbl_setup_finished=Configuração completa
+lbl_setup_finished_msg=A configuração foi completada com sucesso. Apos o re-logon todos os recursos estarão disponíveis.
+
+lbl_zarafa_settings=Configurações Zarafa
+lbl_basic_settings=Configurações básicas
+
+err_mysql_connect=Não foi possível conectar no banco de dados.
+err_password=A senha de administrador está vazia ou diferente.
+
+moduletitle=Configuração

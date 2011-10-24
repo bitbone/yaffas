@@ -1,0 +1,2 @@
+community=Senha para o acesso SNMP.
+network=Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR. O valor "default" permite o acesso somente pela máquina local.

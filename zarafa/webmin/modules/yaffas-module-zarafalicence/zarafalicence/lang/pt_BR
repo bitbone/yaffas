@@ -1,0 +1,14 @@
+lbl_insert=Aplicar licença
+lbl_install_key=Instalar nova licença
+lbl_install_basekey=Instalar nova licença principal
+lbl_install_calkey=Instalar nova licença CAL
+lbl_installed_licences=Licenças instaladas
+lbl_base_key=Serial principal
+lbl_serial=Serial
+lbl_log=Log de licença
+err_wrong_lic=Este não é um serial Zarafa válido
+lbl_archiver_key=Licença Archiver
+lbl_archiver_serial=Serial
+lbl_install_archiverkey=Instalar nova licença Archiver
+lbl_install_acalkey=Instalar nova licença Archiver CAL
+moduletitle=Serial Zarafa

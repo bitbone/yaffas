@@ -1,0 +1,98 @@
+lbl_baseconfig=Configuração base
+lbl_mailserver_name=Nome do servidor de correio
+lbl_unknown_rcp=Destinatário desconhecido
+lbl_refuse_mail=Recusar E-mail
+lbl_delete_mail=Excluir E-mail
+lbl_sendto_mailadmin=Enviar para o Administrador dos e-mails
+lbl_mailadmin=Administrador de Correio
+lbl_maildomain=Domínio de correio
+lbl_ip=IP
+
+lbl_smarthost=Smarthost
+lbl_smarthost_name=Servidor smarthost
+lbl_username=Nome do usuário
+lbl_password=Senha
+
+lbl_del_question=Realmente deseja remover estes itens?
+
+lbl_acceptdomains=Domínios locais
+
+lbl_acceptrelay=Sub-redes abertos para relay
+
+lbl_save=Salvar
+
+lbl_return=Mailserv
+lbl_category=servidor de e-mail
+
+lbl_add=Adicionar
+lbl_del=Remover
+lbl_mailsize=Tamanho máximo de e-mail
+
+lbl_forward_all_mails_title=Encaminhar E-mail
+lbl_forward_all_mails=Encaminhar todos os e-mails
+lbl_rewrite_domain=Reescrever domínios locais
+
+lbl_enable_archive=Habilitar armazenamento de archive
+lbl_archive_destination=Destino do armazenamento de archive
+lbl_archive=armazenamento de Archive
+
+lbl_only_for_public=Administrador Zarafa para entregar e-mails em pasta pública
+
+err_archive_name=É necessário que o destino seja um usuário local ou um endereço de e-mail!
+
+err_no_rewrite=Nome de domínio inválido.
+
+err_no_entrys=Nenhum item.
+err_smarthost=Smarthost inválido.
+err_username=Nome do usuário inválido.
+err_password=Senha inválida.
+err_maildomain=Domínio de e-mail inválido.
+err_ip_entry=Endereço IP ou range IP inválido.
+err_domainname=Erro: O domínio poderá conter somente letras (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é um.
+err_mailadmin=Mailadmin inválido.
+err_mailserver=Servidor de e-mail inválido.
+err_size=O tamanho do e-mail precisa ser um número.
+err_verify_value=Valor inválido para a verificação de destinatário
+
+err_zarafa_not_installed=Zarafa não esta instalado.
+err_user_not_exists=Este usuário não existe neste sistema.
+err_password_missing=Senha não fornecida.
+err_user_not_zarafa_admin=Este usuário não é um administrador Zarafa.
+err_user_password=Senha incorreta.
+
+
+lbl_antivirus=Anti-Vírus
+lbl_antispam=Anti-Spam
+lbl_greylist=Greylist
+lbl_quarantine=Quarentena
+lbl_mailsec=Segurança de e-mail
+lbl_spamassassin=Spamassassin
+lbl_policyserver=Servidor MPP de políticas
+
+lbl_active=Habilitado
+lbl_disabled=Desabilitado
+
+lbl_status=Estado
+lbl_service=Serviço
+lbl_feature=Feature
+
+lbl_start=Início
+lbl_stop=Parar
+
+lbl_started=Executando
+lbl_stopped=Interrompido
+
+lbl_email=E-mail
+lbl_virus_notify=Notificação de vírus encontrado
+
+lbl_disable_tls=TLS/SSL desabilitado
+lbl_disable_client_tls=Desabilitar TLS/SSL para smarthost
+lbl_disable_server_tls=Desabilitar TLS/SSL para cliente de correio
+
+err_email_wrong=O endereço de e-mail fornecido é incorreto!
+
+err_kav_licence=A chave KAV está expirada ou inválida!
+err_kav_update=É necessário atualizar seu KAV antes de ativar este recurso.
+err_kas_update=É necessário atualizar seu KAS antes de ativar este recurso.
+err_activate_policyserver=Please activate policy server in MPP interface first.
+moduletitle=Configuração

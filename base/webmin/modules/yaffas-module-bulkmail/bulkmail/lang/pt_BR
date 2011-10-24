@@ -1,0 +1,11 @@
+index_bulk=E-mail em massa
+index_return=E-mail em massa
+index_from=De
+index_subject=Assunto
+index_message=Mensagem
+index_send=Enviar
+
+err_error=Please complete all forms and check your e-mail address.
+lbl_send_success=Your mails are queued for sending. This may take some time depending on your hardware.
+
+moduletitle=E-mail em massa

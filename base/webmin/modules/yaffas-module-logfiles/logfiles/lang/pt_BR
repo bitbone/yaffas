@@ -1,0 +1,9 @@
+err_nothing_selected=Um arquivo de log precisa ser selecionado.
+err_not_permitted=Não é permitido baixar esse arquivo.
+lbl_logfiles=Arquivo de logs
+lbl_download=Download
+lbl_show_old_logs=Mostrar arquivos de log antigos
+lbl_show_new_logs=Mostrar arquivos de log novos
+lbl_size=Tamanho
+lbl_file=Arquivo
+moduletitle=Exibição de arquivos de log

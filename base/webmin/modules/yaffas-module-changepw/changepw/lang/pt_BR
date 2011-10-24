@@ -1,0 +1,27 @@
+lbl_index_header=Alterar senha
+lbl_index_return=Sistema
+
+lbl_pass=Senha:
+lbl_pass2=Repetir senha:
+lbl_save=Salvar
+lbl_adminpass=Senha do Administrador
+lbl_rootpass=Senha root
+lbl_domadminpass=Domain-Administrator-Password
+
+err_mysql_password=Could not set MySQL password!
+err_file_read=Can't read following file(s):
+err_file_write=Can't write following file(s):
+
+err_root_password=Não foi possível definir a senha root!
+err_domadmin_password=Não foi possível definir a senha do administrador de domínio!
+err_smbpasswd=Não foi possível executar SMBPASSWD!
+err_license=Esta funcionalidade está disponível somente na versão ilimitada
+err_execute=Não foi possível executar:
+err_ldapmodify=Não foi possível executar LDAP Modify!
+err_delete_file=Não foi possível remover o(s) arquivo(s):
+err_copy_file=Não foi possível copiar o(s) arquivo(s):
+
+err_password=Senhas precisam ter no mínimo um carácter e não podem conter o jogo da velha (#).
+err_password_equal=Ambas as senhas precisam ser idênticas.
+err_change_password=Senha inválida.
+moduletitle=Senha do Administrador

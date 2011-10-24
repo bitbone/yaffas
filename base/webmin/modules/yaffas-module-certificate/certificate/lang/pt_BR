@@ -1,0 +1,66 @@
+c=País (código de 2 letras)
+cn=Nome comum (ex. host.nome.com.br)
+
+e_c=País incorreto.
+e_cn=Nome comum incorreto ou não informado.
+e_days=Dias são incorretos.
+e_emailAddress=Endereço de e-mail incorreto.
+e_genfailed=Geração falhou
+e_l=Local incorreto
+e_o=Nome da organização incorreto.
+e_ou=Unidade da organização (OU) incorreto.
+e_service=Selecionar um serviço.
+e_st=Estado incorreto.
+
+err_cert_param=Parâmetros incorretos.
+err_cert_not_valid=Certificado invalido.
+err_fork=Fork falhou
+err_cert_creation=Certificado não foi criado.
+err_nothing_selected=Nenhum certificado selecionado.
+
+emailAddress=Endereço de e-mail (ex. webmaster@empresa.com.br)
+
+gencert_days=Certificado válido por (dias)
+gencert_generate=Gerar chave
+gencert_header=Generate Self Signed Certificate and Key
+gencert_service=Serviço
+gencert_title=Gerar Certificado & Chave
+gencert_e_linkerror=Erro de symlink
+
+import_cert_file=Certificado:
+import_cert_service=Serviço:
+import_upload_cert=Upload de Certificado
+import_upload_cert_s=Upload de certificado
+import_title=Importar Certificado
+import_del=Remover Certificado
+import_delquestion=Realmente remover este Certificado?
+import_ok=Este Certificado foi importado com sucesso!
+import_error=Um erro ocorreu durante a importação. Por favor verificar o arquivo do certificado.
+
+index_header=Gerenciamento de Certificados / Chaves
+index_import=Importar Chave ou Certificado assinado
+index_gencert=Generate Self Signed Certificate and Key
+index_view=Gerenciar/Ver Certificados e Chaves instalados
+index_title=Gerenciador de Certificados
+
+keysize=Tamanho da chave (em bits)
+l=Localidade (ex. cidade)
+o=Nome da organização (ex. empresa)
+ou=Organization Unit Name (e.g. division)
+
+st=Estado (nome completo)
+
+view_begin=Data de início
+view_delete=Remover
+view_deleted=Arquivo excluído com sucesso
+view_name=Nome
+view_end=Válido até
+view_cert_not_valid=Certificado invalido.
+view_header=Gerenciar certificados instalados
+
+restart_service=Os serviçõs serão reiniciados!
+
+yes=sim
+no=não
+succsess=Sucesso
+moduletitle=Gerenciamento de Certificados / Chaves

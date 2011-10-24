@@ -1,0 +1,43 @@
+lbl_userfilter=Filtro de usuário
+lbl_filtertype=Tipo de filtro
+lbl_filtergroup=Grupo
+lbl_ldapfilter_type_0=Padrão
+lbl_ldapfilter_type_1=Plugin AD
+lbl_ldapfilter_type_2=Grupo AD
+lbl_confirm_filter_save=Remover stores Zarafa?
+lbl_confirm_msg=Com este passo, os seguintes stores Zarafa serão removidos:
+err_no_group_found=Não foi possível localizar grupo.
+err_no_rootbasedn=Não foi possível localizar rootDomainNamingContext no AD.
+
+lbl_attachment_size=Tamanho dos anexos
+lbl_size=Tamanho
+err_not_numeric=Este valor é não numérico.
+
+lbl_optimize=Otimizar
+lbl_memory_installed=Memória disponível
+lbl_memory_optimize=Otimizado para
+lbl_memory_optimize_header=Otimizar memória
+lbl_unknown=desconhecido
+
+lbl_quota=Modelo de e-mail de cota
+lbl_quota_warn=Mensagem de 80%
+lbl_quota_soft=Mensagem de 90%
+lbl_quota_hard=Mensagem de 100%
+
+lbl_default_quota=Cota padrão
+lbl_default_quota_header=Cota Padrão
+lbl_no_quota=Desligado
+
+lbl_default_features=Features padrão
+lbl_feature=Feature
+lbl_state=Estado
+
+lbl_database_settings=Configurações MySQL
+lbl_mysql_database=Banco de dados
+lbl_mysql_host=Servidor
+lbl_mysql_user=Nome do usuário
+lbl_mysql_password=Senha
+
+err_mysql_connect=Não foi possível conectar no banco de dados.
+err_quota_value=O valor da cota poderá conter somente dígitos.
+moduletitle=Configuração

@@ -1,0 +1,41 @@
+lbl_index_return=Rede
+lbl_group_add=Criar
+lbl_link_edit=Editar
+lbl_create_group_header=Criar grupo
+lbl_delete=Excluir grupo(s)
+lbl_edit=Editar grupo(s)
+lbl_create=Criar grupo(s)
+lbl_changeuser=Modificar usuário
+
+lbl_index_header=Administração de grupos
+lbl_groupname=Nome do grupo
+lbl_groups=Grupos
+lbl_group=Grupo
+lbl_user=Usuário
+lbl_filetype=Tipo de arquivo
+
+lbl_set_filetype=Definir tipo de arquivo
+
+lbl_create_cache=Criando cache
+lbl_done=concluído
+
+lbl_ask_delete=Realmente deseja remover estes grupos?
+lbl_auth=Autenticação
+lbl_email=E-mail
+lbl_sendas=Permitir enviar-como para
+
+
+err_input=Todos os campos precisam ser preenchidos!
+err_create=Criação de grupos falhou!
+err_delete=Exclusão dos grupos falhou!
+err_group_not_exist=Grupo não existe!
+err_group_already_exists=Grupo já existe!
+err_newgroup_name=Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut).
+err_mode=Modo errado!
+err_no_group_selected=Nenhum grupo selecionado!
+err_no_local_auth=Essa ação é suportada somente usado a autenticação local.
+err_email=Endereço de e-mail não válido
+err_add_email=Não foi possível definir o endereço de email
+err_change_email=Não foi possível modificar o endereço de email
+err_invalid_email=Endereço de e-mail inválido
+moduletitle=Gerenciamento de Grupos

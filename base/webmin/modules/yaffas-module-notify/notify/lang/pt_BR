@@ -1,0 +1,32 @@
+lbl_status=Endereço e de-mail para as Mensagens do Sistema
+lbl_index_header=Notificação
+lbl_index_return=Sistema
+lbl_mail=E-mail
+lbl_send_mail=Enviar e-mail
+lbl_always=Sempre
+lbl_errors=Erros críticos
+lbl_never=Erros
+lbl_test=Teste seu endereço de e-mail
+lbl_test_desc=Clicar o botão abaixo para enviar um e-mail para o endereço de email fornecido anteriormente.
+lbl_test_button=Teste
+err_mail=Este não é um endereço de e-mail válido
+err_modify_file=Não foi possível modificar essa opção de configuração.
+err_write_file=Erro ao escrever o arquivo de configuração.
+err_type=Type can only be: always, errors or never.
+err_found_line=Linha não encontrada no arquivo de configuração.
+err_test=Definir um primeiro um endereço de e-mail.
+err_send_test=Não foi possível enviar um email para seu endereço de e-mail.
+suc_test=Um e-mail foi enviado para o seu endereço de e-mail. Por favor conferir sua caixa de entrada.
+suc_set_mail=Endereço para mensagens do sistema foi definido com sucesso.
+
+lbl_test_mail_subject=Teste - notificação yaffas
+lbl_test_mail_body=This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors.
+lbl_test_mail_body1=Testar endereço de e-mail
+lbl_test_mail_body2=
+lbl_test_mail_body3=This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur.
+lbl_test_mail_body4=
+lbl_test_mail_body5=Divirta-se com yaffas
+lbl_test_mail_body6=
+lbl_test_mail_body7=
+
+moduletitle=Notificação

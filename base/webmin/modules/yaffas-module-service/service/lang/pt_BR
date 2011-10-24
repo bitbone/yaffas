@@ -1,0 +1,50 @@
+index_header=Serviços
+lbl_service=Serviço
+lbl_status=Estado
+lbl_service_on_boot=Inicializar serviço no boot
+lbl_watchme=Monitorar
+lbl_action=Ação
+lbl_execute=Executar
+lbl_start=Início
+lbl_stop=Parar
+lbl_config=Configuração
+lbl_restart=Reiniciar
+lbl_started=Iniciado
+lbl_stopped=Interrompido
+suc_start=Serviço foi iniciado
+dis_start=Serviço precisa ser iniciado
+err_start=Serviço não pôde ser iniciado
+suc_stop=Serviço foi terminado
+dis_stop=Serviço não pode ser terminado
+err_stop=Serviço não pôde ser terminado
+suc_restart=Serviço foi reiniciado
+dis_restart=Serviço não precisa ser reiniciado
+err_restart=Serviço não pôde ser reiniciado
+lbl_really_stop_title=Terminar serviço
+lbl_really_stop=Realmente deseja terminar este serviço?
+
+
+lbl_shutdown=Desligar sistema
+lbl_halt=Desligar sistema
+lbl_reboot=Reiniciar sistema
+lbl_halting=Sistema está sendo terminado.
+lbl_rebooting=Sistema está reiniciando. Em alguns minutos o login estará disponível novamente.
+lbl_sure_halt=Realmente deseja para o sistema.
+lbl_sure_reboot=Realmente deseja reiniciar o sistema.
+
+
+lbl_day=Dia
+lbl_month=Mês
+lbl_date=Data
+lbl_hour=Hora
+lbl_year=Ano
+lbl_setdatetime=Hora do sistema
+
+
+lbl_once=agora
+lbl_every=cada hora
+lbl_daily=diariamente às 
+lbl_minute= minuto
+lbl_hour= hora
+lbl_timeserver=Servidor de Horário
+moduletitle=Serviços

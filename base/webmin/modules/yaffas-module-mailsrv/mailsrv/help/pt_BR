@@ -1,0 +1,2 @@
+mailservername=Este nome será enviado ao SMTP remoto para e-mails enviados.
+mailsize=Limite de tamanho para todos os e-mails recebidos e enviados. Deixar em branco para um tamanho de e-mail ilimitado.

@@ -1,0 +1,95 @@
+category_accounts=Accounts
+category_appearance=Aparência
+category_fax=Fax
+category_manual=Manual
+category_hardware=Hardware
+category_license=Licença
+category_mailbox=Caixa de correio
+category_mailserver=Servidor de e-mail
+category_maintenance=Manutenção
+category_security=Segurança
+category_pdf=Impressoras PDF
+category_zarafa=Zarafa
+category_groupware=Zarafa
+
+err_db_connect=Não foi possível conectar no banco de dados Postgres.
+err_dir_exists=Não foi possível localizar os diretórios:
+err_dir_read=Não foi possível ler os diretórios:
+err_file_copy=Could not copy the following file:
+err_file_delete=Não foi possível remover os arquivos:
+err_file_execute=Não foi possível executar os arquivos:
+err_file_exists=Não foi possível localizar os arquivos:
+err_file_hardlink=Não foi possível criar 'hard links' para os arquivos:
+err_file_read=Não foi possível ler os arquivos:
+err_file_rename=Não foi possível renomear os arquivos:
+err_file_symlink=Não foi possível criar 'symlinks' para os arquivos:
+err_file_write=Não foi possível escrever os arquivos:
+err_user_exists=Não foi possível localizar os usuários:
+err_license_expired_text=Sua licença expirou. Por favor instalar nova licença ou entrar em contato com <a href='mailto:info@bitbone.de'>info@bitbone.de</a> para o uso do serviço.
+err_name_is_alias=Um alias com este nome já existe:
+err_alias_is_user=Um usuário com este nome já existe:
+
+lbl_apply=Aplicar
+lbl_cancel=Cancelar
+lbl_no=Não
+lbl_ok=OK
+lbl_paging_all=Mostrar todos
+lbl_paging_next=Próximo
+lbl_paging_previous=Anterior
+lbl_paging_goto=Ir para
+lbl_save=Salvar
+lbl_yes=Sim
+lbl_create_cache=Criando cache
+lbl_done=concluído
+lbl_apply_filter=Filtro
+lbl_delete=Remover
+
+lbl_product_mail=yaffas|MAIL
+lbl_product_fax=yaffas|FAX
+lbl_product_gate=yaffas|GATE
+lbl_product_pdf=yaffas|PDF
+lbl_product_fileserver=yaffas|FILE
+
+longcategory_accounts=Módulos para a configuração das contas do sistema
+longcategory_appearance=Módulos para a personalização da aparência
+longcategory_license=Módulos par o gerenciamento de licenças
+longcategory_fax=Módulos para a configuração do sistema de fax
+longcategory_handbook=Documentação sobre a administração do sistema
+longcategory_hardware=Módulos para configuração de impressoras, discos e demais hardware
+longcategory_mailbox=Módulos para a configuração das caixas de correio
+longcategory_mailserver=Módulos para a configuração do MTA
+longcategory_security=Módulos para a configuração das opções de segurança
+
+efileopen=Não foi possível abrir $1 : $2
+
+lbl_faxtakeover=Por favor pressionar o botão 'Aplicar' na configuração de fax. A configuração foi modificada.
+lbl_achtung=Atenção!
+
+lbl_lang=Linguagem
+lbl_lang_de=Alemão
+lbl_lang_en=Inglês
+lbl_lang_nl=Holandês
+lbl_lang_fr=Francês
+lbl_lang_pt_BR=Brazil
+
+lbl_table_pager={PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens por página
+lbl_about_yaffas=Sobre yaffas
+lbl_about_zadmin=Sobre Z-Admin
+
+lbl_logged_out=Deslogado
+lbl_logged_out_msg=Um outro administrador logou no sistema. Você terá que relogar.
+
+lbl_loading=Carregando.. por favor aguarde...
+lbl_error=Erro
+lbl_help=Ajuda
+
+lbl_loading_data=Carregando...
+lbl_error_data=Erro de dado.
+lbl_no_data=Nenhum registro encontrado.
+
+lbl_filter_header=Filtrar dados
+lbl_filter_show=Mostrar filtros
+
+err_connection_failed=Não foi possível conectar no backend!
+
+main_logout=Logout

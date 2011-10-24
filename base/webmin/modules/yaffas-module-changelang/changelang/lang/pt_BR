@@ -1,0 +1,9 @@
+lbl_index_header=Alterar linguagem
+lbl_index_return=Sistema
+
+lbl_choose_lang=Escolher Linguagem
+lbl_deutsch=Alemão
+lbl_english=Inglês
+
+err_lang=Linguagem não encontrada!
+moduletitle=Definir Linguagem
