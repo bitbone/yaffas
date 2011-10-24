@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-24 16:23+0200\n"
+"PO-Revision-Date: 2011-10-24 22:44+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -618,35 +618,36 @@ msgstr "Por favor selecionar \"usuário\", \"alias\" ou \"multientrega\"."
 msgid "Please provide a valid mailserver user."
 msgstr "Por favor fornecer um servidor de e-mail válido para o usuário."
 
+# 100%
 #: lang/en:133
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
-msgstr ""
+msgstr "Por favor fornecer uma senha para o usuário no servidor de e-mail."
 
 #: lang/en:134
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
-msgstr ""
+msgstr "Não foi possível habilitar o serviço Fetchmail."
 
 #: lang/en:135
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Fetchmail Mail Retrieval"
-msgstr ""
+msgstr "Busca de E-Mail do Fetchmail"
 
 #: help/en:1
 #, no-wrap
 msgid "Specify the polling interval in seconds."
-msgstr ""
+msgstr "Especificar intervalo em segundos para realizar o polling."
 
 #: help/en:2
 #, no-wrap
 msgid "The remote host name or IP address from which you want to receive mail."
-msgstr ""
+msgstr "O nome de máquina ou endereço IP remoto onde deverão ser buscados os e-mais."
 
 #: help/en:3
 #, no-wrap
 msgid "The DNS name of the remote server. This setting overrides the server name."
-msgstr ""
+msgstr "O nome DNS do servidor remoto. Essa configuração substitui o nome do servidor."
 
 #: help/en:4
 #, no-wrap
@@ -656,12 +657,12 @@ msgstr "Porta TCP/IP do servidor remoto."
 #: help/en:5
 #, no-wrap
 msgid "The header name of the envelope address (e.g. X-Envelope-To)."
-msgstr ""
+msgstr "O nome do cabeçalho que contém o endereço do envelope (ex. X-Envelope-To)."
 
 #: help/en:6
 #, no-wrap
 msgid "Specify the login user from the remote machine."
-msgstr ""
+msgstr "Especificar o login do usuário no servidor remoto."
 
 #~ msgid "Apply key"
 #~ msgstr "Aplicar licença"
@@ -2146,6 +2147,9 @@ msgstr ""
 #~ msgid "Mail Queue"
 #~ msgstr "Fila de e-mail"
 
+#~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
+#~ msgstr "Nome do usuário inválido. Somente caracteres minúsculos, dígitos, pontos e hifens são válidos."
+
 # 94%
 #~ msgid "Password not valid"
 #~ msgstr "Senha inválida"
@@ -2175,10 +2179,12 @@ msgstr ""
 #~ msgid "The alias is not valid."
 #~ msgstr "O alias não é válido."
 
+#~ msgid "The selected username is already used by the system."
+#~ msgstr "O nome de usuário selecionado já está sendo usado pelo sistema."
+
 # 77%
-#, fuzzy
 #~ msgid "The quota value has to be a number."
-#~ msgstr "O valor da cota deve ser positivo."
+#~ msgstr "O valor da cota deve ser um número."
 
 #~ msgid "The quota value has to be positive."
 #~ msgstr "O valor da cota deve ser positivo."
@@ -2228,11 +2234,29 @@ msgstr ""
 #~ msgid "Zarafa administrator"
 #~ msgstr "Administrador Zarafa"
 
+#~ msgid "Zarafa shared store user"
+#~ msgstr "Caixa compartilhada Zarafa"
+
+#~ msgid "irreversible after activation"
+#~ msgstr "irreversível após a ativação"
+
+#~ msgid "Given name"
+#~ msgstr "Primeiro nome"
+
 #~ msgid "Surname"
 #~ msgstr "Sobrenome"
 
+#~ msgid "Zarafa store"
+#~ msgstr "Caixa Zarafa"
+
 #~ msgid "no Zarafa license"
-#~ msgstr "Sem licença Zarafa"
+#~ msgstr "sem licença Zarafa"
+
+#~ msgid "Convert into a zarafa resource"
+#~ msgstr "Converter para um recurso Zarafa"
+
+#~ msgid "Should the following users really be converted into zarafa resources?"
+#~ msgstr "Os usuários realmente deverão ser convertidos para recursos Zarafa?"
 
 #~ msgid "User created with following warnings"
 #~ msgstr "Usuário criado com os seguintes avisos"
@@ -2263,6 +2287,9 @@ msgstr ""
 # 87%
 #~ msgid "Features"
 #~ msgstr "Recursos"
+
+#~ msgid "Add alias"
+#~ msgstr "Adicionar alias"
 
 # 85%
 #~ msgid "Execute"
@@ -2298,6 +2325,9 @@ msgstr ""
 #~ msgid "or"
 #~ msgstr "ou"
 
+#~ msgid "Configuration of mail aliases is done through active directory."
+#~ msgstr "Configuração de alias é feita pelo Active Directory."
+
 #~ msgid "The following usernames or e-mail addresses are not valid."
 #~ msgstr "Os seguintes nomes de usuários ou endereço de e-mails são inválidos."
 
@@ -2313,8 +2343,17 @@ msgstr ""
 #~ msgid "Nothing selected"
 #~ msgstr "Nada selecionado"
 
+#~ msgid "Alias exists as user."
+#~ msgstr "Alias já existente como usuário."
+
+#~ msgid "An alias can only be set for user or folder."
+#~ msgstr "Um alias pode ser definido somente para um usuário ou pasta."
+
 #~ msgid "Error while removing alias."
 #~ msgstr "Erro ao remover alias."
+
+#~ msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
+#~ msgstr "Nenhum administrador Zarafa definido ou nenhuma pasta criada. Por favor definir no módulo <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Configuração do servidor de E-mail</a>."
 
 # 95%
 #, fuzzy
@@ -2341,16 +2380,47 @@ msgstr ""
 #~ msgid "Licensenumber"
 #~ msgstr "Número de licença"
 
+#, fuzzy
+#~ msgid "Incoming MSNs"
+#~ msgstr "MSNs recebidos"
+
 #~ msgid "unlimited"
 #~ msgstr "ilimitado"
 
-# 85%
+#~ msgid "Unlimited (only limited by telephone system)"
+#~ msgstr "Ilimitado (limitado somente pelo sistema telefônico)"
+
+#~ msgid "Configurable controllers"
+#~ msgstr "Controladores configuráveis"
+
+#~ msgid "Valid from"
+#~ msgstr "Válido a partir de"
+
+#~ msgid "Valid until"
+#~ msgstr "Válido até"
+
+#~ msgid "Configurable printers"
+#~ msgstr "Impressoras configuráveis"
+
+#~ msgid "PDF encryption"
+#~ msgstr "Criptografia de PDF"
+
 #, fuzzy
+#~ msgid "Notepaper"
+#~ msgstr "Papel de anotação"
+
+#~ msgid "Merge PDFs"
+#~ msgstr "Mesclar PDFs"
+
+# 85%
 #~ msgid "enabled"
-#~ msgstr "Habilitado"
+#~ msgstr "habilitado"
 
 #~ msgid "disabled"
 #~ msgstr "desabilitado"
+
+#~ msgid "yaffas base"
+#~ msgstr "yaffas base"
 
 #~ msgid "Licensetype"
 #~ msgstr "Tipo de licença"
@@ -2373,12 +2443,27 @@ msgstr ""
 #~ msgid "251-500 User"
 #~ msgstr "251-500 Usuários"
 
+#~ msgid "Could not copy the key."
+#~ msgstr "Não foi possível copiar a chave."
+
+#~ msgid "The product for your key is not installed!"
+#~ msgstr "Nenhum produto instalado para essa chave!"
+
 # 85%
 #~ msgid "Can't create file!"
 #~ msgstr "Não foi possível criar arquivo!"
 
 #~ msgid "Can't write file!"
 #~ msgstr "Não foi possível escrever no arquivo!"
+
+#~ msgid "Invalid key location!"
+#~ msgstr "Localização de chave inválida!"
+
+#~ msgid "Can't remove new key!"
+#~ msgstr "Não foi possível remover nova chave!"
+
+#~ msgid "Wrong key version for installed product!"
+#~ msgstr "Chave na versão errada para o produto instalado!"
 
 #~ msgid "No key available!"
 #~ msgstr "Nenhuma licença disponível!"
@@ -2397,6 +2482,12 @@ msgstr ""
 
 #~ msgid "Send"
 #~ msgstr "Enviar"
+
+#~ msgid "Please complete all forms and check your e-mail address."
+#~ msgstr "Por favor preencher completamente todos os formulários e verificar seu endereço de e-mail."
+
+#~ msgid "Your mails are queued for sending. This may take some time depending on your hardware."
+#~ msgstr "Seus e-mails estão na fila para serem enviados. Isso poderá demorar algum tempo dependendo do hardware."
 
 #~ msgid "Services"
 #~ msgstr "Serviços"
@@ -2500,6 +2591,9 @@ msgstr ""
 #~ msgid "Time Server"
 #~ msgstr "Servidor de Horário"
 
+#~ msgid "Enter the hostname or IP address of the time server to be used for NTP."
+#~ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP."
+
 #~ msgid "Uptime of"
 #~ msgstr "Uptime em"
 
@@ -2563,6 +2657,9 @@ msgstr ""
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
 
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Você está indo usar um arquivo de configuração inferior ou igual ao Yaffas 2.<br>Essa versão pode ser convertido para a versão atual, porém é importante ressaltar, que a configuração de muito módulos foi modificado. A verificação manual dos parâmetros configurados é altamente recomendado!"
+
 #~ msgid "Following list cant be converted:"
 #~ msgstr "Itens abaixo não puderam ser convertidos:"
 
@@ -2581,6 +2678,9 @@ msgstr ""
 # 83%
 #~ msgid "Save Configuration"
 #~ msgstr "Salvar Configuração"
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Erro ao importar a configuração."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erro no arquivo de configuração"
@@ -2638,6 +2738,12 @@ msgstr ""
 
 #~ msgid "Delete virtual IP address"
 #~ msgstr "Remover endereço IP virtual"
+
+#~ msgid "Do you really want to delete the following network interface?"
+#~ msgstr "Realmente deseja remover a interface de rede abaixo?"
+
+#~ msgid "New virtual address on interface"
+#~ msgstr "Novo endereço virtual na interface"
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "Proxy HTTP"
@@ -2704,6 +2810,13 @@ msgstr ""
 
 #~ msgid "Netmask for eth0<br>e.g. 255.255.255.0"
 #~ msgstr "Máscara de rede para eth0<br>ex. 255.255.255.0"
+
+#~ msgid "Gateway for your network. This must be an IPv4 address of this network."
+#~ msgstr "Gateway para sua rede. Este tem que ser um endereço IPv4 desta rede."
+
+#, fuzzy
+#~ msgid "DNS server for resolving names into IP adresses."
+#~ msgstr "Servidor DNS para resolver nomes em endereços IP."
 
 # 95%
 #, fuzzy

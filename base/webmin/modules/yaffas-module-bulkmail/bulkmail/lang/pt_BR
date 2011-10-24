@@ -5,7 +5,7 @@ index_subject=Assunto
 index_message=Mensagem
 index_send=Enviar
 
-err_error=Please complete all forms and check your e-mail address.
-lbl_send_success=Your mails are queued for sending. This may take some time depending on your hardware.
+err_error=Por favor preencher completamente todos os formulários e verificar seu endereço de e-mail.
+lbl_send_success=Seus e-mails estão na fila para serem enviados. Isso poderá demorar algum tempo dependendo do hardware.
 
 moduletitle=E-mail em massa

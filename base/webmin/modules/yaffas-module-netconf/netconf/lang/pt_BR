@@ -35,14 +35,14 @@ lbl_delete=Remover
 lbl_interface=Interface
 lbl_base_settings=Configurações básicas
 
-lbl_enabled=enabled
+lbl_enabled=habilitado
 lbl_disabled=desabilitado
 lbl_status=Estado
 lbl_new_ip=Novo endereço IP virtual
 lbl_delete_device=Remover endereço IP virtual
-lbl_really_delete=Do you really want to delete the following network interface?
+lbl_really_delete=Realmente deseja remover a interface de rede abaixo?
 lbl_create=Criar
-lbl_new_interface=New virtual address on interface
+lbl_new_interface=Novo endereço virtual na interface
 
 
 

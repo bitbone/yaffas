@@ -1,1 +1,1 @@
-timeserver=Enter the hostname or IP address of the time server to be used for NTP.
+timeserver=Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.

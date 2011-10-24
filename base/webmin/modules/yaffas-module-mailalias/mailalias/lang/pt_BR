@@ -1,5 +1,5 @@
 lbl_changealias=Editar
-lbl_addalias=Add alias
+lbl_addalias=Adicionar alias
 lbl_delalias=Remover
 lbl_execute=Executar
 lbl_apply=Aplicar
@@ -21,15 +21,15 @@ lbl_user=Usuário
 lbl_or=ou
 
 lbl_add=Adicionar
-lbl_mailalias_ad=Configuration of mail aliases is done through active directory.
+lbl_mailalias_ad=Configuração de alias é feita pelo Active Directory.
 
 err_check_alias=Os seguintes nomes de usuários ou endereço de e-mails são inválidos.
 err_already_exists=Este alias já existe.
 err_alias_name=Este nome de alias não é válido.
 err_no_alias=Nenhum alias selecionado.
 err_nothing=Nada selecionado
-err_alias_is_user=Alias exists as user.
-err_select_only_one=An alias can only be set for user or folder.
+err_alias_is_user=Alias já existente como usuário.
+err_select_only_one=Um alias pode ser definido somente para um usuário ou pasta.
 lbl_check_aliasesrm_error=Erro ao remover alias.
-lbl_no_zarafa_public_folders=You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.
+lbl_no_zarafa_public_folders=Nenhum administrador Zarafa definido ou nenhuma pasta criada. Por favor definir no módulo <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Configuração do servidor de E-mail</a>.
 moduletitle=Mail alias configuration
