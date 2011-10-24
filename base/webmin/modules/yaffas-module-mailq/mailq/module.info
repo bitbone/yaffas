@@ -7,3 +7,4 @@ desc=Mail Queue
 version=0.1
 desc_nl=Mail Queue
 desc_fr=File d'attente des courriels
+desc_pt_BR=Fila de e-mail

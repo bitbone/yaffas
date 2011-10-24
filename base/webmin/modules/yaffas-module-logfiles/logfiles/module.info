@@ -7,3 +7,4 @@ desc=Logfile download module
 version=1.0
 desc_nl=Log file viewer
 desc_fr=Visionneuse de fichier de journalisation
+desc_pt_BR=Exibição de arquivos de log

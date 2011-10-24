@@ -70,6 +70,7 @@ lbl_lang_de=Allemand
 lbl_lang_en=Anglais
 lbl_lang_nl=Néerlandais
 lbl_lang_fr=Français
+lbl_lang_pt_BR=Brazil
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page
 lbl_about_yaffas=À propos de yaffas
@@ -91,3 +92,4 @@ lbl_filter_show=Appliquer le filtre
 
 err_connection_failed=Impossible de se connecter au moteur !
 
+main_logout=Logout
