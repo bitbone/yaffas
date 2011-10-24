@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2011-10-22 00:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,315 +34,330 @@ msgstr ""
 
 #: lang/en:5
 #, no-wrap
-msgid "No e-mail address specified"
+msgid "Could not set e-mail address"
 msgstr ""
 
 #: lang/en:6
 #, no-wrap
-msgid "Groups not valid"
+msgid "Could not change e-mail address"
 msgstr ""
 
 #: lang/en:7
 #, no-wrap
-msgid "Passwords are not equal"
+msgid "Invalid e-mail address"
 msgstr ""
 
 #: lang/en:8
 #, no-wrap
-msgid "No user selected."
+msgid "No e-mail address specified"
 msgstr ""
 
 #: lang/en:9
 #, no-wrap
-msgid "Wrong filetype selected."
+msgid "Groups not valid"
 msgstr ""
 
 #: lang/en:10
 #, no-wrap
-msgid "Could not change the login."
+msgid "Passwords are not equal"
 msgstr ""
 
 #: lang/en:11
 #, no-wrap
-msgid "Could not read UIDs of the following users:"
+msgid "No user selected."
 msgstr ""
 
 #: lang/en:12
 #, no-wrap
-msgid "The alias is not valid."
+msgid "Wrong filetype selected."
 msgstr ""
 
 #: lang/en:13
+#, no-wrap
+msgid "Could not change the login."
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Could not read UIDs of the following users:"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "The alias is not valid."
+msgstr ""
+
+#: lang/en:16
 #, no-wrap
 msgid ""
 "If you want to you use aliases for this user, you should activate his "
 "mailbox."
 msgstr ""
 
-#: lang/en:14
+#: lang/en:17
 #, no-wrap
 msgid "The selected username is already used by the system."
 msgstr ""
 
-#: lang/en:15
+#: lang/en:18
 #, no-wrap
 msgid "The quota value has to be a number."
 msgstr ""
 
-#: lang/en:16
+#: lang/en:19
 #, no-wrap
 msgid "The quota value has to be positive."
 msgstr ""
 
-#: lang/en:17
+#: lang/en:20
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr ""
 
-#: lang/en:18
+#: lang/en:21
 #, no-wrap
 msgid "You cannot use localhost as domain-part"
 msgstr ""
 
-#: lang/en:19
+#: lang/en:22
 #, no-wrap
 msgid ""
 "The username and the local-part are different. You must define an alias to "
 "localpart. Otherwise zarafa will not be able to deliver emails properly."
 msgstr ""
 
-#: lang/en:20
+#: lang/en:23
 #, no-wrap
 msgid ""
 "Username and e-mail local-part are different. To make Zarafa work with the "
 "given e-mail address you have to define the following e-mail alias:"
 msgstr ""
 
-#: lang/en:21
+#: lang/en:24
 #, no-wrap
 msgid "This user could not be added/edited."
 msgstr ""
 
-#: lang/en:22
+#: lang/en:25
 #, no-wrap
 msgid "This action is only supported with local authentification."
 msgstr ""
 
-#: lang/en:23
+#: lang/en:26
 #, no-wrap
 msgid ""
 "User was created but Zarafa store was not created. This means normally that "
 "your license does not allow any more users."
 msgstr ""
 
-#: lang/en:24
+#: lang/en:27
 #, no-wrap
 msgid ""
 "This user is used for delivery in public folders. You have to select another "
 "user for this, then you can delete this one."
 msgstr ""
 
-#: lang/en:25
+#: lang/en:28
 #, no-wrap
 msgid "Usermanagment"
 msgstr ""
 
-#: lang/en:26
+#: lang/en:29
 #, no-wrap
 msgid "Add user"
 msgstr ""
 
-#: lang/en:27 lang/en:46
+#: lang/en:30 lang/en:49
 #, no-wrap
 msgid "Printer operator"
 msgstr ""
 
-#: lang/en:28
+#: lang/en:31
 #, no-wrap
 msgid "Printer Administrator"
 msgstr ""
 
-#: lang/en:29
+#: lang/en:32
 #, no-wrap
 msgid "Modified users"
 msgstr ""
 
-#: lang/en:30
+#: lang/en:33
 #, no-wrap
 msgid "Modify user"
 msgstr ""
 
-#: lang/en:31
+#: lang/en:34
 #, no-wrap
 msgid "Do You really want to delete the selected users?"
 msgstr ""
 
-#: lang/en:32
+#: lang/en:35
 #, no-wrap
 msgid "Remove user"
 msgstr ""
 
-#: lang/en:33
+#: lang/en:36
 #, no-wrap
 msgid "E-mail address"
 msgstr ""
 
-#: lang/en:34
+#: lang/en:37
 #, no-wrap
 msgid "Name"
 msgstr ""
 
-#: lang/en:35
+#: lang/en:38
 #, no-wrap
 msgid "Groups"
 msgstr ""
 
-#: lang/en:36
+#: lang/en:39
 #, no-wrap
 msgid "Enable e-mail account"
 msgstr ""
 
-#: lang/en:37
+#: lang/en:40
 #, no-wrap
 msgid "No matter"
 msgstr ""
 
-#: lang/en:38
+#: lang/en:41
 #, no-wrap
 msgid "No printer operator"
 msgstr ""
 
-#: lang/en:39
+#: lang/en:42
 #, no-wrap
 msgid "Username"
 msgstr ""
 
-#: lang/en:40
+#: lang/en:43
 #, no-wrap
 msgid "Password"
 msgstr ""
 
-#: lang/en:41
+#: lang/en:44
 #, no-wrap
 msgid "Repeat password"
 msgstr ""
 
-#: lang/en:42 lang/en:67
+#: lang/en:45 lang/en:70
 #, no-wrap
 msgid "User Management"
 msgstr ""
 
-#: lang/en:43
+#: lang/en:46
 #, no-wrap
 msgid "Filetype for fax delivery"
 msgstr ""
 
-#: lang/en:44
+#: lang/en:47
 #, no-wrap
 msgid "E-mail alias"
 msgstr ""
 
-#: lang/en:45
+#: lang/en:48
 #, no-wrap
 msgid "Authentification"
 msgstr ""
 
-#: lang/en:47
+#: lang/en:50
 #, no-wrap
 msgid "User"
 msgstr ""
 
-#: lang/en:48
+#: lang/en:51
 #, no-wrap
 msgid "Mailbox quota"
 msgstr ""
 
-#: lang/en:49
+#: lang/en:52
 #, no-wrap
 msgid "Zarafa administrator"
 msgstr ""
 
-#: lang/en:50
+#: lang/en:53
 #, no-wrap
 msgid "Zarafa shared store user"
 msgstr ""
 
-#: lang/en:51
+#: lang/en:54
 #, no-wrap
 msgid "irreversible after activation"
 msgstr ""
 
-#: lang/en:52
+#: lang/en:55
 #, no-wrap
 msgid "Given name"
 msgstr ""
 
-#: lang/en:53
+#: lang/en:56
 #, no-wrap
 msgid "Surname"
 msgstr ""
 
-#: lang/en:54
+#: lang/en:57
 #, no-wrap
 msgid "Zarafa store"
 msgstr ""
 
-#: lang/en:55
+#: lang/en:58
 #, no-wrap
 msgid "no Zarafa license"
 msgstr ""
 
-#: lang/en:56
+#: lang/en:59
 #, no-wrap
 msgid "Convert into a zarafa resource"
 msgstr ""
 
-#: lang/en:57
+#: lang/en:60
 #, no-wrap
 msgid "Should the following users really be converted into zarafa resources?"
 msgstr ""
 
-#: lang/en:58
+#: lang/en:61
 #, no-wrap
 msgid "User created with following warnings"
 msgstr ""
 
-#: lang/en:59
+#: lang/en:62
 #, no-wrap
 msgid "Business Phone"
 msgstr ""
 
-#: lang/en:60
+#: lang/en:63
 #, no-wrap
 msgid "Location"
 msgstr ""
 
-#: lang/en:61
+#: lang/en:64
 #, no-wrap
 msgid "Fax"
 msgstr ""
 
-#: lang/en:62
+#: lang/en:65
 #, no-wrap
 msgid "Department"
 msgstr ""
 
-#: lang/en:63
+#: lang/en:66
 #, no-wrap
 msgid "Allow send as"
 msgstr ""
 
-#: lang/en:64
+#: lang/en:67
 #, no-wrap
 msgid "For user"
 msgstr ""
 
-#: lang/en:65
+#: lang/en:68
 #, no-wrap
 msgid "For group"
 msgstr ""
 
-#: lang/en:66
+#: lang/en:69
 #, no-wrap
 msgid "Features"
 msgstr ""
