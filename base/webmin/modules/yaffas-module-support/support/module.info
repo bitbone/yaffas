@@ -1,9 +1,9 @@
 longdesc=Support for your yaffas Server
-desc_de=Support
+
 desc_en=Support
 name=support
 category=maintenance
 desc=Support
 version=0.1
-desc_nl=Support
-desc_fr=Support technique
+
+
