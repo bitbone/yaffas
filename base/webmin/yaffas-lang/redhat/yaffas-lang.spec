@@ -20,7 +20,7 @@ make %{?_smp_mflags}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 %post -p /usr/bin/perl
-my @langs = ("de", "en", "nl", "fr");
+my @langs = ("de", "en", "nl", "fr", "pt_BR");
 my @path = qw(/opt/yaffas/webmin /opt/yaffas/usermin);
 
 foreach my $path (@path) {

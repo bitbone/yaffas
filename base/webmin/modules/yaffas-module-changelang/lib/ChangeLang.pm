@@ -71,7 +71,7 @@ sub set_lang($;$) {
 	my $lang = shift;
 	my $user = shift;
 
-	if ($lang ne "de" && $lang ne "en" && $lang ne "nl" && $lang ne "fr") {
+	if ($lang ne "de" && $lang ne "en" && $lang ne "nl" && $lang ne "fr" && $lang ne "pt_BR") {
 		throw Yaffas::Exception("err_lang");
 	}
 
@@ -108,7 +108,20 @@ sub set_lang($;$) {
 			my @content = $file->get_content();
 			my $lineno = $file->search_line(qr/^zarafa-admin.*--create-store/);
 
-			my $langstr = $lang eq "de" ? "de_DE.UTF-8" : "en_GB.UTF-8";
+			my $langstr = "en_GB.UTF-8";
+
+			if ($lang eq "de") {
+				$langstr = "de_DE.UTF-8"
+			}
+			if ($lang eq "fr") {
+				$langstr = "fr_FR.UTF-8"
+			}
+			if ($lang eq "nl") {
+				$langstr = "nl_NL.UTF-8"
+			}
+			if ($lang eq "pt_BR") {
+				$langstr = "pt_BR.UTF-8"
+			}
 
 			if ($lineno > 0) {
 				my $line = $content[$lineno];

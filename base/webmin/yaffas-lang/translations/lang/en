@@ -70,6 +70,7 @@ lbl_lang_de=German
 lbl_lang_en=English
 lbl_lang_nl=Dutch
 lbl_lang_fr=French
+lbl_lang_pt_BR=Brazil
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
 lbl_about_yaffas=About yaffas
@@ -91,3 +92,4 @@ lbl_filter_show=Show filter
 
 err_connection_failed=Could not connect to backend!
 
+main_logout=Logout
