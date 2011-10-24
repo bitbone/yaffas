@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-22 00:13+0300\n"
-"PO-Revision-Date: 2011-10-11 09:22+0200\n"
+"PO-Revision-Date: 2011-10-24 08:50+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -175,12 +175,12 @@ msgstr "E-Mail Adresse nicht gültig"
 #: lang/en:38
 #, no-wrap
 msgid "Could not set e-mail address"
-msgstr ""
+msgstr "Konnte die E-Mail Adresse nicht setzen"
 
 #: lang/en:39
 #, no-wrap
 msgid "Could not change e-mail address"
-msgstr ""
+msgstr "Konnte die E-Mail Adresse nicht ändern"
 
 #: lang/en:40
 #, no-wrap
@@ -342,14 +342,8 @@ msgstr "Gruppenverwaltung"
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
-
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden."
-
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen."
 
 #~ msgid "Stop"
 #~ msgstr "Anhalten"
@@ -1248,9 +1242,6 @@ msgstr "Gruppenverwaltung"
 
 #~ msgid "Support"
 #~ msgstr "Support"
-
-#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
-#~ msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
 
 #~ msgid "Download"
 #~ msgstr "Herunterladen"
@@ -3306,6 +3297,15 @@ msgstr "Gruppenverwaltung"
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Konnte nicht zum Backend verbinden!"
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen."
+
+#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
+#~ msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
 
 #~ msgid "Error passing backup days."
 #~ msgstr "Fehler bei der Übergabe der Sicherungstage."

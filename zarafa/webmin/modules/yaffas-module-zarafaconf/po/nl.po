@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2011-10-24 15:52+0300\n"
 "PO-Revision-Date: 2011-10-18 19:27+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -208,9 +208,9 @@ msgid "This limits the maximum disk usage for each user in MB."
 msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
 #: help/en:3
-#, no-wrap
-msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+#, fuzzy, no-wrap
+msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
 #: help/en:4
 #, no-wrap
@@ -219,8 +219,13 @@ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtw
 
 #: help/en:5
 #, no-wrap
-msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
+msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+msgstr ""
+
+#: help/en:6
+#, fuzzy, no-wrap
+msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
 
 #~ msgid "Apply key"
 #~ msgstr "Sleutel toepassen"
@@ -358,7 +363,8 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgstr "Verwijderen van directory"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+#~ msgstr ""
+#~ "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
 
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
@@ -428,8 +434,13 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Do you really want to delete these resources?"
 #~ msgstr "Wilt u deze resources echt verwijderen?"
 
-#~ msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
-#~ msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die deze resource moeten kunnen boeken in de kalender-instelling voor deze resource."
+#~ msgid ""
+#~ "Do not forget to give appropriate permissions to users that need to book "
+#~ "this resource in the calendar setting for this resource."
+#~ msgstr ""
+#~ "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die "
+#~ "deze resource moeten kunnen boeken in de kalender-instelling voor deze "
+#~ "resource."
 
 #~ msgid "The name of the resource contains illegal characters."
 #~ msgstr "De naam van de resource bevat ongeldige tekens."
@@ -446,8 +457,12 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid "The domain is not defined as local domain in your mailserver configuration."
-#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
+#~ msgid ""
+#~ "The domain is not defined as local domain in your mailserver "
+#~ "configuration."
+#~ msgstr ""
+#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
+#~ "configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -473,14 +488,20 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Deze naam wordt getoond in het globale adresboek."
 
-#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-#~ msgstr "U kunt een omschrijving toevoegen als de naam van de resource niet uit zichzelf duidelijk is."
+#~ msgid ""
+#~ "You may want to add a description if the name of the resource isn't self-"
+#~ "explanatory."
+#~ msgstr ""
+#~ "U kunt een omschrijving toevoegen als de naam van de resource niet uit "
+#~ "zichzelf duidelijk is."
 
 #~ msgid "Check this box and the resource can only be booked once."
-#~ msgstr "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
+#~ msgstr ""
+#~ "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
 
 #~ msgid "Check this box to disable recurring appointments for this resource."
-#~ msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
+#~ msgstr ""
+#~ "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 
 #~ msgid "Admin password"
 #~ msgstr "Admin-wachtwoord"
@@ -503,8 +524,11 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
+#~ msgid ""
+#~ "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr ""
+#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
+#~ "functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"
@@ -625,8 +649,10 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Add spam detected headers at level"
 #~ msgstr "Voeg spamheaders toe vanaf niveau"
 
-#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
-#~ msgstr "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
+#~ msgid ""
+#~ "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr ""
+#~ "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
 
 #~ msgid "Address"
 #~ msgstr "Adres"
@@ -647,16 +673,25 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgstr "Beveiliging"
 
 #~ msgid "This value defines at which score mails are handled as spam."
-#~ msgstr "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
+#~ msgstr ""
+#~ "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
 
 #~ msgid "Define a host or network by its IP address or CIDR."
 #~ msgstr "Geef een host of netwerk op met een IP-adres of CIDR."
 
-#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
-#~ msgstr "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven afmeting. Grotere objecten worden NIET gescand."
+#~ msgid ""
+#~ "ClamAV will scan only objects that are smaller than the specified amount. "
+#~ "Larger objects will NOT be scanned."
+#~ msgstr ""
+#~ "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven "
+#~ "afmeting. Grotere objecten worden NIET gescand."
 
-#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
-#~ msgstr "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het opgegeven adres."
+#~ msgid ""
+#~ "If ClamAV detects a suspicious object, it will send a mail to the "
+#~ "specified address."
+#~ msgstr ""
+#~ "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het "
+#~ "opgegeven adres."
 
 #~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
 #~ msgstr "Zet dit aan om archieven zoals RAR, ZIP, GZ, ... te scannen."
@@ -729,8 +764,12 @@ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de datab
 #~ msgid "Group exists already!"
 #~ msgstr "Groep bestaat al!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+#~ msgid ""
+#~ "Group names have to consist of at least one (alphanumerical) character, "
+#~ "beginning with a letter(no umlaut)."
+#~ msgstr ""
+#~ "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, "
+#~ "beginnend met een letter (geen trema's)."
 
 #~ msgid "Wrong mode!"
 #~ msgstr "Verkeerde modus!"

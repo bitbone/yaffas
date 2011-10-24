@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2011-10-24 15:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
-#: lang/en:1 lang/en:2 lang/en:12
+#: lang/en:1 lang/en:2
 #, no-wrap
 msgid "Support"
 msgstr ""
@@ -23,46 +23,57 @@ msgstr ""
 #: lang/en:3
 #, no-wrap
 msgid ""
-"Click on download button and send the file to the bitbone support if you "
-"have any problems with your yaffas Server."
+"Click on download button to save the configuration for later usage. Send an "
+"e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for "
+"support. You might be asked for parts of the config file data."
 msgstr ""
 
 #: lang/en:4
 #, no-wrap
-msgid "Download"
+msgid ""
+"Click on download button to save the configuration for later usage. Create a "
+"forum topic for support on Z-Admin in the Z-Admin forums on <a "
+"href=\"http://forums.zarafa.com\" "
+"target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts "
+"of the config file data."
 msgstr ""
 
 #: lang/en:5
 #, no-wrap
-msgid "System"
+msgid "Download"
 msgstr ""
 
 #: lang/en:6
 #, no-wrap
-msgid "Please press download to get the available system and hardware informations."
+msgid "System"
 msgstr ""
 
 #: lang/en:7
 #, no-wrap
-msgid "Hardware List"
+msgid "Please press download to get the available system and hardware informations."
 msgstr ""
 
 #: lang/en:8
 #, no-wrap
-msgid "Your system doesn't have the needed programm \"lshw\" installed."
+msgid "Hardware List"
 msgstr ""
 
 #: lang/en:9
 #, no-wrap
-msgid "Your system doesn't have the needed programm \"lspci\" installed."
+msgid "Your system doesn't have the needed programm \"lshw\" installed."
 msgstr ""
 
 #: lang/en:10
 #, no-wrap
-msgid "An error occured while executing \"pspci\"."
+msgid "Your system doesn't have the needed programm \"lspci\" installed."
 msgstr ""
 
 #: lang/en:11
+#, no-wrap
+msgid "An error occured while executing \"pspci\"."
+msgstr ""
+
+#: lang/en:12
 #, no-wrap
 msgid "An error occured while executing \"lshw\"."
 msgstr ""
