@@ -1,4 +1,4 @@
-category_accounts=Accounts
+category_accounts=Contas
 category_appearance=Aparência
 category_fax=Fax
 category_manual=Manual
@@ -70,7 +70,7 @@ lbl_lang_de=Alemão
 lbl_lang_en=Inglês
 lbl_lang_nl=Holandês
 lbl_lang_fr=Francês
-lbl_lang_pt_BR=Brazil
+lbl_lang_pt_BR=Brasil
 
 lbl_table_pager={PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens por página
 lbl_about_yaffas=Sobre yaffas
@@ -92,4 +92,4 @@ lbl_filter_show=Mostrar filtros
 
 err_connection_failed=Não foi possível conectar no backend!
 
-main_logout=Logout
+main_logout=Efetuar logoff

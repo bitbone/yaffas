@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-11 14:27+0200\n"
+"PO-Revision-Date: 2011-10-25 15:35+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -240,7 +240,7 @@ msgstr "Utilisateur Base DN"
 #: lang/en:47
 #, no-wrap
 msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-msgstr "Pour utiliser cette méthode d'authentification, vous devez disposez du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
+msgstr "Pour utiliser cette méthode d'authentification, vous devez disposer du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
 
 #: lang/en:48
 #, no-wrap
@@ -737,14 +737,17 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Ceci limite l'utilisation disque maximale de chaque utilisateur en Mo."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "Cette base de données sera créée si elle n'existe pas encore. Pour cela, l'utilisateur doit posséder les autorisations adéquates."
+#~ msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question."
 
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Ceci est le mot de passe défini sur la base de données. Vous devez définir ce mot de passe manuellement."
 
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question."
+#~ msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+#~ msgstr "Ceci est l'adresse du serveur MySQL. Pour les serveurs installés localement, saisir 'localhost'."
+
+#~ msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa.<br />Il est recommandé d'utiliser le nom 'zarafa'.<br /> Elle sera créée si elle n'existe pas déjà. Pour cela, l'utilisateur doit posséder les autorisations adéquates."
 
 #~ msgid "Stop"
 #~ msgstr "Annuler"
@@ -1159,7 +1162,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Sécurité"
 
 #~ msgid "This value defines at which score mails are handled as spam."
-#~ msgstr "Cette valeur défini le niveau à partir duquel les courriels sont considérés comme spam."
+#~ msgstr "Cette valeur définit le niveau à partir duquel les courriels sont considérés comme spam."
 
 #~ msgid "Define a host or network by its IP address or CIDR."
 #~ msgstr "Définir un hôte ou un réseau par son adresse IP ou CIDR."
@@ -1247,6 +1250,15 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 
 #~ msgid "This action is only supported with local authentification."
 #~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+
+#~ msgid "E-mail address not valid"
+#~ msgstr "Adresse électronique invalide"
+
+#~ msgid "Could not set e-mail address"
+#~ msgstr "Impossible de définir l'adresse électronique"
+
+#~ msgid "Could not change e-mail address"
+#~ msgstr "Impossible de modifier l'adresse électronique"
 
 #~ msgid "Group Management"
 #~ msgstr "Gestion des groupes"
@@ -1717,7 +1729,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "L'accès ne peut être configuré que pour des adresses IP ou des réseaux"
 
 #~ msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
-#~ msgstr "La suite de caractère  communautaire ne peut contenir que des chiffres (0-9) et des lettres (a-z, A-Z)."
+#~ msgstr "La suite de caractères (communautaire) ne peut contenir que des chiffres (0-9) et des lettres (a-z, A-Z)."
 
 #~ msgid "Password for the SNMP access."
 #~ msgstr "Mot de passe pour l'accès SNMP."
@@ -1728,8 +1740,11 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgid "Support"
 #~ msgstr "Support technique"
 
-#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
-#~ msgstr "Cliquer sur le bouton de téléchargement et envoyer le ficher au support bitbone si vous rencontrez un problème quelconque avec votre serveur yaffas."
+#~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
+#~ msgstr "Cliquer sur le bouton de téléchargement afin de sauvegarder la configuration pour une utilisation ultérieure. Envoyer un courriel à <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> pour toute demande de support technique. Il vous sera éventuellement demandé de fournir certaines données du fichier de configuration."
+
+#~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
+#~ msgstr "Cliquer sur le bouton de téléchargement afin de sauvegarder la configuration pour une utilisation ultérieure. Démarrer une nouvelle requête de support technique pour Z-Admin dans le forum de Z-Admin sur <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, il vous sera éventuellement demandé de fournir certaines données du fichier de configuration."
 
 #~ msgid "Download"
 #~ msgstr "Téléchargement"
@@ -1753,7 +1768,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Une erreur s'est produite lors de l'exécution de \"lshw\"."
 
 #~ msgid "Address for System Messages"
-#~ msgstr "Adresse pour les message système"
+#~ msgstr "Adresse pour les messages système"
 
 #~ msgid "Notification"
 #~ msgstr "Notification"
@@ -1924,7 +1939,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Importer une clé ou un certificat signé"
 
 #~ msgid "Manage/View Installed Certificates and Keys"
-#~ msgstr "Gérer/Afficher les certificats et les clés installés"
+#~ msgstr "Gérer/Afficher les certificats et les clés installées"
 
 #~ msgid "Certificate Manager"
 #~ msgstr "Gestionnaire de certificat"
@@ -2060,7 +2075,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Actif ?"
 
 #~ msgid "Remote and local users"
-#~ msgstr "Utilisateur distants et locaux"
+#~ msgstr "Utilisateurs distants et locaux"
 
 #~ msgid "Add a new server"
 #~ msgstr "Ajouter un nouvel utilisateur"
@@ -2174,7 +2189,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Numéro de port manquant ou invalide"
 
 #~ msgid "Missing or invalid remote user name"
-#~ msgstr "nom d'utilisateur manquant ou invalide"
+#~ msgstr "Nom d'utilisateur manquant ou invalide"
 
 #~ msgid "Add another user"
 #~ msgstr "Ajouter un autre utilisateur"
@@ -2192,13 +2207,13 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Seulement si l'interface est ouverte"
 
 #~ msgid "with address / netmask"
-#~ msgstr "avec adresse / masque réseau"
+#~ msgstr "Avec adresse / masque réseau"
 
 #~ msgid "Missing or invalid network interface"
 #~ msgstr "Interface réseau manquante ou invalide"
 
 #~ msgid "Missing or invalid address"
-#~ msgstr "adresse manquante ou invalide"
+#~ msgstr "Adresse manquante ou invalide"
 
 #~ msgid "Invalid address netmask"
 #~ msgstr "Adresse masque réseau invalide"
@@ -2243,7 +2258,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Vérification du courriel sur le(s) serveur(s) à l'aide de la commande $1 .."
 
 #~ msgid ".. checking complete."
-#~ msgstr ".. Vérification terminée"
+#~ msgstr ".. vérification effectuée."
 
 #~ msgid ".. checking failed!"
 #~ msgstr ".. Échec de la vérification !"
@@ -2424,9 +2439,6 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 
 #~ msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 #~ msgstr "Nom d'utilisateur invalide. Seuls les lettres minuscules, les chiffres, le point et le signe moins sont des caractères valides."
-
-#~ msgid "E-mail address not valid"
-#~ msgstr "Adresse électronique invalide"
 
 #~ msgid "No e-mail address specified"
 #~ msgstr "Aucune adresse électronique n'a été spécifiée"
@@ -2769,7 +2781,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Envoyer"
 
 #~ msgid "Please complete all forms and check your e-mail address."
-#~ msgstr "Veuillez compléter tous les formulaire et vérifier votre adresse électronique."
+#~ msgstr "Veuillez remplir tous les formulaire et vérifier votre adresse électronique."
 
 #~ msgid "Your mails are queued for sending. This may take some time depending on your hardware."
 #~ msgstr "Vos courriers ont été ajouté à la queue d'envoi. Ceci peut prendre un certain temps selon la puissance de votre machine."
@@ -2944,7 +2956,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Annuler"
 
 #~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subit des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
+#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subi des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
 
 #~ msgid "Following list cant be converted:"
 #~ msgstr "La liste suivante peut être convertie :"
@@ -3033,7 +3045,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
 
 #~ msgid "No IP address is set."
-#~ msgstr "Aucune adesse IP n'a été définie."
+#~ msgstr "Aucune adresse IP n'a été définie."
 
 #~ msgid "Network Settings"
 #~ msgstr "Configuration du réseau"
@@ -3395,6 +3407,9 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgid "French"
 #~ msgstr "Français"
 
+#~ msgid "Brazil"
+#~ msgstr "Brésil"
+
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page"
 
@@ -3405,7 +3420,7 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 #~ msgstr "Déconnecté"
 
 #~ msgid "Another administrator logged in. You have to log in again."
-#~ msgstr "Un autre administrateur est connecté. Vous devez vous reconnecté."
+#~ msgstr "Un autre administrateur est connecté. Vous devez vous reconnecter."
 
 #~ msgid "Loading please wait..."
 #~ msgstr "Chargement, veuillez patienter..."
@@ -3433,3 +3448,15 @@ msgstr "Nom d'hôte ou adresse IP du serveur LDAP."
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Impossible de se connecter au moteur !"
+
+#~ msgid "Logout"
+#~ msgstr "Déconnexion"
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Cette base de données sera créée si elle n'existe pas encore. Pour cela, l'utilisateur doit posséder les autorisations adéquates."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question."
+
+#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
+#~ msgstr "Cliquer sur le bouton de téléchargement et envoyer le ficher au support bitbone si vous rencontrez un problème quelconque avec votre serveur yaffas."

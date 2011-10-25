@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-24 15:52+0300\n"
-"PO-Revision-Date: 2011-10-24 08:50+0200\n"
+"PO-Revision-Date: 2011-10-25 08:24+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -210,7 +210,7 @@ msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
 #: help/en:3
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
-msgstr ""
+msgstr "Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden."
 
 #: help/en:4
 #, no-wrap
@@ -220,12 +220,12 @@ msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss
 #: help/en:5
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
-msgstr ""
+msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein."
 
 #: help/en:6
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr ""
+msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."
 
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
@@ -1265,6 +1265,12 @@ msgstr ""
 
 #~ msgid "Support"
 #~ msgstr "Support"
+
+#~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Für Support, schicken sie eine E-Mail an <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a>. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
+
+#~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Um Unterstützung zu erhalten, legen sie ein neues Thema im Z-Admin Forum unter <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/> an. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
 
 #~ msgid "Download"
 #~ msgstr "Herunterladen"
@@ -3281,6 +3287,9 @@ msgstr ""
 #~ msgid "French"
 #~ msgstr "Französisch"
 
+#~ msgid "Brazil"
+#~ msgstr "Portugisisch (Brasilien)"
+
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
@@ -3320,6 +3329,9 @@ msgstr ""
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Konnte nicht zum Backend verbinden!"
+
+#~ msgid "Logout"
+#~ msgstr "Abmelden"
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."

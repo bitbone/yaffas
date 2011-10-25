@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-24 16:25+0300\n"
-"PO-Revision-Date: 2011-10-24 08:50+0200\n"
+"PO-Revision-Date: 2011-10-25 08:24+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -355,7 +355,7 @@ msgstr "Französisch"
 #: lang/en:73
 #, no-wrap
 msgid "Brazil"
-msgstr ""
+msgstr "Portugisisch (Brasilien)"
 
 #: lang/en:75
 #, no-wrap
@@ -431,7 +431,7 @@ msgstr "Konnte nicht zum Backend verbinden!"
 #: lang/en:95
 #, no-wrap
 msgid "Logout"
-msgstr ""
+msgstr "Abmelden"
 
 #~ msgid "Apply key"
 #~ msgstr "Schlüssel einspielen"
@@ -586,8 +586,17 @@ msgstr ""
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
 
+#~ msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden."
+
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden."
+
+#~ msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+#~ msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein."
+
+#~ msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."
 
 #~ msgid "Stop"
 #~ msgstr "Anhalten"
@@ -1564,6 +1573,12 @@ msgstr ""
 
 #~ msgid "Support"
 #~ msgstr "Support"
+
+#~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Für Support, schicken sie eine E-Mail an <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a>. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
+
+#~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Um Unterstützung zu erhalten, legen sie ein neues Thema im Z-Admin Forum unter <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/> an. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
 
 #~ msgid "Download"
 #~ msgstr "Herunterladen"

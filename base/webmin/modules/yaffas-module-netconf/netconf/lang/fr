@@ -17,7 +17,7 @@ err_ldap_duplicate_sambadomain=Il n'y as pas exactement un seul exemplaire du no
 
 err_bonding_enabled=Ce module est désactivé parce qu'un 'channel bonding' est activé.
 
-err_no_ip=Aucune adesse IP n'a été définie.
+err_no_ip=Aucune adresse IP n'a été définie.
 
 lbl_index_header=Configuration
 lbl_data=Configuration du réseau

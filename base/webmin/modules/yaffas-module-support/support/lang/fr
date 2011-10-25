@@ -1,7 +1,7 @@
 lbl_index_header=Support technique
 lbl_support=Support technique
-lbl_klick_dl_yaffas=Click on download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@yaffas.org">support@yaffas.org</a> for support. You might be asked for parts of the config file data.
-lbl_klick_dl_zadmin=Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
+lbl_klick_dl_yaffas=Cliquer sur le bouton de téléchargement afin de sauvegarder la configuration pour une utilisation ultérieure. Envoyer un courriel à <a href="mailto:support@yaffas.org">support@yaffas.org</a> pour toute demande de support technique. Il vous sera éventuellement demandé de fournir certaines données du fichier de configuration.
+lbl_klick_dl_zadmin=Cliquer sur le bouton de téléchargement afin de sauvegarder la configuration pour une utilisation ultérieure. Démarrer une nouvelle requête de support technique pour Z-Admin dans le forum de Z-Admin sur <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, il vous sera éventuellement demandé de fournir certaines données du fichier de configuration.
 lbl_download=Téléchargement
 lbl_index_return=Système
 lbl_lshw_text=Veuillez cliquer sur Téléchargement afin d'obtenir des informations sur le matériel et le système disponible.

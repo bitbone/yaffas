@@ -1,21 +1,21 @@
 err_ip=Endereço IP ou máscara de rede invalida.
-err_dns=The DNS server address has to be a valid IP address.
+err_dns=O endereço do DNS precisa ser um IP válido.
 err_domain=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
-err_domain_rename=Could not rename domain.
-err_hostname=Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two.
-err_workgroup_check=Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'.
+err_domain_rename=Não foi possível renomear o domínio.
+err_hostname=O nome de máquina poderá conter somente caracteres (a-z e A-Z), números (0-9) e '-', e precisa ter também um tamanho mínimo de dois.
+err_workgroup_check=O grupo de trabalho poderá conter somente caracteres (a-z e A-Z), números (0-9), '.', '_' e '-'.
 err_copy_file=Could not copy the following file:
 
-err_one_enabled=You have to enable a least one network interface.
-err_gateway_eq_ip=The gateway address has to be different to the server address.
+err_one_enabled=Será necessário habilitar no mínimo uma interface de rede.
+err_gateway_eq_ip=O endereço do gateway precisa ser diferente do endereço do servidor.
 err_search=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
-err_parent_enable=The associated hardware interface has to be enabled.
+err_parent_enable=A interface de hardware associada não esta habilitada.
 
-err_get_sambasid=Error reading data for use with samba.
-err_set_sambasid=Error writing data for use with samba.
-err_ldap_duplicate_sambadomain=The hostname (sambaDomain) does not exist exactly one time in LDAP.
+err_get_sambasid=Erro ao ler os dados para o uso do samba.
+err_set_sambasid=Erro ao escrever os dados para o uso do samba.
+err_ldap_duplicate_sambadomain=O nome da máquina (sambaDomain) não está disponível uma única vez no LDAP.
 
-err_bonding_enabled=This module is deactivated, because channel bonding is active.
+err_bonding_enabled=Este módulo está desativado, porque nenhum canal de bonding está ativo.
 
 err_no_ip=Nenhum endereço IP definido.
 

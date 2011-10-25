@@ -1,6 +1,6 @@
 size=Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess.
 limit=Ceci limite l'utilisation disque maximale de chaque utilisateur en Mo.
-mysql_user=This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database.
+mysql_user=Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question.
 mysql_password=Ceci est le mot de passe défini sur la base de données. Vous devez définir ce mot de passe manuellement.
-mysql_host=This is the address of the MySQL server. For locally installed servers enter 'localhost'.
-mysql_database=This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions.
+mysql_host=Ceci est l'adresse du serveur MySQL. Pour les serveurs installés localement, saisir 'localhost'.
+mysql_database=Ceci est le nom de la base de données devant être utilisée par Zarafa.<br />Il est recommandé d'utiliser le nom 'zarafa'.<br /> Elle sera créée si elle n'existe pas déjà. Pour cela, l'utilisateur doit posséder les autorisations adéquates.
