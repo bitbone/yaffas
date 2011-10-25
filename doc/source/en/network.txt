@@ -33,6 +33,7 @@ For this virtual interface you can use the same values as used for a usual inter
 [NOTE]
 ==============
 Currently neither DHCP nor bridged or bonded network interfaces are supported.
+If you save the interface configuration while using DHCP the interface will be switched to a static address.
 ==============
 
 === SNMP

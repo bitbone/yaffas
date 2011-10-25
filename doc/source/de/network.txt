@@ -35,6 +35,7 @@ Die Einstellungen pro Schnittstelle sind nur aktiv wenn die Schnittstelle aktive
 [NOTE]
 ==============
 Zur Zeit werden weder DHCP noch Netzwerkschnittstellen im Bridge oder Bonding Modus unterstützt.
+Wenn sie die Schnittstellen-Konfiguration speichern während DHCP aktiviert ist, wird die Schnittstelle auf eine statische Adresse umgestellt.
 ==============
 
 === SNMP
