@@ -30,6 +30,11 @@ If multiple interfaces are activated simultaneously, the settings for all interf
 By clicking the button "New Virtual IP Address" you can configure an additional IP address for the associated interface.
 For this virtual interface you can use the same values as used for a usual interface.
 
+[NOTE]
+==============
+Currently neither DHCP nor bridged or bonded network interfaces are supported.
+==============
+
 === SNMP
 
 Click the checkbox under the menu item "Networking -> SNMP Configuration" to enable access via SNMP protocol.
