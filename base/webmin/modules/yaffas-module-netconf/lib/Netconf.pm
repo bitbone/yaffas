@@ -80,7 +80,7 @@ sub new {
 	if (grep {$_ =~ /^bond\d+/} keys %{$self->{DEVICES}}) {
 		throw Yaffas::Exception("err_bonding_enabled");
 	}
-
+	
 	bless $self, $pkg;
 }
 
@@ -129,25 +129,32 @@ sub save {
 
 	$self->disable_virtual();
 
-	my $one_enabled = 0;
+	$self->{one_enabled} = 0;
+	$self->{dhcp} = 0;
 	foreach my $dev (values %{$self->{DEVICES}}) {
 		next unless ($dev->{DEVICE} =~ /^eth\d+$/);
 		if ($dev->{ENABLED} == 1) {
-			$one_enabled = 1;
+			$self->{one_enabled} = 1;
+		}
+		if (lc($dev->{METHOD}) eq 'dhcp') {
+			$self->{dhcp} = 1;
 		}
 	}
 
-	throw Yaffas::Exception("err_one_enabled") unless($one_enabled);
+	$self->{bridges} = scalar keys %{_get_bridges()};
+
+	throw Yaffas::Exception("err_one_enabled") unless($self->{one_enabled} or $self->{dhcp} or $self->{bridges});
 
 	return if $self->{TESTMODE};
 
 	try {	
 		$self->_save_domainname();
 		$self->_save_hostname();
-		$self->_save_iftab();
+#		$self->_save_iftab();
 		$self->_save_workgroup();
 		_stop_network();
 		if($self->{section} eq '1' || $self->{section} eq '4') {
+			# only save interfaces if something changed in those forms
 			$self->_save_interfaces();
 		}
 	} catch Yaffas::Exception with {
@@ -615,8 +622,33 @@ sub _save_hostname {
 	_exchange_samba_domain($old_hostname, $hostname);
 
 	# create new /etc/hosts
-	my $ip = $self->device("eth0")->get_ip();
-
+	my $ip = '';
+	# get our ip address
+	if($self->{dhcp}) {
+		my @interfaces = IO::Interface::Simple->interfaces;
+		for my $if (@interfaces) {
+            if($if ne 'lo') {
+                $ip = $if->address;
+                next;
+            }
+        }
+	} elsif($self->{bridges}) {
+		my @bridges = keys %{_get_bridges()};
+		my @interfaces = IO::Interface::Simple->interfaces;
+		for my $if (@interfaces) {
+			if($if eq $bridges[0]) {
+				$ip = $if->address;
+				next;
+			}
+		}
+	} else {
+		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
+			unless ($dev eq "lo") {
+				$ip = $self->{DEVICES}->{$dev}->{IP};
+			}
+		}
+	}
+		
 	throw Yaffas::Exception("err_no_ip") if $ip eq '';
 
 	my $dnsname = $self->{DOMAINNAME};
@@ -793,6 +825,29 @@ sub _exchange_samba_domain ($$) {
 		$msg = $ldap->unbind;
 		$msg->code && throw Yaffas::Exception('err_set_sambasid', $msg->code, $msg->error);
 	}
+}
+
+sub _get_bridges {
+	my $brctl = Yaffas::Constant::APPLICATION->{brctl};
+	my @result = Yaffas::do_back_quote($brctl, 'show');
+	use Data::Dumper;
+	shift @result;
+	my $bridges = {};
+	my $current_name = '';
+	foreach my $line (@result) {
+		my ($br_name, $br_id, $br_stp, $br_interfaces) = split /\s+/, $line;
+		if($br_name eq '') {
+			push @{$bridges->{$current_name}->{interfaces}}, $br_id;
+		} else {
+			$current_name = $br_name;
+			my $values = {};
+			$values->{id} = $br_id;
+			$values->{stp} = $br_stp;
+			$values->{interfaces} = [$br_interfaces];
+			$bridges->{$br_name} = $values;
+		}
+	}
+	return $bridges;
 }
 
 ## ---------------------------------------------------------------------- ##

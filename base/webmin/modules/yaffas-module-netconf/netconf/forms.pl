@@ -45,6 +45,15 @@ sub net_conf_form () {
 		
 		proxy_form();
 
+		my $bridges = Yaffas::Module::Netconf::_get_bridges();
+		if(scalar keys %$bridges > 0) {
+			print $Cgi->start_form();
+			print Yaffas::UI::section($main::text{lbl_interface},
+				$Cgi->p($main::text{err_bridged_mode})
+			);
+			print $Cgi->end_form();
+		} else {
+
 		print map {
 			my $dev = $conf->device($_);
 
@@ -65,6 +74,10 @@ sub net_conf_form () {
 								$Cgi->td($main::text{lbl_product}.":")
 								  . $Cgi->td(
 									{ -colspan => 3 }, $dev->{PRODUCT}
+								  ),
+								$Cgi->td($main::text{lbl_method}.":")
+								  . $Cgi->td(
+									{ -colspan => 3 }, $dev->{METHOD}
 								  ),
 							  )
 							: "",
@@ -117,9 +130,8 @@ sub net_conf_form () {
 			  . $Cgi->end_form()
 
 		} grep { $_ ne "lo" } sort $conf->get_all_names();
-
-		#						 );
-
+		
+		}
 	}
 	catch Yaffas::Exception with {
 		print Yaffas::UI::all_error_box(shift);

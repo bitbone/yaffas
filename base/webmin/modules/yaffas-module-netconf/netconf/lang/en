@@ -16,6 +16,7 @@ err_set_sambasid=Error writing data for use with samba.
 err_ldap_duplicate_sambadomain=The hostname (sambaDomain) does not exist exactly one time in LDAP.
 
 err_bonding_enabled=This module is deactivated, because channel bonding is active.
+err_bridged_mode=Bridged network interfaces are not supported.
 
 err_no_ip=No IP address is set.
 
