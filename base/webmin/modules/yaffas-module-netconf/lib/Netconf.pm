@@ -415,7 +415,7 @@ sub _load_settings {
 			}
 		}
 	} else {
-		my ($ip, $netmask, $gateway);
+		my ($ip, $netmask, $gateway, $method);
 		my ($dns, $search) = ([],[]);
 
 		push @enabled_interfaces, map { $_->name } grep { m#^eth# } IO::Interface::Simple->interfaces;
@@ -445,6 +445,8 @@ sub _load_settings {
 					chomp $line;
 					$ip = $1 if $line =~ m#^IPADDR=(.+)\z#ix;
 					$netmask = $1 if $line =~ m#^NETMASK=(.+)\z#ix;
+					$method = $1 if $line =~ m#^BOOTPROTO=(.+)\z#ix;
+					$method = "static" unless(lc $method eq 'dhcp');
 					push @$dns, $1 if $line =~ m#^DNS\d+=(.+)\z#ix;
 				}
 			}
@@ -456,7 +458,7 @@ sub _load_settings {
 			}
 
 			my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-			$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
+			$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
 
 			my $parent;
 			if ($device =~ /^(eth\d+):\d+$/) {
@@ -628,7 +630,7 @@ sub _save_hostname {
 		for my $if (@interfaces) {
             if($if ne 'lo') {
                 $ip = $if->address;
-                next;
+                last if (defined $ip && $ip ne '');
             }
         }
 	} elsif($num_bridges) {
@@ -647,7 +649,7 @@ sub _save_hostname {
 			}
 		}
 	}
-		
+
 	throw Yaffas::Exception("err_no_ip") if $ip eq '';
 
 	my $dnsname = $self->{DOMAINNAME};
