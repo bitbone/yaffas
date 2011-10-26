@@ -1,20 +1,26 @@
 == Installation
 
+Yaffas has to be installed on clean Linux distribution.
+At the moment Ubuntu 10.04 and Red Hat 5 are officially supported.
+The following steps describe how {product} can be installed.
+There are packages available for both 32bits and 64bits architectures.
 
 === System requirements
 
-  * Ubuntu or Red Hat Enterprise Linux
-  * about 22 MB of additional disk space
+  * Ubuntu 10.04 or Red Hat Enterprise Linux 5
+  * configured correct full qualified hostname
 
+Yaffas can be installed on a preconfigured Zarafa system, however beaware that your configuration will be overwritten and that you can loose your data.
 
 === Procedure
 
-Yaffas can be installed from the repositories described below.
-
+Yaffas can be installed from the repositories described below for the two supported Linux distributions.
 
 ==== Ubuntu 10.04.2 LTS
 
 **Adding required repositories**
+
+Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
   echo "deb http://repo.yaffas.org/ubuntu-1.0beta3 ./" >> /etc/apt/sources.list
 
@@ -25,26 +31,17 @@ Yaffas can be installed from the repositories described below.
 **Install the packages**
 
   apt-get update
-  apt-get install yaffas yaffas-zarafa
+  apt-get install yaffas yaffas-zarafa yaffas-config
+
 
 This will install {product} base modules and zarafa.
-
-The package manager will usually ask questions for some packages. You can skip all of these by pressing "enter" when the dialog pops up. Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
-
-**Optional: installing the configuration packages**
-
-This package and its dependencies are used to make a freshly installed system manageable with {product}. Without yaffas-config, a number of manual adjustments to configuration files need to be made so the admin interface can function properly.
-
-  apt-get install yaffas-config
-
-Answer "yes" if the installation system asks to replace configuration files.
 
 [WARNING]
 ==============
 
 When installing the **yaffas-config** package and its dependencies, the
 following settings and data will be deleted or overwritten:
- 
+
   * existing LDAP tree
   * slapd configuration
   * Samba configuration
@@ -53,8 +50,40 @@ following settings and data will be deleted or overwritten:
   * zarafa configuration
   * MySQL configuration (optimizations for Zarafa will be made)
 
-
 ==============
+
+During the installation zarafa, mysql, openldap, postfix and many other dependencies are installed.
+
+The package manager will usually ask questions for some packages.
+You can skip all of these by pressing "enter" when the dialog pops up.
+The configuration of these will be done by the **yaffas-config** package.
+
+Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
+
+image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
+image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+
+Leave the LDAP configuration values without changes:
+
+image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
+image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
+image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
+image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
+image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
+image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
+image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+
+For postfix configuration select the "local only" type:
+
+image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
+image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
+image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+
+Use the default values for kerberos configuration:
+
+image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
+image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
+image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
 
 
 ==== Red Hat Enterprise Linux 5
@@ -64,24 +93,46 @@ The installation on Red Hat Enterprise Linux is similar.
 [WARNING]
 ==============
 
-The package yaffas-config will overwrite the same configuration files as mentioned above.
+When installing the **yaffas-config** package and its dependencies, the
+following settings and data will be deleted or overwritten:
+
+  * existing LDAP tree
+  * slapd configuration
+  * Samba configuration
+  * smbldap-tools configuration
+  * postfix configuration
+  * zarafa configuration
+  * MySQL configuration (optimizations for Zarafa will be made)
 
 ==============
 
 **Adding the required repositories**
 
-Prior to the installation of {product} Zarafa packages have to be installed. Otherwise the open source packages included in the EPEL repository will be used. Packages can  be downloaded from http://www.zarafa.com/download-release.
+Prior to the installation of {product} Zarafa packages have to be installed.
+Otherwise the open source packages included in the EPEL repository will be used.
+Packages can be downloaded from http://www.zarafa.com/download-release.
 
-For automatic dependency resolution the http://fedoraproject.org/wiki/EPEL[EPEL] and http://rpmrepo.org/RPMforge[RPMforge] repositories should be included into the yum configuration.
+The yaffas packages will require some dependencies.
+As these dependencies are not part of the standard RHEL repository, the following two repositories have to be added to the installed system.
+
+Run the following command to install the EPEL repository:
+
+  su -c 'rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm'
+
+and run the following commands to add the RPMforge repository:
+
+  su -c 'http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el4.rf.i386.rpm'
+
+After the extra repositories are added, the yaffas repository has to added:
 
 Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/rhel-1.0beta3/
+baseurl = http://repo.yaffas.org/rhel/
 enabled = 1
 protect = 0
-gpgcheck = 1
+gpgcheck = 0
 ----
 
 **Import GPG keys**
@@ -99,13 +150,22 @@ After installation, the {product} web interface is accessible at the following U
 
 The username is "admin" and password is "yaffas".
 
+image:media/en/16_login_thumb.png[link="media/en/16_login.png"]
+
 On first log in the admin password has to be changed. If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
 
-After the first login an authentication server should be selected in Accounts -> Authentication. Choices are Active Directory, remote LDAP and local authentication. Please note that currently the configuration files (yaffas-config) have to be installed for this step.
+image:media/en/17_setup_thumb.png[link="media/en/17_setup.png"]
 
-On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services". Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.
+After the first login an authentication server should be selected in Accounts -> Authentication.
+Choices are Active Directory, remote LDAP and local authentication.
+Please note that currently the configuration files (yaffas-config) have to be installed for this step.
 
-The next step should be to configure the mail server. Without a working mail server configuration some parts of the system will not work. It will also not be possible to create resources for Zarafa when no local domain is set for the mail server.
+On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services".
+Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.
+
+The next step should be to configure the mail server.
+Without a working mail server configuration some parts of the system will not work.
+It will also not be possible to create resources for Zarafa when no local domain is set for the mail server.
 
 [IMPORTANT]
 ==============

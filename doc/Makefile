@@ -2,11 +2,11 @@ all: de_DE.html en_EN.html index.html
 
 pdf: de_DE.pdf en_EN.pdf
 
-de_DE.html: de_DE.txt
+de_DE.html: de_DE.txt source/de/*.txt
 	a2x --icons-dir=icons -fxhtml -dbook de_DE.txt
 	a2x --icons-dir=icons -fchunked -dbook de_DE.txt
 
-en_EN.html: en_EN.txt
+en_EN.html: en_EN.txt source/en/*.txt
 	a2x --icons-dir=icons -fxhtml -dbook en_EN.txt
 	a2x --icons-dir=icons -fchunked -dbook en_EN.txt
 
