@@ -125,6 +125,8 @@ sub net_conf_form () {
 				),
 			  )
               .$Cgi->hidden({-name => 'section', -value => '1'}) 
+              .$Cgi->hidden({-name => 'method', -value => $dev->{METHOD}}) 
+              .$Cgi->hidden({-name => 'device', -value => $_})
 			  . Yaffas::UI::section_button(
 				$Cgi->submit( { -value => $main::text{lbl_save} } ) )
 			  . $Cgi->end_form()

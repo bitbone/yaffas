@@ -129,21 +129,18 @@ sub save {
 
 	$self->disable_virtual();
 
-	$self->{one_enabled} = 0;
-	$self->{dhcp} = 0;
+	my $one_enabled = 0;
+	my $dhcp = scalar $self->_get_dhcp_interfaces();
 	foreach my $dev (values %{$self->{DEVICES}}) {
 		next unless ($dev->{DEVICE} =~ /^eth\d+$/);
 		if ($dev->{ENABLED} == 1) {
-			$self->{one_enabled} = 1;
-		}
-		if (lc($dev->{METHOD}) eq 'dhcp') {
-			$self->{dhcp} = 1;
+			$one_enabled = 1;
 		}
 	}
 
-	$self->{bridges} = scalar keys %{_get_bridges()};
+	my $bridges = scalar keys %{_get_bridges()};
 
-	throw Yaffas::Exception("err_one_enabled") unless($self->{one_enabled} or $self->{dhcp} or $self->{bridges});
+	throw Yaffas::Exception("err_one_enabled") unless($one_enabled or $dhcp or $bridges);
 
 	return if $self->{TESTMODE};
 
@@ -624,7 +621,9 @@ sub _save_hostname {
 	# create new /etc/hosts
 	my $ip = '';
 	# get our ip address
-	if($self->{dhcp}) {
+	my $num_dhcp = scalar $self->_get_dhcp_interfaces();
+	my $num_bridges = scalar keys %{_get_bridges()};
+	if($num_dhcp) {
 		my @interfaces = IO::Interface::Simple->interfaces;
 		for my $if (@interfaces) {
             if($if ne 'lo') {
@@ -632,7 +631,7 @@ sub _save_hostname {
                 next;
             }
         }
-	} elsif($self->{bridges}) {
+	} elsif($num_bridges) {
 		my @bridges = keys %{_get_bridges()};
 		my @interfaces = IO::Interface::Simple->interfaces;
 		for my $if (@interfaces) {
@@ -848,6 +847,17 @@ sub _get_bridges {
 		}
 	}
 	return $bridges;
+}
+
+sub _get_dhcp_interfaces() {
+	my $self = shift;
+	my @interfaces;
+	foreach my $dev (values %{$self->{DEVICES}}) {
+		if (lc($dev->{METHOD}) eq 'dhcp') {
+			push @interfaces, $dev->{DEVICE};
+		}
+	}
+	return @interfaces;
 }
 
 ## ---------------------------------------------------------------------- ##

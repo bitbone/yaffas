@@ -48,8 +48,8 @@ lbl_delete_device=Delete virtual IP address
 lbl_really_delete=Do you really want to delete the following network interface?
 lbl_create=Create
 lbl_new_interface=New virtual address on interface
-
-
+lbl_switch_dhcp_static=Switch from DHCP to static
+lbl_really_switch_dhcp=If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?
 
 lbl_proxy_conf=HTTP Proxy
 lbl_proxy_ip=Proxy
