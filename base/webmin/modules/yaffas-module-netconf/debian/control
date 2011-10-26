@@ -7,6 +7,6 @@ Standards-Version: 3.5.2
 
 Package: yaffas-module-netconf
 Architecture: all
-Depends: ${shlibs:Depends}, yaffas-core, libtest-exception-perl, libio-interface-perl
+Depends: ${shlibs:Depends}, yaffas-core, libtest-exception-perl, libio-interface-perl, bridge-utils
 Description: Basic network configuration for yaffas
  Basic network configuration for yaffas
