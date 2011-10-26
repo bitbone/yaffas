@@ -40,7 +40,7 @@ import_error=Une erreur s'est produite lors de l'importation ! Veuillez vérifie
 index_header=Gestion Certificat / Clé
 index_import=Importer une clé ou un certificat signé
 index_gencert=Générer un certificat auto-signé et une clé
-index_view=Gérer/Afficher les certificats et les clés installés
+index_view=Gérer/Afficher les certificats et les clés installées
 index_title=Gestionnaire de certificat
 
 keysize=Taille de la clé (in octets)

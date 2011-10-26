@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-24 22:44+0200\n"
+"PO-Revision-Date: 2011-10-25 13:54+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -1396,6 +1396,13 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Support"
 #~ msgstr "Suporte"
 
+#~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
+#~ msgstr "Clique no botão de download para salvar a configuração para uso posterior. Envie um email para <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> para obter suporte. Algumas partes do arquivo salvo serão necessários."
+
+#, fuzzy
+#~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
+#~ msgstr "Clique no botão de download para salvar a configuração para uso posterior. Crie um tópico no fórum do Z-Admin em <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>. Alguns dos dados salvos poderão ser requeridos."
+
 #~ msgid "Download"
 #~ msgstr "Download"
 
@@ -1451,6 +1458,9 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Error writing configuration file."
 #~ msgstr "Erro ao escrever o arquivo de configuração."
 
+#~ msgid "Type can only be: always, errors or never."
+#~ msgstr "O tipo poderá ser: sempre, erros ou nunca."
+
 #~ msgid "Line not found in configuration file."
 #~ msgstr "Linha não encontrada no arquivo de configuração."
 
@@ -1469,8 +1479,15 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Test - yaffas notify"
 #~ msgstr "Teste - notificação yaffas"
 
+#, fuzzy
+#~ msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
+#~ msgstr "Este e-mail foi enviado para testar o endereço de e-mail fornecido. Se você recebeu este email será informado sobre erros."
+
 #~ msgid "E-mail address test"
 #~ msgstr "Testar endereço de e-mail"
+
+#~ msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
+#~ msgstr "Este e-mail é usado para testar o endereço de email do administrador. Se você recebeu este email você será notificado desta forma no caso de erro que poderão ocorrer no futuro."
 
 #~ msgid "Have fun with yaffas"
 #~ msgstr "Divirta-se com yaffas"
@@ -1701,10 +1718,17 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Error removing email"
 #~ msgstr "Erro ao remover e-mail"
 
+#, fuzzy
+#~ msgid "Error at dequeue attempt for email"
+#~ msgstr "Erro na tentativa de tirar o e-mail da fila"
+
 # 81%
 #, fuzzy
 #~ msgid "No valid email address"
 #~ msgstr "Endereço de e-mail inválido"
+
+#~ msgid "Display"
+#~ msgstr "Exibição"
 
 #~ msgid "Mail Queue"
 #~ msgstr "Fila de e-mail"
@@ -1993,11 +2017,36 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Only users"
 #~ msgstr "Somente usuários"
 
+#, fuzzy
+#~ msgid "All except users"
+#~ msgstr "Todos, menos usuários"
+
+#~ msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
+#~ msgstr "Esta página pode ser usada para habilitar ou desabilitar um Cron-job para a verificação em intervalos dos servidores de email na configuração do Fetchmail."
+
+#~ msgid "Scheduled Fetchmail settings"
+#~ msgstr "Configurações do Fetchmail agendados"
+
+#~ msgid "Scheduled checking enabled?"
+#~ msgstr "Verificação periódica habilitada?"
+
+#~ msgid "Yes, at times configured below .."
+#~ msgstr "Sim, nas horas configuradas abaixo .."
+
+#~ msgid "Destination for Fetchmail output"
+#~ msgstr "Destino para o resultado do Fetchmail"
+
+#~ msgid "Write to file $1"
+#~ msgstr "Escrever no arquivo $1"
+
 #~ msgid "Email to address $1"
 #~ msgstr "E-mail para o endereço $1"
 
 #~ msgid "Discard"
 #~ msgstr "Descartar"
+
+#~ msgid "Output to cron"
+#~ msgstr "Resultado para o cron"
 
 #~ msgid "Run Fetchmail as user"
 #~ msgstr "Executar Fetchmail como usuário"
@@ -2108,6 +2157,10 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "The alias is not valid."
 #~ msgstr "O alias não é válido."
 
+#, fuzzy
+#~ msgid "If you want to you use aliases for this user, you should activate his mailbox."
+#~ msgstr "Caso queira usar aliases para este usuário será necessário ativar a caixa dele."
+
 #~ msgid "The selected username is already used by the system."
 #~ msgstr "O nome de usuário selecionado já está sendo usado pelo sistema."
 
@@ -2122,13 +2175,33 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "You cannot use localhost as domain-part"
 #~ msgstr "Você não pode utilizar o localhost como parte do domínio"
 
+#~ msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
+#~ msgstr "O nome do usuário e a parte local do endereço são diferentes. É necessário definir um alias para a parte local. Caso contrário o Zarafa não poderá entregar e-mails corretamente."
+
+#~ msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
+#~ msgstr "O nome do usuário e a parte local do endereço são diferentes. Para o funcionamento do Zarafa com o endereço de e-mail fornecido, será necessário definir os seguintes aliases:"
+
+#~ msgid "This user could not be added/edited."
+#~ msgstr "Este usuário não pode ser adicionado/modificado."
+
+#~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
+#~ msgstr "O usuário foi criado com sucesso, mas a caixa do usuário no Zarafa não foi criado. Geralmente isso significa que sua licença ZCP não permite mais usuários."
+
+#~ msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
+#~ msgstr "Este usuário é usado para entregar e-mails em pastas públicas. Primeiro é necessário escolher um outro usuário para este fim. Depois este usuário poderá ser removido."
+
 # 80%
-#, fuzzy
 #~ msgid "Usermanagment"
-#~ msgstr "Gerenciamento de Usuário"
+#~ msgstr "Gerenciamento de Usuários"
 
 #~ msgid "Add user"
 #~ msgstr "Adicionar usuário"
+
+#~ msgid "Printer operator"
+#~ msgstr "Operador de Impressora"
+
+#~ msgid "Printer Administrator"
+#~ msgstr "Administrador de Impressora"
 
 #~ msgid "Modified users"
 #~ msgstr "Usuários modificados"
@@ -2146,12 +2219,21 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Enable e-mail account"
 #~ msgstr "Conta de e-mail habilitado"
 
+#~ msgid "No matter"
+#~ msgstr "Sem problema"
+
+#~ msgid "No printer operator"
+#~ msgstr "Nenhum operador de impressora"
+
 # 93%
 #~ msgid "Repeat password"
 #~ msgstr "Repita a senha"
 
 #~ msgid "User Management"
 #~ msgstr "Gerenciamento de Usuário"
+
+#~ msgid "Filetype for fax delivery"
+#~ msgstr "Tipo de arquivo para a entrega de fax"
 
 #~ msgid "E-mail alias"
 #~ msgstr "E-mail alias"
@@ -2216,6 +2298,16 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 # 87%
 #~ msgid "Features"
 #~ msgstr "Recursos"
+
+#~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
+#~ msgstr "No caso que o usuário é administrador, ele poderá abrir as caixas de todos os usuários no Zarafa."
+
+#~ msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
+#~ msgstr "O usuário não poderá logar no Zarafa e também não contará como usuário ativo na sua licença. Outros usuários poderão abrir essa caixa no modo de delegação."
+
+#, fuzzy
+#~ msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
+#~ msgstr "Fornecer a quantia de espaço no disco que este usuário poderá usar (cota). O usuário será avisado quando chegar perto deste limite. Quando o usuário exceder este limite, não será possível de enviar e receber e-mails novos e-mails."
 
 #~ msgid "Add alias"
 #~ msgstr "Adicionar alias"
@@ -2505,8 +2597,26 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Error in configuration file"
 #~ msgstr "Erro no arquivo de configuração"
 
+#~ msgid "Please install all licence files for your installed products before you insert the configuration."
+#~ msgstr "Por favor fornecer todas as licenças de todos os produtos instalados antes de inserir a configuração."
+
+#~ msgid "Could not save config, because the LDAP service is not running."
+#~ msgstr "Não foi possível salvar a configuração por que o serviço de LDAP não está disponível."
+
+#~ msgid "Could not restore user and groups."
+#~ msgstr "Não foi possível restaurar usuários e grupos."
+
+#~ msgid "Your Configurationfile is not for this fax-card type."
+#~ msgstr "O arquivo de configuração fornecido não é compatível com a placa de fax."
+
+#~ msgid "No authentication type is configured."
+#~ msgstr "Nenhum tipo de autenticação configurado."
+
 #~ msgid "Errors occured."
 #~ msgstr "Ocorreram erros."
+
+#~ msgid "Would you like to save your incomplete Configuration?"
+#~ msgstr "Salvar configuração incompleta?"
 
 # 77%
 #~ msgid "Save configuration"
@@ -2515,10 +2625,47 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "The IP address or netmask it not valid."
 #~ msgstr "Endereço IP ou máscara de rede invalida."
 
+#~ msgid "The DNS server address has to be a valid IP address."
+#~ msgstr "O endereço do DNS precisa ser um IP válido."
+
+#, fuzzy
+#~ msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
+#~ msgstr "O nome do domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-', e precisa ter também um tamanho mínimo de dois."
+
+#~ msgid "Could not rename domain."
+#~ msgstr "Não foi possível renomear o domínio."
+
+#~ msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
+#~ msgstr "O nome de máquina poderá conter somente caracteres (a-z e A-Z), números (0-9) e '-', e precisa ter também um tamanho mínimo de dois."
+
+#~ msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
+#~ msgstr "O grupo de trabalho poderá conter somente caracteres (a-z e A-Z), números (0-9), '.', '_' e '-'."
+
 # 85%
 #, fuzzy
 #~ msgid "Could not copy the following file:"
 #~ msgstr "Não foi possível localizar os arquivos:"
+
+#~ msgid "You have to enable a least one network interface."
+#~ msgstr "Será necessário habilitar no mínimo uma interface de rede."
+
+#~ msgid "The gateway address has to be different to the server address."
+#~ msgstr "O endereço do gateway precisa ser diferente do endereço do servidor."
+
+#~ msgid "The associated hardware interface has to be enabled."
+#~ msgstr "A interface de hardware associada não esta habilitada."
+
+#~ msgid "Error reading data for use with samba."
+#~ msgstr "Erro ao ler os dados para o uso do samba."
+
+#~ msgid "Error writing data for use with samba."
+#~ msgstr "Erro ao escrever os dados para o uso do samba."
+
+#~ msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
+#~ msgstr "O nome da máquina (sambaDomain) não está disponível uma única vez no LDAP."
+
+#~ msgid "This module is deactivated, because channel bonding is active."
+#~ msgstr "Este módulo está desativado, porque nenhum canal de bonding está ativo."
 
 #~ msgid "No IP address is set."
 #~ msgstr "Nenhum endereço IP definido."
@@ -2638,15 +2785,38 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "DNS server for resolving names into IP adresses."
 #~ msgstr "Servidor DNS para resolver nomes em endereços IP."
 
+#~ msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+#~ msgstr "Acrescentar esse valor ao resolver nomes curtos.<br>Para resolver o nome \"servidor\" este valor é acrescentado. Ex. yaffas.org -> servidor.yaffas.org"
+
+#~ msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
+#~ msgstr "Endereço do servidor de proxy HTTP. Este pode ser um endereço IPv4 ou o nome de máquina."
+
+#~ msgid "Port of the HTTP proxy server."
+#~ msgstr "Porta do servidor de proxy HTTP."
+
+#~ msgid "Optional username, if you have to authenticate against the proxy."
+#~ msgstr "Nome do usuário opcional, caso o proxy necessita autenticação."
+
 # 95%
 #, fuzzy
 #~ msgid "Authentication Server"
 #~ msgstr "Servidor de autenticação"
 
+#~ msgid "Accounts"
+#~ msgstr "Contas"
+
+#~ msgid "Domain Controller"
+#~ msgstr "Controlador de domínio"
+
 # 75%
-#, fuzzy
 #~ msgid "Local authentication"
-#~ msgstr "Autenticação DC"
+#~ msgstr "Autenticação Local"
+
+#~ msgid "Local authentication (passwd/group)"
+#~ msgstr "Autenticação Local (passwd/group)"
+
+#~ msgid "No authentication method configured"
+#~ msgstr "Nenhum método de autenticação configurado"
 
 #~ msgid "DC authentication"
 #~ msgstr "Autenticação DC"
@@ -2765,11 +2935,22 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Join Domain without encryption?"
 #~ msgstr "Associar ao domínio sem criptografia?"
 
+#~ msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
+#~ msgstr "O servidor Active Directory não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido, o servidor yaffas não irá se associar ao domínio."
+
+#, fuzzy
+#~ msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
+#~ msgstr "O servidor LDAP não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido será necessário mudar o método de autenticação."
+
 #~ msgid "Delete user fax configuration and PDF files"
 #~ msgstr "Excluir configuração do usuário de fax e arquivos PDF"
 
+#, fuzzy
+#~ msgid "Delete all users' and groups' fax configurations and pdf users' files."
+#~ msgstr "Excluir arquivos de configuração de fax e arquivos pdf de todos os usuários e grupos."
+
 #~ msgid "Print operators group"
-#~ msgstr "Imprimir grupo de operadores"
+#~ msgstr "Grupo de operadores de impressão"
 
 #~ msgid "Change print operators group"
 #~ msgstr "Modificar grupo de operadores de impressão"
@@ -2916,6 +3097,30 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "unknown postfix file"
 #~ msgstr "arquivo postfix desconhecido"
 
+#~ msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
+#~ msgstr "Base de pesquisa Base DN. Dados no LDAP serão procurados abaixo deste ponto, ex. o=yaffas,c=org"
+
+#~ msgid "Attribute with users email address. Default: mail"
+#~ msgstr "Atributo padrão para o endereço de e-mail do usuário. Padrão: mail"
+
+#~ msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
+#~ msgstr "Usuário usado para realizar o bind, ex. cn=ldapadmin,ou=People,o=yaffas,c=org"
+
+#~ msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
+#~ msgstr "Nome do domínio completo no Active Directory. Ex. yaffas.org"
+
+#~ msgid "Name or IP adress of your domain controller."
+#~ msgstr "Nome ou endereço de IP do controlador de domínio."
+
+#~ msgid "Name of a domain administrator. This user should be created in users organizational unit."
+#~ msgstr "Nome do administrador do domínio. Este usuário deverá ser criado no OU de usuários."
+
+#~ msgid "User for read only access. You can give the username or a full dn syntax."
+#~ msgstr "Usuário com permissões somente de leitura. É possível fornecer o nome do usuário ou o DN completo."
+
+#~ msgid "Hostname or IP address of the LDAP server."
+#~ msgstr "Nome de máquina ou endereço IP do servidor LDAP."
+
 #~ msgid "Change Password"
 #~ msgstr "Alterar senha"
 
@@ -2931,15 +3136,19 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "Root-Password"
 #~ msgstr "Senha root"
 
+#~ msgid "Domain-Administrator-Password"
+#~ msgstr "Senha do Administrador de Domínio"
+
+#~ msgid "Could not set MySQL password!"
+#~ msgstr "Não foi possível definir a senha do MySQL!"
+
 # 77%
-#, fuzzy
 #~ msgid "Can't read following file(s):"
-#~ msgstr "Não foi possível copiar o(s) arquivo(s):"
+#~ msgstr "Não foi possível ler o(s) arquivo(s):"
 
 # 78%
-#, fuzzy
 #~ msgid "Can't write following file(s):"
-#~ msgstr "Não foi possível remover o(s) arquivo(s):"
+#~ msgstr "Não foi possível escrever o(s) arquivo(s):"
 
 #~ msgid "Can not set the root password!"
 #~ msgstr "Não foi possível definir a senha root!"
@@ -3090,6 +3299,21 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "delete"
 #~ msgstr "Remover"
 
+#~ msgid "yaffas|MAIL"
+#~ msgstr "yaffas|MAIL"
+
+#~ msgid "yaffas|FAX"
+#~ msgstr "yaffas|FAX"
+
+#~ msgid "yaffas|GATE"
+#~ msgstr "yaffas|GATE"
+
+#~ msgid "yaffas|PDF"
+#~ msgstr "yaffas|PDF"
+
+#~ msgid "yaffas|FILE"
+#~ msgstr "yaffas|FILE"
+
 #~ msgid "Modules for configuring the system accounts"
 #~ msgstr "Módulos para a configuração das contas do sistema"
 
@@ -3135,6 +3359,9 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 #~ msgid "French"
 #~ msgstr "Francês"
 
+#~ msgid "Brazil"
+#~ msgstr "Brasil"
+
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens por página"
 
@@ -3173,6 +3400,9 @@ msgstr "Fornecer nome de máquina ou endereço IP do servidor para o uso do NTP.
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Não foi possível conectar no backend!"
+
+#~ msgid "Logout"
+#~ msgstr "Efetuar logoff"
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "O banco de dados será criado caso ele não exista. Para isso, o usuário precisará de permissões suficientes."

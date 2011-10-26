@@ -1,4 +1,4 @@
-spam_headers=Cette valeur défini le niveau à partir duquel les courriels sont considérés comme spam.
+spam_headers=Cette valeur définit le niveau à partir duquel les courriels sont considérés comme spam.
 sa_trusted_net=Définir un hôte ou un réseau par son adresse IP ou CIDR.
 max_length=ClamAV scannera uniquement les objets qui ne dépassent pas la taille indiquée. Les objets plus larges ne seront PAS scannés.
 virusalert=Si ClamAV détecte un objet suspect, un courriel sera envoyé à l'adresse indiquée.

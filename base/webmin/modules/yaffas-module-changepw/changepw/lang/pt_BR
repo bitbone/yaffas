@@ -6,11 +6,11 @@ lbl_pass2=Repetir senha:
 lbl_save=Salvar
 lbl_adminpass=Senha do Administrador
 lbl_rootpass=Senha root
-lbl_domadminpass=Domain-Administrator-Password
+lbl_domadminpass=Senha do Administrador de Domínio
 
-err_mysql_password=Could not set MySQL password!
-err_file_read=Can't read following file(s):
-err_file_write=Can't write following file(s):
+err_mysql_password=Não foi possível definir a senha do MySQL!
+err_file_read=Não foi possível ler o(s) arquivo(s):
+err_file_write=Não foi possível escrever o(s) arquivo(s):
 
 err_root_password=Não foi possível definir a senha root!
 err_domadmin_password=Não foi possível definir a senha do administrador de domínio!

@@ -70,14 +70,14 @@ lbl_lang_de=Allemand
 lbl_lang_en=Anglais
 lbl_lang_nl=Néerlandais
 lbl_lang_fr=Français
-lbl_lang_pt_BR=Brazil
+lbl_lang_pt_BR=Brésil
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} lignes par page
 lbl_about_yaffas=À propos de yaffas
 lbl_about_zadmin=À propos de Z-Admin
 
 lbl_logged_out=Déconnecté
-lbl_logged_out_msg=Un autre administrateur est connecté. Vous devez vous reconnecté.
+lbl_logged_out_msg=Un autre administrateur est connecté. Vous devez vous reconnecter.
 
 lbl_loading=Chargement, veuillez patienter...
 lbl_error=Erreur
@@ -92,4 +92,4 @@ lbl_filter_show=Appliquer le filtre
 
 err_connection_failed=Impossible de se connecter au moteur !
 
-main_logout=Logout
+main_logout=Déconnexion

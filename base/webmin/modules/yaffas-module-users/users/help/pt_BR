@@ -1,3 +1,3 @@
-zarafaadmin_\d*=When a user is administrator, the user will be allowed to open all Zarafa stores of any user.
-zarafashared_\d*=The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate.
+zarafaadmin_\d*=No caso que o usuário é administrador, ele poderá abrir as caixas de todos os usuários no Zarafa.
+zarafashared_\d*=O usuário não poderá logar no Zarafa e também não contará como usuário ativo na sua licença. Outros usuários poderão abrir essa caixa no modo de delegação.
 zarafaquota_\d*=Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails.

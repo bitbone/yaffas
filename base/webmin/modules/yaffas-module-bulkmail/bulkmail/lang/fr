@@ -5,7 +5,7 @@ index_subject=Objet
 index_message=Message
 index_send=Envoyer
 
-err_error=Veuillez compléter tous les formulaire et vérifier votre adresse électronique.
+err_error=Veuillez remplir tous les formulaire et vérifier votre adresse électronique.
 lbl_send_success=Vos courriers ont été ajouté à la queue d'envoi. Ceci peut prendre un certain temps selon la puissance de votre machine.
 
 moduletitle=Envoi groupé

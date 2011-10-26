@@ -1,4 +1,4 @@
-mysql_user=This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database.
+mysql_user=Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden.
 mysql_password=Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden.
-mysql_host=This is the address of the MySQL server. For locally installed servers enter 'localhost'.
-mysql_database=This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions.
+mysql_host=Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein.
+mysql_database=Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen.
