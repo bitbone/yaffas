@@ -71,7 +71,7 @@ Das Paket yaffas-config überschreibt hier ebenfalls die oben genannten Konfigur
 
 Vor der Installation von {product} müssen die Pakete für Zarafa von http://www.zarafa.com/download-release heruntergeladen und installiert werden.
 
-Um alle Abhängigkeiten automatisch auflösen zu können, sollten die http://fedoraproject.org/wiki/EPEL[EPEL] und http://rpmrepo.org/RPMforge[RPMforge] Repositories eingebunden werden.
+Um alle Abhängigkeiten automatisch auflösen zu können, sollten die http://fedoraproject.org/wiki/EPEL[EPEL] und http://wiki.centos.org/AdditionalResources/Repositories/RPMForge#head-5aabf02717d5b6b12d47edbc5811404998926a1b[RPMforge] Repositories eingebunden werden.
 
 Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
 ----
