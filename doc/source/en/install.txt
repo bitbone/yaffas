@@ -117,11 +117,11 @@ As these dependencies are not part of the standard RHEL repository, the followin
 
 Run the following command to install the EPEL repository:
 
-  su -c 'rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm'
+  rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
 and run the following commands to add the RPMforge repository:
 
-  su -c 'http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el4.rf.i386.rpm'
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el4.rf.i386.rpm
 
 After the extra repositories are added, the yaffas repository has to added:
 
