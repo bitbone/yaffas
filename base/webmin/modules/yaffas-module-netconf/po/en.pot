@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2011-10-28 00:13+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -91,212 +91,249 @@ msgstr ""
 msgid "This module is deactivated, because channel bonding is active."
 msgstr ""
 
-#: lang/en:20
+#: lang/en:19
+#, no-wrap
+msgid "Bridged network interfaces are not supported."
+msgstr ""
+
+#: lang/en:21
 #, no-wrap
 msgid "No IP address is set."
 msgstr ""
 
-#: lang/en:22 lang/en:69
+#: lang/en:23 lang/en:74
 #, no-wrap
 msgid "Configuration"
 msgstr ""
 
-#: lang/en:23
+#: lang/en:24
 #, no-wrap
 msgid "Network Settings"
 msgstr ""
 
-#: lang/en:25
+#: lang/en:26
 #, no-wrap
 msgid "Host name"
 msgstr ""
 
-#: lang/en:26
+#: lang/en:27
 #, no-wrap
 msgid "Domain name"
 msgstr ""
 
-#: lang/en:27
+#: lang/en:28
 #, no-wrap
 msgid "Workgroup"
 msgstr ""
 
-#: lang/en:28
+#: lang/en:29
 #, no-wrap
 msgid "IP address"
 msgstr ""
 
-#: lang/en:29
+#: lang/en:30
 #, no-wrap
 msgid "Netmask"
 msgstr ""
 
-#: lang/en:30
+#: lang/en:31
 #, no-wrap
 msgid "Gateway (if available)"
 msgstr ""
 
-#: lang/en:31
+#: lang/en:32
 #, no-wrap
 msgid "Search domain"
 msgstr ""
 
-#: lang/en:32
+#: lang/en:33
 #, no-wrap
 msgid "DNS Server IP"
 msgstr ""
 
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "Network"
 msgstr ""
 
-#: lang/en:34
+#: lang/en:35
 #, no-wrap
 msgid "Delete"
 msgstr ""
 
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "Interface"
 msgstr ""
 
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Base settings"
 msgstr ""
 
 #: lang/en:38
 #, no-wrap
-msgid "enabled"
+msgid "Mode"
 msgstr ""
 
 #: lang/en:39
 #, no-wrap
-msgid "disabled"
+msgid "Vendor"
 msgstr ""
 
 #: lang/en:40
 #, no-wrap
-msgid "Status"
+msgid "MAC address"
 msgstr ""
 
 #: lang/en:41
 #, no-wrap
-msgid "New virtual IP address"
-msgstr ""
-
-#: lang/en:42
-#, no-wrap
-msgid "Delete virtual IP address"
+msgid "Product"
 msgstr ""
 
 #: lang/en:43
 #, no-wrap
-msgid "Do you really want to delete the following network interface?"
+msgid "enabled"
 msgstr ""
 
 #: lang/en:44
 #, no-wrap
-msgid "Create"
+msgid "disabled"
 msgstr ""
 
 #: lang/en:45
 #, no-wrap
-msgid "New virtual address on interface"
+msgid "Status"
+msgstr ""
+
+#: lang/en:46
+#, no-wrap
+msgid "New virtual IP address"
+msgstr ""
+
+#: lang/en:47
+#, no-wrap
+msgid "Delete virtual IP address"
+msgstr ""
+
+#: lang/en:48
+#, no-wrap
+msgid "Do you really want to delete the following network interface?"
 msgstr ""
 
 #: lang/en:49
 #, no-wrap
-msgid "HTTP Proxy"
+msgid "Create"
 msgstr ""
 
 #: lang/en:50
 #, no-wrap
-msgid "Proxy"
+msgid "New virtual address on interface"
 msgstr ""
 
 #: lang/en:51
 #, no-wrap
-msgid "Port"
+msgid "Switch from DHCP to static"
 msgstr ""
 
 #: lang/en:52
 #, no-wrap
-msgid "Authentication (optional)"
-msgstr ""
-
-#: lang/en:53
-#, no-wrap
-msgid "User"
+msgid ""
+"If you save, the network interface will be switched from DHCP to a static "
+"address. Do you want to continue?"
 msgstr ""
 
 #: lang/en:54
 #, no-wrap
-msgid "Password"
+msgid "HTTP Proxy"
+msgstr ""
+
+#: lang/en:55
+#, no-wrap
+msgid "Proxy"
 msgstr ""
 
 #: lang/en:56
 #, no-wrap
-msgid "Proxyname not valid!"
+msgid "Port"
 msgstr ""
 
 #: lang/en:57
 #, no-wrap
-msgid "Port not valid!"
+msgid "Authentication (optional)"
 msgstr ""
 
 #: lang/en:58
 #, no-wrap
-msgid "Username not valid!"
+msgid "User"
 msgstr ""
 
 #: lang/en:59
 #, no-wrap
-msgid "Password not valid!"
-msgstr ""
-
-#: lang/en:60
-#, no-wrap
-msgid "Error while setting APT proxy!"
+msgid "Password"
 msgstr ""
 
 #: lang/en:61
 #, no-wrap
-msgid "Error while setting WGET proxy!"
+msgid "Proxyname not valid!"
 msgstr ""
 
 #: lang/en:62
 #, no-wrap
-msgid "Error while setting KAV proxy!"
+msgid "Port not valid!"
 msgstr ""
 
 #: lang/en:63
 #, no-wrap
-msgid "Error while deleting APT proxy!"
+msgid "Username not valid!"
 msgstr ""
 
 #: lang/en:64
 #, no-wrap
-msgid "Error while deleting WGET proxy!"
+msgid "Password not valid!"
 msgstr ""
 
 #: lang/en:65
 #, no-wrap
-msgid "Error while deleting KAVS proxy!"
+msgid "Error while setting APT proxy!"
 msgstr ""
 
 #: lang/en:66
 #, no-wrap
-msgid "Error while setting freshclam proxy!"
+msgid "Error while setting WGET proxy!"
 msgstr ""
 
 #: lang/en:67
 #, no-wrap
-msgid "Error while deleting freshclam proxy!"
+msgid "Error while setting KAV proxy!"
 msgstr ""
 
 #: lang/en:68
+#, no-wrap
+msgid "Error while deleting APT proxy!"
+msgstr ""
+
+#: lang/en:69
+#, no-wrap
+msgid "Error while deleting WGET proxy!"
+msgstr ""
+
+#: lang/en:70
+#, no-wrap
+msgid "Error while deleting KAVS proxy!"
+msgstr ""
+
+#: lang/en:71
+#, no-wrap
+msgid "Error while setting freshclam proxy!"
+msgstr ""
+
+#: lang/en:72
+#, no-wrap
+msgid "Error while deleting freshclam proxy!"
+msgstr ""
+
+#: lang/en:73
 #, no-wrap
 msgid "Error restarting freshclam!"
 msgstr ""

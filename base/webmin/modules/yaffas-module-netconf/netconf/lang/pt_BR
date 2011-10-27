@@ -16,6 +16,7 @@ err_set_sambasid=Erro ao escrever os dados para o uso do samba.
 err_ldap_duplicate_sambadomain=O nome da máquina (sambaDomain) não está disponível uma única vez no LDAP.
 
 err_bonding_enabled=Este módulo está desativado, porque nenhum canal de bonding está ativo.
+err_bridged_mode=Bridged network interfaces are not supported.
 
 err_no_ip=Nenhum endereço IP definido.
 
@@ -34,6 +35,10 @@ lbl_index_return=Rede
 lbl_delete=Remover
 lbl_interface=Interface
 lbl_base_settings=Configurações básicas
+lbl_method=Modo
+lbl_vendor=Vendor
+lbl_mac=MAC address
+lbl_product=Produto
 
 lbl_enabled=habilitado
 lbl_disabled=desabilitado
@@ -43,8 +48,8 @@ lbl_delete_device=Remover endereço IP virtual
 lbl_really_delete=Realmente deseja remover a interface de rede abaixo?
 lbl_create=Criar
 lbl_new_interface=Novo endereço virtual na interface
-
-
+lbl_switch_dhcp_static=Switch from DHCP to static
+lbl_really_switch_dhcp=If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?
 
 lbl_proxy_conf=Proxy HTTP
 lbl_proxy_ip=Proxy

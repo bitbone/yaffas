@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2011-10-28 00:13+0300\n"
 "PO-Revision-Date: 2011-10-18 19:27+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,215 +87,250 @@ msgstr ""
 msgid "This module is deactivated, because channel bonding is active."
 msgstr ""
 
-#: lang/en:20
+#: lang/en:19
+#, no-wrap
+msgid "Bridged network interfaces are not supported."
+msgstr ""
+
+#: lang/en:21
 #, no-wrap
 msgid "No IP address is set."
 msgstr ""
 
-#: lang/en:22 lang/en:69
+#: lang/en:23 lang/en:74
 #, no-wrap
 msgid "Configuration"
 msgstr "Configuratie"
 
-#: lang/en:23
+#: lang/en:24
 #, no-wrap
 msgid "Network Settings"
 msgstr ""
 
 # 88%
-#: lang/en:25
+#: lang/en:26
 #, fuzzy, no-wrap
 msgid "Host name"
 msgstr "Hostnaam"
 
-#: lang/en:26
+#: lang/en:27
 #, no-wrap
 msgid "Domain name"
 msgstr ""
 
-#: lang/en:27
+#: lang/en:28
 #, no-wrap
 msgid "Workgroup"
 msgstr ""
 
-#: lang/en:28
+#: lang/en:29
 #, no-wrap
 msgid "IP address"
 msgstr ""
 
-#: lang/en:29
+#: lang/en:30
 #, no-wrap
 msgid "Netmask"
 msgstr ""
 
-#: lang/en:30
+#: lang/en:31
 #, no-wrap
 msgid "Gateway (if available)"
 msgstr ""
 
-#: lang/en:31
+#: lang/en:32
 #, no-wrap
 msgid "Search domain"
 msgstr ""
 
-#: lang/en:32
+#: lang/en:33
 #, no-wrap
 msgid "DNS Server IP"
 msgstr ""
 
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "Network"
 msgstr "Netwerk"
 
-#: lang/en:34
+#: lang/en:35
 #, no-wrap
 msgid "Delete"
 msgstr "Verwijder"
 
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "Interface"
 msgstr "Interface"
 
 # 85%
-#: lang/en:36
+#: lang/en:37
 #, fuzzy, no-wrap
 msgid "Base settings"
 msgstr "Basis-instellingen"
 
 #: lang/en:38
+#, fuzzy, no-wrap
+msgid "Mode"
+msgstr "Module"
+
+#: lang/en:39
+#, fuzzy, no-wrap
+msgid "Vendor"
+msgstr "Afzender"
+
+#: lang/en:40
+#, fuzzy, no-wrap
+msgid "MAC address"
+msgstr "Adres"
+
+#: lang/en:41
+#, no-wrap
+msgid "Product"
+msgstr "Product"
+
+#: lang/en:43
 #, no-wrap
 msgid "enabled"
 msgstr ""
 
-#: lang/en:39
+#: lang/en:44
 #, no-wrap
 msgid "disabled"
 msgstr ""
 
-#: lang/en:40
+#: lang/en:45
 #, no-wrap
 msgid "Status"
 msgstr ""
 
-#: lang/en:41
+#: lang/en:46
 #, no-wrap
 msgid "New virtual IP address"
 msgstr ""
 
-#: lang/en:42
+#: lang/en:47
 #, no-wrap
 msgid "Delete virtual IP address"
 msgstr ""
 
-#: lang/en:43
+#: lang/en:48
 #, no-wrap
 msgid "Do you really want to delete the following network interface?"
 msgstr ""
 
-#: lang/en:44
+#: lang/en:49
 #, no-wrap
 msgid "Create"
 msgstr "Maak aan"
 
-#: lang/en:45
+#: lang/en:50
 #, no-wrap
 msgid "New virtual address on interface"
 msgstr ""
 
-#: lang/en:49
+#: lang/en:51
+#, no-wrap
+msgid "Switch from DHCP to static"
+msgstr ""
+
+#: lang/en:52
+#, no-wrap
+msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+msgstr ""
+
+#: lang/en:54
 #, no-wrap
 msgid "HTTP Proxy"
 msgstr ""
 
-#: lang/en:50
+#: lang/en:55
 #, no-wrap
 msgid "Proxy"
 msgstr ""
 
-#: lang/en:51
+#: lang/en:56
 #, no-wrap
 msgid "Port"
 msgstr ""
 
-#: lang/en:52
+#: lang/en:57
 #, no-wrap
 msgid "Authentication (optional)"
 msgstr ""
 
 # 75%
-#: lang/en:53
+#: lang/en:58
 #, no-wrap
 msgid "User"
 msgstr "Gebruiker"
 
-#: lang/en:54
+#: lang/en:59
 #, no-wrap
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: lang/en:56
+#: lang/en:61
 #, no-wrap
 msgid "Proxyname not valid!"
 msgstr ""
 
-#: lang/en:57
+#: lang/en:62
 #, no-wrap
 msgid "Port not valid!"
 msgstr ""
 
-#: lang/en:58
+#: lang/en:63
 #, no-wrap
 msgid "Username not valid!"
 msgstr ""
 
-#: lang/en:59
+#: lang/en:64
 #, no-wrap
 msgid "Password not valid!"
 msgstr ""
 
-#: lang/en:60
+#: lang/en:65
 #, no-wrap
 msgid "Error while setting APT proxy!"
 msgstr ""
 
-#: lang/en:61
+#: lang/en:66
 #, no-wrap
 msgid "Error while setting WGET proxy!"
 msgstr ""
 
-#: lang/en:62
+#: lang/en:67
 #, no-wrap
 msgid "Error while setting KAV proxy!"
 msgstr ""
 
-#: lang/en:63
+#: lang/en:68
 #, no-wrap
 msgid "Error while deleting APT proxy!"
 msgstr ""
 
-#: lang/en:64
+#: lang/en:69
 #, no-wrap
 msgid "Error while deleting WGET proxy!"
 msgstr ""
 
-#: lang/en:65
+#: lang/en:70
 #, no-wrap
 msgid "Error while deleting KAVS proxy!"
 msgstr ""
 
-#: lang/en:66
+#: lang/en:71
 #, no-wrap
 msgid "Error while setting freshclam proxy!"
 msgstr ""
 
-#: lang/en:67
+#: lang/en:72
 #, no-wrap
 msgid "Error while deleting freshclam proxy!"
 msgstr ""
 
-#: lang/en:68
+#: lang/en:73
 #, no-wrap
 msgid "Error restarting freshclam!"
 msgstr ""
@@ -496,20 +531,22 @@ msgstr ""
 #~ msgid "The quota value can only contain digits."
 #~ msgstr "De quotawaarde kan alleen cijfers bevatten."
 
-#~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
-#~ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
+#~ msgid ""
+#~ "Specify the maximum size of attachments for each mail in MB to be "
+#~ "uploaded via the Webaccess."
+#~ msgstr ""
+#~ "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden "
+#~ "geüpload via de Webaccess."
 
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
-
-#~ msgid "This is the password that is set on the database. You need to set this password manually."
-#~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
-
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
+#~ msgid ""
+#~ "This is the password that is set on the database. You need to set this "
+#~ "password manually."
+#~ msgstr ""
+#~ "Dit is het wachtwoord dat op de database is ingesteld. U moet het "
+#~ "wachtwoord met de hand instellen."
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
@@ -546,9 +583,6 @@ msgstr ""
 
 #~ msgid "Subject"
 #~ msgstr "Onderwerp"
-
-#~ msgid "Sender"
-#~ msgstr "Afzender"
 
 #~ msgid "Date"
 #~ msgstr "Datum"
@@ -608,7 +642,8 @@ msgstr ""
 #~ msgstr "Verwijderen van directory"
 
 #~ msgid "Click on \"restore\" to restore the selected messages."
-#~ msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+#~ msgstr ""
+#~ "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
 
 #~ msgid "No backup available"
 #~ msgstr "Geen reservekopie beschikbaar"
@@ -678,8 +713,13 @@ msgstr ""
 #~ msgid "Do you really want to delete these resources?"
 #~ msgstr "Wilt u deze resources echt verwijderen?"
 
-#~ msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
-#~ msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die deze resource moeten kunnen boeken in de kalender-instelling voor deze resource."
+#~ msgid ""
+#~ "Do not forget to give appropriate permissions to users that need to book "
+#~ "this resource in the calendar setting for this resource."
+#~ msgstr ""
+#~ "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die "
+#~ "deze resource moeten kunnen boeken in de kalender-instelling voor deze "
+#~ "resource."
 
 #~ msgid "The name of the resource contains illegal characters."
 #~ msgstr "De naam van de resource bevat ongeldige tekens."
@@ -696,8 +736,12 @@ msgstr ""
 #~ msgid "You cannot use localhost as domain-part."
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#~ msgid "The domain is not defined as local domain in your mailserver configuration."
-#~ msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
+#~ msgid ""
+#~ "The domain is not defined as local domain in your mailserver "
+#~ "configuration."
+#~ msgstr ""
+#~ "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-"
+#~ "configuratie."
 
 #~ msgid "Local-part of e-mail address must be identical with name."
 #~ msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
@@ -723,14 +767,20 @@ msgstr ""
 #~ msgid "This name will be shown in the global address book."
 #~ msgstr "Deze naam wordt getoond in het globale adresboek."
 
-#~ msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-#~ msgstr "U kunt een omschrijving toevoegen als de naam van de resource niet uit zichzelf duidelijk is."
+#~ msgid ""
+#~ "You may want to add a description if the name of the resource isn't self-"
+#~ "explanatory."
+#~ msgstr ""
+#~ "U kunt een omschrijving toevoegen als de naam van de resource niet uit "
+#~ "zichzelf duidelijk is."
 
 #~ msgid "Check this box and the resource can only be booked once."
-#~ msgstr "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
+#~ msgstr ""
+#~ "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat."
 
 #~ msgid "Check this box to disable recurring appointments for this resource."
-#~ msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
+#~ msgstr ""
+#~ "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 
 #~ msgid "Admin password"
 #~ msgstr "Admin-wachtwoord"
@@ -753,8 +803,11 @@ msgstr ""
 #~ msgid "Setup finished"
 #~ msgstr "Instellen afgerond"
 
-#~ msgid "Setup was finished successfully. After relogin you can use all features."
-#~ msgstr "Instellen is succesvol afgerond. Meld u opnieuw aan om alle functionaliteit te gebruiken."
+#~ msgid ""
+#~ "Setup was finished successfully. After relogin you can use all features."
+#~ msgstr ""
+#~ "Instellen is succesvol afgerond. Meld u opnieuw aan om alle "
+#~ "functionaliteit te gebruiken."
 
 #~ msgid "Zarafa settings"
 #~ msgstr "Zarafa instellingen"
@@ -869,11 +922,10 @@ msgstr ""
 #~ msgid "Add spam detected headers at level"
 #~ msgstr "Voeg spamheaders toe vanaf niveau"
 
-#~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
-#~ msgstr "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
-
-#~ msgid "Address"
-#~ msgstr "Adres"
+#~ msgid ""
+#~ "All hosts and addresses listed here are not checked for spam or viruses."
+#~ msgstr ""
+#~ "Al deze hosts en adressen worden niet gecontroleerd op spam of virussen."
 
 #~ msgid "Type"
 #~ msgstr "Type"
@@ -891,16 +943,25 @@ msgstr ""
 #~ msgstr "Beveiliging"
 
 #~ msgid "This value defines at which score mails are handled as spam."
-#~ msgstr "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
+#~ msgstr ""
+#~ "Deze waarde geeft aan vanaf welke score e-mails als spam worden behandeld."
 
 #~ msgid "Define a host or network by its IP address or CIDR."
 #~ msgstr "Geef een host of netwerk op met een IP-adres of CIDR."
 
-#~ msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
-#~ msgstr "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven afmeting. Grotere objecten worden NIET gescand."
+#~ msgid ""
+#~ "ClamAV will scan only objects that are smaller than the specified amount. "
+#~ "Larger objects will NOT be scanned."
+#~ msgstr ""
+#~ "ClamAV zal alleen objecten scannen die kleiner zijn dan de opgegeven "
+#~ "afmeting. Grotere objecten worden NIET gescand."
 
-#~ msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
-#~ msgstr "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het opgegeven adres."
+#~ msgid ""
+#~ "If ClamAV detects a suspicious object, it will send a mail to the "
+#~ "specified address."
+#~ msgstr ""
+#~ "Als ClamAV een verdacht object vindt, stuurt het een e-mail naar het "
+#~ "opgegeven adres."
 
 #~ msgid "Enable this to scan archives like RAR, ZIP, GZ..."
 #~ msgstr "Zet dit aan om archieven zoals RAR, ZIP, GZ, ... te scannen."
@@ -966,8 +1027,12 @@ msgstr ""
 #~ msgid "Group exists already!"
 #~ msgstr "Groep bestaat al!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+#~ msgid ""
+#~ "Group names have to consist of at least one (alphanumerical) character, "
+#~ "beginning with a letter(no umlaut)."
+#~ msgstr ""
+#~ "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, "
+#~ "beginnend met een letter (geen trema's)."
 
 #~ msgid "Wrong mode!"
 #~ msgstr "Verkeerde modus!"
@@ -1028,9 +1093,6 @@ msgstr ""
 
 #~ msgid "Revision"
 #~ msgstr "Revisie"
-
-#~ msgid "Product"
-#~ msgstr "Product"
 
 #~ msgid "The information cannot be read!"
 #~ msgstr "De informatie kon niet worden gelezen!"
@@ -1100,9 +1162,6 @@ msgstr ""
 
 #~ msgid "Cache"
 #~ msgstr "Cache"
-
-#~ msgid "Module"
-#~ msgstr "Module"
 
 #~ msgid "Referring modules"
 #~ msgstr "Verwijzende modules"
@@ -1348,3 +1407,18 @@ msgstr ""
 #, fuzzy
 #~ msgid "Error"
 #~ msgstr "Fouten"
+
+#~ msgid ""
+#~ "This database will be created if it doesn't exists. To do this the user "
+#~ "needs the right permissions."
+#~ msgstr ""
+#~ "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft "
+#~ "de gebruiker de juiste permissies nodig."
+
+#~ msgid ""
+#~ "This is the username that will be used for connecting to database. The "
+#~ "user has to be created and have the permissions to use the given database."
+#~ msgstr ""
+#~ "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de "
+#~ "database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om "
+#~ "de opgegeven database te kunnen gebruiken."
