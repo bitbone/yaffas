@@ -33,6 +33,12 @@ Netconf.prototype.confirmation = function(url, args, submit) {
 			var d = new Yaffas.Confirm(_("lbl_delete_device"), _("lbl_really_delete")+dlg_arg(args["device"]), submit);
 			d.show();
 			return true;
+		} else {
+			if(args["method"] === "dhcp") {
+				var d = new Yaffas.Confirm(_("lbl_switch_dhcp_static"), _("lbl_really_switch_dhcp")+dlg_arg(args["device"]), submit);
+	            d.show();
+    	        return true;
+			}
 		}
 	}
 	return false;

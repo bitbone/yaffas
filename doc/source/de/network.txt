@@ -32,7 +32,11 @@ Die Einstellungen pro Schnittstelle sind nur aktiv wenn die Schnittstelle aktive
 
 Über den Button  _Neue virtuelle IP Adresse_ können Sie auf der zugehörigen Schnittstelle eine weitere IP Adresse konfigurieren. Für diese virtuelle Schnittstelle können Sie dann die gleichen Werte wie für eine normale Schnittstelle vergeben.
 
-
+[NOTE]
+==============
+Zur Zeit werden weder DHCP noch Netzwerkschnittstellen im Bridge oder Bonding Modus unterstützt.
+Wenn sie die Schnittstellen-Konfiguration speichern während DHCP aktiviert ist, wird die Schnittstelle auf eine statische Adresse umgestellt.
+==============
 
 === SNMP
 Um den Zugriff via SNMP-Protokoll zu aktivieren, setzen Sie den Haken im entsprechenden Feld unter dem Menüpunkt  _Netzwerk->SNMP_ 

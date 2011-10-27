@@ -45,6 +45,15 @@ sub net_conf_form () {
 		
 		proxy_form();
 
+		my $bridges = Yaffas::Module::Netconf::_get_bridges();
+		if(scalar keys %$bridges > 0) {
+			print $Cgi->start_form();
+			print Yaffas::UI::section($main::text{lbl_interface},
+				$Cgi->p($main::text{err_bridged_mode})
+			);
+			print $Cgi->end_form();
+		} else {
+
 		print map {
 			my $dev = $conf->device($_);
 
@@ -57,15 +66,19 @@ sub net_conf_form () {
 
 							$_ =~ /^eth\d+$/
 							? (
-								$Cgi->td("MAC Adresse:")
+								$Cgi->td($main::text{lbl_mac}.":")
 								  . $Cgi->td( { -colspan => 3 }, $dev->{MAC} ),
-								$Cgi->td("Hersteller:")
+								$Cgi->td($main::text{lbl_vendor}.":")
 								  . $Cgi->td( { -colspan => 3 },
 									$dev->{VENDOR} ),
-								$Cgi->td("Produkt:")
+								$Cgi->td($main::text{lbl_product}.":")
 								  . $Cgi->td(
 									{ -colspan => 3 }, $dev->{PRODUCT}
-								  )
+								  ),
+								$Cgi->td($main::text{lbl_method}.":")
+								  . $Cgi->td(
+									{ -colspan => 3 }, $dev->{METHOD}
+								  ),
 							  )
 							: "",
 							_input_status( "$_-enabled", $dev->enabled() ),
@@ -112,14 +125,15 @@ sub net_conf_form () {
 				),
 			  )
               .$Cgi->hidden({-name => 'section', -value => '1'}) 
+              .$Cgi->hidden({-name => 'method', -value => $dev->{METHOD}}) 
+              .$Cgi->hidden({-name => 'device', -value => $_})
 			  . Yaffas::UI::section_button(
 				$Cgi->submit( { -value => $main::text{lbl_save} } ) )
 			  . $Cgi->end_form()
 
 		} grep { $_ ne "lo" } sort $conf->get_all_names();
-
-		#						 );
-
+		
+		}
 	}
 	catch Yaffas::Exception with {
 		print Yaffas::UI::all_error_box(shift);

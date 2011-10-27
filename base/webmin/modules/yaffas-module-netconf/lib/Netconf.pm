@@ -80,7 +80,7 @@ sub new {
 	if (grep {$_ =~ /^bond\d+/} keys %{$self->{DEVICES}}) {
 		throw Yaffas::Exception("err_bonding_enabled");
 	}
-
+	
 	bless $self, $pkg;
 }
 
@@ -130,6 +130,7 @@ sub save {
 	$self->disable_virtual();
 
 	my $one_enabled = 0;
+	my $dhcp = scalar $self->_get_dhcp_interfaces();
 	foreach my $dev (values %{$self->{DEVICES}}) {
 		next unless ($dev->{DEVICE} =~ /^eth\d+$/);
 		if ($dev->{ENABLED} == 1) {
@@ -137,17 +138,20 @@ sub save {
 		}
 	}
 
-	throw Yaffas::Exception("err_one_enabled") unless($one_enabled);
+	my $bridges = scalar keys %{_get_bridges()};
+
+	throw Yaffas::Exception("err_one_enabled") unless($one_enabled or $dhcp or $bridges);
 
 	return if $self->{TESTMODE};
 
 	try {	
 		$self->_save_domainname();
 		$self->_save_hostname();
-		$self->_save_iftab();
+#		$self->_save_iftab();
 		$self->_save_workgroup();
 		_stop_network();
 		if($self->{section} eq '1' || $self->{section} eq '4') {
+			# only save interfaces if something changed in those forms
 			$self->_save_interfaces();
 		}
 	} catch Yaffas::Exception with {
@@ -364,7 +368,6 @@ sub _load_settings {
 		my ($dns, $search) = [];
 		my $method = '';
 
-		my $i = 0;
 		my @lines = $interfaces->get_content();
 
 		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
@@ -379,8 +382,9 @@ sub _load_settings {
 			}
 		}
 
-		foreach my $line (@lines) {
-			$i++;
+		my @revLines = reverse(@lines);
+
+		foreach my $line (@revLines) {
 
 			if ($line =~ /\s*address\s(.*)/) {
 				$ip = $1;
@@ -399,18 +403,19 @@ sub _load_settings {
 			}
 
 			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
-				if ($device ne "") {
-					%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
-				}
 				$device = $1;
 				$method = $2;
+				unless($ip && $netmask) {
+					my $iface = IO::Interface::Simple->new($device);
+					$ip = $iface->address();
+					$netmask = $iface->netmask();
+				}
+				%settings = _create_objects_for_settings(
+					$ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 			}
 		}
-		if($device ne "") {
-			%settings = _create_objects_for_settings($ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
-		}
 	} else {
-		my ($ip, $netmask, $gateway);
+		my ($ip, $netmask, $gateway, $method);
 		my ($dns, $search) = ([],[]);
 
 		push @enabled_interfaces, map { $_->name } grep { m#^eth# } IO::Interface::Simple->interfaces;
@@ -440,6 +445,8 @@ sub _load_settings {
 					chomp $line;
 					$ip = $1 if $line =~ m#^IPADDR=(.+)\z#ix;
 					$netmask = $1 if $line =~ m#^NETMASK=(.+)\z#ix;
+					$method = $1 if $line =~ m#^BOOTPROTO=(.+)\z#ix;
+					$method = "static" unless(lc $method eq 'dhcp');
 					push @$dns, $1 if $line =~ m#^DNS\d+=(.+)\z#ix;
 				}
 			}
@@ -451,7 +458,7 @@ sub _load_settings {
 			}
 
 			my $d_obj = Yaffas::Module::Netconf::Device->new($device);
-			$d_obj->set_all($ip, $netmask, $gateway, $dns, $search);
+			$d_obj->set_all($ip, $netmask, $gateway, $dns, $search, $method);
 
 			my $parent;
 			if ($device =~ /^(eth\d+):\d+$/) {
@@ -614,7 +621,34 @@ sub _save_hostname {
 	_exchange_samba_domain($old_hostname, $hostname);
 
 	# create new /etc/hosts
-	my $ip = $self->device("eth0")->get_ip();
+	my $ip = '';
+	# get our ip address
+	my $num_dhcp = scalar $self->_get_dhcp_interfaces();
+	my $num_bridges = scalar keys %{_get_bridges()};
+	if($num_dhcp) {
+		my @interfaces = IO::Interface::Simple->interfaces;
+		for my $if (@interfaces) {
+            if($if ne 'lo') {
+                $ip = $if->address;
+                last if (defined $ip && $ip ne '');
+            }
+        }
+	} elsif($num_bridges) {
+		my @bridges = keys %{_get_bridges()};
+		my @interfaces = IO::Interface::Simple->interfaces;
+		for my $if (@interfaces) {
+			if($if eq $bridges[0]) {
+				$ip = $if->address;
+				next;
+			}
+		}
+	} else {
+		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
+			unless ($dev eq "lo") {
+				$ip = $self->{DEVICES}->{$dev}->{IP};
+			}
+		}
+	}
 
 	throw Yaffas::Exception("err_no_ip") if $ip eq '';
 
@@ -792,6 +826,40 @@ sub _exchange_samba_domain ($$) {
 		$msg = $ldap->unbind;
 		$msg->code && throw Yaffas::Exception('err_set_sambasid', $msg->code, $msg->error);
 	}
+}
+
+sub _get_bridges {
+	my $brctl = Yaffas::Constant::APPLICATION->{brctl};
+	my @result = Yaffas::do_back_quote($brctl, 'show');
+	use Data::Dumper;
+	shift @result;
+	my $bridges = {};
+	my $current_name = '';
+	foreach my $line (@result) {
+		my ($br_name, $br_id, $br_stp, $br_interfaces) = split /\s+/, $line;
+		if($br_name eq '') {
+			push @{$bridges->{$current_name}->{interfaces}}, $br_id;
+		} else {
+			$current_name = $br_name;
+			my $values = {};
+			$values->{id} = $br_id;
+			$values->{stp} = $br_stp;
+			$values->{interfaces} = [$br_interfaces];
+			$bridges->{$br_name} = $values;
+		}
+	}
+	return $bridges;
+}
+
+sub _get_dhcp_interfaces() {
+	my $self = shift;
+	my @interfaces;
+	foreach my $dev (values %{$self->{DEVICES}}) {
+		if (lc($dev->{METHOD}) eq 'dhcp') {
+			push @interfaces, $dev->{DEVICE};
+		}
+	}
+	return @interfaces;
 }
 
 ## ---------------------------------------------------------------------- ##
@@ -1003,6 +1071,11 @@ sub get_dns {
 sub get_search {
 	my $self = shift;
 	return $self->{SEARCH};
+}
+
+sub get_method {
+	my $self = shift;
+	return $self->{METHOD}
 }
 
 sub vendor {

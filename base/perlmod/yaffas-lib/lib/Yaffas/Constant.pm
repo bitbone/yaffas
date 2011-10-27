@@ -362,6 +362,7 @@ use constant {
 		"pfcat" => '/opt/yaffas/bin/pfcat.sh',
 		"sa_update" => "/usr/bin/sa-update",
 		"policyd_weight" => '/usr/sbin/policyd-weight',
+		"brctl" => '/usr/sbin/brctl',
 	}
 };
 

@@ -16,6 +16,7 @@ err_set_sambasid=Error writing data for use with samba.
 err_ldap_duplicate_sambadomain=The hostname (sambaDomain) does not exist exactly one time in LDAP.
 
 err_bonding_enabled=This module is deactivated, because channel bonding is active.
+err_bridged_mode=Bridged network interfaces are not supported.
 
 err_no_ip=No IP address is set.
 
@@ -34,6 +35,10 @@ lbl_index_return=Network
 lbl_delete=Delete
 lbl_interface=Interface
 lbl_base_settings=Base settings
+lbl_method=Mode
+lbl_vendor=Vendor
+lbl_mac=MAC address
+lbl_product=Product
 
 lbl_enabled=enabled
 lbl_disabled=disabled
@@ -43,8 +48,8 @@ lbl_delete_device=Delete virtual IP address
 lbl_really_delete=Do you really want to delete the following network interface?
 lbl_create=Create
 lbl_new_interface=New virtual address on interface
-
-
+lbl_switch_dhcp_static=Switch from DHCP to static
+lbl_really_switch_dhcp=If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?
 
 lbl_proxy_conf=HTTP Proxy
 lbl_proxy_ip=Proxy

@@ -8,7 +8,7 @@ Group:		Applications/System
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
-Requires:	yaffas-install-lib, yaffas-core, perl-IO-Interface
+Requires:	yaffas-install-lib, yaffas-core, perl-IO-Interface, bridge-utils
 AutoReqProv: no
 
 %description
