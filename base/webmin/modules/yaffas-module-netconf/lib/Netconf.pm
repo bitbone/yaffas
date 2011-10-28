@@ -399,19 +399,23 @@ sub _load_settings {
 			}
 
 			if ($line =~ /^\s*auto\s+(.*)$/) {
-				push @enabled_interfaces, split /\s+/, $1;
+				if(exists $settings{$1}) {
+					push @enabled_interfaces, split /\s+/, $1;
+				}
 			}
 
 			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
-				$device = $1;
-				$method = $2;
-				unless($ip && $netmask) {
-					my $iface = IO::Interface::Simple->new($device);
-					$ip = $iface->address();
-					$netmask = $iface->netmask();
+				unless($line =~ /^\s*#/) {
+					$device = $1;
+					$method = $2;
+					unless($ip && $netmask) {
+						my $iface = IO::Interface::Simple->new($device);
+						$ip = $iface->address();
+						$netmask = $iface->netmask();
+					}
+					%settings = _create_objects_for_settings(
+						$ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 				}
-				%settings = _create_objects_for_settings(
-					$ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
 			}
 		}
 	} else {
@@ -501,13 +505,13 @@ sub _create_objects_for_settings() {
 
 	my $parent;
 	if ($device =~ /^(eth\d+):\d+$/) {
-	$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
+		$d_obj->{PARENT} = $parent = $1 if exists ($settings{$1});
 	}
 
 	if(exists ($settings{$device}) or (defined ($parent) and exists ($settings{$parent}))) {
-	$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
-	$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
-	$settings{$device} = $d_obj;
+		$d_obj->{VENDOR} = $settings{$device}->{VENDOR};
+		$d_obj->{PRODUCT} = $settings{$device}->{PRODUCT};
+		$settings{$device} = $d_obj;
 	}
 
 	$ip = $netmask = $gateway = $search = $device = $method = "";
