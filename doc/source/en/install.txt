@@ -28,6 +28,15 @@ Add the following repositories in order to install {product} and required depend
 
   wget -O - http://repo.yaffas.org/ubuntu/repo.key | apt-key add -
 
+[NOTE]
+===========
+
+If you need a proxy to download from internet, just set the "http_proxy" variable
+
+  export http_proxy=http://<user>:<password>@<your-proxy>:<port>
+
+===========
+
 **Install the packages**
 
   apt-get update
@@ -112,7 +121,7 @@ Prior to the installation of {product} Zarafa packages have to be installed.
 Otherwise the open source packages included in the EPEL repository will be used.
 Packages can be downloaded from http://www.zarafa.com/download-release.
 
-The yaffas packages will require some dependencies.
+The {product} packages will require some dependencies.
 As these dependencies are not part of the standard RHEL repository, the following two repositories have to be added to the installed system.
 
 Run the following command to install the EPEL repository:
@@ -123,13 +132,13 @@ and run the following commands to add the RPMforge repository:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el4.rf.i386.rpm
 
-After the extra repositories are added, the yaffas repository has to added:
+After the extra repositories are added, the {product} repository has to added:
 
 Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/rhel/
+baseurl = http://repo.yaffas.org/rhel-1.0beta3/
 enabled = 1
 protect = 0
 gpgcheck = 0
@@ -150,14 +159,23 @@ After installation, the {product} web interface is accessible at the following U
 
 The username is "admin" and password is "yaffas".
 
-image:media/en/16_login_thumb.png[link="media/en/16_login.png"]
+image:media/en/{theme}/16_login_thumb.png[link="media/en/{theme}/16_login.png"]
 
-On first log in the admin password has to be changed. If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
+On first log in the admin password has to be changed.
+If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
+The database you add here will be used for zarafa and will be created if it does not exists.
 
-image:media/en/17_setup_thumb.png[link="media/en/17_setup.png"]
+image:media/en/{theme}/17_setup_thumb.png[link="media/en/{theme}/17_setup.png"]
 
 After the first login an authentication server should be selected in Accounts -> Authentication.
+
 Choices are Active Directory, remote LDAP and local authentication.
+
+If you select local authentication you can select if you want to use this as authentication server.
+Just click on apply if you don't need that.
+
+image:media/en/{theme}/18_authserver_thumb.png[link="media/en/{theme}/18_authserver.png"]
+
 Please note that currently the configuration files (yaffas-config) have to be installed for this step.
 
 On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services".
@@ -166,6 +184,12 @@ Since by default an iptables firewall is active in Red Hat Enterprise Linux, the
 The next step should be to configure the mail server.
 Without a working mail server configuration some parts of the system will not work.
 It will also not be possible to create resources for Zarafa when no local domain is set for the mail server.
+
+Now you can go Accounts -> User Management and create some users.
+
+image:media/en/{theme}/19_usercreate_thumb.png[link="media/en/{theme}/19_usercreate.png"]
+
+After this step you should be able to login to webacess if you go to https://<your-server's-ip>/webaccess
 
 [IMPORTANT]
 ==============
