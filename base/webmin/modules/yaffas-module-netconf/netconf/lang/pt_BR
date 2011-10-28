@@ -16,7 +16,7 @@ err_set_sambasid=Erro ao escrever os dados para o uso do samba.
 err_ldap_duplicate_sambadomain=O nome da máquina (sambaDomain) não está disponível uma única vez no LDAP.
 
 err_bonding_enabled=Este módulo está desativado, porque nenhum canal de bonding está ativo.
-err_bridged_mode=Interfaces de rede em modo bridge não estão suportados.
+err_bridged_mode=Interfaces de rede em modo bridged não são suportadas.
 
 err_no_ip=Nenhum endereço IP definido.
 
@@ -49,7 +49,7 @@ lbl_really_delete=Realmente deseja remover a interface de rede abaixo?
 lbl_create=Criar
 lbl_new_interface=Novo endereço virtual na interface
 lbl_switch_dhcp_static=Mudar de DHCP para o endereço IP estático
-lbl_really_switch_dhcp=Caso você salvar, o interface de rede será mudado de DHCP para o endereço IP estático. Você deseja continuar?
+lbl_really_switch_dhcp=Caso você salve, a interface de rede será modificada de DHCP para IP estático. Você deseja continuar?
 
 lbl_proxy_conf=Proxy HTTP
 lbl_proxy_ip=Proxy
