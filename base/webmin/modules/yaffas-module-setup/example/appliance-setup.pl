@@ -22,6 +22,10 @@ use Yaffas::Constant;
 
 my $password = "yaffas";
 
+if ($ARGV[0]) {
+	$password = $ARGV[0];
+}
+
 my $mysql_host = "localhost";
 my $mysql_database = "zarafa";
 my $mysql_user = "root";
