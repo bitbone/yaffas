@@ -1,14 +1,14 @@
 err_ip=Endereço IP ou máscara de rede invalida.
 err_dns=O endereço do DNS precisa ser um IP válido.
-err_domain=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
+err_domain=O nome do domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-', e precisa ter também um tamanho mínimo de dois.
 err_domain_rename=Não foi possível renomear o domínio.
 err_hostname=O nome de máquina poderá conter somente caracteres (a-z e A-Z), números (0-9) e '-', e precisa ter também um tamanho mínimo de dois.
 err_workgroup_check=O grupo de trabalho poderá conter somente caracteres (a-z e A-Z), números (0-9), '.', '_' e '-'.
-err_copy_file=Could not copy the following file:
+err_copy_file=Não foi possível localizar os arquivos:
 
 err_one_enabled=Será necessário habilitar no mínimo uma interface de rede.
 err_gateway_eq_ip=O endereço do gateway precisa ser diferente do endereço do servidor.
-err_search=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
+err_search=O nome do domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-', e precisa ter também um tamanho mínimo de dois.
 err_parent_enable=A interface de hardware associada não esta habilitada.
 
 err_get_sambasid=Erro ao ler os dados para o uso do samba.
@@ -16,7 +16,7 @@ err_set_sambasid=Erro ao escrever os dados para o uso do samba.
 err_ldap_duplicate_sambadomain=O nome da máquina (sambaDomain) não está disponível uma única vez no LDAP.
 
 err_bonding_enabled=Este módulo está desativado, porque nenhum canal de bonding está ativo.
-err_bridged_mode=Bridged network interfaces are not supported.
+err_bridged_mode=Interfaces de rede em modo bridge não estão suportados.
 
 err_no_ip=Nenhum endereço IP definido.
 
@@ -24,7 +24,7 @@ lbl_index_header=Configuração
 lbl_data=Configurações de Rede
 
 lbl_hostname=Nome da máquina (host)
-lbl_domain=Nome do Domínio
+lbl_domain=Nome do domínio
 lbl_workgroup=Grupo de trabalho (workgroup)
 lbl_ipaddr=Endereço IP
 lbl_netmask=Máscara de rede (netmask)
@@ -36,8 +36,8 @@ lbl_delete=Remover
 lbl_interface=Interface
 lbl_base_settings=Configurações básicas
 lbl_method=Modo
-lbl_vendor=Vendor
-lbl_mac=MAC address
+lbl_vendor=Fornecedor
+lbl_mac=Endereço MAC
 lbl_product=Produto
 
 lbl_enabled=habilitado
@@ -48,8 +48,8 @@ lbl_delete_device=Remover endereço IP virtual
 lbl_really_delete=Realmente deseja remover a interface de rede abaixo?
 lbl_create=Criar
 lbl_new_interface=Novo endereço virtual na interface
-lbl_switch_dhcp_static=Switch from DHCP to static
-lbl_really_switch_dhcp=If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?
+lbl_switch_dhcp_static=Mudar de DHCP para o endereço IP estático
+lbl_really_switch_dhcp=Caso você salvar, o interface de rede será mudado de DHCP para o endereço IP estático. Você deseja continuar?
 
 lbl_proxy_conf=Proxy HTTP
 lbl_proxy_ip=Proxy

@@ -22,7 +22,7 @@ emailAddress=Endereço de e-mail (ex. webmaster@empresa.com.br)
 
 gencert_days=Certificado válido por (dias)
 gencert_generate=Gerar chave
-gencert_header=Generate Self Signed Certificate and Key
+gencert_header=Gerar Certificado e Chave autoassinados
 gencert_service=Serviço
 gencert_title=Gerar Certificado & Chave
 gencert_e_linkerror=Erro de symlink
@@ -39,14 +39,14 @@ import_error=Um erro ocorreu durante a importação. Por favor verificar o arqui
 
 index_header=Gerenciamento de Certificados / Chaves
 index_import=Importar Chave ou Certificado assinado
-index_gencert=Generate Self Signed Certificate and Key
+index_gencert=Gerar Certificado e Chave autoassinados
 index_view=Gerenciar/Ver Certificados e Chaves instalados
 index_title=Gerenciador de Certificados
 
 keysize=Tamanho da chave (em bits)
 l=Localidade (ex. cidade)
 o=Nome da organização (ex. empresa)
-ou=Organization Unit Name (e.g. division)
+ou=Nome da Unidade de organização (OU) (ex. departamento)
 
 st=Estado (nome completo)
 

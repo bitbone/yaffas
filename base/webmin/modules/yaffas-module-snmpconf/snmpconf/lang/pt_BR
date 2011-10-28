@@ -4,5 +4,5 @@ lbl_enable=Habilitar SNMP
 lbl_snmp_config=Configuração SNMP
 
 err_network_string=O acesso pode ser limitado somente para endereços de IP ou redes.
-err_community_string=The community-string can only contain digits (0-9) and chars (a-z, A-Z).
+err_community_string=O texto community poderá conter somente digitos (0-9) e caracteres (a-z, A-Z).
 moduletitle=Configuração SNMP

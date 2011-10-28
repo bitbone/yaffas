@@ -1,4 +1,4 @@
-lbl_index_header=Authentication Server
+lbl_index_header=Servidor de autenticação
 lbl_return_to_index=Index
 lbl_return_to_cat=Contas
 
@@ -50,9 +50,9 @@ lbl_ads_user=Usuário do Active Directory
 lbl_username_dn=Nome do usuário ou DN
 lbl_title_woe=Associar ao domínio sem criptografia?
 lbl_ads_without_enc=O servidor Active Directory não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido, o servidor yaffas não irá se associar ao domínio.
-lbl_ldap_without_enc=Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type.
+lbl_ldap_without_enc=O servidor LDAP não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido será necessário mudar o método de autenticação.
 lbl_del_faxconf=Excluir configuração do usuário de fax e arquivos PDF
-lbl_expl_del_faxconf=Delete all users' and groups' fax configurations and pdf users' files.
+lbl_expl_del_faxconf=Excluir arquivos de configuração de fax e arquivos pdf de todos os usuários e grupos.
 lbl_printop_group=Grupo de operadores de impressão
 lbl_change_printop_group=Modificar grupo de operadores de impressão
 lbl_admin=Administrador
@@ -109,4 +109,4 @@ err_set_sambasid=Erro ao escrever os dados para o uso do samba.
 err_ldap_duplicate_sambadomain=O domínio samba já existente no LDAP! Por favor corrigir isso.
 err_no_domain_found=<nenhum domínio correspondente>
 err_unknown_postfix_file=arquivo postfix desconhecido
-moduletitle=Authentication Server
+moduletitle=Servidor de autenticação

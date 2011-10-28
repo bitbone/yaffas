@@ -24,9 +24,9 @@ lbl_log=Nome do log
 lbl_clamav=ClamAV
 lbl_clamav_activate=Ativar ClamAV
 lbl_clamav_deactivate=Desativar ClamAV
-lbl_archive=Scan archives
+lbl_archive=Varrer arquivos
 lbl_virusalert=E-mail de alerta de vírus
-lbl_maxlength=Maximum size of scannable objects in MB
+lbl_maxlength=Tamanho máximo de objeto para serem varridos em MB
 lbl_clam_update=Atualizar assinaturas do ClamAV
 lbl_clam_configure=Configurar ClamAV
 
@@ -38,10 +38,10 @@ lbl_sa_update=Atualizar filtros do Spamassassin
 lbl_network=Rede
 lbl_internal=Rede interna
 lbl_trusted=Redes confiáveis
-lbl_add_headers=Add spam detected headers at level
+lbl_add_headers=Adicionar cabeçalho de SPAM no nível
 
-lbl_whitelist=Whitelisting
-lbl_wl_desc=All hosts and addresses listed here are not checked for spam or viruses.
+lbl_whitelist=Lista branca
+lbl_wl_desc=Todos as máquinas e endereços listados aqui não serão verificados por spam ou vírus. 
 lbl_address=Endereço
 lbl_wl_type=Tipo
 lbl_wl_from=Origem

@@ -94,5 +94,5 @@ err_email_wrong=O endereço de e-mail fornecido é incorreto!
 err_kav_licence=A chave KAV está expirada ou inválida!
 err_kav_update=É necessário atualizar seu KAV antes de ativar este recurso.
 err_kas_update=É necessário atualizar seu KAS antes de ativar este recurso.
-err_activate_policyserver=Please activate policy server in MPP interface first.
+err_activate_policyserver=Por favor ativar primeiro o servidor de políticas na interface MPP.
 moduletitle=Configuração

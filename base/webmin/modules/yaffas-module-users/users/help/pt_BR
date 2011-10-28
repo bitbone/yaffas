@@ -1,3 +1,3 @@
 zarafaadmin_\d*=No caso que o usuário é administrador, ele poderá abrir as caixas de todos os usuários no Zarafa.
 zarafashared_\d*=O usuário não poderá logar no Zarafa e também não contará como usuário ativo na sua licença. Outros usuários poderão abrir essa caixa no modo de delegação.
-zarafaquota_\d*=Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails.
+zarafaquota_\d*=Fornecer a quantia de espaço no disco que este usuário poderá usar (cota). O usuário será avisado quando chegar perto deste limite. Quando o usuário exceder este limite, não será possível de enviar e receber e-mails novos e-mails.

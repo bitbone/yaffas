@@ -20,7 +20,7 @@ suc_test=Um e-mail foi enviado para o seu endereço de e-mail. Por favor conferi
 suc_set_mail=Endereço para mensagens do sistema foi definido com sucesso.
 
 lbl_test_mail_subject=Teste - notificação yaffas
-lbl_test_mail_body=This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors.
+lbl_test_mail_body=Este e-mail foi enviado para testar o endereço de e-mail fornecido. Se você recebeu este email será informado sobre erros.
 lbl_test_mail_body1=Testar endereço de e-mail
 lbl_test_mail_body2=
 lbl_test_mail_body3=Este e-mail é usado para testar o endereço de email do administrador. Se você recebeu este email você será notificado desta forma no caso de erro que poderão ocorrer no futuro.

@@ -11,7 +11,7 @@ lbl_delresource_question=Realmente deseja remover estes recursos?
 lbl_remind_perms=As permissões adequadas para os usuários que poderão reservar este recurso precisam ser definidos na configuração de permissão do calendário deste recurso.
 
 err_username=O nome do recurso contém caracteres inválidos.
-err_never_user=The name of the resource is taken from a special user.
+err_never_user=O nome do recurso já está sendo usado por um usuário.
 err_gecos=A descrição do recurso contém caracteres inválidos.
 err_no_email=Endereço de e-mail não especificado.
 err_mail_loc_host=Localhost não pode ser usado como parte do domínio.

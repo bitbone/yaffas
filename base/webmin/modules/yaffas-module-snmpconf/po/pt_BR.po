@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-25 13:54+0200\n"
-"Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
+"PO-Revision-Date: 2011-10-28 13:31+0200\n"
+"Last-Translator: Manfred <m.kutas@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -43,7 +43,7 @@ msgid "The access can only be set for IP-Addresses or networks."
 msgstr "O acesso pode ser limitado somente para endereços de IP ou redes."
 
 #: lang/en:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
 msgstr "O texto community poderá conter somente digitos (0-9) e caracteres (a-z, A-Z)."
 
@@ -397,7 +397,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "O nome do recurso contém caracteres inválidos."
 
 # 85%
-#, fuzzy
 #~ msgid "The name of the resource is taken from a special user."
 #~ msgstr "O nome do recurso já está sendo usado por um usuário."
 
@@ -576,14 +575,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Deactivate clamav"
 #~ msgstr "Desativar ClamAV"
 
-#, fuzzy
 #~ msgid "Scan archives"
 #~ msgstr "Varrer arquivos"
 
 #~ msgid "Virus alert email"
 #~ msgstr "E-mail de alerta de vírus"
 
-#, fuzzy
 #~ msgid "Maximum size of scannable objects in MB"
 #~ msgstr "Tamanho máximo de objeto para serem varridos em MB"
 
@@ -617,15 +614,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Trusted networks"
 #~ msgstr "Redes confiáveis"
 
-#, fuzzy
 #~ msgid "Add spam detected headers at level"
 #~ msgstr "Adicionar cabeçalho de SPAM no nível"
 
-#, fuzzy
 #~ msgid "Whitelisting"
 #~ msgstr "Lista branca"
 
-#, fuzzy
 #~ msgid "All hosts and addresses listed here are not checked for spam or viruses."
 #~ msgstr "Todos as máquinas e endereços listados aqui não serão verificados por spam ou vírus. "
 
@@ -728,7 +722,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Group exists already!"
 #~ msgstr "Grupo já existe!"
 
-#, fuzzy
 #~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
 #~ msgstr "Nomes para grupos precisam ter pelo menos um carácter (alfanumérico), iniciando com uma letra."
 
@@ -949,7 +942,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "You have to update your KAS before you activate this feature."
 #~ msgstr "É necessário atualizar seu KAS antes de ativar este recurso."
 
-#, fuzzy
 #~ msgid "Please activate policy server in MPP interface first."
 #~ msgstr "Por favor ativar primeiro o servidor de políticas na interface MPP."
 
@@ -960,7 +952,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Limite de tamanho para todos os e-mails recebidos e enviados. Deixar em branco para um tamanho de e-mail ilimitado."
 
 # 94%
-#, fuzzy
 #~ msgid "System information"
 #~ msgstr "Informações sobre o sistema"
 
@@ -1219,7 +1210,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
 #~ msgstr "Clique no botão de download para salvar a configuração para uso posterior. Envie um email para <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> para obter suporte. Algumas partes do arquivo salvo serão necessários."
 
-#, fuzzy
 #~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
 #~ msgstr "Clique no botão de download para salvar a configuração para uso posterior. Crie um tópico no fórum do Z-Admin em <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>. Alguns dos dados salvos poderão ser requeridos."
 
@@ -1299,7 +1289,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Test - yaffas notify"
 #~ msgstr "Teste - notificação yaffas"
 
-#, fuzzy
 #~ msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
 #~ msgstr "Este e-mail foi enviado para testar o endereço de e-mail fornecido. Se você recebeu este email será informado sobre erros."
 
@@ -1375,7 +1364,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Generate key"
 #~ msgstr "Gerar chave"
 
-#, fuzzy
 #~ msgid "Generate Self Signed Certificate and Key"
 #~ msgstr "Gerar Certificado e Chave autoassinados"
 
@@ -1433,7 +1421,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Organization Name (e.g. company)"
 #~ msgstr "Nome da organização (ex. empresa)"
 
-#, fuzzy
 #~ msgid "Organization Unit Name (e.g. division)"
 #~ msgstr "Nome da Unidade de organização (OU) (ex. departamento)"
 
@@ -1538,12 +1525,10 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Error removing email"
 #~ msgstr "Erro ao remover e-mail"
 
-#, fuzzy
 #~ msgid "Error at dequeue attempt for email"
 #~ msgstr "Erro na tentativa de tirar o e-mail da fila"
 
 # 81%
-#, fuzzy
 #~ msgid "No valid email address"
 #~ msgstr "Endereço de e-mail inválido"
 
@@ -1598,15 +1583,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
 #~ msgstr "Clique este botão para iniciar o serviço Fetchmail neste servidor, que irá conferir por e-mails novos a cada $1 segundos. O serviço vai ser executado como usuário $2 e usar a configuração acima."
 
-#, fuzzy
 #~ msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
 #~ msgstr "Clique este botão para parar o serviço Fetchmail que está sendo executado como usuário $1. E-Mail não será mais baixado a cada $2 segundos."
 
-#, fuzzy
 #~ msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
 #~ msgstr "O programa Fetchmail $1 não pode ser encontrado. Talvez o Fetchmail não está instalado no seu sistema, ou a <a href='$2'>configuração dos módulos</a> está incorreta."
 
-#, fuzzy
 #~ msgid "No Unix users have <tt>.fetchmailrc</tt> files."
 #~ msgstr "Nenhum usuário Unix possui arquivos <tt>.fetchmailrc</tt>."
 
@@ -1634,14 +1616,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Mail server to contact"
 #~ msgstr "servidor de e-mail para o contato"
 
-#, fuzzy
 #~ msgid "Same as server name"
 #~ msgstr "Mesmo que o nome do servidor"
 
 #~ msgid "Server port"
 #~ msgstr "Porta do servidor"
 
-#, fuzzy
 #~ msgid "Mail server user details"
 #~ msgstr "Enviar detalhes do usuário/servidor"
 
@@ -1718,11 +1698,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Command to run after disconnecting"
 #~ msgstr "Comando a ser executado depois de desconectar"
 
-#, fuzzy
 #~ msgid "You are not allowed to edit this user's fetchmail config"
 #~ msgstr "Permissões inválidas para editar a configuração fetchmail deste usuário"
 
-#, fuzzy
 #~ msgid "Only users' fetchmail config files can be edited"
 #~ msgstr "Somente configuração do usuário poderão ser editados"
 
@@ -1741,7 +1719,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Failed to start fetchmail"
 #~ msgstr "Erro ao iniciar fetchmail"
 
-#, fuzzy
 #~ msgid "Missing or invalid checking interval"
 #~ msgstr "Intervalo de checagem inválido"
 
@@ -1806,12 +1783,10 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Alterado as configurações globais no arquivo $1"
 
 # 83%
-#, fuzzy
 #~ msgid "Started fetchmail daemon"
 #~ msgstr "Iniciar serviço Fetchmail"
 
 # 79%
-#, fuzzy
 #~ msgid "Stopped fetchmail daemon"
 #~ msgstr "Parar serviço Fetchmail"
 
@@ -1824,7 +1799,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Disabled scheduled checking"
 #~ msgstr "Desabilitado o agendamento para verificação"
 
-#, fuzzy
 #~ msgid "Can edit fetchmail config for"
 #~ msgstr "Possível de editar configuração fetchmail para"
 
@@ -1837,7 +1811,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Only users"
 #~ msgstr "Somente usuários"
 
-#, fuzzy
 #~ msgid "All except users"
 #~ msgstr "Todos, menos usuários"
 
@@ -1890,7 +1863,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Do you really want to delete this server?"
 #~ msgstr "Você realmente deseja excluir este servidor?"
 
-#, fuzzy
 #~ msgid "Multidrop"
 #~ msgstr "Multientrega"
 
@@ -1909,7 +1881,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "The given alias is invalid."
 #~ msgstr "O alias fornecido é inválido."
 
-#, fuzzy
 #~ msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 #~ msgstr "Por favor selecionar \"usuário\", \"alias\" ou \"multientrega\"."
 
@@ -1923,7 +1894,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Fetchmail daemon could not be enabled."
 #~ msgstr "Não foi possível habilitar o serviço Fetchmail."
 
-#, fuzzy
 #~ msgid "Fetchmail Mail Retrieval"
 #~ msgstr "Busca de E-Mail do Fetchmail"
 
@@ -1977,7 +1947,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "The alias is not valid."
 #~ msgstr "O alias não é válido."
 
-#, fuzzy
 #~ msgid "If you want to you use aliases for this user, you should activate his mailbox."
 #~ msgstr "Caso queira usar aliases para este usuário será necessário ativar a caixa dele."
 
@@ -2125,7 +2094,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
 #~ msgstr "O usuário não poderá logar no Zarafa e também não contará como usuário ativo na sua licença. Outros usuários poderão abrir essa caixa no modo de delegação."
 
-#, fuzzy
 #~ msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
 #~ msgstr "Fornecer a quantia de espaço no disco que este usuário poderá usar (cota). O usuário será avisado quando chegar perto deste limite. Quando o usuário exceder este limite, não será possível de enviar e receber e-mails novos e-mails."
 
@@ -2197,12 +2165,10 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Nenhum administrador Zarafa definido ou nenhuma pasta criada. Por favor definir no módulo <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Configuração do servidor de E-mail</a>."
 
 # 95%
-#, fuzzy
 #~ msgid "Mail alias configuration"
 #~ msgstr "Configuração de alias de e-mail"
 
 # 86%
-#, fuzzy
 #~ msgid "Install New Key"
 #~ msgstr "Instalar nova licença"
 
@@ -2221,7 +2187,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Licensenumber"
 #~ msgstr "Número de licença"
 
-#, fuzzy
 #~ msgid "Incoming MSNs"
 #~ msgstr "MSNs recebidos"
 
@@ -2246,7 +2211,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "PDF encryption"
 #~ msgstr "Criptografia de PDF"
 
-#, fuzzy
 #~ msgid "Notepaper"
 #~ msgstr "Papel de anotação"
 
@@ -2557,7 +2521,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "The DNS server address has to be a valid IP address."
 #~ msgstr "O endereço do DNS precisa ser um IP válido."
 
-#, fuzzy
 #~ msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
 #~ msgstr "O nome do domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-', e precisa ter também um tamanho mínimo de dois."
 
@@ -2571,7 +2534,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "O grupo de trabalho poderá conter somente caracteres (a-z e A-Z), números (0-9), '.', '_' e '-'."
 
 # 85%
-#, fuzzy
 #~ msgid "Could not copy the following file:"
 #~ msgstr "Não foi possível localizar os arquivos:"
 
@@ -2596,6 +2558,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Este módulo está desativado, porque nenhum canal de bonding está ativo."
 
+#~ msgid "Bridged network interfaces are not supported."
+#~ msgstr "Interfaces de rede em modo bridge não estão suportados."
+
 #~ msgid "No IP address is set."
 #~ msgstr "Nenhum endereço IP definido."
 
@@ -2606,7 +2571,7 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Nome da máquina (host)"
 
 #~ msgid "Domain name"
-#~ msgstr "Nome do Domínio"
+#~ msgstr "Nome do domínio"
 
 #~ msgid "Workgroup"
 #~ msgstr "Grupo de trabalho (workgroup)"
@@ -2629,6 +2594,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Base settings"
 #~ msgstr "Configurações básicas"
 
+#~ msgid "Vendor"
+#~ msgstr "Fornecedor"
+
+#~ msgid "MAC address"
+#~ msgstr "Endereço MAC"
+
 #~ msgid "New virtual IP address"
 #~ msgstr "Novo endereço IP virtual"
 
@@ -2640,6 +2611,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "New virtual address on interface"
 #~ msgstr "Novo endereço virtual na interface"
+
+#~ msgid "Switch from DHCP to static"
+#~ msgstr "Mudar de DHCP para o endereço IP estático"
+
+#~ msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+#~ msgstr "Caso você salvar, o interface de rede será mudado de DHCP para o endereço IP estático. Você deseja continuar?"
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "Proxy HTTP"
@@ -2710,7 +2687,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Gateway for your network. This must be an IPv4 address of this network."
 #~ msgstr "Gateway para sua rede. Este tem que ser um endereço IPv4 desta rede."
 
-#, fuzzy
 #~ msgid "DNS server for resolving names into IP adresses."
 #~ msgstr "Servidor DNS para resolver nomes em endereços IP."
 
@@ -2727,7 +2703,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Nome do usuário opcional, caso o proxy necessita autenticação."
 
 # 95%
-#, fuzzy
 #~ msgid "Authentication Server"
 #~ msgstr "Servidor de autenticação"
 
@@ -2867,14 +2842,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
 #~ msgstr "O servidor Active Directory não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido, o servidor yaffas não irá se associar ao domínio."
 
-#, fuzzy
 #~ msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
 #~ msgstr "O servidor LDAP não suporta criptografia (ldaps). Aceita que a informação ao diretório vai ser transmitido sem ser criptografado? Caso 'não' seja escolhido será necessário mudar o método de autenticação."
 
 #~ msgid "Delete user fax configuration and PDF files"
 #~ msgstr "Excluir configuração do usuário de fax e arquivos PDF"
 
-#, fuzzy
 #~ msgid "Delete all users' and groups' fax configurations and pdf users' files."
 #~ msgstr "Excluir arquivos de configuração de fax e arquivos pdf de todos os usuários e grupos."
 

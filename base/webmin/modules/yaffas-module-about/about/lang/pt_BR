@@ -1,4 +1,4 @@
-lbl_index_title=System information
+lbl_index_title=Informações sobre o sistema
 lbl_index_header=Sobre yaffas
 lbl_index_return=Sistema
 lbl_versions=Versões
@@ -8,7 +8,7 @@ lbl_name=Produto
 
 err_get_products=Essa informação não pode ser lida!
 
-index_title=System information
+index_title=Informações sobre o sistema
 written_by=Escrito por
 
 general_information=Informações gerais
