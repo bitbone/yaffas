@@ -101,12 +101,12 @@ Yaffas.UI.prototype.createMenuBar = function() {
 				onclick: {
 					fn: this.setLanguage.bind(this, "en")
 				}
-            }, {
+            }/*, {
                 text: _("lbl_lang_nl", "global"),
 				onclick: {
 					fn: this.setLanguage.bind(this, "nl")
 				}
-            }, {
+            }*/, {
                 text: _("lbl_lang_fr", "global"),
 				onclick: {
 					fn: this.setLanguage.bind(this, "fr")
