@@ -386,15 +386,15 @@ sub _load_settings {
 
 		foreach my $line (@revLines) {
 
-			if ($line =~ /\s*address\s(.*)/) {
+			if ($line =~ /^\s*address\s(.*)/) {
 				$ip = $1;
 			}
 
-			if ($line =~ /\s*netmask\s(.*)/) {
+			if ($line =~ /^\s*netmask\s(.*)/) {
 				$netmask = $1;
 			}
 
-			if ($line =~ /\s*gateway\s(.*)/) {
+			if ($line =~ /^\s*gateway\s(.*)/) {
 				$gateway = $1;
 			}
 
@@ -404,18 +404,19 @@ sub _load_settings {
 				}
 			}
 
-			if ($line =~ /\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
-				unless($line =~ /^\s*#/) {
+			if ($line =~ /^\s*iface\s+(.*)\s+inet\s+(static|dhcp|loopback)/) {
 					$device = $1;
 					$method = $2;
 					unless($ip && $netmask) {
 						my $iface = IO::Interface::Simple->new($device);
-						$ip = $iface->address();
-						$netmask = $iface->netmask();
+						if(defined $iface) {
+							$ip = $iface->address();
+							$netmask = $iface->netmask();
+						}
 					}
 					%settings = _create_objects_for_settings(
 						$ip, $netmask, $gateway, $dns, $search, $device, $method, %settings);
-				}
+					$ip = $netmask = $gateway = $device = $method = '';
 			}
 		}
 	} else {
@@ -514,7 +515,6 @@ sub _create_objects_for_settings() {
 		$settings{$device} = $d_obj;
 	}
 
-	$ip = $netmask = $gateway = $search = $device = $method = "";
 	return %settings;
 }
 
