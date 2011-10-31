@@ -632,11 +632,11 @@ sub _save_hostname {
 	if($num_dhcp) {
 		my @interfaces = IO::Interface::Simple->interfaces;
 		for my $if (@interfaces) {
-            if($if ne 'lo') {
-                $ip = $if->address;
-                last if (defined $ip && $ip ne '');
-            }
-        }
+			if($if ne 'lo') {
+				$ip = $if->address;
+				last if (defined $ip && $ip ne '');
+			}
+		}
 	} elsif($num_bridges) {
 		my @bridges = keys %{_get_bridges()};
 		my @interfaces = IO::Interface::Simple->interfaces;
@@ -863,8 +863,18 @@ sub _get_dhcp_interfaces() {
 			push @interfaces, $dev->{DEVICE};
 		}
 	}
+	my @processes = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ps}, "ax");
+	my @dhclient = grep { /dhclient/ } @processes;
+	my $cmd = Yaffas::Constant::APPLICATION->{dhclient};
+	foreach my $line (@dhclient) {
+		if($line =~ m#$cmd.*(eth[\d]+)$#)  {
+			push @interfaces, $1;
+		}
+	}
+	
 	return @interfaces;
 }
+
 
 ## ---------------------------------------------------------------------- ##
 

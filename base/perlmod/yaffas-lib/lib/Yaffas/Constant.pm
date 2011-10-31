@@ -363,6 +363,7 @@ use constant {
 		"sa_update" => "/usr/bin/sa-update",
 		"policyd_weight" => '/usr/sbin/policyd-weight',
 		"brctl" => '/usr/sbin/brctl',
+		"dhclient" => '/sbin/dhclient',
 	}
 };
 
