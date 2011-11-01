@@ -7,8 +7,9 @@ There are packages available for both 32bits and 64bits architectures.
 
 === System requirements
 
-  * Ubuntu 10.04 or Red Hat Enterprise Linux 5
-  * correctly configured fully qualified hostname
+  * Ubuntu Server 10.04 or Red Hat Enterprise Linux 5
+  * Correctly configured fully qualified hostname
+  * Static IP address
 
 Yaffas can be installed on a preconfigured Zarafa system, however beware that your configuration will be overwritten and that you can loose your data.
 
@@ -16,7 +17,7 @@ Yaffas can be installed on a preconfigured Zarafa system, however beware that yo
 
 Yaffas can be installed from the repositories described below for the two supported Linux distributions.
 
-==== Ubuntu 10.04.2 LTS
+==== Ubuntu Server 10.04.2 LTS
 
 **Adding required repositories**
 
