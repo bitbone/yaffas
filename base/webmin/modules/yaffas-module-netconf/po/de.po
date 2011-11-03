@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-28 00:13+0300\n"
-"PO-Revision-Date: 2011-10-25 08:24+0200\n"
+"PO-Revision-Date: 2011-11-03 11:18+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 #: lang/en:19
 #, no-wrap
 msgid "Bridged network interfaces are not supported."
-msgstr ""
+msgstr "\"bridged\" Netzwerkschnittstellen sind nicht unterstützt."
 
 #: lang/en:21
 #, no-wrap
@@ -175,12 +175,12 @@ msgstr "Mode"
 #: lang/en:39
 #, no-wrap
 msgid "Vendor"
-msgstr ""
+msgstr "Hersteller"
 
 #: lang/en:40
 #, no-wrap
 msgid "MAC address"
-msgstr ""
+msgstr "MAC Adresse"
 
 #: lang/en:41
 #, no-wrap
@@ -230,12 +230,12 @@ msgstr "Neues virtuelle Adresse auf der Schnittstelle"
 #: lang/en:51
 #, no-wrap
 msgid "Switch from DHCP to static"
-msgstr ""
+msgstr "Von DHCP auf statisch umstellen"
 
 #: lang/en:52
 #, no-wrap
 msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
-msgstr ""
+msgstr "Wenn sie speichern, wird die Netzwerkschnittstelle von DHCP auf eine statische Adresse umgestellt. Wollen sie fortfahren?"
 
 #: lang/en:54
 #, no-wrap

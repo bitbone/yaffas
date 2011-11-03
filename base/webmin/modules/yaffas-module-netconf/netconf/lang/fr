@@ -16,7 +16,7 @@ err_set_sambasid=Une erreur s'est produite lors de l'écriture des données deva
 err_ldap_duplicate_sambadomain=Il n'y as pas exactement un seul exemplaire du nom d'hôte (sambaDomain) dans LDAP.
 
 err_bonding_enabled=Ce module est désactivé parce qu'un 'channel bonding' est activé.
-err_bridged_mode=Bridged network interfaces are not supported.
+err_bridged_mode=Les ponts réseau ne sont pas pris en charge
 
 err_no_ip=Aucune adresse IP n'a été définie.
 
@@ -36,8 +36,8 @@ lbl_delete=Supprimer
 lbl_interface=Interface
 lbl_base_settings=Configuration de base
 lbl_method=Mode
-lbl_vendor=Vendor
-lbl_mac=MAC address
+lbl_vendor=Fournisseur
+lbl_mac=Adresse MAC
 lbl_product=Produit
 
 lbl_enabled=activé
@@ -48,8 +48,8 @@ lbl_delete_device=Supprimer l'adresse IP virtuelle
 lbl_really_delete=Désirez-vous vraiment supprimer l'interface réseau suivante ?
 lbl_create=Créer
 lbl_new_interface=Nouvelle adresse virtuelle sur interface
-lbl_switch_dhcp_static=Switch from DHCP to static
-lbl_really_switch_dhcp=If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?
+lbl_switch_dhcp_static=Basculer du DHCP en static
+lbl_really_switch_dhcp=Si vous enregistrez, l'interface réseau basculera du DHCP vers une adresse statique. Désirez-vous vraiment continuer? 
 
 lbl_proxy_conf=Proxy HTTP
 lbl_proxy_ip=Proxy
