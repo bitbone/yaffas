@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-28 00:13+0300\n"
-"PO-Revision-Date: 2011-10-25 15:35+0200\n"
+"PO-Revision-Date: 2011-11-03 15:55+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -90,7 +90,7 @@ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
 #: lang/en:19
 #, no-wrap
 msgid "Bridged network interfaces are not supported."
-msgstr ""
+msgstr "Les ponts réseau ne sont pas pris en charge"
 
 #: lang/en:21
 #, no-wrap
@@ -175,12 +175,12 @@ msgstr "Mode"
 #: lang/en:39
 #, no-wrap
 msgid "Vendor"
-msgstr ""
+msgstr "Fournisseur"
 
 #: lang/en:40
 #, no-wrap
 msgid "MAC address"
-msgstr ""
+msgstr "Adresse MAC"
 
 #: lang/en:41
 #, no-wrap
@@ -230,12 +230,12 @@ msgstr "Nouvelle adresse virtuelle sur interface"
 #: lang/en:51
 #, no-wrap
 msgid "Switch from DHCP to static"
-msgstr ""
+msgstr "Basculer du DHCP en static"
 
 #: lang/en:52
 #, no-wrap
 msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
-msgstr ""
+msgstr "Si vous enregistrez, l'interface réseau basculera du DHCP vers une adresse statique. Désirez-vous vraiment continuer? "
 
 #: lang/en:54
 #, no-wrap
