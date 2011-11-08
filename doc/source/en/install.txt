@@ -23,7 +23,7 @@ Yaffas can be installed from the repositories described below for the two suppor
 
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
-  echo "deb http://repo.yaffas.org/ubuntu-1.0beta3 ./" >> /etc/apt/sources.list
+  echo "deb http://repo.yaffas.org/ubuntu ./" >> /etc/apt/sources.list
 
 **Import package key**
 
@@ -139,7 +139,7 @@ Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following conten
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/rhel-1.0beta3/
+baseurl = http://repo.yaffas.org/rhel5/
 enabled = 1
 protect = 0
 gpgcheck = 0
