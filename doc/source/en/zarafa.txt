@@ -55,8 +55,6 @@ As a matter of principle each user account in {product} is also a Zarafa user. P
 
 
 ===  Allocation of Email Addresses
-Please pay attention that during the creation of an user account the entry in the field  _"Email Address"_ is formatted as follows:  _"username@configured_maildomain"_  Otherwise, mail reception is not possible. If you want to use a different email address for reception, please insert it at  _"Email Alias"_ .
-
 The registered address at  _"Email Address"_ is also used as sender for all mails sent via web access. For a proper function please set the local domain(s) on the mailserver at first(menu Mailserver-> Configuration -> Local Domains). 
 
 

@@ -51,9 +51,8 @@ Prinzipiell ist jeder im {product} angelegte Benutzer auch ein Zarafa-Benutzer. 
 
 
 ===  Zuordnung der E-Mailadressen
-Beachten Sie bitte, dass beim Anlegen eines neuen Benutzers die, im Feld  _"E-Mail Adresse"_ eingetragene Adresse dem Format  _"benutzername@konfigurierte_maildomain"_ entsprechen muss, damit der Mailempfang möglich ist. Soll als Empfangsmailadresse eine andere verwendet werden, so tragen Sie diese bitte gleich im Feld  _"E-Mail Alias"_ mit ein.
-
-Die unter  _"E-Mail Adresse"_ eingetragene Adresse wird auch als Absenderadresse für alle Mails, die via WebAccess versandt werden, verwendet. Damit eine einwandfreie Zurdnung gewährleistet ist, konfigurieren Sie bitte zuerst die lokale(n) Domain(s) auf dem Mailserver (Menu Mailserver -> Konfiguration -> Lokale Domains). 
+Die unter  _"E-Mail Adresse"_ eingetragene Adresse wird auch als Absenderadresse für alle Mails, die via WebAccess versandt werden, verwendet.
+Damit eine einwandfreie Zurdnung gewährleistet ist, konfigurieren Sie bitte zuerst die lokale(n) Domain(s) auf dem Mailserver (Menu Mailserver -> Konfiguration -> Lokale Domains).
 
 
 
