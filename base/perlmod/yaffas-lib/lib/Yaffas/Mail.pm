@@ -63,7 +63,7 @@ sub set_zarafa_quota($$) {
 	throw Yaffas::Exception("err_quota_number") unless($quota =~ /^\d+|$/);
 	throw Yaffas::Exception("err_quota_negative") if($quota =~ /^-/);
 
-	if ($quota eq "") {
+	if ($quota eq "" || $quota == 0) {
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaOverride", 0);
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaWarn", 0);
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaSoft", 0);
