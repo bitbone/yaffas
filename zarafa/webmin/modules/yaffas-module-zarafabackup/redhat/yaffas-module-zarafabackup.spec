@@ -36,6 +36,11 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="zarafabackup"
 add_webmin_acl $MODULE
 
+if [ "$1" = 1 ]; then
+	mkdir -p /opt/yaffas/config/zarafa
+	echo "backup_dir = /data/backup" > /opt/yaffas/config/zarafa/backup.conf
+fi
+
 %postun
 if [ "$1" = "0" ]; then
 	source /opt/yaffas/lib/bbinstall-lib.sh
