@@ -31,7 +31,7 @@ push @content,
 	value => $load{fifteen}
   };
 
-print to_json( { "Response" => \@content } );
+print to_json( { "Response" => \@content }, {latin1 => 1} );
 =pod
 
 =head1 COPYRIGHT
