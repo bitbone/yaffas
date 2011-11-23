@@ -380,6 +380,13 @@ sub set_zarafa_database($$$$) {
 
 	$file->save();
 
+	# workaround for problem with # in Config::General
+
+	$file = Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_server_cfg});
+	my $num = $file->search_line(qr/^mysql_password.*/);
+	$file->splice_line($num, 1, "mysql_password = $password");
+	$file->save();
+
 	Yaffas::Service::control(ZARAFA_SERVER(), RESTART());
 }
 
