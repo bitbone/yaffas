@@ -85,11 +85,18 @@ case "$1" in
 	if [ -z "$2" ]; then
 		# only on a fresh installation
 		MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*0.25*1024 }')
-        if [ -d /etc/mysql/conf.d ]; then
-            echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $((MEM/4))\ninnodb_log_buffer_size = $((MEM/16))" > /etc/mysql/conf.d/zarafa-innodb.cnf
-        else
-            echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $((MEM/4))\ninnodb_log_buffer_size = $((MEM/16))" >> /etc/mysql/my.cnf
-        fi
+
+		LOGMEM=$(($MEM/4))
+
+		if [ $LOGMEM -gt $((1024*1024*1024)) ]; then
+			LOGMEM="1024M"
+		fi
+
+		if [ -d /etc/mysql/conf.d ]; then
+			echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" > /etc/mysql/conf.d/zarafa-innodb.cnf
+		else
+			echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/mysql/my.cnf
+		fi
 		rm -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
 		sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
 
