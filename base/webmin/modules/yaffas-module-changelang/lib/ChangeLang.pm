@@ -137,6 +137,10 @@ sub set_lang($;$) {
 				$file->splice_line($lineno, 1, $newline);
 				$file->save();
 			}
+
+			if (Yaffas::Constant::OS eq "Ubuntu") {
+				system(Yaffas::Constant::APPLICATION->{'locale-gen'}, $langstr);
+			}
 		}
 	}
 	#apply new language to LCD

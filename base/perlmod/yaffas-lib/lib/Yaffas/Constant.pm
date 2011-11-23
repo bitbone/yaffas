@@ -364,6 +364,7 @@ use constant {
 		"policyd_weight" => '/usr/sbin/policyd-weight',
 		"brctl" => '/usr/sbin/brctl',
 		"dhclient" => '/sbin/dhclient',
+		"locale-gen" => '/usr/sbin/locale-gen',
 	}
 };
 
