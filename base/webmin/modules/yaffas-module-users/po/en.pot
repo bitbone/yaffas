@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-22 00:13+0300\n"
+"POT-Creation-Date: 2011-11-24 00:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -259,7 +259,7 @@ msgstr ""
 
 #: lang/en:48
 #, no-wrap
-msgid "Authentification"
+msgid "Authentication"
 msgstr ""
 
 #: lang/en:50

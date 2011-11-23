@@ -326,14 +326,8 @@ msgstr ""
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
-
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
-
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
@@ -771,11 +765,6 @@ msgstr ""
 #~ msgid "Creating cache"
 #~ msgstr "Cache wordt aangemaakt"
 
-# 81%
-# 85%
-#~ msgid "Do you really want to delete this groups?"
-#~ msgstr "Wilt u deze groepen echt verwijderen?"
-
 #~ msgid "Authentification"
 #~ msgstr "Authenticatie"
 
@@ -797,17 +786,11 @@ msgstr ""
 #~ msgid "Group exists already!"
 #~ msgstr "Groep bestaat al!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Verkeerde modus!"
 
 #~ msgid "No group selected!"
 #~ msgstr "Geen groep geselecteerd!"
-
-#~ msgid "This action is only supported with local authentification."
-#~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
 
 #~ msgid "Group Management"
 #~ msgstr "Groepbeheer"
@@ -1059,6 +1042,9 @@ msgstr ""
 #~ msgid "You cannot use localhost as domain-part"
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel"
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
+
 # 81%
 # 82%
 # 77%
@@ -1173,3 +1159,17 @@ msgstr ""
 #, fuzzy
 #~ msgid "Error"
 #~ msgstr "Fouten"
+
+# 81%
+# 85%
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wilt u deze groepen echt verwijderen?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
