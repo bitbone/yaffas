@@ -225,7 +225,6 @@ sub save_spamassassin_state {
 		}
 	}
 	else {
-		my $line = $f->get_content($num);
 		if(Yaffas::Constant::OS eq "RHEL5") {
 			$line =~ s/^#//;
 		} else {
