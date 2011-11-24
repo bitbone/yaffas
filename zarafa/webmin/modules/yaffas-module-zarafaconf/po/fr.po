@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-24 15:52+0300\n"
-"PO-Revision-Date: 2011-10-25 15:35+0200\n"
+"PO-Revision-Date: 2011-11-03 15:55+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -735,7 +735,9 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Creating cache"
 #~ msgstr "Création d'un cache"
 
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
 
 #~ msgid "Authentification"
@@ -759,16 +761,15 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Group exists already!"
 #~ msgstr "Le groupe existe déjà !"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Mode inapproprié !"
 
 #~ msgid "No group selected!"
 #~ msgstr "Aucun groupe sélectionné !"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Cette action n'est permise qu'avec une authentification locale."
 
 #~ msgid "E-mail address not valid"
@@ -2014,6 +2015,9 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Impossible d'ajouter ou de modifier l'utilisateur."
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+
 #~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 #~ msgstr "L'utilisateur a été créé, mais pas la base de stockage Zarafa. Généralement cela signifie que votre licence ne permet plus d'ajouter de nouveaux utilisateurs."
 
@@ -2064,6 +2068,11 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 
 #~ msgid "E-mail alias"
 #~ msgstr "Alias courriel"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authentification"
 
 #~ msgid "Mailbox quota"
 #~ msgstr "Quota boîte aux lettres"
@@ -2490,9 +2499,6 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Cancel"
 #~ msgstr "Annuler"
 
-#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subi des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
-
 #~ msgid "Following list cant be converted:"
 #~ msgstr "La liste suivante peut être convertie :"
 
@@ -2510,9 +2516,6 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 
 #~ msgid "Save Configuration"
 #~ msgstr "Enregistrer la configuration"
-
-#~ msgid "Das Einspielen der Konfiguration schlug fehl."
-#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erreur dans le fichier de configuration"
@@ -2585,6 +2588,9 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
 
+#~ msgid "Bridged network interfaces are not supported."
+#~ msgstr "Les ponts réseau ne sont pas pris en charge"
+
 #~ msgid "No IP address is set."
 #~ msgstr "Aucune adresse IP n'a été définie."
 
@@ -2618,6 +2624,12 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Base settings"
 #~ msgstr "Configuration de base"
 
+#~ msgid "Vendor"
+#~ msgstr "Fournisseur"
+
+#~ msgid "MAC address"
+#~ msgstr "Adresse MAC"
+
 #~ msgid "New virtual IP address"
 #~ msgstr "Nouvelle adresse IP virtuelle"
 
@@ -2629,6 +2641,12 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 
 #~ msgid "New virtual address on interface"
 #~ msgstr "Nouvelle adresse virtuelle sur interface"
+
+#~ msgid "Switch from DHCP to static"
+#~ msgstr "Basculer du DHCP en static"
+
+#~ msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+#~ msgstr "Si vous enregistrez, l'interface réseau basculera du DHCP vers une adresse statique. Désirez-vous vraiment continuer? "
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "Proxy HTTP"
@@ -2783,9 +2801,6 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Version / IP"
 #~ msgstr "Version / IP"
 
-#~ msgid "Add produkt"
-#~ msgstr "Ajouter un produit"
-
 #~ msgid "IP adress"
 #~ msgstr "Adresse IP"
 
@@ -2830,9 +2845,6 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 
 #~ msgid "Base DN user"
 #~ msgstr "Utilisateur Base DN"
-
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposer du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
 
 #~ msgid "Caution!"
 #~ msgstr "Attention !"
@@ -2903,10 +2915,14 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 #~ msgid "Invalid product"
 #~ msgstr "Produit invalide"
 
-#~ msgid "Computer already authentication server."
+# 86%
+#, fuzzy
+#~ msgid "Computer already is an authentication server."
 #~ msgstr "Computer already authentication server."
 
-#~ msgid "Valid values are acitvate and deactivate."
+# 95%
+#, fuzzy
+#~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
 
 #~ msgid "Valid values are 'on' and 'off'."
@@ -3307,6 +3323,30 @@ msgstr "Ceci est le nom de la base de données devant être utilisée par Zarafa
 
 #~ msgid "Logout"
 #~ msgstr "Déconnexion"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subi des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
+
+#~ msgid "Add produkt"
+#~ msgstr "Ajouter un produit"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposer du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computer already authentication server."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "Cette base de données sera créée si elle n'existe pas encore. Pour cela, l'utilisateur doit posséder les autorisations adéquates."

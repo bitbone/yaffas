@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-28 15:05+0200\n"
-"Last-Translator: Alexandre <a.paraguassu@zarafa.com>\n"
+"PO-Revision-Date: 2011-11-03 11:19+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -698,7 +698,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Creating cache"
 #~ msgstr "Criando cache"
 
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Realmente deseja remover estes grupos?"
 
 #~ msgid "Authentification"
@@ -722,16 +724,15 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Group exists already!"
 #~ msgstr "Grupo já existe!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Nomes para grupos precisam ter pelo menos um carácter (alfanumérico), iniciando com uma letra."
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Modo errado!"
 
 #~ msgid "No group selected!"
 #~ msgstr "Nenhum grupo selecionado!"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Essa ação é suportada somente usado a autenticação local."
 
 #~ msgid "E-mail address not valid"
@@ -1973,6 +1974,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Este usuário não pode ser adicionado/modificado."
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Essa ação é suportada somente usado a autenticação local."
+
 #~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 #~ msgstr "O usuário foi criado com sucesso, mas a caixa do usuário no Zarafa não foi criado. Geralmente isso significa que sua licença ZCP não permite mais usuários."
 
@@ -2026,6 +2030,11 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "E-mail alias"
 #~ msgstr "E-mail alias"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Autenticação"
 
 #~ msgid "Mailbox quota"
 #~ msgstr "Cota da Caixa de E-mail"
@@ -2462,9 +2471,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Cancel"
 #~ msgstr "Cancelar"
 
-#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Você está indo usar um arquivo de configuração inferior ou igual ao Yaffas 2.<br>Essa versão pode ser convertido para a versão atual, porém é importante ressaltar, que a configuração de muito módulos foi modificado. A verificação manual dos parâmetros configurados é altamente recomendado!"
-
 #~ msgid "Following list cant be converted:"
 #~ msgstr "Itens abaixo não puderam ser convertidos:"
 
@@ -2483,9 +2489,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 # 83%
 #~ msgid "Save Configuration"
 #~ msgstr "Salvar Configuração"
-
-#~ msgid "Das Einspielen der Konfiguration schlug fehl."
-#~ msgstr "Erro ao importar a configuração."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erro no arquivo de configuração"
@@ -2774,9 +2777,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Version / IP"
 #~ msgstr "Versão / IP"
 
-#~ msgid "Add produkt"
-#~ msgstr "Adicionar produto"
-
 # 90%
 #~ msgid "IP adress"
 #~ msgstr "Endereço IP"
@@ -2823,9 +2823,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "Base DN user"
 #~ msgstr "DN de base para usuários"
-
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Para usar esse método de autenticação é necessário usar o arquivo de schema. É necessário incluir o arquivo no servidor LDAP."
 
 #~ msgid "Caution!"
 #~ msgstr "Cuidado!"
@@ -2896,10 +2893,14 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Invalid product"
 #~ msgstr "Produto inválido"
 
-#~ msgid "Computer already authentication server."
+# 86%
+#, fuzzy
+#~ msgid "Computer already is an authentication server."
 #~ msgstr "Computador já é servidor de autenticação."
 
-#~ msgid "Valid values are acitvate and deactivate."
+# 95%
+#, fuzzy
+#~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Valores válidos são ativos e inativos."
 
 #~ msgid "Valid values are 'on' and 'off'."
@@ -3305,6 +3306,30 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "Logout"
 #~ msgstr "Efetuar logoff"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Realmente deseja remover estes grupos?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Nomes para grupos precisam ter pelo menos um carácter (alfanumérico), iniciando com uma letra."
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Você está indo usar um arquivo de configuração inferior ou igual ao Yaffas 2.<br>Essa versão pode ser convertido para a versão atual, porém é importante ressaltar, que a configuração de muito módulos foi modificado. A verificação manual dos parâmetros configurados é altamente recomendado!"
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Erro ao importar a configuração."
+
+#~ msgid "Add produkt"
+#~ msgstr "Adicionar produto"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Para usar esse método de autenticação é necessário usar o arquivo de schema. É necessário incluir o arquivo no servidor LDAP."
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computador já é servidor de autenticação."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Valores válidos são ativos e inativos."
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "O banco de dados será criado caso ele não exista. Para isso, o usuário precisará de permissões suficientes."

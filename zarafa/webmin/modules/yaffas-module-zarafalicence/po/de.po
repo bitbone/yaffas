@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-11 09:22+0200\n"
+"PO-Revision-Date: 2011-11-03 11:18+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -196,14 +196,17 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
+#~ msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden."
 
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden."
 
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen."
+#~ msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+#~ msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein."
+
+#~ msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."
 
 #~ msgid "Stop"
 #~ msgstr "Anhalten"
@@ -674,7 +677,9 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Creating cache"
 #~ msgstr "Erzeuge Zwischenspeicher"
 
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Wollen Sie diese Gruppen wirklich löschen?"
 
 #~ msgid "Authentification"
@@ -698,17 +703,25 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Group exists already!"
 #~ msgstr "Diese Gruppen existieren bereits!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zahlen bestehen, müssen länger als 1 Zeichen sein und mit einem Buchstaben beginnen!"
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Falscher Modus ausgewählt!"
 
 #~ msgid "No group selected!"
 #~ msgstr "Keine Gruppe ausgewählt!"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
+
+#~ msgid "E-mail address not valid"
+#~ msgstr "E-Mail Adresse nicht gültig"
+
+#~ msgid "Could not set e-mail address"
+#~ msgstr "Konnte die E-Mail Adresse nicht setzen"
+
+#~ msgid "Could not change e-mail address"
+#~ msgstr "Konnte die E-Mail Adresse nicht ändern"
 
 #~ msgid "Group Management"
 #~ msgstr "Gruppenverwaltung"
@@ -1196,8 +1209,11 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Support"
 #~ msgstr "Support"
 
-#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
-#~ msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
+#~ msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Für Support, schicken sie eine E-Mail an <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a>. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
+
+#~ msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
+#~ msgstr "Klicken sie auf den 'Herunterladen' Knopf um die Konfiguration für die spätere Verwendung zu speichern. Um Unterstützung zu erhalten, legen sie ein neues Thema im Z-Admin Forum unter <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/> an. Es könnte sein, dass sie nach Daten aus der Konfigurationsdatei gefragt werden."
 
 #~ msgid "Download"
 #~ msgstr "Herunterladen"
@@ -1902,9 +1918,6 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Password not valid"
 #~ msgstr "Passwort nicht gültig"
 
-#~ msgid "E-mail address not valid"
-#~ msgstr "E-Mail Adresse nicht gültig"
-
 #~ msgid "No e-mail address specified"
 #~ msgstr "Keine E-Mail Adresse angegeben."
 
@@ -1952,6 +1965,9 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Der Benutzer konnte nicht hinzugefügt/bearbeitet werden."
+
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
 
 #~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 #~ msgstr "Der Benutzer wurde angelegt, doch es konnte kein Zarafa Konto angelegt werden. Das bedeutet sehr wahrscheinlich, dass ihre Zarafa Lizenz keine weiteren Benutzer erlaubt."
@@ -2003,6 +2019,11 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "E-mail alias"
 #~ msgstr "E-Mail Alias"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authentifizierung"
 
 #~ msgid "Mailbox quota"
 #~ msgstr "Mailbox-Quota"
@@ -2429,9 +2450,6 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Cancel"
 #~ msgstr "Abbrechen"
 
-#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Sie sind im Begriff eine yaffas Konfigurationsdatei der Version kleiner oder gleich 2.04 einzuspielen.<br>Diese Version kann zur aktuellen Version konvertiert werden. Jedoch haben sich viele Module grundlegend geändert sodass ein manuelles Prüfen der konfigurierten Werte zwingend erforderlich ist!"
-
 #~ msgid "Following list cant be converted:"
 #~ msgstr "Nicht zu konvertieren sind:"
 
@@ -2449,9 +2467,6 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "Save Configuration"
 #~ msgstr "Konfiguration Speichern"
-
-#~ msgid "Das Einspielen der Konfiguration schlug fehl."
-#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Fehler in Konfigurationsdatei"
@@ -2524,6 +2539,9 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 
+#~ msgid "Bridged network interfaces are not supported."
+#~ msgstr "\"bridged\" Netzwerkschnittstellen sind nicht unterstützt."
+
 #~ msgid "No IP address is set."
 #~ msgstr "Keine IP Adresse gesetzt."
 
@@ -2557,6 +2575,12 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Base settings"
 #~ msgstr "Grundeinstellungen"
 
+#~ msgid "Vendor"
+#~ msgstr "Hersteller"
+
+#~ msgid "MAC address"
+#~ msgstr "MAC Adresse"
+
 #~ msgid "New virtual IP address"
 #~ msgstr "Neue virtuelle IP Adresse"
 
@@ -2568,6 +2592,12 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "New virtual address on interface"
 #~ msgstr "Neues virtuelle Adresse auf der Schnittstelle"
+
+#~ msgid "Switch from DHCP to static"
+#~ msgstr "Von DHCP auf statisch umstellen"
+
+#~ msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+#~ msgstr "Wenn sie speichern, wird die Netzwerkschnittstelle von DHCP auf eine statische Adresse umgestellt. Wollen sie fortfahren?"
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "HTTP Proxy"
@@ -2722,9 +2752,6 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Version / IP"
 #~ msgstr "Version / IP"
 
-#~ msgid "Add produkt"
-#~ msgstr "Produkt hinzufügen"
-
 #~ msgid "IP adress"
 #~ msgstr "IP Adresse"
 
@@ -2769,9 +2796,6 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "Base DN user"
 #~ msgstr "Base DN Benutzer"
-
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Um diesen Server einbinden zu können, müssen Sie die folgende Schema Datei in Ihrem LDAP Server integriert haben."
 
 #~ msgid "Caution!"
 #~ msgstr "Achtung!"
@@ -2842,10 +2866,14 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "Invalid product"
 #~ msgstr "Ungültiges Produkt"
 
-#~ msgid "Computer already authentication server."
+# 86%
+#, fuzzy
+#~ msgid "Computer already is an authentication server."
 #~ msgstr "Computer ist schon Authentifizierungsserver."
 
-#~ msgid "Valid values are acitvate and deactivate."
+# 95%
+#, fuzzy
+#~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Als Argument ist nur acitvate und deactivate erlaubt."
 
 #~ msgid "Valid values are 'on' and 'off'."
@@ -3217,6 +3245,9 @@ msgstr "Zarafa Lizenzschlüssel"
 #~ msgid "French"
 #~ msgstr "Französisch"
 
+#~ msgid "Brazil"
+#~ msgstr "Portugisisch (Brasilien)"
+
 #~ msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 #~ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
@@ -3256,6 +3287,42 @@ msgstr "Zarafa Lizenzschlüssel"
 
 #~ msgid "Could not connect to backend!"
 #~ msgstr "Konnte nicht zum Backend verbinden!"
+
+#~ msgid "Logout"
+#~ msgstr "Abmelden"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wollen Sie diese Gruppen wirklich löschen?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zahlen bestehen, müssen länger als 1 Zeichen sein und mit einem Buchstaben beginnen!"
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Sie sind im Begriff eine yaffas Konfigurationsdatei der Version kleiner oder gleich 2.04 einzuspielen.<br>Diese Version kann zur aktuellen Version konvertiert werden. Jedoch haben sich viele Module grundlegend geändert sodass ein manuelles Prüfen der konfigurierten Werte zwingend erforderlich ist!"
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
+
+#~ msgid "Add produkt"
+#~ msgstr "Produkt hinzufügen"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Um diesen Server einbinden zu können, müssen Sie die folgende Schema Datei in Ihrem LDAP Server integriert haben."
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computer ist schon Authentifizierungsserver."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Als Argument ist nur acitvate und deactivate erlaubt."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dieser Benutzername wird für die Verbindung zur Datenbank benötigt. Der Benutzer muss angelegt sein und über die nötigen Berechtigungen für die Datenbank verfügen."
+
+#~ msgid "Click on download button and send the file to the bitbone support if you have any problems with your yaffas Server."
+#~ msgstr "Bei Problemen mit Ihrem yaffas Server klicken Sie bitte auf den Download Button und schicken die Datei an den bitbone Support."
 
 #~ msgid "Error passing backup days."
 #~ msgstr "Fehler bei der Übergabe der Sicherungstage."

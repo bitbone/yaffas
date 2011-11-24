@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-24 15:52+0300\n"
-"PO-Revision-Date: 2011-10-25 08:24+0200\n"
+"PO-Revision-Date: 2011-11-03 11:18+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -703,7 +703,9 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Creating cache"
 #~ msgstr "Erzeuge Zwischenspeicher"
 
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Wollen Sie diese Gruppen wirklich löschen?"
 
 #~ msgid "Authentification"
@@ -727,16 +729,15 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Group exists already!"
 #~ msgstr "Diese Gruppen existieren bereits!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zahlen bestehen, müssen länger als 1 Zeichen sein und mit einem Buchstaben beginnen!"
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Falscher Modus ausgewählt!"
 
 #~ msgid "No group selected!"
 #~ msgstr "Keine Gruppe ausgewählt!"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
 
 #~ msgid "E-mail address not valid"
@@ -1961,6 +1962,9 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Der Benutzer konnte nicht hinzugefügt/bearbeitet werden."
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
+
 #~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 #~ msgstr "Der Benutzer wurde angelegt, doch es konnte kein Zarafa Konto angelegt werden. Das bedeutet sehr wahrscheinlich, dass ihre Zarafa Lizenz keine weiteren Benutzer erlaubt."
 
@@ -2011,6 +2015,11 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 
 #~ msgid "E-mail alias"
 #~ msgstr "E-Mail Alias"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authentifizierung"
 
 #~ msgid "Mailbox quota"
 #~ msgstr "Mailbox-Quota"
@@ -2437,9 +2446,6 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Cancel"
 #~ msgstr "Abbrechen"
 
-#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-#~ msgstr "Sie sind im Begriff eine yaffas Konfigurationsdatei der Version kleiner oder gleich 2.04 einzuspielen.<br>Diese Version kann zur aktuellen Version konvertiert werden. Jedoch haben sich viele Module grundlegend geändert sodass ein manuelles Prüfen der konfigurierten Werte zwingend erforderlich ist!"
-
 #~ msgid "Following list cant be converted:"
 #~ msgstr "Nicht zu konvertieren sind:"
 
@@ -2457,9 +2463,6 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 
 #~ msgid "Save Configuration"
 #~ msgstr "Konfiguration Speichern"
-
-#~ msgid "Das Einspielen der Konfiguration schlug fehl."
-#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Fehler in Konfigurationsdatei"
@@ -2532,6 +2535,9 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Dieses Modul ist deaktiviert, da Channel Bonding aktiviert wurde."
 
+#~ msgid "Bridged network interfaces are not supported."
+#~ msgstr "\"bridged\" Netzwerkschnittstellen sind nicht unterstützt."
+
 #~ msgid "No IP address is set."
 #~ msgstr "Keine IP Adresse gesetzt."
 
@@ -2565,6 +2571,12 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Base settings"
 #~ msgstr "Grundeinstellungen"
 
+#~ msgid "Vendor"
+#~ msgstr "Hersteller"
+
+#~ msgid "MAC address"
+#~ msgstr "MAC Adresse"
+
 #~ msgid "New virtual IP address"
 #~ msgstr "Neue virtuelle IP Adresse"
 
@@ -2576,6 +2588,12 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 
 #~ msgid "New virtual address on interface"
 #~ msgstr "Neues virtuelle Adresse auf der Schnittstelle"
+
+#~ msgid "Switch from DHCP to static"
+#~ msgstr "Von DHCP auf statisch umstellen"
+
+#~ msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+#~ msgstr "Wenn sie speichern, wird die Netzwerkschnittstelle von DHCP auf eine statische Adresse umgestellt. Wollen sie fortfahren?"
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "HTTP Proxy"
@@ -2730,9 +2748,6 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Version / IP"
 #~ msgstr "Version / IP"
 
-#~ msgid "Add produkt"
-#~ msgstr "Produkt hinzufügen"
-
 #~ msgid "IP adress"
 #~ msgstr "IP Adresse"
 
@@ -2777,9 +2792,6 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 
 #~ msgid "Base DN user"
 #~ msgstr "Base DN Benutzer"
-
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Um diesen Server einbinden zu können, müssen Sie die folgende Schema Datei in Ihrem LDAP Server integriert haben."
 
 #~ msgid "Caution!"
 #~ msgstr "Achtung!"
@@ -2850,10 +2862,14 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 #~ msgid "Invalid product"
 #~ msgstr "Ungültiges Produkt"
 
-#~ msgid "Computer already authentication server."
+# 86%
+#, fuzzy
+#~ msgid "Computer already is an authentication server."
 #~ msgstr "Computer ist schon Authentifizierungsserver."
 
-#~ msgid "Valid values are acitvate and deactivate."
+# 95%
+#, fuzzy
+#~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Als Argument ist nur acitvate und deactivate erlaubt."
 
 #~ msgid "Valid values are 'on' and 'off'."
@@ -3270,6 +3286,30 @@ msgstr "Beim ausführen von \"lshw\" trat ein Fehler auf."
 
 #~ msgid "Logout"
 #~ msgstr "Abmelden"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wollen Sie diese Gruppen wirklich löschen?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Gruppennamen dürfen nur aus Buchstaben(keine Umlaute) und Zahlen bestehen, müssen länger als 1 Zeichen sein und mit einem Buchstaben beginnen!"
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Sie sind im Begriff eine yaffas Konfigurationsdatei der Version kleiner oder gleich 2.04 einzuspielen.<br>Diese Version kann zur aktuellen Version konvertiert werden. Jedoch haben sich viele Module grundlegend geändert sodass ein manuelles Prüfen der konfigurierten Werte zwingend erforderlich ist!"
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
+
+#~ msgid "Add produkt"
+#~ msgstr "Produkt hinzufügen"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Um diesen Server einbinden zu können, müssen Sie die folgende Schema Datei in Ihrem LDAP Server integriert haben."
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computer ist schon Authentifizierungsserver."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Als Argument ist nur acitvate und deactivate erlaubt."
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "Diese Datenbank wird erstellt, wenn sie nicht bereits existiert. Um dies durchzuführen benötigt der Benutzer die entsprechenden Berechtigungen."
