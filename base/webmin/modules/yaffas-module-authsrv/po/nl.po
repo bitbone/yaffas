@@ -52,10 +52,12 @@ msgstr ""
 msgid "No authentication method configured"
 msgstr ""
 
+# 87%
+# 76%
 #: lang/en:9
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "DC authentication"
-msgstr ""
+msgstr "Authenticatie"
 
 #: lang/en:11
 #, no-wrap

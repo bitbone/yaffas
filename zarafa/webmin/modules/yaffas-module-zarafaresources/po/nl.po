@@ -1069,6 +1069,12 @@ msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 #~ msgstr "Basis-instellingen"
 
 # 87%
+# 76%
+#, fuzzy
+#~ msgid "DC authentication"
+#~ msgstr "Authenticatie"
+
+# 87%
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"

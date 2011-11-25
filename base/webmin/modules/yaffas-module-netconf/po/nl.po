@@ -1351,6 +1351,12 @@ msgstr ""
 #~ msgstr "Basisconfiguratie"
 
 # 87%
+# 76%
+#, fuzzy
+#~ msgid "DC authentication"
+#~ msgstr "Authenticatie"
+
+# 87%
 #, fuzzy
 #~ msgid "Products"
 #~ msgstr "Product"
