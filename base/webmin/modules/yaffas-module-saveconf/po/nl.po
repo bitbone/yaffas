@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-18 19:27+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"PO-Revision-Date: 2011-11-03 11:21+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -109,88 +109,83 @@ msgstr ""
 
 #: lang/en:19
 #, no-wrap
-msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+msgid "Following list cant be converted:"
 msgstr ""
 
 #: lang/en:20
 #, no-wrap
-msgid "Following list cant be converted:"
+msgid "Configured MSN's"
 msgstr ""
 
 #: lang/en:21
 #, no-wrap
-msgid "Configured MSN's"
-msgstr ""
-
-#: lang/en:22
-#, no-wrap
 msgid "User eMail adress"
 msgstr ""
 
-#: lang/en:23
+#: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr ""
 
 # 76%
-#: lang/en:24
+#: lang/en:23
 #, fuzzy, no-wrap
 msgid "Restore Configuration"
 msgstr "Basisconfiguratie"
 
 # 88%
-#: lang/en:25
+#: lang/en:24
 #, fuzzy, no-wrap
 msgid "Save Configuration"
 msgstr "Basisconfiguratie"
 
-#: lang/en:26
+#: lang/en:25
 #, no-wrap
-msgid "Das Einspielen der Konfiguration schlug fehl."
+msgid "Applying configuration file failed."
 msgstr ""
 
-#: lang/en:27
+#: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
 msgstr ""
 
-#: lang/en:28
+#: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr ""
 
-#: lang/en:29
+#: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
 msgstr ""
 
-#: lang/en:30
+#: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
 msgstr ""
 
-#: lang/en:31
+#: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
 msgstr ""
 
-#: lang/en:32
+#: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
 msgstr ""
 
-#: lang/en:33
+#: lang/en:32
 #, no-wrap
 msgid "Errors occured."
 msgstr ""
 
-#: lang/en:34
+#: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
 msgstr ""
 
 # 83%
-#: lang/en:35
+#: lang/en:34
 #, fuzzy, no-wrap
 msgid "Save configuration"
 msgstr "Basisconfiguratie"
@@ -348,14 +343,8 @@ msgstr "Basisconfiguratie"
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
-
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
-
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
@@ -798,7 +787,9 @@ msgstr "Basisconfiguratie"
 
 # 81%
 # 85%
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Wilt u deze groepen echt verwijderen?"
 
 #~ msgid "Authentification"
@@ -822,16 +813,15 @@ msgstr "Basisconfiguratie"
 #~ msgid "Group exists already!"
 #~ msgstr "Groep bestaat al!"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Verkeerde modus!"
 
 #~ msgid "No group selected!"
 #~ msgstr "Geen groep geselecteerd!"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
 
 #~ msgid "Group Management"
@@ -1103,12 +1093,20 @@ msgstr "Basisconfiguratie"
 #~ msgid "You cannot use localhost as domain-part"
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel"
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
+
 # 81%
 # 82%
 # 77%
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authenticatie"
 
 # 75%
 #, fuzzy
@@ -1202,3 +1200,17 @@ msgstr "Basisconfiguratie"
 #, fuzzy
 #~ msgid "Error"
 #~ msgstr "Fouten"
+
+# 81%
+# 85%
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wilt u deze groepen echt verwijderen?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."

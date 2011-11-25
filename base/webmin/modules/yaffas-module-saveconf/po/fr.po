@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-10-25 15:35+0200\n"
+"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"PO-Revision-Date: 2011-11-03 15:55+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -109,87 +109,82 @@ msgstr "Annuler"
 
 #: lang/en:19
 #, no-wrap
-msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
-msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subi des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
-
-#: lang/en:20
-#, no-wrap
 msgid "Following list cant be converted:"
 msgstr "La liste suivante peut être convertie :"
 
-#: lang/en:21
+#: lang/en:20
 #, no-wrap
 msgid "Configured MSN's"
 msgstr "MSN's configurés"
 
-#: lang/en:22
+#: lang/en:21
 #, no-wrap
 msgid "User eMail adress"
 msgstr "Adresse électronique de l'utilisateur"
 
-#: lang/en:23
+#: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr "Mot de passe de l'utilisateur. Sera créé en tant que 'start123' et devra être changé dès que possible !"
 
-#: lang/en:24
+#: lang/en:23
 #, no-wrap
 msgid "Restore Configuration"
 msgstr "Restaurer la configuration"
 
-#: lang/en:25
+#: lang/en:24
 #, no-wrap
 msgid "Save Configuration"
 msgstr "Enregistrer la configuration"
 
-#: lang/en:26
+#: lang/en:25
 #, no-wrap
-msgid "Das Einspielen der Konfiguration schlug fehl."
-msgstr "Das Einspielen der Konfiguration schlug fehl."
+msgid "Applying configuration file failed."
+msgstr ""
 
-#: lang/en:27
+#: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
 msgstr "Erreur dans le fichier de configuration"
 
-#: lang/en:28
+#: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr "Veuillez installer tous les fichiers de licence pour vos produits installés avant d'insérer la configuration."
 
-#: lang/en:29
+#: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
 msgstr "Impossible d'enregistrer la configuration parce que le service LDAP n'est pas en cours d'exécution."
 
-#: lang/en:30
+#: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
 msgstr "Impossible de restaurer les utilisateurs et groupes."
 
-#: lang/en:31
+#: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
 msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
 
 # 78%
-#: lang/en:32
+#: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
 msgstr "Aucun type d'authentification n'a été configuré"
 
-#: lang/en:33
+#: lang/en:32
 #, no-wrap
 msgid "Errors occured."
 msgstr "Des erreurs se sont produites."
 
-#: lang/en:34
+#: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
 msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
 
 # 94%
-#: lang/en:35
+#: lang/en:34
 #, no-wrap
 msgid "Save configuration"
 msgstr "Enregistrer la configuration"
@@ -825,7 +820,9 @@ msgstr "Enregistrer la configuration"
 #~ msgid "Creating cache"
 #~ msgstr "Création d'un cache"
 
-#~ msgid "Do you really want to delete this groups?"
+# 95%
+#, fuzzy
+#~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
 
 #~ msgid "Authentification"
@@ -849,16 +846,15 @@ msgstr "Enregistrer la configuration"
 #~ msgid "Group exists already!"
 #~ msgstr "Le groupe existe déjà !"
 
-#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
-
 #~ msgid "Wrong mode!"
 #~ msgstr "Mode inapproprié !"
 
 #~ msgid "No group selected!"
 #~ msgstr "Aucun groupe sélectionné !"
 
-#~ msgid "This action is only supported with local authentification."
+# 96%
+#, fuzzy
+#~ msgid "This action is only supported with local authentication."
 #~ msgstr "Cette action n'est permise qu'avec une authentification locale."
 
 #~ msgid "E-mail address not valid"
@@ -2101,6 +2097,9 @@ msgstr "Enregistrer la configuration"
 #~ msgid "This user could not be added/edited."
 #~ msgstr "Impossible d'ajouter ou de modifier l'utilisateur."
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+
 #~ msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 #~ msgstr "L'utilisateur a été créé, mais pas la base de stockage Zarafa. Généralement cela signifie que votre licence ne permet plus d'ajouter de nouveaux utilisateurs."
 
@@ -2151,6 +2150,11 @@ msgstr "Enregistrer la configuration"
 
 #~ msgid "E-mail alias"
 #~ msgstr "Alias courriel"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authentification"
 
 #~ msgid "Mailbox quota"
 #~ msgstr "Quota boîte aux lettres"
@@ -2571,6 +2575,9 @@ msgstr "Enregistrer la configuration"
 #~ msgid "This module is deactivated, because channel bonding is active."
 #~ msgstr "Ce module est désactivé parce qu'un 'channel bonding' est activé."
 
+#~ msgid "Bridged network interfaces are not supported."
+#~ msgstr "Les ponts réseau ne sont pas pris en charge"
+
 #~ msgid "No IP address is set."
 #~ msgstr "Aucune adresse IP n'a été définie."
 
@@ -2604,6 +2611,12 @@ msgstr "Enregistrer la configuration"
 #~ msgid "Base settings"
 #~ msgstr "Configuration de base"
 
+#~ msgid "Vendor"
+#~ msgstr "Fournisseur"
+
+#~ msgid "MAC address"
+#~ msgstr "Adresse MAC"
+
 #~ msgid "New virtual IP address"
 #~ msgstr "Nouvelle adresse IP virtuelle"
 
@@ -2615,6 +2628,12 @@ msgstr "Enregistrer la configuration"
 
 #~ msgid "New virtual address on interface"
 #~ msgstr "Nouvelle adresse virtuelle sur interface"
+
+#~ msgid "Switch from DHCP to static"
+#~ msgstr "Basculer du DHCP en static"
+
+#~ msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+#~ msgstr "Si vous enregistrez, l'interface réseau basculera du DHCP vers une adresse statique. Désirez-vous vraiment continuer? "
 
 #~ msgid "HTTP Proxy"
 #~ msgstr "Proxy HTTP"
@@ -2769,9 +2788,6 @@ msgstr "Enregistrer la configuration"
 #~ msgid "Version / IP"
 #~ msgstr "Version / IP"
 
-#~ msgid "Add produkt"
-#~ msgstr "Ajouter un produit"
-
 #~ msgid "IP adress"
 #~ msgstr "Adresse IP"
 
@@ -2816,9 +2832,6 @@ msgstr "Enregistrer la configuration"
 
 #~ msgid "Base DN user"
 #~ msgstr "Utilisateur Base DN"
-
-#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
-#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposer du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
 
 #~ msgid "Caution!"
 #~ msgstr "Attention !"
@@ -2889,10 +2902,14 @@ msgstr "Enregistrer la configuration"
 #~ msgid "Invalid product"
 #~ msgstr "Produit invalide"
 
-#~ msgid "Computer already authentication server."
+# 86%
+#, fuzzy
+#~ msgid "Computer already is an authentication server."
 #~ msgstr "Computer already authentication server."
 
-#~ msgid "Valid values are acitvate and deactivate."
+# 95%
+#, fuzzy
+#~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
 
 #~ msgid "Valid values are 'on' and 'off'."
@@ -3293,6 +3310,30 @@ msgstr "Enregistrer la configuration"
 
 #~ msgid "Logout"
 #~ msgstr "Déconnexion"
+
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Les noms de groupes doivent comporter au moins un caractère (alphanumérique), commençant par une lettre (pas d'umlaut)."
+
+#~ msgid "You are about to plug in a yaffas configuration file smaller or equal to version 2.<br>This version can be converted to the actuall version. Nevertheless, many modules have radically changed in such a way that manually checking of configured values are strongly recomended!"
+#~ msgstr "Vous êtes sur le point d'insérer un fichier de configuration yaffas inférieur ou égal à la version 2.<br>Cette version peut être convertie à la version actuelle. Cependant, de nombreux modules ont subi des modifications si importantes qu'une vérification manuelle des valeurs paramétrées est fortement recommandée."
+
+#~ msgid "Das Einspielen der Konfiguration schlug fehl."
+#~ msgstr "Das Einspielen der Konfiguration schlug fehl."
+
+#~ msgid "Add produkt"
+#~ msgstr "Ajouter un produit"
+
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in you LDAP server."
+#~ msgstr "Pour utiliser cette méthode d'authentification, vous devez disposer du fichier de schéma suivant. Vous devez l'inclure et l'utiliser dans votre serveur LDAP."
+
+#~ msgid "Computer already authentication server."
+#~ msgstr "Computer already authentication server."
+
+#~ msgid "Valid values are acitvate and deactivate."
+#~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
 
 #~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
 #~ msgstr "Cette base de données sera créée si elle n'existe pas encore. Pour cela, l'utilisateur doit posséder les autorisations adéquates."

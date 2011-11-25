@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-22 00:13+0300\n"
-"PO-Revision-Date: 2011-10-18 19:27+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"PO-Revision-Date: 2011-11-03 11:21+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,9 +107,10 @@ msgstr "klaar"
 
 # 81%
 # 85%
+# 95%
 #: lang/en:22
-#, no-wrap
-msgid "Do you really want to delete this groups?"
+#, fuzzy, no-wrap
+msgid "Do you really want to delete these groups?"
 msgstr "Wilt u deze groepen echt verwijderen?"
 
 #: lang/en:23
@@ -154,8 +155,8 @@ msgstr "Groep bestaat al!"
 
 #: lang/en:33
 #, no-wrap
-msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
-msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
+msgstr ""
 
 #: lang/en:34
 #, no-wrap
@@ -167,9 +168,10 @@ msgstr "Verkeerde modus!"
 msgid "No group selected!"
 msgstr "Geen groep geselecteerd!"
 
+# 96%
 #: lang/en:36
-#, no-wrap
-msgid "This action is only supported with local authentification."
+#, fuzzy, no-wrap
+msgid "This action is only supported with local authentication."
 msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
 
 #: lang/en:37
@@ -347,14 +349,8 @@ msgstr "Groepbeheer"
 #~ msgid "This limits the maximum disk usage for each user in MB."
 #~ msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
 
-#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
-#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
-
 #~ msgid "This is the password that is set on the database. You need to set this password manually."
 #~ msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
-
-#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
-#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
 
 #~ msgid "Stop"
 #~ msgstr "Stop"
@@ -1007,12 +1003,20 @@ msgstr "Groepbeheer"
 #~ msgid "You cannot use localhost as domain-part"
 #~ msgstr "U kunt localhost niet gebruiken als domein-onderdeel"
 
+#~ msgid "This action is only supported with local authentification."
+#~ msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
+
 # 81%
 # 82%
 # 77%
 #, fuzzy
 #~ msgid "Do You really want to delete the selected users?"
 #~ msgstr "Wilt u deze service echt uitschakelen?"
+
+# 87%
+#, fuzzy
+#~ msgid "Authentication"
+#~ msgstr "Authenticatie"
 
 # 75%
 #, fuzzy
@@ -1121,3 +1125,17 @@ msgstr "Groepbeheer"
 #, fuzzy
 #~ msgid "Error"
 #~ msgstr "Fouten"
+
+# 81%
+# 85%
+#~ msgid "Do you really want to delete this groups?"
+#~ msgstr "Wilt u deze groepen echt verwijderen?"
+
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter(no umlaut)."
+#~ msgstr "Groepnamen moeten bestaan uit ten minste een (alfanumeriek) teken, beginnend met een letter (geen trema's)."
+
+#~ msgid "This database will be created if it doesn't exists. To do this the user needs the right permissions."
+#~ msgstr "De database wordt aangemaakt als hij niet bestaat. Om dit te doen, heeft de gebruiker de juiste permissies nodig."
+
+#~ msgid "This is the username that will be used for connecting to database. The user has to be created and have the permissions to use the given database."
+#~ msgstr "Dit is de gebruikersnaam die wordt gebruikt om te verbinden met de database. Deze gebruiker moet aangemaakt zijn en de permissies hebben om de opgegeven database te kunnen gebruiken."
