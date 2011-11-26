@@ -1341,6 +1341,13 @@ msgstr ""
 
 # 87%
 # 76%
+# 75%
+#, fuzzy
+#~ msgid "Local authentication"
+#~ msgstr "Authenticatie"
+
+# 87%
+# 76%
 #, fuzzy
 #~ msgid "DC authentication"
 #~ msgstr "Authenticatie"

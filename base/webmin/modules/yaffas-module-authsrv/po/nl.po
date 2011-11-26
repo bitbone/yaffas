@@ -37,10 +37,13 @@ msgstr ""
 msgid "Domain Controller"
 msgstr ""
 
+# 87%
+# 76%
+# 75%
 #: lang/en:6
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Local authentication"
-msgstr ""
+msgstr "Authenticatie"
 
 #: lang/en:7 lang/en:59
 #, no-wrap

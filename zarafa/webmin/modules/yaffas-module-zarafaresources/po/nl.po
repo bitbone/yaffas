@@ -1070,6 +1070,13 @@ msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
 
 # 87%
 # 76%
+# 75%
+#, fuzzy
+#~ msgid "Local authentication"
+#~ msgstr "Authenticatie"
+
+# 87%
+# 76%
 #, fuzzy
 #~ msgid "DC authentication"
 #~ msgstr "Authenticatie"
