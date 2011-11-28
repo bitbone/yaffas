@@ -84,13 +84,15 @@ fi
 # optimize memory
 if [ "$1" = 1 ]; then
 	# only on a fresh installation
-	MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*0.25*1024 }')
+	MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')
 
 	LOGMEM=$(($MEM/4))
 
 	if [ $LOGMEM -gt $((1024*1024*1024)) ]; then
 		LOGMEM="1024M"
 	fi
+
+	MEM=$(($MEM/4))
 
 	echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/my.cnf
 
