@@ -86,7 +86,7 @@ if [ "$1" = 1 ]; then
 	# only on a fresh installation
 	MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')
 
-	LOGMEM=$(($MEM/4))
+	LOGMEM=$(($MEM/16))
 
 	if [ $LOGMEM -gt $((1024*1024*1024)) ]; then
 		LOGMEM="1024M"
