@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-24 15:52+0300\n"
+"POT-Creation-Date: 2011-11-29 00:13+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -193,6 +193,11 @@ msgstr ""
 #: lang/en:43
 #, no-wrap
 msgid "Configuration"
+msgstr ""
+
+#: lang/en:44
+#, no-wrap
+msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr ""
 
 #: help/en:1

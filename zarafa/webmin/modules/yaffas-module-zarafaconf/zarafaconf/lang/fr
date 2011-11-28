@@ -41,3 +41,4 @@ lbl_mysql_password=Mot de passe
 err_mysql_connect=Impossible de se connecter à la base de données
 err_quota_value=La valeur du quota ne peut contenir que des chiffres.
 moduletitle=Configuration
+err_password_hash=It is not possible to have a hash (#) character in the MySQL password.
