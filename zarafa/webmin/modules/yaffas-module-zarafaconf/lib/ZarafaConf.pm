@@ -362,6 +362,7 @@ sub set_zarafa_database($$$$) {
 	my $password = shift;
 
 	throw Yaffas::Exception("err_syntax") if ($host =~ /;/ or $database =~ /;/);
+	throw Yaffas::Exception("err_password_hash") if ($password =~ /#/);
 
 	my $db = DBI->connect("dbi:mysql:host=$host", $user, $password);
 
@@ -379,15 +380,6 @@ sub set_zarafa_database($$$$) {
 	$file->get_cfg_values()->{mysql_host} = $host;
 
 	$file->save();
-
-	# workaround for problem with # in Config::General
-
-	$file = Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_server_cfg});
-	my $num = $file->search_line(qr/^mysql_password.*/);
-	$file->splice_line($num, 1, "mysql_password = $password");
-	$file->save();
-
-	Yaffas::Service::control(ZARAFA_SERVER(), RESTART());
 }
 
 sub conf_dump() {
