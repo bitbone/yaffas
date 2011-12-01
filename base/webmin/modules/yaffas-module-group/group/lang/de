@@ -19,7 +19,7 @@ lbl_set_filetype=Dateityp setzen
 lbl_create_cache=Erzeuge Zwischenspeicher
 lbl_done=fertig
 
-lbl_ask_delete=Do you really want to delete these groups?
+lbl_ask_delete=Wollen Sie diese Gruppen wirklich löschen?
 lbl_auth=Authentifizierung
 lbl_email=E-Mail
 lbl_sendas=Senden als erlauben
@@ -30,7 +30,7 @@ err_create=Anlegen der Gruppe schlug fehl!
 err_delete=Löschen der Gruppe schlug fehl!
 err_group_not_exist=Gruppe existiert nicht!
 err_group_already_exists=Diese Gruppen existieren bereits!
-err_newgroup_name=Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut).
+err_newgroup_name=Gruppennamen müssen aus mindestens einem Zeichen (alphanumerisch) bestehen, beginnend mit einem Buchstaben (kein Umlaut).
 err_mode=Falscher Modus ausgewählt!
 err_no_group_selected=Keine Gruppe ausgewählt!
 err_no_local_auth=This action is only supported with local authentication.
