@@ -41,4 +41,4 @@ lbl_mysql_password=Passwort
 err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_quota_value=Der Wert des Quotas darf nur aus Ziffern bestehen.
 moduletitle=Konfiguration
-err_password_hash=In dem MySQL Passwort darf kein hash (#) Zeichen verwendet werden.
+err_password_hash=Im MySQL Passwort darf kein Doppelkreuz (#) Zeichen verwendet werden.
