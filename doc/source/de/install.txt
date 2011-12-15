@@ -1,11 +1,17 @@
 == Installation
 
+Yaffas muss auf einem frischen System installiert werden. Momentan wird Ubuntu 10.04 und Red Hat 5 unterstützt.
+Die Pakete sind für 32 und 64bit geeignet.
 
 === Systemvorausetzungen
 
-  * Ubuntu oder Red Hat Enterprise Linux
-  * ca. 22 MB zusätzlicher Festplattenplatz
+  * Ubuntu 10.04 oder Red Hat Enterprise Linux 5
+  * Korrekt konfigurierter Hostname
+  * Statische IP Adresse
 
+Diese Anleitung bezieht sich nur auf neu installiert Systeme. Sollten Sie ein bereits konfiguriertes System haben können sie {product} momentan noch nicht nutzen. Diese Option wird später nachgeliefert.
+
+Da es momentan noch ein Problem mit dem Speichern von Konfiguationsdateien gibt, darf das MySQL kein Hash Zeichen enthalten.
 
 === Vorgehen
 
