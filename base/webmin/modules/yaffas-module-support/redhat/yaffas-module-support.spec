@@ -8,7 +8,7 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-install-lib, yaffas-core, yaffas-module-saveconf, lshw, perl(Yaffas), perl(File::Copy), perl(File::Find), perl(File::Path), perl(File::Temp)
+Requires:	yaffas-install-lib, yaffas-core, yaffas-module-saveconf, lshw, perl(Yaffas), perl(File::Copy), perl(File::Find), perl(File::Path), perl(File::Temp), pciutils
 AutoReqProv: no
 
 %description
