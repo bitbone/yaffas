@@ -151,7 +151,11 @@ Run the following command to install the EPEL repository:
 
 and run the following commands to add the RPMforge repository:
 
-  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el4.rf.i386.rpm
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+
+or
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
 
 After the extra repositories are added, the {product} repository has to added:
 
