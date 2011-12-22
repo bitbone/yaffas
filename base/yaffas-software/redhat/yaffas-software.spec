@@ -47,6 +47,6 @@ fi
 /opt/software/zarafaads.exe
 /opt/software/zarafaclient-en.msi
 /opt/software/zarafaclient.msi
-/opt/software/zarafamigrationtool.msi
+/opt/software/zarafamigrationtool.exe
 
 %changelog
