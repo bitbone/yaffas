@@ -145,8 +145,8 @@ sub get_cron_values {
 			$line = /(.*?)\s(.*?)\s.*-u\s(.*)\s/;
 
 			my %cronjob = ();
-			$cronjob{hour}    = $1;
-			$cronjob{minute}  = $2;
+			$cronjob{hour}    = $2;
+			$cronjob{minute}  = $1;
 			$cronjob{command} = $3;
 			close DAT;
 			return \%cronjob;

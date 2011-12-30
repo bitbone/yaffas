@@ -197,6 +197,7 @@ sub timeserver_dlg {
 				-name    => "hour",
 				-values  => [ 0 .. 23 ],
 				-default => $hour,
+                ($type eq "h" or $type eq "n") ? (-disabled => "disabled") : (undef => undef),
 			}
 		  )
 		  . $main::text{'lbl_minute'}
@@ -205,6 +206,7 @@ sub timeserver_dlg {
 				-name    => "minute",
 				-values  => [ 0 .. 59 ],
 				-default => $minute,
+                 $type eq "n" ? (-disabled => "disabled") : (undef => undef),
 			}
 		  )
 	  );
