@@ -17,7 +17,9 @@ use Yaffas::Product;
 use Yaffas::Exception;
 use Error qw(:try);
 use Encode;
+use JSON;
 use Yaffas::UGM qw(get_users get_suppl_groupnames);
+use File::Temp;
 
 our @ISA = qw(Yaffas::Module);
 
@@ -192,6 +194,40 @@ sub set_features($$) {
 	Yaffas::LDAP::replace_entries($user, [replace => ["zarafaDisabledFeatures" => \@disabled]]);
 
 	system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
+}
+
+sub get_vacation($) {
+    my $user = shift;
+    my $json = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $user, "json" );
+
+    my $tmp = from_json($json);
+
+    return $tmp->{set}, $tmp->{subject}, $tmp->{message};
+}
+
+sub set_vacation($$;$$) {
+    my $username = shift;
+    my $status = shift;
+    my $subject = shift;
+    my $message = shift;
+
+    if ($status eq "false") {
+        system(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $username, "disable");
+    }
+    else {
+        my $tmpfile = File::Temp->new(TEMPLATE => "tempXXXXXX", DIR => "/tmp/", SUFFIX => ".msg");
+        my $file = $tmpfile->filename();
+
+        print $tmpfile $subject."\n";
+        print $tmpfile $message;
+
+        system(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $username, $file);
+        print "ok";
+    }
+
+    if ($? != 0) {
+        throw Yaffas::Error("err_vacation_save", $username);
+    }
 }
 
 return 1;

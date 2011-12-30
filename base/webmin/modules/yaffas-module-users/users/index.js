@@ -20,6 +20,14 @@ Users.prototype.showEditFiletype = function() {
 	}
 }
 
+Users.prototype.showEditVacation = function() {
+	var s = this.usertable.selectedRows();
+	
+	if (s.length > 0) {
+		Yaffas.ui.openTab('/users/editvacation.cgi', {user: s[0][0]}, this.setupVacationCallback.bind(this));
+	}
+}
+
 Users.prototype.deleteUser = function() {
 	var s = this.usertable.selectedRows();
 	
@@ -29,6 +37,30 @@ Users.prototype.deleteUser = function() {
 		});
 		c.show();
 	}
+}
+
+Users.prototype.setupVacationCallback = function() {
+    var tab = Yaffas.ui.getActiveTabEl();
+
+    var elems = Element.select(tab, "input[name=status]");
+
+    function changeStatus(s) {
+        var elems = Element.select(tab, "input[name=subject]");
+        elems[0].disabled = !s;
+        elems = Element.select(tab, "textarea");
+        elems[0].disabled = !s;
+    }
+
+    for(var i = 0; i < elems.length; ++i) {
+        if (elems[i].value == "false") {
+            var e = new YAHOO.util.Element(elems[i]);
+            e.on("click", changeStatus.curry(false))
+        }
+        if (elems[i].value == "true") {
+            var e = new YAHOO.util.Element(elems[i]);
+            e.on("click", changeStatus.curry(true))
+        }
+    }
 }
 
 Users.prototype.convertToZarafaResource = function() {
@@ -190,6 +222,12 @@ Users.prototype.setupMenu = function() {
 			}
 		})
 	}
+    i.push({
+        text: _("lbl_edit_vacation_msg"),
+    onclick: {
+        fn: this.showEditVacation.bind(this)
+    }
+    })
 	
     this.usersmenu = new Yaffas.Menu({ container: "usersmenu", trigger: "data", items: i });
 }
@@ -301,8 +339,10 @@ Users.prototype.savedForm = function(f, args) {
 			this.usertable.reload();
 			Yaffas.ui.closeTab();
 			break;
+		case "editvacation.cgi":
 		case "set_filetype_ads.cgi":
 			Yaffas.ui.closeTab();
+            break;
 	}
 }
 

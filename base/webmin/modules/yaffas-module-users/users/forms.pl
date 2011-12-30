@@ -437,6 +437,45 @@ sub show_del_alias($$$$$$$$$) {
 	}
 }
 
+sub show_edit_vacation {
+    my $uid = shift;
+
+    my $username = Yaffas::UGM::get_username_by_uid($uid);
+
+    my ($status, $subject, $message) = Yaffas::Module::Users::get_vacation($username);
+
+    print $Cgi->start_form( {-action=>"editvacation.cgi"} );
+
+    print Yaffas::UI::section(
+        $main::text{lbl_edit_vacation_msg}.": $username",
+        $Cgi->hidden({ -name=>"username", -value=>$username}),
+        $Cgi->p(
+            $Cgi->radio_group({ -name => "status", -values => [qw(false true)], -labels => {true=>$main::text{lbl_vacation_enabled}, false=>$main::text{lbl_vacation_disabled}}, -default => $status, -linebreak => "true" }),
+        ),
+        $Cgi->table(
+            $Cgi->Tr(
+                $Cgi->td(
+                    [
+                        $main::text{lbl_subject}.":",
+                        $Cgi->textfield({ -style => "width: 20em", -name => "subject", -value => $subject, ($status eq "true" ? (undef => undef) : (-disabled => 1)) }),
+                    ]
+                )
+            ),
+            $Cgi->Tr(
+                $Cgi->td(
+                    [
+                        $main::text{lbl_message}.":",
+                        $Cgi->textarea({ -columns=>80, -rows=>10, -name => "message", -value => $message, ($status eq "true" ? (undef => undef) : (-disabled => 1)) })
+                    ]
+                )
+            )
+        )
+    );
+
+    print section_button($Cgi->submit({-value => $main::text{lbl_save}}));
+    print $Cgi->end_form();
+}
+
 sub set_user_filetype(@)
 {
 	my @uids = @_;
