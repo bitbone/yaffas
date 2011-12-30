@@ -68,3 +68,7 @@ lbl_sendas_user=For user
 lbl_sendas_group=For group
 lbl_zarafafeatures=Features
 moduletitle=User Management
+lbl_add=Add
+lbl_remove=Remove
+lbl_default=Set default
+lbl_modify=Modify

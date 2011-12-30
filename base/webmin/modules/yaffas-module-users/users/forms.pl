@@ -98,6 +98,7 @@ sub _edit_user($$\@\@;$){
 
 	print section(
 				  $msg,
+                  $Cgi->hidden({-id=>"uid", -value=>$uid}),
 				  $Cgi->table(
 							  $Cgi->Tr([
 										$Cgi->td([
@@ -130,15 +131,39 @@ sub _edit_user($$\@\@;$){
 												 ]),
 										(check_product("fax") || check_product('pdf') || Yaffas::Auth::is_auth_srv() || check_product('zarafa')) ?
 										(
-										$Cgi->td([
-												  $main::text{lbl_email}.":",
-												  $Cgi->textfield(
-																  -name => "email_" . $uid,
-																  -default => $email,
-																  -maxlength =>  90,
-																  -style => "width: 20em",
-																 )
-												 ]),
+                                            $Cgi->td([
+                                                    $main::text{lbl_email}.":",
+                                                    $Cgi->table({-style=>"margin: 0px !important;"},
+                                                        $Cgi->Tr(
+                                                            $Cgi->td(
+                                                                $Cgi->textfield({ -id => "new_email" }),
+                                                                $Cgi->button( { -name => "email_add", -value => $main::text{lbl_add} } )
+                                                            )
+                                                        ),
+                                                        $Cgi->Tr(
+                                                            $Cgi->td(
+                                                                $Cgi->scrolling_list(
+                                                                    -id => "email",
+                                                                    -default => $email,
+                                                                    -labels => {$email => $email." (default)", map {$_ => $_} @aliases},
+                                                                    -values => [grep {$_} ($email ? $email : undef), @aliases],
+                                                                    -maxlength =>  90,
+                                                                    -style => "width: 20em",
+                                                                    -multiple => 1,
+                                                                    -size => 5,
+                                                                )
+                                                            ),
+                                                        ),
+                                                        $Cgi->Tr(
+                                                            $Cgi->td({-style => "margin-left: auto; margin-right: auto;"},
+                                                                $Cgi->button( { -name => "email_modify", -value=>$main::text{lbl_modify} } ),
+                                                                $Cgi->button( { -name => "email_remove", -value=>$main::text{lbl_remove} } ),
+                                                                $Cgi->button( { -name => "email_default", -value=>$main::text{lbl_default} } ),
+                                                            )
+
+                                                        )
+                                                    )
+                                                ]),
 										) : "", ## end if
 
 										$Cgi->td([
@@ -157,15 +182,15 @@ sub _edit_user($$\@\@;$){
 																	   -style => "width: 20em"
 																	  ),
 												 ]),
-										$Cgi->td([
-												 $main::text{lbl_alias}.":",
-												 $Cgi->textfield({
-																 -name=>"alias_$uid",
-																 -value=>join (", ", @aliases),
-																 -maxlength => 100,
-																 -style => "width: 20em"
-																 })
-												 ]),
+                                             #$Cgi->td([
+										     #		 $main::text{lbl_alias}.":",
+										     #		 $Cgi->textfield({
+										     #						 -name=>"alias_$uid",
+										     #						 -value=>join (", ", @aliases),
+										     #						 -maxlength => 100,
+										     #						 -style => "width: 20em"
+										     #						 })
+										     #		 ]),
                                         (map {
 										$Cgi->td([
 												  $main::text{"lbl_".$_}.":",

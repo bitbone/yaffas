@@ -8,7 +8,7 @@ Users.prototype.showEditUser = function() {
 	var s = this.usertable.selectedRows();
 	
 	if (s.length > 0) {
-		Yaffas.ui.openTab('/users/edituser.cgi', {user: s[0][0]});
+		Yaffas.ui.openTab('/users/edituser.cgi', {user: s[0][0]}, this.setupButtons.bind(this));
 	}
 }
 
@@ -40,6 +40,117 @@ Users.prototype.convertToZarafaResource = function() {
 		});
 		c.show();
 	}
+}
+
+Users.prototype.getList = function() {
+    var tab = Yaffas.ui.getActiveTabEl();
+    var e = Element.select(tab, "select[id=email]");
+    if (e !== undefined && e.length)
+        return e[0];
+    else
+        return undefined;
+}
+
+Users.prototype.addEMail = function(e) {
+    var tab = Yaffas.ui.getActiveTabEl();
+    var e = Element.select(tab, "input[id=new_email]")[0];
+
+    if (e.value !== undefined) {
+        var list = this.getList();
+
+        var option = new Option(e.value, e.value);
+
+        if (list.options.length == 0)
+            option.text = e.value+" (default)";
+
+        var def = false;
+        for (var i = 0; i < list.options.length; ++i) {
+            var o = list.options[o];
+
+            if (option.text.match(/\(default\)$/gi)) {
+                def = true;
+            }
+        }
+
+        if (def === false) {
+            this.setDefaultEMail(0);
+        }
+
+        var optsLen = list.options.length;
+        list.options[optsLen] = option;
+
+        e.value = "";
+    }
+}
+
+Users.prototype.removeEMail = function() {
+    var list = this.getList();
+    var option = list.options[list.selectedIndex];
+
+    list.removeChild(option);
+
+    if (option.text.match(/\(default\)$/gi)) {
+        this.setDefaultEMail(0);
+    }
+}
+
+Users.prototype.modifyEMail = function() {
+    var list = this.getList();
+    var option = list.options[list.selectedIndex];
+
+    var tab = Yaffas.ui.getActiveTabEl();
+    var e = Element.select(tab, "input[id=new_email]")[0];
+    e.value = option.value;
+
+    list.removeChild(option);
+}
+
+Users.prototype.setDefaultEMail = function(idx) {
+    var list = this.getList();
+    var index = list.selectedIndex;
+    if (YAHOO.lang.isNumber(idx))
+        index = idx;
+    var option = list.options[index];
+
+    if (option !== undefined) {
+        for (var i = 0; i < list.options.length; ++i) {
+            list.options[i].text = list.options[i].value;
+        }
+
+        option.text = option.value+" (default)";
+    }
+}
+
+Users.prototype.confirmation = function(url, args, submit) {
+    if ((url === "check_edituser.cgi" || url === "check_newuser.cgi") && args["email_"] === undefined) {
+
+        var list = this.getList();
+
+        var tab = Yaffas.ui.getActiveTabEl();
+        var e = Element.select(tab, "input[id=uid]");
+        var uid = e[0].value;
+
+        var def = "";
+        var aliases = [];
+        for(var i = 0; i < list.options.length; ++i) {
+            var o = list.options[i];
+            if (o.text.match(/\(default\)/)) {
+                def = o.value;
+            }
+            else {
+                aliases.push(o.value);
+            }
+        }
+
+        var add = {};
+        add["email_"+uid] = def;
+        if (aliases.length)
+            add["alias_"+uid] = aliases.join(",");
+
+        submit(add);
+        return true;
+    }
+    return false;
 }
 
 Users.prototype.setupMenu = function() {
@@ -111,9 +222,55 @@ Users.prototype.setupTable = function() {
 	});
 }
 
+Users.prototype.setupButtons = function() {
+    var e = $$("input[name=email_add]");
+    var btn = new YAHOO.widget.Button(e[0]);
+    btn.setStyle("vertical-align", "middle");
+    btn.on("click", this.addEMail.bind(this));
+
+    e = $$("input[name=email_remove]");
+    btn = new YAHOO.widget.Button(e[0]);
+    btn.on("click", this.removeEMail.bind(this));
+
+    e = $$("input[name=email_default]");
+    btn = new YAHOO.widget.Button(e[0]);
+    btn.on("click", this.setDefaultEMail.bind(this));
+
+    e = $$("input[name=email_modify]");
+    btn = new YAHOO.widget.Button(e[0]);
+    btn.on("click", this.modifyEMail.bind(this));
+
+    /*
+    var tab = Yaffas.ui.getActiveTabEl();
+    e = Element.select(tab, "input[id=new_email]")[0];
+    var kl = new YAHOO.util.KeyListener(e, {
+        keys: YAHOO.util.KeyListener.KEY.ENTER
+    }, {
+        fn: function() {
+            // don't commit form on enter key press
+            YAHOO.util.Event.preventDefault(e);
+
+            this.addEMail.bind(this);
+        }
+    });
+    kl.enable();
+
+    var l = YAHOO.util.Event.getListeners(tab);
+    YAHOO.util.Event.removeListener(tab, "submit");
+    tab = new YAHOO.util.Element(tab);
+    tab.on("submit", function(ev) {
+        //YAHOO.util.Event.preventDefault(ev);
+        ev.preventDefault();
+        alert("foo");
+        l[0].fn();
+    }.bind(this));
+    */
+}
+
 Users.prototype.setupUI = function(){
 	this.setupTable();
 	this.setupMenu();
+	this.setupButtons();
 }
 
 Users.prototype.savedForm = function(f, args) {
@@ -124,6 +281,7 @@ Users.prototype.savedForm = function(f, args) {
             if (e !== undefined && u !== undefined) {
                 e.insert({top: "<option value='"+u+"'>"+u+"</option>"})
             }
+            this.getList().options.length = 0;
 			this.usertable.reload();
 			Yaffas.ui.resetTab();
 			break;
