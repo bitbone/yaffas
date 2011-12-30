@@ -546,12 +546,15 @@ Yaffas.UI.prototype.submitURL = function(url, args, argsform) {
 
 	var submitArgs = args;
 	
-    var submit = function(){
+    var submit = function(additional){
         this.loading.show();
 		var postData = [];
-		if (submitArgs !== null) {
+		if (submitArgs !== null || additional !== undefined) {
 	        for (var name in submitArgs) {
 	            postData.push(name + "=" + submitArgs[name]);
+	        }
+	        for (var name in additional) {
+	            postData.push(name + "=" + additional[name]);
 	        }
 	        YAHOO.util.Connect.asyncRequest('POST', url, callback, postData.join("&"));
 		}
@@ -791,4 +794,8 @@ Yaffas.UI.prototype.reloadGlobals = function() {
             console.log("loaded Script")
         }
     });
+}
+
+Yaffas.UI.prototype.getActiveTabEl = function() {
+    return this.tabs.get("activeTab").get("contentEl");
 }
