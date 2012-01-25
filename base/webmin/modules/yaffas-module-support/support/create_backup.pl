@@ -111,7 +111,7 @@ my $filesexclude = [
 if( Yaffas::Constant::OS eq 'Ubuntu' ) {
 	$jobs->{execute}->{dpkg} = [ Yaffas::Constant::APPLICATION->{'dpkg'}, "-l" ];
 	push( @{$jobs->{files}}, Yaffas::Constant::FILE->{'network_interfaces'});
-} elsif( Yaffas::Constant::OS eq 'RHEL5' ) {
+} elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 	$jobs->{execute}->{rpm} = [ Yaffas::Constant::APPLICATION->{'rpm'}, "-qa" ];
 	push( @{$jobs->{files}}, Yaffas::Constant::DIR->{'rhel5_devices'} );
 }

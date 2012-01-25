@@ -647,7 +647,7 @@ sub get_user_entries(;$) {
 			($username, undef,$uid, $gid) = split(/:/, $user);
 
 			my $min_uid = 501;
-			$min_uid = 500 if Yaffas::Constant::OS eq 'RHEL5';
+			$min_uid = 500 if Yaffas::Constant::OS =~ m/RHEL\d/ ;
 
 			if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody" && !user_exists_local($username)) {
 				push (@theusers, $username);
@@ -760,7 +760,7 @@ sub get_user_entries_full {
 		($username, undef,$uid, $gid, $gecos) = split(/:/, $user);
 
 		my $min_uid = 501;
-		$min_uid = 500 if Yaffas::Constant::OS eq 'RHEL5';
+		$min_uid = 500 if Yaffas::Constant::OS =~ m/RHEL\d/ ;
 
 		if ( $uid >= $min_uid && $username =~ /^.*[^\$]$/ && $username ne "nobody" && $username ne "nfsnobody" && ! user_exists_local($username)) {
 			$theusers->{$username} = { uid => $uid, gid => $gid, gecos => $gecos };

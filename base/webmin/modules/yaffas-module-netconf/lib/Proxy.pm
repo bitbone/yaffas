@@ -286,7 +286,7 @@ sub _set_freshclam($$;$$) {
 	}
 	if(Yaffas::Constant::OS eq "Ubuntu"){
 		$bkf->set_permissions("clamav","clamav",0600);
-	} elsif (Yaffas::Constant::OS eq "RHEL5") {
+	} elsif (Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		$bkf->set_permissions("clam","clam",0600);
 	}
 	

@@ -90,7 +90,7 @@ Returns 1 if spamassassin is active. Returns undef if not.
 
 sub check_spam {
 	my %amavis = _get_amavis();
-	if(Yaffas::Constant::OS eq "RHEL5") {
+	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		return undef if exists $amavis{'bypass_spam_checks_maps'};
 	} else {
 		#for Ubuntu has inverted logic
@@ -108,7 +108,7 @@ Returns 1 if clamav is active. Returns undef if not.
 
 sub check_antivirus {
 	my %amavis = _get_amavis();
-	if(Yaffas::Constant::OS eq "RHEL5") {
+	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		return undef if exists $amavis{'bypass_virus_checks_maps'};
 	} else {
 		#for Ubuntu has inverted logic
@@ -217,7 +217,7 @@ sub save_spamassassin_state {
 	my $line = $f->get_content($num);
 
 	if ($state) {
-		if(Yaffas::Constant::OS eq "RHEL5") {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			$line =~ s/^/#/;
 		} else {
 			#for Ubuntu has inverted logic
@@ -225,7 +225,7 @@ sub save_spamassassin_state {
 		}
 	}
 	else {
-		if(Yaffas::Constant::OS eq "RHEL5") {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			$line =~ s/^#//;
 		} else {
 			#for Ubuntu has inverted logic
@@ -277,7 +277,7 @@ sub save_clamav_state {
 
 	my $line = $f->get_content($num);
 	if ($state) {
-		if(Yaffas::Constant::OS eq "RHEL5") {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			$line =~ s/^/#/;
 		} else {
 			#for Ubuntu has inverted logic
@@ -285,7 +285,7 @@ sub save_clamav_state {
 		}
 	}
 	else {
-		if(Yaffas::Constant::OS eq "RHEL5") {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			$line =~ s/^#//;
 		} else {
 			#for Ubuntu has inverted logic

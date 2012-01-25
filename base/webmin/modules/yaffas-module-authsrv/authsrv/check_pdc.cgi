@@ -26,7 +26,7 @@ my $dom_pass1 = $main::in{dom_pass1};
 my $printop_group = $main::in{printop_group};
 my $type = $main::in{'pdc_type'};
 try {
-	Yaffas::Service::control(NSCD, STOP) unless Yaffas::Constant::OS eq "RHEL5";
+	Yaffas::Service::control(NSCD, STOP) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 	Yaffas::Service::control(GOGGLETYKE, STOP);
 	if(Yaffas::Service::control(WINBIND, START)) {
 		# sleeping some time, so winbind can get all users
@@ -55,7 +55,7 @@ try {
 		Yaffas::UGM::set_print_operators_group($printop_group, $dom_adm, $dom_pass1);
 	}
 
-	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
+	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 	Yaffas::Service::control(GOGGLETYKE, START);
 	Yaffas::Service::control(SAMBA, RESTART);
 	Yaffas::Service::control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
@@ -79,7 +79,7 @@ try {
 	print Yaffas::UI::ok_box();
 } 
 catch Yaffas::Exception with {
-	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
+	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 	Yaffas::Service::control(GOGGLETYKE, START);
 	print Yaffas::UI::all_error_box(shift);
 	pdc();

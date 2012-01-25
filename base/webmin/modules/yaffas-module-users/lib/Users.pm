@@ -93,7 +93,7 @@ sub check_reasonable_mail($$@) {
 			my $localpart = $1;
 			my $domain = $2;
 			my @domains;
-			if(Yaffas::Constant::OS eq 'RHEL5') {
+			if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 				push @domains, $domain;
 			}
 			else {

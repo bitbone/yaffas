@@ -41,7 +41,7 @@ Changes root password in LDAP and files.
 
 sub change_root_password($) {
 	my $pass = shift;
-	(Yaffas::Constant::OS eq 'RHEL5') && return;
+	(Yaffas::Constant::OS =~ m/RHEL\d/ ) && return;
 
 	throw Yaffas::Exception("err_password") unless (Yaffas::Check::password($pass));
 
@@ -104,7 +104,7 @@ sub change_root_password($) {
 	$SIG{TERM} = 'IGNORE';
 	Yaffas::Service::control(WEBMIN, RESTART);
 	Yaffas::Service::control(LDAP, RESTART);
-	Yaffas::Service::control(NSCD, RESTART) unless Yaffas::Constant::OS eq 'RHEL5';
+	Yaffas::Service::control(NSCD, RESTART) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 	Yaffas::Service::control(SSHD, RESTART);
 	# have to restart samba, becuase smbpasswd does't tell samba to read the new password
 	Yaffas::Service::control(SAMBA, RESTART);

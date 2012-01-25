@@ -453,7 +453,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				FETCHMAIL() => "/usr/bin/fetchmail",
 				);
 }
-elsif(Yaffas::Constant::OS eq 'RHEL5') {
+elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 	%SERVICES = (
 				 EXIM()    => "/sbin/service exim",
 				 SENDMAIL() => "/sbin/service sendmail",
@@ -556,7 +556,7 @@ sub installed_services(;$)
 		'fetchmail'     => { 'constant' => FETCHMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
 	};
 
-#	if(Yaffas::Constant::OS eq 'RHEL5') {
+#	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 #		$services->{'sendmail'}	= { 'constant' => SENDMAIL(), 'allow' => [ 'start', 'stop', 'restart' ] },
 #	}
 
@@ -648,9 +648,9 @@ returns true, if the service is in the default runlevel.
 sub is_in_runlevel($){
 	my $service = shift;
 	my $initscript = $SERVICES{$service};
-	$initscript =~ s/[^ ]* // if( Yaffas::Constant::OS eq 'RHEL5' );
+	$initscript =~ s/[^ ]* // if( Yaffas::Constant::OS =~ m/RHEL\d/  );
 	my $initprefix = '/etc';
-	$initprefix = '/etc/rc.d' if( Yaffas::Constant::OS eq 'RHEL5' );
+	$initprefix = '/etc/rc.d' if( Yaffas::Constant::OS =~ m/RHEL\d/  );
 
 	if($initscript){
 		$initscript =~ s#$initprefix/init.d/##;
@@ -682,7 +682,7 @@ sub add_to_runlevel($){
 	my $service = shift;
 	my $initscript = $SERVICES{$service};
 	my $initprefix = '/etc/init.d/';
-	if( Yaffas::Constant::OS eq 'RHEL5' ) {
+	if( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 		$initscript =~ s/[^ ]* //;
 		$initprefix = '/etc/rc.d/init.d/';
 		$initscript = $initprefix.$initscript;
@@ -704,7 +704,7 @@ sub add_to_runlevel($){
 			$name =~ s/$initprefix//;
 			if( Yaffas::Constant::OS eq 'Ubuntu' ) {
 				system("update-rc.d -f $name defaults");
-			} elsif( Yaffas::Constant::OS eq 'RHEL5' ) {
+			} elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 				system("chkconfig --add $name");
 				system("chkconfig $name on");
 			}
@@ -722,7 +722,7 @@ sub rm_from_runlevel($){
 	my $service = shift;
 	my $initscript = $SERVICES{$service};
 	my $initprefix = '/etc/init.d/';
-	if( Yaffas::Constant::OS eq 'RHEL5' ) {
+	if( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 		$initscript =~ s/[^ ]* //;
 		$initprefix = '/etc/rc.d/init.d/';
 		$initscript = $initprefix.$initscript;
@@ -744,7 +744,7 @@ sub rm_from_runlevel($){
 			$name =~ s/$initprefix//;
 			if( Yaffas::Constant::OS eq 'Ubuntu' ) {
 				system("update-rc.d -f $name remove");
-			} elsif( Yaffas::Constant::OS eq 'RHEL5' ) {
+			} elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 				system("chkconfig $name off");
 			}
 		}
@@ -1022,7 +1022,7 @@ sub check_service_available($) {
 	if(Yaffas::Constant::OS eq 'Ubuntu') {
 		return 1 if (-x $Yaffas::Service::SERVICES{$service});
 	}
-	elsif(Yaffas::Constant::OS eq 'RHEL5') {
+	elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		my $init_script = $Yaffas::Service::SERVICES{$service};
 		$init_script =~ s#/sbin/service\s##;
 		return 1 if (-x "/etc/init.d/$init_script");
