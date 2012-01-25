@@ -198,7 +198,7 @@ sub get_revision_of($){
 			$rev = $1 if $dpkg =~ m/^Version:\s*?.*?(\d\d\d)$/;
 		}
     }
-	elsif(Yaffas::Constant::OS eq 'RHEL5') {
+	elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		my $rpm = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{rpm}, "-q", "--qf", '%{version}', "bbupdate-$product");
 		$rev = $1 if $rpm =~ m/^\d\d\d(\d\d\d)$/;
 	}

@@ -220,7 +220,7 @@ sub choose_auth()
 	my @auth_methodes = ( "local_auth", "yaffas_ldap", "ldap", "ads" );
 
 	# TODO: implement other auth methods for RHEL5
-#	@auth_methodes = ( "files", "ads", "yaffas_ldap", "ldap" ) if Yaffas::Constant::OS eq 'RHEL5';
+#	@auth_methodes = ( "files", "ads", "yaffas_ldap", "ldap" ) if Yaffas::Constant::OS =~ m/RHEL\d/ ;
 
 	# Figure out the current authentication mechanism and set it as default value of the popup menu
 	my $default;

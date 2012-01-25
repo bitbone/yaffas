@@ -828,7 +828,7 @@ For Ubuntu it will always return "exim4".
 
 sub get_mta {
 	my $mta = "exim4";
-	if(Yaffas::Constant::OS eq 'RHEL5') {
+	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		my $mta_link = "/etc/alternatives/mta";
 		if(-l $mta_link) {
 			my $link = readlink $mta_link;

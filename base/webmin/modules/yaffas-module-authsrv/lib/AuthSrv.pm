@@ -93,7 +93,7 @@ and 'ldap' are supported. B<Specifying more than one method is not fully tested>
 
 sub mod_pam
 {
-	Yaffas::Constant::OS eq 'RHEL5' or return;
+	Yaffas::Constant::OS =~ m/RHEL\d/  or return;
 	my %methods;
 	@methods{@_} = ();
 	my $authconfig = Yaffas::Constant::APPLICATION->{'authconfig'};

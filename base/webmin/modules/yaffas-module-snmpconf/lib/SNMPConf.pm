@@ -57,7 +57,7 @@ sub set_snmp_config($;$$) {
 			$network = "default";
 		}
 
-		if(Yaffas::Constant::OS eq 'RHEL5') {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			system(Yaffas::Constant::APPLICATION->{"chkconfig"}, "--level", "2345", "snmpd", "on");
 			system(Yaffas::Constant::APPLICATION->{"chkconfig"}, "--level", "016", "snmpd", "off");
 		}
@@ -73,7 +73,7 @@ sub set_snmp_config($;$$) {
 		my @lines = $file->search_line(qr/^com2sec/);
 
 		foreach (@lines) {
-		if(Yaffas::Constant::OS eq 'RHEL5') {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			$file->splice_line($_, 1, "com2sec  notConfigUser $network $community");
 		} else {
 			$file->splice_line($_, 1, "com2sec readonly $network $community");
@@ -94,7 +94,7 @@ sub set_snmp_config($;$$) {
 		Yaffas::Service::control(SNMPD, RESTART);
 	} else {
 		Yaffas::Service::control(SNMPD, STOP);
-		if(Yaffas::Constant::OS eq 'RHEL5') {
+		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 			system(Yaffas::Constant::APPLICATION->{"chkconfig"}, "--del", "snmpd");
 		}
 		else {
@@ -139,7 +139,7 @@ sub get_snmp_config() {
 		}
 	}
 	my $enabled;
-	if(Yaffas::Constant::OS eq 'RHEL5') {
+	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		$enabled = -l "/etc/rc2.d/S50snmpd" ? 1 : 0;
 	}
 	else {

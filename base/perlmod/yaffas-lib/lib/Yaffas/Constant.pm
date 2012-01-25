@@ -13,7 +13,8 @@ use Switch;
 sub get_os {
 	my $lsb_release = `lsb_release -si -sr`;
 	switch ($lsb_release) {
-		case qr/CentOS 5|RedHatEnterpriseServer 5/ { return "RHEL5"; }
+		case qr/CentOS 6|RedHatEnterpriseServer 6/Scientific 6/ { return "RHEL6"; }
+		case qr/CentOS 5|RedHatEnterpriseServer 5/Scientific 5/ { return "RHEL5"; }
 		case qr/Ubuntu/ { return "Ubuntu"; }
 		else { return "unknown"; }
 	}

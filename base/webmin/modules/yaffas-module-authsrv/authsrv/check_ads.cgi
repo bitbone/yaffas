@@ -38,7 +38,7 @@ try {
 	$ldap_encryption = Yaffas::Module::AuthSrv::test_ldaps($pdc);
 
 	if ((defined $ldap_encryption) || ($noencryption_confirmed eq "yes")) {
-		control(NSCD, STOP) unless Yaffas::Constant::OS eq "RHEL5";
+		control(NSCD, STOP) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 		control(GOGGLETYKE, STOP);
 		control(WINBIND, START);
 
@@ -62,7 +62,7 @@ try {
 			Yaffas::UGM::set_print_operators_group($printop_group, $dom_adm, $dom_pass1);
 		}
 
-		control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
+		control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 		control(GOGGLETYKE, START);
 		control(ZARAFA_SERVER, RESTART) if Yaffas::Product::check_product("zarafa");
 		system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
@@ -88,7 +88,7 @@ try {
 	}
 }
 catch Yaffas::Exception with {
-	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS eq "RHEL5";
+	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
 	Yaffas::Service::control(GOGGLETYKE, START);
 	print Yaffas::UI::all_error_box(shift);
 	ads();
