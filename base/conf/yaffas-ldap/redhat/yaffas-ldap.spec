@@ -83,7 +83,9 @@ if [ "$1" = 1 ] ; then
 	# save existing config files and
 	# copy our config files to default locations
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	%{__mv} -f /etc/ldap.conf /etc/ldap.conf.yaffassave
+	if [ -e /etc/ldap.conf ]; then
+		%{__mv} -f /etc/ldap.conf /etc/ldap.conf.yaffassave
+	fi
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
 	# leave nsswitch.conf will be change by setting authentication
@@ -205,7 +207,9 @@ chkconfig ldap on
 
 %postun
 if [ $1 -eq 0 ]; then
-	%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
+	if [ -e /etc/ldap.conf.yaffassave ]; then
+		%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
+	fi
 	%{__rm} -f /etc/ldap.settings
 	%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
 	%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
