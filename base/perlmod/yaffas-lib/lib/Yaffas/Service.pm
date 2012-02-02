@@ -453,7 +453,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu') {
 				FETCHMAIL() => "/usr/bin/fetchmail",
 				);
 }
-elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
+elsif(Yaffas::Constant::OS =~ m/RHEL5/ ) {
 	%SERVICES = (
 				 EXIM()    => "/sbin/service exim",
 				 SENDMAIL() => "/sbin/service sendmail",
@@ -462,6 +462,66 @@ elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 				 NETWORK() => "/sbin/service network",
 				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",	# TODO: adapt for Red Hat
 				 LDAP()    => "/sbin/service ldap",
+				 NSCD()    => "/sbin/service nscd",
+				 SAMBA()   => "/sbin/service smb",
+				 CYRUS()   => "/sbin/service cyrus-imapd",
+				 SASLAUTHD() => "/sbin/service saslauthd",
+				 INETD()   => "/etc/init.d/inetd",	# TODO: adapt for Red Hat
+				 WEBMIN()  => "/sbin/service yaffas",
+				 USERMIN() => "/sbin/service bbusermin",
+				 XINETD()  => "/sbin/service xinetd",
+				 CAPIINIT()  => "/usr/sbin/capiinit",	# TODO: adapt for Red Hat
+				 MYSQL()   => "/sbin/service mysqld",
+				 CUPS()    => "/etc/init.d/cupsys",	# TODO: adapt for Red Hat
+				 KAV()     => "/etc/init.d/aveserver",	# TODO: adapt for Red Hat
+				 KAS()     => "/etc/init.d/ap-process-server",	# TODO: adapt for Red Hat
+				 GREYLIST() => "/etc/init.d/greylist",	# TODO: adapt for Red Hat
+				 FETCHMAIL() => "/sbin/service fetchmail",
+				 POSTGRESQL() => "/sbin/service postgresql",
+				 SPAMASSASSIN() => "/sbin/service spamassassin",
+				 POLICYD_WEIGHT() => "/sbin/service policyd-weight",
+				 AMAVIS() => "/sbin/service amavisd",
+				 CLAMAV() => "/sbin/service clamd",
+				 WINBIND() => "/sbin/service winbind",
+				 SNMPD() => "/sbin/service snmpd",
+				 DIVAS() => "/usr/lib/eicon/divas/Start",
+				 GOGGLETYKE() => "/sbin/service goggletyke",
+				 ZARAFA_GATEWAY() => "/sbin/service zarafa-gateway",
+				 ZARAFA_MONITOR() => "/sbin/service zarafa-monitor",
+				 ZARAFA_SERVER() => "/sbin/service zarafa-server",
+				 ZARAFA_SPOOLER() => "/sbin/service zarafa-spooler",
+				 ZARAFA_ICAL() => "/sbin/service zarafa-ical",
+				 ZARAFA_LICENSED() => "/sbin/service zarafa-licensed",
+				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
+				 APACHE() => "/sbin/service httpd",
+				 SSHD() => "/sbin/service sshd",
+				 MPPD() => "/etc/init.d/mppd",	# TODO: adapt for Red Hat
+				 MPPMANAGER() => "/etc/init.d/mppmanager",	# TODO: adapt for Red Hat
+				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
+				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
+				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
+				);
+
+	%PROCESSES = (
+				MYSQL() => "/usr/libexec/mysqld",
+				POSTFIX(), => "/usr/libexec/postfix/master",
+				APACHE(), => "/usr/sbin/httpd",
+				POSTGRESQL() => "/usr/bin/postmaster",
+				WINBIND() => "winbindd",
+				EXIM() => "/usr/sbin/exim",
+				SPAMASSASSIN() => "/usr/bin/spamd",
+				FETCHMAIL() => "fetchmail",
+				);
+}
+elsif(Yaffas::Constant::OS =~ m/RHEL6/ ) {
+	%SERVICES = (
+				 EXIM()    => "/sbin/service exim",
+				 SENDMAIL() => "/sbin/service sendmail",
+				 POSTFIX() => "/sbin/service postfix",
+				 HYLAFAX() => "/sbin/service hylafax",
+				 NETWORK() => "/sbin/service network",
+				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",	# TODO: adapt for Red Hat
+				 LDAP()    => "/sbin/service slapd",
 				 NSCD()    => "/sbin/service nscd",
 				 SAMBA()   => "/sbin/service smb",
 				 CYRUS()   => "/sbin/service cyrus-imapd",
