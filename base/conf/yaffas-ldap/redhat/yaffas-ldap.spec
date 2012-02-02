@@ -100,7 +100,12 @@ if [ "$1" = 1 ] ; then
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 
+%if 0%{?rhel} < 6
 	service ldap stop
+%endif
+%if 0%{?rhel} >= 6
+	service slapd stop
+%endif
 	sleep 1
 
 	# kill ldap if it is still running
@@ -198,7 +203,12 @@ chown root:ldapread $LDAPS
 rm -f $LDIF
 
 # enabled ldap service
+%if 0%{?rhel} < 6
 chkconfig ldap on
+%endif
+%if 0%{?rhel} >= 6
+chkconfig slapd on
+%endif
 
 %postun
 if [ $1 -eq 0 ]; then

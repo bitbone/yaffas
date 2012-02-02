@@ -93,7 +93,12 @@ if [ $1 -eq 1 ]; then
 		fi
 	fi
 
+%if 0%{?rhel} < 6
 	service ldap restart
+%endif
+%if 0%{?rhel} >= 6
+	service slapd restart
+%endif
 	service smb restart
 	service winbind restart
 
