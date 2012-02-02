@@ -83,26 +83,21 @@ if [ "$1" = 1 ] ; then
 	# save existing config files and
 	# copy our config files to default locations
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	if [ -e /etc/ldap.conf ]; then
-		%{__mv} -f /etc/ldap.conf /etc/ldap.conf.yaffassave
-	fi
+	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf /etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+		if [ -e $SAVEFILE ]; then
+			%{__mv} -f $SAVEFILE ${SAVEFILE}.yaffassave
+		fi
+	done
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
-	# leave nsswitch.conf will be change by setting authentication
-	#%{__mv} -f /etc/nsswitch.conf /etc/nsswitch.conf.yaffassave
-	#%{__cp} -f ${YAFFAS_EXAMPLE}/etc/nsswitch.conf /etc
-	%{__mv} -f /etc/openldap/slapd.conf /etc/openldap/slapd.conf.yaffassave
 	%{__cp} -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
-	%{__mv} -f /etc/openldap/ldap.conf /etc/openldap/ldap.conf.yaffassave
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
-	%{__mv} -f /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap.conf.yaffassave
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-	%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools/smbldap_bind.conf.yaffassave
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 
 	service ldap stop
@@ -207,17 +202,15 @@ chkconfig ldap on
 
 %postun
 if [ $1 -eq 0 ]; then
-	if [ -e /etc/ldap.conf.yaffassave ]; then
-		%{__mv} -f /etc/ldap.conf.yaffassave /etc/ldap.conf
-	fi
+	for SAVEFILE in /etc/ldap.conf.yaffassave /etc/openldap/slapd.conf.yaffassave /etc/openldap/ldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf.yaffassave; do
+		if [ -e $SAVEFILE ]; then
+			%{__mv} -f $SAVEFILE ${SAVEFILE/.yaffassave/}
+		fi
+	done
 	%{__rm} -f /etc/ldap.settings
-	%{__mv} -f /etc/openldap/slapd.conf.yaffassave /etc/openldap/slapd.conf
-	%{__mv} -f /etc/openldap/ldap.conf.yaffassave /etc/openldap/ldap.conf
 	%{__rm} -f /etc/ldap.secret
 	%{__rm} -f /etc/postfix/ldap-users.cf
 	%{__rm} -f /etc/postfix/ldap-aliases.cf
-	%{__mv} -f /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf
-	%{__mv} -f /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf
 fi
 
 %clean
