@@ -18,6 +18,7 @@ my @ldap_conffiles = (
 	"/etc/zarafa/ldap.yaffas.cfg",
 	"/etc/ldap.settings",
 	"/etc/ldap.conf",
+	"/etc/nslcd.conf",
 	"/etc/postfix/ldap-users.cf",
 	"/etc/postfix/ldap-aliases.cf",
 );
