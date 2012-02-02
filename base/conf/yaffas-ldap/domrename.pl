@@ -103,7 +103,7 @@ open OUTFILE, "> /tmp/slapcat.ldif";
 print OUTFILE @ldif;
 close OUTFILE;
 
-if (Yaffas::Constant::get_os() eq "RHEL5") {
+if (Yaffas::Constant::get_os() =~ m/RHEL\d/ ) {
 	`chcon -u system_u -t slapd_db_t /tmp/slapcat.ldif`;
 }
 
@@ -116,7 +116,7 @@ if ($ldif_file eq "") {
 	my $cmd = Yaffas::Constant::APPLICATION->{slapadd}." -vl /tmp/slapcat.ldif -f ".Yaffas::Constant::FILE->{slapd_conf};
 	print `$cmd`;
 
-	if (Yaffas::Constant::get_os() eq "RHEL5") {
+	if (Yaffas::Constant::get_os() =~ m/RHEL\d/ ) {
 		`chown -R ldap:ldap /var/lib/ldap/`;
 	}
 	else {
