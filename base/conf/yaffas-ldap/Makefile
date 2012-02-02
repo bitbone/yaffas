@@ -7,6 +7,7 @@ install:
 	mkdir -p $(DESTDIR)/tmp
 	mkdir -p $(DESTDIR)/$(YAFFAS_BIN)
 	cp -f share/doc/example/etc/ldap.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
+	cp -f share/doc/example/etc/nslcd.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -f share/doc/example/etc/ldap.secret $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -f share/doc/example/etc/ldap.settings $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -f share/doc/example/etc/nsswitch.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc

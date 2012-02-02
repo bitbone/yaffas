@@ -1,6 +1,6 @@
 Name:		yaffas-ldap
-Version:	0.9.0
-Release:	1%{?dist}
+Version: 1.0.1
+Release: 1
 Summary:	LDAP configuration for yaffas
 Group:		Application/System
 License:	AGPL
@@ -73,6 +73,7 @@ SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
 SMBLDAP_BIND="/etc/smbldap-tools/smbldap_bind.conf"
 LDAP_SETTINGS="/etc/ldap.settings"
 SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
+NSLCDCONF=/etc/nslcd.conf
 
 # only on first installation, if no ldap tree is present
 if [ "$1" = 1 ] ; then
@@ -83,12 +84,13 @@ if [ "$1" = 1 ] ; then
 	# save existing config files and
 	# copy our config files to default locations
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf /etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf /etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
 		if [ -e $SAVEFILE ]; then
 			%{__mv} -f $SAVEFILE ${SAVEFILE}.yaffassave
 		fi
 	done
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
 	%{__cp} -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
 	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
@@ -135,6 +137,7 @@ if [ "$1" = 1 ] ; then
 	echo "Changing configfiles..."
 
 	sed -e "s/BASE/$BASE/" -i $CONF
+	sed -e "s/BASE/$BASE/" -i $NSLCDCONF
 	sed -e "s/BASE/$BASE/" -i $SLAPD
 	sed -e "s/BASE/$BASE/" -i $LDAPCONF
 	sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
@@ -190,6 +193,11 @@ done
 		if [ -f /etc/openldap/DB_CONFIG.example ]; then
 			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 			chown ldap:ldap /var/lib/ldap/DB_CONFIG
+		else
+			if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+				cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+				chown ldap:ldap /var/lib/ldap/DB_CONFIG
+			fi
 		fi
 	fi
 
@@ -224,7 +232,7 @@ chkconfig slapd on
 
 %postun
 if [ $1 -eq 0 ]; then
-	for SAVEFILE in /etc/ldap.conf.yaffassave /etc/openldap/slapd.conf.yaffassave /etc/openldap/ldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/sysconfig/ldap.yaffassave; do
+	for SAVEFILE in /etc/ldap.conf.yaffassave /etc/openldap/slapd.conf.yaffassave /etc/openldap/ldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/sysconfig/ldap.yaffassave /etc/nslcd.conf.yaffassave; do
 		if [ -e $SAVEFILE ]; then
 			%{__mv} -f $SAVEFILE ${SAVEFILE/.yaffassave/}
 		fi
@@ -242,6 +250,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 %config /opt/yaffas/share/doc/example/etc/ldap.conf
+%config /opt/yaffas/share/doc/example/etc/nslcd.conf
 %config /opt/yaffas/share/doc/example/etc/ldap.secret
 %config /opt/yaffas/share/doc/example/etc/ldap.settings
 %config /opt/yaffas/share/doc/example/etc/openldap/ldap.conf
@@ -257,3 +266,29 @@ rm -rf $RPM_BUILD_ROOT
 /tmp/yaffas_base.ldif
 
 %changelog
+* Fri Dec 02 2011 Christof Musik <christof@sanjay.bitbone.de> 1.0.1-1
+- update to version 1.0.1-1
+
+* Mon Oct 31 2011 Package Builder <packages@yaffas.org> 1.0.0-1
+- update to version 1.0.0-1
+
+* Wed Sep 28 2011 Package Builder <packages@yaffas.org> 1.0-beta3
+- update to version 1.0-beta3
+
+* Tue Jul 26 2011 Package Builder <packages@yaffas.org> 1.0-beta2
+- update to version 1.0-beta2
+
+* Fri Jun 03 2011 Package Builder <packages@yaffas.org> 1.0-beta1
+- update to version 1.0-beta1
+
+* Tue May 03 2011 Package Builder <packages@yaffas.org> 0.9.0-1
+- update to version 0.9.0
+- some fixes
+- added mailserver security module
+
+* Fri Apr 08 2011 Package Builder <packages@yaffas.org> 0.8.0-1
+- update to version 0.8.0
+
+* Mon Mar 08 2011 Package Builder <packages@yaffas.org> 0.7.0-1
+- initial release
+
