@@ -94,6 +94,9 @@ if [ $1 -eq 1 ]; then
 		fi
 	fi
 
+	# restore selinux contexts
+	/sbin/restorecon -R /etc/samba
+
 %if 0%{?rhel} < 6
 	service ldap restart
 %endif
