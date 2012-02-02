@@ -28,7 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 set -e
 if [ $1 -eq 1 ]; then
 	# set selinux context
-	/usr/bin/chcon system_u:object_r:initrc_exec_t /opt/yaffas/etc/init.d/fetchmail
+	/usr/bin/chcon -u system_u -r object_r -t initrc_exec_t /opt/yaffas/etc/init.d/fetchmail
 
 	if [ ! -e %{_initrddir}/fetchmail ]; then
 		ln -s /opt/yaffas/etc/init.d/fetchmail %{_initrddir}/fetchmail
