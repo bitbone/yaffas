@@ -313,10 +313,10 @@ sub _load_settings {
 
 		if ($dev =~ /^eth\d+(:\d+)?/) {
 			my @udev_cmd;
-			if(Yaffas::Constant::get_os() eq "Ubuntu"){
-				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
-			} else {
+			if(Yaffas::Constant::OS eq "RHEL5"){
 				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevinfo}, '-a', '-p', "/class/net/$dev");
+			} else {
+				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
 			}
 			my @udevinfo = do_back_quote(@udev_cmd);
 
