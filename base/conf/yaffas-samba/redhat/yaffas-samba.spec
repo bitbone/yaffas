@@ -8,7 +8,8 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	samba, yaffas-ldap, yaffas-core
+%{?el5:Requires: samba, yaffas-ldap, yaffas-core}
+%{?el6:Requires: samba, samba-winbind, yaffas-ldap, yaffas-core}
 
 %description
 Samba configuration for yaffas.
