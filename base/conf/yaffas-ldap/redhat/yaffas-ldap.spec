@@ -113,6 +113,18 @@ if [ "$1" = 1 ] ; then
 		killall -9 slapd
 	fi
 
+%if 0%{?rhel} >= 6
+	SYSCONFIG_LDAP="/etc/sysconfig/ldap"
+	if [ -e $SYSCONFIG_LDAP ]; then
+		%{__cp} -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
+		if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
+			sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
+		else
+			echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
+		fi
+	fi
+%endif
+
 	BASE=`_get_base`
 	ORG=`_get_org $BASE`
 
@@ -212,7 +224,7 @@ chkconfig slapd on
 
 %postun
 if [ $1 -eq 0 ]; then
-	for SAVEFILE in /etc/ldap.conf.yaffassave /etc/openldap/slapd.conf.yaffassave /etc/openldap/ldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf.yaffassave; do
+	for SAVEFILE in /etc/ldap.conf.yaffassave /etc/openldap/slapd.conf.yaffassave /etc/openldap/ldap.conf.yaffassave /etc/smbldap-tools/smbldap.conf.yaffassave /etc/smbldap-tools/smbldap_bind.conf.yaffassave /etc/sysconfig/ldap.yaffassave; do
 		if [ -e $SAVEFILE ]; then
 			%{__mv} -f $SAVEFILE ${SAVEFILE/.yaffassave/}
 		fi
