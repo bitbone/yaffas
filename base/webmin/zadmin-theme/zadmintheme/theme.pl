@@ -106,12 +106,21 @@ sub theme_header() {
 
 						   -script=>$scripts,
 
-						   -head=>$cgi->meta(
-									   {
+						   -head=>$cgi->[
+							   $cgi->meta(
+								   {
+									   -http_equiv => 'X-UA-Compatible',
+									   -content    => 'IE=9',
+								   }
+							   ),
+							   $cgi->meta(
+								   {
 									   -http_equiv => 'Content-Type',
 									   -content    => 'text/html',
-									   }
-									  ),
+								   }
+							   ),
+
+						   ],
 						   -class=>"yui-skin-zadmin"
 						   }
 						  );
