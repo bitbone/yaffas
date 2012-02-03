@@ -27,6 +27,10 @@ if ! id amavis | grep -q "ldapread"; then
     usermod -a -G ldapread amavis
 fi
 
+%if 0%{?rhel} >= 6
+/sbin/service amavisd condrestart
+%endif
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
