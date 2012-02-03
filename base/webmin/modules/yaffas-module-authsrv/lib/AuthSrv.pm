@@ -333,8 +333,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			$lc_ref->{bindpw} = $bindpw;
 
 			if (length($userdn) > 0) {
-				$lc_ref->{nss_base_passwd} = $userdn.($userdn =~ m/,/ ? "" : ",");
-				$lc_ref->{nss_base_shadow} = $userdn.($userdn =~ m/,/ ? "" : ",");
+				$lc_ref->{nss_base_passwd} = $userdn.($userdn =~ m/,/ ? "" : ",$basedn");
+				$lc_ref->{nss_base_shadow} = $userdn.($userdn =~ m/,/ ? "" : ",$basedn");
 			}
 			else {
 				delete $lc_ref->{nss_base_passwd};
@@ -342,7 +342,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			}
 
 			if (length($groupdn) > 0) {
-				$lc_ref->{nss_base_group} = $groupdn.($groupdn =~ m/,/ ? "" : ",");
+				$lc_ref->{nss_base_group} = $groupdn.($groupdn =~ m/,/ ? "" : ",$basedn");
 			}
 			else {
 				delete $lc_ref->{nss_base_group};
