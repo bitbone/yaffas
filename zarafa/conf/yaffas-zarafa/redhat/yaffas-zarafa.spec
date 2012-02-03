@@ -138,6 +138,10 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
+/sbin/restorecon -R /etc/zarafa
+/sbin/restorecon -R /var/lib/zarafa-webaccess
+/sbin/restorecon -R /var/lib/zarafa
+
 chkconfig zarafa-server on
 service zarafa-server stop
 /usr/bin/zarafa-server --ignore-attachment-storage-conflict
