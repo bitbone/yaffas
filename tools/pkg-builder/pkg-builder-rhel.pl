@@ -133,7 +133,7 @@ foreach my $name (@todo) {
 			last if /^%changelog$/;
 			$_ =~ s/^Version:\s+.*$/Version: $version/;
 			if ( defined $release ) {
-				$_ =~ s/^Release:\s+.*$/Release: $release/;
+				$_ =~ s/^Release:\s+.*$/Release: $release%{?dist}/;
 			}
 			else {
 				$_ =~ s/^Release:\s+.*$/Release: 1/;
