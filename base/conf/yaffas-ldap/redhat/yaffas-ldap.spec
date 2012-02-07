@@ -153,7 +153,6 @@ if [ "$1" = 1 ] ; then
 	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
 
 	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-#		cp /usr/share/slapd/DB_CONFIG /var/lib/ldap/
 		if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
 			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 		elif [ -f /etc/openldap/DB_CONFIG.example ]; then
@@ -198,11 +197,8 @@ done
 		if [ -f /etc/openldap/DB_CONFIG.example ]; then
 			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 			chown ldap:ldap /var/lib/ldap/DB_CONFIG
-		else
-			if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
-				cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-				chown ldap:ldap /var/lib/ldap/DB_CONFIG
-			fi
+		elif [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 		fi
 	fi
 
