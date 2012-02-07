@@ -506,21 +506,21 @@ sub textfield {
 	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"],"TABINDEX"], @_);
 	my $name = $params[0];
 
-	return $Cgi->textfield(@params) . _get_help_button($name);
+	return $Cgi->textfield(@_) . _get_help_button($name);
 }
 
 sub password_field {
 	my @params = CGI::Util::rearrange(["NAME",["DEFAULT","VALUE","VALUES"],"SIZE","MAXLENGTH",["OVERRIDE","FORCE"],"TABINDEX"], @_);
 	my $name = $params[0];
 
-	return $Cgi->password_field(@params) . _get_help_button($name);
+	return $Cgi->password_field(@_) . _get_help_button($name);
 }
 
 sub checkbox {
 	my @params = CGI::Util::rearrange(["NAME",["CHECKED","SELECTED","ON"],"VALUE","LABEL",["OVERRIDE","FORCE"],"TABINDEX"], @_);
 	my $name = $params[0];
 
-	return $Cgi->checkbox(@params) . _get_help_button($name);
+	return $Cgi->checkbox(@_) . _get_help_button($name);
 }
 
 1;
