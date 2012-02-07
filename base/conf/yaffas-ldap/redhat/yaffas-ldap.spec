@@ -152,9 +152,12 @@ if [ "$1" = 1 ] ; then
 	sed -e "s/NEWSID/$SID/" -i $LDIF
 	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
 
-#	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
+	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
 #		cp /usr/share/slapd/DB_CONFIG /var/lib/ldap/
-#	fi
+		if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+		fi
+	fi
 
 	# import LDIF
 	slapadd -v -l $DOMRENAME_FILE -f $SLAPD

@@ -92,7 +92,7 @@ sub theme_header() {
 			"/zadmin.css",
 			];
 
-	print $cgi->start_html(
+	my $html_start = $cgi->start_html(
 						   {
 						   -title=>$main::gconfig{product} eq "usermin" ?
 						   "zadmin user interface" : "Z-Admin",
@@ -106,7 +106,7 @@ sub theme_header() {
 
 						   -script=>$scripts,
 
-						   -head=>$cgi->[
+						   -head=>[
 							   $cgi->meta(
 								   {
 									   -http_equiv => 'X-UA-Compatible',
@@ -124,6 +124,10 @@ sub theme_header() {
 						   -class=>"yui-skin-zadmin"
 						   }
 						  );
+
+#	my $dtd = '<!DOCTYPE html>';
+#	$html_start    =~  s{<!DOCTYPE.*?>}{$dtd}s;
+	print $html_start;
 
 	if (defined($ENV{REMOTE_USER}) and $ENV{REMOTE_USER} ne "") {
 		print '
