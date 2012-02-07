@@ -136,7 +136,7 @@ foreach my $name (@todo) {
 				$_ =~ s/^Release:\s+.*$/Release: $release%{?dist}/;
 			}
 			else {
-				$_ =~ s/^Release:\s+.*$/Release: 1/;
+				$_ =~ s/^Release:\s+.*$/Release: 1%{?dist}/;
 			}
 			print SPEC_OUT $_;
 		}
