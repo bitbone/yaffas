@@ -527,6 +527,7 @@ if ($pragma_no_cache || $gconfig{'pragma_no_cache'}) {
 	print "Cache-Control: no-store, no-cache, must-revalidate\n";
 	print "Cache-Control: post-check=0, pre-check=0\n";
 	}
+#print "X-UA-Compatible: IE=9\n"; # for IE9 Standards Mode
 if (defined($_[0])) {
 	print "Content-type: text/html; Charset=$_[0]\n\n";
 	}
