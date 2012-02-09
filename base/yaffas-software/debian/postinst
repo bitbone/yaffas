@@ -24,7 +24,18 @@ case "$1" in
             echo "include = /etc/samba/smbopts.software" >> $INCLUDES
         fi
 
-        /etc/init.d/smbd reload
+        SAMBA=/etc/init.d/smbd
+
+        if [ ! -f $SAMBA ]; then
+            SAMBA=/etc/init.d/samba
+        fi
+
+        if [ ! -f $SAMBA ]; then
+            echo "Samba initscript not found"
+            exit 0
+        fi
+
+        $SAMBA reload
 
     ;;
 
