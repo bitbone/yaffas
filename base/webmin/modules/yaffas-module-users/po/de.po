@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
-"PO-Revision-Date: 2011-12-05 11:20+0200\n"
-"Last-Translator: Christof <musik@bitbone.de>\n"
+"POT-Creation-Date: 2011-12-31 00:15+0100\n"
+"PO-Revision-Date: 2012-02-08 10:09+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -353,6 +353,51 @@ msgstr "Für Gruppe erlauben"
 msgid "Features"
 msgstr "Funktionen"
 
+#: lang/en:71
+#, no-wrap
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: lang/en:72
+#, no-wrap
+msgid "Remove"
+msgstr "Entfernen"
+
+#: lang/en:73
+#, no-wrap
+msgid "Set default"
+msgstr "Standard"
+
+#: lang/en:74
+#, no-wrap
+msgid "Modify"
+msgstr "Ändern"
+
+#: lang/en:75
+#, no-wrap
+msgid "User currently in the office"
+msgstr "Der Benutzer ist zur Zeit im Büro"
+
+#: lang/en:76
+#, no-wrap
+msgid "User currently out of the office"
+msgstr "Der Benutzer ist zur Zeit nicht im Büro"
+
+#: lang/en:77
+#, no-wrap
+msgid "Edit out of office"
+msgstr "Abwesenheit bearbeiten"
+
+#: lang/en:78
+#, no-wrap
+msgid "Subject"
+msgstr "Betreff"
+
+#: lang/en:79
+#, no-wrap
+msgid "Message"
+msgstr "Nachricht"
+
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
@@ -563,9 +608,6 @@ msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen
 #~ msgid "Restore finished"
 #~ msgstr "Wiederherstellung beendet"
 
-#~ msgid "Subject"
-#~ msgstr "Betreff"
-
 #~ msgid "Sender"
 #~ msgstr "Absender"
 
@@ -616,9 +658,6 @@ msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen
 
 #~ msgid "Backup directory"
 #~ msgstr "Sicherungs Verzeichnis"
-
-#~ msgid "Remove"
-#~ msgstr "Entfernen"
 
 #~ msgid "Preserve fullbackup (in days)"
 #~ msgstr "Vollsicherung aufbewahren (in Tagen)"
@@ -815,9 +854,6 @@ msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen
 
 #~ msgid "Delete"
 #~ msgstr "Löschen"
-
-#~ msgid "Add"
-#~ msgstr "Hinzufügen"
 
 #~ msgid "Activate"
 #~ msgstr "Aktivieren"
@@ -2385,9 +2421,6 @@ msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Rundmail"
-
-#~ msgid "Message"
-#~ msgstr "Nachricht"
 
 #~ msgid "Send"
 #~ msgstr "Senden"

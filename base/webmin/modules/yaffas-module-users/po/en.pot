@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"POT-Creation-Date: 2011-12-31 00:15+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -360,6 +360,51 @@ msgstr ""
 #: lang/en:69
 #, no-wrap
 msgid "Features"
+msgstr ""
+
+#: lang/en:71
+#, no-wrap
+msgid "Add"
+msgstr ""
+
+#: lang/en:72
+#, no-wrap
+msgid "Remove"
+msgstr ""
+
+#: lang/en:73
+#, no-wrap
+msgid "Set default"
+msgstr ""
+
+#: lang/en:74
+#, no-wrap
+msgid "Modify"
+msgstr ""
+
+#: lang/en:75
+#, no-wrap
+msgid "User currently in the office"
+msgstr ""
+
+#: lang/en:76
+#, no-wrap
+msgid "User currently out of the office"
+msgstr ""
+
+#: lang/en:77
+#, no-wrap
+msgid "Edit out of office"
+msgstr ""
+
+#: lang/en:78
+#, no-wrap
+msgid "Subject"
+msgstr ""
+
+#: lang/en:79
+#, no-wrap
+msgid "Message"
 msgstr ""
 
 #: help/en:1

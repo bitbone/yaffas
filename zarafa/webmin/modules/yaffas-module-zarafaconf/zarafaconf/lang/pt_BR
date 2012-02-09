@@ -41,4 +41,4 @@ lbl_mysql_password=Senha
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_quota_value=O valor da cota poderá conter somente dígitos.
 moduletitle=Configuração
-err_password_hash=It is not possible to have a hash (#) character in the MySQL password.
+err_password_hash=O carácter sustenido (#) não pode ser usado na senha do MySQL.

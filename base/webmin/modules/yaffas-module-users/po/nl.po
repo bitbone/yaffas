@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"POT-Creation-Date: 2011-12-31 00:15+0100\n"
 "PO-Revision-Date: 2011-11-03 11:21+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -363,6 +363,51 @@ msgstr ""
 msgid "Features"
 msgstr "Functionaliteit"
 
+#: lang/en:71
+#, no-wrap
+msgid "Add"
+msgstr "Voeg toe"
+
+#: lang/en:72
+#, no-wrap
+msgid "Remove"
+msgstr "Verwijder"
+
+#: lang/en:73
+#, no-wrap
+msgid "Set default"
+msgstr ""
+
+#: lang/en:74
+#, no-wrap
+msgid "Modify"
+msgstr ""
+
+#: lang/en:75
+#, no-wrap
+msgid "User currently in the office"
+msgstr ""
+
+#: lang/en:76
+#, no-wrap
+msgid "User currently out of the office"
+msgstr ""
+
+#: lang/en:77
+#, no-wrap
+msgid "Edit out of office"
+msgstr ""
+
+#: lang/en:78
+#, no-wrap
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: lang/en:79
+#, no-wrap
+msgid "Message"
+msgstr ""
+
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
@@ -561,9 +606,6 @@ msgstr ""
 #~ msgid "Restore finished"
 #~ msgstr "Herstellen is afgerond"
 
-#~ msgid "Subject"
-#~ msgstr "Onderwerp"
-
 #~ msgid "Sender"
 #~ msgstr "Afzender"
 
@@ -614,9 +656,6 @@ msgstr ""
 
 #~ msgid "Backup directory"
 #~ msgstr "Reservekopie-directory"
-
-#~ msgid "Remove"
-#~ msgstr "Verwijder"
 
 #~ msgid "Preserve fullbackup (in days)"
 #~ msgstr "Behoud volledige reservekopie (in dagen)"
@@ -811,9 +850,6 @@ msgstr ""
 
 #~ msgid "Delete"
 #~ msgstr "Verwijder"
-
-#~ msgid "Add"
-#~ msgstr "Voeg toe"
 
 #~ msgid "Activate"
 #~ msgstr "Activeer"

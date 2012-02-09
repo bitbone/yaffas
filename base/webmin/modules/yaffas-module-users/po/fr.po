@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"POT-Creation-Date: 2011-12-31 00:15+0100\n"
 "PO-Revision-Date: 2011-11-03 15:55+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -353,6 +353,51 @@ msgstr "Pour le groupe"
 msgid "Features"
 msgstr "Fonctionnalités"
 
+#: lang/en:71
+#, no-wrap
+msgid "Add"
+msgstr "Ajouter"
+
+#: lang/en:72
+#, no-wrap
+msgid "Remove"
+msgstr "Supprimer"
+
+#: lang/en:73
+#, no-wrap
+msgid "Set default"
+msgstr ""
+
+#: lang/en:74
+#, no-wrap
+msgid "Modify"
+msgstr ""
+
+#: lang/en:75
+#, no-wrap
+msgid "User currently in the office"
+msgstr ""
+
+#: lang/en:76
+#, no-wrap
+msgid "User currently out of the office"
+msgstr ""
+
+#: lang/en:77
+#, no-wrap
+msgid "Edit out of office"
+msgstr ""
+
+#: lang/en:78
+#, no-wrap
+msgid "Subject"
+msgstr "Objet"
+
+#: lang/en:79
+#, no-wrap
+msgid "Message"
+msgstr "Message"
+
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
@@ -560,9 +605,6 @@ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. 
 #~ msgid "Restore finished"
 #~ msgstr "La restauration est achevée"
 
-#~ msgid "Subject"
-#~ msgstr "Objet"
-
 #~ msgid "Sender"
 #~ msgstr "Expéditeur"
 
@@ -613,9 +655,6 @@ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. 
 
 #~ msgid "Backup directory"
 #~ msgstr "Dossier de sauvegarde"
-
-#~ msgid "Remove"
-#~ msgstr "Supprimer"
 
 #~ msgid "Preserve fullbackup (in days)"
 #~ msgstr "Conserver une sauvegarde complète (en jours)"
@@ -812,9 +851,6 @@ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. 
 
 #~ msgid "Delete"
 #~ msgstr "Supprimer"
-
-#~ msgid "Add"
-#~ msgstr "Ajouter"
 
 #~ msgid "Activate"
 #~ msgstr "Activer"
@@ -2372,9 +2408,6 @@ msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. 
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Envoi groupé"
-
-#~ msgid "Message"
-#~ msgstr "Message"
 
 #~ msgid "Send"
 #~ msgstr "Envoyer"

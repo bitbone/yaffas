@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-11-03 11:19+0200\n"
-"Last-Translator: André <welter@bitbone.de>\n"
+"PO-Revision-Date: 2012-02-08 18:26+0200\n"
+"Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -203,6 +203,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "Configuration"
 #~ msgstr "Configuração"
+
+#~ msgid "It is not possible to have a hash (#) character in the MySQL password."
+#~ msgstr "O carácter sustenido (#) não pode ser usado na senha do MySQL."
 
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Especifique o tamanho máximo de anexos por e-mail em MB que poderão ser anexado no Webaccess."
@@ -699,7 +702,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Criando cache"
 
 # 95%
-#, fuzzy
 #~ msgid "Do you really want to delete these groups?"
 #~ msgstr "Realmente deseja remover estes grupos?"
 
@@ -724,6 +726,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Group exists already!"
 #~ msgstr "Grupo já existe!"
 
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
+#~ msgstr "Nomes de grupo precisam no mínimo um carácter alfanumérico, começando com uma letra."
+
 #~ msgid "Wrong mode!"
 #~ msgstr "Modo errado!"
 
@@ -731,7 +736,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Nenhum grupo selecionado!"
 
 # 96%
-#, fuzzy
 #~ msgid "This action is only supported with local authentication."
 #~ msgstr "Essa ação é suportada somente usado a autenticação local."
 
@@ -2032,7 +2036,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "E-mail alias"
 
 # 87%
-#, fuzzy
 #~ msgid "Authentication"
 #~ msgstr "Autenticação"
 
@@ -2096,6 +2099,24 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 # 87%
 #~ msgid "Features"
 #~ msgstr "Recursos"
+
+#~ msgid "Set default"
+#~ msgstr "Definir padrão"
+
+#~ msgid "Modify"
+#~ msgstr "Modificar"
+
+#~ msgid "User currently in the office"
+#~ msgstr "Usuário está no escritório"
+
+#~ msgid "User currently out of the office"
+#~ msgstr "Usuário está ausente do escritório"
+
+#~ msgid "Edit out of office"
+#~ msgstr "Editar Ausência do Escritório"
+
+#~ msgid "Message"
+#~ msgstr "Mensagem"
 
 #~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
 #~ msgstr "No caso que o usuário é administrador, ele poderá abrir as caixas de todos os usuários no Zarafa."
@@ -2290,9 +2311,6 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 
 #~ msgid "Bulk mailing"
 #~ msgstr "E-mail em massa"
-
-#~ msgid "Message"
-#~ msgstr "Mensagem"
 
 #~ msgid "Send"
 #~ msgstr "Enviar"
@@ -2489,6 +2507,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 # 83%
 #~ msgid "Save Configuration"
 #~ msgstr "Salvar Configuração"
+
+#~ msgid "Applying configuration file failed."
+#~ msgstr "Aplicação do arquivo de configuração não foi possível."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erro no arquivo de configuração"
@@ -2824,6 +2845,9 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgid "Base DN user"
 #~ msgstr "DN de base para usuários"
 
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in your LDAP server."
+#~ msgstr "Para usar este método de autenticação é necessário incluir o seguinte arquivo de esquema. É necessário de incluir e usar o schema no servidor LDAP.  "
+
 #~ msgid "Caution!"
 #~ msgstr "Cuidado!"
 
@@ -2894,14 +2918,12 @@ msgstr "Fornecer um Endereço IP único ou uma rede em forma de um recurso CIDR.
 #~ msgstr "Produto inválido"
 
 # 86%
-#, fuzzy
 #~ msgid "Computer already is an authentication server."
 #~ msgstr "Computador já é servidor de autenticação."
 
 # 95%
-#, fuzzy
 #~ msgid "Valid values are activate and deactivate."
-#~ msgstr "Valores válidos são ativos e inativos."
+#~ msgstr "Valores válidos são ativo e inativo."
 
 #~ msgid "Valid values are 'on' and 'off'."
 #~ msgstr "Valores válidos são 'on' e 'off'."
