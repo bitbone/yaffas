@@ -32,6 +32,10 @@ case "$1" in
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
+
+            sed -e 's/^START.*/START=yes/' -i /etc/default/saslauthd
+            sed -e 's/^MECHANISMS.*/MECHANISMS="ldap"/' -i /etc/default/saslauthd
+            sed -e 's/^OPTIONS.*/OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"/' -i /etc/default/saslauthd
 		fi
 
 		CONF=/etc/postfix

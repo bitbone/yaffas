@@ -21,9 +21,11 @@ virtual_mailbox_domains = localhost
 virtual_mailbox_maps = ldap:/etc/postfix/ldap-users.cf
 virtual_alias_maps = regexp:/etc/postfix/virtual_users_global, hash:/etc/postfix/ldap-groups.cf, ldap:/etc/postfix/ldap-aliases.cf
 virtual_transport = lmtp:127.0.0.1:2003
-smtp_sasl_auth_enable = no
-smtp_sasl_password_maps = 
-smtp_sasl_security_options = 
+
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_security_options = noanonymous
+smtpd_sasl_local_domain =
+broken_sasl_auth_clients = yes
 
 content_filter = amavis:[127.0.0.1]:10024
 smtpd_helo_required = yes
