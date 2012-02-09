@@ -91,7 +91,18 @@ case "$1" in
 		fi
 	fi
 
-	/etc/init.d/smbd restart
+    SAMBA=/etc/init.d/smbd
+
+    if [ ! -f $SAMBA ]; then
+        SAMBA=/etc/init.d/samba
+    fi
+
+    if [ ! -f $SAMBA ]; then
+        echo "No samba initscript found";
+        exit 1
+    fi
+
+	$SAMBA restart
 	/etc/init.d/winbind restart
 	/etc/init.d/slapd restart
 
@@ -127,7 +138,7 @@ case "$1" in
 
 		/usr/bin/ldapdelete -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET "uid=root,ou=People,$BASE"
 
-		/etc/init.d/smbd restart
+		$SAMBA restart
 		/etc/init.d/winbind restart
 	fi
 
