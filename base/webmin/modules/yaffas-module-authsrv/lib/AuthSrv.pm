@@ -460,10 +460,10 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{smbldap_bind_conf});
 
 		my $slb_ref = $smbldap_bind->get_cfg_values();
-		$slb_ref->{'slaveDN'} = "\"$binddn\"";
-		$slb_ref->{'slavePw'} = "\"$bindpw\"";
-		$slb_ref->{'masterDN'} = "\"$binddn\"";
-		$slb_ref->{'masterPw'} = "\"$bindpw\"";
+		$slb_ref->{'slaveDN'} = "'".$binddn."'";
+		$slb_ref->{'slavePw'} = "'".$bindpw."'";
+		$slb_ref->{'masterDN'} = "'".$binddn."'";
+		$slb_ref->{'masterPw'} = "'".$bindpw."'";
 
 		$smbldap_bind->write();
 
