@@ -7,7 +7,7 @@ Standards-Version: 3.5.2
 
 Package: yaffas-ldap
 Architecture: all
-Pre-Depends: ldap-auth-config | openldap
+Pre-Depends: ldap-auth-config | slapd
 Depends: ${shlibs:Depends}, nscd, libnss-ldap, slapd, libpam-ldap, db4.8-util, ldap-utils,  smbldap-tools, adduser, libterm-readkey-perl, postfix-ldap, samba-common-bin, yaffas-certificates, mkpasswd | whois
 Replaces: base-files, libldap-2.4-2
 Description: Konvertiert LDAP Config und erzeugt LDAP
