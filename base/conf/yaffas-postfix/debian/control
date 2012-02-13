@@ -7,5 +7,7 @@ Standards-Version: 3.7.3
 
 Package: yaffas-postfix
 Architecture: all
+Conflicts: exim4
+Depends: postfix, postfix-ldap
 Description: Configuration package for postfix
  Configuration package for postfix
