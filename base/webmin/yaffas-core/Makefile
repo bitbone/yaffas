@@ -12,7 +12,7 @@ install:
 	mkdir -p $(DESTDIR)/$(YAFFAS_WEBMIN)
 	mkdir -p $(DESTDIR)/etc/init.d/
 	cp -r etc/webmin $(DESTDIR)/$(YAFFAS_CONF)/
-ifeq ($(YAFFAS_OS,RedHatEnterpriseServer))
+ifeq ($(YAFFAS_OS),RedHatEnterpriseServer)
 	cp -r etc/init.d/yaffas $(DESTDIR)/$(YAFFAS_INIT)
 endif
 	cp -r var/webmin/* $(DESTDIR)/$(YAFFAS_STATE)
