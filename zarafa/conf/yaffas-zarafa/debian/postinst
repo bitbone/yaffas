@@ -40,13 +40,19 @@ case "$1" in
 	chmod 600 /etc/zarafa/ldap.cfg
 	chmod 600 /etc/zarafa/ldap.yaffas.cfg
 	#necessary if zarafa installed after first installation
+
+    if [ -f "/etc/locale.gen" ]; then
+        if ! grep -q "^en_US.UTF-8" /etc/locale.gen; then
+            echo "en_US.UTF-8" >> /etc/locale.gen
+        fi
+    fi
+
 	/usr/sbin/locale-gen
 	export PERLLIB="/opt/yaffas/lib/perl5"
 	perl -MYaffas::Module::ChangeLang -wle '
 	my $lang = Yaffas::Module::ChangeLang::get_lang();
 	Yaffas::Module::ChangeLang::set_lang($lang);
 	'
-
 
 	if ! grep ldap.so $PHPINI; then
 		echo "extension = ldap.so" >> $PHPINI
