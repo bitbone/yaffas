@@ -155,7 +155,7 @@ sub save {
 			$self->_save_interfaces();
 		}
 	} catch Yaffas::Exception with {
-		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
             Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
         } else {
             Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
@@ -179,7 +179,7 @@ sub save {
 
 	if ($pid == 0) {
 		## child
-		if(Yaffas::Constant::get_os() eq "Ubuntu"){
+		if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 			Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
 		} else {
 			Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
@@ -191,7 +191,7 @@ sub save {
 		system(Yaffas::Constant::APPLICATION->{nscd}, "-i", "hosts");
 		control(USERMIN, RESTART);
 		control(SASLAUTHD, RESTART);
-		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu';
+		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
 		control(ZARAFA_SERVER, RESTART);
 	} else {
 		## parent - will be killed by webmin restart
@@ -359,7 +359,7 @@ sub _load_settings {
 
 	my @enabled_interfaces;
 
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $interfaces = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces})
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
@@ -484,7 +484,7 @@ sub _load_settings {
 
 	foreach my $dev (@enabled_interfaces) {
 		if(exists $settings{$dev}){
-			if(Yaffas::Constant::get_os() ne "Ubuntu") {
+			if(Yaffas::Constant::get_os() ne "Ubuntu" or Yaffas::Constant::OS eq "Debian") {
 				if(exists $settings{$dev}->{ENABLED} && $settings{$dev}->{ENABLED} eq 'onboot'){
 					$settings{$dev}->{ENABLED} = 1 
 				}
@@ -674,7 +674,7 @@ sub _save_hostname {
 	$file->save();
 
 	# call /etc/init.d/hostname.sh
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $app = Yaffas::Constant::APPLICATION->{"hostname.sh"};
 		system($app, "start");
 		throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
@@ -711,7 +711,7 @@ sub _save_interfaces {
 		$self->{DEVICES}->{lo} = $d_obj;
 	}
 	
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces}, "");
 		$file or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{network_interfaces});
 
@@ -911,7 +911,7 @@ sub conf_dump () {
 }
 
 sub _stop_network {
-	if(Yaffas::Constant::get_os() eq "Ubuntu"){
+	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifdown}, '-a');
 	}
 	else {

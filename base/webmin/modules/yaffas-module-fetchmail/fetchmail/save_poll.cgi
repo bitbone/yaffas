@@ -132,7 +132,7 @@ Yaffas::Service::control(Yaffas::Service::FETCHMAIL(), Yaffas::Service::RESTART(
 footer();
 
 sub enable_daemon() {
-	if(Yaffas::Constant::OS eq "Ubuntu") {
+	if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian") {
 		my $fetchmail_conf = Yaffas::File->new(Yaffas::Constant::FILE->{'fetchmail_default_conf'})
 					or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{'fetchmail_default_conf'});
 

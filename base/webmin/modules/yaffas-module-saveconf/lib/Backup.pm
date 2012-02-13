@@ -506,7 +506,7 @@ sub _set_ldap($)
 	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
 	throw Yaffas::Exception("err_ldap_add", $?) unless $? == 0;
 
-	if(Yaffas::Constant::OS eq 'Ubuntu') {
+	if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 		system("/bin/chown", "-R", "openldap:openldap", Yaffas::Constant::DIR->{ldap_data});
 	} else {
 		system("/bin/chown", "-R", "ldap:ldap", Yaffas::Constant::DIR->{ldap_data});

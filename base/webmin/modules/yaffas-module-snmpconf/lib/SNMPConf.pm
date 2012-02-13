@@ -81,7 +81,7 @@ sub set_snmp_config($;$$) {
 		}
 		$file->save() or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{snmpd_conf});
 
-        if (Yaffas::Constant::OS eq "Ubuntu") {
+        if (Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq 'Debian') {
             $file = Yaffas::File->new("/etc/default/snmpd");
             my @lines = $file->search_line(qr/^SNMPDOPTS/);
 

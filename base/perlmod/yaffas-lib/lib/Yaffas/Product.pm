@@ -193,7 +193,7 @@ sub get_revision_of($){
 	my $rev = 0;
 	$product = "base" if $product eq "framework";
 
-	if(Yaffas::Constant::OS eq 'Ubuntu') {
+	if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian' ) {
 		foreach my $dpkg (Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-s", "bbupdate-$product")) {
 			$rev = $1 if $dpkg =~ m/^Version:\s*?.*?(\d\d\d)$/;
 		}

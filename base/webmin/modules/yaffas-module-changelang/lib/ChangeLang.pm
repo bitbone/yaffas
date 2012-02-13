@@ -138,7 +138,7 @@ sub set_lang($;$) {
 				$file->save();
 			}
 
-			if (Yaffas::Constant::OS eq "Ubuntu") {
+			if (Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq 'Debian') {
 				system(Yaffas::Constant::APPLICATION->{'locale-gen'}, $langstr);
 			}
 		}

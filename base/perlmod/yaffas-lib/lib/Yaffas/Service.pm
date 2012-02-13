@@ -393,7 +393,7 @@ a service. It contains the message which was put to stdout.
 our %SERVICES;
 our %PROCESSES;
 
-if(Yaffas::Constant::OS eq 'Ubuntu') {
+if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 	%SERVICES = (
 				 EXIM()    => "/etc/init.d/exim4",
 				 HYLAFAX() => "/etc/init.d/hylafax",
@@ -762,7 +762,7 @@ sub add_to_runlevel($){
 			# only if service is not configured for upstart
 			my $name = $initscript;
 			$name =~ s/$initprefix//;
-			if( Yaffas::Constant::OS eq 'Ubuntu' ) {
+			if( Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian' ) {
 				system("update-rc.d -f $name defaults");
 			} elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 				system("chkconfig --add $name");
@@ -802,7 +802,7 @@ sub rm_from_runlevel($){
 			# only if service is not configured for upstart
 			my $name = $initscript;
 			$name =~ s/$initprefix//;
-			if( Yaffas::Constant::OS eq 'Ubuntu' ) {
+			if( Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian' ) {
 				system("update-rc.d -f $name remove");
 			} elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {
 				system("chkconfig $name off");
@@ -1079,7 +1079,7 @@ sub __check_output($) {
 sub check_service_available($) {
 	my $service = shift;
 
-	if(Yaffas::Constant::OS eq 'Ubuntu') {
+	if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 		return 1 if (-x $Yaffas::Service::SERVICES{$service});
 	}
 	elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {

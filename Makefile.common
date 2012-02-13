@@ -26,7 +26,8 @@ ETC_LDAP=		/etc/ldap
 
 # Different paths on different distributions
 ifeq ("$(YAFFAS_OS)", "Debian")
-	YAFFAS_OS = "Ubuntu"
+	APACHE_SITES=	/etc/apache2/sites-enabled
+	ETC_LDAP=		/etc/ldap
 endif
 
 ifeq ("$(YAFFAS_OS)", "Ubuntu")

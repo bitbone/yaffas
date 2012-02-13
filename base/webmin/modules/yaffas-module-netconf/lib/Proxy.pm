@@ -34,7 +34,7 @@ On a RHEL machine it works with the yum.conf, of course.
 sub get_proxy {
 	my ($user, $proxy, $port);
 
-	if(Yaffas::Constant::OS eq "Ubuntu"){
+	if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $bkf = Yaffas::File->new($apt_cpath) or throw Yaffas::Exception("err_file_read", $apt_cpath);
 		my $line_nr = $bkf->search_line("Acquire::http::Proxy");
 		if (defined $line_nr) {
@@ -115,7 +115,7 @@ sub set_proxy($$$$){
 		$entry = $user  . ":" . $pass . "@" .  $entry if ($pass and $user);
 		$entry = $user  . "@" . $entry if ($user and !$pass);
 
-		if(Yaffas::Constant::OS eq "Ubuntu"){
+		if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 			_set_apt($entry);
 		} else {
 			_set_yum($proxy, $port, $user, $pass);
@@ -131,7 +131,7 @@ sub set_proxy($$$$){
 	} else {
 		# delmode
 		_del_freshclam();
-		if(Yaffas::Constant::OS eq "Ubuntu"){
+		if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 			_del_apt();
 		} else {
 			_del_yum();
@@ -284,7 +284,7 @@ sub _set_freshclam($$;$$) {
 			$bkf->add_line("$key $params{$key}");
 		}
 	}
-	if(Yaffas::Constant::OS eq "Ubuntu"){
+	if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		$bkf->set_permissions("clamav","clamav",0600);
 	} elsif (Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		$bkf->set_permissions("clam","clam",0600);
@@ -292,7 +292,7 @@ sub _set_freshclam($$;$$) {
 	
 	$bkf->write() or throw Yaffas::Exception('err_set_freshclam');
 
-	if(Yaffas::Constant::OS eq "Ubuntu"){
+	if(Yaffas::Constant::OS eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		Yaffas::Service::control(CLAMAV_FRESHCLAM, RESTART);
 	}
 }

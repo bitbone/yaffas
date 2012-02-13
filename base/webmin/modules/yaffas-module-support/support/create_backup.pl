@@ -108,7 +108,7 @@ my $filesexclude = [
 	Yaffas::Constant::DIR->{'logdir'} . '/mysql/mysql-bin\.\d+',
 ];
 # Specific jobs
-if( Yaffas::Constant::OS eq 'Ubuntu' ) {
+if( Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian" ) {
 	$jobs->{execute}->{dpkg} = [ Yaffas::Constant::APPLICATION->{'dpkg'}, "-l" ];
 	push( @{$jobs->{files}}, Yaffas::Constant::FILE->{'network_interfaces'});
 } elsif( Yaffas::Constant::OS =~ m/RHEL\d/  ) {

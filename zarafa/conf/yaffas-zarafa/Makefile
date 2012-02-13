@@ -16,4 +16,7 @@ install:
 ifeq ($(YAFFAS_OS), "Ubuntu")
 	cp -a $(ETC)/zarafa-webaccess-ssl $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available/
 endif
+ifeq ($(YAFFAS_OS), "Debian")
+	cp -a $(ETC)/zarafa-webaccess-ssl $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available/
+endif
 	cp zarafa.te $(DESTDIR)/tmp
