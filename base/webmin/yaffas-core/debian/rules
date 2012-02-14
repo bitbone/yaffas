@@ -75,7 +75,6 @@ binary-arch: build install
 	dh_installmenu
 	dh_installcron
 	dh_installinfo
-	dh_installinit --init-script="yaffas"
 	dh_installchangelogs
 	dh_link
 	dh_compress

@@ -27,7 +27,7 @@ case "$1" in
     configure)
 
 	if [[ ! -L /etc/init.d/yaffas ]]; then 
-		ln -sf /opt/yaffas/etc/init.d/yaffas /etc/init.d/yaffas
+		ln -sf /opt/yaffas/etc/init.d/yaffas.debian /etc/init.d/yaffas
 		update-rc.d yaffas defaults
 	fi
 	
