@@ -484,7 +484,7 @@ sub _load_settings {
 
 	foreach my $dev (@enabled_interfaces) {
 		if(exists $settings{$dev}){
-			if(Yaffas::Constant::get_os() ne "Ubuntu" or Yaffas::Constant::OS eq "Debian") {
+			if(Yaffas::Constant::get_os() ne "Ubuntu" and Yaffas::Constant::OS ne "Debian") {
 				if(exists $settings{$dev}->{ENABLED} && $settings{$dev}->{ENABLED} eq 'onboot'){
 					$settings{$dev}->{ENABLED} = 1 
 				}
