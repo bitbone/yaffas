@@ -42,6 +42,7 @@ elseif (file_exists($file)) {
 	$GLOBALS["settings"]->set("/outofoffice/set", "true");
 	$GLOBALS["settings"]->set("/outofoffice/subject", $subject);
 	$GLOBALS["settings"]->set("/outofoffice/message", implode($content));
+	$GLOBALS["settings"]->set("/outofoffice_change_id", rand());
 }
 else {
 	print_r($GLOBALS["settings"]->get("/outofoffice"));
