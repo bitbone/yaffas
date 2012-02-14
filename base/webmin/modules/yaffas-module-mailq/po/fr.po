@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2011-11-03 15:55+0200\n"
+"PO-Revision-Date: 2012-02-13 15:13+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -316,6 +316,9 @@ msgstr "File d'attente des courriels"
 
 #~ msgid "Configuration"
 #~ msgstr "Configuration"
+
+#~ msgid "It is not possible to have a hash (#) character in the MySQL password."
+#~ msgstr "Le caractère dièse (#) ne peut pas être utilisé dans le mot de passe MySQL."
 
 #~ msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 #~ msgstr "Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess."
@@ -799,9 +802,8 @@ msgstr "File d'attente des courriels"
 #~ msgstr "Création d'un cache"
 
 # 95%
-#, fuzzy
 #~ msgid "Do you really want to delete these groups?"
-#~ msgstr "Désirez-vous vraiment supprimer ce groupe ?"
+#~ msgstr "Désirez-vous vraiment supprimer ces groupes ?"
 
 #~ msgid "Authentification"
 #~ msgstr "Authentification"
@@ -824,6 +826,9 @@ msgstr "File d'attente des courriels"
 #~ msgid "Group exists already!"
 #~ msgstr "Le groupe existe déjà !"
 
+#~ msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
+#~ msgstr "Les noms de groupe doivent comporter au moins un caractère (alphanumérique), et commencer par une lettre (pas d'umlaut)."
+
 #~ msgid "Wrong mode!"
 #~ msgstr "Mode inapproprié !"
 
@@ -831,9 +836,8 @@ msgstr "File d'attente des courriels"
 #~ msgstr "Aucun groupe sélectionné !"
 
 # 96%
-#, fuzzy
 #~ msgid "This action is only supported with local authentication."
-#~ msgstr "Cette action n'est permise qu'avec une authentification locale."
+#~ msgstr "Cette action n'est prise en charge qu'avec une authentification locale."
 
 #~ msgid "E-mail address not valid"
 #~ msgstr "Adresse électronique invalide"
@@ -2048,7 +2052,6 @@ msgstr "File d'attente des courriels"
 #~ msgstr "Alias courriel"
 
 # 87%
-#, fuzzy
 #~ msgid "Authentication"
 #~ msgstr "Authentification"
 
@@ -2108,6 +2111,24 @@ msgstr "File d'attente des courriels"
 
 #~ msgid "Features"
 #~ msgstr "Fonctionnalités"
+
+#~ msgid "Set default"
+#~ msgstr "Définir par défaut"
+
+#~ msgid "Modify"
+#~ msgstr "Modifier"
+
+#~ msgid "User currently in the office"
+#~ msgstr "L'utilisateur est au bureau"
+
+#~ msgid "User currently out of the office"
+#~ msgstr "L'utilisateur s'est absenté du bureau"
+
+#~ msgid "Edit out of office"
+#~ msgstr "Modifier l'absence du bureau"
+
+#~ msgid "Message"
+#~ msgstr "Message"
 
 #~ msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
 #~ msgstr "Si un utilisateur est administrateur, il aura la possibilité d'ouvrir les bases Zarafa de n'importe quel autre utilisateur."
@@ -2295,9 +2316,6 @@ msgstr "File d'attente des courriels"
 
 #~ msgid "Bulk mailing"
 #~ msgstr "Envoi groupé"
-
-#~ msgid "Message"
-#~ msgstr "Message"
 
 #~ msgid "Send"
 #~ msgstr "Envoyer"
@@ -2494,6 +2512,9 @@ msgstr "File d'attente des courriels"
 
 #~ msgid "Save Configuration"
 #~ msgstr "Enregistrer la configuration"
+
+#~ msgid "Applying configuration file failed."
+#~ msgstr "L'application du fichier de configuration a échouée."
 
 #~ msgid "Error in configuration file"
 #~ msgstr "Erreur dans le fichier de configuration"
@@ -2824,6 +2845,9 @@ msgstr "File d'attente des courriels"
 #~ msgid "Base DN user"
 #~ msgstr "Utilisateur Base DN"
 
+#~ msgid "To use this authentication method you need the following schema file. You have to include and use it in your LDAP server."
+#~ msgstr "Pour utiliser cette méthode d'authentification, le fichier de schéma suivant est indispensable. Il doit être inclus et utilisé par le serveur LDAP."
+
 #~ msgid "Caution!"
 #~ msgstr "Attention !"
 
@@ -2894,12 +2918,10 @@ msgstr "File d'attente des courriels"
 #~ msgstr "Produit invalide"
 
 # 86%
-#, fuzzy
 #~ msgid "Computer already is an authentication server."
-#~ msgstr "Computer already authentication server."
+#~ msgstr "Cet ordinateur fait déjà office de serveur d'authentification."
 
-# 95%
-#, fuzzy
+# 95
 #~ msgid "Valid values are activate and deactivate."
 #~ msgstr "Les valeurs valides sont 'activate' ou 'deactivate'."
 
