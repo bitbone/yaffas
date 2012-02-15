@@ -40,26 +40,21 @@ function _get_base() {
 	ARRAY=(`echo ${DOMAIN} | cut -d. -f1- --output-delimiter=\ `)
 	COUNT=${#ARRAY[*]}
 	BASE=""
-	ORG=""
 
 	for i in `seq 1 $COUNT`
 	do
 		if [ $i -eq $COUNT ]; then
-			BASE="${BASE}c=${ARRAY[$(($i-1))]}"
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]}"
 		elif [ $i -eq $(($COUNT-1)) ]; then
-			BASE="${BASE}o=${ARRAY[$(($i-1))]},"
-			ORG=${ARRAY[$(($i-1))]}
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]},"
 		else
-			BASE="${BASE}ou=${ARRAY[$(($i-1))]},"
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]},"
 		fi
 	done
 
 	echo -n "$BASE"
 }
 
-function _get_org() {
-	echo `echo $1 | sed -e 's/.*o=\(.*\),.*/\1/g'`
-}
 
 # some defines
 CONF="/etc/ldap.conf"
@@ -128,7 +123,6 @@ if [ "$1" = 1 ] ; then
 %endif
 
 	BASE=`_get_base`
-	ORG=`_get_org $BASE`
 
 	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
 	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-aliases.cf

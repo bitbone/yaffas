@@ -28,9 +28,10 @@ my $old_org;
 my $new_domain;
 my $new_org;
 my $ldif_file = "";
+my $upgrade;
 
 sub usage() {
-	print "Usage: domrename.pl <old domain> <new domain> [<ldif file>]\n";
+	print "Usage: domrename.pl <old domain> <new domain> [<ldif file>] [upgrade]\n";
 	print "Note: if <ldif file> is specified only /tmp/slapcat.ldif will be changed\n";
 	exit(-1);
 }
@@ -40,16 +41,34 @@ if (defined($ARGV[0]) && ! defined($ARGV[1])) {
 } elsif (defined($ARGV[0]) && defined($ARGV[1]) && ! defined($ARGV[2])) {
 	$old_domain = $ARGV[0];
 	$new_domain = $ARGV[1];
-} elsif (defined($ARGV[0]) && defined($ARGV[1]) && defined($ARGV[2])) {
+} elsif (defined($ARGV[0]) && defined($ARGV[1]) && defined($ARGV[2]) && ! defined($ARGV[3])) {
+	$old_domain = $ARGV[0];
+	$new_domain = $ARGV[1];
+	if(lc $ARGV[2] eq "upgrade") {
+		$upgrade = $ARGV[2];
+	} else {
+		$ldif_file = $ARGV[2];
+	}
+} elsif (defined($ARGV[0]) && defined($ARGV[1]) && defined($ARGV[2]) && defined($ARGV[3])) {
 	$old_domain = $ARGV[0];
 	$new_domain = $ARGV[1];
 	$ldif_file = $ARGV[2];
+	$upgrade = $ARGV[3];
 } else {
 	usage();
 }
 
-$ldap_old_domain = getLDAPDomain($old_domain);
-$ldap_new_domain = getLDAPDomain($new_domain);
+if(defined $upgrade) {
+	if(lc $upgrade eq "upgrade") {
+		$ldap_old_domain = getOLDLDAPDomain($old_domain);
+		$ldap_new_domain = getLDAPDomain($new_domain);
+	} else {
+		$ldap_old_domain = getLDAPDomain($old_domain);
+		$ldap_new_domain = getLDAPDomain($new_domain);
+	}
+} else {
+	usage();
+}
 
 my @file;
 if ($ldif_file eq "") {
@@ -163,6 +182,30 @@ sub getLDAPDomain {
 
 	for($i=0; $i<=$#tmp; $i++) {
 		if ($i == $#tmp) {
+			$new .= "dc=".$tmp[$i];
+		} elsif ($i == $#tmp-1) {
+			$new .= "dc=".$tmp[$i];
+			$org = $tmp[$i];
+		} else {
+			$new .= "dc=".$tmp[$i];
+		}
+		$new .= "," if ($i != $#tmp);
+	}
+
+	return $new;
+}
+
+sub getOLDLDAPDomain {
+	if ($_[0] eq "BASE") {
+		return "BASE";
+	}
+	my @tmp = split(/\./, $_[0]);
+	die "Domain $_[0] too short" if ($#tmp < 1 && $_[0] ne "BASE");
+	my $new;
+	my $org;
+
+	for($i=0; $i<=$#tmp; $i++) {
+		if ($i == $#tmp) {
 			$new .= "c=".$tmp[$i];
 		} elsif ($i == $#tmp-1) {
 			$new .= "o=".$tmp[$i];
@@ -176,6 +219,7 @@ sub getLDAPDomain {
 	return $new;
 }
 
+
 sub correctLDIF {
 	my ($nd, @ldif) = @_;
 
@@ -186,11 +230,11 @@ sub correctLDIF {
 	@tmp = split (/,/, $nd);
 	@tmp = split (/=/, $tmp[0]);
 	
-	if ($tmp[0] eq "o") {
+#	if ($tmp[0] eq "o") {
 		unshift (@ldif, "dn: ".$nd."\n", "o: $tmp[1]\n", "objectClass: top\n", "objectClass: organization\n");
-	} else {
-		unshift (@ldif, "dn: ".$nd."\n", "ou: $tmp[1]\n", "objectClass: top\n", "objectClass: organizationalUnit\n");
-	}
+#	} else {
+#		unshift (@ldif, "dn: ".$nd."\n", "ou: $tmp[1]\n", "objectClass: top\n", "objectClass: organizationalUnit\n");
+#	}
 
 	return @ldif;
 }
