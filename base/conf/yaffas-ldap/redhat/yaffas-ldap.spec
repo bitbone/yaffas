@@ -79,7 +79,9 @@ if [ "$1" = 1 ] ; then
 	# save existing config files and
 	# copy our config files to default locations
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf /etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf /etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
+	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf \
+		/etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf \
+		/etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
 		if [ -e $SAVEFILE ]; then
 			%{__mv} -f $SAVEFILE ${SAVEFILE}.yaffassave
 		fi
@@ -163,9 +165,11 @@ if [ "$1" = 1 ] ; then
 	# generate password for LDAP
 	OURPASSWD="$(mkpasswd -s 0)"
 
-for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret /etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf /etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
-	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
-done
+	for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret \
+		/etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf \
+		/etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+		sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
+	done
 
 	MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
 	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
@@ -205,6 +209,11 @@ else
 
 	if ! grep zarafa.schema $SLAPD &>/dev/null; then
 		sed 's|include[[:space:]]\+/etc/openldap/schema/samba.schema|include\t/etc/openldap/schema/samba.schema\ninclude /etc/openldap/schema/zarafa.schema|' -i $SLAPD
+	fi
+
+	if grep -q 'BASEDN.*o=.*c=' /etc/ldap.settings; then
+		echo "fixing ldap dn..."
+		/opt/yaffas/bin/domrename.pl $DOMAIN $DOMAIN upgrade
 	fi
 
 fi
