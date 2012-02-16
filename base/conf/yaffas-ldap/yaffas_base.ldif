@@ -1,7 +1,7 @@
 dn: BASE
-ou: ORG
+dc: ORG
 objectClass: top
-objectClass: organization
+objectClass: base
 
 dn: ou=Hosts,BASE
 ou: Hosts
