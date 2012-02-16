@@ -218,6 +218,12 @@ else
 
 fi
 
+%if 0%{?rhel} >= 6
+if [ -e /var/run/nss-pam-ldapd.migrate ]; then
+	rm -f /var/run/nss-pam-ldapd.migrate
+fi
+%endif
+
 # fix permissions
 chmod 440 $CONF
 chmod 640 $LDAPS
