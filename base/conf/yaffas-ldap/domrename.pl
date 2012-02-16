@@ -9,6 +9,7 @@ my @ldap_conffiles = (
 	"/etc/libnss-ldap.conf",
 	"/etc/ldap/slapd.conf",
 	"/etc/openldap/slapd.conf",
+	"/etc/openldap/ldap.conf",
 	"/etc/ldap/ldap.conf",
 	"/etc/smbldap-tools/smbldap.conf",
 	"/etc/samba/smb.conf",
