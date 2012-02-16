@@ -2,7 +2,7 @@
 
 use lib '/opt/yaffas/lib/perl5';
 use Yaffas::Constant;
-use Yaffas::Service qw(control LDAP NSCD STOP START RESTART);
+use Yaffas::Service qw(control LDAP NSCD NSLCD STOP START RESTART);
 
 my @ldap_conffiles = (
 	"/etc/pam_ldap.conf",
