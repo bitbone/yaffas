@@ -55,6 +55,14 @@ function _get_base() {
 	echo -n "$BASE"
 }
 
+# use sample DB_CONFIG if none is configured
+if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
+	if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+		cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+	elif [ -f /etc/openldap/DB_CONFIG.example ]; then
+		cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+	fi
+fi
 
 # some defines
 CONF="/etc/ldap.conf"
@@ -148,14 +156,6 @@ if [ "$1" = 1 ] ; then
 	sed -e "s/NEWSID/$SID/" -i $LDIF
 	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
 
-	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-		if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
-			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-		elif [ -f /etc/openldap/DB_CONFIG.example ]; then
-			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-		fi
-	fi
-
 	# import LDIF
 	slapadd -v -l $DOMRENAME_FILE -f $SLAPD
 	chown -R ldap:ldap /var/lib/ldap/
@@ -191,15 +191,6 @@ if [ "$1" = 1 ] ; then
 	mkdir -p /opt/yaffas/config/
 	echo "method=ldap" > /opt/yaffas/config/alias.cfg
 
-	if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-		if [ -f /etc/openldap/DB_CONFIG.example ]; then
-			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-			chown ldap:ldap /var/lib/ldap/DB_CONFIG
-		elif [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
-			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-		fi
-	fi
-
 else
 	# this is an update :)
 
@@ -214,6 +205,9 @@ else
 	if grep -q 'BASEDN.*o=.*c=' /etc/ldap.settings; then
 		echo "fixing ldap dn..."
 		/opt/yaffas/bin/domrename.pl $DOMAIN $DOMAIN upgrade
+		service zarafa-server restart
+		service postfix reload
+		service smb restart
 	fi
 
 fi

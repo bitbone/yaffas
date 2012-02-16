@@ -231,12 +231,8 @@ sub correctLDIF {
 	}
 	@tmp = split (/,/, $nd);
 	@tmp = split (/=/, $tmp[0]);
-	
-#	if ($tmp[0] eq "o") {
-		unshift (@ldif, "dn: ".$nd."\n", "dc: $tmp[1]\n", "objectClass: top\n", "objectClass: domain\n");
-#	} else {
-#		unshift (@ldif, "dn: ".$nd."\n", "ou: $tmp[1]\n", "objectClass: top\n", "objectClass: organizationalUnit\n");
-#	}
+
+	unshift (@ldif, "dn: ".$nd."\n", "dc: $tmp[1]\n", "objectClass: top\n", "objectClass: domain\n");
 
 	return @ldif;
 }
