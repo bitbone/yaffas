@@ -145,6 +145,11 @@ if ($ldif_file eq "") {
 	print "Restarting nscd ...\n";
 	control(NSCD(), RESTART());
 
+if (Yaffas::Constant::get_os() eq "RHEL6" ) {
+	print "Restarting nslcd ...\n";
+	control(NSLCD(), RESTART());
+}
+
 	open LDAP, "< /etc/ldap.secret";
 	@ldap = <LDAP>;
 	chomp($ldap[0]);

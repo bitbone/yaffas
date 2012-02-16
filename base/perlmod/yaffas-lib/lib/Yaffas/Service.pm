@@ -15,7 +15,7 @@ sub BEGIN {
 						&FETCHMAIL &POSTGRESQL &SPAMASSASSIN &WINBIND &SNMPD
 						&DIVAS &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
-						&APACHE &BBLCD &NFSD
+						&APACHE &BBLCD &NFSD &NSLCD
 						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD &CLAMAV_FRESHCLAM
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
@@ -335,6 +335,8 @@ sub CLAMAV(){ 45; }
 
 sub CLAMAV_FRESHCLAM(){ 46; }
 
+sub NSLCD(){ 47; }
+
 =back
 
 =head2 Constants for Actions
@@ -523,6 +525,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL6/ ) {
 				 CAPI4HYLAFAX()    => "/etc/init.d/capi4hylafax",	# TODO: adapt for Red Hat
 				 LDAP()    => "/sbin/service slapd",
 				 NSCD()    => "/sbin/service nscd",
+				 NSLCD()   => "/sbin/service nslcd",
 				 SAMBA()   => "/sbin/service smb",
 				 CYRUS()   => "/sbin/service cyrus-imapd",
 				 SASLAUTHD() => "/sbin/service saslauthd",
@@ -963,6 +966,8 @@ sub _status($){
 		return __check_network();
 	} elsif ($service eq $Yaffas::Service::SERVICES{ LDAP() }) {
 		return __check_process('/usr/sbin/slapd');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ NSLCD() }) {
+		return __check_process('/usr/sbin/nslcd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ NSCD() }) {
 		return __check_process('/usr/sbin/nscd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SAMBA() }) {
