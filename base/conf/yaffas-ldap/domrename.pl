@@ -145,13 +145,13 @@ if ($ldif_file eq "") {
 	print "Restarting nscd ...\n";
 	control(NSCD(), RESTART());
 
-if (Yaffas::Constant::get_os() eq "RHEL6" ) {
-	print "Restarting nslcd ...\n";
-	control(NSLCD(), RESTART());
-}
+	if (Yaffas::Constant::get_os() eq "RHEL6" ) {
+		print "Restarting nslcd ...\n";
+		control(NSLCD(), RESTART());
+	}
 
-	open LDAP, "< /etc/ldap.secret";
-	@ldap = <LDAP>;
+	open LDAPSEC, "< /etc/ldap.secret";
+	@ldap = <LDAPSEC>;
 	chomp($ldap[0]);
 	`smbpasswd -w $ldap[0]`;
 }
