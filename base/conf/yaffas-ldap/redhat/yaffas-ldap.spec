@@ -232,6 +232,7 @@ chkconfig ldap on
 %endif
 %if 0%{?rhel} >= 6
 chkconfig slapd on
+chkconfig nslcd on
 %endif
 
 %postun
