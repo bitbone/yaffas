@@ -68,7 +68,8 @@ case "$1" in
 
 	a2enmod proxy
 	a2enmod ssl
-    a2ensite zarafa-webaccess-ssl
+	a2enmod proxy_http
+	a2ensite zarafa-webaccess-ssl
 	sed "s/LDAPHOSTNAME/$LDAPHOSTNAME/g" -i /etc/zarafa/ldap.yaffas.cfg
 	OURPASSWD=$(cat /etc/ldap.secret)
 	sed -e "s#--OURPASSWD--#$OURPASSWD#g" -i /etc/zarafa/ldap.yaffas.cfg
