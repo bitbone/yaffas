@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	postfix
+Requires:	postfix, cyrus-sasl
 
 %description
 Configuration package for postfix
@@ -50,6 +50,9 @@ if [ "$1" = 1 ] ; then
 
 	/usr/bin/newaliases
 
+    sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
+    sed -e 's/^OPTIONS.*/OPTIONS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
+    chkconfig saslauthd on
 fi
 
 # disable sendmail
