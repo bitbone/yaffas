@@ -35,7 +35,7 @@ case "$1" in
             exit 0
         fi
 
-        $SAMBA reload
+        $SAMBA reload || exit 0
 
     ;;
 
