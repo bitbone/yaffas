@@ -36,7 +36,7 @@ case "$1" in
             sed -e 's/^START.*/START=yes/' -i /etc/default/saslauthd
             sed -e 's/^MECHANISMS.*/MECHANISMS="rimap"/' -i /etc/default/saslauthd
             sed -e 's/^MECH_OPTIONS.*/MECH_OPTIONS="127.0.0.1"/' -i /etc/default/saslauthd
-            sed -e 's/^OPTIONS.*/OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"/' -i /etc/default/saslauthd
+            sed -e 's#^OPTIONS.*#OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"#' -i /etc/default/saslauthd
 		fi
 
 		CONF=/etc/postfix
@@ -57,6 +57,7 @@ case "$1" in
         /usr/bin/newaliases
 
         invoke-rc.d postfix restart
+        invoke-rc.d saslauthd restart
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

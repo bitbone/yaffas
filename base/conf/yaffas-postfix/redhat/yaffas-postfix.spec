@@ -63,6 +63,7 @@ chkconfig sendmail off
 alternatives --set mta /usr/sbin/sendmail.postfix
 chkconfig postfix on
 service postfix restart
+service saslauthd restart
 
 %postun
 if [ $1 -eq 0 ]; then
