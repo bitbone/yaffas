@@ -47,6 +47,8 @@ case "$1" in
         fi
     fi
 
+    echo "zarafa=Zarafa v7.0.1" > /opt/yaffas/etc/installed-products
+
 	/usr/sbin/locale-gen
 	export PERLLIB="/opt/yaffas/lib/perl5"
 	perl -MYaffas::Module::ChangeLang -wle '
@@ -143,7 +145,6 @@ case "$1" in
 	/etc/init.d/zarafa-dagent restart
 	/etc/init.d/apache2 restart
 
-    echo "zarafa=Zarafa v7.0.1" > /opt/yaffas/etc/installed-products
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

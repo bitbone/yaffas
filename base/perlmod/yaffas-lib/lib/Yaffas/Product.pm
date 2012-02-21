@@ -80,11 +80,6 @@ sub check_product ($){
 										);
 	my %value = $conf->get_cfg()->getall();
 
-	if ($product eq "zarafa") {
-		my @content = Yaffas::File->new(Yaffas::Constant::FILE->{bbexim_conf})->get_content();
-		return 0 if (grep /BBcyrus/, @content);
-	}
-
 	return exists $value{$product};
 }
 
