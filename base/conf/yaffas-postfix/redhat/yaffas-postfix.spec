@@ -29,9 +29,11 @@ if [ "$1" = 1 ] ; then
 	sed -e '/smtp_tls_session_cache_database/d' -i /opt/yaffas/share/doc/example/etc/postfix/main.cf
 	%{__mv} -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
 	%{__mv} -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
+	%{__mv} -f /etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/smtpd.conf.yaffassave
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf /etc/postfix/master.cf
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
 
 	CONF=/etc/postfix
 	mkdir -p $CONF
@@ -79,5 +81,6 @@ fi
 /opt/yaffas/share/doc/example/etc/postfix/main.cf
 /opt/yaffas/share/doc/example/etc/postfix/master.cf
 /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf
+/opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf
 
 %changelog
