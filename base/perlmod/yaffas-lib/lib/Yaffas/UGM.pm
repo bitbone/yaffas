@@ -144,8 +144,8 @@ Deletes group GROUP. On success returns 1 otherwise throws exception
 sub rm_group($) {
 	my $group = shift;
 	Yaffas::Exception->throw('err_no_local_auth')
-	  unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-		|| Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+	  unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+		|| Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 	throw Yaffas::Exception('err_undeletable_group',$group) if grep {$group eq $_} @{Yaffas::Constant::MISC->{admin_groups}};
 	system(Yaffas::Constant::APPLICATION->{groupdel}, $group);
 	throw Yaffas::Exception('err_del_group') unless ($? == 0);
@@ -257,8 +257,8 @@ sub add_user($$$$@) {
 	my $bke = Yaffas::Exception->new();
 
 	Yaffas::Exception->throw('err_no_local_auth')
-	  unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-		|| Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+	  unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+		|| Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
 	unless (Yaffas::Check::username($login)) {
 		$bke->add('err_username', $login);
@@ -366,8 +366,8 @@ sub rm_user ($) {
 	my $ret = undef;
 
 	Yaffas::Exception->throw('err_no_local_auth')
-	  unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-		|| Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+	  unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+		|| Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
 	if ($login =~ /^\d+$/) 
 	{
@@ -523,8 +523,8 @@ sub password($$) {
 		
 	}elsif(user_exists($login)){
 		Yaffas::Exception->throw('err_no_local_auth')
-		unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-				 || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+		unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+				 || Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
 		$cmd = Yaffas::Constant::APPLICATION->{smbldap_passwd}." '$login'";
 		open(PASS, "|$cmd > /dev/null 2>&1") or ($success = undef);
@@ -557,8 +557,8 @@ sub gecos($;$$) {
 
 	if (defined $givenname and defined $surname) {
 		Yaffas::Exception->throw('err_no_local_auth')
-		unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-				 || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+		unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+				 || Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
 		my $gecos = _fix_gecos("$givenname $surname");
 		unless (Yaffas::Check::gecos($gecos)) {
@@ -1090,8 +1090,8 @@ sub set_email($$;$) {
     my $type = shift;
 
     Yaffas::Exception->throw('err_no_local_auth')
-    unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-        || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+    unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+        || Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
     unless (Yaffas::Check::email($email)) {
         throw Yaffas::Exception("err_invalid_email");
@@ -1139,8 +1139,8 @@ sub del_email($) {
 	my $r;
 
 	Yaffas::Exception->throw('err_no_local_auth')
-	  unless ( Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP
-		|| Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES );
+	  unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+		|| Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
 	my $got_it = Yaffas::LDAP::search_entry("sn=$_[0]", 'email');
 	if($got_it){
