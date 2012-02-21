@@ -21,17 +21,15 @@ function _get_base() {
 	ARRAY=(`echo $DOMAIN | cut -d. -f1- --output-delimiter=\ `)
 	COUNT=${#ARRAY[*]}
 	BASE=""
-	ORG=""
 
 	for i in `seq 1 $COUNT`
 	do
 		if [ $i -eq $COUNT ]; then
-			BASE="${BASE}c=${ARRAY[$(($i-1))]}"
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]}"
 		elif [ $i -eq $(($COUNT-1)) ]; then
-			BASE="${BASE}o=${ARRAY[$(($i-1))]},"
-			ORG=${ARRAY[$(($i-1))]}
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]},"
 		else
-			BASE="${BASE}ou=${ARRAY[$(($i-1))]},"
+			BASE="${BASE}dc=${ARRAY[$(($i-1))]},"
 		fi
 	done
 
@@ -113,7 +111,6 @@ case "$1" in
 		fi
 
 		BASE=`_get_base`
-		ORG=`_get_org $BASE`
 
 		sed -e 's#SLAPD_CONF.*#SLAPD_CONF=/etc/ldap/slapd.conf#g' -i /etc/default/slapd
 		sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
