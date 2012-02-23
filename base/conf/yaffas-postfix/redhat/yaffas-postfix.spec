@@ -52,6 +52,9 @@ if [ "$1" = 1 ] ; then
 
 	/usr/bin/newaliases
 
+fi
+
+if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
     sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
     sed -e 's/^OPTIONS.*/OPTIONS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
     chkconfig saslauthd on
