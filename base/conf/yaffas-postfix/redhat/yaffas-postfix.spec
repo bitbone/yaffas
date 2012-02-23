@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	postfix, cyrus-sasl
+Requires:	postfix, cyrus-sasl, cyrus-sasl-plain
 
 %description
 Configuration package for postfix
