@@ -104,12 +104,12 @@ Users.prototype.addEMail = function(e) {
             }
         }
 
+        var optsLen = list.options.length;
+        list.options[optsLen] = option;
+
         if (def === false) {
             this.setDefaultEMail(0);
         }
-
-        var optsLen = list.options.length;
-        list.options[optsLen] = option;
 
         e.value = "";
     }
