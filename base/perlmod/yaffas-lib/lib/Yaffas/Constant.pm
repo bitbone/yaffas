@@ -352,7 +352,7 @@ use constant {
 		"udevinfo" => "/usr/bin/udevinfo",
 		"udevadm" => "/sbin/udevadm",
 		"chkconfig" => "/sbin/chkconfig",
-		"php5" => "/usr/bin/php5",
+		"php5" => ( OS eq 'Ubuntu' or OS eq 'Debian' ) ? "/usr/bin/php5" : "/usr/bin/php",
 		"zarafa_public_folder_script" => "/usr/bin/zarafa-public-folders",
 		"exportfs" => "/usr/sbin/exportfs",
 		"postmap" => "/usr/sbin/postmap",
