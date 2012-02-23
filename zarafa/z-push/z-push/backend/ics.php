@@ -597,7 +597,7 @@ class ImportContentsChangesICS extends MAPIMapping {
             // configure an exporter so we can detect conflicts
             $this->_memChanges = new ImportContentsChangesMem();
             $exporter = new ExportChangesICS($this->_session, $this->_store, $this->_folderid);
-            $exporter->Config(&$this->_memChanges, $this->_conflictsMclass, $this->_conflictsFiltertype, $this->_conflictsState, 0, 0);
+            $exporter->Config($this->_memChanges, $this->_conflictsMclass, $this->_conflictsFiltertype, $this->_conflictsState, 0, 0);
             while(is_array($exporter->Synchronize()));
             $this->_conflictsLoaded = true;
         }
@@ -664,12 +664,15 @@ class ImportContentsChangesICS extends MAPIMapping {
 
     // Import a change in 'read' flags .. This can never conflict
     function ImportMessageReadFlag($id, $flags) {
+        /*
+         * Checking for conflicts is correct at this point, but is a very expensive operation.
+         * If the message was deleted, only an error will be shown.
         $this->_lazyLoadConflicts();
         if($this->_memChanges->isDeleted($id)) {
             debugLog("Conflict detected. Data is already deleted. Request will be ignored.");
             return true;
         }
-
+        */
         $readstate = array ( "sourcekey" => hex2bin($id), "flags" => $flags);
         $ret = mapi_importcontentschanges_importperuserreadstatechange($this->importer, array ($readstate) );
         if($ret == false)
@@ -1240,6 +1243,10 @@ class ImportContentsChangesICS extends MAPIMapping {
 
     function _setTask($mapimessage, $task) {
         mapi_setprops($mapimessage, array(PR_MESSAGE_CLASS => "IPM.Task"));
+
+        if (isset($task->duedate)) {
+            $task->duedate = $this->_getDayStartOfTimestamp($task->duedate);
+        }
 
         $this->_setPropsInMAPI($mapimessage, $task, $this->_taskmapping);
 
