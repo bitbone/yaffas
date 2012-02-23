@@ -58,6 +58,7 @@ if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
     sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
     sed -e 's/^FLAGS.*/FLAGS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
     chkconfig saslauthd on
+    service saslauthd restart
 fi
 
 # disable sendmail
