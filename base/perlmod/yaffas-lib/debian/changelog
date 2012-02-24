@@ -1,3 +1,9 @@
+yaffas-lib (1.1.0-1) lucid; urgency=low
+
+  * update to version 1.1.0-1
+
+ -- Package Builder <packages@yaffas.org>  Fri, 24 Feb 2012 11:44:52 +0100
+
 yaffas-lib (1.0.1-1) lucid; urgency=low
 
   * update to version 1.0.1-1
