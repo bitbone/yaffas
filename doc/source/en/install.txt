@@ -116,7 +116,7 @@ image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
 image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
 
 
-==== Red Hat Enterprise Linux 5
+==== Red Hat Enterprise Linux
 
 The installation on Red Hat Enterprise Linux is similar.
 
@@ -145,6 +145,8 @@ Packages can be downloaded from http://www.zarafa.com/download-release.
 The {product} packages will require some dependencies.
 As these dependencies are not part of the standard RHEL repository, the following two repositories have to be added to the installed system.
 
+**Repositories for RHEL 5**
+
 Run the following command to install the EPEL repository:
 
   rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
@@ -157,13 +159,42 @@ or
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
 
+**Repositories for RHEL 6**
+
+Run the following command to install the EPEL repository:
+
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
+
+and run the following commands to add the RPMforge repository:
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+
+or
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+
+[CAUTION]
+==============
+
+Because of an dependency conflict the package perl-XML-SAX-Base has to be excluded from the rpmforge repository.
+Add the line
+
++exclude=perl-XML-SAX-Base+
+
+as the last line of the +[rpmforge]+ block.
+
+==============
+
+
+**yaffas repository**
+
 After the extra repositories are added, the {product} repository has to added:
 
 Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/rhel5/
+baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
 enabled = 1
 protect = 0
 gpgcheck = 0

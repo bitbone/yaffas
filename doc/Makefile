@@ -14,10 +14,10 @@ index.html: index.txt
 	asciidoc index.txt
 
 de_DE.pdf: de_DE.txt
-	a2x de_DE.txt
+	a2x -fpdf de_DE.txt
 
 en_EN.pdf: en_EN.txt
-	a2x en_EN.txt
+	a2x -fpdf en_EN.txt
 
 clean:
 	rm -rf de_DE.pdf de_DE.html en_EN.pdf en_EN.html index.html de_DE.chunked en_EN.chunked docbook-xsl.css
