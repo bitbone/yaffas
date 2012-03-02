@@ -108,7 +108,7 @@ sub set_lang($;$) {
 			my @content = $file->get_content();
 			my $lineno = $file->search_line(qr/^zarafa-admin.*--create-store/);
 
-			my $langstr = "en_GB.UTF-8";
+			my $langstr = "en_US.UTF-8";
 
 			if ($lang eq "de") {
 				$langstr = "de_DE.UTF-8"
