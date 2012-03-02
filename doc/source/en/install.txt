@@ -171,7 +171,7 @@ and run the following commands to add the RPMforge repository:
 
 or
 
-  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
 [CAUTION]
 ==============

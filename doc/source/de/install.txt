@@ -62,7 +62,7 @@ Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden
 ==============
 
 
-==== Red Hat Enterprise Linux 5
+==== Red Hat Enterprise Linux
 
 Die Installation unter Red Hat Enterprise Linux verläuft ähnlich der Installation unter Ubuntu.
 
@@ -77,7 +77,50 @@ Das Paket yaffas-config überschreibt hier ebenfalls die oben genannten Konfigur
 
 Vor der Installation von {product} müssen die Pakete für Zarafa von http://www.zarafa.com/download-release heruntergeladen und installiert werden.
 
-Um alle Abhängigkeiten automatisch auflösen zu können, sollten die http://fedoraproject.org/wiki/EPEL[EPEL] und http://wiki.centos.org/AdditionalResources/Repositories/RPMForge#head-5aabf02717d5b6b12d47edbc5811404998926a1b[RPMforge] Repositories eingebunden werden.
+Um alle Abhängigkeiten automatisch auflösen zu können, sollten die folgenden beiden Repositories eingebunden werden:
+
+**Repositories für RHEL 5**
+
+Der folgende Befehl installiert das EPEL Repository:
+
+  rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+
+Mit diesem Befehl wird das RPMforge Repository für 32-bit Systeme installiert:
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
+
+Folgender Befehl installiert RPMforge für 64-bit Systeme:
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.x86_64.rpm
+
+**Repositories für RHEL 6**
+
+Der folgende Befehl installiert das EPEL Repository:
+
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
+
+Mit diesem Befehl wird das RPMforge Repository für 32-bit Systeme installiert:
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
+
+Folgender Befehl installiert RPMforge für 64-bit Systeme:
+
+  rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+
+[CAUTION]
+==============
+
+Auf Grund eines Abhängigkeitskonflikts muss das Paket perl-XML-SAX-Base aus dem RPMforge Repository ausgeschlossen werden.
+Dazu fügen sie die Zeile
+
++exclude=perl-XML-SAX-Base+
+
+als letzte Zeile an den +[rpmforge]+ Block an.
+
+==============
+
+
+**yaffas Repository**
 
 Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
 ----
