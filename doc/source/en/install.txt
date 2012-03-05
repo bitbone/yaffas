@@ -116,6 +116,84 @@ image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
 image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
 
 
+==== Debian 6
+
+**Adding required repositories**
+
+Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
+
+  echo "deb http://repo.yaffas.org/debian ./" >> /etc/apt/sources.list
+
+**Import package key**
+
+  wget -O - http://repo.yaffas.org/debian/repo.key | apt-key add -
+
+[NOTE]
+===========
+
+If you need a proxy to download from internet, just set the "http_proxy" variable
+
+  export http_proxy=http://<user>:<password>@<your-proxy>:<port>
+
+===========
+
+**Install the packages**
+
+  apt-get update
+  apt-get install yaffas yaffas-zarafa yaffas-config
+
+
+This will install {product} base modules and zarafa.
+
+[WARNING]
+==============
+
+When installing the **yaffas-config** package and its dependencies, the
+following settings and data will be deleted or overwritten:
+
+  * existing LDAP tree
+  * slapd configuration
+  * Samba configuration
+  * smbldap-tools configuration
+  * postfix configuration
+  * zarafa configuration
+  * MySQL configuration (optimizations for Zarafa will be made)
+
+==============
+
+During the installation zarafa, mysql, openldap, postfix and many other dependencies are installed.
+
+The package manager will usually ask questions for some packages.
+You can skip all of these by pressing "enter" when the dialog pops up.
+The configuration of these will be done by the **yaffas-config** package.
+
+Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
+
+image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
+image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+
+Leave the LDAP configuration values without changes:
+
+image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
+image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
+image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
+image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
+image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
+image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
+image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+
+For postfix configuration select the "local only" type:
+
+image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
+image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
+image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+
+Use the default values for kerberos configuration:
+
+image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
+image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
+image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
+
 ==== Red Hat Enterprise Linux
 
 The installation on Red Hat Enterprise Linux is similar.
