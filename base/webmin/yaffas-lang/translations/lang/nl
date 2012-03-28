@@ -83,8 +83,8 @@ lbl_loading=Loading please wait...
 lbl_error=Error
 lbl_help=Help
 
-lbl_loading_data=Loading...
-lbl_error_data=Data error.
+lbl_loading_data=Laden...
+lbl_error_data=Data foutmelding.
 lbl_no_data=No records found.
 
 lbl_filter_header=Filter data
