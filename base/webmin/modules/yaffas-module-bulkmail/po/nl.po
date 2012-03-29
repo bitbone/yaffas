@@ -1033,6 +1033,11 @@ msgstr ""
 #~ msgid "Host name"
 #~ msgstr "Hostnaam"
 
+# 90%
+#, fuzzy
+#~ msgid "IP address"
+#~ msgstr "IP adres"
+
 # 85%
 #, fuzzy
 #~ msgid "Base settings"
