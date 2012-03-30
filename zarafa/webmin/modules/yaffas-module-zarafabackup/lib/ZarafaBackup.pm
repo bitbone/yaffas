@@ -152,7 +152,15 @@ sub run_restore {
     $text =~ s/\$1/\n$label\n/;
     print $text;
 
-    push @cmd, "/usr/bin/zarafa-restore", "-u", $user;
+    push @cmd, "/usr/bin/zarafa-restore";
+
+    if ($user eq "Public") {
+        push @cmd, "-p";
+    }
+    else {
+        push @cmd, "-u", $user;
+    }
+
     if ($type eq "folder") {
         push @cmd, "-r";
     }
