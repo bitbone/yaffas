@@ -1,10 +1,10 @@
 category=system
 desc=Certificate and Key Management
 desc_en=Certificate / Key Management
-desc_de=Zertifikat / Schlüssel Verwaltung
+desc_de=Zertifikat und Schlüssel Verwaltung
 name=certificate
 version=0.1
 
-desc_nl=Certificate / Key Management
-desc_fr=Gestion Certificat / Clé
-desc_pt_BR=Gerenciamento de Certificados / Chaves
+desc_nl=Certificaat- en Sleutelbeheer
+desc_fr=Gestion Certificat et Clé
+desc_pt_BR=Gerenciamento de Certificados e Chaves

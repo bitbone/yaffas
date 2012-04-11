@@ -37,7 +37,7 @@ import_delquestion=Soll das Zertifikat wirklich gelöscht werden?
 import_ok=Das Zertifikat wurde korrekt importiert!
 import_error=Beim Importierten trat ein Fehler auf! Bitte überprüfen Sie ihre Zertifikatsdatei.
 
-index_header=Zertifikat / Schlüssel Verwaltung
+index_header=Zertifikat und Schlüssel Verwaltung
 index_import=Zertifikat Importieren
 index_gencert=Generiere selbst signierte Zertifikate und Schlüssel
 index_view=Verwalte installierte Zertifikate
@@ -63,4 +63,4 @@ restart_service=Die Dienste werden neu gestartet!
 yes=ja
 no=nein
 succsess=Erfolgreich
-moduletitle=Zertifikat / Schlüssel Verwaltung
+moduletitle=Zertifikat und Schlüssel Verwaltung

@@ -37,7 +37,7 @@ import_delquestion=Realmente remover este Certificado?
 import_ok=Este Certificado foi importado com sucesso!
 import_error=Um erro ocorreu durante a importação. Por favor verificar o arquivo do certificado.
 
-index_header=Gerenciamento de Certificados / Chaves
+index_header=Gerenciamento de Certificados e Chaves
 index_import=Importar Chave ou Certificado assinado
 index_gencert=Gerar Certificado e Chave autoassinados
 index_view=Gerenciar/Ver Certificados e Chaves instalados
@@ -63,4 +63,4 @@ restart_service=Os serviçõs serão reiniciados!
 yes=sim
 no=não
 succsess=Sucesso
-moduletitle=Gerenciamento de Certificados / Chaves
+moduletitle=Gerenciamento de Certificados e Chaves

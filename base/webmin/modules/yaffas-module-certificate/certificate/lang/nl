@@ -37,7 +37,7 @@ import_delquestion=Should this Certificate really be deleted?
 import_ok=The Certificate was imported successfully!
 import_error=An error occured during importing! Please check your certificate file.
 
-index_header=Certificate / Key Management
+index_header=Certificaat- en Sleutelbeheer
 index_import=Import Key or Signed Certificate
 index_gencert=Generate Self Signed Certificate and Key
 index_view=Manage/View Installed Certificates and Keys
@@ -63,4 +63,4 @@ restart_service=The services are going to be restarted!
 yes=yes
 no=no
 succsess=Success
-moduletitle=Certificate / Key Management
+moduletitle=Certificaat- en Sleutelbeheer

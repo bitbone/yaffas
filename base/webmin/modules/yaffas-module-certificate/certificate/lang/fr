@@ -37,7 +37,7 @@ import_delquestion=Désirez-vous vraiment supprimer ce certificat ?
 import_ok=Le certificat a été importé avec succès !
 import_error=Une erreur s'est produite lors de l'importation ! Veuillez vérifier le fichier de votre certificat.
 
-index_header=Gestion Certificat / Clé
+index_header=Gestion Certificat et Clé
 index_import=Importer une clé ou un certificat signé
 index_gencert=Générer un certificat auto-signé et une clé
 index_view=Gérer/Afficher les certificats et les clés installées
@@ -63,4 +63,4 @@ restart_service=Les services vont être redémarrés !
 yes=oui
 no=non
 succsess=Succès
-moduletitle=Gestion Certificat / Clé
+moduletitle=Gestion Certificat et Clé
