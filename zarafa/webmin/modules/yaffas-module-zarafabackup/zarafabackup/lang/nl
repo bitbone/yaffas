@@ -44,4 +44,5 @@ err_no_full_found=Kon geen volledige reservekopie vinden.
 err_mkdir=Kon directory niet aanmaken.
 err_days=Waarde voor reservekopie-dagen incorrect.
 err_read_dir=Kon directory niet openen.
+err_loading_takes_too_long=Loading folder structure take too long. Please try again later.
 moduletitle=Reservekopie
