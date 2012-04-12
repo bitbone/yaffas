@@ -72,7 +72,13 @@ binary-arch: build install
 	dh_installdeb
 #	dh_perl
 	dh_shlibdeps
-	dh_gencontrol
+
+ifeq ($(shell lsb_release -si),Ubuntu)
+	dh_gencontrol -- -Vmkpasswd=mkpasswd -Vslapd=ldap-auth-config
+else
+	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=slapd
+endif
+
 	dh_md5sums
 	dh_builddeb
 

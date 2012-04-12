@@ -2,13 +2,13 @@ Source: yaffas-ldap
 Section: yaffas
 Priority: optional
 Maintainer: Package Builder <packages@yaffas.org>
-Build-Depends: debhelper (>> 3.0.0)
+Build-Depends: debhelper (>> 3.0.0), lsb-release
 Standards-Version: 3.5.2
 
 Package: yaffas-ldap
 Architecture: all
-Pre-Depends: ldap-auth-config | slapd
-Depends: ${shlibs:Depends}, nscd, libnss-ldap, slapd, libpam-ldap, db4.8-util, ldap-utils,  smbldap-tools, adduser, libterm-readkey-perl, postfix-ldap, samba-common-bin, yaffas-certificates, mkpasswd | whois
+Pre-Depends: ${slapd}
+Depends: ${shlibs:Depends}, nscd, libnss-ldap, slapd, libpam-ldap, db4.8-util, ldap-utils,  smbldap-tools, adduser, libterm-readkey-perl, postfix-ldap, samba-common-bin, yaffas-certificates, ${mkpasswd}
 Replaces: base-files, libldap-2.4-2
 Description: Konvertiert LDAP Config und erzeugt LDAP
  * libnss-ldap.conf
