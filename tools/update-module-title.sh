@@ -14,6 +14,7 @@ for l in "de" "nl" "fr" "pt_BR"; do
 
 
 	if grep -q "desc_$l=" module.info; then
+		title=$(echo $title | sed -e 's#/#\\/#g')
 		sed -e "s/desc_$l=.*/$title/" -i module.info
 	else
 		echo $title >> module.info
