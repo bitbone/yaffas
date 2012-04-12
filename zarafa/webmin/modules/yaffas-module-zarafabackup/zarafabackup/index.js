@@ -417,14 +417,15 @@ Backup.prototype.loadFolders = function(node, fnLoadComplete) {
             }
         }.bind(this),
         failure: function(oResponse) {
-            YAHOO.log("Failed to process XHR transaction.", "info", "example");
             oResponse.argument.fnLoadComplete();
+            Yaffas.ui.errorDialog.setBody(_("err_loading_takes_too_long"));
+            Yaffas.ui.errorDialog.show();
         },
         argument: {
             "node": node,
             "fnLoadComplete": fnLoadComplete
         },
-        timeout: 7000
+        timeout: 180000
     };
 
     YAHOO.util.Connect.asyncRequest('GET', sUrl, callback);

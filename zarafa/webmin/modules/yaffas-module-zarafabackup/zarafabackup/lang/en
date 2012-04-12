@@ -44,4 +44,5 @@ err_no_full_found=Could not find a full backup.
 err_mkdir=Could not create directory.
 err_days=Value for backup days incorrect.
 err_read_dir=Could not open directory.
+err_loading_takes_too_long=Loading folder structure take too long. Please try again later.
 moduletitle=Backup
