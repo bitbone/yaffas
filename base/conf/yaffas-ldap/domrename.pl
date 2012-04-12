@@ -59,6 +59,10 @@ if (defined($ARGV[0]) && ! defined($ARGV[1])) {
 	usage();
 }
 
+if ($old_domain eq "localdom") {
+    $old_domain = "yaffas.local";
+}
+
 if(defined $upgrade && lc $upgrade eq "upgrade") {
 	$ldap_old_domain = getOLDLDAPDomain($old_domain);
 	$ldap_new_domain = getLDAPDomain($new_domain);
