@@ -97,7 +97,7 @@ case "$1" in
 
 		# allow slapd access to our certificates
 		APPARMOR_SLAPD=/etc/apparmor.d/usr.sbin.slapd
-		if [ -w $APPARMOR_SLAPD ]; then
+		if [ -w $APPARMOR_SLAPD ] && [ -x /etc/init.d/apparmor ]; then
 			sed "s#\}#  /opt/yaffas/etc/ssl/certs/** r,\n&#" -i $APPARMOR_SLAPD
 			/etc/init.d/apparmor reload
 		fi
