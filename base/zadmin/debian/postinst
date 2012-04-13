@@ -22,7 +22,7 @@ case "$1" in
 
     CONF="/opt/yaffas/etc/installed-products"
     KEY="framework"
-    VALUE='Z-Admin v1.0'
+    VALUE='Z-Admin v1.1.1'
 
     if [ -e $CONF ]; then
         if ! grep -iq ^$KEY $CONF; then
