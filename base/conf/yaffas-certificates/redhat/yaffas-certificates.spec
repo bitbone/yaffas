@@ -26,6 +26,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 if [ $1 -eq 1 ]; then
 	set -e
+	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+	mkdir -p /opt/yaffas/etc/ssl/certs/org/
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* /opt/yaffas/etc/ssl/certs/org/
 	CERTDIR="/opt/yaffas/etc/ssl/certs/"
 	CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppserver"
 	for i in $CERTS; do
@@ -100,6 +103,6 @@ fi
 %files
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}
-/opt/yaffas/etc/ssl
+/opt/yaffas/share/doc/example/etc/ssl/certs/org
 
 %changelog

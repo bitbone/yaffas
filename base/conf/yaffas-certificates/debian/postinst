@@ -25,6 +25,10 @@ case "$1" in
 		# Linking certs
 		CERTDIR="/opt/yaffas/etc/ssl/certs/"
 
+        YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+        mkdir -p /opt/yaffas/etc/ssl/certs/org/
+        cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* /opt/yaffas/etc/ssl/certs/org/
+
 		CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppmanager cups"
 
 		for i in $CERTS; do
