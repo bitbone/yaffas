@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 13:04+0300\n"
+"POT-Creation-Date: 2012-04-13 00:19+0300\n"
 "PO-Revision-Date: 2012-04-11 13:16+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -233,6 +233,11 @@ msgid "Could not open directory."
 msgstr "Impossible d'ouvrir le répertoire."
 
 #: lang/en:47
+#, no-wrap
+msgid "Loading folder structure take too long. Please try again later."
+msgstr ""
+
+#: lang/en:48
 #, no-wrap
 msgid "Backup"
 msgstr "Sauvegarde"
