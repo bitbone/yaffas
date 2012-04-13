@@ -44,7 +44,6 @@ fi
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
-/opt/software/zarafaads.exe
 /opt/software/zarafaclient-en.msi
 /opt/software/zarafaclient.msi
 /opt/software/zarafamigrationtool.exe
