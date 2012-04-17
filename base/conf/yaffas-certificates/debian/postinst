@@ -21,13 +21,17 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 case "$1" in
     configure)
 
-	if [ -z "$2" ]; then
 		# Linking certs
 		CERTDIR="/opt/yaffas/etc/ssl/certs/"
 
         YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
         mkdir -p /opt/yaffas/etc/ssl/certs/org/
-        cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* /opt/yaffas/etc/ssl/certs/org/
+
+		if [ ! -f $CERTDIR/org/default.crt ]; then
+	        cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* $CERTDIR/org/
+		fi
+
+	if [ -z "$2" ]; then
 
 		CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppmanager cups"
 
