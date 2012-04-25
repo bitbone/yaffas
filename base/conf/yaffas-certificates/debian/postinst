@@ -27,6 +27,10 @@ case "$1" in
         YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
         mkdir -p /opt/yaffas/etc/ssl/certs/org/
 
+        if [ -f /opt/yaffas/var/default.crt ]; then
+            cp /opt/yaffas/var/default.* $CERTDIR/org/
+        fi
+
 		if [ ! -f $CERTDIR/org/default.crt ]; then
 	        cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* $CERTDIR/org/
 		fi
