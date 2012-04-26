@@ -44,5 +44,5 @@ err_no_full_found=Impossible de trouver une sauvegarde complète.
 err_mkdir=Impossible de créer le répertoire.
 err_days=Valeur invalide pour les dates de sauvegarde
 err_read_dir=Impossible d'ouvrir le répertoire.
-err_loading_takes_too_long=Loading folder structure take too long. Please try again later.
+err_loading_takes_too_long=Le chargement de l'arborescence du répertoire prend trop de temps. Veuillez essayer ultérieurement.
 moduletitle=Sauvegarde
