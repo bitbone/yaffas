@@ -23,13 +23,25 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 
+%pre
+cp /opt/yaffas/etc/ssl/certs/org/default.* /opt/yaffas/var/
+
 %post
+YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+CERTDIR="/opt/yaffas/etc/ssl/certs/"
+
+mkdir -p ${CERTDIR}/org/
+
+if [ -f /opt/yaffas/var/default.crt ]; then
+    cp /opt/yaffas/var/default.* ${CERTDIR}/org/
+fi
+
+if [ ! -f ${CERTDIR}/org/default.crt ]; then
+	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* ${CERTDIR}/org/
+fi
+
 if [ $1 -eq 1 ]; then
 	set -e
-	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	mkdir -p /opt/yaffas/etc/ssl/certs/org/
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* /opt/yaffas/etc/ssl/certs/org/
-	CERTDIR="/opt/yaffas/etc/ssl/certs/"
 	CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppserver"
 	for i in $CERTS; do
 		ln -sf $CERTDIR/org/default.key $CERTDIR/$i.key
