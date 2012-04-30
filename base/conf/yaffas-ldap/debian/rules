@@ -74,7 +74,12 @@ binary-arch: build install
 	dh_shlibdeps
 
 ifeq ($(shell lsb_release -si),Ubuntu)
+ifeq ($(shell lsb_release -sr),10.04)
 	dh_gencontrol -- -Vmkpasswd=mkpasswd -Vslapd=ldap-auth-config
+endif
+ifeq ($(shell lsb_release -sr),12.04)
+	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=ldap-auth-config
+endif
 else
 	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=slapd
 endif

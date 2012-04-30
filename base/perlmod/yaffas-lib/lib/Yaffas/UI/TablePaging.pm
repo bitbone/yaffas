@@ -15,7 +15,6 @@ use Data::Dumper;
 use Yaffas::Constant;
 use POSIX;
 use URI::Escape;
-use Digest::SHA1;
 use File::Path;
 use URI::Escape;
 
@@ -484,7 +483,6 @@ sub store(\@) {
 
 	mkpath($spool);
 
-#	my $name = Digest::SHA1::sha1_hex($ENV{REMOTE_USER}.join "", localtime());
 	my $name = $ENV{REMOTE_USER};
 
 	my $file = $spool . "/". $name;
