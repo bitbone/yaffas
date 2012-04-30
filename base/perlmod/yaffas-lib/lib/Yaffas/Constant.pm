@@ -21,7 +21,13 @@ sub get_os {
 	}
 }
 
-use constant { OS => get_os() };
+sub get_os_version {
+	my $lsb_version = `lsb_release -sr`;
+	chomp($lsb_version);
+	return $lsb_version;
+}
+
+use constant { OS => get_os(), OSVER => get_os_version() };
 
 use constant {
 	DIR => {
@@ -364,7 +370,7 @@ use constant {
 		"pfcat" => '/opt/yaffas/bin/pfcat.sh',
 		"sa_update" => "/usr/bin/sa-update",
 		"policyd_weight" => '/usr/sbin/policyd-weight',
-		"brctl" => '/usr/sbin/brctl',
+		"brctl" => (OS eq 'Ubuntu' and OSVER eq '12.04') ? '/sbin/brctl' : '/usr/sbin/brctl',
 		"dhclient" => '/sbin/dhclient',
 		"locale-gen" => '/usr/sbin/locale-gen',
 	}
