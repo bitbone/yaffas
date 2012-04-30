@@ -7,6 +7,6 @@ Standards-Version: 3.6.2
 
 Package: yaffas-module-zarafaconf
 Architecture: all
-Depends: yaffas-core, yaffas-module-authsrv, yaffas-module-users, yaffas-install-lib, mysql-server-core-5.1, mysql-server-5.1, zarafa, yaffas-module-mailsrv
+Depends: yaffas-core, yaffas-module-authsrv, yaffas-module-users, yaffas-install-lib, mysql-server, zarafa, yaffas-module-mailsrv
 Description: Module for basic zarafa configuration
  Module for basic zarafa configuration
