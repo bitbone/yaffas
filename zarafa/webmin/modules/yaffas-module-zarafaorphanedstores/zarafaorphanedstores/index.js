@@ -119,6 +119,10 @@ OrphanedStores.prototype.savedForm = function(url){
         case "delete.cgi":
             this.table.reload();
 			break;
+        case "attach.cgi":
+            Yaffas.ui.closeTab();
+            this.table.reload();
+            break;
     }
 }
 

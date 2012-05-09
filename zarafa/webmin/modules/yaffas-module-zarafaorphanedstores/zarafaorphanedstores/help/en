@@ -1,0 +1,1 @@
+orphaned_stores=This is a list of all zarafa stores which are not attached to any user. Usually this happens when users are deleted. You have the option to delete these stores, attach them to another user or copy them to the public store. Attaching a orphaned store to a user will make the orphaned store the user's new store. The user's old store will in turn be orphaned.

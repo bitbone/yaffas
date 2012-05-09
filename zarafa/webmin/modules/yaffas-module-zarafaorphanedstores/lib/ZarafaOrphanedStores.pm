@@ -79,12 +79,19 @@ sub attach_orphan {
 
 sub public_orphan {
 	my $orphan = shift;
-	_log_test("".localtime().": public_orphan: $orphan\n");
+	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '--copyto-public');
+#	if($result =~ m/Unable to get the store information. store guid/) {
+	unless($result =~ m/^$/) {
+		throw new Yaffas::Exception("err_store_not_found", $result);
+	}
 }
 
 sub delete_orphan {
 	my $orphan = shift;
-	_log_test("".localtime().": delete_orphan: $orphan\n");
+	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--remove-store', $orphan);
+	if($result =~ m/Unable to remove store, object not found/) {
+		throw new Yaffas::Exception("err_store_not_found");
+	}
 }
 
 sub _log_test {
