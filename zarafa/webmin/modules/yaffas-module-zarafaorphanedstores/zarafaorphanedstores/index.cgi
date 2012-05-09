@@ -19,8 +19,8 @@ ReadParse();
 header();
 
 try {
-	if ( $main::in{action} eq "attach" ) {
-		show_attach_zarafa_orphaned( split( /\0/, $main::in{orphans} ) );
+	if ( $main::in{action} eq "hook" ) {
+		show_hook_zarafa_orphaned( split( /\0/, $main::in{orphans} ) );
 	}
 	else {
 		show_zarafa_orphaned();

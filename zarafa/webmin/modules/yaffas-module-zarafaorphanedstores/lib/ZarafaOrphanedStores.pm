@@ -72,17 +72,20 @@ sub get_orphaned_stores () {
 	return @stores;
 }
 
-sub attach_orphan {
+sub hook_orphan {
 	my $orphan = shift;
-	_log_test("".localtime().": attach_orphan: $orphan\n");
+	my $username = shift;
+	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '-u', $username, '--type', 'user');
+	unless($result =~ m/^$/) {
+		throw new Yaffas::Exception("err_hook_orphan");
+	}
 }
 
 sub public_orphan {
 	my $orphan = shift;
 	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '--copyto-public');
-#	if($result =~ m/Unable to get the store information. store guid/) {
-	unless($result =~ m/^$/) {
-		throw new Yaffas::Exception("err_store_not_found", $result);
+	if($result =~ m/Unable to get the store information. store guid/) {
+		throw new Yaffas::Exception("err_store_not_found");
 	}
 }
 

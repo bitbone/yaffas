@@ -4,12 +4,12 @@ function OrphanedStores(){
     this.setupTable();
 }
 
-OrphanedStores.prototype.attachOrphanedStore = function(){
+OrphanedStores.prototype.hookOrphanedStore = function(){
     var r = this.table.selectedRows();
     
     if (r.length > 0) {
         Yaffas.ui.openTab("/zarafaorphanedstores/index.cgi", {
-            action: "attach",
+            action: "hook",
             orphans: r[0][0]
         });
     }
@@ -78,9 +78,9 @@ OrphanedStores.prototype.setupTable = function(){
 	}
         },
 	{
-        text: _("lbl_attachorphaned"),
+        text: _("lbl_hookorphaned"),
         onclick: {
-            fn: this.attachOrphanedStore.bind(this)
+            fn: this.hookOrphanedStore.bind(this)
 	}
         },
 	{
@@ -119,7 +119,7 @@ OrphanedStores.prototype.savedForm = function(url){
         case "delete.cgi":
             this.table.reload();
 			break;
-        case "attach.cgi":
+        case "hook.cgi":
             Yaffas.ui.closeTab();
             this.table.reload();
             break;

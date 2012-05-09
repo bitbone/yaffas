@@ -16,17 +16,19 @@ sub show_zarafa_orphaned {
 	);
 }
 
-sub show_attach_zarafa_orphaned {
+sub show_hook_zarafa_orphaned {
 	my @orphans = @_;
-	print $Cgi->start_form("post", "attach.cgi");
+	print $Cgi->start_form("post", "hook.cgi");
 	foreach my $orphan(@orphans) {
-		print section($main::text{lbl_attach_orphan});
+		print section($main::text{lbl_hook_orphan});
+		print $Cgi->hidden ( 'orphans', $orphan );
 		print $Cgi->table(
 			$Cgi->Tr(
 				$Cgi->td($orphan)
 			)
 		);
 	}
+	print section_button( $Cgi->submit( "btnaction", $main::text{lbl_hook} ) );
 	print $Cgi->end_form ();
 }
 

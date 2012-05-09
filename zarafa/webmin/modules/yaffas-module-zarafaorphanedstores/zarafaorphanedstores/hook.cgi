@@ -20,7 +20,7 @@ ReadParse();
 header();
 
 try {
-	Yaffas::Module::ZarafaOrphanedStores::attach_orphan($main::in{guid});
+	Yaffas::Module::ZarafaOrphanedStores::hook_orphan($main::in{guid}, $main::in{username});
 	print Yaffas::UI::ok_box ();
 }
 catch Yaffas::Exception with {
