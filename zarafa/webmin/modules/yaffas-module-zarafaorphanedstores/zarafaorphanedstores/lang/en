@@ -1,0 +1,15 @@
+lbl_orphanedstores=Orphaned Stores
+lbl_description=Description
+lbl_guid=Store Guid
+lbl_username=Guessed Username
+lbl_size=Size
+lbl_modified=Last Modified
+lbl_type=Store Type
+lbl_delorphaned_question=Do you really want to delete the selected stores?
+lbl_delorphaned=Delete orphaned store
+lbl_publicorphaned_question=Do you really want to attach these stores to the public store?
+lbl_deleteorphaned=delete
+lbl_attachorphaned=attach to user
+lbl_publicorphaned=attach to public store
+lbl_attach_orphan=Attach orphaned store
+moduletitle=Orphaned Stores
