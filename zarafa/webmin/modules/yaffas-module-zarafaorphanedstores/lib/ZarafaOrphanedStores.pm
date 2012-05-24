@@ -75,17 +75,21 @@ sub get_orphaned_stores () {
 sub hook_orphan {
 	my $orphan = shift;
 	my $username = shift;
-	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '-u', $username, '--type', 'user');
-	unless($result =~ m/^$/) {
-		throw new Yaffas::Exception("err_hook_orphan");
-	}
+
+	open(FILE, ">/tmp/hook.log");
+	print FILE "trying to hook $orphan to $username\n";
+	close FILE;
+#	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '-u', $username, '--type', 'user');
+#	unless($result =~ m/^$/) {
+		throw Yaffas::Exception("err_hook_orphan");
+#	}
 }
 
 sub public_orphan {
 	my $orphan = shift;
 	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '--copyto-public');
 	if($result =~ m/Unable to get the store information. store guid/) {
-		throw new Yaffas::Exception("err_store_not_found");
+		throw Yaffas::Exception("err_store_not_found");
 	}
 }
 
@@ -93,15 +97,8 @@ sub delete_orphan {
 	my $orphan = shift;
 	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--remove-store', $orphan);
 	if($result =~ m/Unable to remove store, object not found/) {
-		throw new Yaffas::Exception("err_store_not_found");
+		throw Yaffas::Exception("err_store_not_found");
 	}
-}
-
-sub _log_test {
-	my $message = shift;
-	open(FILE, ">/tmp/orphans.log");
-	print FILE $message;
-	close FILE;
 }
 
 sub conf_dump() {

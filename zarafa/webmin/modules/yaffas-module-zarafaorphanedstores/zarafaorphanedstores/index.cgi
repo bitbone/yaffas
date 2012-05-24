@@ -20,7 +20,9 @@ header();
 
 try {
 	if ( $main::in{action} eq "hook" ) {
-		show_hook_zarafa_orphaned( split( /\0/, $main::in{orphans} ) );
+		foreach my $orphan ( split( /\0/, $main::in{orphans} ) ) {
+			show_hook_zarafa_orphaned($orphan);
+		}
 	}
 	else {
 		show_zarafa_orphaned();

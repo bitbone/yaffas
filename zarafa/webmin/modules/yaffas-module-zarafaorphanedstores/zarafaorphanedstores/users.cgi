@@ -4,30 +4,34 @@ use strict;
 use warnings;
 
 use Yaffas;
-use Yaffas::UI;
-use Yaffas::Exception;
-use Yaffas::Module::ZarafaOrphanedStores;
-use Yaffas::Module::Users;
-use Error qw(:try);
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use Yaffas::UGM;
+use JSON;
 
-Yaffas::init_webmin();
+Yaffas::json_header();
 
-require './forms.pl';
+my @users;
+my $userlist;
+my $error = Yaffas::Exception->new();
 
-ReadParse();
+$userlist = Yaffas::UGM::get_users_full();
 
-header();
-
-try {
-	Yaffas::Module::ZarafaOrphanedStores::hook_orphan($main::in{orphan}, $main::in{username});
-	print Yaffas::UI::ok_box ();
+foreach ( keys %{$userlist} ) {
+	my $id = $userlist->{$_}->{uid};
+	if ($id) {
+		my $gecos = $userlist->{$_}->{gecos};
+		my %user  = (
+			"id"             => $id,
+			"username"       => $_,
+			"gecos"          => $gecos,
+		);
+		
+		push( @users, \%user );
+	}
+	else {
+		$error->add( "err_id_not_found", $_ );
+	}
 }
-catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-};
-
-footer();
+print to_json({"Response" => \@users}, {latin1 => 1});
 =pod
 
 =head1 COPYRIGHT
