@@ -589,6 +589,11 @@ source BASE/zarafa/webmin/modules/PACKAGE_NAME/
 dest BASE
 </yaffas-module-zarafaresources>
 
+<yaffas-module-zarafaorphanedstores>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafaorphanedstores>
+
 <yaffas-module-zarafabackup>
 source BASE/zarafa/webmin/modules/PACKAGE_NAME/
 dest BASE
