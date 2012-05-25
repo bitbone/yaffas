@@ -42,8 +42,12 @@ Resources.prototype.setupTable = function(){
         label: _("lbl_description"),
         sortable: true,
     }, {
-        key: "email",
-        label: _("lbl_email"),
+        key: "type",
+        label: _("lbl_resource_type"),
+        sortable: true,
+    }, {
+        key: "capacity",
+        label: _("lbl_capacity"),
         sortable: true,
     }, {
         key: "conflicts",

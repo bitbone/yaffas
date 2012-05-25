@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas::Module::About;
-use Yaffas::UI qw(section section_button textfield checkbox);
+use Yaffas::UI qw(section section_button textfield checkbox scrolling_list);
 use Yaffas::UI::TablePaging qw(show_page match);
 use Yaffas::Module::ZarafaResources;
 use Sort::Naturally;
@@ -84,6 +84,29 @@ sub show_edit_zarafa_resource (@) {
 						),
 						$Cgi->td(
 							[
+								$main::text{lbl_resource_type} . ':',
+								scrolling_list(
+									-name => 'type'
+									  . ( $create ? '' : '_' . $resource ),
+									-labels   => { Room => $main::text{lbl_room}, Equipment => $main::text{lbl_equipment} },
+									-values   => [ qw(- Room Equipment) ],
+									-default => $details{type},
+									-size => 1,
+								)
+							]
+						),
+						$Cgi->td(
+							[
+								$main::text{lbl_capacity} . ':',
+								textfield(
+									-name => 'capacity'
+									  . ( $create ? '' : '_' . $resource ),
+									-value   => $details{capacity},
+								)
+							]
+						),
+						$Cgi->td(
+							[
 								$main::text{lbl_decline_conflict} . ':',
 								checkbox(
 									-name => 'decline_conflict'
@@ -105,7 +128,7 @@ sub show_edit_zarafa_resource (@) {
 									-checked => $details{decline_recurring}
 								)
 							]
-						)
+						),
 					]
 				)
 			)

@@ -22,7 +22,8 @@ header();
 try {
 	Yaffas::Module::ZarafaResources::create_resource(
 		$main::in{name},             $main::in{description},
-		$main::in{decline_conflict}, $main::in{decline_recurring}
+		$main::in{decline_conflict}, $main::in{decline_recurring},
+		$main::in{type},             $main::in{capacity},
 	);
 	print Yaffas::UI::ok_box ();
 }

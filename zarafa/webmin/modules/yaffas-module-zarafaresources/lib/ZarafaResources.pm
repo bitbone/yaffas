@@ -58,11 +58,13 @@ Creates a new resource.
 
 =cut
 
-sub create_resource ($$$$) {
+sub create_resource ($$$$$$) {
 	throw Yaffas::Exception("err_no_local_auth") unless  Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES;
 
 	my ( $resource, $description, $decline_conflict,
-		$decline_recurring ) = @_;
+		$decline_recurring, $type, $capacity ) = @_;
+
+	_check_capacity($capacity);
 
 	# 'resource' as givenname for all resources:
 	# a givenname is required and none need to be set
@@ -84,7 +86,7 @@ sub create_resource ($$$$) {
 
 	Yaffas::UGM::add_user( $resource, undef, 'resource', $description );
 	Yaffas::UGM::set_email( $resource, $email ); # set email seperate to avoid warning about incorrect email address
-	modify_resource( $resource, $description, $decline_conflict, $decline_recurring );
+	modify_resource( $resource, $description, $decline_conflict, $decline_recurring, $type, $capacity );
 }
 
 =item delete_resource ( RESOURCE )
@@ -101,26 +103,38 @@ sub delete_resource ($) {
 	Yaffas::UGM::rm_user($resource);
 }
 
-=item modify_resource ( RESOURCE, DESCRIPTION, DECLINE_CONFLICT, DECLINE_RECURRING )
+=item modify_resource ( RESOURCE, DESCRIPTION, DECLINE_CONFLICT, DECLINE_RECURRING, TYPE, CAPACITY )
 
 Modifies an existing resource.
 
 =cut
 
-sub modify_resource ($$$$) {
-	my ( $resource, $description, $decline_conflict, $decline_recurring ) = @_;
+sub modify_resource ($$$$$$) {
+	my ( $resource, $description, $decline_conflict, $decline_recurring, $type, $capacity ) = @_;
 
 	if (Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES) {
+		_check_capacity($capacity);
+
 		Yaffas::Module::Users::set_zarafa_shared( $resource, 1 );
 		Yaffas::UGM::gecos( $resource, 'resource', $description );
 		my $pass = join "", map{("a".."z","A".."Z",0..9)[int(rand(62))]}(1..26);
 		Yaffas::UGM::password($resource, $pass);
 		Yaffas::UGM::set_suppl_groups($resource, "");
+		if ($type ne "-") {
+			if  ($type eq "Room" || $type eq "Equipment") {
+				Yaffas::LDAP::replace_entry($resource, "zarafaResourceType", $type);
+			}
+			else {
+				throw Yaffas::Exception("err_unknown_type");
+			}
+		}
+		Yaffas::LDAP::replace_entry($resource, "zarafaResourceCapacity", $capacity);
 	}
 
 	system( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '-u', $resource, '--mr-accept', '1' );
 	system( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '-u', $resource, '--mr-decline-conflict', $decline_conflict );
 	system( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '-u', $resource, '--mr-decline-recurring', $decline_recurring );
+	system( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--sync' );
 }
 
 =item get_resource_details ( RESOURCE )
@@ -155,9 +169,25 @@ sub get_resource_details ($) {
 		elsif ( $line =~ m/^Decline recur meet\.req:\s*(yes|no)/ ) {
 			$details{decline_recurring} = ( $1 eq 'yes' ? 1 : 0 );
 		}
+		elsif ( $line =~ m/^Resource capacity:\s*(\d+)/ ) {
+			$details{capacity} = $1;
+		}
+		elsif ( $line =~ m/^Non-active type:\s*(.*)/ ) {
+			if ($1 ne "Room" && $1 ne "Equipment") {
+				$details{type} = "-";
+			}
+			else {
+				$details{type} = $1;
+			}
+		}
 	}
 
 	return %details;
+}
+
+sub _check_capacity {
+	my $capacity = shift;
+	throw Yaffas::Exception("err_no_number") unless ($capacity =~ /^\d+$/);
 }
 
 sub conf_dump() {

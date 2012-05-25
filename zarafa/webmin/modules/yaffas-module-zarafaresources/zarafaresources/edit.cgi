@@ -34,7 +34,7 @@ try {
 			: 0
 		);
 		Yaffas::Module::ZarafaResources::modify_resource( $resource,
-			$description, $decline_conflict, $decline_recurring );
+			$description, $decline_conflict, $decline_recurring, $main::in{"type_".$resource}, $main::in{"capacity_".$resource} );
 	}
 	print Yaffas::UI::ok_box ( $main::text{lbl_remind_perms} );
 
