@@ -2,7 +2,7 @@ function OrphanedStores(){
 	this.table = null;
 	this.usertable= null;
 	this.menu = null;
-	this.myDialog = null;
+	this.hookDialog = null;
 	this.setupTable();
 }
 
@@ -10,45 +10,55 @@ OrphanedStores.prototype.hookOrphanedStore = function(){
 	var r = this.table.selectedRows();
 	
 	if (r.length > 0) {
-		if(this.myDialog != null) {
-			this.myDialog.show();
+		if(this.hookDialog != null) {
+			this.hookDialog.show();
 		} else {
-			myDialog = new YAHOO.widget.Dialog("hookToUser",
+			hookDialog = new YAHOO.widget.Dialog("hookToUser",
 			{
-			//	modal: true,
 				fixedcenter: true,
 				draggable: false,
 				close: false,
-			//	visible: false,
+				width: "250px",
 			});
 			var onSuccess = function(o) {
 				var resMatch = o.responseText.search("/>:-\\(</");
-				if(resMatch.length != -1) {
+				if(resMatch != -1) {
 					alert(_("err_could_not_hook_to_user"));
 				}
 				module.usertable.destroy();
-				this.table.reload();
+				module.table.reload();
 			};
 			var onFailure = function(o) {
 				alert("Your submission failed. Status: " + o.status);
 			};
-			myDialog.callback.success = onSuccess;
-			myDialog.callback.failure = onFailure;
+			hookDialog.callback.success = onSuccess;
+			hookDialog.callback.failure = onFailure;
 			var handleSubmit = function() {
 				var ur = module.usertable.selectedRows();
-				var postdata = "orphan=" + r[0][0] + "&username=" + ur[0][1];
-				myDialog.cfg.setProperty("postdata", postdata);
-				this.submit();
+				if(ur[0] == undefined) {
+					alert(_("err_select_user"));
+				} else {
+					var postdata = "orphan=" + r[0][0] + "&username=" + ur[0][1];
+					hookDialog.cfg.setProperty("postdata", postdata);
+					this.submit();
+				}
 			};
 			var handleCancel = function() { this.cancel(); };
 			var myButtons = [ { text: _("lbl_submit_hook"), handler:handleSubmit }, { text: _("lbl_cancel_hook"), handler:handleCancel, isDefault:true }];
-			myDialog.cfg.queueProperty("buttons", myButtons);
-	//		myDialog.hideEvent.subscribe(function(o) {
-	//			setTimeout(function() {myDialog.destroy();}, 0);
-	//		});
-			myDialog.render("hookToUser");
-			this.setupUserTable();
-			myDialog.show();
+			hookDialog.cfg.queueProperty("buttons", myButtons);
+			hookDialog.setBody('<div id="hookDialog_body"><form method="post" action="/zarafaorphanedstores/hook.cgi" name="hook_orphan"><div id="userdata" /></form></div>');
+			hookDialog.setHeader(_("lbl_hook_orphan") + " " + r[0][0]);
+			hookDialog.render();
+			if(this.usertable == null) {
+				this.setupUserTable();
+				this.usertable.hideEvent.subscribe(function(o) {
+        	       setTimeout(function() {this.usertable.destroy();}, 0);
+            	});
+			} else {
+				this.usertable.setupTable();
+			}
+
+			hookDialog.show();
 		}
 	}
 }

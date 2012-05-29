@@ -76,13 +76,10 @@ sub hook_orphan {
 	my $orphan = shift;
 	my $username = shift;
 
-	open(FILE, ">/tmp/hook.log");
-	print FILE "trying to hook $orphan to $username\n";
-	close FILE;
-#	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '-u', $username, '--type', 'user');
-#	unless($result =~ m/^$/) {
+	my $result = Yaffas::do_back_quote_2( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '--hook-store' , $orphan, '-u', $username, '--type', 'user');
+	unless($result =~ m/^$/) {
 		throw Yaffas::Exception("err_hook_orphan");
-#	}
+	}
 }
 
 sub public_orphan {

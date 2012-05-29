@@ -11,14 +11,13 @@ use Sort::Naturally;
 sub show_zarafa_orphaned {
 	print Yaffas::UI::section($main::text{lbl_orphanedstores},
 		$Cgi->div({-id=>"table"}, ""),
-#		$Cgi->div({-id=>"hookToUser"}, ""),
 		$Cgi->div({-id=>"hookToUser", -class=>"yui-pe-content"},
-			$Cgi->div({-class=>"hd"}, $main::text{lbl_hook_orphan}),
-			$Cgi->div({-class=>"bd"},
-				$Cgi->start_form(-method=>"post", -action=>"/zarafaorphanedstores/hook.cgi",-name=>"hook_orphan"),
-				$Cgi->div({-id=>"userdata"}, ""),
-				$Cgi->end_form()
-			),
+#			$Cgi->div({-class=>"hd"}),
+#			$Cgi->div({-class=>"bd"},
+#				$Cgi->start_form(-method=>"post", -action=>"/zarafaorphanedstores/hook.cgi",-name=>"hook_orphan"),
+#				$Cgi->div({-id=>"userdata"}, ""),
+#				$Cgi->end_form()
+#			),
 		),
 		$Cgi->div({-id=>"menu"}, ""),
 	);
