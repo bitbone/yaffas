@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:  noarch
-Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap
+Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafaorphanedstores, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap
 
 %description
 Additional yaffas configuration to make zarafa work
