@@ -89,37 +89,19 @@ sub do_back_quote_2(@) {
 	warn "call do_back_quote_2 with more than one param."	if (scalar @_ <= 1);
 	warn "Use absolute path!\n" unless($_[0] =~ m#^/#);
 
-
-	my $pid;
 	open NULL , ">", "/dev/null";
 
-# this segfaults!!!
-#	my $sig_chld = $SIG{CHLD};
-#	$SIG{CHLD} = sub {close KID;};
+	local $ENV{'PATH'} = "/usr/sbin/:/sbin/:/bin:/usr/bin";
 
-	unless (defined($pid = open3(gensym, ">&NULL", \*KID , "-"))) {
-		print "Can't fork: $!";
-		die;
+	open3(gensym, ">&NULL", \*KID , @_) or die "Can't fork $!";
+
+	my @output = ();
+	local $_;
+	while (<KID>) { # gibt ein kind eine zeile aus ohne zeilenumbruch, blockt die io hier.
+		push @output, $_;
 	}
-	if ($pid) {                     # parent
-		my @output = ();
-		local $_;
-		while (<KID>) { # gibt ein kind eine zeile aus ohne zeilenumbruch, blockt die io hier.
-			push @output, $_;
-		}
-		close KID; 
-		waitpid $pid, POSIX::WNOHANG; # dann wird das hier nicht erreicht und ich behalten den zombi auf dem system
-		# durch die sig child handler wird der FH geschlossen und die io blockt nicht,
-		# waitpid wird durchlaufen
-		# orgninal handler wieder installieren.
-#		$SIG{CHLD} = $sig_chld;
-		return wantarray ? @output : join("", @output);
-	} else {
-		local $ENV{'PATH'} = "/usr/sbin/:/sbin/:/bin:/usr/bin";
-		# Minimal PATH.
-		# Consider sanitizing the environment even more.
-		exec @_ or (print "can't exec $_[0]: $!" and die);
-	}
+	close KID;
+	return wantarray ? @output : join("", @output);
 }
 
 sub do_back_quote_12 (@){
