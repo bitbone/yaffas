@@ -1,7 +1,7 @@
 lbl_option=Option
 lbl_state=State
 lbl_save=Save
-lbl_webaccess_options=Zarafa Webaccess Options
+lbl_webaccess_options=Options
 lbl_DISABLE_FULL_GAB=Disable full Global Address Book
 lbl_ENABLE_GAB_ALPHABETBAR=Enable Alphabetbar in Global Address Book
 lbl_ENABLE_PUBLIC_FOLDERS=Enable Public Folders
@@ -10,9 +10,10 @@ lbl_FCKEDITOR_SPELLCHECKER_ENABLED=Enable spellchecker in HTLM editor
 lbl_THEME_COLOR=Theme Color
 lbl_white=White
 lbl_silver=Silver
-lbl_theme_color=Webaccess Theme Color
+lbl_theme_color=Theme Color
 
 err_undefined_type=Unknown Webaccess Option
 err_undefined_color=Unknown Color
+err_webaccess_config=Could not open webaccess config file
 moduletitle=Webaccess
 

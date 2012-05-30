@@ -13,7 +13,7 @@ ReadParse();
 Yaffas::json_header();
 
 if (defined $main::in{type}) {
-	set_config_value(lc $main::in{type}, $main::in{value});
+	set_config_value($main::in{type}, $main::in{value});
 }
 else {
 	my $f = get_webaccess_values();
@@ -21,7 +21,7 @@ else {
 	my @options;
 
 	foreach (keys %{$f}) {
-		push @options, {"option" => uc $_, "label" => $main::text{get_option_label($_)}, state => $f->{$_} eq "true" ? 1 : 0};
+		push @options, {"option" => $_, "label" => $main::text{get_option_label($_)}, state => $f->{$_} eq "true" ? 1 : 0};
 	}
 
 	print to_json({"Response" => \@options}, {latin1 => 1});

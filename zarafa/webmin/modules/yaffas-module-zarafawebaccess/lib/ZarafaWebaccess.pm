@@ -17,26 +17,52 @@ use Yaffas::Constant;
 use Error qw(:try);
 
 my @known_types = qw(DISABLE_FULL_GAB ENABLE_GAB_ALPHABETBAR ENABLE_PUBLIC_FOLDERS DISABLE_DELETE_IN_RESTORE_ITEMS FCKEDITOR_SPELLCHECKER_ENABLED);
-my $theme_color = "THEME_COLOR";
-
 my %types = map { $_ => "lbl_".$_ } @known_types;
 
 my @known_colors = qw(silver white);
 my %colors = map { $_ => "lbl_".$_ } @known_colors;
 
-my $conf_file = Yaffas::Constant::FILE->{webaccess_config};
+my $theme_color = "THEME_COLOR";
+
+my $filename = Yaffas::Constant::FILE->{webaccess_config};
 
 sub set_config_value {
 	my $type = shift;
 	my $value = shift;
 
 	throw Yaffas::Exception("err_undefined_type") unless exists($types{$type}) or ($type eq $theme_color);
+	
+	my $file = Yaffas::File->new($filename);
+
+	throw Yaffas::Exception("err_webaccess_config") unless defined $file;
+
+	my $rex = qr/define\(["']$type["'],\s*["']{0,1}(\w+)["']{0,1}\);/;
+	my $linenr = $file->search_line($rex);
+	
+	if(defined $linenr) {
+		my $delim = ($value eq "true" || $value eq "false") ? "" : "'";
+		my $newline = "\tdefine('$type', $delim$value$delim);";
+		$file->splice_line($linenr, 1, $newline);
+		$file->write();
+	}
 }
 
 sub get_config_value {
 	my $type = shift;
-	my $value;
 
+	my $file = Yaffas::File->new($filename);
+
+	throw Yaffas::Exception("err_webaccess_config") unless defined $file;
+
+	my $value;
+	my $rex = qr/define\(["']$type["'],\s*["']{0,1}(\w+)["']{0,1}\);/;
+	my $linenr = $file->search_line($rex);
+	
+	if(defined $linenr) {
+		my $line = $file->get_content($linenr);
+		$line =~ m/$rex/;
+		$value = $1;	
+	}
 
 	return $value;
 }
@@ -44,7 +70,7 @@ sub get_config_value {
 sub get_webaccess_values {
 	my $options = {};	
 	foreach my $type (keys %types) {
-		$options->{$type} = "true";
+		$options->{$type} = get_config_value($type);
 	}
 
 	return $options;
@@ -59,7 +85,7 @@ sub set_theme_color {
 }
 
 sub get_theme_color {
-	my $color;
+	my $color = get_config_value("THEME_COLOR");
 	return $color;
 }
 

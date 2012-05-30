@@ -25,11 +25,11 @@ ZarafaWebaccess.prototype.setupTable = function() {
 
 			YAHOO.util.Event.addListener(e.getElementsByTagName("input")[0], "click", function() {
 				console.log("clicked %s %s", this.checked, record.getData().option);
-				Yaffas.ui.submitURL("/zarafawebaccess/options.cgi", {service: record.getData().option, value: this.checked ? "1" : "0"})
+				Yaffas.ui.submitURL("/zarafawebaccess/options.cgi", {type: record.getData().option, value: this.checked ? "true" : "false"})
 			})
     	}
     }];
-	this.usertable = new Yaffas.Table({
+	this.table = new Yaffas.Table({
 		container: "options",
 		columns: myColumnDefs,
 		url: "/zarafawebaccess/options.cgi",
@@ -37,35 +37,13 @@ ZarafaWebaccess.prototype.setupTable = function() {
 	});
 }
 
-
-function getElementsByClass(searchClass, node, tag){
-    var classElements = new Array();
-    if (node == null) 
-        node = document;
-    if (tag == null) 
-        tag = '*';
-    var els = node.getElementsByTagName(tag);
-    var elsLen = els.length;
-    var pattern = new RegExp("(^|\\\\s)" + searchClass + "(\\\\s|$)");
-    for (i = 0, j = 0; i < elsLen; i++) {
-        if (pattern.test(els[i].className)) {
-            classElements[j] = els[i];
-            j++;
-        }
-    }
-    return classElements;
-}
-
-function toggle_filtergroup(selected){
-    var array = getElementsByClass("filtergroup");
-    for (var i = 0; i < array.length; i++) {
-        if (selected == 2) {
-            array[i].style.display = "table-cell";
-        }
-        else {
-            array[i].style.display = "none";
-        }
+ZarafaWebaccess.prototype.savedForm = function(url){
+    switch (url) {
+        case "options.cgi":
+            this.table.reload();
+            break;
     }
 }
+
 
 module = new ZarafaWebaccess();
