@@ -107,7 +107,10 @@ sub conf_dump() {
 	my $bkc = Yaffas::Conf->new();
 	my $sec = $bkc->section("zarafawebaccess");
 	my $func;
-	for my $type (qw(DISABLE_FULL_GAB ENABLE_GAB_ALPHABETBAR ENABLE_PUBLIC_FOLDERS DISABLE_DELETE_IN_RESTORE_ITEMS FCKEDITOR_SPELLCHECKER_ENABLED THEME_COLOR)) {
+	my @conf_types;
+	push @conf_types, @known_types;
+	push @conf_types, $theme_color;
+	for my $type (@conf_types) {
 		$func = Yaffas::Conf::Function->new("webaccess-config-$type", "Yaffas::Module::ZarafaWebaccess::set_config_value");
 		$func->add_param({type => "scalar", param => $type});
 		$func->add_param({type => "scalar", param => get_config_value($type)});
