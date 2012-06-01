@@ -251,6 +251,13 @@ or
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
+[NOTE]
+==============
+
+For Red Hat Enterprise Linux systems it is necessary to subscribe to the "RHEL Server Optional" channel. This is not done by default.
+
+==============
+
 [CAUTION]
 ==============
 

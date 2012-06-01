@@ -199,6 +199,14 @@ Folgender Befehl installiert RPMforge für 64-bit Systeme:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
 
+[NOTE]
+==============
+
+Für Red Hat Enterprise Linux Systeme ist es notwendig den Kanal "RHEL Server Optional" zu abonnieren. Dies geschieht nicht automatisch.
+
+==============
+
+
 [CAUTION]
 ==============
 
