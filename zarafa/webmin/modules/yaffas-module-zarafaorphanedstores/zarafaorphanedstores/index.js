@@ -16,9 +16,9 @@ OrphanedStores.prototype.hookOrphanedStore = function(){
 			hookDialog = new YAHOO.widget.Dialog("hookToUser",
 			{
 				fixedcenter: true,
-				draggable: false,
+				draggable: true,
 				close: false,
-				width: "250px",
+				width: "750px",
 			});
 			var onSuccess = function(o) {
 				var resMatch = o.responseText.search("/>:-\\(</");
