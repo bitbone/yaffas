@@ -64,6 +64,10 @@ sub show_installed_licences() {
 														$archiver_serial),
 									 )
 							);
+	#print $Cgi->h2($main::text{lbl_usercount});
+	#my @usercount = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--user-count");
+	#shift @usercount;
+	#print $Cgi->pre(@usercount);
 	print Yaffas::UI::end_section();
 }
 
