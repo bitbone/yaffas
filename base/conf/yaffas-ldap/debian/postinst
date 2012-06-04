@@ -104,6 +104,7 @@ case "$1" in
             if [ -e /etc/apparmor.d/local/usr.sbin.slapd ]; then
                 mv -f /etc/apparmor.d/local/usr.sbin.slapd /etc/apparmor.d/local/usr.sbin.slapd.yaffassave
             fi
+            mkdir -p /etc/apparmor.d/local/
             cp -f ${YAFFAS_EXAMPLE}/etc/apparmor.d/local/* /etc/apparmor.d/local/
 			/etc/init.d/apparmor reload
 		fi
