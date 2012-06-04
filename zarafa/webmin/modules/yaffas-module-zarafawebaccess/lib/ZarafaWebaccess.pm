@@ -19,7 +19,7 @@ use Error qw(:try);
 my @known_types = qw(DISABLE_FULL_GAB ENABLE_GAB_ALPHABETBAR ENABLE_PUBLIC_FOLDERS DISABLE_DELETE_IN_RESTORE_ITEMS FCKEDITOR_SPELLCHECKER_ENABLED);
 my %types = map { $_ => "lbl_".$_ } @known_types;
 
-my @known_colors = qw(silver white);
+my @known_colors = qw(classic silver white);
 my %colors = map { $_ => "lbl_".$_ } @known_colors;
 
 my $theme_color = "THEME_COLOR";

@@ -8,22 +8,6 @@ use Yaffas::Auth::Type qw(:standard);
 use Yaffas::Mail;
 use Yaffas::Module::ZarafaWebaccess qw(get_theme_color get_color_labels);
 
-#sub show_options_old() {
-#
-#	print "<script src='functions.js' type='text/javascript'></script>";
-#	print $Cgi->start_form({-action=>"options.cgi"});
-#	print Yaffas::UI::section($main::text{lbl_options},
-#							  $Cgi->table(
-#										  $Cgi->Tr([
-#												   _filtertype(\@settings),
-#												   _filtergroup(\@settings),
-#												   ])
-#										 )
-#							 );
-#	print Yaffas::UI::section_button($Cgi->button({-id=>"saveoptions", -label=>$main::text{'lbl_save'}}));
-#	print $Cgi->end_form();
-#}
-
 sub show_options() {
 	print Yaffas::UI::section($main::text{lbl_webaccess_options},
 		$Cgi->div({-id=>"options"}, "")
@@ -35,19 +19,20 @@ sub show_theme_color() {
 	my $color_labels = get_color_labels();
 	my $colors = map {$_ => $main::text{$color_labels->{$_}}} keys %{$color_labels};
 	print $Cgi->start_form({-action => "theme_color.cgi"});
-	print Yaffas::UI::section($main::text{lbl_theme_color},
-							  $Cgi->table(
-										  $Cgi->Tr([
-												   $main::text{lbl_theme_color}.": ",
-#												   textfield({-name => "theme_color", -value => $main::text(get_color_label(get_theme_color()))}),
-												   $Cgi->scrolling_list(-name => 'theme_color',
-                                                            -values => [keys %{$color_labels}],
-															-labels => $colors,
-                                                            -default => get_theme_color(),
-                                                            -size => 1),
-												   ])
-										 )
-						 );
+	print Yaffas::UI::section($main::text{lbl_theme_color}, 
+		$Cgi->p(
+			$Cgi->table(
+				$Cgi->Tr([
+						$main::text{lbl_theme_color}.": ",
+						$Cgi->scrolling_list(-name => 'theme_color',
+							-values => [keys %{$color_labels}],
+							-labels => $colors,
+							-default => get_theme_color(),
+							-size => 1),
+					])
+			)
+		)
+	);
 	print Yaffas::UI::section_button($Cgi->submit({-name=>"savecolor", -value=>$main::text{'lbl_save'}}));
 	print $Cgi->end_form();
 }
