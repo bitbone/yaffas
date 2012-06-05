@@ -31,7 +31,7 @@ sub set_config_value {
 	my $value = shift;
 
 	throw Yaffas::Exception("err_undefined_type") unless exists($types{$type}) or ($type eq $theme_color);
-	
+
 	my $file = Yaffas::File->new($filename);
 
 	throw Yaffas::Exception("err_webaccess_config") unless defined $file;
@@ -44,6 +44,12 @@ sub set_config_value {
 		my $newline = "\tdefine('$type', $delim$value$delim);";
 		$file->splice_line($linenr, 1, $newline);
 		$file->write();
+	}
+
+	if ($type eq "FCKEDITOR_SPELLCHECKER_ENABLED" && $value eq "true") {
+		if (! -x "/usr/bin/aspell") {
+			throw Yaffas::Exception("err_no_aspell");
+		}
 	}
 }
 

@@ -15,5 +15,6 @@ lbl_theme_color=Theme Color
 err_undefined_type=Unknown Webaccess Option
 err_undefined_color=Unknown Color
 err_webaccess_config=Could not open webaccess config file
+err_no_aspell=Please install the package "aspell-lang" (e.g. aspell-de for german) for spell checking in your language.
 moduletitle=Webaccess
 

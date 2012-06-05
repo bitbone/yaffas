@@ -3,7 +3,9 @@
 use strict;
 use warnings;
 
+use Error qw(:try);
 use Yaffas;
+use Yaffas::UI;
 use Yaffas::Module::ZarafaWebaccess qw(set_config_value get_option_label get_webaccess_values);
 use JSON;
 
@@ -13,7 +15,11 @@ ReadParse();
 Yaffas::json_header();
 
 if (defined $main::in{type}) {
-	set_config_value($main::in{type}, $main::in{value});
+	try {
+		set_config_value($main::in{type}, $main::in{value});
+	} catch Yaffas::Exception with {
+		print Yaffas::UI::all_error_box(shift);
+	};
 }
 else {
 	my $f = get_webaccess_values();
