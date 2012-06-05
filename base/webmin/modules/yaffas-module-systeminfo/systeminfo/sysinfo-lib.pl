@@ -169,7 +169,7 @@ local ($_, @rv, @mem_splitter, @swap_splitter, $meminfo);
 
 open(PROC_MEMINFO, "/proc/meminfo");
 
-if ( `uname -r` =~ 2.6 ) {
+if ( `uname -r` =~ /^(3\.\d|2\.6)/ ) {
     # Get it the easy way
     while ($_ = <PROC_MEMINFO>) {
         if ( /^MemTotal:\s+(\d+)\skB/ ) { $mem_total = $1 };
