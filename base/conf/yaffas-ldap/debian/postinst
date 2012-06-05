@@ -131,6 +131,8 @@ case "$1" in
 		sed -e "s/BASE/$BASE/" -i $LDAPCONF
 		sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
 		sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
+		HOST=$(hostname -s)
+		sed -e "s/DOMAIN/$HOST/" -i $SMBLDAP_CONF
 		sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
 
 		echo "Removing old LDAP Database"
