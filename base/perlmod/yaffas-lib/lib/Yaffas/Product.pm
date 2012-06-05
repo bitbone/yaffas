@@ -173,7 +173,7 @@ sub get_version_of($) {
 		}
 	}
 
-	return $1 if $version =~ /v([.\d]+)/;
+	return $1 if $version =~ /v([.\d]+-?.*)/;
 	return 0;
 }
 

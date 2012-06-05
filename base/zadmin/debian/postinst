@@ -24,6 +24,10 @@ case "$1" in
     KEY="framework"
     VALUE='Z-Admin v1.1.1'
 
+    if [ -e /opt/yaffas/share/doc/example/etc/git-revision ]; then
+        VALUE=$VALUE-$(cat /opt/yaffas/share/doc/example/etc/git-revision | tr "-" " " | awk '{ print $3 }')
+    fi
+
     if [ -e $CONF ]; then
         if ! grep -iq ^$KEY $CONF; then
             echo "$KEY=$VALUE" >> $CONF
