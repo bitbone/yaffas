@@ -1,5 +1,5 @@
 function Setup(){
-    this.pages = 4;
+    this.pages = 5;
     this.currentPage = 1;
     this.form = null;
 
@@ -20,7 +20,7 @@ Setup.prototype.setupUI = function() {
     }.bind(this));
     this.btnSubmit.set("disabled", true);
 
-    this.form = this.btnSubmit.get("element").parentNode.parentNode.parentNode;
+    this.form = this.btnSubmit.get("element").parentNode.parentNode;
 }
 
 Setup.prototype.finished = function() {

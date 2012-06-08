@@ -9,10 +9,15 @@ use Yaffas::Product;
 use Error qw(:try);
 
 sub show_setup() {
+    my $page = 0;
     print $Cgi->start_form({-action=>"initialsetup.cgi", -method=>"post"});
-    print Yaffas::UI::section("Setup", $Cgi->div( {-id=>"setup"},
+    print Yaffas::UI::section("Quick Setup", $Cgi->div( {-id=>"setup", -style=>"height: 20em;"},
             $Cgi->div({-id=>"page-1"},
-                $Cgi->h2($main::text{lbl_basic_settings}." (1/4)"),
+                $Cgi->h2($main::text{lbl_welcome}." (1/5)"),
+                $Cgi->p($main::text{lbl_settings}),
+            ),
+            $Cgi->div({-id=>"page-2", -style=>"display: none"},
+                $Cgi->h2($main::text{lbl_basic_settings}." (2/5)"),
                 $Cgi->table(
                     $Cgi->Tr(
                         $Cgi->td($main::text{lbl_admin_pw}.":"),
@@ -25,12 +30,12 @@ sub show_setup() {
                 ),
             ),
             Yaffas::Product::check_product("zarafa") ? (
-                $Cgi->div({-id=>"page-2", -style=>"display: none"},
-                    $Cgi->h2($main::text{lbl_zarafa_settings}." (2/4)"),
+                $Cgi->div({-id=>"page-3", -style=>"display: none"},
+                    $Cgi->h2($main::text{lbl_zarafa_settings}." (3/5)"),
                     $Cgi->table(
                         $Cgi->Tr(
                             $Cgi->td($main::text{lbl_mysql_user}.":"),
-                            $Cgi->td(textfield({-name=>"mysql_user"}))
+                            $Cgi->td(textfield({-name=>"mysql_user", -default=>"root"}))
                         ),
                         $Cgi->Tr(
                             $Cgi->td($main::text{lbl_mysql_password}.":"),
@@ -38,28 +43,29 @@ sub show_setup() {
                         ),
                         $Cgi->Tr(
                             $Cgi->td($main::text{lbl_mysql_host}.":"),
-                            $Cgi->td(textfield({-name=>"mysql_host"}))
+                            $Cgi->td(textfield({-name=>"mysql_host", -default=>"localhost"}))
                         ),
                         $Cgi->Tr(
                             $Cgi->td($main::text{lbl_mysql_database}.":"),
-                            $Cgi->td(textfield({-name=>"mysql_database"}))
+                            $Cgi->td(textfield({-name=>"mysql_database", -default=>"zarafa"}))
                         ),
                     )
                 )
             ) : (),
-            $Cgi->div({-id=>"page-3", -style=>"display: none"},
-                $Cgi->h2($main::text{lbl_mailserver_settings}." (3/4)"),
+            $Cgi->div({-id=>"page-4", -style=>"display: none"},
+                $Cgi->h2($main::text{lbl_mailserver_settings}." (4/5)"),
                 $Cgi->table(
                     map {
                     $Cgi->Tr(
                         $Cgi->td($main::text{"lbl_mailserver_".$_}.":"),
                         $Cgi->td(textfield({-name=>"mailserver_".$_}))
                     )
-                    } qw(domain smarthost smarthost_user smarthost_password)
+                    } qw(domain smarthost_server smarthost_user smarthost_password)
                 )
             ),
-            $Cgi->div({-id=>"page-4", -style=>"display: none"},
-                $Cgi->h2($main::text{lbl_user_settings}." (4/4)"),
+            $Cgi->div({-id=>"page-5", -style=>"display: none"},
+                $Cgi->h2($main::text{lbl_user_settings}." (5/5)"),
+                $Cgi->p($main::text{lbl_user_local_ldap}),
                 $Cgi->table(
                     map {
                     $Cgi->Tr(
@@ -68,8 +74,6 @@ sub show_setup() {
                     )
                     } qw(login firstname surname email password password_repeat)
                 )
-            ),
-            $Cgi->div({-id=>"page-3", -style=>"display: none"},
             ),
         )
     );

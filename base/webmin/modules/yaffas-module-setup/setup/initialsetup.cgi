@@ -36,8 +36,8 @@ try {
 		set_accept_domains($main::in{mailserver_domain});
 	}
 
-	if ($main::in{mailserver_smarthost}) {
-		set_smarthost($main::in{mailserver_smarthost}, $main::in{mailserver_smarthost_user}, $main::in{mailserver_smarthost_password})
+	if ($main::in{mailserver_smarthost_server}) {
+		set_smarthost($main::in{mailserver_smarthost_server}, $main::in{mailserver_smarthost_user}, $main::in{mailserver_smarthost_password})
 	}
 
 	if ($main::in{user_login}) {
