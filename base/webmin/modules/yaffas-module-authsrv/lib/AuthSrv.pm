@@ -467,6 +467,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 		$smbldap_bind->write();
 
+		_remove_webaccess_plugin("passwd");
+
 		# be sure system domain ist same as in ldap tree if local auth.
 		if ($host eq "127.0.0.1" || $host eq "localhost")
 		{
@@ -502,6 +504,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 			# move ldap_secret_local file to ldap_secret
 			move (Yaffas::Constant::FILE->{ldap_secret_local}, Yaffas::Constant::FILE->{ldap_secret});
+			_link_webaccess_plugin("passwd");
 		}
 		
 		# /etc/ldap.settings (must be done after samba, otherwise get_auth_type fails...
@@ -990,6 +993,8 @@ sub set_pdc( ;$$$$$$$$){
 		Yaffas::Service::control(SAMBA, RESTART);
 		Yaffas::Service::control(WINBIND, RESTART);
 		Yaffas::Service::control(USERMIN, RESTART);
+
+		_remove_webaccess_plugin("passwd");
 
 		# for RedHat
 		mod_pam("winbind");
@@ -1724,6 +1729,24 @@ sub _create_builtin_admins($$) {
 
 	system("net", "sam", "createbuiltingroup", "administrators");
 	system("net", "sam", "addmem", "administrators", "$dom\\$admin");
+}
+
+sub _link_webaccess_plugin {
+	my $plugin = shift;
+	if (Yaffas::Product::check_product("zarafa")) {
+		unless (-d "/var/lib/zarafa-webaccess/plugins/$plugin") {
+			symlink "/opt/yaffas/zarafa/webaccess/plugins/$plugin/", "/var/lib/zarafa-webaccess/plugins/$plugin";
+		}
+	}
+}
+
+sub _remove_webaccess_plugin {
+	my $plugin = shift;
+	if (Yaffas::Product::check_product("zarafa")) {
+		if (-l "/var/lib/zarafa-webaccess/plugins/$plugin") {
+			unlink "/var/lib/zarafa-webaccess/plugins/$plugin";
+		}
+	}
 }
 
 1;

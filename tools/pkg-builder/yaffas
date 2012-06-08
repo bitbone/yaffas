@@ -574,6 +574,11 @@ source BASE/zarafa/PACKAGE_NAME/
 dest BASE
 </z-push>
 
+<zarafa-wa-plugins>
+source BASE/zarafa/PACKAGE_NAME/
+dest BASE
+</zarafa-wa-plugins>
+
 #<bbconf-modsamba-zarafa>
 #source BASE/zarafa/PACKAGE_NAME/
 #dest BASE

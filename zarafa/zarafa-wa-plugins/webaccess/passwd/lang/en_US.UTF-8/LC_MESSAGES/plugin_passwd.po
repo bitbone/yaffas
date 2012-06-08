@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-26 20:42+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dialogs/pwdchange.php:4
+msgid "Password change result"
+msgstr "Password change result"
+
+#: dialogs/pwdchange.php:19
+msgid "Password changed successfully"
+msgstr "Password changed successfully"
+
+#: dialogs/pwdchange.php:21
+msgid "An error occured!"
+msgstr "An error occured!"
+
+#: dialogs/pwdchange.php:25
+msgid "Failed!"
+msgstr "Failed!"
+
+#: dialogs/pwdchange.php:26
+msgid "New Passwords don't match"
+msgstr "New Passwords don't match"
+
+#: dialogs/pwdchange.php:27
+msgid "Username missing"
+msgstr "Username missing"
+
+#: tabs/pwdchange.php:4 tabs/pwdchange.php:16 tabs/pwdchange.php:33
+msgid "Change Password"
+msgstr "Change Password"
+
+#: tabs/pwdchange.php:19
+msgid "Old password"
+msgstr "Old password"
+
+#: tabs/pwdchange.php:23
+msgid "New password"
+msgstr "New password"
+
+#: tabs/pwdchange.php:27
+msgid "Retype new password"
+msgstr "Retype new password"

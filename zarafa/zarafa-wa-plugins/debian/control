@@ -1,0 +1,12 @@
+Source: zarafa-wa-plugins
+Section: yaffas
+Priority: optional
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.2
+
+Package: zarafa-wa-plugins
+Architecture: all
+Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa-webaccess
+Description: Misc zarafa webaccess/webapp plugins
+ Misc zarafa webaccess/webapp plugins
