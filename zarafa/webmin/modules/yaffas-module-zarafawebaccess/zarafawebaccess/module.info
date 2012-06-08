@@ -5,3 +5,6 @@ name=zarafawebaccess
 category=groupware
 desc=Zarafa Webaccess
 version=1.0
+desc_nl=Webaccess
+desc_fr=Webaccess
+desc_pt_BR=Webaccess

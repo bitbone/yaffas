@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -74,67 +74,92 @@ msgstr "Wilt u deze resources echt verwijderen?"
 msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
 msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die deze resource moeten kunnen boeken in de kalender-instelling voor deze resource."
 
+#: lang/en:12
+#, no-wrap
+msgid "Type"
+msgstr ""
+
 #: lang/en:13
+#, no-wrap
+msgid "Capacity"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Room"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Equipment"
+msgstr ""
+
+#: lang/en:17
 #, no-wrap
 msgid "The name of the resource contains illegal characters."
 msgstr "De naam van de resource bevat ongeldige tekens."
 
-#: lang/en:14
+#: lang/en:18
 #, no-wrap
 msgid "The name of the resource is taken from a special user."
 msgstr "De naam van de resource is bezet door een speciale gebruiker."
 
-#: lang/en:15
+#: lang/en:19
 #, no-wrap
 msgid "The description of the resource contains illegal characters."
 msgstr "De omschrijving van de resource bevat ongeldige tekens."
 
-#: lang/en:16
+#: lang/en:20
 #, no-wrap
 msgid "No e-mail address specified."
 msgstr "Geen e-mailadres opgegeven."
 
-#: lang/en:17
+#: lang/en:21
 #, no-wrap
 msgid "You cannot use localhost as domain-part."
 msgstr "U kunt localhost niet gebruiken als domein-onderdeel."
 
-#: lang/en:18
+#: lang/en:22
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr "Het domein is niet gedefinieerd als lokaal domein in de e-mailserver-configuratie."
 
-#: lang/en:19
+#: lang/en:23
 #, no-wrap
 msgid "Local-part of e-mail address must be identical with name."
 msgstr "Het lokale deel van het e-mailadres moet gelijk zijn aan de naam."
 
-#: lang/en:20
+#: lang/en:24
 #, no-wrap
 msgid "The e-mail address is not valid."
 msgstr "Het e-mailadres is niet geldig."
 
-#: lang/en:21
+#: lang/en:25
 #, no-wrap
 msgid "The name of the resource is taken from a user."
 msgstr "De naam van de resource is bezet door een gebruiker."
 
-#: lang/en:22
+#: lang/en:26
 #, no-wrap
 msgid "The name of the resource is taken from a user's alias."
 msgstr "De naam van de resource is bezet door een alias van een gebruiker."
 
-#: lang/en:23
+#: lang/en:27
 #, no-wrap
 msgid "The given resource doesn't exist."
 msgstr "De opgegeven resource bestaat niet."
 
-#: lang/en:24
+#: lang/en:28
 #, no-wrap
 msgid "No local mail domains configured."
 msgstr "Geen lokale e-maildomeinen geconfigureerd."
 
-#: lang/en:25
+#: lang/en:29
+#, no-wrap
+msgid "Capacity have to be a number."
+msgstr ""
+
+#: lang/en:30
 #, no-wrap
 msgid "Resources"
 msgstr "Resources"
@@ -158,3 +183,13 @@ msgstr "De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat.
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
 msgstr "Vink dit aan om herhalende afspraken voor deze resource te weigeren."
+
+#: help/en:5
+#, no-wrap
+msgid "Select the type of the resource."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Define the capacity of the resource. This value is only available for equipment resources."
+msgstr ""

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,67 +72,92 @@ msgid ""
 "this resource in the calendar setting for this resource."
 msgstr ""
 
+#: lang/en:12
+#, no-wrap
+msgid "Type"
+msgstr ""
+
 #: lang/en:13
 #, no-wrap
-msgid "The name of the resource contains illegal characters."
+msgid "Capacity"
 msgstr ""
 
 #: lang/en:14
 #, no-wrap
-msgid "The name of the resource is taken from a special user."
+msgid "Room"
 msgstr ""
 
 #: lang/en:15
 #, no-wrap
-msgid "The description of the resource contains illegal characters."
-msgstr ""
-
-#: lang/en:16
-#, no-wrap
-msgid "No e-mail address specified."
+msgid "Equipment"
 msgstr ""
 
 #: lang/en:17
 #, no-wrap
-msgid "You cannot use localhost as domain-part."
+msgid "The name of the resource contains illegal characters."
 msgstr ""
 
 #: lang/en:18
 #, no-wrap
-msgid "The domain is not defined as local domain in your mailserver configuration."
+msgid "The name of the resource is taken from a special user."
 msgstr ""
 
 #: lang/en:19
 #, no-wrap
-msgid "Local-part of e-mail address must be identical with name."
+msgid "The description of the resource contains illegal characters."
 msgstr ""
 
 #: lang/en:20
 #, no-wrap
-msgid "The e-mail address is not valid."
+msgid "No e-mail address specified."
 msgstr ""
 
 #: lang/en:21
 #, no-wrap
-msgid "The name of the resource is taken from a user."
+msgid "You cannot use localhost as domain-part."
 msgstr ""
 
 #: lang/en:22
 #, no-wrap
-msgid "The name of the resource is taken from a user's alias."
+msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr ""
 
 #: lang/en:23
 #, no-wrap
-msgid "The given resource doesn't exist."
+msgid "Local-part of e-mail address must be identical with name."
 msgstr ""
 
 #: lang/en:24
 #, no-wrap
-msgid "No local mail domains configured."
+msgid "The e-mail address is not valid."
 msgstr ""
 
 #: lang/en:25
+#, no-wrap
+msgid "The name of the resource is taken from a user."
+msgstr ""
+
+#: lang/en:26
+#, no-wrap
+msgid "The name of the resource is taken from a user's alias."
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "The given resource doesn't exist."
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "No local mail domains configured."
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "Capacity have to be a number."
+msgstr ""
+
+#: lang/en:30
 #, no-wrap
 msgid "Resources"
 msgstr ""
@@ -157,4 +182,16 @@ msgstr ""
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "Select the type of the resource."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid ""
+"Define the capacity of the resource. This value is only available for "
+"equipment resources."
 msgstr ""

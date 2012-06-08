@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: 2012-04-26 09:24+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,8 +38,8 @@ msgid "Install new client key"
 msgstr "Touche Installer un nouveau client"
 
 #: lang/en:5
-#, no-wrap
-msgid "Installed licenses"
+#, fuzzy, no-wrap
+msgid "Installed subscriptions"
 msgstr "Licences installées"
 
 #: lang/en:6
@@ -53,8 +53,8 @@ msgid "Serial number"
 msgstr "Numéro de série"
 
 #: lang/en:8
-#, no-wrap
-msgid "License Log"
+#, fuzzy, no-wrap
+msgid "Licensed Log"
 msgstr "Fichier journal de licence"
 
 #: lang/en:9
@@ -79,5 +79,8 @@ msgstr "Touche Installer un nouveau client d'archivage"
 
 #: lang/en:14
 #, no-wrap
-msgid "Zarafa License Key"
-msgstr "Clé de licence Zarafa"
+msgid "Zarafa Subscription"
+msgstr ""
+
+#~ msgid "Zarafa License Key"
+#~ msgstr "Clé de licence Zarafa"

@@ -2,3 +2,5 @@ name=Ce nom sera affiché dans le carnet d'adresse global.
 description=Il peut être judicieux d'ajouter une description si le nom de la ressource n'est pas explicatif.
 decline_conflict=Cocher cette case afin que la ressource ne puisse être réservée qu'une seule fois.
 decline_recurring=Cocher cette case afin que de désactiver les utilisations récurrentes de cette ressource.
+type=Select the type of the resource.
+capacity=Define the capacity of the resource. This value is only available for equipment resources.
