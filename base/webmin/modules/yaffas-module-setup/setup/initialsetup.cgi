@@ -47,6 +47,9 @@ try {
 		Yaffas::UGM::password($main::in{user_login}, $main::in{user_password});
 	}
 
+	Yaffas::UGM::create_group_aliases();
+	Yaffas::Service::control(POSTFIX, RESTART);
+
 	Yaffas::Module::Setup::hide();
 }
 catch Yaffas::Exception with {
