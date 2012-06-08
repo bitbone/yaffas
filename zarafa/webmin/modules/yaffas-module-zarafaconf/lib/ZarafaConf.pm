@@ -363,6 +363,7 @@ sub set_zarafa_database($$$$) {
 
 	throw Yaffas::Exception("err_syntax") if ($host =~ /;/ or $database =~ /;/);
 	throw Yaffas::Exception("err_password_hash") if ($password =~ /#/);
+	throw Yaffas::Exception("err_no_server") unless ($host);
 
 	my $db = DBI->connect("dbi:mysql:host=$host", $user, $password);
 
