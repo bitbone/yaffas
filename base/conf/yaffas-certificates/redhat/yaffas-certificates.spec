@@ -24,7 +24,9 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %{__rm} -rf $RPM_BUILD_ROOT
 
 %pre
-cp /opt/yaffas/etc/ssl/certs/org/default.* /opt/yaffas/var/
+if [ -f /opt/yaffas/etc/ssl/certs/org/default.crt ]; then
+    cp /opt/yaffas/etc/ssl/certs/org/default.* /opt/yaffas/var/
+fi
 
 %post
 YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
