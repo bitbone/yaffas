@@ -22,7 +22,7 @@ my @ldap_conffiles = (
 	"/etc/nslcd.conf",
 	"/etc/postfix/ldap-users.cf",
 	"/etc/postfix/ldap-aliases.cf",
-	"/var/lib/zarafa-webaccess/plugins/passwd/config.inc.php",
+	"/opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php",
 );
 my @other_conffiles = ("/etc/hosts", "/etc/defaultdomain");
 my $old_domain;
