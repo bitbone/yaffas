@@ -75,7 +75,7 @@ msgstr "Ne pas oublier d'attribuer les autorisations adéquates aux utilisateurs
 #: lang/en:12
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: lang/en:13
 #, no-wrap

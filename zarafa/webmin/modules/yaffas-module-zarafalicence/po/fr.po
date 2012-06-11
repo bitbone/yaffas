@@ -38,9 +38,9 @@ msgid "Install new client key"
 msgstr "Touche Installer un nouveau client"
 
 #: lang/en:5
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Installed subscriptions"
-msgstr "Licences installées"
+msgstr ""
 
 #: lang/en:6
 #, no-wrap
@@ -52,6 +52,7 @@ msgstr "Touche Base"
 msgid "Serial number"
 msgstr "Numéro de série"
 
+# 91%
 #: lang/en:8
 #, fuzzy, no-wrap
 msgid "Licensed Log"
@@ -81,6 +82,3 @@ msgstr "Touche Installer un nouveau client d'archivage"
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
-
-#~ msgid "Zarafa License Key"
-#~ msgstr "Clé de licence Zarafa"

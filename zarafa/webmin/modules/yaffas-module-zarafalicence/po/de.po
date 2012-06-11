@@ -38,9 +38,9 @@ msgid "Install new client key"
 msgstr "Neuen Client-Schlüssel installieren"
 
 #: lang/en:5
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Installed subscriptions"
-msgstr "Installierte Lizenzen"
+msgstr ""
 
 #: lang/en:6
 #, no-wrap
@@ -52,6 +52,7 @@ msgstr "Basis Schlüssel"
 msgid "Serial number"
 msgstr "Serialnummer"
 
+# 91%
 #: lang/en:8
 #, fuzzy, no-wrap
 msgid "Licensed Log"
@@ -81,6 +82,3 @@ msgstr "Neuen Archiver Client Schlüssel installieren"
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
-
-#~ msgid "Zarafa License Key"
-#~ msgstr "Zarafa Lizenzschlüssel"

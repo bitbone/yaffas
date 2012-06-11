@@ -77,7 +77,7 @@ msgstr "Vergeet niet om de juiste permissies toe te kennen aan gebruikers die de
 #: lang/en:12
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: lang/en:13
 #, no-wrap

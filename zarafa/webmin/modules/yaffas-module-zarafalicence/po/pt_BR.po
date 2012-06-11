@@ -38,9 +38,9 @@ msgid "Install new client key"
 msgstr "Instalar nova licença CAL"
 
 #: lang/en:5
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Installed subscriptions"
-msgstr "Licenças instaladas"
+msgstr ""
 
 #: lang/en:6
 #, no-wrap
@@ -52,6 +52,7 @@ msgstr "Serial principal"
 msgid "Serial number"
 msgstr "Serial"
 
+# 91%
 #: lang/en:8
 #, fuzzy, no-wrap
 msgid "Licensed Log"
@@ -81,6 +82,3 @@ msgstr "Instalar nova licença Archiver CAL"
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
-
-#~ msgid "Zarafa License Key"
-#~ msgstr "Serial Zarafa"

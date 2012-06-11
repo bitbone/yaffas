@@ -75,7 +75,7 @@ msgstr "Vergessen Sie nicht, Benutzern, die diese Ressource buchen sollen die n√
 #: lang/en:12
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: lang/en:13
 #, no-wrap

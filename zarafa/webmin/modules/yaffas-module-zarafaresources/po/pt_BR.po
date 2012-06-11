@@ -75,7 +75,7 @@ msgstr "As permissões adequadas para os usuários que poderão reservar este re
 #: lang/en:12
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "Tipo"
 
 #: lang/en:13
 #, no-wrap

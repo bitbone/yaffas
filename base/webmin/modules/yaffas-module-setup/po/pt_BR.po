@@ -69,9 +69,9 @@ msgid "Setup was finished successfully. After relogin you can use all features."
 msgstr "A configuração foi completada com sucesso. Apos o re-logon todos os recursos estarão disponíveis."
 
 #: lang/en:14
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Mailserver settings"
-msgstr "Configurações básicas"
+msgstr ""
 
 #: lang/en:15
 #, no-wrap
@@ -81,28 +81,28 @@ msgstr ""
 #: lang/en:16
 #, no-wrap
 msgid "Smarthost"
-msgstr ""
+msgstr "Smarthost"
 
 #: lang/en:17
 #, no-wrap
 msgid "Username (if needed)"
 msgstr ""
 
-# 85%
 #: lang/en:18 lang/en:24
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Password"
-msgstr "Senha do Administrador"
+msgstr "Senha"
 
 #: lang/en:20
 #, no-wrap
 msgid "Create user"
 msgstr ""
 
+# 77%
 #: lang/en:21
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Loginname"
-msgstr ""
+msgstr "Nome do log"
 
 #: lang/en:22
 #, no-wrap
@@ -110,19 +110,19 @@ msgid "Firstname"
 msgstr ""
 
 #: lang/en:23
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Surname"
-msgstr "Nome do usuário MySQL"
+msgstr "Sobrenome"
 
 #: lang/en:25
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Password (repeat)"
-msgstr "Senha do Administrador (confirmar)"
+msgstr ""
 
 #: lang/en:26
 #, no-wrap
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: lang/en:28
 #, no-wrap

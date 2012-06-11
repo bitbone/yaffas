@@ -38,9 +38,9 @@ msgid "Install new client key"
 msgstr "Nieuwe clientsleutel toevoegen"
 
 #: lang/en:5
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Installed subscriptions"
-msgstr "Geïnstalleerde licenties"
+msgstr ""
 
 #: lang/en:6
 #, no-wrap
@@ -52,6 +52,7 @@ msgstr "Basissleutel"
 msgid "Serial number"
 msgstr "Serienummer"
 
+# 91%
 #: lang/en:8
 #, fuzzy, no-wrap
 msgid "Licensed Log"
@@ -81,6 +82,3 @@ msgstr "Nieuwe archiver-clientsleutel toevoegen"
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
-
-#~ msgid "Zarafa License Key"
-#~ msgstr "Zarafa Licentiesleutel"
