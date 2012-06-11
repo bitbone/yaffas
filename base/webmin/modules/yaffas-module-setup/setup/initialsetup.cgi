@@ -115,6 +115,8 @@ sub _set_local_auth {
 			wait;
 		}
 
+		sleep 10; # give system some time to settle down on ldap
+
 		print Yaffas::UI::ok_box();
 	}
 	catch Yaffas::Exception with
@@ -122,7 +124,6 @@ sub _set_local_auth {
 		Yaffas::Service::control(NSCD, START);
 		Yaffas::Service::control(GOGGLETYKE, START);
 		print Yaffas::UI::all_error_box(shift);
-		local_ldap();
 	};
 }
 =pod
