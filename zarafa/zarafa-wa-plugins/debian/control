@@ -7,6 +7,6 @@ Standards-Version: 3.6.2
 
 Package: zarafa-wa-plugins
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa-webaccess
+Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa-webaccess, yaffas-ldap
 Description: Misc zarafa webaccess/webapp plugins
  Misc zarafa webaccess/webapp plugins

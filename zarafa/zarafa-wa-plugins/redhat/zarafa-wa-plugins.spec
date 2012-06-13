@@ -7,7 +7,7 @@ License:	GPL
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	zarafa-webaccess
+Requires:	zarafa-webaccess, yaffas-ldap
 
 %description
 Misc zarafa webaccess/webapp plugins
