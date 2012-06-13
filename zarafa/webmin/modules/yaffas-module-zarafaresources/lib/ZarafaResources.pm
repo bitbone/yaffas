@@ -84,6 +84,10 @@ sub create_resource ($$$$$$) {
 		}
 	}
 
+	if ($email =~ /.*\@$/) {
+		throw Yaffas::Exception("err_no_domains");
+	}
+
 	Yaffas::UGM::add_user( $resource, undef, 'resource', $description );
 	Yaffas::UGM::set_email( $resource, $email ); # set email seperate to avoid warning about incorrect email address
 	modify_resource( $resource, $description, $decline_conflict, $decline_recurring, $type, $capacity );
