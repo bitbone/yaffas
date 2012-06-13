@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-24 15:52+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: 2012-05-15 09:55+0200\n"
 "Last-Translator: Hans-Peter <hps@zarafaserver.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,65 +19,146 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
+msgid "Welcome"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
 msgid "Admin password"
 msgstr "Admin Passwort"
 
-#: lang/en:2
+#: lang/en:5
 #, no-wrap
 msgid "Admin password (repeat)"
 msgstr "Admin Passwort (Wiederholung)"
 
-#: lang/en:3
+#: lang/en:6
 #, no-wrap
 msgid "MySQL database"
 msgstr "MySQL Datenbank"
 
-#: lang/en:4
+#: lang/en:7
 #, no-wrap
 msgid "MySQL server"
 msgstr "MySQL Server"
 
-#: lang/en:5
+#: lang/en:8
 #, no-wrap
 msgid "MySQL username"
 msgstr "MySQL Benutzername"
 
-#: lang/en:6
+#: lang/en:9
 #, no-wrap
 msgid "MySQL password"
 msgstr "MySQL Passwort"
 
-#: lang/en:8
+#: lang/en:11
 #, no-wrap
 msgid "Setup finished"
 msgstr "Setup abgeschlossen"
 
-#: lang/en:9
+#: lang/en:12
 #, no-wrap
 msgid "Setup was finished successfully. After relogin you can use all features."
 msgstr "Das Setup wurde erfolgreich abgeschlossen. Nach dem erneuten Login können Sie alle Funktionen nutzen."
 
-#: lang/en:11
+#: lang/en:14
+#, no-wrap
+msgid "Mailserver settings"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Primary mail domain"
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Smarthost"
+msgstr "Smarthost"
+
+#: lang/en:17
+#, no-wrap
+msgid "Username (if needed)"
+msgstr ""
+
+#: lang/en:18 lang/en:24
+#, no-wrap
+msgid "Password"
+msgstr "Passwort"
+
+#: lang/en:20
+#, no-wrap
+msgid "Create user"
+msgstr ""
+
+# 77%
+#: lang/en:21
+#, fuzzy, no-wrap
+msgid "Loginname"
+msgstr "Logname"
+
+#: lang/en:22
+#, no-wrap
+msgid "Firstname"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "Surname"
+msgstr "Nachname"
+
+#: lang/en:25
+#, no-wrap
+msgid "Password (repeat)"
+msgstr ""
+
+#: lang/en:26
+#, no-wrap
+msgid "Email"
+msgstr "E-Mail"
+
+#: lang/en:28
+#, no-wrap
+msgid "If you fill this form, then local LDAP authentication will be enabled."
+msgstr ""
+
+#: lang/en:30
 #, no-wrap
 msgid "Zarafa settings"
 msgstr "Zarafa Einstellungen"
 
-#: lang/en:12
+#: lang/en:31
 #, no-wrap
 msgid "Basic settings"
 msgstr "Grundeinstellungen"
 
-#: lang/en:14
+#: lang/en:33
+#, no-wrap
+msgid "Finish"
+msgstr ""
+
+#: lang/en:35
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Konnte keine Verbindung zur Datenbank herstellen."
 
-#: lang/en:15
+#: lang/en:36
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."
 
-#: lang/en:17
+#: lang/en:37
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+msgstr ""
+
+#: lang/en:39
 #, no-wrap
 msgid "Setup"
 msgstr "Setup"
@@ -101,3 +182,38 @@ msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server g
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."
+
+#: help/en:5
+#, no-wrap
+msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
+msgstr ""
+
+#: help/en:7 help/en:8
+#, no-wrap
+msgid "Optional setting if your smarthost needs authentication."
+msgstr ""
+
+#: help/en:9
+#, no-wrap
+msgid "This is the name that you will have to login with."
+msgstr ""
+
+#: help/en:10
+#, no-wrap
+msgid "First name of that user."
+msgstr ""
+
+#: help/en:11
+#, no-wrap
+msgid "Surname of that user."
+msgstr ""
+
+#: help/en:12
+#, no-wrap
+msgid "Email address of that user that will be used for sending and receiving."
+msgstr ""

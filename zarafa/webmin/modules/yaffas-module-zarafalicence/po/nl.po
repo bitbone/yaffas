@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,8 +39,8 @@ msgstr "Nieuwe clientsleutel toevoegen"
 
 #: lang/en:5
 #, no-wrap
-msgid "Installed licenses"
-msgstr "Geïnstalleerde licenties"
+msgid "Installed subscriptions"
+msgstr ""
 
 #: lang/en:6
 #, no-wrap
@@ -52,9 +52,10 @@ msgstr "Basissleutel"
 msgid "Serial number"
 msgstr "Serienummer"
 
+# 91%
 #: lang/en:8
-#, no-wrap
-msgid "License Log"
+#, fuzzy, no-wrap
+msgid "Licensed Log"
 msgstr "Licentielogboek"
 
 #: lang/en:9
@@ -79,5 +80,5 @@ msgstr "Nieuwe archiver-clientsleutel toevoegen"
 
 #: lang/en:14
 #, no-wrap
-msgid "Zarafa License Key"
-msgstr "Zarafa Licentiesleutel"
+msgid "Zarafa Subscription"
+msgstr ""

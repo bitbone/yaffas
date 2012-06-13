@@ -2,3 +2,5 @@ name=Deze naam wordt getoond in het globale adresboek.
 description=U kunt een omschrijving toevoegen als de naam van de resource niet uit zichzelf duidelijk is.
 decline_conflict=De resource kan slechts eenmaal geboekt worden als dit aangevinkt staat.
 decline_recurring=Vink dit aan om herhalende afspraken voor deze resource te weigeren.
+type=Select the type of the resource.
+capacity=Define the capacity of the resource. This value is only available for equipment resources.
