@@ -45,4 +45,5 @@ err_mkdir=Konnte das Verzeichnis nicht anlegen.
 err_days=Wert für den Backup Zeitpunkt ist nicht korrekt
 err_read_dir=Konnte das Verzeichnis nicht öffnen.
 err_loading_takes_too_long=Das Laden der Ordnerliste dauerte zu lange. Versuchen Sie es später noch einmal.
+err_no_symlinks_created=Couldn't create symlinks for differential backup. Please check your storage device.
 moduletitle=Backup
