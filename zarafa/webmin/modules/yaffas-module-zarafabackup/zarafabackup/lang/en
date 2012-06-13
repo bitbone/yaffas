@@ -45,4 +45,5 @@ err_mkdir=Could not create directory.
 err_days=Value for backup days incorrect.
 err_read_dir=Could not open directory.
 err_loading_takes_too_long=Loading folder structure take too long. Please try again later.
+err_no_symlinks_created=Couldn't create symlinks for differential backup. Please check your storage device.
 moduletitle=Backup

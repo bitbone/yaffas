@@ -66,6 +66,25 @@ Alternatively, you can choose name or IP address of {product} without mentioning
 A complete manual and current documentation of Zarafa Web Access can be downloaded here: http://www.zarafaserver.com/doc.
 
 
+=== Zarafa Backup
+
+With this module you can create brick-level backups of your zarafa data.
+You are afterwards able to restore single elements of the stores.
+
+To create the backup select a time and day for the full and differential backup.
+You can select a directory on the server where you want to save the backups and configure a preserve time.
+After that timespan old backups will be deleted.
+
+To restore elements select the day from you wish to restore you element and open the store and folder you need.
+Then add a folder or element to restore list by using the context menu.
+After you have selected all elements for restore you have to start the process in the restore tab.
+
+[IMPORTANT]
+==============
+If you mount a share to the backup directory, make sure that symlinks are supported.
+If this is not the case, then differential backups are not possible and the system will do full backups.
+==============
+
 
 ////
 === Microsoft Outlook Connection

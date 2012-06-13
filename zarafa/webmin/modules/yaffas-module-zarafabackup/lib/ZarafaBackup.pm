@@ -38,7 +38,7 @@ BEGIN {
         $preserve_time = 14;
     }
 
-    if (not defined %main::text) {
+    if (not %main::text) {
         %main::text = Yaffas::UI::Webmin::get_lang("zarafabackup");
     }
 }
@@ -64,6 +64,13 @@ sub run {
                         /.*\/(.*?\.zbk)$/ && symlink "../$old/$1", $1
                     }
                 }, "../".$old);
+
+            my $links = 0;
+            find({ no_chdir => 1, wanted => sub {-f $_ && $links++}}, ".");
+
+            if ($links == 0) {
+                print $main::text{err_no_symlinks_created};
+            }
         }
         else {
             # no backup available
