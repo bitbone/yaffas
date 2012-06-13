@@ -23,6 +23,8 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
+BASEDN=$(grep BASEDN /etc/ldap.settings | awk -F "BASEDN=" '{print $2}')
+sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php
 
 %files
 %defattr(-,root,root,-)

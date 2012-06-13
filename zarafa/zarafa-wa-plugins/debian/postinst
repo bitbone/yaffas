@@ -19,6 +19,8 @@ set -e
 
 case "$1" in
     configure)
+        BASEDN=$(grep BASEDN /etc/ldap.settings | awk -F "BASEDN=" '{print $2}')
+        sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
