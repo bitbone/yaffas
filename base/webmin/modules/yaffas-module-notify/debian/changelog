@@ -1,3 +1,9 @@
+yaffas-module-notify (1.2.0-1) lucid; urgency=low
+
+  * update to version 1.2.0-1
+
+ -- Package Builder <packages@yaffas.org>  Wed, 13 Jun 2012 16:12:52 +0200
+
 yaffas-module-notify (1.1.1-1) lucid; urgency=low
 
   * update to version 1.1.1-1

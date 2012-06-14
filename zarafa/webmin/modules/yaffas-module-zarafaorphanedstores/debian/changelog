@@ -1,5 +1,11 @@
 yaffas-module-zarafaorphanedstores (1.2.0-1) lucid; urgency=low
 
+  * update to version 1.2.0-1
+
+ -- Package Builder <packages@yaffas.org>  Wed, 13 Jun 2012 16:12:45 +0200
+
+yaffas-module-zarafaorphanedstores (1.2.0-1) lucid; urgency=low
+
   * initial release
 
  -- Package Builder <packages@yaffas.org>  Wed, 09 May 2012 14:52:25 +0200

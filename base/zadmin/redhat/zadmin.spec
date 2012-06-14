@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='Z-Admin v1.1.1'
+VALUE='Z-Admin v1.2.0-beta1'
 
 if [ -e /opt/yaffas/share/doc/example/etc/git-revision ]; then
     VALUE=$VALUE-$(cat /opt/yaffas/share/doc/example/etc/git-revision | tr "-" " " | awk '{ print $3 }')
