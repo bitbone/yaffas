@@ -45,4 +45,5 @@ err_mkdir=Impossible de créer le répertoire.
 err_days=Valeur invalide pour les dates de sauvegarde
 err_read_dir=Impossible d'ouvrir le répertoire.
 err_loading_takes_too_long=Le chargement de l'arborescence du répertoire prend trop de temps. Veuillez essayer ultérieurement.
+err_no_symlinks_created=Couldn't create symlinks for differential backup. Please check your storage device.
 moduletitle=Sauvegarde

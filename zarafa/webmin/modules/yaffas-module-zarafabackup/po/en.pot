@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-04-13 00:19+0300\n"
+"POT-Creation-Date: 2012-06-14 00:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -236,6 +236,13 @@ msgid "Loading folder structure take too long. Please try again later."
 msgstr ""
 
 #: lang/en:48
+#, no-wrap
+msgid ""
+"Couldn't create symlinks for differential backup. Please check your storage "
+"device."
+msgstr ""
+
+#: lang/en:49
 #, no-wrap
 msgid "Backup"
 msgstr ""

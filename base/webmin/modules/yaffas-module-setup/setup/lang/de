@@ -1,5 +1,5 @@
-lbl_welcome=Welcome
-lbl_settings=This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation.
+lbl_welcome=Willkommen
+lbl_settings=Dieser Dialg wird die grundlegenden Einstellungen abfragen, die für das Fertigstellen der Installation nötig sind.<br />Wenn Sie sich wegen einer Einstellung nicht sicher sind, gehen Sie mit der Maus über das Glühbirnensymbol. Dann erhalten Sie zusätzliche Erläuterungen.
 
 lbl_admin_pw=Admin Passwort
 lbl_admin_pw_repeat=Admin Passwort (Wiederholung)
@@ -11,29 +11,29 @@ lbl_mysql_password=MySQL Passwort
 lbl_setup_finished=Setup abgeschlossen
 lbl_setup_finished_msg=Das Setup wurde erfolgreich abgeschlossen. Nach dem erneuten Login können Sie alle Funktionen nutzen.
 
-lbl_mailserver_settings=Mailserver settings
-lbl_mailserver_domain=Primary mail domain
+lbl_mailserver_settings=Mailserver Einstellungen
+lbl_mailserver_domain=Primäre Maildomäne
 lbl_mailserver_smarthost_server=Smarthost
-lbl_mailserver_smarthost_user=Username (if needed)
+lbl_mailserver_smarthost_user=Benutzername (falls notwendig)
 lbl_mailserver_smarthost_password=Passwort
 
-lbl_user_settings=Create user
-lbl_user_login=Loginname
-lbl_user_firstname=Firstname
+lbl_user_settings=Benutzer anlegen
+lbl_user_login=Anmeldename
+lbl_user_firstname=Vorname
 lbl_user_surname=Nachname
 lbl_user_password=Passwort
-lbl_user_password_repeat=Password (repeat)
+lbl_user_password_repeat=Passwort (Wiederholung)
 lbl_user_email=E-Mail
 
-lbl_user_local_ldap=If you fill this form, then local LDAP authentication will be enabled.
+lbl_user_local_ldap=Wenn Sie diese Formular ausfüllen, wird die lokale LDAP-Authentifizierung aktivert.
 
 lbl_zarafa_settings=Zarafa Einstellungen
 lbl_basic_settings=Grundeinstellungen
 
-lbl_finish=Finish
+lbl_finish=Abschließen
 
 err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_password=Die Admin Passwörter stimmen nicht überein oder sind leer.
-err_domainname=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one.
+err_domainname=Die Domäne kann nur Buchstaben (a-z und A-Z), Ziffern (0-9), '.' und '-' enthalten und muss mindestens eine Länge von einem Zeichen haben.
 
 moduletitle=Setup
