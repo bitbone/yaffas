@@ -10,6 +10,7 @@ use Yaffas::UGM;
 use Yaffas::Module::Users;
 use Yaffas::Module::Mailsrv::Postfix;
 use Yaffas::Constant;
+use Yaffas::Check;
 
 our @ISA = qw(Yaffas::Module);
 
@@ -64,7 +65,7 @@ sub create_resource ($$$$$$) {
 	my ( $resource, $description, $decline_conflict,
 		$decline_recurring, $type, $capacity ) = @_;
 
-	_check_capacity($capacity);
+	_check_capacity($type, $capacity);
 
 	# 'resource' as givenname for all resources:
 	# a givenname is required and none need to be set
@@ -78,10 +79,11 @@ sub create_resource ($$$$$$) {
 
 	my $email = $resource.'@';
 	for my $domain (@domains) {
-		unless($domain =~ m/^localhost$/) {
-			$email .= $domain;
-			last;
-		}
+		next if($domain =~ m/^localhost$/);
+		next unless (Yaffas::Check::email($email.$domain));
+
+		$email .= $domain;
+		last;
 	}
 
 	if ($email =~ /.*\@$/) {
@@ -117,7 +119,7 @@ sub modify_resource ($$$$$$) {
 	my ( $resource, $description, $decline_conflict, $decline_recurring, $type, $capacity ) = @_;
 
 	if (Yaffas::Auth::auth_type eq Yaffas::Auth::Type::LOCAL_LDAP || Yaffas::Auth::auth_type eq Yaffas::Auth::Type::FILES) {
-		_check_capacity($capacity);
+		_check_capacity($type, $capacity);
 
 		Yaffas::Module::Users::set_zarafa_shared( $resource, 1 );
 		Yaffas::UGM::gecos( $resource, 'resource', $description );
@@ -190,8 +192,11 @@ sub get_resource_details ($) {
 }
 
 sub _check_capacity {
+	my $type = shift;
 	my $capacity = shift;
-	throw Yaffas::Exception("err_no_number") unless ($capacity =~ /^\d+$/);
+	if ($type eq "Room" || $type eq "Equipment") {
+		throw Yaffas::Exception("err_no_number") unless ($capacity =~ /^\d+$/);
+	}
 }
 
 sub conf_dump() {
