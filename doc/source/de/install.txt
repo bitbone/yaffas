@@ -5,7 +5,7 @@ Die Pakete sind für 32 und 64bit geeignet.
 
 === Systemvorausetzungen
 
-  * Ubuntu 10.04 oder Red Hat Enterprise Linux 5
+  * Ubuntu 10.04/12.04, Debian 6 oder Red Hat Enterprise Linux 5/6
   * Korrekt konfigurierter Hostname
   * Statische IP Adresse
 
@@ -33,11 +33,17 @@ Dort gibt es im Verzeichnis base/conf und zarafa/conf die benötigten Konfigurat
 Die beötigten Schritte zur Installation sind in den Skripten debian/postinst für Ubuntu/Debian Systeme bzw. redhat/*.spec für RedHat Systeme beschrieben.
 Sie müssen sicherstellen, dass jeder Schritt an Ihr System angepasst und ausgeführt wurde.
 
-==== Ubuntu 10.04.2 LTS
+==== Ubuntu Server
 
 **Hinzufügen der benötigten Repositories**
 
-  echo "deb http://repo.yaffas.org/ubuntu ./" >> /etc/apt/sources.list
+_Ubuntu 10.04 LTS_
+
+  echo "deb http://repo.yaffas.org/lucid ./" >> /etc/apt/sources.list
+
+_Ubuntu 12.04 LTS_
+
+  echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
 
 **Importieren des Paketkeys**
 
