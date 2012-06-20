@@ -20,6 +20,11 @@ function pwdchange_settings_html(){
 				<td><input name="pwdchange_oldpw" id="pwdchange_oldpw" type="password" class="text" value=""> </td>
 			</tr>
 			<tr>
+				<td colspan="2">
+					<label>'._("Your new password needs to be at least 8 characters long and consist at least of a capital char and a number.").'</label>
+				</td>
+			</tr>
+			<tr>
 				<th><label for="pwdchange_newpwd1">'._("New password").'</label></th>
 				<td><input name="pwdchange_newpwd1" id="pwdchange_newpwd1" type="password" class="text" value=""></td>
 			</tr>
