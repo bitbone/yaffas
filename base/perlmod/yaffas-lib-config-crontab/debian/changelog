@@ -1,3 +1,9 @@
+yaffas-lib-config-crontab (1.2.0-2) lucid; urgency=low
+
+  * update to version 1.2.0-2
+
+ -- Package Builder <packages@yaffas.org>  Mon, 25 Jun 2012 08:41:02 +0200
+
 yaffas-lib-config-crontab (1.2.0-1) lucid; urgency=low
 
   * update to version 1.2.0-1
