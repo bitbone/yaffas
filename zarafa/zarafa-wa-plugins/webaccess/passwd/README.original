@@ -1,0 +1,32 @@
+(this is the comment, that stood originally in manifest.xml)
+
+Passwd Plugin
+Copyright (C) 2009 Andreas Brodowski (brodowski at gmx.net)
+
+This is just a small passwd plugin that should show the possibilities to enhance Zarafa WA by plugins. 
+It is just a quick hack far away from being perfect or whatever. Feel free to use it in any situation 
+you like but feel yourself responsible for what you're doing since this comes without ANY warranty (ok -
+despite of that it will waste your disc space). In case you find bugs, please either fix them yourself
+and provide me the necessary changes to prevent the bug or at least notify me about so that I can fix 
+it.
+
+I publish this application herewith under the same License as the Community Version of Web Access to 
+easy you the way not even to fiddle around with different Licenses inside the Zarafa Groupware Solution.
+You may use it in Commercial Zarafa Groupware but for this plugin the License of the Community Version
+that corresponds to your Commercial Zarafa Groupware applies.
+
+To install it, just copy the content of the passwd-0.99.0.tgz archive into your plugins folder. Please 
+adapt the dialogs/pwdchange.php file according your backend needs (currently zarafa-passwd is in use 
+but taken from /usr/local/bin folder).
+
+A word about languages... They're in lang folder defined. I did it for the English and German language.
+Feel free to add your native language. It is not difficult. Just translate the phrases in file and 
+create same folder name for language as used in Zarafa, copy file there and use msgfmt to compile it -
+if you need help with this, feel free to contact me. 
+It would be fine if you could send me your translation so that I can include it in the distribution.
+
+TODOs until Version 1.00:
+- Implement real ajax communication to get rid of the post
+- Ensure that the module can only be used in https context
+- Implement backend plugin structure for passwd backends
+

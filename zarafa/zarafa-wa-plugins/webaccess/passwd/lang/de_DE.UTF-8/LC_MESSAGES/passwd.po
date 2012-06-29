@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER # This file is distributed under the same license as the PACKAGE package.  # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.  # #, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-26 20:42+0200\n"
+"PO-Revision-Date: 2009-04-26 20:42+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: de_DE <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dialogs/pwdchange.php:4
+msgid "Password change result"
+msgstr "Ergebnis der Passwort-&Auml;nderung"
+
+#: dialogs/pwdchange.php:61
+msgid "success: password update"
+msgstr "Das Passwort wurde erfolgreich ge&auml;ndert. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:68
+msgid "failure: password update"
+msgstr "Das Passwort konnte nicht ge&auml;ndert werden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:74
+msgid "failure: new password empty"
+msgstr "Das neue Password darf nicht leer sein. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:77
+msgid "failure: new passwords dont match"
+msgstr "Die Werte f&uuml;r das neue Passwort m&uuml;ssen &uuml;bereinstimmen. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:84
+msgid "failure: old passwords wrong"
+msgstr "Das Original-Passwort war falsch. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:87
+msgid "failure: could not bind to ldap"
+msgstr "Konnte nicht an den Verzeichnis-Dienst binden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:94
+msgid "failure: could not connect to ldap"
+msgstr "Konnte nicht mit dem Verzeichnis-Dienst verbinden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:107
+msgid "failure: password weak"
+msgstr "Das gew&auml;hlte Passwort ist nicht stark genug. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: dialogs/pwdchange.php:120
+msgid "failure: username not found"
+msgstr "Der Benutzername wurde nicht gefunden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+
+#: tabs/pwdchange.php:4 tabs/pwdchange.php:16 tabs/pwdchange.php:33
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: tabs/pwdchange.php:19
+msgid "Old password"
+msgstr "Altes Passwort"
+
+#: tabs/pwdchange.php:23
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: tabs/pwdchange.php:27
+msgid "Retype new password"
+msgstr "Neues Passwort wiederholen"
+

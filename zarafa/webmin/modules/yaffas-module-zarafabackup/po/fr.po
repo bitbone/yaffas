@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-13 00:19+0300\n"
+"POT-Creation-Date: 2012-06-14 00:19+0300\n"
 "PO-Revision-Date: 2012-04-26 09:24+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,6 +238,11 @@ msgid "Loading folder structure take too long. Please try again later."
 msgstr "Le chargement de l'arborescence du répertoire prend trop de temps. Veuillez essayer ultérieurement."
 
 #: lang/en:48
+#, no-wrap
+msgid "Couldn't create symlinks for differential backup. Please check your storage device."
+msgstr ""
+
+#: lang/en:49
 #, no-wrap
 msgid "Backup"
 msgstr "Sauvegarde"

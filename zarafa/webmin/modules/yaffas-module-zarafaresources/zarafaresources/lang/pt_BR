@@ -9,6 +9,10 @@ lbl_editresource=Modificar recurso
 lbl_delresource=Remover recurso
 lbl_delresource_question=Realmente deseja remover estes recursos?
 lbl_remind_perms=As permissões adequadas para os usuários que poderão reservar este recurso precisam ser definidos na configuração de permissão do calendário deste recurso.
+lbl_resource_type=Tipo
+lbl_capacity=Capacity
+lbl_room=Room
+lbl_equipment=Equipment
 
 err_username=O nome do recurso contém caracteres inválidos.
 err_never_user=O nome do recurso já está sendo usado por um usuário.
@@ -22,4 +26,5 @@ err_user_exists_allready=O nome do recurso já está sendo usado por um usuário
 err_name_is_alias=O nome do recurso já está sendo usado como alias de um usuário.
 err_user_doesnt_exist=O recurso informado não existe.
 err_no_domains=Nenhum domínio local configurado.
+err_no_number=Capacity have to be a number.
 moduletitle=Recursos

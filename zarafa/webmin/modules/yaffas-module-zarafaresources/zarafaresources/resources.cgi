@@ -23,7 +23,9 @@ foreach my $resource (@resources) {
 		description => $details{description},
 		email => $details{email},
 		conflicts => $details{decline_conflict},
-		recurring => $details{decline_recurring}
+		recurring => $details{decline_recurring},
+		type => $details{type},
+		capacity => $details{capacity},
 	};
 	push( @content, $r );
 }

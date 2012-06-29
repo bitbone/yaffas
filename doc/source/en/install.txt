@@ -7,7 +7,7 @@ There are packages available for both 32bits and 64bits architectures.
 
 === System requirements
 
-  * Ubuntu Server 10.04 or Red Hat Enterprise Linux 5
+  * Ubuntu Server 10.04/12.04, Debian 6 or Red Hat Enterprise Linux 5/6
   * Correctly configured fully qualified hostname
   * Static IP address
 
@@ -37,13 +37,20 @@ You have to make sure that every step that is in these scripts is adapted for yo
 
 We invite you to ask for community support for this installation path, which we will monitor closely on the forum and possibly create a standardized procedure from this.
 
-==== Ubuntu Server 10.04.2 LTS
+==== Ubuntu Server
 
 **Adding required repositories**
 
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
-  echo "deb http://repo.yaffas.org/ubuntu ./" >> /etc/apt/sources.list
+
+_Ubuntu 10.04 LTS_
+
+  echo "deb http://repo.yaffas.org/lucid ./" >> /etc/apt/sources.list
+
+_Ubuntu 12.04 LTS_
+
+  echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
 
 **Import package key**
 
@@ -250,6 +257,13 @@ and run the following commands to add the RPMforge repository:
 or
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.x86_64.rpm
+
+[NOTE]
+==============
+
+For Red Hat Enterprise Linux systems it is necessary to subscribe to the "RHEL Server Optional" channel. This is not done by default.
+
+==============
 
 [CAUTION]
 ==============

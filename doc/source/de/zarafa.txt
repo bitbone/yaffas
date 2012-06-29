@@ -61,6 +61,24 @@ Zugriff via WebAccess erhalten Sie über die Eingabe der URL in die Adressleiste
 
 Eine komplette Anleitung und aktuelle Dokumentationen für den Zarafa WebAccess können Sie unter http://www.zarafaserver.de/doc herunterladen.
 
+=== Zarafa Backup
+
+Mit diesem Modul ist es möglich Brick-Level Backup der Zarafa Daten zu erstellen.
+Es ist dann möglich einzelne Elemente wiederherzustellen.
+
+Um ein Backup zu erstellen wählen Sie Zeit und Tag für das Voll- und Differentielle Backup aus.
+Geben Sie ein Verzeichnis an, in das die Backups gesichert werden sollen.
+Außerdem können Sie festlegen wie lange ein Backup aufgehoben wird bevor es gelöscht wird.
+
+Um ein Element zu wiederherstellen müssen Sie den Tag auswählen und den Ordner öffnen den Sie brauchen.
+Über das Kontext Menü können Sie dann einen Ordner oder ein Element zum Wiederherstellen auswählen.
+Im Tab Wiederherstellen müssen Sie dann noch Wiederherstellungsprozess starten.
+
+[IMPORTANT]
+==============
+Wenn Sie eine Freigabe in das Backup Verzeichnis eingebunden haben, müssen Sie sicherstellen das Symbolische Links erstellt werden können.
+Falls dies nicht der Fall ist, können Differentielle Backup nicht erstellt werden.
+==============
 
 
 === Anbindung von Microsoft Outlook

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2012-06-08 17:44+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgstr ""
 
 #: lang/en:5
 #, no-wrap
-msgid "Installed licenses"
+msgid "Installed subscriptions"
 msgstr ""
 
 #: lang/en:6
@@ -52,7 +52,7 @@ msgstr ""
 
 #: lang/en:8
 #, no-wrap
-msgid "License Log"
+msgid "Licensed Log"
 msgstr ""
 
 #: lang/en:9
@@ -77,5 +77,5 @@ msgstr ""
 
 #: lang/en:14
 #, no-wrap
-msgid "Zarafa License Key"
+msgid "Zarafa Subscription"
 msgstr ""

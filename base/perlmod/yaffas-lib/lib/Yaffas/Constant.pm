@@ -21,7 +21,13 @@ sub get_os {
 	}
 }
 
-use constant { OS => get_os() };
+sub get_os_version {
+	my $lsb_version = `lsb_release -sr`;
+	chomp($lsb_version);
+	return $lsb_version;
+}
+
+use constant { OS => get_os(), OSVER => get_os_version() };
 
 use constant {
 	DIR => {
@@ -252,6 +258,7 @@ use constant {
 		"wl_postfix" => "/opt/yaffas/config/postfix/whitelist-postfix",
 		"wl_amavis" => "/opt/yaffas/config/whitelist-amavis",
 		"rhel5_network" => "/etc/sysconfig/network",
+		"webaccess_config" => "/etc/zarafa/webaccess-ajax/config.php",
 	}
 };
 
@@ -364,7 +371,7 @@ use constant {
 		"pfcat" => '/opt/yaffas/bin/pfcat.sh',
 		"sa_update" => "/usr/bin/sa-update",
 		"policyd_weight" => '/usr/sbin/policyd-weight',
-		"brctl" => '/usr/sbin/brctl',
+		"brctl" => (OS eq 'Ubuntu' and OSVER eq '12.04') ? '/sbin/brctl' : '/usr/sbin/brctl',
 		"dhclient" => '/sbin/dhclient',
 		"locale-gen" => '/usr/sbin/locale-gen',
 	}

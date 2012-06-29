@@ -8,7 +8,7 @@ Standards-Version: 3.6.2
 Package: yaffas-zarafa
 Architecture: all
 Pre-Depends: libapache2-mod-php5, mysql-server, yaffas-module-changelang, zarafa-webaccess, yaffas-ldap
-Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa, php5-ldap, php-mail, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-zarafabackup, zarafa-indexer
+Depends: ${shlibs:Depends}, ${misc:Depends}, zarafa, php5-ldap, php-mail, z-push, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-zarafaorphanedstores, yaffas-module-zarafawebaccess, yaffas-module-zarafabackup, zarafa-indexer, zarafa-webapp, zarafa-wa-plugins
 Replaces: zarafa
 Conflicts: dovecot-imapd, dovecot-pop3d, dovecot-common
 Description: configure yaffas for zarafa

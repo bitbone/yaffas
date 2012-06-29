@@ -1,3 +1,6 @@
+lbl_welcome=Welcome
+lbl_settings=This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation.
+
 lbl_admin_pw=Admin password
 lbl_admin_pw_repeat=Admin password (repeat)
 lbl_mysql_database=MySQL database
@@ -8,10 +11,29 @@ lbl_mysql_password=MySQL password
 lbl_setup_finished=Setup finished
 lbl_setup_finished_msg=Setup was finished successfully. After relogin you can use all features.
 
+lbl_mailserver_settings=Mailserver settings
+lbl_mailserver_domain=Primary mail domain
+lbl_mailserver_smarthost_server=Smarthost
+lbl_mailserver_smarthost_user=Username (if needed)
+lbl_mailserver_smarthost_password=Password
+
+lbl_user_settings=Create user
+lbl_user_login=Loginname
+lbl_user_firstname=Firstname
+lbl_user_surname=Surname
+lbl_user_password=Password
+lbl_user_password_repeat=Password (repeat)
+lbl_user_email=Email
+
+lbl_user_local_ldap=If you fill this form, then local LDAP authentication will be enabled.
+
 lbl_zarafa_settings=Zarafa settings
 lbl_basic_settings=Basic settings
 
+lbl_finish=Finish
+
 err_mysql_connect=Could not connect to database.
 err_password=The admin password is empty or does not match.
+err_domainname=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one.
 
 moduletitle=Setup

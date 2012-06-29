@@ -17,7 +17,7 @@ all required packages into your system.
 %build
 
 %install
-rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -25,7 +25,11 @@ rm -rf $RPM_BUILD_ROOT
 %post
 CONF="/opt/yaffas/etc/installed-products"
 KEY="framework"
-VALUE='yaffas v1.1.1'
+VALUE='yaffas v1.2.0'
+
+if [ -e /opt/yaffas/share/doc/example/etc/git-revision ]; then
+    VALUE=$VALUE-$(cat /opt/yaffas/share/doc/example/etc/git-revision | tr "-" " " | awk '{ print $3 }')
+fi
 
 if [ -e $CONF ]; then
 	if ! grep -iq ^$KEY $CONF; then
@@ -40,5 +44,6 @@ fi
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
+/opt/yaffas/share/doc/example/etc/git-revision
 
 %changelog

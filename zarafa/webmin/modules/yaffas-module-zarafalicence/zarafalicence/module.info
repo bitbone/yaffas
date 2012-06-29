@@ -1,10 +1,10 @@
-longdesc=Zarafa License
-desc_de=Zarafa Lizenzschlüssel
-desc_en=Zarafa License Key
+longdesc=Zarafa Subscription
+desc_de=Zarafa Subskription
+desc_en=Zarafa Subscription
 name=zarafalicence
 category=license
-desc=Zarafa License Key
+desc=Zarafa Subscription
 version=1.0
-desc_nl=Zarafa Licentiesleutel
-desc_fr=Clé de licence Zarafa
-desc_pt_BR=Serial Zarafa
+desc_nl=Zarafa Subscription
+desc_fr=Zarafa Subscription
+desc_pt_BR=Zarafa Subscription

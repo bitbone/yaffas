@@ -1,0 +1,9 @@
+This plugin is largely based on the "Passwd" plugin by
+Andreas Brodowski. For his original README please read
+README.original.
+
+In order to get this plugin to work in your environment, you'll have
+to do the following:
+
+- Change the basedn in your config.inc.php to fit your 
+  environment

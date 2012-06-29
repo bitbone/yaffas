@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 13:04+0300\n"
-"PO-Revision-Date: 2012-04-11 13:16+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2011-11-29 00:13+0100\n"
+"PO-Revision-Date: 2012-05-24 09:46+0200\n"
+"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -200,7 +200,7 @@ msgstr "Configuratie"
 #: lang/en:44
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
-msgstr ""
+msgstr "Het is niet mogelijk om een hekje (#) te gebruiken in het MySQL-wachtwoord."
 
 #: help/en:1
 #, no-wrap

@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-26 20:42+0200\n"
+"PO-Revision-Date: 2009-04-26 20:42+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: de_DE <de@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: dialogs/pwdchange.php:4
+msgid "Password change result"
+msgstr "Password change result"
+
+#: dialogs/pwdchange.php:61
+msgid "success: password update"
+msgstr "Password updated successfully. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:68
+msgid "failure: password update"
+msgstr " Could not update password. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:74
+msgid "failure: new password empty"
+msgstr "The new passwords may not be empty. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:77
+msgid "failure: new passwords dont match"
+msgstr "The values you've entered for the new password don't match. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:84
+msgid "failure: old passwords wrong"
+msgstr "You've entered the wrong password. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:87
+msgid "failure: could not bind to ldap"
+msgstr "Could not bind to the directory service. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:94
+msgid "failure: could not connect to ldap"
+msgstr "Could not connect to the directory service. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:107
+msgid "failure: password weak"
+msgstr "The chosen password is to weak. Please leave this dialog open, you'll be logged out soon."
+
+#: dialogs/pwdchange.php:120
+msgid "failure: username not found"
+msgstr "The username you've entered couldn't be found. Please leave this dialog open, you'll be logged out soon."
+
+#: tabs/pwdchange.php:4 tabs/pwdchange.php:16 tabs/pwdchange.php:33
+msgid "Change Password"
+msgstr "Passwort ändern"
+
+#: tabs/pwdchange.php:19
+msgid "Old password"
+msgstr "Altes Passwort"
+
+#: tabs/pwdchange.php:23
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: tabs/pwdchange.php:27
+msgid "Retype new password"
+msgstr "Neues Passwort wiederholen"
+

@@ -622,7 +622,8 @@ sub _save_hostname {
 	my $old_hostname = uc( $self->{OLD_HOSTNAME} );
 
 	# modify sambaDomainName entry in ldap
-	_exchange_samba_domain($old_hostname, $hostname);
+	# disabling this line, since I can't see any use for it
+	# _exchange_samba_domain($old_hostname, $hostname);
 
 	# create new /etc/hosts
 	my $ip = '';
@@ -689,6 +690,8 @@ sub _save_hostname {
 
 		system(Yaffas::Constant::FILE->{'rhel_net'}, 'restart');
 	}
+
+	_set_smbldap_tools_domain($hostname);
 }
 
 ## ---------------------------------------------------------------------- ##
@@ -830,6 +833,30 @@ sub _exchange_samba_domain ($$) {
 		$msg = $ldap->unbind;
 		$msg->code && throw Yaffas::Exception('err_set_sambasid', $msg->code, $msg->error);
 	}
+}
+
+sub _set_smbldap_tools_domain ($) {
+	my $hostname = shift;
+	$hostname = uc $hostname;
+	my $file = Yaffas::File->new(Yaffas::Constant::FILE->{smbldap_conf});
+	throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{iftab}) unless(defined($file));
+
+	my $linenr = $file->search_line(qr/^\s*sambaDomain.*/);
+	my $entry = "sambaDomain=\"$hostname\"";
+
+	# add line if entry was not found
+	if ($linenr !~ m/^\d+/) {
+		$file->add_line($entry);
+	}
+	else {
+		# exchange line if entry was found
+		$file->splice_line($linenr, 1, $entry);
+	}
+
+	$file->save();
+
+	# run this to create an entry in ldap, so smbldap-useradd doesn't fail
+	system(Yaffas::Constant::APPLICATION->{net}, "getlocalsid");
 }
 
 sub _get_bridges {

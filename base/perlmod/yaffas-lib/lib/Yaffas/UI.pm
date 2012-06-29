@@ -13,7 +13,7 @@ sub BEGIN {
 						section_button section start_section end_section
 						table start_table end_table small_form
 						value_add_del_form creating_cache_finish creating_cache_start
-						textfield password_field checkbox
+						textfield password_field checkbox scrolling_list
 					   );
 	*CGI::start_form = \&CGI::startform;
 	$Cgi = CGI->new("");
@@ -521,6 +521,13 @@ sub checkbox {
 	my $name = $params[0];
 
 	return $Cgi->checkbox(@_) . _get_help_button($name);
+}
+
+sub scrolling_list {
+	my @params = CGI::Util::rearrange(["NAME",["VALUES","VALUE"],["DEFAULTS","DEFAULT"],"SIZE","MULTIPLE","LABELS","ATTRIBUTES",["OVERRIDE","FORCE"],"TABINDEX"], @_);
+	my $name = $params[0];
+
+	return $Cgi->scrolling_list(@_) . _get_help_button($name);
 }
 
 1;

@@ -267,6 +267,7 @@ rm -rf $RPM_BUILD_ROOT
 %config /opt/yaffas/share/doc/example/etc/postfix/ldap-users.cf
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap.conf
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap_bind.conf
+%config /opt/yaffas/share/doc/example/etc/apparmor.d/local/usr.sbin.slapd
 %config %attr(750,root,root) /opt/yaffas/bin/domrename.pl
 /tmp/yaffas_base.ldif
 

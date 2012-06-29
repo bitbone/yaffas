@@ -25,4 +25,10 @@ $virus_admin = "postmaster\@localhost";
 push @mynetworks, keys(%{read_hash('/opt/yaffas/config/postfix/whitelist-postfix')}) if -e '/opt/yaffas/config/postfix/whitelist-postfix';
 push @local_domains_maps, map {chomp($_); $_} split /\s*,\s*/, `/usr/sbin/postconf -h virtual_mailbox_domains`;
 
+# check if hostname has appended domain; if not append yaffas.local
+if ($myhostname !~ /\./) {
+    $myhostname .= ".yaffas.local";
+}
+
+
 1;

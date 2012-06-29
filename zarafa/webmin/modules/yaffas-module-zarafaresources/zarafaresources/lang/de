@@ -9,6 +9,10 @@ lbl_editresource=Ressource bearbeiten
 lbl_delresource=Ressource löschen
 lbl_delresource_question=Wollen Sie diese Ressourcen wirklich löschen?
 lbl_remind_perms=Vergessen Sie nicht, Benutzern, die diese Ressource buchen sollen die nötigen Berechtigungen auf den Kalender der Ressource zu geben.
+lbl_resource_type=Typ
+lbl_capacity=Kapazität
+lbl_room=Raum
+lbl_equipment=Gerät
 
 err_username=Der Name für die Ressource enthält ungültige Zeichen.
 err_never_user=Der Name für die Ressource ist bereits durch einen speziellen Benutzer belegt.
@@ -22,4 +26,5 @@ err_user_exists_allready=Der Name für die Ressource ist bereits für einen Benu
 err_name_is_alias=Der Name für die Ressource ist bereits für ein Benutzeralias vergeben.
 err_user_doesnt_exist=Die angegebene Ressource existiert nicht.
 err_no_domains=Es wurden noch keine lokalen Mail Domänen konfiguriert.
+err_no_number=Die Kapazität muss eine Zahl sein.
 moduletitle=Ressourcen

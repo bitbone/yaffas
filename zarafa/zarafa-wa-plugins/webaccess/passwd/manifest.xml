@@ -1,0 +1,25 @@
+<plugin version="1">
+	<info>
+		<version>0.1</version>
+		<name>ldap-passwd</name>
+		<title>Zarafa LDAP Password Change Plugin</title>
+		<author>Stephan Saathoff (Original passwd-Plugin: Andreas Brodowski)</author>
+		<authorURL>http://www.bytemine.net/</authorURL>
+		<description>Plugin to allow users to change their LDAP password in settings</description>
+	</info>
+	<resources>
+		<server>
+			<serverfile>passwd.php</serverfile>
+		</server>
+		<client>
+			<clientfile type="js">passwd.js</clientfile>
+		</client>
+		<dialogs>
+			<dialog>
+				<name>pwdchange</name>
+				<file>dialogs/pwdchange.php</file>
+			</dialog>
+		</dialogs>
+		<language>lang</language>
+	</resources>
+</plugin>

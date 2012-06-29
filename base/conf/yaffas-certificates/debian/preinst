@@ -6,7 +6,9 @@ install)
     ;;
 
 upgrade)
-    cp /opt/yaffas/etc/ssl/certs/org/default.* /opt/yaffas/var/
+    if [ -f /opt/yaffas/etc/ssl/certs/org/default.crt ]; then
+        cp /opt/yaffas/etc/ssl/certs/org/default.* /opt/yaffas/var/
+    fi
     ;;
 
 abort-upgrade)

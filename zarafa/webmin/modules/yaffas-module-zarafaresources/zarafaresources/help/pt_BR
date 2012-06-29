@@ -2,3 +2,5 @@ name=Este nome será exibido no catálogo de endereços.
 description=Uma descrição para o recurso deve ser adicionado caso o nome não é autoexplicativo.
 decline_conflict=Com este campo ativo o recuso pode ser reservado somente uma vez.
 decline_recurring=Com este campo ativo o recuso não aceitará reuniões recorrentes.
+type=Select the type of the resource.
+capacity=Define the capacity of the resource. This value is only available for equipment resources.

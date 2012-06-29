@@ -2,3 +2,5 @@ name=Dieser Name wird im globalen Adressbuch angezeigt.
 description=Sie können eine Beschreibung hinzufügen, falls der Name der Ressource nicht selbsterklärend ist.
 decline_conflict=Wenn dieser Kasten markiert ist, kann die Ressource nur einfach gebucht werden.
 decline_recurring=Markieren sie diesen Kasten um wiederkehrende Termine für diese Ressource zu verbieten.
+type=Wählen Sie den Typ der Ressource.
+capacity=Geben sie die Kapazität der Ressource an. Dieser Wert ist nur für Geräteressourcen verfügbar.

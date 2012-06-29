@@ -574,6 +574,11 @@ source BASE/zarafa/PACKAGE_NAME/
 dest BASE
 </z-push>
 
+<zarafa-wa-plugins>
+source BASE/zarafa/PACKAGE_NAME/
+dest BASE
+</zarafa-wa-plugins>
+
 #<bbconf-modsamba-zarafa>
 #source BASE/zarafa/PACKAGE_NAME/
 #dest BASE
@@ -588,6 +593,16 @@ dest BASE
 source BASE/zarafa/webmin/modules/PACKAGE_NAME/
 dest BASE
 </yaffas-module-zarafaresources>
+
+<yaffas-module-zarafaorphanedstores>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafaorphanedstores>
+
+<yaffas-module-zarafawebaccess>
+source BASE/zarafa/webmin/modules/PACKAGE_NAME/
+dest BASE
+</yaffas-module-zarafawebaccess>
 
 <yaffas-module-zarafabackup>
 source BASE/zarafa/webmin/modules/PACKAGE_NAME/

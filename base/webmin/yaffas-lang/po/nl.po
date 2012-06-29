@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-11 13:04+0300\n"
-"PO-Revision-Date: 2012-04-11 13:16+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2011-10-24 16:25+0300\n"
+"PO-Revision-Date: 2012-05-24 09:46+0200\n"
+"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -376,9 +376,9 @@ msgstr ""
 
 # 83%
 #: lang/en:83
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Error"
-msgstr "Fouten"
+msgstr "Fout"
 
 #: lang/en:84
 #, no-wrap

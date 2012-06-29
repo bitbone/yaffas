@@ -1,0 +1,17 @@
+yaffas-module-zarafawebaccess (1.2.0-2) lucid; urgency=low
+
+  * update to version 1.2.0-2
+
+ -- Package Builder <packages@yaffas.org>  Mon, 25 Jun 2012 08:40:59 +0200
+
+yaffas-module-zarafawebaccess (1.2.0-1) lucid; urgency=low
+
+  * update to version 1.2.0-1
+
+ -- Package Builder <packages@yaffas.org>  Wed, 13 Jun 2012 16:12:45 +0200
+
+yaffas-module-zarafawebaccess (1.2.0-1) lucid; urgency=low
+
+  * initial release
+
+ -- Package Builder <packages@yaffas.org>  Wed, 30 May 2012 12:07:54 +0200

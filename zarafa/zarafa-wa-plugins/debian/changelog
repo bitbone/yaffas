@@ -1,0 +1,17 @@
+zarafa-wa-plugins (1.2.0-2) lucid; urgency=low
+
+  * update to version 1.2.0-2
+
+ -- Package Builder <packages@yaffas.org>  Mon, 25 Jun 2012 08:40:58 +0200
+
+zarafa-wa-plugins (1.2.0-1) lucid; urgency=low
+
+  * update to version 1.2.0-1
+
+ -- Package Builder <packages@yaffas.org>  Wed, 13 Jun 2012 16:12:44 +0200
+
+zarafa-wa-plugins (1.1.9-1) lucid; urgency=low
+
+  * initial release
+
+ -- Package Builder <packages@yaffas.org>  Tue, 03 May 2011 07:11:40 +0000

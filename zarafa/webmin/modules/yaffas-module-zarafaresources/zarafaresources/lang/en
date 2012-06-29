@@ -9,6 +9,10 @@ lbl_editresource=Modify resource
 lbl_delresource=Delete resource
 lbl_delresource_question=Do you really want to delete these resources?
 lbl_remind_perms=Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource.
+lbl_resource_type=Type
+lbl_capacity=Capacity
+lbl_room=Room
+lbl_equipment=Equipment
 
 err_username=The name of the resource contains illegal characters.
 err_never_user=The name of the resource is taken from a special user.
@@ -22,4 +26,5 @@ err_user_exists_allready=The name of the resource is taken from a user.
 err_name_is_alias=The name of the resource is taken from a user's alias.
 err_user_doesnt_exist=The given resource doesn't exist.
 err_no_domains=No local mail domains configured.
+err_no_number=Capacity have to be a number.
 moduletitle=Resources
