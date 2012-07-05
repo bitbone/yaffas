@@ -74,30 +74,30 @@ Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
-image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
+image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
-image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
-image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
-image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
-image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
-image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
-image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
+image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
+image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
+image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
+image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
+image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
+image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
-image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
-image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
+image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
+image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
-image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
-image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
+image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
+image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
+image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 ==== Debian 6
 
@@ -134,30 +134,30 @@ Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
-image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
+image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
-image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
-image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
-image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
-image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
-image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
-image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
+image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
+image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
+image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
+image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
+image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
+image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
-image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
-image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
+image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
+image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
-image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
-image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
+image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
+image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
+image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 
 ==== Red Hat Enterprise Linux

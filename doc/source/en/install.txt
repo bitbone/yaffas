@@ -97,30 +97,30 @@ The configuration of these will be done by the **yaffas-config** package.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
-image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
-image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
+image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
 
 Leave the LDAP configuration values without changes:
 
-image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
-image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
-image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
-image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
-image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
-image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
-image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
+image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
+image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
+image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
+image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
+image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
+image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
 
 For postfix configuration select the "local only" type:
 
-image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
-image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
-image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
+image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
+image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
 
 Use the default values for kerberos configuration:
 
-image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
-image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
-image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
+image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
+image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
+image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 
 ==== Debian 6
@@ -176,30 +176,30 @@ The configuration of these will be done by the **yaffas-config** package.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
-image:media/en/1_mysql_thumb.png[link="media/en/1_mysql.png"]
-image:media/en/2_mysql_repeat_thumb.png[link="media/en/2_mysql_repeat.png"]
+image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
+image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
 
 Leave the LDAP configuration values without changes:
 
-image:media/en/3_ldap_thumb.png[link="media/en/3_ldap.png"]
-image:media/en/4_ldap_thumb.png[link="media/en/4_ldap.png"]
-image:media/en/5_ldap_thumb.png[link="media/en/5_ldap.png"]
-image:media/en/6_ldap_thumb.png[link="media/en/6_ldap.png"]
-image:media/en/7_ldap_thumb.png[link="media/en/7_ldap.png"]
-image:media/en/8_ldap_thumb.png[link="media/en/8_ldap.png"]
-image:media/en/9_ldap_thumb.png[link="media/en/9_ldap.png"]
+image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
+image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
+image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
+image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
+image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
+image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
+image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
 
 For postfix configuration select the "local only" type:
 
-image:media/en/10_postfix_thumb.png[link="media/en/10_postfix.png"]
-image:media/en/11_postfix_thumb.png[link="media/en/11_postfix.png"]
-image:media/en/12_postfix_thumb.png[link="media/en/12_postfix.png"]
+image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
+image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
+image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
 
 Use the default values for kerberos configuration:
 
-image:media/en/13_kerberos_thumb.png[link="media/en/13_kerberos.png"]
-image:media/en/14_kerberos_thumb.png[link="media/en/14_kerberos.png"]
-image:media/en/15_kerberos_thumb.png[link="media/en/15_kerberos.png"]
+image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
+image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
+image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 ==== Red Hat Enterprise Linux
 
@@ -307,13 +307,13 @@ After installation, the {product} web interface is accessible at the following U
 
 The username is "admin" and password is "yaffas".
 
-image:media/en/{theme}/16_login_thumb.png[link="media/en/{theme}/16_login.png"]
+image:images/en/{theme}/16_login_thumb.png[link="images/en/{theme}/16_login.png"]
 
 On first log in the admin password has to be changed.
 If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
 The database you add here will be used for zarafa and will be created if it does not exists.
 
-image:media/en/{theme}/17_setup_thumb.png[link="media/en/{theme}/17_setup.png"]
+image:images/en/{theme}/17_setup_thumb.png[link="images/en/{theme}/17_setup.png"]
 
 After the first login an authentication server should be selected in Accounts -> Authentication.
 
@@ -322,7 +322,7 @@ Choices are Active Directory, remote LDAP and local authentication.
 If you select local authentication you can select if you want to use this as authentication server.
 Just click on apply if you don't need that.
 
-image:media/en/{theme}/18_authserver_thumb.png[link="media/en/{theme}/18_authserver.png"]
+image:images/en/{theme}/18_authserver_thumb.png[link="images/en/{theme}/18_authserver.png"]
 
 Please note that currently the configuration files (yaffas-config) have to be installed for this step.
 
@@ -335,7 +335,7 @@ It will also not be possible to create resources for Zarafa when no local domain
 
 Now you can go Accounts -> User Management and create some users.
 
-image:media/en/{theme}/19_usercreate_thumb.png[link="media/en/{theme}/19_usercreate.png"]
+image:images/en/{theme}/19_usercreate_thumb.png[link="images/en/{theme}/19_usercreate.png"]
 
 After this step you should be able to login to webacess if you go to https://<your-server's-ip>/webaccess
 
