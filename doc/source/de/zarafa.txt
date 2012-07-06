@@ -89,25 +89,25 @@ Installieren Sie nun zunächst den Client auf dem Windows-Rechner durch einen Do
 
 Starten Sie Outlook und wählen Sie aus dem Menü  _"Extras"_ den punkt  _"E-Mail-Konten"_  Erstellen Sie ein neues E-Mail-Konto. 
 
-image:media/de/zarafa/guides_zarafa_connect1.png[]
+image:images/de/zarafa/guides_zarafa_connect1.png[]
 
 
 
 Als Servertyp wählen Sie bitte  _"Zusätzliche Servertypen"_ aus, und klicken auf weiter. 
 
-image:media/de/zarafa/guides_zarafa_connect2.png[]
+image:images/de/zarafa/guides_zarafa_connect2.png[]
 
 
 
 Wenn Sie wie oben beschrieben die zarafaclient.exe von der CD installiert haben, können Sie hier  _"Zarafa-Server"_ auswählen. Sollte das nicht der Fall sein, dann installieren Sie zunächst bitte den Zarafaclient. 
 
-image:media/de/zarafa/guides_zarafa_connect3.png[]
+image:images/de/zarafa/guides_zarafa_connect3.png[]
 
 
 
 Tragen Sie nun die Daten ihres {product} & ZARAFA-Servers ein. Sie können wahlweise Port 237 für verschlüsselte Übertragung (Standard) oder Port 236 für eine unverschlüsselte Verbindung benutzen. Den Benutzernamen und das Passwort verwenden Sie wie im {product} konfiguriert. 
 
-image:media/de/zarafa/guides_zarafa_connect4.png[]
+image:images/de/zarafa/guides_zarafa_connect4.png[]
 
 
 Stellen Sie bitte sicher, dass für das erstellte Konto der Punkt  _"Neue Nachrichten übermitteln an"_ auf  _"Inbox - Benutzer"_ gesetzt ist. Schließen Sie nun Outlook und öffnen Sie es erneut - Sie sollten nun Zugriff auf ihren Store haben und können mailen, Termine verwalten, Kontakte pflegen, etc. 
