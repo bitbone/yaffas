@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-13 00:19+0300\n"
+"PO-Revision-Date: 2012-04-26 09:24+0200\n"
+"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Stop"
+msgstr "Annuler"
+
+#: lang/en:2
+#, no-wrap
+msgid "Close"
+msgstr "Fermer"
+
+#: lang/en:3 lang/en:19
+#, no-wrap
+msgid "Restore"
+msgstr "Restaurer"
+
+#: lang/en:4
+#, no-wrap
+msgid "Restoring folder $1..."
+msgstr "Restauration du fichier $1..."
+
+#: lang/en:5
+#, no-wrap
+msgid "Restoring element $1..."
+msgstr "Restauration de l'élément $1..."
+
+#: lang/en:6
+#, no-wrap
+msgid "done"
+msgstr "achevé"
+
+#: lang/en:7
+#, no-wrap
+msgid "failed"
+msgstr "échoué"
+
+#: lang/en:8
+#, no-wrap
+msgid "Start restore"
+msgstr "Démarrer la restauration"
+
+#: lang/en:9
+#, no-wrap
+msgid "Restore was started"
+msgstr "La restauration a été initiée"
+
+#: lang/en:10
+#, no-wrap
+msgid "Restore running"
+msgstr "La restauration est en cours"
+
+#: lang/en:11
+#, no-wrap
+msgid "Restore finished"
+msgstr "La restauration est achevée"
+
+#: lang/en:12
+#, no-wrap
+msgid "Subject"
+msgstr "Objet"
+
+#: lang/en:13
+#, no-wrap
+msgid "Sender"
+msgstr "Expéditeur"
+
+#: lang/en:14
+#, no-wrap
+msgid "Date"
+msgstr "Date"
+
+#: lang/en:15
+#, no-wrap
+msgid "Start"
+msgstr "Démarrer"
+
+#: lang/en:16
+#, no-wrap
+msgid "End"
+msgstr "Fin"
+
+#: lang/en:17
+#, no-wrap
+msgid "Select backup"
+msgstr "Sélectionner la sauvegarde"
+
+#: lang/en:18
+#, no-wrap
+msgid "Backup Overview"
+msgstr "Aperçu de la sauvegarde"
+
+#: lang/en:20
+#, no-wrap
+msgid "Clear"
+msgstr "Effacer"
+
+#: lang/en:21
+#, no-wrap
+msgid "Do you want to remove these elements from restore list?"
+msgstr "Désirez-vous retirer ces éléments de la liste de restauration ?"
+
+#: lang/en:22
+#, no-wrap
+msgid "Really clear?"
+msgstr "Êtes-vous certain de vouloir effacer ?"
+
+#: lang/en:23
+#, no-wrap
+msgid "Store"
+msgstr "Stocker"
+
+#: lang/en:24 lang/en:27
+#, no-wrap
+msgid "Backup time"
+msgstr "Heure de la sauvegarde"
+
+#: lang/en:25
+#, no-wrap
+msgid "Settings"
+msgstr "Paramètres"
+
+#: lang/en:26
+#, no-wrap
+msgid "Global settings"
+msgstr "Paramètres globaux"
+
+#: lang/en:28
+#, no-wrap
+msgid "Full backup"
+msgstr "Sauvegarde complète"
+
+#: lang/en:29
+#, no-wrap
+msgid "Differential backup"
+msgstr "Sauvegarde différentielle"
+
+#: lang/en:30
+#, no-wrap
+msgid "at"
+msgstr "à"
+
+#: lang/en:31
+#, no-wrap
+msgid "Backup directory"
+msgstr "Dossier de sauvegarde"
+
+#: lang/en:32
+#, no-wrap
+msgid "Remove"
+msgstr "Supprimer"
+
+#: lang/en:33
+#, no-wrap
+msgid "Preserve fullbackup (in days)"
+msgstr "Conserver une sauvegarde complète (en jours)"
+
+#: lang/en:34
+#, no-wrap
+msgid "Removing directory"
+msgstr "Suppression de répertoire"
+
+#: lang/en:35
+#, no-wrap
+msgid "Click on \"restore\" to restore the selected messages."
+msgstr "Cliquer sur \"Restaurer\" afin de restaurer les messages sélectionnés."
+
+#: lang/en:36
+#, no-wrap
+msgid "No backup available"
+msgstr "Aucune sauvegarde disponible"
+
+#: lang/en:37
+#, no-wrap
+msgid "Zarafa Backup"
+msgstr "Sauvegarde Zarafa"
+
+#: lang/en:38
+#, no-wrap
+msgid "Zarafa Backup is not installed"
+msgstr "Le gestionnaire de sauvegarde Zarafa n'est pas installé"
+
+#: lang/en:40
+#, no-wrap
+msgid "Time not correct."
+msgstr "L'heure est incorrecte."
+
+#: lang/en:41
+#, no-wrap
+msgid "Preserve time not set or not correct."
+msgstr "L'heure de conservation n'es pas définie ou est incorrecte."
+
+#: lang/en:42
+#, no-wrap
+msgid "Could not open file."
+msgstr "Impossible d'ouvrir le fichier."
+
+#: lang/en:43
+#, no-wrap
+msgid "Could not find a full backup."
+msgstr "Impossible de trouver une sauvegarde complète."
+
+#: lang/en:44
+#, no-wrap
+msgid "Could not create directory."
+msgstr "Impossible de créer le répertoire."
+
+#: lang/en:45
+#, no-wrap
+msgid "Value for backup days incorrect."
+msgstr "Valeur invalide pour les dates de sauvegarde"
+
+#: lang/en:46
+#, no-wrap
+msgid "Could not open directory."
+msgstr "Impossible d'ouvrir le répertoire."
+
+#: lang/en:47
+#, no-wrap
+msgid "Loading folder structure take too long. Please try again later."
+msgstr "Le chargement de l'arborescence du répertoire prend trop de temps. Veuillez essayer ultérieurement."
+
+#: lang/en:48
+#, no-wrap
+msgid "Backup"
+msgstr "Sauvegarde"
+
+#: help/en:1
+#, no-wrap
+msgid "In which directory should the backups be stored?"
+msgstr "Dans quel répertoire les sauvegardes devront-elles être stockées ?"
+
+#: help/en:2
+#, no-wrap
+msgid "How long should each backup be preserved?"
+msgstr "Combien de temps chaque sauvegarde devra-elle être conservée ?"

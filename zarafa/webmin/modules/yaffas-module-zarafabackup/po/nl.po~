@@ -1,0 +1,253 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-04-13 00:19+0300\n"
+"PO-Revision-Date: 2012-05-24 09:46+0200\n"
+"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Stop"
+msgstr "Stop"
+
+#: lang/en:2
+#, no-wrap
+msgid "Close"
+msgstr "Sluit"
+
+#: lang/en:3 lang/en:19
+#, no-wrap
+msgid "Restore"
+msgstr "Herstel"
+
+#: lang/en:4
+#, no-wrap
+msgid "Restoring folder $1..."
+msgstr "Map $1 herstellen..."
+
+#: lang/en:5
+#, no-wrap
+msgid "Restoring element $1..."
+msgstr "Element $1 herstellen..."
+
+#: lang/en:6
+#, no-wrap
+msgid "done"
+msgstr "klaar"
+
+#: lang/en:7
+#, no-wrap
+msgid "failed"
+msgstr "mislukt"
+
+#: lang/en:8
+#, no-wrap
+msgid "Start restore"
+msgstr "Begin herstellen"
+
+#: lang/en:9
+#, no-wrap
+msgid "Restore was started"
+msgstr "Herstellen is begonnen"
+
+#: lang/en:10
+#, no-wrap
+msgid "Restore running"
+msgstr "Herstellen wordt uitgevoerd"
+
+#: lang/en:11
+#, no-wrap
+msgid "Restore finished"
+msgstr "Herstellen is afgerond"
+
+#: lang/en:12
+#, no-wrap
+msgid "Subject"
+msgstr "Onderwerp"
+
+#: lang/en:13
+#, no-wrap
+msgid "Sender"
+msgstr "Afzender"
+
+#: lang/en:14
+#, no-wrap
+msgid "Date"
+msgstr "Datum"
+
+#: lang/en:15
+#, no-wrap
+msgid "Start"
+msgstr "Begin"
+
+#: lang/en:16
+#, no-wrap
+msgid "End"
+msgstr "Einde"
+
+#: lang/en:17
+#, no-wrap
+msgid "Select backup"
+msgstr "Selecteer reservekopie"
+
+#: lang/en:18
+#, no-wrap
+msgid "Backup Overview"
+msgstr "Overzicht reservekopieën"
+
+#: lang/en:20
+#, no-wrap
+msgid "Clear"
+msgstr "Wissen"
+
+#: lang/en:21
+#, no-wrap
+msgid "Do you want to remove these elements from restore list?"
+msgstr "Wilt u deze elementen verwijderen van de herstellijst?"
+
+#: lang/en:22
+#, no-wrap
+msgid "Really clear?"
+msgstr "Echt wissen?"
+
+#: lang/en:23
+#, no-wrap
+msgid "Store"
+msgstr "Store"
+
+#: lang/en:24 lang/en:27
+#, no-wrap
+msgid "Backup time"
+msgstr "Tijd van reservekopie"
+
+#: lang/en:25
+#, no-wrap
+msgid "Settings"
+msgstr "Instellingen"
+
+#: lang/en:26
+#, no-wrap
+msgid "Global settings"
+msgstr "Globale instellingen"
+
+#: lang/en:28
+#, no-wrap
+msgid "Full backup"
+msgstr "Volledige reservekopie"
+
+#: lang/en:29
+#, no-wrap
+msgid "Differential backup"
+msgstr "Differentiële reservekopie"
+
+#: lang/en:30
+#, no-wrap
+msgid "at"
+msgstr "op"
+
+#: lang/en:31
+#, no-wrap
+msgid "Backup directory"
+msgstr "Reservekopie-directory"
+
+#: lang/en:32
+#, no-wrap
+msgid "Remove"
+msgstr "Verwijder"
+
+#: lang/en:33
+#, no-wrap
+msgid "Preserve fullbackup (in days)"
+msgstr "Behoud volledige reservekopie (in dagen)"
+
+#: lang/en:34
+#, no-wrap
+msgid "Removing directory"
+msgstr "Verwijderen van directory"
+
+#: lang/en:35
+#, no-wrap
+msgid "Click on \"restore\" to restore the selected messages."
+msgstr "Klik op \"zet terug\" om de geselecteerde berichten terug te zetten."
+
+#: lang/en:36
+#, no-wrap
+msgid "No backup available"
+msgstr "Geen reservekopie beschikbaar"
+
+#: lang/en:37
+#, no-wrap
+msgid "Zarafa Backup"
+msgstr "Zarafa Backup"
+
+#: lang/en:38
+#, no-wrap
+msgid "Zarafa Backup is not installed"
+msgstr "Zarafa Backup is niet geïnstalleerd"
+
+#: lang/en:40
+#, no-wrap
+msgid "Time not correct."
+msgstr "Tijd niet correct."
+
+#: lang/en:41
+#, no-wrap
+msgid "Preserve time not set or not correct."
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
+msgid "Could not open file."
+msgstr "Kon bestand niet openen."
+
+#: lang/en:43
+#, no-wrap
+msgid "Could not find a full backup."
+msgstr "Kon geen volledige reservekopie vinden."
+
+#: lang/en:44
+#, no-wrap
+msgid "Could not create directory."
+msgstr "Kon directory niet aanmaken."
+
+#: lang/en:45
+#, no-wrap
+msgid "Value for backup days incorrect."
+msgstr "Waarde voor reservekopie-dagen incorrect."
+
+#: lang/en:46
+#, no-wrap
+msgid "Could not open directory."
+msgstr "Kon directory niet openen."
+
+#: lang/en:47
+#, no-wrap
+msgid "Loading folder structure take too long. Please try again later."
+msgstr ""
+
+#: lang/en:48
+#, no-wrap
+msgid "Backup"
+msgstr "Reservekopie"
+
+#: help/en:1
+#, no-wrap
+msgid "In which directory should the backups be stored?"
+msgstr "In welke directory moeten reservekopieën worden opgeslagen?"
+
+#: help/en:2
+#, no-wrap
+msgid "How long should each backup be preserved?"
+msgstr "Hoe lang moet elke reservekopie worden bewaard?"

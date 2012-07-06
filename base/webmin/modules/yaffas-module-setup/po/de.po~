@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-24 15:52+0300\n"
+"PO-Revision-Date: 2012-05-15 09:55+0200\n"
+"Last-Translator: Hans-Peter <hps@zarafaserver.de>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Admin password"
+msgstr "Admin Passwort"
+
+#: lang/en:2
+#, no-wrap
+msgid "Admin password (repeat)"
+msgstr "Admin Passwort (Wiederholung)"
+
+#: lang/en:3
+#, no-wrap
+msgid "MySQL database"
+msgstr "MySQL Datenbank"
+
+#: lang/en:4
+#, no-wrap
+msgid "MySQL server"
+msgstr "MySQL Server"
+
+#: lang/en:5
+#, no-wrap
+msgid "MySQL username"
+msgstr "MySQL Benutzername"
+
+#: lang/en:6
+#, no-wrap
+msgid "MySQL password"
+msgstr "MySQL Passwort"
+
+#: lang/en:8
+#, no-wrap
+msgid "Setup finished"
+msgstr "Setup abgeschlossen"
+
+#: lang/en:9
+#, no-wrap
+msgid "Setup was finished successfully. After relogin you can use all features."
+msgstr "Das Setup wurde erfolgreich abgeschlossen. Nach dem erneuten Login können Sie alle Funktionen nutzen."
+
+#: lang/en:11
+#, no-wrap
+msgid "Zarafa settings"
+msgstr "Zarafa Einstellungen"
+
+#: lang/en:12
+#, no-wrap
+msgid "Basic settings"
+msgstr "Grundeinstellungen"
+
+#: lang/en:14
+#, no-wrap
+msgid "Could not connect to database."
+msgstr "Konnte keine Verbindung zur Datenbank herstellen."
+
+#: lang/en:15
+#, no-wrap
+msgid "The admin password is empty or does not match."
+msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."
+
+#: lang/en:17
+#, no-wrap
+msgid "Setup"
+msgstr "Setup"
+
+#: help/en:1
+#, no-wrap
+msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+msgstr "Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden."
+
+#: help/en:2
+#, no-wrap
+msgid "This is the password that is set on the database. You need to set this password manually."
+msgstr "Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden."
+
+#: help/en:3
+#, no-wrap
+msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein."
+
+#: help/en:4
+#, no-wrap
+msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."

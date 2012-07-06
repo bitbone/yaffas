@@ -1,0 +1,83 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Apply key"
+msgstr "Aplicar licença"
+
+#: lang/en:2
+#, no-wrap
+msgid "Install new key"
+msgstr "Instalar nova licença"
+
+#: lang/en:3
+#, no-wrap
+msgid "Install new base key"
+msgstr "Instalar nova licença principal"
+
+#: lang/en:4
+#, no-wrap
+msgid "Install new client key"
+msgstr "Instalar nova licença CAL"
+
+#: lang/en:5
+#, no-wrap
+msgid "Installed licenses"
+msgstr "Licenças instaladas"
+
+#: lang/en:6
+#, no-wrap
+msgid "Base key"
+msgstr "Serial principal"
+
+#: lang/en:7 lang/en:11
+#, no-wrap
+msgid "Serial number"
+msgstr "Serial"
+
+#: lang/en:8
+#, no-wrap
+msgid "License Log"
+msgstr "Log de licença"
+
+#: lang/en:9
+#, no-wrap
+msgid "This is not a valid Zarafa serial"
+msgstr "Este não é um serial Zarafa válido"
+
+#: lang/en:10
+#, no-wrap
+msgid "Archiver key"
+msgstr "Licença Archiver"
+
+#: lang/en:12
+#, no-wrap
+msgid "Install new archiver key"
+msgstr "Instalar nova licença Archiver"
+
+#: lang/en:13
+#, no-wrap
+msgid "Install new archiver client key"
+msgstr "Instalar nova licença Archiver CAL"
+
+#: lang/en:14
+#, no-wrap
+msgid "Zarafa License Key"
+msgstr "Serial Zarafa"

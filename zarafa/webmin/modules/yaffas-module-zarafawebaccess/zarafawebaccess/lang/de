@@ -1,0 +1,20 @@
+lbl_option=Option
+lbl_state=State
+lbl_save=Speichern
+lbl_webaccess_options=Optionen
+lbl_DISABLE_FULL_GAB="vollständiges" globales Adressbuch deaktivieren
+lbl_ENABLE_GAB_ALPHABETBAR=Alphabetleiste im globalen Adressbuch aktivieren
+lbl_ENABLE_PUBLIC_FOLDERS=Öffentliche Ordner aktivieren
+lbl_DISABLE_DELETE_IN_RESTORE_ITEMS=Löschen in "Elemente wiederherstellen" deaktivieren
+lbl_FCKEDITOR_SPELLCHECKER_ENABLED=Rechtschreibprüfung im HTML Editor aktivieren
+lbl_THEME_COLOR=Layout Farbe
+lbl_white=Weiss
+lbl_silver=Silber
+lbl_theme_color=Layout Farbe
+
+err_undefined_type=Unbekannte Webaccess Option
+err_undefined_color=Unbekannte Farbe
+err_webaccess_config=Konnte die Konfigurationsdatei für den Webaccess nicht öffnen
+err_no_aspell=Bitte installieren sie das Paket "aspell-lang" (z.B. aspell-de für Deutsch) für die Rechtschreibprüfung in ihrer Sprache.
+moduletitle=Webaccess
+

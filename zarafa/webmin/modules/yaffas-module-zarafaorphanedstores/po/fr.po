@@ -1,0 +1,156 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-07-06 10:03+0300\n"
+"PO-Revision-Date: 2012-04-26 09:24+0200\n"
+"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.1.5\n"
+
+#: lang/en:1 lang/en:28
+#, no-wrap
+msgid "Orphaned Stores"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Description"
+msgstr "Description"
+
+#: lang/en:3
+#, no-wrap
+msgid "Store Guid"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Guessed Username"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Size"
+msgstr "Taille"
+
+#: lang/en:6
+#, no-wrap
+msgid "Last Modified"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Store Type"
+msgstr ""
+
+# 89%
+#: lang/en:8
+#, fuzzy, no-wrap
+msgid "Do you really want to delete the selected store?"
+msgstr "Désirez-vous vraiment supprimer les utilisateurs sélectionnés ?"
+
+#: lang/en:9
+#, no-wrap
+msgid "Delete orphaned store"
+msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "Do you really want to copy this store to the public store?"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "Delete"
+msgstr "Supprimer"
+
+#: lang/en:12 lang/en:18
+#, no-wrap
+msgid "Hook to user"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Copy to public store"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Hook orphaned store"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Confirm"
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Username"
+msgstr "Nom d'utilisateur"
+
+#: lang/en:17
+#, no-wrap
+msgid "Full Name"
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "Orphaned Store ID"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "Hook store"
+msgstr ""
+
+# 75%
+#: lang/en:21
+#, fuzzy, no-wrap
+msgid "to user"
+msgstr "Pour l'utilisateur"
+
+#: lang/en:22
+#, no-wrap
+msgid "Hook"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "Cancel"
+msgstr "Annuler"
+
+#: lang/en:24
+#, no-wrap
+msgid "Could not hook orphaned store"
+msgstr ""
+
+# 76%
+#: lang/en:25
+#, fuzzy, no-wrap
+msgid "Could not find store"
+msgstr "Impossible de trouver le groupe."
+
+#: lang/en:26
+#, no-wrap
+msgid "Could not hook the store to the selected user."
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "You have to select a user first"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "This is a list of all zarafa stores which are not hooked to any user. Usually this happens when users are deleted. You have the option to delete these stores, hook them to another user or copy them to the public store. Hooking a orphaned store to a user will make the orphaned store the user's new store. The user's old store will in turn be orphaned."
+msgstr ""

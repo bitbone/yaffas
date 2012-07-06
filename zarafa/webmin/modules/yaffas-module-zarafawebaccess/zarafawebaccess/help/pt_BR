@@ -1,0 +1,6 @@
+size=Especifique o tamanho máximo de anexos por e-mail em MB que poderão ser anexado no Webaccess.
+limit=Limite máximo em MB de espaço em disco por cada usuário.
+mysql_user=Este é o usuário que conectará ao banco de dados. Este usuário precisa ser criado e ter permissões de usar o banco de dados especificado.
+mysql_password=Esta é a senha que está definida no banco de dados. Você precisa definir essa senha manualmente.
+mysql_host=Este é o endereço do servidor MySQL. Para usar o serviço local, use 'localhost'.
+mysql_database=Este é o nome do banco de dados para ser usado pelo Zarafa.<br />Recomendamos 'zarafa'.<br />O banco será criado caso não existe. O usuário precisa ter as permissões corretas para este fim.
