@@ -16,19 +16,52 @@
 args="-f /etc/fetchmailrc -L /var/log/fetchmail.log"
 prog="fetchmail"
 RETVAL=0
+FETCHMAILRC="/etc/fetchmailrc"
+FETCHMAILUIDL="/var/spool/mail/.fetchmail-UIDL-cache"
 
 # Defining arguments.
 start() {
+    mkdir -p /var/run/fetchmail
+    chown fetchmail /var/run/fetchmail
+    restorecon /var/run/fetchmail
+
+    if ! grep -q pidfile $FETCHMAILRC; then
+        TMPFILE=$(mktemp)
+        echo "set pidfile /var/run/fetchmail/fetchmail.pid" | cat - $FETCHMAILRC > $TMPFILE && mv $TMPFILE $FETCHMAILRC
+        rm $TMPFILE
+        restorecon $FETCHMAILRC
+    fi
+
+    if ! grep -q idfile $FETCHMAILRC; then
+        TMPFILE=$(mktemp)
+        echo "set idfile " $FETCHMAILUIDL | cat - $FETCHMAILRC > $TMPFILE && mv $TMPFILE $FETCHMAILRC
+        rm $TMPFILE
+        restorecon $FETCHMAILRC
+    fi
+
+    [ -e /home/fetchmail/.fetchids ] && mv /home/fetchmail/.fetchids $FETCHMAILUIDL && restorecon $FETCHMAILUIDL
+
+    chown -f fetchmail $FETCHMAILRC $FETCHMAILUIDL
+    chmod -f 600 $FETCHMAILUIDL
+
     echo -n "Starting $prog: "
+
     su fetchmail -s /bin/sh -c "$prog $args"
+
     RETVAL=$?
-    echo
+
+    if [ $? -eq 0 ]; then
+        success
+    else
+        failure
+    fi
+    echo ""
     return $RETVAL
 }
 
 stop() {
     echo -n "Stopping $prog: "
-    su fetchmail -s /bin/sh -c "fetchmail --quit"
+    killproc fetchmail
     RETVAL=$?
     echo
     return $RETVAL
