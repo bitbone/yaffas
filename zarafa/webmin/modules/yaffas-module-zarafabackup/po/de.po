@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-22 01:17+0300\n"
-"PO-Revision-Date: 2012-07-20 20:57+0200\n"
+"POT-Creation-Date: 2012-07-23 00:53+0300\n"
+"PO-Revision-Date: 2012-07-22 11:43+0200\n"
 "Last-Translator: Michael <m.kromer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -238,9 +238,9 @@ msgid "Loading folder structure take too long. Please try again later."
 msgstr "Das Laden der Ordnerliste dauerte zu lange. Versuchen Sie es später noch einmal."
 
 #: lang/en:48
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Couldn't create symlinks for differential backup. Please check your storage device."
-msgstr "Konnte Symlinks für Differentialsicherung nicht erstellen. Bitte überprüfen Sie Ihr Speichergerät."
+msgstr "Konnte Symlinks für Differentialsicherung nicht erstellen. Bitte überprüfen Sie Ihren Storage."
 
 #: lang/en:49
 #, no-wrap
