@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-07-23 00:53+0300\n"
+"PO-Revision-Date: 2012-07-22 11:43+0200\n"
+"Last-Translator: Michael <m.kromer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -240,7 +240,7 @@ msgstr "Das Laden der Ordnerliste dauerte zu lange. Versuchen Sie es später noc
 #: lang/en:48
 #, no-wrap
 msgid "Couldn't create symlinks for differential backup. Please check your storage device."
-msgstr ""
+msgstr "Konnte Symlinks für Differentialsicherung nicht erstellen. Bitte überprüfen Sie Ihren Storage."
 
 #: lang/en:49
 #, no-wrap
