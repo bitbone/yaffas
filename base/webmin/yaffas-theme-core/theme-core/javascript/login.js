@@ -120,7 +120,7 @@ Yaffas.Login.prototype.handleLogin = function(){
             
             if (re.length > 0) {
 	            this.ui.loading.hide();
-                this.ui.errorDialog.setBody(re[0].innerHTML);
+                this.ui.errorDialog.setBody("<div style='min-width: 180px; text-align: center'>"+re[0].innerHTML+"</div>");
                 this.ui.errorDialog.show();
                 return true;
             }
