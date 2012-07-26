@@ -51,8 +51,13 @@ sub run {
     mkpath($BACKUPDIR);
     chdir $BACKUPDIR;
 
+    my $last = find_last_full();
+
+    if (!$last) {
+        $type = "full";
+    }
+
     if ($type eq "diff") {
-        my $last = find_last_full();
         if ($last ne "") {
             my $old = $last."-F";
             my $new = $date."-".$last."-D";
@@ -94,7 +99,7 @@ sub run {
 }
 
 sub find_last_full {
-    opendir DIR, $BACKUPDIR;
+    opendir DIR, $BACKUPDIR or return;
     my @dirs = sort readdir DIR;
     close DIR;
     my $last;
