@@ -13,7 +13,7 @@
 # Source networking configuration.
 . /etc/sysconfig/network
 
-args="-f /etc/fetchmailrc -L /var/log/fetchmail.log"
+args="-f /etc/fetchmailrc -L /var/log/fetchmail.log --idfile /var/spool/mail/.fetchmail-UIDL-cache"
 prog="fetchmail"
 RETVAL=0
 FETCHMAILRC="/etc/fetchmailrc"
