@@ -9,7 +9,7 @@ use Yaffas::Constant;
 use Yaffas::Conf;
 use Yaffas::File::Config;
 use File::Samba;
-use Yaffas::Service qw(control START STOP RESTART LDAP NSCD HYLAFAX SASLAUTHD SAMBA WINBIND WEBMIN USERMIN ZARAFA_SERVER);
+use Yaffas::Service qw(control START STOP RESTART LDAP NSCD NSLCD HYLAFAX SASLAUTHD SAMBA WINBIND WEBMIN USERMIN ZARAFA_SERVER);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Netconf;
 use Yaffas::Exception;
@@ -867,6 +867,9 @@ sub auth_srv_ldap($)
 
 	Yaffas::Service::control(LDAP, STOP);
 	Yaffas::Service::control(LDAP, START);
+	if (Yaffas::Constant::get_os() eq "RHEL6" ) {
+		Yaffas::Service::control(NSLCD, RESTART);
+	}
 }
 
 
