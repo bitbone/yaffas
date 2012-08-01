@@ -40,6 +40,7 @@ for (keys %main::in) {
 					 zarafaquota => $main::in{'zarafaquota_'.$uid},
 					 zarafaadmin => $main::in{'zarafaadmin_'.$uid},
 					 zarafashared => $main::in{'zarafashared_'.$uid},
+					 zarafahide => $main::in{'zarafahide_'.$uid},
 					 zarafaimap => $main::in{'zarafaimap_'.$uid},
 					 zarafapop3 => $main::in{'zarafapop3_'.$uid},
 					 businessphone => $main::in{'businessphone_'.$uid},
@@ -174,6 +175,7 @@ try {
 				Yaffas::Mail::set_zarafa_quota($login, $info{$_}->{zarafaquota});
 				Yaffas::Module::Users::set_zarafa_admin($login, $info{$_}->{zarafaadmin});
 				Yaffas::Module::Users::set_zarafa_shared($login, $info{$_}->{zarafashared});
+				Yaffas::Module::Users::set_zarafa_hidden($login, $info{$_}->{zarafahide});
 				Yaffas::Module::Users::set_features($login, { imap => $info{$_}->{zarafaimap}, pop3 => $info{$_}->{zarafapop3} });
 			} catch Yaffas::Exception with {
 				$e->append(shift);

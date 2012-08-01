@@ -31,7 +31,7 @@ sub _edit_user($$\@\@;$){
 	my $mailusers = shift;
 	my $take_vars_from_me = shift;
 
-	my ($login, $givenname, $surname, $is_mailuser, @usergroups, $msg, $email, $filetype, @aliases, $zarafaquota, $zarafaadmin, $zarafashared, %avalues);
+	my ($login, $givenname, $surname, $is_mailuser, @usergroups, $msg, $email, $filetype, @aliases, $zarafaquota, $zarafaadmin, $zarafashared, $zarafahide, %avalues);
 
 	if ($take_vars_from_me) {
 			$login = $take_vars_from_me->{"login"};
@@ -46,6 +46,7 @@ sub _edit_user($$\@\@;$){
 			$zarafaquota = $take_vars_from_me->{"zarafaquota"};
 			$zarafaadmin = $take_vars_from_me->{"zarafaadmin"};
 			$zarafashared = $take_vars_from_me->{"zarafashared"};
+			$zarafahide = $take_vars_from_me->{"zarafahide"};
 
 			$avalues{businessphone} = $take_vars_from_me->{"businessphone"};
 			$avalues{location} = $take_vars_from_me->{"location"};
@@ -65,6 +66,7 @@ sub _edit_user($$\@\@;$){
 			$zarafaquota = Yaffas::Mail::get_zarafa_quota($login);
 			$zarafaadmin = Yaffas::Module::Users::get_zarafa_admin($login);
 			$zarafashared = Yaffas::Module::Users::get_zarafa_shared($login);
+			$zarafahide = Yaffas::Module::Users::get_zarafa_hidden($login);
 
 			$avalues{businessphone} = Yaffas::UGM::get_additional_value($login, $Yaffas::Module::Users::ADDITIONAL_VALUES->{businessphone});
 			$avalues{location} = Yaffas::UGM::get_additional_value($login, $Yaffas::Module::Users::ADDITIONAL_VALUES->{location});
@@ -83,6 +85,7 @@ sub _edit_user($$\@\@;$){
 			$zarafaquota = $main::in{zarafaquota_};
 			$zarafaadmin = $main::in{zarafaadmin_};
 			$zarafashared = $main::in{zarafashared_};
+			$zarafahide = $main::in{zarafahide_};
 
 			$avalues{businessphone} = $main::in{"businessphone_"};
 			$avalues{location} = $main::in{"location_"};
@@ -246,6 +249,15 @@ sub _edit_user($$\@\@;$){
 												  checkbox({
 																  -name=>"zarafashared_" . $uid,
 																  -checked=>$zarafashared,
+																  -value=>"yes",
+																  -label=>"",
+																  }),
+												 ]),
+										$Cgi->td([
+												  $main::text{lbl_zarafahide}.":",
+												  checkbox({
+																  -name=>"zarafahide_" . $uid,
+																  -checked=>$zarafahide,
 																  -value=>"yes",
 																  -label=>"",
 																  }),

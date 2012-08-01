@@ -80,6 +80,26 @@ sub set_zarafa_shared($$) {
 	return 1;
 }
 
+sub get_zarafa_hidden($) {
+	my $login = shift;
+	return (Yaffas::LDAP::search_entry("uid=$login", "zarafaHidden"))[0];
+}
+
+sub set_zarafa_hidden($$) {
+	my $login = shift;
+	my $activate = shift;
+	my $ret;
+
+	if ($activate) {
+		$ret = Yaffas::LDAP::replace_entry($login, "zarafaHidden", 1);
+		throw Yaffas::Exception("err_ldap_save", $ret) if ($ret);
+	} else {
+		$ret = Yaffas::LDAP::replace_entry($login, "zarafaHidden", 0);
+		throw Yaffas::Exception("err_ldap_save", $ret) if ($ret);
+	}
+	return 1;
+}
+
 sub check_reasonable_mail($$@) {
 	#$email is reference!
 	my ($user, $email, @aliases) = @_;
