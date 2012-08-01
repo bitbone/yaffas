@@ -32,7 +32,7 @@ start() {
         restorecon $FETCHMAILRC
     fi
 
-    if ! grep -q idfile $FETCHMAILRC; then
+    if ! grep -q "\bidfile\b" $FETCHMAILRC; then
         TMPFILE=$(mktemp)
         echo "set idfile " $FETCHMAILUIDL | cat - $FETCHMAILRC > $TMPFILE && mv $TMPFILE $FETCHMAILRC
         rm $TMPFILE
