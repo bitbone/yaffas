@@ -1,3 +1,4 @@
 zarafaadmin_\d*=Si un utilisateur est administrateur, il aura la possibilité d'ouvrir les bases Zarafa de n'importe quel autre utilisateur.
 zarafashared_\d*=L'utilisateur ne pourra pas se connecter et ne sera pas ajouté à la liste des utilisateurs actifs de votre licence. Les autres utilisateurs pourront accéder à la base de stockage de cet utilisateur en tant que délégués.
 zarafaquota_\d*=Saisir la taille de l'espace disque que cet utilisateur pourra remplir. L'utilisateur sera averti si il s'approche de cette limite. Une fois la limite atteinte, l'utilisateur ne pourra plus envoyer ou recevoir de courriel.
+zarafahide_\d*=When enabled it hides this user from the global addressbook.

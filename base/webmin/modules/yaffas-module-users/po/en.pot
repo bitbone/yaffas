@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-12-31 00:15+0100\n"
+"POT-Creation-Date: 2012-08-02 05:10+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -407,6 +407,11 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
+#: lang/en:80
+#, no-wrap
+msgid "Hide from addressbook"
+msgstr ""
+
 #: help/en:1
 #, no-wrap
 msgid ""
@@ -427,4 +432,9 @@ msgid ""
 "Enter the amount of disk space this user may take up. The user will be "
 "warned if he draws near that limit. After the limit is reached, the user "
 "will not be able to send and receive mails."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "When enabled it hides this user from the global addressbook."
 msgstr ""

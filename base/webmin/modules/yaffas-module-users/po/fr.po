@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-12-31 00:15+0100\n"
+"POT-Creation-Date: 2012-08-02 05:09+0300\n"
 "PO-Revision-Date: 2012-04-26 09:24+0200\n"
 "Last-Translator: Pierrick <pierrick@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -398,6 +398,11 @@ msgstr "Objet"
 msgid "Message"
 msgstr "Message"
 
+#: lang/en:80
+#, no-wrap
+msgid "Hide from addressbook"
+msgstr ""
+
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
@@ -412,3 +417,8 @@ msgstr "L'utilisateur ne pourra pas se connecter et ne sera pas ajouté à la li
 #, no-wrap
 msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
 msgstr "Saisir la taille de l'espace disque que cet utilisateur pourra remplir. L'utilisateur sera averti si il s'approche de cette limite. Une fois la limite atteinte, l'utilisateur ne pourra plus envoyer ou recevoir de courriel."
+
+#: help/en:4
+#, no-wrap
+msgid "When enabled it hides this user from the global addressbook."
+msgstr ""
