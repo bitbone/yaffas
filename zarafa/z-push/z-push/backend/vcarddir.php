@@ -2,12 +2,11 @@
 /***********************************************
 * File      :   vcarddir.php
 * Project   :   Z-Push
-* Descr     :   This backend is for vcard
-*               directories.
+* Descr     :   This backend is for vcard directories.
 *
 * Created   :   01.10.2007
 *
-* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+* Copyright 2007 - 2011 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -41,31 +40,183 @@
 *
 * Consult LICENSE file for details
 ************************************************/
-include_once('diffbackend.php');
+include_once('lib/default/diffbackend/diffbackend.php');
 
-class BackendVCDir extends BackendDiff {
-    var $_user;
-    var $_devid;
-    var $_protocolversion;
+class BackendVCardDir extends BackendDiff {
+    /**----------------------------------------------------------------------------------------------------------
+     * default backend methods
+     */
 
-    function Setup($user, $devid, $protocolversion) {
-        $this->_user = $user;
-        $this->_devid = $devid;
-        $this->_protocolversion = $protocolversion;
-
+    /**
+     * Authenticates the user - NOT EFFECTIVELY IMPLEMENTED
+     * Normally some kind of password check would be done here.
+     * Alternatively, the password could be ignored and an Apache
+     * authentication via mod_auth_* could be done
+     *
+     * @param string        $username
+     * @param string        $domain
+     * @param string        $password
+     *
+     * @access public
+     * @return boolean
+     */
+    public function Logon($username, $domain, $password) {
         return true;
     }
 
-    function SendMail($rfc822, $forward = false, $reply = false, $parent = false) {
+    /**
+     * Logs off
+     *
+     * @access public
+     * @return boolean
+     */
+    public function Logoff() {
+        return true;
+    }
+
+    /**
+     * Sends an e-mail
+     * Not implemented here
+     *
+     * @param SyncSendMail  $sm     SyncSendMail object
+     *
+     * @access public
+     * @return boolean
+     * @throws StatusException
+     */
+    public function SendMail($sm) {
         return false;
     }
 
-    function GetWasteBasket() {
+    /**
+     * Returns the waste basket
+     *
+     * @access public
+     * @return string
+     */
+    public function GetWasteBasket() {
         return false;
     }
 
-    function GetMessageList($folderid, $cutoffdate) {
-        debugLog('VCDir::GetMessageList('.$folderid.')');
+    /**
+     * Returns the content of the named attachment as stream
+     * not implemented
+     *
+     * @param string        $attname
+     *
+     * @access public
+     * @return SyncItemOperationsAttachment
+     * @throws StatusException
+     */
+    public function GetAttachmentData($attname) {
+        return false;
+    }
+
+    /**----------------------------------------------------------------------------------------------------------
+     * implemented DiffBackend methods
+     */
+
+    /**
+     * Returns a list (array) of folders.
+     * In simple implementations like this one, probably just one folder is returned.
+     *
+     * @access public
+     * @return array
+     */
+    public function GetFolderList() {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::GetFolderList()');
+        $contacts = array();
+        $folder = $this->StatFolder("root");
+        $contacts[] = $folder;
+
+        return $contacts;
+    }
+
+    /**
+     * Returns an actual SyncFolder object
+     *
+     * @param string        $id           id of the folder
+     *
+     * @access public
+     * @return object       SyncFolder with information
+     */
+    public function GetFolder($id) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::GetFolder('.$id.')');
+        if($id == "root") {
+            $folder = new SyncFolder();
+            $folder->serverid = $id;
+            $folder->parentid = "0";
+            $folder->displayname = "Contacts";
+            $folder->type = SYNC_FOLDER_TYPE_CONTACT;
+
+            return $folder;
+        } else return false;
+    }
+
+    /**
+     * Returns folder stats. An associative array with properties is expected.
+     *
+     * @param string        $id             id of the folder
+     *
+     * @access public
+     * @return array
+     */
+    public function StatFolder($id) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::StatFolder('.$id.')');
+        $folder = $this->GetFolder($id);
+
+        $stat = array();
+        $stat["id"] = $id;
+        $stat["parent"] = $folder->parentid;
+        $stat["mod"] = $folder->displayname;
+
+        return $stat;
+    }
+
+    /**
+     * Creates or modifies a folder
+     * not implemented
+     *
+     * @param string        $folderid       id of the parent folder
+     * @param string        $oldid          if empty -> new folder created, else folder is to be renamed
+     * @param string        $displayname    new folder name (to be created, or to be renamed to)
+     * @param int           $type           folder type
+     *
+     * @access public
+     * @return boolean                      status
+     * @throws StatusException              could throw specific SYNC_FSSTATUS_* exceptions
+     *
+     */
+    public function ChangeFolder($folderid, $oldid, $displayname, $type){
+        return false;
+    }
+
+    /**
+     * Deletes a folder
+     *
+     * @param string        $id
+     * @param string        $parent         is normally false
+     *
+     * @access public
+     * @return boolean                      status - false if e.g. does not exist
+     * @throws StatusException              could throw specific SYNC_FSSTATUS_* exceptions
+     *
+     */
+    public function DeleteFolder($id, $parentid){
+        return false;
+    }
+
+    /**
+     * Returns a list (array) of messages
+     *
+     * @param string        $folderid       id of the parent folder
+     * @param long          $cutoffdate     timestamp in the past from which on messages should be returned
+     *
+     * @access public
+     * @return array/false  array with messages or false if folder is not available
+     */
+    public function GetMessageList($folderid, $cutoffdate) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::GetMessageList('.$folderid.')');
         $messages = array();
 
         $dir = opendir($this->getPath());
@@ -88,61 +239,18 @@ class BackendVCDir extends BackendDiff {
         return $messages;
     }
 
-    function GetFolderList() {
-        debugLog('VCDir::GetFolderList()');
-        $contacts = array();
-        $folder = $this->StatFolder("root");
-        $contacts[] = $folder;
-
-        return $contacts;
-    }
-
-    function GetFolder($id) {
-        debugLog('VCDir::GetFolder('.$id.')');
-        if($id == "root") {
-            $folder = new SyncFolder();
-            $folder->serverid = $id;
-            $folder->parentid = "0";
-            $folder->displayname = "Contacts";
-            $folder->type = SYNC_FOLDER_TYPE_CONTACT;
-
-            return $folder;
-        } else return false;
-    }
-
-    function StatFolder($id) {
-        debugLog('VCDir::StatFolder('.$id.')');
-        $folder = $this->GetFolder($id);
-
-        $stat = array();
-        $stat["id"] = $id;
-        $stat["parent"] = $folder->parentid;
-        $stat["mod"] = $folder->displayname;
-
-        return $stat;
-    }
-
-    function GetAttachmentData($attname) {
-        return false;
-    }
-
-    function StatMessage($folderid, $id) {
-        debugLog('VCDir::StatMessage('.$folderid.', '.$id.')');
-        if($folderid != "root")
-            return false;
-
-        $stat = stat($this->getPath() . "/" . $id);
-
-        $message = array();
-        $message["mod"] = $stat["mtime"];
-        $message["id"] = $id;
-        $message["flags"] = 1;
-
-        return $message;
-    }
-
-    function GetMessage($folderid, $id, $truncsize, $mimesupport = 0) {
-        debugLog('VCDir::GetMessage('.$folderid.', '.$id.', ..)');
+    /**
+     * Returns the actual SyncXXX object type.
+     *
+     * @param string            $folderid           id of the parent folder
+     * @param string            $id                 id of the message
+     * @param ContentParameters $contentparameters  parameters of the requested message (truncation, mimesupport etc)
+     *
+     * @access public
+     * @return object/false     false if the message could not be retrieved
+     */
+    public function GetMessage($folderid, $id, $contentparameters) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::GetMessage('.$folderid.', '.$id.', ..)');
         if($folderid != "root")
             return;
 
@@ -355,16 +463,44 @@ class BackendVCDir extends BackendDiff {
         return $message;
     }
 
-    function DeleteMessage($folderid, $id) {
-        return unlink($this->getPath() . '/' . $id);
+    /**
+     * Returns message stats, analogous to the folder stats from StatFolder().
+     *
+     * @param string        $folderid       id of the folder
+     * @param string        $id             id of the message
+     *
+     * @access public
+     * @return array
+     */
+    public function StatMessage($folderid, $id) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::StatMessage('.$folderid.', '.$id.')');
+        if($folderid != "root")
+            return false;
+
+        $stat = stat($this->getPath() . "/" . $id);
+
+        $message = array();
+        $message["mod"] = $stat["mtime"];
+        $message["id"] = $id;
+        $message["flags"] = 1;
+
+        return $message;
     }
 
-    function SetReadFlag($folderid, $id, $flags) {
-        return false;
-    }
-
-    function ChangeMessage($folderid, $id, $message) {
-        debugLog('VCDir::ChangeMessage('.$folderid.', '.$id.', ..)');
+    /**
+     * Called when a message has been changed on the mobile.
+     * This functionality is not available for emails.
+     *
+     * @param string        $folderid       id of the folder
+     * @param string        $id             id of the message
+     * @param SyncXXX       $message        the SyncObject containing a message
+     *
+     * @access public
+     * @return array                        same return value as StatMessage()
+     * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
+     */
+    public function ChangeMessage($folderid, $id, $message) {
+        ZLog::Write(LOGLEVEL_DEBUG, 'VCDir::ChangeMessage('.$folderid.', '.$id.', ..)');
         $mapping = array(
             'fileas' => 'FN',
             'lastname;firstname;middlename;title;suffix' => 'N',
@@ -391,7 +527,7 @@ class BackendVCDir extends BackendDiff {
         $data = "BEGIN:VCARD\nVERSION:2.1\nPRODID:Z-Push\n";
         foreach($mapping as $k => $v){
             $val = '';
-            $ks = split(';', $k);
+            $ks = explode(';', $k);
             foreach($ks as $i){
                 if(!empty($message->$i))
                     $val .= $this->escape($message->$i);
@@ -440,16 +576,74 @@ class BackendVCDir extends BackendDiff {
         return $this->StatMessage($folderid, $id);
     }
 
-    function MoveMessage($folderid, $id, $newfolderid) {
+    /**
+     * Changes the 'read' flag of a message on disk
+     *
+     * @param string        $folderid       id of the folder
+     * @param string        $id             id of the message
+     * @param int           $flags          read flag of the message
+     *
+     * @access public
+     * @return boolean                      status of the operation
+     * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
+     */
+    public function SetReadFlag($folderid, $id, $flags) {
         return false;
     }
 
-    // -----------------------------------
-
-    function getPath() {
-        return str_replace('%u', $this->_user, VCARDDIR_DIR);
+    /**
+     * Called when the user has requested to delete (really delete) a message
+     *
+     * @param string        $folderid       id of the folder
+     * @param string        $id             id of the message
+     *
+     * @access public
+     * @return boolean                      status of the operation
+     * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
+     */
+    public function DeleteMessage($folderid, $id) {
+        return unlink($this->getPath() . '/' . $id);
     }
 
+    /**
+     * Called when the user moves an item on the PDA from one folder to another
+     * not implemented
+     *
+     * @param string        $folderid       id of the source folder
+     * @param string        $id             id of the message
+     * @param string        $newfolderid    id of the destination folder
+     *
+     * @access public
+     * @return boolean                      status of the operation
+     * @throws StatusException              could throw specific SYNC_MOVEITEMSSTATUS_* exceptions
+     */
+    public function MoveMessage($folderid, $id, $newfolderid) {
+        return false;
+    }
+
+
+    /**----------------------------------------------------------------------------------------------------------
+     * private vcard-specific internals
+     */
+
+    /**
+     * The path we're working on
+     *
+     * @access private
+     * @return string
+     */
+    private function getPath() {
+        return str_replace('%u', $this->store, VCARDDIR_DIR);
+    }
+
+    /**
+     * Escapes a string
+     *
+     * @param string        $data           string to be escaped
+     *
+     * @access private
+     * @return string
+     */
     function escape($data){
         if (is_array($data)) {
             foreach ($data as $key => $val) {
@@ -463,6 +657,14 @@ class BackendVCDir extends BackendDiff {
         return u2wi($data);
     }
 
+    /**
+     * Un-escapes a string
+     *
+     * @param string        $data           string to be un-escaped
+     *
+     * @access private
+     * @return string
+     */
     function unescape($data){
         $data = str_replace(array('\\\\', '\\;', '\\,', '\\n','\\N'),array('\\', ';', ',', "\n", "\n"),$data);
         return $data;

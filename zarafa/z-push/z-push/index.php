@@ -4,11 +4,11 @@
 * Project   :   Z-Push
 * Descr     :   This is the entry point
 *               through which all requests
-*               are called.
+*               are processed.
 *
 * Created   :   01.10.2007
 *
-* Copyright 2007 - 2010 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -43,192 +43,238 @@
 * Consult LICENSE file for details
 ************************************************/
 
-ob_start(false, 1048576);
+ob_start(null, 1048576);
 
-include_once('zpushdefs.php');
-include_once("config.php");
-include_once("proto.php");
-include_once("request.php");
-include_once("debug.php");
-include_once("compat.php");
-include_once("version.php");
+include_once('lib/exceptions/exceptions.php');
+include_once('lib/utils/utils.php');
+include_once('lib/utils/compat.php');
+include_once('lib/utils/timezoneutil.php');
+include_once('lib/core/zpushdefs.php');
+include_once('lib/core/stateobject.php');
+include_once('lib/core/interprocessdata.php');
+include_once('lib/core/pingtracking.php');
+include_once('lib/core/topcollector.php');
+include_once('lib/core/loopdetection.php');
+include_once('lib/core/asdevice.php');
+include_once('lib/core/statemanager.php');
+include_once('lib/core/devicemanager.php');
+include_once('lib/core/zpush.php');
+include_once('lib/core/zlog.php');
+include_once('lib/interface/ibackend.php');
+include_once('lib/interface/ichanges.php');
+include_once('lib/interface/iexportchanges.php');
+include_once('lib/interface/iimportchanges.php');
+include_once('lib/interface/isearchprovider.php');
+include_once('lib/interface/istatemachine.php');
+include_once('lib/core/streamer.php');
+include_once('lib/core/streamimporter.php');
+include_once('lib/core/synccollections.php');
+include_once('lib/core/hierarchycache.php');
+include_once('lib/core/changesmemorywrapper.php');
+include_once('lib/core/syncparameters.php');
+include_once('lib/core/bodypreference.php');
+include_once('lib/core/contentparameters.php');
+include_once('lib/wbxml/wbxmldefs.php');
+include_once('lib/wbxml/wbxmldecoder.php');
+include_once('lib/wbxml/wbxmlencoder.php');
+include_once('lib/syncobjects/syncobject.php');
+include_once('lib/syncobjects/syncbasebody.php');
+include_once('lib/syncobjects/syncbaseattachment.php');
+include_once('lib/syncobjects/syncmailflags.php');
+include_once('lib/syncobjects/syncrecurrence.php');
+include_once('lib/syncobjects/syncappointment.php');
+include_once('lib/syncobjects/syncappointmentexception.php');
+include_once('lib/syncobjects/syncattachment.php');
+include_once('lib/syncobjects/syncattendee.php');
+include_once('lib/syncobjects/syncmeetingrequestrecurrence.php');
+include_once('lib/syncobjects/syncmeetingrequest.php');
+include_once('lib/syncobjects/syncmail.php');
+include_once('lib/syncobjects/syncnote.php');
+include_once('lib/syncobjects/synccontact.php');
+include_once('lib/syncobjects/syncfolder.php');
+include_once('lib/syncobjects/syncprovisioning.php');
+include_once('lib/syncobjects/synctaskrecurrence.php');
+include_once('lib/syncobjects/synctask.php');
+include_once('lib/syncobjects/syncoofmessage.php');
+include_once('lib/syncobjects/syncoof.php');
+include_once('lib/syncobjects/syncuserinformation.php');
+include_once('lib/syncobjects/syncdeviceinformation.php');
+include_once('lib/syncobjects/syncdevicepassword.php');
+include_once('lib/syncobjects/syncitemoperationsattachment.php');
+include_once('lib/syncobjects/syncsendmail.php');
+include_once('lib/syncobjects/syncsendmailsource.php');
+include_once('lib/default/backend.php');
+include_once('lib/default/searchprovider.php');
+include_once('lib/request/request.php');
+include_once('lib/request/requestprocessor.php');
 
-// Attempt to set maximum execution time
-ini_set('max_execution_time', SCRIPT_TIMEOUT);
-set_time_limit(SCRIPT_TIMEOUT);
+include_once('config.php');
+include_once('version.php');
 
-$input = fopen("php://input", "r");
-$output = fopen("php://output", "w+");
 
-// The script must always be called with authorisation info
-if(!isset($_SERVER['PHP_AUTH_PW'])) {
-    debugLog("Start");
-    debugLog("Z-Push version: $zpush_version");
-    debugLog("Client IP: ". $_SERVER['REMOTE_ADDR']);
-    header("WWW-Authenticate: Basic realm=\"ZPush\"");
-    header("HTTP/1.1 401 Unauthorized");
-    printZPushLegal("Access denied. Please send authorisation information");
-    debugLog("Access denied: no password sent.");
-    debugLog("end");
-    debugLog("--------");
-    return;
-}
+    // Attempt to set maximum execution time
+    ini_set('max_execution_time', SCRIPT_TIMEOUT);
+    set_time_limit(SCRIPT_TIMEOUT);
 
-// split username & domain if received as one
-global $auth_user;
-$pos = strrpos($_SERVER['PHP_AUTH_USER'], '\\');
-if($pos === false){
-    $auth_user = $_SERVER['PHP_AUTH_USER'];
-    $auth_domain = '';
-}else{
-    $auth_domain = substr($_SERVER['PHP_AUTH_USER'],0,$pos);
-    $auth_user = substr($_SERVER['PHP_AUTH_USER'],$pos+1);
-}
-$auth_pw = $_SERVER['PHP_AUTH_PW'];
+    try {
+        // check config & initialize the basics
+        ZPush::CheckConfig();
+        Request::Initialize();
+        ZLog::Initialize();
 
-debugLog("Start");
-debugLog("Z-Push version: $zpush_version");
-debugLog("Client IP: ". $_SERVER['REMOTE_ADDR']);
+        ZLog::Write(LOGLEVEL_DEBUG,"-------- Start");
+        ZLog::Write(LOGLEVEL_INFO,
+                    sprintf("Version='%s' method='%s' from='%s' cmd='%s' getUser='%s' devId='%s' devType='%s'",
+                                    @constant('ZPUSH_VERSION'), Request::GetMethod(), Request::GetRemoteAddr(),
+                                    Request::GetCommand(), Request::GetGETUser(), Request::GetDeviceID(), Request::GetDeviceType()));
 
-$cmd = $user = $devid = $devtype = "";
+        // Stop here if this is an OPTIONS request
+        if (Request::IsMethodOPTIONS())
+            throw new NoPostRequestException("Options request", NoPostRequestException::OPTIONS_REQUEST);
 
-// Parse the standard GET parameters
-if(isset($_GET["Cmd"]))
-    $cmd = $_GET["Cmd"];
-if(isset($_GET["User"]))
-    $user = $_GET["User"];
-if(isset($_GET["DeviceId"]))
-    $devid = $_GET["DeviceId"];
-if(isset($_GET["DeviceType"]))
-    $devtype = $_GET["DeviceType"];
+        ZPush::CheckAdvancedConfig();
 
-// The GET parameters are required
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(!isset($user) || !isset($devid) || !isset($devtype)) {
-        print("Your device requested the Z-Push URL without the required GET parameters");
-        return;
-    }
-}
+        // Process request headers and look for AS headers
+        Request::ProcessHeaders();
 
-// Get the request headers so we can get the AS headers
-$requestheaders = array_change_key_case(apache_request_headers(), CASE_LOWER);
+        // Check required GET parameters
+        if(Request::IsMethodPOST() && (Request::GetCommandCode() === false || !Request::GetGETUser() || !Request::GetDeviceID() || !Request::GetDeviceType()))
+            throw new FatalException("Requested the Z-Push URL without the required GET parameters");
 
-global $protocolversion, $policykey, $useragent;
-$protocolversion = (isset($requestheaders["ms-asprotocolversion"]))? $requestheaders["ms-asprotocolversion"] : "1.0";
-$policykey = (isset($requestheaders["x-ms-policykey"]))? $requestheaders["x-ms-policykey"] : 0;
-$useragent = (isset($requestheaders["user-agent"]))? $requestheaders["user-agent"] : "unknown";
+        // Load the backend
+        $backend = ZPush::GetBackend();
 
-debugLog("Client supports version " . $protocolversion);
+        // always request the authorization header
+        if (! Request::AuthenticationInfo())
+            throw new AuthenticationRequiredException("Access denied. Please send authorisation information");
 
-// Load our backend driver
-$backend_dir = opendir(BASE_PATH . "/backend");
-while($entry = readdir($backend_dir)) {
-    $subdirfile = BASE_PATH . "/backend/" . $entry . "/" . $entry . ".php";
+        // check the provisioning information
+        if (PROVISIONING === true && Request::IsMethodPOST() && ZPush::CommandNeedsProvisioning(Request::GetCommandCode()) &&
+            ((Request::WasPolicyKeySent() && Request::GetPolicyKey() == 0) || ZPush::GetDeviceManager()->ProvisioningRequired(Request::GetPolicyKey())) &&
+            (LOOSE_PROVISIONING === false ||
+            (LOOSE_PROVISIONING === true && Request::WasPolicyKeySent())))
+            //TODO for AS 14 send a wbxml response
+            throw new ProvisioningRequiredException();
 
-    if(substr($entry,0,1) == "." || (substr($entry,-3) != "php" && !is_file($subdirfile)))
-        continue;
+        // most commands require an authenticated user
+        if (ZPush::CommandNeedsAuthentication(Request::GetCommandCode()))
+            RequestProcessor::Authenticate();
 
-    // do not load Zarafa backend if PHP-MAPI is unavailable
-    if (!function_exists("mapi_logon") && ($entry == "ics.php"))
-        continue;
+        // Do the actual processing of the request
+        if (Request::IsMethodGET())
+            throw new NoPostRequestException("This is the Z-Push location and can only be accessed by Microsoft ActiveSync-capable devices", NoPostRequestException::GET_REQUEST);
 
-    // do not load Kolab backend if not a Kolab system
-    if (! file_exists('Horde/Kolab/Kolab_Zpush/lib/kolabActivesyncData.php') && ($entry == "kolab"))
-        continue;
-
-    if (is_file($subdirfile))
-        $entry = $entry . "/" . $entry . ".php";
-
-    include_once(BASE_PATH . "/backend/" . $entry);
-}
-
-// Initialize our backend
-$backend = new $BACKEND_PROVIDER();
-
-if($backend->Logon($auth_user, $auth_domain, $auth_pw) == false) {
-    header("HTTP/1.1 401 Unauthorized");
-    header("WWW-Authenticate: Basic realm=\"ZPush\"");
-    printZPushLegal("Access denied. Username or password incorrect.");
-    debugLog("Access denied: backend logon failed.");
-    debugLog("end");
-    debugLog("--------");
-    return;
-}
-
-// $user is usually the same as the PHP_AUTH_USER. This allows you to sync the 'john' account if you
-// have sufficient privileges as user 'joe'.
-if($backend->Setup($user, $devid, $protocolversion) == false) {
-    header("HTTP/1.1 401 Unauthorized");
-    header("WWW-Authenticate: Basic realm=\"ZPush\"");
-    printZPushLegal("Access denied or user '$user' unknown.");
-    debugLog("Access denied: backend setup failed.");
-    debugLog("end");
-    debugLog("--------");
-    return;
-}
-
-// check policy header
-if (PROVISIONING === true && $_SERVER["REQUEST_METHOD"] == 'POST' && $cmd != 'Ping' && $cmd != 'Provision' &&
-    $backend->CheckPolicy($policykey, $devid) != SYNC_PROVISION_STATUS_SUCCESS &&
-    (LOOSE_PROVISIONING === false ||
-    (LOOSE_PROVISIONING === true && isset($requestheaders["x-ms-policykey"])))) {
-
-    header("HTTP/1.1 449 Retry after sending a PROVISION command");
-    header("MS-Server-ActiveSync: 6.5.7638.1");
-    header("MS-ASProtocolVersions: 1.0,2.0,2.1,2.5");
-    header("MS-ASProtocolCommands: Sync,SendMail,SmartForward,SmartReply,GetAttachment,GetHierarchy,CreateCollection,DeleteCollection,MoveCollection,FolderSync,FolderCreate,FolderDelete,FolderUpdate,MoveItems,GetItemEstimate,MeetingResponse,Provision,ResolveRecipients,ValidateCert,Search,Ping");
-    header("Cache-Control: private");
-    debugLog("POST cmd $cmd denied: Retry after sending a PROVISION command");
-    debugLog("end");
-    debugLog("--------");
-    return;
-}
-
-// Do the actual request
-switch($_SERVER["REQUEST_METHOD"]) {
-    case 'OPTIONS':
-        header("MS-Server-ActiveSync: 6.5.7638.1");
-        header("MS-ASProtocolVersions: 1.0,2.0,2.1,2.5");
-        header("MS-ASProtocolCommands: Sync,SendMail,SmartForward,SmartReply,GetAttachment,GetHierarchy,CreateCollection,DeleteCollection,MoveCollection,FolderSync,FolderCreate,FolderDelete,FolderUpdate,MoveItems,GetItemEstimate,MeetingResponse,ResolveRecipients,ValidateCert,".(PROVISIONING === true ? "Provision,":"")."Search,Ping");
-        debugLog("Options request");
-        break;
-    case 'POST':
-        header("MS-Server-ActiveSync: 6.5.7638.1");
-        debugLog("POST cmd: $cmd");
         // Do the actual request
-        if(!HandleRequest($backend, $cmd, $devid, $protocolversion)) {
-            // Request failed. Try to output some kind of error information. We can only do this if
-            // output had not started yet. If it has started already, we can't show the user the error, and
-            // the device will give its own (useless) error message.
-            if(!headers_sent())
-                printZPushLegal("Error rocessing command <i>$cmd</i> from your PDA.", "Here is the debug output:<br><pre>". getDebugInfo() . "</pre>");
+        header(ZPush::GetServerHeader());
+
+        // announce the supported AS versions (if not already sent to device)
+        if (ZPush::GetDeviceManager()->AnnounceASVersion()) {
+            $versions = ZPush::GetSupportedProtocolVersions(true);
+            ZLog::Write(LOGLEVEL_INFO, sprintf("Announcing latest AS version to device: %s", $versions));
+            header("X-MS-RP: ". $versions);
         }
-        break;
-    case 'GET':
-        debugLog("GET request from agent: ". $useragent);
-        printZPushLegal("GET not supported", "This is the z-push location and can only be accessed by Microsoft ActiveSync-capable devices.");
-        break;
-}
 
+        RequestProcessor::Initialize();
+        if(!RequestProcessor::HandleRequest())
+            throw new WBXMLException(ZLog::GetWBXMLDebugInfo());
 
-$len = ob_get_length();
-$data = ob_get_contents();
+        // stream the data
+        $len = ob_get_length();
+        $data = ob_get_contents();
+        ob_end_clean();
 
-ob_end_clean();
+        // log amount of data transferred
+        // TODO check $len when streaming more data (e.g. Attachments), as the data will be send chunked
+        ZPush::GetDeviceManager()->SentData($len);
 
-// Unfortunately, even though zpush can stream the data to the client
-// with a chunked encoding, using chunked encoding also breaks the progress bar
-// on the PDA. So we de-chunk here and just output a content-length header and
-// send it as a 'normal' packet. If the output packet exceeds 1MB (see ob_start)
-// then it will be sent as a chunked packet anyway because PHP will have to flush
-// the buffer.
+        // Unfortunately, even though Z-Push can stream the data to the client
+        // with a chunked encoding, using chunked encoding breaks the progress bar
+        // on the PDA. So the data is de-chunk here, written a content-length header and
+        // data send as a 'normal' packet. If the output packet exceeds 1MB (see ob_start)
+        // then it will be sent as a chunked packet anyway because PHP will have to flush
+        // the buffer.
+        if(!headers_sent())
+            header("Content-Length: $len");
 
-header("Content-Length: $len");
-print $data;
+        // send vnd.ms-sync.wbxml content type header if there is no content
+        // otherwise text/html content type is added which might break some devices
+        if ($len == 0)
+            header("Content-Type: application/vnd.ms-sync.wbxml");
 
-// destruct backend after all data is on the stream
-$backend->Logoff();
+        print $data;
 
-debugLog("end");
-debugLog("--------");
+        // destruct backend after all data is on the stream
+        $backend->Logoff();
+    }
+
+    catch (NoPostRequestException $nopostex) {
+        if ($nopostex->getCode() == NoPostRequestException::OPTIONS_REQUEST) {
+            header(ZPush::GetServerHeader());
+            header(ZPush::GetSupportedProtocolVersions());
+            header(ZPush::GetSupportedCommands());
+            ZLog::Write(LOGLEVEL_INFO, $nopostex->getMessage());
+        }
+        else if ($nopostex->getCode() == NoPostRequestException::GET_REQUEST) {
+            if (Request::GetUserAgent())
+                ZLog::Write(LOGLEVEL_INFO, sprintf("User-agent: '%s'", Request::GetUserAgent()));
+            if (!headers_sent() && $nopostex->showLegalNotice())
+                ZPush::PrintZPushLegal('GET not supported', $nopostex->getMessage());
+        }
+    }
+
+    catch (Exception $ex) {
+        if (Request::GetUserAgent())
+            ZLog::Write(LOGLEVEL_INFO, sprintf("User-agent: '%s'", Request::GetUserAgent()));
+        $exclass = get_class($ex);
+
+        if(!headers_sent()) {
+            if ($ex instanceof ZPushException) {
+                header('HTTP/1.1 '. $ex->getHTTPCodeString());
+                foreach ($ex->getHTTPHeaders() as $h)
+                    header($h);
+            }
+            // something really unexpected happened!
+            else
+                header('HTTP/1.1 500 Internal Server Error');
+        }
+        else
+            ZLog::Write(LOGLEVEL_FATAL, "Exception: ($exclass) - headers were already sent. Message: ". $ex->getMessage());
+
+        if ($ex instanceof AuthenticationRequiredException) {
+            ZPush::PrintZPushLegal($exclass, sprintf('<pre>%s</pre>',$ex->getMessage()));
+
+            // log the failed login attemt e.g. for fail2ban
+            if (defined('LOGAUTHFAIL') && LOGAUTHFAIL != false)
+                ZLog::Write(LOGLEVEL_WARN, sprintf("IP: %s failed to authenticate user '%s'",  Request::GetRemoteAddr(), Request::GetAuthUser()? Request::GetAuthUser(): Request::GetGETUser() ));
+        }
+
+        // This could be a WBXML problem.. try to get the complete request
+        else if ($ex instanceof WBXMLException) {
+            ZLog::Write(LOGLEVEL_FATAL, "Request could not be processed correctly due to a WBXMLException. Please report this.");
+        }
+
+        // Try to output some kind of error information. This is only possible if
+        // the output had not started yet. If it has started already, we can't show the user the error, and
+        // the device will give its own (useless) error message.
+        else if (!($ex instanceof ZPushException) || $ex->showLegalNotice()) {
+            $cmdinfo = (Request::GetCommand())? sprintf(" processing command <i>%s</i>", Request::GetCommand()): "";
+            $extrace = $ex->getTrace();
+            $trace = (!empty($extrace))? "\n\nTrace:\n". print_r($extrace,1):"";
+            ZPush::PrintZPushLegal($exclass . $cmdinfo, sprintf('<pre>%s</pre>',$ex->getMessage() . $trace));
+        }
+
+        // Announce exception to process loop detection
+        if (ZPush::GetDeviceManager(false))
+            ZPush::GetDeviceManager()->AnnounceProcessException($ex);
+
+        // Announce exception if the TopCollector if available
+        ZPush::GetTopCollector()->AnnounceInformation(get_class($ex), true);
+    }
+
+    // save device data if the DeviceManager is available
+    if (ZPush::GetDeviceManager(false))
+        ZPush::GetDeviceManager()->Save();
+
+    // end gracefully
+    ZLog::Write(LOGLEVEL_DEBUG, '-------- End');
 ?>

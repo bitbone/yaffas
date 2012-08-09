@@ -903,7 +903,7 @@ class Mail_mimeDecode
 
         // all ISO-8859-1 are converted as if they were Windows-1252 - see Mantis #456
         if (strtolower($charset) == 'iso-8859-1')
-           $charset = 'Windows-1252';
+            $charset = 'Windows-1252';
 
         return @iconv($charset, $this->_charset. "//TRANSLIT", $input);
     }
@@ -917,7 +917,7 @@ class Mail_mimeDecode
      * @access private
      */
     function raiseError($message) {
-        debugLog("mimeDecode error: ". $message);
+        ZLog::Write(LOGLEVEL_ERROR, "mimeDecode error: ". $message);
         return false;
     }
 } // End of class

@@ -6,5 +6,5 @@ DESTDIR ?= /
 clean:
 
 install:
-	mkdir -p $(DESTDIR)/$(APACHE_ROOT)/
-	cp -a z-push $(DESTDIR)/$(APACHE_ROOT)/
+	mkdir -p $(DESTDIR)/usr/share/z-push/
+	cp -a z-push/* $(DESTDIR)/usr/share/z-push/

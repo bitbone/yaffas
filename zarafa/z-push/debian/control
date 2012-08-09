@@ -7,6 +7,6 @@ Standards-Version: 3.6.2
 
 Package: z-push
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, php-pear, php-mail, libapache2-mod-php5
-Description: Open-source push technology
- Z-push is an implementation of the ActiveSync protocol, which is used 'over-the-air' for multi platform ActiveSync devices, including Windows Mobile, Ericsson and Nokia phones. With Z-push any groupware can be connected and synced with these devices.
+Depends: ${shlibs:Depends}, ${misc:Depends}, php-mail, libapache2-mod-php5
+Description: Open-source ActiveSync implementation
+ Z-Push is an implementation of the ActiveSync protocol which is used 'over-the-air' for multi platform ActiveSync devices, including Windows Mobile, iPhone, Android, Sony Ericsson and Nokia mobile devices. With Z-Push any groupware can be connected and synced with these devices. 

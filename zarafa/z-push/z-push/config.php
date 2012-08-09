@@ -40,24 +40,15 @@
 *
 * Consult LICENSE file for details
 ************************************************/
-    // Defines the default time zone
-    if (function_exists("date_default_timezone_set")){
-        date_default_timezone_set("Europe/Amsterdam");
-    }
 
-    // Defines the base path on the server, terminated by a slash
-    define('BASE_PATH', dirname($_SERVER['SCRIPT_FILENAME']) . "/");
+/**********************************************************************************
+ *  Default settings
+ */
+    // Defines the default time zone, change e.g. to "Europe/London" if necessary
+    define('TIMEZONE', '');
 
-    // Define the include paths
-    ini_set('include_path',
-                        BASE_PATH. "include/" . PATH_SEPARATOR .
-                        BASE_PATH. PATH_SEPARATOR .
-                        ini_get('include_path') . PATH_SEPARATOR .
-                        "/usr/share/php/" . PATH_SEPARATOR .
-                        "/usr/share/php5/" . PATH_SEPARATOR .
-                        "/usr/share/pear/");
-
-    define('STATE_DIR', BASE_PATH.'/state');
+    // Defines the base path on the server
+    define('BASE_PATH', dirname($_SERVER['SCRIPT_FILENAME']). '/');
 
     // Try to set unlimited timeout
     define('SCRIPT_TIMEOUT', 0);
@@ -65,6 +56,32 @@
     //Max size of attachments to display inline. Default is 1MB
     define('MAX_EMBEDDED_SIZE', 1048576);
 
+
+/**********************************************************************************
+ *  Default FileStateMachine settings
+ */
+    define('STATE_DIR', '/var/lib/z-push/');
+
+
+/**********************************************************************************
+ *  Logging settings
+ */
+    define('LOGFILEDIR', '/var/log/z-push/');
+    define('LOGFILE', LOGFILEDIR . 'z-push.log');
+    define('LOGERRORFILE', LOGFILEDIR . 'z-push-error.log');
+    define('LOGLEVEL', LOGLEVEL_INFO);
+    define('LOGAUTHFAIL', false);
+
+
+    // To save e.g. WBXML data only for selected users, add the usernames to the array
+    // The data will be saved into a dedicated file per user in the LOGFILEDIR
+    define('LOGUSERLEVEL', LOGLEVEL_DEVICEID);
+    $specialLogUsers = array();
+
+
+/**********************************************************************************
+ *  Mobile settings
+ */
     // Device Provisioning
     define('PROVISIONING', true);
 
@@ -96,13 +113,21 @@
     // a higher value if you have a high load on the server.
     define('PING_INTERVAL', 30);
 
+    // Interval in seconds to force a re-check of potentially missed notifications when
+    // using a changes sink. Default are 300 seconds (every 5 min).
+    // This can also be disabled by setting it to false
+    define('SINK_FORCERECHECK', 300);
+
+/**********************************************************************************
+ *  Backend settings
+ */
     // The data providers that we are using (see configuration below)
-    $BACKEND_PROVIDER = "BackendICS";
+    define('BACKEND_PROVIDER', "BackendZarafa");
+
 
     // ************************
-    //  BackendICS settings
+    //  BackendZarafa settings
     // ************************
-
     // Defines the server to which we want to connect
     define('MAPI_SERVER', 'file:///var/run/zarafa');
 
@@ -110,9 +135,7 @@
     // ************************
     //  BackendIMAP settings
     // ************************
-
     // Defines the server to which we want to connect
-    // recommended to use local servers only
     define('IMAP_SERVER', 'localhost');
     // connecting to default port (143)
     define('IMAP_PORT', 143);
@@ -125,9 +148,9 @@
     define('IMAP_DEFAULTFROM', '');
     // copy outgoing mail to this folder. If not set z-push will try the default folders
     define('IMAP_SENTFOLDER', '');
-    // forward messages inline (default off - as attachment)
+    // forward messages inline (default false - as attachment)
     define('IMAP_INLINE_FORWARD', false);
-    // use imap_mail() to send emails (default) - off uses mail()
+    // use imap_mail() to send emails (default) - if false mail() is used
     define('IMAP_USE_IMAPMAIL', true);
 
 
@@ -138,13 +161,77 @@
     define('MAILDIR_SUBDIR', 'Maildir');
 
     // **********************
-    //  BackendVCDir settings
+    //  BackendVCardDir settings
     // **********************
     define('VCARDDIR_DIR', '/home/%u/.kde/share/apps/kabc/stdvcf');
 
-    // Alternative backend to perform SEARCH requests (GAL search)
-    // if an empty value is used, the default search functionality of the main backend is used
-    // use 'SearchLDAP' to search in a LDAP directory (see backend/searchldap/config.php)
+
+/**********************************************************************************
+ *  Search provider settings
+ *
+ *  Alternative backend to perform SEARCH requests (GAL search)
+ *  By default the main Backend defines the preferred search functionality.
+ *  If set, the Search Provider will always be preferred.
+ *  Use 'BackendSearchLDAP' to search in a LDAP directory (see backend/searchldap/config.php)
+ */
     define('SEARCH_PROVIDER', '');
+    // Time in seconds for the server search. Setting it too high might result in timeout.
+    // Setting it too low might not return all results. Default is 10.
+    define('SEARCH_WAIT', 10);
+    // The maximum number of results to send to the client. Setting it too high
+    // might result in timeout. Default is 10.
+    define('SEARCH_MAXRESULTS', 10);
+
+
+/**********************************************************************************
+ *  Synchronize additional folders to all mobiles
+ *
+ *  With this feature, special folders can be synchronized to all mobiles.
+ *  This is useful for e.g. global company contacts.
+ *
+ *  This feature is supported only by certain devices, like iPhones.
+ *  Check the compatibility list for supported devices:
+ *      http://z-push.sf.net/compatibility
+ *
+ *  To synchronize a folder, add a section setting all parameters as below:
+ *      store:      the ressource where the folder is located.
+ *                  Zarafa users use 'SYSTEM' for the 'Public Folder'
+ *      folderid:   folder id of the folder to be synchronized
+ *      name:       name to be displayed on the mobile device
+ *      type:       supported types are:
+ *                      SYNC_FOLDER_TYPE_USER_CONTACT
+ *                      SYNC_FOLDER_TYPE_USER_APPOINTMENT
+ *                      SYNC_FOLDER_TYPE_USER_TASK
+ *                      SYNC_FOLDER_TYPE_USER_MAIL
+ *
+ *  Additional notes:
+ *  - on Zarafa systems use backend/zarafa/listfolders.php script to get a list
+ *    of available folders
+ *
+ *  - all Z-Push users must have full writing permissions (secretary rights) so
+ *    the configured folders can be synchronized to the mobile
+ *
+ *  - this feature is only partly suitable for multi-tenancy environments,
+ *    as ALL users from ALL tenents need access to the configured store & folder.
+ *    When configuring a public folder, this will cause problems, as each user has
+ *    a different public folder in his tenant, so the folder are not available.
+
+ *  - changing this configuration could cause HIGH LOAD on the system, as all
+ *    connected devices will be updated and load the data contained in the
+ *    added/modified folders.
+ */
+
+    $additionalFolders = array(
+        // demo entry for the synchronization of contacts from the public folder.
+        // uncomment (remove '/*' '*/') and fill in the folderid
+/*
+        array(
+            'store'     => "SYSTEM",
+            'folderid'  => "",
+            'name'      => "Public Contacts",
+            'type'      => SYNC_FOLDER_TYPE_USER_CONTACT,
+        ),
+*/
+    );
 
 ?>
