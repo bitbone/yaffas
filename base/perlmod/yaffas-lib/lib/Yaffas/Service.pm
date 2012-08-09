@@ -337,6 +337,8 @@ sub CLAMAV_FRESHCLAM(){ 46; }
 
 sub NSLCD(){ 47; }
 
+sub ZARAFA_SEARCH(){ 48; }
+
 =back
 
 =head2 Constants for Actions
@@ -433,6 +435,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 				 ZARAFA_ICAL() => "/etc/init.d/zarafa-ical",
 				 ZARAFA_LICENSED() => "/etc/init.d/zarafa-licensed",
 				 ZARAFA_DAGENT() => "/etc/init.d/zarafa-dagent",
+				 ZARAFA_SEARCH() => "/etc/init.d/zarafa-search",
 				 APACHE() => "/etc/init.d/apache2",
 				 SSHD() => "/etc/init.d/ssh",
 				 MPPD() => "/etc/init.d/mppd",
@@ -495,6 +498,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL5/ ) {
 				 ZARAFA_ICAL() => "/sbin/service zarafa-ical",
 				 ZARAFA_LICENSED() => "/sbin/service zarafa-licensed",
 				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
+				 ZARAFA_SEARCH() => "/sbin/service zarafa-search",
 				 APACHE() => "/sbin/service httpd",
 				 SSHD() => "/sbin/service sshd",
 				 MPPD() => "/etc/init.d/mppd",	# TODO: adapt for Red Hat
@@ -556,6 +560,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL6/ ) {
 				 ZARAFA_ICAL() => "/sbin/service zarafa-ical",
 				 ZARAFA_LICENSED() => "/sbin/service zarafa-licensed",
 				 ZARAFA_DAGENT() => "/sbin/service zarafa-dagent",
+				 ZARAFA_SEARCH() => "/sbin/service zarafa-search",
 				 APACHE() => "/sbin/service httpd",
 				 SSHD() => "/sbin/service sshd",
 				 MPPD() => "/etc/init.d/mppd",	# TODO: adapt for Red Hat
@@ -679,6 +684,7 @@ sub installed_services(;$)
 		$services->{'zarafa-ical'} = { 'constant' => ZARAFA_ICAL(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'zarafa-licensed'} = { 'constant' => ZARAFA_LICENSED(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'zarafa-dagent'} = { 'constant' => ZARAFA_DAGENT(), 'allow' => [ 'start', 'stop', 'restart' ] };
+		$services->{'zarafa-search'} = { 'constant' => ZARAFA_SEARCH(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'apache'}		= { 'constant' => APACHE(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'mysql'}		= { 'constant' => MYSQL(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		delete $services->{cyrus};
@@ -1016,6 +1022,8 @@ sub _status($){
 		return __check_process('/usr/bin/zarafa-monitor');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SERVER() }) {
 		return __check_process('/usr/bin/zarafa-server');
+	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SEARCH() }) {
+		return __check_process('/usr/bin/zarafa-search');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SPOOLER() }) {
 		return __check_process('/usr/bin/zarafa-spooler');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_ICAL() }) {
