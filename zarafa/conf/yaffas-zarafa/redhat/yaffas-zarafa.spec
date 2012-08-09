@@ -138,6 +138,20 @@ if [ "$1" = 1 ] ; then
 fi
 %{__rm} -f /tmp/zarafa.{pp,mod,te}
 
+echo "1: " $1
+
+if [ "$1" = 2 ]; then
+    SERVERCFG="/etc/zarafa/server.cfg"
+    if grep -q index_services_enabled $SERVERCFG; then
+        sed -e 's/index_services_enabled/search_enabled/' -i $SERVERCFG
+    fi
+
+    if grep -q index_services_path $SERVERCFG; then
+        sed -e '/index_services_path/d' -i $SERVERCFG
+        echo "search_socket = file:///var/run/zarafa-search" >> $SERVERCFG
+    fi
+fi
+
 /sbin/restorecon -R /etc/zarafa
 /sbin/restorecon -R /var/lib/zarafa-webaccess
 /sbin/restorecon -R /var/lib/zarafa
@@ -171,6 +185,7 @@ fi
 %config /opt/yaffas/share/doc/example/etc/zarafa/monitor.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/server.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/spooler.cfg
+%config /opt/yaffas/share/doc/example/etc/zarafa/search.cfg
 /tmp/zarafa.te
 
 %changelog
