@@ -1,3 +1,4 @@
 zarafaadmin_\d*=When a user is administrator, the user will be allowed to open all Zarafa stores of any user.
 zarafashared_\d*=The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate.
 zarafaquota_\d*=Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails.
+zarafahide_\d*=When enabled it hides this user from the global addressbook.
