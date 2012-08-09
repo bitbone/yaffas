@@ -162,7 +162,7 @@ service zarafa-server stop
 service zarafa-server restart
 
 # enable services
-for SERV in mysqld zarafa-gateway zarafa-ical zarafa-indexer zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
+for SERV in mysqld zarafa-gateway zarafa-ical zarafa-search zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
 	chkconfig $SERV on
 	service $SERV start
 done
