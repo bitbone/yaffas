@@ -337,7 +337,7 @@ Now you can go Accounts -> User Management and create some users.
 
 image:images/en/{theme}/19_usercreate_thumb.png[link="images/en/{theme}/19_usercreate.png"]
 
-After this step you should be able to login to webacess if you go to https://<your-server's-ip>/webaccess
+After this step you should be able to login to Zarafa WebAcess if you go to https://<your-server's-ip>/webaccess or WebApp https://<your-server's-ip>/webapp
 
 [IMPORTANT]
 ==============

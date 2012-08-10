@@ -51,11 +51,10 @@ The registered address at  _"Email Address"_ is also used as sender for all mail
 
 
 
-=== Zarafa Web Access
-Insert the URL into your browser, e.g. https://zarafaserver.local/webaccess.
-Alternatively, you can choose name or IP address of {product} without mentioning a port number. (e.g. http://zarafaserver.local)
+=== Zarafa WebAccess/WebApp
+Insert the URL into your browser, e.g. https://zarafaserver.local/webaccess for webaccess. To reach the WebApp interface to to https://zarafaserver.local/webapp
 
-A complete manual and current documentation of Zarafa Web Access can be downloaded here: http://www.zarafaserver.com/doc.
+A complete manual and current documentation of Zarafa WebAccess and WebApp can be downloaded here: http://www.zarafa.com/doc.
 
 
 === Zarafa Backup

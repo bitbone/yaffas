@@ -56,10 +56,11 @@ Damit eine einwandfreie Zurdnung gewährleistet ist, konfigurieren Sie bitte zue
 
 
 
-=== Zarafa Webaccess
-Zugriff via WebAccess erhalten Sie über die Eingabe der URL in die Adressleiste des Browsers mit einem angehängten  _"webaccess"_  z.B. https://zarafaserver.lokal/webaccess - Weitere Alternativen sehen Sie, wenn Sie das {product} über den Namen bzw. die IP-Adresse ansprechen, ohne Angabe eines Ports. (z.B. http://zarafaserver.local)
+=== Zarafa WebAccess/WebApp
+Zugriff via WebAccess erhalten Sie über die Eingabe der URL in die Adressleiste des Browsers mit einem angehängten  _"webaccess"_.(z.B. https://zarafaserver.lokal/webaccess)
+Um auf WebApp zuzugreifen verwenden Sie für die URL _"webapp"_ (z.B. https://zarafaserver.lokal/webapp)
 
-Eine komplette Anleitung und aktuelle Dokumentationen für den Zarafa WebAccess können Sie unter http://www.zarafaserver.de/doc herunterladen.
+Eine komplette Anleitung und aktuelle Dokumentationen für den Zarafa WebAccess können Sie unter http://www.zarafa.com/doc herunterladen.
 
 === Zarafa Backup
 
