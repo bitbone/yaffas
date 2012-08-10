@@ -38,14 +38,14 @@ ln -sf /usr/share/z-push/z-push-top.php /usr/bin/z-push-top
 
 HTTPD_CONF=/etc/httpd/conf/httpd.conf
 if ( ! grep -q "^Alias /Microsoft-Server-ActiveSync" $HTTPD_CONF ); then
-	echo -e "\nAlias /Microsoft-Server-ActiveSync /var/www/z-push/index.php" >> $HTTPD_CONF
+	echo -e "\nAlias /Microsoft-Server-ActiveSync /usr/share/z-push/index.php" >> $HTTPD_CONF
 fi
 
 if grep -q "/var/www/z-push/index.php" $HTTPD_CONF; then
     sed -e "s#Alias /Microsoft-Server-ActiveSync.*#Alias /Microsoft-Server-ActiveSync /usr/share/z-push/index.php#" -i $HTTPD_CONF
 fi
 
-service httpd reload
+service httpd restart
 
 %files
 %defattr(-,root,root,-)
