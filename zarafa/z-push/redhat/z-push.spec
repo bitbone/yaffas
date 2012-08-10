@@ -7,7 +7,8 @@ License:	GPL
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	php, php-process
+%{?el5:Requires: php}
+%{?el6:Requires: php, php-process}
 
 %description
 Z-Push is an implementation of the ActiveSync protocol which is used
