@@ -1,4 +1,4 @@
-Alias /Microsoft-Server-ActiveSync /var/www/z-push/index.php
+Alias /Microsoft-Server-ActiveSync /usr/share/z-push/index.php
 
 <VirtualHost *:443>
         ServerName zarafa
