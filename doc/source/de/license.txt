@@ -1,9 +1,7 @@
-== Lizenz
+== Subskription
 
+=== Zarafa Subskription
+In dem Modul können Sie neue Basisschlüssel und Zusatzschlüssel für weitere Clients einspielen. Geben Sie dazu in das vorgesehene Feld die jeweilige Seriennummer ein und betätigen Sie die Eingabe durch den Button  _"Schlüssel einspielen"_.
 
-
-=== Zarafa Lizenzschlüssel
-In dem Lizenzmodul für Zarafa können Sie neue Basisschlüssel und Zusatzschlüssel für weitere Clients einspielen. Geben Sie dazu in das vorgesehene Feld die jeweilige Seriennummer ein und betätigen Sie die Eingabe durch den Button  _"Schlüssel einspielen"_ 
-
-Alle installierten Schlüssel können Sie unter dem Reiter  _"Installierte Lizenzen"_ einsehen. Weitere Informationen erhalten Sie unter dem Reiter  _"Lizenzlog"_ 
+Alle installierten Schlüssel können Sie unter dem Reiter  _"Installierte Subskriptionen"_ einsehen. Weitere Informationen erhalten Sie unter dem Reiter  _"Lizenz-Daemon Log"_.
 
