@@ -551,10 +551,10 @@ Yaffas.UI.prototype.submitURL = function(url, args, argsform) {
 		var postData = [];
 		if (submitArgs !== null || additional !== undefined) {
 	        for (var name in submitArgs) {
-	            postData.push(name + "=" + submitArgs[name]);
+	            postData.push(name + "=" + encodeURIComponent(submitArgs[name]));
 	        }
 	        for (var name in additional) {
-	            postData.push(name + "=" + additional[name]);
+	            postData.push(name + "=" + encodeURIComponent(additional[name]));
 	        }
 	        YAHOO.util.Connect.asyncRequest('POST', url, callback, postData.join("&"));
 		}
