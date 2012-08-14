@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:00+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-08-15 00:17+0300\n"
+"PO-Revision-Date: 2012-08-09 12:36+0200\n"
+"Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -42,10 +42,11 @@ msgstr "Handbuch"
 msgid "Hardware"
 msgstr "Hardware"
 
+# 75%
 #: lang/en:6
-#, no-wrap
-msgid "License"
-msgstr "Lizenz"
+#, fuzzy, no-wrap
+msgid "Subscription"
+msgstr "Beschreibung"
 
 #: lang/en:7
 #, no-wrap
