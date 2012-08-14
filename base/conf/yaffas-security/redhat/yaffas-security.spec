@@ -28,7 +28,7 @@ if ! id amavis | grep -q "ldapread"; then
 fi
 
 %if 0%{?rhel} >= 6
-/sbin/service amavisd condrestart
+/sbin/service amavisd restart
 %endif
 
 %clean
