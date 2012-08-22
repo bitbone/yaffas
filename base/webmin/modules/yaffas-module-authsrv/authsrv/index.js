@@ -6,10 +6,22 @@ Authsrv = function(){
 
 Authsrv.prototype.confirmation = function(url, args, submit){
     if (url == "check_ads.cgi" && ! args["ldaps"]) {
+		Yaffas.ui.loading.show();
         var callback = {
             success: function(o) {
-				var i = YAHOO.lang.JSON.parse(o.responseText);
-                if (typeof (i.ldaps) !== "undefined" && i.ldaps === 0) {
+				Yaffas.ui.loading.hide();
+				var i;
+				try {
+					i = YAHOO.lang.JSON.parse(o.responseText);
+				}
+				catch(err) {
+					var r = YAHOO.util.Dom.get("response");
+					r.innerHTML = parseScript(o.responseText);
+
+					Yaffas.ui.checkError();
+				}
+				if (typeof (i.ldaps) !== "undefined" && i.ldaps === 0) {
+					Yaffas.ui.loading.hide();
 					var dlg = new Yaffas.Confirm(_("lbl_title_woe"), _("lbl_ads_without_enc"), function() {
 						args["ldaps"] = 1;
 						Yaffas.ui.submitURL("/authsrv/check_ads.cgi", args);
@@ -22,6 +34,7 @@ Authsrv.prototype.confirmation = function(url, args, submit){
 				}
             },
             failure: function(e){
+				Yaffas.ui.loading.hide();
             	console.log("failure on get");
             },
             scope: this
@@ -31,10 +44,22 @@ Authsrv.prototype.confirmation = function(url, args, submit){
 	    return true;
     }
     if (url == "check_ldap.cgi" && ! args["ldaps"]) {
+		Yaffas.ui.loading.show();
         var callback = {
             success: function(o) {
-				var i = YAHOO.lang.JSON.parse(o.responseText);
+				Yaffas.ui.loading.hide();
+				var i;
+				try {
+					i = YAHOO.lang.JSON.parse(o.responseText);
+				}
+				catch(err) {
+					var r = YAHOO.util.Dom.get("response");
+					r.innerHTML = parseScript(o.responseText);
+
+					Yaffas.ui.checkError();
+				}
                 if (typeof (i.ldaps) !== "undefined" && i.ldaps === 0) {
+					Yaffas.ui.loading.hide();
 					var dlg = new Yaffas.Confirm(_("lbl_title_woe"), _("lbl_ldap_without_enc"), function() {
 						args["ldaps"] = 1;
 						Yaffas.ui.submitURL("/authsrv/check_ldap.cgi", args);
@@ -47,6 +72,7 @@ Authsrv.prototype.confirmation = function(url, args, submit){
 				}
             },
             failure: function(e){
+				Yaffas.ui.loading.hide();
             	console.log("failure on get");
             },
             scope: this
