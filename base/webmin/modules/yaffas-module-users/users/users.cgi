@@ -67,6 +67,14 @@ foreach ( keys %{$userlist} ) {
 		
 		if ($bkzarafa) {
 			$user{zarafa_license} = _in_group_lc( $_, @zstores );
+			$user{zarafa_store_size} = defined($userlist->{$_}->{zarafa_store_size}) ? $userlist->{$_}->{zarafa_store_size} : 0;
+			if ($user{zarafa_store_size}) {
+				$user{zarafa_store_active} = $userlist->{$_}->{zarafa_store_active} == 1 ? 1 : 0;
+			}
+			else {
+				$user{zarafa_store_active} = -1;
+			}
+			$user{zarafa_administrator} = $userlist->{$_}->{zarafa_administrator} == 1 ? 1 : 0;
 		}
 
 		push( @users, \%user );
