@@ -83,4 +83,4 @@ lbl_zarafa_store_type=Store type
 lbl_zarafa_administrator=Administrator
 lbl_zarafa_store_type_active=Active
 lbl_zarafa_store_type_inactive=Shared
-lbl_zarafa_no_store=No store available
+lbl_zarafa_no_store=None

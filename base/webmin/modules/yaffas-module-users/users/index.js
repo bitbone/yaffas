@@ -290,7 +290,7 @@ Users.prototype.setupTable = function() {
                 e.innerHTML = data+" MB";
             }
             else {
-                e.innerHTML = _("lbl_zarafa_no_store");
+                e.innerHTML = "--";
             }
         }
     }, {
