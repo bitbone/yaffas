@@ -1,3 +1,9 @@
+yaffas-module-authsrv (1.2.1-2) lucid; urgency=low
+
+  * update to version 1.2.1-2
+
+ -- Package Builder <packages@yaffas.org>  Thu, 23 Aug 2012 16:33:41 +0200
+
 yaffas-module-authsrv (1.2.1-1) lucid; urgency=low
 
   * update to version 1.2.1-1
