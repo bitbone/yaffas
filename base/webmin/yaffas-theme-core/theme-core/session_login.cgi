@@ -61,7 +61,7 @@ if ($main::logged_in eq "1") {
 		  $cgi->div({class=>"section", style=>"margin-left: 5px;margin-right: 5px;"},
 								$cgi->h1({class => 'warning'}, $main::lang{'admin_warning'}),
 								$cgi->div(
-										  $cgi->p($main::lang{'admin_text'}),
+										  $cgi->p($main::logged_in_ip ? main::text('admin_text_ip', $main::logged_in_ip) : $main::text{'admin_text'}),
 										  $cgi->p($main::lang{'admin_ask'})
 										 )
 							   ),

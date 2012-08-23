@@ -93,3 +93,10 @@ lbl_filter_show=Show filter
 err_connection_failed=Could not connect to backend!
 
 main_logout=Logout
+
+admin_ask=Do you want to close the administrators connection?
+admin_failed=Couldnt restart webmin.
+admin_submit=Close
+admin_text=There is already an administrator connected.<br>If you want to log in, you will need to close his connection.
+admin_text_ip=There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection.
+
