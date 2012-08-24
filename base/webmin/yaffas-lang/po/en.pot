@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-08-15 00:17+0300\n"
+"POT-Creation-Date: 2012-08-25 00:20+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -417,4 +417,33 @@ msgstr ""
 #: lang/en:95
 #, no-wrap
 msgid "Logout"
+msgstr ""
+
+#: lang/en:97
+#, no-wrap
+msgid "Do you want to close the administrators connection?"
+msgstr ""
+
+#: lang/en:98
+#, no-wrap
+msgid "Couldnt restart webmin."
+msgstr ""
+
+#: lang/en:99
+#, no-wrap
+msgid "Close"
+msgstr ""
+
+#: lang/en:100
+#, no-wrap
+msgid ""
+"There is already an administrator connected.<br>If you want to log in, you "
+"will need to close his connection."
+msgstr ""
+
+#: lang/en:101
+#, no-wrap
+msgid ""
+"There is already an administrator connected from $1.<br>If you want to log "
+"in, you will need to close his connection."
 msgstr ""

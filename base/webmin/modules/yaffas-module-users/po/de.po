@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-10 00:19+0300\n"
-"PO-Revision-Date: 2012-08-09 12:36+0200\n"
+"POT-Creation-Date: 2012-08-25 00:20+0300\n"
+"PO-Revision-Date: 2012-08-17 08:41+0200\n"
 "Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -402,6 +402,38 @@ msgstr "Nachricht"
 #, no-wrap
 msgid "Hide from addressbook"
 msgstr "Aus dem Adressbuch ausblenden"
+
+#: lang/en:81
+#, no-wrap
+msgid "Store size"
+msgstr ""
+
+# 90%
+#: lang/en:82
+#, fuzzy, no-wrap
+msgid "Store type"
+msgstr "Postfachtyp"
+
+#: lang/en:83
+#, no-wrap
+msgid "Administrator"
+msgstr "Administrator"
+
+# 85%
+#: lang/en:84
+#, fuzzy, no-wrap
+msgid "Active"
+msgstr "Aktiv?"
+
+#: lang/en:85
+#, no-wrap
+msgid "Shared"
+msgstr "Shared"
+
+#: lang/en:86
+#, no-wrap
+msgid "None"
+msgstr "Keine"
 
 #: help/en:1
 #, no-wrap
