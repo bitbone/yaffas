@@ -2,10 +2,6 @@ Yaffas.Loading = function(d) {
 	this.counter = 0;
 	this.dlg = new YAHOO.widget.Panel("wait", {
         width: "240px",
-        effect: {
-            effect: YAHOO.widget.ContainerEffect.FADE,
-            duration: 0.25
-        },
         fixedcenter: true,
         close: false,
         draggable: false,

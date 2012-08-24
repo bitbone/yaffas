@@ -39,6 +39,20 @@ print "Set-Cookie: testing=1; path=/$sec\r\n";
 
 header("login");
 
+my %problems;
+
+if (defined($main::in{'timed_out'})) {
+	$problems{timeout} = 1;
+}
+
+if ($main::logged_in ne "1") {
+	$problems{session_replaced} = 1;
+}
+
+if (keys %problems) {
+	print $cgi->div({-id=>"problems", -class=>"hidden"}, to_json(\%problems, {latin1 => 1}));
+}
+
 # print lang to browser, because globals.cgi doesn't work here
 print $cgi->div({-id=>"lang", class=>"hidden"}, to_json({global => {map {$_ => $main::text{$_}} qw(lbl_yes lbl_no lbl_error lbl_loading)}}));
 
@@ -47,7 +61,7 @@ if ($main::logged_in eq "1") {
 		  $cgi->div({class=>"section", style=>"margin-left: 5px;margin-right: 5px;"},
 								$cgi->h1({class => 'warning'}, $main::lang{'admin_warning'}),
 								$cgi->div(
-										  $cgi->p($main::lang{'admin_text'}),
+										  $cgi->p($main::logged_in_ip ? main::text('admin_text_ip', $main::logged_in_ip) : $main::text{'admin_text'}),
 										  $cgi->p($main::lang{'admin_ask'})
 										 )
 							   ),

@@ -240,23 +240,77 @@ Users.prototype.setupTable = function() {
         sortable: true,
 		hidden: true
     }, {
+        key: "zarafa_license",
+        label: _("lbl_zarafa_store"),
+        sortable: true,
+        hidden: true,
+    }, {
         key: "username",
         label: _("lbl_userlogin"),
-        sortable: true
+        sortable: true,
+        formatter: function(e, record, column, data){
+            var type = "active";
+            if (record.getData("zarafa_administrator")) {
+                type = "admin";
+            }
+            if (record.getData("zarafa_store_active") === 0) {
+                type = "inactive";
+            }
+            var v = record.getData("zarafa_license");
+            if (typeof(v) !== "undefined" && v !== "X") {
+                type = "nostore";
+            }
+            e.style.backgroundImage = "url('/users/images/user-"+type+".png')";
+            e.style.backgroundSize = "20px";
+            e.style.backgroundRepeat = "no-repeat";
+            e.style.backgroundPosition = "left center";
+            e.style.paddingLeft = "20px";
+            e.innerHTML = data;
+        }
     }, {
         key: "gecos",
         label: _("lbl_gecos"),
         sortable: true,
     }, {
-        key: "zarafa_license",
-        label: _("lbl_zarafa_store"),
-        sortable: true
+        key: "zarafa_administrator",
+        label: _("lbl_zarafa_administrator"),
+        sortable: true,
+        formatter: function(e, record, column, data){
+            if (typeof(data) !== "undefined" && data === 1) {
+                e.innerHTML = _("lbl_yes");
+            }
+        }
+    }, {
+        key: "zarafa_store_size",
+        label: _("lbl_zarafa_store_size"),
+        sortable: true,
+        formatter: function(e, record, column, data){
+            var v = record.getData("zarafa_license");
+            if (typeof(v) !== "undefined" && v === "X") {
+                e.innerHTML = data+" MB";
+            }
+            else {
+                e.innerHTML = "--";
+            }
+        }
+    }, {
+        key: "zarafa_store_active",
+        label: _("lbl_zarafa_store_type"),
+        sortable: true,
+        formatter: function(e, record, column, data){
+            if (record.getData("zarafa_license") !== "X") {
+                e.innerHTML = _("lbl_zarafa_no_store");
+            }
+            else {
+                e.innerHTML = data === 1 ? _("lbl_zarafa_store_type_active") : _("lbl_zarafa_store_type_inactive");
+            }
+        }
     }];
 	this.usertable = new Yaffas.Table({
 		container: "data",
 		columns: myColumnDefs,
 		url: "/users/users.cgi",
-		sortColumn: 1
+		sortColumn: 2
 	});
 }
 

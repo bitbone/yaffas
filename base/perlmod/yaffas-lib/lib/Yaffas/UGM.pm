@@ -729,6 +729,15 @@ sub get_users_full {
 				'--details', $user );
 			my $is_resource = 0;
 			foreach (@tmp) {
+				if (m/Current store size:\s+(\d+\.\d+) MB/) {
+					$user_entries->{$user}->{zarafa_store_size} = $1;
+				}
+				if (m/Active:\s+(yes|no)/) {
+					$user_entries->{$user}->{zarafa_store_active} = ($1 eq "yes" ? 1 : 0);
+				}
+				if (m/Administrator:\s+(yes|no)/) {
+					$user_entries->{$user}->{zarafa_administrator} = ($1 eq "yes" ? 1 : 0);
+				}
 				next unless $_ =~ m/^Auto-accept meeting req:\s*(yes|no)/;
 				$is_resource = 1 if $1 eq 'yes';
 			}

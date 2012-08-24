@@ -5,10 +5,10 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin/admin.cgi
---- yaffas-core~/usr/local/webmin/admin.cgi	1970-01-01 01:00:00.000000000 +0100
-+++ yaffas-core/usr/local/webmin/admin.cgi	2011-04-11 10:57:34.000000000 +0200
-@@ -0,0 +1,64 @@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin/admin.cgi
+--- yaffas-core~/usr/local/webmin/admin.cgi	1970-01-01 00:00:00.000000000 +0000
++++ yaffas-core/usr/local/webmin/admin.cgi	2012-08-23 11:50:25.000000000 +0000
+@@ -0,0 +1,79 @@
 +#!/usr/bin/perl -w
 +# This file will called from bitbonethme/index.gi
 +#use strict;
@@ -38,8 +38,23 @@ diff -urNad yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin
 +	print "Content-type: text/html\n\n";
 +	print "<html><head><meta http-equiv=\"refresh\" content=\"0; URL=/\"></head></html>\n";
 +} else {
++	my %sessiondb;
++	dbmopen(%sessiondb, "/opt/yaffas/var/sessiondb", 0700);
++	my %logged_user;
++	
++	foreach my $k (keys %sessiondb) {
++		my @v = split /\s+/, $sessiondb{$k};
++
++		if (scalar @v == 3) {
++			$logged_user{$v[1]} = $v[2];
++		}
++	}
++	my @keys = sort keys %logged_user;
++	my $time = shift @keys;
++	
 +	$ENV{REMOTE_USER} = "";
 +	$main::logged_in = "1";
++	$main::logged_in_ip = $logged_user{$time};
 +	Yaffas::init_webmin();
 +	require "./".$main::gconfig{theme}."/session_login.cgi";
 +	return 1;
@@ -73,35 +88,9 @@ diff -urNad yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin
 +	close(LANG);
 +	return 1;
 +}
-diff -urNad yaffas-core~/usr/local/webmin/lang/de yaffas-core/usr/local/webmin/lang/de
---- yaffas-core~/usr/local/webmin/lang/de	2011-04-01 14:55:05.000000000 +0200
-+++ yaffas-core/usr/local/webmin/lang/de	2011-04-11 10:44:09.000000000 +0200
-@@ -251,3 +251,9 @@
- users_title1=Wähle Benutzer..
- users_title2=Wähle Benutzer..
- yes=Ja
-+admin_ask=Wollen Sie die bestehende Administratorverbindung trennen?
-+admin_failed=Webmin konnte nicht neu gestartet werden.
-+admin_submit=Trennen
-+admin_text=Es ist bereits ein Administrator eingeloggt.<br>Wenn Sie sich einloggen wollen, m&uuml;ssen Sie erst die Verbindung des anderen Administrators trennen.
-+admin_warning=Achtung!
-+
-diff -urNad yaffas-core~/usr/local/webmin/lang/en yaffas-core/usr/local/webmin/lang/en
---- yaffas-core~/usr/local/webmin/lang/en	2011-04-01 14:55:05.000000000 +0200
-+++ yaffas-core/usr/local/webmin/lang/en	2011-04-11 10:44:09.000000000 +0200
-@@ -286,3 +286,9 @@
- ui_rowlabel=$2 in row $1 :
- 
- header_statusmsg=$1 logged into $2 $3 on $4 ($5)
-+
-+admin_ask=Do you want to close the administrators connection?
-+admin_failed=Couldnt restart webmin.
-+admin_submit=Close
-+admin_text=There is already an administrator.<br>If you want to log in, you will need to close his connection.
-+admin_warning=Warning!
-diff -urNad yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webmin/miniserv.pl
---- yaffas-core~/usr/local/webmin/miniserv.pl	2011-04-11 10:44:08.000000000 +0200
-+++ yaffas-core/usr/local/webmin/miniserv.pl	2011-04-11 10:48:18.000000000 +0200
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webmin/miniserv.pl
+--- yaffas-core~/usr/local/webmin/miniserv.pl	2012-08-23 11:50:25.000000000 +0000
++++ yaffas-core/usr/local/webmin/miniserv.pl	2012-08-23 11:50:25.000000000 +0000
 @@ -1940,6 +1940,36 @@
  	$ENV{'HTTP_COOKIE'} =~ s/;?\s*$sidname=([a-f0-9]+)//;
  	$ENV{'MOBILE_DEVICE'} = 1 if ($mobile_device);
@@ -139,9 +128,9 @@ diff -urNad yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webm
  	# Check if the CGI can be handled internally
  	open(CGI, $full);
  	local $first = <CGI>;
-diff -urNad yaffas-core~/usr/local/webmin/web-lib-funcs.pl yaffas-core/usr/local/webmin/web-lib-funcs.pl
---- yaffas-core~/usr/local/webmin/web-lib-funcs.pl	2011-04-01 14:55:06.000000000 +0200
-+++ yaffas-core/usr/local/webmin/web-lib-funcs.pl	2011-04-11 10:44:09.000000000 +0200
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/web-lib-funcs.pl yaffas-core/usr/local/webmin/web-lib-funcs.pl
+--- yaffas-core~/usr/local/webmin/web-lib-funcs.pl	2012-04-13 08:18:53.000000000 +0000
++++ yaffas-core/usr/local/webmin/web-lib-funcs.pl	2012-08-23 11:50:25.000000000 +0000
 @@ -402,31 +402,14 @@
  # %in if none is given. Also sets the global variables $in and @in
  sub ReadParse

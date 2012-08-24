@@ -284,6 +284,23 @@ Yaffas.UI.prototype.openTabs = function(o) {
 
 	// check if we got a whole header which indicate a login page
 	if (o.responseText.substr(0, 14) === "<!DOCTYPE html") {
+		var c = new Element("div");
+		var timeout = 0;
+		c.innerHTML = o.responseText;
+
+		var problems = c.select("div#problems");
+
+		if (problems[0]) {
+			try {
+				var m = YAHOO.lang.JSON.parse(problems[0].innerHTML);
+				if (typeof(m.timeout) !== "undefined") {
+					timeout = 1;
+				}
+			}
+			catch(err) {
+			}
+		}
+
 		this.loading.hide();
         var dlg = new YAHOO.widget.SimpleDialog("logoutdlg", {
             effect: {
@@ -300,7 +317,12 @@ Yaffas.UI.prototype.openTabs = function(o) {
         });
 
         dlg.setHeader(_("lbl_logged_out", "global"));
-        dlg.setBody(_("lbl_logged_out_msg", "global"));
+		if (timeout === 1) {
+			dlg.setBody(_("lbl_logged_out_timeout", "global"));
+		}
+		else {
+			dlg.setBody(_("lbl_logged_out_msg", "global"));
+		}
         dlg.cfg.setProperty("icon", YAHOO.widget.SimpleDialog.ICON_ALARM);
 
         var handleYes = function(){
