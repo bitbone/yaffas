@@ -94,9 +94,9 @@ err_connection_failed=Konnte nicht zum Backend verbinden!
 
 main_logout=Abmelden
 
-admin_ask=Do you want to close the administrators connection?
-admin_failed=Couldnt restart webmin.
+admin_ask=Möchten sie die Verbindung des Administrators beenden?
+admin_failed=Webmin konnte nicht neu gestartet werden.
 admin_submit=Schließen
-admin_text=There is already an administrator connected.<br>If you want to log in, you will need to close his connection.
-admin_text_ip=There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection.
+admin_text=Es ist bereits ein Administrator angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden.
+admin_text_ip=Es ist bereits ein Administrator von $1 angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden.
 
