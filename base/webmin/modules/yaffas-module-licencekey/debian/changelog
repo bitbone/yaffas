@@ -1,3 +1,9 @@
+yaffas-module-licencekey (1.2.2-1) lucid; urgency=low
+
+  * update to version 1.2.2-1
+
+ -- André Welter <awelter@julius.bitbone.de>  Mon, 17 Sep 2012 13:56:52 +0200
+
 yaffas-module-licencekey (1.2.1-2) lucid; urgency=low
 
   * update to version 1.2.1-2
