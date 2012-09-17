@@ -1,20 +1,20 @@
-lbl_option=Option
+lbl_option=Opção
 lbl_state=Estado
 lbl_save=Salvar
-lbl_webaccess_options=Options
-lbl_DISABLE_FULL_GAB=Disable full Global Address Book
-lbl_ENABLE_GAB_ALPHABETBAR=Enable Alphabetbar in Global Address Book
-lbl_ENABLE_PUBLIC_FOLDERS=Enable Public Folders
-lbl_DISABLE_DELETE_IN_RESTORE_ITEMS=Disable delete in restore items
-lbl_FCKEDITOR_SPELLCHECKER_ENABLED=Enable spellchecker in HTLM editor
-lbl_THEME_COLOR=Theme Color
-lbl_white=White
-lbl_silver=Silver
-lbl_theme_color=Theme Color
+lbl_webaccess_options=Opções
+lbl_DISABLE_FULL_GAB=Desativar catálogo global de endereços
+lbl_ENABLE_GAB_ALPHABETBAR=Ativar barra com letras no catálogo global de endereços
+lbl_ENABLE_PUBLIC_FOLDERS=Habilitar Pastas Públicas
+lbl_DISABLE_DELETE_IN_RESTORE_ITEMS=Desabilitar 'Excluir' no Restaurar Ítens
+lbl_FCKEDITOR_SPELLCHECKER_ENABLED=Habilitar Verificador ortográfico no editor HTML
+lbl_THEME_COLOR=Cor do tema
+lbl_white=Branco
+lbl_silver=Prata
+lbl_theme_color=Cor do tema
 
-err_undefined_type=Unknown Webaccess Option
-err_undefined_color=Unknown Color
-err_webaccess_config=Could not open webaccess config file
+err_undefined_type=Opção do Webaccess desconhecido
+err_undefined_color=Cor desconhecida
+err_webaccess_config=Não foi possível acessar o arquivo de configuração
 err_no_aspell=Please install the package "aspell-lang" (e.g. aspell-de for german) for spell checking in your language.
 moduletitle=Webaccess
 

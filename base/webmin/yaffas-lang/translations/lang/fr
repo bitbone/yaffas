@@ -93,3 +93,10 @@ lbl_filter_show=Appliquer le filtre
 err_connection_failed=Impossible de se connecter au moteur !
 
 main_logout=Déconnexion
+
+admin_ask=Do you want to close the administrators connection?
+admin_failed=Couldnt restart webmin.
+admin_submit=Fermer
+admin_text=There is already an administrator connected.<br>If you want to log in, you will need to close his connection.
+admin_text_ip=There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection.
+

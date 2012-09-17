@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-02 05:09+0300\n"
+"POT-Creation-Date: 2012-08-25 00:20+0300\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -412,6 +412,38 @@ msgstr ""
 #, no-wrap
 msgid "Hide from addressbook"
 msgstr ""
+
+#: lang/en:81
+#, no-wrap
+msgid "Store size"
+msgstr ""
+
+#: lang/en:82
+#, no-wrap
+msgid "Store type"
+msgstr ""
+
+#: lang/en:83
+#, no-wrap
+msgid "Administrator"
+msgstr ""
+
+# 75%
+#: lang/en:84
+#, fuzzy, no-wrap
+msgid "Active"
+msgstr "Activeer"
+
+#: lang/en:85
+#, no-wrap
+msgid "Shared"
+msgstr "Gedeeld"
+
+# 75%
+#: lang/en:86
+#, no-wrap
+msgid "None"
+msgstr "Geen"
 
 #: help/en:1
 #, no-wrap

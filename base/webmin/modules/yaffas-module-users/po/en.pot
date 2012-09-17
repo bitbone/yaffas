@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-08-02 05:10+0300\n"
+"POT-Creation-Date: 2012-08-25 00:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -410,6 +410,36 @@ msgstr ""
 #: lang/en:80
 #, no-wrap
 msgid "Hide from addressbook"
+msgstr ""
+
+#: lang/en:81
+#, no-wrap
+msgid "Store size"
+msgstr ""
+
+#: lang/en:82
+#, no-wrap
+msgid "Store type"
+msgstr ""
+
+#: lang/en:83
+#, no-wrap
+msgid "Administrator"
+msgstr ""
+
+#: lang/en:84
+#, no-wrap
+msgid "Active"
+msgstr ""
+
+#: lang/en:85
+#, no-wrap
+msgid "Shared"
+msgstr ""
+
+#: lang/en:86
+#, no-wrap
+msgid "None"
 msgstr ""
 
 #: help/en:1

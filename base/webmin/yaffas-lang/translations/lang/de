@@ -93,3 +93,10 @@ lbl_filter_show=Filter anzeigen
 err_connection_failed=Konnte nicht zum Backend verbinden!
 
 main_logout=Abmelden
+
+admin_ask=Möchten sie die Verbindung des Administrators beenden?
+admin_failed=Webmin konnte nicht neu gestartet werden.
+admin_submit=Schließen
+admin_text=Es ist bereits ein Administrator angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden.
+admin_text_ip=Es ist bereits ein Administrator von $1 angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden.
+
