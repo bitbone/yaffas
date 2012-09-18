@@ -236,7 +236,13 @@ Run the following command to install the EPEL repository:
 
   rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
-and run the following commands to add the RPMforge repository:
+If the above referenced URL is no longer functional because a newer version
+of the package is available, then you can still get the latest version from
+this address:
+http://download.fedoraproject.org/pub/epel/5/i386/repoview/epel-release.html
+
+
+Then run the following commands to add the RPMforge repository:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
 
@@ -248,9 +254,14 @@ or
 
 Run the following command to install the EPEL repository:
 
-  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
 
-and run the following commands to add the RPMforge repository:
+If the above referenced URL is no longer functional because a newer version
+of the package is available, then you can still get the latest version from
+this address:
+http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html
+
+Then run the following commands to add the RPMforge repository:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
 

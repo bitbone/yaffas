@@ -183,6 +183,10 @@ Der folgende Befehl installiert das EPEL Repository:
 
   rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
+Sollte obige Adresse nicht mehr aktuell sein, weil inzwischen eine neuere
+Version des Pakets vorliegt, so kann die aktuellste RPM-Datei unter
+folgender Adresse bezogen werden:  http://download.fedoraproject.org/pub/epel/5/i386/repoview/epel-release.html
+
 Mit diesem Befehl wird das RPMforge Repository für 32-bit Systeme installiert:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
@@ -195,7 +199,11 @@ Folgender Befehl installiert RPMforge für 64-bit Systeme:
 
 Der folgende Befehl installiert das EPEL Repository:
 
-  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-5.noarch.rpm
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
+
+Sollte obige Adresse nicht mehr aktuell sein, weil inzwischen eine neuere
+Version des Pakets vorliegt, so kann die aktuellste RPM-Datei unter
+folgender Adresse bezogen werden:  http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html
 
 Mit diesem Befehl wird das RPMforge Repository für 32-bit Systeme installiert:
 
