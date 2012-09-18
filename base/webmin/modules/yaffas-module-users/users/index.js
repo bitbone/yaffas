@@ -67,7 +67,7 @@ Users.prototype.convertToZarafaResource = function() {
 	var s = this.usertable.selectedRows();
 	
 	if (s.length > 0) {
-		var c = new Yaffas.Confirm(_("lbl_convert_to_zarafa_resource"), _("lbl_convert_to_zarafa_resource_question")+dlg_arg(s[0][3]), function() {
+		var c = new Yaffas.Confirm(_("lbl_convert_to_zarafa_resource"), _("lbl_convert_to_zarafa_resource_question")+dlg_arg(s[0][2]), function() {
 			Yaffas.ui.submitURL('/users/convert.cgi', { user: s[0][0] });
 		});
 		c.show();
