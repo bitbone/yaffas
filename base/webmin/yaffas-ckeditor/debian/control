@@ -1,0 +1,13 @@
+Source: yaffas-ckeditor
+Section: yaffas
+Priority: extra
+Maintainer: Package Builder <packages@yaffas.org>
+Build-Depends: debhelper (>= 5)
+Standards-Version: 3.7.2
+
+Package: yaffas-ckeditor
+Architecture: all
+Pre-Depends: yaffas-core
+# bbusermin-core disabled
+Description: CKEditor Library
+ CKEditor Library

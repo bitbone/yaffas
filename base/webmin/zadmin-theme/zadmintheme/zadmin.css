@@ -21,6 +21,13 @@ iframe {
 	display: none;
 }
 
+/* CKEditor uses an iframe which is hidden by the rule above;
+ * we'll make it visible again here
+ */
+.cke_contents iframe, .cke_skin_kama iframe, .cke_panel iframe {
+    display: block;
+}
+
 a:focus {
 	outline: none;
 }
