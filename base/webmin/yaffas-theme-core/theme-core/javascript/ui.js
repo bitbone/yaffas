@@ -576,12 +576,38 @@ Yaffas.UI.prototype.submitForm = function(e){
             }
         }
 
+        var parseURL = function(url) {
+          /* parseURL: returns the given URL, splitted into parts */
+
+          // The <div> step is necessary for this to work on IE6
+          var div = document.createElement("div");
+          div.innerHTML = "<a></a>";
+          div.firstChild.href = url;
+          return div.firstChild;
+        };
+
 				var prepareForm = function() {
 					YAHOO.util.Connect.setForm(element, upload);
 				}
-				YAHOO.util.Connect.setForm(element, upload);
-        var url = element.action.split("/");
-        url = "/" + this.currentPage + "/" + url[url.length - 1];
+        YAHOO.util.Connect.setForm(element, upload);
+        var url = element.action;
+        var path = parseURL(url).pathname.split('/');
+        if (path.length <= 2) {
+          // The path component looks like this: /foo.cgi;
+          // Splitting this string yields ["", "foo.cgi"];
+          // By using this check we make sure that we're dealing with
+          // an URL we are supposed to rewrite. This is necessary
+          // in cases where forms use relative URLs -- these get
+          // misinterpreted by the browser, as they are meant to be
+          // interpreted relative to the module's directory, which the
+          // browser doesn't know. So we'll re-insert it here.
+          // If path.length is longer than 2, this means we have a path
+          // to a subdirectory. In this case we'll leave it unmodified as
+          // this is probably by intention of the module author.
+          // This way modules can explicitly POST to other modules by
+          // specifying an absolute URL.
+          url = "/" + this.currentPage + "/" + path[path.length - 1];
+        }
 
         this.submitURL(url, null, args, prepareForm);
     } 
