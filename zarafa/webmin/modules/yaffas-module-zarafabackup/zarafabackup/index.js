@@ -435,9 +435,10 @@ Backup.prototype.setupTable = function(user, folder, type) {
     if (typeof this.messagemenu !== "undefined") {
         this.messagemenu.destroy();
     }
-    if (typeof this.table !== "undefined") {
-        // TODO: destory table if it exists
-        //this.table.destroy();
+    if (typeof this.table !== "undefined" && this.table !== null) {
+        this.table.destroy();
+        this.table = null;
+        $("mainpane").innerHTML = "";
     }
     var myColumnDefs = [
             {
