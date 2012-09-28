@@ -9,6 +9,7 @@ Patch0:		multipart.patch
 Patch1:		session.patch
 Patch2:		yaffas.patch
 Patch3:		login.patch
+Patch4:		main_in_get_post.patch
 BuildArch:	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires:	perl, perl-Net-SSLeay, yaffas-install-lib, yaffas-lib
@@ -23,6 +24,7 @@ The core package for yaffas webmin.
 %{__patch} -p1 < redhat/$(basename %PATCH1)
 %{__patch} -p1 < redhat/$(basename %PATCH2)
 %{__patch} -p1 < redhat/$(basename %PATCH3)
+%{__patch} -p1 < redhat/$(basename %PATCH4)
 
 %install
 
@@ -38,6 +40,7 @@ done
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 
+%{__patch} -R -p1 < redhat/$(basename %PATCH4)
 %{__patch} -R -p1 < redhat/$(basename %PATCH3)
 %{__patch} -R -p1 < redhat/$(basename %PATCH2)
 %{__patch} -R -p1 < redhat/$(basename %PATCH1)
