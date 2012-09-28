@@ -36,6 +36,7 @@ case "$1" in
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
+			cp -f -a /opt/yaffas/share/doc/example/etc/postfix/virtual_users_global /etc/postfix
 		fi
 
         if ! grep -q "START=yes" /etc/default/saslauthd; then

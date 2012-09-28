@@ -35,6 +35,7 @@ if [ "$1" = 1 ] ; then
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 	mkdir -p /etc/postfix/sasl
 	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
+	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/virtual_users_global /etc/postfix
 
 	CONF=/etc/postfix
 	mkdir -p $CONF
@@ -87,5 +88,6 @@ fi
 /opt/yaffas/share/doc/example/etc/postfix/master.cf
 /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf
 /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf
+/opt/yaffas/share/doc/example/etc/postfix/virtual_users_global
 
 %changelog
