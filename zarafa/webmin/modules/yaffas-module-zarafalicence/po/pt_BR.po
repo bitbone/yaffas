@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 17:44+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Instalar nova licença CAL"
 #: lang/en:5
 #, no-wrap
 msgid "Installed subscriptions"
-msgstr ""
+msgstr "Subscrições instaladas"
 
 #: lang/en:6
 #, no-wrap
@@ -54,9 +54,9 @@ msgstr "Serial"
 
 # 91%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Licensed Log"
-msgstr "Log de licença"
+msgstr "Log da licença"
 
 #: lang/en:9
 #, no-wrap
@@ -81,4 +81,4 @@ msgstr "Instalar nova licença Archiver CAL"
 #: lang/en:14
 #, no-wrap
 msgid "Zarafa Subscription"
-msgstr ""
+msgstr "Subscrição Zarafa"

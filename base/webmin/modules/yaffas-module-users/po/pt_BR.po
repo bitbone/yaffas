@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-25 00:20+0300\n"
-"PO-Revision-Date: 2012-06-11 10:02+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
+"Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -414,17 +414,17 @@ msgstr "Mensagem"
 #: lang/en:80
 #, no-wrap
 msgid "Hide from addressbook"
-msgstr ""
+msgstr "Ocultar do catálogo de endereços"
 
 #: lang/en:81
 #, no-wrap
 msgid "Store size"
-msgstr ""
+msgstr "Tamanho da caixa"
 
 #: lang/en:82
 #, no-wrap
 msgid "Store type"
-msgstr ""
+msgstr "Tipo da caixa"
 
 #: lang/en:83
 #, no-wrap
@@ -433,9 +433,9 @@ msgstr "Administrador"
 
 # 85%
 #: lang/en:84
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Active"
-msgstr "Ativo?"
+msgstr "Ativo"
 
 #: lang/en:85
 #, no-wrap
@@ -466,4 +466,4 @@ msgstr "Fornecer a quantia de espaço no disco que este usuário poderá usar (c
 #: help/en:4
 #, no-wrap
 msgid "When enabled it hides this user from the global addressbook."
-msgstr ""
+msgstr "Habilitado oculta o usuário do catálogo de endereços."

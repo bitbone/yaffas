@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-15 00:17+0300\n"
-"PO-Revision-Date: 2012-09-14 17:14+0200\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -95,12 +95,12 @@ msgstr "Não foi possível acessar o arquivo de configuração"
 #: lang/en:18
 #, no-wrap
 msgid "Please install the package \"aspell-lang\" (e.g. aspell-de for german) for spell checking in your language."
-msgstr ""
+msgstr "Por favor instalar o pacote \"aspell-XX\" (ex. \"aspell-pt-br\" para português do brasil) para habilitar a verificação ortográfica da sua linguá."
 
 #: lang/en:19
 #, no-wrap
 msgid "Webaccess"
-msgstr ""
+msgstr "Webaccess"
 
 #: help/en:1
 #, no-wrap
