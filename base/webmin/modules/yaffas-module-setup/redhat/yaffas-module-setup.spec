@@ -34,5 +34,7 @@ make install DESTDIR=$RPM_BUILD_ROOT
 /opt/yaffas/webmin/setup
 /opt/yaffas/share/doc/example/appliance-setup.pl
 /opt/yaffas/lib/perl5/Yaffas/Module/Setup.pm
+/usr/local/bin/postinst-rpm.sh
+/usr/locak/bin/postinst-deb.sh
 
 %changelog
