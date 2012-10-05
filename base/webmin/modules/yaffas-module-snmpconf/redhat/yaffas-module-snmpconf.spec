@@ -27,10 +27,6 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 MODULE="snmpconf"
 add_webmin_acl $MODULE
 
-if cat /etc/snmp/snmpd.conf| grep com2sec | grep paranoid >/dev/null; then
-	/sbin/chkconfig --del confd
-fi
-
 %postun
 if [ "$1" = "0" ]; then
 	set -e

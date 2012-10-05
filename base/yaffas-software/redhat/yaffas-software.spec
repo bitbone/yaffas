@@ -24,14 +24,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-INCLUDES="/etc/samba/includes.smb"
-if [ -e $INCLUDES ]; then
-	if ( ! grep -q "smbopts.software" $INCLUDES ); then
-		echo "include = /etc/samba/smbopts.software" >> $INCLUDES
-	fi
-fi
-
-service smb reload
 
 %postun
 INCLUDES="/etc/samba/includes.smb"
