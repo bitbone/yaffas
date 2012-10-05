@@ -1,3 +1,7 @@
+#!/bin/bash
+OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
+INSTALLLEVEL=1
+
 ##### yaffas-ldap #####
 DOMAIN=$(hostname -d 2> /dev/null || echo "")
 
@@ -54,7 +58,7 @@ SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
 NSLCDCONF=/etc/nslcd.conf
 
 # only on first installation, if no ldap tree is present
-if [ "$1" = 1 ] ; then
+if [ "$INSTALLLEVEL" = 1 ] ; then
 
 	# create group which allows users to read from ldap
 	groupadd -f -r ldapread
@@ -66,28 +70,29 @@ if [ "$1" = 1 ] ; then
 		/etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf \
 		/etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
 		if [ -e $SAVEFILE ]; then
-			%{__mv} -f $SAVEFILE ${SAVEFILE}.yaffassave
+			mv -f $SAVEFILE ${SAVEFILE}.yaffassave
 		fi
 	done
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
-	%{__cp} -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
+	cp -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
+	cp -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
+	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
+	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
+	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
+	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
+	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
+	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 
-%if 0%{?rhel} < 6
+if [ x$OS = xRHEL5 ]; then
 	service ldap stop
-%endif
-%if 0%{?rhel} >= 6
+fi
+
+if [ x$OS = xRHEL6 ]; then
 	service slapd stop
-%endif
+fi
 	sleep 1
 
 	# kill ldap if it is still running
@@ -95,17 +100,17 @@ if [ "$1" = 1 ] ; then
 		killall -9 slapd
 	fi
 
-%if 0%{?rhel} >= 6
+if [ x$OS = xRHEL6 ]; then
 	SYSCONFIG_LDAP="/etc/sysconfig/ldap"
 	if [ -e $SYSCONFIG_LDAP ]; then
-		%{__cp} -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
+		cp -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
 		if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
 			sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
 		else
 			echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
 		fi
 	fi
-%endif
+fi
 
 	BASE=`_get_base`
 
@@ -187,11 +192,11 @@ else
 
 fi
 
-%if 0%{?rhel} >= 6
+if [ x$OS = xRHEL6 ]; then
 if [ -e /var/run/nss-pam-ldapd.migrate ]; then
 	rm -f /var/run/nss-pam-ldapd.migrate
 fi
-%endif
+fi
 
 # fix permissions
 chmod 440 $CONF
@@ -202,24 +207,24 @@ chown root:ldapread $LDAPS
 rm -f $LDIF
 
 # enabled ldap service
-%if 0%{?rhel} < 6
+if [ x$OS = xRHEL5 ]; then
 chkconfig ldap on
-%endif
-%if 0%{?rhel} >= 6
+fi
+if [ x$OS = xRHEL6 ]; then
 chkconfig slapd on
 chkconfig nslcd on
-%endif
+fi
 
 ##### end yaffas-ldap #####
 
 ##### yaffas-samba #####
-if [ $1 -eq 1 ]; then
+if [ $INSTALLLEVEL -eq 1 ]; then
 	# preserve config files and copy our config
 	# to default location
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	%{__mv} -f /etc/samba/smb.conf /etc/samba/smb.conf.yaffassave
-	%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/samba/smb.conf /etc/samba
-	%{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/samba/smbopts.software /etc/samba
+	mv -f /etc/samba/smb.conf /etc/samba/smb.conf.yaffassave
+	cp -f -a ${YAFFAS_EXAMPLE}/etc/samba/smb.conf /etc/samba
+	cp -f -a ${YAFFAS_EXAMPLE}/etc/samba/smbopts.software /etc/samba
 
 	mkdir -p /etc/samba/smbprinters/
 	mkdir -p /etc/samba/printer/{W32ALPHA,W32MIPS,W32PPC,W32X86,WIN40}
@@ -284,16 +289,16 @@ if [ $1 -eq 1 ]; then
 	# restore selinux contexts
 	/sbin/restorecon -R /etc/samba
 
-%if 0%{?rhel} < 6
+if [ x$OS = xRHEL5 ]; then
 	service ldap restart
-%endif
-%if 0%{?rhel} >= 6
+fi
+if [ x$OS = xRHEL6 ]; then
 	service slapd restart
-%endif
+fi
 	service smb restart
 	service winbind restart
 
-	if [ "$1" = 1 ] ; then
+	if [ "$INSTALLLEVEL" = 1 ] ; then
 		SECRET=$(cat /etc/ldap.secret)
 		smbpasswd -w $SECRET
 
@@ -339,17 +344,17 @@ fi
 ##### end yaffas-samba #####
 
 ##### yaffas-postfix #####
-if [ "$1" = 1 ] ; then
+if [ "$INSTALLLEVEL" = 1 ] ; then
 	sed -e '/smtpd_tls_session_cache_database/d' -i /opt/yaffas/share/doc/example/etc/postfix/main.cf
 	sed -e '/smtp_tls_session_cache_database/d' -i /opt/yaffas/share/doc/example/etc/postfix/main.cf
-	%{__mv} -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
-	%{__mv} -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
-	%{__mv} -f /etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/smtpd.conf.yaffassave
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf /etc/postfix/master.cf
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
+	mv -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
+	mv -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
+	mv -f /etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/smtpd.conf.yaffassave
+	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
+	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf /etc/postfix/master.cf
+	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 	mkdir -p /etc/postfix/sasl
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
+	cp -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
 
 	CONF=/etc/postfix
 	mkdir -p $CONF
@@ -394,19 +399,19 @@ if ! id amavis | grep -q "ldapread"; then
     usermod -a -G ldapread amavis
 fi
 
-%if 0%{?rhel} >= 6
-/sbin/service amavisd restart
-%endif
+if [ x$OS = xRHEL6 ]; then
+	/sbin/service amavisd restart
+fi
 
 ##### end yaffas-security #####
 
 ##### yaffas-zarafa #####
-if [ "$1" = 1 ] ; then
+if [ "$INSTALLLEVEL" = 1 ] ; then
     YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
     for CFG in /etc/zarafa/*.cfg; do
-        %{__cp} -f $CFG ${CFG}.yaffassave
+        cp -f $CFG ${CFG}.yaffassave
     done
-    %{__cp} -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
+    cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
 fi
 
 LDAPHOSTNAME=`grep "BASEDN=" /etc/ldap.settings | cut -d= -f2-`
@@ -427,7 +432,7 @@ if [ -e $SSL_CONF ]; then
 fi
 
 # optimize memory
-if [ "$1" = 1 ]; then
+if [ "$INSTALLLEVEL" = 1 ]; then
     # only on a fresh installation
     MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')
 
@@ -441,7 +446,7 @@ if [ "$1" = 1 ]; then
 
     echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/my.cnf
 
-    %{__rm} -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
+    rm -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
     sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
 
     # fix plugin path
@@ -449,25 +454,25 @@ if [ "$1" = 1 ]; then
         sed -e 's#plugin_path\s*=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
     fi
  
-    %{__mkdir} -p /data/zarafa/attachments/
+    mkdir -p /data/zarafa/attachments/
 fi
 
-if [ "$1" = 1 ] ; then
+if [ "$INSTALLLEVEL" = 1 ] ; then
     #only do this on install, not on upgrade
     zarafa-admin -s
 fi
 
 # install zarafa selinux module
-if [ "$1" = 1 ] ; then
+if [ "$INSTALLLEVEL" = 1 ] ; then
     checkmodule -M -m -o /tmp/zarafa.mod /tmp/zarafa.te
     semodule_package -o /tmp/zarafa.pp -m /tmp/zarafa.mod
     semodule -i /tmp/zarafa.pp
 fi
-%{__rm} -f /tmp/zarafa.{pp,mod,te}
+rm -f /tmp/zarafa.{pp,mod,te}
 
-echo "1: " $1
+echo "1: " $INSTALLLEVEL
 
-if [ "$1" = 2 ]; then
+if [ "$INSTALLLEVEL" = 2 ]; then
     SERVERCFG="/etc/zarafa/server.cfg"
     if grep -q index_services_enabled $SERVERCFG; then
         sed -e 's/index_services_enabled/search_enabled/' -i $SERVERCFG
@@ -519,13 +524,13 @@ fi
 
 ##### yaffas-module-security #####
 
-if [ "$1" = 1 ]; then
-	%{__mv} -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
-	%{__mv} -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
+if [ "$INSTALLLEVEL" = 1 ]; then
+	mv -f /etc/policyd-weight.conf /etc/policyd-weight.conf.yaffassave
+	cp -f -a /opt/yaffas/share/doc/example/etc/policyd-weight.conf /etc
+	mv -f /etc/amavisd.conf /etc/amavisd.conf.yaffassave
+	cp -f -a /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf /etc/amavisd.conf
 	mkdir -p /etc/amavis/conf.d/
-	%{__cp} -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
+	cp -f -a /opt/yaffas/share/doc/example/etc/amavis/conf.d/60-yaffas /etc/amavis/conf.d/60-yaffas
 
 	USER=$(getent passwd | awk -F: '/^clam/ { print $1 }')
 

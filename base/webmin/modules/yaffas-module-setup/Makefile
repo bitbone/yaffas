@@ -13,3 +13,4 @@ install:
 	cp -r  $(MODULE) $(DESTDIR)/$(YAFFAS_WEBMIN)/
 	cp -r  lib/* $(DESTDIR)/$(YAFFAS_MODULE)/
 	cp -r  example/* $(DESTDIR)/$(YAFFAS_EXAMPLE)/
+	cp postinst-*.sh /usr/local/bin
