@@ -1,3 +1,9 @@
+yaffas-module-changepw (1.2.3-1) lucid; urgency=low
+
+  * update to version 1.2.3-1
+
+ -- Package Builder <packages@yaffas.org>  Fri, 05 Oct 2012 11:40:57 +0200
+
 yaffas-module-changepw (1.2.2-1) lucid; urgency=low
 
   * update to version 1.2.2-1
