@@ -23,14 +23,6 @@ make install DESTDIR=$RPM_BUILD_ROOT
 %post
 set -e
 
-if ! id amavis | grep -q "ldapread"; then
-    usermod -a -G ldapread amavis
-fi
-
-%if 0%{?rhel} >= 6
-/sbin/service amavisd restart
-%endif
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
