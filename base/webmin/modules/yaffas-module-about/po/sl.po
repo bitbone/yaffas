@@ -1,0 +1,613 @@
+# #-#-#-#-#  plugin_passwd.pot (PACKAGE VERSION)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-05 18:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"X-Generator: Translate Toolkit 1.8.1\n"
+
+#: lang/en:1 lang/en:11
+#, no-wrap
+msgid "System information"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "About yaffas"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "System"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Versions"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Version"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "Revision"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Product"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "The information cannot be read!"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Written by"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "General information"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "on an"
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Up-time of"
+msgstr ""
+
+#: lang/en:17
+#, no-wrap
+msgid "days"
+msgstr ""
+
+#: lang/en:18
+#, no-wrap
+msgid "hours"
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "minutes"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "Load average"
+msgstr ""
+
+#: lang/en:21
+#, no-wrap
+msgid "CPU load"
+msgstr ""
+
+#: lang/en:22
+#, no-wrap
+msgid "Overall load"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "for the last minute"
+msgstr ""
+
+#: lang/en:24
+#, no-wrap
+msgid "for the last 5 minutes"
+msgstr ""
+
+#: lang/en:25
+#, no-wrap
+msgid "for the last 15 minutes"
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "Memory usage"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "Main memory"
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "Swap memory"
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
+msgid "Total"
+msgstr ""
+
+#: lang/en:31 lang/en:100
+#, no-wrap
+msgid "Used"
+msgstr ""
+
+#: lang/en:32 lang/en:45
+#, no-wrap
+msgid "Free"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid "Shared"
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "Buffers"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Cache"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "Module"
+msgstr ""
+
+#: lang/en:37 lang/en:99
+#, no-wrap
+msgid "Size"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "Referring modules"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Modules currently in use"
+msgstr ""
+
+#: lang/en:40
+#, no-wrap
+msgid "Available Memory"
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "Usage Key:"
+msgstr ""
+
+#: lang/en:43
+#, no-wrap
+msgid "In Use"
+msgstr ""
+
+#: lang/en:44
+#, no-wrap
+msgid "Buffer"
+msgstr ""
+
+#: lang/en:47
+#, no-wrap
+msgid "IRQ usage"
+msgstr ""
+
+#: lang/en:48 lang/en:91
+#, no-wrap
+msgid "Device"
+msgstr ""
+
+#: lang/en:49
+#, no-wrap
+msgid "IO usage"
+msgstr ""
+
+#: lang/en:51
+#, no-wrap
+msgid "Network statistics"
+msgstr ""
+
+#: lang/en:52
+#, no-wrap
+msgid "Interface"
+msgstr ""
+
+#: lang/en:53
+#, no-wrap
+msgid "Receive"
+msgstr ""
+
+#: lang/en:54
+#, no-wrap
+msgid "Sent"
+msgstr ""
+
+#: lang/en:55
+#, no-wrap
+msgid "Bytes"
+msgstr ""
+
+#: lang/en:56
+#, no-wrap
+msgid "Errors"
+msgstr ""
+
+#: lang/en:57
+#, no-wrap
+msgid "Dropped"
+msgstr ""
+
+#: lang/en:58
+#, no-wrap
+msgid "Overruns"
+msgstr ""
+
+#: lang/en:59
+#, no-wrap
+msgid "Frame"
+msgstr ""
+
+#: lang/en:60
+#, no-wrap
+msgid "Carrier"
+msgstr ""
+
+#: lang/en:61
+#, no-wrap
+msgid "Collisions"
+msgstr ""
+
+#: lang/en:62
+#, no-wrap
+msgid "Active connections"
+msgstr ""
+
+#: lang/en:63 lang/en:81
+#, no-wrap
+msgid "Protocol"
+msgstr ""
+
+#: lang/en:64
+#, no-wrap
+msgid "Receive queue"
+msgstr ""
+
+#: lang/en:65
+#, no-wrap
+msgid "Send queue"
+msgstr ""
+
+#: lang/en:66
+#, no-wrap
+msgid "Local"
+msgstr ""
+
+#: lang/en:67
+#, no-wrap
+msgid "Foreign"
+msgstr ""
+
+#: lang/en:68 lang/en:85
+#, no-wrap
+msgid "State"
+msgstr ""
+
+#: lang/en:69
+#, no-wrap
+msgid "Who's logged"
+msgstr ""
+
+#: lang/en:70
+#, no-wrap
+msgid "User"
+msgstr ""
+
+#: lang/en:71
+#, no-wrap
+msgid "TTY"
+msgstr ""
+
+#: lang/en:72
+#, no-wrap
+msgid "From"
+msgstr ""
+
+#: lang/en:73
+#, no-wrap
+msgid "Login@"
+msgstr ""
+
+#: lang/en:74
+#, no-wrap
+msgid "Idle"
+msgstr ""
+
+#: lang/en:75
+#, no-wrap
+msgid "Jcpu"
+msgstr ""
+
+#: lang/en:76
+#, no-wrap
+msgid "Pcpu"
+msgstr ""
+
+#: lang/en:77
+#, no-wrap
+msgid "Command"
+msgstr ""
+
+#: lang/en:78
+#, no-wrap
+msgid "Listening sockets"
+msgstr ""
+
+#: lang/en:79
+#, no-wrap
+msgid "Active sockets"
+msgstr ""
+
+#: lang/en:80
+#, no-wrap
+msgid "Unix sockets"
+msgstr ""
+
+#: lang/en:82
+#, no-wrap
+msgid "RefCnt"
+msgstr ""
+
+#: lang/en:83
+#, no-wrap
+msgid "Flags"
+msgstr ""
+
+#: lang/en:84
+#, no-wrap
+msgid "Type"
+msgstr ""
+
+#: lang/en:86
+#, no-wrap
+msgid "I-node"
+msgstr ""
+
+#: lang/en:87
+#, no-wrap
+msgid "Path"
+msgstr ""
+
+#: lang/en:89
+#, no-wrap
+msgid "File system statistics"
+msgstr ""
+
+#: lang/en:90
+#, no-wrap
+msgid "Mounted file system"
+msgstr ""
+
+#: lang/en:92
+#, no-wrap
+msgid "Directory"
+msgstr ""
+
+#: lang/en:93 lang/en:98
+#, no-wrap
+msgid "File system"
+msgstr ""
+
+#: lang/en:94
+#, no-wrap
+msgid "Mode"
+msgstr ""
+
+#: lang/en:96
+#, no-wrap
+msgid "File system information"
+msgstr ""
+
+#: lang/en:101
+#, no-wrap
+msgid "Available"
+msgstr ""
+
+#: lang/en:102
+#, no-wrap
+msgid "Used%"
+msgstr ""
+
+#: lang/en:103
+#, no-wrap
+msgid "Mounted on"
+msgstr ""
+
+#: lang/en:105
+#, no-wrap
+msgid "Time"
+msgstr ""
+
+#: lang/en:106
+#, no-wrap
+msgid "Value"
+msgstr ""
+
+#: lang/en:108
+#, no-wrap
+msgid "Memory type"
+msgstr ""
+
+#: lang/en:109
+#, no-wrap
+msgid "Information"
+msgstr ""
