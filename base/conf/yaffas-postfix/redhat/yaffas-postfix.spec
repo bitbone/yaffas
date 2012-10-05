@@ -56,6 +56,10 @@ if [ "$1" = 1 ] ; then
 
 fi
 
+if ! grep -q "^/postmaster@" /etc/postfix/virtual_users_global; then
+    echo "/postmaster@.*/ root@localhost" >> /etc/postfix/virtual_users_global
+fi
+
 if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
     sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
     sed -e 's/^FLAGS.*/FLAGS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
