@@ -28,11 +28,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 
-%files
-%defattr(-,root,root,-)
-%doc debian/{changelog,copyright}
-/usr/share/z-push
-
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
 - initial release
