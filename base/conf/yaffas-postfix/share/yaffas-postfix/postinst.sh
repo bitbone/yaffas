@@ -34,21 +34,37 @@ if [ "$INSTALLLEVEL" = 1 ] ; then
 
 fi
 
-if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
-    sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
-    sed -e 's/^FLAGS.*/FLAGS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
-    chkconfig saslauthd on
-    service saslauthd restart
+if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
+
+	if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
+	    sed -e 's/^MECH.*/MECH="rimap"/' -i /etc/sysconfig/saslauthd
+	    sed -e 's/^FLAGS.*/FLAGS="-O 127.0.0.1"/' -i /etc/sysconfig/saslauthd
+	    chkconfig saslauthd on
+	    service saslauthd restart
+	fi
+	
+	# disable sendmail
+	service sendmail stop
+	chkconfig sendmail off
+	
+	# enable postfix
+	alternatives --set mta /usr/sbin/sendmail.postfix
+	chkconfig postfix on
+	service postfix restart
+	service saslauthd restart
+else
+	if ! grep -q "START=yes" /etc/default/saslauthd; then
+	    sed -e 's/^START.*/START=yes/' -i /etc/default/saslauthd
+	fi
+
+	if ! grep -q 'MECHANISMS="rimap"' /etc/default/saslauthd; then
+		sed -e 's/^MECHANISMS.*/MECHANISMS="rimap"/' -i /etc/default/saslauthd
+		sed -e 's/^MECH_OPTIONS.*/MECH_OPTIONS="127.0.0.1"/' -i /etc/default/saslauthd
+		sed -e 's#^OPTIONS.*#OPTIONS="-c -m /var/spool/postfix/var/run/saslauthd"#' -i /etc/default/saslauthd
+	fi
+	adduser postfix sasl
+	invoke-rc.d postfix restart
+	invoke-rc.d saslauthd restart
 fi
-
-# disable sendmail
-service sendmail stop
-chkconfig sendmail off
-
-# enable postfix
-alternatives --set mta /usr/sbin/sendmail.postfix
-chkconfig postfix on
-service postfix restart
-service saslauthd restart
 
 ##### end yaffas-postfix #####

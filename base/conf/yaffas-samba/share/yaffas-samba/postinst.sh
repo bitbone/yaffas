@@ -71,17 +71,36 @@ if [ $INSTALLLEVEL -eq 1 ]; then
 		fi
 	fi
 
+	if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
 	# restore selinux contexts
-	/sbin/restorecon -R /etc/samba
-
-if [ x$OS = xRHEL5 ]; then
-	service ldap restart
-fi
-if [ x$OS = xRHEL6 ]; then
-	service slapd restart
-fi
-	service smb restart
-	service winbind restart
+		/sbin/restorecon -R /etc/samba
+	fi
+	
+	if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
+		if [ x$OS = xRHEL5 ]; then
+			service ldap restart
+		fi
+		if [ x$OS = xRHEL6 ]; then
+			service slapd restart
+		fi
+		service smb restart
+		service winbind restart
+	else
+		SAMBA=/etc/init.d/smbd
+	
+	    if [ ! -f $SAMBA ]; then
+	        SAMBA=/etc/init.d/samba
+	    fi
+	
+	    if [ ! -f $SAMBA ]; then
+	        echo "No samba initscript found";
+	        exit 1
+	    fi
+	
+		$SAMBA restart
+		/etc/init.d/winbind restart
+		/etc/init.d/slapd restart
+	fi
 
 	if [ "$INSTALLLEVEL" = 1 ] ; then
 		SECRET=$(cat /etc/ldap.secret)
@@ -115,13 +134,20 @@ fi
 
 		/usr/bin/ldapdelete -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET "uid=root,ou=People,$BASE"
 
-		service smb restart
-		service winbind restart
+		if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
+			service smb restart
+			service winbind restart
+		else
+			$SAMBA restart
+			/etc/init.d/winbind restart
+		fi
 	fi
 
-	# enable services
-	chkconfig smb on
-	chkconfig winbind on
+	if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
+		# enable services
+		chkconfig smb on
+		chkconfig winbind on
+	fi
 
 	rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 fi
