@@ -15,6 +15,6 @@ install:
 	cp -r  lib/* $(DESTDIR)/$(YAFFAS_MODULE)/
 	cp -r  example/* $(DESTDIR)/$(YAFFAS_EXAMPLE)/
 	cp postinst-rpm.sh /usr/local/bin
-    cp postinst-deb.sh /usr/local/bin
-    cp postinst-all.sh /usr/local/bin
+	cp postinst-deb.sh /usr/local/bin
+	cp postinst-all.sh /usr/local/bin
 	
