@@ -4,8 +4,8 @@ NTROOTDIR=mkntpwd/
 
 install:
 
-    mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
-    cp -r share/yaffas-security $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	cp -r share/yaffas-security $(DESTDIR)/$(YAFFAS_PREFIX)/share
 
 clean:
 
