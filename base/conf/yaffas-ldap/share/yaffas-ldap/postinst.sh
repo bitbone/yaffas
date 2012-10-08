@@ -1,6 +1,6 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-INSTALLLEVEL=1
+INSTALLLEVEL=$1
 
 ##### yaffas-ldap #####
 DOMAIN=$(hostname -d 2> /dev/null || echo "")
@@ -36,26 +36,39 @@ function _get_base() {
 
 # use sample DB_CONFIG if none is configured
 if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-	if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
-		cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-	elif [ -f /etc/openldap/DB_CONFIG.example ]; then
-		cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
+			cp /usr/share/slapd/DB_CONFIG /var/lib/ldap/
+		fi
+	else
+		if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+		elif [ -f /etc/openldap/DB_CONFIG.example ]; then
+			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+		fi
 	fi
 fi
 
 # some defines
 CONF="/etc/ldap.conf"
 NSS="/etc/nsswitch.conf"
-SLAPD="/etc/openldap/slapd.conf"
+
+if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+	SLAPD="/etc/ldap/slapd.conf"
+	LDAPCONF="/etc/ldap/ldap.conf"
+else
+	SLAPD="/etc/openldap/slapd.conf"
+	LDAPCONF="/etc/openldap/ldap.conf"
+	NSLCDCONF=/etc/nslcd.conf
+fi
+
 LDAPS="/etc/ldap.secret"
 LDIF="/tmp/yaffas_base.ldif"
 DOMRENAME_FILE="/tmp/slapcat.ldif"
-LDAPCONF="/etc/openldap/ldap.conf"
 SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
 SMBLDAP_BIND="/etc/smbldap-tools/smbldap_bind.conf"
 LDAP_SETTINGS="/etc/ldap.settings"
 SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
-NSLCDCONF=/etc/nslcd.conf
 
 # only on first installation, if no ldap tree is present
 if [ "$INSTALLLEVEL" = 1 ] ; then
@@ -66,33 +79,42 @@ if [ "$INSTALLLEVEL" = 1 ] ; then
 	# save existing config files and
 	# copy our config files to default locations
 	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf \
-		/etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf \
-		/etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
+	for SAVEFILE in $CONF $SLAPD $LDAPCONF $SMBLDAP_CONF $SMBLDAP_BIND $NSLCDCONF; do
 		if [ -e $SAVEFILE ]; then
 			mv -f $SAVEFILE ${SAVEFILE}.yaffassave
 		fi
 	done
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
-	cp -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
-	cp -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
+	
+	for CONFFILE in $CONF $SLAPD $LDAPCONF $SMBLDAP_CONF $SMBLDAP_BIND $NSLCDCONF; do
+		if [ -e ${YAFFAS_EXAMPLE}$CONFFILE ]; then
+			cp -f -p ${YAFFAS_EXAMPLE}$CONFFILE $CONFFILE
+		fi
+	done
+		
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/samba.schema /etc/ldap/schema
+		cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/zarafa.schema /etc/ldap/schema
+	else
+		cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
+		cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+	fi
+
 	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
+	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
 	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
-	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 
-if [ x$OS = xRHEL5 ]; then
-	service ldap stop
-fi
-
-if [ x$OS = xRHEL6 ]; then
-	service slapd stop
-fi
+	if [ x$OS = xRHEL5 ]; then
+		service ldap stop
+	fi
+	
+	if [ x$OS = xRHEL6 ]; then
+		service slapd stop
+	fi
+	
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		/etc/init.d/slapd stop
+	fi
+	
 	sleep 1
 
 	# kill ldap if it is still running
@@ -100,17 +122,21 @@ fi
 		killall -9 slapd
 	fi
 
-if [ x$OS = xRHEL6 ]; then
-	SYSCONFIG_LDAP="/etc/sysconfig/ldap"
-	if [ -e $SYSCONFIG_LDAP ]; then
-		cp -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
-		if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
-			sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
-		else
-			echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
+	if [ x$OS = xRHEL6 ]; then
+		SYSCONFIG_LDAP="/etc/sysconfig/ldap"
+		if [ -e $SYSCONFIG_LDAP ]; then
+			cp -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
+			if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
+				sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
+			else
+				echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
+			fi
 		fi
 	fi
-fi
+
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		sed -e 's#SLAPD_CONF.*#SLAPD_CONF=/etc/ldap/slapd.conf#g' -i /etc/default/slapd
+	fi
 
 	BASE=`_get_base`
 
@@ -121,13 +147,18 @@ fi
 	echo "Changing configfiles..."
 
 	sed -e "s/BASE/$BASE/" -i $CONF
-	sed -e "s/BASE/$BASE/" -i $NSLCDCONF
+	if [ x$OS = xRHEL6 ]; then
+		sed -e "s/BASE/$BASE/" -i $NSLCDCONF
+	fi
 	sed -e "s/BASE/$BASE/" -i $SLAPD
 	sed -e "s/BASE/$BASE/" -i $LDAPCONF
 	sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
 	sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
 	sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
-
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		HOST=$(hostname -s)
+		sed -e "s/DOMAIN/$HOST/" -i $SMBLDAP_CONF
+	fi
 
 	echo "Removing old LDAP Database"
 	rm -rf /var/lib/ldap/*
@@ -138,21 +169,34 @@ fi
 
 	# import LDIF
 	slapadd -v -l $DOMRENAME_FILE -f $SLAPD
-	chown -R ldap:ldap /var/lib/ldap/
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		LDAPUSER=openldap
+		LDAPGROUP=openldap
+	else
+		LDAPUSER=ldap
+		LDAPGROUP=ldap
+	fi
+	
+	chown -R $LDAPUSER:$LDAPGROUP /var/lib/ldap/
+
 	rm -f $DOMRENAME_FILE
 	rm $LDIF
 
 	# generate password for LDAP
-	OURPASSWD="$(mkpasswd -s 0)"
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		OURPASSWD="$(mkpasswd yaffas)"
+	else
+		OURPASSWD="$(mkpasswd -s 0)"
+	fi
 
-	for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret \
+	for MYFILE in $LDAPCONF /etc/ldap.secret \
 		/etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf \
-		/etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+		$CONF $SMBLDAP_BIND; do
 		sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
 	done
 
 	MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
-	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
+	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i $SLAPD
 
 	#write ldap.settings
 	echo "BASEDN=$BASE" >$LDAP_SETTINGS
@@ -164,10 +208,15 @@ fi
 	echo "EMAIL=mail" >> $LDAP_SETTINGS
 
 	# set listening options
-	DEFAULT="/etc/sysconfig/ldap"
-	sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
+	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
+		DEFAULT="/etc/default/slapd"
+		sed 's/.*SLAPD_SERVICES.*/SLAPD_SERVICES=\"ldap:\/\/127.0.0.1\/ \"/' -i $DEFAULT
+	else
+		DEFAULT="/etc/sysconfig/ldap"
+		sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
+		sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
+		sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
+	fi
 	mkdir -p /opt/yaffas/config/
 	echo "method=ldap" > /opt/yaffas/config/alias.cfg
 
@@ -203,6 +252,7 @@ chmod 440 $CONF
 chmod 640 $LDAPS
 chown root:ldapread $CONF
 chown root:ldapread $LDAPS
+chown root:ldapread /etc/ldap.conf
 
 rm -f $LDIF
 
