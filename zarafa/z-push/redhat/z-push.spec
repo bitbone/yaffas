@@ -28,6 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
