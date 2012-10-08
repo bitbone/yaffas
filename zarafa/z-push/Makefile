@@ -8,3 +8,6 @@ clean:
 install:
 	mkdir -p $(DESTDIR)/usr/share/z-push/
 	cp -a z-push/* $(DESTDIR)/usr/share/z-push/
+	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	cp -r share/z-push $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	
