@@ -39,5 +39,6 @@ fi
 /opt/software/zarafaclient-en.msi
 /opt/software/zarafaclient.msi
 /opt/software/zarafamigrationtool.exe
+/opt/yaffas/share/%{name}/postinst.sh
 
 %changelog

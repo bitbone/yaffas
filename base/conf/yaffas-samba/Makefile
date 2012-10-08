@@ -19,4 +19,6 @@ install:
 	$(INSTALL) -f conf/$(SMB_CONF) $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/smb.conf
 	$(INSTALL) -f conf/smbopts.software $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/samba/
 	$(INSTALL) -f tmp/root.ldif $(DESTDIR)$(YAFFAS_EXAMPLE)/tmp
+	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	cp -r share/yaffas-samba $(DESTDIR)/$(YAFFAS_PREFIX)/share
 

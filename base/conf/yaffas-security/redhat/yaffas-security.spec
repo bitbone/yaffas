@@ -29,5 +29,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
+/opt/yaffas/share/%{name}/postinst.sh
 
 %changelog
