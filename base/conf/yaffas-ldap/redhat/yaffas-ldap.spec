@@ -57,6 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 %config /opt/yaffas/share/doc/example/etc/smbldap-tools/smbldap_bind.conf
 %config /opt/yaffas/share/doc/example/etc/apparmor.d/local/usr.sbin.slapd
 %config %attr(750,root,root) /opt/yaffas/bin/domrename.pl
+/opt/yaffas/share/%{name}/postinst.sh
 /tmp/yaffas_base.ldif
 
 %changelog

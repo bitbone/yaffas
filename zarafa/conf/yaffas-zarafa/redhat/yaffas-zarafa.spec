@@ -62,6 +62,7 @@ fi
 %config /opt/yaffas/share/doc/example/etc/zarafa/server.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/spooler.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/search.cfg
+/opt/yaffas/share/%{name}/postinst.sh
 /tmp/zarafa.te
 
 %changelog
