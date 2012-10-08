@@ -27,30 +27,12 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-mkdir -p /var/lib/z-push/
-mkdir -p /var/log/z-push/
-
-chown apache:apache /var/lib/z-push/ /var/log/z-push/
-chcon -R -t httpd_sys_content_t /var/lib/z-push/ /var/log/z-push/
-
-ln -sf /usr/share/z-push/z-push-admin.php /usr/bin/z-push-admin
-ln -sf /usr/share/z-push/z-push-top.php /usr/bin/z-push-top
-
-HTTPD_CONF=/etc/httpd/conf/httpd.conf
-if ( ! grep -q "^Alias /Microsoft-Server-ActiveSync" $HTTPD_CONF ); then
-	echo -e "\nAlias /Microsoft-Server-ActiveSync /usr/share/z-push/index.php" >> $HTTPD_CONF
-fi
-
-if grep -q "/var/www/z-push/index.php" $HTTPD_CONF; then
-    sed -e "s#Alias /Microsoft-Server-ActiveSync.*#Alias /Microsoft-Server-ActiveSync /usr/share/z-push/index.php#" -i $HTTPD_CONF
-fi
-
-service httpd restart
 
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /usr/share/z-push
+/opt/yaffas/share/%{name}/postinst.sh
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
