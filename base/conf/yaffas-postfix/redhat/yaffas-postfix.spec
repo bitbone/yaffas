@@ -40,6 +40,7 @@ fi
 /opt/yaffas/share/doc/example/etc/postfix/master.cf
 /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf
 /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf
-/opt/yaffas/share/%{name}/postinst.sh
+/opt/yaffas/share/%{name}/postinst-deb.sh
+/opt/yaffas/share/%{name}/postinst-rpm.sh
 
 %changelog

@@ -1,6 +1,10 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-INSTALLLEVEL=1
+if [ -n $1 ]; then
+	INSTALLLEVEL=$1
+else 
+	INSTALLLEVEL=1
+fi
 
 ##### yaffas-samba #####
 if [ $INSTALLLEVEL -eq 1 ]; then
