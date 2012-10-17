@@ -32,7 +32,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /usr/share/z-push
-/opt/yaffas/share/%{name}/postinst.sh
+/opt/yaffas/share/%{name}/postinst-deb.sh
+/opt/yaffas/share/%{name}/postinst-rpm.sh
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1

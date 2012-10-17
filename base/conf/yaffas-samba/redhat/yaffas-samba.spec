@@ -40,7 +40,8 @@ fi
 %config /opt/yaffas/share/doc/example/etc/samba/smb.conf
 %config /opt/yaffas/share/doc/example/etc/samba/smbopts.software
 /opt/yaffas/share/doc/example/tmp/root.ldif
-/opt/yaffas/share/%{name}/postinst.sh
+/opt/yaffas/share/%{name}/postinst-deb.sh
+/opt/yaffas/share/%{name}/postinst-rpm.sh
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 0.7.0-1
