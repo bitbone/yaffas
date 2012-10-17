@@ -1,6 +1,14 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
+<<<<<<< HEAD:zarafa/conf/yaffas-zarafa/share/yaffas-zarafa/postinst.sh
 INSTALLLEVEL=$1
+=======
+if [ -n $1 ]; then
+	INSTALLLEVEL=$1
+else 
+	INSTALLLEVEL=1
+fi
+>>>>>>> * put deb and rpm postinst scripts in separate files in yaffas share:zarafa/conf/yaffas-zarafa/share/yaffas-zarafa/postinst-rpm.sh
 
 ##### yaffas-zarafa #####
 if [ "$INSTALLLEVEL" = 1 ] ; then

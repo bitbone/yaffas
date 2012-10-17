@@ -51,7 +51,8 @@ fi
 /opt/yaffas/share/doc/example/etc/policyd-weight.conf
 /opt/yaffas/share/doc/example/etc/amavis-master.cf
 /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf
-/opt/yaffas/share/%{name}/postinst.sh
+/opt/yaffas/share/%{name}/postinst-deb.sh
+/opt/yaffas/share/%{name}/postinst-rpm.sh
 %dir /opt/yaffas/config/postfix
 
 %changelog
