@@ -1,6 +1,5 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-INSTALLLEVEL=1
 
 ##### yaffas-security #####
 if ! id amavis | grep -q "ldapread"; then

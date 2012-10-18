@@ -17,6 +17,7 @@ install:
 	cp -r share/doc/example/etc/smbldap-tools $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -r share/doc/example/etc/apparmor.d $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -r share/yaffas-ldap $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	cp -r share/yaffas-upgrade $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp yaffas_base.ldif $(DESTDIR)/tmp/
 	cp domrename.pl $(DESTDIR)/$(YAFFAS_BIN)
 

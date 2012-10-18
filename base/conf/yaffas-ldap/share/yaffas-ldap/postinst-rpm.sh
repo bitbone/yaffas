@@ -1,10 +1,5 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-if [ -n $1 ]; then
-	INSTALLLEVEL=$1
-else 
-	INSTALLLEVEL=1
-fi
 
 ##### yaffas-ldap #####
 DOMAIN=$(hostname -d 2> /dev/null || echo "")
@@ -62,33 +57,31 @@ SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
 NSLCDCONF=/etc/nslcd.conf
 
 # only on first installation, if no ldap tree is present
-if [ "$INSTALLLEVEL" = 1 ] ; then
+# create group which allows users to read from ldap
+groupadd -f -r ldapread
 
-	# create group which allows users to read from ldap
-	groupadd -f -r ldapread
-
-	# save existing config files and
-	# copy our config files to default locations
-	YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-	for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf \
-		/etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf \
-		/etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
-		if [ -e $SAVEFILE ]; then
-			mv -f $SAVEFILE ${SAVEFILE}.yaffassave
-		fi
-	done
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
-	cp -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
-	cp -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
-	cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
-	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
-	cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
-	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
-	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
-	cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
+# save existing config files and
+# copy our config files to default locations
+YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
+for SAVEFILE in /etc/ldap.conf /etc/openldap/slapd.conf \
+	/etc/openldap/ldap.conf /etc/smbldap-tools/smbldap.conf \
+	/etc/smbldap-tools/smbldap_bind.conf /etc/nslcd.conf; do
+	if [ -e $SAVEFILE ]; then
+		mv -f $SAVEFILE ${SAVEFILE}.yaffassave
+	fi
+done
+cp -f ${YAFFAS_EXAMPLE}/etc/ldap.conf /etc
+cp -f ${YAFFAS_EXAMPLE}/etc/nslcd.conf /etc
+cp -f ${YAFFAS_EXAMPLE}/etc/ldap.settings /etc
+cp -f -p ${YAFFAS_EXAMPLE}/etc/openldap/slapd.conf /etc/openldap
+cp -f ${YAFFAS_EXAMPLE}/etc/openldap/ldap.conf /etc/openldap
+cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
+cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
+cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
+cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
+cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
+cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 
 if [ x$OS = xRHEL5 ]; then
 	service ldap stop
@@ -97,12 +90,12 @@ fi
 if [ x$OS = xRHEL6 ]; then
 	service slapd stop
 fi
-	sleep 1
+sleep 1
 
-	# kill ldap if it is still running
-	if pgrep slapd; then
-		killall -9 slapd
-	fi
+# kill ldap if it is still running
+if pgrep slapd; then
+	killall -9 slapd
+fi
 
 if [ x$OS = xRHEL6 ]; then
 	SYSCONFIG_LDAP="/etc/sysconfig/ldap"
@@ -116,90 +109,68 @@ if [ x$OS = xRHEL6 ]; then
 	fi
 fi
 
-	BASE=`_get_base`
+BASE=`_get_base`
 
-	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
-	sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-aliases.cf
+sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-users.cf
+sed -e "s#BASE#$BASE#" -i /etc/postfix/ldap-aliases.cf
 
-	echo "Using base $BASE ..."
-	echo "Changing configfiles..."
+echo "Using base $BASE ..."
+echo "Changing configfiles..."
 
-	sed -e "s/BASE/$BASE/" -i $CONF
-	sed -e "s/BASE/$BASE/" -i $NSLCDCONF
-	sed -e "s/BASE/$BASE/" -i $SLAPD
-	sed -e "s/BASE/$BASE/" -i $LDAPCONF
-	sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
-	sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
-	sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
+sed -e "s/BASE/$BASE/" -i $CONF
+sed -e "s/BASE/$BASE/" -i $NSLCDCONF
+sed -e "s/BASE/$BASE/" -i $SLAPD
+sed -e "s/BASE/$BASE/" -i $LDAPCONF
+sed -e "s/BASE/$BASE/" -i $SMBLDAP_CONF
+sed -e "s/NEWSID/$SID/" -i $SMBLDAP_CONF
+sed -e "s/BASE/$BASE/" -i $SMBLDAP_BIND
 
+echo "Removing old LDAP Database"
+rm -rf /var/lib/ldap/*
 
-	echo "Removing old LDAP Database"
-	rm -rf /var/lib/ldap/*
+echo "Executing domrename.pl ... $DOMAIN $LDIF"
+sed -e "s/NEWSID/$SID/" -i $LDIF
+/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
 
-	echo "Executing domrename.pl ... $DOMAIN $LDIF"
-	sed -e "s/NEWSID/$SID/" -i $LDIF
-	/opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
+# import LDIF
+slapadd -v -l $DOMRENAME_FILE -f $SLAPD
+chown -R ldap:ldap /var/lib/ldap/
+rm -f $DOMRENAME_FILE
+rm $LDIF
 
-	# import LDIF
-	slapadd -v -l $DOMRENAME_FILE -f $SLAPD
-	chown -R ldap:ldap /var/lib/ldap/
-	rm -f $DOMRENAME_FILE
-	rm $LDIF
+# generate password for LDAP
+OURPASSWD="$(mkpasswd -s 0)"
 
-	# generate password for LDAP
-	OURPASSWD="$(mkpasswd -s 0)"
+for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret \
+	/etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf \
+	/etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
+	sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
+done
 
-	for MYFILE in /etc/openldap/ldap.conf /etc/ldap.secret \
-		/etc/postfix/ldap-users.cf /etc/postfix/ldap-aliases.cf \
-		/etc/ldap.conf /etc/smbldap-tools/smbldap_bind.conf; do
-		sed -e "s/--OURPASSWD--/$OURPASSWD/" -i $MYFILE
-	done
+MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
+sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
 
-	MYCRYPTPW=$(slappasswd -h {CRYPT} -s $OURPASSWD)
-	sed -e "s#--MYCRYPTPW--#$MYCRYPTPW#" -i /etc/openldap/slapd.conf
+#write ldap.settings
+echo "BASEDN=$BASE" >$LDAP_SETTINGS
+echo "USERSEARCH=uid">>$LDAP_SETTINGS
+echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
+echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
+echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
+echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
+echo "EMAIL=mail" >> $LDAP_SETTINGS
 
-	#write ldap.settings
-	echo "BASEDN=$BASE" >$LDAP_SETTINGS
-	echo "USERSEARCH=uid">>$LDAP_SETTINGS
-	echo "BINDDN=cn=ldapadmin,ou=People,$BASE" >> $LDAP_SETTINGS
-	echo "USER_SEARCHBASE=ou=People,$BASE" >> $LDAP_SETTINGS
-	echo "LDAPSECRET=$OURPASSWD" >> $LDAP_SETTINGS
-	echo "LDAPURI=ldap://127.0.0.1" >> $LDAP_SETTINGS
-	echo "EMAIL=mail" >> $LDAP_SETTINGS
-
-	# set listening options
-	DEFAULT="/etc/sysconfig/ldap"
-	sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
-	sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
-	mkdir -p /opt/yaffas/config/
-	echo "method=ldap" > /opt/yaffas/config/alias.cfg
-
-else
-	# this is an update :)
-
-	if ! grep "^tls_checkpeer" $CONF > /dev/null; then
-		echo "tls_checkpeer no" >> $CONF
-	fi
-
-	if ! grep zarafa.schema $SLAPD &>/dev/null; then
-		sed 's|include[[:space:]]\+/etc/openldap/schema/samba.schema|include\t/etc/openldap/schema/samba.schema\ninclude /etc/openldap/schema/zarafa.schema|' -i $SLAPD
-	fi
-
-	if grep -q 'BASEDN.*o=.*c=' /etc/ldap.settings; then
-		echo "fixing ldap dn..."
-		/opt/yaffas/bin/domrename.pl $DOMAIN $DOMAIN upgrade
-		service zarafa-server restart
-		service postfix reload
-		service smb restart
-	fi
-
-fi
+# set listening options
+DEFAULT="/etc/sysconfig/ldap"
+sed 's/.*SLAPD_LDAP\s*=.*/SLAPD_LDAP=\"yes\"/' -i $DEFAULT
+sed 's/.*SLAPD_LDAPS\s*=.*/SLAPD_LDAPS=\"yes\"/' -i $DEFAULT
+sed 's/.*SLAPD_LDAPI\s*=.*/SLAPD_LDAPI=\"yes\"/' -i $DEFAULT
+mkdir -p /opt/yaffas/config/
+echo "method=ldap" > /opt/yaffas/config/alias.cfg
 
 if [ x$OS = xRHEL6 ]; then
-if [ -e /var/run/nss-pam-ldapd.migrate ]; then
-	rm -f /var/run/nss-pam-ldapd.migrate
-fi
+	if [ -e /var/run/nss-pam-ldapd.migrate ]; then
+		rm -f /var/run/nss-pam-ldapd.migrate
+	fi
 fi
 
 # fix permissions

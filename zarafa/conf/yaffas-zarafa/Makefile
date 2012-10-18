@@ -14,6 +14,7 @@ install:
 	mkdir -p $(DESTDIR)/var/log/zarafa
 	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp -r share/yaffas-zarafa $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	cp -r share/yaffas-upgrade $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	
 	cp -a $(wildcard $(ETC)/*.cfg) $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/zarafa/
 ifeq ($(YAFFAS_OS),Ubuntu)

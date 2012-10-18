@@ -1,6 +1,5 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-INSTALLLEVEL=1
 
 mkdir -p /var/lib/z-push/
 mkdir -p /var/log/z-push/

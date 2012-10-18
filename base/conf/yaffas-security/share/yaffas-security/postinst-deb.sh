@@ -1,10 +1,5 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-if [ -n $1 ]; then
-	INSTALLLEVEL=$1
-else 
-	INSTALLLEVEL=1
-fi
 
 set -e
 
