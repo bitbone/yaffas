@@ -6,7 +6,9 @@ sed -e '/smtpd_tls_session_cache_database/d' -i /opt/yaffas/share/doc/example/et
 sed -e '/smtp_tls_session_cache_database/d' -i /opt/yaffas/share/doc/example/etc/postfix/main.cf
 mv -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
 mv -f /etc/postfix/master.cf /etc/postfix/master.cf.yaffassave
-mv -f /etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/smtpd.conf.yaffassave
+if [ -e /etc/postfix/sasl/smtpd.conf ]; then
+	mv -f /etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/smtpd.conf.yaffassave
+fi
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master-redhat.cf /etc/postfix/master.cf
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
