@@ -145,7 +145,6 @@ if [ x$OS = xRHEL5 -o x$OS = xRHEL6 ]; then
 	chkconfig winbind on
 fi
 
-	rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
-fi
+rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
 ##### end yaffas-samba #####
