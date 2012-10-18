@@ -7,12 +7,13 @@ elif [ x$OS = xDebian -o x$OS = xUbuntu ]; then
 	DIST=deb
 fi
 
-INSTALLLEVEL=1
+LOGFILE=/root/yaffas-postinst.log
+rm -f $LOGFILE
 
 for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zarafa yaffas-software yaffas-module-security z-push; do
-	echo "executing $YAFFAS_SHARE/${module}/postinst-${DIST}.sh ..."
-	echo ""
-	sh $YAFFAS_SHARE/${module}/postinst-${DIST}.sh
-	echo ""
-	echo "... done"
+	echo "executing $YAFFAS_SHARE/${module}/postinst-${DIST}.sh ..." >> $LOGFILE
+	echo "" >> $LOGFILE
+	sh $YAFFAS_SHARE/${module}/postinst-${DIST}.sh >> $LOGFILE
+	echo "" >> $LOGFILE
+	echo "... done" >> $LOGFILE
 done

@@ -19,6 +19,8 @@ ReadParse();
 header();
 
 try {
+
+    system("/usr/local/bin/postinst-all.sh");
 	my $pw1 = $main::in{admin_password1};
 	my $pw2 = $main::in{admin_password2};
 
