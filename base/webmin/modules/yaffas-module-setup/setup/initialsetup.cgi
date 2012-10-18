@@ -20,7 +20,9 @@ header();
 
 try {
 
-    system("/usr/local/bin/postinst-all.sh");
+    # first execute post installation scripts to setup the configuration files
+    system("/opt/yaffas/bin/postinst-all.sh");
+    
 	my $pw1 = $main::in{admin_password1};
 	my $pw2 = $main::in{admin_password2};
 
