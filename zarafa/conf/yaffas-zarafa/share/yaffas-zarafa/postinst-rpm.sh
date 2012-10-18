@@ -1,29 +1,12 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-<<<<<<< HEAD:zarafa/conf/yaffas-zarafa/share/yaffas-zarafa/postinst.sh
-INSTALLLEVEL=$1
-=======
-if [ -n $1 ]; then
-	INSTALLLEVEL=$1
-else 
-	INSTALLLEVEL=1
-fi
->>>>>>> * put deb and rpm postinst scripts in separate files in yaffas share:zarafa/conf/yaffas-zarafa/share/yaffas-zarafa/postinst-rpm.sh
 
 ##### yaffas-zarafa #####
-if [ "$INSTALLLEVEL" = 1 ] ; then
-    YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
-    for CFG in /etc/zarafa/*.cfg; do
-        cp -f $CFG ${CFG}.yaffassave
-    done
-    cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
-    if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
-    	if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
-			mv -f /etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available/zarafa-webaccess-ssl.yaffassave
-		fi
-		cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
-	fi
-fi
+YAFFAS_EXAMPLE=/opt/yaffas/share/doc/example
+for CFG in /etc/zarafa/*.cfg; do
+    cp -f $CFG ${CFG}.yaffassave
+done
+cp -f -a ${YAFFAS_EXAMPLE}/etc/zarafa/*.cfg /etc/zarafa
 
 LDAPHOSTNAME=`grep "BASEDN=" /etc/ldap.settings | cut -d= -f2-`
 
@@ -81,88 +64,41 @@ if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
 fi
 
 # optimize memory
-if [ "$INSTALLLEVEL" = 1 ]; then
-    # only on a fresh installation
-    MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')
+# only on a fresh installation
+MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')
 
-    LOGMEM=$(($MEM/16))
+LOGMEM=$(($MEM/16))
 
-    if [ $LOGMEM -gt $((1024*1024*1024)) ]; then
-        LOGMEM="1024M"
-    fi
+if [ $LOGMEM -gt $((1024*1024*1024)) ]; then
+    LOGMEM="1024M"
+fi
 
-    MEM=$(($MEM/4))
+MEM=$(($MEM/4))
 
-	if [ x$OS = xRHEL5 -o x$OS = xRHEL6]; then
-        echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/my.cnf
-	fi
-	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
-		if [ -d /etc/mysql/conf.d ]; then
-			echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" > /etc/mysql/conf.d/zarafa-innodb.cnf
-		else
-			echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/mysql/my.cnf
-		fi
-	fi
+echo -e "[mysqld]\ninnodb_buffer_pool_size = $MEM\ninnodb_log_file_size = $LOGMEM\ninnodb_log_buffer_size = 32M" >> /etc/my.cnf
 
-    rm -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
-    sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
+rm -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
+sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
 
-    # fix plugin path
-	if [ "$(lsb_release -sr)" != "12.04" ]; then
-		if uname -m | grep -q "x86_64"; then
-			sed -e 's#^plugin_path\s*=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
-		else
-			sed -e 's#^plugin_path\s*=.*#plugin_path=/usr/lib/zarafa#' -i /etc/zarafa/server.cfg
-		fi
-	fi
+# fix plugin path
+if [ "x86_64" = $(rpm -q --qf %{ARCH} zarafa-server) ]; then
+    sed -e 's#plugin_path\s*=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
+fi
  
-    mkdir -p /data/zarafa/attachments/
-fi
+mkdir -p /data/zarafa/attachments/
 
-if [ "$INSTALLLEVEL" = 1 ] ; then
-    #only do this on install, not on upgrade
-    zarafa-admin -s
-fi
+#only do this on install, not on upgrade
+zarafa-admin -s
 
-if [ x$OS = xRHEL5 -o x$OS = xRHEL6]; then
-	# install zarafa selinux module
-	if [ "$INSTALLLEVEL" = 1 ] ; then
-	    checkmodule -M -m -o /tmp/zarafa.mod /tmp/zarafa.te
-	    semodule_package -o /tmp/zarafa.pp -m /tmp/zarafa.mod
-	    semodule -i /tmp/zarafa.pp
-	fi
-	rm -f /tmp/zarafa.{pp,mod,te}
-fi
+# install zarafa selinux module
+checkmodule -M -m -o /tmp/zarafa.mod /tmp/zarafa.te
+semodule_package -o /tmp/zarafa.pp -m /tmp/zarafa.mod
+semodule -i /tmp/zarafa.pp
+rm -f /tmp/zarafa.{pp,mod,te}
 
-if [ "$INSTALLLEVEL" = 2 ]; then
-    SERVERCFG="/etc/zarafa/server.cfg"
-    if grep -q index_services_enabled $SERVERCFG; then
-        sed -e 's/index_services_enabled/search_enabled/' -i $SERVERCFG
-    fi
-
-    if grep -q index_services_path $SERVERCFG; then
-        sed -e '/index_services_path/d' -i $SERVERCFG
-        echo "search_socket = file:///var/run/zarafa-search" >> $SERVERCFG
-    fi
-fi
-
-if [ x$OS = xRHEL5 -o x$OS = xRHEL6]; then
-
-	/sbin/restorecon -R /etc/zarafa
-	/sbin/restorecon -R /var/lib/zarafa-webaccess
-	/sbin/restorecon -R /var/lib/zarafa
-	
-	chkconfig zarafa-server on
-	service zarafa-server stop
-	/usr/bin/zarafa-server --ignore-attachment-storage-conflict
-	service zarafa-server restart
-	
-	# enable services
-	for SERV in mysqld zarafa-gateway zarafa-ical zarafa-search zarafa-licensed zarafa-monitor zarafa-spooler zarafa-dagent; do
-	    chkconfig $SERV on
-	    service $SERV start
-	done
-fi
+/sbin/restorecon -R /etc/zarafa
+/sbin/restorecon -R /var/lib/zarafa-webaccess
+/sbin/restorecon -R /var/lib/zarafa
 
 if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
 	#EVIL!!

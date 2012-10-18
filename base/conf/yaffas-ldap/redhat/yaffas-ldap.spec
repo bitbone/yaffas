@@ -59,6 +59,7 @@ rm -rf $RPM_BUILD_ROOT
 %config %attr(750,root,root) /opt/yaffas/bin/domrename.pl
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
+/opt/yaffas/share/yaffas-upgrade/01-yaffas-ldap.sh
 /tmp/yaffas_base.ldif
 
 %changelog

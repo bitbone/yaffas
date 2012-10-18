@@ -1,23 +1,16 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
-if [ -n $1 ]; then
-    INSTALLLEVEL=$1
-else 
-    INSTALLLEVEL=1
-fi
 
 set -e
 
 
-if [ "$INSTALLLEVEL" = 1 ] ; then
-	# preserve config files and copy our config
-	# to default location
-	if [ -e /etc/samba/smb.conf ]; then
-		mv -f /etc/samba/smb.conf /etc/samba/smb.conf.yaffassave
-	fi
-	cp -f -a /opt/yaffas/share/doc/example/etc/samba/smb.conf /etc/samba
-	cp -f -a /opt/yaffas/share/doc/example/etc/samba/smbopts.software /etc/samba
+# preserve config files and copy our config
+# to default location
+if [ -e /etc/samba/smb.conf ]; then
+	mv -f /etc/samba/smb.conf /etc/samba/smb.conf.yaffassave
 fi
+cp -f -a /opt/yaffas/share/doc/example/etc/samba/smb.conf /etc/samba
+cp -f -a /opt/yaffas/share/doc/example/etc/samba/smbopts.software /etc/samba
 
 mkdir -p /etc/samba/smbprinters/
 mkdir -p /etc/samba/printer/{W32ALPHA,W32MIPS,W32PPC,W32X86,WIN40}
@@ -94,44 +87,40 @@ $SAMBA restart
 /etc/init.d/winbind restart
 /etc/init.d/slapd restart
 
-if [ "$INSTALLLEVEL" = 1 ] ; then
-	SECRET=$(cat /etc/ldap.secret)
-	smbpasswd -w $SECRET
+SECRET=$(cat /etc/ldap.secret)
+smbpasswd -w $SECRET
 
-	# grant SePrintOperatorPrivilege to "Print Operators"
-	# first add root to ldap (needed to grant privilege)
-	SID=$(net getlocalsid)
-	SID=${SID/*S/S}
-	sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
-	sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
-	/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
-	# set privileges for root
+# grant SePrintOperatorPrivilege to "Print Operators"
+# first add root to ldap (needed to grant privilege)
+SID=$(net getlocalsid)
+SID=${SID/*S/S}
+sed -e "s/-thedn-/$BASE/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+sed -e "s/-thesid-/$SID/g" -i /opt/yaffas/share/doc/example/tmp/root.ldif
+/usr/bin/ldapadd -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET -f /opt/yaffas/share/doc/example/tmp/root.ldif
+# set privileges for root
 
-	for i in $(seq 1 60); do
-		#no exit if grep fails!
-		set +e
-		RA=$(netstat -ptuan 2>/dev/null | grep -e ":137" )
-		RB=$(netstat -ptuan 2>/dev/null | grep -e ":445" )
-		set -e
-		if [ -n "$RA" -a -n "$RB" ];then
-			break
-		fi
-		sleep 1
-	done
-	# set privileges for 'Print Operators'
-	/usr/bin/net rpc rights grant "Print Operators" SePrintOperatorPrivilege -U root%bitUPsam1
-	# set privileges for 'Domain Admins'
-	/usr/bin/net rpc rights grant "Domain Admins" SeAddUsersPrivilege SeDiskOperatorPrivilege SeMachineAccountPrivilege SePrintOperatorPrivilege SeRemoteShutdownPrivilege SeTakeOwnershipPrivilege SeBackupPrivilege SeRestorePrivilege -U root%bitUPsam1
-	# remove root from LDAP
+for i in $(seq 1 60); do
+	#no exit if grep fails!
+	set +e
+	RA=$(netstat -ptuan 2>/dev/null | grep -e ":137" )
+	RB=$(netstat -ptuan 2>/dev/null | grep -e ":445" )
+	set -e
+	if [ -n "$RA" -a -n "$RB" ];then
+		break
+	fi
+	sleep 1
+done
+# set privileges for 'Print Operators'
+/usr/bin/net rpc rights grant "Print Operators" SePrintOperatorPrivilege -U root%bitUPsam1
+# set privileges for 'Domain Admins'
+/usr/bin/net rpc rights grant "Domain Admins" SeAddUsersPrivilege SeDiskOperatorPrivilege SeMachineAccountPrivilege SePrintOperatorPrivilege SeRemoteShutdownPrivilege SeTakeOwnershipPrivilege SeBackupPrivilege SeRestorePrivilege -U root%bitUPsam1
+# remove root from LDAP
 
-	/usr/bin/ldapdelete -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET "uid=root,ou=People,$BASE"
+/usr/bin/ldapdelete -x -D "cn=ldapadmin,ou=People,$BASE" -w $SECRET "uid=root,ou=People,$BASE"
 
-	$SAMBA restart
-	/etc/init.d/winbind restart
-fi
+$SAMBA restart
+/etc/init.d/winbind restart
 
-	rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
+rm -f /opt/yaffas/share/doc/example/tmp/root.ldif
 
 exit 0
-
-
