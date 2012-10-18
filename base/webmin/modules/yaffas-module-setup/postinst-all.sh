@@ -8,7 +8,11 @@ elif [ x$OS = xDebian -o x$OS = xUbuntu ]; then
 fi
 
 LOGFILE=/root/yaffas-postinst.log
-rm -f $LOGFILE
+
+if [ -e /root/yaffas-postinst.log ]; then
+	echo "yaffas post installation scripts were already run. Exiting."
+	exit 0
+fi
 
 for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zarafa yaffas-software yaffas-module-security z-push; do
 	echo "executing $YAFFAS_SHARE/${module}/postinst-${DIST}.sh ..." >> $LOGFILE
@@ -17,3 +21,5 @@ for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zar
 	echo "" >> $LOGFILE
 	echo "... done" >> $LOGFILE
 done
+
+exit 0
