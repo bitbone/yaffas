@@ -64,7 +64,7 @@ fi
 %config /opt/yaffas/share/doc/example/etc/zarafa/search.cfg
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
-/opt/yaffas/share/yaffas-upgrade/01-yaffas-zarafa.sh
+/opt/yaffas/share/yaffas-upgrade/02-yaffas-zarafa.sh
 /tmp/zarafa.te
 
 %changelog

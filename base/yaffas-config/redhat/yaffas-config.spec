@@ -14,9 +14,11 @@ Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security
 Meta-package for yaffas
 
 %build
+make %{?_smp_mflags}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+make install DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
