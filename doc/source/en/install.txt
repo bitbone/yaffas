@@ -276,19 +276,6 @@ For Red Hat Enterprise Linux systems it is necessary to subscribe to the "RHEL S
 
 ==============
 
-[CAUTION]
-==============
-
-Because of an dependency conflict the package perl-XML-SAX-Base has to be excluded from the rpmforge repository.
-Add the line
-
-+exclude=perl-XML-SAX-Base+
-
-as the last line of the +[rpmforge]+ block.
-
-==============
-
-
 **yaffas repository**
 
 After the extra repositories are added, the {product} repository has to added:

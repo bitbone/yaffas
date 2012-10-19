@@ -220,20 +220,6 @@ Für Red Hat Enterprise Linux Systeme ist es notwendig den Kanal "RHEL Server Op
 
 ==============
 
-
-[CAUTION]
-==============
-
-Auf Grund eines Abhängigkeitskonflikts muss das Paket perl-XML-SAX-Base aus dem RPMforge Repository ausgeschlossen werden.
-Dazu fügen sie die Zeile
-
-+exclude=perl-XML-SAX-Base+
-
-als letzte Zeile an den +[rpmforge]+ Block an.
-
-==============
-
-
 **yaffas Repository**
 
 Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
