@@ -9,6 +9,7 @@ Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
 Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security
+Conflicts:  perl-XML-SAX-Base
 
 %description
 Meta-package for yaffas
