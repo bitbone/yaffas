@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 17:44+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -80,17 +80,17 @@ msgstr "Tipo"
 #: lang/en:13
 #, no-wrap
 msgid "Capacity"
-msgstr ""
+msgstr "Capacidade"
 
 #: lang/en:14
 #, no-wrap
 msgid "Room"
-msgstr ""
+msgstr "Sala"
 
 #: lang/en:15
 #, no-wrap
 msgid "Equipment"
-msgstr ""
+msgstr "Equipamento"
 
 #: lang/en:17
 #, no-wrap
@@ -156,7 +156,7 @@ msgstr "Nenhum domínio local configurado."
 #: lang/en:29
 #, no-wrap
 msgid "Capacity have to be a number."
-msgstr ""
+msgstr "Capacidade precisa ser um número."
 
 #: lang/en:30
 #, no-wrap
@@ -186,9 +186,9 @@ msgstr "Com este campo ativo o recuso não aceitará reuniões recorrentes."
 #: help/en:5
 #, no-wrap
 msgid "Select the type of the resource."
-msgstr ""
+msgstr "Selecione o tipo do recurso."
 
 #: help/en:6
 #, no-wrap
 msgid "Define the capacity of the resource. This value is only available for equipment resources."
-msgstr ""
+msgstr "Define a capacidade do recurso. Este valor está disponível somente para recursos de equipamento."

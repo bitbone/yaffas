@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-06 10:03+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: lang/en:1 lang/en:28
 #, no-wrap
 msgid "Orphaned Stores"
-msgstr ""
+msgstr "Caixas órfã"
 
 #: lang/en:2
 #, no-wrap
@@ -30,12 +30,12 @@ msgstr "Descrição"
 #: lang/en:3
 #, no-wrap
 msgid "Store Guid"
-msgstr ""
+msgstr "Guid da Caixa"
 
 #: lang/en:4
 #, no-wrap
 msgid "Guessed Username"
-msgstr ""
+msgstr "Suposto nome do usuário"
 
 #: lang/en:5
 #, no-wrap
@@ -45,29 +45,29 @@ msgstr "Tamanho"
 #: lang/en:6
 #, no-wrap
 msgid "Last Modified"
-msgstr ""
+msgstr "Última Modificação"
 
 #: lang/en:7
 #, no-wrap
 msgid "Store Type"
-msgstr ""
+msgstr "Tipo de Caixa"
 
 # 79%
 # 89%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Do you really want to delete the selected store?"
-msgstr "Você deseja realmente excluir os usuários selecionados?"
+msgstr "Você deseja realmente excluir as caixas selecionadas?"
 
 #: lang/en:9
 #, no-wrap
 msgid "Delete orphaned store"
-msgstr ""
+msgstr "Excluir caixa órfã"
 
 #: lang/en:10
 #, no-wrap
 msgid "Do you really want to copy this store to the public store?"
-msgstr ""
+msgstr "Realmente deseja copiar esta caixa para a pasta pública?"
 
 # 83%
 #: lang/en:11
@@ -78,22 +78,22 @@ msgstr "Remover"
 #: lang/en:12 lang/en:18
 #, no-wrap
 msgid "Hook to user"
-msgstr ""
+msgstr "Atribuir à usuário"
 
 #: lang/en:13
 #, no-wrap
 msgid "Copy to public store"
-msgstr ""
+msgstr "Copiar para pasta pública"
 
 #: lang/en:14
 #, no-wrap
 msgid "Hook orphaned store"
-msgstr ""
+msgstr "Atribuir caixa órfã"
 
 #: lang/en:15
 #, no-wrap
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: lang/en:16
 #, no-wrap
@@ -103,28 +103,28 @@ msgstr "Nome do usuário"
 #: lang/en:17
 #, no-wrap
 msgid "Full Name"
-msgstr ""
+msgstr "Nome Completo"
 
 #: lang/en:19
 #, no-wrap
 msgid "Orphaned Store ID"
-msgstr ""
+msgstr "ID da Caixa Órfã"
 
 #: lang/en:20
 #, no-wrap
 msgid "Hook store"
-msgstr ""
+msgstr "Atribuir Caixa"
 
 # 75%
 #: lang/en:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "to user"
-msgstr "Para usuário"
+msgstr "ao usuário"
 
 #: lang/en:22
 #, no-wrap
 msgid "Hook"
-msgstr ""
+msgstr "Atribuir"
 
 #: lang/en:23
 #, no-wrap
@@ -134,25 +134,25 @@ msgstr "Cancelar"
 #: lang/en:24
 #, no-wrap
 msgid "Could not hook orphaned store"
-msgstr ""
+msgstr "Não foi possível atribuir caixa órfã"
 
 # 76%
 #: lang/en:25
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Could not find store"
-msgstr "Não foi possível localizar grupo."
+msgstr "Não foi possível localizar caixa"
 
 #: lang/en:26
 #, no-wrap
 msgid "Could not hook the store to the selected user."
-msgstr ""
+msgstr "Não foi possível atribuir caixa ao usuário selecionado."
 
 #: lang/en:27
 #, no-wrap
 msgid "You have to select a user first"
-msgstr ""
+msgstr "É necessário selecionar um usuário primeiro"
 
 #: help/en:1
 #, no-wrap
 msgid "This is a list of all zarafa stores which are not hooked to any user. Usually this happens when users are deleted. You have the option to delete these stores, hook them to another user or copy them to the public store. Hooking a orphaned store to a user will make the orphaned store the user's new store. The user's old store will in turn be orphaned."
-msgstr ""
+msgstr "Gerará uma lista de todas as caixas Zarafa que não estão atribuídos à um usuário. Normalmente isso acontece quando um usuário é excluído. É possível remover essas caixas, atribuí-las à um outro usuário ou copiá-las para a pasta pública. Quando uma caixa órfã é atribuída a um usuário, essa caixa será a caixa principal deste usuário. A caixa atribuída anteriormente será uma caixa órfã em seguida."

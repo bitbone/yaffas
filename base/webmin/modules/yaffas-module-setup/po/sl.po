@@ -1,0 +1,368 @@
+# #-#-#-#-#  plugin_passwd.pot (PACKAGE VERSION)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-05 18:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"X-Generator: Translate Toolkit 1.8.1\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Welcome"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Admin password"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Admin password (repeat)"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "MySQL database"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "MySQL server"
+msgstr ""
+
+#: lang/en:8
+#, no-wrap
+msgid "MySQL username"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "MySQL password"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "Setup finished"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Setup was finished successfully. After relogin you can use all features."
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Mailserver settings"
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Primary mail domain"
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Smarthost"
+msgstr ""
+
+#: lang/en:17
+#, no-wrap
+msgid "Username (if needed)"
+msgstr ""
+
+#: lang/en:18 lang/en:24
+#, no-wrap
+msgid "Password"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "Create user"
+msgstr ""
+
+#: lang/en:21
+#, no-wrap
+msgid "Loginname"
+msgstr ""
+
+#: lang/en:22
+#, no-wrap
+msgid "Firstname"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "Surname"
+msgstr ""
+
+#: lang/en:25
+#, no-wrap
+msgid "Password (repeat)"
+msgstr ""
+
+#: lang/en:26
+#, no-wrap
+msgid "Email"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "If you fill this form, then local LDAP authentication will be enabled."
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
+msgid "Zarafa settings"
+msgstr ""
+
+#: lang/en:31
+#, no-wrap
+msgid "Basic settings"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid "Finish"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Could not connect to database."
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "The admin password is empty or does not match."
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Setup"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "This is the password that is set on the database. You need to set this password manually."
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
+msgstr ""
+
+#: help/en:7 help/en:8
+#, no-wrap
+msgid "Optional setting if your smarthost needs authentication."
+msgstr ""
+
+#: help/en:9
+#, no-wrap
+msgid "This is the name that you will have to login with."
+msgstr ""
+
+#: help/en:10
+#, no-wrap
+msgid "First name of that user."
+msgstr ""
+
+#: help/en:11
+#, no-wrap
+msgid "Surname of that user."
+msgstr ""
+
+#: help/en:12
+#, no-wrap
+msgid "Email address of that user that will be used for sending and receiving."
+msgstr ""

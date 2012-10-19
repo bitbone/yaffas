@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 17:44+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Welcome"
-msgstr ""
+msgstr "Bem vindo"
 
 #: lang/en:2
 #, no-wrap
 msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
-msgstr ""
+msgstr "Este diálogo de setup é para definir as configurações básicas necessárias para terminar a instalação.<br />Caso tenha dúvida sobre as configurações, aponta seu mouse nos símbolos de lampada para receber mais informações. "
 
 # 85%
 #: lang/en:4
@@ -71,12 +71,12 @@ msgstr "A configuração foi completada com sucesso. Apos o re-logon todos os re
 #: lang/en:14
 #, no-wrap
 msgid "Mailserver settings"
-msgstr ""
+msgstr "Configurações do servidor de e-mail"
 
 #: lang/en:15
 #, no-wrap
 msgid "Primary mail domain"
-msgstr ""
+msgstr "Domínio principal de e-mail"
 
 #: lang/en:16
 #, no-wrap
@@ -86,7 +86,7 @@ msgstr "Smarthost"
 #: lang/en:17
 #, no-wrap
 msgid "Username (if needed)"
-msgstr ""
+msgstr "Nome do usuário (se necessário)"
 
 #: lang/en:18 lang/en:24
 #, no-wrap
@@ -96,18 +96,18 @@ msgstr "Senha"
 #: lang/en:20
 #, no-wrap
 msgid "Create user"
-msgstr ""
+msgstr "Criar usuário"
 
 # 77%
 #: lang/en:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Loginname"
-msgstr "Nome do log"
+msgstr "Nome de login"
 
 #: lang/en:22
 #, no-wrap
 msgid "Firstname"
-msgstr ""
+msgstr "Primeiro nome"
 
 #: lang/en:23
 #, no-wrap
@@ -117,7 +117,7 @@ msgstr "Sobrenome"
 #: lang/en:25
 #, no-wrap
 msgid "Password (repeat)"
-msgstr ""
+msgstr "Senha (confirmar)"
 
 #: lang/en:26
 #, no-wrap
@@ -127,7 +127,7 @@ msgstr "E-mail"
 #: lang/en:28
 #, no-wrap
 msgid "If you fill this form, then local LDAP authentication will be enabled."
-msgstr ""
+msgstr "Ao preencher este formulário, a autenticação local do LDAP será habilitada."
 
 #: lang/en:30
 #, no-wrap
@@ -142,7 +142,7 @@ msgstr "Configurações básicas"
 #: lang/en:33
 #, no-wrap
 msgid "Finish"
-msgstr ""
+msgstr "Concluir"
 
 #: lang/en:35
 #, no-wrap
@@ -157,7 +157,7 @@ msgstr "A senha de administrador está vazia ou diferente."
 #: lang/en:37
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
-msgstr ""
+msgstr "O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é de um."
 
 #: lang/en:39
 #, no-wrap
@@ -187,34 +187,34 @@ msgstr "Este é o nome do banco de dados para ser usado pelo Zarafa.<br />Recome
 #: help/en:5
 #, no-wrap
 msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
-msgstr ""
+msgstr "Este é o domínio principal do seu servidor. É possível adicionar mais domínios depois, em Servidor de E-Mail -> Configuração."
 
 #: help/en:6
 #, no-wrap
 msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
-msgstr ""
+msgstr "Configuração opcional, caso seja necessário usar um smarthost para o envio de email. Deixando esta configuração em branco o servidor tentará entregar o e-mail diretamente ao destinatário."
 
 #: help/en:7 help/en:8
 #, no-wrap
 msgid "Optional setting if your smarthost needs authentication."
-msgstr ""
+msgstr "Configuração opcional caso o smarthost exige autenticação. "
 
 #: help/en:9
 #, no-wrap
 msgid "This is the name that you will have to login with."
-msgstr ""
+msgstr "Este é o nome que será usado para logar no sistema."
 
 #: help/en:10
 #, no-wrap
 msgid "First name of that user."
-msgstr ""
+msgstr "Primeiro nome deste usuário."
 
 #: help/en:11
 #, no-wrap
 msgid "Surname of that user."
-msgstr ""
+msgstr "Sobrenome deste usuário."
 
 #: help/en:12
 #, no-wrap
 msgid "Email address of that user that will be used for sending and receiving."
-msgstr ""
+msgstr "Endereço de e-mail deste usuário que será usado para enviar e receber."

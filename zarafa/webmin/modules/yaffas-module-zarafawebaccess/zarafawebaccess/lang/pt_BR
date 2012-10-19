@@ -15,6 +15,6 @@ lbl_theme_color=Cor do tema
 err_undefined_type=Opção do Webaccess desconhecido
 err_undefined_color=Cor desconhecida
 err_webaccess_config=Não foi possível acessar o arquivo de configuração
-err_no_aspell=Please install the package "aspell-lang" (e.g. aspell-de for german) for spell checking in your language.
+err_no_aspell=Por favor instalar o pacote "aspell-XX" (ex. "aspell-pt-br" para português do brasil) para habilitar a verificação ortográfica da sua linguá.
 moduletitle=Webaccess
 

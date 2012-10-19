@@ -1,0 +1,233 @@
+# #-#-#-#-#  plugin_passwd.pot (PACKAGE VERSION)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"X-Generator: Translate Toolkit 1.8.1\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Apply key"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Install new key"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "Install new base key"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Install new client key"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Installed subscriptions"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "Base key"
+msgstr ""
+
+#: lang/en:7 lang/en:11
+#, no-wrap
+msgid "Serial number"
+msgstr ""
+
+#: lang/en:8
+#, no-wrap
+msgid "Licensed Log"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "This is not a valid Zarafa serial"
+msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "Archiver key"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Install new archiver key"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Install new archiver client key"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Zarafa Subscription"
+msgstr ""

@@ -1,5 +1,5 @@
-lbl_welcome=Welcome
-lbl_settings=This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation.
+lbl_welcome=Bem vindo
+lbl_settings=Este diálogo de setup é para definir as configurações básicas necessárias para terminar a instalação.<br />Caso tenha dúvida sobre as configurações, aponta seu mouse nos símbolos de lampada para receber mais informações. 
 
 lbl_admin_pw=Senha do Administrador
 lbl_admin_pw_repeat=Senha do Administrador (confirmar)
@@ -11,29 +11,29 @@ lbl_mysql_password=Senha MySQL
 lbl_setup_finished=Configuração completa
 lbl_setup_finished_msg=A configuração foi completada com sucesso. Apos o re-logon todos os recursos estarão disponíveis.
 
-lbl_mailserver_settings=Mailserver settings
-lbl_mailserver_domain=Primary mail domain
+lbl_mailserver_settings=Configurações do servidor de e-mail
+lbl_mailserver_domain=Domínio principal de e-mail
 lbl_mailserver_smarthost_server=Smarthost
-lbl_mailserver_smarthost_user=Username (if needed)
+lbl_mailserver_smarthost_user=Nome do usuário (se necessário)
 lbl_mailserver_smarthost_password=Senha
 
-lbl_user_settings=Create user
-lbl_user_login=Loginname
-lbl_user_firstname=Firstname
+lbl_user_settings=Criar usuário
+lbl_user_login=Nome de login
+lbl_user_firstname=Primeiro nome
 lbl_user_surname=Sobrenome
 lbl_user_password=Senha
-lbl_user_password_repeat=Password (repeat)
+lbl_user_password_repeat=Senha (confirmar)
 lbl_user_email=E-mail
 
-lbl_user_local_ldap=If you fill this form, then local LDAP authentication will be enabled.
+lbl_user_local_ldap=Ao preencher este formulário, a autenticação local do LDAP será habilitada.
 
 lbl_zarafa_settings=Configurações Zarafa
 lbl_basic_settings=Configurações básicas
 
-lbl_finish=Finish
+lbl_finish=Concluir
 
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_password=A senha de administrador está vazia ou diferente.
-err_domainname=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one.
+err_domainname=O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é de um.
 
 moduletitle=Configuração

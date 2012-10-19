@@ -1,0 +1,383 @@
+# #-#-#-#-#  plugin_passwd.pot (PACKAGE VERSION)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bg\n"
+"X-Generator: Translate Toolkit 1.8.1\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "Userfilter"
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "Filtertype"
+msgstr ""
+
+#: lang/en:3
+#, no-wrap
+msgid "Group"
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Default"
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "AD Plugin"
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "AD Group"
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Delete these zarafa stores?"
+msgstr ""
+
+#: lang/en:8
+#, no-wrap
+msgid "With this step, the following zarafa stores would be deleted:"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "Could not find Group."
+msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "Could not find the rootDomainNamingContext in AD."
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Size of attachments"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Size"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "The value is not numeric."
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "Optimize"
+msgstr ""
+
+#: lang/en:17
+#, no-wrap
+msgid "Addressable memory"
+msgstr ""
+
+#: lang/en:18
+#, no-wrap
+msgid "Optimized for"
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "Optimize memory"
+msgstr ""
+
+#: lang/en:20
+#, no-wrap
+msgid "unknown"
+msgstr ""
+
+#: lang/en:22
+#, no-wrap
+msgid "Quota e-mail templates"
+msgstr ""
+
+#: lang/en:23
+#, no-wrap
+msgid "Message at 80%"
+msgstr ""
+
+#: lang/en:24
+#, no-wrap
+msgid "Message at 90%"
+msgstr ""
+
+#: lang/en:25
+#, no-wrap
+msgid "Message at 100%"
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "Default quota"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "Default Quota"
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "Off"
+msgstr ""
+
+#: lang/en:31
+#, no-wrap
+msgid "Default features"
+msgstr ""
+
+#: lang/en:32
+#, no-wrap
+msgid "Feature"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid "State"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "MySQL settings"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "Database"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "Server"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "Username"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Password"
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "Could not connect to database."
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
+msgid "The quota value can only contain digits."
+msgstr ""
+
+#: lang/en:43
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#: lang/en:44
+#, no-wrap
+msgid "It is not possible to have a hash (#) character in the MySQL password."
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "This limits the maximum disk usage for each user in MB."
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "This is the password that is set on the database. You need to set this password manually."
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
+msgstr ""

@@ -1,0 +1,538 @@
+# #-#-#-#-#  plugin_passwd.pot (PACKAGE VERSION)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-10-05 18:27+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: sl\n"
+"X-Generator: Translate Toolkit 1.8.1\n"
+
+#: lang/en:1
+#, no-wrap
+msgid "The IP address or netmask it not valid."
+msgstr ""
+
+#: lang/en:2
+#, no-wrap
+msgid "The DNS server address has to be a valid IP address."
+msgstr ""
+
+#: lang/en:3 lang/en:11
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
+msgstr ""
+
+#: lang/en:4
+#, no-wrap
+msgid "Could not rename domain."
+msgstr ""
+
+#: lang/en:5
+#, no-wrap
+msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
+msgstr ""
+
+#: lang/en:6
+#, no-wrap
+msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
+msgstr ""
+
+#: lang/en:7
+#, no-wrap
+msgid "Could not copy the following file:"
+msgstr ""
+
+#: lang/en:9
+#, no-wrap
+msgid "You have to enable a least one network interface."
+msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "The gateway address has to be different to the server address."
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "The associated hardware interface has to be enabled."
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Error reading data for use with samba."
+msgstr ""
+
+#: lang/en:15
+#, no-wrap
+msgid "Error writing data for use with samba."
+msgstr ""
+
+#: lang/en:16
+#, no-wrap
+msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
+msgstr ""
+
+#: lang/en:18
+#, no-wrap
+msgid "This module is deactivated, because channel bonding is active."
+msgstr ""
+
+#: lang/en:19
+#, no-wrap
+msgid "Bridged network interfaces are not supported."
+msgstr ""
+
+#: lang/en:21
+#, no-wrap
+msgid "No IP address is set."
+msgstr ""
+
+#: lang/en:23 lang/en:74
+#, no-wrap
+msgid "Configuration"
+msgstr ""
+
+#: lang/en:24
+#, no-wrap
+msgid "Network Settings"
+msgstr ""
+
+#: lang/en:26
+#, no-wrap
+msgid "Host name"
+msgstr ""
+
+#: lang/en:27
+#, no-wrap
+msgid "Domain name"
+msgstr ""
+
+#: lang/en:28
+#, no-wrap
+msgid "Workgroup"
+msgstr ""
+
+#: lang/en:29
+#, no-wrap
+msgid "IP address"
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
+msgid "Netmask"
+msgstr ""
+
+#: lang/en:31
+#, no-wrap
+msgid "Gateway (if available)"
+msgstr ""
+
+#: lang/en:32
+#, no-wrap
+msgid "Search domain"
+msgstr ""
+
+#: lang/en:33
+#, no-wrap
+msgid "DNS Server IP"
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "Network"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "Delete"
+msgstr ""
+
+#: lang/en:36
+#, no-wrap
+msgid "Interface"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "Base settings"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "Mode"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Vendor"
+msgstr ""
+
+#: lang/en:40
+#, no-wrap
+msgid "MAC address"
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "Product"
+msgstr ""
+
+#: lang/en:43
+#, no-wrap
+msgid "enabled"
+msgstr ""
+
+#: lang/en:44
+#, no-wrap
+msgid "disabled"
+msgstr ""
+
+#: lang/en:45
+#, no-wrap
+msgid "Status"
+msgstr ""
+
+#: lang/en:46
+#, no-wrap
+msgid "New virtual IP address"
+msgstr ""
+
+#: lang/en:47
+#, no-wrap
+msgid "Delete virtual IP address"
+msgstr ""
+
+#: lang/en:48
+#, no-wrap
+msgid "Do you really want to delete the following network interface?"
+msgstr ""
+
+#: lang/en:49
+#, no-wrap
+msgid "Create"
+msgstr ""
+
+#: lang/en:50
+#, no-wrap
+msgid "New virtual address on interface"
+msgstr ""
+
+#: lang/en:51
+#, no-wrap
+msgid "Switch from DHCP to static"
+msgstr ""
+
+#: lang/en:52
+#, no-wrap
+msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
+msgstr ""
+
+#: lang/en:54
+#, no-wrap
+msgid "HTTP Proxy"
+msgstr ""
+
+#: lang/en:55
+#, no-wrap
+msgid "Proxy"
+msgstr ""
+
+#: lang/en:56
+#, no-wrap
+msgid "Port"
+msgstr ""
+
+#: lang/en:57
+#, no-wrap
+msgid "Authentication (optional)"
+msgstr ""
+
+#: lang/en:58
+#, no-wrap
+msgid "User"
+msgstr ""
+
+#: lang/en:59
+#, no-wrap
+msgid "Password"
+msgstr ""
+
+#: lang/en:61
+#, no-wrap
+msgid "Proxyname not valid!"
+msgstr ""
+
+#: lang/en:62
+#, no-wrap
+msgid "Port not valid!"
+msgstr ""
+
+#: lang/en:63
+#, no-wrap
+msgid "Username not valid!"
+msgstr ""
+
+#: lang/en:64
+#, no-wrap
+msgid "Password not valid!"
+msgstr ""
+
+#: lang/en:65
+#, no-wrap
+msgid "Error while setting APT proxy!"
+msgstr ""
+
+#: lang/en:66
+#, no-wrap
+msgid "Error while setting WGET proxy!"
+msgstr ""
+
+#: lang/en:67
+#, no-wrap
+msgid "Error while setting KAV proxy!"
+msgstr ""
+
+#: lang/en:68
+#, no-wrap
+msgid "Error while deleting APT proxy!"
+msgstr ""
+
+#: lang/en:69
+#, no-wrap
+msgid "Error while deleting WGET proxy!"
+msgstr ""
+
+#: lang/en:70
+#, no-wrap
+msgid "Error while deleting KAVS proxy!"
+msgstr ""
+
+#: lang/en:71
+#, no-wrap
+msgid "Error while setting freshclam proxy!"
+msgstr ""
+
+#: lang/en:72
+#, no-wrap
+msgid "Error while deleting freshclam proxy!"
+msgstr ""
+
+#: lang/en:73
+#, no-wrap
+msgid "Error restarting freshclam!"
+msgstr ""
+
+#: help/en:1
+#, no-wrap
+msgid "e.g. hostname"
+msgstr ""
+
+#: help/en:2
+#, no-wrap
+msgid "e.g. yaffas.org"
+msgstr ""
+
+#: help/en:3
+#, no-wrap
+msgid "e.g. yaffas"
+msgstr ""
+
+#: help/en:4
+#, no-wrap
+msgid "IP address for eth0<br>e.g. 192.168.0.100"
+msgstr ""
+
+#: help/en:5
+#, no-wrap
+msgid "Netmask for eth0<br>e.g. 255.255.255.0"
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Gateway for your network. This must be an IPv4 address of this network."
+msgstr ""
+
+#: help/en:7
+#, no-wrap
+msgid "DNS server for resolving names into IP adresses."
+msgstr ""
+
+#: help/en:8
+#, no-wrap
+msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
+msgstr ""
+
+#: help/en:9
+#, no-wrap
+msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
+msgstr ""
+
+#: help/en:10
+#, no-wrap
+msgid "Port of the HTTP proxy server."
+msgstr ""
+
+#: help/en:11
+#, no-wrap
+msgid "Optional username, if you have to authenticate against the proxy."
+msgstr ""
