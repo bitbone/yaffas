@@ -41,6 +41,9 @@ else
 	echo "$KEY=$VALUE" >> $CONF
 fi
 
+# process all upgrade scripts
+/opt/yaffas/bin/yaffas-upgrade.sh
+
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}

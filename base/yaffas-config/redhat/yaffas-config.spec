@@ -26,8 +26,6 @@ rm -rf $RPM_BUILD_ROOT
 %post
 mkdir -p /opt/yaffas/etc
 
-/opt/yaffas/bin/yaffas-upgrade.sh
-
 # enable services
 for SERV in httpd amavisd clamd spamassassin policyd-weight; do
 	chkconfig $SERV on
