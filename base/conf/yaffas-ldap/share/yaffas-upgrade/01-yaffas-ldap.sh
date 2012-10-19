@@ -2,6 +2,19 @@
 
 # this is an update :)
 
+DOMAIN=$(hostname -d 2> /dev/null || echo "")
+
+if [ -z "$DOMAIN" ]; then
+    DOMAIN="yaffas.local"
+fi
+
+if ! echo $DOMAIN | grep -q "\."; then
+    DOMAIN="$DOMAIN.local"
+fi
+
+CONF="/etc/ldap.conf"
+SLAPD="/etc/openldap/slapd.conf"
+
 if ! grep "^tls_checkpeer" $CONF > /dev/null; then
 	echo "tls_checkpeer no" >> $CONF
 fi
