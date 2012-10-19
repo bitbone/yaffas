@@ -1,41 +1,21 @@
 #!/usr/bin/perl
 
-use Yaffas;
-use Yaffas::UI;
-use Yaffas::Module::ZarafaLicence;
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
-use Yaffas::Exception;
-use Error qw(:try);
-
-Yaffas::init_webmin();
-
-require './forms.pl';
-
-use CGI::Carp qw(fatalsToBrowser);
 use strict;
 use warnings;
 
-ReadParse();
+use Yaffas;
+use Yaffas::Module::ZarafaLicence;
 
-header();
+use JSON;
 
-my @footer;
-try {
-	if (defined($main::in{license})) {
-		Yaffas::Module::ZarafaLicence::install($main::in{license});
-		print Yaffas::UI::ok_box();
-		push @footer, "", $main::text{BBMODULEDESC};
-    }
-    else {
-		show_installed_licences();
-		show_baselicense_form();
-		show_log();
-	}
-} catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-};
+Yaffas::init_webmin();
 
-footer(@footer);
+Yaffas::json_header();
+
+my $users = Yaffas::Module::ZarafaLicence::get_user_count();
+
+print to_json( { "Response" => $users } );
+
 =pod
 
 =head1 COPYRIGHT

@@ -23,8 +23,6 @@ sub get_licence_version() {
 	}
 
 sub validate_serial($$$) {
-
-	
 	my ($key,$kind,$version) = @_;
 		if($kind eq "base") {
 			if($version==20 || $version==30) { return $key =~ m/[0-9A-Z]{24}/;}
@@ -42,6 +40,28 @@ sub validate_serial($$$) {
 			return $key =~ m/A[0-9A-Z]{16}/;
 		}
 	return 1;
+}
+
+sub install($) {
+    my $key = shift;
+
+    $key = uc $key;
+
+    if ($key =~ /^Z.{24}/) {
+        install_basekey($key);
+    }
+    elsif ($key =~ /^A.{24}/) {
+        install_archiverkey($key);
+    }
+    elsif ($key =~ /^Z.{16}/) {
+        install_calkey($key);
+    }
+    elsif ($key =~ /^A.{16}/) {
+        install_acalkey($key);
+    }
+    else {
+        throw Yaffas::Exception("err_wrong_lic", $key);
+    }
 }
 
 sub install_basekey($) {
@@ -117,6 +137,41 @@ sub get_log() {
 	my $file = Yaffas::File->new("/var/log/zarafa/licensed.log");
 	my @lines = $file->get_content();
 	return splice @lines, -3, 3;
+}
+
+sub get_user_count {
+    my @usercount = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--user-count");
+    shift @usercount;
+    shift @usercount;
+    shift @usercount;
+
+    my @ret;
+    my $i = 0;
+
+    foreach my $line (@usercount) {
+        my @values = split /\t/, $line;
+
+        if ($line =~ /Active/) {
+            push @ret, [$i++, "Active", $values[3], $values[4], $values[5]];
+        }
+        if ($line =~ /Non-active/) {
+            push @ret, [$i++, "Non-Active", $values[2], $values[3], $values[4]];
+        }
+        if ($line =~ /Users/) {
+            push @ret, [$i++, "&nbsp;&nbsp;"."Users", "", $values[4], ""];
+        }
+        if ($line =~ /Rooms/) {
+            push @ret, [$i++, "&nbsp;&nbsp;Rooms", "", $values[4], ""];
+        }
+        if ($line =~ /Equipment/) {
+            push @ret, [$i++, "&nbsp;&nbsp;Equipment", "", $values[3], ""];
+        }
+        if ($line =~ /Total/) {
+            push @ret, [$i++, "Total", "", $values[4], ""];
+        }
+    }
+    return \@ret;
+
 }
 
 1;
