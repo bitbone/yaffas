@@ -38,6 +38,10 @@ case "$1" in
         echo "$KEY=$VALUE" >> $CONF
     fi
 
+    # process all upgrade scripts
+    /opt/yaffas/bin/yaffas-upgrade.sh
+    
+
     exit 0
 
     ;;

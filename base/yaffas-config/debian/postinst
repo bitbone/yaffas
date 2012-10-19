@@ -20,8 +20,6 @@
 case "$1" in
     configure)
     
-    /opt/yaffas/bin/yaffas-upgrade.sh
-
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
