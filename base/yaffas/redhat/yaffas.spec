@@ -41,8 +41,10 @@ else
 	echo "$KEY=$VALUE" >> $CONF
 fi
 
-# process all upgrade scripts
-/opt/yaffas/bin/yaffas-upgrade.sh
+if [ $1 -gt 1 ] ; then
+    # process all upgrade scripts
+    /opt/yaffas/bin/yaffas-upgrade.sh
+fi
 
 %files
 %defattr(-,root,root,-)

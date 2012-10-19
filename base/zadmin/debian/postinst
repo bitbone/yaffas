@@ -37,9 +37,11 @@ case "$1" in
     else
         echo "$KEY=$VALUE" >> $CONF
     fi
-
-    # process all upgrade scripts
-    /opt/yaffas/bin/yaffas-upgrade.sh
+    
+    if [ -n "$2" ]; then
+        # process all upgrade scripts
+        /opt/yaffas/bin/yaffas-upgrade.sh
+    fi
     
     exit 0
 
