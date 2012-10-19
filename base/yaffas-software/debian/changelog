@@ -1,3 +1,9 @@
+yaffas-software (1.2.3-2) lucid; urgency=low
+
+  * update software package for zarafa 7.1.1
+
+ -- Christof Musik <musik@bitbone.de>  Fri, 19 Oct 2012 14:14:33 +0200
+
 yaffas-software (1.2.3-1) lucid; urgency=low
 
   * update to version 1.2.3-1
