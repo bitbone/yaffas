@@ -25,6 +25,8 @@ if [ -n "$GROUP" ]; then
 	usermod -a -G $GROUP amavis
 fi
 
+service amavsid restart
+
 if ! grep -q "amavis" /etc/postfix/master.cf; then
 	cat /opt/yaffas/share/doc/example/etc/amavis-master.cf >> /etc/postfix/master.cf
 fi
