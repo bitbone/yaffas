@@ -24,6 +24,8 @@ rm -rf $RPM_BUILD_ROOT
 %post
 mkdir -p /opt/yaffas/etc
 
+/opt/yaffas/bin/yaffas-upgrade.sh
+
 # enable services
 for SERV in httpd amavisd clamd spamassassin policyd-weight; do
 	chkconfig $SERV on
@@ -33,5 +35,6 @@ done
 %files
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
+/opt/yaffas/bin/yaffas-upgrade.sh
 
 %changelog

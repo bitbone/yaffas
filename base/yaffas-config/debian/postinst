@@ -19,6 +19,8 @@
 
 case "$1" in
     configure)
+    
+    /opt/yaffas/bin/yaffas-upgrade.sh
 
     ;;
 
