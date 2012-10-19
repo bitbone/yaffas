@@ -8,9 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
-Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security, perl-XML-SAX
-#Provides:   XML::SAX::Base
-Conflicts:  perl-XML-SAX-Base = 0:1.04-1.el6.rf
+Requires:	yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security
 
 %description
 Meta-package for yaffas

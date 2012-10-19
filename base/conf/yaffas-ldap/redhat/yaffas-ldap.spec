@@ -10,6 +10,7 @@ BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:	noarch
 %{?el5:Requires: nscd, openldap-servers, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect, yaffas-certificates, nss_ldap}
 %{?el6:Requires: nscd, openldap-servers, openldap-clients, smbldap-tools, perl(Term::ReadKey), postfix, samba-common, expect, yaffas-certificates, nss-pam-ldapd}
+Conflicts:  perl-XML-SAX-Base = 0:1.04-1.el6.rf
 
 %description
 Edits libnss-ldap.conf, pam-ldap.conf, nsswitch.conf
