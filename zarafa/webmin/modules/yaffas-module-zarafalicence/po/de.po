@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-10-20 00:29+0300\n"
+"PO-Revision-Date: 2012-09-07 10:09+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,66 +19,72 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid "Apply key"
-msgstr "Schlüssel einspielen"
+msgid "Submit"
+msgstr ""
 
 #: lang/en:2
 #, no-wrap
-msgid "Install new key"
-msgstr "Neuen Schlüssel installieren"
+msgid "Install new serial"
+msgstr ""
 
 #: lang/en:3
-#, no-wrap
-msgid "Install new base key"
-msgstr "Neuen Basis-Schlüssel installieren"
-
-#: lang/en:4
-#, no-wrap
-msgid "Install new client key"
-msgstr "Neuen Client-Schlüssel installieren"
-
-#: lang/en:5
 #, no-wrap
 msgid "Installed subscriptions"
 msgstr "Installierte Subskriptionen"
 
-#: lang/en:6
+#: lang/en:4
 #, no-wrap
-msgid "Base key"
-msgstr "Basis Schlüssel"
+msgid "Base serial"
+msgstr ""
 
-#: lang/en:7 lang/en:11
+#: lang/en:5
 #, no-wrap
 msgid "Serial number"
 msgstr "Serialnummer"
 
 # 91%
-#: lang/en:8
+#: lang/en:6
 #, no-wrap
 msgid "Licensed Log"
 msgstr "Lizenz-Daemon Log"
 
-#: lang/en:9
-#, no-wrap
-msgid "This is not a valid Zarafa serial"
+# 96%
+#: lang/en:7
+#, fuzzy, no-wrap
+msgid "This is not a valid zarafa serial"
 msgstr "Das ist keine gültige Zarafa-Seriennummer"
 
-#: lang/en:10
+#: lang/en:8
 #, no-wrap
-msgid "Archiver key"
-msgstr "Archiver Schlüssel"
+msgid "Archiver serial"
+msgstr ""
 
-#: lang/en:12
-#, no-wrap
-msgid "Install new archiver key"
-msgstr "Neuen Archiver Schlüssel installieren"
-
-#: lang/en:13
-#, no-wrap
-msgid "Install new archiver client key"
-msgstr "Neuen Archiver Client Schlüssel installieren"
-
-#: lang/en:14
+#: lang/en:9
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr "Zarafa Subskription"
+
+#: lang/en:10
+#, no-wrap
+msgid "User count"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "No serial installed!"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Allowed"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Available"
+msgstr "Verfügbar"
+
+#: lang/en:14
+#, no-wrap
+msgid "Used"
+msgstr "Benutzt"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"POT-Creation-Date: 2012-10-20 00:29+0300\n"
 "PO-Revision-Date: 2012-10-01 19:24+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,66 +19,72 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid "Apply key"
-msgstr "Aplicar licença"
+msgid "Submit"
+msgstr ""
 
 #: lang/en:2
 #, no-wrap
-msgid "Install new key"
-msgstr "Instalar nova licença"
+msgid "Install new serial"
+msgstr ""
 
 #: lang/en:3
-#, no-wrap
-msgid "Install new base key"
-msgstr "Instalar nova licença principal"
-
-#: lang/en:4
-#, no-wrap
-msgid "Install new client key"
-msgstr "Instalar nova licença CAL"
-
-#: lang/en:5
 #, no-wrap
 msgid "Installed subscriptions"
 msgstr "Subscrições instaladas"
 
-#: lang/en:6
+#: lang/en:4
 #, no-wrap
-msgid "Base key"
-msgstr "Serial principal"
+msgid "Base serial"
+msgstr ""
 
-#: lang/en:7 lang/en:11
+#: lang/en:5
 #, no-wrap
 msgid "Serial number"
 msgstr "Serial"
 
 # 91%
-#: lang/en:8
+#: lang/en:6
 #, no-wrap
 msgid "Licensed Log"
 msgstr "Log da licença"
 
-#: lang/en:9
-#, no-wrap
-msgid "This is not a valid Zarafa serial"
+# 96%
+#: lang/en:7
+#, fuzzy, no-wrap
+msgid "This is not a valid zarafa serial"
 msgstr "Este não é um serial Zarafa válido"
 
-#: lang/en:10
+#: lang/en:8
 #, no-wrap
-msgid "Archiver key"
-msgstr "Licença Archiver"
+msgid "Archiver serial"
+msgstr ""
 
-#: lang/en:12
-#, no-wrap
-msgid "Install new archiver key"
-msgstr "Instalar nova licença Archiver"
-
-#: lang/en:13
-#, no-wrap
-msgid "Install new archiver client key"
-msgstr "Instalar nova licença Archiver CAL"
-
-#: lang/en:14
+#: lang/en:9
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr "Subscrição Zarafa"
+
+#: lang/en:10
+#, no-wrap
+msgid "User count"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "No serial installed!"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Allowed"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Available"
+msgstr "Disponível"
+
+#: lang/en:14
+#, no-wrap
+msgid "Used"
+msgstr "Usado"

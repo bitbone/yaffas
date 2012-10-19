@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 17:44+0300\n"
+"POT-Creation-Date: 2012-10-20 00:29+0300\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,66 +19,72 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid "Apply key"
-msgstr "Sleutel toepassen"
+msgid "Submit"
+msgstr ""
 
 #: lang/en:2
 #, no-wrap
-msgid "Install new key"
-msgstr "Nieuwe sleutel toevoegen"
+msgid "Install new serial"
+msgstr ""
 
 #: lang/en:3
-#, no-wrap
-msgid "Install new base key"
-msgstr "Nieuwe basissleutel toevoegen"
-
-#: lang/en:4
-#, no-wrap
-msgid "Install new client key"
-msgstr "Nieuwe clientsleutel toevoegen"
-
-#: lang/en:5
 #, no-wrap
 msgid "Installed subscriptions"
 msgstr ""
 
-#: lang/en:6
+#: lang/en:4
 #, no-wrap
-msgid "Base key"
-msgstr "Basissleutel"
+msgid "Base serial"
+msgstr ""
 
-#: lang/en:7 lang/en:11
+#: lang/en:5
 #, no-wrap
 msgid "Serial number"
 msgstr "Serienummer"
 
 # 91%
-#: lang/en:8
+#: lang/en:6
 #, fuzzy, no-wrap
 msgid "Licensed Log"
 msgstr "Licentielogboek"
 
-#: lang/en:9
-#, no-wrap
-msgid "This is not a valid Zarafa serial"
+# 96%
+#: lang/en:7
+#, fuzzy, no-wrap
+msgid "This is not a valid zarafa serial"
 msgstr "Dit is geen geldige Zarafa-sleutel"
 
-#: lang/en:10
+#: lang/en:8
 #, no-wrap
-msgid "Archiver key"
-msgstr "Archiversleutel"
+msgid "Archiver serial"
+msgstr ""
 
-#: lang/en:12
-#, no-wrap
-msgid "Install new archiver key"
-msgstr "Nieuwe archiver-sleutel toevoegen"
-
-#: lang/en:13
-#, no-wrap
-msgid "Install new archiver client key"
-msgstr "Nieuwe archiver-clientsleutel toevoegen"
-
-#: lang/en:14
+#: lang/en:9
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
+
+#: lang/en:10
+#, no-wrap
+msgid "User count"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "No serial installed!"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
+msgid "Allowed"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "Available"
+msgstr ""
+
+#: lang/en:14
+#, no-wrap
+msgid "Used"
+msgstr "Gebruikt"
