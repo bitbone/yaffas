@@ -5,8 +5,6 @@ use Yaffas;
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use JSON;
 
-require './forms.pl';
-
 Yaffas::init_webmin();
 ReadParse();
 Yaffas::json_header();
