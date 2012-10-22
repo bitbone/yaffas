@@ -1,4 +1,5 @@
 function Setup(){
+	this.executer = null;
     this.pages = 5;
     this.currentPage = 1;
     this.form = null;
