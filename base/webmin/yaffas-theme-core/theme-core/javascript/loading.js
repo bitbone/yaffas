@@ -11,7 +11,7 @@ Yaffas.Loading = function(d) {
     });
     
     this.dlg.setHeader(_("lbl_loading", "global"));
-    this.dlg.setBody('<img src="/images/loading.gif" />');
+    this.dlg.setBody('<img src="/images/loading.gif" /><div id="loadingtext"></div>');
     this.dlg.render(document.body);
 }
 

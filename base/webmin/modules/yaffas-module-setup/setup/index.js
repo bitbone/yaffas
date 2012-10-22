@@ -61,6 +61,42 @@ Setup.prototype.submit = function() {
     Yaffas.ui.submitURL("/setup/initialsetup.cgi", args);
 }
 
+Setup.prototype.startLogRefresh = function() {
+	if (!this.executer) {
+		this.executer = new PeriodicalExecuter(this.refreshLog.bind(this), 2)
+	}
+}
+
+Setup.prototype.stopLogRefresh = function() {
+	if (this.executer) {
+		this.executer.stop();
+		delete this.executer;
+	}
+	Yaffas.ui.reloadGlobals();
+}
+
+Setup.prototype.refreshLog = function() {
+	var callback = {
+		success : function(o) {
+			var log = YAHOO.util.Dom.get("loadingtext");
+			var obj = YAHOO.lang.JSON.parse(o.responseText);
+			if (log) {
+				if (typeof obj.log !== "undefined") {
+					log.innerHTML = obj.log;
+				}
+			}
+			if (typeof obj.status !== "undefined") {
+				if (obj.status === 0) {
+					this.stopLogRefresh();
+				}
+			}
+		},
+		scope : this
+	}
+	YAHOO.util.Connect.asyncRequest("POST", "/setup/setuplog.cgi", callback);
+}
+
+
 Setup.prototype.showPage = function(page) {
     if (page <= 0)
         page = 1;
