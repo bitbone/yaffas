@@ -60,6 +60,7 @@ Setup.prototype.finished = function() {
 Setup.prototype.submit = function() {
     var args = Form.serializeElements(this.form.getElements(), { hash: true });
     Yaffas.ui.submitURL("/setup/initialsetup.cgi", args);
+    this.startLogRefresh();
 }
 
 Setup.prototype.startLogRefresh = function() {
