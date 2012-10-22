@@ -22,4 +22,6 @@ for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zar
 	echo "... done" >> $LOGFILE
 done
 
+echo "all scripts finished" >> $LOGFILE
+
 exit 0
