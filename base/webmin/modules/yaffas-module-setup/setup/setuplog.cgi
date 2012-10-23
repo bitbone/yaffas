@@ -4,6 +4,7 @@ use warnings;
 use Yaffas;
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use JSON;
+use Yaffas::Constant;
 
 Yaffas::init_webmin();
 ReadParse();
@@ -12,7 +13,9 @@ Yaffas::json_header();
 my $status = 1;
 my $log = "";
 
-open(FILE, "</root/yaffas-postinst.log");
+my $logfile = Yaffas::Constant::FILE->{postinst_log};
+
+open(FILE, "<".$logfile);
 while(<FILE>) {
         if($_ =~ m/all scripts finished/) {
                 $status = 0;
