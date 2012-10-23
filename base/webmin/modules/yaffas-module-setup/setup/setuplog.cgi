@@ -17,12 +17,13 @@ my $logfile = Yaffas::Constant::FILE->{postinst_log};
 
 open(FILE, "<".$logfile);
 while(<FILE>) {
-        if($_ =~ m/all scripts finished/) {
-                $status = 0;
-        }
-        elsif($_ =~ m#^executing.*/yaffas-([^/]*)/#) {
-                $log = $1;
-        }
+    if($_ =~ m/all scripts finished/) {
+        $log = "$main::text{'lbl_initial_conf'}";
+        $status = 0;
+    }
+    elsif($_ =~ m#^executing.*/yaffas-([^/]*)/#) {
+        $log = $1;
+    }
 }
 
 print to_json( {"log" => "$main::text{'lbl_setup_execute'}: $log", "status" => $status});

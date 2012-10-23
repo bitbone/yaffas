@@ -84,7 +84,7 @@ Setup.prototype.refreshLog = function() {
 			var obj = YAHOO.lang.JSON.parse(o.responseText);
 			if (log) {
 				if (typeof obj.log !== "undefined") {
-					log.innerHTML = obj.log;
+					log.innerHTML = "<p>" + _("lbl_some_time") + " ...<br/>" + obj.log + "</p>";
 				}
 			}
 			if (typeof obj.status !== "undefined") {
