@@ -21,7 +21,8 @@ header();
 try {
 
     # first execute post installation scripts to setup the configuration files
-    system("/opt/yaffas/bin/postinst-all.sh");
+    my $postinst_all = Yaffas::Constant::FILE->{postinst_all};
+    system($postinst_all);
     
 	my $pw1 = $main::in{admin_password1};
 	my $pw2 = $main::in{admin_password2};
