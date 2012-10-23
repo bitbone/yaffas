@@ -17,6 +17,11 @@ cp -f -a /opt/yaffas/share/doc/example/etc/postfix/main.cf /etc/postfix
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/master.cf /etc/postfix
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
+cp -f -a /opt/yaffas/share/doc/example/etc/postfix/virtual_users_global /etc/postfix
+
+if ! grep -q "^/postmaster@" /etc/postfix/virtual_users_global; then
+	echo "/postmaster@.*/ root@localhost" >> /etc/postfix/virtual_users_global
+fi
 
 if ! grep -q "START=yes" /etc/default/saslauthd; then
 	sed -e 's/^START.*/START=yes/' -i /etc/default/saslauthd
@@ -38,7 +43,6 @@ touch $CONF/ldap-users.cf
 touch $CONF/ldap-users.cf.db
 touch $CONF/smtp_auth.cf
 postmap $CONF/smtp_auth.cf
-touch $CONF/virtual_users_global
 postmap $CONF/virtual_users_global
 
 chmod 600 $CONF/smtp_auth.cf
