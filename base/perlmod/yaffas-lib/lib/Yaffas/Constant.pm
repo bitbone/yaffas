@@ -259,6 +259,7 @@ use constant {
 		"wl_amavis" => "/opt/yaffas/config/whitelist-amavis",
 		"rhel5_network" => "/etc/sysconfig/network",
 		"webaccess_config" => "/etc/zarafa/webaccess-ajax/config.php",
+		"postinst_log" => "/opt/yaffas/log/yaffas-postinst.log",
 	}
 };
 

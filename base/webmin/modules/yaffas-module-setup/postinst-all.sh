@@ -7,9 +7,10 @@ elif [ x$OS = xDebian -o x$OS = xUbuntu ]; then
 	DIST=deb
 fi
 
-LOGFILE=/root/yaffas-postinst.log
+LOGFILE=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::FILE->{postinst_log}')
+mkdir -p $(dirname $LOGFILE)
 
-if [ -e /root/yaffas-postinst.log ]; then
+if [ -e $LOGFILE ]; then
 	echo "yaffas post installation scripts were already run. Exiting."
 	exit 0
 fi
