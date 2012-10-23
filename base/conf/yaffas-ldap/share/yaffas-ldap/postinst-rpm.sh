@@ -35,39 +35,26 @@ function _get_base() {
 
 # use sample DB_CONFIG if none is configured
 if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
-		if [ ! -f /var/lib/ldap/DB_CONFIG ]; then
-			cp /usr/share/slapd/DB_CONFIG /var/lib/ldap/
-		fi
-	else
-		if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
-			cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-		elif [ -f /etc/openldap/DB_CONFIG.example ]; then
-			cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
-		fi
+	if [ -f /usr/share/openldap-servers/DB_CONFIG.example ]; then
+		cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+	elif [ -f /etc/openldap/DB_CONFIG.example ]; then
+		cp /etc/openldap/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
 	fi
 fi
 
 # some defines
 CONF="/etc/ldap.conf"
 NSS="/etc/nsswitch.conf"
-
-if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
-	SLAPD="/etc/ldap/slapd.conf"
-	LDAPCONF="/etc/ldap/ldap.conf"
-else
-	SLAPD="/etc/openldap/slapd.conf"
-	LDAPCONF="/etc/openldap/ldap.conf"
-	NSLCDCONF=/etc/nslcd.conf
-fi
-
+SLAPD="/etc/openldap/slapd.conf"
 LDAPS="/etc/ldap.secret"
 LDIF="/tmp/yaffas_base.ldif"
 DOMRENAME_FILE="/tmp/slapcat.ldif"
+LDAPCONF="/etc/openldap/ldap.conf"
 SMBLDAP_CONF="/etc/smbldap-tools/smbldap.conf"
 SMBLDAP_BIND="/etc/smbldap-tools/smbldap_bind.conf"
 LDAP_SETTINGS="/etc/ldap.settings"
 SID=`net getlocalsid 2>/dev/null | awk '{print $NF}'`
+NSLCDCONF=/etc/nslcd.conf
 
 # only on first installation, if no ldap tree is present
 # create group which allows users to read from ldap
@@ -110,21 +97,17 @@ if pgrep slapd; then
 	killall -9 slapd
 fi
 
-	if [ x$OS = xRHEL6 ]; then
-		SYSCONFIG_LDAP="/etc/sysconfig/ldap"
-		if [ -e $SYSCONFIG_LDAP ]; then
-			cp -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
-			if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
-				sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
-			else
-				echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
-			fi
+if [ x$OS = xRHEL6 ]; then
+	SYSCONFIG_LDAP="/etc/sysconfig/ldap"
+	if [ -e $SYSCONFIG_LDAP ]; then
+		cp -f $SYSCONFIG_LDAP ${SYSCONFIG_LDAP}.yaffassave
+		if grep -q "SLAPD_OPTIONS=" $SYSCONFIG_LDAP; then
+			sed -e 's/.*SLAPD_OPTIONS=.*/SLAPD_OPTIONS="-f \/etc\/openldap\/slapd.conf"/' -i $SYSCONFIG_LDAP
+		else
+			echo 'SLAPD_OPTIONS="-f /etc/openldap/slapd.conf"' >> $SYSCONFIG_LDAP
 		fi
 	fi
-
-	if [ x$OS = xDebian -o x$OS = xUbuntu ]; then
-		sed -e 's#SLAPD_CONF.*#SLAPD_CONF=/etc/ldap/slapd.conf#g' -i /etc/default/slapd
-	fi
+fi
 
 BASE=`_get_base`
 
@@ -195,7 +178,6 @@ chmod 440 $CONF
 chmod 640 $LDAPS
 chown root:ldapread $CONF
 chown root:ldapread $LDAPS
-chown root:ldapread /etc/ldap.conf
 
 rm -f $LDIF
 
