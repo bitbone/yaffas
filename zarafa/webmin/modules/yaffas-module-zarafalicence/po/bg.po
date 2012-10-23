@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2012-10-20 00:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,65 +169,70 @@ msgstr ""
 
 #: lang/en:1
 #, no-wrap
-msgid "Apply key"
+msgid "Submit"
 msgstr ""
 
 #: lang/en:2
 #, no-wrap
-msgid "Install new key"
+msgid "Install new serial"
 msgstr ""
 
 #: lang/en:3
 #, no-wrap
-msgid "Install new base key"
+msgid "Installed subscriptions"
 msgstr ""
 
 #: lang/en:4
 #, no-wrap
-msgid "Install new client key"
+msgid "Base serial"
 msgstr ""
 
 #: lang/en:5
 #, no-wrap
-msgid "Installed subscriptions"
+msgid "Serial number"
 msgstr ""
 
 #: lang/en:6
 #, no-wrap
-msgid "Base key"
+msgid "Licensed Log"
 msgstr ""
 
-#: lang/en:7 lang/en:11
+#: lang/en:7
 #, no-wrap
-msgid "Serial number"
+msgid "This is not a valid zarafa serial"
 msgstr ""
 
 #: lang/en:8
 #, no-wrap
-msgid "Licensed Log"
+msgid "Archiver serial"
 msgstr ""
 
 #: lang/en:9
 #, no-wrap
-msgid "This is not a valid Zarafa serial"
+msgid "Zarafa Subscription"
 msgstr ""
 
 #: lang/en:10
 #, no-wrap
-msgid "Archiver key"
+msgid "User count"
+msgstr ""
+
+#: lang/en:11
+#, no-wrap
+msgid "No serial installed!"
 msgstr ""
 
 #: lang/en:12
 #, no-wrap
-msgid "Install new archiver key"
+msgid "Allowed"
 msgstr ""
 
 #: lang/en:13
 #, no-wrap
-msgid "Install new archiver client key"
+msgid "Available"
 msgstr ""
 
 #: lang/en:14
 #, no-wrap
-msgid "Zarafa Subscription"
+msgid "Used"
 msgstr ""
