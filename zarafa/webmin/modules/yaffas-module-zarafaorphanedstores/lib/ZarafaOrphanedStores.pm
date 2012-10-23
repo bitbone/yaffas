@@ -48,12 +48,12 @@ sub get_orphaned_stores () {
 		next if $line =~ m/^\s*----------/;
 		next if $line =~ m/^$/;
 		my @fields = split /\t+/, $line;
-		if($line =~ m/Store guid\s+Guessed username\s+Last modified\s+Store size\s+Store type/) {
+		if($line =~ m/Store guid\s+Guessed username\s+Last login\s+Store size\s+Store type/) {
 			for(my $i = 0; $i < @fields; $i++) {
 				switch ($fields[$i]) {
 					case "Store guid" { $columns->{'guid'} = $i }
 					case "Guessed username" { $columns->{'username'} = $i }
-					case "Last modified" { $columns->{'modified'} = $i }
+					case "Last login" { $columns->{'login'} = $i }
 					case "Store size" { $columns->{'size'} = $i }
 					case "Store type" { $columns->{'type'} = $i }
 				}
@@ -63,7 +63,7 @@ sub get_orphaned_stores () {
 		my $store = {
 			'guid' => $fields[$columns->{'guid'}],
 			'username' => $fields[$columns->{'username'}],
-			'modified' => $fields[$columns->{'modified'}],
+			'login' => $fields[$columns->{'login'}],
 			'size' => $fields[$columns->{'size'}],
 			'type' => $fields[$columns->{'type'}],
 		};

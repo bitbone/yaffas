@@ -123,8 +123,8 @@ OrphanedStores.prototype.setupTable = function(){
 		label: _("lbl_username"),
 		sortable: true,
 	}, {
-		key: "modified",
-		label: _("lbl_modified"),
+		key: "login",
+		label: _("lbl_login"),
 		sortable: true,
 	}, {
 		key: "size",

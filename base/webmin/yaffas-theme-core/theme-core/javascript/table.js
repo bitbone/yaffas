@@ -268,5 +268,7 @@ Yaffas.Table.prototype.reload = function(useCache){
 }
 
 Yaffas.Table.prototype.destroy = function() {
-	this.filterform.destroy();
+    if (typeof this.filterform !== "undefined" && this.filterform !== null) {
+        this.filterform.destroy();
+    }
 }
