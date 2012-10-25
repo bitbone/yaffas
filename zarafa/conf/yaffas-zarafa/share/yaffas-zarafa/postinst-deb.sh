@@ -28,8 +28,6 @@ if [ -f "/etc/locale.gen" ]; then
     fi
 fi
 
-echo "zarafa=Zarafa v7.0.1" > /opt/yaffas/etc/installed-products
-
 /usr/sbin/locale-gen
 export PERLLIB="/opt/yaffas/lib/perl5"
 perl -MYaffas::Module::ChangeLang -wle '
