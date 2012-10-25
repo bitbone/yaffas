@@ -4,7 +4,7 @@ NTROOTDIR=mkntpwd/
 
 install:
 	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
-	mkdir -p $(DESTDIR)/tmp
+	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/share
 	mkdir -p $(DESTDIR)/$(YAFFAS_BIN)
 	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp -f share/doc/example/etc/ldap.conf $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
@@ -18,7 +18,7 @@ install:
 	cp -r share/doc/example/etc/apparmor.d $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc
 	cp -r share/yaffas-ldap $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp -r share/yaffas-upgrade $(DESTDIR)/$(YAFFAS_PREFIX)/share
-	cp yaffas_base.ldif $(DESTDIR)/tmp/
+	cp yaffas_base.ldif $(DESTDIR)/$(YAFFAS_EXAMPLE)/share
 	cp domrename.pl $(DESTDIR)/$(YAFFAS_BIN)
 
 clean:

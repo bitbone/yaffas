@@ -129,6 +129,8 @@ echo "Removing old LDAP Database"
 rm -rf /var/lib/ldap/*
 
 echo "Executing domrename.pl ... $DOMAIN $LDIF"
+
+cp $YAFFAS_EXAMPLE/share/yaffas_base.ldif $LDIF
 sed -e "s/NEWSID/$SID/" -i $LDIF
 /opt/yaffas/bin/domrename.pl BASE $DOMAIN $LDIF
 
