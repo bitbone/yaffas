@@ -63,7 +63,6 @@ rm -rf $RPM_BUILD_ROOT
 /opt/yaffas/share/%{name}/postinst-rpm.sh
 /opt/yaffas/share/yaffas-upgrade/01-yaffas-ldap.sh
 /opt/yaffas/share/doc/example/yaffas_base.ldif
-/tmp/yaffas_base.ldif
 
 %changelog
 * Fri Dec 02 2011 Christof Musik <christof@sanjay.bitbone.de> 1.0.1-1
