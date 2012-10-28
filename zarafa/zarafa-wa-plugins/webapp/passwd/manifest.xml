@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE plugin SYSTEM "manifest.dtd">
+<plugin version="2">
+	<info>
+		<version>1.0</version>
+		<name>passwd</name>
+		<title>Password change plugin</title>
+		<author>Christof Musik, bitbone AG</author>
+		<authorURL>http://www.zarafa.com</authorURL>
+		<description>Plugin to allow users to change their password</description>
+	</info>
+	<components>
+		<component>
+			<files>
+				<client>
+					<clientfile load="release">js/passwd.js</clientfile>
+					<clientfile load="debug">js/passwd.js</clientfile>
+					<clientfile load="source">js/passwd.js</clientfile>
+				</client>
+			</files>
+		</component>
+	</components>
+</plugin>
