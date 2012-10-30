@@ -3,6 +3,7 @@
 use Yaffas;
 use Yaffas::UI;
 use Yaffas::Module::ZarafaLicence;
+use Yaffas::Service qw(control RELOAD ZARAFA_SERVER);
 use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use Yaffas::Exception;
 use Error qw(:try);
@@ -24,6 +25,7 @@ try {
 		$main::in{filtertype},
 		$main::in{filtergroup}
 	);
+	control(ZARAFA_SERVER, RELOAD);
 	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with {
