@@ -4,7 +4,7 @@ var Restore = function() {
     this.restoreStatus = null;
 
     var submit = function() {
-        Yaffas.ui.submitURL("/zarafabackup/restore.cgi", {keys: escape(this.restorekeys.toJSON())});
+        Yaffas.ui.submitURL("/zarafabackup/restore.cgi", {keys: this.restorekeys.toJSON()});
 
         $("restoremessage").innerHTML = _("lbl_restore_started");
         $("restoreloading").style.display = "block";
