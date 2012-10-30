@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2012-10-30 10:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -289,25 +289,40 @@ msgstr ""
 
 #: lang/en:33
 #, no-wrap
-msgid "Finish"
+msgid "This might take some time"
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "setting up"
 msgstr ""
 
 #: lang/en:35
 #, no-wrap
-msgid "Could not connect to database."
-msgstr ""
-
-#: lang/en:36
-#, no-wrap
-msgid "The admin password is empty or does not match."
+msgid "initial configuration"
 msgstr ""
 
 #: lang/en:37
 #, no-wrap
-msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+msgid "Finish"
 msgstr ""
 
 #: lang/en:39
+#, no-wrap
+msgid "Could not connect to database."
+msgstr ""
+
+#: lang/en:40
+#, no-wrap
+msgid "The admin password is empty or does not match."
+msgstr ""
+
+#: lang/en:41
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+msgstr ""
+
+#: lang/en:43
 #, no-wrap
 msgid "Setup"
 msgstr ""
