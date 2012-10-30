@@ -491,19 +491,59 @@ Yaffas.UI.prototype.moduleCleanup = function() {
  * @return true if error is found
  */
 Yaffas.UI.prototype.checkError = function() {
-	var r = $('response').select('[class="error"]');
-	if (r.length == 0)
-		r = $('content').select('[class="error"]');
+	var errortext = "";
 
-    if (r.length > 0) {
-        // handle error case
-        var e = r[0].parentNode.getElementsByTagName("div");
-        this.loading.hide();
-        this.errorDialog.setBody(e[0].innerHTML);
-		r[0].parentNode.parentNode.innerHTML = "";
-        this.errorDialog.show();
-        return true;
-    }
+	// check for an unhandled perl error
+	var r = $('response');
+	var perl_error_pos = r.innerHTML.indexOf(
+	  '<h1>Error - Perl execution failed</h1>');
+	if (perl_error_pos != -1) {
+	    // Check if the typical string for fatal Perl errors is in the
+		// response body.
+		// In theory, this could lead to false positives (if a CGI script
+		// really wants to print out the text above, but this is not
+		// really likely in our setup.
+
+		errortext = r.innerHTML.substr(perl_error_pos);
+
+		// if this somehow ate the whole error message, revert back to the
+		// whole response:
+		if (!errortext) {
+			errortext = "<h1>Perl error</h1><pre>" +
+			  escape(r.innerHTML) + "</pre>";
+		}
+	}
+
+	if (!errortext) {
+		// no perl error, so we'll check for a a yaffas error
+		// (<div class="error">)
+		var r = $('response').select('[class="error"]');
+		if (r.length == 0) {
+			r = $('content').select('[class="error"]');
+		}
+
+		if (r.length > 0) {
+			// yaffas error found (class="error")
+			var e = r[0].parentNode.getElementsByTagName("div");
+			errortext = e[0].innerHTML;
+			// remove the error text from the body
+			r[0].parentNode.parentNode.innerHTML = "";
+		}
+	}
+
+	if (!errortext) {
+		// we're lucky, no (detectable) error occured, return early and
+		// say checkError -> false
+		return false;
+	}
+
+	// if any errortext was found, we show the error to the user
+	// and return true so that the caller knows that indeed any error
+	// occured
+	this.loading.hide();
+	this.errorDialog.setBody(errortext);
+	this.errorDialog.show();
+	return true;
 }
 
 Yaffas.UI.prototype.submitForm = function(e){
