@@ -33,7 +33,7 @@ Sie können folgende Variablen zum erstellen des Textes verwenden:
 In diesem Modul können Sie neue Ressourcen anlegen oder löschen. Markieren Sie hierzu eine Ressource mit der rechten Maustaste und wählen Sie die gewünschte Aktion. 
 
 Beachten Sie beim Anlegen: Eine Ressource benötigt einen Namen - unter diesem erscheint sie im globalen Adressbuch - und eine eine Beschreibung.
-Sie können außerdem festlegen, ob eine Ressource nur einmal pro Zeitraum gebucht werden darf ( _"Konflikte verbieten"_  und ob Wiederholungstermine abgelehnt werden sollen. 
+Sie können außerdem festlegen, ob eine Ressource nur einmal pro Zeitraum gebucht werden darf (_"Konflikte verbieten"_) und ob Wiederholungstermine abgelehnt werden sollen. 
 
 [IMPORTANT]
 ==============
