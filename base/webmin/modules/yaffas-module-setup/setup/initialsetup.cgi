@@ -30,6 +30,11 @@ try {
 	throw Yaffas::Exception("err_password") unless ($pw1 eq $pw2 and length($pw1) > 0);
 	throw Yaffas::Exception("err_domainname") unless (Yaffas::Check::domainname($main::in{mailserver_domain}));
 
+	if ($main::in{user_login}) {
+		throw Yaffas::Exception("err_user_exists_locally") if
+			Yaffas::UGM::user_exists_local($main::in{user_login});
+	}
+
 	Yaffas::Module::ChangePW::change_admin_password($pw1);
 
 	if (Yaffas::Product::check_product("zarafa")) {
