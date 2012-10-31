@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"POT-Creation-Date: 2012-10-30 10:53+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
-#: lang/en:1 lang/en:28
+#: lang/en:1 lang/en:29
 #, no-wrap
 msgid "Orphaned Stores"
 msgstr ""
@@ -199,100 +199,105 @@ msgstr ""
 
 #: lang/en:7
 #, no-wrap
-msgid "Store Type"
+msgid "Last Login"
 msgstr ""
 
 #: lang/en:8
 #, no-wrap
-msgid "Do you really want to delete the selected store?"
+msgid "Store Type"
 msgstr ""
 
 #: lang/en:9
 #, no-wrap
-msgid "Delete orphaned store"
+msgid "Do you really want to delete the selected store?"
 msgstr ""
 
 #: lang/en:10
 #, no-wrap
-msgid "Do you really want to copy this store to the public store?"
+msgid "Delete orphaned store"
 msgstr ""
 
 #: lang/en:11
 #, no-wrap
+msgid "Do you really want to copy this store to the public store?"
+msgstr ""
+
+#: lang/en:12
+#, no-wrap
 msgid "Delete"
 msgstr ""
 
-#: lang/en:12 lang/en:18
+#: lang/en:13 lang/en:19
 #, no-wrap
 msgid "Hook to user"
 msgstr ""
 
-#: lang/en:13
+#: lang/en:14
 #, no-wrap
 msgid "Copy to public store"
 msgstr ""
 
-#: lang/en:14
+#: lang/en:15
 #, no-wrap
 msgid "Hook orphaned store"
 msgstr ""
 
-#: lang/en:15
+#: lang/en:16
 #, no-wrap
 msgid "Confirm"
 msgstr ""
 
-#: lang/en:16
+#: lang/en:17
 #, no-wrap
 msgid "Username"
 msgstr ""
 
-#: lang/en:17
+#: lang/en:18
 #, no-wrap
 msgid "Full Name"
 msgstr ""
 
-#: lang/en:19
+#: lang/en:20
 #, no-wrap
 msgid "Orphaned Store ID"
 msgstr ""
 
-#: lang/en:20
+#: lang/en:21
 #, no-wrap
 msgid "Hook store"
 msgstr ""
 
-#: lang/en:21
+#: lang/en:22
 #, no-wrap
 msgid "to user"
 msgstr ""
 
-#: lang/en:22
+#: lang/en:23
 #, no-wrap
 msgid "Hook"
 msgstr ""
 
-#: lang/en:23
+#: lang/en:24
 #, no-wrap
 msgid "Cancel"
 msgstr ""
 
-#: lang/en:24
+#: lang/en:25
 #, no-wrap
 msgid "Could not hook orphaned store"
 msgstr ""
 
-#: lang/en:25
+#: lang/en:26
 #, no-wrap
 msgid "Could not find store"
 msgstr ""
 
-#: lang/en:26
+#: lang/en:27
 #, no-wrap
 msgid "Could not hook the store to the selected user."
 msgstr ""
 
-#: lang/en:27
+#: lang/en:28
 #, no-wrap
 msgid "You have to select a user first"
 msgstr ""

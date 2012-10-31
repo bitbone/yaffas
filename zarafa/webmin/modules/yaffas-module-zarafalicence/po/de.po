@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-20 00:29+0300\n"
-"PO-Revision-Date: 2012-09-07 10:09+0200\n"
+"POT-Creation-Date: 2012-10-30 10:53+0100\n"
+"PO-Revision-Date: 2012-10-24 14:25+0200\n"
 "Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Submit"
-msgstr ""
+msgstr "Absenden"
 
 #: lang/en:2
 #, no-wrap
 msgid "Install new serial"
-msgstr ""
+msgstr "Neue Lizenz installieren"
 
 #: lang/en:3
 #, no-wrap
@@ -35,7 +35,7 @@ msgstr "Installierte Subskriptionen"
 #: lang/en:4
 #, no-wrap
 msgid "Base serial"
-msgstr ""
+msgstr "Basislizenz"
 
 #: lang/en:5
 #, no-wrap
@@ -50,14 +50,14 @@ msgstr "Lizenz-Daemon Log"
 
 # 96%
 #: lang/en:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "This is not a valid zarafa serial"
-msgstr "Das ist keine gültige Zarafa-Seriennummer"
+msgstr "Das ist keine gültige Zarafa Lizenz"
 
 #: lang/en:8
 #, no-wrap
 msgid "Archiver serial"
-msgstr ""
+msgstr "Zarafa-Archiver Lizenz"
 
 #: lang/en:9
 #, no-wrap
@@ -67,17 +67,17 @@ msgstr "Zarafa Subskription"
 #: lang/en:10
 #, no-wrap
 msgid "User count"
-msgstr ""
+msgstr "Benutzeranzahl"
 
 #: lang/en:11
 #, no-wrap
 msgid "No serial installed!"
-msgstr ""
+msgstr "Keine Lizenz installiert!"
 
 #: lang/en:12
 #, no-wrap
 msgid "Allowed"
-msgstr ""
+msgstr "Erlaubt"
 
 #: lang/en:13
 #, no-wrap

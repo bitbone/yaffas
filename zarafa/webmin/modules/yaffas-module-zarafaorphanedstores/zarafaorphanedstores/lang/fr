@@ -4,6 +4,7 @@ lbl_guid=Store Guid
 lbl_username=Guessed Username
 lbl_size=Taille
 lbl_modified=Last Modified
+lbl_login=Last Login
 lbl_type=Store Type
 lbl_delorphaned_question=Do you really want to delete the selected store?
 lbl_delorphaned=Delete orphaned store
