@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-20 00:29+0300\n"
-"PO-Revision-Date: 2012-10-01 19:24+0200\n"
+"POT-Creation-Date: 2012-10-30 10:53+0100\n"
+"PO-Revision-Date: 2012-10-24 14:12+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -20,12 +20,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: lang/en:2
 #, no-wrap
 msgid "Install new serial"
-msgstr ""
+msgstr "Instalar novo serial"
 
 #: lang/en:3
 #, no-wrap
@@ -35,7 +35,7 @@ msgstr "Subscrições instaladas"
 #: lang/en:4
 #, no-wrap
 msgid "Base serial"
-msgstr ""
+msgstr "Serial Base"
 
 #: lang/en:5
 #, no-wrap
@@ -50,14 +50,14 @@ msgstr "Log da licença"
 
 # 96%
 #: lang/en:7
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "This is not a valid zarafa serial"
 msgstr "Este não é um serial Zarafa válido"
 
 #: lang/en:8
 #, no-wrap
 msgid "Archiver serial"
-msgstr ""
+msgstr "Serial Archiver"
 
 #: lang/en:9
 #, no-wrap
@@ -67,17 +67,17 @@ msgstr "Subscrição Zarafa"
 #: lang/en:10
 #, no-wrap
 msgid "User count"
-msgstr ""
+msgstr "Número de usuários"
 
 #: lang/en:11
 #, no-wrap
 msgid "No serial installed!"
-msgstr ""
+msgstr "Nenhum serial instalado!"
 
 #: lang/en:12
 #, no-wrap
 msgid "Allowed"
-msgstr ""
+msgstr "Permitido"
 
 #: lang/en:13
 #, no-wrap

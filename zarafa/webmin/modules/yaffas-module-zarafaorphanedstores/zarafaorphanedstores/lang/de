@@ -4,6 +4,7 @@ lbl_guid=Postfach GUID
 lbl_username=Geschätzter Benutzername
 lbl_size=Größe
 lbl_modified=Letzte Änderung
+lbl_login=Last Login
 lbl_type=Postfachtyp
 lbl_delorphaned_question=Wollen Sie das Postfach wirklich löschen?
 lbl_delorphaned=Verwaistes Postfach löschen

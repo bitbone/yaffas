@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: 2012-10-01 19:24+0200\n"
+"POT-Creation-Date: 2012-10-30 10:53+0100\n"
+"PO-Revision-Date: 2012-10-24 14:12+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -141,25 +141,40 @@ msgstr "Configurações básicas"
 
 #: lang/en:33
 #, no-wrap
+msgid "This might take some time"
+msgstr ""
+
+#: lang/en:34
+#, no-wrap
+msgid "setting up"
+msgstr ""
+
+#: lang/en:35
+#, no-wrap
+msgid "initial configuration"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
 msgid "Finish"
 msgstr "Concluir"
 
-#: lang/en:35
+#: lang/en:39
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Não foi possível conectar no banco de dados."
 
-#: lang/en:36
+#: lang/en:40
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "A senha de administrador está vazia ou diferente."
 
-#: lang/en:37
+#: lang/en:41
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr "O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é de um."
 
-#: lang/en:39
+#: lang/en:43
 #, no-wrap
 msgid "Setup"
 msgstr "Configuração"
