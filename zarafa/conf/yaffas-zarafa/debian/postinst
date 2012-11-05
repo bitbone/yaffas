@@ -24,7 +24,7 @@ set -e
 case "$1" in
     configure)
 
-        if ! grep -q "^zarafa=" /opt/yaffas/etc/installed-products
+        if ! grep -q "^zarafa=" /opt/yaffas/etc/installed-products; then
             echo "zarafa=Zarafa" > /opt/yaffas/etc/installed-products
         fi
 
