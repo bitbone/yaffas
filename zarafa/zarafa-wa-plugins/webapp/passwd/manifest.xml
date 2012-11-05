@@ -9,6 +9,9 @@
 		<authorURL>http://www.zarafa.com</authorURL>
 		<description>Plugin to allow users to change their password</description>
 	</info>
+    <translations>
+        <translationsdir>lang</translationsdir>
+    </translations>
 	<components>
 		<component>
 			<files>

@@ -101,7 +101,7 @@ function getBody() {
 					}
 					else {
 		
-						if (($newpw1 == "") || ($newpw1 == "")) { send_result ("failure", _("New password empty is empty")); }
+						if (($newpw1 == "") || ($newpw1 == "")) { send_result ("failure", _("New password is empty")); }
 						if (!check_password($newpw1)) { send_result ("failure", _("Password too weak.")); }
 						else { send_result ("failure", _("New passwords don't match.")); }
 					}
@@ -153,10 +153,10 @@ function getBody() {
 				send_result ("failure", _("Password update failed. Please contact the system administrator."));
 			}   
 		} else {
-			if ($newpw1 != $newpw2) send_result ("failure", _("new passwords dont match"));
-			if ($username == null) send_result ("failure", _("username not found"));
-			if ($newpw1 == null && $newpw2 == null) send_result ("failure", _("new password empty"));
-			if (!check_password($newpw1)) send_result ("failure", _("password weak"));
+			if ($newpw1 != $newpw2) send_result ("failure", _("New passwords don't match."));
+			if ($username == null) send_result ("failure", _("Username not found"));
+			if ($newpw1 == null && $newpw2 == null) send_result ("failure", _("New password is empty"));
+			if (!check_password($newpw1)) send_result ("failure", _("Password too weak."));
 		}   
 	}
 	putenv('LC_ALL='.$_SESSION['lang']);
@@ -179,7 +179,6 @@ function ssha_encode ($text) {
 // - contain numbers
 // return FALSE if not all criteria are met
 function check_password ($password) {
-    return TRUE;
 	if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
 		return TRUE;
 	} else {

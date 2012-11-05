@@ -10,7 +10,7 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsCategory = Ext.extend(Zarafa.set
         config = config || {};
 
         Ext.applyIf(config, {
-            title : _('Change Password'),
+            title : dgettext("plugin_passwd", 'Change password'),
             iconCls : 'icon_exampleplugin_icon',
             items : [{
                 xtype : 'zarafa.passwdsettingspluginwidget'
@@ -33,28 +33,28 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
         config = config || {};
 
         Ext.applyIf(config, {
-            title : _('Change password'),
+            title : dgettext("plugin_passwd", 'Change password'),
             layout : 'form',
             items : [{
                 xtype:'fieldset',
-                title: _('Insert a new password; at least 6 chars...'),
+                title: dgettext("plugin_passwd", 'Insert a new password. Your new password needs to be at least 8 characters long and consist at least of a capital character and a number. '),
                 flex : 1,
                 border: false,
                 items :[{
                     xtype : 'textfield',
                     ref : '../oldPassword',
                     inputType: 'password',
-                    fieldLabel : _('Old password'),
+                    fieldLabel : dgettext("plugin_passwd", 'Old password'),
                 },{
                     xtype : 'textfield',
                     ref : '../newPassword',
                     inputType: 'password',
-                    fieldLabel : _('New password'),
+                    fieldLabel : dgettext("plugin_passwd", 'New password'),
                 },{
                     xtype : 'textfield',
                     inputType: 'password',
                     ref : '../newPasswordRepeat',
-                    fieldLabel : _('New password (repeat)'),
+                    fieldLabel : dgettext("plugin_passwd", 'New password (repeat)'),
                 }]
             }]
 
@@ -70,16 +70,16 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
         }
         catch(e) {
             obj.status = "failure";
-            obj.message = _("Unknown response");
+            obj.message = dgettext("plugin_passwd", "Unknown response");
         }
-        var msg = _(obj.message);
+        var msg = dgettext("plugin_passwd", obj.message);
         var title = "";
 
         if (obj.status === "success") {
-            title = _("Password changed");
+            title = dgettext("plugin_passwd", "Password changed");
         }
         else {
-            title = _("Error");
+            title = dgettext("plugin_passwd", "Error");
         }
 
         Ext.MessageBox.show({
