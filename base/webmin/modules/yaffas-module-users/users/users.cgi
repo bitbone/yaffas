@@ -83,6 +83,7 @@ foreach ( keys %{$userlist} ) {
 		$error->add( "err_id_not_found", $_ );
 	}
 }
+throw $error if $error;
 print to_json({"Response" => \@users}, {latin1 => 1});
 =pod
 
