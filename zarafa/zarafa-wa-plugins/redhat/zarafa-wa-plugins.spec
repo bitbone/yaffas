@@ -25,11 +25,13 @@ rm -rf $RPM_BUILD_ROOT
 %post
 BASEDN=$(grep BASEDN /etc/ldap.settings | awk -F "BASEDN=" '{print $2}')
 sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php
+sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php
 
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
 /opt/yaffas/zarafa/webaccess/plugins
+/opt/yaffas/zarafa/webapp/plugins
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
