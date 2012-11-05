@@ -468,6 +468,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$smbldap_bind->write();
 
 		_remove_webaccess_plugin("passwd");
+		_remove_webapp_plugin("passwd");
 
 		# be sure system domain ist same as in ldap tree if local auth.
 		if ($host eq "127.0.0.1" || $host eq "localhost")
@@ -505,6 +506,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			# move ldap_secret_local file to ldap_secret
 			move (Yaffas::Constant::FILE->{ldap_secret_local}, Yaffas::Constant::FILE->{ldap_secret});
 			_link_webaccess_plugin("passwd");
+			_link_webapp_plugin("passwd");
 		}
 		
 		# /etc/ldap.settings (must be done after samba, otherwise get_auth_type fails...
@@ -1748,6 +1750,24 @@ sub _remove_webaccess_plugin {
 	if (Yaffas::Product::check_product("zarafa")) {
 		if (-l "/var/lib/zarafa-webaccess/plugins/$plugin") {
 			unlink "/var/lib/zarafa-webaccess/plugins/$plugin";
+		}
+	}
+}
+
+sub _link_webapp_plugin {
+	my $plugin = shift;
+	if (Yaffas::Product::check_product("zarafa")) {
+		unless (-d "/var/lib/zarafa-webapp/plugins/$plugin") {
+			symlink "/opt/yaffas/zarafa/webapp/plugins/$plugin/", "/var/lib/zarafa-webapp/plugins/$plugin";
+		}
+	}
+}
+
+sub _remove_webapp_plugin {
+	my $plugin = shift;
+	if (Yaffas::Product::check_product("zarafa")) {
+		if (-l "/var/lib/zarafa-webapp/plugins/$plugin") {
+			unlink "/var/lib/zarafa-webapp/plugins/$plugin";
 		}
 	}
 }

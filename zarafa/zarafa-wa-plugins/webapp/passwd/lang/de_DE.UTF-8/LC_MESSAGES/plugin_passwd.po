@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-11-05 11:55+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: passwd/php/pwdchange.php:93 passwd/php/pwdchange.php:151
+msgid "Password updated correctly. You will need to login again."
+msgstr "Passwort wurde korrekt geändert. Sie müssen sich neu anmelden."
+
+#: passwd/php/pwdchange.php:99 passwd/php/pwdchange.php:120
+#: passwd/php/pwdchange.php:124 passwd/php/pwdchange.php:153
+msgid "Password update failed. Please contact the system administrator."
+msgstr ""
+"Das Passwort konnte nicht aktualisiert werden. Bitte kontaktieren Sie den "
+"System Administrator."
+
+#: passwd/php/pwdchange.php:104 passwd/php/pwdchange.php:158
+msgid "New password is empty"
+msgstr "Das neue Passwort darf nicht leer sein."
+
+#: passwd/php/pwdchange.php:105 passwd/php/pwdchange.php:159
+msgid "Password too weak."
+msgstr "Das Passwort ist zu schwach."
+
+#: passwd/php/pwdchange.php:106 passwd/php/pwdchange.php:156
+msgid "New passwords don't match."
+msgstr "Die Passwörter stimmen nicht überein."
+
+#: passwd/php/pwdchange.php:112
+msgid "Old password is wrong."
+msgstr "Das eingegebene Passwort ist falsch."
+
+#: passwd/php/pwdchange.php:115
+msgid "Could not bind to ldap."
+msgstr "Konnte nicht zum LDAP verbinden"
+
+#: passwd/js/passwd.js:47 js/passwd.js:47
+msgid "Old password"
+msgstr "Bisheriges Passwort"
+
+#: passwd/js/passwd.js:13 passwd/js/passwd.js:36
+msgid "Change password"
+msgstr "Passwort ändern"
+
+#: passwd/js/passwd.js:52 js/passwd.js:52
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: passwd/js/passwd.js:57 js/passwd.js:57
+msgid "New password (repeat)"
+msgstr "Neues Passwort (wiederholt)"
+
+#: passwd/js/passwd.js:73 js/passwd.js:73
+msgid "Unknown response"
+msgstr ""
+"Unbekannte Antwort vom Server. Bitte kontaktieren Sie den System "
+"Administrator"
+
+#: passwd/js/passwd.js:79 js/passwd.js:79
+msgid "Password changed"
+msgstr "Das Passwort wurde geändert"
+
+#: passwd/js/passwd.js:82 js/passwd.js:82
+msgid "Error"
+msgstr "Fehler"
+
+#: js/passwd.js:40 passwd/js/passwd.js:40
+msgid ""
+"Insert a new password. Your new password needs to be at least 8 characters "
+"long and consist at least of a capital character and a number. "
+msgstr ""
+"Bitte geben Sie ein neues Passwort ein. Das Passwort muss aus mindestens 8 "
+"Buchstaben bestehen, muss einen großen Buchstaben und eine Ziffer enthalten."
+
+#: passwd/php/pwdchange.php:157
+msgid "Username not found"
+msgstr "Der Benutzername wurde nicht gefunden"
