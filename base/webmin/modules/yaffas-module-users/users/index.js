@@ -49,8 +49,8 @@ Users.prototype.deleteUser = function() {
 	var s = this.usertable.selectedRows();
 	
 	if (s.length > 0) {
-		var c = new Yaffas.Confirm(_("lbl_deluser"), _("lbl_delete_question")+dlg_arg(s[0][1]), function() {
-			Yaffas.ui.submitURL('/users/check_deluser.cgi', { uid: s[0][0], login_: s[0][1] }); // login_ needed for removal user from sendas list
+		var c = new Yaffas.Confirm(_("lbl_deluser"), _("lbl_delete_question")+dlg_arg(s[0][2]), function() {
+			Yaffas.ui.submitURL('/users/check_deluser.cgi', { uid: s[0][0] });
 		});
 		c.show();
 	}
