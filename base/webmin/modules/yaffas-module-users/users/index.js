@@ -28,6 +28,23 @@ Users.prototype.showEditVacation = function() {
 	}
 }
 
+Users.prototype.showForceResync = function() {
+	var s = this.usertable.selectedRows();
+
+	if (s.length <= 0) {
+		return;
+	}
+	var dialog = new Yaffas.Confirm(
+		_("lbl_force_zarafa_resync"),
+		_("lbl_force_zarafa_resync_question") + dlg_arg(s[0][2]),
+		function() {
+			Yaffas.ui.submitURL(
+				'/users/force_zarafa_resync.cgi',
+				{loginnames: s[0][2]});
+		});
+	dialog.show();
+}
+
 Users.prototype.deleteUser = function() {
 	var s = this.usertable.selectedRows();
 	
@@ -228,6 +245,15 @@ Users.prototype.setupMenu = function() {
         fn: this.showEditVacation.bind(this)
     }
     })
+
+		if (Yaffas.PRODUCTS.indexOf("zarafa") >= 0) {
+			i.push({
+				text: _("lbl_force_zarafa_resync"),
+				onclick: {
+					fn: this.showForceResync.bind(this)
+				}
+			});
+		}
 	
     this.usersmenu = new Yaffas.Menu({ container: "usersmenu", trigger: "data", items: i });
 }
