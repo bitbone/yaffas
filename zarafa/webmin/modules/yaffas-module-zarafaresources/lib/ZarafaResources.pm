@@ -134,7 +134,11 @@ sub modify_resource ($$$$$$) {
 				throw Yaffas::Exception("err_unknown_type");
 			}
 		}
-		Yaffas::LDAP::replace_entry($resource, "zarafaResourceCapacity", $capacity);
+		Yaffas::LDAP::del_entry($resource, "zarafaResourceCapacity");
+		if ($type eq "Equipment") {
+			Yaffas::LDAP::add_entry($resource, "zarafaResourceCapacity",
+			$capacity);
+		}
 	}
 
 	system( Yaffas::Constant::APPLICATION->{'zarafa_admin'}, '-u', $resource, '--mr-accept', '1' );
@@ -188,13 +192,20 @@ sub get_resource_details ($) {
 		}
 	}
 
+	if ($details{type} ne "Equipment") {
+		# Only equipments support capacities, but zarafa-admin shows
+		# Capacity: 0 even for non-Equipment resources;
+		# we hide this from the user...
+		$details{capacity} = "";
+	}
+
 	return %details;
 }
 
 sub _check_capacity {
 	my $type = shift;
 	my $capacity = shift;
-	if ($type eq "Room" || $type eq "Equipment") {
+	if ($type eq "Equipment") {
 		throw Yaffas::Exception("err_no_number") unless ($capacity =~ /^\d+$/);
 	}
 }
