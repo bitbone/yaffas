@@ -69,7 +69,7 @@ if ($action eq 'start') {
 	}
 	
 	if(grep { $_ eq 'policyserver' } @features && ! Yaffas::Module::Secconfig::check_mpp_policyserver()) {
-		print Yaffas::UI::error_box("err_activate_policyserver");
+		print Yaffas::UI::error_box($main::text{'err_activate_policyserver'});
 		exit 0;	
 	}
 }
