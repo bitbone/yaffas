@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-10-30 10:54+0100\n"
+"POT-Creation-Date: 2012-11-07 00:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -175,7 +175,14 @@ msgid ""
 "'-'. It also has a minimum length of one."
 msgstr ""
 
-#: lang/en:43
+#: lang/en:42
+#, no-wrap
+msgid ""
+"The given username already exists locally. Please specify another username "
+"or delete the existing user first."
+msgstr ""
+
+#: lang/en:44
 #, no-wrap
 msgid "Setup"
 msgstr ""

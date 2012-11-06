@@ -39,5 +39,6 @@ lbl_finish=Finish
 err_mysql_connect=Impossible de se connecter à la base de données
 err_password=Le mot de passe de l'administrateur est vide ou ne correspond pas.
 err_domainname=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one.
+err_user_exists_locally=The given username already exists locally. Please specify another username or delete the existing user first.
 
 moduletitle=Configuration
