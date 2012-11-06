@@ -352,11 +352,6 @@ sub replace_entry($$$;$) {
 	
 
 	my $r = $result->code;
-	if ($r) {
-		open (LOG, ">/tmp/um.log");
-		print LOG $r;
-		close LOG;
-	}
 	warn "failed to replace entry: " . $result->error if ($r);
 	$ldap->unbind;
 	return $r;
