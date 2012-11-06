@@ -1294,6 +1294,7 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_user_unique_attribute'} = 'uid';
 	$cfg_values->{'ldap_group_unique_attribute'} = 'cn';
 	$cfg_values->{'ldap_emailaddress_attribute'} = 'mail';
+	$cfg_values->{'ldap_emailaliases_attribute'} = 'zarafaAliases';
 	$cfg_values->{'ldap_groupmembers_attribute'} = 'memberUid';
 	$cfg_values->{'ldap_groupmembers_attribute_type'} = 'name';
 	$cfg_values->{'ldap_loginname_attribute'} = 'uid';
@@ -1340,6 +1341,7 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_group_unique_attribute'} = 'objectGuid',
 		$cfg_values->{'ldap_user_unique_attribute'} = 'objectGuid',
 		$cfg_values->{'ldap_emailaddress_attribute'} = 'mail',
+		$cfg_values->{'ldap_emailaliases_attribute'} = 'otherMailbox';
 		$cfg_values->{'ldap_groupmembers_attribute'} = 'member',
 		$cfg_values->{'ldap_groupmembers_attribute_type'} = 'dn',
 		$cfg_values->{'ldap_loginname_attribute'} = 'sAMAccountName',
