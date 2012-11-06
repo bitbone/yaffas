@@ -2,6 +2,39 @@ function Resources(){
     this.table = null;
     this.menu = null;
     this.setupTable();
+
+		var new_res_tab = Yaffas.ui.tabs.get("tabs")[1].get("contentEl");
+		var type = new_res_tab.getElementsBySelector("select")[0];
+		YAHOO.util.Event.addListener(
+			type,
+			"change",
+			this.updateCapacity.bind(this)
+		);
+
+		this.updateCapacity(0, new_res_tab);
+}
+
+Resources.prototype.updateCapacity = function(event, tab) {
+	if (!tab) {
+		tab = Yaffas.ui.getActiveTabEl();
+	}
+	var type = tab.getElementsBySelector("select")[0];
+	var resource = tab.getElementsBySelector("input[name=resource]");
+	if (resource.length) {
+		// edit form field names are called type_somename etc.
+		resource = "_" + resource[0].value;
+	} else {
+		// new form field names are called just "type" without any suffix
+		resource = "";
+	}
+
+	var capacity = tab.getElementsBySelector(
+		"input[name=capacity" + resource + "]")[0];
+	if (type.options[type.selectedIndex].value == "Equipment") {
+		capacity.enable();
+	} else {
+		capacity.disable();
+	}
 }
 
 Resources.prototype.editResource = function(){
@@ -11,7 +44,18 @@ Resources.prototype.editResource = function(){
         Yaffas.ui.openTab("/zarafaresources/index.cgi", {
             action: "edit",
             resource: r[0][0]
-        });
+        },
+				function() {
+					var tab = Yaffas.ui.getActiveTabEl();
+					var type = tab.getElementsBySelector("select")[0];
+					YAHOO.util.Event.addListener(
+						type,
+						"change",
+						this.updateCapacity.bind(this)
+					);
+
+					this.updateCapacity();
+				}.bind(this));
     }
 }
 
