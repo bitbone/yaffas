@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-05 11:55+0100\n"
+"POT-Creation-Date: 2012-11-07 09:41+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,25 +18,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: passwd/php/pwdchange.php:93 passwd/php/pwdchange.php:151
+#: passwd/php/pwdchange.php:157 passwd/php/pwdchange.php:185
 msgid "Password updated correctly. You will need to login again."
 msgstr "Passwort wurde korrekt geändert. Sie müssen sich neu anmelden."
 
 #: passwd/php/pwdchange.php:99 passwd/php/pwdchange.php:120
 #: passwd/php/pwdchange.php:124 passwd/php/pwdchange.php:153
+#: passwd/php/pwdchange.php:160 passwd/php/pwdchange.php:187
 msgid "Password update failed. Please contact the system administrator."
 msgstr ""
 "Das Passwort konnte nicht aktualisiert werden. Bitte kontaktieren Sie den "
 "System Administrator."
 
 #: passwd/php/pwdchange.php:104 passwd/php/pwdchange.php:158
+#: passwd/php/pwdchange.php:192
 msgid "New password is empty"
 msgstr "Das neue Passwort darf nicht leer sein."
 
 #: passwd/php/pwdchange.php:105 passwd/php/pwdchange.php:159
+#: passwd/php/pwdchange.php:193
 msgid "Password too weak."
 msgstr "Das Passwort ist zu schwach."
 
 #: passwd/php/pwdchange.php:106 passwd/php/pwdchange.php:156
+#: passwd/php/pwdchange.php:190
 msgid "New passwords don't match."
 msgstr "Die Passwörter stimmen nicht überein."
 
@@ -70,11 +75,11 @@ msgstr ""
 "Unbekannte Antwort vom Server. Bitte kontaktieren Sie den System "
 "Administrator"
 
-#: passwd/js/passwd.js:79 js/passwd.js:79
+#: passwd/js/passwd.js:79 js/passwd.js:79 passwd/js/passwd.js:84
 msgid "Password changed"
 msgstr "Das Passwort wurde geändert"
 
-#: passwd/js/passwd.js:82 js/passwd.js:82
+#: passwd/js/passwd.js:82 js/passwd.js:82 passwd/js/passwd.js:87
 msgid "Error"
 msgstr "Fehler"
 
@@ -86,6 +91,10 @@ msgstr ""
 "Bitte geben Sie ein neues Passwort ein. Das Passwort muss aus mindestens 8 "
 "Buchstaben bestehen, muss einen großen Buchstaben und eine Ziffer enthalten."
 
-#: passwd/php/pwdchange.php:157
+#: passwd/php/pwdchange.php:157 passwd/php/pwdchange.php:191
 msgid "Username not found"
 msgstr "Der Benutzername wurde nicht gefunden"
+
+#: passwd/js/passwd.js:79
+msgid "Error was"
+msgstr "Fehler war"

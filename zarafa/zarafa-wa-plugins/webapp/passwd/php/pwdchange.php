@@ -12,8 +12,8 @@ if ($_SESSION['lang'] != "en_EN") {
 bindtextdomain ($domain, "plugins/passwd/lang/");
 textdomain ($domain);
 
-function send_result($status, $msg) {
-    printf('{status: "%s", message: "%s"}', $status, $msg);
+function send_result($status, $msg, $err) {
+    printf('{status: "%s", message: "%s", error: "%s"}', $status, $msg, $err);
 }
 
 function getBody() {
@@ -35,9 +35,9 @@ function getBody() {
 	$config = new Configuration();
 
 	// check if we should use ldap or zarafa-admin
-	$use_ldap = $config->get_method ();
+	$method = $config->get_method ();
 
-	if ($use_ldap) {
+	if ($method == "ldap") {
 
 		//
 		// use ldap
@@ -127,6 +127,39 @@ function getBody() {
 		// release ldap-bind
 		ldap_unbind($ds);
 	}
+    else if ($method == "ad") {
+
+        if (
+            ($newpw1 == $newpw2) && 
+            ($newpw1 != NULL) && 
+            ($newpw1 != "") &&
+            (check_password($newpw1))
+        ) {
+
+            $descriptorspec = array(
+                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+                1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+                2 => array("pipe", "w") // stderr is a file to write to
+            );
+
+            $process = proc_open("/usr/bin/smbpasswd -U ".escapeshellarg($username)." -r ".escapeshellarg($config->get_uri())." -s", $descriptorspec, $pipes, "/tmp");
+            fwrite($pipes[0], $password."\n");
+            fwrite($pipes[0], $newpw1."\n");
+            fwrite($pipes[0], $newpw1."\n");
+
+            $msg = fread($pipes[2], 1024);
+            $msg = rtrim($msg);
+
+            $ret = proc_close($process);
+
+            if ($ret == 0) {
+                send_result ("success", _("Password updated correctly. You will need to login again."));
+            }
+            else {
+                send_result ("failure", _("Password update failed. Please contact the system administrator."), $msg);
+            }
+        }
+    }
 	else {
 
 		//
@@ -179,6 +212,7 @@ function ssha_encode ($text) {
 // - contain numbers
 // return FALSE if not all criteria are met
 function check_password ($password) {
+    return TRUE;
 	if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
 		return TRUE;
 	} else {
@@ -186,12 +220,5 @@ function check_password ($password) {
 	}
 }
 
-// logout user
-// TODO: Don't log out user when password didn't change.
-function getJavaScript_onload(){
-	echo "\t\t\t\t\twindow.setTimeout(\"parent.parentwindow.location.href='index.php?logout'\",5000);\n";
-} 
-
 getBody();
-
 ?>
