@@ -4,7 +4,7 @@
 class Configuration
 {
 	// define, if this zarafa-installation uses ldap
-	private $use_ldap = TRUE;
+	private $method = "ldap";
 
 	// basedn, to search for users dn
 	private $basedn = "dc=bitbone,dc=de";
@@ -22,7 +22,7 @@ class Configuration
 	}
 
 	function get_method () {
-		return $this->use_ldap;
+		return $this->method;
 	}
 
 }
