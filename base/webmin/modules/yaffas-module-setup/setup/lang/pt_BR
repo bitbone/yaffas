@@ -39,5 +39,6 @@ lbl_finish=Concluir
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_password=A senha de administrador está vazia ou diferente.
 err_domainname=O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é de um.
+err_user_exists_locally=The given username already exists locally. Please specify another username or delete the existing user first.
 
 moduletitle=Configuração
