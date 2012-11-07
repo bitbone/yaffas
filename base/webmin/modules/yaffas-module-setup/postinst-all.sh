@@ -18,7 +18,7 @@ fi
 for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zarafa yaffas-software yaffas-module-security z-push; do
 	echo "executing $YAFFAS_SHARE/${module}/postinst-${DIST}.sh ..." >> $LOGFILE
 	echo "" >> $LOGFILE
-	sh $YAFFAS_SHARE/${module}/postinst-${DIST}.sh >> $LOGFILE
+	bash $YAFFAS_SHARE/${module}/postinst-${DIST}.sh >> $LOGFILE
 	echo "" >> $LOGFILE
 	echo "... done" >> $LOGFILE
 done
