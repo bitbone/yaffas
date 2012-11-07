@@ -64,7 +64,7 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
 
     handlePasswordChanged: function(res) {
         var t = res.responseText;
-        var obj;
+        var obj = {};
         try {
             obj = Ext.decode(t);
         }
@@ -73,6 +73,11 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
             obj.message = dgettext("plugin_passwd", "Unknown response");
         }
         var msg = dgettext("plugin_passwd", obj.message);
+        var err = obj.error;
+
+        if (err !== "") {
+            msg = msg+"<br><br>"+dgettext("plugin_passwd", "Error was")+":<br>"+err;
+        }
         var title = "";
 
         if (obj.status === "success") {

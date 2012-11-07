@@ -35,9 +35,9 @@ function getBody() {
 	$config = new Configuration();
 
 	// check if we should use ldap or zarafa-admin
-	$use_ldap = $config->get_method ();
+	$method = $config->get_method ();
 
-	if ($use_ldap) {
+	if ($method == "ldap") {
 
 		//
 		// use ldap
@@ -127,6 +127,39 @@ function getBody() {
 		// release ldap-bind
 		ldap_unbind($ds);
 	}
+    else if ($method == "ad") {
+
+        if (
+            ($newpw1 == $newpw2) &&
+            ($newpw1 != NULL) &&
+            ($newpw1 != "") &&
+            (check_password($newpw1))
+        ) {
+
+            $descriptorspec = array(
+                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+                1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+                2 => array("pipe", "w") // stderr is a file to write to
+            );
+
+            $process = proc_open("/usr/bin/smbpasswd -U ".escapeshellarg($username)." -r ".escapeshellarg($config->get_uri())." -s", $descriptorspec, $pipes, "/tmp");
+            fwrite($pipes[0], $password."\n");
+            fwrite($pipes[0], $newpw1."\n");
+            fwrite($pipes[0], $newpw1."\n");
+
+            $msg = fread($pipes[2], 1024);
+            $msg = rtrim($msg);
+
+            $ret = proc_close($process);
+
+            if ($ret == 0) {
+                echo _("success: password update"); 
+            }
+            else {
+                echo _("failure: password update")."<br>".$msg; 
+            }
+        }
+    }
 	else {
 
 		//

@@ -30,14 +30,15 @@ lbl_user_local_ldap=Wenn Sie diese Formular ausfüllen, wird die lokale LDAP-Aut
 lbl_zarafa_settings=Zarafa Einstellungen
 lbl_basic_settings=Grundeinstellungen
 
-lbl_some_time=This might take some time
-lbl_setup_execute=setting up
-lbl_initial_conf=initial configuration
+lbl_some_time=Dies kann ein wenig dauern
+lbl_setup_execute=wird eingerichtet
+lbl_initial_conf=initiale Konfiguration
 
 lbl_finish=Abschließen
 
 err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_password=Die Admin Passwörter stimmen nicht überein oder sind leer.
 err_domainname=Die Domäne kann nur Buchstaben (a-z und A-Z), Ziffern (0-9), '.' und '-' enthalten und muss mindestens eine Länge von einem Zeichen haben.
+err_user_exists_locally=The given username already exists locally. Please specify another username or delete the existing user first.
 
 moduletitle=Setup

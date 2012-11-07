@@ -30,6 +30,8 @@ sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webapp/plugins/passwd
 %files
 %defattr(-,root,root,-)
 %doc debian/{changelog,copyright}
+%config /opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php
+%config /opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php
 /opt/yaffas/zarafa/webaccess/plugins
 /opt/yaffas/zarafa/webapp/plugins
 
