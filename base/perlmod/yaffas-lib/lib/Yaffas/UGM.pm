@@ -75,6 +75,7 @@ sub get_hylafax_filetype ($$);
 sub get_print_operators_group();
 sub set_print_operators_group($;$$);
 sub _get_workgroup();
+sub get_next_free_uid(;@);
 
 {
 	my $getent;
@@ -284,11 +285,20 @@ sub add_user($$$$@) {
 			$bke->add('err_email', $login);
 		}
 	}
+	# Why are we searching for a free uid here?
+	# Because smbldap-useradd no longer checks for collisions between
+	# uids of local users with uids of LDAP users in recent versions,
+	# so we are doing this check ourselves;
+	# This has the side effect that samba's sambaUnixIdPool entry in LDAP
+	# is no longer respected or updated when choosing uids!
+	# See also the relevant ticket, ADM-185
+	my $uid = get_next_free_uid();
 
 	my $gid = join ",", @groups;
 
 	my @cmd;
 	push @cmd, Yaffas::Constant::APPLICATION->{useradd}, "-g", $pgid;
+	push @cmd, "-u", $uid;
 	push @cmd, "-G", $gid;
 	push @cmd, "-m", "-a";
 	push @cmd, "-s", $shell;
@@ -1695,6 +1705,39 @@ sub create_group_aliases {
     `$postmap $cfg`;
 }
 
+=item get_next_free_uid()
+
+Returns the next free uid (usually for passing it to smbldap-useradd).
+This works by increasing $MIN_UID until no user with the tested uid is
+found. The resulting uid is then returned.
+
+=cut
+
+sub get_next_free_uid(;@) {
+	my $MIN_UID = 1000;
+	my $MAX_UID = 60000;
+	my @userlist = $_[0] ? @{$_[0]} : ();
+	my %useduids;
+	my $uid;
+	if (scalar @userlist <= 0) {
+		@userlist = @{getent("passwd")};
+	}
+	foreach my $user (@userlist) {
+		(undef, undef, $uid, undef) = split(/:/, $user);
+		$useduids{int($uid)} = 1;
+	}
+
+	$uid = $MIN_UID;
+	while (exists $useduids{$uid} && $uid <= $MAX_UID) {
+		$uid++;
+	}
+
+	if ($uid < $MIN_UID || $uid > $MAX_UID) {
+		# sanity check; we don't want to create system users here...
+		throw Yaffas::Exception("err_cannot_find_free_uid");
+	}
+	return $uid;
+}
 1;
 
 =back

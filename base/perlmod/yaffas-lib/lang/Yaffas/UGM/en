@@ -18,3 +18,4 @@ err_chgrp_printer=Could not change the group of the print$ share.
 err_chmod_printer=Could not change the permissions for the print$ share.
 err_printop_group=Group does not exists.
 err_no_local_auth=This action is only supported with local authentification.
+err_cannot_find_free_uid=Internal error: Unable to find a free uid
