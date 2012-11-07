@@ -26,5 +26,5 @@ err_user_exists_allready=Le nom de la ressource provient d'un utilisateur.
 err_name_is_alias=Le nom de la ressource provient de l'alias d'un utilisateur.
 err_user_doesnt_exist=La ressource demandée n'existe pas.
 err_no_domains=Aucun domaine local de courriel n'a été configuré.
-err_no_number=Capacity have to be a number.
+err_no_number=Capacity has to be a number.
 moduletitle=Ressources

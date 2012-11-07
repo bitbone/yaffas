@@ -25,6 +25,8 @@ err_user_doesnt_exist=This user could not be added/edited.
 err_no_local_auth=Deze actie wordt alleen ondersteund met lokale authenticatie.
 err_create_store=User was created but Zarafa store was not created. This means normally that your license does not allow any more users.
 err_user_is_zarafa_admin=This user is used for delivery in public folders. You have to select another user for this, then you can delete this one.
+err_zarafa_admin_force_resync_failed=Internal call to zarafa-admin --force-resync failed, error code:
+
 lbl_usermanagment=Usermanagment
 lbl_adduser=Add user
 lbl_prnop=Printer operator
@@ -84,3 +86,5 @@ lbl_zarafa_administrator=Administrator
 lbl_zarafa_store_type_active=Active
 lbl_zarafa_store_type_inactive=Gedeeld
 lbl_zarafa_no_store=Geen
+lbl_force_zarafa_resync=Force offline profile resynchronization
+lbl_force_zarafa_resync_question=This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?

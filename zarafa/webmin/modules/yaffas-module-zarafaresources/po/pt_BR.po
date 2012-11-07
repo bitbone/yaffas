@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: 2012-10-01 19:24+0200\n"
+"POT-Creation-Date: 2012-11-08 00:24+0100\n"
+"PO-Revision-Date: 2012-10-24 14:12+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -153,9 +153,10 @@ msgstr "O recurso informado não existe."
 msgid "No local mail domains configured."
 msgstr "Nenhum domínio local configurado."
 
+# 93%
 #: lang/en:29
-#, no-wrap
-msgid "Capacity have to be a number."
+#, fuzzy, no-wrap
+msgid "Capacity has to be a number."
 msgstr "Capacidade precisa ser um número."
 
 #: lang/en:30

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-25 00:20+0300\n"
+"POT-Creation-Date: 2012-11-08 00:24+0100\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,290 +149,305 @@ msgstr "Cet utilisateur est utilisé pour la distribution dans les dossiers publ
 
 #: lang/en:28
 #, no-wrap
+msgid "Internal call to zarafa-admin --force-resync failed, error code:"
+msgstr ""
+
+#: lang/en:30
+#, no-wrap
 msgid "Usermanagment"
 msgstr "Gestion des utilisateurs"
 
-#: lang/en:29
+#: lang/en:31
 #, no-wrap
 msgid "Add user"
 msgstr "Ajouter un utilisateur"
 
-#: lang/en:30 lang/en:49
+#: lang/en:32 lang/en:51
 #, no-wrap
 msgid "Printer operator"
 msgstr "Opérateur imprimante"
 
-#: lang/en:31
+#: lang/en:33
 #, no-wrap
 msgid "Printer Administrator"
 msgstr "Administrateur imprimante"
 
-#: lang/en:32
+#: lang/en:34
 #, no-wrap
 msgid "Modified users"
 msgstr "Utilisateurs modifiés"
 
-#: lang/en:33
+#: lang/en:35
 #, no-wrap
 msgid "Modify user"
 msgstr "Modifier un utilisateur"
 
-#: lang/en:34
+#: lang/en:36
 #, no-wrap
 msgid "Do You really want to delete the selected users?"
 msgstr "Désirez-vous vraiment supprimer les utilisateurs sélectionnés ?"
 
-#: lang/en:35
+#: lang/en:37
 #, no-wrap
 msgid "Remove user"
 msgstr "Retirer un utilisateur"
 
-#: lang/en:36
+#: lang/en:38
 #, no-wrap
 msgid "E-mail address"
 msgstr "Adresse électronique"
 
-#: lang/en:37
+#: lang/en:39
 #, no-wrap
 msgid "Name"
 msgstr "Nom"
 
-#: lang/en:38
+#: lang/en:40
 #, no-wrap
 msgid "Groups"
 msgstr "Groupes"
 
-#: lang/en:39
+#: lang/en:41
 #, no-wrap
 msgid "Enable e-mail account"
 msgstr "Activer un compte de courriel"
 
-#: lang/en:40
+#: lang/en:42
 #, no-wrap
 msgid "No matter"
 msgstr "Peu importe"
 
-#: lang/en:41
+#: lang/en:43
 #, no-wrap
 msgid "No printer operator"
 msgstr "Aucun opérateur imprimante"
 
-#: lang/en:42
+#: lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
-#: lang/en:43
+#: lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "Mot de passe"
 
-#: lang/en:44
+#: lang/en:46
 #, no-wrap
 msgid "Repeat password"
 msgstr "Renouveler la saisie du mot de passe"
 
-#: lang/en:45 lang/en:70
+#: lang/en:47 lang/en:72
 #, no-wrap
 msgid "User Management"
 msgstr "Gestion des utilisateurs"
 
-#: lang/en:46
+#: lang/en:48
 #, no-wrap
 msgid "Filetype for fax delivery"
 msgstr "Type de fichier pour la distribution de fax"
 
-#: lang/en:47
+#: lang/en:49
 #, no-wrap
 msgid "E-mail alias"
 msgstr "Alias courriel"
 
 # 87%
-#: lang/en:48
+#: lang/en:50
 #, no-wrap
 msgid "Authentication"
 msgstr "Authentification"
 
-#: lang/en:50
+#: lang/en:52
 #, no-wrap
 msgid "User"
 msgstr "Utilisateur"
 
-#: lang/en:51
+#: lang/en:53
 #, no-wrap
 msgid "Mailbox quota"
 msgstr "Quota boîte aux lettres"
 
-#: lang/en:52
+#: lang/en:54
 #, no-wrap
 msgid "Zarafa administrator"
 msgstr "Administrateur Zarafa"
 
-#: lang/en:53
+#: lang/en:55
 #, no-wrap
 msgid "Zarafa shared store user"
 msgstr "Utilisateur de la  base de stockage partagée Zarafa"
 
-#: lang/en:54
+#: lang/en:56
 #, no-wrap
 msgid "irreversible after activation"
 msgstr "irréversible après l'activation"
 
-#: lang/en:55
+#: lang/en:57
 #, no-wrap
 msgid "Given name"
 msgstr "Prénom"
 
-#: lang/en:56
+#: lang/en:58
 #, no-wrap
 msgid "Surname"
 msgstr "Nom"
 
-#: lang/en:57
+#: lang/en:59
 #, no-wrap
 msgid "Zarafa store"
 msgstr "Base de stockage Zarafa"
 
-#: lang/en:58
+#: lang/en:60
 #, no-wrap
 msgid "no Zarafa license"
 msgstr "Aucune licence Zarafa"
 
-#: lang/en:59
+#: lang/en:61
 #, no-wrap
 msgid "Convert into a zarafa resource"
 msgstr "Convertir en ressource Zarafa"
 
-#: lang/en:60
+#: lang/en:62
 #, no-wrap
 msgid "Should the following users really be converted into zarafa resources?"
 msgstr "Désirez-vous vraiment que les utilisateurs suivants soient convertis en ressources Zarafa ?"
 
-#: lang/en:61
+#: lang/en:63
 #, no-wrap
 msgid "User created with following warnings"
 msgstr "Utilisateurs créés avec les avertissements suivants"
 
-#: lang/en:62
+#: lang/en:64
 #, no-wrap
 msgid "Business Phone"
 msgstr "Téléphone professionnel"
 
-#: lang/en:63
+#: lang/en:65
 #, no-wrap
 msgid "Location"
 msgstr "Emplacement"
 
-#: lang/en:64
+#: lang/en:66
 #, no-wrap
 msgid "Fax"
 msgstr "Fax"
 
-#: lang/en:65
+#: lang/en:67
 #, no-wrap
 msgid "Department"
 msgstr "Service"
 
-#: lang/en:66
+#: lang/en:68
 #, no-wrap
 msgid "Allow send as"
 msgstr "Permettre 'Envoyer en tant que'"
 
-#: lang/en:67
+#: lang/en:69
 #, no-wrap
 msgid "For user"
 msgstr "Pour l'utilisateur"
 
-#: lang/en:68
+#: lang/en:70
 #, no-wrap
 msgid "For group"
 msgstr "Pour le groupe"
 
-#: lang/en:69
+#: lang/en:71
 #, no-wrap
 msgid "Features"
 msgstr "Fonctionnalités"
 
-#: lang/en:71
+#: lang/en:73
 #, no-wrap
 msgid "Add"
 msgstr "Ajouter"
 
-#: lang/en:72
+#: lang/en:74
 #, no-wrap
 msgid "Remove"
 msgstr "Supprimer"
 
-#: lang/en:73
+#: lang/en:75
 #, no-wrap
 msgid "Set default"
 msgstr "Définir par défaut"
 
-#: lang/en:74
+#: lang/en:76
 #, no-wrap
 msgid "Modify"
 msgstr "Modifier"
 
-#: lang/en:75
+#: lang/en:77
 #, no-wrap
 msgid "User currently in the office"
 msgstr "L'utilisateur est au bureau"
 
-#: lang/en:76
+#: lang/en:78
 #, no-wrap
 msgid "User currently out of the office"
 msgstr "L'utilisateur s'est absenté du bureau"
 
-#: lang/en:77
+#: lang/en:79
 #, no-wrap
 msgid "Edit out of office"
 msgstr "Modifier l'absence du bureau"
 
-#: lang/en:78
+#: lang/en:80
 #, no-wrap
 msgid "Subject"
 msgstr "Objet"
 
-#: lang/en:79
+#: lang/en:81
 #, no-wrap
 msgid "Message"
 msgstr "Message"
 
-#: lang/en:80
+#: lang/en:82
 #, no-wrap
 msgid "Hide from addressbook"
 msgstr ""
 
-#: lang/en:81
+#: lang/en:83
 #, no-wrap
 msgid "Store size"
 msgstr ""
 
-#: lang/en:82
+#: lang/en:84
 #, no-wrap
 msgid "Store type"
 msgstr ""
 
-#: lang/en:83
+#: lang/en:85
 #, no-wrap
 msgid "Administrator"
 msgstr "Administrateur"
 
 # 85%
-#: lang/en:84
+#: lang/en:86
 #, fuzzy, no-wrap
 msgid "Active"
 msgstr "Actif ?"
 
-#: lang/en:85
+#: lang/en:87
 #, no-wrap
 msgid "Shared"
 msgstr "Partagé"
 
-#: lang/en:86
+#: lang/en:88
 #, no-wrap
 msgid "None"
 msgstr "Aucun"
+
+#: lang/en:89
+#, no-wrap
+msgid "Force offline profile resynchronization"
+msgstr ""
+
+#: lang/en:90
+#, no-wrap
+msgid "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
+msgstr ""
 
 #: help/en:1
 #, no-wrap

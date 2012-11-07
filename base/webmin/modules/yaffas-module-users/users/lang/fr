@@ -25,6 +25,8 @@ err_user_doesnt_exist=Impossible d'ajouter ou de modifier l'utilisateur.
 err_no_local_auth=Cette action n'est permise qu'avec une authentification locale.
 err_create_store=L'utilisateur a été créé, mais pas la base de stockage Zarafa. Généralement cela signifie que votre licence ne permet plus d'ajouter de nouveaux utilisateurs.
 err_user_is_zarafa_admin=Cet utilisateur est utilisé pour la distribution dans les dossiers publics. Vous devez sélectionner un autre utilisateur pour cela, ensuite vous pourrez supprimer celui-là.
+err_zarafa_admin_force_resync_failed=Internal call to zarafa-admin --force-resync failed, error code:
+
 lbl_usermanagment=Gestion des utilisateurs
 lbl_adduser=Ajouter un utilisateur
 lbl_prnop=Opérateur imprimante
@@ -84,3 +86,5 @@ lbl_zarafa_administrator=Administrateur
 lbl_zarafa_store_type_active=Active
 lbl_zarafa_store_type_inactive=Partagé
 lbl_zarafa_no_store=Aucun
+lbl_force_zarafa_resync=Force offline profile resynchronization
+lbl_force_zarafa_resync_question=This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?

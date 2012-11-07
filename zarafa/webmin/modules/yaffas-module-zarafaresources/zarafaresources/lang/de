@@ -26,5 +26,5 @@ err_user_exists_allready=Der Name für die Ressource ist bereits für einen Benu
 err_name_is_alias=Der Name für die Ressource ist bereits für ein Benutzeralias vergeben.
 err_user_doesnt_exist=Die angegebene Ressource existiert nicht.
 err_no_domains=Es wurden noch keine lokalen Mail Domänen konfiguriert.
-err_no_number=Die Kapazität muss eine Zahl sein.
+err_no_number=Capacity has to be a number.
 moduletitle=Ressourcen
