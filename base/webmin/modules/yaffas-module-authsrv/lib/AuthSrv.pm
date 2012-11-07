@@ -954,7 +954,7 @@ sub set_pdc( ;$$$$$$$$){
 
 		throw $exception if $exception;
 
-		# Allowing remote auth if we do a remote out ourself is pointless. So disable it.
+		# Allowing remote auth if we do a remote auth ourself is pointless. So disable it.
 		if( Yaffas::Auth::is_auth_srv() ){
 			auth_srv_ldap( 'deactivate' );
 		}
