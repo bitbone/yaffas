@@ -225,8 +225,6 @@ sub defaultquota_form {
 
 sub database_settings {
 	my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
-	use Data::Dumper;
-	print Dumper $settings;
 
 	print $Cgi->start_form({-action=>"zarafadb.cgi", -method=>"post"});
 	print Yaffas::UI::section($main::text{lbl_database_settings},
