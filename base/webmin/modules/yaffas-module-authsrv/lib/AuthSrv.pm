@@ -1743,24 +1743,26 @@ sub update_passwd_plugin_config {
     my $host = shift;
     my $dn = shift;
 
-    my $file = Yaffas::File->new("/opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php");
+    foreach my $fn (qw(/opt/yaffas/zarafa/webaccess/plugins/passwd/config.inc.php /opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php)) {
+        my $file = Yaffas::File->new($fn) or throw Yaffas::Exception("err_file_read", $fn);
 
-    my $line = $file->search_line(qr/private \$method/);
-    if ($line) {
-        $file->splice_line($line, 1, 'private $method = "'.$method.'";');
+        my $line = $file->search_line(qr/private \$method/);
+        if ($line) {
+            $file->splice_line($line, 1, 'private $method = "'.$method.'";');
+        }
+
+        $line = $file->search_line(qr/private \$uri/);
+        if ($line) {
+            $file->splice_line($line, 1, 'private $uri = "'.$host.'";');
+        }
+
+        $line = $file->search_line(qr/private \$basedn/);
+        if ($line) {
+            $file->splice_line($line, 1, 'private $basedn = "'.$dn.'";');
+        }
+
+        $file->save();
     }
-
-    $line = $file->search_line(qr/private \$uri/);
-    if ($line) {
-        $file->splice_line($line, 1, 'private $uri = "'.$host.'";');
-    }
-
-    $line = $file->search_line(qr/private \$basedn/);
-    if ($line) {
-        $file->splice_line($line, 1, 'private $basedn = "'.$dn.'";');
-    }
-
-    $file->save();
 }
 
 sub _link_webaccess_plugin {
