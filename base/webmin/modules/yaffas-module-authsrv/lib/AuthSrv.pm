@@ -467,8 +467,9 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 		$smbldap_bind->write();
 
-		_remove_webaccess_plugin("passwd");
-		_remove_webapp_plugin("passwd");
+        _link_webaccess_plugin("passwd");
+        _link_webapp_plugin("passwd");
+        update_passwd_plugin_config("ldap", $host, $basedn);
 
 		# be sure system domain ist same as in ldap tree if local auth.
 		if ($host eq "127.0.0.1" || $host eq "localhost")
@@ -505,8 +506,6 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 			# move ldap_secret_local file to ldap_secret
 			move (Yaffas::Constant::FILE->{ldap_secret_local}, Yaffas::Constant::FILE->{ldap_secret});
-			_link_webaccess_plugin("passwd");
-			_link_webapp_plugin("passwd");
 		}
 		
 		# /etc/ldap.settings (must be done after samba, otherwise get_auth_type fails...
@@ -964,7 +963,6 @@ sub set_pdc( ;$$$$$$$$){
 		set_pdc_smb( $realm, $pdc, $workgroup, $type, $encryption );
 		set_pdc_krb( $realm, $domain, $pdc );
 
-
 		my $userdn;
 		if ($type eq "win") {
 			if ( $binduser !~ m/cn=/i) {	#if binduser is not already the DN
@@ -999,8 +997,6 @@ sub set_pdc( ;$$$$$$$$){
 		Yaffas::Service::control(WINBIND, RESTART);
 		Yaffas::Service::control(USERMIN, RESTART);
 
-		_remove_webaccess_plugin("passwd");
-
 		# for RedHat
 		mod_pam("winbind");
 
@@ -1022,6 +1018,10 @@ sub set_pdc( ;$$$$$$$$){
 		}
 
 		_create_builtin_admins($domain, $admin);
+
+        _link_webaccess_plugin("passwd");
+        _link_webapp_plugin("passwd");
+        update_passwd_plugin_config("ad", $pdc, Yaffas::Auth::get_ads_basedn($pdc));
 
 		# postfix
 		my $postfix_settings = {
@@ -1738,6 +1738,31 @@ sub _create_builtin_admins($$) {
 	system("net", "sam", "addmem", "administrators", "$dom\\$admin");
 }
 
+sub update_passwd_plugin_config {
+    my $method = shift;
+    my $host = shift;
+    my $dn = shift;
+
+    my $file = Yaffas::File->new("/opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php");
+
+    my $line = $file->search_line(qr/private \$method/);
+    if ($line) {
+        $file->splice_line($line, 1, 'private $method = "'.$method.'";');
+    }
+
+    $line = $file->search_line(qr/private \$uri/);
+    if ($line) {
+        $file->splice_line($line, 1, 'private $uri = "'.$host.'";');
+    }
+
+    $line = $file->search_line(qr/private \$basedn/);
+    if ($line) {
+        $file->splice_line($line, 1, 'private $basedn = "'.$dn.'";');
+    }
+
+    $file->save();
+}
+
 sub _link_webaccess_plugin {
 	my $plugin = shift;
 	if (Yaffas::Product::check_product("zarafa")) {
@@ -1759,8 +1784,8 @@ sub _remove_webaccess_plugin {
 sub _link_webapp_plugin {
 	my $plugin = shift;
 	if (Yaffas::Product::check_product("zarafa")) {
-		unless (-d "/var/lib/zarafa-webapp/plugins/$plugin") {
-			symlink "/opt/yaffas/zarafa/webapp/plugins/$plugin/", "/var/lib/zarafa-webapp/plugins/$plugin";
+		unless (-d "/usr/share/zarafa-webapp/plugins/$plugin") {
+			symlink "/opt/yaffas/zarafa/webapp/plugins/$plugin/", "/usr/share/zarafa-webapp/plugins/$plugin";
 		}
 	}
 }
@@ -1768,8 +1793,8 @@ sub _link_webapp_plugin {
 sub _remove_webapp_plugin {
 	my $plugin = shift;
 	if (Yaffas::Product::check_product("zarafa")) {
-		if (-l "/var/lib/zarafa-webapp/plugins/$plugin") {
-			unlink "/var/lib/zarafa-webapp/plugins/$plugin";
+		if (-l "/usr/share/zarafa-webapp/plugins/$plugin") {
+			unlink "/usr/share/zarafa-webapp/plugins/$plugin";
 		}
 	}
 }
