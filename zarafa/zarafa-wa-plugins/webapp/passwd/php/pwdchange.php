@@ -3,11 +3,11 @@
 // init gettext
 $domain = "passwd";
 if ($_SESSION['lang'] != "en_EN") {
-	putenv('LC_ALL='.$_SESSION['lang']);
-	setlocale(LC_ALL, $_SESSION['lang']);
+    putenv('LC_ALL='.$_SESSION['lang']);
+    setlocale(LC_ALL, $_SESSION['lang']);
 } else {
-	putenv('LC_ALL=en_US.UTF-8');
-	setlocale(LC_ALL, 'en_US.UTF-8');
+    putenv('LC_ALL=en_US.UTF-8');
+    setlocale(LC_ALL, 'en_US.UTF-8');
 }
 bindtextdomain ($domain, "plugins/passwd/lang/");
 textdomain ($domain);
@@ -16,195 +16,16 @@ function send_result($status, $msg, $err) {
     printf('{status: "%s", message: "%s", error: "%s"}', $status, $msg, $err);
 }
 
-function getBody() {
-
-// debug
-//error_reporting (E_ALL);
-//ini_set('error_log','/var/log/php_error.log');
-
-	$username = (isset($_POST["pwdchange_username"])? $_POST["pwdchange_username"] : null);
-	$password = (isset($_POST["pwdchange_oldpw"])   ? $_POST["pwdchange_oldpw"]    : null);
-	$newpw1   = (isset($_POST["pwdchange_newpwd1"]) ? $_POST["pwdchange_newpwd1"]  : null);
-	$newpw2   = (isset($_POST["pwdchange_newpwd2"]) ? $_POST["pwdchange_newpwd2"]  : null);
-
-	// get path for this plugin
-	$pathname = dirname($_SERVER['SCRIPT_FILENAME']);
-
-	// get some basic configuration
-	include '../config.inc.php';
-	$config = new Configuration();
-
-	// check if we should use ldap or zarafa-admin
-	$method = $config->get_method ();
-
-	if ($method == "ldap") {
-
-		//
-		// use ldap
-		//
-
-		// get the users uid
-		if (strpos($username, "@")) {
-			// i assume, that user logs in with uid@ou
-			$a_rdn = explode ("@", $username);
-			$uid = $a_rdn[0];
-		} else {
-			// user logs in with his uid
-			$uid = $username;
-		}
-
-		// connect to ldap directory
-		$ds = ldap_connect($config->get_uri());
-		$ldap_error = ldap_errno($ds);
-		if ($ldap_error == 0) {
-
-			// lookup the users dn
-			$sr = ldap_search (
-				$ds,                   // connection-identify
-				$config->get_basedn(), // basedn
-				"uid=".$uid,           // search filter
-				array("dn")            // needed attributes. we need the dn
-			);
-			if ($sr) {
-
-				$info = ldap_get_entries($ds, $sr);
-				$dn = $info[0]['dn'];
-
-				// bind to ldap directory
-				ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
-				$bind = ldap_bind($ds, $dn, $password);
-				$ldap_error = ldap_errno($ds);
-				if ($ldap_error == 0) {
-
-					// Connection and bind are established, now try to change password
-					if (
-						($newpw1 == $newpw2) && 
-						($newpw1 != NULL) && 
-						($newpw1 != "") &&
-						(check_password($newpw1))
-					) {
-			
-						$password_hash = ssha_encode ($newpw1);
-						$entry = array('userPassword' => $password_hash);
-						$return_mod = ldap_modify ($ds, $dn, $entry);
-						$ldap_error = ldap_errno($ds);
-						if ($ldap_error == 0) {
-
-							send_result ("success", _("Password updated correctly. You will need to login again.")); 
-						}
-						else {
-
-							// TODO: acknowledge the ldap error codes to give a more
-							// specific error report to the user
-							send_result ("failure", _("Password update failed. Please contact the system administrator."));
-						}
-					}
-					else {
-		
-						if (($newpw1 == "") || ($newpw1 == "")) { send_result ("failure", _("New password is empty")); }
-						if (!check_password($newpw1)) { send_result ("failure", _("Password too weak.")); }
-						else { send_result ("failure", _("New passwords don't match.")); }
-					}
-
-				}
-				else {
-					if ($ldap_error == 49) {
-							send_result ("failure", _("Old password is wrong."));
-					}
-					else {
-						send_result ("failure", _("Could not bind to ldap."));
-					}
-				}
-			}
-			else {
-				send_result ("failure", _("Password update failed. Please contact the system administrator."));
-			}
-
-		} else {
-			send_result ("failure", _("Password update failed. Please contact the system administrator."));
-		}
-
-		// release ldap-bind
-		ldap_unbind($ds);
-	}
-    else if ($method == "ad") {
-
-        if (
-            ($newpw1 == $newpw2) && 
-            ($newpw1 != NULL) && 
-            ($newpw1 != "") &&
-            (check_password($newpw1))
-        ) {
-
-            $descriptorspec = array(
-                0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
-                1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
-                2 => array("pipe", "w") // stderr is a file to write to
-            );
-
-            $process = proc_open("/usr/bin/smbpasswd -U ".escapeshellarg($username)." -r ".escapeshellarg($config->get_uri())." -s", $descriptorspec, $pipes, "/tmp");
-            fwrite($pipes[0], $password."\n");
-            fwrite($pipes[0], $newpw1."\n");
-            fwrite($pipes[0], $newpw1."\n");
-
-            $msg = fread($pipes[2], 1024);
-            $msg = rtrim($msg);
-
-            $ret = proc_close($process);
-
-            if ($ret == 0) {
-                send_result ("success", _("Password updated correctly. You will need to login again."));
-            }
-            else {
-                send_result ("failure", _("Password update failed. Please contact the system administrator."), $msg);
-            }
-        }
-    }
-	else {
-
-		//
-		// use zarafa-admin to change password
-		// (this part is basically the original zarafa-passwd
-		// plugin (and really unsecure))
-		//
-
-		$passwd_cmd = "/usr/bin/zarafa-passwd -u %s -o %s -p %s";
-		if (
-			($username != null) &&  
-			($password != null) &&  
-			($newpw1 != null) &&  
-			($newpw2 == $newpw1) &&
-			(check_password($newpw1))
-		) {
-
-			// all information correct, change password
-			$mycmd = sprintf($passwd_cmd, $username, $password, $newpw1);
-			exec($mycmd,$arrayout, $retval);
-			if ($retval == 0) {
-				send_result ("success", _("Password updated correctly. You will need to login again."));
-			} else {
-				send_result ("failure", _("Password update failed. Please contact the system administrator."));
-			}   
-		} else {
-			if ($newpw1 != $newpw2) send_result ("failure", _("New passwords don't match."));
-			if ($username == null) send_result ("failure", _("Username not found"));
-			if ($newpw1 == null && $newpw2 == null) send_result ("failure", _("New password is empty"));
-			if (!check_password($newpw1)) send_result ("failure", _("Password too weak."));
-		}   
-	}
-	putenv('LC_ALL='.$_SESSION['lang']);
-	setlocale(LC_ALL, $_SESSION['lang']);
-}
 
 // 	create a ldap-password-hash from $text
 function ssha_encode ($text) {
-	$salt = "";
-	for ($i=1;$i<=10;$i++) {
-		$salt .= substr('0123456789abcdef',rand(0,15),1);
-	}       
-	$hash = "{SSHA}".base64_encode(pack("H*",sha1($text.$salt)).$salt);
-	return $hash;
-}       
+    $salt = "";
+    for ($i=1;$i<=10;$i++) {
+        $salt .= substr('0123456789abcdef',rand(0,15),1);
+    }
+    $hash = "{SSHA}".base64_encode(pack("H*",sha1($text.$salt)).$salt);
+    return $hash;
+}
 
 // check passwords. They should meet the following criteria:
 // - min. 8 chars, max. 20
@@ -212,13 +33,187 @@ function ssha_encode ($text) {
 // - contain numbers
 // return FALSE if not all criteria are met
 function check_password ($password) {
-    return TRUE;
-	if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
-		return TRUE;
-	} else {
-		return FALSE;
-	}
+    if (preg_match("#.*^(?=.{8,20})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*$#", $password)) {
+        return TRUE;
+    } else {
+        return FALSE;
+    }
 }
 
-getBody();
+// debug
+//error_reporting (E_ALL);
+//ini_set('error_log','/var/log/php_error.log');
+
+$username = (isset($_POST["pwdchange_username"])? $_POST["pwdchange_username"] : null);
+$password = (isset($_POST["pwdchange_oldpw"])   ? $_POST["pwdchange_oldpw"]    : null);
+$newpw1   = (isset($_POST["pwdchange_newpwd1"]) ? $_POST["pwdchange_newpwd1"]  : null);
+$newpw2   = (isset($_POST["pwdchange_newpwd2"]) ? $_POST["pwdchange_newpwd2"]  : null);
+
+// get path for this plugin
+$pathname = dirname($_SERVER['SCRIPT_FILENAME']);
+
+// get some basic configuration
+include '../config.inc.php';
+$config = new Configuration();
+
+// check if we should use ldap or zarafa-admin
+$method = $config->get_method ();
+
+if ($method == "ldap") {
+
+    //
+    // use ldap
+    //
+
+    // get the users uid
+    if (strpos($username, "@")) {
+        // i assume, that user logs in with uid@ou
+        $a_rdn = explode ("@", $username);
+        $uid = $a_rdn[0];
+    } else {
+        // user logs in with his uid
+        $uid = $username;
+    }
+
+    // connect to ldap directory
+    $ds = ldap_connect($config->get_uri());
+    $ldap_error = ldap_errno($ds);
+    if ($ldap_error == 0) {
+
+        // lookup the users dn
+        $sr = ldap_search (
+            $ds,                   // connection-identify
+            $config->get_basedn(), // basedn
+            "uid=".$uid,           // search filter
+            array("dn")            // needed attributes. we need the dn
+        );
+        if ($sr) {
+
+            $info = ldap_get_entries($ds, $sr);
+            $dn = $info[0]['dn'];
+
+            // bind to ldap directory
+            ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+            $bind = ldap_bind($ds, $dn, $password);
+            $ldap_error = ldap_errno($ds);
+            if ($ldap_error == 0) {
+
+                // Connection and bind are established, now try to change password
+                if (
+                    ($newpw1 == $newpw2) &&
+                    ($newpw1 != NULL) &&
+                    ($newpw1 != "") &&
+                    (check_password($newpw1))
+                ) {
+
+                    $password_hash = ssha_encode ($newpw1);
+                    $entry = array('userPassword' => $password_hash);
+                    $return_mod = ldap_modify ($ds, $dn, $entry);
+                    $ldap_error = ldap_errno($ds);
+                    if ($ldap_error == 0) {
+
+                        send_result ("success", _("Password updated correctly. You will need to login again."));
+                    }
+                    else {
+
+                        // TODO: acknowledge the ldap error codes to give a more
+                        // specific error report to the user
+                        send_result ("failure", _("Password update failed. Please contact the system administrator."));
+                    }
+                }
+                else {
+
+                    if (($newpw1 == "") || ($newpw1 == "")) { send_result ("failure", _("New password is empty")); }
+                        if (!check_password($newpw1)) { send_result ("failure", _("Password too weak.")); }
+                        else { send_result ("failure", _("New passwords don't match.")); }
+                }
+
+            }
+            else {
+                if ($ldap_error == 49) {
+                    send_result ("failure", _("Old password is wrong."));
+                }
+                else {
+                    send_result ("failure", _("Could not bind to ldap."));
+                }
+            }
+        }
+        else {
+            send_result ("failure", _("Password update failed. Please contact the system administrator."));
+        }
+
+    } else {
+        send_result ("failure", _("Password update failed. Please contact the system administrator."));
+    }
+
+    // release ldap-bind
+    ldap_unbind($ds);
+}
+else if ($method == "ad") {
+
+    if (
+        ($newpw1 == $newpw2) &&
+        ($newpw1 != NULL) &&
+        ($newpw1 != "") &&
+        (check_password($newpw1))
+    ) {
+
+        $descriptorspec = array(
+            0 => array("pipe", "r"),  // stdin is a pipe that the child will read from
+            1 => array("pipe", "w"),  // stdout is a pipe that the child will write to
+            2 => array("pipe", "w") // stderr is a file to write to
+        );
+
+        $process = proc_open("/usr/bin/smbpasswd -U ".escapeshellarg($username)." -r ".escapeshellarg($config->get_uri())." -s", $descriptorspec, $pipes, "/tmp");
+        fwrite($pipes[0], $password."\n");
+        fwrite($pipes[0], $newpw1."\n");
+        fwrite($pipes[0], $newpw1."\n");
+
+        $msg = fread($pipes[2], 1024);
+        $msg = rtrim($msg);
+
+        $ret = proc_close($process);
+
+        if ($ret == 0) {
+            send_result ("success", _("Password updated correctly. You will need to login again."));
+        }
+        else {
+            send_result ("failure", _("Password update failed. Please contact the system administrator."), $msg);
+        }
+    }
+}
+else {
+
+    //
+    // use zarafa-admin to change password
+    // (this part is basically the original zarafa-passwd
+    // plugin (and really unsecure))
+    //
+
+    $passwd_cmd = "/usr/bin/zarafa-passwd -u %s -o %s -p %s";
+    if (
+        ($username != null) &&
+        ($password != null) &&
+        ($newpw1 != null) &&
+        ($newpw2 == $newpw1) &&
+        (check_password($newpw1))
+    ) {
+
+        // all information correct, change password
+        $mycmd = sprintf($passwd_cmd, $username, $password, $newpw1);
+        exec($mycmd,$arrayout, $retval);
+        if ($retval == 0) {
+            send_result ("success", _("Password updated correctly. You will need to login again."));
+        } else {
+            send_result ("failure", _("Password update failed. Please contact the system administrator."));
+        }
+    } else {
+        if ($newpw1 != $newpw2) send_result ("failure", _("New passwords don't match."));
+        if ($username == null) send_result ("failure", _("Username not found"));
+        if ($newpw1 == null && $newpw2 == null) send_result ("failure", _("New password is empty"));
+        if (!check_password($newpw1)) send_result ("failure", _("Password too weak."));
+    }
+}
+putenv('LC_ALL='.$_SESSION['lang']);
+setlocale(LC_ALL, $_SESSION['lang']);
 ?>
