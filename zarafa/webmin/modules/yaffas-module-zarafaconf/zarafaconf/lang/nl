@@ -38,6 +38,22 @@ lbl_mysql_host=Server
 lbl_mysql_user=Gebruikersnaam
 lbl_mysql_password=Wachtwoord
 
+lbl_prf_creator=PRF Creator
+lbl_profilename=Profile name
+lbl_mailboxname=Gebruikersnaam
+lbl_password=Wachtwoord
+lbl_homeserver=Server adress
+lbl_overwriteprofile=Overwrite profile
+lbl_backupprofile=Backup profile
+lbl_download=Download
+
+lbl_connectiontype=Connection type
+lbl_connectiontype_autodetect=Autodetect
+lbl_connectiontype_online=Online
+lbl_connectiontype_cached=Cached
+
+lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
+
 err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_quota_value=De quotawaarde kan alleen cijfers bevatten.
 moduletitle=Configuratie

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 00:24+0100\n"
-"PO-Revision-Date: 2012-11-05 17:18+0200\n"
-"Last-Translator: Michael <m.kromer@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-09 00:23+0100\n"
+"PO-Revision-Date: 2012-11-08 10:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,7 +154,7 @@ msgstr "Es wurden noch keine lokalen Mail Domänen konfiguriert."
 
 # 93%
 #: lang/en:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Capacity has to be a number."
 msgstr "Die Kapazität muss eine Zahl sein."
 

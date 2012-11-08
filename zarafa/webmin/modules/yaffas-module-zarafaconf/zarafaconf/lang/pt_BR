@@ -38,6 +38,22 @@ lbl_mysql_host=Servidor
 lbl_mysql_user=Nome do usuário
 lbl_mysql_password=Senha
 
+lbl_prf_creator=PRF Creator
+lbl_profilename=Profile name
+lbl_mailboxname=Nome do usuário
+lbl_password=Senha
+lbl_homeserver=Server adress
+lbl_overwriteprofile=Overwrite profile
+lbl_backupprofile=Backup profile
+lbl_download=Download
+
+lbl_connectiontype=Connection type
+lbl_connectiontype_autodetect=Autodetect
+lbl_connectiontype_online=Online
+lbl_connectiontype_cached=Cached
+
+lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
+
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_quota_value=O valor da cota poderá conter somente dígitos.
 moduletitle=Configuração
