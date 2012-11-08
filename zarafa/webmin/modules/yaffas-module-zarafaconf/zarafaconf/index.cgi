@@ -19,25 +19,16 @@ ReadParse();
 
 header();
 
-
 try {
-	show_userfilter();
+	show_basic_settings();
 	database_settings();
-	show_attachment_size();
-	defaultquota_form();
-	show_features();
 	quota_message_forms();
 	prf_creator();
-}
-catch Yaffas::Exception with {
-	print Yaffas::UI::all_error_box(shift);
-}
-try {
 	show_memory_optimize();
 }
 catch Yaffas::Exception with {
 	print Yaffas::UI::all_error_box(shift);
-}
+};
 footer();
 =pod
 

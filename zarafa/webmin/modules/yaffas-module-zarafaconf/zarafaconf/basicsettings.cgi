@@ -1,38 +1,66 @@
 #!/usr/bin/perl
 
+use strict;
+use warnings;
+
 use Yaffas;
-use Yaffas::UI;
-use Yaffas::Module::ZarafaLicence;
 use Yaffas::Service qw(control RELOAD ZARAFA_SERVER);
-use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
+use Yaffas::Module::ZarafaConf;
 use Yaffas::Exception;
 use Error qw(:try);
 
 Yaffas::init_webmin();
-
-require './forms.pl';
-
-use CGI::Carp qw(fatalsToBrowser);
-use strict;
-use warnings;
-
 ReadParse();
 
 header();
 
-try {
+sub save_features() {
+	my $features = Yaffas::Module::ZarafaConf::get_default_features();
+	foreach my $feature (keys %{$features}) {
+		Yaffas::Module::ZarafaConf::change_default_features(
+			$feature,
+			defined $main::in{"feature_$feature"} ? 1 : 0);
+	}
+}
+
+sub save_attachment_size() {
+	Yaffas::Module::ZarafaConf::attachment_size($main::in{attachment_size});
+}
+
+sub save_default_quota() {
+	if (not defined $main::in{quota} or $main::in{quota} eq "") {
+		Yaffas::Module::ZarafaConf::set_default_quota(-1);
+	} elsif ($main::in{quota} =~ /^\d+$/) {
+		Yaffas::Module::ZarafaConf::set_default_quota($main::in{quota});
+	} else {
+		throw Yaffas::Exception("err_value");
+	}
+}
+
+sub save_userfilter() {
+	if (not defined $main::in{filtertype} or
+			not defined $main::in{filtergroup}) {
+		return;
+	}
 	Yaffas::Module::ZarafaConf::zarafa_ldap_filter(
 		$main::in{filtertype},
 		$main::in{filtergroup}
 	);
 	control(ZARAFA_SERVER, RELOAD);
+}
+
+try {
+	save_userfilter();
+	save_features();
+	save_attachment_size();
+	save_default_quota();
 	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with {
 	print Yaffas::UI::all_error_box(shift);
-	show_settings();
 };
-footer();
+
+
 =pod
 
 =head1 COPYRIGHT

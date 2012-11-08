@@ -1,5 +1,5 @@
-size=Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess.
-limit=This limits the maximum disk usage for each user in MB.
+attachment_size=Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess.
+quota=This limits the maximum disk usage for each user in MB. Leave empty for no limit.
 mysql_user=This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database.
 mysql_password=This is the password that is set on the database. You need to set this password manually.
 mysql_host=This is the address of the MySQL server. For locally installed servers enter 'localhost'.

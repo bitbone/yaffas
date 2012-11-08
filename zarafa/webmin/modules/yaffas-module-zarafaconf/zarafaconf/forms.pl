@@ -8,98 +8,106 @@ use Yaffas::Auth::Type qw(:standard);
 use Yaffas::Mail;
 use Yaffas::Module::ZarafaConf;
 
-sub show_userfilter() {
+sub show_basic_settings() {
+	print "<script src='functions.js' type='text/javascript'></script>";
+	print $Cgi->start_form({-action=>"basicsettings.cgi",
+		-name=>"basic_settings_form"});
+	print Yaffas::UI::start_section($main::text{lbl_basic_settings});
+	print $Cgi->start_table();
+
+	# user filter
 	my @settings = Yaffas::Module::ZarafaConf::zarafa_ldap_filter();
 	my $auth = Yaffas::Auth::get_auth_type();
+	if ($auth eq ADS) {
+		print $Cgi->Tr([
+			$Cgi->td([$main::text{lbl_userfilter},
+				_filtertype(\@settings) .
+				$Cgi->br() .
+				_filtergroup(\@settings),
+			])
+		]);
+	}
 
-	return if not $auth eq ADS;
 
-	print "<script src='functions.js' type='text/javascript'></script>";
-	print $Cgi->start_form({-action=>"filteruser.cgi"});
-	print Yaffas::UI::section($main::text{lbl_userfilter},
-							  $Cgi->table(
-										  $Cgi->Tr([
-												   _filtertype(\@settings),
-												   _filtergroup(\@settings),
-												   ])
-										 )
-							 );
-	print Yaffas::UI::section_button($Cgi->button({-id=>"savefilter", -label=>$main::text{'lbl_save'}}));
+	# features
+	my $features = Yaffas::Module::ZarafaConf::get_default_features();
+	foreach my $feature (keys %{$features}) {
+		print $Cgi->Tr([
+			$Cgi->td([
+				$main::text{"lbl_enable_${feature}_by_default"},
+				$Cgi->checkbox({
+					name => "feature_$feature",
+					label => "",
+					value => undef,
+					checked => ($features->{$feature} eq "on") ? 1 : 0
+				})
+			])
+		]);
+	}
+
+	# attachment size
+	my $value = Yaffas::Module::ZarafaConf::attachment_size();
+	print $Cgi->Tr([
+		$Cgi->td([
+			$main::text{lbl_attachment_size} . " (MB)",
+			textfield({-name=>"attachment_size", -value=>$value})
+		])
+	]);
+
+	# default quota
+	my $quota = Yaffas::Mail::get_default_quota(); # in kB
+
+	if (defined($main::in{quota})) {
+	    $quota = $main::in{quota}
+	} elsif($quota == -1){
+	    undef $quota;
+	} else{
+	    $quota /= 1024;
+	}
+
+	print $Cgi->Tr([
+		$Cgi->td([
+			$main::text{'lbl_default_quota_header'},
+			textfield(
+				-name => 'quota',
+				-default => (defined $quota ? $quota : ""),
+			)
+		])
+	]);
+	print $Cgi->end_table();
+	print Yaffas::UI::section_button(
+		$Cgi->submit({
+			-name=>"save_basic_settings",
+			-label=>$main::text{'lbl_save'}}));
+	print Yaffas::UI::end_section();
 	print $Cgi->end_form();
-}
-
-sub confirm_userfilter {
-	my $filter = shift;
-	my $group = shift;
-	my $stores = shift;
-	print Yaffas::UI::yn_confirm({
-								 -action => "index.cgi",
-								 -hidden => [filtertype => $filter, filtergroup => $group, userfilter => 1, confirmed => 1],
-								 -title => $main::text{lbl_confirm_filter_save},
-								 -yes => $main::text{lbl_yes},
-								 -no => $main::text{lbl_no},
-								 },
-								 $main::text{lbl_confirm_msg},
-								 $Cgi->ul($Cgi->li($stores))
-								);
 }
 
 sub _filtertype {
 	my $settings = shift;
-	return $Cgi->td([$main::text{lbl_filtertype}.":",
-					$Cgi->scrolling_list({
-										 -id=>"filtertype",
-										 -name=>"filtertype",
-										 -values=>[0..2],
-										 -labels=>{map {$_ => $main::text{"lbl_ldapfilter_type_".$_}} (0..2)},
-										 -default=>$settings->[0],
-										 -size=>1,
-										 -onChange=>"javascript:toggle_filtergroup(this.value)",
-										 })
-					]);
+	return $Cgi->scrolling_list({
+			 -id=>"filtertype",
+			 -name=>"filtertype",
+			 -values=>[0..2],
+			 -labels=>{map {$_ => $main::text{"lbl_ldapfilter_type_".$_}} (0..2)},
+			 -default=>$settings->[0],
+			 -size=>1,
+			 -onChange=>"javascript:toggle_filtergroup(this.value)",
+			 });
 }
 
 sub _filtergroup {
 	my $settings = shift;
 	
-	if ($settings->[0] == Yaffas::Module::ZarafaConf::FILTERTYPE->{ADGROUP}) {
-	}
-	return $Cgi->td({-class=>"filtergroup"}, [$main::text{lbl_filtergroup}.":",
-					$Cgi->scrolling_list({
-										 -id=>"filtergroup",
-										 -name=>"filtergroup",
-										 -values=>[Yaffas::UGM::get_groups()],
-										 -default=>$settings->[1],
-										 -size=>1,
-										 }),
-										 $Cgi->span({-id=>"filtersetting", class=>"hidden"}, $settings->[0])
-					]);
-}
-
-sub show_attachment_size(;$) {
-	my $value = shift;
-
-	$value = Yaffas::Module::ZarafaConf::attachment_size() unless defined $value;
-	print $Cgi->start_form({-action=>"attachment.cgi"});
-	print Yaffas::UI::section($main::text{lbl_attachment_size},
-							  $Cgi->table(
-										  $Cgi->Tr([
-												   $Cgi->td([
-															$main::text{lbl_size}."(MB):",
-															textfield({-name=>"size", -value=>$value})
-														   ]),
-												   ])
-										 )
-							 );
-	print Yaffas::UI::section_button($Cgi->submit({-name=>"attachment_size", -value=>$main::text{'lbl_save'}}));
-	print $Cgi->end_form();
-}
-
-sub show_features() {
-	print Yaffas::UI::section($main::text{lbl_default_features},
-		$Cgi->div({-id=>"features"}, "")
-	);
-
+	return $Cgi->scrolling_list({
+			 -id=>"filtergroup",
+			 -name=>"filtergroup",
+			 -values=>[Yaffas::UGM::get_groups()],
+			 -default=> lc $settings->[1],
+			 -size=>1,
+			 -style=> $settings->[0] != 2 ? 'visibility:hidden' : ''
+			 }) .
+			 $Cgi->input({-id=>"filtersetting", type=>"hidden", value=>$settings->[0]});
 }
 
 sub show_memory_optimize {
@@ -160,7 +168,7 @@ sub quota_message_forms () {
 		my $content = Yaffas::Module::ZarafaConf::get_quota_message($_);
 		print $Cgi->div (
 			{ -name => 'message_' . $_ },
-			$Cgi->h2 ({-name => 'quota_textarea_label'}, $main::text{'lbl_quota_' . $_} . ':'),
+			$Cgi->h2({-name => 'quota_textarea_label'}, $main::text{'lbl_quota_' . $_} . ':'),
 			$Cgi->textarea(
 				-id     => 'message_' . $_,
 				-name     => 'message_' . $_,
@@ -177,49 +185,6 @@ sub quota_message_forms () {
 			{ -name => 'quota_msg', -value => $main::text{'lbl_save'} }
 		)
 	);
-	print $Cgi->end_form();
-}
-
-sub defaultquota_form {
-	my $quota = Yaffas::Mail::get_default_quota(); # in kB
-
-	if (defined($main::in{limit})) {
-	    $quota = $main::in{limit}
-	}elsif($quota == -1){
-	    undef $quota;
-	}else{
-	    $quota /= 1024;
-	}
-
-	print $Cgi->start_form("post", "quota.cgi");
-	print Yaffas::UI::section(
-				  $main::text{'lbl_default_quota_header'},
-
-				  $Cgi->p(
-				  $Cgi->table($Cgi->Tr([$Cgi->td(
-					  $Cgi->input({
-							   -type => 'radio',
-							   -name => 'quota',
-							   -value => 'noquota',
-							   (defined $quota ? () : (-checked => 'checked')),
-							  }).$main::text{lbl_no_quota}),
-					  $Cgi->td(
-
-				  $Cgi->input({
-							   -type => 'radio',
-							   -name => 'quota',
-							   -value => 'yesquota',
-							   (defined $quota ? (-checked => 'checked') : ()),
-							  }) . 
-				  textfield(
-								  -name => 'limit',
-								  -default => (defined $quota?$quota:""),
-								 )
-					  )]))
-				 ));
-	print Yaffas::UI::section_button(
-						 $Cgi->submit({ -name => 'default_quota', -value => $main::text{lbl_save}} )
-						);
 	print $Cgi->end_form();
 }
 
