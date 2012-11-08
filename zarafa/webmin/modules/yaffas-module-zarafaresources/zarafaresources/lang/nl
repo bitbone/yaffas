@@ -26,5 +26,5 @@ err_user_exists_allready=De naam van de resource is bezet door een gebruiker.
 err_name_is_alias=De naam van de resource is bezet door een alias van een gebruiker.
 err_user_doesnt_exist=De opgegeven resource bestaat niet.
 err_no_domains=Geen lokale e-maildomeinen geconfigureerd.
-err_no_number=Capacity have to be a number.
+err_no_number=Capacity has to be a number.
 moduletitle=Resources

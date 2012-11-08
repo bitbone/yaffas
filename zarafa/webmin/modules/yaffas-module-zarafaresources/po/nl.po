@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-06-08 17:44+0300\n"
+"POT-Creation-Date: 2012-11-08 00:24+0100\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,7 +156,7 @@ msgstr "Geen lokale e-maildomeinen geconfigureerd."
 
 #: lang/en:29
 #, no-wrap
-msgid "Capacity have to be a number."
+msgid "Capacity has to be a number."
 msgstr ""
 
 #: lang/en:30
