@@ -140,6 +140,20 @@ attributetype ( 1.3.6.1.4.1.26278.1.1.4.1
 	SUBSTR caseIgnoreSubstringsMatch
 	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
 
+attributetype ( 1.3.6.1.4.1.26278.1.1.6.1
+	NAME 'zarafaUserArchiveServers'
+	DESC 'ZARAFA: List of server names that contain an archive store for the user'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
+attributetype ( 1.3.6.1.4.1.26278.1.1.6.2
+	NAME 'zarafaUserArchiveCouplings'
+	DESC 'ZARAFA: List of username:foldername pairs that specify many-to-one archive locations'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 )
+
 objectclass	( 1.3.6.1.4.1.26278.1.1.0.0
 	NAME 'zarafa-user'
 	DESC 'Zarafa: an user of Zarafa'
@@ -149,7 +163,8 @@ objectclass	( 1.3.6.1.4.1.26278.1.1.0.0
 		zarafaQuotaOverride $ zarafaQuotaWarn $ zarafaQuotaSoft $ zarafaSendAsPrivilege $
 		zarafaQuotaHard $ zarafaAdmin $ zarafaSharedStoreOnly $ zarafaResourceType $
 		zarafaResourceCapacity $ zarafaAccount $ zarafaHidden $ zarafaAliases $
-		zarafaUserServer $ zarafaEnabledFeatures $ zarafaDisabledFeatures
+		zarafaUserServer $ zarafaEnabledFeatures $ zarafaDisabledFeatures $
+		zarafaUserArchiveServers $ zarafaUserArchiveCouplings
 		)
 	)
 
@@ -176,7 +191,7 @@ objectclass	( 1.3.6.1.4.1.26278.1.2.0.0
 	SUP top	AUXILIARY
 	MUST ( cn )
 	MAY (
-		zarafaAccount $ zarafaHidden $ mail $ zarafaAliases $ zarafaSecurityGroup
+		zarafaAccount $ zarafaHidden $ mail $ zarafaAliases $ zarafaSecurityGroup $ zarafaSendAsPrivilege
 		)
 	)
 	
@@ -231,7 +246,7 @@ objectclass ( 1.3.6.1.4.1.26278.1.3.0.0
 	NAME 'zarafa-company'
 	DESC 'ZARAFA: a company of Zarafa' 
 	SUP top AUXILIARY
-	MUST ( cn )
+	MUST ( ou )
 	MAY (
 		zarafaAccount $ zarafaHidden $
 		zarafaViewPrivilege $ zarafaAdminPrivilege $ zarafaSystemAdmin $
@@ -267,13 +282,20 @@ attributetype (1.3.6.1.4.1.26278.1.4.4.4
 	EQUALITY integerMatch
 	SYNTAX 1.3.6.1.4.1.1466.115.121.1.27 SINGLE-VALUE )
 
+attributetype (1.3.6.1.4.1.26278.1.4.4.6
+	NAME 'zarafaProxyURL'
+	DESC 'ZARAFA: Full proxy URL for this server'
+	EQUALITY caseIgnoreMatch
+	SUBSTR caseIgnoreSubstringsMatch
+	SYNTAX 1.3.6.1.4.1.1466.115.121.1.15 SINGLE-VALUE )
+
 objectclass ( 1.3.6.1.4.1.26278.1.4.0.0
 	NAME 'zarafa-server'
 	DESC 'ZARAFA: a Zarafa server'
 	SUP top AUXILIARY
 	MUST ( cn )
 	MAY (
-		zarafaAccount $ zarafaHidden $ zarafaHttpPort $ zarafaSslPort $ zarafaFilePath $ zarafaContainsPublic
+		zarafaAccount $ zarafaHidden $ zarafaHttpPort $ zarafaSslPort $ zarafaFilePath $ zarafaContainsPublic $ zarafaProxyURL
 		)
 	)
 
