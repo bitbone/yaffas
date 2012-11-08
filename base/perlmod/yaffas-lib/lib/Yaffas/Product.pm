@@ -173,6 +173,34 @@ sub get_version_of($) {
 		}
 	}
 
+    if ($product eq "framework") {
+        if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
+            my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-l", "yaffas-core");
+
+            foreach my $line (@tmp) {
+                if ($line =~ /^ii\s+.*?\s+(\d+\.\d+\.\d+-\d+)\s+.*/) {
+                    return $1;
+                }
+            }
+        }
+        elsif (Yaffas::Constant::OS =~ /RHEL?/) {
+            my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{rpm}, "-qi", "yaffas-core");
+            my $version;
+            my $release;
+
+            foreach my $line (@tmp) {
+                if ($line =~ /^Version\s+:\s+(\d+\.\d+\.\d+).*/) {
+                    $version = $1;
+                }
+                if ($line =~ /^Release\s+:\s+(.+?)\s+.*/) {
+                    $release = $1;
+                }
+            }
+            return $version."-".$release;
+
+        }
+    }
+
 	return $1 if $version =~ /v([.\d]+-?.*)/;
 	return 0;
 }
