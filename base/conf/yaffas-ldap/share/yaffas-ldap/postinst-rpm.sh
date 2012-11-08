@@ -79,7 +79,11 @@ cp -f ${YAFFAS_EXAMPLE}/etc/ldap.secret /etc
 cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
 cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
 cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/samba.schema /etc/openldap/schema
-cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+if [ -e /usr/share/doc/zarafa/zarafa.schema ]; then
+	cp /usr/share/doc/zarafa/zarafa.schema /etc/openldap/schema
+else
+	cp -f ${YAFFAS_EXAMPLE}/etc/openldap/schema/zarafa.schema /etc/openldap/schema
+fi
 cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap.conf /etc/smbldap-tools
 cp -f ${YAFFAS_EXAMPLE}/etc/smbldap-tools/smbldap_bind.conf /etc/smbldap-tools
 

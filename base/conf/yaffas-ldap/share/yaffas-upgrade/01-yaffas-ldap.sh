@@ -1,4 +1,5 @@
 #!/bin/bash
+OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
 
 # this is an update :)
 
@@ -30,3 +31,18 @@ if grep -q 'BASEDN.*o=.*c=' /etc/ldap.settings; then
 	service postfix reload
 	service smb restart
 fi
+
+# make sure the latest zarafa LDAP schema is installed
+if [ -e /usr/share/doc/zarafa/zarafa.schema ]; then
+	cp /usr/share/doc/zarafa/zarafa.schema /etc/openldap/schema
+elif [ -e /usr/share/doc/zarafa/zarafa.schema.gz ]; then
+	zcat /usr/share/doc/zarafa/zarafa.schema.gz > /etc/ldap/schema
+fi
+
+if [ x$OS = xRHEL5 ]; then
+	service ldap restart
+elif [ x$OS = xRHEL6 ]; then
+	service slapd restart
+else
+	/etc/init.d/slapd restart
+fi 
