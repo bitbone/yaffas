@@ -27,6 +27,7 @@ try {
 	defaultquota_form();
 	show_features();
 	quota_message_forms();
+	prf_creator();
 }
 catch Yaffas::Exception with {
 	print Yaffas::UI::all_error_box(shift);

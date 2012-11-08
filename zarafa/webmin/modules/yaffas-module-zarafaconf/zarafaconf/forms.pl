@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Yaffas::UI qw/textfield/;
+use Yaffas::UI qw/textfield radio_group scrolling_list/;
 use Yaffas::Auth::Type qw(:standard);
 use Yaffas::Mail;
 use Yaffas::Module::ZarafaConf;
@@ -225,8 +225,6 @@ sub defaultquota_form {
 
 sub database_settings {
 	my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
-	use Data::Dumper;
-	print Dumper $settings;
 
 	print $Cgi->start_form({-action=>"zarafadb.cgi", -method=>"post"});
 	print Yaffas::UI::section($main::text{lbl_database_settings},
@@ -251,6 +249,57 @@ sub database_settings {
 	);
 	print Yaffas::UI::section_button($Cgi->submit({-value=>$main::text{'lbl_save'}}));
 	print $Cgi->end_form();
+}
+
+sub prf_creator {
+    my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
+    print $Cgi->start_form({-name=>"createprf", -action=>"createprf.cgi", -method=>"post"});
+
+    print Yaffas::UI::section($main::text{lbl_prf_creator},
+        $Cgi->table(
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_homeserver}.":"),
+                $Cgi->td(textfield({-name=>"homeserver", -value=>$ENV{SERVER_NAME}}))
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_connectiontype}.":"),
+                $Cgi->td(scrolling_list({
+                            -name=>"connectiontype",
+                            -values=>[qw(0x000 0x580 0x80)],
+                            -labels=>{
+                                "0x580" => $main::text{lbl_connectiontype_cached},
+                                "0x000" => $main::text{lbl_connectiontype_online},
+                                "0x80" => $main::text{lbl_connectiontype_autodetect},
+                                },
+                            -size => 1
+                            })
+                    )
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_profilename}.":"),
+                $Cgi->td(textfield({-name=>"profilename", -value => "Zarafa"}))
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_mailboxname}.":"),
+                $Cgi->td(textfield({-name=>"mailboxname", -value => '%UserName%' }))
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_password}.":"),
+                $Cgi->td(textfield({-name=>"password", -value => '' }))
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_overwriteprofile}.":"),
+                $Cgi->td(radio_group({-name=>"overwriteprofile", -values => [qw(yes no)], -default=>"yes", -labels=> {yes => $main::text{lbl_yes}, no => $main::text{lbl_no}}}))
+            ),
+            $Cgi->Tr(
+                $Cgi->td($main::text{lbl_backupprofile}.":"),
+                $Cgi->td(radio_group({-name=>"backupprofile", -values => [qw(yes no)], -default=>"no", -labels=> {yes => $main::text{lbl_yes}, no => $main::text{lbl_no}}}))
+            ),
+        )
+    );
+    print Yaffas::UI::section_button($Cgi->button({-id=>"btncreateprf", -value=>$main::text{'lbl_download'}}));
+    print $Cgi->end_form();
+
 }
 
 return 1;

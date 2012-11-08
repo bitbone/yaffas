@@ -1,0 +1,89 @@
+; **************************************************************
+; Section 1 - Profile Defaults
+; **************************************************************
+
+[General]
+Custom=1
+ProfileName={$profilename}
+DefaultProfile=No
+OverwriteProfile={$overwriteprofile}
+ModifyDefaultProfileIfPresent=TRUE
+BackupProfile={$backupprofile}
+DefaultStore=Service3
+
+; **************************************************************
+; Section 2 - Services in Profile
+; **************************************************************
+
+[Service List]
+Service1=Microsoft Outlook Client
+Service2=Outlook Address Book
+Service3=Zarafa Server
+Service4=Unicode Personal Folders
+
+;***************************************************************
+; Section 4 - Default values for each service.
+;***************************************************************
+
+[Service3]
+OverwriteExistingService=Yes
+UniqueService=Yes
+MailboxName={$mailboxname}
+HomeServer={$homeserver}
+Password={$password}
+
+;***************************************************************
+; Choose flags for caching / online or autodetect modus
+; flags 0x580 = caching mode
+; flags 0x000 = online
+; flags 0x80  = autodetect online/offline
+;***************************************************************
+
+Flags={$connectiontype}
+;***************************************************************
+; Define path of the offline caching data
+;***************************************************************
+;Path= d:\
+
+[Service2]      ; Outlook Address Book
+; No configuration needed with the Address Book
+
+[Service1]
+DoAutoArchive=False
+AutoArchiveFileName = z:\archive.pst
+
+[Service4]
+UniqueService = No
+Name = Personal Folders
+PathToPersonalFolders = "z:\%UserName%.pst"
+EncryptionType = 0x80000000
+
+
+;***************************************************************
+; Section 6 - Mapping for profile properties
+;***************************************************************
+
+[Zarafa server]
+ServiceName=ZARAFA6
+MDBGUID=CA3D253C27D23C4494FE425FAB958C19
+MailboxName=PT_STRING8,0x6701
+HomeServer=PT_STRING8,0x6700
+Password=PT_STRING8,0x6702
+Flags=PT_LONG,0x6704
+Path=PT_STRING8,0x6710
+
+[Outlook Address Book]
+ServiceName=CONTAB
+
+[Microsoft Outlook Client]
+SectionGUID=0a0d020000000000c000000000000046
+DoAutoArchive=PT_BOOLEAN,0x0320
+AutoArchiveFileName=PT_STRING8,0x0324
+
+[Unicode Personal Folders]
+ServiceName=MSUPST MS
+Name=PT_UNICODE,0x3001
+PathToPersonalFolders=PT_STRING8,0x6700
+RememberPassword=PT_BOOLEAN,0x6701
+EncryptionType=PT_LONG,0x6702
+Password=PT_STRING8,0x6703

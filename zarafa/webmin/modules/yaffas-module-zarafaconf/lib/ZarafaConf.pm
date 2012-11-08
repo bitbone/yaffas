@@ -17,7 +17,7 @@ use Yaffas::LDAP;
 use Yaffas::Service qw(control STOP START RESTART RELOAD ZARAFA_SERVER ZARAFA_GATEWAY ZARAFA_SPOOLER MYSQL EXIM);
 use Error qw(:try);
 use Sort::Naturally;
-use Data::Dumper;
+use Text::Template;
 
 our $TESTMODE = 0;
 
@@ -353,6 +353,29 @@ sub get_zarafa_database() {
 		password => $file->get_cfg_values()->{mysql_password},
 		database => $file->get_cfg_values()->{mysql_database}
 	};
+}
+
+=item create_prf ( VALUES )
+
+Creates PRF file from given VALUES hash and returns it. Uses outlook.prf as a
+template which is filled with Text::Template.
+
+Possible values are:
+
+  profilename
+  mailboxname
+  password
+  homeserver
+  overwriteprofile
+  backupprofile
+
+=cut
+
+sub create_prf {
+    my $values = shift;
+    my $template = Text::Template->new(TYPE => 'FILE',  SOURCE => 'outlook.prf');
+    my $text = $template->fill_in(HASH => $values);
+    return $text;
 }
 
 sub set_zarafa_database($$$$) {

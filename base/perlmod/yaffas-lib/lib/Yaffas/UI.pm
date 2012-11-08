@@ -13,7 +13,7 @@ sub BEGIN {
 						section_button section start_section end_section
 						table start_table end_table small_form
 						value_add_del_form creating_cache_finish creating_cache_start
-						textfield password_field checkbox scrolling_list
+						textfield password_field checkbox scrolling_list radio_group
 					   );
 	*CGI::start_form = \&CGI::startform;
 	$Cgi = CGI->new("");
@@ -514,6 +514,16 @@ sub password_field {
 	my $name = $params[0];
 
 	return $Cgi->password_field(@_) . _get_help_button($name);
+}
+
+sub radio_group {
+	my @params = CGI::Util::rearrange(["NAME",["VALUES","VALUE"],["DEFAULT","DEFAULTS"],"LINEBREAK","LABELS","LABELATTRIBUTES",
+                                       "ATTRIBUTES","ROWS",["COLUMNS,COLS"],["ROWHEADERS","ROWHEADER"],["COLHEADERS","COLHEADER"],
+                                                          ["OVERRIDE","FORCE"],"NOLABELS","TABINDEX","DISABLED" ],@_);
+
+	my $name = $params[0];
+
+	return $Cgi->radio_group(@_) . _get_help_button($name);
 }
 
 sub checkbox {

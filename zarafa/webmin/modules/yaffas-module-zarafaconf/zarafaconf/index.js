@@ -19,6 +19,16 @@ function ZarafaConf(){
     if (typeof s !== "undefined" && s) {
         toggle_filtergroup(s.innerHTML.strip());
     }
+
+    var createprf = new YAHOO.widget.Button("btncreateprf");
+
+    createprf.on("click", function() {
+        var args = $$("[name=createprf]")[0].serialize();
+        window.open("/zarafaconf/createprf.cgi?"+args);
+        window.close();
+    });
+
+
 	this.setupTable();
 }
 
