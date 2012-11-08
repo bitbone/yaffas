@@ -9,8 +9,10 @@ err_no_rootbasedn=Could not find the rootDomainNamingContext in AD.
 
 lbl_attachment_size=Maximum attachment size in Webaccess
 lbl_size=Size
-err_attachment_size_not_numeric=The attachment size must be numeric.
-err_softdelete_not_numeric=The softdelete lifetime must be numeric.
+lbl_enforce_softdelete_now=Purge old deleted items now?
+err_attachment_size_not_numeric=The maximum attachment size must be numeric and >0.
+err_softdelete_not_numeric=The softdelete lifetime must be numeric and >=0.
+err_purge_softdelete_failed=Could not purge old items.
 
 lbl_optimize=Optimize
 lbl_memory_installed=Addressable memory

@@ -301,6 +301,23 @@ sub set_default_features() {
 	}
 }
 
+sub purge_old_items($) {
+	# Purges old deleted items from Zarafa
+	my $days = shift;
+	if (not defined $days or $days <= 1) {
+		# TODO: --purge-softdelete 0 is also allowed, but means purging
+		# everything right now; we don't implement this, because this
+		# could be unintended by the user, as 0 means "don't ever delete"
+		# in the softdelete_lifetime config option;
+		# if we implement it, we have to change the GUI
+		return;
+	}
+	my $result = Yaffas::do_back_quote(
+		Yaffas::Constant::APPLICATION->{'zarafa_admin'},
+		'--purge-softdelete', $days);
+	throw Yaffas::Exception("err_purge_softdelete_failed") unless
+		$result == 0;
+}
 sub softdelete_lifetime(;$) {
 	# Gets or sets (if given) the softdelete_lifetime in zarafa/server.cfg
 	my $lifetime = shift;
@@ -314,7 +331,7 @@ sub softdelete_lifetime(;$) {
 	my $cfg = $file->get_cfg_values();
 	if (defined $lifetime) {
 		throw Yaffas::Exception("err_softdelete_not_numeric") unless
-			($lifetime =~ /^\d+$/ and $lifetime > 0);
+			($lifetime =~ /^\d+$/ and $lifetime >= 0);
 		$cfg->{softdelete_lifetime} = $lifetime;
 		$file->save();
 		control(ZARAFA_SERVER(), RELOAD());

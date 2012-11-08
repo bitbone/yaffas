@@ -49,9 +49,12 @@ sub save_userfilter() {
 	control(ZARAFA_SERVER, RELOAD);
 }
 
-sub save_softdelete_lifetime() {
-	Yaffas::Module::ZarafaConf::softdelete_lifetime(
+sub save_softdelete_lifetime_and_purge() {
+	my $days = Yaffas::Module::ZarafaConf::softdelete_lifetime(
 		$main::in{softdelete_lifetime});
+	if (defined $main::in{enforce_softdelete_now}) {
+		Yaffas::Module::ZarafaConf::purge_old_items($days);
+	}
 }
 
 try {
@@ -59,7 +62,7 @@ try {
 	save_features();
 	save_attachment_size();
 	save_default_quota();
-	save_softdelete_lifetime();
+	save_softdelete_lifetime_and_purge();
 	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with {

@@ -87,6 +87,14 @@ sub show_basic_settings() {
 				-default => (defined $softdelete_lifetime ?
 					$softdelete_lifetime : ""),
 			)
+		]),
+		$Cgi->td([
+			$main::text{'lbl_enforce_softdelete_now'},
+			$Cgi->checkbox({
+				label=>"",
+				id=>'enforce_softdelete_now',
+				name=>'enforce_softdelete_now'
+			})
 		])
 	]);
 
