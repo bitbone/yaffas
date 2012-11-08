@@ -339,7 +339,6 @@ sub change_default_features {
 }
 
 sub get_zarafa_database() {
-	print Yaffas::Constant::FILE->{zarafa_server_cfg};
 	my $file = new Yaffas::File::Config(Yaffas::Constant::FILE->{zarafa_server_cfg},
 		{
 			-SplitPolicy => 'custom',
