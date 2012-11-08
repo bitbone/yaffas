@@ -566,11 +566,14 @@ Yaffas.UI.prototype.submitForm = function(e){
             }
         }
 
-        YAHOO.util.Connect.setForm(element, upload);
+				var prepareForm = function() {
+					YAHOO.util.Connect.setForm(element, upload);
+				}
+				YAHOO.util.Connect.setForm(element, upload);
         var url = element.action.split("/");
         url = "/" + this.currentPage + "/" + url[url.length - 1];
 
-        this.submitURL(url, null, args);
+        this.submitURL(url, null, args, prepareForm);
     } 
     catch (ex) {
         console.log(ex);
@@ -580,7 +583,8 @@ Yaffas.UI.prototype.submitForm = function(e){
     }
 }
 
-Yaffas.UI.prototype.submitURL = function(url, args, argsform) {
+Yaffas.UI.prototype.submitURL = function(url, args, argsform,
+		preprocess_func) {
 	var handleSuccess = function(o){
         console.log("response: %s", o.status);
         var r = YAHOO.util.Dom.get("response");
@@ -610,6 +614,9 @@ Yaffas.UI.prototype.submitURL = function(url, args, argsform) {
 	
     var submit = function(additional){
         this.loading.show();
+				if (typeof(preprocess_func) !== "undefined") {
+					preprocess_func();
+				}
 		var postData = [];
 		if (submitArgs !== null || additional !== undefined) {
 	        for (var name in submitArgs) {
