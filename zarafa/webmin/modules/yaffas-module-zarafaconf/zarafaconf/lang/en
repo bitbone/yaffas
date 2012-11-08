@@ -52,6 +52,7 @@ lbl_connectiontype_autodetect=Autodetect
 lbl_connectiontype_online=Online
 lbl_connectiontype_cached=Cached
 
+lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
 
 err_mysql_connect=Could not connect to database.
 err_quota_value=The quota value can only contain digits.

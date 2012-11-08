@@ -256,6 +256,7 @@ sub prf_creator {
     print $Cgi->start_form({-name=>"createprf", -action=>"createprf.cgi", -method=>"post"});
 
     print Yaffas::UI::section($main::text{lbl_prf_creator},
+        $Cgi->p($main::text{lbl_outlook_start}),
         $Cgi->table(
             $Cgi->Tr(
                 $Cgi->td($main::text{lbl_homeserver}.":"),
