@@ -74,6 +74,22 @@ sub show_basic_settings() {
 			)
 		])
 	]);
+
+	# softdelete lifetime
+	my $softdelete_lifetime =
+		Yaffas::Module::ZarafaConf::softdelete_lifetime();
+
+	print $Cgi->Tr([
+		$Cgi->td([
+			$main::text{'lbl_softdelete_lifetime'},
+			textfield(
+				-name => 'softdelete_lifetime',
+				-default => (defined $softdelete_lifetime ?
+					$softdelete_lifetime : ""),
+			)
+		])
+	]);
+
 	print $Cgi->end_table();
 	print Yaffas::UI::section_button(
 		$Cgi->submit({

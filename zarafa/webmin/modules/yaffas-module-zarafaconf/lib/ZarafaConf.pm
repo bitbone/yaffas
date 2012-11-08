@@ -135,7 +135,7 @@ sub attachment_size(;$) {
 	my @lines = $file->search_line(qr/^php_value\s+upload_max_filesize\s*(.*)/);
 
 	if (defined $size) {
-		throw Yaffas::Exception("err_not_numeric") unless ($size =~ /^\d+$/ and $size > 0);
+		throw Yaffas::Exception("err_attachment_size_not_numeric") unless ($size =~ /^\d+$/ and $size > 0);
 		$file->splice_line($lines[0], 1, "php_value upload_max_filesize ${size}M");
 
 		$size++;
@@ -299,6 +299,30 @@ sub set_default_features() {
 	foreach my $f (keys %featues) {
 		change_default_features($f, $featues{$f} eq "on" ? 1 : 0);
 	}
+}
+
+sub softdelete_lifetime(;$) {
+	# Gets or sets (if given) the softdelete_lifetime in zarafa/server.cfg
+	my $lifetime = shift;
+
+	my $file = Yaffas::File::Config->new(
+		Yaffas::Constant::FILE->{zarafa_server_cfg}, {
+			-SplitPolicy => 'custom',
+			-SplitDelimiter => '\s*=\s*',
+			-StoreDelimiter => ' = ',
+		});
+	my $cfg = $file->get_cfg_values();
+	if (defined $lifetime) {
+		throw Yaffas::Exception("err_softdelete_not_numeric") unless
+			($lifetime =~ /^\d+$/ and $lifetime > 0);
+		$cfg->{softdelete_lifetime} = $lifetime;
+		$file->save();
+		control(ZARAFA_SERVER(), RELOAD());
+	}
+	if (not defined $cfg->{softdelete_lifetime}) {
+		$cfg->{softdelete_lifetime} = 30; #days, zarafa default
+	}
+	return $cfg->{softdelete_lifetime};
 }
 
 sub change_default_features {

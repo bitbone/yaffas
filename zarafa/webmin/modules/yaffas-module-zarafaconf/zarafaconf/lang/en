@@ -9,7 +9,8 @@ err_no_rootbasedn=Could not find the rootDomainNamingContext in AD.
 
 lbl_attachment_size=Maximum attachment size in Webaccess
 lbl_size=Size
-err_not_numeric=The value is not numeric.
+err_attachment_size_not_numeric=The attachment size must be numeric.
+err_softdelete_not_numeric=The softdelete lifetime must be numeric.
 
 lbl_optimize=Optimize
 lbl_memory_installed=Addressable memory
@@ -52,6 +53,7 @@ lbl_connectiontype_cached=Cached
 
 lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
 lbl_basic_settings=Basic settings
+lbl_softdelete_lifetime=Number of days to keep deleted items
 
 err_mysql_connect=Could not connect to database.
 err_quota_value=The quota value can only contain digits.

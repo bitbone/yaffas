@@ -49,11 +49,17 @@ sub save_userfilter() {
 	control(ZARAFA_SERVER, RELOAD);
 }
 
+sub save_softdelete_lifetime() {
+	Yaffas::Module::ZarafaConf::softdelete_lifetime(
+		$main::in{softdelete_lifetime});
+}
+
 try {
 	save_userfilter();
 	save_features();
 	save_attachment_size();
 	save_default_quota();
+	save_softdelete_lifetime();
 	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with {
