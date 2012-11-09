@@ -1,7 +1,7 @@
 #use strict;
 
 use Yaffas;
-use Yaffas::UI qw(start_section end_section section_button textfield);
+use Yaffas::UI qw(start_section end_section section_button textfield radio_group scrolling_list);
 use Yaffas::Product;
 use Yaffas::Mail::Mailalias;
 use Sort::Naturally;
@@ -105,7 +105,7 @@ sub show_edit {
 				$Cgi->td(
 					[
 						$main::text{'poll_skip'},
-						scalar $Cgi->radio_group(
+						scalar radio_group(
 							{
 								-name   => "skip",
 								-value  => [ 0, 1 ],
@@ -152,9 +152,10 @@ sub show_edit {
 				$Cgi->td(
 					[
 						$main::text{'poll_proto'},
-						$Cgi->popup_menu(
+						scrolling_list(
 							{
 								-name   => 'proto',
+								-size => 1,
 								-values => \@protocols,
 								-labels => {
 									map {
@@ -275,8 +276,9 @@ sub show_edit {
 								$main::text{'lbl_local_user'} . ": "
 							),
 							$Cgi->td(
-								$Cgi->popup_menu(
+								$Cgi->scrolling_list(
 									{
+										-size => 1,
 										-name    => "local_user_" . $i,
 										-values  => [ nsort keys %local_users ],
 										-default => Yaffas::LDAP::search_user_by_attribute("email", $u->{'is'}[0]),
@@ -305,8 +307,9 @@ sub show_edit {
 								$main::text{'lbl_local_alias'} . ": "
 							),
 							$Cgi->td(
-								$Cgi->popup_menu(
+								scrolling_list(
 									{
+										-size => 1,
 										-name => "alias_" . $i,
 										-values =>
 										  [ nsort keys %local_aliases ],
@@ -338,91 +341,44 @@ sub show_edit {
 			),
 			$Cgi->Tr(
 				$Cgi->td( $main::text{'poll_keep'} ),
-				$Cgi->td(
-					$Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "keep_$i",
-							-value => 1,
-							(
-								$u->{'keep'} eq '1' ? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'yes'}
-					  . $Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "keep_$i",
-							-value => 0,
-							(
-								$u->{'keep'} eq '0' ? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'no'}
-				),
+				$Cgi->td(scalar radio_group({
+					-type  => 'radio',
+					-name  => "keep_$i",
+					-value => [1, 0],
+					-labels => {
+						0 => $main::text{no},
+						1 => $main::text{yes},
+					},
+					-default => defined $u->{'keep'} ? $u->{'keep'} : 0
+				})),
 			),
 			$Cgi->Tr(
 				$Cgi->td( $main::text{'poll_fetchall'} ),
-				$Cgi->td(
-					$Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "fetchall_$i",
-							-value => 1,
-							(
-								$u->{'fetchall'} eq '1'
-								? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'yes'}
-					  . $Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "fetchall_$i",
-							-value => 0,
-							(
-								$u->{'fetchall'} eq '0'
-								? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'no'}
-				),
+				$Cgi->td(scalar radio_group({
+					-type  => 'radio',
+					-name  => "fetchall_$i",
+					-value => [1, 0],
+					-labels => {
+						0 => $main::text{no},
+						1 => $main::text{yes},
+					},
+					-default =>
+						defined $u->{'fetchall'} ? $u->{'fetchall'} : 0
+				})),
 			),
 			$Cgi->Tr(
 				$Cgi->td( $main::text{'poll_ssl'} ),
 				$Cgi->td(
-					$Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "ssl_$i",
-							-value => 1,
-							(
-								$u->{'ssl'} eq '1' ? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'yes'}
-					  . $Cgi->input(
-						{
-							-type  => 'radio',
-							-name  => "ssl_$i",
-							-value => 0,
-							(
-								$u->{'ssl'} eq '0' ? ( -checked => 'checked' )
-								: ''
-							)
-						}
-					  )
-					  . $main::text{'no'}
+					scalar radio_group({
+						-type  => 'radio',
+						-name  => "ssl_$i",
+						-value => [1, 0],
+						-labels => {
+							0 => $main::text{'no'},
+							1 => $main::text{'yes'},
+						},
+						-default => defined $u->{'ssl'} ? $u->{'ssl'} : 0
+					})
 				),
 			),
 		);
