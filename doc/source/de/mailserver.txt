@@ -12,6 +12,15 @@ In den Benutzerdetails können Sie Einstellungen vornehmen, die den Benutzer bet
 
 Im  _Multidrop_ Modus wird jeweils der  _"localpart"_ (links vom @-Zeichen) der Empfängeradresse ausgewertet und nach einem lokalen Benutzer oder Alias gleichen Namens gesucht, an den die Mail dann zugestellt wird. Alle weiteren Felder sind optional und können den eigenen Bedürfnissen angepasst werden. 
 
+**Hinweis zu SSL/TLS:** Wenn die SSL-Variante eines Protokolls (z.B.
+POP3S, IMAPS, ...) benutzt werden soll, muss lediglich das Protokoll
+selbst (POP3 oder IMAP) angegeben werden und ein Haken bei _Mit SSL
+verbinden_ gesetzt werden. Der Default-Port sollte nicht verändert werden,
+außer dies wird explizit benötigt. So wird er intern automatisch auf
+SSL angepasst.
+Wenn TLS benutzt werden soll, darf die Option _Mit SSL verbinden_ nicht
+aktiviert sein. Fetchmail wird automatisch TLS benutzen, wenn der Server
+TLS-Support anbietet.
 
 
 === Mailserver Konfiguration

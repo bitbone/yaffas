@@ -11,6 +11,14 @@ At "Mailserver User Details" you can enter settings for the user, whose mails sh
 
 All other fields are optional and can be customized. 
 
+**Note regarding SSL/TLS:** If you want to use SSL variants (e.g. POP3S,
+IMAPS, ...), just specify the protocol (POP3 or IMAP) and enable the
+_Connect in SSL mode_ option. Do not change the default port unless
+needed, it will be adapted automatically.
+If you want to use TLS, then do not check the _Connect in SSL_ mode option
+at all, fetchmail will automatically use TLS if the server advertises
+support for it.
+
 
 === Mailserver Configuration
 
