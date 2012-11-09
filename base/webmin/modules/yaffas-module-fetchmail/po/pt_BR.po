@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-10-24 14:12+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -595,41 +595,46 @@ msgstr "Usuário"
 
 #: lang/en:128
 #, no-wrap
+msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
+msgstr ""
+
+#: lang/en:130
+#, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Por favor fornecer usuário remoto e local."
 
-#: lang/en:129
+#: lang/en:131
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "O nome do usuário fornecido é inválido."
 
-#: lang/en:130
+#: lang/en:132
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "O alias fornecido é inválido."
 
-#: lang/en:131
+#: lang/en:133
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Por favor selecionar \"usuário\", \"alias\" ou \"multientrega\"."
 
-#: lang/en:132
+#: lang/en:134
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Por favor fornecer um servidor de e-mail válido para o usuário."
 
 # 100%
-#: lang/en:133
+#: lang/en:135
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Por favor fornecer uma senha para o usuário no servidor de e-mail."
 
-#: lang/en:134
+#: lang/en:136
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Não foi possível habilitar o serviço Fetchmail."
 
-#: lang/en:135
+#: lang/en:137
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Busca de E-Mail do Fetchmail"
@@ -646,20 +651,30 @@ msgstr "O nome de máquina ou endereço IP remoto onde deverão ser buscados os 
 
 #: help/en:3
 #, no-wrap
-msgid "The DNS name of the remote server. This setting overrides the server name."
-msgstr "O nome DNS do servidor remoto. Essa configuração substitui o nome do servidor."
+msgid "Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify \"Connect in SSL mode\" below."
+msgstr ""
 
 #: help/en:4
 #, no-wrap
-msgid "The TCP/IP port of the remote server."
-msgstr "Porta TCP/IP do servidor remoto."
+msgid "The DNS name of the remote server. This setting overrides the server name."
+msgstr "O nome DNS do servidor remoto. Essa configuração substitui o nome do servidor."
 
 #: help/en:5
+#, no-wrap
+msgid "The TCP/IP port of the remote server. Leave this at \"Default\" unless you know what you are doing. If \"Connect in SSL mode\" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Specify wheter SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
+msgstr ""
+
+#: help/en:7
 #, no-wrap
 msgid "The header name of the envelope address (e.g. X-Envelope-To)."
 msgstr "O nome do cabeçalho que contém o endereço do envelope (ex. X-Envelope-To)."
 
-#: help/en:6
+#: help/en:8
 #, no-wrap
 msgid "Specify the login user from the remote machine."
 msgstr "Especificar o login do usuário no servidor remoto."

@@ -157,170 +157,171 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-07 00:20+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Welcome"
-msgstr ""
+msgstr "歡迎"
 
 #: lang/en:2
 #, no-wrap
 msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
-msgstr ""
+msgstr "此設定對話將要求為完成安裝所需之基本設定。如您對設定不確定，請滑過燈泡，您就可以得到更多解釋。"
 
 #: lang/en:4
 #, no-wrap
 msgid "Admin password"
-msgstr ""
+msgstr "管理者密碼"
 
 #: lang/en:5
 #, no-wrap
 msgid "Admin password (repeat)"
-msgstr ""
+msgstr "管理者密碼(重覆)"
 
 #: lang/en:6
 #, no-wrap
 msgid "MySQL database"
-msgstr ""
+msgstr "MySQL資料庫"
 
 #: lang/en:7
 #, no-wrap
 msgid "MySQL server"
-msgstr ""
+msgstr "MySQ伺服器"
 
 #: lang/en:8
 #, no-wrap
 msgid "MySQL username"
-msgstr ""
+msgstr "MySQL用戶名稱"
 
 #: lang/en:9
 #, no-wrap
 msgid "MySQL password"
-msgstr ""
+msgstr "MySQL密碼"
 
 #: lang/en:11
 #, no-wrap
 msgid "Setup finished"
-msgstr ""
+msgstr "設定完成"
 
 #: lang/en:12
 #, no-wrap
 msgid "Setup was finished successfully. After relogin you can use all features."
-msgstr ""
+msgstr "設定成功。在重新登入後，您可使用全部功能"
 
 #: lang/en:14
 #, no-wrap
 msgid "Mailserver settings"
-msgstr ""
+msgstr "郵件伺服器設定"
 
 #: lang/en:15
 #, no-wrap
 msgid "Primary mail domain"
-msgstr ""
+msgstr "主要郵件網域"
 
 #: lang/en:16
 #, no-wrap
 msgid "Smarthost"
-msgstr ""
+msgstr "智慧主機"
 
 #: lang/en:17
 #, no-wrap
 msgid "Username (if needed)"
-msgstr ""
+msgstr "用戶名稱(如有需要)"
 
 #: lang/en:18 lang/en:24
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "密碼"
 
 #: lang/en:20
 #, no-wrap
 msgid "Create user"
-msgstr ""
+msgstr "建立使用者"
 
 #: lang/en:21
 #, no-wrap
 msgid "Loginname"
-msgstr ""
+msgstr "登入名稱"
 
 #: lang/en:22
 #, no-wrap
 msgid "Firstname"
-msgstr ""
+msgstr "前名"
 
 #: lang/en:23
 #, no-wrap
 msgid "Surname"
-msgstr ""
+msgstr "姓"
 
 #: lang/en:25
 #, no-wrap
 msgid "Password (repeat)"
-msgstr ""
+msgstr "密碼(重覆)"
 
 #: lang/en:26
 #, no-wrap
 msgid "Email"
-msgstr ""
+msgstr "電子郵件"
 
 #: lang/en:28
 #, no-wrap
 msgid "If you fill this form, then local LDAP authentication will be enabled."
-msgstr ""
+msgstr "您若填寫此表格，本地LDAP身分驗證將被啟用。"
 
 #: lang/en:30
 #, no-wrap
 msgid "Zarafa settings"
-msgstr ""
+msgstr "Zarafa設定"
 
 #: lang/en:31
 #, no-wrap
 msgid "Basic settings"
-msgstr ""
+msgstr "基礎設定"
 
 #: lang/en:33
 #, no-wrap
 msgid "This might take some time"
-msgstr ""
+msgstr "可能需要花點時間"
 
 #: lang/en:34
 #, no-wrap
 msgid "setting up"
-msgstr ""
+msgstr "設定中"
 
 #: lang/en:35
 #, no-wrap
 msgid "initial configuration"
-msgstr ""
+msgstr "初始化設定"
 
 #: lang/en:37
 #, no-wrap
 msgid "Finish"
-msgstr ""
+msgstr "完成"
 
 #: lang/en:39
 #, no-wrap
 msgid "Could not connect to database."
-msgstr ""
+msgstr "無法連線到資料庫"
 
 #: lang/en:40
 #, no-wrap
 msgid "The admin password is empty or does not match."
-msgstr ""
+msgstr "管理者密碼是空的或不匹配"
 
 #: lang/en:41
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
-msgstr ""
+msgstr "網域只能含字符(a-z及A-Z)、數字(0-9)\"、”.”及”-“，最短為一"
 
 #: lang/en:42
 #, no-wrap
@@ -330,59 +331,59 @@ msgstr ""
 #: lang/en:44
 #, no-wrap
 msgid "Setup"
-msgstr ""
+msgstr "設定"
 
 #: help/en:1
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
-msgstr ""
+msgstr "此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。"
 
 #: help/en:2
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
-msgstr ""
+msgstr "此為設定在資料庫上之密碼。您須用手動設定此密碼。"
 
 #: help/en:3
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
-msgstr ""
+msgstr "這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。"
 
 #: help/en:4
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr ""
+msgstr "這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。"
 
 #: help/en:5
 #, no-wrap
 msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
-msgstr ""
+msgstr "這是您的伺服器之主要郵件網域。您以後可在郵件伺服器->配置增加更多網域"
 
 #: help/en:6
 #, no-wrap
 msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
-msgstr ""
+msgstr "如您需要一個智慧主機來發送郵件之可選設定。如您讓其保留為空的，郵件伺服器將直接發送郵件給收件人"
 
 #: help/en:7 help/en:8
 #, no-wrap
 msgid "Optional setting if your smarthost needs authentication."
-msgstr ""
+msgstr "如您的智慧主機需要身分驗證之可選設定"
 
 #: help/en:9
 #, no-wrap
 msgid "This is the name that you will have to login with."
-msgstr ""
+msgstr "這是您登入所用的名稱"
 
 #: help/en:10
 #, no-wrap
 msgid "First name of that user."
-msgstr ""
+msgstr "該用戶的首名"
 
 #: help/en:11
 #, no-wrap
 msgid "Surname of that user."
-msgstr ""
+msgstr "該用戶的姓"
 
 #: help/en:12
 #, no-wrap
 msgid "Email address of that user that will be used for sending and receiving."
-msgstr ""
+msgstr "該用戶用來收發電子郵件的地址"

@@ -157,15 +157,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -190,7 +191,7 @@ msgstr ""
 #: lang/en:5
 #, no-wrap
 msgid "Backup"
-msgstr ""
+msgstr "備份"
 
 #: lang/en:6
 #, no-wrap
@@ -255,7 +256,7 @@ msgstr ""
 #: lang/en:18
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: lang/en:19
 #, no-wrap
@@ -277,15 +278,17 @@ msgstr ""
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr ""
 
+# 76%
 #: lang/en:23
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Restore Configuration"
-msgstr ""
+msgstr "基礎配置"
 
+# 88%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save Configuration"
-msgstr ""
+msgstr "基礎配置"
 
 #: lang/en:25
 #, no-wrap
@@ -332,7 +335,8 @@ msgstr ""
 msgid "Would you like to save your incomplete Configuration?"
 msgstr ""
 
+# 83%
 #: lang/en:34
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save configuration"
-msgstr ""
+msgstr "基礎配置"

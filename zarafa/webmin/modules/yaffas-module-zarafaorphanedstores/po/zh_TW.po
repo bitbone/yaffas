@@ -157,152 +157,153 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-30 10:53+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1 lang/en:29
 #, no-wrap
 msgid "Orphaned Stores"
-msgstr ""
+msgstr "孤立的儲存"
 
 #: lang/en:2
 #, no-wrap
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: lang/en:3
 #, no-wrap
 msgid "Store Guid"
-msgstr ""
+msgstr "儲存指引"
 
 #: lang/en:4
 #, no-wrap
 msgid "Guessed Username"
-msgstr ""
+msgstr "猜測之用戶名稱"
 
 #: lang/en:5
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: lang/en:6
 #, no-wrap
 msgid "Last Modified"
-msgstr ""
+msgstr "最後修改"
 
 #: lang/en:7
 #, no-wrap
 msgid "Last Login"
-msgstr ""
+msgstr "最後登入"
 
 #: lang/en:8
 #, no-wrap
 msgid "Store Type"
-msgstr ""
+msgstr "儲存類型"
 
 #: lang/en:9
 #, no-wrap
 msgid "Do you really want to delete the selected store?"
-msgstr ""
+msgstr "您真的要刪除選定的儲存嗎?"
 
 #: lang/en:10
 #, no-wrap
 msgid "Delete orphaned store"
-msgstr ""
+msgstr "刪除孤立的儲存"
 
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to copy this store to the public store?"
-msgstr ""
+msgstr "您真的要複製此儲存至公共儲存嗎?"
 
 #: lang/en:12
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
 #: lang/en:13 lang/en:19
 #, no-wrap
 msgid "Hook to user"
-msgstr ""
+msgstr "掛至用戶"
 
 #: lang/en:14
 #, no-wrap
 msgid "Copy to public store"
-msgstr ""
+msgstr "複製至公共儲存"
 
 #: lang/en:15
 #, no-wrap
 msgid "Hook orphaned store"
-msgstr ""
+msgstr "掛孤立儲存"
 
 #: lang/en:16
 #, no-wrap
 msgid "Confirm"
-msgstr ""
+msgstr "確認"
 
 #: lang/en:17
 #, no-wrap
 msgid "Username"
-msgstr ""
+msgstr "用戶名稱"
 
 #: lang/en:18
 #, no-wrap
 msgid "Full Name"
-msgstr ""
+msgstr "全名"
 
 #: lang/en:20
 #, no-wrap
 msgid "Orphaned Store ID"
-msgstr ""
+msgstr "孤立儲存之識別碼"
 
 #: lang/en:21
 #, no-wrap
 msgid "Hook store"
-msgstr ""
+msgstr "掛儲存"
 
 #: lang/en:22
 #, no-wrap
 msgid "to user"
-msgstr ""
+msgstr "至用戶"
 
 #: lang/en:23
 #, no-wrap
 msgid "Hook"
-msgstr ""
+msgstr "掛"
 
 #: lang/en:24
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: lang/en:25
 #, no-wrap
 msgid "Could not hook orphaned store"
-msgstr ""
+msgstr "無法掛孤立儲存"
 
 #: lang/en:26
 #, no-wrap
 msgid "Could not find store"
-msgstr ""
+msgstr "無法找到儲存"
 
 #: lang/en:27
 #, no-wrap
 msgid "Could not hook the store to the selected user."
-msgstr ""
+msgstr "無法掛儲存至選定之用戶"
 
 #: lang/en:28
 #, no-wrap
 msgid "You have to select a user first"
-msgstr ""
+msgstr "您須先選擇一個用戶"
 
 #: help/en:1
 #, no-wrap
 msgid "This is a list of all zarafa stores which are not hooked to any user. Usually this happens when users are deleted. You have the option to delete these stores, hook them to another user or copy them to the public store. Hooking a orphaned store to a user will make the orphaned store the user's new store. The user's old store will in turn be orphaned."
-msgstr ""
+msgstr "這是未掛至任何用戶之全部Zarafa儲存列表，這通常發生在用戶被刪除時。您可選擇刪除這些儲存、將其掛至另一用戶或將其複製至公共儲存。如將孤立儲存掛到一用戶，將使此孤立儲存成為此用戶之新儲存，此用戶之舊儲存將轉變成孤立。"

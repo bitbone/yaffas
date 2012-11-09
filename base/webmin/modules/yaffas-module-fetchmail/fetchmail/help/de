@@ -1,6 +1,8 @@
 interval=Geben sie das Abrufintervall in Sekunden an.
 poll=Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen wollen.
+proto=Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify "Connect in SSL mode" below.
 via=Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen.
-port=Der TCP/IP Port des entfernten Servers.
+port=The TCP/IP port of the remote server. Leave this at "Default" unless you know what you are doing. If "Connect in SSL mode" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option.
+ssl=Specify wheter SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to "No" instead.
 poll_envelope=Der Kopfzeilenname der Umschlagadresse (z.B. X-Envelope-To).
 user=Geben sie den Login-Benutzer der entfernten Maschine an.

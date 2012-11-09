@@ -1,5 +1,5 @@
-size=Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess.
-limit=Ceci limite l'utilisation disque maximale de chaque utilisateur en Mo.
+attachment_size=Spécifier en Mo la taille maximale des pièces jointes pour chaque courriel pouvant être téléchargée par WebAccess.
+quota=This limits the maximum disk usage for each user in MB. Leave empty for no limit.
 mysql_user=Ceci est le nom d'utilisateur qui sera utilisé pour se connecter à la base de données. L'utilisateur doit être créé et doit posséder les autorisations nécessaires pour accéder à la base de données en question.
 mysql_password=Ceci est le mot de passe défini sur la base de données. Vous devez définir ce mot de passe manuellement.
 mysql_host=Ceci est l'adresse du serveur MySQL. Pour les serveurs installés localement, saisir 'localhost'.
@@ -10,4 +10,4 @@ mailboxname=The username to connect to the server. Most of the time you will wan
 password=If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it.
 overwriteprofile=Specify if you want your profile to be overwritten during installation.
 backupprofile=Specify if you want to backup an existing profile before overwriting it.
-
+softdelete_lifetime=Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days).

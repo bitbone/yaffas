@@ -157,15 +157,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1 lang/en:11
 #, no-wrap
@@ -180,7 +181,7 @@ msgstr ""
 #: lang/en:3
 #, no-wrap
 msgid "System"
-msgstr ""
+msgstr "系統"
 
 #: lang/en:4
 #, no-wrap
@@ -295,7 +296,7 @@ msgstr ""
 #: lang/en:31 lang/en:100
 #, no-wrap
 msgid "Used"
-msgstr ""
+msgstr "使用的"
 
 #: lang/en:32 lang/en:45
 #, no-wrap
@@ -312,10 +313,11 @@ msgstr ""
 msgid "Buffers"
 msgstr ""
 
+# 83%
 #: lang/en:35
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Cache"
-msgstr ""
+msgstr "暫存"
 
 #: lang/en:36
 #, no-wrap
@@ -325,7 +327,7 @@ msgstr ""
 #: lang/en:37 lang/en:99
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: lang/en:38
 #, no-wrap
@@ -460,7 +462,7 @@ msgstr ""
 #: lang/en:68 lang/en:85
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "州"
 
 #: lang/en:69
 #, no-wrap
@@ -470,7 +472,7 @@ msgstr ""
 #: lang/en:70
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "用戶"
 
 #: lang/en:71
 #, no-wrap
@@ -535,7 +537,7 @@ msgstr ""
 #: lang/en:84
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "類型"
 
 #: lang/en:86
 #, no-wrap
@@ -580,12 +582,13 @@ msgstr ""
 #: lang/en:101
 #, no-wrap
 msgid "Available"
-msgstr ""
+msgstr "可用的"
 
+# 80%
 #: lang/en:102
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Used%"
-msgstr ""
+msgstr "使用的"
 
 #: lang/en:103
 #, no-wrap

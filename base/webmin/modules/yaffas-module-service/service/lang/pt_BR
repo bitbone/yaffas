@@ -38,7 +38,9 @@ lbl_month=Mês
 lbl_date=Data
 lbl_hour=Hora
 lbl_year=Ano
+lbl_timezone=Timezone
 lbl_setdatetime=Hora do sistema
+err_invalid_timezone=Invalid timezone
 
 
 lbl_once=agora

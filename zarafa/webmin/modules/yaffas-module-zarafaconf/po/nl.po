@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-09 00:23+0100\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
 "PO-Revision-Date: 2012-05-24 09:46+0200\n"
 "Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,236 +24,246 @@ msgstr "Gebruikersfilter"
 
 #: lang/en:2
 #, no-wrap
-msgid "Filtertype"
-msgstr "Filtertype"
-
-#: lang/en:3
-#, no-wrap
-msgid "Group"
-msgstr "Groep"
-
-#: lang/en:4
-#, no-wrap
 msgid "Default"
 msgstr "Standaard"
 
-#: lang/en:5
+#: lang/en:3
 #, no-wrap
 msgid "AD Plugin"
 msgstr "AD Plug-in"
 
-#: lang/en:6
+#: lang/en:4
 #, no-wrap
 msgid "AD Group"
 msgstr "AD Groep"
 
-#: lang/en:7
+#: lang/en:5
 #, no-wrap
 msgid "Delete these zarafa stores?"
 msgstr "Deze zarafa stores verwijderen?"
 
-#: lang/en:8
+#: lang/en:6
 #, no-wrap
 msgid "With this step, the following zarafa stores would be deleted:"
 msgstr "Met deze stap zullen de volgende zarafa stores worden verwijderd:"
 
-#: lang/en:9
+#: lang/en:7
 #, no-wrap
 msgid "Could not find Group."
 msgstr "Kon Groep niet vinden."
 
-#: lang/en:10
+#: lang/en:8
 #, no-wrap
 msgid "Could not find the rootDomainNamingContext in AD."
 msgstr "Kon de rootDomainNamingContext niet vinden in AD."
 
-#: lang/en:12
+#: lang/en:10
 #, no-wrap
-msgid "Size of attachments"
-msgstr "Grootte van bijlagen"
+msgid "Maximum attachment size in Webaccess"
+msgstr ""
 
-#: lang/en:13
+#: lang/en:11
 #, no-wrap
 msgid "Size"
 msgstr "Grootte"
 
+#: lang/en:12
+#, no-wrap
+msgid "Purge old deleted items now?"
+msgstr ""
+
+#: lang/en:13
+#, no-wrap
+msgid "The maximum attachment size must be numeric and >0."
+msgstr ""
+
 #: lang/en:14
 #, no-wrap
-msgid "The value is not numeric."
-msgstr "De waarde is niet numeriek."
+msgid "The softdelete lifetime must be numeric and >=0."
+msgstr ""
 
-#: lang/en:16
+#: lang/en:15
+#, no-wrap
+msgid "Could not purge old items."
+msgstr ""
+
+#: lang/en:17
 #, no-wrap
 msgid "Optimize"
 msgstr "Optimaliseer"
 
-#: lang/en:17
+#: lang/en:18
 #, no-wrap
 msgid "Addressable memory"
 msgstr "Adresseerbaar geheugen"
 
-#: lang/en:18
+#: lang/en:19
 #, no-wrap
 msgid "Optimized for"
 msgstr "Geoptimaliseerd voor"
 
-#: lang/en:19
+#: lang/en:20
 #, no-wrap
 msgid "Optimize memory"
 msgstr "Optimaliseer geheugen"
 
-#: lang/en:20
+#: lang/en:21
 #, no-wrap
 msgid "unknown"
 msgstr "onbekend"
 
-#: lang/en:22
+#: lang/en:23
 #, no-wrap
 msgid "Quota e-mail templates"
 msgstr "Quota-e-mailsjablonen"
 
-#: lang/en:23
+#: lang/en:24
 #, no-wrap
 msgid "Message at 80%"
 msgstr "Bericht op 80%"
 
-#: lang/en:24
+#: lang/en:25
 #, no-wrap
 msgid "Message at 90%"
 msgstr "Bericht op 90%"
 
-#: lang/en:25
+#: lang/en:26
 #, no-wrap
 msgid "Message at 100%"
 msgstr "Bericht op 100%"
 
-#: lang/en:27
+#: lang/en:28 lang/en:29
 #, no-wrap
 msgid "Default quota"
 msgstr "Standaard quota"
 
-#: lang/en:28
-#, no-wrap
-msgid "Default Quota"
-msgstr "Standaard Quota"
-
-#: lang/en:29
-#, no-wrap
-msgid "Off"
-msgstr "Uit"
-
 #: lang/en:31
 #, no-wrap
-msgid "Default features"
-msgstr "Standaardfunctionaliteiten"
+msgid "Enable POP3 for users by default"
+msgstr ""
 
 #: lang/en:32
+#, no-wrap
+msgid "Enable IMAP for users by default"
+msgstr ""
+
+#: lang/en:33
 #, no-wrap
 msgid "Feature"
 msgstr "Functionaliteit"
 
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "State"
 msgstr "Status"
 
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "MySQL settings"
 msgstr "MySQL-instellingen"
 
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Database"
 msgstr "Database"
 
-#: lang/en:37
+#: lang/en:38
 #, no-wrap
 msgid "Server"
 msgstr "Server"
 
-#: lang/en:38 lang/en:43
+#: lang/en:39 lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "Gebruikersnaam"
 
-#: lang/en:39 lang/en:44
+#: lang/en:40 lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "Wachtwoord"
 
-#: lang/en:41
+#: lang/en:42
 #, no-wrap
 msgid "PRF Creator"
 msgstr ""
 
-#: lang/en:42
+#: lang/en:43
 #, no-wrap
 msgid "Profile name"
 msgstr ""
 
-#: lang/en:45
+#: lang/en:46
 #, no-wrap
 msgid "Server adress"
 msgstr ""
 
-#: lang/en:46
+#: lang/en:47
 #, no-wrap
 msgid "Overwrite profile"
 msgstr ""
 
-#: lang/en:47
+#: lang/en:48
 #, no-wrap
 msgid "Backup profile"
 msgstr ""
 
-#: lang/en:48
+#: lang/en:49
 #, no-wrap
 msgid "Download"
 msgstr ""
 
-#: lang/en:50
+#: lang/en:51
 #, no-wrap
 msgid "Connection type"
 msgstr ""
 
-#: lang/en:51
+#: lang/en:52
 #, no-wrap
 msgid "Autodetect"
 msgstr ""
 
-#: lang/en:52
+#: lang/en:53
 #, no-wrap
 msgid "Online"
 msgstr ""
 
 # 83%
-#: lang/en:53
+#: lang/en:54
 #, fuzzy, no-wrap
 msgid "Cached"
 msgstr "Cache"
 
-#: lang/en:55
+#: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /import \\\\path\\to\\file.prf)"
 msgstr ""
 
 #: lang/en:57
 #, no-wrap
+msgid "Basic settings"
+msgstr "Basis-instellingen"
+
+#: lang/en:58
+#, no-wrap
+msgid "Number of days to keep deleted items"
+msgstr ""
+
+#: lang/en:60
+#, no-wrap
 msgid "Could not connect to database."
 msgstr "Kan geen verbinding krijgen met de database."
 
-#: lang/en:58
+#: lang/en:61
 #, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "De quotawaarde kan alleen cijfers bevatten."
 
-#: lang/en:59
+#: lang/en:62
 #, no-wrap
 msgid "Configuration"
 msgstr "Configuratie"
 
-#: lang/en:60
+#: lang/en:63
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr "Het is niet mogelijk om een hekje (#) te gebruiken in het MySQL-wachtwoord."
@@ -265,8 +275,8 @@ msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worde
 
 #: help/en:2
 #, no-wrap
-msgid "This limits the maximum disk usage for each user in MB."
-msgstr "Dit beperkt het maximale schijfgebruik voor elke gebruiker in MB."
+msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
+msgstr ""
 
 #: help/en:3
 #, no-wrap
@@ -316,4 +326,9 @@ msgstr ""
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
+msgstr ""
+
+#: help/en:13
+#, no-wrap
+msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."
 msgstr ""
