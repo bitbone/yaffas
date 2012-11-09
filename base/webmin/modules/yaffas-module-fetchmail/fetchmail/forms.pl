@@ -10,12 +10,12 @@ use Sort::Naturally;
 my @protocols = qw(pop3 pop2 imap imap-k4 imap-gss apop kpop);
 
 sub show_polls {
-	print Yaffas::UI::section(
-		$main::text{index_title},
-		$Cgi->div( { -id => "menubar" }, "" ),
-		$Cgi->div( { -id => "table" },   "" ),
-		$Cgi->div( { -id => "menu" },    "" )
-	);
+	print Yaffas::UI::start_section($main::text{index_title});
+	print $Cgi->div( { -id => "menubar" }, "" );
+	print $Cgi->div( { -id => "table" },   "" );
+	print $Cgi->div( { -id => "menu" },    "" );
+	print $Cgi->p($main::text{'lbl_check_logs'});
+	print Yaffas::UI::end_section();
 }
 
 sub show_global_settings {
