@@ -259,7 +259,10 @@ If given, sets sambaSID in remote ldap
 
 sub set_bk_ldap_auth($$$$$$$$;$$) {
 	my $i = 1;
-	my ($host, $basedn, $binddn, $bindpw, $userdn, $groupdn, $usersearch, $email, $encryption, $sambasid) = @_;
+	my ($hosts, $basedn, $binddn, $bindpw, $userdn, $groupdn, $usersearch, $email, $encryption, $sambasid) = @_;
+	unless(ref($hosts) eq "ARRAY") {
+		$hosts = [$hosts];
+	}
 
 	my $exception = Yaffas::Exception->new();
 
@@ -279,12 +282,14 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 	try{
 		# check all input values
-		$exception->add("err_invalid_host")
-		if (! (Yaffas::Check::ip($host) ||
-				Yaffas::Check::hostname($host) ||
-				Yaffas::Check::domainname($host)
-			  )
-		   );
+		foreach my $host (@{$hosts}) {
+			$exception->add("err_invalid_host")
+			if (! (Yaffas::Check::ip($host) ||
+					Yaffas::Check::hostname($host) ||
+					Yaffas::Check::domainname($host)
+				  )
+			   );
+		}
 
 		$exception->add("err_userdn") if ($userdn && !Yaffas::Check::dn($userdn) );
 		$exception->add("err_groupdn") if ($groupdn && !Yaffas::Check::dn($groupdn) );
@@ -296,11 +301,23 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 		throw $exception if $exception;
 
-		# Disable AuthSrv if we are not authenticating against localhost 
-		if( Yaffas::Auth::is_auth_srv()&& $host ne "127.0.0.1" && $host ne "localhost" ){
-			auth_srv_ldap( "deactivate" );
+		# Disable AuthSrv if we are not authenticating against localhost
+		my $deactivate = 1;
+		foreach my $host (@{$hosts}) {
+			if( Yaffas::Auth::is_auth_srv()&& ($host eq "127.0.0.1" || $host eq "localhost") ){
+				$deactivate = 0;
+			}
 		}
-		if( $host ne "127.0.0.1" && $host ne "localhost" ){
+		if($deactivate) {
+            auth_srv_ldap( "deactivate" );
+		}
+        $deactivate = 1;
+        foreach my $host (@{$hosts}) {
+            if($host eq "127.0.0.1" || $host eq "localhost" ){
+                $deactivate = 0;
+            }
+        }
+        if($deactivate) {
 			auth_srv_pdc ( "deactivate" );
 		}
 
@@ -322,12 +339,14 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 				) or throw Yaffas::Exception("err_file_read", $cfile);
 
 			my $lc_ref = $lc->get_cfg_values();
-			$lc_ref->{host} = $host;
-			if ($encryption) {
-				$lc_ref->{uri} = "ldaps://" . $host;
-			} else {
-				$lc_ref->{uri} = "ldap://" . $host;
+			# $lc_ref->{host} = $host;
+			my $protocol = "ldap://";
+			if($encryption) {
+				$protocol = "ldaps://";
 			}
+			my @uris = map($protocol.$_ , @{$hosts});
+			$lc_ref->{uri} = join " ", @uris;
+
 			$lc_ref->{base} = $basedn;
 			$lc_ref->{binddn} = $binddn;
 			$lc_ref->{bindpw} = $bindpw;
@@ -384,7 +403,9 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$smb = File::Samba->new( Yaffas::Constant::FILE->{'smb_includes_global'} )
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{smb_includes_global});
 		$smb->version(3);
-		$smb->globalParameter('passdb backend', 'ldapsam:ldap://' . $host);
+		$protocol = "ldap://";
+        @uris = map($protocol.$_ , @{$hosts});
+		$smb->globalParameter('passdb backend', 'ldapsam:"'.(join " ", @uris).'"');
 		$smb->deleteGlobalParameter('password server');
 		$smb->deleteGlobalParameter('idmap gid');
 		$smb->deleteGlobalParameter('idmap uid');
@@ -411,7 +432,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		my $linenr = $smbldap_c->search_line(qr/^\s*slaveLDAP\s*=/);
 		if (defined($linenr))
 		{
-			$smbldap_c->splice_line($linenr, 1, "slaveLDAP=\"$host\"");
+			$smbldap_c->splice_line($linenr, 1, "slaveLDAP=\"".${$hosts}[0].""\"");
 		}
 		undef($linenr);
 		
@@ -419,7 +440,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$linenr = $smbldap_c->search_line(qr/^\s*masterLDAP\s*=/);
 		if (defined($linenr))
 		{
-			$smbldap_c->splice_line($linenr, 1, "masterLDAP=\"$host\"");
+			$smbldap_c->splice_line($linenr, 1, "masterLDAP=\"".${$hosts}[0]."\"");
 		}
 		undef($linenr);
 
@@ -469,10 +490,16 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
         _link_webaccess_plugin("passwd");
         _link_webapp_plugin("passwd");
-        update_passwd_plugin_config("ldap", $host, $basedn);
+        update_passwd_plugin_config("ldap", ${$hosts}[0], $basedn);
 
 		# be sure system domain ist same as in ldap tree if local auth.
-		if ($host eq "127.0.0.1" || $host eq "localhost")
+		my $is_local_auth = 0;
+		foreach my $host (@{$hosts}) {
+			if ($host eq "127.0.0.1" || $host eq "localhost") {
+				$is_local_auth = 1;
+			}
+		}
+		if ($is_local_auth)
 		{
 			my $netconf = Yaffas::Module::Netconf->new();
 			my $hostname = $netconf->hostname();
@@ -516,11 +543,13 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		} else {
 			$ls_ref->{USER_SEARCHBASE} = $basedn;
 		}
-		if ($encryption) {
-			$ls_ref->{LDAPURI} = "ldaps://" . $host;
-		} else {
-			$ls_ref->{LDAPURI} = "ldap://" . $host;
-		}
+		$protocol = "ldap://";
+        if($encryption) {
+            $protocol = "ldaps://";
+        }
+        @uris = map($protocol.$_ , @{$hosts});
+        $ls_ref->{LDAPURI} = join " ", @uris;
+		
 		$ls_ref->{BINDDN} = $binddn;
 		$ls_ref->{BASEDN} = $basedn;
 		$ls_ref->{LDAPSECRET} = $bindpw;
@@ -537,7 +566,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 												 );
 
 		my $ldap_conf_ref = $ldap_conf->get_cfg_values();
-		$ldap_conf_ref->{'host'} = $host;
+		$ldap_conf_ref->{'host'} = ${$hosts}[0];
+		$ldap_conf_ref->{'URI'} = @uris;
 		$ldap_conf_ref->{'base'} = $basedn;
 		$ldap_conf->write();
 
@@ -547,12 +577,13 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		if (Yaffas::Product::check_product("zarafa")) {
 			my $zarafa_settings = {
 				'ldap_bind_user' => $binddn,
-				'ldap_host' => $host,
+				#'ldap_host' => $host,
+				'ldap_uri' => @uris,
 			};
-			unless (defined $encryption) {
-				$zarafa_settings->{'ldap_port'} = '389';
-				$zarafa_settings->{'ldap_protocol'} = 'ldap';
-			}
+			#unless (defined $encryption) {
+			#	$zarafa_settings->{'ldap_port'} = '389';
+			#	$zarafa_settings->{'ldap_protocol'} = 'ldap';
+			#}
 			set_zarafa_ldap($zarafa_settings);
 			Yaffas::Service::control(ZARAFA_SERVER, RESTART);
 			system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
@@ -890,7 +921,10 @@ configures Domain Controller settings
 =cut
 
 sub set_pdc( ;$$$$$$$$){
-	my( $pdc, $domain, $admin, $passwd, $type, $binduser, $bindpw, $encryption ) = @_;
+	my( $pdcs, $domain, $admin, $passwd, $type, $binduser, $bindpw, $encryption ) = @_;
+	unless(ref($pdcs) eq "ARRAY") {
+        $pdcs = [$pdcs];
+    }
 	my $exception = Yaffas::Exception->new();
 
 	my @rollback=( 
@@ -906,13 +940,17 @@ sub set_pdc( ;$$$$$$$$){
 	my $id = rollback_prepare( @rollback );
 
 	try {
-		if (length $pdc < 1) {
+		if (scalar @{$pdcs} < 1) {
 			$exception->add('err_pdc_missing');
 		}
-		elsif ( (! Yaffas::Check::ip($pdc)) && 
-			(! Yaffas::Check::hostname($pdc)) && 
-			(! Yaffas::Check::domainname($pdc)) ) {
-			$exception->add('err_invalid_host'); 
+		else {
+			foreach my $pdc (@{$pdcs}) {
+				if ( (! Yaffas::Check::ip($pdc)) && 
+                    (! Yaffas::Check::hostname($pdc)) && 
+                    (! Yaffas::Check::domainname($pdc)) ) {
+                        $exception->add('err_invalid_host'); 
+                } 
+			}
 		}
 		if (length $domain < 1) {
 			$exception->add('err_miss_domain');
@@ -960,32 +998,33 @@ sub set_pdc( ;$$$$$$$$){
 		}
 		auth_srv_pdc ( 'deactivate' );
 
-		set_pdc_smb( $realm, $pdc, $workgroup, $type, $encryption );
-		set_pdc_krb( $realm, $domain, $pdc );
+		set_pdc_smb( $realm, $pdcs, $workgroup, $type, $encryption );
+		set_pdc_krb( $realm, $domain, $pdcs );
 
 		my $userdn;
 		if ($type eq "win") {
+            my $ldapuri;
+            my $ldap_proto = "ldap";
+            if ($encryption) {
+                $ldap_proto .= "s";
+            }
+            my @uris = map($ldap_proto.$_ , @{$pdcs});
+            $ldapuri = join " ", @uris;
 			if ( $binduser !~ m/cn=/i) {	#if binduser is not already the DN
-				$userdn = Yaffas::Auth::get_ads_userdn($pdc,$admin,$passwd,$binduser);
+				$userdn = Yaffas::Auth::get_ads_userdn($ldapuri,$admin,$passwd,$binduser);
 				$exception->add('err_get_userdn', $binduser) unless defined $userdn;
 			} else {
 				$userdn = $binduser;
 			}
 			throw $exception if $exception;
-			my $ldapuri;
-			my $ldap_proto = "ldap";
-			if ($encryption) {
-				$ldap_proto .= "s";
-			}
-			$ldapuri = $ldap_proto . "://" . $pdc;
-			$exception->add('err_user_bind', $binduser) unless check_userbind($pdc,$userdn,$bindpw,$ldap_proto);
+			$exception->add('err_user_bind', $binduser) unless check_userbind($ldapuri,$userdn,$bindpw,$ldap_proto);
 			throw $exception if $exception;
 			# /etc/ldap.settings
 			my $ls_ref = {};
 			$ls_ref->{USERSEARCH} = 'sAMAccountName';
 			$ls_ref->{USER_SEARCHBASE} = "";
 			$ls_ref->{LDAPURI} = $ldapuri;
-			$ls_ref->{BASEDN} = Yaffas::Auth::get_ads_basedn($pdc);
+			$ls_ref->{BASEDN} = Yaffas::Auth::get_ads_basedn($ldapuri);
 			$ls_ref->{BINDDN} = $userdn;
 			$ls_ref->{LDAPSECRET} = $bindpw;
 			set_searchldap_settings($ls_ref);
@@ -1003,30 +1042,31 @@ sub set_pdc( ;$$$$$$$$){
 		mod_nsswitch("files winbind");
 
 		if (Yaffas::Product::check_product("zarafa") && ($type eq "win")) {
-			my $zarafa_settings = {
-				'ldap_bind_user' => $userdn,
-				'ldap_host' => $pdc,
-				'ldap_bind_passwd' => $bindpw,
-			};
-			unless (defined $encryption) {
-				$zarafa_settings->{'ldap_port'} = '389';
-				$zarafa_settings->{'ldap_protocol'} = 'ldap';
-			}
-			set_zarafa_ldap($zarafa_settings);
-			Yaffas::Service::control(ZARAFA_SERVER, RESTART);
-			system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
-		}
+            my $zarafa_settings = {
+                'ldap_bind_user' => $binddn,
+                #'ldap_host' => $host,
+                'ldap_uri' => @uris,
+            };
+            #unless (defined $encryption) {
+            #   $zarafa_settings->{'ldap_port'} = '389';
+            #   $zarafa_settings->{'ldap_protocol'} = 'ldap';
+            #}
+            set_zarafa_ldap($zarafa_settings);
+            Yaffas::Service::control(ZARAFA_SERVER, RESTART);
+            system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync");
+        }
+		
 
 		_create_builtin_admins($domain, $admin);
 
         _link_webaccess_plugin("passwd");
         _link_webapp_plugin("passwd");
-        update_passwd_plugin_config("ad", $pdc, Yaffas::Auth::get_ads_basedn($pdc));
+        update_passwd_plugin_config("ad", ${$pdcs}[0], Yaffas::Auth::get_ads_basedn($pdc));
 
 		# postfix
 		my $postfix_settings = {
 			'server_host' => $pdc,
-			'search_base' => Yaffas::Auth::get_ads_basedn($pdc),
+			'search_base' => Yaffas::Auth::get_ads_basedn($ldapuri),
 			'bind_dn' => $userdn,
 			'bind_pw' => $bindpw,
 			'bind' => 'yes',
@@ -1081,8 +1121,13 @@ throws: Yaffas::Exception( 'err_writing_krb' )
 =cut
 
 sub set_pdc_krb( $$$ ) {
-	my( $realm, $domain, $pdc ) = @_;
+	my( $realm, $domain, $pdcs ) = @_;
 	my $krb = Yaffas::Constant::FILE->{'krb5'};
+
+    my @kdcs = ();
+    foreach my $pdc (@{$pdcs}) {
+    	push @kdcs, "   kdc = $pdc\n";
+    }
 
 	my $file = Yaffas::File->new($krb, [
 		"[libdefaults]\n",
@@ -1090,7 +1135,7 @@ sub set_pdc_krb( $$$ ) {
 		"clockskew = 300\n",
 		"[realms]\n",
 		"$realm = {\n",
-		"   kdc = $pdc\n",
+		@kdcs,
 		"}\n",
 		"[domain_realm]\n",
 		"$domain  = $realm\n",
@@ -1116,7 +1161,7 @@ throws: Yaffas::Exception( 'err_writing_smb' )
 =cut
 
 sub set_pdc_smb($$$$;$){
-	my( $realm, $pdc, $workgroup, $type, $encryption ) = @_;
+	my( $realm, $pdcs, $workgroup, $type, $encryption ) = @_;
 	my $smb = File::Samba->new( Yaffas::Constant::FILE->{'smb_includes_global'} )
 		or throw Yaffas::Exception( 'err_file_read', Yaffas::Constant::FILE->{'smb_includes_global'} );
 	$smb->version(3);
@@ -1139,7 +1184,7 @@ sub set_pdc_smb($$$$;$){
 		$smb->globalParameter('security', 'DOMAIN');
 		$smb->globalParameter('workgroup', $realm);
 	}
-	$smb->globalParameter('password server', $pdc);
+	$smb->globalParameter('password server', (join ", ", @{$pdcs}).", *");
 	$smb->globalParameter('winbind separator', '/');
 	$smb->globalParameter('idmap uid', '10000-30000');
 	$smb->globalParameter('idmap gid', '10000-30000');
@@ -1328,8 +1373,8 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_group_type_attribute_value'} = "posixGroup";
 
 	} elsif ($type eq ADS) {
-		$basedn = Yaffas::Auth::get_ads_basedn($additional_config->{'ldap_host'});
-		$rootbasedn = Yaffas::Auth::get_ads_basedn($additional_config->{'ldap_host'}, "rootDomainNamingContext");
+		$basedn = Yaffas::Auth::get_ads_basedn($additional_config->{'ldap_uri'});
+		$rootbasedn = Yaffas::Auth::get_ads_basedn($additional_config->{'ldap_uri'}, "rootDomainNamingContext");
 		unless (defined $additional_config->{'ldap_bind_passwd'}) {
 			$exception->add("err_miss_pass")
 		}
@@ -1478,17 +1523,16 @@ returns 1 if bind was successful, undef else; exception on failure in DN or pass
 =cut
 
 sub check_userbind($$$;$){
-	my ($server, $userdn, $pass, $ldap_proto) = @_;
+	my ($ldapuri, $userdn, $pass, $ldap_proto) = @_;
 
 	if ((! defined $ldap_proto) || ($ldap_proto !~ m/^ldaps?$/)) {
 		$ldap_proto = "ldap";
 	}
-	my $ldapuri = $ldap_proto . "://" . $server;
 	my $rv = undef;
 	my $exception = Yaffas::Exception->new();
 	$exception->add("err_pass_wrong", $pass) unless Yaffas::Check::password($pass);
 	throw $exception if( $exception );
-	my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$userdn,"-x","-H",$ldapuri,"-w",$pass,"-b",$userdn);
+	my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$userdn,"-x","-H",'"'.$ldapuri.'"',"-w",$pass,"-b",$userdn);
 #	if ($? != 0) {
 	if (scalar @re > 0) {
 		my $errorcode = "";
