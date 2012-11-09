@@ -10,7 +10,7 @@
 *
 * Created   :   01.10.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -103,6 +103,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
         $this->changesSinkFolders = array();
         $this->changesSinkStores = array();
         $this->wastebasket = false;
+        $this->session = false;
 
         ZLog::Write(LOGLEVEL_DEBUG, sprintf("BackendZarafa using PHP-MAPI version: %s", phpversion("mapi")));
     }
@@ -151,7 +152,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
      */
     public function Logon($user, $domain, $pass) {
         ZLog::Write(LOGLEVEL_DEBUG, sprintf("ZarafaBackend->Logon(): Trying to authenticate user '%s'..", $user));
-        $this->mainUser = $user;
+        $this->mainUser = strtolower($user);
 
         try {
             // check if notifications are available in php-mapi
@@ -165,9 +166,11 @@ class BackendZarafa implements IBackend, ISearchProvider {
                 $this->notifications = false;
             }
 
-            if (mapi_last_hresult())
+            if (mapi_last_hresult()) {
                 ZLog::Write(LOGLEVEL_ERROR, sprintf("ZarafaBackend->Logon(): login failed with error code: 0x%X", mapi_last_hresult()));
-
+                if (mapi_last_hresult() == MAPI_E_NETWORK_ERROR)
+                    throw new HTTPReturnCodeException("Error connecting to ZCP (login)", 503, null, LOGLEVEL_INFO);
+            }
         }
         catch (MAPIException $ex) {
             throw new AuthenticationRequiredException($ex->getDisplayMessage());
@@ -180,13 +183,16 @@ class BackendZarafa implements IBackend, ISearchProvider {
         }
 
         // Get/open default store
-        $this->defaultstore = $this->openMessageStore($user);
+        $this->defaultstore = $this->openMessageStore($this->mainUser);
+
+        if (mapi_last_hresult() == MAPI_E_FAILONEPROVIDER)
+            throw new HTTPReturnCodeException("Error connecting to ZCP (open store)", 503, null, LOGLEVEL_INFO);
 
         if($this->defaultstore === false)
             throw new AuthenticationRequiredException(sprintf("ZarafaBackend->Logon(): User '%s' has no default store", $user));
 
         $this->store = $this->defaultstore;
-        $this->storeName = $user;
+        $this->storeName = $this->mainUser;
 
         ZLog::Write(LOGLEVEL_DEBUG, sprintf("ZarafaBackend->Logon(): User '%s' is authenticated",$user));
 
@@ -438,6 +444,25 @@ class BackendZarafa implements IBackend, ISearchProvider {
             ZLog::Write(LOGLEVEL_DEBUG, "Use the mapi_inetmapi_imtomapi function");
             $ab = mapi_openaddressbook($this->session);
             mapi_inetmapi_imtomapi($this->session, $this->store, $ab, $mapimessage, $sm->mime, array());
+
+            // Set the appSeqNr so that tracking tab can be updated for meeting request updates
+            // @see http://jira.zarafa.com/browse/ZP-68
+            $meetingRequestProps = MAPIMapping::GetMeetingRequestProperties();
+            $meetingRequestProps = getPropIdsFromStrings($this->store, $meetingRequestProps);
+            $props = mapi_getprops($mapimessage, array(PR_MESSAGE_CLASS, $meetingRequestProps["goidtag"]));
+            if (stripos($props[PR_MESSAGE_CLASS], "IPM.Schedule.Meeting.Resp.") === 0) {
+                // search for calendar items using goid
+                $mr = new Meetingrequest($this->store, $mapimessage);
+                $appointments = $mr->findCalendarItems($props[$meetingRequestProps["goidtag"]]);
+                if (is_array($appointments) && !empty($appointments)) {
+                    $app = mapi_msgstore_openentry($this->store, $appointments[0]);
+                    $appprops = mapi_getprops($app, array($meetingRequestProps["appSeqNr"]));
+                    if (isset($appprops[$meetingRequestProps["appSeqNr"]]) && $appprops[$meetingRequestProps["appSeqNr"]]) {
+                        $mapiprops[$meetingRequestProps["appSeqNr"]] = $appprops[$meetingRequestProps["appSeqNr"]];
+                        ZLog::Write(LOGLEVEL_DEBUG, sprintf("Set sequence number to:%d", $appprops[$meetingRequestProps["appSeqNr"]]));
+                    }
+                }
+            }
 
             // Delete the PR_SENT_REPRESENTING_* properties because some android devices
             // do not send neither From nor Sender header causing empty PR_SENT_REPRESENTING_NAME and
@@ -846,6 +871,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
         // F/B will be updated on logoff
 
         // We have to return the ID of the new calendar item, so do that here
+        $calendarid = "";
         if (isset($entryid)) {
             $newitem = mapi_msgstore_openentry($this->store, $entryid);
             $newprops = mapi_getprops($newitem, array(PR_SOURCE_KEY));
@@ -854,7 +880,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
 
         // on recurring items, the MeetingRequest class responds with a wrong entryid
         if ($requestid == $calendarid) {
-               ZLog::Write(LOGLEVEL_DEBUG, sprintf("BackendZarafa->MeetingResponse('%s','%s', '%s'): returned calender id is the same as the requestid - re-searching", $requestid, $folderid, $response));
+            ZLog::Write(LOGLEVEL_DEBUG, sprintf("BackendZarafa->MeetingResponse('%s','%s', '%s'): returned calender id is the same as the requestid - re-searching", $requestid, $folderid, $response));
 
             $props = MAPIMapping::GetMeetingRequestProperties();
             $props = getPropIdsFromStrings($this->store, $props);
@@ -870,10 +896,10 @@ class BackendZarafa implements IBackend, ISearchProvider {
                $calendarid = bin2hex($newprops[PR_SOURCE_KEY]);
                ZLog::Write(LOGLEVEL_DEBUG, sprintf("BackendZarafa->MeetingResponse('%s','%s', '%s'): found other calendar entryid", $requestid, $folderid, $response));
             }
-        }
 
-        if ($calendarid == "" || $requestid == $calendarid)
-            throw new StatusException(sprintf("BackendZarafa->MeetingResponse('%s','%s', '%s'): Error finding the accepted meeting response in the calendar", $requestid, $folderid, $response), SYNC_MEETRESPSTATUS_INVALIDMEETREQ);
+            if ($requestid == $calendarid)
+                throw new StatusException(sprintf("BackendZarafa->MeetingResponse('%s','%s', '%s'): Error finding the accepted meeting response in the calendar", $requestid, $folderid, $response), SYNC_MEETRESPSTATUS_INVALIDMEETREQ);
+        }
 
         // delete meeting request from Inbox
         $folderentryid = mapi_msgstore_entryidfromsourcekey($this->store, hex2bin($folderid));
@@ -900,13 +926,15 @@ class BackendZarafa implements IBackend, ISearchProvider {
 
         $this->changesSink = @mapi_sink_create();
 
-        if (! $this->changesSink) {
-            ZLog::Write(LOGLEVEL_DEBUG, "ZarafaBackend->HasChangesSink(): sink could not be created");
+        if (! $this->changesSink || mapi_last_hresult()) {
+            ZLog::Write(LOGLEVEL_WARN, sprintf("ZarafaBackend->HasChangesSink(): sink could not be created with  0x%X", mapi_last_hresult()));
             return false;
         }
 
         ZLog::Write(LOGLEVEL_DEBUG, "ZarafaBackend->HasChangesSink(): created");
-        return true;
+
+        // advise the main store and also to check if the connection supports it
+        return $this->adviseStoreToSink($this->defaultstore);
     }
 
     /**
@@ -929,13 +957,8 @@ class BackendZarafa implements IBackend, ISearchProvider {
         // add entryid to the monitored folders
         $this->changesSinkFolders[$entryid] = $folderid;
 
-        // check if this store is already monitored, else advise it
-        if (!in_array($this->store, $this->changesSinkStores)) {
-            mapi_msgstore_advise($this->store, null, fnevObjectModified | fnevObjectCreated | fnevObjectMoved | fnevObjectDeleted, $this->changesSink);
-            $this->changesSinkStores[] = $this->store;
-            ZLog::Write(LOGLEVEL_DEBUG, sprintf("ZarafaBackend->ChangesSinkInitialize(): advised store '%s'", $this->store));
-        }
-        return true;
+        // advise the current store to the sink
+        return $this->adviseStoreToSink($this->store);
     }
 
     /**
@@ -1238,6 +1261,30 @@ class BackendZarafa implements IBackend, ISearchProvider {
      */
 
     /**
+     * Advises a store to the changes sink
+     *
+     * @param mapistore $store              store to be advised
+     *
+     * @access private
+     * @return boolean
+     */
+    private function adviseStoreToSink($store) {
+        // check if we already advised the store
+        if (!in_array($store, $this->changesSinkStores)) {
+            mapi_msgstore_advise($this->store, null, fnevObjectModified | fnevObjectCreated | fnevObjectMoved | fnevObjectDeleted, $this->changesSink);
+            $this->changesSinkStores[] = $store;
+
+            if (mapi_last_hresult()) {
+                ZLog::Write(LOGLEVEL_WARN, sprintf("ZarafaBackend->adviseStoreToSink(): failed to advised store '%s' with code 0x%X. Polling will be performed.", $this->store, mapi_last_hresult()));
+                return false;
+            }
+            else
+                ZLog::Write(LOGLEVEL_DEBUG, sprintf("ZarafaBackend->adviseStoreToSink(): advised store '%s'", $this->store));
+        }
+        return true;
+    }
+
+    /**
      * Open the store marked with PR_DEFAULT_STORE = TRUE
      * if $return_public is set, the public store is opened
      *
@@ -1360,7 +1407,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
             $oofmessage = new SyncOOFMessage();
             $oofmessage->appliesToInternal = "";
             $oofmessage->enabled = $oof->oofstate;
-            $oofmessage->replymessage = w2u(isset($oofprops[PR_EC_OUTOFOFFICE_MSG]) ? $oofprops[PR_EC_OUTOFOFFICE_MSG] : "");
+            $oofmessage->replymessage = (isset($oofprops[PR_EC_OUTOFOFFICE_MSG])) ? w2u($oofprops[PR_EC_OUTOFOFFICE_MSG]) : "";
             $oofmessage->bodytype = $oof->bodytype;
             unset($oofmessage->appliesToExternal, $oofmessage->appliesToExternalUnknown);
             $oof->oofmessage[] = $oofmessage;
@@ -1370,8 +1417,7 @@ class BackendZarafa implements IBackend, ISearchProvider {
         }
 
         //unset body type for oof in order not to stream it
-        unset($oof->bodyType);
-
+        unset($oof->bodytype);
     }
 
     /**

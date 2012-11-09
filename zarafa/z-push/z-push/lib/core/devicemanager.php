@@ -10,7 +10,7 @@
 *
 * Created   :   11.04.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -46,9 +46,6 @@
 ************************************************/
 
 class DeviceManager {
-    // stream up to 100 messages to the client by default
-    const DEFAULTWINDOWSIZE = 100;
-
     // broken message indicators
     const MSG_BROKEN_UNKNOWN = 1;
     const MSG_BROKEN_CAUSINGLOOP = 2;
@@ -432,6 +429,23 @@ class DeviceManager {
     }
 
     /**
+     * Removes device information about a broken message as it is been removed from the mobile.
+     *
+     * @param string        $id         message id
+     *
+     * @access public
+     * @return boolean
+     */
+    public function RemoveBrokenMessage($id) {
+        $folderid = $this->getLatestFolder();
+        if ($this->device->RemoveIgnoredMessage($folderid, $id)) {
+            ZLog::Write(LOGLEVEL_INFO, sprintf("DeviceManager->RemoveBrokenMessage('%s', '%s'): cleared data about previously ignored message", $folderid, $id));
+            return true;
+        }
+        return false;
+    }
+
+    /**
      * Amount of items to me synchronized
      *
      * @param string    $folderid
@@ -444,7 +458,13 @@ class DeviceManager {
         if (isset($this->windowSize[$folderid]))
             $items = $this->windowSize[$folderid];
         else
-            $items = self::DEFAULTWINDOWSIZE;
+            $items = (defined("SYNC_MAX_ITEMS")) ? SYNC_MAX_ITEMS : 100;
+
+        if (defined("SYNC_MAX_ITEMS") && SYNC_MAX_ITEMS < $items) {
+            if ($queuedmessages > SYNC_MAX_ITEMS)
+                ZLog::Write(LOGLEVEL_DEBUG, sprintf("DeviceManager->GetWindowSize() overwriting max itmes requested of %d by %d forced in configuration.", $items, SYNC_MAX_ITEMS));
+            $items = SYNC_MAX_ITEMS;
+        }
 
         $this->setLatestFolder($folderid);
 
@@ -692,7 +712,7 @@ class DeviceManager {
      */
     private function announceAcceptedMessage($folderid, $id) {
         if ($this->device->RemoveIgnoredMessage($folderid, $id)) {
-            ZLog::Write(LOGLEVEL_INFO, sprintf("DeviceManager->announceAcceptedMessage('%s', '%s'): cleared previosily ignored message as message is sucessfully streamed",$folderid, $id));
+            ZLog::Write(LOGLEVEL_INFO, sprintf("DeviceManager->announceAcceptedMessage('%s', '%s'): cleared previously ignored message as message is sucessfully streamed",$folderid, $id));
             return true;
         }
         return false;

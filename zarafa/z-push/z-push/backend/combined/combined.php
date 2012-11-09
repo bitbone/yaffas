@@ -14,7 +14,7 @@
 *
 * Created   :   29.11.2010
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -61,6 +61,7 @@ class BackendCombined extends Backend {
     public $config;
     public $backends;
     private $activeBackend;
+    private $activeBackendID;
 
     /**
      * Constructor of the combined backend
@@ -310,8 +311,13 @@ class BackendCombined extends Backend {
      */
     function GetWasteBasket(){
         ZLog::Write(LOGLEVEL_DEBUG, "Combined->GetWasteBasket()");
-        if (isset($this->activeBackend))
-            return $this->activeBackend->GetWasteBasket();
+
+        if (isset($this->activeBackend)) {
+            if (!$this->activeBackend->GetWasteBasket())
+                return false;
+            else
+                return $this->activeBackendID . $this->config['delimiter'] . $this->activeBackend->GetWasteBasket();
+        }
 
         return false;
     }
@@ -376,6 +382,7 @@ class BackendCombined extends Backend {
             return false;
 
         $this->activeBackend = $this->backends[$id];
+        $this->activeBackendID = $id;
         return $this->backends[$id];
     }
 

@@ -6,7 +6,7 @@
 *
 * Created   :   01.10.2007
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -182,7 +182,7 @@ class ZLog {
         if (!isset(self::$devid))
             self::$devid = '';
 
-        return Utils::GetFormattedTime() ." ". self::$pidstr . self::$user . self::getLogLevelString($loglevel, (LOGLEVEL > LOGLEVEL_INFO)) ." ". self::$devid;
+        return Utils::GetFormattedTime() ." ". self::$pidstr . self::getLogLevelString($loglevel, (LOGLEVEL > LOGLEVEL_INFO)) ." ". self::$user . self::$devid;
     }
 
     /**

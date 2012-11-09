@@ -10,7 +10,7 @@
 *
 * Created   :   08.11.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -57,13 +57,13 @@ class SyncOOFMessage extends SyncObject {
         $mapping = array (
             //only one of the following 3 apply types will be available
             SYNC_SETTINGS_APPLIESTOINTERVAL             => array (  self::STREAMER_VAR      => "appliesToInternal",
-                                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_SEND_EMPTY),
+                                                                    self::STREAMER_PROP     => self::STREAMER_TYPE_SEND_EMPTY),
 
-            SYNC_SETTINGS_APPLIESTOEXTERNALKNOWN        => array (  self::STREAMER_VAR      => "aplliesToExternal",
-                                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_SEND_EMPTY),
+            SYNC_SETTINGS_APPLIESTOEXTERNALKNOWN        => array (  self::STREAMER_VAR      => "appliesToExternal",
+                                                                    self::STREAMER_PROP     => self::STREAMER_TYPE_SEND_EMPTY),
 
-            SYNC_SETTINGS_APPLIESTOEXTERNALUNKNOWN      => array (  self::STREAMER_VAR      => "aplliesToExternalUnknown",
-                                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_SEND_EMPTY),
+            SYNC_SETTINGS_APPLIESTOEXTERNALUNKNOWN      => array (  self::STREAMER_VAR      => "appliesToExternalUnknown",
+                                                                    self::STREAMER_PROP     => self::STREAMER_TYPE_SEND_EMPTY),
 
             SYNC_SETTINGS_ENABLED                       => array (  self::STREAMER_VAR      => "enabled"),
 

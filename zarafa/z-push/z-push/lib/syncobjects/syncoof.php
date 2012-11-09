@@ -10,7 +10,7 @@
 *
 * Created   :   08.11.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -58,11 +58,11 @@ class SyncOOF extends SyncObject {
             SYNC_SETTINGS_OOFSTATE      => array (  self::STREAMER_VAR      => "oofstate",
                                                     self::STREAMER_CHECKS   => array(   array(   self::STREAMER_CHECK_ONEVALUEOF => array(0,1,2) ))),
 
-            SYNC_SETTINGS_STARTIME      => array (  self::STREAMER_VAR      => "startime",
-                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_DATE),
+            SYNC_SETTINGS_STARTTIME      => array (  self::STREAMER_VAR      => "starttime",
+                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_DATE_DASHES),
 
             SYNC_SETTINGS_ENDTIME       => array (  self::STREAMER_VAR      => "endtime",
-                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_DATE),
+                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_DATE_DASHES),
 
             SYNC_SETTINGS_OOFMESSAGE    => array (  self::STREAMER_VAR      => "oofmessage",
                                                     self::STREAMER_TYPE     => "SyncOOFMessage",

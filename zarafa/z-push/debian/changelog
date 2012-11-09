@@ -1,3 +1,9 @@
+z-push (2.0.5-1) lucid; urgency=low
+
+  * update to version 2.0.5-1
+
+ -- Christof Musik <musik@bitbone.de>  Fri, 09 Nov 2012 11:43:52 +0100
+
 z-push (2.0.1-1) lucid; urgency=low
 
   * update to version 2.0.1-1

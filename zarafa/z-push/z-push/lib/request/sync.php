@@ -42,6 +42,8 @@
 ************************************************/
 
 class Sync extends RequestProcessor {
+    // Ignored SMS identifier
+    const ZPUSHIGNORESMS = "ZPISMS";
     private $importer;
 
     /**
@@ -58,7 +60,7 @@ class Sync extends RequestProcessor {
         $sc = new SyncCollections();
         $status = SYNC_STATUS_SUCCESS;
         $wbxmlproblem = false;
-        $emtpysync = false;
+        $emptysync = false;
 
         // Start Synchronize
         if(self::$decoder->getElementStartTag(SYNC_SYNCHRONIZE)) {
@@ -72,7 +74,11 @@ class Sync extends RequestProcessor {
             }
 
             // Synching specified folders
-            if(self::$decoder->getElementStartTag(SYNC_FOLDERS)) {
+            // Android still sends heartbeat sync even if all syncfolders are disabled.
+            // Check if Folders tag is empty (<Folders/>) and only sync if there are
+            // some folders in the request. See ZP-172
+            $startTag = self::$decoder->getElementStartTag(SYNC_FOLDERS);
+            if(isset($startTag[EN_FLAGS]) && $startTag[EN_FLAGS]) {
                 while(self::$decoder->getElementStartTag(SYNC_FOLDER)) {
                     $actiondata = array();
                     $actiondata["requested"] = true;
@@ -95,10 +101,15 @@ class Sync extends RequestProcessor {
                     }
 
                     // SyncKey
-                    if(!self::$decoder->getElementStartTag(SYNC_SYNCKEY))
-                        return false;
-                    $synckey = self::$decoder->getElementContent();
-                    if(!self::$decoder->getElementEndTag())
+                    if(self::$decoder->getElementStartTag(SYNC_SYNCKEY)) {
+                        $synckey = "0";
+                        if (($synckey = self::$decoder->getElementContent()) !== false) {
+                            if(!self::$decoder->getElementEndTag()) {
+                                return false;
+                            }
+                        }
+                    }
+                    else
                         return false;
 
                     // FolderId
@@ -222,20 +233,31 @@ class Sync extends RequestProcessor {
 
                     // Do not truncate by default
                     $spa->SetTruncation(SYNC_TRUNCATION_ALL);
-                    // set to synchronize all changes. The mobile could overwrite this value
-                    $spa->SetFilterType(SYNC_FILTERTYPE_ALL);
 
                     while(self::$decoder->getElementStartTag(SYNC_OPTIONS)) {
+                        $firstOption = true;
                         while(1) {
+                            // foldertype definition
                             if(self::$decoder->getElementStartTag(SYNC_FOLDERTYPE)) {
                                 $foldertype = self::$decoder->getElementContent();
                                 ZLog::Write(LOGLEVEL_DEBUG, sprintf("HandleSync(): specified options block with foldertype '%s'", $foldertype));
 
                                 // switch the foldertype for the next options
                                 $spa->UseCPO($foldertype);
+
+                                // set to synchronize all changes. The mobile could overwrite this value
+                                $spa->SetFilterType(SYNC_FILTERTYPE_ALL);
+
                                 if(!self::$decoder->getElementEndTag())
-                                return false;
+                                    return false;
                             }
+                            // if no foldertype is defined, use default cpo
+                            else if ($firstOption){
+                                $spa->UseCPO();
+                                // set to synchronize all changes. The mobile could overwrite this value
+                                $spa->SetFilterType(SYNC_FILTERTYPE_ALL);
+                            }
+                            $firstOption = false;
 
                             if(self::$decoder->getElementStartTag(SYNC_FILTERTYPE)) {
                                 $spa->SetFilterType(self::$decoder->getElementContent());
@@ -354,6 +376,17 @@ class Sync extends RequestProcessor {
                             if ($status == SYNC_STATUS_SUCCESS)
                                 $nchanges++;
 
+                            // Foldertype sent when synching SMS
+                            if(self::$decoder->getElementStartTag(SYNC_FOLDERTYPE)) {
+                                $foldertype = self::$decoder->getElementContent();
+                                ZLog::Write(LOGLEVEL_DEBUG, sprintf("HandleSync(): incoming data with foldertype '%s'", $foldertype));
+
+                                if(!self::$decoder->getElementEndTag())
+                                return false;
+                            }
+                            else
+                                $foldertype = false;
+
                             if(self::$decoder->getElementStartTag(SYNC_SERVERENTRYID)) {
                                 $serverid = self::$decoder->getElementContent();
 
@@ -385,11 +418,6 @@ class Sync extends RequestProcessor {
                             else
                                 $message = false;
 
-                            if ($status != SYNC_STATUS_SUCCESS) {
-                                ZLog::Write(LOGLEVEL_WARN, "Ignored incoming change, global status indicates problem.");
-                                continue;
-                            }
-
                             switch($element[EN_TAG]) {
                                 case SYNC_FETCH:
                                     array_push($actiondata["fetchids"], $serverid);
@@ -400,15 +428,17 @@ class Sync extends RequestProcessor {
                                         $status = $this->getImporter($sc, $spa, $actiondata);
 
                                     if ($status == SYNC_STATUS_SUCCESS)
-                                        $this->importMessage($spa, $actiondata, $element[EN_TAG], $message, $clientid, $serverid);
+                                        $this->importMessage($spa, $actiondata, $element[EN_TAG], $message, $clientid, $serverid, $foldertype, $nchanges);
+                                    else
+                                        ZLog::Write(LOGLEVEL_WARN, "Ignored incoming change, global status indicates problem.");
 
                                     break;
                             }
 
                             if ($actiondata["fetchids"])
-                                self::$topCollector->AnnounceInformation(sprintf("Fetching %d", $nchanges),true);
+                                self::$topCollector->AnnounceInformation(sprintf("Fetching %d", $nchanges));
                             else
-                                self::$topCollector->AnnounceInformation(sprintf("Incoming %d", $nchanges),($nchanges>0)?true:false);
+                                self::$topCollector->AnnounceInformation(sprintf("Incoming %d", $nchanges));
 
                             if(!self::$decoder->getElementEndTag()) // end add/change/delete/move
                                 return false;
@@ -416,6 +446,9 @@ class Sync extends RequestProcessor {
 
                         if ($status == SYNC_STATUS_SUCCESS && $this->importer !== false) {
                             ZLog::Write(LOGLEVEL_INFO, sprintf("Processed '%d' incoming changes", $nchanges));
+                            if (!$actiondata["fetchids"])
+                                self::$topCollector->AnnounceInformation(sprintf("%d incoming", $nchanges), true);
+
                             try {
                                 // Save the updated state, which is used for the exporter later
                                 $sc->AddParameter($spa, "state", $this->importer->GetState());
@@ -483,7 +516,7 @@ class Sync extends RequestProcessor {
         }
         // we did not receive a SYNCHRONIZE block - assume empty sync
         else {
-            $emtpysync = true;
+            $emptysync = true;
         }
         // END SYNCHRONIZE
 
@@ -496,7 +529,7 @@ class Sync extends RequestProcessor {
         }
 
         // Partial & Empty Syncs need saved data to proceed with synchronization
-        if ($status == SYNC_STATUS_SUCCESS && (! $sc->HasCollections() || $partial === true )) {
+        if ($status == SYNC_STATUS_SUCCESS && ($emptysync === true || $partial === true) ) {
             ZLog::Write(LOGLEVEL_DEBUG, sprintf("HandleSync(): Partial or Empty sync requested. Retrieving data of synchronized folders."));
 
             // Load all collections - do not overwrite existing (received!), laod states and check permissions
@@ -529,7 +562,7 @@ class Sync extends RequestProcessor {
         }
 
         // HEARTBEAT & Empty sync
-        if ($status == SYNC_STATUS_SUCCESS && (isset($hbinterval) || $emtpysync == true)) {
+        if ($status == SYNC_STATUS_SUCCESS && (isset($hbinterval) || $emptysync == true)) {
             $interval = (defined('PING_INTERVAL') && PING_INTERVAL > 0) ? PING_INTERVAL : 30;
 
             if (isset($hbinterval))
@@ -549,7 +582,7 @@ class Sync extends RequestProcessor {
                 // wait for changes
                 try {
                     // if doing an empty sync, check only once for changes
-                    if ($emtpysync) {
+                    if ($emptysync) {
                         $foundchanges = $sc->CountChanges();
                     }
                     // wait for changes
@@ -564,7 +597,7 @@ class Sync extends RequestProcessor {
                 }
 
                 // in case of an empty sync with no changes, we can reply with an empty response
-                if ($emtpysync && !$foundchanges){
+                if ($emptysync && !$foundchanges){
                     ZLog::Write(LOGLEVEL_DEBUG, "No changes found for empty sync. Replying with empty response");
                     return true;
                 }
@@ -964,11 +997,18 @@ class Sync extends RequestProcessor {
                 throw new StatusException(sprintf("Sync->getImporter(): no importer for folder id '%s'", $spa->GetFolderId()), SYNC_STATUS_FOLDERHIERARCHYCHANGED);
 
             // if there is a valid state obtained after importing changes in a previous loop, we use that state
-            if ($actiondata["failstate"] && isset($actiondata["failstate"]["failedsyncstate"])) {
+            if (isset($actiondata["failstate"]) && isset($actiondata["failstate"]["failedsyncstate"])) {
                 $this->importer->Config($actiondata["failstate"]["failedsyncstate"], $spa->GetConflict());
             }
             else
                 $this->importer->Config($sc->GetParameter($spa, "state"), $spa->GetConflict());
+
+            // the CPO is also needed by the importer to check if imported changes
+            // are inside the sync window - see ZP-258
+            // TODO ConfigContentParameters needs to be defined in IImportChanges and all implementing importers/backends
+            // this is currently only supported by the Zarafa Backend
+            if (method_exists($this->importer, "ConfigContentParameters"))
+                $this->importer->ConfigContentParameters($spa->GetCPO());
         }
         catch (StatusException $stex) {
            $status = $stex->getCode();
@@ -989,12 +1029,14 @@ class Sync extends RequestProcessor {
      * @param SyncObject        $message        SyncObject message to be imported
      * @param string            $clientid       Client message identifier
      * @param string            $serverid       Server message identifier
+     * @param string            $foldertype     On sms sync, this says "SMS", else false
+     * @param integer           $messageCount   Counter of already imported messages
      *
      * @access private
      * @throws StatusException  in case the importer is not available
      * @return -                Message related status are returned in the actiondata.
      */
-    private function importMessage($spa, &$actiondata, $todo, $message, $clientid, $serverid) {
+    private function importMessage($spa, &$actiondata, $todo, $message, $clientid, $serverid, $foldertype, $messageCount) {
         // the importer needs to be available!
         if ($this->importer == false)
             throw StatusException(sprintf("Sync->importMessage(): importer not available", SYNC_STATUS_SERVERERROR));
@@ -1018,7 +1060,7 @@ class Sync extends RequestProcessor {
             }
 
             // message was REMOVED before, do NOT attemp to remove it again
-            if ($todo == SYNC_REMOVE && $actiondata["failstate"]["removeids"][$serverid]) {
+            if ($todo == SYNC_REMOVE && isset($actiondata["failstate"]["removeids"][$serverid])) {
                 $ignoreMessage = true;
 
                 // make sure no messages are sent back
@@ -1034,11 +1076,18 @@ class Sync extends RequestProcessor {
         if (!$ignoreMessage) {
             switch($todo) {
                 case SYNC_MODIFY:
+                    self::$topCollector->AnnounceInformation(sprintf("Saving modified message %d", $messageCount));
                     try {
                         $actiondata["modifyids"][] = $serverid;
 
+                        // ignore sms messages
+                        if ($foldertype == "SMS" || stripos($serverid, self::ZPUSHIGNORESMS) !== false) {
+                            ZLog::Write(LOGLEVEL_DEBUG, "SMS sync are not supported. Ignoring message.");
+                            // TODO we should update the SMS
+                            $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
+                        }
                         // check incoming message without logging WARN messages about errors
-                        if (!($message instanceof SyncObject) || !$message->Check(true)) {
+                        else if (!($message instanceof SyncObject) || !$message->Check(true)) {
                             $actiondata["statusids"][$serverid] = SYNC_STATUS_CLIENTSERVERCONVERSATIONERROR;
                         }
                         else {
@@ -1065,9 +1114,18 @@ class Sync extends RequestProcessor {
 
                     break;
                 case SYNC_ADD:
+                    self::$topCollector->AnnounceInformation(sprintf("Creating new message from mobile %d", $messageCount));
                     try {
+                        // ignore sms messages
+                        if ($foldertype == "SMS") {
+                            ZLog::Write(LOGLEVEL_DEBUG, "SMS sync are not supported. Ignoring message.");
+                            // TODO we should create the SMS
+                            // return a fake serverid which we can identify later
+                            $actiondata["clientids"][$clientid] = self::ZPUSHIGNORESMS . $clientid;
+                            $actiondata["statusids"][$clientid] = SYNC_STATUS_SUCCESS;
+                        }
                         // check incoming message without logging WARN messages about errors
-                        if (!($message instanceof SyncObject) || !$message->Check(true)) {
+                        else if (!($message instanceof SyncObject) || !$message->Check(true)) {
                             $actiondata["clientids"][$clientid] = false;
                             $actiondata["statusids"][$clientid] = SYNC_STATUS_CLIENTSERVERCONVERSATIONERROR;
                         }
@@ -1082,23 +1140,32 @@ class Sync extends RequestProcessor {
                     }
                     break;
                 case SYNC_REMOVE:
+                    self::$topCollector->AnnounceInformation(sprintf("Deleting message removed on mobile %d", $messageCount));
                     try {
                         $actiondata["removeids"][] = $serverid;
-                        // if message deletions are to be moved, move them
-                        if($spa->GetDeletesAsMoves()) {
-                            $folderid = self::$backend->GetWasteBasket();
-
-                            if($folderid) {
-                                $this->importer->ImportMessageMove($serverid, $folderid);
-                                $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
-                                break;
-                            }
-                            else
-                                ZLog::Write(LOGLEVEL_WARN, "Message should be moved to WasteBasket, but the Backend did not return a destination ID. Message is hard deleted now!");
+                        // ignore sms messages
+                        if ($foldertype == "SMS" || stripos($serverid, self::ZPUSHIGNORESMS) !== false) {
+                            ZLog::Write(LOGLEVEL_DEBUG, "SMS sync are not supported. Ignoring message.");
+                            // TODO we should delete the SMS
+                            $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
                         }
+                        else {
+                            // if message deletions are to be moved, move them
+                            if($spa->GetDeletesAsMoves()) {
+                                $folderid = self::$backend->GetWasteBasket();
 
-                        $this->importer->ImportMessageDeletion($serverid);
-                        $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
+                                if($folderid) {
+                                    $this->importer->ImportMessageMove($serverid, $folderid);
+                                    $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
+                                    break;
+                                }
+                                else
+                                    ZLog::Write(LOGLEVEL_WARN, "Message should be moved to WasteBasket, but the Backend did not return a destination ID. Message is hard deleted now!");
+                            }
+
+                            $this->importer->ImportMessageDeletion($serverid);
+                            $actiondata["statusids"][$serverid] = SYNC_STATUS_SUCCESS;
+                        }
                     }
                     catch (StatusException $stex) {
                        $actiondata["statusids"][$serverid] = $stex->getCode();

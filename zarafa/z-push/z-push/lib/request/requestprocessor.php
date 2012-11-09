@@ -13,7 +13,7 @@
 *
 * Created   :   12.08.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -110,7 +110,7 @@ abstract class RequestProcessor {
         if (!ZPush::CommandNeedsPlainInput(Request::GetCommandCode()))
             self::$decoder = new WBXMLDecoder(Request::GetInputStream());
 
-        self::$encoder = new WBXMLEncoder(Request::GetOutputStream());
+        self::$encoder = new WBXMLEncoder(Request::GetOutputStream(), Request::GetGETAcceptMultipart());
     }
 
     /**
