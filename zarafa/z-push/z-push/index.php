@@ -45,6 +45,9 @@
 
 ob_start(null, 1048576);
 
+// ignore user abortions because this can lead to weird errors - see ZP-239
+ignore_user_abort(true);
+
 include_once('lib/exceptions/exceptions.php');
 include_once('lib/utils/utils.php');
 include_once('lib/utils/compat.php');
@@ -60,6 +63,7 @@ include_once('lib/core/statemanager.php');
 include_once('lib/core/devicemanager.php');
 include_once('lib/core/zpush.php');
 include_once('lib/core/zlog.php');
+include_once('lib/core/paddingfilter.php');
 include_once('lib/interface/ibackend.php');
 include_once('lib/interface/ichanges.php');
 include_once('lib/interface/iexportchanges.php');

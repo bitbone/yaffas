@@ -10,7 +10,7 @@
 *
 * Created   :   05.09.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -146,6 +146,11 @@ class SyncTask extends SyncObject {
      */
     public function Check($logAsDebug = false) {
         $ret = parent::Check($logAsDebug);
+
+        // semantic checks general "turn off switch"
+        if (defined("DO_SEMANTIC_CHECKS") && DO_SEMANTIC_CHECKS === false)
+            return $ret;
+
         if (!$ret)
             return false;
 

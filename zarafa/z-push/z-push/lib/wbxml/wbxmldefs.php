@@ -6,7 +6,7 @@
 *
 * Created   :   01.10.2007
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -318,6 +318,7 @@ class WBXMLDefs {
                         0x38 => "IsLeapMonth", //14.0
                         0x39 => "FirstDayOfWeek", //post 14.0 20100501
                         0x3a => "OnlineMeetingInternalLink", //post 14.0 20100501
+                        0x3b => "OnlineMeetingExternalLink", //post 14.0 20120630
                     ),
                     5 => array (
                         0x05 => "Moves",

@@ -10,7 +10,7 @@
 *
 * Created   :   05.09.2011
 *
-* Copyright 2007 - 2011 Zarafa Deutschland GmbH
+* Copyright 2007 - 2012 Zarafa Deutschland GmbH
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU Affero General Public License, version 3,
@@ -223,11 +223,11 @@ class SyncProvisioning extends SyncObject {
                                                                                     self::STREAMER_CHECKS   => array(   self::STREAMER_CHECK_ONEVALUEOF => array(0,1) )),
 
                     SYNC_PROVISION_UNAPPROVEDINROMAPPLIST               => array (  self::STREAMER_VAR      => "unapprovedinromapplist",
-                                                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_SEND_EMPTY,
+                                                                                    self::STREAMER_PROP     => self::STREAMER_TYPE_SEND_EMPTY,
                                                                                     self::STREAMER_ARRAY    => SYNC_PROVISION_APPNAME),  //TODO check
 
                     SYNC_PROVISION_APPROVEDAPPLIST                      => array (  self::STREAMER_VAR      => "approvedapplist",
-                                                                                    self::STREAMER_TYPE     => self::STREAMER_TYPE_SEND_EMPTY,
+                                                                                    self::STREAMER_PROP     => self::STREAMER_TYPE_SEND_EMPTY,
                                                                                     self::STREAMER_ARRAY    => SYNC_PROVISION_HASH), //TODO check
             );
         }
