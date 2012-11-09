@@ -4,3 +4,10 @@ mysql_user=Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mi
 mysql_password=Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden.
 mysql_host=Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein.
 mysql_database=Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen.
+homeserver=Specify the server adress that will be used to connect your outlook clients to zarafa server.
+profilename=The name for the outlook profile.
+mailboxname=The username to connect to the server. Most of the time you will want to use "%UserName%" which will be replaced by outlook with the current username.
+password=If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it.
+overwriteprofile=Specify if you want your profile to be overwritten during installation.
+backupprofile=Specify if you want to backup an existing profile before overwriting it.
+
