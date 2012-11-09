@@ -209,21 +209,19 @@ returns BASEDN of ADS LDAP of the given ATTRIBUTE or undef on failure
 =cut
 
 sub get_ads_basedn($;$){
-	my $dcname = shift;
+	my $uri = shift;
 	my $attribute = shift;
 
 	my $basedn = undef;
 
 	$attribute = "defaultNamingContext" unless (defined($attribute));
 
-	if (Yaffas::Check::ip($dcname) || Yaffas::Check::hostname($dcname) || Yaffas::Check::domainname($dcname)) {
-		my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-x","-b", '',"-s", "base", "-h", $dcname);
-		foreach (@rv) {
-			if ( m/$attribute/) {
-				$basedn = (split /\s*:\s*/)[1];
-				chomp($basedn);
-				last;
-			}
+	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-x","-b", '',"-s", "base", "-H", '"'.$uri.'"');
+	foreach (@rv) {
+		if ( m/$attribute/) {
+			$basedn = (split(/\s*:\s*/))[1];
+			chomp($basedn);
+			last;
 		}
 	}
 	return $basedn;
@@ -244,7 +242,7 @@ returns DN of an ADS user of which only the name is known or undef on failure
 =cut
 
 sub get_ads_userdn($$$$){
-	my ($dcname, $admin, $pass, $user) = @_;
+	my ($uri, $admin, $pass, $user) = @_;
 	my $userdn = undef;
 
 	my $exception = Yaffas::Exception->new();
@@ -252,10 +250,10 @@ sub get_ads_userdn($$$$){
 	$exception->add("err_user_wrong", $user) unless Yaffas::Check::pathetic_username($user);
 	$exception->add("err_pass_wrong", $pass) unless Yaffas::Check::password($pass);
 	throw $exception if( $exception );
-	my $basedn = get_ads_basedn($dcname);
+	my $basedn = get_ads_basedn($uri);
 	return undef unless defined $basedn;
 	my $admindn = "cn=$admin,cn=Users,$basedn";
-	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-h", $dcname,"-w",$pass,"(sAMAccountName=$user)");
+	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", '"'.$uri.'"',"-w",$pass,"(sAMAccountName=$user)");
 	if ($? == 0) {
 		foreach (@rv) {
 			if ( m/dn/) {
@@ -265,7 +263,7 @@ sub get_ads_userdn($$$$){
 			}
 		}
 	} else {
-		my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-h", $dcname,"-w",$pass,"(sAMAccountName=$user)");
+		my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", '"'.$uri.'"',"-w",$pass,"(sAMAccountName=$user)");
 		my $errorcode = undef;
 		foreach (@re) {
 			if (m/AcceptSecurityContext/) {

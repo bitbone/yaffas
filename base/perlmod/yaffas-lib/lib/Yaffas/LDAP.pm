@@ -170,6 +170,26 @@ sub get_host ()
 	return (defined $host) ? $host : undef;
 }
 
+=item get_ldap_uri ()
+
+returns an array reference of ldap uris from /etc/ldap.settings
+
+=cut
+
+sub get_ldap_uri ()
+{
+	my $ls_file = Yaffas::File::Config->new(Yaffas::Constant::FILE->{'ldap_settings'},
+                        {
+                                        -SplitPolicy => 'custom',
+                                        -SplitDelimiter => '\s*=\s*',
+                                        -StoreDelimiter => '=',
+                        }) or die "could not open " . Yaffas::Constant::FILE->{'ldap_settings'} . " $!";
+    my $ls_ref = $ls_file->get_cfg_values();
+    my $ldapuri = $ls_ref->{'LDAPURI'};
+    my @uris = split(/ /, $ldapuri);
+    return \@uris;
+}
+
 =item search_entry (FILTER, ATTRIB, [ORG_UNIT])
 
 searches in LDAP-Tree.
@@ -489,7 +509,7 @@ sub search_user_by_attribute($$) {
 
 	@return_users = Yaffas::do_back_quote(
 		Yaffas::Constant::APPLICATION->{'ldapsearch'},
-		"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
+		"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $searchbase,
 		"($attribute=$avalue)", $namefilter, "-w", $ldapsecret, "-LLL"
 		);
 	return (map {s/$namefilter:\s*//i;chomp; $_} grep(/$namefilter:\s*/i,@return_users));
@@ -541,7 +561,7 @@ sub search_attribute($$;$) {
 	if ($type eq "user") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
+			"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $user_searchbase,
 			"($namefilter=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
 	} elsif ($type eq "group") {
@@ -549,14 +569,14 @@ sub search_attribute($$;$) {
 		foreach my $user (@users) {
 			push @return_attribs, Yaffas::do_back_quote(
 				Yaffas::Constant::APPLICATION->{'ldapsearch'},
-				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
+				"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $user_searchbase,
 				"($namefilter=$user)", $attribute, "-w", $ldapsecret, "-LLL"
 				);
 		}
 	} elsif ($type eq "grouponly") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $group_searchbase,
+			"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $group_searchbase,
 			"(cn=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
     } else {
@@ -602,7 +622,8 @@ sub _init($$$) {
 
         $$domain = get_domain();
         $$passwd = &get_passwd();
-        $$ldap = Net::LDAP->new(get_host(), port => 389);
+        #$$ldap = Net::LDAP->new(get_host(), port => 389);
+        $$ldap = Net::LDAP->new(get_ldap_uri());
         $$ldap->bind("cn=ldapadmin,ou=People," . $$domain , password => $$passwd);
 }
 
@@ -611,7 +632,8 @@ sub _anon_init($$) {
         my $ldap = shift;
 
         $$domain = get_domain();
-        $$ldap = Net::LDAP->new(get_host());
+        #$$ldap = Net::LDAP->new(get_host());
+        $$ldap = Net::LDAP->new(get_ldap_uri());
         if(defined $$ldap) {
             $$ldap->bind();
             return 1;
