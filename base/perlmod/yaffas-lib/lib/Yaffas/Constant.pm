@@ -84,6 +84,7 @@ use constant {
 		"rhel5_devices" => "/etc/sysconfig/networking/devices/",
 		"rhel5_scripts" => "/etc/sysconfig/network-scripts/",
 		"mppserver_conf" => "/etc/mppserver/",
+        "zoneinfo" => "/usr/share/zoneinfo"
 	}
 };
 
@@ -261,6 +262,8 @@ use constant {
 		"webaccess_config" => "/etc/zarafa/webaccess-ajax/config.php",
 		"postinst_log" => "/opt/yaffas/log/yaffas-postinst.log",
 		"postinst_all" => "/opt/yaffas/bin/postinst-all.sh",
+		"timezone" => "/etc/timezone",
+		"sysconfig_clock" => "/etc/sysconfig/clock",
 	}
 };
 
