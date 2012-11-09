@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas;
-use Yaffas::Service qw(control RELOAD ZARAFA_SERVER);
+use Yaffas::Service qw(control RESTART ZARAFA_SERVER);
 use Yaffas::Module::ZarafaConf;
 use Yaffas::Exception;
 use Error qw(:try);
@@ -46,7 +46,7 @@ sub save_userfilter() {
 		$main::in{filtertype},
 		$main::in{filtergroup}
 	);
-	control(ZARAFA_SERVER, RELOAD);
+	control(ZARAFA_SERVER, RESTART);
 }
 
 sub save_softdelete_lifetime_and_purge() {
