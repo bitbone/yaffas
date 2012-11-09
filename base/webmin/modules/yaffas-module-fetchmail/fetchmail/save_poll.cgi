@@ -78,7 +78,11 @@ else {
 		local @is;
 		if( $main::in{"type_$i"} eq "local_user" ){
 			if ( Yaffas::UGM::user_exists($main::in{"local_user_$i"}) ){
-				push(@is, Yaffas::UGM::get_email($main::in{"local_user_$i"}));
+				my $email = Yaffas::UGM::get_email(
+					$main::in{"local_user_$i"});
+				throw Yaffas::Exception("err_bad_email", "User index $i")
+					unless $email;
+				push(@is, $email);
 			}
 			else{
 				&_my_error($main::text{'err_local_user'}); 
@@ -98,6 +102,9 @@ else {
 		}
 		else{
 			&_my_error($main::text{'err_no_selection'});
+		}
+		if (not @is) {
+			throw Yaffas::Exception("err_bad_targets");
 		}
 
 		$user->{'is'} = \@is;
