@@ -53,7 +53,7 @@ sub datetime_dlg {
 					[
 						$main::text{lbl_day},   $main::text{lbl_date},
 						$main::text{lbl_month}, $main::text{lbl_year},
-						$main::text{lbl_hour}
+						$main::text{lbl_hour}, $main::text{lbl_timezone}
 					]
 				),
 			),
@@ -116,6 +116,16 @@ sub datetime_dlg {
 							-default => $src{second},
 							-values =>
 							  [ map { sprintf "%02s", $_ } ( 0 .. 59 ) ]
+						}
+					),
+				),
+				$Cgi->td(
+					$Cgi->popup_menu(
+						{
+							-name    => "timezone",
+							-default => Yaffas::Module::Time::get_current_timezone(),
+							-values =>
+							  [ Yaffas::Module::Time::get_timezones() ]
 						}
 					)
 				)

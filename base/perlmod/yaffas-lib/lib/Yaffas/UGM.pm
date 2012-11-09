@@ -299,12 +299,15 @@ sub add_user($$$$@) {
 	my @cmd;
 	push @cmd, Yaffas::Constant::APPLICATION->{useradd}, "-g", $pgid;
 
-	# we require --non-unique to work around yet another smbldap-useradd
-	# bug, which is sadly in Ubuntu's 12.04 packages;
-	# by doing this we circumvent the duplicate uid check, which is
-	# tolerable, as we do our own check...
-	# also ADM-185
-	push @cmd, "--non-unique";
+	if (Yaffas::Constant::OS eq "Ubuntu" && Yaffas::Constant::OSVER eq "12.04") {
+		# we require --non-unique to work around yet another smbldap-useradd
+		# bug, which is sadly in Ubuntu's 12.04 packages;
+		# by doing this we circumvent the duplicate uid check, which is
+		# tolerable, as we do our own check...
+		# also ADM-185
+		push @cmd, "--non-unique";
+	}
+
 	push @cmd, "-u", $uid;
 	push @cmd, "-G", $gid;
 	push @cmd, "-m", "-a";

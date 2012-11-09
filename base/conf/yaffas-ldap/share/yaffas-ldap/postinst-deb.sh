@@ -79,7 +79,7 @@ cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-users.cf /etc/postfix
 cp -f ${YAFFAS_EXAMPLE}/etc/postfix/ldap-aliases.cf /etc/postfix
 cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/samba.schema /etc/ldap/schema
 if [ -e /usr/share/doc/zarafa/zarafa.schema.gz ]; then
-	zcat /usr/share/doc/zarafa/zarafa.schema.gz > /etc/ldap/schema
+	zcat /usr/share/doc/zarafa/zarafa.schema.gz > /etc/ldap/schema/zarafa.schema
 else 
 	cp -f ${YAFFAS_EXAMPLE}/etc/ldap/schema/zarafa.schema /etc/ldap/schema
 fi

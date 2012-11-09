@@ -108,6 +108,8 @@ Yaffas.Table.prototype.setupTable = function(){
                 
                 for (var name in this.filterarg) {
                     if (typeof data[i][name] !== "undefined") {
+                        // convert everything to string
+                        data[i][name] = data[i][name]+"";
                         if (data[i][name].indexOf(this.filterarg[name], 0) < 0) {
                             matched &= false;
                         }

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-09 00:23+0100\n"
+"PO-Revision-Date: 2012-11-08 10:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -172,32 +172,88 @@ msgstr "Datenbank"
 msgid "Server"
 msgstr "Server"
 
-#: lang/en:38
+#: lang/en:38 lang/en:43
 #, no-wrap
 msgid "Username"
 msgstr "Benutzername"
 
-#: lang/en:39
+#: lang/en:39 lang/en:44
 #, no-wrap
 msgid "Password"
 msgstr "Passwort"
 
 #: lang/en:41
 #, no-wrap
+msgid "PRF Creator"
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
+msgid "Profile name"
+msgstr ""
+
+#: lang/en:45
+#, no-wrap
+msgid "Server adress"
+msgstr ""
+
+#: lang/en:46
+#, no-wrap
+msgid "Overwrite profile"
+msgstr ""
+
+#: lang/en:47
+#, no-wrap
+msgid "Backup profile"
+msgstr ""
+
+#: lang/en:48
+#, no-wrap
+msgid "Download"
+msgstr "Herunterladen"
+
+#: lang/en:50
+#, no-wrap
+msgid "Connection type"
+msgstr ""
+
+#: lang/en:51
+#, no-wrap
+msgid "Autodetect"
+msgstr ""
+
+#: lang/en:52
+#, no-wrap
+msgid "Online"
+msgstr ""
+
+# 83%
+#: lang/en:53
+#, fuzzy, no-wrap
+msgid "Cached"
+msgstr "Cache"
+
+#: lang/en:55
+#, no-wrap
+msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /import \\\\path\\to\\file.prf)"
+msgstr ""
+
+#: lang/en:57
+#, no-wrap
 msgid "Could not connect to database."
 msgstr "Konnte keine Verbindung zur Datenbank herstellen."
 
-#: lang/en:42
+#: lang/en:58
 #, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "Der Wert des Quotas darf nur aus Ziffern bestehen."
 
-#: lang/en:43
+#: lang/en:59
 #, no-wrap
 msgid "Configuration"
 msgstr "Konfiguration"
 
-#: lang/en:44
+#: lang/en:60
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr "Im MySQL Passwort darf kein Doppelkreuz (#) Zeichen verwendet werden."
@@ -231,3 +287,33 @@ msgstr "Dies ist die Adresse des MySQL Servers. Für lokal installierte Server g
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br />Wir empfehlen 'zarafa'.<br />Sollte sie nicht existieren, wird sie angelegt. Dafür benötigt der Benutzer die entsprechenden Berechtigungen."
+
+#: help/en:7
+#, no-wrap
+msgid "Specify the server adress that will be used to connect your outlook clients to zarafa server."
+msgstr ""
+
+#: help/en:8
+#, no-wrap
+msgid "The name for the outlook profile."
+msgstr ""
+
+#: help/en:9
+#, no-wrap
+msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
+msgstr ""
+
+#: help/en:10
+#, no-wrap
+msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
+msgstr ""
+
+#: help/en:11
+#, no-wrap
+msgid "Specify if you want your profile to be overwritten during installation."
+msgstr ""
+
+#: help/en:12
+#, no-wrap
+msgid "Specify if you want to backup an existing profile before overwriting it."
+msgstr ""

@@ -14,6 +14,7 @@ use Yaffas::Constant;
 use Yaffas::File::Config;
 use Yaffas::Exception;
 use Error qw(:try);
+use File::Copy;
 
 our @ISA = ("Yaffas::Module");
 
@@ -164,6 +165,8 @@ sub set_time {
 		throw Yaffas::Exception("err_time_format") if ( $in->{$i} !~ /^\d+$/ );
 	}
 
+    set_timezone($main::in{timezone});
+
 	$in->{'year'} = substr( $in->{'year'}, 2, length( $in->{'year'} ) );
 
 	push @format, "--set",
@@ -210,6 +213,71 @@ sub get_time {
 	}
 
 	return %hw_date;
+}
+
+sub get_current_timezone {
+    if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
+        my $file = Yaffas::File->new(Yaffas::Constant::FILE->{timezone})
+            or throw Yaffas::Exception("err_file_not_found", Yaffas::Constant::FILE->{timezone});
+
+        my $zone = $file->get_content();
+
+        return $zone;
+    }
+    else {
+        my $file = Yaffas::File->new(Yaffas::Constant::FILE->{sysconfig_clock})
+            or throw Yaffas::Exception("err_file_not_found", Yaffas::Constant::FILE->{sysconfig_clock});
+
+        my @content = $file->get_content();
+
+        foreach my $line (@content) {
+            if ($line =~ /^ZONE="(.*)"$/) {
+                return $1;
+            }
+        }
+    }
+}
+
+sub set_timezone {
+    my $zone = shift;
+
+    my @zones = get_timezones();
+
+    if (! grep $zone, @zones) {
+        throw Yaffas::Exception("err_invalid_timezone", $zone);
+    }
+
+    if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
+        my $file = Yaffas::File->new(Yaffas::Constant::FILE->{timezone}, $zone);
+        $file->save();
+    }
+    else {
+        my $file = Yaffas::File->new(Yaffas::Constant::FILE->{sysconfig_clock});
+        my $line = $file->search_line(qr/^ZONE=/);
+        if ($line >= 0) {
+            $file->splice_line($line, 1, "ZONE=\"$zone\"");
+        }
+        else {
+            $file->add_line("ZONE=\"$zone\"");
+        }
+        $file->save();
+    }
+
+    if (-l "/etc/localtime") {
+        unlink "/etc/localtime";
+    }
+    my $dir = Yaffas::Constant::DIR->{zoneinfo};
+    copy($dir."/posix/".$zone, "/etc/localtime");
+}
+
+sub get_timezones {
+    my @zones = `find /usr/share/zoneinfo/posix/ -type f | cut -d/ -f6- | sort`;
+
+    foreach (@zones) {
+        chomp($_);
+    }
+
+    return @zones;
 }
 
 1;
