@@ -29,6 +29,9 @@ foreach my $p (@conf) {
 	my @users = ();
 	
 	foreach my $u ( @{ $p->{'users'} } ) {
+		if (not $u->{'is'}) {
+			$u->{'is'} = [];
+		}
 		push @users, sprintf "%s -> %s<br>\n", &html_escape( $u->{'user'} ),
 		  &html_escape(
 			@{ $u->{'is'} }
