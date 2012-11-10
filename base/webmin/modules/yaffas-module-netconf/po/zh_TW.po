@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"POT-Creation-Date: 2012-11-11 00:22+0100\n"
 "PO-Revision-Date: 2012-11-09 09:35+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -422,10 +422,12 @@ msgstr "用戶"
 msgid "Password"
 msgstr "密碼"
 
+# 94%
+# 75%
 #: lang/en:61
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Proxyname not valid!"
-msgstr ""
+msgstr "用戶名稱無效"
 
 #: lang/en:62
 #, no-wrap
