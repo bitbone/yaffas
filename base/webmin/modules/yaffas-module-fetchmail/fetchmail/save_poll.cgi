@@ -27,12 +27,7 @@ sub main() {
 	}
 
 	&lock_file($file);
-	if ($in{'check'}) {
-		# Go to the mail checking CGI
-		&redirect("check.cgi?file=$file&idx=$in{'idx'}&adduser=1&user=$in{'user'}");
-		exit;
-	}
-	elsif ($in{'delete'}) {
+	if ($in{'delete'}) {
 		# Just delete the poll
 		&delete_poll($poll, $file);
 	}
@@ -78,7 +73,7 @@ sub main() {
 			$user->{'user'} = $in{"user_$i"};
 			$user->{'pass'} = $in{"pass_$i"};
 
-			# Determin which radiobutton was selected and put the value of the affected popup menu in @is
+			# Determine which radiobutton was selected and put the value of the affected popup menu in @is
 			local @is;
 			if( $main::in{"type_$i"} eq "local_user" ){
 				if ( Yaffas::UGM::user_exists($main::in{"local_user_$i"}) ){

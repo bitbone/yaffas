@@ -10,12 +10,10 @@ if ($module_info{'usermin'}) {
 	else {
 		&switch_to_remote_user();
 		}
-	$cron_cmd = "$module_config_directory/check.pl";
 	$cron_user = $remote_user;
 	$fetchmail_config = "$remote_user_info[7]/.fetchmailrc";
 	}
 else {
-	$cron_cmd = "$module_config_directory/check.pl";
 	$cron_user = "root";
 	$fetchmail_config = $config{'config_file'};
 	}
