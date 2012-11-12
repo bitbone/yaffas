@@ -241,7 +241,6 @@ sub database_settings {
 }
 
 sub prf_creator {
-    my $settings = Yaffas::Module::ZarafaConf::get_zarafa_database();
     print $Cgi->start_form({-name=>"createprf", -action=>"createprf.cgi", -method=>"post"});
 
     print Yaffas::UI::section($main::text{lbl_prf_creator},
@@ -249,7 +248,7 @@ sub prf_creator {
         $Cgi->table(
             $Cgi->Tr(
                 $Cgi->td($main::text{lbl_homeserver}.":"),
-                $Cgi->td(textfield({-name=>"homeserver", -value=>$ENV{SERVER_NAME}}))
+                $Cgi->td(textfield({-name=>"homeserver", -value=>"http://".$ENV{SERVER_NAME}.":236/zarafa"}))
             ),
             $Cgi->Tr(
                 $Cgi->td($main::text{lbl_connectiontype}.":"),
