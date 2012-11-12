@@ -1482,9 +1482,10 @@ sub set_zarafa_ldap(;$) {
 		$basedn = Yaffas::LDAP::get_local_domain();
 		my $binddn = "cn=ldapadmin,ou=People," . $basedn;
 		$cfg_values->{'ldap_bind_user'}                  = $binddn;
-		$cfg_values->{'ldap_protocol'}                   = 'ldap';
-		$cfg_values->{'ldap_port'}                       = '389';
-		$cfg_values->{'ldap_host'}                       = 'localhost';
+		#$cfg_values->{'ldap_protocol'}                   = 'ldap';
+		#$cfg_values->{'ldap_port'}                       = '389';
+		#$cfg_values->{'ldap_host'}                       = 'localhost';
+		$cfg_values->{'ldap_uri'}                        = 'ldap://localhost';
 		$cfg_values->{'ldap_search_base'}                = $basedn;
 		$cfg_values->{'ldap_user_type_attribute_value'}  = "posixAccount";
 		$cfg_values->{'ldap_group_type_attribute_value'} = "posixGroup";
