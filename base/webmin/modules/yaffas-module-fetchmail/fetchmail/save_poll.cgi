@@ -111,8 +111,6 @@ sub main() {
 			$user->{'keep'} = $in{"keep_$i"};
 			$user->{'fetchall'} = $in{"fetchall_$i"};
 			$user->{'ssl'} = $in{"ssl_$i"};
-			$user->{'preconnect'} = $in{"preconnect_$i"};
-			$user->{'postconnect'} = $in{"postconnect_$i"};
 			push(@users, $user);
 		}
 		$poll->{'users'} = \@users;
