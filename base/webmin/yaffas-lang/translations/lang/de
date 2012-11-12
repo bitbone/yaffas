@@ -78,6 +78,7 @@ lbl_about_zadmin=Über Z-Admin
 
 lbl_logged_out=Abgemeldet
 lbl_logged_out_msg=Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden.
+lbl_logged_out_timeout=The session timed out, please re-login.
 
 lbl_loading=Lade, bitte warten...
 lbl_error=Fehler

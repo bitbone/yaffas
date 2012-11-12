@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-11-10 00:24+0100\n"
+"POT-Creation-Date: 2012-11-13 00:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -644,6 +644,18 @@ msgid "Fetchmail daemon could not be enabled."
 msgstr ""
 
 #: lang/en:137
+#, no-wrap
+msgid "Denying attempt to create poll query without any target users."
+msgstr ""
+
+#: lang/en:138
+#, no-wrap
+msgid ""
+"Cannot use the given username as a target as it has no valid email address "
+"associated with it."
+msgstr ""
+
+#: lang/en:139
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr ""

@@ -38,9 +38,9 @@ lbl_month=Monat
 lbl_date=Datum
 lbl_hour= Stunde 
 lbl_year=Jahr
-lbl_timezone=Timezone
+lbl_timezone=Zeitzone
 lbl_setdatetime=Systemzeit
-err_invalid_timezone=Invalid timezone
+err_invalid_timezone=Ungültige Zeitzone
 
 
 lbl_once=einmalig

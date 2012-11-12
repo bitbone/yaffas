@@ -87,4 +87,4 @@ lbl_zarafa_store_type_active=Aktiv
 lbl_zarafa_store_type_inactive=Shared
 lbl_zarafa_no_store=Keine
 lbl_force_zarafa_resync=Offline-Profil Resynchronisierung erzwingen
-lbl_force_zarafa_resync_question=This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?
+lbl_force_zarafa_resync_question=Diese Funktion zwingt im Cached-Mode laufende Clients, alle Daten erneut mit dem Server zu synchronisieren. Dies kann gewisse clientseitige Probleme beheben, nimmt aber je nach Größe des Postfachs eventuell einige Zeit und Bandbreite in Anspruch. Es sollte daher abgewogen werden, ob dies wirklich erwünscht ist, insbesondere in Umgebungen mit langsamer Server-Anbindung.<br /><br/>Soll die Re-Synchronisation jetzt für den folgenden Benutzer durchgeführt werden?

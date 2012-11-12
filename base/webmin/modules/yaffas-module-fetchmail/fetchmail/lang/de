@@ -125,7 +125,7 @@ lbl_target=Lokales Ziel
 lbl_local_alias=Alias
 lbl_local_user=Benutzer
 
-lbl_check_logs=After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href="#m=logfiles-3">Maintainance -&gt; Log file viewer</a>.
+lbl_check_logs=Nach dem Hinzufügen von neuen Einträgen oder falls E-Mails nicht wie erwartet abgeholt werden, sollte die Log-Datei /var/log/fetchmail.log konsultiert werden, welche auch via <a href="#m=logfiles-3">Wartung -&gt; Logdateienbetrachter</a> einsehbar ist.
 
 err_user=Bitte geben Sie lokalen und entfernten User an
 err_local_user=Der angegebene lokale Benutzer ist ungültig.
@@ -134,4 +134,6 @@ err_no_selection=Bitte wählen Sie als Ziel entweder "Benutzer", "Alias" oder "M
 err_remote_user=Bitte geben Sie einen gültigen Mailserverbenutzer an.
 err_remote_passwd=Bitte geben Sie ein Passwort für den Mailserverbenutzer an.
 err_enable_fetchmail=Der fetchmail Dienst konnte nicht aktiviert werden.
+err_bad_targets=Denying attempt to create poll query without any target users.
+err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
 moduletitle=Fetchmail-Konfiguration

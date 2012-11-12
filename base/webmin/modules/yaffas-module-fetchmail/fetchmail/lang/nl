@@ -134,4 +134,6 @@ err_no_selection=Please select "user", "alias" or "multidrop".
 err_remote_user=Please provide a valid mailserver user.
 err_remote_passwd=Please provide a password for the mailserver user.
 err_enable_fetchmail=Fetchmail daemon could not be enabled.
+err_bad_targets=Denying attempt to create poll query without any target users.
+err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
 moduletitle=Fetchmail Mail Retrieval

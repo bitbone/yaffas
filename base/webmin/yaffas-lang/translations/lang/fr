@@ -78,6 +78,7 @@ lbl_about_zadmin=À propos de Z-Admin
 
 lbl_logged_out=Déconnecté
 lbl_logged_out_msg=Un autre administrateur est connecté. Vous devez vous reconnecter.
+lbl_logged_out_timeout=The session timed out, please re-login.
 
 lbl_loading=Chargement, veuillez patienter...
 lbl_error=Erreur
