@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-08 10:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.5\n"
 
-#: lang/en:1 lang/en:50
+#: lang/en:1 lang/en:52
 #, no-wrap
 msgid "Services"
 msgstr "Dienste"
@@ -194,35 +194,45 @@ msgstr "Jahr"
 
 #: lang/en:41
 #, no-wrap
+msgid "Timezone"
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
 msgid "System time"
 msgstr "Systemzeit"
 
-#: lang/en:44
+#: lang/en:43
+#, no-wrap
+msgid "Invalid timezone"
+msgstr ""
+
+#: lang/en:46
 #, no-wrap
 msgid "now"
 msgstr "einmalig"
 
-#: lang/en:45
+#: lang/en:47
 #, no-wrap
 msgid "hourly"
 msgstr "jede Stunde"
 
-#: lang/en:46
+#: lang/en:48
 #, no-wrap
 msgid "daily at "
 msgstr "jeden Tag"
 
-#: lang/en:47
+#: lang/en:49
 #, no-wrap
 msgid " minute"
 msgstr " Minute "
 
-#: lang/en:48
+#: lang/en:50
 #, no-wrap
 msgid " hour"
 msgstr " Stunde "
 
-#: lang/en:49
+#: lang/en:51
 #, no-wrap
 msgid "Time Server"
 msgstr "Zeit-Server"

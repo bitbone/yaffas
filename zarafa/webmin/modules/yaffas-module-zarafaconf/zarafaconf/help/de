@@ -1,5 +1,5 @@
-size=Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Webaccess hochgeladen werden können.
-limit=Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)
+attachment_size=Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Webaccess hochgeladen werden können.
+quota=This limits the maximum disk usage for each user in MB. Leave empty for no limit.
 mysql_user=Dies ist der Benutzername, der dazu verwendet wird eine Verbindung mit der Datenbank aufzubauen. Dieser Benutzer muss zuvor angelegt worden sein und muss über die Berechtigungen verfügen diese Datenbank zu verwenden.
 mysql_password=Dies ist das für die Datenbank vergebene Passwort. Dieses Passwort muss manuell gesetzt werden.
 mysql_host=Dies ist die Adresse des MySQL Servers. Für lokal installierte Server geben sie 'localhost' ein.
@@ -10,4 +10,4 @@ mailboxname=The username to connect to the server. Most of the time you will wan
 password=If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it.
 overwriteprofile=Specify if you want your profile to be overwritten during installation.
 backupprofile=Specify if you want to backup an existing profile before overwriting it.
-
+softdelete_lifetime=Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days).

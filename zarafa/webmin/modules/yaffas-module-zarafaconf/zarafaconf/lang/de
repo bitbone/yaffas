@@ -1,6 +1,4 @@
 lbl_userfilter=Benutzer Filter
-lbl_filtertype=Filtertyp
-lbl_filtergroup=Gruppe
 lbl_ldapfilter_type_0=Standard (alle)
 lbl_ldapfilter_type_1=AD Plugin
 lbl_ldapfilter_type_2=AD Gruppe
@@ -9,9 +7,12 @@ lbl_confirm_msg=Mit dem nächsten Schritt werden die folgenden Zarafa Stores gel
 err_no_group_found=Konnte die angegebene Gruppe nicht finden.
 err_no_rootbasedn=Konnte den rootDomainNamingContext im AD nicht finden.
 
-lbl_attachment_size=Größe von Anhängen
+lbl_attachment_size=Maximum attachment size in Webaccess
 lbl_size=Größe
-err_not_numeric=Es sind nur Dezimalzahlen als Anhangsgröße erlaubt.
+lbl_enforce_softdelete_now=Purge old deleted items now?
+err_attachment_size_not_numeric=The maximum attachment size must be numeric and >0.
+err_softdelete_not_numeric=The softdelete lifetime must be numeric and >=0.
+err_purge_softdelete_failed=Could not purge old items.
 
 lbl_optimize=Optimiere
 lbl_memory_installed=Adressierbarer Speicher
@@ -26,9 +27,9 @@ lbl_quota_hard=Meldung bei 100%
 
 lbl_default_quota=Standard Quota
 lbl_default_quota_header=Standard Quota
-lbl_no_quota=Aus
 
-lbl_default_features=Standardfunktionen
+lbl_enable_pop3_by_default=Enable POP3 for users by default
+lbl_enable_imap_by_default=Enable IMAP for users by default
 lbl_feature=Funktion
 lbl_state=State
 
@@ -53,6 +54,8 @@ lbl_connectiontype_online=Online
 lbl_connectiontype_cached=Cached
 
 lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
+lbl_basic_settings=Grundeinstellungen
+lbl_softdelete_lifetime=Number of days to keep deleted items
 
 err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_quota_value=Der Wert des Quotas darf nur aus Ziffern bestehen.

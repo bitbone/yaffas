@@ -157,15 +157,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -175,7 +176,7 @@ msgstr ""
 #: lang/en:2
 #, no-wrap
 msgid "Mailserver"
-msgstr ""
+msgstr "郵件伺服器"
 
 #: lang/en:3
 #, no-wrap
@@ -185,7 +186,7 @@ msgstr ""
 #: lang/en:4
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "大小"
 
 #: lang/en:5
 #, no-wrap
@@ -195,7 +196,7 @@ msgstr ""
 #: lang/en:6
 #, no-wrap
 msgid "Sender"
-msgstr ""
+msgstr "寄件人"
 
 #: lang/en:7
 #, no-wrap
@@ -205,17 +206,18 @@ msgstr ""
 #: lang/en:8
 #, no-wrap
 msgid "Status"
-msgstr ""
+msgstr "狀態"
 
 #: lang/en:9
 #, no-wrap
 msgid "Attempt to deliver"
 msgstr ""
 
+# 76%
 #: lang/en:10
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Delete emails"
-msgstr ""
+msgstr "刪除郵件"
 
 #: lang/en:11
 #, no-wrap
@@ -237,15 +239,17 @@ msgstr ""
 msgid "All"
 msgstr ""
 
+# 75%
 #: lang/en:15
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "None"
-msgstr ""
+msgstr "完成"
 
+# 83%
 #: lang/en:16
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Emails"
-msgstr ""
+msgstr "電子郵件"
 
 #: lang/en:17
 #, no-wrap
@@ -270,7 +274,7 @@ msgstr ""
 #: lang/en:21
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: lang/en:22
 #, no-wrap
@@ -307,10 +311,11 @@ msgstr ""
 msgid "Error at dequeue attempt for email"
 msgstr ""
 
+# 81%
 #: lang/en:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No valid email address"
-msgstr ""
+msgstr "無效電子郵件地址"
 
 #: lang/en:30
 #, no-wrap
