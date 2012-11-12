@@ -494,7 +494,13 @@ Yaffas.UI.prototype.checkError = function() {
 	var errortext = "";
 
 	// check for an unhandled perl error
+	//
+	// submitForm() results go to a response object, but
+	// normal requests go to the content object
 	var r = $('response');
+	if (!r || !r.innerHTML) {
+		r = $('content');
+	}
 	var perl_error_pos = r.innerHTML.indexOf(
 	  '<h1>Error - Perl execution failed</h1>');
 	if (perl_error_pos != -1) {
