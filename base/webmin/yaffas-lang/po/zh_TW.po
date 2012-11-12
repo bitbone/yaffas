@@ -157,15 +157,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -192,20 +193,22 @@ msgstr ""
 msgid "Hardware"
 msgstr ""
 
+# 75%
 #: lang/en:6
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Subscription"
-msgstr ""
+msgstr "描述"
 
 #: lang/en:7
 #, no-wrap
 msgid "Mailbox"
 msgstr ""
 
+# 81%
 #: lang/en:8
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mail Server"
-msgstr ""
+msgstr "郵件伺服器"
 
 #: lang/en:9
 #, no-wrap
@@ -215,7 +218,7 @@ msgstr ""
 #: lang/en:10
 #, no-wrap
 msgid "Security"
-msgstr ""
+msgstr "安全"
 
 #: lang/en:11
 #, no-wrap
@@ -227,10 +230,11 @@ msgstr ""
 msgid "Zarafa"
 msgstr ""
 
+# 76%
 #: lang/en:15
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Could not connect to Postgres database."
-msgstr ""
+msgstr "無法連線到資料庫"
 
 #: lang/en:16
 #, no-wrap
@@ -310,12 +314,12 @@ msgstr ""
 #: lang/en:32
 #, no-wrap
 msgid "Apply"
-msgstr ""
+msgstr "套用"
 
 #: lang/en:33
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: lang/en:34
 #, no-wrap
@@ -350,7 +354,7 @@ msgstr ""
 #: lang/en:40
 #, no-wrap
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
 #: lang/en:41
 #, no-wrap
@@ -360,22 +364,23 @@ msgstr ""
 #: lang/en:42
 #, no-wrap
 msgid "Creating cache"
-msgstr ""
+msgstr "建立緩存"
 
 #: lang/en:43
 #, no-wrap
 msgid "done"
-msgstr ""
+msgstr "完成"
 
 #: lang/en:44
 #, no-wrap
 msgid "Filter"
 msgstr ""
 
+# 83%
 #: lang/en:45
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "delete"
-msgstr ""
+msgstr "刪除"
 
 #: lang/en:47
 #, no-wrap
@@ -470,12 +475,12 @@ msgstr ""
 #: lang/en:69
 #, no-wrap
 msgid "German"
-msgstr ""
+msgstr "德語"
 
 #: lang/en:70
 #, no-wrap
 msgid "English"
-msgstr ""
+msgstr "英語"
 
 #: lang/en:71
 #, no-wrap
@@ -580,7 +585,7 @@ msgstr ""
 #: lang/en:99
 #, no-wrap
 msgid "Close"
-msgstr ""
+msgstr "關閉"
 
 #: lang/en:100
 #, no-wrap

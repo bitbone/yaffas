@@ -157,30 +157,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Change Password"
-msgstr ""
+msgstr "更改密碼"
 
 #: lang/en:2
 #, no-wrap
 msgid "System"
-msgstr ""
+msgstr "系統"
 
+# 88%
 #: lang/en:4
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Password:"
-msgstr ""
+msgstr "密碼"
 
 #: lang/en:5
 #, no-wrap
@@ -190,12 +192,13 @@ msgstr ""
 #: lang/en:6
 #, no-wrap
 msgid "Save"
-msgstr ""
+msgstr "儲存"
 
+# 85%
 #: lang/en:7
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Admin-Password"
-msgstr ""
+msgstr "管理者密碼"
 
 #: lang/en:8
 #, no-wrap
@@ -275,9 +278,9 @@ msgstr ""
 #: lang/en:26
 #, no-wrap
 msgid "Password not valid."
-msgstr ""
+msgstr "密碼無效"
 
 #: lang/en:27
 #, no-wrap
 msgid "Admin password"
-msgstr ""
+msgstr "管理者密碼"

@@ -1,6 +1,4 @@
 lbl_userfilter=Gebruikersfilter
-lbl_filtertype=Filtertype
-lbl_filtergroup=Groep
 lbl_ldapfilter_type_0=Standaard
 lbl_ldapfilter_type_1=AD Plug-in
 lbl_ldapfilter_type_2=AD Groep
@@ -9,9 +7,12 @@ lbl_confirm_msg=Met deze stap zullen de volgende zarafa stores worden verwijderd
 err_no_group_found=Kon Groep niet vinden.
 err_no_rootbasedn=Kon de rootDomainNamingContext niet vinden in AD.
 
-lbl_attachment_size=Grootte van bijlagen
+lbl_attachment_size=Maximum attachment size in Webaccess
 lbl_size=Grootte
-err_not_numeric=De waarde is niet numeriek.
+lbl_enforce_softdelete_now=Purge old deleted items now?
+err_attachment_size_not_numeric=The maximum attachment size must be numeric and >0.
+err_softdelete_not_numeric=The softdelete lifetime must be numeric and >=0.
+err_purge_softdelete_failed=Could not purge old items.
 
 lbl_optimize=Optimaliseer
 lbl_memory_installed=Adresseerbaar geheugen
@@ -25,10 +26,10 @@ lbl_quota_soft=Bericht op 90%
 lbl_quota_hard=Bericht op 100%
 
 lbl_default_quota=Standaard quota
-lbl_default_quota_header=Standaard Quota
-lbl_no_quota=Uit
+lbl_default_quota_header=Standaard quota
 
-lbl_default_features=Standaardfunctionaliteiten
+lbl_enable_pop3_by_default=Enable POP3 for users by default
+lbl_enable_imap_by_default=Enable IMAP for users by default
 lbl_feature=Functionaliteit
 lbl_state=Status
 
@@ -53,6 +54,8 @@ lbl_connectiontype_online=Online
 lbl_connectiontype_cached=Cached
 
 lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
+lbl_basic_settings=Basis-instellingen
+lbl_softdelete_lifetime=Number of days to keep deleted items
 
 err_mysql_connect=Kan geen verbinding krijgen met de database.
 err_quota_value=De quotawaarde kan alleen cijfers bevatten.

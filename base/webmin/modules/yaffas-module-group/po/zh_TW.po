@@ -157,187 +157,188 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "網路"
 
 #: lang/en:2
 #, no-wrap
 msgid "Create"
-msgstr ""
+msgstr "建立"
 
 #: lang/en:3
 #, no-wrap
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: lang/en:4
 #, no-wrap
 msgid "Create group"
-msgstr ""
+msgstr "建立群組"
 
 #: lang/en:5
 #, no-wrap
 msgid "Delete group(s)"
-msgstr ""
+msgstr "刪除群組"
 
 #: lang/en:6
 #, no-wrap
 msgid "Edit group(s)"
-msgstr ""
+msgstr "編輯群組"
 
 #: lang/en:7
 #, no-wrap
 msgid "Create group(s)"
-msgstr ""
+msgstr "建立群組"
 
 #: lang/en:8
 #, no-wrap
 msgid "Modify user"
-msgstr ""
+msgstr "修改用戶"
 
 #: lang/en:10
 #, no-wrap
 msgid "Groupadministration"
-msgstr ""
+msgstr "群組管理"
 
 #: lang/en:11
 #, no-wrap
 msgid "Groupname"
-msgstr ""
+msgstr "群組名稱"
 
 #: lang/en:12
 #, no-wrap
 msgid "Groups"
-msgstr ""
+msgstr "群組"
 
 #: lang/en:13
 #, no-wrap
 msgid "Group"
-msgstr ""
+msgstr "群組"
 
 #: lang/en:14
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "用戶"
 
 #: lang/en:15
 #, no-wrap
 msgid "Filetype"
-msgstr ""
+msgstr "檔案類型"
 
 #: lang/en:17
 #, no-wrap
 msgid "Set Filetype"
-msgstr ""
+msgstr "設定檔案類型"
 
 #: lang/en:19
 #, no-wrap
 msgid "Creating cache"
-msgstr ""
+msgstr "建立緩存"
 
 #: lang/en:20
 #, no-wrap
 msgid "done"
-msgstr ""
+msgstr "完成"
 
 #: lang/en:22
 #, no-wrap
 msgid "Do you really want to delete these groups?"
-msgstr ""
+msgstr "您真要刪除這些群組嗎?"
 
 #: lang/en:23
 #, no-wrap
 msgid "Authentification"
-msgstr ""
+msgstr "身分驗證"
 
 #: lang/en:24
 #, no-wrap
 msgid "Email"
-msgstr ""
+msgstr "電子郵件"
 
 #: lang/en:25
 #, no-wrap
 msgid "Allow send as for"
-msgstr ""
+msgstr "允許發送的"
 
 #: lang/en:28
 #, no-wrap
 msgid "All input fields has to be filled!"
-msgstr ""
+msgstr "全部輸入欄位均須填寫！"
 
 #: lang/en:29
 #, no-wrap
 msgid "Creation of groups failed!"
-msgstr ""
+msgstr "群組建立失敗！"
 
 #: lang/en:30
 #, no-wrap
 msgid "Deletion of groups failed!"
-msgstr ""
+msgstr "群組刪除失敗！"
 
 #: lang/en:31
 #, no-wrap
 msgid "Group doesn't exist!"
-msgstr ""
+msgstr "群組不存在！"
 
 #: lang/en:32
 #, no-wrap
 msgid "Group exists already!"
-msgstr ""
+msgstr "群組已存在！"
 
 #: lang/en:33
 #, no-wrap
 msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
-msgstr ""
+msgstr "群組名稱須至少含一(字母數字)字元，以字母開始(非母音變化)。"
 
 #: lang/en:34
 #, no-wrap
 msgid "Wrong mode!"
-msgstr ""
+msgstr "錯誤模式"
 
 #: lang/en:35
 #, no-wrap
 msgid "No group selected!"
-msgstr ""
+msgstr "未選定群組"
 
 #: lang/en:36
 #, no-wrap
 msgid "This action is only supported with local authentication."
-msgstr ""
+msgstr "此動作僅有本地身分驗證支援"
 
 #: lang/en:37
 #, no-wrap
 msgid "E-mail address not valid"
-msgstr ""
+msgstr "電子郵件地址無效"
 
 #: lang/en:38
 #, no-wrap
 msgid "Could not set e-mail address"
-msgstr ""
+msgstr "無法設定電子郵件地址"
 
 #: lang/en:39
 #, no-wrap
 msgid "Could not change e-mail address"
-msgstr ""
+msgstr "無法改變電子郵件地址"
 
 #: lang/en:40
 #, no-wrap
 msgid "Invalid e-mail address"
-msgstr ""
+msgstr "無效電子郵件地址"
 
 #: lang/en:41
 #, no-wrap
 msgid "Group Management"
-msgstr ""
+msgstr "群組管理"

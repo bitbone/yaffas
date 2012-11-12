@@ -157,30 +157,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
-#: lang/en:1 lang/en:50
-#, no-wrap
+# 87%
+#: lang/en:1 lang/en:52
+#, fuzzy, no-wrap
 msgid "Services"
-msgstr ""
+msgstr "服務"
 
 #: lang/en:2
 #, no-wrap
 msgid "Service"
-msgstr ""
+msgstr "服務"
 
 #: lang/en:3
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "州"
 
 #: lang/en:4
 #, no-wrap
@@ -205,17 +207,17 @@ msgstr ""
 #: lang/en:8
 #, no-wrap
 msgid "Start"
-msgstr ""
+msgstr "開始"
 
 #: lang/en:9
 #, no-wrap
 msgid "Stop"
-msgstr ""
+msgstr "停止"
 
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
-msgstr ""
+msgstr "設定"
 
 #: lang/en:11
 #, no-wrap
@@ -230,7 +232,7 @@ msgstr ""
 #: lang/en:13
 #, no-wrap
 msgid "Stopped"
-msgstr ""
+msgstr "停止"
 
 #: lang/en:14
 #, no-wrap
@@ -282,10 +284,11 @@ msgstr ""
 msgid "Stop service"
 msgstr ""
 
+# 86%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to stop this service?"
-msgstr ""
+msgstr "您真的要關閉此服務嗎?"
 
 #: lang/en:27 lang/en:28
 #, no-wrap
@@ -330,7 +333,7 @@ msgstr ""
 #: lang/en:38
 #, no-wrap
 msgid "Date"
-msgstr ""
+msgstr "日期"
 
 #: lang/en:39
 #, no-wrap
@@ -344,35 +347,45 @@ msgstr ""
 
 #: lang/en:41
 #, no-wrap
+msgid "Timezone"
+msgstr ""
+
+#: lang/en:42
+#, no-wrap
 msgid "System time"
 msgstr ""
 
-#: lang/en:44
+#: lang/en:43
 #, no-wrap
-msgid "now"
-msgstr ""
-
-#: lang/en:45
-#, no-wrap
-msgid "hourly"
+msgid "Invalid timezone"
 msgstr ""
 
 #: lang/en:46
 #, no-wrap
-msgid "daily at "
+msgid "now"
 msgstr ""
 
 #: lang/en:47
 #, no-wrap
-msgid " minute"
+msgid "hourly"
 msgstr ""
 
 #: lang/en:48
 #, no-wrap
-msgid " hour"
+msgid "daily at "
 msgstr ""
 
 #: lang/en:49
+#, no-wrap
+msgid " minute"
+msgstr ""
+
+#: lang/en:50
+#, no-wrap
+msgid " hour"
+msgstr ""
+
+#: lang/en:51
 #, no-wrap
 msgid "Time Server"
 msgstr ""

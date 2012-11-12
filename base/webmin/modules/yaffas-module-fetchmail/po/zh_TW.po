@@ -157,15 +157,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-11-11 00:22+0100\n"
+"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -182,10 +183,12 @@ msgstr ""
 msgid "Protocol"
 msgstr ""
 
+# 75%
+# 85%
 #: lang/en:4
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Active?"
-msgstr ""
+msgstr "啟用"
 
 #: lang/en:5
 #, no-wrap
@@ -505,7 +508,7 @@ msgstr ""
 #: lang/en:74
 #, no-wrap
 msgid "Settings"
-msgstr ""
+msgstr "設定"
 
 #: lang/en:75
 #, no-wrap
@@ -710,12 +713,13 @@ msgstr ""
 #: lang/en:121
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "刪除"
 
+# 87%
 #: lang/en:122
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to delete this server?"
-msgstr ""
+msgstr "您真的要刪除此條目嗎?"
 
 #: lang/en:123
 #, no-wrap
@@ -735,44 +739,49 @@ msgstr ""
 #: lang/en:126
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "用戶"
 
 #: lang/en:128
 #, no-wrap
-msgid "Please provide a local and remote user."
-msgstr ""
-
-#: lang/en:129
-#, no-wrap
-msgid "The given local username is invalid."
+msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 msgstr ""
 
 #: lang/en:130
 #, no-wrap
-msgid "The given alias is invalid."
+msgid "Please provide a local and remote user."
 msgstr ""
 
 #: lang/en:131
 #, no-wrap
-msgid "Please select \"user\", \"alias\" or \"multidrop\"."
+msgid "The given local username is invalid."
 msgstr ""
 
 #: lang/en:132
 #, no-wrap
-msgid "Please provide a valid mailserver user."
+msgid "The given alias is invalid."
 msgstr ""
 
 #: lang/en:133
 #, no-wrap
-msgid "Please provide a password for the mailserver user."
+msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr ""
 
 #: lang/en:134
 #, no-wrap
-msgid "Fetchmail daemon could not be enabled."
+msgid "Please provide a valid mailserver user."
 msgstr ""
 
 #: lang/en:135
+#, no-wrap
+msgid "Please provide a password for the mailserver user."
+msgstr ""
+
+#: lang/en:136
+#, no-wrap
+msgid "Fetchmail daemon could not be enabled."
+msgstr ""
+
+#: lang/en:137
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr ""
@@ -789,20 +798,30 @@ msgstr ""
 
 #: help/en:3
 #, no-wrap
-msgid "The DNS name of the remote server. This setting overrides the server name."
+msgid "Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify \"Connect in SSL mode\" below."
 msgstr ""
 
 #: help/en:4
 #, no-wrap
-msgid "The TCP/IP port of the remote server."
+msgid "The DNS name of the remote server. This setting overrides the server name."
 msgstr ""
 
 #: help/en:5
 #, no-wrap
-msgid "The header name of the envelope address (e.g. X-Envelope-To)."
+msgid "The TCP/IP port of the remote server. Leave this at \"Default\" unless you know what you are doing. If \"Connect in SSL mode\" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option."
 msgstr ""
 
 #: help/en:6
+#, no-wrap
+msgid "Specify wheter SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
+msgstr ""
+
+#: help/en:7
+#, no-wrap
+msgid "The header name of the envelope address (e.g. X-Envelope-To)."
+msgstr ""
+
+#: help/en:8
 #, no-wrap
 msgid "Specify the login user from the remote machine."
 msgstr ""

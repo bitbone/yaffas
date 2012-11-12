@@ -1,6 +1,8 @@
 interval=Spécifier l'intervalle de vérification en secondes.
 poll=Le nom de l'hôte distant ou l'adresse IP à partir desquels vous voulez recevoir du courriel.
+proto=Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify "Connect in SSL mode" below.
 via=Le nom DNS du serveur distant. Ce paramètre écrase le nom du serveur.
-port=Le port TCP/IP du serveur distant.
+port=The TCP/IP port of the remote server. Leave this at "Default" unless you know what you are doing. If "Connect in SSL mode" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option.
+ssl=Specify wheter SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to "No" instead.
 poll_envelope=Le nom d'entête de l'adresse de l'enveloppe (p. ex. X-Enveloppe-Pour).
 user=Spécifier l'identifiant de connexion à la machine distante.

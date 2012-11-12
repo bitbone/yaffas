@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"PO-Revision-Date: 2012-11-08 10:22+0200\n"
+"Last-Translator: André <welter@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -591,40 +591,45 @@ msgstr "Benutzer"
 
 #: lang/en:128
 #, no-wrap
+msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
+msgstr ""
+
+#: lang/en:130
+#, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Bitte geben Sie lokalen und entfernten User an"
 
-#: lang/en:129
+#: lang/en:131
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "Der angegebene lokale Benutzer ist ungültig."
 
-#: lang/en:130
+#: lang/en:132
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "Der angegebene Alias ist ungültig."
 
-#: lang/en:131
+#: lang/en:133
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Bitte wählen Sie als Ziel entweder \"Benutzer\", \"Alias\" oder \"Multidrop\""
 
-#: lang/en:132
+#: lang/en:134
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Bitte geben Sie einen gültigen Mailserverbenutzer an."
 
-#: lang/en:133
+#: lang/en:135
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Bitte geben Sie ein Passwort für den Mailserverbenutzer an."
 
-#: lang/en:134
+#: lang/en:136
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 
-#: lang/en:135
+#: lang/en:137
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Fetchmail-Konfiguration"
@@ -641,20 +646,30 @@ msgstr "Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen
 
 #: help/en:3
 #, no-wrap
-msgid "The DNS name of the remote server. This setting overrides the server name."
-msgstr "Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen."
+msgid "Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify \"Connect in SSL mode\" below."
+msgstr ""
 
 #: help/en:4
 #, no-wrap
-msgid "The TCP/IP port of the remote server."
-msgstr "Der TCP/IP Port des entfernten Servers."
+msgid "The DNS name of the remote server. This setting overrides the server name."
+msgstr "Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen."
 
 #: help/en:5
+#, no-wrap
+msgid "The TCP/IP port of the remote server. Leave this at \"Default\" unless you know what you are doing. If \"Connect in SSL mode\" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option."
+msgstr ""
+
+#: help/en:6
+#, no-wrap
+msgid "Specify wheter SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
+msgstr ""
+
+#: help/en:7
 #, no-wrap
 msgid "The header name of the envelope address (e.g. X-Envelope-To)."
 msgstr "Der Kopfzeilenname der Umschlagadresse (z.B. X-Envelope-To)."
 
-#: help/en:6
+#: help/en:8
 #, no-wrap
 msgid "Specify the login user from the remote machine."
 msgstr "Geben sie den Login-Benutzer der entfernten Maschine an."
