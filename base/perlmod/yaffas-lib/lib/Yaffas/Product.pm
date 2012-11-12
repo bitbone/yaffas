@@ -183,7 +183,7 @@ sub get_version_of($) {
                 }
             }
         }
-        elsif (Yaffas::Constant::OS =~ /RHEL?/) {
+        elsif (Yaffas::Constant::OS =~ /RHEL./) {
             my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{rpm}, "-qi", "yaffas-core");
             my $version;
             my $release;
