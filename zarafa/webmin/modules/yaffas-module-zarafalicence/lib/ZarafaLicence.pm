@@ -47,16 +47,16 @@ sub install($) {
 
     $key = uc $key;
 
-    if ($key =~ /^Z.{24}/) {
+    if ($key =~ /^Z.{24}$/) {
         install_basekey($key);
     }
-    elsif ($key =~ /^A.{24}/) {
+    elsif ($key =~ /^A.{24}$/) {
         install_archiverkey($key);
     }
-    elsif ($key =~ /^Z.{16}/) {
+    elsif ($key =~ /^Z.{16}$/) {
         install_calkey($key);
     }
-    elsif ($key =~ /^A.{16}/) {
+    elsif ($key =~ /^A.{16}$/) {
         install_acalkey($key);
     }
     else {
