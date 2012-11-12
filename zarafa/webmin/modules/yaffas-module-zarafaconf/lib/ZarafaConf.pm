@@ -49,7 +49,7 @@ sub zarafa_ldap_filter(;$$) {
 			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADPLUGIN} && $auth eq ADS) {
-			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
+			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_uri'}, "rootDomainNamingContext");
 			throw Yaffas::Exception("err_no_rootbasedn") unless $rootbasedn;
 			$cfg->{'ldap_user_search_filter'} = "(&(objectClass=person)(objectCategory=CN=Person,CN=Schema,CN=Configuration,$rootbasedn)(zarafaAccount=1))";
 			Yaffas::Module::AuthSrv::set_zarafa_ldap($cfg);
@@ -60,7 +60,7 @@ sub zarafa_ldap_filter(;$$) {
 			Yaffas::Module::Mailsrv::Postfix::set_postfix_ldap($postfix_settings, "users", 1);
 		}
 		if ($filter == FILTERTYPE->{ADGROUP} && $auth eq ADS) {
-			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_host'}, "rootDomainNamingContext");
+			my $rootbasedn = Yaffas::Auth::get_ads_basedn($cfg->{'ldap_uri'}, "rootDomainNamingContext");
 			throw Yaffas::Exception("err_no_rootbasedn") unless $rootbasedn;
 
 			my @group = Yaffas::LDAP::search_attribute("user", $value, "dn");
