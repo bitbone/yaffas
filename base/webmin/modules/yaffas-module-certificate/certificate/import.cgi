@@ -14,7 +14,7 @@ header($main::text{'import_title'}, "");
 
 if ( $ENV{'QUERY_STRING'}){
 	try {
-		ReadParseMime(10000);
+		ReadParseMime();
 		show_import_ok_err();
 		print Yaffas::UI::ok_box();
 	} catch Yaffas::Exception with {
