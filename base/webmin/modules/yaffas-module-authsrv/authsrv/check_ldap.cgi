@@ -34,7 +34,8 @@ header();
 
 try {
 	throw Yaffas::Exception("err_miss_host") unless $host;
-	my @hosts = split(/\s{0,}[;,\s]\s{0,}/, $host);
+	$host =~ s/^\s+//;
+	my @hosts = split(/\s{0,}[;,\s\0]\s{0,}/, $host);
 	my $test_ldaps = 0;
 	foreach (@hosts) {
 		if(Yaffas::Module::AuthSrv::test_ldaps($_)) {
