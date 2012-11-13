@@ -11,7 +11,7 @@ function pwdchange_settings_order(){
 function pwdchange_settings_html(){
 	echo '
 	<form enctype="multipart/form-data" id="formpwdchange" name="formpwdchange" method="post">
-	<input name="pwdchange_username" id="pwdchange_username" type="hidden" value="'.$_SESSION['username'].'">
+	<input name="pwdchange_username" id="pwdchange_username" type="hidden" value="'.htmlspecialchars($_SESSION['username']).'">
 	<fieldset>
 		<legend>'._("Change Password").'</legend>
 		<table class="textinput">
