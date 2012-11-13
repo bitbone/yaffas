@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-11 00:22+0100\n"
+"POT-Creation-Date: 2012-11-13 00:21+0100\n"
 "PO-Revision-Date: 2012-11-09 09:35+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -188,10 +188,13 @@ msgstr ""
 msgid "Domain Controller"
 msgstr ""
 
+# 87%
+# 76%
+# 75%
 #: lang/en:6
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Local authentication"
-msgstr ""
+msgstr "身分驗證"
 
 #: lang/en:7 lang/en:59
 #, no-wrap

@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"POT-Creation-Date: 2012-11-13 00:21+0100\n"
 "PO-Revision-Date: 2012-11-09 09:35+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -385,7 +385,7 @@ msgstr "暫存"
 
 #: lang/en:56
 #, no-wrap
-msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /import \\\\path\\to\\file.prf)"
+msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 msgstr ""
 
 #: lang/en:57
@@ -450,7 +450,7 @@ msgstr "這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若
 
 #: help/en:7
 #, no-wrap
-msgid "Specify the server adress that will be used to connect your outlook clients to zarafa server."
+msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
 msgstr ""
 
 #: help/en:8

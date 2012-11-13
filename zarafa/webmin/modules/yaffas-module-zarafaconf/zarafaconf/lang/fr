@@ -53,7 +53,7 @@ lbl_connectiontype_autodetect=Autodetect
 lbl_connectiontype_online=Online
 lbl_connectiontype_cached=Cached
 
-lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /import \\path\to\file.prf)
+lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /importprf \\path\to\file.prf)
 lbl_basic_settings=Paramètres de base
 lbl_softdelete_lifetime=Number of days to keep deleted items
 

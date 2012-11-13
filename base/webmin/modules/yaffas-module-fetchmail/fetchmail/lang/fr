@@ -134,4 +134,6 @@ err_no_selection=Veuillez sélectionner "utilisateur", "alias" ou "multidrop".
 err_remote_user=Veuillez saisir un nom d'utilisateur du serveur de courrier valide.
 err_remote_passwd=Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier.
 err_enable_fetchmail=Impossible d'activer le daemon Fetchmail.
+err_bad_targets=Denying attempt to create poll query without any target users.
+err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
 moduletitle=Récupération du courrier par Fetchmail

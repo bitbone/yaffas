@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"POT-Creation-Date: 2012-11-13 00:21+0100\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -628,6 +628,16 @@ msgid "Fetchmail daemon could not be enabled."
 msgstr "Impossible d'activer le daemon Fetchmail."
 
 #: lang/en:137
+#, no-wrap
+msgid "Denying attempt to create poll query without any target users."
+msgstr ""
+
+#: lang/en:138
+#, no-wrap
+msgid "Cannot use the given username as a target as it has no valid email address associated with it."
+msgstr ""
+
+#: lang/en:139
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Récupération du courrier par Fetchmail"
