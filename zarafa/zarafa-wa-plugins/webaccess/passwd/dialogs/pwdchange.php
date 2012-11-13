@@ -91,6 +91,7 @@ function getBody() {
 						if ($ldap_error == 0) {
 
 							echo _("success: password update"); 
+							logout();
 						}
 						else {
 
@@ -101,7 +102,7 @@ function getBody() {
 					}
 					else {
 		
-						if (($newpw1 == "") || ($newpw1 == "")) { echo _("failure: new password empty"); }
+						if (($newpw1 == "") || ($newpw2 == "")) { echo _("failure: new password empty"); }
 						if (!check_password($newpw1)) { echo _("failure: password weak"); }
 						else { echo _("failure: new passwords dont match"); }
 					}
@@ -154,10 +155,17 @@ function getBody() {
 
             if ($ret == 0) {
                 echo _("success: password update"); 
+		logout();
             }
             else {
                 echo _("failure: password update")."<br>".$msg; 
             }
+        }
+        else {
+
+            if (($newpw1 == "") || ($newpw2 == "")) { echo _("failure: new password empty"); }
+                if (!check_password($newpw1)) { echo _("failure: password weak"); }
+                else { echo _("failure: new passwords dont match"); }
         }
     }
 	else {
@@ -182,6 +190,7 @@ function getBody() {
 			exec($mycmd,$arrayout, $retval);
 			if ($retval == 0) {
 				echo _("success: password update");
+				logout();
 			} else {
 				echo _("failure: password update");
 			}   
@@ -219,10 +228,8 @@ function check_password ($password) {
 	}
 }
 
-// logout user
-// TODO: Don't log out user when password didn't change.
-function getJavaScript_onload(){
-	echo "\t\t\t\t\twindow.setTimeout(\"parent.parentwindow.location.href='index.php?logout'\",5000);\n";
-} 
+function logout() {
+	echo "<script>window.setTimeout(\"parent.parentwindow.location.href='index.php?logout'\",5000);</script>\n";
+}
 
 ?>

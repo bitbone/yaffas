@@ -21,35 +21,35 @@ msgstr "Das Passwort wurde erfolgreich ge&auml;ndert. Bitte lassen Sie diesen Di
 
 #: dialogs/pwdchange.php:68
 msgid "failure: password update"
-msgstr "Das Passwort konnte nicht ge&auml;ndert werden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Das Passwort konnte nicht ge&auml;ndert werden. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:74
 msgid "failure: new password empty"
-msgstr "Das neue Password darf nicht leer sein. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Das neue Password darf nicht leer sein. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:77
 msgid "failure: new passwords dont match"
-msgstr "Die Werte f&uuml;r das neue Passwort m&uuml;ssen &uuml;bereinstimmen. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Die Werte f&uuml;r das neue Passwort m&uuml;ssen &uuml;bereinstimmen. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:84
 msgid "failure: old passwords wrong"
-msgstr "Das Original-Passwort war falsch. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Das Original-Passwort war falsch. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:87
 msgid "failure: could not bind to ldap"
-msgstr "Konnte nicht an den Verzeichnis-Dienst binden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Konnte nicht an den Verzeichnis-Dienst binden. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:94
 msgid "failure: could not connect to ldap"
-msgstr "Konnte nicht mit dem Verzeichnis-Dienst verbinden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Konnte nicht mit dem Verzeichnis-Dienst verbinden. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:107
 msgid "failure: password weak"
-msgstr "Das gew&auml;hlte Passwort ist nicht stark genug. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Das gew&auml;hlte Passwort ist nicht stark genug. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: dialogs/pwdchange.php:120
 msgid "failure: username not found"
-msgstr "Der Benutzername wurde nicht gefunden. Bitte lassen Sie diesen Dialog ge&ouml;ffnet, Sie werden gleich abgemeldet."
+msgstr "Der Benutzername wurde nicht gefunden. Bitte schließen Sie diesen Dialog und versuchen Sie es noch einmal."
 
 #: tabs/pwdchange.php:4 tabs/pwdchange.php:16 tabs/pwdchange.php:33
 msgid "Change Password"
