@@ -38,7 +38,8 @@ try {
 		$oldusers = Yaffas::Module::AuthSrv::get_sys_and_db_users();
 		$oldgroups = Yaffas::Module::AuthSrv::get_sys_and_db_groups();
 	}
-	my @pdcs = split(/\s{0,}[;,\s]\s{0,}/, $pdc);
+	$pdc =~ s/^\s+//;
+	my @pdcs = split(/\s{0,}[;,\s\0]\s{0,}/, $pdc);
 	Yaffas::Module::AuthSrv::set_pdc( \@pdcs, $dom_name, $dom_adm, $dom_pass1, "samba", );
 	Yaffas::Module::AuthSrv::mod_nsswitch();
 

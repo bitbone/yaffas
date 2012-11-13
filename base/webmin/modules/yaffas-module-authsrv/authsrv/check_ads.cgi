@@ -35,7 +35,8 @@ try {
 	my $exception = Yaffas::Exception->new();
 	$exception->add('err_pdc_missing') unless $pdc;
 	throw $exception if $exception;
-	my @pdcs = split(/\s{0,}[;,\s]\s{0,}/, $pdc);
+	$pdc =~ s/^\s+//;
+	my @pdcs = split(/\s{0,}[;,\s\0]\s{0,}/, $pdc);
 	my $test_ldaps = 0;
 	foreach (@pdcs) {
 		if(Yaffas::Module::AuthSrv::test_ldaps($_)) {
