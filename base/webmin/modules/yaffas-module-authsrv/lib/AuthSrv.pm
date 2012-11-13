@@ -627,7 +627,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 
 		my $ldap_conf_ref = $ldap_conf->get_cfg_values();
 		$ldap_conf_ref->{'host'} = ${$hosts}[0];
-		$ldap_conf_ref->{'URI'}  = @uris;
+		$ldap_conf_ref->{'URI'}  = $ldapuri;
 		$ldap_conf_ref->{'base'} = $basedn;
 		$ldap_conf->write();
 
@@ -639,7 +639,7 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 				'ldap_bind_user' => $binddn,
 
 				#'ldap_host' => $host,
-				'ldap_uri' => @uris,
+				'ldap_uri' => $ldapuri,
 			};
 
 			#unless (defined $encryption) {
