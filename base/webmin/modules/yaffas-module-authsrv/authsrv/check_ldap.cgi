@@ -34,9 +34,24 @@ header();
 
 try {
 	throw Yaffas::Exception("err_miss_host") unless $host;
-	$ldap_encryption = Yaffas::Module::AuthSrv::test_ldaps($host);
+	my @hosts = split(/\s{0,}[;,\s]\s{0,}/, $host);
+	my $test_ldaps = 0;
+	foreach (@hosts) {
+		if(Yaffas::Module::AuthSrv::test_ldaps($_)) {
+			$test_ldaps += 1;
+		}
+	}
+	if($test_ldaps >= scalar @hosts) {
+		$ldap_encryption = 1;
+	}
+
 	if ((defined $ldap_encryption) || ($noencryption_confirmed eq "1")) {
-		my $sambasids_available = Yaffas::Module::AuthSrv::get_all_sambasid ($host, $basedn, $binddn, $bindpw, $ldap_encryption);
+		my $sambasids_available = {};
+		foreach (@hosts) {
+			my $available_sids = Yaffas::Module::AuthSrv::get_all_sambasid ($_, $basedn, $binddn, $bindpw, $ldap_encryption);
+			my %tmp_sids = (%$sambasids_available, %$available_sids);
+			$sambasids_available = \%tmp_sids;
+		}
 		my @tmp = keys %$sambasids_available;
 		if ((not $sambasid) && scalar (@tmp) == 1) {
 			$sambasid = $tmp[0];
@@ -55,7 +70,7 @@ try {
 				$oldusers = Yaffas::Module::AuthSrv::get_sys_and_db_users();
 				$oldgroups = Yaffas::Module::AuthSrv::get_sys_and_db_groups();
 			}
-			Yaffas::Module::AuthSrv::set_bk_ldap_auth($host, $basedn, $binddn, $bindpw, $userdn, $groupdn, $usersearch, $email, $ldap_encryption, $sambasid);
+			Yaffas::Module::AuthSrv::set_bk_ldap_auth(\@hosts, $basedn, $binddn, $bindpw, $userdn, $groupdn, $usersearch, $email, $ldap_encryption, $sambasid);
 			Yaffas::Module::AuthSrv::mod_nsswitch();
 			if (Yaffas::Product::check_product("fax") || Yaffas::Product::check_product("pdf")) {
 				my $all = undef;

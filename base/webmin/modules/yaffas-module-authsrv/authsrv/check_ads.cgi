@@ -35,7 +35,16 @@ try {
 	my $exception = Yaffas::Exception->new();
 	$exception->add('err_pdc_missing') unless $pdc;
 	throw $exception if $exception;
-	$ldap_encryption = Yaffas::Module::AuthSrv::test_ldaps($pdc);
+	my @pdcs = split(/\s{0,}[;,\s]\s{0,}/, $pdc);
+	my $test_ldaps = 0;
+	foreach (@pdcs) {
+		if(Yaffas::Module::AuthSrv::test_ldaps($_)) {
+			$test_ldaps += 1;
+		}
+	}
+	if($test_ldaps >= scalar @pdcs) {
+		$ldap_encryption = 1;
+	}
 
 	if ((defined $ldap_encryption) || ($noencryption_confirmed eq "yes")) {
 		control(NSCD, STOP) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
@@ -49,7 +58,7 @@ try {
 			$oldusers = Yaffas::Module::AuthSrv::get_sys_and_db_users();
 			$oldgroups = Yaffas::Module::AuthSrv::get_sys_and_db_groups();
 		}
-		Yaffas::Module::AuthSrv::set_pdc( $pdc, $dom_name, $dom_adm, $dom_pass1, $type, $ads_user, $ads_user_pass1, $ldap_encryption );
+		Yaffas::Module::AuthSrv::set_pdc( \@pdcs, $dom_name, $dom_adm, $dom_pass1, $type, $ads_user, $ads_user_pass1, $ldap_encryption );
 		Yaffas::Module::AuthSrv::mod_nsswitch();
 
 		control(SAMBA, RESTART);
