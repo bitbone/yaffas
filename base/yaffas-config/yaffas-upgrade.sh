@@ -9,7 +9,7 @@ echo "Starting upgrade procedures ..." >> $LOGFILE
 
 for UPGRADE in /opt/yaffas/share/yaffas-upgrade/*.sh; do
 	echo $(basename $UPGRADE) >> $LOGFILE
-	sh $UPGRADE >> $LOGFILE
+	bash "$UPGRADE" >> $LOGFILE
 done
 
 echo "... done" >> $LOGFILE
