@@ -216,7 +216,7 @@ sub get_ads_basedn($;$){
 
 	$attribute = "defaultNamingContext" unless (defined($attribute));
 
-	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-x","-b", '',"-s", "base", "-H", '"'.$uri.'"');
+	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-x","-b", '',"-s", "base", "-H", $uri);
 	foreach (@rv) {
 		if ( m/$attribute/) {
 			$basedn = (split(/\s*:\s*/))[1];
@@ -253,7 +253,7 @@ sub get_ads_userdn($$$$){
 	my $basedn = get_ads_basedn($uri);
 	return undef unless defined $basedn;
 	my $admindn = "cn=$admin,cn=Users,$basedn";
-	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", '"'.$uri.'"',"-w",$pass,"(sAMAccountName=$user)");
+	my @rv = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", $uri,"-w",$pass,"(sAMAccountName=$user)");
 	if ($? == 0) {
 		foreach (@rv) {
 			if ( m/dn/) {
@@ -263,7 +263,7 @@ sub get_ads_userdn($$$$){
 			}
 		}
 	} else {
-		my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", '"'.$uri.'"',"-w",$pass,"(sAMAccountName=$user)");
+		my @re = Yaffas::do_back_quote_2(Yaffas::Constant::APPLICATION->{ldapsearch},"-D",$admindn,"-x","-b",$basedn,"-H", $uri,"-w",$pass,"(sAMAccountName=$user)");
 		my $errorcode = undef;
 		foreach (@re) {
 			if (m/AcceptSecurityContext/) {
