@@ -3,6 +3,6 @@ poll=Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen wo
 proto=Das zu benutzende Protokoll; wenn der Server TLS-Unterstützung anbietet, wird sie automatisch genutzt. Wenn SSL benutzt werden soll, muss unten der Haken bei "Mit SSL verbinden" gesetzt werden.
 via=Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen.
 port=Der TCP-Port des entfernten Servers. Sollte in den meisten Fällen auf "Standard" gesetzt bleiben. Wenn "Mit SSL verbinden" aktiviert ist, wird in der Standardeinstellung automatisch der korrekte Port für die SSL-Variante des gewählten Protokolls verwendet, ohne dass manuell eingegriffen werden muss.
-ssl=Legt fest, ob SSL-Verschlüsselung für die Verbindung benutzt wird. Wenn TLS oder unverschlüsselte Verbindungen benutzt werden sollen, sollte hier "Nein" gewählt werden.
+ssl=Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to "No" instead.
 poll_envelope=Der Kopfzeilenname der Umschlagadresse (z.B. X-Envelope-To).
 user=Geben sie den Login-Benutzer der entfernten Maschine an.

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-11-13 00:22+0100\n"
+"POT-Creation-Date: 2012-11-14 00:23+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -695,7 +695,7 @@ msgstr ""
 #: help/en:6
 #, no-wrap
 msgid ""
-"Specify wheter SSL-encrypted connections should be used. If you want to use "
+"Specify whether SSL-encrypted connections should be used. If you want to use "
 "TLS or unencrypted connections, set this to \"No\" instead."
 msgstr ""
 
