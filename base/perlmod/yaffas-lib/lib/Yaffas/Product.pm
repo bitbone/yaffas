@@ -174,12 +174,20 @@ sub get_version_of($) {
 	}
 
     if ($product eq "framework") {
+        my $git = "-unknown";
+        my $fn = Yaffas::Constant::FILE->{git_revision};
+        if (-r $fn) {
+            my $file = Yaffas::File->new($fn);
+            $git = $file->get_content();
+            $git =~ s#^heads/devel-0##;
+        }
+
         if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
             my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-l", "yaffas-core");
 
             foreach my $line (@tmp) {
                 if ($line =~ /^ii\s+.*?\s+(\d+\.\d+\.\d+-\d+)\s+.*/) {
-                    return $1;
+                    return $1.$git;
                 }
             }
         }
@@ -196,7 +204,7 @@ sub get_version_of($) {
                     $release = $1;
                 }
             }
-            return $version."-".$release;
+            return $version."-".$release.$git;
 
         }
     }

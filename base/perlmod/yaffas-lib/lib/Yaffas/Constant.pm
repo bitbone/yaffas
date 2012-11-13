@@ -264,6 +264,7 @@ use constant {
 		"postinst_all" => "/opt/yaffas/bin/postinst-all.sh",
 		"timezone" => "/etc/timezone",
 		"sysconfig_clock" => "/etc/sysconfig/clock",
+		"git_revision" => "/opt/yaffas/share/doc/example/etc/git-revision",
 	}
 };
 
