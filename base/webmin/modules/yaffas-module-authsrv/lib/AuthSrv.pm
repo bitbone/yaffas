@@ -1690,7 +1690,7 @@ sub check_userbind($$$;$) {
 	throw $exception if ($exception);
 	my @re = Yaffas::do_back_quote_2(
 		Yaffas::Constant::APPLICATION->{ldapsearch},
-		"-D", $userdn, "-x", "-H", '"' . $ldapuri . '"',
+		"-D", $userdn, "-x", "-H", $ldapuri,
 		"-w", $pass, "-b", $userdn
 	);
 
