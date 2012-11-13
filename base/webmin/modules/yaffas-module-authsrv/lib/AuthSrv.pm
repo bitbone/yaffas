@@ -1020,10 +1020,11 @@ sub set_pdc( ;$$$$$$$$) {
 		$pdcs = [$pdcs];
 	}
 	my $ldapuri;
-	my $ldap_proto = "ldap";
-	if ($encryption) {
-		$ldap_proto .= "s";
-	}
+	my $ldap_proto = "ldap://";
+    if ($encryption) {
+        $ldap_proto = "ldaps://";
+    }
+	
 	my @uris = map( $ldap_proto . $_, @{$pdcs} );
 	$ldapuri = join " ", @uris;
 
