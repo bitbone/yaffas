@@ -509,7 +509,7 @@ sub search_user_by_attribute($$) {
 
 	@return_users = Yaffas::do_back_quote(
 		Yaffas::Constant::APPLICATION->{'ldapsearch'},
-		"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $searchbase,
+		"-H", $ldapuri, "-x", "-D", $binddn, "-b", $searchbase,
 		"($attribute=$avalue)", $namefilter, "-w", $ldapsecret, "-LLL"
 		);
 	return (map {s/$namefilter:\s*//i;chomp; $_} grep(/$namefilter:\s*/i,@return_users));
@@ -561,7 +561,7 @@ sub search_attribute($$;$) {
 	if ($type eq "user") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $user_searchbase,
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 			"($namefilter=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
 	} elsif ($type eq "group") {
@@ -569,14 +569,14 @@ sub search_attribute($$;$) {
 		foreach my $user (@users) {
 			push @return_attribs, Yaffas::do_back_quote(
 				Yaffas::Constant::APPLICATION->{'ldapsearch'},
-				"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $user_searchbase,
+				"-H", $ldapuri, "-x", "-D", $binddn, "-b", $user_searchbase,
 				"($namefilter=$user)", $attribute, "-w", $ldapsecret, "-LLL"
 				);
 		}
 	} elsif ($type eq "grouponly") {
 		@return_attribs = Yaffas::do_back_quote(
 			Yaffas::Constant::APPLICATION->{'ldapsearch'},
-			"-H", '"'.$ldapuri.'"', "-x", "-D", $binddn, "-b", $group_searchbase,
+			"-H", $ldapuri, "-x", "-D", $binddn, "-b", $group_searchbase,
 			"(cn=$name)", $attribute, "-w", $ldapsecret, "-LLL"
 			);
     } else {
