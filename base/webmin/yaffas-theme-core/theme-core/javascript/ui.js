@@ -279,14 +279,41 @@ Yaffas.UI.prototype.replaceTabs = function(o) {
 	this.loading.hide();
 };
 
+Yaffas.UI.prototype.getResponseHTML = function(o) {
+	/*
+	 * Returns the HTML of the given YUI async response
+	 *
+	 * We handle two cases here:
+	 * - o is the response object
+	 * - o.response is the response object
+	 *
+	 * Also, we try to use .responseXML first, as that's the technical
+	 * correct way to get the desired output. As this is not always
+	 * populated, we fall back to using .responseText.
+	 * We cannot always use .responseText, as this gives us bad results
+	 * when YUI handles the request through an iframe (e.g. for file uploads)
+	 * @see ADM-215
+	 */
+	if (!o.responseXML && !o.responseText && o.response) {
+		o = o.response;
+	}
+	if (o.responseXML && o.responseXML.body) {
+		return o.responseXML.body.innerHTML;
+	} else if (o.responseText) {
+		return o.responseText;
+	} else {
+		return "";
+	}
+}
+
 Yaffas.UI.prototype.openTabs = function(o) {
 	var div = document.getElementById('content');
 
 	// check if we got a whole header which indicate a login page
-	if (o.responseText.substr(0, 14) === "<!DOCTYPE html") {
+	if (this.getResponseHTML(o).substr(0, 14) === "<!DOCTYPE html") {
 		var c = new Element("div");
 		var timeout = 0;
-		c.innerHTML = o.responseText;
+		c.innerHTML = this.getResponseHTML(o);
 
 		var problems = c.select("div#problems");
 
@@ -338,9 +365,7 @@ Yaffas.UI.prototype.openTabs = function(o) {
 		dlg.show();
 		return;
 	}
-	if (o.responseText !== undefined) {
-		div.innerHTML = o.responseText;
-	}
+	div.innerHTML = this.getResponseHTML(o);
 
 	var sections = YAHOO.util.Dom.get("content");
 
@@ -624,7 +649,7 @@ Yaffas.UI.prototype.submitURL = function(url, args, argsform,
 	var handleSuccess = function(o) {
 		console.log("response: %s", o.status);
 		var r = YAHOO.util.Dom.get("response");
-		r.innerHTML = parseScript(o.responseText);
+		r.innerHTML = parseScript(this.getResponseHTML(o));
 
 		if (!this.checkError()) {
 			this.loading.hide();
@@ -767,28 +792,22 @@ Yaffas.UI.prototype.selectTab = function(t) {
 };
 
 Yaffas.UI.prototype.handleFailure = function(o) {
-	var errorMsg = "";
+	var errorMsg = this.getResponseHTML(o);
 
-	if (typeof o.responseText !== "undefined") {
-		errorMsg = o.responseText;
-	}	else if (typeof o.response !== "undefined" && typeof o.response.responseText !== "undefined") {
-		errorMsg = o.response.responseText;
-	}	else if (typeof o.statusText !== "undefined") {
+	if (!errorMsg && o.statusText) {
 		if (o.statusText === "communication failure") {
 			errorMsg = _("err_connection_failed", "global");
 		} else {
 			errorMsg = o.statusText;
 		}
-	} else {
+	}
+	if (!errorMsg) {
 		errorMsg = "An undefined error occured!";
 	}
-
-	if (errorMsg) {
-		this.loading.hide();
-		this.errorDialog.setBody(errorMsg);
-		this.errorDialog.show();
-	}
-};
+	this.loading.hide();
+	this.errorDialog.setBody(errorMsg);
+	this.errorDialog.show();
+}
 
 Yaffas.UI.prototype.logout = function() {
 	console.log("logout");
