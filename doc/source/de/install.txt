@@ -52,25 +52,9 @@ _Ubuntu 12.04 LTS_
 **Installation der Pakete**
 
   apt-get update
-  apt-get install yaffas yaffas-config yaffas-zarafa
+  apt-get install yaffas
 
 Dies installiert die {product} Basismodule und Zarafa.
-
-[WARNING]
-==============
-
-Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden folgende Einstellungen und Daten gelöscht oder überschrieben:
-
-  * bestehender LDAP-Baum
-  * slapd Konfiguration
-  * Samba Konfiguration
-  * smbldap-tools Konfiguration
-  * postfix Konfiguration
-  * zarafa Konfiguration (wenn yaffas-zarafa installiert wurde)
-  * MySQL Konfiguration (Optimierungen für Zarafa werden eingetragen)
-
-
-==============
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
@@ -112,25 +96,9 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 **Installation der Pakete**
 
   apt-get update
-  apt-get install yaffas yaffas-config yaffas-zarafa
+  apt-get install yaffas
 
 Dies installiert die {product} Basismodule und Zarafa.
-
-[WARNING]
-==============
-
-Bei Installation des **yaffas-config** Paketes und seiner Abhängigkeiten werden folgende Einstellungen und Daten gelöscht oder überschrieben:
-
-  * bestehender LDAP-Baum
-  * slapd Konfiguration
-  * Samba Konfiguration
-  * smbldap-tools Konfiguration
-  * postfix Konfiguration
-  * zarafa Konfiguration (wenn yaffas-zarafa installiert wurde)
-  * MySQL Konfiguration (Optimierungen für Zarafa werden eingetragen)
-
-
-==============
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
@@ -163,13 +131,6 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 ==== Red Hat Enterprise Linux
 
 Die Installation unter Red Hat Enterprise Linux verläuft ähnlich der Installation unter Ubuntu.
-
-[WARNING]
-==============
-
-Das Paket yaffas-config überschreibt hier ebenfalls die oben genannten Konfigurationen.
-
-==============
 
 **Hinzufügen der benötigten Repositories**
 
@@ -238,7 +199,7 @@ gpgcheck = 0
 
 **Installation der Pakete**
 
-  yum install yaffas yaffas-zarafa yaffas-config
+  yum install yaffas
 
 
 === Erste Schritte
@@ -246,6 +207,22 @@ gpgcheck = 0
 Nach der Installation ist das {product} Webinterface unter folgender URL zu erreichen: `https://<ip-des-servers>:10000`
 
 Der Benutzername ist "admin" und das Passwort "yaffas".
+
+[WARNING]
+==============
+
+Bei Installation werden folgende Einstellungen geändert und **Daten
+gelöscht oder überschrieben**:
+
+  * bestehender LDAP-Baum
+  * slapd Konfiguration
+  * Samba Konfiguration
+  * smbldap-tools Konfiguration
+  * postfix Konfiguration
+  * zarafa Konfiguration (wenn yaffas-zarafa installiert wurde)
+  * MySQL Konfiguration (Optimierungen für Zarafa werden eingetragen)
+
+==============
 
 Im folgenden Setup-Dialog muss das Admin-Passwort geändert werden. Außerdem muss der Benutzer einen MySQL Benutzer angeben, der die Berechtigung hat auf einem MySQL-Server eine Datenbank für Zarafa anzulegen.
 

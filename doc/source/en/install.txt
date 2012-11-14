@@ -22,9 +22,9 @@ Yaffas can be installed from the repositories described below for the two suppor
 ==== Installation on existing server
 
 Right now the installation on an existing server is not recommended and not supported.
-Before considering to go this way, either wait for one of the next releases or install a on a clean machine and migrate your data to the new system.
+Before considering to go this way, either wait for one of the next releases or install on a clean machine and migrate your data to the new system.
 
-If it still your wish to install it on an existing server make sure you have a backup or make a copy of your actual machine.
+If you still wish to install it on an existing server make sure you have a backup or make a copy of your actual machine.
 
 To install {product} on such system you must not install yaffas-config and yaffas-zarafa, which will overwrite your configuration.
 yaffas-config is a meta package which depends on yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security.
@@ -68,32 +68,17 @@ If you need a proxy to download from internet, just set the "http_proxy" variabl
 **Install the packages**
 
   apt-get update
-  apt-get install yaffas yaffas-zarafa yaffas-config
+  apt-get install yaffas
 
 
 This will install {product} base modules and zarafa.
-
-[WARNING]
-==============
-
-When installing the **yaffas-config** package and its dependencies, the
-following settings and data will be deleted or overwritten:
-
-  * existing LDAP tree
-  * slapd configuration
-  * Samba configuration
-  * smbldap-tools configuration
-  * postfix configuration
-  * zarafa configuration
-  * MySQL configuration (optimizations for Zarafa will be made)
-
-==============
 
 During the installation zarafa, mysql, openldap, postfix and many other dependencies are installed.
 
 The package manager will usually ask questions for some packages.
 You can skip all of these by pressing "enter" when the dialog pops up.
-The configuration of these will be done by the **yaffas-config** package.
+The configuration of these will be done by the yaffas installation
+procedure later.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
@@ -152,22 +137,6 @@ If you need a proxy to download from internet, just set the "http_proxy" variabl
 
 This will install {product} base modules and zarafa.
 
-[WARNING]
-==============
-
-When installing the **yaffas-config** package and its dependencies, the
-following settings and data will be deleted or overwritten:
-
-  * existing LDAP tree
-  * slapd configuration
-  * Samba configuration
-  * smbldap-tools configuration
-  * postfix configuration
-  * zarafa configuration
-  * MySQL configuration (optimizations for Zarafa will be made)
-
-==============
-
 During the installation zarafa, mysql, openldap, postfix and many other dependencies are installed.
 
 The package manager will usually ask questions for some packages.
@@ -204,22 +173,6 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 ==== Red Hat Enterprise Linux
 
 The installation on Red Hat Enterprise Linux is similar.
-
-[WARNING]
-==============
-
-When installing the **yaffas-config** package and its dependencies, the
-following settings and data will be deleted or overwritten:
-
-  * existing LDAP tree
-  * slapd configuration
-  * Samba configuration
-  * smbldap-tools configuration
-  * postfix configuration
-  * zarafa configuration
-  * MySQL configuration (optimizations for Zarafa will be made)
-
-==============
 
 **Adding the required repositories**
 
@@ -307,7 +260,25 @@ The username is "admin" and password is "yaffas".
 
 image:images/en/{theme}/16_login_thumb.png[link="images/en/{theme}/16_login.png"]
 
-On first log in the admin password has to be changed.
+On first login, the setup assistant will be launched.
+
+[WARNING]
+==============
+
+The setup procedure will change the following settings and **data will
+be deleted or overwritten**:
+
+  * existing LDAP tree
+  * slapd configuration
+  * Samba configuration
+  * smbldap-tools configuration
+  * postfix configuration
+  * zarafa configuration
+  * MySQL configuration (optimizations for Zarafa will be made)
+
+==============
+
+The installer will also ask you to change the default admin password.
 If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
 The database you add here will be used for zarafa and will be created if it does not exists.
 
