@@ -26,14 +26,15 @@ Before considering to go this way, either wait for one of the next releases or i
 
 If you still wish to install it on an existing server make sure you have a backup or make a copy of your actual machine.
 
-To install {product} on such system you must not install yaffas-config and yaffas-zarafa, which will overwrite your configuration.
-yaffas-config is a meta package which depends on yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security.
+To install {product} on such a system, install the packages as described
+below, but skip the installation wizard (change
+/opt/yaffas/etc/webmin/webmin.acl symlink to point to
+webmin.acl-global instead of -setup), as it would delete all your data.
 
-These will install all needed dependencies like openldap, samba, zarafa, etc.
-The sourcecode of the packages can be found on http://www.github.com/bitbone/yaffas/.
-There you have in base/conf and zarafa/conf the configuration packages.
-The needed steps can be found in debian/postinst for Ubuntu systems and redhat/*.spec for RedHat systems.
-You have to make sure that every step that is in these scripts is adapted for your system and then executed.
+You will have to do several configuration changes on your own. You can
+figure out the necessary details by inspecting the relevant resources
+(/opt/yaffas/share/yaffas-upgrade/, /opt/yaffas/share/yaffas-ldap/, and
+the source code of the packages as found on http://www.github.com/bitbone/yaffas/).
 
 We invite you to ask for community support for this installation path, which we will monitor closely on the forum and possibly create a standardized procedure from this.
 
@@ -141,7 +142,7 @@ During the installation zarafa, mysql, openldap, postfix and many other dependen
 
 The package manager will usually ask questions for some packages.
 You can skip all of these by pressing "enter" when the dialog pops up.
-The configuration of these will be done by the **yaffas-config** package.
+The configuration of these will be done later by the installation wizard.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
@@ -292,8 +293,6 @@ If you select local authentication you can select if you want to use this as aut
 Just click on apply if you don't need that.
 
 image:images/en/{theme}/18_authserver_thumb.png[link="images/en/{theme}/18_authserver.png"]
-
-Please note that currently the configuration files (yaffas-config) have to be installed for this step.
 
 On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services".
 Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.

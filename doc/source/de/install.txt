@@ -24,14 +24,17 @@ Bevor Sie diesen Schritt in Betracht ziehen, warten Sie besser auf eines der nä
 
 Wenn Sie trotzdem es auf einem bestehenden System installieren möchten, stellen Sie sicher dass eine Sicherung der Daten oder der kompletten Maschine vorhanden ist.
 
-Um das {product} auf solch einem System zu installieren dürfen Sie yaffas-config und yaffas-zarafa nicht installieren, da dieses Ihre Konfiguration überschreibt.
-yaffas-config ist ein Meta Paket dass von yaffas-ldap, yaffas-postfix, yaffas-samba, yaffas-security abhängt.
+Um das {product} auf solch einem System zu installieren, müssen zunächst
+Pakete wie unten beschrieben installiert werden. Der Installations-Wizard
+muss aber übersprungen werden (Symlink /opt/yaffas/etc/webmin/webmin.acl
+muss angepasst werden, sodass er auf webmin.acl-global, statt -setup
+zeigt), da er sonst alle Bestandsdaten löschen würde.
 
-Diese Pakete installieren alle benötigten Abhängigkeiten wie z.B. openldap, samba und zarafa.
-Der Quellcode dieser Pakete kann auf der Seite http://www.github.com/bitbone/yaffas/ gefunden werden.
-Dort gibt es im Verzeichnis base/conf und zarafa/conf die benötigten Konfigurationspakete.
-Die beötigten Schritte zur Installation sind in den Skripten debian/postinst für Ubuntu/Debian Systeme bzw. redhat/*.spec für RedHat Systeme beschrieben.
-Sie müssen sicherstellen, dass jeder Schritt an Ihr System angepasst und ausgeführt wurde.
+Es müssen mehrere Konfigurationsänderungen auf eigene Faust durchgeführt
+werden. Die nötigen Details können den relevanten Ressourcen
+entnommen werden (/opt/yaffas/share/yaffas-upgrade/,
+/opt/yaffas/share/yaffas-ldap/ und der Quellcode dieser Pakete unter
+http://www.github.com/bitbone/yaffas/).
 
 ==== Ubuntu Server
 
@@ -226,7 +229,7 @@ gelöscht oder überschrieben**:
 
 Im folgenden Setup-Dialog muss das Admin-Passwort geändert werden. Außerdem muss der Benutzer einen MySQL Benutzer angeben, der die Berechtigung hat auf einem MySQL-Server eine Datenbank für Zarafa anzulegen.
 
-Nach dem ersten Login sollte zunächst der Authentifizerungsserver ausgewählt werden. Zur Auswahl stehen hier Active Directory, lokale Authentifizerung am lokalen LDAP und die Anbindung an einen externen LDAP. Bitte beachten Sie, dass für diesen Schritt momentan noch die Konfigurationsdateien (yaffas-config) installiert sein müssen.
+Nach dem ersten Login sollte zunächst der Authentifizerungsserver ausgewählt werden. Zur Auswahl stehen hier Active Directory, lokale Authentifizerung am lokalen LDAP und die Anbindung an einen externen LDAP.
 
 Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet und zum automatischen Start beim Booten eingestellt werden. Dies ist unter dem Menüpunkt "System->Dienste" möglich. Da unter RHEL standardmäßig eine iptables-Firewall aktiv ist, müssen die Ports für die benötigten Dienste nachträglich manuell geöffnet werden.
 
