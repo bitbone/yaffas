@@ -132,7 +132,7 @@ If you need a proxy to download from internet, just set the "http_proxy" variabl
 **Install the packages**
 
   apt-get update
-  apt-get install yaffas yaffas-zarafa yaffas-config
+  apt-get install yaffas
 
 
 This will install {product} base modules and zarafa.
@@ -249,7 +249,7 @@ gpgcheck = 1
 
 **Packages installation**
 
-  yum install yaffas yaffas-zarafa yaffas-config
+  yum install yaffas
 
 
 === First steps
