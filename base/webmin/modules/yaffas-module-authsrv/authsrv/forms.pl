@@ -288,7 +288,7 @@ sub remote_ldap(;$)
 	my $method = shift;
 
 	my $values = Yaffas::Auth::get_bk_ldap_auth();
-
+    my $hosts = join ", ", @{$values->{hostlist}};
 
 	print $cgi->start_form( {-action=>"check_ldap.cgi"} );
 	print Yaffas::UI::section($method eq "yaffas" ? $main::text{lbl_bk_ldap} : $main::text{lbl_ldap},
@@ -308,7 +308,7 @@ sub remote_ldap(;$)
 												   $cgi->td( 
 												   		textfield(
 															"host",
-															( $main::in{'host'} )?( $main::in{'host'} ):( $values->{host} ),
+															( $main::in{'host'} )?( $main::in{'host'} ):( $hosts ),
 															40,
 															150
 														)
@@ -515,6 +515,7 @@ sub status(){
 		}
 		elsif( $authtype eq REMOTE_LDAP ){
 			my $info = Yaffas::Auth::get_bk_ldap_auth();
+			my $hosts = join ", ", @{$info->{hostlist}};
 			print( 
 				Yaffas::UI::section(
 					$main::text{lbl_status},
@@ -525,7 +526,7 @@ sub status(){
 						),
 						$cgi->Tr(
 							$cgi->td( $main::text{lbl_host} . ":" ),
-							$cgi->td( $info->{host}  )
+							$cgi->td( $hosts )
 						),
 						$cgi->Tr(
 							$cgi->td( $main::text{lbl_basedn} . ":" ),

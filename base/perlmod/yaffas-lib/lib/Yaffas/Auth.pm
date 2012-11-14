@@ -142,6 +142,11 @@ sub get_bk_ldap_auth() {
 
 	$ret{groupdn} = $cfg_v->{nss_base_group};
 	$ret{groupdn} =~ s/(.*),$/$1/;
+	
+	my @hosts = split(/\s{0,}[;,\s\0]\s{0,}/, $ret{uri});
+	foreach(@hosts) { $_ =~ s/ldaps?:\/\/// };
+	
+	$ret{hostlist} = \@hosts;
 
 	$file = Yaffas::File::Config->new( Yaffas::Constant::FILE->{ldap_settings},
 									   {
