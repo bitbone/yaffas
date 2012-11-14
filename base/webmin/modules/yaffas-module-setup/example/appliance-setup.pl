@@ -26,6 +26,10 @@ if ($ARGV[0]) {
 	$password = $ARGV[0];
 }
 
+# first execute post installation scripts to setup the configuration files
+my $postinst_all = Yaffas::Constant::FILE->{postinst_all};
+system($postinst_all);
+
 my $mysql_host = "localhost";
 my $mysql_database = "zarafa";
 my $mysql_user = "root";
