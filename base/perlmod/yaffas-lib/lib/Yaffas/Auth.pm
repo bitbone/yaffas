@@ -118,7 +118,21 @@ sub get_bk_ldap_auth() {
 
 	my %ret;
 	my $cfg_v = $file->get_cfg_values();
-	$ret{host} = $cfg_v->{host};
+    $ret{uri} = $cfg_v->{uri};
+    if ($ret{uri}) {
+        # make sure if we have localhost in uri that we get local authentication
+        if ($ret{uri} =~ /(localhost|127\.0\.0\.1)/) {
+            $ret{host} = "127.0.0.1";
+        }
+        else {
+            if ($ret{uri} =~ m#^ldaps?://(.*)(:\d+)?\s+.*#) {
+                $ret{host} = $1;
+            }
+        }
+    }
+    else {
+        $ret{host} = $cfg_v->{base};
+    }
 	$ret{base} = $cfg_v->{base};
 	$ret{binddn} = $cfg_v->{binddn};
 	$ret{bindpw} = $cfg_v->{bindpw};
