@@ -190,7 +190,7 @@ name = Yaffas $releasever
 baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
 enabled = 1
 protect = 0
-gpgcheck = 0
+gpgcheck = 1
 ----
 
 **Importieren des Paketkeys**
