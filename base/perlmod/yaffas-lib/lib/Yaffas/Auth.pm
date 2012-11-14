@@ -186,6 +186,8 @@ sub get_pdc_info(){
 	my %info;
 	if( lc($smb->globalParameter('security')) eq 'ads' || $smb->globalParameter('security') eq 'DOMAIN' ){
 		$info{host} = $smb->globalParameter('password server');
+		# filter the '*' entry (included in config file as recommended by samba docu)
+		$info{host} =~ s/\s*,\s*\*//;
 		$info{domain} = lc $smb->globalParameter('realm');
 		$info{type} = (lc($smb->globalParameter('security')) eq 'ads') ? "win" : "samba";
 	}
