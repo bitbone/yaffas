@@ -425,15 +425,16 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		
 		# /etc/nslcd.conf (only RHEL based distributions)
 		if(Yaffas::Constant::OS =~ m/RHEL6/) {
-			my $nslcd_conf = Yaffas::File::Config->new(
-			     Yaffas::Constant::FILE->{nslcd_conf},
+			my $nslcd_conf = Yaffas::Constant::FILE->{nslcd_conf};
+			my $lc = Yaffas::File::Config->new(
+			     $nslcd_conf,
 			     {
                     -SplitPolicy    => 'custom',
                     -SplitDelimiter => '\s+',
                     -StoreDelimiter => ' ',
                 }
 			) or throw Yaffas::Exception( "err_file_read", $nslcd_conf );
-			my $lc_ref = $nslcd_conf->get_cfg_values();
+			my $lc_ref = $lc->get_cfg_values();
 			$lc_ref->{uri} = $ldapuri;
             $lc_ref->{base} = $basedn;
             $lc->write();
