@@ -265,6 +265,7 @@ use constant {
 		"timezone" => "/etc/timezone",
 		"sysconfig_clock" => "/etc/sysconfig/clock",
 		"git_revision" => "/opt/yaffas/share/doc/example/etc/git-revision",
+		"nslcd_conf" => "/etc/nslcd.conf",
 	}
 };
 

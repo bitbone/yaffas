@@ -422,6 +422,22 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			#$lc_ref->{pam_login_attribute} = $usersearch;
 			$lc->write();
 		}
+		
+		# /etc/nslcd.conf (only RHEL based distributions)
+		if(Yaffas::Constant::OS =~ m/RHEL6/) {
+			my $nslcd_conf = Yaffas::File::Config->new(
+			     Yaffas::Constant::FILE->{nslcd_conf},
+			     {
+                    -SplitPolicy    => 'custom',
+                    -SplitDelimiter => '\s+',
+                    -StoreDelimiter => ' ',
+                }
+			) or throw Yaffas::Exception( "err_file_read", $nslcd_conf );
+			my $lc_ref = $nslcd_conf->get_cfg_values();
+			$lc_ref->{uri} = $ldapuri;
+            $lc_ref->{base} = $basedn;
+            $lc->write();
+		}
 
 		# /etc/samba/smb.conf					-rw-r--r--	root root
 		my $smb = File::Samba->new( Yaffas::Constant::FILE->{'samba_conf'} )
@@ -629,6 +645,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 		$ldap_conf_ref->{'host'} = ${$hosts}[0];
 		$ldap_conf_ref->{'URI'}  = $ldapuri;
 		$ldap_conf_ref->{'base'} = $basedn;
+		$ldap_conf_ref->{'binddn'} = $binddn;
+        $ldap_conf_ref->{'bindpw'} = $bindpw;
 		$ldap_conf->write();
 
 		mod_nsswitch("files ldap");
@@ -638,14 +656,9 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			my $zarafa_settings = {
 				'ldap_bind_user' => $binddn,
 
-				#'ldap_host' => $host,
 				'ldap_uri' => $ldapuri,
 			};
 
-			#unless (defined $encryption) {
-			#	$zarafa_settings->{'ldap_port'} = '389';
-			#	$zarafa_settings->{'ldap_protocol'} = 'ldap';
-			#}
 			set_zarafa_ldap($zarafa_settings);
 			Yaffas::Service::control( ZARAFA_SERVER, RESTART );
 			system( Yaffas::Constant::APPLICATION->{zarafa_admin}, "--sync" );
