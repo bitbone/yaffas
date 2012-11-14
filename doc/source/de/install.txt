@@ -47,7 +47,7 @@ _Ubuntu 12.04 LTS_
 
 **Importieren des Paketkeys**
 
-  wget -O - http://repo.yaffas.org/ubuntu/repo.key | apt-key add -
+  wget -O - http://repo.yaffas.org/repo.key | apt-key add -
 
 **Installation der Pakete**
 
@@ -91,7 +91,7 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 **Importieren des Paketkeys**
 
-  wget -O - http://repo.yaffas.org/debian/repo.key | apt-key add -
+  wget -O - http://repo.yaffas.org/repo.key | apt-key add -
 
 **Installation der Pakete**
 
@@ -195,7 +195,7 @@ gpgcheck = 0
 
 **Importieren des Paketkeys**
 
-  rpm --import http://repo.yaffas.org/rhel.key
+  rpm --import http://repo.yaffas.org/repo.key
 
 **Installation der Pakete**
 
