@@ -179,7 +179,7 @@ sub get_version_of($) {
         if (-r $fn) {
             my $file = Yaffas::File->new($fn);
             $git = $file->get_content();
-            $git =~ s#^heads/devel-0##;
+            $git =~ s#^heads/.*?-0##;
         }
 
         if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
