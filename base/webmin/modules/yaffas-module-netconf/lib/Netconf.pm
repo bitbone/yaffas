@@ -398,7 +398,7 @@ sub _load_settings {
 				$gateway = $1;
 			}
 
-			if ($line =~ /^\s*auto\s+(.*)$/) {
+			if ($line =~ /^\s*(?:allow-\S+|auto)\s+(.*)$/) {
 				if(exists $settings{$1}) {
 					push @enabled_interfaces, split /\s+/, $1;
 				}
