@@ -90,7 +90,7 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 **Hinzufügen der benötigten Repositories**
 
-  echo "deb http://repo.yaffas.org/debian ./" >> /etc/apt/sources.list
+  echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
 
 **Importieren des Paketkeys**
 

@@ -115,7 +115,7 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
-  echo "deb http://repo.yaffas.org/debian ./" >> /etc/apt/sources.list
+  echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
 
 **Import package key**
 
