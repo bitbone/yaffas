@@ -35,15 +35,6 @@ my $lang = Yaffas::Module::ChangeLang::get_lang();
 Yaffas::Module::ChangeLang::set_lang($lang);
 '
 
-if ! grep ldap.so $PHPINI; then
-	echo "extension = ldap.so" >> $PHPINI
-fi
-if ! grep mapi.so $PHPINI; then
-	echo "extension = mapi.so" >> $PHPINI
-fi
-if ! grep mapi.so $PHPCLIINI; then
-	echo "extension = mapi.so" >> $PHPCLIINI
-fi
 sed 's/^magic_quotes_gpc[[:space:]]*=.*/magic_quotes_gpc = Off/' -i $PHPINI
 sed 's/^memory_limit[[:space:]]*=[[:space:]]*16M/memory_limit = 64M/' -i $PHPINI
 
