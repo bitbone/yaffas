@@ -400,6 +400,8 @@ sub set_bk_ldap_auth($$$$$$$$;$$) {
 			$lc_ref->{binddn} = $binddn;
 			$lc_ref->{bindpw} = $bindpw;
 
+			delete $lc_ref->{rootbinddn};
+
 			if ( length($userdn) > 0 ) {
 				$lc_ref->{nss_base_passwd} =
 				  $userdn . ( $userdn =~ m/,/ ? "" : ",$basedn" );
