@@ -55,7 +55,7 @@ _Ubuntu 12.04 LTS_
 
 **Import package key**
 
-  wget -O - http://repo.yaffas.org/repo.key | apt-key add -
+  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
 
 [NOTE]
 ===========
@@ -119,7 +119,7 @@ Add the following repositories in order to install {product} and required depend
 
 **Import package key**
 
-  wget -O - http://repo.yaffas.org/repo.key | apt-key add -
+  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
 
 [NOTE]
 ===========
@@ -246,7 +246,7 @@ gpgcheck = 1
 
 **Import GPG keys**
 
-  rpm --import http://repo.yaffas.org/repo.key
+  rpm --import http://repo.yaffas.org/repo.rpm.key
 
 **Packages installation**
 
