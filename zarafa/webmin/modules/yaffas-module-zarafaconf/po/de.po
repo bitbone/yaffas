@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 00:21+0100\n"
-"PO-Revision-Date: 2012-11-12 15:54+0200\n"
+"POT-Creation-Date: 2012-11-17 00:23+0100\n"
+"PO-Revision-Date: 2012-11-16 08:57+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -236,7 +236,7 @@ msgstr "Cached (zwischenspeichern)"
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
-msgstr ""
+msgstr "Um die erstellte PRF-Datei zu installieren, muss Outlook auf der Kommandozeile mit dem \"/importprf\"-Parameter gestartet werden (bspw. outlook.exe /importprf \\\\pfad\\zur\\datei.prf)."
 
 #: lang/en:57
 #, no-wrap
@@ -301,7 +301,7 @@ msgstr "Die ist der Name der Datenbank, die von Zarafa verwendet werden soll.<br
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
-msgstr ""
+msgstr "Legt die Adresse fest, die Outlook-Clients verwenden, um sich mit dem Zarafa-Server zu verbinden."
 
 #: help/en:8
 #, no-wrap
