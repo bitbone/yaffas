@@ -75,7 +75,7 @@ $Yaffas::UI::Print_inner_div = 0;
 
 my @links = ("network.cgi", "memory.cgi", "fs.cgi", "irq.cgi");
 my @titles = ($main::text{'network_load'}, $main::text{'memory_usage'} ,$main::text{'fs_stat'}, $main::text{'irq_usage'});
-my @icons = ("images/network.gif", "images/mem.gif", "images/fs.gif", "images/irq.gif");
+my @icons = ();
 icons_table(\@links, \@titles, \@icons);
 
 
