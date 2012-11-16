@@ -447,6 +447,11 @@ if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 				 CLAMAV_FRESHCLAM() => "/etc/init.d/clamav-freshclam",
 				);
 
+	if (Yaffas::Constant::OS eq 'Debian') {
+		# ADM-222
+		$SERVICES{SAMBA()} = "/etc/init.d/samba",
+	}
+
 	%PROCESSES = (
 				MYSQL() => "/usr/sbin/mysqld",
 				POSTFIX() => "/usr/lib/postfix/master",
