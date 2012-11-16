@@ -108,6 +108,7 @@ fi
 #only do this on install, not on upgrade
 zarafa-admin -s
 
+/etc/init.d/zarafa-monitor restart
 /etc/init.d/zarafa-dagent restart
 /etc/init.d/apache2 restart
 
