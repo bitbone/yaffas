@@ -52,17 +52,20 @@ Yaffas.Confirm.prototype.show = function(){
 		this.hide();
 	};
 
-	var myButtons = [{
-		text: _("lbl_yes", "global"),
-		handler: {
-			fn: handleYes,
-			obj: this
-		}
-		}, {
+	var myButtons = [
+		{
+			text: _("lbl_yes", "global"),
+			handler: {
+				fn: handleYes,
+				obj: this
+			}
+		},
+		{
 			text: _("lbl_no", "global"),
 			handler: handleNo,
 			isDefault: true
-	}];
+		}
+	];
 
 	mySimpleDialog.cfg.queueProperty("buttons", myButtons);
 
