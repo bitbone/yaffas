@@ -1072,10 +1072,11 @@ Returns the username of the UID, and undef if the UID is not found.
 =cut
 
 sub get_username_by_uid ($) {
-	my $uid = shift;
-	#we use a random number to prevent perl from caching
-	my ($login) = (getpwuid($uid),rand) or return undef;
-	return $login;
+    my $id = shift;
+    for (@{getent("passwd")}) {
+        return $1 if (/^(.*):.*:$id:.*$/)
+    }
+    return undef;
 }
 
 =cut
