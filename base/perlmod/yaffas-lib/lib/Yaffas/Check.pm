@@ -85,7 +85,8 @@ sub username($) {
 	return undef if (length($login) > 1024);
 	#this can be used, once uppercase letters are allowed again
 	#if ( (length($login) > 0) && $login =~ m/^[a-zA-Z][a-zA-Z0-9\-\.]*[a-zA-Z0-9]+$/) {
-	if ( (length($login) > 0) && $login =~ m/^[a-z][a-z0-9\-\.]*[a-z0-9]+$/) {
+	if ( (length($login) > 0) &&
+			$login =~ m/^[a-z]($|[a-z0-9\-\.]*[a-z0-9]+)$/) {
 		return 1;
 	} else {
 		return 0;
