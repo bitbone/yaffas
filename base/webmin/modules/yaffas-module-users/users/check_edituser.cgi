@@ -104,7 +104,8 @@ try {
 		
 		try {
 			my $email = $info{$_}->{email};
-			Yaffas::UGM::set_email($login, $email) if (defined($email));
+			Yaffas::UGM::set_email($login, $email)
+				if (defined($email) and $email);
 		}
 		catch Yaffas::Exception with {
 			$e->append(shift);
