@@ -48,6 +48,22 @@ _Ubuntu 12.04 LTS_
 
   echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
 
+[NOTE]
+===========
+
+Wenn für den Internetzugang ein Proxy benötigt wird, muss die Umgebungs-Variable "http_proxy" gesetzt werden.
+
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+Diese Einstellung sollte nach der Installation permanent festgelegt
+werden, indem der Proxy in der Benutzeroberfläche (Netzwerk &gt;
+Konfiguration &gt; HTTP Proxy) eingetragen wird.
+Dies stellt außerdem sicher, dass alle unterstützen Dienste den Proxy
+ordnungsgemäß nutzen können (wie z.B. ClamAV's freshclam).
+
+===========
+
 **Importieren des Paketkeys**
 
   wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
@@ -92,6 +108,22 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
   echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
 
+[NOTE]
+===========
+
+Wenn für den Internetzugang ein Proxy benötigt wird, muss die Umgebungs-Variable "http_proxy" gesetzt werden.
+
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+Diese Einstellung sollte nach der Installation permanent festgelegt
+werden, indem der Proxy in der Benutzeroberfläche (Netzwerk &gt;
+Konfiguration &gt; HTTP Proxy) eingetragen wird.
+Dies stellt außerdem sicher, dass alle unterstützen Dienste den Proxy
+ordnungsgemäß nutzen können (wie z.B. ClamAV's freshclam).
+
+===========
+
 **Importieren des Paketkeys**
 
   wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
@@ -134,6 +166,22 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 ==== Red Hat Enterprise Linux
 
 Die Installation unter Red Hat Enterprise Linux verläuft ähnlich der Installation unter Ubuntu.
+
+[NOTE]
+===========
+
+Wenn für den Internetzugang ein Proxy benötigt wird, muss die Umgebungs-Variable "http_proxy" gesetzt werden.
+
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+Diese Einstellung sollte nach der Installation permanent festgelegt
+werden, indem der Proxy in der Benutzeroberfläche (Netzwerk &gt;
+Konfiguration &gt; HTTP Proxy) eingetragen wird.
+Dies stellt außerdem sicher, dass alle unterstützen Dienste den Proxy
+ordnungsgemäß nutzen können (wie z.B. ClamAV's freshclam).
+
+===========
 
 **Hinzufügen der benötigten Repositories**
 

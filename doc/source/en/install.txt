@@ -53,18 +53,24 @@ _Ubuntu 12.04 LTS_
 
   echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
 
-**Import package key**
-
-  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
-
 [NOTE]
 ===========
 
 If you need a proxy to download from internet, just set the "http_proxy" variable
 
-  export http_proxy=http://<user>:<password>@<your-proxy>:<port>
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+You should later make this setting permanent by setting the proxy in the
+user interface (Network &gt; Configuration &gt; HTTP Proxy).
+This will also ensure that all supported services can properly use the
+proxy (such as ClamAV's freshclam).
 
 ===========
+
+**Import package key**
+
+  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
 
 **Install the packages**
 
@@ -117,18 +123,24 @@ Add the following repositories in order to install {product} and required depend
 
   echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
 
-**Import package key**
-
-  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
-
 [NOTE]
 ===========
 
 If you need a proxy to download from internet, just set the "http_proxy" variable
 
-  export http_proxy=http://<user>:<password>@<your-proxy>:<port>
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+You should later make this setting permanent by setting the proxy in the
+user interface (Network &gt; Configuration &gt; HTTP Proxy).
+This will also ensure that all supported services can properly use the
+proxy (such as ClamAV's freshclam).
 
 ===========
+
+**Import package key**
+
+  wget -O - http://repo.yaffas.org/repo.deb.key | apt-key add -
 
 **Install the packages**
 
@@ -174,6 +186,21 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 ==== Red Hat Enterprise Linux
 
 The installation on Red Hat Enterprise Linux is similar.
+
+[NOTE]
+===========
+
+If you need a proxy to download from internet, just set the "http_proxy" variable
+
+  export http_proxy="http://<user>:<password>@<your-proxy>:<port>"
+  export HTTP_PROXY="$http_proxy"
+
+You should later make this setting permanent by setting the proxy in the
+user interface (Network &gt; Configuration &gt; HTTP Proxy).
+This will also ensure that all supported services can properly use the
+proxy (such as ClamAV's freshclam).
+
+===========
 
 **Adding the required repositories**
 
