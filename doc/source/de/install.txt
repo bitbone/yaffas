@@ -250,6 +250,18 @@ gpgcheck = 1
 
   yum install yaffas
 
+[NOTE]
+================
+
+Wenn das obige Kommando auf RHEL5 zu einem Konflikt zwischen php-common und
+php53-common führt, dann ist das auf einen
+http://bugs.centos.org/view.php?id=4852[Packaging-Fehler] zurückzuführen.
+Workaround:
+
+  yum remove php53 php53-common
+  yum install php
+
+================
 
 === Erste Schritte
 

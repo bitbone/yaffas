@@ -219,7 +219,8 @@ this address:
 http://download.fedoraproject.org/pub/epel/5/i386/repoview/epel-release.html
 
 
-Then run the following commands to add the RPMforge repository:
+Then, depending on your architecture, run the following commands to add
+the RPMforge repository:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el5.rf.i386.rpm
 
@@ -238,7 +239,8 @@ of the package is available, then you can still get the latest version from
 this address:
 http://download.fedoraproject.org/pub/epel/6/i386/repoview/epel-release.html
 
-Then run the following commands to add the RPMforge repository:
+Then, depending on your architecture, run the following commands to add
+the RPMforge repository:
 
   rpm -Uvh http://packages.sw.be/rpmforge-release/rpmforge-release-0.5.2-2.el6.rf.i686.rpm
 
@@ -275,6 +277,18 @@ gpgcheck = 1
 
   yum install yaffas
 
+[NOTE]
+================
+
+If running the above command leads to a conflict between php-common and
+php53-common on RHEL5, then this is because of a
+http://bugs.centos.org/view.php?id=4852[packaging bug]. You can work
+around this by running
+
+  yum remove php53 php53-common
+  yum install php
+
+================
 
 === First steps
 
