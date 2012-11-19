@@ -288,7 +288,10 @@ sub remote_ldap(;$)
 	my $method = shift;
 
 	my $values = Yaffas::Auth::get_bk_ldap_auth();
-    my $hosts = join ", ", @{$values->{hostlist}};
+	my $hosts = "";
+	if ($values) {
+		$hosts = join ", ", @{$values->{hostlist}};
+	}
 
 	print $cgi->start_form( {-action=>"check_ldap.cgi"} );
 	print Yaffas::UI::section($method eq "yaffas" ? $main::text{lbl_bk_ldap} : $main::text{lbl_ldap},
