@@ -591,7 +591,10 @@ sub gecos($;$$) {
 		throw Yaffas::Exception("err_gecos", $user) unless ($? == 0 and $ret == 0);
 		return $gecos;
 	} else {
-		return ((getpwnam($user))[6]);
+		for (@{getent("passwd")}) {
+			return $1 if (/^$user:[^:]*:[^:]*:[^:]*:([^:]*):/)
+		}
+		return undef;
 	}
 }
 
