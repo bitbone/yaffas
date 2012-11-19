@@ -204,10 +204,6 @@ proxy (such as ClamAV's freshclam).
 
 **Adding the required repositories**
 
-Prior to the installation of {product} Zarafa packages have to be installed.
-Otherwise the open source packages included in the EPEL repository will be used.
-Packages can be downloaded from http://www.zarafa.com/download-release.
-
 The {product} packages will require some dependencies.
 As these dependencies are not part of the standard RHEL repository, the following two repositories have to be added to the installed system.
 
