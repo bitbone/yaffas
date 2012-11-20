@@ -16,11 +16,12 @@ Time can be set with drop-down fields and be saved afterwards.
 ==== Time Server
 Additionally, time can be synchronized with a time server. This is possible once or in hourly or daily intervals. For this purpose enter the IP address or the hostname of the time server and choose an interval.
 
-For example, the below listed time servers can be used. The precondition is that a valid DNS server is configured.
+If you do not run your own NTP server in your network, just enter
++pool.ntp.org+ (or a local version such as +us.pool.ntp.org+). This
+address refers to a cluster of lots of publicly available NTP servers (see
+http://www.pool.ntp.org/[NTP Pool Project]).
 
-   * time.fu-berlin.de
-   * ntp0.fau.de
-   * ntp1.ptb.de
+For this to work, a working DNS server has to be set up.
 
 ==== Restart / Shutdown
 At the tab "Shutdown System" you can reboot or shut down the system.

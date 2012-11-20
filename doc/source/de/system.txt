@@ -16,12 +16,13 @@ Unter diesem Reiter lässt sich die Systemzeit manuell ändern. Dazu wird die ge
 ==== Zeitserver
 Zusätzlich kann die Zeit mit einem Zeitserver synchronisiert werden. Dies ist einmalig oder in stündlichen bzw. täglichen Intervallen möglich. Dazu wird die IP-Adresse oder der Hostname des Zeitservers in das entsprechende Feld eingetragen und der gewünschte Intervall gesetzt.
 
-Beispielsweise können die im folgenden aufgelisteten Zeitserver verwendet werden. Voraussetzung dafür ist, dass ein gültiger DNS-Server konfiguriert wurde.
+Wenn kein eigener NTP-Server im Netzwerk betrieben wird, kann einfach
++pool.ntp.org+ benutzt werden (oder eine lokale Variante wie
++de.pool.ntp.org+). Diese Adresse wird von einem Cluster an öffentlich
+verfügbaren NTP-Servern betrieben (siehe 
+http://www.pool.ntp.org/[NTP Pool Project]).
 
-  * time.fu-berlin.de
-  * ntp0.fau.de
-  * ntp1.ptb.de
-
+Hierfür ist ein funktionierender DNS-Server notwendig.
 
 
 ==== Neustart / Herunterfahren
