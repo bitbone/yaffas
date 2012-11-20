@@ -13,6 +13,32 @@ use Error qw(:try);
 
 our @ISA = qw(Yaffas::Module);
 
+our $DEFAULT_CONFIG = <<'EOT';
+# yaffas-1.3 configuration - DO NOT MOVE OR DELETE THIS LINE
+
+# COMMUNITYs
+#       sec.name source    community
+com2sec readonly 127.0.0.1 public
+
+# GROUPs
+#             	sec.model  sec.name
+group MyROGroup v1         readonly
+group MyROGroup v2c        readonly
+group MyROGroup usm        readonly
+
+# VIEWs
+#           incl/excl subtree                          mask
+view all    included  .1                               80
+
+# ACLs
+#                context sec.model sec.level match  read   write  notif
+access MyROGroup ""      any       noauth    exact  all    none   none
+
+# System information
+syslocation Unknown (configure /etc/snmp/snmpd.local.conf)
+syscontact Root <root@localhost> (configure /etc/snmp/snmpd.local.conf)
+EOT
+
 =head1 NAME
 
 Yaffas::Module::SNMPConf - Functions for SNMP configuration
@@ -45,16 +71,11 @@ sub set_snmp_config($;$$) {
 			$community = "public";
 		}
 
-		if (defined($network) and $network ne "default") {
-			my $check = 0;
-			if ($network =~ m/(.*)\/(.*)$/) {
-				$check = Yaffas::Check::ip($1, $2, "netaddr");
-			} else {
-				$check = Yaffas::Check::ip($network);
-			}
-			throw Yaffas::Exception("err_network_string") unless ($check)
-		} else {
-			$network = "default";
+		$network = "127.0.0.1" unless defined $network;
+		if ($network ne "default" &&
+				!Yaffas::Check::ip($1, $2, "netaddr") &&
+				!Yaffas::Check::ip($network)) {
+			throw Yaffas::Exception("err_network_string");
 		}
 
 		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
@@ -70,14 +91,26 @@ sub set_snmp_config($;$$) {
 
 		throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{snmpd_conf}) unless($file->get_content());
 
+		if (!config_has_yaffas_tag($file)) {
+			# do a backup:
+			my $bkpfile = Yaffas::File->new(
+				Yaffas::Constant::FILE->{snmpd_conf} . '.yaffassave');
+			my @oldlines = $file->get_content();
+			$bkpfile->set_content(\@oldlines);
+			$bkpfile->save() or
+				throw Yaffas::Exception("err_file_write",
+					Yaffas::Constant::FILE->{snmpd_conf} . '.yaffassave');
+
+			# we have permission to replace the file with our default
+			# config, so lets do that
+			my @lines = split(/\n/, $DEFAULT_CONFIG);
+			$file->set_content(\@lines);
+		}
+
 		my @lines = $file->search_line(qr/^com2sec/);
 
 		foreach (@lines) {
-		if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
-			$file->splice_line($_, 1, "com2sec  notConfigUser $network $community");
-		} else {
 			$file->splice_line($_, 1, "com2sec readonly $network $community");
-		}
 		}
 		$file->save() or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{snmpd_conf});
 
@@ -101,6 +134,27 @@ sub set_snmp_config($;$$) {
 			system(Yaffas::Constant::APPLICATION->{"update-rc.d"}, "-f", "snmpd", "remove");
 		}
 	}
+}
+
+=over
+
+=item config_has_yaffas_tag(FILEOBJ)
+
+FILEOBJ - Yaffas::File instance
+
+Returns whether the given config file contains the yaffas tag.
+
+=cut
+
+sub config_has_yaffas_tag(;$) {
+	my $file = shift;
+	if (!defined($file)) {
+		$file = Yaffas::File->new(Yaffas::Constant::FILE->{snmpd_conf});
+		throw Yaffas::Exception("err_file_read",
+			Yaffas::Constant::FILE->{snmpd_conf})
+			unless($file->get_content());
+	}
+	return $file->get_content(0) =~ qr/^\s*#\s*yaffas-\S+ configuration/;
 }
 
 sub _set_snmp_config($;$$) {
@@ -138,6 +192,15 @@ sub get_snmp_config() {
 			last;
 		}
 	}
+	if (!config_has_yaffas_tag($file)) {
+		if (!$vals[3]) {
+			$vals[3] = "public";
+		}
+		if (!$vals[2] || $vals[2] eq "default") {
+			$vals[2] = "127.0.0.1";
+		}
+	}
+
 	my $enabled;
 	if(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
 		$enabled = -l "/etc/rc2.d/S50snmpd" ? 1 : 0;
