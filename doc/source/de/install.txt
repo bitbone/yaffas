@@ -240,6 +240,7 @@ baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
 enabled = 1
 protect = 0
 gpgcheck = 1
+priority = 1
 ----
 
 **Importieren des Paketkeys**
@@ -259,7 +260,11 @@ http://bugs.centos.org/view.php?id=4852[Packaging-Fehler] zurückzuführen.
 Workaround:
 
   yum remove php53 php53-common
-  yum install php
+  yum install php php-ldap php-mapi php-pecl-json
+
+Danach sollte die yaffas-Installation ohne Probleme möglich sein:
+
+  yum install yaffas
 
 ================
 

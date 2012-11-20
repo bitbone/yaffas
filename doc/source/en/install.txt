@@ -267,6 +267,7 @@ baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
 enabled = 1
 protect = 0
 gpgcheck = 1
+priority = 1
 ----
 
 **Import GPG keys**
@@ -286,7 +287,11 @@ http://bugs.centos.org/view.php?id=4852[packaging bug]. You can work
 around this by running
 
   yum remove php53 php53-common
-  yum install php
+  yum install php php-ldap php-mapi php-pecl-json
+
+before re-running
+
+  yum install yaffas
 
 ================
 
