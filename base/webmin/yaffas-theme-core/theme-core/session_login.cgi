@@ -73,6 +73,8 @@ if (defined($main::in{'failed'})) {
 	print $cgi->div({-class=>"error"}, $main::text{'session_failed'});
 }
 
+print $cgi->start_div({-id=>"mainview"});
+
 print $cgi->start_div( {-id=>"login", -style=>'text-align:center'} );
 print $cgi->div({-class=>"hd"}, "Login");
 print $cgi->start_div({-class=>"bd"});
@@ -97,6 +99,7 @@ print $cgi->table( {-class=> "section", -style=>"margin-left: auto; margin-right
 							])
 				 );
 print $cgi->end_form();
+print $cgi->end_div();
 print $cgi->end_div();
 print $cgi->end_div();
 

@@ -210,6 +210,7 @@ sub theme_header() {
 
 		# Container Navigation
 		print $cgi->comment("Container Navigation");
+        print $cgi->start_div({-id => "mainview"}, "");
 		print $cgi->start_ul( {-id=>"navigation"} );
 
 		foreach my $c (@cats) {
@@ -237,6 +238,8 @@ sub theme_header() {
 		print $cgi->div({-id => "tabbar"}, "");
 		print $cgi->div({-id => "topbar"},$cgi->div({-id => "uimenubar"}, ""), $cgi->div({-id=>"topbar-background"}, ""), $cgi->div({-id=>"topbarlogo"}, ""));
 		print $cgi->div({-id => "bottombar"}, $cgi->div({-id=>"logoyaffas-long"}, ""), $cgi->div( {-id=>"notification"}, $notification));
+
+        print $cgi->end_div(); # mainview
 
 		print $cgi->div( {-id=>"error_dlg"}, "");
 		print $cgi->div( {-id=>"confirmationdlg"}, "");

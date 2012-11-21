@@ -6,43 +6,47 @@ Yaffas.UI = function() {
 	this.tabs = null;
 	this.loading = null;
 	this.errorDialog = null;
+	this.layout = null;
 
 	this.addCloseButton = false;
 	this.showHelpTooltip = true;
 }
 
 Yaffas.UI.prototype.setup = function(){
-    this.initLoadingDialog();
+	this.initLoadingDialog();
 	this.initErrorDialog();
 	this.initHistoryManager();
-	this.createNavigationMenu();	
+	this.createNavigationMenu();
 	this.createTabBar();
 	this.createMenuBar();
-	
-	var layout = new YAHOO.widget.Layout({
-        units: [{
-            position: "left",
-            width: 205,
-            body: "navigation",
-            resize: false,
+
+	this.layout = new YAHOO.widget.Layout("mainview", {
+		units: [{
+			position: "left",
+			width: 205,
+			height: "100%",
+			body: "navigation",
+			resize: false,
 			scroll: false
-        }, {
-            position: "center",
-            body: "tabbar",
-			scroll: true
-        }, {
+		}, {
+			position: "center",
+			body: "tabbar",
+			scroll: true,
+			width: "100%",
+		}, {
 			position: "top",
 			height: "85px",
-			body: "topbar"
+			body: "topbar",
 		}, {
 			position: "bottom",
 			height: "40px",
-			body: "bottombar"
+			body: "bottombar",
 		}
 		]
-    });
+	});
 
-    layout.render();
+	this.layout.render();
+	YAHOO.util.Event.addListener(window, "resize", function() { this.layout.resize() }.bind(this));
 }
 
 Yaffas.UI.prototype.createNavigationMenu = function() {
@@ -137,7 +141,7 @@ Yaffas.UI.prototype.createMenuBar = function() {
 		visible: true
     });
 	m.addItems(items);
-	m.render(document.body);
+	m.render($("topbar"));
 	
 	var e = YAHOO.util.Dom.get("main_language");
 	if (e) {

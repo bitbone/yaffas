@@ -1,5 +1,6 @@
 Yaffas.Login = function(){
     Yaffas.ui = new Object();
+    this.layout = null;
     
     var div = document.getElementById('lang');
     if (div.innerHTML !== undefined) {
@@ -53,7 +54,7 @@ Yaffas.Login = function(){
 }
 
 Yaffas.Login.prototype.setup = function(){
-    var layout = new YAHOO.widget.Layout({
+    this.layout = new YAHOO.widget.Layout("mainview", {
         units: [{
             position: "center",
             body: "tabbar",
@@ -70,7 +71,7 @@ Yaffas.Login.prototype.setup = function(){
         }]
     });
 
-    layout.render();
+    this.layout.render();
     this.loginDialog = new YAHOO.widget.Dialog("login", {
         width: "300px",
         fixedcenter: true,
@@ -94,9 +95,11 @@ Yaffas.Login.prototype.setup = function(){
         $("wait").style.display = "block";
         // IE9 scrolls to bottom, because login dialog is created there - so we now jump to the top
         scrollTo(0);
+
+        YAHOO.util.Event.addListener(window, "resize", function() { Yaffas.login.layout.resize() }.bind(this));
     };
     s.delay(0.1);
-    
+
 }
 
 Yaffas.Login.prototype.handleReLogin = function(msg){

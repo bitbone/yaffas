@@ -1,10 +1,20 @@
+html {
+	height: 100%;
+}
+
 body {
 	color: #000000 !important;
 	font-family: Arial, Helvetica, sans-serif !important;
 	font-size: 9pt !important;
 	padding: 0px !important;
 	margin: 0px !important;
-	display: none;
+	height: 100%;
+	width: 100%;
+}
+
+#mainview {
+	height: 100%;
+	width: 100%;
 }
 
 iframe {
@@ -136,6 +146,14 @@ div.yui-dt-paginator:first-child {
 
 .yui-content {
 	background-color: white !important;
+}
+
+.yui-layout {
+	background-color: white !important;
+}
+
+.yui-skin-yaffas .yui-layout .yui-layout-unit div.yui-layout-bd {
+	background-color: transparent;
 }
 
 .yui-layout-unit-center, .yui-layout-unit-left {
