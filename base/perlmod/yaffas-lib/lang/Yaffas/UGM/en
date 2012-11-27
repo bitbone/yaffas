@@ -19,3 +19,5 @@ err_chmod_printer=Could not change the permissions for the print$ share.
 err_printop_group=Group does not exists.
 err_no_local_auth=This action is only supported with local authentification.
 err_cannot_find_free_uid=Internal error: Unable to find a free uid
+err_nonunique_uid=The selected user's id is not unique. This should not happen and is not supported. Please fix this problem manually.
+err_nonunique_gid=The selected group's id is not unique. This should not happen and is not supported. Please fix this problem manually.

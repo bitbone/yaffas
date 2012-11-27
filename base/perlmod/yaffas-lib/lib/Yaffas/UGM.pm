@@ -896,10 +896,18 @@ Returns the groupname of the GID. undef on error.
 
 sub get_groupname_by_gid($) {
     my $id = shift;
+	my $count = 0;
+	my $match = "";
     for (@{getent("group")}) {
-        return $1 if (/^([^:]+):[^:]*:$id:.*$/)
+        if (/^([^:]+):[^:]*:$id:.*$/) {
+			$count++;
+			$match = $1;
+		}
     }
-    return undef;
+	if ($count > 1) {
+		throw Yaffas::Exception('err_nonunique_gid');
+	}
+    return $match;
 }
 
 =item get_gid_by_groupname ( GROUPNAME )
@@ -1076,10 +1084,18 @@ Returns the username of the UID, and undef if the UID is not found.
 
 sub get_username_by_uid ($) {
     my $id = shift;
+	my $count = 0;
+	my $match = "";
     for (@{getent("passwd")}) {
-        return $1 if (/^([^:]+):[^:]*:$id:.*$/)
+        if (/^([^:]+):[^:]*:$id:.*$/) {
+			$count++;
+			$match = $1;
+		}
     }
-    return undef;
+	if ($count > 1) {
+		throw Yaffas::Exception("err_nonunique_uid");
+	}
+    return $match;
 }
 
 =cut
