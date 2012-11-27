@@ -897,7 +897,7 @@ Returns the groupname of the GID. undef on error.
 sub get_groupname_by_gid($) {
     my $id = shift;
     for (@{getent("group")}) {
-        return $1 if (/^(.*):.*:$id:.*$/)
+        return $1 if (/^([^:]+):[^:]*:$id:.*$/)
     }
     return undef;
 }
@@ -1077,7 +1077,7 @@ Returns the username of the UID, and undef if the UID is not found.
 sub get_username_by_uid ($) {
     my $id = shift;
     for (@{getent("passwd")}) {
-        return $1 if (/^(.*):.*:$id:.*$/)
+        return $1 if (/^([^:]+):[^:]*:$id:.*$/)
     }
     return undef;
 }
