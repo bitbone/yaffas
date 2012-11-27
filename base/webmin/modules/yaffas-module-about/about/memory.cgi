@@ -17,8 +17,13 @@ my @content;
 my $meminfo = &meminfo();
 push @content,
   {
-	type  => "used",
+	type  => "total",
 	value => $meminfo->{'mem_total'}
+  };
+push @content,
+  {
+	type  => "used",
+	value => $meminfo->{'mem_used'}
   };
 push @content,
   {
