@@ -65,6 +65,7 @@ fi
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
 /opt/yaffas/share/yaffas-upgrade/02-yaffas-zarafa.sh
+/opt/yaffas/share/yaffas-upgrade/03-yaffas-zarafa-notifications.sh
 /tmp/zarafa.te
 
 %changelog
