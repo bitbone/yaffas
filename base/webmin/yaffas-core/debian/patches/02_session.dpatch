@@ -7,7 +7,7 @@
 @DPATCH@
 diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/admin.cgi yaffas-core/usr/local/webmin/admin.cgi
 --- yaffas-core~/usr/local/webmin/admin.cgi	1970-01-01 00:00:00.000000000 +0000
-+++ yaffas-core/usr/local/webmin/admin.cgi	2012-08-23 11:50:25.000000000 +0000
++++ yaffas-core/usr/local/webmin/admin.cgi	2012-09-28 07:34:49.272013763 +0000
 @@ -0,0 +1,79 @@
 +#!/usr/bin/perl -w
 +# This file will called from bitbonethme/index.gi
@@ -89,8 +89,8 @@ diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' 
 +	return 1;
 +}
 diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webmin/miniserv.pl
---- yaffas-core~/usr/local/webmin/miniserv.pl	2012-08-23 11:50:25.000000000 +0000
-+++ yaffas-core/usr/local/webmin/miniserv.pl	2012-08-23 11:50:25.000000000 +0000
+--- yaffas-core~/usr/local/webmin/miniserv.pl	2012-09-28 07:34:49.141014070 +0000
++++ yaffas-core/usr/local/webmin/miniserv.pl	2012-09-28 07:34:49.274013759 +0000
 @@ -1940,6 +1940,36 @@
  	$ENV{'HTTP_COOKIE'} =~ s/;?\s*$sidname=([a-f0-9]+)//;
  	$ENV{'MOBILE_DEVICE'} = 1 if ($mobile_device);
@@ -128,46 +128,3 @@ diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' 
  	# Check if the CGI can be handled internally
  	open(CGI, $full);
  	local $first = <CGI>;
-diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/web-lib-funcs.pl yaffas-core/usr/local/webmin/web-lib-funcs.pl
---- yaffas-core~/usr/local/webmin/web-lib-funcs.pl	2012-04-13 08:18:53.000000000 +0000
-+++ yaffas-core/usr/local/webmin/web-lib-funcs.pl	2012-08-23 11:50:25.000000000 +0000
-@@ -402,31 +402,14 @@
- # %in if none is given. Also sets the global variables $in and @in
- sub ReadParse
- {
--local $a = $_[0] ? $_[0] : \%in;
--%$a = ( );
--local $i;
--local $meth = $_[1] ? $_[1] : $ENV{'REQUEST_METHOD'};
--undef($in);
--if ($meth eq 'POST') {
--	local $clen = $ENV{'CONTENT_LENGTH'};
--	&read_fully(STDIN, \$in, $clen) == $clen ||
--		&error("Failed to read POST input : $!");
--	}
--if ($ENV{'QUERY_STRING'}) {
--	if ($in) { $in .= "&".$ENV{'QUERY_STRING'}; }
--	else { $in = $ENV{'QUERY_STRING'}; }
--	}
--@in = split(/\&/, $in);
--foreach $i (@in) {
--	local ($k, $v) = split(/=/, $i, 2);
--	if (!$_[2]) {
--		$k =~ tr/\+/ /;
--		$v =~ tr/\+/ /;
--		}
--	$k =~ s/%(..)/pack("c",hex($1))/ge;
--	$v =~ s/%(..)/pack("c",hex($1))/ge;
--	$a->{$k} = defined($a->{$k}) ? $a->{$k}."\0".$v : $v;
--	}
-+use CGI;
-+
-+my $cgi = CGI->new();
-+
-+my @names = $cgi->param();
-+foreach my $n ($cgi->param()) {
-+	$in{$n} = join "\0", $cgi->param($n);
-+}
- }
- 
- # read_fully(fh, &buffer, length)

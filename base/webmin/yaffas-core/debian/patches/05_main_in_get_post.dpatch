@@ -1,0 +1,93 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 05_main_in_get_post.dpatch by Christian Hoffmann <hoffmann@bitbone.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: This patch simplifies %main::in population by using $cgi->param()
+## DP: instead of custom parsing. It also makes sure, that both for
+## DP: normal POST requests (handled by ReadParse) and for file upload
+## DP: POST requests (handled by ReadParseMime), GET parameters are also
+## DP: available through %main::in
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/web-lib-funcs.pl yaffas-core/usr/local/webmin/web-lib-funcs.pl
+--- yaffas-core~/usr/local/webmin/web-lib-funcs.pl	2012-09-20 04:59:13.000000000 +0000
++++ yaffas-core/usr/local/webmin/web-lib-funcs.pl	2012-09-28 09:38:57.966409810 +0000
+@@ -321,7 +321,24 @@
+ $ENV{'CONTENT_TYPE'} =~ /boundary=(.*)$/ || &error($text{'readparse_enc'});
+ if ($ENV{'CONTENT_LENGTH'} && $max && $ENV{'CONTENT_LENGTH'} > $max) {
+ 	&error($err);
+-	}
++}
++
++# explicitly fetch GET values here;
++# this is necessary because for POST requests,
++# $cgi->param() only returns POST data, but in %in we
++# want both GET and POST values;
++# to retain backward compatibility, we're
++# first fetching the GET values and then the POST
++# data, so in the case of colliding names, the POST
++# value wins;
++# we're passing an emptry string here so that CGI doesn't try to
++# read our file upload post data from STDIN
++my $cgi = CGI->new("");
++my @names = $cgi->url_param();
++foreach my $n ($cgi->url_param()) {
++	$in{$n} = join "\0", $cgi->url_param($n);
++}
++
+ &$cbfunc(0, $ENV{'CONTENT_LENGTH'}, $file, @$cbargs) if ($cbfunc);
+ $boundary = $1;
+ <STDIN>;	# skip first boundary
+@@ -402,31 +419,27 @@
+ # %in if none is given. Also sets the global variables $in and @in
+ sub ReadParse
+ {
+-local $a = $_[0] ? $_[0] : \%in;
+-%$a = ( );
+-local $i;
+-local $meth = $_[1] ? $_[1] : $ENV{'REQUEST_METHOD'};
+-undef($in);
+-if ($meth eq 'POST') {
+-	local $clen = $ENV{'CONTENT_LENGTH'};
+-	&read_fully(STDIN, \$in, $clen) == $clen ||
+-		&error("Failed to read POST input : $!");
+-	}
+-if ($ENV{'QUERY_STRING'}) {
+-	if ($in) { $in .= "&".$ENV{'QUERY_STRING'}; }
+-	else { $in = $ENV{'QUERY_STRING'}; }
+-	}
+-@in = split(/\&/, $in);
+-foreach $i (@in) {
+-	local ($k, $v) = split(/=/, $i, 2);
+-	if (!$_[2]) {
+-		$k =~ tr/\+/ /;
+-		$v =~ tr/\+/ /;
+-		}
+-	$k =~ s/%(..)/pack("c",hex($1))/ge;
+-	$v =~ s/%(..)/pack("c",hex($1))/ge;
+-	$a->{$k} = defined($a->{$k}) ? $a->{$k}."\0".$v : $v;
+-	}
++use CGI;
++
++my $cgi = CGI->new();
++
++# explicitly fetch GET values here;
++# this is necessary because for POST requests,
++# $cgi->param() only returns POST data, but in %in we
++# want both GET and POST values;
++# to retain backward compatibility, we're
++# first fetching the GET values and then the POST
++# data, so in the case of colliding names, the POST
++# value wins
++my @names = $cgi->url_param();
++foreach my $n ($cgi->url_param()) {
++	$in{$n} = join "\0", $cgi->url_param($n);
++}
++# GET or POST parameters
++@names = $cgi->param();
++foreach my $n ($cgi->param()) {
++	$in{$n} = join "\0", $cgi->param($n);
++}
+ }
+ 
+ # read_fully(fh, &buffer, length)
