@@ -3,7 +3,11 @@ include ../../../Makefile.common
 
 DESTDIR ?= /
 
+dummy:
+
 clean:
+	git checkout -f usr/ 2>/dev/null || true
+	git clean -f -d usr/ 2>/dev/null || true
 
 install:
 	mkdir -p $(DESTDIR)/$(YAFFAS_INIT)

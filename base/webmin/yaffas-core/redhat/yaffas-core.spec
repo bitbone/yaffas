@@ -19,6 +19,7 @@ AutoReqProv: no
 The core package for yaffas webmin.
 
 %build
+make clean
 # fix perl path
 %{__patch} -p1 < redhat/$(basename %PATCH0)
 %{__patch} -p1 < redhat/$(basename %PATCH1)
