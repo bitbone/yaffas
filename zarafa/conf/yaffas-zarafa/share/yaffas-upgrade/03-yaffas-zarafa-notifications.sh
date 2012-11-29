@@ -24,7 +24,7 @@ remove_phpini_extension() {
 
 # run only on debian/ubuntu
 
-if [ $(lsb_release -si) == "Ubuntu" ] || [ $(lsb_release -si) == "Debian" ]; then
+if [[ $(lsb_release -si) == "Ubuntu" ]] || [[ $(lsb_release -si) == "Debian" ]]; then
 	if has_php_extension mapi $CONFD_CLI || \
 		has_php_extension mapi $CONFD_GLOBAL; then
 		remove_phpini_extension mapi $PHPINI_CLI
