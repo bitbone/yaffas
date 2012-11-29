@@ -2,6 +2,8 @@ include ../../../Makefile.common
 DESTDIR ?= /
 NTROOTDIR=mkntpwd/
 
+dummy:
+
 install:
 
 	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
