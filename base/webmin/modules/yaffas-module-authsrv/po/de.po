@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:02+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-30 00:30+0100\n"
+"PO-Revision-Date: 2012-11-16 08:57+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -566,8 +566,8 @@ msgstr "Vollständiger Domänenname des Active Directory. z.B. yaffas.org"
 
 #: help/en:5
 #, no-wrap
-msgid "Name or IP adress of your domain controller."
-msgstr "Name oder IP Adresse des Domänen Controllers."
+msgid "Name or IP adress of your domain controller or controllers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."
+msgstr ""
 
 #: help/en:6
 #, no-wrap
@@ -581,5 +581,5 @@ msgstr "Benutzer für lesenden Zugriff. Sie können den Benutzernamen oder die V
 
 #: help/en:8
 #, no-wrap
-msgid "Hostname or IP address of the LDAP server."
-msgstr "Hostname oder IP Adresse des LDAP Servers."
+msgid "Hostname or IP address of the LDAP server or servers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."
+msgstr ""

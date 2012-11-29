@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-17 00:23+0100\n"
+"POT-Creation-Date: 2012-11-30 00:30+0100\n"
 "PO-Revision-Date: 2012-11-16 08:57+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -365,101 +365,106 @@ msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge p
 
 #: lang/en:76
 #, no-wrap
+msgid "About bitkit"
+msgstr ""
+
+#: lang/en:77
+#, no-wrap
 msgid "About yaffas"
 msgstr "Über yaffas"
 
-#: lang/en:77
+#: lang/en:78
 #, no-wrap
 msgid "About Z-Admin"
 msgstr "Über Z-Admin"
 
-#: lang/en:79
+#: lang/en:80
 #, no-wrap
 msgid "Logged out"
 msgstr "Abgemeldet"
 
-#: lang/en:80
+#: lang/en:81
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
 msgstr "Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden."
 
-#: lang/en:81
+#: lang/en:82
 #, no-wrap
 msgid "The session timed out, please re-login."
 msgstr "Die Sitzung ist abgelaufen, bitte neu einloggen."
 
-#: lang/en:83
+#: lang/en:84
 #, no-wrap
 msgid "Loading please wait..."
 msgstr "Lade, bitte warten..."
 
 # 83%
-#: lang/en:84
+#: lang/en:85
 #, no-wrap
 msgid "Error"
 msgstr "Fehler"
 
-#: lang/en:85
+#: lang/en:86
 #, no-wrap
 msgid "Help"
 msgstr "Hilfe"
 
-#: lang/en:87
+#: lang/en:88
 #, no-wrap
 msgid "Loading..."
 msgstr "Lade..."
 
-#: lang/en:88
+#: lang/en:89
 #, no-wrap
 msgid "Data error."
 msgstr "Datenfehler."
 
-#: lang/en:89
+#: lang/en:90
 #, no-wrap
 msgid "No records found."
 msgstr "Keine Einträge gefunden."
 
-#: lang/en:91
+#: lang/en:92
 #, no-wrap
 msgid "Filter data"
 msgstr "Daten filtern"
 
-#: lang/en:92
+#: lang/en:93
 #, no-wrap
 msgid "Show filter"
 msgstr "Filter anzeigen"
 
-#: lang/en:94
+#: lang/en:95
 #, no-wrap
 msgid "Could not connect to backend!"
 msgstr "Konnte nicht zum Backend verbinden!"
 
-#: lang/en:96
+#: lang/en:97
 #, no-wrap
 msgid "Logout"
 msgstr "Abmelden"
 
-#: lang/en:98
+#: lang/en:99
 #, no-wrap
 msgid "Do you want to close the administrators connection?"
 msgstr "Möchten sie die Verbindung des Administrators beenden?"
 
-#: lang/en:99
+#: lang/en:100
 #, no-wrap
 msgid "Couldnt restart webmin."
 msgstr "Webmin konnte nicht neu gestartet werden."
 
-#: lang/en:100
+#: lang/en:101
 #, no-wrap
 msgid "Close"
 msgstr "Schließen"
 
-#: lang/en:101
+#: lang/en:102
 #, no-wrap
 msgid "There is already an administrator connected.<br>If you want to log in, you will need to close his connection."
 msgstr "Es ist bereits ein Administrator angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden."
 
-#: lang/en:102
+#: lang/en:103
 #, no-wrap
 msgid "There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection."
 msgstr "Es ist bereits ein Administrator von $1 angemeldet.<br>Wenn sie sich anmelden möchten, müssen sie seine Verbindung beenden."

@@ -24,6 +24,7 @@ lbl_auth=Authenticatie
 lbl_email=E-mail
 lbl_sendas=Sta toe om te verzenden als
 
+lbl_edit_disclaimer=Configure disclaimer
 
 err_input=Alle velden moeten worden ingevuld!
 err_create=Aanmaken van groepen is mislukt!

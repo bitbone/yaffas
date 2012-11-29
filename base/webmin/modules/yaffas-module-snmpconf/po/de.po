@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-30 00:30+0100\n"
+"PO-Revision-Date: 2012-11-16 08:57+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,17 +32,27 @@ msgstr "Community (Passwort)"
 msgid "Enable SNMP"
 msgstr "SNMP aktivieren"
 
-#: lang/en:4 lang/en:8
+#: lang/en:4 lang/en:10
 #, no-wrap
 msgid "SNMP Configuration"
 msgstr "SNMP Konfiguration"
 
+#: lang/en:5
+#, no-wrap
+msgid "Replace SNMP configuration?"
+msgstr ""
+
 #: lang/en:6
+#, no-wrap
+msgid "In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?"
+msgstr ""
+
+#: lang/en:8
 #, no-wrap
 msgid "The access can only be set for IP-Addresses or networks."
 msgstr "Der Zugriff kann nur für IP-Adressen oder Netzbereiche aktiviert werden."
 
-#: lang/en:7
+#: lang/en:9
 #, no-wrap
 msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
 msgstr "Der Community-String darf nur aus Zahlen (0-9) und Buchstaben (a-z, A-Z) bestehen."
@@ -54,5 +64,5 @@ msgstr "Passwort für den SNMP-Zugriff."
 
 #: help/en:2
 #, no-wrap
-msgid "Enter a single IP address or a network in form of a CIDR ressource. Enter \"default\" to allow access only from the local machine."
-msgstr "Geben sie eine einzelne IP Adresse oder ein Netzwerk in Form einer CIDR Ressource an. Geben sie \"default\" ein, um einen Zugriff nur von der lokalen Maschine zu erlauben."
+msgid "Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or \"default\" to allow access from everywhere. Enter \"127.0.0.1\" to allow access from the local machine only."
+msgstr ""
