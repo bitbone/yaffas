@@ -2,6 +2,9 @@ var Users = function(){
 	this.usersmenu = null;
 	this.usertable = null;
 	this.usersource = null;
+	if (Yaffas.MODULES.indexOf("maildisclaimers") >= 0) {
+		YAHOO.util.Get.script("/maildisclaimers/lib.js");
+	}
 }
 
 Users.prototype.showEditUser = function() {
@@ -43,6 +46,15 @@ Users.prototype.showForceResync = function() {
 				{loginnames: s[0][2]});
 		});
 	dialog.show();
+}
+
+Users.prototype.showEditDisclaimer = function() {
+	var s = this.usertable.selectedRows();
+
+	if (s.length > 0) {
+		Yaffas.ui.openTab('/maildisclaimers/setuser.cgi', {user: s[0][0]},
+			MailDisclaimers.setupDisclaimerCallback);
+	}
 }
 
 Users.prototype.deleteUser = function() {
@@ -244,7 +256,15 @@ Users.prototype.setupMenu = function() {
     onclick: {
         fn: this.showEditVacation.bind(this)
     }
-    })
+    });
+		if (Yaffas.MODULES.indexOf("maildisclaimers") >= 0) {
+			i.push({
+				text: _("lbl_edit_disclaimer"),
+				onclick: {
+					fn: this.showEditDisclaimer.bind(this)
+				}
+			});
+		}
 
 		if (Yaffas.PRODUCTS.indexOf("zarafa") >= 0) {
 			i.push({
@@ -422,7 +442,11 @@ Users.prototype.savedForm = function(f, args) {
 		case "editvacation.cgi":
 		case "set_filetype_ads.cgi":
 			Yaffas.ui.closeTab();
-            break;
+      break;
+    case "setuser.cgi": // real url: /maildisclaimers/setuser.cgi
+      Yaffas.ui.closeTab();
+      MailDisclaimers.disableRTEs();
+      break;
 	}
 }
 
