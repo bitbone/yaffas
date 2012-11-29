@@ -7,7 +7,7 @@ use warnings;
 use Switch;
 
 ##################################################
-# determine of we are on a RHEL5 or Ubuntu machine
+# determine if we are on a RHEL5 or Ubuntu machine
 ##################################################
 
 sub get_os {
