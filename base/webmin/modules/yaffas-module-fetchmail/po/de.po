@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-14 00:22+0100\n"
-"PO-Revision-Date: 2012-11-12 15:54+0200\n"
+"POT-Creation-Date: 2012-11-17 00:23+0100\n"
+"PO-Revision-Date: 2012-11-16 08:57+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -632,12 +632,12 @@ msgstr "Der fetchmail Dienst konnte nicht aktiviert werden."
 #: lang/en:137
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
-msgstr ""
+msgstr "Der Versuch, einen Abholauftrag ohne Zielbenutzer zu erstellen, wurde abgebrochen."
 
 #: lang/en:138
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
-msgstr ""
+msgstr "Der gewählte Benutzername kann nicht als Ziel verwendet werden, da er keine gültige Mailadresse besitzt."
 
 #: lang/en:139
 #, no-wrap
@@ -672,7 +672,7 @@ msgstr "Der TCP-Port des entfernten Servers. Sollte in den meisten Fällen auf \
 #: help/en:6
 #, no-wrap
 msgid "Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
-msgstr ""
+msgstr "Legt fest, ob SSL-verschlüsselte Verbindungen benutzt werden sollen. Soll TLS oder keine Verschlüsselung benutzt werden, so muss hier \"Nein\" gewählt werden."
 
 #: help/en:7
 #, no-wrap
