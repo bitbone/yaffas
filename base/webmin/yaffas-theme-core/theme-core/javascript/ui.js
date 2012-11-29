@@ -37,6 +37,7 @@ Yaffas.UI.prototype.setup = function(){
 			position: "top",
 			height: "85px",
 			body: "topbar",
+			scroll: null /* default is false, which leads to overflow:hidden! */
 		}, {
 			position: "bottom",
 			height: "40px",
