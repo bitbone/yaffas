@@ -2,6 +2,9 @@ Groups = function() {
 	this.table = null;
 	this.menu = null;
 	this.setupTable();
+	if (Yaffas.MODULES.indexOf("maildisclaimers") >= 0) {
+		YAHOO.util.Get.script("/maildisclaimers/lib.js");
+	}
 }
 
 Groups.prototype.editGroup = function() {
@@ -21,19 +24,27 @@ Groups.prototype.deleteGroup = function() {
 		d.show();
 	}
 }
+Groups.prototype.showEditDisclaimer = function() {
+	var r = this.table.selectedRows();
+
+	if (r.length > 0) {
+		Yaffas.ui.openTab('/maildisclaimers/setgroup.cgi', {groups: r[0][0]},
+			MailDisclaimers.setupDisclaimerCallback);
+	}
+}
+
 
 Groups.prototype.setupTable = function() {
-    var menuitems = [];
+	var menuitems = [];
 
-    if (auth_type() === "local LDAP") {
-        menuitems.push(
-        {
-            text: _("lbl_edit"),
-            onclick: {
-                fn: this.editGroup.bind(this)
-            }
-        }
-        );
+	if (auth_type() === "local LDAP") {
+		menuitems.push({
+			text: _("lbl_edit"),
+			onclick: {
+				fn: this.editGroup.bind(this)
+			}
+		}
+		);
 
 		menuitems.push({
 			text: _("lbl_delete"),
@@ -43,17 +54,25 @@ Groups.prototype.setupTable = function() {
 		});
 	}
 
+	if (Yaffas.MODULES.indexOf("maildisclaimers") >= 0) {
+		menuitems.push({
+			text: _("lbl_edit_disclaimer"),
+			onclick: {
+				fn: this.showEditDisclaimer.bind(this)
+			}
+		});
+	}
+
 	var columns = [
-    {
-        key: "group",
-        label: _("lbl_groupname"),
-        sortable: true
-    }, {
-        key: "users",
-        label: _("lbl_user"),
-        sortable: true,
-    }
-	];
+	{
+		key: "group",
+		label: _("lbl_groupname"),
+		sortable: true
+	}, {
+		key: "users",
+		label: _("lbl_user"),
+		sortable: true,
+	}];
 		
 	this.table = new Yaffas.Table({
 		container: "table",
@@ -77,6 +96,10 @@ Groups.prototype.savedForm = function(url) {
 			break;
 		case "rm_groups.cgi":
 			this.table.reload();
+			break;
+		case "setgroup.cgi": // real url: /maildisclaimers/setgroup.cgi
+			MailDisclaimers.disableRTEs();
+			Yaffas.ui.closeTab();
 			break;
 	}
 }
