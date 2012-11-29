@@ -34,6 +34,7 @@ sed -e "s/dc=bitbone,dc=de/$BASEDN/" -i /opt/yaffas/zarafa/webapp/plugins/passwd
 %config /opt/yaffas/zarafa/webapp/plugins/passwd/config.inc.php
 /opt/yaffas/zarafa/webaccess/plugins
 /opt/yaffas/zarafa/webapp/plugins
+/opt/yaffas/share/yaffas-upgrade
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
