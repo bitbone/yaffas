@@ -84,7 +84,8 @@ use constant {
 		"rhel5_devices" => "/etc/sysconfig/networking/devices/",
 		"rhel5_scripts" => "/etc/sysconfig/network-scripts/",
 		"mppserver_conf" => "/etc/mppserver/",
-        "zoneinfo" => "/usr/share/zoneinfo"
+        "zoneinfo" => "/usr/share/zoneinfo",
+		"maildisclaimers" => "/opt/yaffas/etc/maildisclaimers/",
 	}
 };
 
