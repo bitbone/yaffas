@@ -1,4 +1,3 @@
-/opt/yaffas/etc/init.d/yaffas
 /opt/yaffas/var/miniserv.error
 /opt/yaffas/var/miniserv.log
 /opt/yaffas/var/sessiondb.dir
