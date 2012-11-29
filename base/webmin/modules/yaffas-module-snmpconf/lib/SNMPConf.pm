@@ -72,9 +72,9 @@ sub set_snmp_config($;$$) {
 		}
 
 		$network = "127.0.0.1" unless defined $network;
-		if ($network ne "default" &&
-				!Yaffas::Check::ip($1, $2, "netaddr") &&
-				!Yaffas::Check::ip($network)) {
+		if ($network ne "default" && !Yaffas::Check::ip($network) &&
+				($network !~ m/^([0-9\.]+)\/([0-9\.]+)$/ ||
+				!Yaffas::Check::ip($1, $2, "netaddr"))) {
 			throw Yaffas::Exception("err_network_string");
 		}
 
