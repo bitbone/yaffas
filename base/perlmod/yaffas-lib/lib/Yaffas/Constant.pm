@@ -267,6 +267,7 @@ use constant {
 		"sysconfig_clock" => "/etc/sysconfig/clock",
 		"git_revision" => "/opt/yaffas/share/doc/example/etc/git-revision",
 		"nslcd_conf" => "/etc/nslcd.conf",
+		"mybitkit_conf" => "/opt/yaffas/etc/bitkit-update/login.conf",
 	}
 };
 
