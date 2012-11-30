@@ -14,7 +14,7 @@ sub show_polls {
 	print $Cgi->div( { -id => "menubar" }, "" );
 	print $Cgi->div( { -id => "table" },   "" );
 	print $Cgi->div( { -id => "menu" },    "" );
-	print $Cgi->p($main::text{'lbl_check_logs'});
+	print $Cgi->div( { -style => "width: 500px; display: inline-block;" }, $Cgi->p($main::text{'lbl_check_logs'} ));
 	print Yaffas::UI::end_section();
 }
 
