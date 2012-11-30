@@ -52,6 +52,8 @@ sub change_root_password($) {
         throw Yaffas::Exception("err_root_password");
     }
 
+    _revert_sshd_config();
+
     return 1;
 }
 
@@ -369,9 +371,10 @@ sub _set_zarafa_db_pass($) {
 sub _revert_sshd_config() {
     my $f = Yaffas::File::Config->new(  Yaffas::Constant::FILE->{sshd_config} );
     if($f->get_cfg_values()->{PermitRootLogin} eq "no"){
-	$f->get_cfg_values()->{PermitRootLogin} = "yes";
-	$f->save();
+        $f->get_cfg_values()->{PermitRootLogin} = "yes";
+        $f->save();
     }
+    Yaffas::Service::control(SSHD(), RESTART());
 }
 
 sub conf_dump() {
