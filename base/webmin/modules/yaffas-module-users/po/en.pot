@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-11-08 00:25+0100\n"
+"POT-Creation-Date: 2012-11-30 00:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -460,6 +460,11 @@ msgid ""
 "depending on the mailbox size this may consume lots of time and bandwidth, "
 "so please verify if you really want this, especially in low-bandwidth "
 "setups.<br/><br/>Force resynchronization for the following user?"
+msgstr ""
+
+#: lang/en:91
+#, no-wrap
+msgid "Configure disclaimer"
 msgstr ""
 
 #: help/en:1

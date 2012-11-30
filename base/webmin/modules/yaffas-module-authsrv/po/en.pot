@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
+"POT-Creation-Date: 2012-11-30 00:31+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -574,7 +574,9 @@ msgstr ""
 
 #: help/en:5
 #, no-wrap
-msgid "Name or IP adress of your domain controller."
+msgid ""
+"Name or IP adress of your domain controller or controllers. Can be a comma, "
+"semicolon or space separated list of hostnames or IP addresses."
 msgstr ""
 
 #: help/en:6
@@ -591,5 +593,7 @@ msgstr ""
 
 #: help/en:8
 #, no-wrap
-msgid "Hostname or IP address of the LDAP server."
+msgid ""
+"Hostname or IP address of the LDAP server or servers. Can be a comma, "
+"semicolon or space separated list of hostnames or IP addresses."
 msgstr ""

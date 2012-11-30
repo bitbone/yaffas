@@ -24,6 +24,7 @@ lbl_auth=Autenticação
 lbl_email=E-mail
 lbl_sendas=Permitir enviar-como para
 
+lbl_edit_disclaimer=Configure disclaimer
 
 err_input=Todos os campos precisam ser preenchidos!
 err_create=Criação de grupos falhou!

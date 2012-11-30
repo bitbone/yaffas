@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 00:21+0100\n"
+"POT-Creation-Date: 2012-11-30 00:30+0100\n"
 "PO-Revision-Date: 2012-11-09 09:35+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -722,7 +722,7 @@ msgstr ""
 
 #: help/en:5
 #, no-wrap
-msgid "Name or IP adress of your domain controller."
+msgid "Name or IP adress of your domain controller or controllers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."
 msgstr ""
 
 #: help/en:6
@@ -737,5 +737,5 @@ msgstr ""
 
 #: help/en:8
 #, no-wrap
-msgid "Hostname or IP address of the LDAP server."
+msgid "Hostname or IP address of the LDAP server or servers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."
 msgstr ""

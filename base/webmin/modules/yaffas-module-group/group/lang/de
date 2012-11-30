@@ -24,6 +24,7 @@ lbl_auth=Authentifizierung
 lbl_email=E-Mail
 lbl_sendas=Senden als erlauben
 
+lbl_edit_disclaimer=Configure disclaimer
 
 err_input=Alle Felder müssen ausgefüllt sein!
 err_create=Anlegen der Gruppe schlug fehl!

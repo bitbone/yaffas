@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2012-11-30 00:30+0100\n"
+"PO-Revision-Date: 2012-11-16 08:57+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -123,73 +123,78 @@ msgstr "E-Mail"
 msgid "Allow send as for"
 msgstr "Senden als erlauben"
 
-#: lang/en:28
+#: lang/en:27
+#, no-wrap
+msgid "Configure disclaimer"
+msgstr ""
+
+#: lang/en:29
 #, no-wrap
 msgid "All input fields has to be filled!"
 msgstr "Alle Felder müssen ausgefüllt sein!"
 
-#: lang/en:29
+#: lang/en:30
 #, no-wrap
 msgid "Creation of groups failed!"
 msgstr "Anlegen der Gruppe schlug fehl!"
 
-#: lang/en:30
+#: lang/en:31
 #, no-wrap
 msgid "Deletion of groups failed!"
 msgstr "Löschen der Gruppe schlug fehl!"
 
-#: lang/en:31
+#: lang/en:32
 #, no-wrap
 msgid "Group doesn't exist!"
 msgstr "Gruppe existiert nicht!"
 
-#: lang/en:32
+#: lang/en:33
 #, no-wrap
 msgid "Group exists already!"
 msgstr "Diese Gruppen existieren bereits!"
 
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
 msgstr "Gruppennamen müssen aus mindestens einem Zeichen (alphanumerisch) bestehen, beginnend mit einem Buchstaben (kein Umlaut)."
 
-#: lang/en:34
+#: lang/en:35
 #, no-wrap
 msgid "Wrong mode!"
 msgstr "Falscher Modus ausgewählt!"
 
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "No group selected!"
 msgstr "Keine Gruppe ausgewählt!"
 
 # 96%
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "This action is only supported with local authentication."
 msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
 
-#: lang/en:37
+#: lang/en:38
 #, no-wrap
 msgid "E-mail address not valid"
 msgstr "E-Mail Adresse nicht gültig"
 
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "Could not set e-mail address"
 msgstr "Konnte die E-Mail Adresse nicht setzen"
 
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "Could not change e-mail address"
 msgstr "Konnte die E-Mail Adresse nicht ändern"
 
-#: lang/en:40
+#: lang/en:41
 #, no-wrap
 msgid "Invalid e-mail address"
 msgstr "Ungültige E-Mail Adresse"
 
-#: lang/en:41
+#: lang/en:42
 #, no-wrap
 msgid "Group Management"
 msgstr "Gruppenverwaltung"

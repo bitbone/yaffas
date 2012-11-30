@@ -2,7 +2,7 @@ basedn=LDAP Such Basis DN. LDAP Einträge werden ab diesem Punkt gesucht. z.B. o
 email=Attribut in dem E-Mail Adresse vorgehalten wird. Standard: mail
 binddn=Benutzer mit dem die Verbindung hergestellt wird. z.B. cn=ldapadmin,ou=People,o=yaffas,c=org
 dom_name=Vollständiger Domänenname des Active Directory. z.B. yaffas.org
-pass_pdc=Name oder IP Adresse des Domänen Controllers.
+pass_pdc=Name or IP adress of your domain controller or controllers. Can be a comma, semicolon or space separated list of hostnames or IP addresses.
 dom_adm=Name des Domänen Administrators. Dieser Benutzer muss in der Users Organisationseinheit erstellt sein.
 ads_user=Benutzer für lesenden Zugriff. Sie können den Benutzernamen oder die Volle DN Syntax eingeben.
-host=Hostname oder IP Adresse des LDAP Servers.
+host=Hostname or IP address of the LDAP server or servers. Can be a comma, semicolon or space separated list of hostnames or IP addresses.
