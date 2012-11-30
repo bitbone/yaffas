@@ -73,7 +73,7 @@ lbl_lang_fr=Französisch
 lbl_lang_pt_BR=Portugisisch (Brasilien)
 
 lbl_table_pager={PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite
-lbl_about_bitkit=About bitkit
+lbl_about_bitkit=Über bitkit
 lbl_about_yaffas=Über yaffas
 lbl_about_zadmin=Über Z-Admin
 
