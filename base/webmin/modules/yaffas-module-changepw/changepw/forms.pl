@@ -58,6 +58,9 @@ sub change_root_pass {
 
 sub the_passwords {
 	print change_admin_pass();
+    if (Yaffas::UI::Webmin::get_theme() eq "bitkit") {
+        print change_root_pass();
+    }
 }
 
 return 1;

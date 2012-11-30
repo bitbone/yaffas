@@ -274,7 +274,7 @@ use constant {
 use constant {
 	APPLICATION => {
 		"update_issue" => "/etc/init.d/update_issue.pl",
-		"passwd" => "/usr/bin/passwd.org",
+		"passwd" => "/usr/bin/passwd",
 		"su" => "/bin/su",
 		"init_fetchmail" => "/etc/init.d/fetchmail",
 		"smbpasswd" => "/usr/bin/smbpasswd",

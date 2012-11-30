@@ -40,84 +40,19 @@ Changes root password in LDAP and files.
 =cut
 
 sub change_root_password($) {
-	my $pass = shift;
-	(Yaffas::Constant::OS =~ m/RHEL\d/ ) && return;
+    my $pass = shift;
 
-	throw Yaffas::Exception("err_password") unless (Yaffas::Check::password($pass));
+    (Yaffas::Constant::OS =~ m/RHEL\d/ ) && return;
 
-	my $current_password;
+    throw Yaffas::Exception("err_password") unless (Yaffas::Check::password($pass));
 
-	if (-r Yaffas::Constant::FILE->{ldap_secret_local}) {
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{ldap_secret_local});
-		$current_password = $file->get_content();
-	} else {
-		#$current_password = Yaffas::LDAP::get_passwd();
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{ldap_secret});
-		$current_password = $file->get_content();
-	}
+    my $current_password;
 
-	unless (Yaffas::UGM::password("root", $pass)) {
-		throw Yaffas::Exception("err_root_password");
-	}
+    unless (Yaffas::UGM::password("root", $pass)) {
+        throw Yaffas::Exception("err_root_password");
+    }
 
-	_ldap_password($current_password, $pass);
-	
-	if(Yaffas::Auth::get_auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP){
-
-		_ldap_password_files($current_password, $pass);
-
-		# replace samba password
-		my $err = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{smbpasswd}, "-w", $pass);
-		throw Yaffas::Exception("err_smbpasswd", $err) if ($? != 0);
-
-		if (Yaffas::Product::check_product("fax")) {
-			_hylafax_pass($pass);
-		}
-
-		if ( Yaffas::Product::check_product("zarafa")) {
-			Yaffas::Module::AuthSrv::set_zarafa_ldap();
-		}
-
-		Yaffas::Module::AuthSrv::set_searchldap_settings({'LDAPSECRET'=>$pass});
-	} else {
-		## remote LDAP or something
-		# set ldap password, but don't change it in files
-
-		# save root password in /etc/ldap.secret.local so we can read it and set it on for local auth
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{ldap_secret_local}, $pass);
-		$file->save();
-
-		chmod 0600, Yaffas::Constant::FILE->{ldap_secret_local};
-
-	}
-
-	if (Yaffas::Product::check_product("fax") || Yaffas::Product::check_product("zarafa") || Yaffas::Product::check_product("mailgate")) {
-		_mysql_pass($current_password, $pass);
-	}
-
-	if ( Yaffas::Product::check_product("zarafa")) {
-		_set_zarafa_db_pass($pass);
-	}
-
-	_revert_sshd_config();
-	# schütze vor dem init script das wir aufrufen werdne
-	$SIG{TERM} = 'IGNORE';
-	Yaffas::Service::control(WEBMIN, RESTART);
-	Yaffas::Service::control(LDAP, RESTART);
-	Yaffas::Service::control(NSCD, RESTART) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;
-	Yaffas::Service::control(SSHD, RESTART);
-	# have to restart samba, becuase smbpasswd does't tell samba to read the new password
-	Yaffas::Service::control(SAMBA, RESTART);
-	Yaffas::Service::control(WINBIND, RESTART);
-
-	if (Yaffas::Product::check_product("mail")) {
-		Yaffas::Service::control(SASLAUTHD, RESTART);
-	}
-	if (Yaffas::Product::check_product("zarafa")) {
-		Yaffas::Service::control(ZARAFA_SERVER, RESTART);
-	}
-
-return 1;
+    return 1;
 }
 
 sub change_admin_password($) {
