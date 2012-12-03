@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-11-16 08:57+0200\n"
-"Last-Translator: Christian <hoffmann@bitbone.de>\n"
+"POT-Creation-Date: 2012-12-01 00:24+0100\n"
+"PO-Revision-Date: 2012-11-30 11:39+0200\n"
+"Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,12 +40,12 @@ msgstr "SNMP Konfiguration"
 #: lang/en:5
 #, no-wrap
 msgid "Replace SNMP configuration?"
-msgstr ""
+msgstr "Soll die SNMP Konfiguration ersetzt werden?"
 
 #: lang/en:6
 #, no-wrap
 msgid "In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?"
-msgstr ""
+msgstr "Um die gewünschte Änderung der Konfiguration durchzuführen muss die aktuelle SNMP Konfiguration <strong>überschrieben</strong> werden. <br />Soll die Konfiguration überschrieben werden?"
 
 #: lang/en:8
 #, no-wrap
@@ -65,4 +65,4 @@ msgstr "Passwort für den SNMP-Zugriff."
 #: help/en:2
 #, no-wrap
 msgid "Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or \"default\" to allow access from everywhere. Enter \"127.0.0.1\" to allow access from the local machine only."
-msgstr ""
+msgstr "Geben Sie eine IP Adresse, eine Netzwerk Adresse in der CIDR Schreibweise (z.B. 192.168.0.0/24) oder \"default\" an um den Zugriff von überall zu erlauben. Verwenden Sie \"127.0.0.1\" um den Zugriff nur auf die lokale Maschine zu begrenzen."
