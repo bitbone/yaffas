@@ -17,7 +17,7 @@ sub BEGIN {
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD &NSLCD
 						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD &CLAMAV_FRESHCLAM
-						&BITKIT_MAILDISCLAIMERS
+						&YAFFAS_MAILDISCLAIMERS
 						&START &STOP &RESTART &STATUS &RELOAD
 					   );
 }
@@ -340,7 +340,7 @@ sub NSLCD(){ 47; }
 
 sub ZARAFA_SEARCH(){ 48; }
 
-sub BITKIT_MAILDISCLAIMERS(){ 49; }
+sub YAFFAS_MAILDISCLAIMERS(){ 49; }
 
 =back
 
@@ -448,7 +448,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 				 NFSD() => "/etc/init.d/nfs-kernel-server",
 				 POSTFIX() => "/etc/init.d/postfix",
 				 CLAMAV_FRESHCLAM() => "/etc/init.d/clamav-freshclam",
-				 BITKIT_MAILDISCLAIMERS() => "/etc/init.d/bitkit-maildisclaimers",
+				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
 				);
 
 	if (Yaffas::Constant::OS eq 'Debian') {
@@ -515,7 +515,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL5/ ) {
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
 				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
-				 BITKIT_MAILDISCLAIMERS() => "/etc/init.d/bitkit-maildisclaimers",
+				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
 				);
 
 	%PROCESSES = (
@@ -578,7 +578,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL6/ ) {
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
 				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
-				 BITKIT_MAILDISCLAIMERS() => "/etc/init.d/bitkit-maildisclaimers",
+				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
 				);
 
 	%PROCESSES = (
@@ -711,8 +711,8 @@ sub installed_services(;$)
 		$services->{'nfs-kernel-server'}		= { 'constant' => NFSD(), 'allow' => [ 'start', 'stop', 'restart' ] };
 	}
 
-	if(-f $SERVICES{BITKIT_MAILDISCLAIMERS()}) {
-		$services->{'bitkit-maildisclaimers'}		= { 'constant' => BITKIT_MAILDISCLAIMERS(), 'allow' => [ 'start', 'stop', 'restart' ] };
+	if(-f $SERVICES{YAFFAS_MAILDISCLAIMERS()}) {
+		$services->{'yaffas-maildisclaimers'}		= { 'constant' => YAFFAS_MAILDISCLAIMERS(), 'allow' => [ 'start', 'stop', 'restart' ] };
 	}
 
 	if($want)
@@ -1069,7 +1069,7 @@ sub _status($){
 		return __check_process('policyd-weight');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ CLAMAV_FRESHCLAM() }) {
 		return __check_process('clamav-freshclam');
-	} elsif ($service eq $Yaffas::Service::SERVICES{ BITKIT_MAILDISCLAIMERS() }) {
+	} elsif ($service eq $Yaffas::Service::SERVICES{ YAFFAS_MAILDISCLAIMERS() }) {
 		return __check_process(
 			'python /opt/yaffas/libexec/maildisclaimers/daemon.py');
 	}
