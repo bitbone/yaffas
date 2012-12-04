@@ -592,7 +592,9 @@ Yaffas.UI.prototype.submitForm = function(e){
 				}
         YAHOO.util.Connect.setForm(element, upload);
         var url = element.action;
-        var path = parseURL(url).pathname.split('/');
+        var parsedURL = parseURL(url);
+        var path = parsedURL.pathname.split('/');
+        var querystring = parsedURL.search;
         if (path.length <= 2) {
           // The path component looks like this: /foo.cgi;
           // Splitting this string yields ["", "foo.cgi"];
@@ -608,6 +610,7 @@ Yaffas.UI.prototype.submitForm = function(e){
           // This way modules can explicitly POST to other modules by
           // specifying an absolute URL.
           url = "/" + this.currentPage + "/" + path[path.length - 1];
+          url += querystring;
         }
 
         this.submitURL(url, null, args, prepareForm);
