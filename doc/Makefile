@@ -1,3 +1,7 @@
+LAST_GIT_CHANGE := $(shell gitx log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
+LAST_LOCAL_CHANGE := $(shell stat --format=%Y index.txt)
+LAST_CHANGE := $(shell [[ $(LAST_LOCAL_CHANGE) -gt $(LAST_GIT_CHANGE) ]] && echo $(LAST_LOCAL_CHANGE) || echo $(LAST_GIT_CHANGE))
+
 all: de_DE.html en_EN.html index.html
 
 pdf: de_DE.pdf en_EN.pdf
@@ -14,7 +18,10 @@ en_EN.html: en_EN.txt source/en/*.txt
 	ln -sf ../docbook-xsl.css en_EN.chunked/
 	ln -sf ../images en_EN.chunked
 
-index.html: index.txt
+index.html: de_DE.html en_EN.html index.txt
+	# fix the file's last-changed time, so that asciidoc generates
+	# a proper "Last updated" footer
+	touch --date=@$(LAST_CHANGE) index.txt >/dev/null 2>&1 || true
 	asciidoc index.txt
 
 de_DE.pdf: de_DE.txt
