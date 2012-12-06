@@ -24,7 +24,7 @@ iframe {
 /* CKEditor uses an iframe which is hidden by the rule above;
  * we'll make it visible again here
  */
-.cke_contents iframe, .cke_skin_kama iframe, .cke_panel iframe {
+.cke iframe {
     display: block;
 }
 
