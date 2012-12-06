@@ -29,8 +29,8 @@ lbl_halt=System herunterfahren
 lbl_reboot=System neu booten
 lbl_halting=Das System wird heruntergefahren und ausgeschalten.
 lbl_rebooting=Das System wird neu gestartet. In einigen Minuten können Sie sich wieder anmelden.
-lbl_sure_halt=Möchten Sie wirklich das System herunterfahren.
-lbl_sure_reboot=Möchen Sie wirklich das System neu starten.
+lbl_sure_halt=Do you really want to halt the system?
+lbl_sure_reboot=Do you really want to reboot the system?
 
 
 lbl_day=Tag

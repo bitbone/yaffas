@@ -29,8 +29,8 @@ lbl_halt=Desligar sistema
 lbl_reboot=Reiniciar sistema
 lbl_halting=Sistema está sendo terminado.
 lbl_rebooting=Sistema está reiniciando. Em alguns minutos o login estará disponível novamente.
-lbl_sure_halt=Realmente deseja para o sistema.
-lbl_sure_reboot=Realmente deseja reiniciar o sistema.
+lbl_sure_halt=Do you really want to halt the system?
+lbl_sure_reboot=Do you really want to reboot the system?
 
 
 lbl_day=Dia

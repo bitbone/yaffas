@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
+"POT-Creation-Date: 2012-12-07 00:24+0100\n"
 "PO-Revision-Date: 2012-11-09 09:35+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,14 +310,16 @@ msgstr ""
 msgid "System is rebooting. In some minutes you can login again."
 msgstr ""
 
+# 87%
+# 75%
 #: lang/en:32
-#, no-wrap
-msgid "Do you really want to halt the system."
-msgstr ""
+#, fuzzy, no-wrap
+msgid "Do you really want to halt the system?"
+msgstr "您真的要刪除此條目嗎?"
 
 #: lang/en:33
 #, no-wrap
-msgid "Do you really want to reboot the system."
+msgid "Do you really want to reboot the system?"
 msgstr ""
 
 #: lang/en:36
