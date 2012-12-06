@@ -29,8 +29,8 @@ lbl_halt=Shutdown system
 lbl_reboot=Reboot system
 lbl_halting=System is shuting down.
 lbl_rebooting=System is rebooting. In some minutes you can login again.
-lbl_sure_halt=Do you really want to halt the system.
-lbl_sure_reboot=Do you really want to reboot the system.
+lbl_sure_halt=Do you really want to halt the system?
+lbl_sure_reboot=Do you really want to reboot the system?
 
 
 lbl_day=Day
