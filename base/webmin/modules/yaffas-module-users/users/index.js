@@ -445,7 +445,6 @@ Users.prototype.savedForm = function(f, args) {
       break;
     case "setuser.cgi": // real url: /maildisclaimers/setuser.cgi
       Yaffas.ui.closeTab();
-      MailDisclaimers.disableRTEs();
       break;
 	}
 }

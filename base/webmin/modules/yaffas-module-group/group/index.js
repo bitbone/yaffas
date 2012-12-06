@@ -98,7 +98,6 @@ Groups.prototype.savedForm = function(url) {
 			this.table.reload();
 			break;
 		case "setgroup.cgi": // real url: /maildisclaimers/setgroup.cgi
-			MailDisclaimers.disableRTEs();
 			Yaffas.ui.closeTab();
 			break;
 	}
