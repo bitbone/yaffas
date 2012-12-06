@@ -1,5 +1,5 @@
 Name:		yaffas-ckeditor
-Version:	3.6.4
+Version:	4.0
 Release:	1%{?dist}
 Summary:	CKeditor Library
 Group:		Application/System

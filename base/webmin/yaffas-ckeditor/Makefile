@@ -1,7 +1,7 @@
 include ../../../Makefile.common
 
 DESTDIR ?= /
-VER := 4.0
+VER ?= 4.0
 
 clean:
 
@@ -10,8 +10,9 @@ install:
 	cp -r ckeditor/* $(DESTDIR)/$(YAFFAS_WEBMIN)/ckeditor
 
 upstream-update:
+	echo "Updating to version $(VER)"
 	git rm -rf ckeditor || true
-	wget http://download.cksource.com/CKEditor/CKEditor/CKEditor%20$(VER)/ckeditor_$(VER)_standard.tar.gz -O ckeditor.tar.gz
+	wget http://download.cksource.com/CKEditor/CKEditor/CKEditor%20$(VER)/ckeditor_$(VER)_full.tar.gz -O ckeditor.tar.gz
 	tar xvzf ckeditor.tar.gz ckeditor/
 	rm -rf ckeditor/samples ckeditor/README* ckeditor/CHANGES*
 	rm ckeditor.tar.gz
