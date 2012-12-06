@@ -29,7 +29,7 @@ my @del = split /\0/, $del if $del;
 my @add = split /\s*,\s*/, $add if $add;
 
 try {
-	# test if okee
+	# test if oke
 	foreach my $add(@add) {
 		test(@del, $add);
 	}
@@ -40,7 +40,7 @@ try {
 	foreach my $add(@add) {
 		set_accept_domains($add);
 	}
-	control(POSTFIX() ,RESTART());
+	control(POSTFIX(), RESTART());
 	print Yaffas::UI::ok_box();
 
 } catch Yaffas::Exception with {
