@@ -7,7 +7,7 @@ use Yaffas::UI;
 use Yaffas::Check;
 use Yaffas::Exception;
 use Yaffas::Module::Mailsrv::Postfix qw(rm_accept_domains set_accept_domains);
-use Yaffas::Service qw(POSTFIX RESTART control);
+use Yaffas::Service qw(POSTFIX YAFFAS_MAILDISCLAIMERS RESTART control);
 
 
 use Error qw(:try);
@@ -41,6 +41,10 @@ try {
 		set_accept_domains($add);
 	}
 	control(POSTFIX(), RESTART());
+	if (Yaffas::Service::installed_services("yaffas-maildisclaimers")) {
+		# need to re-read postfix's virtual_mailbox_domains
+		control(YAFFAS_MAILDISCLAIMERS(), RESTART());
+	}
 	print Yaffas::UI::ok_box();
 
 } catch Yaffas::Exception with {

@@ -164,6 +164,10 @@ Enables amavis in postfix if it isn't already enabled.
 
 sub enable_amavis {
 	_set_postfix("content_filter", "amavis:[127.0.0.1]:10024");
+	if (eval { require Yaffas::Module::MailDisclaimers; 1 }) {
+		# force config re-patching
+		Yaffas::Module::Maildisclaimers::update_service(1);
+	}
 	control(POSTFIX(), RESTART());
 }
 
@@ -176,6 +180,10 @@ Disables amavis in postfix if it is enabled
 
 sub disable_amavis {
 	_set_postfix("content_filter", "");
+	if (eval { require Yaffas::Module::MailDisclaimers; 1 }) {
+		# force config re-patching
+		Yaffas::Module::Maildisclaimers::update_service(1);
+	}
 	control(POSTFIX(), RESTART());
 }
 

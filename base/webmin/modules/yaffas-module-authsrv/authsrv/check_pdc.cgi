@@ -7,7 +7,7 @@ use Yaffas::UI qw(ok_box error_box all_error_box);
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Exception;
 use Yaffas::Module::AuthSrv;
-use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN WEBMIN POSTFIX);
+use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN WEBMIN POSTFIX YAFFAS_MAILDISCLAIMERS);
 use Error qw(:try);
 use Yaffas::UGM;
 use Yaffas::Constant;
@@ -64,6 +64,11 @@ try {
 	system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 	Yaffas::Service::control(USERMIN, RESTART);
 	Yaffas::Service::control(POSTFIX, RESTART);
+	if (Yaffas::Service::installed_services("yaffas-maildisclaimers")) {
+		# need to re-read LDAP config
+		control(YAFFAS_MAILDISCLAIMERS(), RESTART());
+	}
+
 	# fork, because we have to restart webmin
 	my $pid = fork;
 	if ($pid == 0) {

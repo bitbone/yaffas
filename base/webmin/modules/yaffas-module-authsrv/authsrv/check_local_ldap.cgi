@@ -10,7 +10,7 @@ use Yaffas::UI;
 use Yaffas::Exception;
 use Error qw(:try);
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX WEBMIN);
+use Yaffas::Service qw(control START STOP RESTART NSCD WINBIND GOGGLETYKE SAMBA ZARAFA_SERVER USERMIN POSTFIX WEBMIN YAFFAS_MAILDISCLAIMERS);
 use Yaffas::UGM;
 use Yaffas::File;
 use Yaffas::Constant;
@@ -72,6 +72,10 @@ try
 	system(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-s");
 	Yaffas::Service::control(USERMIN, RESTART);
 	Yaffas::Service::control(POSTFIX, RESTART);
+	if (Yaffas::Service::installed_services("yaffas-maildisclaimers")) {
+		# need to re-read LDAP config
+		control(YAFFAS_MAILDISCLAIMERS(), RESTART());
+	}
 	Yaffas::File->new(Yaffas::Constant::FILE->{auth_wizard_lock}, 1)->save();
 
 	# fork, because we have to restart webmin
