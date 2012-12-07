@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 00:21+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"PO-Revision-Date: 2012-12-07 20:55+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Não foi possível localizar rootDomainNamingContext no AD."
 #: lang/en:10
 #, no-wrap
 msgid "Maximum attachment size in Webaccess"
-msgstr ""
+msgstr "Tamanho máximo de anexos no Webaccess"
 
 #: lang/en:11
 #, no-wrap
@@ -70,22 +70,22 @@ msgstr "Tamanho"
 #: lang/en:12
 #, no-wrap
 msgid "Purge old deleted items now?"
-msgstr ""
+msgstr "Remover itens deletados agora?"
 
 #: lang/en:13
 #, no-wrap
 msgid "The maximum attachment size must be numeric and >0."
-msgstr ""
+msgstr "O tamanho máximo de anexos tem que ser numérico e maior que 0."
 
 #: lang/en:14
 #, no-wrap
 msgid "The softdelete lifetime must be numeric and >=0."
-msgstr ""
+msgstr "O tempo de vida de itens no softdelete tem que ser numérico e maior ou igual à 0."
 
 #: lang/en:15
 #, no-wrap
 msgid "Could not purge old items."
-msgstr ""
+msgstr "Não foi possível remover itens antigos."
 
 #: lang/en:17
 #, no-wrap
@@ -140,12 +140,12 @@ msgstr "Cota padrão"
 #: lang/en:31
 #, no-wrap
 msgid "Enable POP3 for users by default"
-msgstr ""
+msgstr "Habilitar POP3 para usuários por padrão"
 
 #: lang/en:32
 #, no-wrap
 msgid "Enable IMAP for users by default"
-msgstr ""
+msgstr "Habilitar IMAP para usuários por padrão"
 
 #: lang/en:33
 #, no-wrap
@@ -185,27 +185,27 @@ msgstr "Senha"
 #: lang/en:42
 #, no-wrap
 msgid "PRF Creator"
-msgstr ""
+msgstr "Gerador de PRF"
 
 #: lang/en:43
 #, no-wrap
 msgid "Profile name"
-msgstr ""
+msgstr "Nome do Perfil"
 
 #: lang/en:46
 #, no-wrap
 msgid "Server adress"
-msgstr ""
+msgstr "Endereço do servidor"
 
 #: lang/en:47
 #, no-wrap
 msgid "Overwrite profile"
-msgstr ""
+msgstr "Sobrescrever perfil"
 
 #: lang/en:48
 #, no-wrap
 msgid "Backup profile"
-msgstr ""
+msgstr "Perfil backup"
 
 #: lang/en:49
 #, no-wrap
@@ -215,28 +215,28 @@ msgstr "Download"
 #: lang/en:51
 #, no-wrap
 msgid "Connection type"
-msgstr ""
+msgstr "Tipo de conexão"
 
 #: lang/en:52
 #, no-wrap
 msgid "Autodetect"
-msgstr ""
+msgstr "Auto detectar"
 
 #: lang/en:53
 #, no-wrap
 msgid "Online"
-msgstr ""
+msgstr "Online"
 
 # 83%
 #: lang/en:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Cached"
-msgstr "Cache"
+msgstr "Cached (offline)"
 
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
-msgstr ""
+msgstr "Para usar o arquivo gerado é necessário executar o Outlook na linha de comando com o parâmetro \"/importprf\" (ex. outlook.exe /importprf \\\\caminho\\para\\arquivo.prf)."
 
 #: lang/en:57
 #, no-wrap
@@ -246,7 +246,7 @@ msgstr "Configurações básicas"
 #: lang/en:58
 #, no-wrap
 msgid "Number of days to keep deleted items"
-msgstr ""
+msgstr "Número de dias para manter itens excluídos"
 
 #: lang/en:60
 #, no-wrap
@@ -276,7 +276,7 @@ msgstr "Especifique o tamanho máximo de anexos por e-mail em MB que poderão se
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
-msgstr ""
+msgstr "Isso limita o uso máximo de disco para cada usuário em MB. Deixe em branco para não definir limite."
 
 #: help/en:3
 #, no-wrap
@@ -301,34 +301,34 @@ msgstr "Este é o nome do banco de dados para ser usado pelo Zarafa.<br />Recome
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
-msgstr ""
+msgstr "Especifique o endereço do servidor que será usado para conectar os clientes Outlook no servidor Zarafa."
 
 #: help/en:8
 #, no-wrap
 msgid "The name for the outlook profile."
-msgstr ""
+msgstr "O nome do perfil do Outlook."
 
 #: help/en:9
 #, no-wrap
 msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
-msgstr ""
+msgstr "O usuário para conectar no servidor. Na maioria das vezes você deve usar \"%UserName%\" que será substituído pelo Outlook pelo nome do usuário correto."
 
 #: help/en:10
 #, no-wrap
 msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
-msgstr ""
+msgstr "Se você especificar um nome de usuário você também deve fornecer a senha deste usuário. Se deixar o campo em branco o Outlook perguntará pela senha."
 
 #: help/en:11
 #, no-wrap
 msgid "Specify if you want your profile to be overwritten during installation."
-msgstr ""
+msgstr "Especifique se você quer substituir o perfil durante a instalação."
 
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
-msgstr ""
+msgstr "Especifique se você quer um backup do perfil existente antes de substituí-lo."
 
 #: help/en:13
 #, no-wrap
 msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."
-msgstr ""
+msgstr "Itens (emails, itens no calendário, ...) não são removidos pelo Zarafa imediatamente. Eles podem ser restaurados por algum tempo. Este valor especifique este tempo (em dias)."

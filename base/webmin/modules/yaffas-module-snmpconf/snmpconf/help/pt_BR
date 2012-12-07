@@ -1,2 +1,2 @@
 community=Senha para o acesso SNMP.
-network=Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or "default" to allow access from everywhere. Enter "127.0.0.1" to allow access from the local machine only.
+network=Preenche um endereço IP único, um endereço de rede usando notação CIDR (ex. 192.168.0.0/24) ou "default" para permitir o acesso de qualquer lugar. Entra "127.0.0.1" para permitir o acesso somente local.

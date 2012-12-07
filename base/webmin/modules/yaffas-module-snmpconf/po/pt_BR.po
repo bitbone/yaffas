@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"PO-Revision-Date: 2012-12-07 20:55+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,12 +40,12 @@ msgstr "Configuração SNMP"
 #: lang/en:5
 #, no-wrap
 msgid "Replace SNMP configuration?"
-msgstr ""
+msgstr "Substituir configuração SMTP?"
 
 #: lang/en:6
 #, no-wrap
 msgid "In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?"
-msgstr ""
+msgstr "Para que o yaffas pode aplicar as modificação solicitadas, é necessário <strong>substituir</strong> as configurações atuais SNMP.<br />Quer substituir essa configuração?"
 
 #: lang/en:8
 #, no-wrap
@@ -65,4 +65,4 @@ msgstr "Senha para o acesso SNMP."
 #: help/en:2
 #, no-wrap
 msgid "Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or \"default\" to allow access from everywhere. Enter \"127.0.0.1\" to allow access from the local machine only."
-msgstr ""
+msgstr "Preenche um endereço IP único, um endereço de rede usando notação CIDR (ex. 192.168.0.0/24) ou \"default\" para permitir o acesso de qualquer lugar. Entra \"127.0.0.1\" para permitir o acesso somente local."

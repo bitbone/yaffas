@@ -30,15 +30,15 @@ lbl_user_local_ldap=Ao preencher este formulário, a autenticação local do LDA
 lbl_zarafa_settings=Configurações Zarafa
 lbl_basic_settings=Configurações básicas
 
-lbl_some_time=This might take some time
-lbl_setup_execute=setting up
-lbl_initial_conf=initial configuration
+lbl_some_time=Isso poderá demorar um pouco
+lbl_setup_execute=configurando
+lbl_initial_conf=configuração inicial
 
 lbl_finish=Concluir
 
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_password=A senha de administrador está vazia ou diferente.
 err_domainname=O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-'. O tamanho mínimo é de um.
-err_user_exists_locally=The given username already exists locally. Please specify another username or delete the existing user first.
+err_user_exists_locally=O nome do usuário fornecido já existe localmente. Por favor especifique um outro usuário ou apague o usuário existente primeiro.
 
 moduletitle=Configuração

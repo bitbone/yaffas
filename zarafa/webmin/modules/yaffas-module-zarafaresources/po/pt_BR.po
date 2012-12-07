@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-08 00:24+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"PO-Revision-Date: 2012-12-07 20:55+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -155,7 +155,7 @@ msgstr "Nenhum domínio local configurado."
 
 # 93%
 #: lang/en:29
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Capacity has to be a number."
 msgstr "Capacidade precisa ser um número."
 
