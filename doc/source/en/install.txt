@@ -274,7 +274,7 @@ priority = 1
 
   rpm --import http://repo.yaffas.org/repo.rpm.key
 
-**Packages installation**
+**Package installation**
 
   yum install yaffas
 
