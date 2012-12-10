@@ -12,8 +12,10 @@ header();
 
 my $mode   = $main::in{mode};
 
-if ($mode eq "halt" || $mode eq "reboot") {
-	system($mode);
+if ($mode eq "halt") {
+	system("shutdown", "-h", "now");
+} elsif ($mode eq "reboot") {
+	system("reboot");
 }
 else {
 	print error_box("Unknown mode!");
