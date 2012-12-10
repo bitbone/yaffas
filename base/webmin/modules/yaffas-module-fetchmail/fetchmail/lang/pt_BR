@@ -125,7 +125,7 @@ lbl_target=Destino
 lbl_local_alias=Alias
 lbl_local_user=Usuário
 
-lbl_check_logs=After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href="#m=logfiles-3">Maintainance -&gt; Log file viewer</a>.
+lbl_check_logs=Depois de adicionar novas configurações ou caso os usuários não recebem emails como esperado, você deve verificar o log /var/log/fetchmail.log, qual pode ser visualizado também via <a href="#m=logfiles-3">Manutenção -&gt; Exibição de arquivos de log</a>.
 
 err_user=Por favor fornecer usuário remoto e local.
 err_local_user=O nome do usuário fornecido é inválido.

@@ -73,13 +73,13 @@ lbl_lang_fr=Francês
 lbl_lang_pt_BR=Brasil
 
 lbl_table_pager={PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens por página
-lbl_about_bitkit=About bitkit
+lbl_about_bitkit=Sobre yaffas
 lbl_about_yaffas=Sobre yaffas
 lbl_about_zadmin=Sobre Z-Admin
 
 lbl_logged_out=Deslogado
 lbl_logged_out_msg=Um outro administrador logou no sistema. Você terá que relogar.
-lbl_logged_out_timeout=The session timed out, please re-login.
+lbl_logged_out_timeout=O tempo da sessão expirou, por favor efetue o login novamente.
 
 lbl_loading=Carregando.. por favor aguarde...
 lbl_error=Erro
