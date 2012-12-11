@@ -18,7 +18,7 @@ de_DE.chunked: $(SOURCES_DE)
 	ln -sf ../images de_DE.chunked
 
 de_DE.pdf: $(SOURCES_DE)
-	a2x -fpdf -lang=de de_DE.txt
+	a2x -fpdf de_DE.txt
 
 
 en_EN.html: $(SOURCES_EN)
@@ -30,7 +30,7 @@ en_EN.chunked: $(SOURCES_EN)
 	ln -sf ../images en_EN.chunked
 
 en_EN.pdf: $(SOURCES_EN)
-	a2x -fpdf -lang=en en_EN.txt
+	a2x -fpdf en_EN.txt
 
 index.html: de_DE.html en_EN.html index.txt
 	# fix the file's last-changed time, so that asciidoc generates
