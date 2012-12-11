@@ -1,4 +1,4 @@
-LAST_GIT_CHANGE := $(shell gitx log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
+LAST_GIT_CHANGE := $(shell git log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
 LAST_LOCAL_CHANGE := $(shell stat --format=%Y index.txt)
 LAST_CHANGE := $(shell [[ $(LAST_LOCAL_CHANGE) -gt $(LAST_GIT_CHANGE) ]] && echo $(LAST_LOCAL_CHANGE) || echo $(LAST_GIT_CHANGE))
 
