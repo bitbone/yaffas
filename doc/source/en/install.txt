@@ -251,7 +251,9 @@ or
 [NOTE]
 ==============
 
-For Red Hat Enterprise Linux systems it is necessary to subscribe to the "RHEL Server Optional" channel. This is not done by default.
+For Red Hat Enterprise Linux systems it is necessary to
+https://access.redhat.com/knowledge/solutions/11312[subscribe] to the
+"RHEL Server Optional" channel. This is not done by default.
 
 ==============
 

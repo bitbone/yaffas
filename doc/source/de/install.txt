@@ -228,7 +228,9 @@ Folgender Befehl installiert RPMforge für 64-bit Systeme:
 [NOTE]
 ==============
 
-Für Red Hat Enterprise Linux Systeme ist es notwendig den Kanal "RHEL Server Optional" zu abonnieren. Dies geschieht nicht automatisch.
+Für Red Hat Enterprise Linux Systeme ist es notwendig den Kanal "RHEL Server Optional" zu
+https://access.redhat.com/knowledge/solutions/11312[abonnieren].
+Dies geschieht nicht automatisch.
 
 ==============
 
