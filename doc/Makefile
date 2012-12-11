@@ -10,10 +10,10 @@ SOURCE_DE := de_DE.txt source/de/*.txt
 SOURCE_EN := en_EN.txt source/en/*.txt
 
 de_DE.html: $(SOURCE_DE)
-	a2x --icons-dir=icons -fxhtml -dbook -a lang=de de_DE.txt
+	a2x --icons-dir=icons -fxhtml -dbook de_DE.txt
 
 de_DE.chunked: $(SOURCE_DE)
-	a2x --icons-dir=icons -fchunked -dbook -a lang=de de_DE.txt
+	a2x --icons-dir=icons -fchunked -dbook de_DE.txt
 	ln -sf ../docbook-xsl.css de_DE.chunked/
 	ln -sf ../images de_DE.chunked
 
@@ -22,10 +22,10 @@ de_DE.pdf: $(SOURCE_DE)
 
 
 en_EN.html: $(SOURCE_EN)
-	a2x --icons-dir=icons -fxhtml -dbook -a lang=en en_EN.txt
+	a2x --icons-dir=icons -fxhtml -dbook en_EN.txt
 
 en_EN.chunked: $(SOURCE_EN)
-	a2x --icons-dir=icons -fchunked -dbook -a lang=en en_EN.txt
+	a2x --icons-dir=icons -fchunked -dbook en_EN.txt
 	ln -sf ../docbook-xsl.css en_EN.chunked/
 	ln -sf ../images en_EN.chunked
 

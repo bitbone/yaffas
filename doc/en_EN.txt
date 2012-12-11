@@ -1,3 +1,4 @@
+:lang: en
 :product: yaffas
 :theme: yaffas
 
