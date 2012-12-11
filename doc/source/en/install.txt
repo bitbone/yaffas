@@ -355,9 +355,7 @@ After this step you should be able to login to Zarafa WebAcess if you go to http
 
 [IMPORTANT]
 ==============
-
 The language in the {product} UI has to be set for the folders in Zarafa to be created in the right language. This should be done prior to the creation of users.
-
 ==============
 
 === Additional Steps

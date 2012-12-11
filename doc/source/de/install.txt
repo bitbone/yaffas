@@ -306,9 +306,7 @@ Der nächste Schritt sollte das Konfigurieren des Mailservers sein. Ohne eine fu
 
 [IMPORTANT]
 ==============
-
 Damit die Namen der Ordner in Zarafa in der richtigen Sprache angelegt werden, muss die gewünschte Sprache in der {product} UI eingestellt sein. Dies sollte vor dem Anlegen von Benutzern durchgeführt werden.
-
 ==============
 
 === Zusätzliche Schritte
