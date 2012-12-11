@@ -74,9 +74,9 @@ proxy (such as ClamAV's freshclam).
 
 **Install the packages**
 
+[subs="attributes"]
   apt-get update
-  apt-get install yaffas
-
+  apt-get install {product}
 
 This will install {product} base modules and zarafa.
 
@@ -144,9 +144,9 @@ proxy (such as ClamAV's freshclam).
 
 **Install the packages**
 
+[subs="attributes"]
   apt-get update
-  apt-get install yaffas
-
+  apt-get install {product}
 
 This will install {product} base modules and zarafa.
 
@@ -276,7 +276,8 @@ priority = 1
 
 **Package installation**
 
-  yum install yaffas
+[subs="attributes"]
+  yum install {product}
 
 [NOTE]
 ================
@@ -291,7 +292,8 @@ around this by running
 
 before re-running
 
-  yum install yaffas
+[subs="attributes"]
+  yum install {product}
 
 ================
 

@@ -70,8 +70,9 @@ ordnungsgemäß nutzen können (wie z.B. ClamAV's freshclam).
 
 **Installation der Pakete**
 
+[subs="attributes"]
   apt-get update
-  apt-get install yaffas
+  apt-get install {product}
 
 Dies installiert die {product} Basismodule und Zarafa.
 
@@ -130,8 +131,9 @@ ordnungsgemäß nutzen können (wie z.B. ClamAV's freshclam).
 
 **Installation der Pakete**
 
+[subs="attributes"]
   apt-get update
-  apt-get install yaffas
+  apt-get install {product}
 
 Dies installiert die {product} Basismodule und Zarafa.
 
@@ -249,7 +251,8 @@ priority = 1
 
 **Installation der Pakete**
 
-  yum install yaffas
+[subs="attributes"]
+  yum install {product}
 
 [NOTE]
 ================
@@ -264,7 +267,8 @@ Workaround:
 
 Danach sollte die yaffas-Installation ohne Probleme möglich sein:
 
-  yum install yaffas
+[subs="attributes"]
+  yum install {product}
 
 ================
 
