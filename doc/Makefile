@@ -1,11 +1,11 @@
 SOURCES_COMMON := source/build-logic.txt
 SOURCES_DE := de_DE.txt source/de/*.txt $(SOURCES_COMMON)
 SOURCES_EN := en_EN.txt source/en/*.txt $(SOURCES_COMMON)
-PRODUCT ?= $(shell echo $(RELEASE) | sed -re 's:^([^-]+).*:\1:')
+PRODUCT ?= $(shell echo $(RELEASE) | sed -rne 's:^([^-]+).*:\1:p')
 PRODUCT := $(if $(PRODUCT),$(PRODUCT),yaffas)
-VERSION ?= $(shell echo $(RELEASE) | sed -re 's:^[^-]+-([^_]+).*:\1:')
+VERSION ?= $(shell echo $(RELEASE) | sed -rne 's:^[^-]+-([^_]+).*:\1:p')
 VERSION := $(if $(VERSION),$(VERSION),latest)
-RELEASE_TYPE ?= $(shell echo $(RELEASE) | sed -re 's:^[^_]+(_(.*))?:\2:')
+RELEASE_TYPE ?= $(shell echo $(RELEASE) | sed -rne 's:^[^_]+(_(.*))?:\2:p')
 RELEASE_TYPE := $(if $(RELEASE_TYPE),$(RELEASE_TYPE),dev)
 ISBETA := $(if $(filter $(RELEASE_TYPE), beta other),=beta,!)
 A2X_ATTRIBUTES := -a product=$(PRODUCT) -a version=$(VERSION) \
