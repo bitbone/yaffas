@@ -1,3 +1,4 @@
+
 == Installation
 
 Yaffas has to be installed on clean Linux distribution.
@@ -42,16 +43,28 @@ We invite you to ask for community support for this installation path, which we 
 
 **Adding required repositories**
 
-Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
+ifdef::isbeta[]
+[WARNING]
+==============
+This is a {product} **beta** version. The following addresses are only
+valid for the beta version. Once a new version is published,
+the repository URL has to be **updated manually**, otherwise **no
+updates**
+to newer versions will be possible.
+==============
+endif::isbeta[]
 
+Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
 _Ubuntu 10.04 LTS_
 
-  echo "deb http://repo.yaffas.org/lucid ./" >> /etc/apt/sources.list
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}lucid ./" >> /etc/apt/sources.list
 
 _Ubuntu 12.04 LTS_
 
-  echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}precise ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========
@@ -119,9 +132,21 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 **Adding required repositories**
 
+ifdef::isbeta[]
+[WARNING]
+==============
+This is a {product} **beta** version. The following addresses are only
+valid for the beta version. Once a new version is published,
+the repository URL has to be **updated manually**, otherwise **no
+updates**
+to newer versions will be possible.
+==============
+endif::isbeta[]
+
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
-  echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}squeeze ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========
@@ -259,13 +284,25 @@ https://access.redhat.com/knowledge/solutions/11312[subscribe] to the
 
 **yaffas repository**
 
+ifdef::isbeta[]
+[WARNING]
+==============
+This is a {product} **beta** version. The following addresses are only
+valid for the beta version. Once a new version is published,
+the repository URL has to be **updated manually**, otherwise **no
+updates**
+to newer versions will be possible.
+==============
+endif::isbeta[]
+
 After the extra repositories are added, the {product} repository has to added:
 
 Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
+[subs="attributes"]
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
+baseurl = http://repo.yaffas.org/{repository_prefix}rhel/$releasever
 enabled = 1
 protect = 0
 gpgcheck = 1

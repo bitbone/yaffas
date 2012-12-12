@@ -40,13 +40,25 @@ http://www.github.com/bitbone/yaffas/).
 
 **Hinzufügen der benötigten Repositories**
 
+ifdef::isbeta[]
+[WARNING]
+==============
+Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
+für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
+**manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
+Versionen möglich sind!
+==============
+endif::isbeta[]
+
 _Ubuntu 10.04 LTS_
 
-  echo "deb http://repo.yaffas.org/lucid ./" >> /etc/apt/sources.list
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}lucid ./" >> /etc/apt/sources.list
 
 _Ubuntu 12.04 LTS_
 
-  echo "deb http://repo.yaffas.org/precise ./" >> /etc/apt/sources.list
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}precise ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========
@@ -107,7 +119,18 @@ image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
 
 **Hinzufügen der benötigten Repositories**
 
-  echo "deb http://repo.yaffas.org/squeeze ./" >> /etc/apt/sources.list
+ifdef::isbeta[]
+[WARNING]
+==============
+Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
+für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
+**manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
+Versionen möglich sind!
+==============
+endif::isbeta[]
+
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}squeeze ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========
@@ -235,12 +258,22 @@ Dies geschieht nicht automatisch.
 ==============
 
 **yaffas Repository**
+ifdef::isbeta[]
+[WARNING]
+==============
+Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
+für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
+**manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
+Versionen möglich sind!
+==============
+endif::isbeta[]
 
 Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
+[subs="attributes"]
 ----
 [yaffas]
 name = Yaffas $releasever
-baseurl = http://repo.yaffas.org/releases/latest/rhel/$releasever
+baseurl = http://repo.yaffas.org/{repository_prefix}rhel/$releasever
 enabled = 1
 protect = 0
 gpgcheck = 1

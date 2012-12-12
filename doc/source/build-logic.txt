@@ -1,0 +1,18 @@
+///////////////////////////////////////////////////////
+Build-related logic to allow building yaffas,
+zadmin and bitkit documentation from this single
+repository. Also, different release modes are
+supported.
+
+{product}, {version}, {release-type} should be passed
+on the command line by the Makefile using -a
+///////////////////////////////////////////////////////
+
+:product: {product}
+:theme: {product}
+
+///////////////////////////////////////////////////////
+This is used in source/*/install.txt for the repository
+URLs. Betas have different URLs...
+///////////////////////////////////////////////////////
+:repository_prefix: {release-type@beta:releases/beta/{version}/:releases/latest/}

@@ -1,6 +1,5 @@
 :lang: en
-:product: yaffas
-:theme: yaffas
+include::source/build-logic.txt[]
 
 = {product} documentation
 
