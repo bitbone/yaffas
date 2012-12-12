@@ -347,10 +347,11 @@ Damit die Namen der Ordner in Zarafa in der richtigen Sprache angelegt werden, m
 
 === Zusätzliche Schritte
 
-Wenn die supporteten Zarafa Pakete verwendet werden gibt es zwei zusätzliche Pakete:
+Zusätzliche Features wie Brick-Level-Backups und
+Multi-User-Kalendar-Ansichten in WebAccess können durch die Installation
+der Pakete zarafa-backup bzw. zarafa-webaccess-muc aktiviert werden
+(via +yum install+ unter RHEL und +apt-get install+ auf
+Debian/Ubuntu).
 
-* zarafa-webaccess-muc
-* zarafa-backup
-
-Diese müssen manuell installiert werden, damit die entsprechenden Funktionen zur Verfügung stehen.
+Dies ist nur mit einer kommerziellen Zarafa-Lizenz möglich.
 

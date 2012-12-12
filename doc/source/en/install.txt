@@ -398,11 +398,9 @@ The language in the {product} UI has to be set for the folders in Zarafa to be c
 
 === Additional Steps
 
-When using the supported zarafa packages there will be two more packages available:
-
-* zarafa-webaccess-muc
-* zarafa-backup
-
-These have to be installed manually for the corresponding functionality to be available.
-
+Additional features like brick-level backups and the Multi-User-Calendar
+plugin for WebAccess can be enabled by manually installating the package
+zarafa-backup or zarafa-webaccess-muc respectiveley (using +yum install+ on
+RHEL and +apt-get install+ on Debian/Ubuntu).
+This will only work if you have a commercial Zarafa license.
 
