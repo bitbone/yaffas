@@ -8,7 +8,7 @@ Nach der Installation von {product} muss dies als erstes konfiguriert werden da 
 
 
 
-{product} kann die Benutzer gegen die lokale Datenbank, einen entfernten {product} Authentifizierungsserver oder eine Microsoft Windows ActiveDirectory Domäne authentifizieren.
+{product} kann die Benutzer gegen die lokale Datenbank, einen entfernten Yaffas-Authentifizierungsserver oder eine Microsoft Windows ActiveDirectory Domäne authentifizieren.
 
 Bei Verwendung der lokalen Benutzerdatenbank kann der lokale Server auch als Authentifizierungsserver für andere {product}-Produkte dienen.
 
@@ -29,7 +29,7 @@ Hier können Sie einstellen, dass die Benutzerdatenbank lokal gepflegt wird. Zus
 
 
 
-==== {product} LDAP Server
+==== Yaffas LDAP Server
 Falls Sie bereits ein {product}-Produkt mit aktivem LDAP Dienst einsetzen, können Sie hier die LDAP Konfiguration des entfernten Servers eintragen. Die dort gepflegten Benutzer können so auch auf diesem System verwendet werden. 
 
 [NOTE]

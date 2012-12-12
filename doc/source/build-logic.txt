@@ -9,7 +9,7 @@ on the command line by the Makefile using -a
 ///////////////////////////////////////////////////////
 
 :product: {product}
-:theme: {product}
+:theme: {product@zadmin:zarafa:{product}}
 
 ///////////////////////////////////////////////////////
 This is used in source/*/install.txt for the repository

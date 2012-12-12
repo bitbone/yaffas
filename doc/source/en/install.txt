@@ -1,10 +1,11 @@
-
 == Installation
+:images: {product@zadmin:images/:images/en/}
 
-Yaffas has to be installed on clean Linux distribution.
-At the moment Ubuntu 10.04 and Red Hat 5 are officially supported.
+{product} has to be installed on a freshly set up Linux distribution.
+At the moment Ubuntu 10.04/12.04, Debian 6 and Red Hat 5/6 are officially
+supported.
 The following steps describe how {product} can be installed.
-There are packages available for both 32bits and 64bits architectures.
+There are packages available for both 32bit and 64bit architectures.
 
 === System requirements
 
@@ -12,13 +13,13 @@ There are packages available for both 32bits and 64bits architectures.
   * Correctly configured fully qualified hostname
   * Static IP address
 
-Yaffas can be installed on a preconfigured Zarafa system, however beware that your configuration will be overwritten and that you can loose your data.
+{product} can be installed on a preconfigured Zarafa system, however beware that your configuration will be overwritten and that you can loose your data.
 
-Please also make sure that your MySQL password has no hash sign (#) since there is a problem with the current configuration management.
+Please also make sure that your MySQL password does not contain a hash sign (#) since there is a problem with the current configuration management.
 
 === Procedure
 
-Yaffas can be installed from the repositories described below for the two supported Linux distributions.
+{product} can be installed from the repositories described below for the two supported Linux distributions.
 
 ==== Installation on existing server
 
@@ -97,35 +98,35 @@ During the installation zarafa, mysql, openldap, postfix and many other dependen
 
 The package manager will usually ask questions for some packages.
 You can skip all of these by pressing "enter" when the dialog pops up.
-The configuration of these will be done by the yaffas installation
+The configuration of these will be done by the {product} installation
 procedure later.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
-image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
-image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
+image:{images}/1_mysql_thumb.png[link="{images}1_mysql.png"]
+image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
 
 Leave the LDAP configuration values without changes:
 
-image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
-image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
-image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
-image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
-image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
-image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
-image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
+image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
+image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
+image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
+image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
+image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
+image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
+image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
 
 For postfix configuration select the "local only" type:
 
-image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
-image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
-image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
+image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
+image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
+image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
 
 Use the default values for kerberos configuration:
 
-image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
-image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
-image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
+image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
+image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
+image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 
 ==== Debian 6
@@ -183,30 +184,30 @@ The configuration of these will be done later by the installation wizard.
 
 Only if you are asked for a MySQL server root password you should enter a password and note it down as you will be asked for MySQL credentials when first using {product}.
 
-image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
-image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
+image:{images}1_mysql_thumb.png[link="{images}1_mysql.png"]
+image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
 
 Leave the LDAP configuration values without changes:
 
-image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
-image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
-image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
-image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
-image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
-image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
-image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
+image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
+image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
+image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
+image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
+image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
+image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
+image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
 
 For postfix configuration select the "local only" type:
 
-image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
-image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
-image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
+image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
+image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
+image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
 
 Use the default values for kerberos configuration:
 
-image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
-image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
-image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
+image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
+image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
+image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 ==== Red Hat Enterprise Linux
 
@@ -282,7 +283,7 @@ https://access.redhat.com/knowledge/solutions/11312[subscribe] to the
 
 ==============
 
-**yaffas repository**
+**{product} repository**
 
 ifdef::isbeta[]
 [WARNING]
@@ -297,11 +298,11 @@ endif::isbeta[]
 
 After the extra repositories are added, the {product} repository has to added:
 
-Create a file "yaffas.repo" in folder /etc/yum.repos.d with the following contents:
+Create a file "{product}.repo" in folder /etc/yum.repos.d with the following contents:
 [subs="attributes"]
 ----
-[yaffas]
-name = Yaffas $releasever
+[{product}]
+name = {product} $releasever
 baseurl = http://repo.yaffas.org/{repository_prefix}rhel/$releasever
 enabled = 1
 protect = 0
@@ -342,7 +343,7 @@ After installation, the {product} web interface is accessible at the following U
 
 The username is "admin" and password is "yaffas".
 
-image:images/en/{theme}/16_login_thumb.png[link="images/en/{theme}/16_login.png"]
+image:{images}{theme}/16_login_thumb.png[link="{images}{theme}/16_login.png"]
 
 On first login, the setup assistant will be launched.
 
@@ -362,11 +363,11 @@ be deleted or overwritten**:
 
 ==============
 
-The installer will also ask you to change the default admin password.
-If you installed the yaffas-zarafa package you have to specify a MySQL user who has permission to create a database for Zarafa.
+The installer will also ask you to change the default admin password and
+you will have to specify a MySQL user who has permission to create a database for Zarafa.
 The database you add here will be used for zarafa and will be created if it does not exists.
 
-image:images/en/{theme}/17_setup_thumb.png[link="images/en/{theme}/17_setup.png"]
+image:{images}{theme}/17_setup_thumb.png[link="{images}{theme}/17_setup.png"]
 
 After the first login an authentication server should be selected in Accounts -> Authentication.
 
@@ -375,7 +376,7 @@ Choices are Active Directory, remote LDAP and local authentication.
 If you select local authentication you can select if you want to use this as authentication server.
 Just click on apply if you don't need that.
 
-image:images/en/{theme}/18_authserver_thumb.png[link="images/en/{theme}/18_authserver.png"]
+image:{images}{theme}/18_authserver_thumb.png[link="{images}{theme}/18_authserver.png"]
 
 On Red Hat Enterprise Linux you also need to start the required services and configure them for automatic start at boot. This is can be done in "System -> Services".
 Since by default an iptables firewall is active in Red Hat Enterprise Linux, the ports for the needed services have to be opened manually.
@@ -386,7 +387,7 @@ It will also not be possible to create resources for Zarafa when no local domain
 
 Now you can go Accounts -> User Management and create some users.
 
-image:images/en/{theme}/19_usercreate_thumb.png[link="images/en/{theme}/19_usercreate.png"]
+image:{images}{theme}/19_usercreate_thumb.png[link="{images}{theme}/19_usercreate.png"]
 
 After this step you should be able to login to Zarafa WebAcess if you go to https://<your-server's-ip>/webaccess or WebApp https://<your-server's-ip>/webapp
 

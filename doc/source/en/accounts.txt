@@ -22,12 +22,12 @@ To select a type of authentication choose the tab  _"Select authentication"_ bel
 ====  Local Authentication
 When choosing these method a local LDAP will be used for storing users and groups. You can optionally choose to let this server be used by other servers as authentication source.
 
-==== {product} LDAP Server
+==== Yaffas LDAP Server
 If you already use another {product} server with local LDAP authentication you can enter it's connection details here. Users and groups on the remote system can then be used on the local server. 
 
 [NOTE]
 ==============
-A {product} server which authenticates it's users against a remote server can not act itself as an authentication server. Should this option be active it will automatically be deactivated.
+A {product} server which authenticates its users against a remote server cannot act itself as an authentication server. Should this option be active it will automatically be deactivated.
 ==============
 
 The following values have to be configured to run the LDAP server:
@@ -42,7 +42,7 @@ The following values have to be configured to run the LDAP server:
 
 
 ====  Remote LDAP Authentication
-You can use {product} together with any remote LDAP server. Only the schema as to be installed on the remote LDAP server. 
+You can use {product} together with any remote LDAP server. Only the schema has to be installed on the remote LDAP server. 
 
 [options="header"]
 |======

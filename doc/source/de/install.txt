@@ -1,7 +1,10 @@
 == Installation
+:images: {product@zadmin:images/:images/en/}
 
-Yaffas muss auf einem frischen System installiert werden. Momentan wird Ubuntu 10.04 und Red Hat 5 unterstützt.
-Die Pakete sind für 32 und 64bit geeignet.
+{product} muss auf einem frisch eingerichteten Linux-System installiert
+werden. Momentan werden Ubuntu 10.04/12.04, Debian 6 und Red Hat 5/6
+unterstützt.
+Die Pakete sind für 32bit und 64bit geeignet.
 
 === Systemvorausetzungen
 
@@ -11,11 +14,11 @@ Die Pakete sind für 32 und 64bit geeignet.
 
 Diese Anleitung bezieht sich nur auf neu installiert Systeme. Sollten Sie ein bereits konfiguriertes System haben können sie {product} momentan noch nicht nutzen. Diese Option wird später nachgeliefert.
 
-Da es momentan noch ein Problem mit dem Speichern von Konfiguationsdateien gibt, darf das MySQL kein Hash Zeichen enthalten.
+Da es momentan noch ein Problem mit dem Speichern von Konfiguationsdateien gibt, darf das MySQL-Passwort kein Hash-Zeichen (#) enthalten.
 
 === Vorgehen
 
-Yaffas kann direkt aus den unten angegebenen Repositories installiert werden.
+{product} kann direkt aus den unten angegebenen Repositories installiert werden.
 
 ==== Installation auf bestehenden Systemen
 
@@ -90,30 +93,30 @@ Dies installiert die {product} Basismodule und Zarafa.
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
-image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
+image:{images}1_mysql_thumb.png[link="{images}1_mysql.png"]
+image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
-image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
-image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
-image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
-image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
-image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
-image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
+image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
+image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
+image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
+image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
+image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
+image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
+image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
-image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
-image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
+image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
+image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
+image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
-image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
-image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
+image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
+image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
+image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 ==== Debian 6
 
@@ -162,30 +165,30 @@ Dies installiert die {product} Basismodule und Zarafa.
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:images/en/1_mysql_thumb.png[link="images/en/1_mysql.png"]
-image:images/en/2_mysql_repeat_thumb.png[link="images/en/2_mysql_repeat.png"]
+image:{images}1_mysql_thumb.png[link="{images}1_mysql.png"]
+image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:images/en/3_ldap_thumb.png[link="images/en/3_ldap.png"]
-image:images/en/4_ldap_thumb.png[link="images/en/4_ldap.png"]
-image:images/en/5_ldap_thumb.png[link="images/en/5_ldap.png"]
-image:images/en/6_ldap_thumb.png[link="images/en/6_ldap.png"]
-image:images/en/7_ldap_thumb.png[link="images/en/7_ldap.png"]
-image:images/en/8_ldap_thumb.png[link="images/en/8_ldap.png"]
-image:images/en/9_ldap_thumb.png[link="images/en/9_ldap.png"]
+image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
+image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
+image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
+image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
+image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
+image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
+image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:images/en/10_postfix_thumb.png[link="images/en/10_postfix.png"]
-image:images/en/11_postfix_thumb.png[link="images/en/11_postfix.png"]
-image:images/en/12_postfix_thumb.png[link="images/en/12_postfix.png"]
+image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
+image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
+image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:images/en/13_kerberos_thumb.png[link="images/en/13_kerberos.png"]
-image:images/en/14_kerberos_thumb.png[link="images/en/14_kerberos.png"]
-image:images/en/15_kerberos_thumb.png[link="images/en/15_kerberos.png"]
+image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
+image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
+image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 
 ==== Red Hat Enterprise Linux
@@ -257,7 +260,7 @@ Dies geschieht nicht automatisch.
 
 ==============
 
-**yaffas Repository**
+**{product} Repository**
 ifdef::isbeta[]
 [WARNING]
 ==============
@@ -268,11 +271,11 @@ Versionen möglich sind!
 ==============
 endif::isbeta[]
 
-Im Verzeichnis /etc/yum.repos.d die Datei yaffas.repo mit folgendem Inhalt anlegen:
+Im Verzeichnis /etc/yum.repos.d die Datei {product}.repo mit folgendem Inhalt anlegen:
 [subs="attributes"]
 ----
-[yaffas]
-name = Yaffas $releasever
+[{product}]
+name = {product} $releasever
 baseurl = http://repo.yaffas.org/{repository_prefix}rhel/$releasever
 enabled = 1
 protect = 0
@@ -300,7 +303,7 @@ Workaround:
   yum remove php53 php53-common
   yum install php php-ldap php-mapi php-pecl-json
 
-Danach sollte die yaffas-Installation ohne Probleme möglich sein:
+Danach sollte die {product}-Installation ohne Probleme möglich sein:
 
 [subs="attributes"]
   yum install {product}
@@ -324,7 +327,7 @@ gelöscht oder überschrieben**:
   * Samba Konfiguration
   * smbldap-tools Konfiguration
   * postfix Konfiguration
-  * zarafa Konfiguration (wenn yaffas-zarafa installiert wurde)
+  * zarafa Konfiguration
   * MySQL Konfiguration (Optimierungen für Zarafa werden eingetragen)
 
 ==============
