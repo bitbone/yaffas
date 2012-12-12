@@ -44,7 +44,7 @@ We invite you to ask for community support for this installation path, which we 
 
 **Adding required repositories**
 
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 This is a {product} **beta** version. The following addresses are only
@@ -53,7 +53,7 @@ the repository URL has to be **updated manually**, otherwise **no
 updates**
 to newer versions will be possible.
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
@@ -133,7 +133,7 @@ image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 **Adding required repositories**
 
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 This is a {product} **beta** version. The following addresses are only
@@ -142,7 +142,7 @@ the repository URL has to be **updated manually**, otherwise **no
 updates**
 to newer versions will be possible.
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
 
@@ -285,7 +285,7 @@ https://access.redhat.com/knowledge/solutions/11312[subscribe] to the
 
 **{product} repository**
 
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 This is a {product} **beta** version. The following addresses are only
@@ -294,7 +294,7 @@ the repository URL has to be **updated manually**, otherwise **no
 updates**
 to newer versions will be possible.
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 After the extra repositories are added, the {product} repository has to added:
 

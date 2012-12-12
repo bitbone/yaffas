@@ -1,15 +1,15 @@
 SOURCES_COMMON := source/build-logic.txt
 SOURCES_DE := de_DE.txt source/de/*.txt $(SOURCES_COMMON)
 SOURCES_EN := en_EN.txt source/en/*.txt $(SOURCES_COMMON)
-PRODUCT ?= $(shell echo $(RELEASE) | sed -rne 's:^([^-]+).*:\1:p')
+PRODUCT ?= $(shell echo $(RELEASE) | sed -rne 's:^([^-_]+).*:\1:p')
 PRODUCT := $(if $(PRODUCT),$(PRODUCT),yaffas)
 VERSION ?= $(shell echo $(RELEASE) | sed -rne 's:^[^-]+-([^_]+).*:\1:p')
 VERSION := $(if $(VERSION),$(VERSION),latest)
 RELEASE_TYPE ?= $(shell echo $(RELEASE) | sed -rne 's:^[^_]+(_(.*))?:\2:p')
 RELEASE_TYPE := $(if $(RELEASE_TYPE),$(RELEASE_TYPE),dev)
-ISBETA := $(if $(filter $(RELEASE_TYPE), beta other),=beta,!)
-A2X_ATTRIBUTES := -a product=$(PRODUCT) -a version=$(VERSION) \
-		-a release-type=$(RELEASE_TYPE) -a isbeta$(ISBETA)
+A2X_ATTRIBUTES := -a product=$(PRODUCT) -a product-$(PRODUCT) \
+		-a release-type=$(RELEASE_TYPE) -a release-type-$(RELEASE_TYPE) \
+		-a version=$(VERSION)
 
 LAST_GIT_CHANGE := $(shell git log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
 LAST_LOCAL_CHANGE := $(shell stat --format=%Y index.txt)

@@ -43,7 +43,7 @@ http://www.github.com/bitbone/yaffas/).
 
 **Hinzufügen der benötigten Repositories**
 
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
@@ -51,7 +51,7 @@ für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
 **manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
 Versionen möglich sind!
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 _Ubuntu 10.04 LTS_
 
@@ -122,7 +122,7 @@ image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
 
 **Hinzufügen der benötigten Repositories**
 
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
@@ -130,7 +130,7 @@ für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
 **manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
 Versionen möglich sind!
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 [subs="attributes"]
   echo "deb http://repo.yaffas.org/{repository_prefix}squeeze ./" >> /etc/apt/sources.list
@@ -261,7 +261,7 @@ Dies geschieht nicht automatisch.
 ==============
 
 **{product} Repository**
-ifdef::isbeta[]
+ifdef::release-type-beta[]
 [WARNING]
 ==============
 Dies ist eine {product}-**Beta**-Version, die folgenden Adressen sind nur
@@ -269,7 +269,7 @@ für die Beta gültig. Bei Erscheinen einer neuen Version muss die Adresse
 **manuell aktualisiert** werden, da sonst **keine Updates** auf neuere
 Versionen möglich sind!
 ==============
-endif::isbeta[]
+endif::release-type-beta[]
 
 Im Verzeichnis /etc/yum.repos.d die Datei {product}.repo mit folgendem Inhalt anlegen:
 [subs="attributes"]
