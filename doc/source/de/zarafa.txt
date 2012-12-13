@@ -72,7 +72,7 @@ Geben Sie ein Verzeichnis an, in das die Backups gesichert werden sollen.
 Außerdem können Sie festlegen wie lange ein Backup aufgehoben wird bevor es gelöscht wird.
 
 Um ein Element zu wiederherstellen müssen Sie den Tag auswählen und den Ordner öffnen den Sie brauchen.
-Über das Kontext Menü können Sie dann einen Ordner oder ein Element zum Wiederherstellen auswählen.
+Über das Kontext-Menü können Sie dann einen Ordner oder ein Element zum Wiederherstellen auswählen.
 Im Tab Wiederherstellen müssen Sie dann noch Wiederherstellungsprozess starten.
 
 [IMPORTANT]
