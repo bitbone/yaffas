@@ -11,11 +11,18 @@ A2X_ATTRIBUTES := -a product=$(PRODUCT) -a product-$(PRODUCT) \
 		-a release-type=$(RELEASE_TYPE) -a release-type-$(RELEASE_TYPE) \
 		-a version=$(VERSION)
 
+TARGETS_EN := en_EN.html en_EN.chunked 
+TARGETS_DE := de_DE.html de_DE.chunked
+ALL_TARGETS := $(TARGETS_DE)
+ifneq ($(PRODUCT), bitkit)
+	ALL_TARGETS := $(ALL_TARGETS) $(TARGETS_EN) index.html
+endif
+
 LAST_GIT_CHANGE := $(shell git log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
 LAST_LOCAL_CHANGE := $(shell stat --format=%Y index.txt)
 LAST_CHANGE := $(shell [[ $(LAST_LOCAL_CHANGE) -gt $(LAST_GIT_CHANGE) ]] && echo $(LAST_LOCAL_CHANGE) || echo $(LAST_GIT_CHANGE))
 
-all: de_DE.html de_DE.chunked en_EN.html en_EN.chunked index.html
+all: clean $(ALL_TARGETS)
 
 pdf: de_DE.pdf en_EN.pdf
 

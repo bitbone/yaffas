@@ -1,0 +1,179 @@
+== Installation
+:images: images/de/bitkit/
+
+=== Hardware-Mindestanforderungen
+
+==== Allgemein
+    * 1 GHz Prozessor x86 (Intel kompatibel)
+    * 1 GB Arbeitsspeicher
+    * 8 GB Festplatte
+    * bootfähiges CD/DVD-Laufwerk
+    * Netzwerkkarte
+    * kein Betriebssystem notwendig 
+
+[IMPORTANT]
+==============
+bitkit|SOLUTIONS belegt immer die komplette Festplatte des Systems! Installieren Sie bitkit nicht auf einem produktiven Server. Die auf der Festplatte befindlichen Daten werden ansonsten gelöscht!
+==============
+
+//////////////////////////////////////////////////////////////////////
+==== für bitkit|FAX
+
+    * Unterstützte ISDN-Karten:
+      * AVM: Fritz! PCI, B1 PCI, C2 PCI, C4 PCI
+      * Eicon/Dialogic: Diva Server 2FX, BRI-2M, 4BRI-8M, PRI-E1
+
+[WARNING]
+==============
+Der parallele Betrieb von AVM und Dialogic ISDN-Karten wird nicht unterstützt!
+==============
+//////////////////////////////////////////////////////////////////////
+  
+==== für bitkit|ZARAFA
+
+  * CPU: Pentium 4, 3 GHz
+  * 512MB RAM + 50MB pro anzulegendem User
+  * 40GB Festplatte
+
+Bitte beachten Sie, dass dies Mindestanforderungen sind. Je nach Größe der Postfächer der Benutzer kann es empfehlenswert sein, diese Anfordungen deutlich nach oben anzupassen!
+
+
+=== Installation
+
+Legen Sie bitte die bitkit-Installations-CD in das CD/DVD-Laufwerk des Rechners, auf dem Sie bitkit|SOLUTIONS installieren wollen. Der Reihe nach werden die Daten für die Installation abgefragt.
+ 
+[TIP]
+==============
+
+|=====================================================
+| Navigation innerhalb der Installationsoberfläche |
+| TAB     | Springen zwischen Schaltflächen und Kästen
+| CURSOR  | Springen zwischen Optionen in einem Kasten
+| RETURN  |	Aktivieren einer Schaltfläche
+| SPACE   |	Aktivieren einer Option in einem Kasten
+|=====================================================
+
+==============
+
+Im ersten Schritt müssen Sie den Lizenzbedingungen der freien Lizenzen zustimmen:
+
+image:{images}licences-free.png[]
+
+
+Dies gilt ebenfalls für die nicht-freien Lizenzen:
+
+image:{images}licences-nonfree.png[]
+
+
+An dieser Stelle wählen Sie die zu verwendende Festplatte aus. **Alle Daten auf dieser Festplatte werden gelöscht!**
+
+image:{images}disk.png[]
+
+
+Anschliessend wählen Sie die gewünschten Produkte aus:
+
+image:{images}products.png[]
+
+
+Sie werden aufgefordert den Host- und Domainnamen des Servers einzutragen. Hierbei handelt es sich **nicht** um die Maildomain!
+
+image:{images}hostname.png[]
+
+
+Zusätzlich benötigt die Installationsroutine auch Informationen über das Netzwerk:
+
+image:{images}networking.png[]
+
+
+Abschliessend muss noch ein Passwort für den Login an der Administrationsoberfläche festgelegt werden:
+
+image:{images}password.png[]
+
+
+Sie erhalten nun eine Übersicht aller konfigurierten Optionen. Ist alles korrekt konfiguriert, können Sie die Installation anstoßen.
+
+image:{images}summary.png[]
+
+
+Nach erfolgreicher Installation werden sie aufgefordert, das Installationsmedium zu entfernen und den Server neuzustarten.
+
+image:{images}reboot.png[]
+
+=== Nach der Installation
+
+Nachdem der Server neugestartet ist, können Sie sich über Ihren Browser auf der Administrations-Oberfläche des bitkits einloggen.
+
+Verwenden Sie dabei die bei der Installation vergebene IP-Adresse auf Port 10000, z.B.
+
+  https://192.168.100.100:10000
+
+[WARNUNG]
+=========
+Ein Login ist nur über das HTTPS-Protokoll möglich!
+=========
+
+
+=== Erste Schritte nach der Installation
+
+/////////////////////////////////////////////////////
+==== Lizenz einspielen
+ _Menü Lizenz->bitkit Lizenzschlüssel_ 
+
+Spielen Sie zunächst alle benötigten Lizenzen ein. Nur so haben Sie auf alle Konfigurationsparameter der Benutzeroberfläche Zugriff. 
+
+[IMPORTANT]
+==============
+Wenn Sie Testkeys verwenden, dann werden nach Ablauf des Testzeitraumes die entsprechenden Konfigurationsoptionen ausgeblendet und sind nicht mehr veränderbar. Das bitkit kann aber in der vorhandenen Konfiguration uneingeschränkt weiter betrieben werden!
+==============
+//////////////////////////////////////////////////////
+
+
+==== Uhrzeit setzen
+_Menü System -> Dienste -> Systemzeit_
+
+Eine richtig gestellte Uhrzeit ist vor allem dann wichtig, wenn Sie sich mit einem Active-Directory-Server (AD) verbinden wollen. Für eine Verbindung mit einem AD muss zusätzlich die IP-Adresse des Servers unter dem Menüpunkt "Zeit-Server" eingetragen werden.
+
+===== Netzwerk konfigurieren
+_Menü Netzwerk -> Konfiguration_
+
+Bei der Installation setzen Sie lediglich die IP-Adresse, Netzmaske und gegebenenfalls das Standardgateway. Setzen Sie bitte zudem den DNS-Server und einen Proxy-Server (falls vorhanden).
+
+Falls Sie einen Active Directory Server verwenden, tragen Sie bitte in einem Feld für die DNS-Server die IP-Adresse des AD-Servers ein.
+
+==== Portaldaten eintragen
+_Menü Wartung -> Update_
+
+Tragen Sie bitte Ihren Benutzernamen und das Passwort ihres Zugangs für my.bitkit.com ein. Sie benötigen diese Daten um die Updates für Ihr bitkit zu erhalten.
+
+==== Benachrichtigungen einstellen
+_Menü Wartung -> Meldungen_
+
+Hier sollten Sie eine gültige E-Mail-Adresse hinterlegen. Falls im laufenden System Fehler auftreten oder Warnhinweise produziert werden sollten, dann werden alle Meldungen an die hinterlegte Adresse geschickt.
+
+Damit Sie überprüfen können, ob das System korrekt konfiguriert ist, erhalten Sie nach dem Eintragen der Adresse eine Testmail an die hinterlegte Adresse.
+
+==== Mailserver konfigurieren
+
+_Menü Mailserver -> Konfiguration_
+
+Tragen Sie im Reiter "Grundkonfiguration" unter "Mailserver Name" den Namen ein, unter dem Ihr Mailserver erreichbar ist.
+
+Tragen Sie zusätzlich im Reiter "Lokale Domänen" alle Domänen ein, die der Mailserver lokal abhandeln soll.
+
+==== Updates installieren
+_Menü Wartung -> Update_
+
+Spielen Sie wichtige Aktualisierungen Ihres bitkits vor dem produktiven Betrieb ein.
+
+
+==== Benutzer anlegen / Benutzerverwaltung einrichten
+_Menü -> Benutzerkonten_
+
+Falls Sie nicht die bitkit-eigene lokale Authentifizierung verwenden
+möchten, haben Sie unter dem Punkt Authentifizierungsserver weitere
+Konfigurationsmöglichkeiten.
+
+An dieser Stelle können Sie außerdem die ersten Gruppen und Benutzer anlegen.
+
+==== Konfiguration sichern
+_Menü Wartung -> Konfiguration sichern_

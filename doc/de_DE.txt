@@ -3,7 +3,14 @@ include::source/build-logic.txt[]
 
 = {product} Dokumentation
 
+ifndef::product-bitkit[]
 include::source/de/install.txt[]
+endif::product-bitkit[]
+
+ifdef::product-bitkit[]
+include::source/de/install.bitkit.txt[]
+endif::product-bitkit[]
+
 include::source/de/system.txt[]
 include::source/de/network.txt[]
 include::source/de/accounts.txt[]
@@ -11,4 +18,3 @@ include::source/de/maintenance.txt[]
 include::source/de/mailserver.txt[]
 include::source/de/license.txt[]
 include::source/de/zarafa.txt[]
-
