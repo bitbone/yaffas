@@ -4,6 +4,7 @@ include::source/build-logic.txt[]
 = {product} documentation
 
 include::source/en/install.txt[]
+include::source/en/basics.txt[]
 include::source/en/system.txt[]
 include::source/en/network.txt[]
 include::source/en/accounts.txt[]
@@ -11,5 +12,3 @@ include::source/en/maintenance.txt[]
 include::source/en/mailserver.txt[]
 include::source/en/license.txt[]
 include::source/en/zarafa.txt[]
-
-

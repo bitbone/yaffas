@@ -1,12 +1,13 @@
 == Benutzerkonten
 
+[[authentication-server]]
 ===  Authentifizierungsserver
 
-Über den Menüpunkt  _Benutzerverwaltung->Authentifizierungsserver_ lässt sich die Art der Authentifizierung über die Benutzernamen und Passwörter bezogen werden, festlegen.
+Über den Menüpunkt _Benutzerverwaltung -> Authentifizierungsserver_ lässt sich die Art der Authentifizierung über die Benutzernamen und Passwörter bezogen werden, festlegen.
+
+image:{images}23_authserver_thumb.png[link="{images}23_authserver.png"]
 
 Nach der Installation von {product} muss dies als erstes konfiguriert werden da einige Dienste davon abhängig sind. Benutzer und Gruppen können erst angelegt werden nachdem eine Authentifizierungsmethode ausgewählt wurde.
-
-
 
 {product} kann die Benutzer gegen die lokale Datenbank, einen entfernten Yaffas-Authentifizierungsserver oder eine Microsoft Windows ActiveDirectory Domäne authentifizieren.
 
@@ -19,15 +20,10 @@ Wird die Art der Authentifizierung umgestellt, so werden alle Einstellungen zur�
 Bei der Umstellung der Authentifizierung versucht {product} vorhandene Benutzer im neuen Authentifizierungs-Modus zu finden und zu übernehmen. Benutzerdaten die nicht zugeordnet werden können, werden gelöscht.
 ==============
 
-
-
-Um eine Art der Authentifizierung festzulegen, wählen Sie im Menüpunkt  _Benutzerkonten->Authentifizierungsserver_ den Reiter  _Authentifizierung wählen_ 
-
+Um eine Art der Authentifizierung festzulegen, wählen Sie im Menüpunkt  _Benutzerkonten -> Authentifizierungsserver_ den Reiter  _Authentifizierung wählen_ 
 
 ====  Lokale Authentifizierung
 Hier können Sie einstellen, dass die Benutzerdatenbank lokal gepflegt wird. Zusätzlich können Sie hier noch die Funktion als Authentifizierungsserver aktivieren. Dadurch wird es anderen {product} Installationen ermöglicht, diesen Server zur Authentifizierung zu verwenden. 
-
-
 
 ==== Yaffas LDAP Server
 Falls Sie bereits ein {product}-Produkt mit aktivem LDAP Dienst einsetzen, können Sie hier die LDAP Konfiguration des entfernten Servers eintragen. Die dort gepflegten Benutzer können so auch auf diesem System verwendet werden. 
@@ -120,7 +116,7 @@ Falls Sie den Active Directory User, sein Passwort oder die DN Ihres Servers än
 
 
 === Benutzerverwaltung
-Unter dem Menüpunkt  _Benutzerkonten->Benutzerverwaltung_ werden alle existierenden Benutzer angezeigt. Bei einer großen Anzahl von Benutzern können die Sortier- und Filterfunktion sehr hilfreich sein. Um einen vorhandenen Benutzer zu editieren oder zu löschen, klicken Sie mit der rechten Maustaste auf den entsprechenden Benutzer.
+Unter dem Menüpunkt  _Benutzerkonten -> Benutzerverwaltung_ werden alle existierenden Benutzer angezeigt. Bei einer großen Anzahl von Benutzern können die Sortier- und Filterfunktion sehr hilfreich sein. Um einen vorhandenen Benutzer zu editieren oder zu löschen, klicken Sie mit der rechten Maustaste auf den entsprechenden Benutzer.
 
 
 

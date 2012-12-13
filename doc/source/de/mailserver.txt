@@ -1,6 +1,5 @@
+[[mailserver]]
 == Mailserver
-
-
 
 === Fetchmail
 
@@ -23,8 +22,8 @@ aktiviert sein. Fetchmail wird automatisch TLS benutzen, wenn der Server
 TLS-Support anbietet.
 
 
+[[mailserver-config]]
 === Mailserver Konfiguration
-
 
 ==== Grundkonfiguration
 Über den Reiter  _"Grundkonfiguration"_ können Sie die Konfiguration Ihres Mailservers anpassen. Der  _"Mailserver Name"_ ist der Name, der bei ausgehenden E-Mails an den entfernten SMTP-Server gesendet wird. Diese Einstellung ist optional.

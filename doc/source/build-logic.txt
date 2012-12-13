@@ -16,3 +16,7 @@ This is used in source/*/install.txt for the repository
 URLs. Betas have different URLs...
 ///////////////////////////////////////////////////////
 :repository_prefix: {release-type@beta:releases/beta/{version}/:releases/latest/}
+
+:images_common: {product@zadmin:images/:images/{lang}/}
+:images: {images_common}{theme}/
+

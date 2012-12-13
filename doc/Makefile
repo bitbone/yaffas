@@ -1,6 +1,9 @@
 SOURCES_COMMON := source/build-logic.txt
 SOURCES_DE := de_DE.txt source/de/*.txt $(SOURCES_COMMON)
 SOURCES_EN := en_EN.txt source/en/*.txt $(SOURCES_COMMON)
+IMAGES := images/en/*.png images/en/yaffas/*.png images/en/zarafa/*.png \
+		  images/de/zarafa/*.png
+#		images/de/yaffas/*.png images/de/*.png
 PRODUCT ?= $(shell echo $(RELEASE) | sed -rne 's:^([^-_]+).*:\1:p')
 PRODUCT := $(if $(PRODUCT),$(PRODUCT),yaffas)
 VERSION ?= $(shell echo $(RELEASE) | sed -rne 's:^[^-]+-([^_]+).*:\1:p')
@@ -11,20 +14,26 @@ A2X_ATTRIBUTES := -a product=$(PRODUCT) -a product-$(PRODUCT) \
 		-a release-type=$(RELEASE_TYPE) -a release-type-$(RELEASE_TYPE) \
 		-a version=$(VERSION)
 
-TARGETS_EN := en_EN.html en_EN.chunked 
-TARGETS_DE := de_DE.html de_DE.chunked
-ALL_TARGETS := $(TARGETS_DE)
+HTML_EN := en_EN.html en_EN.chunked 
+HTML_DE := de_DE.html de_DE.chunked
+HTML_TARGETS := $(HTML_DE)
 ifneq ($(PRODUCT), bitkit)
-	ALL_TARGETS := $(ALL_TARGETS) $(TARGETS_EN) index.html
+	HTML_TARGETS := $(HTML_TARGETS) $(HTML_EN) index.html
 endif
 
 LAST_GIT_CHANGE := $(shell git log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
 LAST_LOCAL_CHANGE := $(shell stat --format=%Y index.txt)
 LAST_CHANGE := $(shell [[ $(LAST_LOCAL_CHANGE) -gt $(LAST_GIT_CHANGE) ]] && echo $(LAST_LOCAL_CHANGE) || echo $(LAST_GIT_CHANGE))
 
-all: clean $(ALL_TARGETS)
+all: html
 
-pdf: de_DE.pdf en_EN.pdf
+html: clean need-thumbs $(HTML_TARGETS)
+
+pdf: clean need-thumbs de_DE.pdf en_EN.pdf
+
+need-thumbs: $(IMAGES)
+	find images/ -name '*.png' -and -not -name '*_thumb.png' \
+		-exec ./bin/build-thumb.sh {} \;
 
 de_DE.html: $(SOURCES_DE)
 	a2x $(A2X_ATTRIBUTES) --icons-dir=icons -fxhtml -dbook de_DE.txt

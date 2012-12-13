@@ -11,6 +11,7 @@ ifdef::product-bitkit[]
 include::source/de/install.bitkit.txt[]
 endif::product-bitkit[]
 
+include::source/de/basics.txt[]
 include::source/de/system.txt[]
 include::source/de/network.txt[]
 include::source/de/accounts.txt[]

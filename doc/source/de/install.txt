@@ -1,5 +1,4 @@
 == Installation
-:images: {product@zadmin:images/:images/en/}
 
 {product} muss auf einem frisch eingerichteten Linux-System installiert
 werden. Momentan werden Ubuntu 10.04/12.04, Debian 6 und Red Hat 5/6
@@ -93,30 +92,30 @@ Dies installiert die {product} Basismodule und Zarafa.
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:{images}1_mysql_thumb.png[link="{images}1_mysql.png"]
-image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
+image:{images_common}1_mysql_thumb.png[link="{images_common}1_mysql.png"]
+image:{images_common}2_mysql_repeat_thumb.png[link="{images_common}2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
-image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
-image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
-image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
-image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
-image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
-image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
+image:{images_common}3_ldap_thumb.png[link="{images_common}3_ldap.png"]
+image:{images_common}4_ldap_thumb.png[link="{images_common}4_ldap.png"]
+image:{images_common}5_ldap_thumb.png[link="{images_common}5_ldap.png"]
+image:{images_common}6_ldap_thumb.png[link="{images_common}6_ldap.png"]
+image:{images_common}7_ldap_thumb.png[link="{images_common}7_ldap.png"]
+image:{images_common}8_ldap_thumb.png[link="{images_common}8_ldap.png"]
+image:{images_common}9_ldap_thumb.png[link="{images_common}9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
-image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
-image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
+image:{images_common}10_postfix_thumb.png[link="{images_common}10_postfix.png"]
+image:{images_common}11_postfix_thumb.png[link="{images_common}11_postfix.png"]
+image:{images_common}12_postfix_thumb.png[link="{images_common}12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
-image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
-image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
+image:{images_common}13_kerberos_thumb.png[link="{images_common}13_kerberos.png"]
+image:{images_common}14_kerberos_thumb.png[link="{images_common}14_kerberos.png"]
+image:{images_common}15_kerberos_thumb.png[link="{images_common}15_kerberos.png"]
 
 ==== Debian 6
 
@@ -165,30 +164,30 @@ Dies installiert die {product} Basismodule und Zarafa.
 
 Der Paketmanager wird für einige Pakete Fragen stellen. Sie können diese überspringen, indem sie "Return" drücken, wenn ein Dialog erscheint. Nur wenn sie nach einem MySQL-Server root Passwort gefragt werden, sollten sie eines eingeben und es aufschreiben, da sie nach MySQL Zugangsdaten gefragt werden, wenn sie {product} zum ersten Mal benutzen.
 
-image:{images}1_mysql_thumb.png[link="{images}1_mysql.png"]
-image:{images}2_mysql_repeat_thumb.png[link="{images}2_mysql_repeat.png"]
+image:{images_common}1_mysql_thumb.png[link="{images_common}1_mysql.png"]
+image:{images_common}2_mysql_repeat_thumb.png[link="{images_common}2_mysql_repeat.png"]
 
 Verändern Sie nicht die LDAP Konfiguration:
 
-image:{images}3_ldap_thumb.png[link="{images}3_ldap.png"]
-image:{images}4_ldap_thumb.png[link="{images}4_ldap.png"]
-image:{images}5_ldap_thumb.png[link="{images}5_ldap.png"]
-image:{images}6_ldap_thumb.png[link="{images}6_ldap.png"]
-image:{images}7_ldap_thumb.png[link="{images}7_ldap.png"]
-image:{images}8_ldap_thumb.png[link="{images}8_ldap.png"]
-image:{images}9_ldap_thumb.png[link="{images}9_ldap.png"]
+image:{images_common}3_ldap_thumb.png[link="{images_common}3_ldap.png"]
+image:{images_common}4_ldap_thumb.png[link="{images_common}4_ldap.png"]
+image:{images_common}5_ldap_thumb.png[link="{images_common}5_ldap.png"]
+image:{images_common}6_ldap_thumb.png[link="{images_common}6_ldap.png"]
+image:{images_common}7_ldap_thumb.png[link="{images_common}7_ldap.png"]
+image:{images_common}8_ldap_thumb.png[link="{images_common}8_ldap.png"]
+image:{images_common}9_ldap_thumb.png[link="{images_common}9_ldap.png"]
 
 Wählen Sie bei der Postfix Konfiguration nur die Lokale Zustellung aus:
 
-image:{images}10_postfix_thumb.png[link="{images}10_postfix.png"]
-image:{images}11_postfix_thumb.png[link="{images}11_postfix.png"]
-image:{images}12_postfix_thumb.png[link="{images}12_postfix.png"]
+image:{images_common}10_postfix_thumb.png[link="{images_common}10_postfix.png"]
+image:{images_common}11_postfix_thumb.png[link="{images_common}11_postfix.png"]
+image:{images_common}12_postfix_thumb.png[link="{images_common}12_postfix.png"]
 
 Verwenden Sie die vorgegebenen Werte für die Kerberos Konfiguration:
 
-image:{images}13_kerberos_thumb.png[link="{images}13_kerberos.png"]
-image:{images}14_kerberos_thumb.png[link="{images}14_kerberos.png"]
-image:{images}15_kerberos_thumb.png[link="{images}15_kerberos.png"]
+image:{images_common}13_kerberos_thumb.png[link="{images_common}13_kerberos.png"]
+image:{images_common}14_kerberos_thumb.png[link="{images_common}14_kerberos.png"]
+image:{images_common}15_kerberos_thumb.png[link="{images_common}15_kerberos.png"]
 
 
 ==== Red Hat Enterprise Linux
@@ -316,6 +315,12 @@ Nach der Installation ist das {product} Webinterface unter folgender URL zu erre
 
 Der Benutzername ist "admin" und das Passwort "yaffas".
 
+image:{images}16_login_thumb.png[link="{images}16_login.png"]
+
+Beim ersten Login wird automatisch der Installations-Assistent gestartet.
+
+image:{images}17_setup_thumb.png[link="{images}17_setup.png"]
+
 [WARNING]
 ==============
 
@@ -332,13 +337,43 @@ gelöscht oder überschrieben**:
 
 ==============
 
-Im folgenden Setup-Dialog muss das Admin-Passwort geändert werden. Außerdem muss der Benutzer einen MySQL Benutzer angeben, der die Berechtigung hat auf einem MySQL-Server eine Datenbank für Zarafa anzulegen.
+Im folgenden Setup-Dialog muss das Admin-Passwort geändert werden.
 
-Nach dem ersten Login sollte zunächst der Authentifizerungsserver ausgewählt werden. Zur Auswahl stehen hier Active Directory, lokale Authentifizerung am lokalen LDAP und die Anbindung an einen externen LDAP.
+image:{images}18_setup_basic_thumb.png[link="{images}18_setup_basic.png"]
 
-Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet und zum automatischen Start beim Booten eingestellt werden. Dies ist unter dem Menüpunkt "System->Dienste" möglich. Da unter RHEL standardmäßig eine iptables-Firewall aktiv ist, müssen die Ports für die benötigten Dienste nachträglich manuell geöffnet werden.
+Für Zarafa muss nun ein MySQL-Server konfiguriert werden. Der angegebene
+Benutzer benötigt Rechte auf die angegebene Datenbank, im Zweifelsfalle
+auch zur Erstellung dieser.
 
-Der nächste Schritt sollte das Konfigurieren des Mailservers sein. Ohne eine funktionierende Mailserverkonfiguration werden einige Teile des Systems nicht funktionieren. Es wird auch nicht möglich sein Ressourcen für Zarafa anzulegen, ohne das eine lokale Domäne für den Mailserver eingerichtet ist.
+image:{images}19_setup_zarafa_thumb.png[link="{images}19_setup_zarafa.png"]
+
+Als nächstes müssen die Parameter für den Mailserver konfiguriert werden.
+Eine primäre Maildomain (bspw. rechnername.example.org) muss angegeben
+werden, ein Smarthost (und die dafür benötigten Zugangsdaten) werden nur
+gebraucht, wenn der {product}-Server alle ausgehenden Mails über den
+angegebenen Host verschicken soll.
+
+image:{images}20_setup_mailserver_thumb.png[link="{images}20_setup_mailserver.png"]
+
+Im letzten Schritt besteht nun die Möglichkeit, die lokale
+Authentifizierung automatisch zu aktivieren und einen ersten Benutzer
+anzulegen.
+
+image:{images}21_setup_createuser_thumb.png[link="{images}21_setup_createuser.png"]
+
+Wurde kein lokaler Benutzer im Installationsassistenten angelegt,
+so muss nach dem Abschluss des Setups manuell der
+<<authentication-server,Authentication-Server konfiguriert>> werden.
+
+Unter Red Hat Enterprise Linux müssen zudem die benötigten Dienste gestartet und zum automatischen Start beim Booten eingestellt werden. Dies ist unter dem Menüpunkt _System -> Dienste_ möglich. Da unter RHEL standardmäßig eine iptables-Firewall aktiv ist, müssen die Ports für die benötigten Dienste nachträglich manuell geöffnet werden.
+
+Der nächste Schritt sollte das <<mailserver-config,Konfigurieren des Mailservers sein>>.
+Ohne eine funktionierende Mailserverkonfiguration werden einige Teile des Systems nicht funktionieren. Es wird auch nicht möglich sein Ressourcen für Zarafa anzulegen, ohne dass eine lokale Domäne für den Mailserver eingerichtet ist.
+
+Von nun an könnten unter _Benutzer -> Benutzerverwaltung_ Benutzer
+angelegt werden.
+
+Nach diesem Schritt ist ein Login in Zarafa WebAccess (_https://<server-ip>/webaccess_) und WebApp (_https://<server-ip>/webapp_) möglich.
 
 [IMPORTANT]
 ==============

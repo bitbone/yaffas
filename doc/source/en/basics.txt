@@ -1,0 +1,29 @@
+== Basic usage instructions
+
+=== Opening the administration web interface
+The {product} administration interface is accessible through https:// using
+the previously configured ip address on port 10000.
+If you used the address _192.168.100.100_, for instance, the complete
+address would look like this:
+
+  https://192.168.100.100:10000/
+
+image:{images}22_overview_thumb.png[link="{images}22_overview.png"]
+
+=== Usage
+The main interface is split into the navigation area on the left side
+and the content area on the right.
+Use your mouse to select the category you wish to access in the navigation
+menu. A sub-menu with the available configuration modules will open.
+After clicking on one of these modules, the available sub-sections will
+appear on the right in the content area.
+
+[TIP]
+=====
+Many functions which work on specific objects (such as the user
+administration) are available by using the context menu. The context menu
+can be opened by right-clicking on an entry in the relevant table.
+=====
+
+More-specific descriptions can be found in the following chapters.
+

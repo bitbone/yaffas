@@ -1,3 +1,4 @@
+[[mailserver]]
 == Mailserver
 
 === Fetchmail Mail Retrieval
@@ -19,7 +20,7 @@ If you want to use TLS, then do not check the _Connect in SSL_ mode option
 at all, fetchmail will automatically use TLS if the server advertises
 support for it.
 
-
+[[mailserver-config]]
 === Mailserver Configuration
 
 ==== Base Configuration

@@ -1,8 +1,11 @@
 == Accounts
 
+[[authentication-server]]
 ===  Authentication Server
 
-The menu topic  _"Accounts->Authentication Server"_ leads to a page for configuring the source for authentication.
+The menu topic _Accounts -> Authentication Server_ leads to a page for configuring the source for authentication.
+
+image:{images}23_authserver_thumb.png[link="{images}23_authserver.png"]
 
 After installation of {product} this has to be configured first because other services depend on it. Users and groups can only be created after selecting an authentication type.
 
@@ -17,7 +20,7 @@ When changing the authentication type all settings that apply to users will be d
 {product} tried to find existing users in the new authentication source. Data from users that can not be found will be deleted.
 ==============
 
-To select a type of authentication choose the tab  _"Select authentication"_ below the menu topic  _"Accounts->Authentication Server"_
+To select a type of authentication choose the tab _Select authentication_ below the menu topic _Accounts -> Authentication Server_
 
 ====  Local Authentication
 When choosing these method a local LDAP will be used for storing users and groups. You can optionally choose to let this server be used by other servers as authentication source.
@@ -84,7 +87,7 @@ If you change the active directory user, his password or the DN of your server, 
 
 === User Management
 
-In the UI under  _Accounts->User management_ all existing users are shown. When you have a lot of users the sort and filter options can be useful. To edit or delete an existing user you have to right-click on that user's entry.
+In the UI under _AccountsUser management_ all existing users are shown. When you have a lot of users the sort and filter options can be useful. To edit or delete an existing user you have to right-click on that user's entry.
 
 [NOTE]
 ==============
