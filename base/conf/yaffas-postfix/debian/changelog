@@ -1,3 +1,9 @@
+yaffas-postfix (1.3.0-3) lucid; urgency=low
+
+  * update to version 1.3.0-3
+
+ -- Package Builder <packages@yaffas.org>  Fri, 14 Dec 2012 11:24:42 +0100
+
 yaffas-postfix (1.3.0-2) lucid; urgency=low
 
   * update to version 1.3.0-2
