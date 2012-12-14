@@ -1,0 +1,185 @@
+=== E-Mail-Disclaimer
+Das E-Mail-Disclaimer-Modul ermöglicht es, Texte festzulegen, die an alle
+ausgehenden E-Mails angehängt werden. Dies kann z.B. benutzt werden, um
+rechtliche Floskeln (wie "Diese E-Mail enthält vertrauliche
+Informationen") oder Signaturen (wie "Max Mustermann, Beispiel GmbH")
+automatisiert zu integrieren.
+Die Texte können für Klartext- und HTML-E-Mails separat festgelegt werden.
+Desweiteren können globale Disclaimer, aber auch gruppen- und
+benutzerspezifische Texte konfiguriert werden. Letztere werden in der
+allgemeinen Benutzer- bzw. Gruppenverwaltung im Bereich "Benutzerkonten"
+im Kontextmenü (Rechtsklick auf die entspr. Tabellenzeile) eingerichtet.
+
+[NOTE]
+==========
+Die hier konfigurierten Disclaimer arbeiten direkt im Mailserver und
+dürfen nicht mit dem gleichnamigen Zarafa-Feature verwechselt werden.
+
+Dieses Feature bietet zum Teil umfangreichere Möglichkeiten (wie die
+Einbettung von Bildern in Signatur und E-Mail) und ist für ein
+breiteres Spektrum an Verwendungstypen geeignet (die Disclaimer werden
+an alle ausgehenden Mails angehängt, nicht nur an die, die über Outlook,
+WebAccess oder WebApp verschickt werden).
+
+Wird gleichzeitig ein Disclaimer im verwendeten Mailclient (Outlook,
+WebApp, WebAccess, Thunderbird, ...) festgelegt, so wird dieser
+_zusätzlich_ angezeigt, was in den meisten Fällen nicht gewollt sein
+dürfte.
+
+Disclaimer können allerdings bei dieser Möglichkeit nur durch den Admin
+in der {product}-Oberfläche und nicht durch einzelne Benutzer verwaltet
+werden.
+==========
+
+==== Einbettungs-Verfahren
+Da E-Mails in sehr unterschiedlichen Strukturen auftreten können, ist
+dieses Modul sehr flexibel gestaltet und kommt mit allen gängigen E-Mail-
+Typen zurecht.
+Bei sehr einfach gestrickten Klartext-E-Mails wird lediglich der Text um
+den konfigurierten Text-Disclaimer ergänzt.
+Bei allen aufwendigeren E-Mails ("Multipart") wird ein neuer Abschnitt
+("MIME Part") an die Mail angefügt, um kryptographische Signaturen zu
+erhalten und die Darstellung von formatierten E-Mails (HTML) nicht zu
+stören.
+In manchen E-Mail-Programmen (wie z.B. Thunderbird) wird bei dieser
+Einbettungsvariante ein horizontaler Strich zwischen der ursprünglichen
+E-Mail und dem Disclaimertext angezeigt. Dies kann leider nicht
+unterbunden werden. Weitere Informationen zu diesem Thema erhalten Sie
+beim Support.
+
+==== Disclaimer-Auswahl-Prozess
+Die Abarbeitung der konfigurierten Disclaimer erfolgt beim Versand
+einer E-Mail wie folgt. Es wird jeweils geprüft, ob ein
+
+1. benutzerspezifischer
+2. gruppenspezifischer
+3. globaler
+
+Disclaimer vorhanden ist. Der erste Disclaimer, der gefunden wird,
+wird verwendet. So kann beispielsweise ein firmenweiter Disclaimer
+festgelegt werden, während für einen Newsletter-Benutzer der Disclaimer
+deaktiviert (leerer Disclaimer) oder angepasst wird.
+
+Werden gruppenspezifische Disclaimer verwendet und ein Benutzer ist
+Mitglied mehrerer Gruppen, so wird der Disclaimer der Gruppe verwendet,
+die alphabetisch sortiert als erstes kommt.
+
+[NOTE]
+============
+Es besteht ein Unterschied zwischen _inaktiven_ (_"Disclaimer wird nicht
+benutzt"_) und leeren Disclaimern (leeres Textfeld bei Benutzern und
+Gruppen).
+Ist der Disclaimer für den Benutzer _max_ bspw. auf inaktiv gesetzt, so
+wird als nächstes nach einem Disclaimer für eine seiner Gruppen gesucht.
+Ist der Disclaimer für den Benutzer _max_ stattdessen aber aktiv und auf
+einen leeren Text gesetzt, so erhalten Mails von diesem Benutzer keinen
+Disclaimer, selbst wenn passende gruppenspezifische oder globale
+Disclaimer eingerichtet sind.
+=============
+
+==== Template-Syntax
+Die Texte können ein spezielle Template-Variablen benutzen, die beim
+Versand der E-Mail dann dynamisch mit den assoziierten Daten des
+Benutzers (aus der LDAP-Datenbank) ersetzt werden.
+
+Die folgenden Schlüsselwörter sind zur Zeit verfügbar:
+
+[options="header"]
+|======
+| Variable | Bedeutung
+| $\{FULLNAME} | gesamter Name des Benutzers (Vor- und Nachname)
+| $\{GIVENNAME} | Vorname des Benutzers
+| $\{LASTNAME} | Nachname des Benutzers
+| $\{DEPARTMENT} | Firmenabteilung des Benutzers
+| $\{COMPANY} | Firmenname des Benutzers
+| $\{PHONE} | Telefonnummer des Benutzers
+| $\{FAX} | Fax-Nummer des Benutzers
+| $\{EMAIL} | E-Mail-Adresse des Benutzers
+| $\{FROM} | Absender-Adresse der E-Mail (kann von $\{EMAIL} abweichen, z.B. wenn Aliase genutzt werden)
+| $\{STREET} | Straße und Hausnummer des Benutzers
+| $\{POBOX} | Postfach des Benutzers
+| $\{ZIP} | Postleitzahl des Benutzers
+| $\{CITY} | Ort des Benutzers
+| $\{STATE} | Bundesland des Benutzers
+| $\{COUNTRY} | Land des Benutzers
+|======
+
+In HTML-Disclaimern werden die dynamisch eingesetzten Daten automatisch
+für die Verwendung im HTML-Kontext aufbereitet ("escaped").
+Unbekannte Variablen oder Variablen, für die für den aktuellen Benutzer
+keine Daten vorliegen, werden durch eine leere Zeichenkette ersetzt. Wenn
+die Variable der einzige Inhalt dieser Zeile war, wird die ganze Zeile
+entfernt, um ungewollte Leerzeilen zu vermeiden.
+Zwischen E-Mail-Text und Disclaimer wird automatisch ein Abstand
+eingefügt.
+
+[[mailserver-disclaimers-blacklist]]
+==== Blacklists
+Im Tab _Einstellungen_ besteht die Möglichkeit, anhand bestimmter
+Kriterien festzulegen, dass bestimmte E-Mails vom automatischen Anfügen
+von Disclaimern ausgenommen sind.
+
+===== Syntax
+Es gibt drei verschiedene mögliche Schreibweisen für Einträge in diesen
+Listen:
+
+- Klartext (bspw. +mustermann@example.org+)
+- Globbing (bspw. `*@example.org` oder `mustermann@*.example.org`)
+- reguläre Ausdrücke (nur für fortgeschrittene Benutzer);
+  http://docs.python.org/2/library/re.html[Syntax]:
+  +/regulärer Ausdruck/+ (bspw. +/^(max|moritz)@example\.org$/+)
+
+Jeder Eintrag muss in einer eigenen Zeile stehen.
+Kommentare sind mit dem _#_-Zeichen möglich.
+
+===== Blacklist auf Basis der Ziel-Adresse
+Dieses Feature ist z.B. dann sinnvoll, wenn interne Mails (Mails an
+Kollegen) keine Disclaimer erhalten sollen.
+In diesem Fall kann folgender Ausdruck verwendet werden:
+
+  *@domain.der.firma
+
+[[mailserver-disclaimers-blacklist-mime]]
+===== Blacklist auf Basis des MIME-Types
+Dieses Feature erlaubt das Deaktivieren von Mails auf Basis des in der
+Mail angegebenen Content-Types (MIME-Types). Dies ist v.a. dann sinnvoll,
+wenn kryptographisch signierte oder verschlüsselte E-Mails aufgrund
+von <<mailserver-disclaimers-pgp,technischen Einschränkungen>> vom
+Disclaimer-System ausgenommen werden sollen.
+
+In diesem Fall können folgende Ausdrücke verwendet werden:
+
+  # um signierte Mails unbearbeitet durchzulassen
+  multipart/signed
+  
+  # um verschlüsselte Mails unbeearbeitet durchzulassen
+  multipart/encrypted
+
+[[mailserver-disclaimers-pgp]]
+==== Verschlüsselte / signierte E-Mails (PGP, S/MIME)
+Das Anfügen von Disclaimern an kryptographisch signierte oder
+verschlüsselte E-Mails (PGP/MIME oder S/MIME) ist nicht immer problemlos
+möglich.
+Zwar kann dieses Modul diese Fälle in einer standardkonformen Variante
+behandeln, einige E-Mail-Clients (wie z.B. Thunderbird) haben aber
+trotzdem Probleme, die elektronischen Signaturen solcher E-Mails korrekt
+zu erkennen. Signierte E-Mails werden weiterhin korrekt angezeigt, es ist
+aber nicht mehr erkennbar, dass die E-Mail signiert war.
+Verschlüsselte E-Mails funktionieren wie gewohnt.
+
+Das Problem kann umgangen werden, indem auf
+PGP/MIME und S/MIME verzichtet und stattdessen PGP/Inline genutzt wird.
+Das ist natürlich oft keine zufriedenstellende Lösung für
+S/MIME-Umgebungen, aber auch PGP, da hier keine Anhänge mehr signiert
+werden. Die andere Alternative besteht darin, einen entsprechenden
+<<mailserver-disclaimers-blacklist-mime,Blacklist-Eintrag für die betroffenen MIME-Types zu definieren>>.
+Dadurch werden die betroffenen Mails nicht mehr bearbeitet, sie enthalten
+also auch keinen Disclaimer.
+
+Die zum oben erwähnten Thunderbird-Problem gehörigen Fehlerberichte sind
+https://bugzilla.mozilla.org/show_bug.cgi?id=295118[#295118],
+https://bugzilla.mozilla.org/show_bug.cgi?id=159238[#159238],
+https://bugzilla.mozilla.org/show_bug.cgi?id=235482[#235482],
+https://bugzilla.mozilla.org/show_bug.cgi?id=248846[#248846] und
+https://bugzilla.mozilla.org/show_bug.cgi?id=746052[#746052].
+

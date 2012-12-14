@@ -1,0 +1,79 @@
+/////////////////////////////////////////////////////////////////////
+WARNING: This section is OUTDATED
+Synchronize with the German translation before including this file
+in mailserver.txt!
+/////////////////////////////////////////////////////////////////////
+
+=== E-mail disclaimers
+The e-mail disclaimers module enables you to configure texts which will be
+appended to all out-going mail. This can be used to implement legal
+disclaimers (like "This message contains confidential information") or
+signatures (like "John Doe, Example Ltd.").
+The texts can be configured separately for both plaintext and HTML
+mails. Disclaimers can be configured on a global, a group-specific and
+a user-specific level. Group- and user-specific texts can be set up by
+using the context menu (right click on a user row in the table) in the
+generic user, respectively, group management tab in the "Accounts" menu.
+
+All texts can contain special template markers, which will be replaced by
+their real associated value for the current user (from LDAP) at
+evaluation time (i.e. when a mail is being sent).
+
+The following keywords will be recognized:
+
+[options="header"]
+|======
+| Variable | Meaning
+| $\{FULLNAME} | the user's full name (first name + last name)
+| $\{GIVENNAME} | the user's first name
+| $\{LASTNAME} | the user's last name
+| $\{DEPARTMENT} | the user's department in the company
+| $\{COMPANY} | the user's company name
+| $\{PHONE} | the user's phone number
+| $\{FAX} | the user's fax number
+| $\{EMAIL} | the user's primary email address
+| $\{FROM} | the email's From: address (might differ from $\{EMAIL}, e.g. when using aliases)
+| $\{STREET} | the user's street address
+| $\{POBOX} | the user's post office box
+| $\{ZIP} | the user's zip code
+| $\{CITY} | the user's city
+| $\{STATE} | the user's state
+| $\{COUNTRY} | the user's country
+|======
+
+In HTML disclaimers, all keyword data will be automatically escaped.
+Invalid keywords or keywords with no associated data for the current user
+will be replaced with an empty string. If the keyword was the only content
+in that line, the whole line is eaten. This avoids bad looking empty
+lines.
+Before a disclaimer is appended to an e-mail, a line break is
+inserted between the email and the disclaimer.
+
+**Be aware** though that automatically appending disclaimers to signed or
+encrypted mails (PGP/MIME or S/MIME) on a gateway can be problematic.
+Although this module is able to handle these cases in a
+standards-conforming way, several e-mail clients (e.g Thunderbird) have
+problems recognizing the cryptographical signatures of such mangled mails.
+Signed mails will still be properly displayed, but it will not be obvious
+to the user that a message was signed. Encrypted mails will display
+perfectly as well (at least in Thunderbird). You can work around these
+problems either by stopping to use PGP/MIME or S/MIME and falling back to
+PGP/Inline. This is not optimal because it is no solution for S/MIME
+setups and even for PGP usage it is a step backwards as attachments are no
+longer signed. The other alternative is stopping this module from touching
+such mails. This works by configuring a Content-Type-based exception rule.
+You can add the necessary rules in Zarafa -> E-mail disclaimers ->
+Preferences -> "MIME types, which should not receive disclaimers". Simply
+insert multipart/signed and/or multipart/encrypted (each on their own
+line) there.
+The bug reports related to the above mentioned Thunderbird issue are
+https://bugzilla.mozilla.org/show_bug.cgi?id=295118[#295118],
+https://bugzilla.mozilla.org/show_bug.cgi?id=159238[#159238],
+https://bugzilla.mozilla.org/show_bug.cgi?id=235482[#235482],
+https://bugzilla.mozilla.org/show_bug.cgi?id=248846[#248846] and
+https://bugzilla.mozilla.org/show_bug.cgi?id=746052[#746052].
+
+If group-specific disclaimers are used and a user is a member of multiple
+groups, the groups are sorted alphabetically and the first group's
+disclaimer is used.
+

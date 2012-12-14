@@ -99,3 +99,7 @@ Sie können über das  _Rundmail_ Modul eine E-Mail an alle Benutzer schicken. T
 Beachten Sie, dass es ein paar Minuten dauern kann, bis alle E-Mails in die Mailboxen verteilt worden sind.
 ==============
 
+ifdef::product-bitkit[]
+include::mailserver.disclaimers.txt[]
+endif::product-bitkit[]
+

@@ -120,3 +120,8 @@ With this module you can send an email to all users of the system. You must inse
 ==============
 Please notice that it could take a few minutes until all messages have been sent to the various mailboxes.
 ==============
+
+ifdef::product-bitkit[]
+include::mailserver.disclaimers.txt[]
+endif::product-bitkit[]
+
