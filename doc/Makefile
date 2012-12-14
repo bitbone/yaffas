@@ -1,3 +1,4 @@
+SHELL = /bin/bash
 SOURCES_COMMON := source/build-logic.txt
 SOURCES_DE := de_DE.txt source/de/*.txt $(SOURCES_COMMON)
 SOURCES_EN := en_EN.txt source/en/*.txt $(SOURCES_COMMON)
@@ -43,7 +44,7 @@ de_DE.html: $(SOURCES_DE)
 de_DE.chunked: $(SOURCES_DE)
 	a2x $(A2X_ATTRIBUTES) --icons-dir=icons -fchunked -dbook de_DE.txt
 	ln -sf ../docbook-xsl.css de_DE.chunked/
-	ln -sf ../images de_DE.chunked
+	ln -sf ../images de_DE.chunked || true
 
 de_DE.pdf: $(SOURCES_DE)
 	a2x $(A2X_ATTRIBUTES) -fpdf de_DE.txt
@@ -54,7 +55,7 @@ en_EN.html: $(SOURCES_EN)
 en_EN.chunked: $(SOURCES_EN)
 	a2x $(A2X_ATTRIBUTES) --icons-dir=icons -fchunked -dbook en_EN.txt
 	ln -sf ../docbook-xsl.css en_EN.chunked/
-	ln -sf ../images en_EN.chunked
+	ln -sf ../images en_EN.chunked || true
 
 en_EN.pdf: $(SOURCES_EN)
 	a2x $(A2X_ATTRIBUTES) -fpdf en_EN.txt
