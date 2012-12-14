@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 INFILE="$1"
 OUTFILE="${INFILE/.png/_thumb.png}"
 SIZE="50%x50%"
