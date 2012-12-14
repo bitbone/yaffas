@@ -2,8 +2,8 @@ lbl_network=Acesso para
 lbl_community=Comunidade (Senha)
 lbl_enable=Habilitar SNMP
 lbl_snmp_config=Configuração SNMP
-lbl_confirm_replace_config_header=Replace SNMP configuration?
-lbl_confirm_replace_config_msg=In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?
+lbl_confirm_replace_config_header=Substituir configuração SMTP?
+lbl_confirm_replace_config_msg=Para que o yaffas pode aplicar as modificação solicitadas, é necessário <strong>substituir</strong> as configurações atuais SNMP.<br />Quer substituir essa configuração?
 
 err_network_string=O acesso pode ser limitado somente para endereços de IP ou redes.
 err_community_string=O texto community poderá conter somente digitos (0-9) e caracteres (a-z, A-Z).

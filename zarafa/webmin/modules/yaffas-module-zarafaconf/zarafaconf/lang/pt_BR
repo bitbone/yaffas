@@ -7,12 +7,12 @@ lbl_confirm_msg=Com este passo, os seguintes stores Zarafa serão removidos:
 err_no_group_found=Não foi possível localizar grupo.
 err_no_rootbasedn=Não foi possível localizar rootDomainNamingContext no AD.
 
-lbl_attachment_size=Maximum attachment size in Webaccess
+lbl_attachment_size=Tamanho máximo de anexos no Webaccess
 lbl_size=Tamanho
-lbl_enforce_softdelete_now=Purge old deleted items now?
-err_attachment_size_not_numeric=The maximum attachment size must be numeric and >0.
-err_softdelete_not_numeric=The softdelete lifetime must be numeric and >=0.
-err_purge_softdelete_failed=Could not purge old items.
+lbl_enforce_softdelete_now=Remover itens deletados agora?
+err_attachment_size_not_numeric=O tamanho máximo de anexos tem que ser numérico e maior que 0.
+err_softdelete_not_numeric=O tempo de vida de itens no softdelete tem que ser numérico e maior ou igual à 0.
+err_purge_softdelete_failed=Não foi possível remover itens antigos.
 
 lbl_optimize=Otimizar
 lbl_memory_installed=Memória disponível
@@ -28,8 +28,8 @@ lbl_quota_hard=Mensagem de 100%
 lbl_default_quota=Cota padrão
 lbl_default_quota_header=Cota padrão
 
-lbl_enable_pop3_by_default=Enable POP3 for users by default
-lbl_enable_imap_by_default=Enable IMAP for users by default
+lbl_enable_pop3_by_default=Habilitar POP3 para usuários por padrão
+lbl_enable_imap_by_default=Habilitar IMAP para usuários por padrão
 lbl_feature=Feature
 lbl_state=Estado
 
@@ -39,23 +39,23 @@ lbl_mysql_host=Servidor
 lbl_mysql_user=Nome do usuário
 lbl_mysql_password=Senha
 
-lbl_prf_creator=PRF Creator
-lbl_profilename=Profile name
+lbl_prf_creator=Gerador de PRF
+lbl_profilename=Nome do Perfil
 lbl_mailboxname=Nome do usuário
 lbl_password=Senha
-lbl_homeserver=Server adress
-lbl_overwriteprofile=Overwrite profile
-lbl_backupprofile=Backup profile
+lbl_homeserver=Endereço do servidor
+lbl_overwriteprofile=Sobrescrever perfil
+lbl_backupprofile=Perfil backup
 lbl_download=Download
 
-lbl_connectiontype=Connection type
-lbl_connectiontype_autodetect=Autodetect
+lbl_connectiontype=Tipo de conexão
+lbl_connectiontype_autodetect=Auto detectar
 lbl_connectiontype_online=Online
-lbl_connectiontype_cached=Cached
+lbl_connectiontype_cached=Cached (offline)
 
-lbl_outlook_start=To use this created file you have to run outlook on a commandline with the "/importprf" parameter. (e.g. outlook.exe /importprf \\path\to\file.prf)
+lbl_outlook_start=Para usar o arquivo gerado é necessário executar o Outlook na linha de comando com o parâmetro "/importprf" (ex. outlook.exe /importprf \\caminho\para\arquivo.prf).
 lbl_basic_settings=Configurações básicas
-lbl_softdelete_lifetime=Number of days to keep deleted items
+lbl_softdelete_lifetime=Número de dias para manter itens excluídos
 
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_quota_value=O valor da cota poderá conter somente dígitos.

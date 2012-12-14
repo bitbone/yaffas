@@ -1,8 +1,8 @@
 interval=Especificar intervalo em segundos para realizar o polling.
 poll=O nome de máquina ou endereço IP remoto onde deverão ser buscados os e-mais.
-proto=Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify "Connect in SSL mode" below.
+proto=Protocolo a ser usado. Caso o servidor suporta TLS este será usado automaticamente. Caso queira usar SSL, ativa a opção "Conectar com o modo SSL" abaixo.
 via=O nome DNS do servidor remoto. Essa configuração substitui o nome do servidor.
-port=The TCP/IP port of the remote server. Leave this at "Default" unless you know what you are doing. If "Connect in SSL mode" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option.
-ssl=Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to "No" instead.
+port=A porta TCP/IP do servidor remoto. Mantenha essa opção em "Default" caso você não tem certeza de que está fazendo. Caso "Conectar com o modo SSL" está ativo, o valor padrão também cobre o SSL do protocolo em questão sem a necessidade de modificar essa opção.
+ssl=Especifique se uma conexão SSL deve ser usada. Caso você queira usar TLS ou conexões não criptografadas, selecione a opção "Não". 
 poll_envelope=O nome do cabeçalho que contém o endereço do envelope (ex. X-Envelope-To).
 user=Especificar o login do usuário no servidor remoto.

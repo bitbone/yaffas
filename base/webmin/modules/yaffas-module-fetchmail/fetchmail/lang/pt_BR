@@ -125,7 +125,7 @@ lbl_target=Destino
 lbl_local_alias=Alias
 lbl_local_user=Usuário
 
-lbl_check_logs=After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href="#m=logfiles-3">Maintainance -&gt; Log file viewer</a>.
+lbl_check_logs=Depois de adicionar novas configurações ou caso os usuários não recebem emails como esperado, você deve verificar o log /var/log/fetchmail.log, qual pode ser visualizado também via <a href="#m=logfiles-3">Manutenção -&gt; Exibição de arquivos de log</a>.
 
 err_user=Por favor fornecer usuário remoto e local.
 err_local_user=O nome do usuário fornecido é inválido.
@@ -134,6 +134,6 @@ err_no_selection=Por favor selecionar "usuário", "alias" ou "multientrega".
 err_remote_user=Por favor fornecer um servidor de e-mail válido para o usuário.
 err_remote_passwd=Por favor fornecer uma senha para o usuário no servidor de e-mail.
 err_enable_fetchmail=Não foi possível habilitar o serviço Fetchmail.
-err_bad_targets=Denying attempt to create poll query without any target users.
-err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
+err_bad_targets=Negando tentativa de criar poll sem ter um usuário de destino.
+err_bad_email=Não foi possível usar o nome de usuário fornecido como destio, porque ele não tem nenhum endereço de email válido configurado.
 moduletitle=Busca de E-Mail do Fetchmail

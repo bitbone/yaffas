@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-07 00:20+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"PO-Revision-Date: 2012-12-07 20:55+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -142,17 +142,17 @@ msgstr "Configurações básicas"
 #: lang/en:33
 #, no-wrap
 msgid "This might take some time"
-msgstr ""
+msgstr "Isso poderá demorar um pouco"
 
 #: lang/en:34
 #, no-wrap
 msgid "setting up"
-msgstr ""
+msgstr "configurando"
 
 #: lang/en:35
 #, no-wrap
 msgid "initial configuration"
-msgstr ""
+msgstr "configuração inicial"
 
 #: lang/en:37
 #, no-wrap
@@ -177,7 +177,7 @@ msgstr "O domínio poderá conter somente caracteres (a-z e A-Z), números (0-9)
 #: lang/en:42
 #, no-wrap
 msgid "The given username already exists locally. Please specify another username or delete the existing user first."
-msgstr ""
+msgstr "O nome do usuário fornecido já existe localmente. Por favor especifique um outro usuário ou apague o usuário existente primeiro."
 
 #: lang/en:44
 #, no-wrap

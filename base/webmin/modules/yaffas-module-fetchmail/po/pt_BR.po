@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-14 00:22+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-11 00:23+0100\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -596,7 +596,7 @@ msgstr "Usuário"
 #: lang/en:128
 #, no-wrap
 msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
-msgstr ""
+msgstr "Depois de adicionar novas configurações ou caso os usuários não recebem emails como esperado, você deve verificar o log /var/log/fetchmail.log, qual pode ser visualizado também via <a href=\"#m=logfiles-3\">Manutenção -&gt; Exibição de arquivos de log</a>."
 
 #: lang/en:130
 #, no-wrap
@@ -637,12 +637,12 @@ msgstr "Não foi possível habilitar o serviço Fetchmail."
 #: lang/en:137
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
-msgstr ""
+msgstr "Negando tentativa de criar poll sem ter um usuário de destino."
 
 #: lang/en:138
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
-msgstr ""
+msgstr "Não foi possível usar o nome de usuário fornecido como destio, porque ele não tem nenhum endereço de email válido configurado."
 
 #: lang/en:139
 #, no-wrap
@@ -662,7 +662,7 @@ msgstr "O nome de máquina ou endereço IP remoto onde deverão ser buscados os 
 #: help/en:3
 #, no-wrap
 msgid "Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify \"Connect in SSL mode\" below."
-msgstr ""
+msgstr "Protocolo a ser usado. Caso o servidor suporta TLS este será usado automaticamente. Caso queira usar SSL, ativa a opção \"Conectar com o modo SSL\" abaixo."
 
 #: help/en:4
 #, no-wrap
@@ -672,12 +672,12 @@ msgstr "O nome DNS do servidor remoto. Essa configuração substitui o nome do s
 #: help/en:5
 #, no-wrap
 msgid "The TCP/IP port of the remote server. Leave this at \"Default\" unless you know what you are doing. If \"Connect in SSL mode\" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option."
-msgstr ""
+msgstr "A porta TCP/IP do servidor remoto. Mantenha essa opção em \"Default\" caso você não tem certeza de que está fazendo. Caso \"Conectar com o modo SSL\" está ativo, o valor padrão também cobre o SSL do protocolo em questão sem a necessidade de modificar essa opção."
 
 #: help/en:6
 #, no-wrap
 msgid "Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
-msgstr ""
+msgstr "Especifique se uma conexão SSL deve ser usada. Caso você queira usar TLS ou conexões não criptografadas, selecione a opção \"Não\". "
 
 #: help/en:7
 #, no-wrap

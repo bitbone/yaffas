@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-11 00:23+0100\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -354,7 +354,7 @@ msgstr "{PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens po
 #: lang/en:76
 #, no-wrap
 msgid "About bitkit"
-msgstr ""
+msgstr "Sobre yaffas"
 
 #: lang/en:77
 #, no-wrap
@@ -379,7 +379,7 @@ msgstr "Um outro administrador logou no sistema. Você terá que relogar."
 #: lang/en:82
 #, no-wrap
 msgid "The session timed out, please re-login."
-msgstr ""
+msgstr "O tempo da sessão expirou, por favor efetue o login novamente."
 
 #: lang/en:84
 #, no-wrap

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-10-24 14:12+0200\n"
+"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"PO-Revision-Date: 2012-12-07 20:55+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -154,7 +154,7 @@ msgstr "Este usuário é usado para entregar e-mails em pastas públicas. Primei
 #: lang/en:28
 #, no-wrap
 msgid "Internal call to zarafa-admin --force-resync failed, error code:"
-msgstr ""
+msgstr "Execução interna do zarafa-admin --force-resync falhou com o código de erro:"
 
 # 80%
 #: lang/en:30
@@ -456,17 +456,17 @@ msgstr "Nenhum"
 #: lang/en:89
 #, no-wrap
 msgid "Force offline profile resynchronization"
-msgstr ""
+msgstr "Forçar ressincronização do perfil offline "
 
 #: lang/en:90
 #, no-wrap
 msgid "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
-msgstr ""
+msgstr "Isso força que o cliente (em modo cached) ressincroniza todos os dados com o servidor. Certos problemas que podem ocorrer no lado do cliente podem ser reparados com este procedimento, mas o tamanho do perfil poderá causar um consumo de banda alto. Então por favor verifique se você realmente quer executar este processo, especialmente em setups com banda limitada.<br/><br/>Forçar ressincronização para o usuário?"
 
 #: lang/en:91
 #, no-wrap
 msgid "Configure disclaimer"
-msgstr ""
+msgstr "Configurar disclaimer"
 
 #: help/en:1
 #, no-wrap
