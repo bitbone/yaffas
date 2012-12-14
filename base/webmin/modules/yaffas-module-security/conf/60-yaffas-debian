@@ -24,7 +24,21 @@ $virus_admin = "postmaster\@localhost";
 @whitelist_sender_maps = read_hash('/opt/yaffas/config/whitelist-amavis') if -e '/opt/yaffas/config/whitelist-amavis';
 
 @mynetworks = qw( 127.0.0.0/8 [::1] [FE80::]/10 [FEC0::]/10 );
-push @mynetworks, keys(%{read_hash('/opt/yaffas/config/postfix/whitelist-postfix')}) if -e '/opt/yaffas/config/postfix/whitelist-postfix';
+
+# /opt/yaffas/config/postfix/whitelist-postfix is allowed to contain
+# domains; adding domains to @mynetworks breaks amavis, so this cannot be
+# right (see ADM-253); as such, we only add ip addresses to @mynetworks
+if (-e '/opt/yaffas/config/postfix/whitelist-postfix') {
+	for my $entry (keys(%{read_hash('/opt/yaffas/config/postfix/whitelist-postfix')})) {
+		# ip_to_vec is a helper function from amavisd which tries to
+		# parse valid IP address from the given entry;
+		# as it might call die(), we wrap in eval{} here;
+		# this check avoids domains being added to @mynetworks
+		if (eval { Amavis::Lookup::IP::ip_to_vec($entry); 1 }) {
+			push @mynetworks, $entry;
+		}
+	}
+}
 
 push @local_domains_maps, map {chomp($_); $_} split /\s*,\s*/, `/usr/sbin/postconf -h virtual_mailbox_domains`;
 
