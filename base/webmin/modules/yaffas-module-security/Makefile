@@ -26,4 +26,5 @@ install:
 	cp conf/channels.keys $(DESTDIR)/$(YAFFAS_DATA)/
 	cp conf/channels.cf   $(DESTDIR)/$(YAFFAS_DATA)/
 	cp -r share/yaffas-module-security $(DESTDIR)/$(YAFFAS_PREFIX)/share
-	
+	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share/yaffas-upgrade
+	cp -r share/yaffas-upgrade/* $(DESTDIR)/$(YAFFAS_PREFIX)/share/yaffas-upgrade

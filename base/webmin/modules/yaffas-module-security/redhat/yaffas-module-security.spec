@@ -53,6 +53,7 @@ fi
 /opt/yaffas/share/doc/example/etc/amavisd-redhat.conf
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
+/opt/yaffas/share/yaffas-upgrade/yaffas-module-security-1.3.0-update-amavis-60-yaffas.sh
 %dir /opt/yaffas/config/postfix
 
 %changelog
