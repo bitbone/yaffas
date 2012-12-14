@@ -17,8 +17,10 @@ A2X_ATTRIBUTES := -a product=$(PRODUCT) -a product-$(PRODUCT) \
 HTML_EN := en_EN.html en_EN.chunked 
 HTML_DE := de_DE.html de_DE.chunked
 HTML_TARGETS := $(HTML_DE)
+PDF_TARGETS := de_DE.pdf
 ifneq ($(PRODUCT), bitkit)
 	HTML_TARGETS := $(HTML_TARGETS) $(HTML_EN) index.html
+	PDF_TARGETS := $(PDF_TARGETS) en_EN.pdf
 endif
 
 LAST_GIT_CHANGE := $(shell git log -n1 --format="format:%ct" . 2>/dev/null || echo 0)
@@ -29,7 +31,7 @@ all: html
 
 html: clean need-thumbs $(HTML_TARGETS)
 
-pdf: clean need-thumbs de_DE.pdf en_EN.pdf
+pdf: clean need-thumbs $(PDF_TARGETS)
 
 need-thumbs: $(IMAGES)
 	find images/ -name '*.png' -and -not -name '*_thumb.png' \
