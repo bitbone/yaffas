@@ -9,7 +9,7 @@ declare -a REQUIRED_IMAGES=()
 BASE="images"
 declare -a LANGUAGES=(de en)
 declare -a THEMES=(yaffas zarafa)
-EXCLUDE="($BASE/en/bitkit/)"
+EXCLUDE="($BASE/en/bitkit/|$BASE/de/zarafa/|_thumb\.png)"
 
 filter_false_positives() {
 	grep -vP "$EXCLUDE"

@@ -88,25 +88,25 @@ First, install the client on the Windows computer by double-clicking on  _"zaraf
 
 Start Outlook and choose the topic  _"Email Accounts"_ from menu  _"Extras"_  Create a new email account. 
 
-image:images/en/zarafa/guides_zarafa_connect1.png[]
+image:{images_common}guides_zarafa_connect1.png[]
 
 
 
 Server type must be  _"Additional Servers"_  
 
-image:images/en/zarafa/guides_zarafa_connect2.png[]
+image:{images_common}guides_zarafa_connect2.png[]
 
 
 
 If you installed zarafaclient.exe from CD, you must now choose  _"Zarafa Server"_  If you are not able to choose "Zarafa Server", please install the Zarafa client first. 
 
-image:images/en/zarafa/guides_zarafa_connect3.png[]
+image:{images_common}guides_zarafa_connect3.png[]
 
 
 
 Please insert the data of your {product} & ZARAFA server. You can use port 237 for an encrypted transmission (standard) or port 236 for an unencrypted connection. Use username and password like set in {product}.
 
-image:images/en/zarafa/guides_zarafa_connect4.png[]
+image:{images_common}guides_zarafa_connect4.png[]
 
 
 Please make sure that the following setting is made for the new account:  _"New Messages Send to"_ must match  _"Inbox User"_  Close Outlook and start it again. Now you can access your store and use mail, calendar or contacts... . 

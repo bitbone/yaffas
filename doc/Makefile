@@ -2,8 +2,8 @@ SOURCES_COMMON := source/build-logic.txt
 SOURCES_DE := de_DE.txt source/de/*.txt $(SOURCES_COMMON)
 SOURCES_EN := en_EN.txt source/en/*.txt $(SOURCES_COMMON)
 IMAGES := images/en/*.png images/en/yaffas/*.png images/en/zarafa/*.png \
-		  images/de/zarafa/*.png
-#		images/de/yaffas/*.png images/de/*.png
+		images/de/yaffas/*.png images/de/*.png
+#		  images/de/zarafa/*.png
 PRODUCT ?= $(shell echo $(RELEASE) | sed -rne 's:^([^-_]+).*:\1:p')
 PRODUCT := $(if $(PRODUCT),$(PRODUCT),yaffas)
 VERSION ?= $(shell echo $(RELEASE) | sed -rne 's:^[^-]+-([^_]+).*:\1:p')
