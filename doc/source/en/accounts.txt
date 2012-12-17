@@ -17,7 +17,7 @@ When using the local LDAP for authentication the server can also be used as (LDA
 ==============
 When changing the authentication type all settings that apply to users will be deleted. Those settings have to be re-applied after the change.
 
-{product} tried to find existing users in the new authentication source. Data from users that can not be found will be deleted.
+{product} tries to find existing users in the new authentication source. Data from users that cannot be found will be deleted.
 ==============
 
 To select a type of authentication choose the tab _Select authentication_ below the menu topic _Accounts -> Authentication Server_
