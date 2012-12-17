@@ -472,3 +472,14 @@ div.yui-layout-bd {
 	padding: 5px;
 }
 
+/* when using the light bulbs in headers, they
+ * always appear at the right-most position (due to h2 being width:100%);
+ * therefore, we move our tooltip to the left to avoid extending
+ * the content area by 200px to the right
+ */
+h2 .tooltip div {
+    margin-left: -220px;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
