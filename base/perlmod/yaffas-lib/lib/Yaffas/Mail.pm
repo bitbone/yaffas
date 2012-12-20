@@ -60,8 +60,8 @@ sub set_zarafa_quota($$) {
 	my $login = shift;
 	my $quota = shift;
 
-	throw Yaffas::Exception("err_quota_number") unless($quota =~ /^\d+|$/);
 	throw Yaffas::Exception("err_quota_negative") if($quota =~ /^-/);
+	throw Yaffas::Exception("err_quota_number") unless($quota =~ /^(\d+|)$/);
 
 	if ($quota eq "" || $quota == 0) {
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaOverride", 0);
