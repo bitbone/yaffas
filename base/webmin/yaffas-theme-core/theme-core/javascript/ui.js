@@ -820,13 +820,11 @@ Yaffas.UI.prototype.openAbout = function() {
 }
 
 Yaffas.UI.prototype.openHelp = function() {
-	if (Yaffas.LANG["used"] === "en") {
-		window.open("http://wiki.yaffas.org/doku.php?id=en:start");
+	if (Yaffas.CONFIG["theme"] == "bitkit") {
+		window.open("http://doc.bitkit.com");
+	} else {
+		window.open("http://doc.yaffas.org/");
 	}
-	else {
-		window.open("http://wiki.yaffas.org");
-	}
-
 }
 
 Yaffas.UI.prototype.replaceValueForm = function() {

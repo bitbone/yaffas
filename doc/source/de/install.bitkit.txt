@@ -101,7 +101,13 @@ image:{images}reboot.png[]
 
 === Nach der Installation
 
-Nachdem der Server neugestartet ist, können Sie sich über Ihren Browser auf der Administrations-Oberfläche des bitkits einloggen.
+Der erste Neustart nach der Installation wird noch deutlich länger
+dauern als ein regulärer, da im Hintergrund noch einige finale Anpassungen
+vorgenommen werden. Dies ist also normal, bitte brechen Sie den
+Startvorgang auch in diesem Fall nicht vorzeitig ab.
+Nachdem der Server fertig hochgefahren ist und der Login erscheint, können
+Sie sich über Ihren Browser auf der Administrations-Oberfläche des bitkits
+einloggen.
 
 Verwenden Sie dabei die bei der Installation vergebene IP-Adresse auf Port 10000, z.B.
 
