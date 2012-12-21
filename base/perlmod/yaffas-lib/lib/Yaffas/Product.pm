@@ -183,7 +183,11 @@ sub get_version_of($) {
         }
 
         if (Yaffas::Constant::OS eq "Ubuntu" || Yaffas::Constant::OS eq "Debian") {
-            my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-l", "yaffas-core");
+            my @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-l", "bitkit");
+
+            if ($? ne "0") {
+                @tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-l", "yaffas-core");
+            }
 
             foreach my $line (@tmp) {
                 if ($line =~ /^ii\s+.*?\s+(\d+\.\d+\.\d+-\d+)\s+.*/) {
