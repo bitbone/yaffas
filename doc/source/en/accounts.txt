@@ -5,9 +5,11 @@
 
 The menu topic _Accounts -> Authentication Server_ leads to a page for configuring the source for authentication.
 
+ifndef::product-bitkit[]
 image:{images}23_authserver_thumb.png[link="{images}23_authserver.png"]
 
 After installation of {product} this has to be configured first because other services depend on it. Users and groups can only be created after selecting an authentication type.
+endif::product-bitkit[]
 
 {product} can use a local LDAP, a remote {product} LDAP or a Microsoft Windows Active Directory domain for authentication.
 

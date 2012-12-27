@@ -5,10 +5,12 @@
 
 Über den Menüpunkt _Benutzerverwaltung -> Authentifizierungsserver_ lässt sich die Art der Authentifizierung über die Benutzernamen und Passwörter bezogen werden, festlegen.
 
+ifndef::product-bitkit[]
 image:{images}23_authserver_thumb.png[link="{images}23_authserver.png"]
 
 Nach der Installation von {product} muss dies als erstes konfiguriert werden da einige Dienste davon abhängig sind. Benutzer und Gruppen können erst angelegt werden nachdem eine Authentifizierungsmethode ausgewählt wurde.
 
+endif::product-bitkit[]
 {product} kann die Benutzer gegen die lokale Datenbank, einen entfernten Yaffas-Authentifizierungsserver oder eine Microsoft Windows ActiveDirectory Domäne authentifizieren.
 
 Bei Verwendung der lokalen Benutzerdatenbank kann der lokale Server auch als Authentifizierungsserver für andere {product}-Produkte dienen.
