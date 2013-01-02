@@ -360,28 +360,28 @@ sub _load_settings {
 
 	my @enabled_interfaces;
 
+	my ($dns, $search) = [];
+	my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
+	my @content = $resolv->get_content();
+
+	foreach my $line (@content) {
+		if ($line =~ /^search\s+(.*)/) {
+			push @{$search}, split /\s+/, $1;
+		}
+		if ($line =~ /^nameserver\s+(.*)/) {
+			push @{$dns}, split /\s+/, $1;
+		}
+	}
+
 	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $interfaces = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces})
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
 		my $device = "";
 		my ($ip, $netmask, $gateway) = "";
-		my ($dns, $search) = [];
 		my $method = '';
 
 		my @lines = $interfaces->get_content();
-
-		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
-		my @content = $resolv->get_content();
-
-		foreach my $line (@content) {
-			if ($line =~ /^search\s+(.*)/) {
-				push @{$search}, split /\s+/, $1;
-			}
-			if ($line =~ /^nameserver\s+(.*)/) {
-				push @{$dns}, split /\s+/, $1;
-			}
-		}
 
 		my @revLines = reverse(@lines);
 
@@ -422,22 +422,12 @@ sub _load_settings {
 		}
 	} else {
 		my ($ip, $netmask, $gateway, $method);
-		my ($dns, $search) = ([],[]);
 
 		push @enabled_interfaces, map { $_->name } grep { m#^eth# } IO::Interface::Simple->interfaces;
 
 		my @routes = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'route'}, '-n');
 		foreach my $route (@routes){
 			$gateway = $1 if $route =~ m#^0\.0\.0\.0\s+([^ ]+)#ix;
-		}
-
-		my $yf = Yaffas::File->new(Yaffas::Constant::FILE->{'resolv_conf'});
-		foreach my $line ($yf->get_content()){
-			chomp $line;
-
-			if($line =~ m#search\s+(.+)\z#ix){
-				push @$search, $1;
-			}
 		}
 
 		foreach my $device (@enabled_interfaces){
