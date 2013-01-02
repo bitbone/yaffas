@@ -7,7 +7,7 @@ our @ISA = ("Yaffas::Module");
 
 use Yaffas qw(do_back_quote);
 use Yaffas::Exception;
-use Yaffas::Service qw(WEBMIN USERMIN SASLAUTHD HYLAFAX SAMBA NETWORK NSCD ZARAFA_SERVER RESTART control);
+use Yaffas::Service qw(WEBMIN USERMIN SASLAUTHD HYLAFAX SAMBA NETWORK NSCD ZARAFA_SERVER POLICYD_WEIGHT RESTART control);
 use Yaffas::Auth;
 use Yaffas::Auth::Type;
 use Yaffas::File;
@@ -192,6 +192,7 @@ sub save {
 		control(USERMIN, RESTART);
 		control(SASLAUTHD, RESTART);
 		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
+		control(POLICYD_WEIGHT, RESTART);
 		control(ZARAFA_SERVER, RESTART);
 	} else {
 		## parent - will be killed by webmin restart
