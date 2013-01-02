@@ -236,7 +236,7 @@ As these dependencies are not part of the standard RHEL repository, the followin
 
 Run the following command to install the EPEL repository:
 
-  rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/i386/epel-release-5-4.noarch.rpm
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/5/i386/epel-release-5-4.noarch.rpm
 
 If the above referenced URL is no longer functional because a newer version
 of the package is available, then you can still get the latest version from
@@ -257,7 +257,7 @@ or
 
 Run the following command to install the EPEL repository:
 
-  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-7.noarch.rpm
+  rpm -Uvh http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
 
 If the above referenced URL is no longer functional because a newer version
 of the package is available, then you can still get the latest version from
