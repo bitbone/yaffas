@@ -7,7 +7,7 @@ if [[ ${INFILE} != ${INFILE/_thumb.png} ]]; then
 	exit 1
 fi
 if [[ $(stat --format=%Y "${INFILE}" 2>/dev/null || echo 0) \
-		-lt $(stat --format=%Y "${OUTFILE}" 2>/dev/null || echo 0) ]]; then
+		-le $(stat --format=%Y "${OUTFILE}" 2>/dev/null || echo 0) ]]; then
 	exit 0
 fi
 echo "Building thumb of $INFILE"
