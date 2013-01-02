@@ -822,6 +822,8 @@ Yaffas.UI.prototype.openAbout = function() {
 Yaffas.UI.prototype.openHelp = function() {
 	if (Yaffas.CONFIG["theme"] == "bitkit") {
 		window.open("http://doc.bitkit.com");
+	} else if (Yaffas.CONFIG["theme"] == "zadmin") {
+		window.open("http://doc.zarafa.com/trunk/ZAdmin/en-US/html/");
 	} else {
 		window.open("http://doc.yaffas.org/");
 	}
