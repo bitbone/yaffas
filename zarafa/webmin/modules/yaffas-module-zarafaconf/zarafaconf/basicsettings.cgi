@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use Yaffas;
-use Yaffas::Service qw(control RESTART ZARAFA_SERVER);
+use Yaffas::Service qw(control RESTART ZARAFA_SERVER POSTFIX YAFFAS_MAILDISCLAIMERS);
 use Yaffas::Module::ZarafaConf;
 use Yaffas::Exception;
 use Error qw(:try);
@@ -47,6 +47,11 @@ sub save_userfilter() {
 		$main::in{filtergroup}
 	);
 	control(ZARAFA_SERVER, RESTART);
+	control(POSTFIX, RESTART);
+	if (Yaffas::Service::installed_services("yaffas-maildisclaimers")) {
+		# need to re-read LDAP config
+		control(YAFFAS_MAILDISCLAIMERS, RESTART);
+	}
 }
 
 sub save_softdelete_lifetime_and_purge() {
