@@ -500,10 +500,17 @@ sub _set_ldap($)
 	# change the dn_name
 	chomp(my $dn_new = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'hostname'}, "-d"));
 
-	system(Yaffas::Constant::APPLICATION->{'domrename'}, $domain, $dn_new, $file);
-	throw Yaffas::Exception("err_domrename", $?) unless $? == 0;
+	if ($dn_new) {
+		# only call domrename if a domain has been set; otherwise we will
+		# just use the exported scheme; see ADM-265
+		system(Yaffas::Constant::APPLICATION->{'domrename'}, $domain,
+			$dn_new, $file);
+		throw Yaffas::Exception("err_domrename", $?) unless $? == 0;
+		# domrename writes its output to this vv
+		$file = Yaffas::Constant::FILE->{'tmpslap'};
+	}
 
-	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", Yaffas::Constant::FILE->{'tmpslap'});
+	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", $file);
 	throw Yaffas::Exception("err_ldap_add", $?) unless $? == 0;
 
 	if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {

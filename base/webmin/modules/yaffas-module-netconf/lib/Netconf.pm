@@ -903,9 +903,15 @@ sub _get_dhcp_interfaces() {
 =cut
 
 sub set_configuration {
+	my $domain = shift;
+	my $host = shift;
 	my $conf = Yaffas::Module::Netconf->new();
-	$conf->domainname(shift);
-	$conf->hostname(shift);
+	if ($domain) {
+		$conf->domainname(shift);
+	}
+	if ($host) {
+		$conf->hostname(shift);
+	}
 	$conf->save();
 }
 
