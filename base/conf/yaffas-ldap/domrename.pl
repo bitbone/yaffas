@@ -231,10 +231,19 @@ sub getOLDLDAPDomain {
 sub correctLDIF {
 	my ($nd, @ldif) = @_;
 
+	# remove the first block (with the root dn), as it might be wrong
+	# and will be re-added below:
+	my $found_block = 0;
 	for ($i=0; $i<$#ldif; $i++) {
-		last if ($ldif[$i] =~ /^$/);
+		if ($ldif[$i] =~ /^$/) {
+			last if $found_block;
+		} else {
+			$found_block = 1;
+		}
 		$ldif[$i] = "";
 	}
+
+	# extract the foo out of dc=foo,dc=example,dc=org
 	@tmp = split (/,/, $nd);
 	@tmp = split (/=/, $tmp[0]);
 
