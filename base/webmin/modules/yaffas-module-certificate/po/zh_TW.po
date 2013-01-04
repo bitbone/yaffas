@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,107 +171,107 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Country (2 letter code)"
-msgstr ""
+msgstr "國家(2 letter code)"
 
 #: lang/en:2
 #, no-wrap
 msgid "Common Name (e.g. host.name.de)"
-msgstr ""
+msgstr "Common Name (e.g. host.name.de)"
 
 #: lang/en:4
 #, no-wrap
 msgid "Country not correct."
-msgstr ""
+msgstr "Country not correct."
 
 #: lang/en:5
 #, no-wrap
 msgid "Common Name not correct or not set."
-msgstr ""
+msgstr "Common Name not correct or not set."
 
 #: lang/en:6
 #, no-wrap
 msgid "Days are not correct."
-msgstr ""
+msgstr "日期輸入錯誤"
 
 #: lang/en:7
 #, no-wrap
 msgid "E-mail Adress not correct."
-msgstr ""
+msgstr "電子郵件輸入錯誤"
 
 #: lang/en:8
 #, no-wrap
 msgid "Generation not successful"
-msgstr ""
+msgstr "Generation not successful"
 
 #: lang/en:9
 #, no-wrap
 msgid "Locality not correct"
-msgstr ""
+msgstr "本機輸入錯誤"
 
 #: lang/en:10
 #, no-wrap
 msgid "Organization Name not correct."
-msgstr ""
+msgstr "組織名稱輸入錯誤"
 
 #: lang/en:11
 #, no-wrap
 msgid "Organization Unit not correct."
-msgstr ""
+msgstr "組織單位輸入錯誤"
 
 #: lang/en:12
 #, no-wrap
 msgid "Please select A service."
-msgstr ""
+msgstr "請選擇一個服務"
 
 #: lang/en:13
 #, no-wrap
 msgid "State or province not correct."
-msgstr ""
+msgstr "State or province not correct."
 
 #: lang/en:15
 #, no-wrap
 msgid "Parameters not correct."
-msgstr ""
+msgstr "Parameters not correct."
 
 #: lang/en:16
 #, no-wrap
 msgid "Certificate not valid."
-msgstr ""
+msgstr "憑證不是有效的"
 
 #: lang/en:17
 #, no-wrap
 msgid "Fork failed"
-msgstr ""
+msgstr "Fork failed"
 
 #: lang/en:18
 #, no-wrap
 msgid "Certificate wasn't created."
-msgstr ""
+msgstr "沒有建立憑證"
 
 #: lang/en:19
 #, no-wrap
 msgid "No certificate selected."
-msgstr ""
+msgstr "沒有選擇的憑證"
 
 #: lang/en:21
 #, no-wrap
 msgid "E-mail address (e.g. webmaster@company.com)"
-msgstr ""
+msgstr "電子郵件地址(e.g. webmaster@company.com)"
 
 #: lang/en:23
 #, no-wrap
 msgid "Certificate valid for (days)"
-msgstr ""
+msgstr "憑證有效日(天)"
 
 #: lang/en:24
 #, no-wrap
 msgid "Generate key"
-msgstr ""
+msgstr "產生KEY"
 
 #: lang/en:25 lang/en:42
 #, no-wrap
 msgid "Generate Self Signed Certificate and Key"
-msgstr ""
+msgstr "產生自身簽認憑證與KEY"
 
 #: lang/en:26
 #, no-wrap
@@ -281,108 +281,108 @@ msgstr "服務"
 #: lang/en:27
 #, no-wrap
 msgid "Generate Certificate & Key"
-msgstr ""
+msgstr "產生憑證和KEY"
 
 #: lang/en:28
 #, no-wrap
 msgid "Symlink Error"
-msgstr ""
+msgstr "符號連結錯誤"
 
 #: lang/en:30
 #, no-wrap
 msgid "Certificate:"
-msgstr ""
+msgstr "憑證："
 
 # 87%
 #: lang/en:31
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Service:"
-msgstr "服務"
+msgstr "服務："
 
 #: lang/en:32
 #, no-wrap
 msgid "Upload Certificate"
-msgstr ""
+msgstr "上傳憑證"
 
 #: lang/en:33
 #, no-wrap
 msgid "Upload certificate"
-msgstr ""
+msgstr "上傳憑證"
 
 #: lang/en:34
 #, no-wrap
 msgid "Import Certificate"
-msgstr ""
+msgstr "匯入憑證"
 
 #: lang/en:35
 #, no-wrap
 msgid "Delete Certificate"
-msgstr ""
+msgstr "刪除憑證"
 
 #: lang/en:36
 #, no-wrap
 msgid "Should this Certificate really be deleted?"
-msgstr ""
+msgstr "確定刪除此憑證？"
 
 #: lang/en:37
 #, no-wrap
 msgid "The Certificate was imported successfully!"
-msgstr ""
+msgstr "成功匯入憑證"
 
 #: lang/en:38
 #, no-wrap
 msgid "An error occured during importing! Please check your certificate file."
-msgstr ""
+msgstr "匯入過程發生錯誤。請檢查您的憑證檔案"
 
 #: lang/en:40 lang/en:66
 #, no-wrap
 msgid "Certificate / Key Management"
-msgstr ""
+msgstr "Certificate / Key Management"
 
 #: lang/en:41
 #, no-wrap
 msgid "Import Key or Signed Certificate"
-msgstr ""
+msgstr "匯入KEY或已簽認的憑證"
 
 #: lang/en:43
 #, no-wrap
 msgid "Manage/View Installed Certificates and Keys"
-msgstr ""
+msgstr "管理/檢視已安裝的憑證和keys"
 
 #: lang/en:44
 #, no-wrap
 msgid "Certificate Manager"
-msgstr ""
+msgstr "憑證管理"
 
 #: lang/en:46
 #, no-wrap
 msgid "Keysize (in bits)"
-msgstr ""
+msgstr "Keysize (in bits)"
 
 #: lang/en:47
 #, no-wrap
 msgid "Locality (e.g. city)"
-msgstr ""
+msgstr "Locality (e.g. city)"
 
 #: lang/en:48
 #, no-wrap
 msgid "Organization Name (e.g. company)"
-msgstr ""
+msgstr "Organization Name (e.g. company)"
 
 #: lang/en:49
 #, no-wrap
 msgid "Organization Unit Name (e.g. division)"
-msgstr ""
+msgstr "Organization Unit Name (e.g. division)"
 
 #: lang/en:51
 #, no-wrap
 msgid "State or province (full name)"
-msgstr ""
+msgstr "State or province (full name)"
 
 #: lang/en:53
 #, no-wrap
 msgid "Begin Date"
-msgstr ""
+msgstr "開始日期"
 
 #: lang/en:54
 #, no-wrap
@@ -392,44 +392,44 @@ msgstr "刪除"
 #: lang/en:55
 #, no-wrap
 msgid "File deleted sucessfully"
-msgstr ""
+msgstr "已成功刪除檔案"
 
 #: lang/en:56
 #, no-wrap
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: lang/en:57
 #, no-wrap
 msgid "Expires on"
-msgstr ""
+msgstr "有效期到"
 
 #: lang/en:58
 #, no-wrap
 msgid "Certificate not valid!"
-msgstr ""
+msgstr "無效的憑證"
 
 #: lang/en:59
 #, no-wrap
 msgid "Manage Installed Certificates"
-msgstr ""
+msgstr "管理已安裝的憑證"
 
 #: lang/en:61
 #, no-wrap
 msgid "The services are going to be restarted!"
-msgstr ""
+msgstr "將重新啟動此服務"
 
 #: lang/en:63
 #, no-wrap
 msgid "yes"
-msgstr ""
+msgstr "是"
 
 #: lang/en:64
 #, no-wrap
 msgid "no"
-msgstr ""
+msgstr "否"
 
 #: lang/en:65
 #, no-wrap
 msgid "Success"
-msgstr ""
+msgstr "成功"

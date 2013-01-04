@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,49 +171,49 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Accounts"
-msgstr ""
+msgstr "帳戶"
 
 #: lang/en:2
 #, no-wrap
 msgid "Appearance"
-msgstr ""
+msgstr "外觀"
 
 #: lang/en:3
 #, no-wrap
 msgid "Fax"
-msgstr ""
+msgstr "傳真"
 
 #: lang/en:4
 #, no-wrap
 msgid "Manual"
-msgstr ""
+msgstr "手動"
 
 #: lang/en:5
 #, no-wrap
 msgid "Hardware"
-msgstr ""
+msgstr "硬體"
 
 # 75%
 #: lang/en:6
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Subscription"
-msgstr "描述"
+msgstr "訂閱"
 
 #: lang/en:7
 #, no-wrap
 msgid "Mailbox"
-msgstr ""
+msgstr "郵箱"
 
 # 81%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Mail Server"
 msgstr "郵件伺服器"
 
 #: lang/en:9
 #, no-wrap
 msgid "Maintenance"
-msgstr ""
+msgstr "維護"
 
 #: lang/en:10
 #, no-wrap
@@ -223,93 +223,93 @@ msgstr "安全"
 #: lang/en:11
 #, no-wrap
 msgid "PDF Printers"
-msgstr ""
+msgstr "PDF印表機"
 
 #: lang/en:12 lang/en:13
 #, no-wrap
 msgid "Zarafa"
-msgstr ""
+msgstr "Zarafa"
 
 # 76%
 #: lang/en:15
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Could not connect to Postgres database."
-msgstr "無法連線到資料庫"
+msgstr "無法連接POSTgres 資料庫"
 
 #: lang/en:16
 #, no-wrap
 msgid "Could not find the following directories:"
-msgstr ""
+msgstr "無法找到下面之目錄："
 
 #: lang/en:17
 #, no-wrap
 msgid "Could not read the following directories:"
-msgstr ""
+msgstr "無法讀下面之目錄："
 
 #: lang/en:18
 #, no-wrap
 msgid "Could not copy the following file:"
-msgstr ""
+msgstr "無法複製下列檔案："
 
 #: lang/en:19
 #, no-wrap
 msgid "Could not delete the following files:"
-msgstr ""
+msgstr "無法刪除下面檔案："
 
 #: lang/en:20
 #, no-wrap
 msgid "Could not execute the following files:"
-msgstr ""
+msgstr "無法執行下面檔案："
 
 #: lang/en:21
 #, no-wrap
 msgid "Could not find the following files:"
-msgstr ""
+msgstr "無法找到下面檔案："
 
 #: lang/en:22
 #, no-wrap
 msgid "Could not create hard link for the following files:"
-msgstr ""
+msgstr "無法建立下面檔案之hard link："
 
 #: lang/en:23
 #, no-wrap
 msgid "Could not read the following files:"
-msgstr ""
+msgstr "無法讀下面檔案："
 
 #: lang/en:24
 #, no-wrap
 msgid "Could not rename the following files:"
-msgstr ""
+msgstr "無法將下面檔案重新命名："
 
 #: lang/en:25
 #, no-wrap
 msgid "Could not create symlink for the following files:"
-msgstr ""
+msgstr "無法建立下面檔案之符號鏈接："
 
 #: lang/en:26
 #, no-wrap
 msgid "Could not write the following files:"
-msgstr ""
+msgstr "無法寫下面檔案："
 
 #: lang/en:27
 #, no-wrap
 msgid "Could not find the following users:"
-msgstr ""
+msgstr "無法找到下面用戶"
 
 #: lang/en:28
 #, no-wrap
 msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
-msgstr ""
+msgstr "您的授權已經到期。請安裝新的授權檔案或聯絡<a href='mailto:info@bitbone.de'>info@bitbone.de</a>以便繼續使用。"
 
 #: lang/en:29
 #, no-wrap
 msgid "There is already an alias with this name:"
-msgstr ""
+msgstr "已經有此名稱之別名："
 
 #: lang/en:30
 #, no-wrap
 msgid "There is already a user with this name:"
-msgstr ""
+msgstr "已經有此名稱之用戶："
 
 #: lang/en:32
 #, no-wrap
@@ -324,32 +324,32 @@ msgstr "取消"
 #: lang/en:34
 #, no-wrap
 msgid "No"
-msgstr ""
+msgstr "否"
 
 #: lang/en:35
 #, no-wrap
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: lang/en:36
 #, no-wrap
 msgid "Show all"
-msgstr ""
+msgstr "顯示全部"
 
 #: lang/en:37
 #, no-wrap
 msgid "Next"
-msgstr ""
+msgstr "次"
 
 #: lang/en:38
 #, no-wrap
 msgid "Previous"
-msgstr ""
+msgstr "前"
 
 #: lang/en:39
 #, no-wrap
 msgid "Go to"
-msgstr ""
+msgstr "至"
 
 #: lang/en:40
 #, no-wrap
@@ -359,7 +359,7 @@ msgstr "儲存"
 #: lang/en:41
 #, no-wrap
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #: lang/en:42
 #, no-wrap
@@ -374,103 +374,103 @@ msgstr "完成"
 #: lang/en:44
 #, no-wrap
 msgid "Filter"
-msgstr ""
+msgstr "過濾器"
 
 # 83%
 #: lang/en:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "delete"
 msgstr "刪除"
 
 #: lang/en:47
 #, no-wrap
 msgid "yaffas|MAIL"
-msgstr ""
+msgstr "yaffas|郵件"
 
 #: lang/en:48
 #, no-wrap
 msgid "yaffas|FAX"
-msgstr ""
+msgstr "yaffas|傳真"
 
 #: lang/en:49
 #, no-wrap
 msgid "yaffas|GATE"
-msgstr ""
+msgstr "yaffas|閘口"
 
 #: lang/en:50
 #, no-wrap
 msgid "yaffas|PDF"
-msgstr ""
+msgstr "yaffas|PDF"
 
 #: lang/en:51
 #, no-wrap
 msgid "yaffas|FILE"
-msgstr ""
+msgstr "yaffas|檔案"
 
 #: lang/en:53
 #, no-wrap
 msgid "Modules for configuring the system accounts"
-msgstr ""
+msgstr "配置系統帳戶之模組"
 
 #: lang/en:54
 #, no-wrap
 msgid "Modules to customize the appearance"
-msgstr ""
+msgstr "客製化外觀之模組"
 
 #: lang/en:55
 #, no-wrap
 msgid "Modules for the license management"
-msgstr ""
+msgstr "許可管理之模組"
 
 #: lang/en:56
 #, no-wrap
 msgid "Modules for configuring the fax system"
-msgstr ""
+msgstr "配置傳真系統之模組"
 
 #: lang/en:57
 #, no-wrap
 msgid "Handbooks for system administration"
-msgstr ""
+msgstr "系統管理手冊"
 
 #: lang/en:58
 #, no-wrap
 msgid "Modules for printer, disk and other hardware configuration"
-msgstr ""
+msgstr "配置印表機、磁碟及其他硬體之模組"
 
 #: lang/en:59
 #, no-wrap
 msgid "Modules for configuring mailboxes"
-msgstr ""
+msgstr "配置郵箱之模組"
 
 #: lang/en:60
 #, no-wrap
 msgid "Modules for configuring the MTA"
-msgstr ""
+msgstr "配置MTA之模組"
 
 #: lang/en:61
 #, no-wrap
 msgid "Modules for configuring security options"
-msgstr ""
+msgstr "配置安全選項之模組"
 
 #: lang/en:63
 #, no-wrap
 msgid "Can not open $1 : $2"
-msgstr ""
+msgstr "無法打開$1 : $2 "
 
 #: lang/en:65
 #, no-wrap
 msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-msgstr ""
+msgstr "請於傳真配置內按下”運用”按鈕。配置已經改變。"
 
 #: lang/en:66
 #, no-wrap
 msgid "Attention!"
-msgstr ""
+msgstr "注意！"
 
 #: lang/en:68
 #, no-wrap
 msgid "Language"
-msgstr ""
+msgstr "語言"
 
 #: lang/en:69
 #, no-wrap
@@ -485,112 +485,112 @@ msgstr "英語"
 #: lang/en:71
 #, no-wrap
 msgid "Dutch"
-msgstr ""
+msgstr "荷蘭"
 
 #: lang/en:72
 #, no-wrap
 msgid "French"
-msgstr ""
+msgstr "法國"
 
 #: lang/en:73
 #, no-wrap
 msgid "Brazil"
-msgstr ""
+msgstr "巴西"
 
 #: lang/en:75
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
-msgstr ""
+msgstr "｛頁鏈接｝頁｛跳至下拉頁｝｛每下拉頁之列｝每頁條目"
 
 #: lang/en:76
 #, no-wrap
 msgid "About bitkit"
-msgstr ""
+msgstr "關於bitkit"
 
 #: lang/en:77
 #, no-wrap
 msgid "About yaffas"
-msgstr ""
+msgstr "關於yaffas"
 
 #: lang/en:78
 #, no-wrap
 msgid "About Z-Admin"
-msgstr ""
+msgstr "關於Z-Admin"
 
 #: lang/en:80
 #, no-wrap
 msgid "Logged out"
-msgstr ""
+msgstr "登出"
 
 #: lang/en:81
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
-msgstr ""
+msgstr "另一管理員登入，您須再次登入"
 
 #: lang/en:82
 #, no-wrap
 msgid "The session timed out, please re-login."
-msgstr ""
+msgstr "此連線已愈時，請重新登入"
 
 #: lang/en:84
 #, no-wrap
 msgid "Loading please wait..."
-msgstr ""
+msgstr "載入中，請等候…"
 
 #: lang/en:85
 #, no-wrap
 msgid "Error"
-msgstr ""
+msgstr "錯誤"
 
 #: lang/en:86
 #, no-wrap
 msgid "Help"
-msgstr ""
+msgstr "Help"
 
 #: lang/en:88
 #, no-wrap
 msgid "Loading..."
-msgstr ""
+msgstr "載入中..."
 
 #: lang/en:89
 #, no-wrap
 msgid "Data error."
-msgstr ""
+msgstr "資料錯誤"
 
 #: lang/en:90
 #, no-wrap
 msgid "No records found."
-msgstr ""
+msgstr "未找到記錄"
 
 #: lang/en:92
 #, no-wrap
 msgid "Filter data"
-msgstr ""
+msgstr "過濾資料"
 
 #: lang/en:93
 #, no-wrap
 msgid "Show filter"
-msgstr ""
+msgstr "顯示過濾器"
 
 #: lang/en:95
 #, no-wrap
 msgid "Could not connect to backend!"
-msgstr ""
+msgstr "無法連接後台！"
 
 #: lang/en:97
 #, no-wrap
 msgid "Logout"
-msgstr ""
+msgstr "登出"
 
 #: lang/en:99
 #, no-wrap
 msgid "Do you want to close the administrators connection?"
-msgstr ""
+msgstr "您要關閉此管理員連接嗎?"
 
 #: lang/en:100
 #, no-wrap
 msgid "Couldnt restart webmin."
-msgstr ""
+msgstr "無法重新啟動webmin"
 
 #: lang/en:101
 #, no-wrap
@@ -600,9 +600,9 @@ msgstr "關閉"
 #: lang/en:102
 #, no-wrap
 msgid "There is already an administrator connected.<br>If you want to log in, you will need to close his connection."
-msgstr ""
+msgstr "已經有一管理員自$1連接。<br>如您要登入，您須關閉此連接。"
 
 #: lang/en:103
 #, no-wrap
 msgid "There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection."
-msgstr ""
+msgstr "已經有一管理員自$1連接。<br>如您要登入，您須關閉此連接。"

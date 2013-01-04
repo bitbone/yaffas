@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,17 +171,17 @@ msgstr ""
 #: lang/en:1 lang/en:2
 #, no-wrap
 msgid "Support"
-msgstr ""
+msgstr "支援"
 
 #: lang/en:3
 #, no-wrap
 msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
-msgstr ""
+msgstr "點選下載按鈕來儲存設定檔。傳送郵件到<a href=\"mailto:support@yaffas.org\">support@yaffas.org</a>.您可能會被詢問此設定檔案內容"
 
 #: lang/en:4
 #, no-wrap
 msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
-msgstr ""
+msgstr "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
 
 #: lang/en:5
 #, no-wrap
@@ -196,29 +196,29 @@ msgstr "系統"
 #: lang/en:7
 #, no-wrap
 msgid "Please press download to get the available system and hardware informations."
-msgstr ""
+msgstr "請按下載來獲得目前系統和硬體資訊"
 
 #: lang/en:8
 #, no-wrap
 msgid "Hardware List"
-msgstr ""
+msgstr "硬體列表"
 
 #: lang/en:9
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lshw\" installed."
-msgstr ""
+msgstr "您的系統似乎沒有安裝\"lshw\"程式"
 
 #: lang/en:10
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lspci\" installed."
-msgstr ""
+msgstr "您的系統似乎沒有安裝\"lspci\"程式"
 
 #: lang/en:11
 #, no-wrap
 msgid "An error occured while executing \"pspci\"."
-msgstr ""
+msgstr "執行\"pspci\"發生錯誤"
 
 #: lang/en:12
 #, no-wrap
 msgid "An error occured while executing \"lshw\"."
-msgstr ""
+msgstr "執行\"lshw\"發生錯誤"

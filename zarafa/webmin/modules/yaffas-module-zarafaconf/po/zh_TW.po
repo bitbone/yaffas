@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 00:21+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -211,7 +211,7 @@ msgstr "在AD內無法找到根域命名上下文"
 #: lang/en:10
 #, no-wrap
 msgid "Maximum attachment size in Webaccess"
-msgstr ""
+msgstr "Webaccess最大附件檔案大小"
 
 #: lang/en:11
 #, no-wrap
@@ -221,22 +221,22 @@ msgstr "大小"
 #: lang/en:12
 #, no-wrap
 msgid "Purge old deleted items now?"
-msgstr ""
+msgstr "現在清除舊的已刪除項目？"
 
 #: lang/en:13
 #, no-wrap
 msgid "The maximum attachment size must be numeric and >0."
-msgstr ""
+msgstr "此最大的附件檔案大小必須是數字並且大於0"
 
 #: lang/en:14
 #, no-wrap
 msgid "The softdelete lifetime must be numeric and >=0."
-msgstr ""
+msgstr "此軟刪除存活時間必須是數字並且大於等於0"
 
 #: lang/en:15
 #, no-wrap
 msgid "Could not purge old items."
-msgstr ""
+msgstr "無法清除舊項目"
 
 #: lang/en:17
 #, no-wrap
@@ -291,12 +291,12 @@ msgstr "預設配額"
 #: lang/en:31
 #, no-wrap
 msgid "Enable POP3 for users by default"
-msgstr ""
+msgstr "預設啟動使用者POP3服務"
 
 #: lang/en:32
 #, no-wrap
 msgid "Enable IMAP for users by default"
-msgstr ""
+msgstr "預設啟動使用者IMAP服務"
 
 #: lang/en:33
 #, no-wrap
@@ -386,7 +386,7 @@ msgstr "暫存"
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
-msgstr ""
+msgstr "使用此檔案您需要執行outlook命令列使用此參數\"/importprf\"(e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 
 #: lang/en:57
 #, no-wrap
@@ -396,7 +396,7 @@ msgstr "基礎設定"
 #: lang/en:58
 #, no-wrap
 msgid "Number of days to keep deleted items"
-msgstr ""
+msgstr "保留已刪除項目的天數"
 
 #: lang/en:60
 #, no-wrap
@@ -426,7 +426,7 @@ msgstr "指名各郵件經Webaccess上載之附件的最大大小(MB)"
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
-msgstr ""
+msgstr "限制每位使用者最大使用容量(MB).空白表示無限制"
 
 #: help/en:3
 #, no-wrap
@@ -451,7 +451,7 @@ msgstr "這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
-msgstr ""
+msgstr "指定伺服器位置來使用outlook連線到Zarafa伺服器"
 
 #: help/en:8
 #, no-wrap
@@ -461,24 +461,24 @@ msgstr "Outlook配置檔名稱"
 #: help/en:9
 #, no-wrap
 msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
-msgstr ""
+msgstr "此使用者名稱用來連接伺服器。您可以使用\"%UserName%\"變數來替換目前使用者的名稱"
 
 #: help/en:10
 #, no-wrap
 msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
-msgstr ""
+msgstr "如果您指定一個使用者名稱您必須也要指定此使用者密碼。如果您沒有指定，outlook將會詢問此使用者密碼"
 
 #: help/en:11
 #, no-wrap
 msgid "Specify if you want your profile to be overwritten during installation."
-msgstr ""
+msgstr "指定在安裝的過程中如果您想要覆寫您的設定檔"
 
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
-msgstr ""
+msgstr "指定在覆寫前是否要備份設定檔"
 
 #: help/en:13
 #, no-wrap
 msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."
-msgstr ""
+msgstr "在Zarafa上不會立刻刪除項目(郵件，行事曆內容....)。將會保留一段時間。此指定多久時間(天)"

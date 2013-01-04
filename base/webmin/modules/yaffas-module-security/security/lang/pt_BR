@@ -41,7 +41,7 @@ lbl_trusted=Redes confiáveis
 lbl_add_headers=Adicionar cabeçalho de SPAM no nível
 
 lbl_whitelist=Lista branca
-lbl_wl_desc=Todos as máquinas e endereços listados aqui não serão verificados por spam ou vírus. 
+lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
 lbl_address=Endereço
 lbl_wl_type=Tipo
 lbl_wl_from=Origem

@@ -41,7 +41,7 @@ lbl_trusted=Vertrouwde netwerken
 lbl_add_headers=Voeg spamheaders toe vanaf niveau
 
 lbl_whitelist=Whitelisting
-lbl_wl_desc=Al deze hosts en adressen worden niet gecontroleerd op spam of virussen.
+lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
 lbl_address=Adres
 lbl_wl_type=Type
 lbl_wl_from=Bron

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,17 +171,17 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "A logfile must be selected."
-msgstr ""
+msgstr "須選定記錄檔案"
 
 #: lang/en:2
 #, no-wrap
 msgid "It is not allowed to download this file."
-msgstr ""
+msgstr "不容許下載此檔案"
 
 #: lang/en:3
 #, no-wrap
 msgid "Logfiles"
-msgstr ""
+msgstr "log檔案"
 
 #: lang/en:4
 #, no-wrap
@@ -191,12 +191,12 @@ msgstr "下載"
 #: lang/en:5
 #, no-wrap
 msgid "Show old logfiles"
-msgstr ""
+msgstr "顯示舊記錄檔案"
 
 #: lang/en:6
 #, no-wrap
 msgid "Show new logfiles"
-msgstr ""
+msgstr "顯示新記錄檔案"
 
 #: lang/en:7
 #, no-wrap
@@ -206,9 +206,9 @@ msgstr "大小"
 #: lang/en:8
 #, no-wrap
 msgid "File"
-msgstr ""
+msgstr "檔案"
 
 #: lang/en:9
 #, no-wrap
 msgid "Log file viewer"
-msgstr ""
+msgstr "記錄檔案查看器"

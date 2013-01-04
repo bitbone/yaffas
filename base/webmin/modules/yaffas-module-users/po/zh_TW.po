@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,11 +171,11 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
-msgstr ""
+msgstr "用戶名稱無效。僅有小寫、數字、點及負號有效。"
 
 # 94%
 #: lang/en:2 lang/en:3
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Password not valid"
 msgstr "密碼無效"
 
@@ -201,64 +201,64 @@ msgstr "無效電子郵件地址"
 
 # 96%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "No e-mail address specified"
 msgstr "未指定電子郵件地址"
 
 #: lang/en:9
 #, no-wrap
 msgid "Groups not valid"
-msgstr ""
+msgstr "群組無效"
 
 #: lang/en:10
 #, no-wrap
 msgid "Passwords are not equal"
-msgstr ""
+msgstr "密碼不一致"
 
 #: lang/en:11
 #, no-wrap
 msgid "No user selected."
-msgstr ""
+msgstr "未選定用戶"
 
 #: lang/en:12
 #, no-wrap
 msgid "Wrong filetype selected."
-msgstr ""
+msgstr "選擇之檔案類型錯誤"
 
 #: lang/en:13
 #, no-wrap
 msgid "Could not change the login."
-msgstr ""
+msgstr "無法改變登入"
 
 #: lang/en:14
 #, no-wrap
 msgid "Could not read UIDs of the following users:"
-msgstr ""
+msgstr "無法讀下列用戶之UID："
 
 #: lang/en:15
 #, no-wrap
 msgid "The alias is not valid."
-msgstr ""
+msgstr "此別名無效"
 
 #: lang/en:16
 #, no-wrap
 msgid "If you want to you use aliases for this user, you should activate his mailbox."
-msgstr ""
+msgstr "您若要用此用戶之別名，您應先啟用其郵箱"
 
 #: lang/en:17
 #, no-wrap
 msgid "The selected username is already used by the system."
-msgstr ""
+msgstr "此選定用戶名稱已被系統使用"
 
 #: lang/en:18
 #, no-wrap
 msgid "The quota value has to be a number."
-msgstr ""
+msgstr "配額值須為數字"
 
 #: lang/en:19
 #, no-wrap
 msgid "The quota value has to be positive."
-msgstr ""
+msgstr "配額值須為正數"
 
 #: lang/en:20
 #, no-wrap
@@ -267,70 +267,70 @@ msgstr "此網域不是定義為您的郵件伺服器配置內之本地網域"
 
 # 97%
 #: lang/en:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "You cannot use localhost as domain-part"
-msgstr "您無法使用本地主機作為網域部分"
+msgstr "您不能使用本地主機為網域部分"
 
 #: lang/en:22
 #, no-wrap
 msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
-msgstr ""
+msgstr "用戶名稱與本地部分不同。您須定義別名為本地部分。不然zarafa無法適當交付電子郵件"
 
 #: lang/en:23
 #, no-wrap
 msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
-msgstr ""
+msgstr "用戶名稱與電子郵件本地部分不同。要讓zarafa用所給的電子郵件地址作業，您須定義下列電子郵件別名："
 
 #: lang/en:24
 #, no-wrap
 msgid "This user could not be added/edited."
-msgstr ""
+msgstr "無法增加/編輯此用戶"
 
 # 96%
 #: lang/en:25
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "This action is only supported with local authentification."
 msgstr "此動作僅有本地身分驗證支援"
 
 #: lang/en:26
 #, no-wrap
 msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
-msgstr ""
+msgstr "用戶已經建立但Zarafa儲存未建立。這通常表示您的授權不容許更多用戶。"
 
 #: lang/en:27
 #, no-wrap
 msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
-msgstr ""
+msgstr "此用戶係用於公共文件夾內。您須為其選擇另一用戶，然後您可刪除這個"
 
 #: lang/en:28
 #, no-wrap
 msgid "Internal call to zarafa-admin --force-resync failed, error code:"
-msgstr ""
+msgstr "Internal call to zarafa-admin --force-resync failed, error code:"
 
 #: lang/en:30
 #, no-wrap
 msgid "Usermanagment"
-msgstr ""
+msgstr "用戶管理"
 
 #: lang/en:31
 #, no-wrap
 msgid "Add user"
-msgstr ""
+msgstr "增加用戶"
 
 #: lang/en:32 lang/en:51
 #, no-wrap
 msgid "Printer operator"
-msgstr ""
+msgstr "印表機操作員"
 
 #: lang/en:33
 #, no-wrap
 msgid "Printer Administrator"
-msgstr ""
+msgstr "印表機管理員"
 
 #: lang/en:34
 #, no-wrap
 msgid "Modified users"
-msgstr ""
+msgstr "修改之用戶"
 
 #: lang/en:35
 #, no-wrap
@@ -339,24 +339,24 @@ msgstr "修改用戶"
 
 # 89%
 #: lang/en:36
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Do You really want to delete the selected users?"
-msgstr "您真的要刪除選定的儲存嗎?"
+msgstr "您真的要刪除選定之用戶嗎?"
 
 #: lang/en:37
 #, no-wrap
 msgid "Remove user"
-msgstr ""
+msgstr "移除用戶"
 
 #: lang/en:38
 #, no-wrap
 msgid "E-mail address"
-msgstr ""
+msgstr "電子郵件地址"
 
 #: lang/en:39
 #, no-wrap
 msgid "Name"
-msgstr ""
+msgstr "名稱"
 
 #: lang/en:40
 #, no-wrap
@@ -366,17 +366,17 @@ msgstr "群組"
 #: lang/en:41
 #, no-wrap
 msgid "Enable e-mail account"
-msgstr ""
+msgstr "啟用電子郵件帳戶"
 
 #: lang/en:42
 #, no-wrap
 msgid "No matter"
-msgstr ""
+msgstr "無論"
 
 #: lang/en:43
 #, no-wrap
 msgid "No printer operator"
-msgstr ""
+msgstr "無印表機操作員"
 
 #: lang/en:44
 #, no-wrap
@@ -391,28 +391,28 @@ msgstr "密碼"
 #: lang/en:46
 #, no-wrap
 msgid "Repeat password"
-msgstr ""
+msgstr "重覆密碼"
 
 #: lang/en:47 lang/en:72
 #, no-wrap
 msgid "User Management"
-msgstr ""
+msgstr "用戶管理"
 
 #: lang/en:48
 #, no-wrap
 msgid "Filetype for fax delivery"
-msgstr ""
+msgstr "交付傳真之檔案類型"
 
 #: lang/en:49
 #, no-wrap
 msgid "E-mail alias"
-msgstr ""
+msgstr "電子郵件別名"
 
 # 87%
 #: lang/en:50
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Authentication"
-msgstr "身分驗證"
+msgstr "身分驗證 "
 
 #: lang/en:52
 #, no-wrap
@@ -422,28 +422,28 @@ msgstr "用戶"
 #: lang/en:53
 #, no-wrap
 msgid "Mailbox quota"
-msgstr ""
+msgstr "郵箱配額"
 
 # 75%
 #: lang/en:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Zarafa administrator"
-msgstr "郵件管理者"
+msgstr "Zarafa管理員"
 
 #: lang/en:55
 #, no-wrap
 msgid "Zarafa shared store user"
-msgstr ""
+msgstr "Zarafa共享儲存用戶"
 
 #: lang/en:56
 #, no-wrap
 msgid "irreversible after activation"
-msgstr ""
+msgstr "啟用後不可逆"
 
 #: lang/en:57
 #, no-wrap
 msgid "Given name"
-msgstr ""
+msgstr "給定名稱"
 
 #: lang/en:58
 #, no-wrap
@@ -453,68 +453,68 @@ msgstr "姓"
 #: lang/en:59
 #, no-wrap
 msgid "Zarafa store"
-msgstr ""
+msgstr "Zarafa儲存"
 
 #: lang/en:60
 #, no-wrap
 msgid "no Zarafa license"
-msgstr ""
+msgstr "無Zarafa授權"
 
 #: lang/en:61
 #, no-wrap
 msgid "Convert into a zarafa resource"
-msgstr ""
+msgstr "轉換成Zarafa資源"
 
 #: lang/en:62
 #, no-wrap
 msgid "Should the following users really be converted into zarafa resources?"
-msgstr ""
+msgstr "下面之用戶真要轉換成Zarafa資源嗎?  "
 
 #: lang/en:63
 #, no-wrap
 msgid "User created with following warnings"
-msgstr ""
+msgstr "以下面的警告建立之用戶"
 
 #: lang/en:64
 #, no-wrap
 msgid "Business Phone"
-msgstr ""
+msgstr "商務電話"
 
 #: lang/en:65
 #, no-wrap
 msgid "Location"
-msgstr ""
+msgstr "地點"
 
 #: lang/en:66
 #, no-wrap
 msgid "Fax"
-msgstr ""
+msgstr "傳真"
 
 #: lang/en:67
 #, no-wrap
 msgid "Department"
-msgstr ""
+msgstr "部門"
 
 # 76%
 #: lang/en:68
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Allow send as"
-msgstr "允許發送的"
+msgstr "允許發送為"
 
 # 75%
 #: lang/en:69
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "For user"
-msgstr "至用戶"
+msgstr "用戶之"
 
 #: lang/en:70
 #, no-wrap
 msgid "For group"
-msgstr ""
+msgstr "群組之"
 
 # 87%
 #: lang/en:71
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Features"
 msgstr "功能"
 
@@ -531,27 +531,27 @@ msgstr "移除"
 #: lang/en:75
 #, no-wrap
 msgid "Set default"
-msgstr ""
+msgstr "設定預設"
 
 #: lang/en:76
 #, no-wrap
 msgid "Modify"
-msgstr ""
+msgstr "修改"
 
 #: lang/en:77
 #, no-wrap
 msgid "User currently in the office"
-msgstr ""
+msgstr "用戶目前在辦公室"
 
 #: lang/en:78
 #, no-wrap
 msgid "User currently out of the office"
-msgstr ""
+msgstr "用戶目前離開辦公室"
 
 #: lang/en:79
 #, no-wrap
 msgid "Edit out of office"
-msgstr ""
+msgstr "編輯離開辦公室"
 
 #: lang/en:80
 #, no-wrap
@@ -561,77 +561,77 @@ msgstr "主旨"
 #: lang/en:81
 #, no-wrap
 msgid "Message"
-msgstr ""
+msgstr "郵件"
 
 #: lang/en:82
 #, no-wrap
 msgid "Hide from addressbook"
-msgstr ""
+msgstr "自全域通訊錄隱藏"
 
 #: lang/en:83
 #, no-wrap
 msgid "Store size"
-msgstr ""
+msgstr "儲存大小"
 
 # 90%
 #: lang/en:84
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Store type"
 msgstr "儲存類型"
 
 #: lang/en:85
 #, no-wrap
 msgid "Administrator"
-msgstr ""
+msgstr "管理者"
 
 # 75%
 #: lang/en:86
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Active"
 msgstr "啟用"
 
 #: lang/en:87
 #, no-wrap
 msgid "Shared"
-msgstr ""
+msgstr "分享"
 
 # 75%
 #: lang/en:88
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "None"
-msgstr "完成"
+msgstr "None"
 
 #: lang/en:89
 #, no-wrap
 msgid "Force offline profile resynchronization"
-msgstr ""
+msgstr "強制離線設定檔再同步"
 
 #: lang/en:90
 #, no-wrap
 msgid "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
-msgstr ""
+msgstr "此強制設定(Cache mode)會重新從伺服器上下載所有資料。某些使用者問題可以被解決，但是此設定會耗損網路頻寬和時間，您需要特別注意網路頻寬問題。<br/><br/>強制以下使用者重新同步嗎？"
 
 #: lang/en:91
 #, no-wrap
 msgid "Configure disclaimer"
-msgstr ""
+msgstr "設定郵件宣告"
 
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
-msgstr ""
+msgstr "當用戶是管理員時，用戶被容許打開任何用戶之Zarafa儲存"
 
 #: help/en:2
 #, no-wrap
 msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
-msgstr ""
+msgstr "此用戶不能登入而將不被加到您的許可啟用的用戶。其他用戶可作為代表人打開此用戶之儲存"
 
 #: help/en:3
 #, no-wrap
 msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
-msgstr ""
+msgstr "輸入此用戶可能佔用之磁碟空間。如果此用戶提取量靠近限制，就會收到警告。達到限制後，此用戶就不能收發郵件"
 
 #: help/en:4
 #, no-wrap
 msgid "When enabled it hides this user from the global addressbook."
-msgstr ""
+msgstr "在啟用時，將自全域通訊錄隱藏此用戶"

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,17 +171,17 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Install New Key"
-msgstr ""
+msgstr "安裝新的license"
 
 #: lang/en:2
 #, no-wrap
 msgid "Existing Keys"
-msgstr ""
+msgstr "已存在的license"
 
 #: lang/en:3
 #, no-wrap
 msgid "Licensekey"
-msgstr ""
+msgstr "Licensekey"
 
 #: lang/en:4
 #, no-wrap
@@ -191,171 +191,171 @@ msgstr "系統"
 #: lang/en:5
 #, no-wrap
 msgid "Apply key"
-msgstr ""
+msgstr "Apply key"
 
 #: lang/en:6
 #, no-wrap
 msgid "Customer"
-msgstr ""
+msgstr "客戶"
 
 #: lang/en:7
 #, no-wrap
 msgid "Initial Key"
-msgstr ""
+msgstr "初始密鑰"
 
 #: lang/en:8
 #, no-wrap
 msgid "Licensenumber"
-msgstr ""
+msgstr "授權號碼"
 
 #: lang/en:9
 #, no-wrap
 msgid "Incoming MSNs"
-msgstr ""
+msgstr "傳入MSN"
 
 #: lang/en:10
 #, no-wrap
 msgid "unlimited"
-msgstr ""
+msgstr "無限制"
 
 #: lang/en:11
 #, no-wrap
 msgid "Unlimited (only limited by telephone system)"
-msgstr ""
+msgstr "無限制(僅受電話系統限制)"
 
 #: lang/en:12
 #, no-wrap
 msgid "Configurable controllers"
-msgstr ""
+msgstr "可配置之控制器"
 
 #: lang/en:13
 #, no-wrap
 msgid "Valid from"
-msgstr ""
+msgstr "有效期自"
 
 #: lang/en:14
 #, no-wrap
 msgid "Valid until"
-msgstr ""
+msgstr "有效期至"
 
 #: lang/en:15
 #, no-wrap
 msgid "Configurable printers"
-msgstr ""
+msgstr "可配置之印表機"
 
 #: lang/en:16
 #, no-wrap
 msgid "PDF encryption"
-msgstr ""
+msgstr "PDF加密"
 
 #: lang/en:17
 #, no-wrap
 msgid "Notepaper"
-msgstr ""
+msgstr "便條紙"
 
 #: lang/en:18
 #, no-wrap
 msgid "Merge PDFs"
-msgstr ""
+msgstr "合併PDF"
 
 # 85%
 #: lang/en:19
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "enabled"
 msgstr "啟用"
 
 # 87%
 #: lang/en:20
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "disabled"
 msgstr "關閉"
 
 #: lang/en:21
 #, no-wrap
 msgid "yaffas base"
-msgstr ""
+msgstr "yaffas base"
 
 #: lang/en:23
 #, no-wrap
 msgid "Licensetype"
-msgstr ""
+msgstr "授權類型"
 
 #: lang/en:24
 #, no-wrap
 msgid "Companylicense"
-msgstr ""
+msgstr "公司授權"
 
 #: lang/en:25
 #, no-wrap
 msgid "1-10 User"
-msgstr ""
+msgstr "1-10用戶"
 
 #: lang/en:26
 #, no-wrap
 msgid "11-50 User"
-msgstr ""
+msgstr "11-50用戶"
 
 #: lang/en:27
 #, no-wrap
 msgid "51-100 User"
-msgstr ""
+msgstr "51-100用戶"
 
 #: lang/en:28
 #, no-wrap
 msgid "101-250 User"
-msgstr ""
+msgstr "101-250用戶"
 
 #: lang/en:29
 #, no-wrap
 msgid "251-500 User"
-msgstr ""
+msgstr "251-500用戶"
 
 #: lang/en:31
 #, no-wrap
 msgid "Could not copy the key."
-msgstr ""
+msgstr "無法複製密鑰"
 
 #: lang/en:32
 #, no-wrap
 msgid "The product for your key is not installed!"
-msgstr ""
+msgstr "未安裝您的密鑰產品"
 
 #: lang/en:33
 #, no-wrap
 msgid "Can't create file!"
-msgstr ""
+msgstr "無法建立檔案！"
 
 #: lang/en:34
 #, no-wrap
 msgid "Can't write file!"
-msgstr ""
+msgstr "無法寫檔案！"
 
 #: lang/en:35
 #, no-wrap
 msgid "Invalid key location!"
-msgstr ""
+msgstr "無效密鑰位置！"
 
 #: lang/en:36
 #, no-wrap
 msgid "Can't remove new key!"
-msgstr ""
+msgstr "無法移除新密鑰！"
 
 #: lang/en:37
 #, no-wrap
 msgid "Wrong key version for installed product!"
-msgstr ""
+msgstr "安裝產品之版本錯誤！"
 
 #: lang/en:38
 #, no-wrap
 msgid "No key available!"
-msgstr ""
+msgstr "無可用密鑰"
 
 #: lang/en:39
 #, no-wrap
 msgid "Successfully saved licensekey!"
-msgstr ""
+msgstr "成功儲存許可密鑰！"
 
 #: lang/en:40
 #, no-wrap
 msgid "yaffas license key management"
-msgstr ""
+msgstr "yaffas授權密鑰管理 "

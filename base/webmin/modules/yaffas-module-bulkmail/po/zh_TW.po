@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,12 +171,12 @@ msgstr ""
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
-msgstr ""
+msgstr "大量郵件"
 
 #: lang/en:3
 #, no-wrap
 msgid "From"
-msgstr ""
+msgstr "寄件人"
 
 #: lang/en:4
 #, no-wrap
@@ -186,19 +186,19 @@ msgstr "主旨"
 #: lang/en:5
 #, no-wrap
 msgid "Message"
-msgstr ""
+msgstr "郵件"
 
 #: lang/en:6
 #, no-wrap
 msgid "Send"
-msgstr ""
+msgstr "傳送"
 
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
-msgstr ""
+msgstr "請完成全部表格並檢查您的電子郵件地址"
 
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."
-msgstr ""
+msgstr "您的郵件正排隊準備發送中。這可能需要花一點時間，視您的硬體而定"

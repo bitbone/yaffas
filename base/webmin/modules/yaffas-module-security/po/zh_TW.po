@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -360,8 +360,8 @@ msgstr "白名單"
 
 #: lang/en:44
 #, no-wrap
-msgid "All hosts and addresses listed here are not checked for spam or viruses."
-msgstr "此處所列的全部主機和地址未做垃圾郵件或病毒檢查"
+msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
+msgstr ""
 
 #: lang/en:45
 #, no-wrap
