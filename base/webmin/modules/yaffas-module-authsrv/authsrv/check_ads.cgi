@@ -83,23 +83,14 @@ try {
 			control(YAFFAS_MAILDISCLAIMERS(), RESTART());
 		}
 
-	# fork, because we have to restart webmin
-	my $pid = fork;
-	if ($pid == 0) {
-		# child
-		try {
-			Yaffas::Service::control(WEBMIN, RESTART);
-		} catch Yaffas::Exception with {
-			print Yaffas::UI::all_error_box(shift);
-		};
-	} else {
-		# parent
-		wait;
-	}
+	try {
+		Yaffas::Service::control(WEBMIN, RESTART);
+	} catch Yaffas::Exception with {
+		print Yaffas::UI::all_error_box(shift);
+	};
 
-		sleep(3);
-		print Yaffas::UI::ok_box();
-	}
+	sleep(3);
+	print Yaffas::UI::ok_box();
 }
 catch Yaffas::Exception with {
 	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;

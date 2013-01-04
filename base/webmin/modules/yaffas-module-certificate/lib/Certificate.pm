@@ -356,21 +356,7 @@ sub restart_service($) {
 
 	if (@restart) {
 		foreach my $service (@restart) {
-			my $pid = fork();
-			throw Yaffas::Exception('err_fork') unless defined $pid;
-
-			if ($pid) {
-				# parent
-				wait;
-				exit 0;
-				# wird webmin neu gestartet. so wird das hier gekillt, vom
-				# kind. wird ein andere dienst gerestartet, so wird der
-				# vater nach dem ende des kindes weiterlaufen, dies wird
-				# mit exit 0 verindert. ( oder? )
-			}else {
-				# child
-				Yaffas::Service::control($services{$service}, Yaffas::Service::RESTART());
-			}
+			Yaffas::Service::control($services{$service}, Yaffas::Service::RESTART());
 		}
 		return 1;
 	}

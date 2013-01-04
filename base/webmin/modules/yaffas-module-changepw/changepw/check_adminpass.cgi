@@ -21,26 +21,16 @@ my $pass1 = $main::in{'pass1'};
 my $pass2 = $main::in{'pass2'};
 
 
-# fork, because we have to restart webmin
-my $pid = fork;
-if ($pid == 0) {
-	# child
-	try {
-		Yaffas::Module::ChangePW::check_passwords($pass1, $pass2);
-		Yaffas::Module::ChangePW::change_admin_password($pass1);
+try {
+	Yaffas::Module::ChangePW::check_passwords($pass1, $pass2);
+	Yaffas::Module::ChangePW::change_admin_password($pass1);
 
-		print Yaffas::UI::ok_box();
-	} catch Yaffas::Exception with {
-		print Yaffas::UI::all_error_box(shift);
-		print change_admin_pass();
-	};
-	main::footer();
-} else {
-	# parent
-	wait;
-}
-
-
+	print Yaffas::UI::ok_box();
+} catch Yaffas::Exception with {
+	print Yaffas::UI::all_error_box(shift);
+	print change_admin_pass();
+};
+main::footer();
 
 =pod
 

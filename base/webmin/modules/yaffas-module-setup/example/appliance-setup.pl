@@ -62,19 +62,11 @@ try
     Yaffas::Service::control(POSTFIX, RESTART);
     Yaffas::File->new(Yaffas::Constant::FILE->{auth_wizard_lock}, 1)->save();
 
-    # fork, because we have to restart webmin
-    my $pid = fork;
-    if ($pid == 0) {
-        # child
-        try {
-            Yaffas::Service::control(WEBMIN, RESTART);
-        } catch Yaffas::Exception with {
-            print Yaffas::UI::all_error_box(shift);
-        };
-    } else {
-        # parent
-        wait;
-    }
+	try {
+		Yaffas::Service::control(WEBMIN, RESTART);
+	} catch Yaffas::Exception with {
+		print Yaffas::UI::all_error_box(shift);
+	};
 }
 catch Yaffas::Exception with
 {
