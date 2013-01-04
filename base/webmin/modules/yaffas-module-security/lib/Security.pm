@@ -839,10 +839,6 @@ sub whitelist_add {
 	my $what = shift;
 	my $type = _oftype($what);
 
-	if(!Yaffas::Check::email($what) && !Yaffas::Check::domainname($what) && !Yaffas::Check::ip($what)){
-		throw Yaffas::Exception("Input of unknown type");
-	}
-
 	throw Yaffas::Exception("Unknown type: $what") unless $type;
 
 	my %list = whitelist();
@@ -850,7 +846,7 @@ sub whitelist_add {
 
 	if($type eq "email"){
 		wl_amavis_add($what),
-	} elsif($type eq "domain" || $type eq "ip") {
+	} elsif($type eq "domain" || $type eq "ip" || $type eq "net") {
 		wl_postfix_add($what);
 		wl_amavis_add($what);
 	}
@@ -869,16 +865,12 @@ sub whitelist_delete {
 
 	throw Yaffas::Exception("Unknown type: $what") unless $type;
 
-	if(!Yaffas::Check::email($what) && !Yaffas::Check::domainname($what) && !Yaffas::Check::ip($what)){
-		throw Yaffas::Exception("Input of unknown type");
-	}
-
 	my %list = whitelist();
 	throw Yaffas::Exception('Unknown entry') unless grep { $what eq $_ } keys %list;
 
 	if($type eq 'email'){
 		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} } ;
-	} elsif($type eq 'domain' || $type eq 'ip'){
+	} elsif($type eq 'domain' || $type eq 'ip' || $type eq 'net' ){
 		wl_postfix_delete($what) if grep { 'postfix' eq $_ } @{ $list{$what}->{from} };
 		wl_amavis_delete($what) if grep { 'amavis' eq $_ } @{ $list{$what}->{from} };
 	}
@@ -908,6 +900,9 @@ sub _oftype {
 	return "email" if Yaffas::Check::email($x);
 	return "domain" if Yaffas::Check::domainname($x);
 	return "ip" if Yaffas::Check::ip($x);
+	if ($x =~ m/^([0-9\.]+)\/([0-9\.]+)$/) {
+		return "net" if Yaffas::Check::ip($1, $2, "netaddr");
+	}
 	return undef;
 }
 

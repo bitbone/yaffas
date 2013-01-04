@@ -7,7 +7,7 @@ our @ISA = ("Yaffas::Module");
 
 use Yaffas qw(do_back_quote);
 use Yaffas::Exception;
-use Yaffas::Service qw(WEBMIN USERMIN SASLAUTHD HYLAFAX SAMBA NETWORK NSCD ZARAFA_SERVER RESTART control);
+use Yaffas::Service qw(WEBMIN USERMIN SASLAUTHD HYLAFAX SAMBA NETWORK NSCD ZARAFA_SERVER POLICYD_WEIGHT RESTART control);
 use Yaffas::Auth;
 use Yaffas::Auth::Type;
 use Yaffas::File;
@@ -192,6 +192,7 @@ sub save {
 		control(USERMIN, RESTART);
 		control(SASLAUTHD, RESTART);
 		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
+		control(POLICYD_WEIGHT, RESTART);
 		control(ZARAFA_SERVER, RESTART);
 	} else {
 		## parent - will be killed by webmin restart
@@ -359,28 +360,28 @@ sub _load_settings {
 
 	my @enabled_interfaces;
 
+	my ($dns, $search) = [];
+	my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
+	my @content = $resolv->get_content();
+
+	foreach my $line (@content) {
+		if ($line =~ /^search\s+(.*)/) {
+			push @{$search}, split /\s+/, $1;
+		}
+		if ($line =~ /^nameserver\s+(.*)/) {
+			push @{$dns}, split /\s+/, $1;
+		}
+	}
+
 	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $interfaces = Yaffas::File->new(Yaffas::Constant::FILE->{network_interfaces})
 			or throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{network_interfaces});
 
 		my $device = "";
 		my ($ip, $netmask, $gateway) = "";
-		my ($dns, $search) = [];
 		my $method = '';
 
 		my @lines = $interfaces->get_content();
-
-		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf});
-		my @content = $resolv->get_content();
-
-		foreach my $line (@content) {
-			if ($line =~ /^search\s+(.*)/) {
-				push @{$search}, split /\s+/, $1;
-			}
-			if ($line =~ /^nameserver\s+(.*)/) {
-				push @{$dns}, split /\s+/, $1;
-			}
-		}
 
 		my @revLines = reverse(@lines);
 
@@ -421,22 +422,12 @@ sub _load_settings {
 		}
 	} else {
 		my ($ip, $netmask, $gateway, $method);
-		my ($dns, $search) = ([],[]);
 
 		push @enabled_interfaces, map { $_->name } grep { m#^eth# } IO::Interface::Simple->interfaces;
 
 		my @routes = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{'route'}, '-n');
 		foreach my $route (@routes){
 			$gateway = $1 if $route =~ m#^0\.0\.0\.0\s+([^ ]+)#ix;
-		}
-
-		my $yf = Yaffas::File->new(Yaffas::Constant::FILE->{'resolv_conf'});
-		foreach my $line ($yf->get_content()){
-			chomp $line;
-
-			if($line =~ m#search\s+(.+)\z#ix){
-				push @$search, $1;
-			}
 		}
 
 		foreach my $device (@enabled_interfaces){
@@ -912,9 +903,15 @@ sub _get_dhcp_interfaces() {
 =cut
 
 sub set_configuration {
+	my $domain = shift;
+	my $host = shift;
 	my $conf = Yaffas::Module::Netconf->new();
-	$conf->domainname(shift);
-	$conf->hostname(shift);
+	if ($domain) {
+		$conf->domainname(shift);
+	}
+	if ($host) {
+		$conf->hostname(shift);
+	}
 	$conf->save();
 }
 

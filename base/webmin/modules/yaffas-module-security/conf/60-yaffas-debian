@@ -34,7 +34,7 @@ if (-e '/opt/yaffas/config/postfix/whitelist-postfix') {
 		# parse valid IP address from the given entry;
 		# as it might call die(), we wrap in eval{} here;
 		# this check avoids domains being added to @mynetworks
-		if (eval { Amavis::Lookup::IP::ip_to_vec($entry); 1 }) {
+		if (eval { Amavis::Lookup::IP::ip_to_vec($entry, 1); 1 }) {
 			push @mynetworks, $entry;
 		}
 	}

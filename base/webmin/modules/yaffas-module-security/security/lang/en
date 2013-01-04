@@ -41,7 +41,7 @@ lbl_trusted=Trusted networks
 lbl_add_headers=Add spam detected headers at level
 
 lbl_whitelist=Whitelisting
-lbl_wl_desc=All hosts and addresses listed here are not checked for spam or viruses.
+lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
 lbl_address=Address
 lbl_wl_type=Type
 lbl_wl_from=Source
