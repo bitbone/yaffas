@@ -27,6 +27,13 @@ if ( $ENV{'QUERY_STRING'}){
 }
 
 footer();
+
+# ensure connection termination, even with keep-alive, to force the client
+# to reconnect and use the new SSL certificate; our CGIs usually run
+# in the webmin connection-specific process, and not in their own, that's
+# why this works
+exit 0;
+
 =pod
 
 =head1 COPYRIGHT
