@@ -273,6 +273,12 @@ sub set_default_quota {
 	Yaffas::Mail::set_default_quota($limit);
 }
 
+sub get_default_quota {
+	my $limit = Yaffas::Mail::get_default_quota();
+	return -1 if $limit < 0;
+	return $limit / 1024;
+}
+
 sub get_default_features() {
 	my $f = Yaffas::File::Config->new(Yaffas::Constant::FILE->{zarafa_server_cfg});
 
@@ -456,7 +462,7 @@ sub conf_dump() {
 
 	$sec = $bkc->section("mailboxconf");
 	$func = Yaffas::Conf::Function->new("quota", "Yaffas::Module::ZarafaConf::set_default_quota");
-	$func->add_param({type => "scalar", param => (Yaffas::Mail::get_default_quota()/1024)});
+	$func->add_param({type => "scalar", param => get_default_quota()});
 	$sec->del_func("quota");
 	$sec->add_func($func);
 

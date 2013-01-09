@@ -63,7 +63,7 @@ sub set_zarafa_quota($$) {
 	throw Yaffas::Exception("err_quota_negative") if($quota =~ /^-/);
 	throw Yaffas::Exception("err_quota_number") unless($quota =~ /^(\d+|)$/);
 
-	if ($quota eq "" || $quota == 0) {
+	if ($quota eq "" || $quota <= 0) {
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaOverride", 0);
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaWarn", 0);
 		Yaffas::LDAP::replace_entry($login, "zarafaQuotaSoft", 0);
@@ -745,6 +745,8 @@ QUOTA must be a integer value, with Quotasize in kB.
 
 sub set_default_quota($) {
 	my $quota = shift;
+	# the minus sign in $quota is allowed as this function may be passed
+	# -1 (meaning no default quota); this case is handled below
 	throw Yaffas::Exception("err_quota_value") unless ($quota =~ /^-?\d+$/);
 
 	if (Yaffas::Product::check_product("zarafa")) {
