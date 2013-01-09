@@ -72,7 +72,6 @@ sub set_zarafa_quota($$) {
 	else {
 		my $ret;
 		my $quota_warn = sprintf ("%d", $quota * 0.8);
-		$quota_warn > 1 or $quota_warn = 1;
 		unless ($quota_warn > 1) {
 			$quota_warn = 1;
 		}
