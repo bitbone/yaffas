@@ -178,37 +178,42 @@ sub set_time {
 	  . $in->{'minute'} . ":"
 	  . $in->{'second'} . "";
 
-	print Yaffas::do_back_quote("/sbin/hwclock", @format);
-	Yaffas::do_back_quote("/sbin/hwclock", "--hctosys");
+	system("/sbin/hwclock", @format) == 0 or
+		throw Yaffas::Exception("err_cannot_set_time");
+	system("/sbin/hwclock", "--hctosys") == 0 or
+		throw Yaffas::Exception("err_cannot_set_time");
 }
 
 sub get_time {
 	my %hw_date;
-
-	my $rawhwdate = `hwclock`;
-	if ( $rawhwdate =~ /^(\S+)\s+(\S+)\s+(\d+)\s+(\d+):(\d+):(\d+)\s+(\d+)\s+/ )
-	{
-		$hw_date{'day'}    = $1;
-		$hw_date{'month'}  = $2;
-		$hw_date{'date'}   = $3;
-		$hw_date{'hour'}   = $4;
-		$hw_date{'minute'} = $5;
-		$hw_date{'second'} = $6;
-		$hw_date{'year'}   = $7;
+	for my $cmd ("hwclock", "date '+%a %b %e %H:%M:%S %Y '") {
+		my $rawhwdate = `$cmd`;
+		if ( $rawhwdate =~ /^(\S+)\s+(\S+)\s+(\d+)\s+(\d+):(\d+):(\d+)\s+(\d+)\s+/ )
+		{
+			$hw_date{'day'}    = $1;
+			$hw_date{'month'}  = $2;
+			$hw_date{'date'}   = $3;
+			$hw_date{'hour'}   = $4;
+			$hw_date{'minute'} = $5;
+			$hw_date{'second'} = $6;
+			$hw_date{'year'}   = $7;
+			last;
+		}
+		elsif ( $rawhwdate =~
+			/^(\S+)\s+(\d+)\s+(\S+)\s+(\d+)\s+(\d+):(\d+):(\d+)\s+(am|pm)\s+/i )
+		{
+			$hw_date{'day'}    = $1;
+			$hw_date{'month'}  = $3;
+			$hw_date{'date'}   = $2;
+			$hw_date{'hour'}   = $5;
+			$hw_date{'minute'} = $6;
+			$hw_date{'second'} = $7;
+			$hw_date{'year'}   = $4;
+			$hw_date{'hour'} += 12 if ( $8 eq 'pm' );
+			last;
+		}
 	}
-	elsif ( $rawhwdate =~
-		/^(\S+)\s+(\d+)\s+(\S+)\s+(\d+)\s+(\d+):(\d+):(\d+)\s+(am|pm)\s+/i )
-	{
-		$hw_date{'day'}    = $1;
-		$hw_date{'month'}  = $3;
-		$hw_date{'date'}   = $2;
-		$hw_date{'hour'}   = $5;
-		$hw_date{'minute'} = $6;
-		$hw_date{'second'} = $7;
-		$hw_date{'year'}   = $4;
-		$hw_date{'hour'} += 12 if ( $8 eq 'pm' );
-	}
-	else {
+	if (!exists $hw_date{'year'}) {
 		throw Yaffas::Exception("err_hwclock_format");
 	}
 

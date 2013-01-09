@@ -5,16 +5,23 @@ use CGI::Carp qw(warningsToBrowser fatalsToBrowser);
 use Yaffas;
 use Yaffas::UI qw(ok_box all_error_box);
 use Yaffas::Module::Service;
+use Yaffas::Exception;
+use Error qw(:try);
 require './forms.pl';
 
 Yaffas::init_webmin();
 
 header();
 
-services_dlg();
-datetime_dlg();
-timeserver_dlg();
-shutdown_dlg();
+try {
+	services_dlg();
+	datetime_dlg();
+	timeserver_dlg();
+	shutdown_dlg();
+}
+catch Yaffas::Exception with {
+	print Yaffas::UI::all_error_box(shift);
+};
 
 footer();
 =pod
