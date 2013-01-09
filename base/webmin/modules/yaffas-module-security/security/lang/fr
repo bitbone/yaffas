@@ -41,7 +41,7 @@ lbl_trusted=Réseaux de confiance
 lbl_add_headers=Ajouter 'spam detected' dans les entêtes à partir du niveau
 
 lbl_whitelist=Liste blanche
-lbl_wl_desc=Tous les hôtes et les adresses contenus dans cette liste ne seront pas inspectés pour spam ou virus.
+lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
 lbl_address=Adresse
 lbl_wl_type=Type
 lbl_wl_from=Source

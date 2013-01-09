@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -276,7 +276,7 @@ msgstr "允許發送的"
 #: lang/en:27
 #, no-wrap
 msgid "Configure disclaimer"
-msgstr ""
+msgstr "設定郵件宣告"
 
 #: lang/en:29
 #, no-wrap

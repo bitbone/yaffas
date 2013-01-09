@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -326,7 +326,7 @@ msgstr "網域只能含字符(a-z及A-Z)、數字(0-9)\"、”.”及”-“，�
 #: lang/en:42
 #, no-wrap
 msgid "The given username already exists locally. Please specify another username or delete the existing user first."
-msgstr ""
+msgstr "此使用者已存在。請指定另一個使用者名稱或是先刪除已存在的使用者"
 
 #: lang/en:44
 #, no-wrap

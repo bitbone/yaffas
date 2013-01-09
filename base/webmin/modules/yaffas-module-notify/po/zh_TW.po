@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -171,12 +171,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Address for System Messages"
-msgstr ""
+msgstr "接收系統郵件地址"
 
 #: lang/en:2 lang/en:32
 #, no-wrap
 msgid "Notification"
-msgstr ""
+msgstr "通知"
 
 #: lang/en:3
 #, no-wrap
@@ -191,109 +191,109 @@ msgstr "電子郵件"
 #: lang/en:5
 #, no-wrap
 msgid "Send e-mail"
-msgstr ""
+msgstr "傳送電子郵件"
 
 #: lang/en:6
 #, no-wrap
 msgid "Always"
-msgstr ""
+msgstr "總是"
 
 #: lang/en:7
 #, no-wrap
 msgid "Critical errors"
-msgstr ""
+msgstr "嚴重錯誤"
 
 #: lang/en:8
 #, no-wrap
 msgid "Errors"
-msgstr ""
+msgstr "錯誤"
 
 #: lang/en:9
 #, no-wrap
 msgid "Test your e-mail address"
-msgstr ""
+msgstr "測試您的電子郵件地址"
 
 #: lang/en:10
 #, no-wrap
 msgid "Click the button below to send a mail to your previously set e-mail address."
-msgstr ""
+msgstr "點選此按鈕來傳送您之前設定的電子郵件地址"
 
 #: lang/en:11
 #, no-wrap
 msgid "Test"
-msgstr ""
+msgstr "測試"
 
 #: lang/en:12
 #, no-wrap
 msgid "This is not a valid mail address"
-msgstr ""
+msgstr "不是正確的電子郵件地址"
 
 #: lang/en:13
 #, no-wrap
 msgid "Can not modify configuration entry."
-msgstr ""
+msgstr "無法修改設定檔組態"
 
 #: lang/en:14
 #, no-wrap
 msgid "Error writing configuration file."
-msgstr ""
+msgstr "寫入設定檔錯誤"
 
 #: lang/en:15
 #, no-wrap
 msgid "Type can only be: always, errors or never."
-msgstr ""
+msgstr "類型只能為:總是、錯誤或是從不"
 
 #: lang/en:16
 #, no-wrap
 msgid "Line not found in configuration file."
-msgstr ""
+msgstr "在此設定檔案中沒有Line"
 
 #: lang/en:17
 #, no-wrap
 msgid "Please set an e-mail address first."
-msgstr ""
+msgstr "請先設定電子郵件地址"
 
 #: lang/en:18
 #, no-wrap
 msgid "Could not send a mail to your address."
-msgstr ""
+msgstr "無法傳送郵件到您的地址"
 
 #: lang/en:19
 #, no-wrap
 msgid "An e-mail has been sent to your given address. Please check your mailbox."
-msgstr ""
+msgstr "郵件已傳送到您的地址。請檢查您的信箱"
 
 #: lang/en:20
 #, no-wrap
 msgid "Successfully set adress for system messages."
-msgstr ""
+msgstr "成功設定系統訊息地址"
 
 #: lang/en:22
 #, no-wrap
 msgid "Test - yaffas notify"
-msgstr ""
+msgstr "Test - yaffas notify"
 
 #: lang/en:23
 #, no-wrap
 msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
-msgstr ""
+msgstr "此測試郵件發送到您的設定的地址。如果您收到此郵件，有錯誤就會通知您"
 
 #: lang/en:24
 #, no-wrap
 msgid "E-mail address test"
-msgstr ""
+msgstr "測試電子郵件地址"
 
 #: lang/en:26
 #, no-wrap
 msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
-msgstr ""
+msgstr "此電子郵件用來確認管理者地址。如果您收到此郵件，未來將會被通知任何系統狀況"
 
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
-msgstr ""
+msgstr "Have fun with yaffas"
 
 #: help/en:1
 #, no-wrap
 msgid "Enter a valid email address to receive notifications about the status of the system."
-msgstr ""
+msgstr "輸入有效的電子郵件地址來接收系統狀態通知"

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2012-12-10 11:06+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -209,8 +209,8 @@ msgstr "Whitelisting"
 
 #: lang/en:44
 #, no-wrap
-msgid "All hosts and addresses listed here are not checked for spam or viruses."
-msgstr "Die hier angegebenen Hosts und Adressen werden nicht auf Spam und Viren überprüft."
+msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
+msgstr ""
 
 #: lang/en:45
 #, no-wrap

@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-26 09:24+0200\n"
-"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"PO-Revision-Date: 2012-06-11 10:02+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -209,8 +209,8 @@ msgstr "Liste blanche"
 
 #: lang/en:44
 #, no-wrap
-msgid "All hosts and addresses listed here are not checked for spam or viruses."
-msgstr "Tous les hôtes et les adresses contenus dans cette liste ne seront pas inspectés pour spam ou virus."
+msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
+msgstr ""
 
 #: lang/en:45
 #, no-wrap
