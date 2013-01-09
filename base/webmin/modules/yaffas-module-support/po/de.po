@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -55,12 +55,12 @@ msgstr "Hardware Liste"
 #: lang/en:9
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lshw\" installed."
-msgstr "Ihr System verfügt nicht über die benötigten Programme \"lshw\"!"
+msgstr "Ihr System verfügt nicht über das benötigte Programm \"lshw\"."
 
 #: lang/en:10
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lspci\" installed."
-msgstr "Ihr System verfügt nicht über die benötigten Programme \"lspci\"!"
+msgstr "Ihr System verfügt nicht über das benötigte Programm \"lspci\"."
 
 #: lang/en:11
 #, no-wrap

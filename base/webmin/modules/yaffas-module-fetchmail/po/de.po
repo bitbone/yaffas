@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-17 00:23+0100\n"
-"PO-Revision-Date: 2012-11-16 08:57+0200\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -205,7 +205,7 @@ msgstr "Üblicherweise nicht"
 #: lang/en:41
 #, no-wrap
 msgid "Connect in SSL mode?"
-msgstr "Mit SSL verbinden"
+msgstr "Mit SSL verbinden?"
 
 #: lang/en:42
 #, no-wrap
@@ -445,7 +445,7 @@ msgstr "Fetchmail-Programm gestoppt"
 #: lang/en:94
 #, no-wrap
 msgid "Enabled scheduled checking"
-msgstr "Geplantes Abholen aktivieren."
+msgstr "Geplantes Abholen aktivieren"
 
 #: lang/en:95
 #, no-wrap

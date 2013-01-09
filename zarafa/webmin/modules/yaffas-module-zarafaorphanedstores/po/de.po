@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-07 00:20+0100\n"
-"PO-Revision-Date: 2012-11-05 17:18+0200\n"
-"Last-Translator: Michael <m.kromer@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -148,7 +148,7 @@ msgstr "Konnte das angegebene Postfach nicht finden."
 #: lang/en:27
 #, no-wrap
 msgid "Could not hook the store to the selected user."
-msgstr "Konnte das Postfach nicht an den angegebenen Benutzer anhängen"
+msgstr "Konnte das Postfach nicht an den angegebenen Benutzer anhängen."
 
 #: lang/en:28
 #, no-wrap

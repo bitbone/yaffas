@@ -24,6 +24,6 @@ lbl_submit_hook=Umhängen
 lbl_cancel_hook=Abbrechen
 err_hook_orphan=Konnte das verwaiste Postfach nicht umhängen
 err_store_not_found=Konnte das angegebene Postfach nicht finden.
-err_could_not_hook_to_user=Konnte das Postfach nicht an den angegebenen Benutzer anhängen
+err_could_not_hook_to_user=Konnte das Postfach nicht an den angegebenen Benutzer anhängen.
 err_select_user=Sie müssen zuerst einen Benutzer auswählen
 moduletitle=Verwaiste Postfächer

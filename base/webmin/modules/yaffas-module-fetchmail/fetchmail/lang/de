@@ -38,7 +38,7 @@ poll_is_gate=Lokale Benutzer oder E-Mail Adressen
 poll_keep=Nachrichten auf dem Server belassen?
 poll_fetchall=Immer alle Nachrichten abholen?
 poll_usually=Üblicherweise nicht
-poll_ssl=Mit SSL verbinden
+poll_ssl=Mit SSL verbinden?
 poll_err=Konnte Server nicht speichern
 poll_epoll=Der Servername fehlt oder stimmt nicht
 poll_evia=Fehlender oder ungültiger Mailserver-Name
@@ -91,7 +91,7 @@ log_global_user=Allgemeine Einstellungen des Bentzers $1 geändert
 log_global_file=Allgemeine Einstellungen in der Datei $1 geändert
 log_start=Fetchmail-Programm gestartet
 log_stop=Fetchmail-Programm gestoppt
-log_create_cron=Geplantes Abholen aktivieren.
+log_create_cron=Geplantes Abholen aktivieren
 log_update_cron=Geplantes Abholen ändern
 log_delete_cron=Geplantes Abholen abschalten
 

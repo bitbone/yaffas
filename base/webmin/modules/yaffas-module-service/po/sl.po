@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-08 00:27+0100\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,7 +167,7 @@ msgstr ""
 "Language: sl\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
-#: lang/en:1 lang/en:52
+#: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr ""
@@ -357,32 +357,37 @@ msgstr ""
 msgid "Invalid timezone"
 msgstr ""
 
-#: lang/en:46
+#: lang/en:44
 #, no-wrap
-msgid "now"
+msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
 msgstr ""
 
 #: lang/en:47
 #, no-wrap
-msgid "hourly"
+msgid "now"
 msgstr ""
 
 #: lang/en:48
 #, no-wrap
-msgid "daily at "
+msgid "hourly"
 msgstr ""
 
 #: lang/en:49
 #, no-wrap
-msgid " minute"
+msgid "daily at "
 msgstr ""
 
 #: lang/en:50
 #, no-wrap
-msgid " hour"
+msgid " minute"
 msgstr ""
 
 #: lang/en:51
+#, no-wrap
+msgid " hour"
+msgstr ""
+
+#: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr ""

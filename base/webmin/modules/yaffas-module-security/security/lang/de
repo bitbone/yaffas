@@ -41,7 +41,7 @@ lbl_trusted=Vertrauenswürdige Netzwerke
 lbl_add_headers=Hinzufügen von "Spam-Headern" ab Level 
 
 lbl_whitelist=Whitelisting
-lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
+lbl_wl_desc=E-Mails von den hier gelisteten Domains, E-Mail-Adressen, IPs oder IP-Netzen werden nie abgewiesen.
 lbl_address=Adresse
 lbl_wl_type=Typ
 lbl_wl_from=Quelle

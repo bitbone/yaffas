@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-06 10:03+0300\n"
-"PO-Revision-Date: 2012-07-05 18:19+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -111,7 +111,7 @@ msgstr "Geben Sie die maximale Größe von E-Mail Anhängen in MB an, die im Web
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB."
-msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)"
+msgstr "Dies begrenzt den maximalen Festplattenplatz pro Benutzer (in MB)."
 
 #: help/en:3
 #, no-wrap
