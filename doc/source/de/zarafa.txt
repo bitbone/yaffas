@@ -111,11 +111,12 @@ image:{images_common}guides_zarafa_connect4.png[]
 
 Stellen Sie bitte sicher, dass für das erstellte Konto der Punkt  _"Neue Nachrichten übermitteln an"_ auf  _"Inbox - Benutzer"_ gesetzt ist. Schließen Sie nun Outlook und öffnen Sie es erneut - Sie sollten nun Zugriff auf ihren Store haben und können mailen, Termine verwalten, Kontakte pflegen, etc. 
 
+ifndef::product-bitkit[]
 [NOTE]
 ==============
 Bitte haben Sie Verständnis, dass wir keinen Support für die Benutzung, Konfiguration oder Installation von Microsoft Outlook leisten können!
 ==============
-
+endif::product-bitkit[]
 
 
 === Backup Pfade
