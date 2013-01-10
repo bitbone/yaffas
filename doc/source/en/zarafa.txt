@@ -10,7 +10,7 @@ You can also set the maximum size of attachments uploadable via the Zarafa Webac
 
 [NOTE]
 ==============
-This limitation does **not** overwrite the setting of the mailserver. If there is a smaller size of attachments allowed, the mailserver settings are valid.
+This limitation does **not** override the setting of the mailserver. If there is a smaller size of attachments allowed, the mailserver settings are effective.
 ==============
 
 At the tab  _"Messages At Reaching Quota"_ you can customize the messages for reaching limits. The description of variables is available at the online help. 
@@ -77,7 +77,6 @@ If this is not the case, then differential backups are not possible and the syst
 ==============
 
 
-////
 === Microsoft Outlook Connection
 
 The client you need for connecting Microsoft Outlook is in  _"software"_ at the directory _"zarafa"_ on your {product} system.
@@ -115,8 +114,6 @@ Please make sure that the following setting is made for the new account:  _"New 
 ==============
 Please understand that we are not able to give support to any issue of using, configuring or installing Microsoft Outlook!
 ==============
-
-////
 
 
 
