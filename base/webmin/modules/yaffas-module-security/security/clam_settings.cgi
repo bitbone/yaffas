@@ -19,10 +19,10 @@ my $virusalert  = $main::in{virusalert};
 
 try {
 	throw Yaffas::Exception("Undefined value for archive") unless defined $archive;
-	throw Yaffas::Exception("Undefined value for length") unless defined $max_length;
+	throw Yaffas::Exception("err_bad_maximum_size") unless defined $max_length;
 
 	throw Yaffas::Exception("Invalid value for archive") if $archive !~ m#^(true|false)\z#;
-	throw Yaffas::Exception("Invalid value for length") if $max_length !~ m#^\d+\z#;
+	throw Yaffas::Exception("err_bad_maximum_size") if $max_length !~ m#^\d+\z#;
 
 	if($archive eq 'false'){
 		Yaffas::Module::Security::clam_scan_archive(0);
