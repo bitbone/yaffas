@@ -128,6 +128,11 @@ Yaffas.UI.prototype.createMenuBar = function() {
 					onclick: {
 						fn: this.setLanguage.bind(this, "pt_BR")
 					}
+				}, {
+					text: _("lbl_lang_zh_TW", "global"),
+					onclick: {
+						fn: this.setLanguage.bind(this, "zh_TW")
+					}
 				}
 			]
 		}
