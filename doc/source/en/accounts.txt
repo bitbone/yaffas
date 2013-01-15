@@ -85,6 +85,14 @@ For simple queries to the domain controller a standard user account is sufficien
 If you change the active directory user, his password or the DN of your server, you have to change those in the authentication module too!
 ==============
 
+[NOTE]
+==============
+It is currently not possible to use an Active Directory server whose
+workgroup is different than the domain.
+This is being worked on. The current status along with further information
+can be found in the https://jira.zarafa.com/browse/ADM-275[relevant ticket].
+==============
+
 
 
 === User Management

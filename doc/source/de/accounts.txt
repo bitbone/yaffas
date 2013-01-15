@@ -115,6 +115,14 @@ Für die regulären Anfragen an den Domänencontroller genügt ein Benutzeraccou
 Falls Sie den Active Directory User, sein Passwort oder die DN Ihres Servers ändern, so müssen Sie diese Änderungen auch im Authentifizierungsmodul vornehmen!
 ==============
 
+[NOTE]
+==============
+Es ist zur Zeit nicht möglich, einen Active-Directory-Server zu benutzen,
+dessen Workgroup sich von der Domain unterscheidet.
+Dies wird in einer zukünftigen Version behoben. Der aktuelle Status kann,
+ebenso wie weitere Informationen, im
+https://jira.zarafa.com/browse/ADM-275[entspr. Ticket] nachgesehen werden.
+==============
 
 
 === Benutzerverwaltung
