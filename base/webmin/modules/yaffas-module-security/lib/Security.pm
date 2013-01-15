@@ -536,7 +536,9 @@ sub clam_max_length {
 
 	unless(defined $set){
 		my $line = $y->get_content($num);
-		return undef unless $line =~ m#^StreamMaxLength\s*(\d+)#ix;
+		# 10 is the default value, if nothing is specified explicitly
+		# (from man clamd.conf)
+		return "10" unless $line =~ m#^StreamMaxLength\s*(\d+)#ix;
 		return $1;
 	}
 
