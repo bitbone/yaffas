@@ -1,0 +1,17 @@
+/var/log/z-push/z-push.log {
+        weekly
+        missingok
+        rotate 13
+        compress
+        delaycompress
+        notifempty
+}
+
+/var/log/z-push/z-push-error.log {
+        monthly
+        missingok
+        rotate 12
+        compress
+        delaycompress
+        notifempty
+}

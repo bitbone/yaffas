@@ -22,6 +22,8 @@ make %{?_smp_mflags}
 %install
 rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT
+mkdir -p $RPM_BUILD_ROOT%{_sysconfdir}/logrotate.d
+install -m 644 debian/z-push.logrotate $RPM_BUILD_ROOT%{_sysconfdir}/logrotate.d/z-push
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -34,6 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/z-push
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
+%{_sysconfdir}/logrotate.d/z-push
 
 %changelog
 * Mon Mar 08 2011 Package Builder <packages@yaffas.org> 1.4.5-1
