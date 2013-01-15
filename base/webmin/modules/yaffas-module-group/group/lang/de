@@ -2,9 +2,9 @@ lbl_index_return=Netzwerk
 lbl_group_add=Erstellen
 lbl_link_edit=Bearbeiten
 lbl_create_group_header=Gruppe erstellen
-lbl_delete=Gruppe löschen
-lbl_edit=Gruppe bearbeiten
-lbl_create=Gruppe anlegen
+lbl_delete=Gruppe(n) löschen
+lbl_edit=Gruppe(n) bearbeiten
+lbl_create=Gruppe(n) anlegen
 lbl_changeuser=Benutzer ändern
 
 lbl_index_header=Gruppenverwaltung

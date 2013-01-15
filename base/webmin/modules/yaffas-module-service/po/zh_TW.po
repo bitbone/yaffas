@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
 "PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -169,7 +169,7 @@ msgstr ""
 "X-Generator: Pootle 2.1.5\n"
 
 # 87%
-#: lang/en:1 lang/en:52
+#: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr "服務"
@@ -364,32 +364,37 @@ msgstr "系統時間"
 msgid "Invalid timezone"
 msgstr "無效的時區"
 
-#: lang/en:46
+#: lang/en:44
+#, no-wrap
+msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
+msgstr ""
+
+#: lang/en:47
 #, no-wrap
 msgid "now"
 msgstr "現在"
 
-#: lang/en:47
+#: lang/en:48
 #, no-wrap
 msgid "hourly"
 msgstr "每小時"
 
-#: lang/en:48
+#: lang/en:49
 #, no-wrap
 msgid "daily at "
 msgstr "每日於"
 
-#: lang/en:49
+#: lang/en:50
 #, no-wrap
 msgid " minute"
 msgstr "分鐘"
 
-#: lang/en:50
+#: lang/en:51
 #, no-wrap
 msgid " hour"
 msgstr "小時"
 
-#: lang/en:51
+#: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr "時間伺服器"

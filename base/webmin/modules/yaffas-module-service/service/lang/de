@@ -41,6 +41,7 @@ lbl_year=Jahr
 lbl_timezone=Zeitzone
 lbl_setdatetime=Systemzeit
 err_invalid_timezone=Ungültige Zeitzone
+err_cannot_set_time=Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead.
 
 
 lbl_once=einmalig

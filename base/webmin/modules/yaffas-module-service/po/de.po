@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-11 00:23+0100\n"
-"PO-Revision-Date: 2012-12-10 11:06+0200\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.5\n"
 
-#: lang/en:1 lang/en:52
+#: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr "Dienste"
@@ -210,32 +210,37 @@ msgstr "Systemzeit"
 msgid "Invalid timezone"
 msgstr "Ungültige Zeitzone"
 
-#: lang/en:46
+#: lang/en:44
+#, no-wrap
+msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
+msgstr ""
+
+#: lang/en:47
 #, no-wrap
 msgid "now"
 msgstr "einmalig"
 
-#: lang/en:47
+#: lang/en:48
 #, no-wrap
 msgid "hourly"
 msgstr "jede Stunde"
 
-#: lang/en:48
+#: lang/en:49
 #, no-wrap
 msgid "daily at "
 msgstr "jeden Tag"
 
-#: lang/en:49
+#: lang/en:50
 #, no-wrap
 msgid " minute"
 msgstr " Minute "
 
-#: lang/en:50
+#: lang/en:51
 #, no-wrap
 msgid " hour"
 msgstr " Stunde "
 
-#: lang/en:51
+#: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr "Zeit-Server"

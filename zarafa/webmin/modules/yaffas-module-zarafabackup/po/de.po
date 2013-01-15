@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-23 00:53+0300\n"
-"PO-Revision-Date: 2012-07-22 11:43+0200\n"
-"Last-Translator: Michael <m.kromer@zarafa.com>\n"
+"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -225,7 +225,7 @@ msgstr "Konnte das Verzeichnis nicht anlegen."
 #: lang/en:45
 #, no-wrap
 msgid "Value for backup days incorrect."
-msgstr "Wert für den Backup Zeitpunkt ist nicht korrekt"
+msgstr "Wert für den Backup-Zeitpunkt ist nicht korrekt."
 
 #: lang/en:46
 #, no-wrap
