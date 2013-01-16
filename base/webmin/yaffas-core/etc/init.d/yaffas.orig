@@ -27,24 +27,11 @@ d_stop() {
 	/opt/yaffas/etc/webmin/stop > /dev/null
 }
 
-#
-#	Function that returns whether the daemon/service is running
-#
-d_isrunning() {
-	pidfile=`grep "^pidfile=" /opt/yaffas/etc/webmin/miniserv.conf | sed -e 's/pidfile=//g'`
-	pid=`cat "$pidfile" 2>/dev/null`
-	kill -0 "$pid" 2>/dev/null #implicit return value
-}
-
 case "$1" in
   start)
-	if d_isrunning; then
-		echo "$DESC: $NAME is already running"
-	else
-		echo -n "Starting $DESC: $NAME"
-		d_start
-		echo "."
-	fi
+	echo -n "Starting $DESC: $NAME"
+	d_start
+	echo "."
 	;;
   stop)
 	echo -n "Stopping $DESC: $NAME"
@@ -58,7 +45,7 @@ case "$1" in
 	#	just the same as "restart".
 	#
 	echo -n "Restarting $DESC: $NAME"
-	d_stop 2>/dev/null || :
+	d_stop
 	sleep 1
 	d_start
 	echo "."
