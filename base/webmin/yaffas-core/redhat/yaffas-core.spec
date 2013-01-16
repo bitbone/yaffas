@@ -74,6 +74,7 @@ fi
 
 /sbin/chkconfig --add yaffas
 /sbin/chkconfig yaffas on
+/sbin/service yaffas stop &>/dev/null || :
 /sbin/service yaffas start &>/dev/null || :
 
 %preun
