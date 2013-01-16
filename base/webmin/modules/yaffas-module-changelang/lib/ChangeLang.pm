@@ -71,7 +71,7 @@ sub set_lang($;$) {
 	my $lang = shift;
 	my $user = shift;
 
-	if ($lang ne "de" && $lang ne "en" && $lang ne "nl" && $lang ne "fr" && $lang ne "pt_BR") {
+	if ($lang ne "de" && $lang ne "en" && $lang ne "nl" && $lang ne "fr" && $lang ne "pt_BR" && $lang ne "zh_TW") {
 		throw Yaffas::Exception("err_lang");
 	}
 

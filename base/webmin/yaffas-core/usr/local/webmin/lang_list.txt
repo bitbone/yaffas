@@ -8,6 +8,7 @@ lang=pt,titles=1	Portuguese
 lang=pt_BR,titles=1,fallback=pt	Portuguese (Brazilian)
 lang=zh_TW.Big5,charset=Big5,titles=0	Traditional Chinese
 lang=zh_TW.UTF-8,charset=UTF-8,titles=0	Traditional Chinese
+lang=zh_TW,charset=UTF-8,titles=0	Traditional Chinese
 lang=zh_CN,titles=0,charset=GB2312	Simplified Chinese
 lang=zh_CN.UTF-8,titles=0,charset=UTF-8	Simplified Chinese
 lang=sv,titles=1	Swedish
