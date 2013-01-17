@@ -1,7 +1,6 @@
 #!/bin/bash
 
-DEBEMAIL="packages@yaffas.org"
-DEBFULLNAME="Package Builder"
+export DEBEMAIL="Package Builder <packages@yaffas.org>"
 
 DIR=$1; shift
 
