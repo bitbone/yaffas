@@ -194,8 +194,9 @@ sub save {
 		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
 		control(POLICYD_WEIGHT, RESTART);
 		control(ZARAFA_SERVER, RESTART);
+		exit;
 	} else {
-		## parent - will be killed by webmin restart
+		## parent - wait for the child to perform all the restarts
 		wait;
 	}
 }
