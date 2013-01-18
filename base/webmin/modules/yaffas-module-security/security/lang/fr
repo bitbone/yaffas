@@ -48,4 +48,5 @@ lbl_wl_from=Source
 lbl_wl_entry=Saisie
 
 err_mail=Adresse électronique invalide
+err_bad_maximum_size=Maximum size of scannable objects must be a number (in MB).
 moduletitle=Sécurité

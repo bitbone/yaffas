@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
-"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"POT-Creation-Date: 2013-01-18 11:05+0100\n"
+"PO-Revision-Date: 2013-01-15 15:51+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -238,6 +238,11 @@ msgid "Invalid e-mail address"
 msgstr "Ungültige E-Mail Adresse"
 
 #: lang/en:51
+#, no-wrap
+msgid "Maximum size of scannable objects must be a number (in MB)."
+msgstr ""
+
+#: lang/en:52
 #, no-wrap
 msgid "Security"
 msgstr "Sicherheit"

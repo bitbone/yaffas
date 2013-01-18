@@ -48,4 +48,5 @@ lbl_wl_from=Bron
 lbl_wl_entry=Item
 
 err_mail=Ongeldig e-mailadres
+err_bad_maximum_size=Maximum size of scannable objects must be a number (in MB).
 moduletitle=Beveiliging

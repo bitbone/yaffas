@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
+"POT-Creation-Date: 2013-01-18 11:05+0100\n"
 "PO-Revision-Date: 2013-01-04 11:20+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -389,6 +389,11 @@ msgid "Invalid e-mail address"
 msgstr "無效電子郵件地址"
 
 #: lang/en:51
+#, no-wrap
+msgid "Maximum size of scannable objects must be a number (in MB)."
+msgstr ""
+
+#: lang/en:52
 #, no-wrap
 msgid "Security"
 msgstr "安全"

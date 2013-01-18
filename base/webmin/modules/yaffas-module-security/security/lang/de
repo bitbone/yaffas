@@ -48,4 +48,5 @@ lbl_wl_from=Quelle
 lbl_wl_entry=Eintrag
 
 err_mail=Ungültige E-Mail Adresse
+err_bad_maximum_size=Maximum size of scannable objects must be a number (in MB).
 moduletitle=Sicherheit
