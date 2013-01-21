@@ -440,11 +440,11 @@ sub _load_settings {
 
 				foreach my $line ($bkf->get_content()){
 					chomp $line;
-					$ip = $1 if $line =~ m#^IPADDR="?(.+)"?\z#ix;
-					$netmask = $1 if $line =~ m#^NETMASK="?(.+)"?\z#ix;
-					$method = $1 if $line =~ m#^BOOTPROTO="?(.+)"?\z#ix;
+					$ip = $1 if $line =~ m#^IPADDR="?(.+?)"?\z#ix;
+					$netmask = $1 if $line =~ m#^NETMASK="?(.+?)"?\z#ix;
+					$method = $1 if $line =~ m#^BOOTPROTO="?(.+?)"?\z#ix;
 					$method = "static" unless(lc $method eq 'dhcp');
-					push @$dns, $1 if $line =~ m#^DNS\d+="?(.+)"?\z#ix;
+					push @$dns, $1 if $line =~ m#^DNS\d+="?(.+?)"?\z#ix;
 				}
 			}
 
