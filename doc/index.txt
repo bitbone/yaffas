@@ -4,6 +4,6 @@
 
 [width="50%"]
 |=======================
-| Deutsch | http://doc.yaffas.org/de_DE.chunked[html] | http://doc.yaffas.org/de_DE.html[html-single]
-| English | http://doc.yaffas.org/en_EN.chunked[html] | http://doc.yaffas.org/en_EN.html[html-single]
+| Deutsch | link:de_DE.chunked/index.html[html] | link:de_DE.html[html-single]
+| English | link:en_EN.chunked/index.html[html] | link:en_EN.html[html-single]
 |=======================
