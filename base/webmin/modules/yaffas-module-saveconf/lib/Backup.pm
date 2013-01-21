@@ -508,6 +508,12 @@ sub _set_ldap($)
 		throw Yaffas::Exception("err_domrename", $?) unless $? == 0;
 		# domrename writes its output to this vv
 		$file = Yaffas::Constant::FILE->{'tmpslap'};
+	} else {
+		# domrename ensures that $file (/tmp/slapcat.ldif) has the correct SELinux context;
+		# if we don't call domrename, we have to ensure that ourselves (ADM-288)
+		if (Yaffas::Constant::get_os() =~ m/RHEL\d/ ) {
+			system("chcon", "-u", "system_u", "-t", "slapd_db_t", $file);
+		}
 	}
 
 	system(Yaffas::Constant::APPLICATION->{'slapadd'}, "-f", Yaffas::Constant::FILE->{slapd_conf}, "-c", "-l", $file);
