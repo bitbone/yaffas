@@ -5,7 +5,7 @@
 
 use encoding 'utf-8';
 
-my @langs = ("de", "en", "nl", "fr", "pt_BR");
+my @langs = ("de", "en", "nl", "fr", "pt_BR", "zh_TW");
 my @path = qw(/opt/yaffas/webmin); # disabled usermin
 
 foreach my $path (@path) {
