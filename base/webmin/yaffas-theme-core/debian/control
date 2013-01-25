@@ -7,6 +7,6 @@ Standards-Version: 3.5.2
 
 Package: yaffas-theme-core
 Architecture: all
-Depends: ${shlibs:Depends}, libjson-perl, libconfig-general-perl, yaffas-core, yaffas-yui
+Depends: ${shlibs:Depends}, libjson-perl, libconfig-general-perl, yaffas-core, yaffas-yui, yaffas-module-changelang
 Description: Theme core for yaffas
  Theme core for yaffas

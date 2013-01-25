@@ -8,7 +8,7 @@ Group:		Applications/System
 Source: 	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-core, yaffas-yui, perl(JSON)
+Requires:	yaffas-core, yaffas-yui, yaffas-module-changelang, perl(JSON)
 AutoReqProv: no
 
 %description
