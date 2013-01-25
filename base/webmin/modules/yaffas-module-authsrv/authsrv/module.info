@@ -8,4 +8,4 @@ version=0.1
 desc_nl=Authentication Server
 desc_fr=Serveur d'authentification
 desc_pt_BR=Servidor de autenticação
-desc_zh_TW=Authentication Server
+desc_zh_TW=身分驗證伺服器

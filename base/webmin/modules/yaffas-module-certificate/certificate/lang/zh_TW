@@ -1,0 +1,66 @@
+c=國家(2 letter code)
+cn=Common Name (e.g. host.name.de)
+
+e_c=Country not correct.
+e_cn=Common Name not correct or not set.
+e_days=日期輸入錯誤
+e_emailAddress=電子郵件輸入錯誤
+e_genfailed=Generation not successful
+e_l=本機輸入錯誤
+e_o=組織名稱輸入錯誤
+e_ou=組織單位輸入錯誤
+e_service=請選擇一個服務
+e_st=State or province not correct.
+
+err_cert_param=Parameters not correct.
+err_cert_not_valid=憑證不是有效的
+err_fork=Fork failed
+err_cert_creation=沒有建立憑證
+err_nothing_selected=沒有選擇的憑證
+
+emailAddress=電子郵件地址(e.g. webmaster@company.com)
+
+gencert_days=憑證有效日(天)
+gencert_generate=產生KEY
+gencert_header=產生自身簽認憑證與KEY
+gencert_service=服務
+gencert_title=產生憑證和KEY
+gencert_e_linkerror=符號連結錯誤
+
+import_cert_file=憑證：
+import_cert_service=服務：
+import_upload_cert=上傳憑證
+import_upload_cert_s=上傳憑證
+import_title=匯入憑證
+import_del=刪除憑證
+import_delquestion=確定刪除此憑證？
+import_ok=成功匯入憑證
+import_error=匯入過程發生錯誤。請檢查您的憑證檔案
+
+index_header=Certificate / Key Management
+index_import=匯入KEY或已簽認的憑證
+index_gencert=產生自身簽認憑證與KEY
+index_view=管理/檢視已安裝的憑證和keys
+index_title=憑證管理
+
+keysize=Keysize (in bits)
+l=Locality (e.g. city)
+o=Organization Name (e.g. company)
+ou=Organization Unit Name (e.g. division)
+
+st=State or province (full name)
+
+view_begin=開始日期
+view_delete=刪除
+view_deleted=已成功刪除檔案
+view_name=名稱
+view_end=有效期到
+view_cert_not_valid=無效的憑證
+view_header=管理已安裝的憑證
+
+restart_service=將重新啟動此服務
+
+yes=是
+no=否
+succsess=成功
+moduletitle=Certificate / Key Management

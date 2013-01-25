@@ -1,1 +1,32 @@
-email=輸入有效的電子郵件地址來接收系統狀態通知
+lbl_status=接收系統郵件地址
+lbl_index_header=通知
+lbl_index_return=系統
+lbl_mail=電子郵件
+lbl_send_mail=傳送電子郵件
+lbl_always=總是
+lbl_errors=嚴重錯誤
+lbl_never=錯誤
+lbl_test=測試您的電子郵件地址
+lbl_test_desc=點選此按鈕來傳送您之前設定的電子郵件地址
+lbl_test_button=測試
+err_mail=不是正確的電子郵件地址
+err_modify_file=無法修改設定檔組態
+err_write_file=寫入設定檔錯誤
+err_type=類型只能為:總是、錯誤或是從不
+err_found_line=在此設定檔案中沒有Line
+err_test=請先設定電子郵件地址
+err_send_test=無法傳送郵件到您的地址
+suc_test=郵件已傳送到您的地址。請檢查您的信箱
+suc_set_mail=成功設定系統訊息地址
+
+lbl_test_mail_subject=Test - yaffas notify
+lbl_test_mail_body=此測試郵件發送到您的設定的地址。如果您收到此郵件，有錯誤就會通知您
+lbl_test_mail_body1=測試電子郵件地址
+lbl_test_mail_body2=
+lbl_test_mail_body3=此電子郵件用來確認管理者地址。如果您收到此郵件，未來將會被通知任何系統狀況
+lbl_test_mail_body4=
+lbl_test_mail_body5=Have fun with yaffas
+lbl_test_mail_body6=
+lbl_test_mail_body7=
+
+moduletitle=通知

@@ -1,0 +1,14 @@
+lbl_insert=提交
+lbl_install_key=安裝新的序號
+lbl_installed_licences=安裝訂閱
+lbl_base_key=Base序號
+lbl_serial=序號
+lbl_log=授權日誌
+err_wrong_lic=此非有效的Zarafa序號
+lbl_archiver_key=Archiver序號
+moduletitle=Zarafa訂閱
+lbl_usercount=使用者計數
+lbl_no_serial=沒有安裝序號
+lbl_stores_allowed=允許
+lbl_stores_avail=可用的
+lbl_stores_used=使用的

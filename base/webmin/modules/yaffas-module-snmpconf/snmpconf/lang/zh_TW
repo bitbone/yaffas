@@ -1,2 +1,10 @@
-community=SNMP密碼
-network=Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or "default" to allow access from everywhere. Enter "127.0.0.1" to allow access from the local machine only.
+lbl_network=Access for
+lbl_community=Community (Password)
+lbl_enable=啟動SNMP
+lbl_snmp_config=SNMP配置
+lbl_confirm_replace_config_header=置換SNMP配置？
+lbl_confirm_replace_config_msg=為了讓yaffas可以執行需求改變，需要<strong>覆寫</strong>目前的SNMP配置<br />此設定可以覆寫嗎？
+
+err_network_string=此權限只能設定單一IP或是網域
+err_community_string=此commuity-string只能包含數字(0-9)和字母(a-z, A-Z)
+moduletitle=SNMP配置
