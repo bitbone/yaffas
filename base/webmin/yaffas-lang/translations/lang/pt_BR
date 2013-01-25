@@ -71,6 +71,7 @@ lbl_lang_en=Inglês
 lbl_lang_nl=Holandês
 lbl_lang_fr=Francês
 lbl_lang_pt_BR=Brasil
+lbl_lang_zh_TW=Chinese (Taiwan)
 
 lbl_table_pager={PageLinks} Página {JumpToPageDropdown} {RowsPerPageDropdown} ítens por página
 lbl_about_bitkit=Sobre yaffas

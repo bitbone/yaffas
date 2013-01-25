@@ -1,0 +1,2 @@
+mailservername=此名稱將會發送到遠端SMTP主機發送的郵件
+mailsize=限制所有進出的郵件大小。空白表示此主機無限制

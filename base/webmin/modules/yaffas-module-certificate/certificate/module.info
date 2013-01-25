@@ -8,3 +8,4 @@ version=0.1
 desc_nl=Certificaat- en Sleutelbeheer
 desc_fr=Gestion Certificat et Clé
 desc_pt_BR=Gerenciamento de Certificados e Chaves
+desc_zh_TW=Certificate / Key Management

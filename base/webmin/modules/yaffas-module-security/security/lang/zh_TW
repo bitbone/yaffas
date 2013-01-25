@@ -1,0 +1,5 @@
+spam_headers=此值定義將郵件處理為垃圾郵件之分數
+sa_trusted_net=用IP地址或CIDR定義主機網路
+max_length=ClamAV 將僅掃描小於指定量之物件。較大物件將不予掃描。
+virusalert=若ClamAV 偵測到可疑物件，將發送郵件給指定地址。
+archive=啟用之以掃描RAR, ZIP, GZ...等歸檔

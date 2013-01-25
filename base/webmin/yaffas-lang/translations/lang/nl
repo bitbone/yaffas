@@ -71,6 +71,7 @@ lbl_lang_en=Engels
 lbl_lang_nl=Dutch
 lbl_lang_fr=French
 lbl_lang_pt_BR=Brazil
+lbl_lang_zh_TW=Chinese (Taiwan)
 
 lbl_table_pager={PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page
 lbl_about_bitkit=About bitkit

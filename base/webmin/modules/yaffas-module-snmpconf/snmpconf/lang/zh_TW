@@ -1,0 +1,2 @@
+community=SNMP密碼
+network=Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or "default" to allow access from everywhere. Enter "127.0.0.1" to allow access from the local machine only.

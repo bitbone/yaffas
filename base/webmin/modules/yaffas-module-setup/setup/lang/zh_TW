@@ -1,0 +1,12 @@
+mysql_user=此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。
+mysql_password=此為設定在資料庫上之密碼。您須用手動設定此密碼。
+mysql_host=這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。
+mysql_database=這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。
+mailserver_domain=這是您的伺服器之主要郵件網域。您以後可在郵件伺服器->配置增加更多網域
+mailserver_smarthost_server=如您需要一個智慧主機來發送郵件之可選設定。如您讓其保留為空的，郵件伺服器將直接發送郵件給收件人
+mailserver_smarthost_user=如您的智慧主機需要身分驗證之可選設定
+mailserver_smarthost_password=如您的智慧主機需要身分驗證之可選設定
+user_login=這是您登入所用的名稱
+user_firstname=該用戶的首名
+user_surname=該用戶的姓
+user_email=該用戶用來收發電子郵件的地址
