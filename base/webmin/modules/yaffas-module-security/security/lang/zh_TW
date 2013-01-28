@@ -1,52 +1,5 @@
-lbl_apply=套用
-lbl_edit=編輯
-lbl_delete=刪除
-lbl_add=增加
-lbl_activate=啟用
-lbl_deactivate=關閉
-lbl_update=更新
-lbl_really_delete=刪除條目
-lbl_really_delete_msg=您真的要刪除此條目嗎?
-
-lbl_really_disable=您真的要關閉此服務嗎?
-lbl_really_enable=您真的要啟用此服務嗎?
-
-lbl_policy=政策
-lbl_policy_enable=啟用政策
-lbl_policy_disable=關閉政策
-lbl_dnsbl=DNSBL
-lbl_rhsbl=RHSBL
-lbl_host=主機名稱
-lbl_hit=得分
-lbl_miss=失分
-lbl_log=記錄名稱
-
-lbl_clamav=ClamAV
-lbl_clamav_activate=啟用clamav
-lbl_clamav_deactivate=關閉clamav
-lbl_archive=掃描歸檔
-lbl_virusalert=病毒警報電子郵件
-lbl_maxlength=可掃描物件之最大大小(MB)
-lbl_clam_update=更新此ClamAV病毒特徵
-lbl_clam_configure=配置clamav
-
-lbl_sa=Spamassassin
-lbl_sa_configure=配置Spamassassin
-lbl_sa_enable=啟用Spamassassin
-lbl_sa_disable=關閉Spamassassin
-lbl_sa_update=更新Spamassassin過濾
-lbl_network=網路
-lbl_internal=內部網路
-lbl_trusted=可信任網路
-lbl_add_headers=增加垃圾郵件偵測標頭
-
-lbl_whitelist=白名單
-lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
-lbl_address=地址
-lbl_wl_type=類型
-lbl_wl_from=源
-lbl_wl_entry=條目
-
-err_mail=無效電子郵件地址
-err_bad_maximum_size=Maximum size of scannable objects must be a number (in MB).
-moduletitle=安全
+spam_headers=此值定義將郵件處理為垃圾郵件之分數
+sa_trusted_net=用IP地址或CIDR定義主機網路
+max_length=ClamAV 將僅掃描小於指定量之物件。較大物件將不予掃描。
+virusalert=若ClamAV 偵測到可疑物件，將發送郵件給指定地址。
+archive=啟用之以掃描RAR, ZIP, GZ...等歸檔

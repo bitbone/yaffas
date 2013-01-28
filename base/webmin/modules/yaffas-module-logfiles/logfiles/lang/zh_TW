@@ -1,9 +1,0 @@
-err_nothing_selected=須選定記錄檔案
-err_not_permitted=不容許下載此檔案
-lbl_logfiles=log檔案
-lbl_download=下載
-lbl_show_old_logs=顯示舊記錄檔案
-lbl_show_new_logs=顯示新記錄檔案
-lbl_size=大小
-lbl_file=檔案
-moduletitle=記錄檔案查看器

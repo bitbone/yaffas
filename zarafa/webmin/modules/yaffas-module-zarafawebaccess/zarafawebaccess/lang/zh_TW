@@ -1,20 +1,6 @@
-lbl_option=選項
-lbl_state=州
-lbl_save=儲存
-lbl_webaccess_options=選項
-lbl_DISABLE_FULL_GAB=關閉全部全域通訊錄
-lbl_ENABLE_GAB_ALPHABETBAR=啟用全域通訊錄內之字母欄
-lbl_ENABLE_PUBLIC_FOLDERS=啟用公用資料夾
-lbl_DISABLE_DELETE_IN_RESTORE_ITEMS=停用在復原項目內之刪除
-lbl_FCKEDITOR_SPELLCHECKER_ENABLED=啟用HTML編輯器內之拼音檢查
-lbl_THEME_COLOR=主題顏色
-lbl_white=白色
-lbl_silver=銀色
-lbl_theme_color=主題顏色
-
-err_undefined_type=不明Webaccess 選項
-err_undefined_color=不明顏色
-err_webaccess_config=無法打開Webaccess配置檔案
-err_no_aspell=請安裝\"aspell-lang\" (以德文拼音檢查器為例 )檢查您的語言之拼音。
-moduletitle=Webaccess
-
+size=指名各郵件經Webaccess上載之附件的最大大小(MB)
+limit=這限制各用戶之磁碟最大用量(MB)
+mysql_user=此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。
+mysql_password=此為設定在資料庫上之密碼。您須用手動設定此密碼。
+mysql_host=這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。
+mysql_database=這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。

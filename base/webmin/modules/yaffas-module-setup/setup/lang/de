@@ -1,5 +1,5 @@
 lbl_welcome=Willkommen
-lbl_settings=Dieser Dialg wird die grundlegenden Einstellungen abfragen, die für das Fertigstellen der Installation nötig sind.<br />Wenn Sie sich wegen einer Einstellung nicht sicher sind, gehen Sie mit der Maus über das Glühbirnensymbol. Dann erhalten Sie zusätzliche Erläuterungen.
+lbl_settings=Dieser Dialog wird die grundlegenden Einstellungen abfragen, die für das Fertigstellen der Installation nötig sind.<br />Wenn Sie sich wegen einer Einstellung nicht sicher sind, gehen Sie mit der Maus über das Glühbirnensymbol. Dann erhalten Sie zusätzliche Erläuterungen.
 
 lbl_admin_pw=Admin Passwort
 lbl_admin_pw_repeat=Admin Passwort (Wiederholung)
