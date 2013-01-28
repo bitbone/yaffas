@@ -15,9 +15,10 @@ im Kontextmenü (Rechtsklick auf die entspr. Tabellenzeile) eingerichtet.
 Die hier konfigurierten Disclaimer arbeiten direkt im Mailserver und
 dürfen nicht mit dem gleichnamigen Zarafa-Feature verwechselt werden.
 
-Dieses Feature bietet zum Teil umfangreichere Möglichkeiten (wie die
-Einbettung von Bildern in Signatur und E-Mail) und ist für ein
-breiteres Spektrum an Verwendungstypen geeignet (die Disclaimer werden
+Das {product}-Maildisclaimer-Feature bietet zum Teil umfangreichere
+Möglichkeiten (wie die
+Einbettung von Bildern in Disclaimern) und ist für ein
+breiteres Spektrum an Szenarien geeignet (die Disclaimer werden
 an alle ausgehenden Mails angehängt, nicht nur an die, die über Outlook,
 WebAccess oder WebApp verschickt werden).
 
