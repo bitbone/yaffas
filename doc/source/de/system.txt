@@ -40,7 +40,7 @@ Um die Kommunikation mit dem Webinterface und den Mailverkehr zu verschlüsseln 
 ==== Zertifikate verwalten
 Über den Reiter  _"Verwalte installierte Zertifikate"_ werden alle auf dem System vorhandenen Zertifikate angezeigt. Wenn Sie ein Zertifikat löschen mochten, so setzen Sie den Haken vor dem Zertifikat und klicken Sie auf den Button  _Löschen_  Das Defaultzertifikat default.crt, welches für alle Dienste des Systems verwendet wird, kann nicht gelöscht werden.
 
-[TIP]
+[NOTE]
 ==============
 Wenn Sie  _"default.crt"_ austauschen möchten, so müssen Sie entweder ein neues Zertifikat für alle Dienste erstellen, oder ein vorhandenes Zertifikat importieren.
 ==============

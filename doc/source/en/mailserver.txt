@@ -69,7 +69,7 @@ By right-clicking on an email, you can delete, attempt to deliver or display the
 === Mail Alias Configuration
 At "Mail Alias" all set mail aliases - both the aliases of the system, as well as your own aliases - are displayed.
 
-[TIP]
+[NOTE]
 ==============
 When adding a mail alias please consider that the alias test is executed ** before ** the mailbox allocation. It may happen that emails will be assigned to another user although that user has a mailbox on the server. In such cases please check all set mail aliases.
 ==============
@@ -106,7 +106,7 @@ Activating the security services at the security module is not sufficient.
 If you started these services after activating them at the security module, the service "amavis" has to be restarted.
 ==============
 
-[TIP]
+[NOTE]
 ==============
 If the ClamAV service will not start, it may have no virus signatures. The freshclam service draws them automatically, but requires an internet connection. A proxy server can be configured at Network Configuration if necessary. This will cause an update of the signatures via freshclam.
 ==============

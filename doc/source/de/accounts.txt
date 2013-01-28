@@ -156,7 +156,7 @@ Wenn Sie möchten, dass die Mailbox eines Users angelegt wird, dann können Sie 
 
 Neue Gruppen können über den Reiter  _"Gruppe erstellen"_ angelegt werden. Nach dem Eintrag der neuen Gruppe im Feld Gruppenname wird diese über den Button Erstellen im System angelegt.
 
-[TIP]
+[NOTE]
 ==============
 Wenn Sie mehrere Gruppen auf einmal anlegen wollen, so geben Sie diese durch Komma getrennt an.
 ==============
@@ -169,7 +169,7 @@ Vorhandene Gruppen können per Rechtsklick editiert/gelöscht werden.
 === Admin Passwort
 Über diesen Dialog kann das Passwort für die Web-Oberfläche geändert werden. Hierzu ist eine zweimalige Eingabe des Passwortes mit anschließendem Klick auf Sichern erforderlich. 
 
-[TIP]
+[IMPORTANT]
 ==============
 Passwörter sollten keine benutzerbezogenen Daten, keine bekannten Wörter und keine  _"einfachen"_ Tastaturkombinationen beinhalten (z.B. nebeneinander liegende Tasten).
 ==============

@@ -36,7 +36,7 @@ Under the menu item "Certificate / Key Management" they can be managed. You can 
 ==== Manage Certificates
 Using the tab "Manage Installed Certificates" all certificates existing on the system are displayed. If you want to delete a certificate, tick the box on the left of the certificate and click on the button "delete". The default certificate "default.crt", which is used for all services of the system, cannot be deleted.
 
-[TIP]
+[NOTE]
 ==============
 If you want to replace "default.crt", you must either create a new certificate for all services or import an existing certificate.
 ==============

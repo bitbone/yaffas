@@ -55,7 +55,7 @@ An die hier angegebene E-Mail-Adresse werden die Fehlermeldungen des Systems ges
 Bitte tragen Sie an dieser Stelle eine gültige E-Mailadresse ein. Kritische Meldungen können so an den Administrator gemeldet werden um die Funktionsfähigkeit von {product} zu gewährleisten.
 ==============
 
-[TIP]
+[NOTE]
 ==============
 Wenn Sie mehrere Empfänger informieren wollen, dann tragen Sie als Adresse ein Alias ein, z.B. "admins@localhost". In der Mailalias-Verwaltung tragen Sie dann  _"admins"_ als Alias ein und setzen dort die Mailadressen der Empfänger ein.
 ==============

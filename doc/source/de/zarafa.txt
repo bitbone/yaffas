@@ -7,7 +7,7 @@ Klicken Sie hier auf  _"Optimiere"_ um die Speichereinstellungen auf Ihrem Syste
 
 Auch können Sie hier die Maximalgröße für Dateianhänge festlegen, die über die Zarafa Webaccess Oberfläche hochgeladen werden dürfen. 
 
-[TIP]
+[NOTE]
 ==============
 Diese Beschränkung überschreibt **nicht** die des Mailservers. Ist dort eine geringere Größe erlaubt, so hat diese Vorrang.
 ==============

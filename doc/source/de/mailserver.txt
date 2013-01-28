@@ -62,7 +62,7 @@ In der Mail-Warteschlange befinden sich alle E-Mails, die nicht versendet werden
 === Mailalias Konfiguration
 Durch das Mailalias-Modul werden alle gesetzten Mailaliase - sowohl die Aliase des Systems, als auch eigene Aliase - angezeigt. 
 
-[TIP]
+[NOTE]
 ==============
 Beim Hinzufügen eines Mailaliases ist zu beachten, dass die Aliasprüfung **vor** der Mailboxzuweisung abgearbeitet wird. Somit kann es passieren, dass E-Mails einem anderen Benutzer zugewiesen werden obwohl der betreffende Benutzer eine Mailbox auf dem Server hat. Prüfen Sie also in einem solchen Fall alle gesetztenMailaliase.
 ==============
@@ -82,10 +82,10 @@ Die Dienste spamassassin und clamav müssen über das Dienste Modul separat gest
 
 ==============
 
-[TIP]
+[NOTE]
 ==============
 
-Falls der clamav Dienst sich nicht starten lässt, so hat dieser möglicherweise noch keine Virensignaturen. Diese bezieht der freshclam Dienst automatisch, benötigt dafür aber eine Internetverbindung. Sollte bei Ihnen hierfür ein Proxy Server nötig sein, so tragen Sie diesen entsprechend unter Netzwerkkonfiguration ein. Dadurch wird eine erneute Aktualisierung der Signaturen mittels freshclam ausgelöst.
+Falls der clamav-Dienst sich nicht starten lässt, so hat dieser möglicherweise noch keine Virensignaturen. Diese bezieht der freshclam Dienst automatisch, benötigt dafür aber eine Internetverbindung. Sollte bei Ihnen hierfür ein Proxy Server nötig sein, so tragen Sie diesen entsprechend unter Netzwerkkonfiguration ein. Dadurch wird eine erneute Aktualisierung der Signaturen mittels freshclam ausgelöst.
 
 ==============
 

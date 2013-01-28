@@ -132,7 +132,7 @@ Existing groups can be edited by right-clicking on their entry and selecting _"E
 === Admin password
 The admin password for the {product} Web-UI can be changed after selecting this this menu topic. The password has to be entered twice before clicking on "Save". 
 
-[TIP]
+[IMPORTANT]
 ==============
 Passwords should not contain user related strings, dictionary words or  _"simple"_ combinations of characters (e.g. characters next to each other on the keyboard).
 ==============

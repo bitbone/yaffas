@@ -48,7 +48,7 @@ Error messages (disk full, license issues) from the {product} server will be sen
 
 Please enter a valid e-mail address, so critical messages can reach an administrator and the system can be kept running.
 
-[TIP]
+[NOTE]
 ==============
 If you would like to enter multiple recipients you can enter an alias as recipient,e.g. "admins@localhost", then you can set  _"admins"_ as alias under  _Mail alias configuration_ and supply the addresses of the recipients.
 ==============

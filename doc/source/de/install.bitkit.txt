@@ -42,7 +42,7 @@ Bitte beachten Sie, dass dies Mindestanforderungen sind. Je nach Größe der Pos
 
 Legen Sie bitte die bitkit-Installations-CD in das CD/DVD-Laufwerk des Rechners, auf dem Sie bitkit|SOLUTIONS installieren wollen. Der Reihe nach werden die Daten für die Installation abgefragt.
  
-[TIP]
+[NOTE]
 ==============
 
 |=====================================================

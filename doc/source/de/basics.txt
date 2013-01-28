@@ -13,10 +13,10 @@ image:{images}22_overview_thumb.png[link="{images}22_overview.png"]
 Der Hauptschirm teilt sich in den Navigationsbereich (links) und den Arbeitsbereich (rechts) auf. Mit der Maus wählen Sie im Navigationsmenü die gewünschte Kategorie. Es öffnet sich ein Untermenü mit den verschiedenen Konfigurationsmodulen.
 Nach einem Klick auf eines dieser Konfigurationsmodule, kann durch alle darin verfügbaren Sektionen navigiert werden.
 
-[TIP]
-=====
+[NOTE]
+======
 Viele Funktionen, die sich auf einzelne Objekte beziehen (wie z.B. die Benutzerverwaltung), sind über das Kontextmenü erreichbar. Dieses erscheint, wenn z.B. in der Benutzer-Tabelle ein Rechtsklick auf den entsprechenden Eintrag gemacht wird.
-=====
+======
 
 Konkrete Hilfestellungen zu den einzelnen Funktionen erhalten Sie in den folgenden Kapiteln.
 

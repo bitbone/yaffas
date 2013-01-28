@@ -18,12 +18,12 @@ menu. A sub-menu with the available configuration modules will open.
 After clicking on one of these modules, the available sub-sections will
 appear on the right in the content area.
 
-[TIP]
-=====
+[NOTE]
+======
 Many functions which work on specific objects (such as the user
 administration) are available by using the context menu. The context menu
 can be opened by right-clicking on an entry in the relevant table.
-=====
+======
 
 More-specific descriptions can be found in the following chapters.
 
