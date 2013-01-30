@@ -1,0 +1,11 @@
+hostname=如主機名稱
+domain=如yaffas.org
+workgroup=如yaffas
+eth0-ipaddr=eth0<br>e.g. 192.168.0.100之IP地址
+eth0-netmask=eth0<br>e.g. 255.255.255.0之網路遮罩
+eth0-gateway=您的網路之閘口。須為此網路之IPv4地址
+eth0-dns=將名稱解析為IP地址之DNS伺服器。
+eth0-search=在解析簡稱時附加此值。<br>解析"server" 名稱時，附加yaffas.org，成為server.yaffas.org。
+proxy=HTTP代理伺服器地址。可以是IPv4地址或主機名稱
+port=HTTP代理伺服器之埠。
+user=如果您須做代理的身分驗證時之可選用戶名稱。

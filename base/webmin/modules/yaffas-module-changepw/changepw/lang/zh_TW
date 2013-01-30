@@ -1,0 +1,27 @@
+lbl_index_header=更改密碼
+lbl_index_return=系統
+
+lbl_pass=密碼：
+lbl_pass2=重複密碼：
+lbl_save=儲存
+lbl_adminpass=管理者密碼
+lbl_rootpass=Root-Password
+lbl_domadminpass=Domain-Administrator-Password
+
+err_mysql_password=無法設定MYSQL密碼！
+err_file_read=無法讀下列檔案：
+err_file_write=無法寫下列檔案：
+
+err_root_password=無法設定root password!
+err_domadmin_password=無法設定網域管理員密碼！
+err_smbpasswd=無法執行SMBPASSWD ！
+err_license=此功能僅有無限制版本可用
+err_execute=無法執行下列：
+err_ldapmodify=無法執行LDAP修改！
+err_delete_file=無法刪除下列檔案：
+err_copy_file=無法複製下列檔案：
+
+err_password=密碼須至少一字元長度並且不能包含井號(#)。
+err_password_equal=兩密碼須相同
+err_change_password=密碼無效
+moduletitle=管理者密碼

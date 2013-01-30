@@ -1,0 +1,6 @@
+size=指名各郵件經Webaccess上載之附件的最大大小(MB)
+limit=這限制各用戶之磁碟最大用量(MB)
+mysql_user=此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。
+mysql_password=此為設定在資料庫上之密碼。您須用手動設定此密碼。
+mysql_host=這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。
+mysql_database=這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。

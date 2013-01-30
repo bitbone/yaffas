@@ -1,0 +1,6 @@
+name=此名稱將顯示於全域通訊錄內
+description=如果資源名稱非不言自明，您可能要加入描述
+decline_conflict=勾選此框，此資源只能登記一次。
+decline_recurring=勾選此框以關閉此資源之重複性約定。
+type=選擇資源之類型
+capacity=定義資源之容量，此值僅適用設備資源。

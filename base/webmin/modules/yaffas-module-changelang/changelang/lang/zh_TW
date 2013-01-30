@@ -1,0 +1,9 @@
+lbl_index_header=改變語言
+lbl_index_return=系統
+
+lbl_choose_lang=選擇語言
+lbl_deutsch=德語
+lbl_english=英語
+
+err_lang=未能找到語言！
+moduletitle=設定語言

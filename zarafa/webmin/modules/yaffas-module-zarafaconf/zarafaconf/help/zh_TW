@@ -1,0 +1,13 @@
+attachment_size=指名各郵件經Webaccess上載之附件的最大大小(MB)
+quota=限制每位使用者最大使用容量(MB).空白表示無限制
+mysql_user=此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。
+mysql_password=此為設定在資料庫上之密碼。您須用手動設定此密碼。
+mysql_host=這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。
+mysql_database=這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。
+homeserver=指定伺服器位置來使用outlook連線到Zarafa伺服器
+profilename=Outlook配置檔名稱
+mailboxname=此使用者名稱用來連接伺服器。您可以使用"%UserName%"變數來替換目前使用者的名稱
+password=如果您指定一個使用者名稱您必須也要指定此使用者密碼。如果您沒有指定，outlook將會詢問此使用者密碼
+overwriteprofile=指定在安裝的過程中如果您想要覆寫您的設定檔
+backupprofile=指定在覆寫前是否要備份設定檔
+softdelete_lifetime=在Zarafa上不會立刻刪除項目(郵件，行事曆內容....)。將會保留一段時間。此指定多久時間(天)

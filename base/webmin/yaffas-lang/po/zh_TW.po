@@ -157,9 +157,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-25 12:12+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
-"Last-Translator: Evan <evan@ulink.com.tw>\n"
+"POT-Creation-Date: 2013-01-30 09:27+0100\n"
+"PO-Revision-Date: 2013-01-30 09:23+0200\n"
+"Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -505,7 +505,7 @@ msgstr ""
 #: lang/en:76
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
-msgstr "｛頁鏈接｝頁｛跳至下拉頁｝｛每下拉頁之列｝每頁條目"
+msgstr "｛PageLinks｝頁｛JumpToPageDropdown｝｛RowsPerPageDropdown｝每頁條目"
 
 #: lang/en:77
 #, no-wrap

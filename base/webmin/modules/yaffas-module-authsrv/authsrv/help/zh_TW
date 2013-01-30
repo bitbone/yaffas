@@ -1,0 +1,8 @@
+basedn=LDA搜尋基礎DN。起始點(如0=yaffas，c=org)開始搜尋LDAP。
+email=用戶電子郵件地址之屬性。預設：mail
+binddn=用戶綁定e.g. cn=ldapadmin,ou=People,o=yaffas,c=org
+dom_name=您的Active Directory之全網域名稱，如yaffas.org
+pass_pdc=您的網域控制器之名稱或IP地址
+dom_adm=網域管理員之名稱。此用戶應建立於用戶之組織單位內
+ads_user=僅能讀之用戶。您可給用戶名稱或全dn語法
+host=主機名稱或LDAP伺服器之IP地址。可以是逗號，分號或空格分隔的主機名或IP地址的列表。

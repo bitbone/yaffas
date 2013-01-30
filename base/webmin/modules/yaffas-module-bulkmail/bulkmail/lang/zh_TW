@@ -1,0 +1,11 @@
+index_bulk=大量郵件
+index_return=大量郵件
+index_from=寄件人
+index_subject=主旨
+index_message=郵件
+index_send=傳送
+
+err_error=請完成全部表格並檢查您的電子郵件地址
+lbl_send_success=您的郵件正排隊準備發送中。這可能需要花一點時間，視您的硬體而定
+
+moduletitle=大量郵件
