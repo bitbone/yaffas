@@ -155,11 +155,7 @@ sub save {
 			$self->_save_interfaces();
 		}
 	} catch Yaffas::Exception with {
-		if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
-            Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
-        } else {
-            Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
-        }
+		_start_network();
 
 		my $exception = shift;
 		my $errors = $exception->get_errors();
@@ -179,12 +175,7 @@ sub save {
 
 	if ($pid == 0) {
 		## child
-		if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
-			Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{ifup}, '-a');
-		} else {
-			Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'start');
-		}
-
+		_start_network();
 		if (-d Yaffas::Constant::DIR->{hylafax}) {
 			control(HYLAFAX, RESTART);
 		}
@@ -941,6 +932,36 @@ sub _stop_network {
 	}
 	else {
 		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'}, 'stop');
+	}
+}
+
+sub _start_network {
+	if (Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian") {
+		my $interfaces = Yaffas::File->new(
+			Yaffas::Constant::FILE->{network_interfaces})
+			or throw Yaffas::Exception("err_file_read",
+				Yaffas::Constant::FILE->{network_interfaces});
+
+		my @lines = $interfaces->get_content();
+		my @revLines = reverse(@lines);
+		my $device;
+
+		foreach my $line (@revLines) {
+			if ($line =~ /^\s*(?:allow-\S+|auto)\s+(\S+)\s*$/) {
+				# we are using ifup explicitly on specific interfaces
+				# instead of using -a as it does not consider
+				# allow-hotplug devices, which is the default
+				# nowadays.
+				# note: ifdown *does* consider allow-hotplug with -a
+				$device = $1;
+				Yaffas::do_back_quote(
+					Yaffas::Constant::APPLICATION->{ifup}, $device);
+			}
+		}
+
+	} else {
+		Yaffas::do_back_quote(Yaffas::Constant::FILE->{'rhel_net'},
+			'start');
 	}
 }
 
