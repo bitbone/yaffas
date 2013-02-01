@@ -42,6 +42,7 @@ fi
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
 /opt/software/zarafaclient-en.msi
+/opt/software/zarafaclient.msi
 /opt/software/zarafaclient-7.1.3-40304.msi
 /opt/software/zarafamigrationtool.exe
 /opt/yaffas/share/%{name}/postinst-deb.sh
