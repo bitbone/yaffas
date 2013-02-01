@@ -1,5 +1,20 @@
 == Zarafa
 
+ifdef::product-zadmin[]
+=== Z-Push (Active Sync)
+Z-Push is not installed automatically if you install {product}.
+You can still install it after {product} using the package manager:
+
+On RHEL:
+
+  yum install z-push
+
+On Debian/Ubuntu:
+
+  apt-get install z-push
+
+endif::product-zadmin[]
+
 === Groupware Configuration
 In this module you can optimize memory (RAM) for Zarafa, define the size of attachments or the content of quota emails for users.
 
