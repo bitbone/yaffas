@@ -29,7 +29,7 @@ case "$1" in
 		# remove older zarafa clients such as zarafaclient-7.1.1-1234
 		rm -f $(readlink /opt/software/zarafa/zarafaclient.msi)
 		# create a new symlink to the latest version
-		ln -f /opt/software/zarafa/zarafaclient-7.1.3-40304.msi \
+		ln -sf /opt/software/zarafa/zarafaclient-7.1.3-40304.msi \
 			/opt/software/zarafa/zarafaclient.msi
     ;;
 

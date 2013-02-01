@@ -28,7 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 rm -f $(readlink /opt/software/zarafa/zarafaclient.msi)
 
 # create a new symlink to the latest version
-ln -f /opt/software/zarafa/zarafaclient-7.1.3-40304.msi /opt/software/zarafa/zarafaclient.msi
+ln -sf /opt/software/zarafa/zarafaclient-7.1.3-40304.msi /opt/software/zarafa/zarafaclient.msi
 
 %postun
 INCLUDES="/etc/samba/includes.smb"
