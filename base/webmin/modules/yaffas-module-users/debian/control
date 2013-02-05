@@ -7,6 +7,6 @@ Standards-Version: 3.5.2
 
 Package: yaffas-module-users
 Architecture: all
-Depends: ${shlibs:Depends}, yaffas-core, expect, yaffas-module-authsrv, yaffas-module-mailalias, yaffas-module-mailsrv
+Depends: ${shlibs:Depends}, yaffas-core, expect, yaffas-module-authsrv, yaffas-module-mailalias, yaffas-module-mailsrv, yaffas-module-zarafaconf
 Description: Module for managing yaffas users
  Module for managing yaffas users
