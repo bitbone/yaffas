@@ -6,6 +6,8 @@ use Yaffas;
 use Yaffas::UI qw(ok_box all_error_box);
 use Yaffas::Service;
 use Yaffas::Module::Service;
+use Yaffas::Exception;
+use Error qw(:try);
 require './forms.pl';
 
 Yaffas::init_webmin();
