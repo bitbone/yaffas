@@ -78,8 +78,8 @@ sub show_setup() {
         )
     );
     print Yaffas::UI::section_button(
-        $Cgi->button({-name=>"Prev", -id=>"prevPage"}),
-        $Cgi->button({-name=>"Next", -id=>"nextPage"}),
+        $Cgi->button({-name=>"Prev", -id=>"prevPage", -value=>$main::text{'lbl_prev'}}),
+        $Cgi->button({-name=>"Next", -id=>"nextPage", -value=>$main::text{'lbl_next'}}),
         $Cgi->button({-id=>"submit", -value=>$main::text{'lbl_finish'}}),
     );
     print $Cgi->end_form();

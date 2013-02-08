@@ -35,6 +35,8 @@ lbl_setup_execute=setting up
 lbl_initial_conf=initial configuration
 
 lbl_finish=Finish
+lbl_next=Next
+lbl_prev=Previous
 
 err_mysql_connect=Could not connect to database.
 err_password=The admin password is empty or does not match.
