@@ -82,8 +82,9 @@ If you want to delete an alias, please right-click on the entry in the overview 
 === Security
 
 This module allows you to configure security settings for this mailserver.
-You can enable a virus and spam check.
-There is also support for the policy sever that allows you to reject emails during smtp time.
+Currently virus and spam checking are supported.
+There is also support for the policy sever that allows you to reject emails
+based on certain criteria before even accepting it for delivery.
 
 [NOTE]
 ======
@@ -105,9 +106,10 @@ The policy server can decide during smtp time if a message should be accepted ba
 
 ==== SpamAssassin
 
-Spamassassin can classify your emails based on internal rules if a message is spam or not.
-Every message will get points for special attributes which will get summed up.
-If a certain level of pointes is reached the message will get marked as spam.
+SpamAssassin can classify your emails based on internal rules if a message is spam or not.
+Every message gets assigned points for specific attributes.
+If the sum of these points exceeds a certain level,
+the message will get marked as spam.
 
 ==== ClamAV
 

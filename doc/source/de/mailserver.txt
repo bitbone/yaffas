@@ -75,19 +75,10 @@ Wollen Sie einen Alias entfernen, klicken Sie in der Übersicht mit der rechten 
 
 === Sicherheit
 
-[IMPORTANT]
-==============
-
-Die Dienste spamassassin und clamav müssen über das Dienste Modul separat gestartet werden, bevor diese vom Sicherheitsmodul genutzt werden können. Ein reines Aktivieren im Sicherheitsmodul genügt nicht. Haben Sie diese Dienste nach dem Aktivieren im Sicherheitsmodul gestartet, so muss der Dienst amavis ebenfalls neu gestartet werden.
-
-==============
-
-[NOTE]
-==============
-
-Falls der clamav-Dienst sich nicht starten lässt, so hat dieser möglicherweise noch keine Virensignaturen. Diese bezieht der freshclam Dienst automatisch, benötigt dafür aber eine Internetverbindung. Sollte bei Ihnen hierfür ein Proxy Server nötig sein, so tragen Sie diesen entsprechend unter Netzwerkkonfiguration ein. Dadurch wird eine erneute Aktualisierung der Signaturen mittels freshclam ausgelöst.
-
-==============
+Dieses Modul bietet Sicherheitsfunktionen für den Mailserver. Zur Zeit
+werden Virus- und Spam-Überprüfungen unterstützt.
+Außerdem ist es über den sog. Policy-Server möglich, E-Mails auf Basis
+bestimmter Kriterien vor der Einlieferung in den Mailserver abzuweisen.
 
 [NOTE]
 ======
@@ -103,6 +94,40 @@ Installationen ja in der Regel der externe Mailserver-Betreiber schon
 Vorkehrungen zur Virus- and Spamprävention getroffen hat.
 
 ======
+
+==== Policy-Server
+
+Der Policy-Dienst kann bereits während der Entgegennahme einer E-Mail
+je nach Bewertung des Senders entscheiden, ob die E-Mail akzeptiert
+oder abgewiesen werden soll.
+
+==== SpamAssassin
+
+SpamAssassin kann E-Mails basierend auf vorgegebenen Regeln
+untersuchen und sie dementsprechend als Spam oder Nicht-Spam einstufen.
+Diverse Eigenschaften einer Nachricht werden mit einem bestimmten Wert
+bepunktet. Übersteigt die Summe dieser Punkte ein gewisses Level, so wird
+die E-Mail als Spam markiert.
+
+==== ClamAV
+
+ClamAV untersucht E-Mails auf Viren. Wenn eine Nachricht einen
+Schädling enthält, wird die E-Mail dem Benutzer nicht zugestellt.
+
+
+[IMPORTANT]
+==============
+
+Die Dienste spamassassin und clamav müssen über das Dienste Modul separat gestartet werden, bevor diese vom Sicherheitsmodul genutzt werden können. Ein reines Aktivieren im Sicherheitsmodul genügt nicht. Haben Sie diese Dienste nach dem Aktivieren im Sicherheitsmodul gestartet, so muss der Dienst amavis ebenfalls neu gestartet werden.
+
+==============
+
+[NOTE]
+==============
+
+Falls der clamav-Dienst sich nicht starten lässt, so hat dieser möglicherweise noch keine Virensignaturen. Diese bezieht der freshclam Dienst automatisch, benötigt dafür aber eine Internetverbindung. Sollte bei Ihnen hierfür ein Proxy Server nötig sein, so tragen Sie diesen entsprechend unter Netzwerkkonfiguration ein. Dadurch wird eine erneute Aktualisierung der Signaturen mittels freshclam ausgelöst.
+
+==============
 
 
 
