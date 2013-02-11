@@ -249,7 +249,7 @@ sub add_user($$$$@) {
 	my $shell = '/bin/false';
 	my $ret = undef;
 
-	my $gecos = _fix_gecos("$givenname $surname");
+	my $gecos = "$givenname $surname";
 
 	my $success = undef;
 	#my $pgid = get_group_id('bkusers');
@@ -580,7 +580,7 @@ sub gecos($;$$) {
 		unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
 				 || Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
-		my $gecos = _fix_gecos("$givenname $surname");
+		my $gecos = "$givenname $surname";
 		unless (Yaffas::Check::gecos($gecos)) {
 			throw Yaffas::Exception('err_gecos', $user);
 		}
@@ -1604,20 +1604,6 @@ sub name($;$$) {
 	}
 
 	return ($givenname, $surname);
-}
-
-sub _fix_gecos($) {
-	my $gecos = shift;
-
-	$gecos =~ s/ö/oe/g;
-	$gecos =~ s/ä/ae/g;
-	$gecos =~ s/ü/ue/g;
-	$gecos =~ s/Ö/Oe/g;
-	$gecos =~ s/Ä/Ae/g;
-	$gecos =~ s/Ü/Ue/g;
-	$gecos =~ s/ß/ss/g;
-
-	return $gecos;
 }
 
 sub set_additional_values {

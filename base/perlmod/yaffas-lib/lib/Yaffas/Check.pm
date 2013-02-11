@@ -117,7 +117,7 @@ sub gecos($) {
         my $geco = shift;
         if ( defined($geco) ) {
                 return undef if (length($geco) > 1024);
-                if($geco =~ m/^[0-9A-Za-zöäüÖÄÜß\.\-\s]+$/) {
+                if($geco =~ m/^[^\x00-\x1f\x7f]+$/) {
                         return 1;
                 } else {
                         return 0;
