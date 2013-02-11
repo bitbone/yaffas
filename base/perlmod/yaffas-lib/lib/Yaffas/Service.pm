@@ -514,7 +514,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL5/ ) {
 				 MPPMANAGER() => "/etc/init.d/mppmanager",	# TODO: adapt for Red Hat
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
-				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
+				 NFSD() => "/sbin/service nfs",
 				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
 				);
 
@@ -577,7 +577,7 @@ elsif(Yaffas::Constant::OS =~ m/RHEL6/ ) {
 				 MPPMANAGER() => "/etc/init.d/mppmanager",	# TODO: adapt for Red Hat
 				 SEARCHD() => "/etc/init.d/searchd",	# TODO: adapt for Red Hat
 				 BBLCD() => "/etc/init.d/bblcd",	# TODO: adapt for Red Hat
-				 NFSD() => "/etc/init.d/nfs-kernel-server",	# TODO: adapt for Red Hat
+				 NFSD() => "/sbin/service nfs",
 				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
 				);
 
@@ -706,7 +706,7 @@ sub installed_services(;$)
 		$services->{'apache'}		= { 'constant' => APACHE(), 'allow' => [ 'start', 'stop', 'restart' ] };
 	}
 
-	if(check_product('fileserver'))
+	if(check_product('shares'))
 	{
 		$services->{'nfs-kernel-server'}		= { 'constant' => NFSD(), 'allow' => [ 'start', 'stop', 'restart' ] };
 	}
