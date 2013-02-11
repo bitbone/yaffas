@@ -35,6 +35,8 @@ lbl_setup_execute=setting up
 lbl_initial_conf=initial configuration
 
 lbl_finish=Finish
+lbl_next=Suivant
+lbl_prev=Précédant
 
 err_mysql_connect=Impossible de se connecter à la base de données
 err_password=Le mot de passe de l'administrateur est vide ou ne correspond pas.
