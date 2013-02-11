@@ -85,6 +85,20 @@ This module allows you to configure security settings for this mailserver.
 You can enable a virus and spam check.
 There is also support for the policy sever that allows you to reject emails during smtp time.
 
+[NOTE]
+======
+
+When using fetchmail, Amavis and SpamAssassin will not properly scan
+incoming mail for viruses or spam. This happens as all mail appears
+to be coming from localhost (127.0.0.1), which is white-listed.
+Sadly, this cannot be solved in a generic way without introducing any
+side effects. However, this is usually not a big problem, as the
+external mail hoster usually provides virus scanning and spam checking
+already.
+
+======
+
+
 ==== Policy Server
 
 The policy server can decide during smtp time if a message should be accepted based on reputation of the sender.

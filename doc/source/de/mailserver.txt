@@ -89,6 +89,22 @@ Falls der clamav-Dienst sich nicht starten lässt, so hat dieser möglicherweise
 
 ==============
 
+[NOTE]
+======
+
+Wenn fetchmail zum Abholen von E-Mails benutzt wird, können Amavis und
+SpamAssassin diese E-Mails nicht korrekt auf Viren oder Spam untersuchen.
+Das ist darin begründet, dass alle Mails so aussehen, als kämen sie lokal
+(via 127.0.0.1) an, weswegen sie aufgrund einer Whitelisting-Regel
+nicht gescannt werden. Leider kann dies nicht auf eine generische
+Art und Weise gelöst werden, ohne andere Nebeneffekte auszulösen. Dies
+sollte aber in der Regel kein großes Problem sein, da in solchen
+Installationen ja in der Regel der externe Mailserver-Betreiber schon
+Vorkehrungen zur Virus- and Spamprävention getroffen hat.
+
+======
+
+
 
 
 === Rundmail
