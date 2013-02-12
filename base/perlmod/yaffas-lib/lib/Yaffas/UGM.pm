@@ -330,9 +330,10 @@ sub add_user($$$$@) {
 	push @cmd, "-m", "-a";
 	push @cmd, "-s", $shell;
 
-	push @cmd, "-c", $gecos;
-	push @cmd, "-N", $givenname;
-	push @cmd, "-S", $surname;
+	# givenName, sn, cn and gecos will be populated
+	# with default values, which will later be fixed by gecos();
+	# the reason for this is that smbldap-useradd and -usermod do not
+	# properly support utf-8 in all versions we have to support
 	push @cmd, $login;
 
 
