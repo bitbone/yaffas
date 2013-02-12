@@ -80,11 +80,24 @@ sub get_next_free_uid(;@);
 {
 	my $getent;
 	my $getent_cmd = Yaffas::Constant::APPLICATION->{getent};
+	sub insert_displayname($) {
+		# receives a single passwd line, replaces the realname
+		# with the displayName from LDAP and returns the result
+		my ($login, $pw, $uid, $gid, $gecos,
+			$home, $shell) = split(/:/, $_);
+		$gecos = (Yaffas::LDAP::search_attribute(
+			'user', $login, 'displayName'))[0];
+		return "$login:$pw:$uid:$gid:$gecos:$home:$shell";
+	}
 	sub getent{
 		unless(defined $getent) {
 			my @passwd  = `$getent_cmd passwd`;
 			my @group = `$getent_cmd group`;
 
+			if (Yaffas::Auth::auth_type() eq
+				Yaffas::Auth::Type::LOCAL_LDAP) {
+				@passwd = map &insert_displayname, @passwd;
+			}
 			my %pw_data_name;
 			my %pw_data_uid;
 			foreach(@passwd){
@@ -110,6 +123,10 @@ sub get_next_free_uid(;@);
 	sub add_user_to_cache {
 		my $user = shift;
 		my $line = `$getent_cmd passwd $user`;
+		if (Yaffas::Auth::auth_type() eq
+			Yaffas::Auth::Type::LOCAL_LDAP) {
+			$line = insert_displayname($line);
+		}
 		push @{ $getent->{passwd} }, $line;
 	}
 	sub add_group_to_cache {
