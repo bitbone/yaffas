@@ -601,11 +601,18 @@ sub gecos($;$$) {
 		unless (Yaffas::Check::gecos($gecos)) {
 			throw Yaffas::Exception('err_gecos', $user);
 		}
-		do_back_quote(Yaffas::Constant::APPLICATION->{usermod}, "-c", $gecos, $user);
-		my $ret = Yaffas::LDAP::replace_entry($user, "cn", "$givenname $surname");
-		$ret += Yaffas::LDAP::replace_entry($user, "displayName", "$givenname $surname");
+		my $ret = 0;
+		# gecos field does not support unicode (see nis.schema), so
+		# we use the username (ADM-273)
+		$ret += Yaffas::LDAP::replace_entry($user, "gecos", $user);
+
+		$ret += Yaffas::LDAP::replace_entry($user, "cn", $gecos);
+		$ret += Yaffas::LDAP::replace_entry($user, "displayName", $gecos);
+		# smbldap-* adds this entry, and we remove it;
+		# return code is explicitly not checked as a failure to do so
+		# should not result in an overall failure
 		Yaffas::LDAP::del_entry($user, "description");
-		throw Yaffas::Exception("err_gecos", $user) unless ($? == 0 and $ret == 0);
+		throw Yaffas::Exception("err_gecos", $user) unless $ret == 0;
 		return $gecos;
 	} else {
 		for (@{getent("passwd")}) {
