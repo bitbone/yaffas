@@ -104,6 +104,7 @@ sub get_next_free_uid(;@);
 				my  ($username, undef,$uid, $gid) = split(/:/, $_);
 				$pw_data_name{$username} = $_;
 			}
+			# populate cache
 			$getent = {
 				passwd => \@passwd,
 				group => \@group,
@@ -174,8 +175,8 @@ sub rm_group($) {
 		shift()->throw();
 	};
 
-    clear_cache();
-    create_group_aliases();
+	clear_cache();
+	create_group_aliases();
 
 	return 1;
 }
@@ -242,18 +243,19 @@ sub add_group($) {
 	do_back_quote(Yaffas::Constant::APPLICATION->{groupadd}, "-a", $group);
 	throw Yaffas::Exception('err_add_group') unless ($? == 0);
 
-    my $ret = Yaffas::LDAP::add_entry($group, "objectClass", "zarafa-group", "Group");
+	my $ret = Yaffas::LDAP::add_entry($group, "objectClass", "zarafa-group", "Group");
 
 	throw Yaffas::Exception('err_add_group') unless ($ret == 0);
 
 	add_group_to_cache( $group );
-    create_group_aliases();
+	create_group_aliases();
 	return 1;
 }
 
-=item add_user( USERNAME, EMAIL, GECOS, GROUPS )
+=item add_user( USERNAME, EMAIL, GIVENNAME, SURNAME, GROUPS )
 
-Adds a user with USERNAME, GROUPS, EMAIL and GECOS entry to userdatabase.
+Adds a user with USERNAME, EMAIL, GIVENNAME, SURNAME and GROUPS entry
+to userdatabase.
 
 =cut
 
@@ -388,7 +390,7 @@ sub add_user($$$$@) {
 	clear_cache();
 	getent();
 
-    create_group_aliases();
+	create_group_aliases();
 
 	return $success;
 }
@@ -437,7 +439,7 @@ sub rm_user ($) {
 		shift()->throw();
 	};
 
-    create_group_aliases();
+	create_group_aliases();
 }
 
 =item clean_user_data ( USERNAME )
@@ -582,8 +584,10 @@ sub password($$) {
 
 =item gecos ( USER, [ GIVENNAME, SURNAME ] )
 
-It returns the Gecos of the USER.
-If NEWGECOS is specified it sets a new gecos and returns it.
+Returns the Gecos of the USER.
+If GIVENNAME and SURNAME are given, it updates displayName, cn, sn and
+givenName accordingly. gecos will always be set to the login name as it
+does not support unicode (schema-wise).
 If a error occures it returns undef.
 
 =cut
@@ -920,19 +924,19 @@ Returns the groupname of the GID. undef on error.
 =cut
 
 sub get_groupname_by_gid($) {
-    my $id = shift;
+	my $id = shift;
 	my $count = 0;
 	my $match = "";
-    for (@{getent("group")}) {
-        if (/^([^:]+):[^:]*:$id:.*$/) {
+	for (@{getent("group")}) {
+		if (/^([^:]+):[^:]*:$id:.*$/) {
 			$count++;
 			$match = $1;
 		}
-    }
+	}
 	if ($count > 1) {
 		throw Yaffas::Exception('err_nonunique_gid');
 	}
-    return $match;
+	return $match;
 }
 
 =item get_gid_by_groupname ( GROUPNAME )
@@ -942,11 +946,11 @@ It returns the GID of the GROUPNAME. undef on error.
 =cut
 
 sub get_gid_by_groupname($) {
-    my $group = shift;
-    for (@{getent("group")}) {
-        return $1 if /^$group:.:([^:]+):/
-    }
-    return undef;
+	my $group = shift;
+	for (@{getent("group")}) {
+		return $1 if /^$group:.:([^:]+):/
+	}
+	return undef;
 }
 
 =item get_suppl_groupids( USERNAME )
@@ -957,18 +961,18 @@ and returns the groupid
 =cut
 
 sub get_suppl_groupids($) {
-    my $user = shift;
-    my @supplgroup;
-    my @tmp = @{ getent("group") };
+	my $user = shift;
+	my @supplgroup;
+	my @tmp = @{ getent("group") };
 
-    foreach (@tmp) {
-        if ( m/^([^:]+):[^:]+:([^:]+):(.*)$/ ){
-            next if $1 eq "bkusers";
-            next unless grep {$user eq $_} split ",", $3;
-            push @supplgroup, $2;
-        }
-    }
-    return @supplgroup;
+	foreach (@tmp) {
+		if ( m/^([^:]+):[^:]+:([^:]+):(.*)$/ ){
+			next if $1 eq "bkusers";
+			next unless grep {$user eq $_} split ",", $3;
+			push @supplgroup, $2;
+		}
+	}
+	return @supplgroup;
 }
 
 =item get_suppl_groupnames ( USERNAME )
@@ -979,18 +983,18 @@ and returns the groupnames
 =cut
 
 sub get_suppl_groupnames($) {
-    my $user = shift;
-    my @supplgroup;
-    my @tmp = @{ getent("group") };
+	my $user = shift;
+	my @supplgroup;
+	my @tmp = @{ getent("group") };
 
-    foreach (@tmp) {
-        if ( m/^([^:]+):[^:]+:([^:]+):(.*)$/ ){
-            next if $1 eq "bkusers";
-            next unless grep {$user eq $_} split ",", $3;
-            push @supplgroup, $1;
-        }
-    }
-    return @supplgroup;
+	foreach (@tmp) {
+		if ( m/^([^:]+):[^:]+:([^:]+):(.*)$/ ){
+			next if $1 eq "bkusers";
+			next unless grep {$user eq $_} split ",", $3;
+			push @supplgroup, $1;
+		}
+	}
+	return @supplgroup;
 }
 
 =item set_suppl_groups (USER, GROUPS)
@@ -1033,12 +1037,12 @@ sub set_suppl_groups ($@){
 	push @cmd, $user;
 
 	Yaffas::do_back_quote(@cmd);
-    unless ($? == 0) {
+	unless ($? == 0) {
 		throw Yaffas::Exception("err_set_suppl_group", $? >> 8);
 	}
 
-    clear_cache();
-    create_group_aliases();
+	clear_cache();
+	create_group_aliases();
 
 	1;
 }
@@ -1053,11 +1057,11 @@ Returns undef on error.
 =cut
 
 sub is_user_in_group ($$) {
-    my $user = shift;
-    my $group = shift;
-    return undef unless ($user and $group);
+	my $user = shift;
+	my $group = shift;
+	return undef unless ($user and $group);
 	my @users = get_users($group);
-    return scalar grep {$_ eq $user if (defined($_))} get_users($group);
+	return scalar grep {$_ eq $user if (defined($_))} get_users($group);
 }
 
 =item user_exists ( USERNAME )
@@ -1108,19 +1112,19 @@ Returns the username of the UID, and undef if the UID is not found.
 =cut
 
 sub get_username_by_uid ($) {
-    my $id = shift;
+	my $id = shift;
 	my $count = 0;
 	my $match = "";
-    for (@{getent("passwd")}) {
-        if (/^([^:]+):[^:]*:$id:.*$/) {
+	for (@{getent("passwd")}) {
+		if (/^([^:]+):[^:]*:$id:.*$/) {
 			$count++;
 			$match = $1;
 		}
-    }
+	}
 	if ($count > 1) {
 		throw Yaffas::Exception("err_nonunique_uid");
 	}
-    return $match;
+	return $match;
 }
 
 =cut
@@ -1140,12 +1144,12 @@ sub get_email($;$)
 
 	my $mail;
 
-    if (defined($type) && $type eq "group") {
-        $mail = (Yaffas::LDAP::search_attribute('grouponly',"$user", 'mail'))[0];
-    }
-    else {
-        $mail = (Yaffas::LDAP::search_attribute('user',"$user", 'mail'))[0];
-    }
+	if (defined($type) && $type eq "group") {
+		$mail = (Yaffas::LDAP::search_attribute('grouponly',"$user", 'mail'))[0];
+	}
+	else {
+		$mail = (Yaffas::LDAP::search_attribute('user',"$user", 'mail'))[0];
+	}
 
 	return undef unless $mail;
 	return $mail;
@@ -1159,45 +1163,45 @@ throws Yaffas::Exception on error.
 =cut
 
 sub set_email($$;$) {
-    my $user = shift;
-    my $email = shift;
-    my $type = shift;
+	my $user = shift;
+	my $email = shift;
+	my $type = shift;
 
-    Yaffas::Exception->throw('err_no_local_auth')
-    unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
-        || Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
+	Yaffas::Exception->throw('err_no_local_auth')
+	unless ( Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::LOCAL_LDAP
+		|| Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::FILES );
 
-    unless (Yaffas::Check::email($email)) {
-        throw Yaffas::Exception("err_invalid_email");
-    }
+	unless (Yaffas::Check::email($email)) {
+		throw Yaffas::Exception("err_invalid_email");
+	}
 
-    my $r;
-    my $got_it;
-    if ($type eq "group") {
-        $got_it = Yaffas::LDAP::search_entry("cn=$user", 'mail', "Group");
-    }
-    else {
-        $got_it = Yaffas::LDAP::search_entry("uid=$user", 'mail');
-    }
+	my $r;
+	my $got_it;
+	if ($type eq "group") {
+		$got_it = Yaffas::LDAP::search_entry("cn=$user", 'mail', "Group");
+	}
+	else {
+		$got_it = Yaffas::LDAP::search_entry("uid=$user", 'mail');
+	}
 
-    if ($got_it) {
-        if ($type eq "group") {
-            $r = Yaffas::LDAP::replace_entry($user, "mail", $email, "Group");
-        }
-        else {
-            $r = Yaffas::LDAP::replace_entry($user, "mail", $email);
-        }
-        throw Yaffas::Exception("err_change_email", $r) if $r;
-    }
-    else {
-        if ($type eq "group") {
-            $r = Yaffas::LDAP::add_entry($user, "mail", $email, "Group");
-        }
-        else {
-            $r = Yaffas::LDAP::add_entry($user, "mail", $email);
-        }
-        throw Yaffas::Exception("err_add_email", $r) if $r;
-    }
+	if ($got_it) {
+		if ($type eq "group") {
+			$r = Yaffas::LDAP::replace_entry($user, "mail", $email, "Group");
+		}
+		else {
+			$r = Yaffas::LDAP::replace_entry($user, "mail", $email);
+		}
+		throw Yaffas::Exception("err_change_email", $r) if $r;
+	}
+	else {
+		if ($type eq "group") {
+			$r = Yaffas::LDAP::add_entry($user, "mail", $email, "Group");
+		}
+		else {
+			$r = Yaffas::LDAP::add_entry($user, "mail", $email);
+		}
+		throw Yaffas::Exception("err_add_email", $r) if $r;
+	}
 }
 
 =item del_email( USER )
@@ -1229,8 +1233,8 @@ This routine returns the crypted password for B<USER>.
 =cut
 
 sub get_crypted_passwd($){
-    my $user = shift;
-    my @pw = do_back_quote(Yaffas::Constant::APPLICATION->{usershow}, $user);
+	my $user = shift;
+	my @pw = do_back_quote(Yaffas::Constant::APPLICATION->{usershow}, $user);
 	foreach my $pw (@pw)
 	{
 	 	chomp $pw;
@@ -1632,21 +1636,21 @@ sub name($;$$) {
 }
 
 sub set_additional_values {
-    my $login = shift;
-    my $values = shift;
+	my $login = shift;
+	my $values = shift;
 
-    throw Yaffas::Exception("err_values") unless ref $values eq "HASH";
+	throw Yaffas::Exception("err_values") unless ref $values eq "HASH";
 
-    foreach my $k (keys %{$values}) {
-        Yaffas::LDAP::replace_entry($login, $k, $values->{$k});
-    }
+	foreach my $k (keys %{$values}) {
+		Yaffas::LDAP::replace_entry($login, $k, $values->{$k});
+	}
 }
 
 sub get_additional_value {
-    my $login = shift;
-    my $key = shift;
+	my $login = shift;
+	my $key = shift;
 
-    return (Yaffas::LDAP::search_attribute("user", $login, $key))[0];
+	return (Yaffas::LDAP::search_attribute("user", $login, $key))[0];
 }
 
 =item get_send_as LOGIN
@@ -1720,30 +1724,30 @@ e.g. group@domain.com user1@domain.com,user2@domain.com
 =cut
 
 sub create_group_aliases {
-    return if (Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::ADS);
+	return if (Yaffas::Auth::auth_type() eq Yaffas::Auth::Type::ADS);
 
-    my $cfg = Yaffas::Constant::FILE->{postfix_ldap_group};
+	my $cfg = Yaffas::Constant::FILE->{postfix_ldap_group};
 
-    my $file = Yaffas::File->new($cfg);
-    $file->wipe_content();
+	my $file = Yaffas::File->new($cfg);
+	$file->wipe_content();
 
-    my @groups = Yaffas::UGM::get_groups();
+	my @groups = Yaffas::UGM::get_groups();
 
-    foreach my $g (@groups) {
-        my ($m) = Yaffas::LDAP::search_attribute("grouponly", $g, "mail");
+	foreach my $g (@groups) {
+		my ($m) = Yaffas::LDAP::search_attribute("grouponly", $g, "mail");
 
-        if ($m) {
-            my @addresses = Yaffas::LDAP::search_attribute("group", $g, "mail");
-            if (scalar @addresses) {
-                $file->add_line($m." ".join(",", @addresses));
-            }
-        }
-    }
+		if ($m) {
+			my @addresses = Yaffas::LDAP::search_attribute("group", $g, "mail");
+			if (scalar @addresses) {
+				$file->add_line($m." ".join(",", @addresses));
+			}
+		}
+	}
 
-    $file->save();
+	$file->save();
 
-    my $postmap = Yaffas::Constant::APPLICATION->{postmap};
-    `$postmap $cfg`;
+	my $postmap = Yaffas::Constant::APPLICATION->{postmap};
+	`$postmap $cfg`;
 }
 
 =item get_next_free_uid()
