@@ -383,9 +383,6 @@ sub add_user($$$$@) {
 	}
 	throw Yaffas::Exception("err_useradd_failed", $ret_text) unless $success;
 
-	# add user in cache.
-	add_user_to_cache($login);
-
 	# add user's groups in cache
 	clear_cache();
 	getent();
