@@ -48,6 +48,16 @@ E-Mail und dem Disclaimertext angezeigt. Dies kann leider nicht
 unterbunden werden. Weitere Informationen zu diesem Thema erhalten Sie
 beim Support.
 
+[IMPORTANT]
+===========
+Dieses Modul kommt nicht mit RTF-E-Mails ("Richtext", "winmail.dat")
+klar, wie sie von manchen Outlook-Versionen standardmäßig generiert
+werden. Stattdessen muss auf das HTML- oder Klartextformat gewechselt
+werden. Ansonsten wird zwar an den Klartext-Teil der E-Mail der
+Disclaimer angefügt, wird die E-Mail aber mit einem Programm geöffnet,
+das das Richtext-Format unterstützt, so fehlt der Disclaimer.
+===========
+
 ==== Disclaimer-Auswahl-Prozess
 Die Abarbeitung der konfigurierten Disclaimer erfolgt beim Versand
 einer E-Mail wie folgt. Es wird jeweils geprüft, ob ein
