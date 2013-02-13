@@ -94,7 +94,7 @@ Yaffas.Login.prototype.setup = function(){
         $("error_dlg").style.display = "block";
         $("wait").style.display = "block";
         // IE9 scrolls to bottom, because login dialog is created there - so we now jump to the top
-        scrollTo(0);
+        scrollTo(0, 0);
 
         YAHOO.util.Event.addListener(window, "resize", function() { Yaffas.login.layout.resize() }.bind(this));
     };
