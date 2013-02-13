@@ -538,7 +538,7 @@ sub _features_table () {
 						-labels=> {
 							on => $main::text{lbl_feature_on},
 							off => $main::text{lbl_feature_off},
-							default => $main::text{"lbl_feature_default_" . $default->{imap}};
+							default => $main::text{"lbl_feature_default_" . $default->{imap}},
 						},
 						-default => $features->{imap}
 					})
@@ -552,7 +552,7 @@ sub _features_table () {
 						-labels=> {
 							on => $main::text{lbl_feature_on},
 							off => $main::text{lbl_feature_off},
-							default => $main::text{"lbl_feature_default_" . $default->{imap}};
+							default => $main::text{"lbl_feature_default_" . $default->{imap}},
 						},
 						-default => $features->{pop3}
 					})
