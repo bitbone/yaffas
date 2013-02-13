@@ -535,7 +535,11 @@ sub _features_table () {
 				$Cgi->radio_group({
 						-name=>"zarafaimap_" . $uid,
 						-values=>[qw(on off default)],
-						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{imap} },
+						-labels=> {
+							on => $main::text{lbl_feature_on},
+							off => $main::text{lbl_feature_off},
+							default => $main::text{"lbl_feature_default_" . $default->{imap}};
+						},
 						-default => $features->{imap}
 					})
 				]
@@ -545,7 +549,11 @@ sub _features_table () {
 				$Cgi->radio_group({
 						-name=>"zarafapop3_" . $uid,
 						-values=>[qw(on off default)],
-						-labels=> { on => "On", off => "Off", default => sprintf "Default (%s)", $default->{pop3} },
+						-labels=> {
+							on => $main::text{lbl_feature_on},
+							off => $main::text{lbl_feature_off},
+							default => $main::text{"lbl_feature_default_" . $default->{imap}};
+						},
 						-default => $features->{pop3}
 					})
 				]
