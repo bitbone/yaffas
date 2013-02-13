@@ -35,6 +35,8 @@ lbl_setup_execute=configurando
 lbl_initial_conf=configuração inicial
 
 lbl_finish=Concluir
+lbl_next=Próximo
+lbl_prev=Anterior
 
 err_mysql_connect=Não foi possível conectar no banco de dados.
 err_password=A senha de administrador está vazia ou diferente.

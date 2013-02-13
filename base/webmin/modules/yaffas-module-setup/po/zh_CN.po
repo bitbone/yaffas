@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-07 00:20+0100\n"
+"POT-Creation-Date: 2013-02-11 09:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -307,27 +307,37 @@ msgstr ""
 msgid "Finish"
 msgstr ""
 
-#: lang/en:39
+#: lang/en:38
 #, no-wrap
-msgid "Could not connect to database."
+msgid "Next"
 msgstr ""
 
-#: lang/en:40
+#: lang/en:39
 #, no-wrap
-msgid "The admin password is empty or does not match."
+msgid "Previous"
 msgstr ""
 
 #: lang/en:41
 #, no-wrap
-msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
+msgid "Could not connect to database."
 msgstr ""
 
 #: lang/en:42
 #, no-wrap
-msgid "The given username already exists locally. Please specify another username or delete the existing user first."
+msgid "The admin password is empty or does not match."
+msgstr ""
+
+#: lang/en:43
+#, no-wrap
+msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr ""
 
 #: lang/en:44
+#, no-wrap
+msgid "The given username already exists locally. Please specify another username or delete the existing user first."
+msgstr ""
+
+#: lang/en:46
 #, no-wrap
 msgid "Setup"
 msgstr ""

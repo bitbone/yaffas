@@ -35,6 +35,8 @@ lbl_setup_execute=設定中
 lbl_initial_conf=初始化設定
 
 lbl_finish=完成
+lbl_next=次
+lbl_prev=前
 
 err_mysql_connect=無法連線到資料庫
 err_password=管理者密碼是空的或不匹配

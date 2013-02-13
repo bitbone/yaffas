@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-28 15:17+0100\n"
+"POT-Creation-Date: 2013-02-11 09:44+0100\n"
 "PO-Revision-Date: 2013-01-25 16:31+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,27 +158,37 @@ msgstr "initiale Konfiguration"
 msgid "Finish"
 msgstr "Abschließen"
 
+#: lang/en:38
+#, no-wrap
+msgid "Next"
+msgstr "Weiter"
+
 #: lang/en:39
+#, no-wrap
+msgid "Previous"
+msgstr "Zurück"
+
+#: lang/en:41
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Konnte keine Verbindung zur Datenbank herstellen."
 
-#: lang/en:40
+#: lang/en:42
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "Die Admin Passwörter stimmen nicht überein oder sind leer."
 
-#: lang/en:41
+#: lang/en:43
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr "Die Domäne kann nur Buchstaben (a-z und A-Z), Ziffern (0-9), '.' und '-' enthalten und muss mindestens eine Länge von einem Zeichen haben."
 
-#: lang/en:42
+#: lang/en:44
 #, no-wrap
 msgid "The given username already exists locally. Please specify another username or delete the existing user first."
 msgstr "Der angegebene Benutzername existiert bereits lokal. Bitte geben sie einen anderen Benutzernamen an oder löschen sie den existierenden Benutzer."
 
-#: lang/en:44
+#: lang/en:46
 #, no-wrap
 msgid "Setup"
 msgstr "Setup"

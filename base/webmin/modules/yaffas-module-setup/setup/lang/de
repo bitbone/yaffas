@@ -35,6 +35,8 @@ lbl_setup_execute=wird eingerichtet
 lbl_initial_conf=initiale Konfiguration
 
 lbl_finish=Abschließen
+lbl_next=Weiter
+lbl_prev=Zurück
 
 err_mysql_connect=Konnte keine Verbindung zur Datenbank herstellen.
 err_password=Die Admin Passwörter stimmen nicht überein oder sind leer.
