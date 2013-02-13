@@ -54,7 +54,7 @@ if (keys %problems) {
 }
 
 # print lang to browser, because globals.cgi doesn't work here
-print $cgi->div({-id=>"lang", class=>"hidden"}, to_json({global => {map {$_ => $main::text{$_}} qw(lbl_yes lbl_no lbl_error lbl_loading)}}));
+print $cgi->div({-id=>"lang", class=>"hidden"}, to_json({global => {map {$_ => $main::text{$_}} qw(lbl_yes lbl_no lbl_error lbl_loading)}}, {latin1 => 1}));
 
 if ($main::logged_in eq "1") {
 		print $cgi->div({-id=>"response"}, $cgi->start_form(-method => 'post', -action => 'admin.cgi', -style => "display: block;"),
