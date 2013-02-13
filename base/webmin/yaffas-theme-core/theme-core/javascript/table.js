@@ -246,11 +246,11 @@ Yaffas.Table.prototype.selectedRows = function(){
         var r = s[i].childNodes;
         ret.push([]);
         for (var j = 0; j < r.length; ++j) {
-            if (r[j].innerText) {
-                ret[i].push(r[j].innerText);
+            if (r[j].textContent) {
+                ret[i].push(r[j].textContent);
             }
             else {
-                ret[i].push(r[j].textContent);
+                ret[i].push(r[j].innerText);
             }
         }
     }
