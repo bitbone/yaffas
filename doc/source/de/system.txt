@@ -62,6 +62,15 @@ PEM-Dateien zu erzeugen, kann folgendes Kommando verwendet werden:
 
     cat private.key cert.crt > combined.pem
 
+Eine korrekt formatierte Datei sieht so aus:
+
+    -----BEGIN PRIVATE KEY-----
+    ...kodierter Schlüssel...
+    -----END PRIVATE KEY-----
+    -----BEGIN CERTIFICATE-----
+    ...kodiertes Zertifikat...
+    -----END CERTIFICATE-----
+
 
 [IMPORTANT]
 ==============

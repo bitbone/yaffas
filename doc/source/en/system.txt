@@ -57,6 +57,15 @@ the private key and the certificate, you can combine them using
 
     cat private.key cert.crt > combined.pem
 
+A properly formatted file should look like this:
+
+    -----BEGIN PRIVATE KEY-----
+    ...encoded key...
+    -----END PRIVATE KEY-----
+    -----BEGIN CERTIFICATE-----
+    ...encoded certificate...
+    -----END CERTIFICATE-----
+
 [IMPORTANT]
 ==============
 Currently there is a https://jira.zarafa.com/browse/ADM-215[bug]
