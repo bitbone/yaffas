@@ -10,3 +10,5 @@ err_no_lshw=您的系統似乎沒有安裝"lshw"程式
 err_no_lspci=您的系統似乎沒有安裝"lspci"程式
 err_executing_lspci=執行"pspci"發生錯誤
 err_executing_lshw=執行"lshw"發生錯誤
+
+moduletitle=支援

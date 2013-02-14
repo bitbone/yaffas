@@ -89,3 +89,7 @@ lbl_zarafa_no_store=None
 lbl_force_zarafa_resync=強制離線設定檔再同步
 lbl_force_zarafa_resync_question=此強制設定(Cache mode)會重新從伺服器上下載所有資料。某些使用者問題可以被解決，但是此設定會耗損網路頻寬和時間，您需要特別注意網路頻寬問題。<br/><br/>強制以下使用者重新同步嗎？
 lbl_edit_disclaimer=設定郵件宣告
+lbl_feature_on=On
+lbl_feature_off=關
+lbl_feature_default_on=Default (on)
+lbl_feature_default_off=Default (off)

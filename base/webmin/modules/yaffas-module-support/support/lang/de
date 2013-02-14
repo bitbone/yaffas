@@ -10,3 +10,5 @@ err_no_lshw=Ihr System verfügt nicht über das benötigte Programm "lshw".
 err_no_lspci=Ihr System verfügt nicht über das benötigte Programm "lspci".
 err_executing_lspci=Beim ausführen von "pspci" trat ein Fehler auf.
 err_executing_lshw=Beim ausführen von "lshw" trat ein Fehler auf.
+
+moduletitle=Support
