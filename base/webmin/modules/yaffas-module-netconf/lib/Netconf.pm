@@ -515,7 +515,7 @@ sub _get_all_devices() {
 
 =item domainname ()
 
-	Returns current domain name.
+	Returns or changes the current domain name.
 
 =cut
 
@@ -524,7 +524,7 @@ sub domainname {
 	my $domain = shift;
 
 	if (defined($domain)) {
-		throw Yaffas::Exception("err_domain") unless(Yaffas::Check::domainname($domain));
+		throw Yaffas::Exception("err_domain") unless(Yaffas::Check::domainname($domain) && $domain =~ /\./);
 		$self->{DOMAINNAME} = $domain;
 		return;
 	}
