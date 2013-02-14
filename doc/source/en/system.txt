@@ -50,7 +50,20 @@ If you choose "all" at the drop-down field "service", you can create a default c
 If you want to upload an existing certificate, click on the tab "Upload Certificate" and click on "Browse" to choose the file from your hard disk.
 Select the file with the certificate and click "Open". After the dialog closed itself you have to select the service to which your certificate shall apply. Finally, you should delete any remaining duplicates.
 
+Currently only PEM-encoded certificates with the private key and the
+actual certificate concatenated are supported. These files usually have
+the file extension ".pem" or ".crt". If you have seperate files for
+the private key and the certificate, you can combine them using
+
+    cat private.key cert.crt > combined.pem
+
 [IMPORTANT]
 ==============
-The key and the certificate must be contained together in one file to successfully import a certificate. Please note that the key should come **first** and the file **must not be** encrypted.
+Currently there is a https://jira.zarafa.com/browse/ADM-215[bug]
+preventing error messages from being shown when problematic certificates
+are uploaded. These certificates will not be
+installed and the action will fail silently.
+Therefore, please double-check that your certificate is **PEM-encoded** and
+that it contains **first the private key and then the certificate**. Also
+ensure that the private key is **not encrypted**.
 ==============

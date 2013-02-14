@@ -54,8 +54,23 @@ Um selbst ein Zertifikat zu erstellen, klicken Sie auf den Reiter  _"Generiere S
 Möchten Sie ein vorhandenes Zertifikat hochladen, so klicken Sie auf den Reiter  _"Zertifikat hochladen"_ und auf Durchsuchen um die Datei auf Ihrer Festplatte auszuwählen.
 Wählen Sie die Datei mit dem Zertifikat aus und klicken Sie auf Öffnen. Nun schließt sich der Dialog und Sie müssen noch den Service auswählen, für den Ihr Zertifikat gelten soll. Nach dem Import sollten Sie eventuell die noch vorhandenen doppelten Zertifikate für andere Dienste löschen.
 
+Derzeit werden nur PEM-kodierte Zertifikate unterstützt, wobei der
+private Schlüssel und das Zertifikat selbst in einer Datei zusammengefügt
+vorliegen müssen. Solche Dateien haben in der Regel die Dateiendung
+".pem" oder ".crt". Um eine solche kombinierte Datei aus zwei einzelnen
+PEM-Dateien zu erzeugen, kann folgendes Kommando verwendet werden:
+
+    cat private.key cert.crt > combined.pem
+
+
 [IMPORTANT]
 ==============
-
-Um ein Zertifikat erfolgreich zu importieren, müssen sich der Key und das Zertifikat zusammen in einer Datei befinden. Dabei ist zu beachten, dass der Key an **erster** Stelle steht und die Datei **nicht** verschlüsselt ist.
+Derzeit verhindert ein https://jira.zarafa.com/browse/ADM-215[Bug] die
+korrekte Anzeige von Fehlern beim Zertifikats-Import. Falsch formatierte
+Zertifikate werden nicht
+installiert und es erscheint keine Fehlermeldung.
+Deswegen sollte genau überprüft werden, dass das Zertifikat
+**PEM-kodiert** ist und **erst den privaten Schlüssel und dann das
+Zertifikat** enthält. Außerdem darf der private Schlüssel **nicht
+verschlüsselt** sein.
 ==============
