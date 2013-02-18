@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
-"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"POT-Creation-Date: 2013-02-15 00:30+0100\n"
+"PO-Revision-Date: 2013-02-13 15:09+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.1.5\n"
 
-#: lang/en:1 lang/en:2
+#: lang/en:1 lang/en:2 lang/en:14
 #, no-wrap
 msgid "Support"
 msgstr "Support"

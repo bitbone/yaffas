@@ -157,9 +157,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
-"Last-Translator: Evan <evan@ulink.com.tw>\n"
+"POT-Creation-Date: 2013-02-15 00:30+0100\n"
+"PO-Revision-Date: 2013-01-30 12:22+0200\n"
+"Last-Translator: Christof <musik@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -615,6 +615,26 @@ msgstr "此強制設定(Cache mode)會重新從伺服器上下載所有資料。
 #, no-wrap
 msgid "Configure disclaimer"
 msgstr "設定郵件宣告"
+
+#: lang/en:92
+#, no-wrap
+msgid "On"
+msgstr ""
+
+#: lang/en:93
+#, no-wrap
+msgid "Off"
+msgstr "關"
+
+#: lang/en:94
+#, no-wrap
+msgid "Default (on)"
+msgstr ""
+
+#: lang/en:95
+#, no-wrap
+msgid "Default (off)"
+msgstr ""
 
 #: help/en:1
 #, no-wrap

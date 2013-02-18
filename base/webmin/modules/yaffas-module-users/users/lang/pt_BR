@@ -89,3 +89,7 @@ lbl_zarafa_no_store=Nenhum
 lbl_force_zarafa_resync=Forçar ressincronização do perfil offline 
 lbl_force_zarafa_resync_question=Isso força que o cliente (em modo cached) ressincroniza todos os dados com o servidor. Certos problemas que podem ocorrer no lado do cliente podem ser reparados com este procedimento, mas o tamanho do perfil poderá causar um consumo de banda alto. Então por favor verifique se você realmente quer executar este processo, especialmente em setups com banda limitada.<br/><br/>Forçar ressincronização para o usuário?
 lbl_edit_disclaimer=Configurar disclaimer
+lbl_feature_on=On
+lbl_feature_off=Desligado
+lbl_feature_default_on=Default (on)
+lbl_feature_default_off=Default (off)

@@ -89,3 +89,7 @@ lbl_zarafa_no_store=Aucun
 lbl_force_zarafa_resync=Force offline profile resynchronization
 lbl_force_zarafa_resync_question=This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?
 lbl_edit_disclaimer=Configure disclaimer
+lbl_feature_on=On
+lbl_feature_off=Désactivé
+lbl_feature_default_on=Default (on)
+lbl_feature_default_off=Default (off)
