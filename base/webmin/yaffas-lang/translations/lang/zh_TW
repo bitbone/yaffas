@@ -71,7 +71,7 @@ lbl_lang_en=英語
 lbl_lang_nl=荷蘭
 lbl_lang_fr=法國
 lbl_lang_pt_BR=巴西
-lbl_lang_zh_TW=Chinese (Taiwan)
+lbl_lang_zh_TW=繁體中文(臺灣)
 
 lbl_table_pager={PageLinks} 頁 {JumpToPageDropdown}{RowsPerPageDropdown} 每頁條目
 lbl_about_bitkit=關於bitkit

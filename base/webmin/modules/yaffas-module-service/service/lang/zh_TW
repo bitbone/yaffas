@@ -41,7 +41,7 @@ lbl_year=年
 lbl_timezone=時區
 lbl_setdatetime=系統時間
 err_invalid_timezone=無效的時區
-err_cannot_set_time=Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead.
+err_cannot_set_time=更改時間失敗(hwclock發生錯誤)。在某些guest作業系統例如Linux主機，不允許更改時間，不過可以更改Host主機系統時間來替代
 
 
 lbl_once=現在

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-02-19 00:26+0100\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -367,7 +367,7 @@ msgstr "無效的時區"
 #: lang/en:44
 #, no-wrap
 msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
-msgstr ""
+msgstr "更改時間失敗(hwclock發生錯誤)。在某些guest作業系統例如Linux主機，不允許更改時間，不過可以更改Host主機系統時間來替代"
 
 #: lang/en:47
 #, no-wrap
