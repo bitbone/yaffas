@@ -11,7 +11,7 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsCategory = Ext.extend(Zarafa.set
 
         Ext.applyIf(config, {
             title : dgettext("plugin_passwd", 'Change password'),
-            iconCls : 'icon_exampleplugin_icon',
+            iconCls : 'zarafa-settings-category-passwd',
             items : [{
                 xtype : 'zarafa.passwdsettingspluginwidget'
             }]

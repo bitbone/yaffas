@@ -20,6 +20,9 @@
 					<clientfile load="debug">js/passwd.js</clientfile>
 					<clientfile load="source">js/passwd.js</clientfile>
 				</client>
+        <resources>
+          <resourcefile>css/passwd.css</resourcefile>
+        </resources>
 			</files>
 		</component>
 	</components>
