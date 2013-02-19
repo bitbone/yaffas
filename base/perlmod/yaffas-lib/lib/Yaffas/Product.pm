@@ -33,7 +33,7 @@ sub get_license_info($$);
 sub get_all_license_info($);
 sub check_product ($);
 
-my @products = ("fax", "mail", "pdf", "framework", "zarafa", "mailgate", "shares");
+my @products = ("fax", "mail", "pdf", "framework", "zarafa", "mailgate", "fileserver");
 my @free_products = ('mail'); # Procucts which need no key
 
 =pod
