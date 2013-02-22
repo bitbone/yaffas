@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-18 11:05+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-02-19 00:26+0100\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -361,7 +361,7 @@ msgstr "白名單"
 #: lang/en:44
 #, no-wrap
 msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
-msgstr ""
+msgstr "在此列出的郵件網域，郵件地址，IP或是IP網段不會被阻擋"
 
 #: lang/en:45
 #, no-wrap
@@ -391,7 +391,7 @@ msgstr "無效電子郵件地址"
 #: lang/en:51
 #, no-wrap
 msgid "Maximum size of scannable objects must be a number (in MB)."
-msgstr ""
+msgstr "可以掃描的最大檔案大小，必須是數字(MB)"
 
 #: lang/en:52
 #, no-wrap

@@ -41,12 +41,12 @@ lbl_trusted=可信任網路
 lbl_add_headers=增加垃圾郵件偵測標頭
 
 lbl_whitelist=白名單
-lbl_wl_desc=Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected.
+lbl_wl_desc=在此列出的郵件網域，郵件地址，IP或是IP網段不會被阻擋
 lbl_address=地址
 lbl_wl_type=類型
 lbl_wl_from=源
 lbl_wl_entry=條目
 
 err_mail=無效電子郵件地址
-err_bad_maximum_size=Maximum size of scannable objects must be a number (in MB).
+err_bad_maximum_size=可以掃描的最大檔案大小，必須是數字(MB)
 moduletitle=安全
