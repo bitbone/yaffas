@@ -7,7 +7,7 @@ PASSWORD="$2"
 source ~/.update-zarafa-client 2>/dev/null
 
 URL="http://download.zarafa.com/supported"
-STATUS="final"
+STATUS=${STATUS:-final}
 VERSION="7.1"
 RELEASE="7.1.3-40304"
 CMD="wget --user=$USERNAME --password=$PASSWORD -qc"
@@ -21,7 +21,7 @@ extract_versions() {
 
 extract_client_binary() {
 	sed -rne \
-		's:.*["/](zarafaclient-'$VERSION'[0-9\.-]+.msi)">.*:\1:p'
+		's:.*["/](zarafaclient-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
 }
 
 AVAILABLE_VERSIONS=$($CMD "$URL/$STATUS/" -qO - | extract_versions)
