@@ -62,6 +62,10 @@ rm -f /tmp/zarafa.{pp,mod,te}
 /sbin/restorecon -R /var/lib/zarafa-webaccess
 /sbin/restorecon -R /var/lib/zarafa
 
+# WebApp 1.3 and later default to connecting to http://localhost:236
+# instead of using the unix socket /var/run/zarafa (ADM-321)
+setsebool httpd_can_network_connect=1
+
 chkconfig zarafa-server on
 service zarafa-server stop
 /usr/bin/zarafa-server --ignore-attachment-storage-conflict
