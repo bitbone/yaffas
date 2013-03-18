@@ -157,15 +157,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-19 00:34+0100\n"
+"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -257,10 +259,11 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
+# 75%
 #: lang/en:21
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Used"
-msgstr ""
+msgstr "Uporabnik"
 
 #: lang/en:22 lang/en:35
 #, no-wrap
@@ -290,7 +293,7 @@ msgstr ""
 #: lang/en:27
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: lang/en:28
 #, no-wrap
@@ -435,7 +438,7 @@ msgstr ""
 #: lang/en:60
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: lang/en:61
 #, no-wrap

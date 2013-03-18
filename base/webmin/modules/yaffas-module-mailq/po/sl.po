@@ -157,140 +157,142 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-19 00:34+0100\n"
+"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Email Queue"
-msgstr ""
+msgstr "Čakalna vrsta elektronskih sporočil"
 
 #: lang/en:2
 #, no-wrap
 msgid "Mailserver"
-msgstr ""
+msgstr "Poštni strežnik"
 
 #: lang/en:3
 #, no-wrap
 msgid "ID"
-msgstr ""
+msgstr "ID"
 
 #: lang/en:4
 #, no-wrap
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: lang/en:5
 #, no-wrap
 msgid "Time"
-msgstr ""
+msgstr "Čas"
 
 #: lang/en:6
 #, no-wrap
 msgid "Sender"
-msgstr ""
+msgstr "Pošiljatelj"
 
 #: lang/en:7
 #, no-wrap
 msgid "Recipient"
-msgstr ""
+msgstr "Prejemnik"
 
 #: lang/en:8
 #, no-wrap
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: lang/en:9
 #, no-wrap
 msgid "Attempt to deliver"
-msgstr ""
+msgstr "Poskus pošiljanja"
 
 #: lang/en:10
 #, no-wrap
 msgid "Delete emails"
-msgstr ""
+msgstr "Izbriži elektronska sporočila"
 
 #: lang/en:11
 #, no-wrap
 msgid "Forward to postmaster"
-msgstr ""
+msgstr "Posreduj poštnemu skrbniku"
 
 #: lang/en:12
 #, no-wrap
 msgid "Forward to special user"
-msgstr ""
+msgstr "Posreduj posebnemu uporabniku"
 
 #: lang/en:13
 #, no-wrap
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: lang/en:14
 #, no-wrap
 msgid "All"
-msgstr ""
+msgstr "Vse"
 
 #: lang/en:15
 #, no-wrap
 msgid "None"
-msgstr ""
+msgstr "Nič"
 
 #: lang/en:16
 #, no-wrap
 msgid "Emails"
-msgstr ""
+msgstr "Elektronska sporočila"
 
 #: lang/en:17
 #, no-wrap
 msgid "Email address"
-msgstr ""
+msgstr "Naslov elektronskega sporočila"
 
 #: lang/en:18
 #, no-wrap
 msgid "Mail ID"
-msgstr ""
+msgstr "Poštni ID"
 
 #: lang/en:19
 #, no-wrap
 msgid "forward to"
-msgstr ""
+msgstr "posreduj do"
 
 #: lang/en:20
 #, no-wrap
 msgid "Really remove the emails with this mail ids?"
-msgstr ""
+msgstr "Dokončno odstrani sporočila s temi ID-ji?"
 
 #: lang/en:21
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "Mreža"
 
 #: lang/en:22
 #, no-wrap
 msgid "No emails selected."
-msgstr ""
+msgstr "Ni zbranih sporočil."
 
 #: lang/en:23
 #, no-wrap
 msgid "No mail IDs selected"
-msgstr ""
+msgstr "Ni izbranih ID-jev sporočil"
 
 #: lang/en:24
 #, no-wrap
 msgid "Error marking email addresses as delivered"
-msgstr ""
+msgstr "Napaka pri označevanju naslovov sporočil kot poslano"
 
 #: lang/en:25
 #, no-wrap
 msgid "Error while adding new recipient to the mailid"
-msgstr ""
+msgstr "Napaka pri dodajanju novega prejemnika k poštnem id"
 
 #: lang/en:26
 #, no-wrap
@@ -307,17 +309,19 @@ msgstr ""
 msgid "Error at dequeue attempt for email"
 msgstr ""
 
+# 81%
 #: lang/en:29
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No valid email address"
-msgstr ""
+msgstr "Neveljaven naslov elektronskega sporočila"
 
 #: lang/en:30
 #, no-wrap
 msgid "Display"
 msgstr ""
 
+# 81%
 #: lang/en:31
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mail Queue"
-msgstr ""
+msgstr "Čakalna vrsta elektronskih sporočil"

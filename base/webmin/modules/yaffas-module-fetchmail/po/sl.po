@@ -157,15 +157,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-14 00:22+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-19 00:34+0100\n"
+"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -712,10 +714,11 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
+# 80%
 #: lang/en:122
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to delete this server?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:123
 #, no-wrap
@@ -735,7 +738,7 @@ msgstr ""
 #: lang/en:126
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: lang/en:128
 #, no-wrap

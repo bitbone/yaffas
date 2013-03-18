@@ -157,15 +157,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-19 00:35+0100\n"
+"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
@@ -187,10 +189,11 @@ msgstr ""
 msgid "Refuse Mail"
 msgstr ""
 
+# 76%
 #: lang/en:5
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Delete Mail"
-msgstr ""
+msgstr "Izbriži elektronska sporočila"
 
 #: lang/en:6
 #, no-wrap
@@ -232,10 +235,11 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
+# 86%
 #: lang/en:16
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to delete these entries?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:18
 #, no-wrap
@@ -252,20 +256,21 @@ msgstr ""
 msgid "Save"
 msgstr ""
 
+# 80%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mailserv"
-msgstr ""
+msgstr "Poštni strežnik"
 
 #: lang/en:25
 #, no-wrap
 msgid "Mailserver"
-msgstr ""
+msgstr "Poštni strežnik"
 
 #: lang/en:27
 #, no-wrap
 msgid "Add"
-msgstr ""
+msgstr "Dodaj"
 
 #: lang/en:28
 #, no-wrap
@@ -450,7 +455,7 @@ msgstr ""
 #: lang/en:75
 #, no-wrap
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: lang/en:76
 #, no-wrap
@@ -482,10 +487,11 @@ msgstr ""
 msgid "Stopped"
 msgstr ""
 
+# 83%
 #: lang/en:85
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "E-mail"
-msgstr ""
+msgstr "Elektronsko sporočilo"
 
 #: lang/en:86
 #, no-wrap
