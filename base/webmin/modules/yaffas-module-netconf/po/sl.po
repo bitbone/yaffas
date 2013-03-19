@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:35+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:35+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -312,7 +312,7 @@ msgstr ""
 #: lang/en:36
 #, no-wrap
 msgid "Interface"
-msgstr ""
+msgstr "Interface"
 
 #: lang/en:37
 #, no-wrap
@@ -322,7 +322,7 @@ msgstr ""
 #: lang/en:38
 #, no-wrap
 msgid "Mode"
-msgstr ""
+msgstr "Način"
 
 #: lang/en:39
 #, no-wrap
@@ -342,12 +342,12 @@ msgstr ""
 #: lang/en:43
 #, no-wrap
 msgid "enabled"
-msgstr ""
+msgstr "enabled"
 
 #: lang/en:44
 #, no-wrap
 msgid "disabled"
-msgstr ""
+msgstr "onemogočeno"
 
 #: lang/en:45
 #, no-wrap

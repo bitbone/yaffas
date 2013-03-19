@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,17 +172,17 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Address for System Messages"
-msgstr ""
+msgstr "Naslov za sistemska sporočila"
 
 #: lang/en:2 lang/en:32
 #, no-wrap
 msgid "Notification"
-msgstr ""
+msgstr "Obvestilo"
 
 #: lang/en:3
 #, no-wrap
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 # 83%
 #: lang/en:4
@@ -193,109 +193,109 @@ msgstr "Elektronsko sporočilo"
 #: lang/en:5
 #, no-wrap
 msgid "Send e-mail"
-msgstr ""
+msgstr "Pošlji elektronsko sporočilo"
 
 #: lang/en:6
 #, no-wrap
 msgid "Always"
-msgstr ""
+msgstr "Vedno"
 
 #: lang/en:7
 #, no-wrap
 msgid "Critical errors"
-msgstr ""
+msgstr "Kritične napake"
 
 #: lang/en:8
 #, no-wrap
 msgid "Errors"
-msgstr ""
+msgstr "Napake"
 
 #: lang/en:9
 #, no-wrap
 msgid "Test your e-mail address"
-msgstr ""
+msgstr "Testiraj svoj elektronski naslov"
 
 #: lang/en:10
 #, no-wrap
 msgid "Click the button below to send a mail to your previously set e-mail address."
-msgstr ""
+msgstr "Pritisnite gumb spodaj za pošiljanje sporočila na vaš prednastavljen elektronski naslov."
 
 #: lang/en:11
 #, no-wrap
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: lang/en:12
 #, no-wrap
 msgid "This is not a valid mail address"
-msgstr ""
+msgstr "Na elektronski naslov ni veljaven"
 
 #: lang/en:13
 #, no-wrap
 msgid "Can not modify configuration entry."
-msgstr ""
+msgstr "Can not modify configuration entry."
 
 #: lang/en:14
 #, no-wrap
 msgid "Error writing configuration file."
-msgstr ""
+msgstr "Error writing configuration file."
 
 #: lang/en:15
 #, no-wrap
 msgid "Type can only be: always, errors or never."
-msgstr ""
+msgstr "Vtipkano je lahko samo: vedno, napake ali nikoli."
 
 #: lang/en:16
 #, no-wrap
 msgid "Line not found in configuration file."
-msgstr ""
+msgstr "V konfiguracijski datoteki ta vrstica ni bila najdena."
 
 #: lang/en:17
 #, no-wrap
 msgid "Please set an e-mail address first."
-msgstr ""
+msgstr "Prosimo, da najprej nastavite naslov elektronskega sporočila."
 
 #: lang/en:18
 #, no-wrap
 msgid "Could not send a mail to your address."
-msgstr ""
+msgstr "Ni bilo mogoče poslati sporočila na vaš naslov."
 
 #: lang/en:19
 #, no-wrap
 msgid "An e-mail has been sent to your given address. Please check your mailbox."
-msgstr ""
+msgstr "Sporočilo je bilo poslano na vaš dani naslov. Prosimo preglejte vaš predal."
 
 #: lang/en:20
 #, no-wrap
 msgid "Successfully set adress for system messages."
-msgstr ""
+msgstr "Naslov za sistemska sporočila je bil uspešno nastavljen."
 
 #: lang/en:22
 #, no-wrap
 msgid "Test - yaffas notify"
-msgstr ""
+msgstr "Test - yaffas notify"
 
 #: lang/en:23
 #, no-wrap
 msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
-msgstr ""
+msgstr "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
 
 #: lang/en:24
 #, no-wrap
 msgid "E-mail address test"
-msgstr ""
+msgstr "Testiranje elektronskega naslova"
 
 #: lang/en:26
 #, no-wrap
 msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
-msgstr ""
+msgstr "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
 
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
-msgstr ""
+msgstr "Have fun with yaffas"
 
 #: help/en:1
 #, no-wrap
 msgid "Enter a valid email address to receive notifications about the status of the system."
-msgstr ""
+msgstr "Vnesite veljaven elektronski naslov za prejemanje obvestil o statusu sistema."

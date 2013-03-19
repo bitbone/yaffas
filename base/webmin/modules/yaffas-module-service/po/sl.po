@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:35+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:35+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgstr ""
 #: lang/en:3
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "State"
 
 #: lang/en:4
 #, no-wrap
@@ -284,10 +284,12 @@ msgstr ""
 msgid "Stop service"
 msgstr ""
 
+# 80%
+# 78%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to stop this service?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:27 lang/en:28
 #, no-wrap
@@ -309,10 +311,12 @@ msgstr ""
 msgid "System is rebooting. In some minutes you can login again."
 msgstr ""
 
+# 80%
+# 75%
 #: lang/en:32
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to halt the system?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:33
 #, no-wrap

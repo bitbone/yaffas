@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,49 +172,49 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Access for"
-msgstr ""
+msgstr "Dostop za"
 
 #: lang/en:2
 #, no-wrap
 msgid "Community (Password)"
-msgstr ""
+msgstr "Community (Password"
 
 #: lang/en:3
 #, no-wrap
 msgid "Enable SNMP"
-msgstr ""
+msgstr "Enable SNMP"
 
 #: lang/en:4 lang/en:10
 #, no-wrap
 msgid "SNMP Configuration"
-msgstr ""
+msgstr "SNMP Configuration"
 
 #: lang/en:5
 #, no-wrap
 msgid "Replace SNMP configuration?"
-msgstr ""
+msgstr "Replace SNMP configuration?"
 
 #: lang/en:6
 #, no-wrap
 msgid "In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?"
-msgstr ""
+msgstr "In order for yaffas to be able to perform the requested changes, it has to <strong>overwrite</strong> the current SNMP configuration.<br />Should the config be overwritten?"
 
 #: lang/en:8
 #, no-wrap
 msgid "The access can only be set for IP-Addresses or networks."
-msgstr ""
+msgstr "The access can only be set for IP-Addresses or networks."
 
 #: lang/en:9
 #, no-wrap
 msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
-msgstr ""
+msgstr "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
 
 #: help/en:1
 #, no-wrap
 msgid "Password for the SNMP access."
-msgstr ""
+msgstr "Password for the SNMP access."
 
 #: help/en:2
 #, no-wrap
 msgid "Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or \"default\" to allow access from everywhere. Enter \"127.0.0.1\" to allow access from the local machine only."
-msgstr ""
+msgstr "Enter a single IP address, a network address using CIDR notation (e.g. 192.168.0.0/24) or \"default\" to allow access from everywhere. Enter \"127.0.0.1\" to allow access from the local machine only."

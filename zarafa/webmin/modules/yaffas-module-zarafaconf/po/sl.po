@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:35+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:35+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -307,7 +307,7 @@ msgstr ""
 #: lang/en:34
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "State"
 
 #: lang/en:36
 #, no-wrap
@@ -362,7 +362,7 @@ msgstr ""
 #: lang/en:49
 #, no-wrap
 msgid "Download"
-msgstr ""
+msgstr "Prenos"
 
 #: lang/en:51
 #, no-wrap
@@ -379,10 +379,11 @@ msgstr ""
 msgid "Online"
 msgstr ""
 
+# 83%
 #: lang/en:54
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Cached"
-msgstr ""
+msgstr "Predpomnilnik"
 
 #: lang/en:56
 #, no-wrap

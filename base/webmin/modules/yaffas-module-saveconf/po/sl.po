@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:35+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -235,10 +235,11 @@ msgstr ""
 msgid "execute"
 msgstr "Izvedi"
 
+# 85%
 #: lang/en:14
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Can't create zipfile!"
-msgstr ""
+msgstr "Can't create file!"
 
 #: lang/en:15
 #, no-wrap
@@ -285,20 +286,22 @@ msgstr ""
 msgid "Restore Configuration"
 msgstr ""
 
+# 83%
 #: lang/en:24
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save Configuration"
-msgstr ""
+msgstr "SNMP Configuration"
 
 #: lang/en:25
 #, no-wrap
 msgid "Applying configuration file failed."
 msgstr ""
 
+# 81%
 #: lang/en:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Error in configuration file"
-msgstr ""
+msgstr "Error writing configuration file."
 
 #: lang/en:27
 #, no-wrap
@@ -335,7 +338,8 @@ msgstr ""
 msgid "Would you like to save your incomplete Configuration?"
 msgstr ""
 
+# 77%
 #: lang/en:34
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Save configuration"
-msgstr ""
+msgstr "SNMP Configuration"

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -297,17 +297,17 @@ msgstr "Napaka pri dodajanju novega prejemnika k poštnem id"
 #: lang/en:26
 #, no-wrap
 msgid "Error while force a delivery"
-msgstr ""
+msgstr "Error while force a delivery"
 
 #: lang/en:27
 #, no-wrap
 msgid "Error removing email"
-msgstr ""
+msgstr "Napaka odstranjevanja elektronskega sporočila"
 
 #: lang/en:28
 #, no-wrap
 msgid "Error at dequeue attempt for email"
-msgstr ""
+msgstr "Error at dequeue attempt for email"
 
 # 81%
 #: lang/en:29
@@ -318,7 +318,7 @@ msgstr "Neveljaven naslov elektronskega sporočila"
 #: lang/en:30
 #, no-wrap
 msgid "Display"
-msgstr ""
+msgstr "Prikaz"
 
 # 81%
 #: lang/en:31

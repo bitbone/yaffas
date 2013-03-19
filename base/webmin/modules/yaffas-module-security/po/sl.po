@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -215,15 +215,19 @@ msgstr ""
 msgid "Do you really want to delete this entry?"
 msgstr "Ali res želite izbrisati te skupine?"
 
+# 80%
+# 81%
 #: lang/en:11
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to disable this service?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
+# 80%
+# 80%
 #: lang/en:12
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to enable this service?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:14
 #, no-wrap
@@ -373,7 +377,7 @@ msgstr ""
 #: lang/en:46
 #, no-wrap
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: lang/en:47
 #, no-wrap

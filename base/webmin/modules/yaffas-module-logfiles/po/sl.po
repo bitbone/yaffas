@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,32 +172,32 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "A logfile must be selected."
-msgstr ""
+msgstr "A logfile must be selected."
 
 #: lang/en:2
 #, no-wrap
 msgid "It is not allowed to download this file."
-msgstr ""
+msgstr "It is not allowed to download this file."
 
 #: lang/en:3
 #, no-wrap
 msgid "Logfiles"
-msgstr ""
+msgstr "Logfiles"
 
 #: lang/en:4
 #, no-wrap
 msgid "Download"
-msgstr ""
+msgstr "Prenos"
 
 #: lang/en:5
 #, no-wrap
 msgid "Show old logfiles"
-msgstr ""
+msgstr "Show old logfiles"
 
 #: lang/en:6
 #, no-wrap
 msgid "Show new logfiles"
-msgstr ""
+msgstr "Show new logfiles"
 
 #: lang/en:7
 #, no-wrap
@@ -207,9 +207,9 @@ msgstr "Velikost"
 #: lang/en:8
 #, no-wrap
 msgid "File"
-msgstr ""
+msgstr "Datoteka"
 
 #: lang/en:9
 #, no-wrap
 msgid "Log file viewer"
-msgstr ""
+msgstr "Log file viewer"
