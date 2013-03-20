@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:34+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -202,12 +202,12 @@ msgstr "Revision"
 #: lang/en:7
 #, no-wrap
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: lang/en:9
 #, no-wrap
 msgid "The information cannot be read!"
-msgstr ""
+msgstr "Ne morem brati informacije!"
 
 #: lang/en:12
 #, no-wrap
@@ -226,9 +226,9 @@ msgstr "on an"
 
 # 90%
 #: lang/en:16
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Up-time of"
-msgstr "Uptime of"
+msgstr "Up-time of"
 
 #: lang/en:17
 #, no-wrap
@@ -393,9 +393,9 @@ msgstr "Prejemanje"
 
 # 75%
 #: lang/en:54
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Sent"
-msgstr "Pošlji"
+msgstr "Sent"
 
 #: lang/en:55
 #, no-wrap
@@ -560,9 +560,9 @@ msgstr "Filesytem statistics"
 
 # 94%
 #: lang/en:90
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Mounted file system"
-msgstr "Mounted filesystem"
+msgstr "Mounted file system"
 
 #: lang/en:92
 #, no-wrap
@@ -582,25 +582,25 @@ msgstr "Način"
 
 # 95%
 #: lang/en:96
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "File system information"
 msgstr "Informacije o podatkovnem sistemu"
 
 #: lang/en:101
 #, no-wrap
 msgid "Available"
-msgstr ""
+msgstr "Na voljo"
 
 # 80%
 #: lang/en:102
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Used%"
-msgstr "Uporabljeno"
+msgstr "Used%"
 
 #: lang/en:103
 #, no-wrap
 msgid "Mounted on"
-msgstr ""
+msgstr "Mounted on"
 
 #: lang/en:105
 #, no-wrap
@@ -610,14 +610,14 @@ msgstr "Čas"
 #: lang/en:106
 #, no-wrap
 msgid "Value"
-msgstr ""
+msgstr "Value"
 
 #: lang/en:108
 #, no-wrap
 msgid "Memory type"
-msgstr ""
+msgstr "Tip spomina"
 
 #: lang/en:109
 #, no-wrap
 msgid "Information"
-msgstr ""
+msgstr "Informacija"

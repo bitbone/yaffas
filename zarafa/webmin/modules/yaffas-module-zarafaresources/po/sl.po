@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -260,20 +260,22 @@ msgstr ""
 msgid "The description of the resource contains illegal characters."
 msgstr ""
 
+# 96%
 #: lang/en:20
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No e-mail address specified."
-msgstr ""
+msgstr "Ni specificiranega elektronskega naslova"
 
+# 97%
 #: lang/en:21
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "You cannot use localhost as domain-part."
-msgstr ""
+msgstr "You cannot use localhost as domain-part"
 
 #: lang/en:22
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
-msgstr ""
+msgstr "The domain is not defined as local domain in your mailserver configuration."
 
 #: lang/en:23
 #, no-wrap

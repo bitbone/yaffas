@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -189,20 +189,24 @@ msgstr ""
 msgid "Domain Controller"
 msgstr ""
 
+# 87%
+# 76%
+# 75%
 #: lang/en:6
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Local authentication"
-msgstr ""
+msgstr "Avtentikacija"
 
 #: lang/en:7 lang/en:59
 #, no-wrap
 msgid "Local authentication (passwd/group)"
 msgstr ""
 
+# 78%
 #: lang/en:8
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "No authentication method configured"
-msgstr ""
+msgstr "No authentication type is configured."
 
 # 87%
 # 76%
@@ -281,15 +285,16 @@ msgstr ""
 msgid " Repeat bind password"
 msgstr ""
 
+# 87%
 #: lang/en:25
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Products"
-msgstr ""
+msgstr "Produkt"
 
 #: lang/en:26
 #, no-wrap
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: lang/en:27
 #, no-wrap
@@ -311,20 +316,21 @@ msgstr ""
 msgid "Allow authentication requests of remote clients via PDC."
 msgstr ""
 
+# 75%
 #: lang/en:31
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Domain administrator"
-msgstr ""
+msgstr "Zarafa administrator"
 
 #: lang/en:32 lang/en:58
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 #: lang/en:33
 #, no-wrap
 msgid "Repeat password"
-msgstr ""
+msgstr "Ponovi geslo"
 
 #: lang/en:34
 #, no-wrap
@@ -444,7 +450,7 @@ msgstr ""
 #: lang/en:57
 #, no-wrap
 msgid "Administrator"
-msgstr ""
+msgstr "Administrator"
 
 #: lang/en:60
 #, no-wrap
@@ -471,10 +477,11 @@ msgstr ""
 msgid "No DC was given."
 msgstr ""
 
+# 79%
 #: lang/en:66
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Invalid server name"
-msgstr ""
+msgstr "Neveljavno ime serverja"
 
 #: lang/en:67
 #, no-wrap
@@ -514,7 +521,7 @@ msgstr ""
 #: lang/en:74
 #, no-wrap
 msgid "Passwords are not equal"
-msgstr ""
+msgstr "Gesli nista enaki"
 
 #: lang/en:75
 #, no-wrap
@@ -526,10 +533,11 @@ msgstr ""
 msgid "Valid values are 'on' and 'off'."
 msgstr ""
 
+# 95%
 #: lang/en:77
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Passwords are not equal."
-msgstr ""
+msgstr "Gesli nista enaki"
 
 #: lang/en:78
 #, no-wrap
@@ -659,7 +667,7 @@ msgstr ""
 #: lang/en:103
 #, no-wrap
 msgid "Password not valid"
-msgstr ""
+msgstr "Geslo je nepravilno"
 
 #: lang/en:104
 #, no-wrap

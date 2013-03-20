@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:35+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -204,10 +204,11 @@ msgstr ""
 msgid "Last Login"
 msgstr ""
 
+# 90%
 #: lang/en:8
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Store Type"
-msgstr ""
+msgstr "Shrani tip"
 
 # 75%
 #: lang/en:9
@@ -228,7 +229,7 @@ msgstr ""
 #: lang/en:12
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: lang/en:13 lang/en:19
 #, no-wrap
@@ -253,7 +254,7 @@ msgstr ""
 #: lang/en:17
 #, no-wrap
 msgid "Username"
-msgstr ""
+msgstr "Uporabniško ime"
 
 #: lang/en:18
 #, no-wrap
@@ -270,10 +271,11 @@ msgstr ""
 msgid "Hook store"
 msgstr ""
 
+# 75%
 #: lang/en:22
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "to user"
-msgstr ""
+msgstr "Za uporabnika"
 
 #: lang/en:23
 #, no-wrap
@@ -283,7 +285,7 @@ msgstr ""
 #: lang/en:24
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: lang/en:25
 #, no-wrap

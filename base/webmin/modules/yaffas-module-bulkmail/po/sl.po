@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgstr ""
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
-msgstr ""
+msgstr "Bulk mailing"
 
 #: lang/en:3
 #, no-wrap
@@ -182,12 +182,12 @@ msgstr "Od"
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
-msgstr ""
+msgstr "Zadeva"
 
 #: lang/en:5
 #, no-wrap
 msgid "Message"
-msgstr ""
+msgstr "Sporočilo"
 
 #: lang/en:6
 #, no-wrap
@@ -197,9 +197,9 @@ msgstr "Pošlji"
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
-msgstr ""
+msgstr "Please complete all forms and check your e-mail address."
 
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."
-msgstr ""
+msgstr "Your mails are queued for sending. This may take some time depending on your hardware."

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:34+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -182,7 +182,7 @@ msgstr ""
 #: lang/en:3
 #, no-wrap
 msgid "Fax"
-msgstr ""
+msgstr "Faks"
 
 #: lang/en:4
 #, no-wrap
@@ -218,7 +218,7 @@ msgstr ""
 #: lang/en:10
 #, no-wrap
 msgid "Security"
-msgstr ""
+msgstr "Varnost"
 
 #: lang/en:11
 #, no-wrap
@@ -318,7 +318,7 @@ msgstr "Uporabi"
 #: lang/en:33
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: lang/en:34
 #, no-wrap
@@ -375,10 +375,11 @@ msgstr "končano"
 msgid "Filter"
 msgstr ""
 
+# 83%
 #: lang/en:45
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: lang/en:47
 #, no-wrap

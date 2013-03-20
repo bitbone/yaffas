@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -318,10 +318,13 @@ msgstr ""
 msgid "Do you really want to halt the system?"
 msgstr "Ali res želite izbrisati te skupine?"
 
+# 80%
+# 75%
+# 87%
 #: lang/en:33
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Do you really want to reboot the system?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:36
 #, no-wrap

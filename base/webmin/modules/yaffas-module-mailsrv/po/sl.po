@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -201,10 +201,11 @@ msgstr "Izbriži elektronska sporočila"
 msgid "Send to mailadmin"
 msgstr ""
 
+# 75%
 #: lang/en:7
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mail administrator"
-msgstr ""
+msgstr "Zarafa administrator"
 
 #: lang/en:8
 #, no-wrap
@@ -229,12 +230,12 @@ msgstr ""
 #: lang/en:13
 #, no-wrap
 msgid "Username"
-msgstr ""
+msgstr "Uporabniško ime"
 
 #: lang/en:14
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 # 86%
 #: lang/en:16
@@ -276,7 +277,7 @@ msgstr "Dodaj"
 #: lang/en:28
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: lang/en:29
 #, no-wrap
@@ -343,10 +344,11 @@ msgstr ""
 msgid "Username not valid."
 msgstr ""
 
+# 94%
 #: lang/en:48
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Password not valid."
-msgstr ""
+msgstr "Geslo je nepravilno"
 
 #: lang/en:49
 #, no-wrap
@@ -436,7 +438,7 @@ msgstr ""
 #: lang/en:69
 #, no-wrap
 msgid "Spamassassin"
-msgstr ""
+msgstr "Spamassassin"
 
 #: lang/en:70
 #, no-wrap
@@ -465,10 +467,11 @@ msgstr "Status"
 msgid "Service"
 msgstr ""
 
+# 87%
 #: lang/en:77
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Feature"
-msgstr ""
+msgstr "Funkcije"
 
 #: lang/en:79
 #, no-wrap

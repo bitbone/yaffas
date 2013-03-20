@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-21 00:33+0100\n"
+"PO-Revision-Date: 2013-03-20 15:08+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -259,20 +259,22 @@ msgstr ""
 msgid "Network Settings"
 msgstr ""
 
+# 88%
 #: lang/en:26
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Host name"
-msgstr ""
+msgstr "Ime gostitelja"
 
 #: lang/en:27
 #, no-wrap
 msgid "Domain name"
 msgstr ""
 
+# 77%
 #: lang/en:28
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Workgroup"
-msgstr ""
+msgstr "Za skupino"
 
 #: lang/en:29
 #, no-wrap
@@ -307,7 +309,7 @@ msgstr "Mreža"
 #: lang/en:35
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: lang/en:36
 #, no-wrap
@@ -337,7 +339,7 @@ msgstr ""
 #: lang/en:41
 #, no-wrap
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: lang/en:43
 #, no-wrap
@@ -417,7 +419,7 @@ msgstr "Uporabnik"
 #: lang/en:59
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 #: lang/en:61
 #, no-wrap
@@ -434,10 +436,11 @@ msgstr ""
 msgid "Username not valid!"
 msgstr ""
 
+# 94%
 #: lang/en:64
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Password not valid!"
-msgstr ""
+msgstr "Geslo je nepravilno"
 
 #: lang/en:65
 #, no-wrap
