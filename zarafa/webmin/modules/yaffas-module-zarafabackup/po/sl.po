@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: lang/en:2
 #, no-wrap
@@ -237,12 +237,12 @@ msgstr "Pošiljatelj"
 #: lang/en:14
 #, no-wrap
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: lang/en:15
 #, no-wrap
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: lang/en:16
 #, no-wrap

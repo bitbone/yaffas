@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -554,9 +554,9 @@ msgstr "Path"
 
 # 90%
 #: lang/en:89
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "File system statistics"
-msgstr "Filesytem statistics"
+msgstr "File sytem statistics"
 
 # 94%
 #: lang/en:90
@@ -571,7 +571,7 @@ msgstr "Direktorij"
 
 # 90%
 #: lang/en:93 lang/en:98
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "File system"
 msgstr "Podatkovni sistem"
 

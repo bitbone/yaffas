@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -405,13 +405,13 @@ msgstr "Tip datoteke za pošiljko iz faksa"
 
 # 75%
 #: lang/en:49
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "E-mail alias"
 msgstr "Poštni alias"
 
 # 87%
 #: lang/en:50
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Authentication"
 msgstr "Avtentikacija"
 

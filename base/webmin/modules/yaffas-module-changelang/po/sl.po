@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-20 00:35+0100\n"
-"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,7 +172,7 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Change Language"
-msgstr ""
+msgstr "Spremeni jezik"
 
 #: lang/en:2
 #, no-wrap
@@ -182,24 +182,24 @@ msgstr "Sistem"
 #: lang/en:4
 #, no-wrap
 msgid "Choose Language"
-msgstr ""
+msgstr "Izberi jezik"
 
 #: lang/en:5
 #, no-wrap
 msgid "German"
-msgstr ""
+msgstr "Nemščina"
 
 #: lang/en:6
 #, no-wrap
 msgid "English"
-msgstr ""
+msgstr "Angleščina"
 
 #: lang/en:8
 #, no-wrap
 msgid "Language not found!"
-msgstr ""
+msgstr "Jezik ni bil najden!"
 
 #: lang/en:9
 #, no-wrap
 msgid "Set Language"
-msgstr ""
+msgstr "Nastavi jezik"

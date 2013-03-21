@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,12 +172,12 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Accounts"
-msgstr ""
+msgstr "Računi"
 
 #: lang/en:2
 #, no-wrap
 msgid "Appearance"
-msgstr ""
+msgstr "Appearance"
 
 #: lang/en:3
 #, no-wrap
@@ -187,33 +187,33 @@ msgstr "Faks"
 #: lang/en:4
 #, no-wrap
 msgid "Manual"
-msgstr ""
+msgstr "Navodilo"
 
 #: lang/en:5
 #, no-wrap
 msgid "Hardware"
-msgstr ""
+msgstr "Hardware"
 
 #: lang/en:6
 #, no-wrap
 msgid "Subscription"
-msgstr ""
+msgstr "Subscription"
 
 #: lang/en:7
 #, no-wrap
 msgid "Mailbox"
-msgstr ""
+msgstr "Poštni nabiralnik"
 
 # 90%
 #: lang/en:8
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Mail Server"
 msgstr "Poštni strežnik"
 
 #: lang/en:9
 #, no-wrap
 msgid "Maintenance"
-msgstr ""
+msgstr "Maintenance"
 
 #: lang/en:10
 #, no-wrap
@@ -223,92 +223,92 @@ msgstr "Varnost"
 #: lang/en:11
 #, no-wrap
 msgid "PDF Printers"
-msgstr ""
+msgstr "PDF tiskalniki"
 
 #: lang/en:12 lang/en:13
 #, no-wrap
 msgid "Zarafa"
-msgstr ""
+msgstr "Zarafa"
 
 #: lang/en:15
 #, no-wrap
 msgid "Could not connect to Postgres database."
-msgstr ""
+msgstr "Could not connect to Postgres database."
 
 #: lang/en:16
 #, no-wrap
 msgid "Could not find the following directories:"
-msgstr ""
+msgstr "Could not find the following directories:"
 
 #: lang/en:17
 #, no-wrap
 msgid "Could not read the following directories:"
-msgstr ""
+msgstr "Could not read the following directories:"
 
 #: lang/en:18
 #, no-wrap
 msgid "Could not copy the following file:"
-msgstr ""
+msgstr "Could not copy the following file:"
 
 #: lang/en:19
 #, no-wrap
 msgid "Could not delete the following files:"
-msgstr ""
+msgstr "Could not delete the following files:"
 
 #: lang/en:20
 #, no-wrap
 msgid "Could not execute the following files:"
-msgstr ""
+msgstr "Could not execute the following files:"
 
 #: lang/en:21
 #, no-wrap
 msgid "Could not find the following files:"
-msgstr ""
+msgstr "Could not find the following files:"
 
 #: lang/en:22
 #, no-wrap
 msgid "Could not create hard link for the following files:"
-msgstr ""
+msgstr "Could not create hard link for the following files:"
 
 #: lang/en:23
 #, no-wrap
 msgid "Could not read the following files:"
-msgstr ""
+msgstr "Could not read the following files:"
 
 #: lang/en:24
 #, no-wrap
 msgid "Could not rename the following files:"
-msgstr ""
+msgstr "Could not rename the following files:"
 
 #: lang/en:25
 #, no-wrap
 msgid "Could not create symlink for the following files:"
-msgstr ""
+msgstr "Could not create symlink for the following files:"
 
 #: lang/en:26
 #, no-wrap
 msgid "Could not write the following files:"
-msgstr ""
+msgstr "Could not write the following files:"
 
 #: lang/en:27
 #, no-wrap
 msgid "Could not find the following users:"
-msgstr ""
+msgstr "Could not find the following users:"
 
 #: lang/en:28
 #, no-wrap
 msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
-msgstr ""
+msgstr "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
 
 #: lang/en:29
 #, no-wrap
 msgid "There is already an alias with this name:"
-msgstr ""
+msgstr "There is already an alias with this name:"
 
 #: lang/en:30
 #, no-wrap
 msgid "There is already a user with this name:"
-msgstr ""
+msgstr "There is already a user with this name:"
 
 #: lang/en:32
 #, no-wrap
@@ -323,7 +323,7 @@ msgstr "Prekliči"
 #: lang/en:34
 #, no-wrap
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: lang/en:35
 #, no-wrap
@@ -333,32 +333,32 @@ msgstr "OK"
 #: lang/en:36
 #, no-wrap
 msgid "Show all"
-msgstr ""
+msgstr "Pokaži vse"
 
 #: lang/en:37
 #, no-wrap
 msgid "Next"
-msgstr ""
+msgstr "Naslednji"
 
 #: lang/en:38
 #, no-wrap
 msgid "Previous"
-msgstr ""
+msgstr "Prejšnji"
 
 #: lang/en:39
 #, no-wrap
 msgid "Go to"
-msgstr ""
+msgstr "Pojdi na"
 
 #: lang/en:40
 #, no-wrap
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: lang/en:41
 #, no-wrap
 msgid "Yes"
-msgstr ""
+msgstr "Da"
 
 #: lang/en:42
 #, no-wrap
@@ -373,18 +373,18 @@ msgstr "končano"
 #: lang/en:44
 #, no-wrap
 msgid "Filter"
-msgstr ""
+msgstr "Filter"
 
 # 83%
 #: lang/en:45
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "delete"
-msgstr "Izbriši"
+msgstr "izbriši"
 
 #: lang/en:47
 #, no-wrap
 msgid "yaffas|MAIL"
-msgstr ""
+msgstr "yaffas|MAIL"
 
 #: lang/en:48
 #, no-wrap
@@ -474,12 +474,12 @@ msgstr ""
 #: lang/en:69
 #, no-wrap
 msgid "German"
-msgstr ""
+msgstr "Nemščina"
 
 #: lang/en:70
 #, no-wrap
 msgid "English"
-msgstr ""
+msgstr "Angleščina"
 
 #: lang/en:71
 #, no-wrap

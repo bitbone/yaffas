@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,72 +172,72 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Welcome"
-msgstr ""
+msgstr "Dobrodošli"
 
 #: lang/en:2
 #, no-wrap
 msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
-msgstr ""
+msgstr "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
 
 #: lang/en:4
 #, no-wrap
 msgid "Admin password"
-msgstr ""
+msgstr "Admin geslo"
 
 #: lang/en:5
 #, no-wrap
 msgid "Admin password (repeat)"
-msgstr ""
+msgstr "Admin geslo (ponovi)"
 
 #: lang/en:6
 #, no-wrap
 msgid "MySQL database"
-msgstr ""
+msgstr "MySQL baza podatkov"
 
 #: lang/en:7
 #, no-wrap
 msgid "MySQL server"
-msgstr ""
+msgstr "MySQL server"
 
 #: lang/en:8
 #, no-wrap
 msgid "MySQL username"
-msgstr ""
+msgstr "MySQL uporabniško ime"
 
 #: lang/en:9
 #, no-wrap
 msgid "MySQL password"
-msgstr ""
+msgstr "MySQL geslo"
 
 #: lang/en:11
 #, no-wrap
 msgid "Setup finished"
-msgstr ""
+msgstr "Nastavitve končane"
 
 #: lang/en:12
 #, no-wrap
 msgid "Setup was finished successfully. After relogin you can use all features."
-msgstr ""
+msgstr "Nastavitve so bile uspešno dokončane. Po ponovni prijavi lahko uporabljate vse funkcije."
 
 #: lang/en:14
 #, no-wrap
 msgid "Mailserver settings"
-msgstr ""
+msgstr "Nastavitve poštnega strežnika"
 
 #: lang/en:15
 #, no-wrap
 msgid "Primary mail domain"
-msgstr ""
+msgstr "Glavna domena sporočil"
 
 #: lang/en:16
 #, no-wrap
 msgid "Smarthost"
-msgstr ""
+msgstr "Smarthost"
 
 #: lang/en:17
 #, no-wrap
 msgid "Username (if needed)"
-msgstr ""
+msgstr "Uporabniško ime (če je potrebno)"
 
 #: lang/en:18 lang/en:24
 #, no-wrap
@@ -247,18 +247,18 @@ msgstr "Geslo"
 #: lang/en:20
 #, no-wrap
 msgid "Create user"
-msgstr ""
+msgstr "Ustvari uporabnika"
 
 # 77%
 #: lang/en:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Loginname"
 msgstr "Prijavno ime"
 
 #: lang/en:22
 #, no-wrap
 msgid "Firstname"
-msgstr ""
+msgstr "Ime"
 
 #: lang/en:23
 #, no-wrap
@@ -268,7 +268,7 @@ msgstr "Priimek"
 #: lang/en:25
 #, no-wrap
 msgid "Password (repeat)"
-msgstr ""
+msgstr "Geslo (ponovi)"
 
 #: lang/en:26
 #, no-wrap
@@ -278,124 +278,124 @@ msgstr "Elektronsko sporočilo"
 #: lang/en:28
 #, no-wrap
 msgid "If you fill this form, then local LDAP authentication will be enabled."
-msgstr ""
+msgstr "If you fill this form, then local LDAP authentication will be enabled."
 
 #: lang/en:30
 #, no-wrap
 msgid "Zarafa settings"
-msgstr ""
+msgstr "Zarafa nastavitve"
 
 #: lang/en:31
 #, no-wrap
 msgid "Basic settings"
-msgstr ""
+msgstr "Osnovne nastavitve"
 
 #: lang/en:33
 #, no-wrap
 msgid "This might take some time"
-msgstr ""
+msgstr "To lahko traja nekaj trenutkov"
 
 #: lang/en:34
 #, no-wrap
 msgid "setting up"
-msgstr ""
+msgstr "setting up"
 
 #: lang/en:35
 #, no-wrap
 msgid "initial configuration"
-msgstr ""
+msgstr "initial configuration"
 
 #: lang/en:37
 #, no-wrap
 msgid "Finish"
-msgstr ""
+msgstr "Dokončaj"
 
 #: lang/en:38
 #, no-wrap
 msgid "Next"
-msgstr ""
+msgstr "Naslednji"
 
 #: lang/en:39
 #, no-wrap
 msgid "Previous"
-msgstr ""
+msgstr "Prejšnji"
 
 #: lang/en:41
 #, no-wrap
 msgid "Could not connect to database."
-msgstr ""
+msgstr "Ne morem se povezati v bazo podatkov."
 
 #: lang/en:42
 #, no-wrap
 msgid "The admin password is empty or does not match."
-msgstr ""
+msgstr "Admin geslo je prazno ali pa se ne ujema."
 
 #: lang/en:43
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
-msgstr ""
+msgstr "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 
 #: lang/en:44
 #, no-wrap
 msgid "The given username already exists locally. Please specify another username or delete the existing user first."
-msgstr ""
+msgstr "The given username already exists locally. Please specify another username or delete the existing user first."
 
 #: lang/en:46
 #, no-wrap
 msgid "Setup"
-msgstr ""
+msgstr "Nastavitve"
 
 #: help/en:1
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
-msgstr ""
+msgstr "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 
 #: help/en:2
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
-msgstr ""
+msgstr "This is the password that is set on the database. You need to set this password manually."
 
 #: help/en:3
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
-msgstr ""
+msgstr "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 
 #: help/en:4
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr ""
+msgstr "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 
 #: help/en:5
 #, no-wrap
 msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
-msgstr ""
+msgstr "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
 
 #: help/en:6
 #, no-wrap
 msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
-msgstr ""
+msgstr "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
 
 #: help/en:7 help/en:8
 #, no-wrap
 msgid "Optional setting if your smarthost needs authentication."
-msgstr ""
+msgstr "Optional setting if your smarthost needs authentication."
 
 #: help/en:9
 #, no-wrap
 msgid "This is the name that you will have to login with."
-msgstr ""
+msgstr "This is the name that you will have to login with."
 
 #: help/en:10
 #, no-wrap
 msgid "First name of that user."
-msgstr ""
+msgstr "Ime tega uporabnika."
 
 #: help/en:11
 #, no-wrap
 msgid "Surname of that user."
-msgstr ""
+msgstr "Priimek ali ta uporabnik."
 
 #: help/en:12
 #, no-wrap
 msgid "Email address of that user that will be used for sending and receiving."
-msgstr ""
+msgstr "Email address of that user that will be used for sending and receiving."
