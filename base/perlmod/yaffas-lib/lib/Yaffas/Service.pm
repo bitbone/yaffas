@@ -936,6 +936,21 @@ sub _stop($$) {
 
 sub _restart($$) {
 	my $tmp;
+	if ($_[0] eq $Yaffas::Service::SERVICES{ WEBMIN() }) {
+		# if webmin has to be restarted, it would kill also this process,
+		# which would reset the connection to the user's browser;
+		# therefore we install a signal handler to IGNORE SIGTERM so that
+		# we can continue serving this request; the process will exit
+		# regularly after the request has been finished;
+		# NOTE: this is supposed to replace several fork-then-system()
+		#       calls which were supposed to do the same; however, this
+		#       did not work properly, so better just use
+		#       control(WEBMIN, RESTART), which ends up here
+		$SIG{'TERM'} = 'IGNORE';
+
+		# continue... the actual restart is handled by the block of
+		# common cases below
+	}
 	if($_[0] eq $Yaffas::Service::SERVICES{ HYLAFAX() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_SERVER() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_MONITOR() } ||

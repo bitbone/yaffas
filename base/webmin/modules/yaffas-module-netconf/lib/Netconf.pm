@@ -169,27 +169,20 @@ sub save {
 		
 	};
 
-	my $pid = fork();
-
-	throw Yaffas::Exception("err_fork") unless (defined($pid));
-
-	if ($pid == 0) {
-		## child
-		_start_network();
-		if (-d Yaffas::Constant::DIR->{hylafax}) {
-			control(HYLAFAX, RESTART);
-		}
-		system(Yaffas::Constant::APPLICATION->{nscd}, "-i", "hosts");
-		control(USERMIN, RESTART);
-		control(SASLAUTHD, RESTART);
-		control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
-		control(POLICYD_WEIGHT, RESTART);
-		control(ZARAFA_SERVER, RESTART);
-		exit;
-	} else {
-		## parent - wait for the child to perform all the restarts
-		wait;
+	# as we expect a webmin restart, protect ourselves from being
+	# TERMinated by the webmin main process;
+	# we will exit automatically after the end of the request
+	$SIG{'TERM'} = 'IGNORE';
+	_start_network();
+	if (-d Yaffas::Constant::DIR->{hylafax}) {
+		control(HYLAFAX, RESTART);
 	}
+	system(Yaffas::Constant::APPLICATION->{nscd}, "-i", "hosts");
+	control(USERMIN, RESTART);
+	control(SASLAUTHD, RESTART);
+	control(NSCD, RESTART) if Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq "Debian";
+	control(POLICYD_WEIGHT, RESTART);
+	control(ZARAFA_SERVER, RESTART);
 }
 
 =item add_virtual_device ( DEVICE )
