@@ -15,6 +15,7 @@ Yaffas.Menu.prototype.setup = function(){
         itemdata: []
     });
     this.menu.addItems(this.items);
+    this.menu.multiselect = this.multiselect;
     
     var onTriggerContextMenu = function(e){
         var target = this.contextEventTarget;
