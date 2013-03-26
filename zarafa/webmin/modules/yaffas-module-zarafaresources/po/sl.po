@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-22 00:32+0100\n"
-"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"POT-Creation-Date: 2013-03-27 00:32+0100\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -172,18 +172,18 @@ msgstr ""
 #: lang/en:1
 #, no-wrap
 msgid "Manage resources"
-msgstr ""
+msgstr "Manage resources"
 
 #: lang/en:2
 #, no-wrap
 msgid "Resource"
-msgstr ""
+msgstr "Resource"
 
 # 75%
 #: lang/en:3
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Description"
-msgstr "Subscription"
+msgstr "Description"
 
 #: lang/en:4
 #, no-wrap
@@ -193,38 +193,38 @@ msgstr "Elektronsko sporočilo"
 #: lang/en:5
 #, no-wrap
 msgid "Decline conflicts"
-msgstr ""
+msgstr "Decline conflicts"
 
 #: lang/en:6
 #, no-wrap
 msgid "Decline recurrent meetings"
-msgstr ""
+msgstr "Decline recurrent meetings"
 
 #: lang/en:7
 #, no-wrap
 msgid "New resource"
-msgstr ""
+msgstr "New resource"
 
 #: lang/en:8
 #, no-wrap
 msgid "Modify resource"
-msgstr ""
+msgstr "Modify resource"
 
 #: lang/en:9
 #, no-wrap
 msgid "Delete resource"
-msgstr ""
+msgstr "Delete resource"
 
 # 86%
 #: lang/en:10
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Do you really want to delete these resources?"
-msgstr "Ali res želite izbrisati te skupine?"
+msgstr "Ali res želite izbrisati te vire?"
 
 #: lang/en:11
 #, no-wrap
 msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
-msgstr ""
+msgstr "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
 
 #: lang/en:12
 #, no-wrap
@@ -234,42 +234,42 @@ msgstr "Type"
 #: lang/en:13
 #, no-wrap
 msgid "Capacity"
-msgstr ""
+msgstr "Capacity"
 
 #: lang/en:14
 #, no-wrap
 msgid "Room"
-msgstr ""
+msgstr "Room"
 
 #: lang/en:15
 #, no-wrap
 msgid "Equipment"
-msgstr ""
+msgstr "Equipment"
 
 #: lang/en:17
 #, no-wrap
 msgid "The name of the resource contains illegal characters."
-msgstr ""
+msgstr "The name of the resource contains illegal characters."
 
 #: lang/en:18
 #, no-wrap
 msgid "The name of the resource is taken from a special user."
-msgstr ""
+msgstr "The name of the resource is taken from a special user."
 
 #: lang/en:19
 #, no-wrap
 msgid "The description of the resource contains illegal characters."
-msgstr ""
+msgstr "The description of the resource contains illegal characters."
 
 # 96%
 #: lang/en:20
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "No e-mail address specified."
 msgstr "Ni specificiranega elektronskega naslova"
 
 # 97%
 #: lang/en:21
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "You cannot use localhost as domain-part."
 msgstr "You cannot use localhost as domain-part"
 
@@ -281,69 +281,69 @@ msgstr "The domain is not defined as local domain in your mailserver configurati
 #: lang/en:23
 #, no-wrap
 msgid "Local-part of e-mail address must be identical with name."
-msgstr ""
+msgstr "Local-part of e-mail address must be identical with name."
 
 #: lang/en:24
 #, no-wrap
 msgid "The e-mail address is not valid."
-msgstr ""
+msgstr "The e-mail address is not valid."
 
 #: lang/en:25
 #, no-wrap
 msgid "The name of the resource is taken from a user."
-msgstr ""
+msgstr "The name of the resource is taken from a user."
 
 #: lang/en:26
 #, no-wrap
 msgid "The name of the resource is taken from a user's alias."
-msgstr ""
+msgstr "The name of the resource is taken from a user's alias."
 
 #: lang/en:27
 #, no-wrap
 msgid "The given resource doesn't exist."
-msgstr ""
+msgstr "The given resource doesn't exist."
 
 #: lang/en:28
 #, no-wrap
 msgid "No local mail domains configured."
-msgstr ""
+msgstr "No local mail domains configured."
 
 #: lang/en:29
 #, no-wrap
 msgid "Capacity has to be a number."
-msgstr ""
+msgstr "Capacity has to be a number."
 
 #: lang/en:30
 #, no-wrap
 msgid "Resources"
-msgstr ""
+msgstr "Resources"
 
 #: help/en:1
 #, no-wrap
 msgid "This name will be shown in the global address book."
-msgstr ""
+msgstr "This name will be shown in the global address book."
 
 #: help/en:2
 #, no-wrap
 msgid "You may want to add a description if the name of the resource isn't self-explanatory."
-msgstr ""
+msgstr "You may want to add a description if the name of the resource isn't self-explanatory."
 
 #: help/en:3
 #, no-wrap
 msgid "Check this box and the resource can only be booked once."
-msgstr ""
+msgstr "Check this box and the resource can only be booked once."
 
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
-msgstr ""
+msgstr "Check this box to disable recurring appointments for this resource."
 
 #: help/en:5
 #, no-wrap
 msgid "Select the type of the resource."
-msgstr ""
+msgstr "Select the type of the resource."
 
 #: help/en:6
 #, no-wrap
 msgid "Define the capacity of the resource. This value is only available for equipment resources."
-msgstr ""
+msgstr "Define the capacity of the resource. This value is only available for equipment resources."

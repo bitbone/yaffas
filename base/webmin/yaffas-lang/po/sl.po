@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-22 00:32+0100\n"
-"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"POT-Creation-Date: 2013-03-27 00:31+0100\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -389,87 +389,87 @@ msgstr "yaffas|MAIL"
 #: lang/en:48
 #, no-wrap
 msgid "yaffas|FAX"
-msgstr ""
+msgstr "yaffas|FAX"
 
 #: lang/en:49
 #, no-wrap
 msgid "yaffas|GATE"
-msgstr ""
+msgstr "yaffas|GATE"
 
 #: lang/en:50
 #, no-wrap
 msgid "yaffas|PDF"
-msgstr ""
+msgstr "yaffas|PDF"
 
 #: lang/en:51
 #, no-wrap
 msgid "yaffas|FILE"
-msgstr ""
+msgstr "yaffas|FILE"
 
 #: lang/en:53
 #, no-wrap
 msgid "Modules for configuring the system accounts"
-msgstr ""
+msgstr "Moduli za konfiguriranje sistemskih računov"
 
 #: lang/en:54
 #, no-wrap
 msgid "Modules to customize the appearance"
-msgstr ""
+msgstr "Modules to customize the appearance"
 
 #: lang/en:55
 #, no-wrap
 msgid "Modules for the license management"
-msgstr ""
+msgstr "Modules for the license management"
 
 #: lang/en:56
 #, no-wrap
 msgid "Modules for configuring the fax system"
-msgstr ""
+msgstr "Modules for configuring the fax system"
 
 #: lang/en:57
 #, no-wrap
 msgid "Handbooks for system administration"
-msgstr ""
+msgstr "Handbooks for system administration"
 
 #: lang/en:58
 #, no-wrap
 msgid "Modules for printer, disk and other hardware configuration"
-msgstr ""
+msgstr "Modules for printer, disk and other hardware configuration"
 
 #: lang/en:59
 #, no-wrap
 msgid "Modules for configuring mailboxes"
-msgstr ""
+msgstr "Modules for configuring mailboxes"
 
 #: lang/en:60
 #, no-wrap
 msgid "Modules for configuring the MTA"
-msgstr ""
+msgstr "Modules for configuring the MTA"
 
 #: lang/en:61
 #, no-wrap
 msgid "Modules for configuring security options"
-msgstr ""
+msgstr "Modules for configuring security options"
 
 #: lang/en:63
 #, no-wrap
 msgid "Can not open $1 : $2"
-msgstr ""
+msgstr "Ne morem odpreti $1 : $2"
 
 #: lang/en:65
 #, no-wrap
 msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-msgstr ""
+msgstr "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
 
 #: lang/en:66
 #, no-wrap
 msgid "Attention!"
-msgstr ""
+msgstr "Pozor!"
 
 #: lang/en:68
 #, no-wrap
 msgid "Language"
-msgstr ""
+msgstr "Jezik"
 
 #: lang/en:69
 #, no-wrap
@@ -484,32 +484,32 @@ msgstr "Angleščina"
 #: lang/en:71
 #, no-wrap
 msgid "Dutch"
-msgstr ""
+msgstr "Dutch"
 
 #: lang/en:72
 #, no-wrap
 msgid "French"
-msgstr ""
+msgstr "French"
 
 #: lang/en:73
 #, no-wrap
 msgid "Brazil"
-msgstr ""
+msgstr "Brazil"
 
 #: lang/en:74
 #, no-wrap
 msgid "Chinese (Taiwan)"
-msgstr ""
+msgstr "Chinese (Taiwan)"
 
 #: lang/en:76
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
-msgstr ""
+msgstr "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 
 #: lang/en:77
 #, no-wrap
 msgid "About bitkit"
-msgstr ""
+msgstr "About bitkit"
 
 #: lang/en:78
 #, no-wrap
@@ -519,95 +519,95 @@ msgstr "About yaffas"
 #: lang/en:79
 #, no-wrap
 msgid "About Z-Admin"
-msgstr ""
+msgstr "About Z-Admin"
 
 #: lang/en:81
 #, no-wrap
 msgid "Logged out"
-msgstr ""
+msgstr "Logged out"
 
 #: lang/en:82
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
-msgstr ""
+msgstr "Another administrator logged in. You have to log in again."
 
 #: lang/en:83
 #, no-wrap
 msgid "The session timed out, please re-login."
-msgstr ""
+msgstr "The session timed out, please re-login."
 
 #: lang/en:85
 #, no-wrap
 msgid "Loading please wait..."
-msgstr ""
+msgstr "Nalaganje prosim počakajte ..."
 
 # 83%
 #: lang/en:86
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Error"
-msgstr "Napake"
+msgstr "Napaka"
 
 #: lang/en:87
 #, no-wrap
 msgid "Help"
-msgstr ""
+msgstr "Pomoč"
 
 #: lang/en:89
 #, no-wrap
 msgid "Loading..."
-msgstr ""
+msgstr "Nalaganje..."
 
 #: lang/en:90
 #, no-wrap
 msgid "Data error."
-msgstr ""
+msgstr "Data error."
 
 #: lang/en:91
 #, no-wrap
 msgid "No records found."
-msgstr ""
+msgstr "Ni najdenih zapisov."
 
 #: lang/en:93
 #, no-wrap
 msgid "Filter data"
-msgstr ""
+msgstr "Filter data"
 
 #: lang/en:94
 #, no-wrap
 msgid "Show filter"
-msgstr ""
+msgstr "Pokaži filter"
 
 #: lang/en:96
 #, no-wrap
 msgid "Could not connect to backend!"
-msgstr ""
+msgstr "Could not connect to backend!"
 
 #: lang/en:98
 #, no-wrap
 msgid "Logout"
-msgstr ""
+msgstr "Logout"
 
 #: lang/en:100
 #, no-wrap
 msgid "Do you want to close the administrators connection?"
-msgstr ""
+msgstr "Do you want to close the administrators connection?"
 
 #: lang/en:101
 #, no-wrap
 msgid "Couldnt restart webmin."
-msgstr ""
+msgstr "Couldnt restart webmin."
 
 #: lang/en:102
 #, no-wrap
 msgid "Close"
-msgstr ""
+msgstr "Zapri"
 
 #: lang/en:103
 #, no-wrap
 msgid "There is already an administrator connected.<br>If you want to log in, you will need to close his connection."
-msgstr ""
+msgstr "There is already an administrator connected.<br>If you want to log in, you will need to close his connection."
 
 #: lang/en:104
 #, no-wrap
 msgid "There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection."
-msgstr ""
+msgstr "There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection."
