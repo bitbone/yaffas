@@ -6,7 +6,7 @@ use Yaffas;
 use Yaffas::UI;
 use Yaffas::UGM;
 use Yaffas::Product;
-use Yaffas::Module::Mailsrv;
+use Yaffas::Module::Mailsrv::Postfix;
 use Yaffas::Service;
 use Yaffas::Constant;
 use Yaffas::Exception;
@@ -48,7 +48,7 @@ sub main() {
 
 		# Create the poll structure
 		$poll->{'poll'} = $in{'poll'};
-		my @domains = Yaffas::Module::Mailsrv::get_accept_domains();
+		my @domains = Yaffas::Module::Mailsrv::Postfix::get_accept_domains();
 		$poll->{'aka'} = join " ", @domains if (scalar @domains);
 		#$poll->{'aka'} = "#aka" unless (@domains);
 		$poll->{'skip'} = $in{'skip'};
