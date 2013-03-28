@@ -206,7 +206,7 @@ sub show_edit {
 				$Cgi->td(
 					[
 						$main::text{'poll_envelope'},
-						textfield( 'poll_envelope', $poll->{'envelope'} )
+						textfield( 'envelope', $poll->{'envelope'} )
 					]
 				),
 			]
@@ -338,6 +338,14 @@ sub show_edit {
 						),
 					),
 				),
+			),
+			$Cgi->Tr(
+				$Cgi->td(
+					[
+						$main::text{'poll_smtpaddress'},
+						textfield( "smtpaddress_$i", $u->{'smtpaddress'} )
+					]
+				)
 			),
 			$Cgi->Tr(
 				$Cgi->td( $main::text{'poll_keep'} ),

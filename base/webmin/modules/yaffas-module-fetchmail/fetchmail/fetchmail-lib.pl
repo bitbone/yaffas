@@ -129,6 +129,9 @@ for($i=0; $i<@toks; $i++) {
 	elsif ($t->[0] eq 'aka') {
 		$user->{'aka'} = $toks[++$i]->[0];
 		}
+	elsif ($t->[0] eq 'smtpaddress') {
+		$user->{'smtpaddress'} = $toks[++$i]->[0];
+		}
 
 	else {
 		# Found an unknown option!
@@ -266,6 +269,8 @@ foreach $u (@{$_[0]->{'users'}}) {
 		if ($u->{'preconnect'});
 	push(@rv, "\tpostconnect \"$u->{'postconnect'}\"")
 		if ($u->{'postconnect'});
+	push(@rv, "\tsmtpaddress \"$u->{'smtpaddress'}\"")
+		if ($u->{'smtpaddress'});
 	push(@rv, "\t".join(" ", map { /^\S+$/ ? $_ : "\"$_\"" }
 			     @{$u->{'unknown'}})) if (@{$u->{'unknown'}});
 	}

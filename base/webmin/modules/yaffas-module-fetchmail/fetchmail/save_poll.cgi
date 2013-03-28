@@ -41,7 +41,6 @@ sub main() {
 		$in{'port_def'} || ($in{'port'} =~ /^\d+$/ && $in{'port'} > 0 && $in{'port'} <= 65535) ||
 			&_my_error($text{'poll_eport'});
 
-
 		&_my_error($main::text{'poll_evia'}) unless $main::in{'via_def'} =~ m/^\S+$/;
 		&_my_error($main::text{'poll_eport'}) unless $main::in{'port_def'} =~ m/^\d+$/;
 
@@ -56,8 +55,7 @@ sub main() {
 		$poll->{'via'} = $in{'via_def'} ? undef : $in{'via'};
 		$poll->{'proto'} = $in{'proto'};
 		$poll->{'port'} = $in{'port_def'} ? undef : $in{'port'};
-		$poll->{'envelope'} = $in{'poll_envelope'};
-
+		$poll->{'envelope'} = $in{'envelope'};
 
 		# Validate user inputs
 		for($i=0; defined($in{"user_$i"}); $i++) {
@@ -111,6 +109,10 @@ sub main() {
 			$user->{'keep'} = $in{"keep_$i"};
 			$user->{'fetchall'} = $in{"fetchall_$i"};
 			$user->{'ssl'} = $in{"ssl_$i"};
+
+			$in{"smtpaddress_$i"} && $in{"smtpaddress_$i"} !~ /^[^\r\n\s]*$/ && &_my_error($text{'err_smtpaddress'});
+			$user->{'smtpaddress'} = $in{"smtpaddress_$i"};
+
 			push(@users, $user);
 		}
 		$poll->{'users'} = \@users;

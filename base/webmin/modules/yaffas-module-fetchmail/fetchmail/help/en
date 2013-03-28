@@ -1,8 +1,9 @@
 interval=Specify the polling interval in seconds.
-poll_envelope=The header name of the envelope address (e.g. X-Envelope-To).
+envelope=The header name of the envelope address (e.g. X-Envelope-To or X-Original-To). Grab this information from the mail source headers. This should be set when using multidrop, otherwise multidrop may fail to work properly.
 poll=The remote host name or IP address from which you want to receive mail.
 proto=Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify "Connect in SSL mode" below.
 via=The DNS name of the remote server. This setting overrides the server name.
 port=The TCP/IP port of the remote server. Leave this at "Default" unless you know what you are doing. If "Connect in SSL mode" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option.
 ssl=Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to "No" instead.
 user=Specify the login user from the remote machine.
+smtpaddress=Domain to use when deliverying mails to the local mail server (DOMAIN in RCPT TO:user@DOMAIN)
