@@ -117,8 +117,8 @@ sub check_reasonable_mail($$@) {
 				push @domains, $domain;
 			}
 			else {
-				require Yaffas::Module::Mailsrv;
-				@domains = Yaffas::Module::Mailsrv::get_accept_domains();
+				require Yaffas::Module::Mailsrv::Postfix;
+				@domains = Yaffas::Module::Mailsrv::Postfix::get_accept_domains();
 			}
 			if(defined(Yaffas::Check::is_localhost($domain))) {
 				$e->add("err_mail_loc_host");
