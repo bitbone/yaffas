@@ -104,6 +104,8 @@ if (defined($opts{c})) {
 	exit 0;
 }
 
+my $failures = 0;
+
 foreach my $name (@todo) {
 	my %pkg = %{$packages{$name}};
 
@@ -113,17 +115,24 @@ foreach my $name (@todo) {
 		print "Building $pkg{source} ... ";
 		my @package_file = build_package($pkg{source});
 
-		print "done\n" if (@package_file);
-		print "failed\n" unless (@package_file);
-
-		foreach my $pfile (@package_file) {
-			rm_package($name, $pkg{dest});
-			print "Copying $pfile to $pkg{dest}\n";
-			copy_package($pfile, $pkg{dest});
-			clean_source($pkg{source});
-			print "\n-----------------------------------\n\n";
+		if (@package_file) {
+			print "done\n";
+			foreach my $pfile (@package_file) {
+				rm_package($name, $pkg{dest});
+				print "Copying $pfile to $pkg{dest}\n";
+				copy_package($pfile, $pkg{dest});
+				clean_source($pkg{source});
+				print "\n-----------------------------------\n\n";
+			}
+		} else {
+			print "failed\n" unless (@package_file);
+			$failures++;
 		}
 	}
+}
+if ($failures) {
+	print "$failures package(s) failed to build; exiting\n";
+	exit 1;
 }
 
 sub build_package($) {
@@ -143,8 +152,9 @@ sub build_package($) {
 
 		return @packages;
 	} else {
+		print "dpkg-buildpackage in $dir failed:\n";
 		print @ret;
-		exit 1;
+		return undef;
 	}
 	return undef;
 }
