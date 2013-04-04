@@ -123,7 +123,7 @@ foreach my $name (@todo) {
 		print "Building $pkg{source} ... ";
 		my @package_file = build_package($pkg{source});
 
-		if (@package_file) {
+		if ($package_file[0]) {
 			print "done\n";
 			foreach my $pfile (@package_file) {
 				rm_package($name, $pkg{dest});
