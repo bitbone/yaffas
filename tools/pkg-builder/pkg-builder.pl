@@ -5,6 +5,7 @@ use warnings;
 
 use File::Copy;
 use File::Find;
+use File::Path qw(make_path);
 use Cwd qw(abs_path);
 use Data::Dumper;
 use Config::General;
@@ -34,7 +35,7 @@ my %opts;
 
 my @todo;
 
-getopts("chrf:", \%opts);
+getopts("chrf:d:", \%opts);
 
 if ( defined $opts{h} ){
 	usage();
@@ -59,6 +60,13 @@ print "Using $file as package list.\n";
 
 $source_base = $packages{source_base} if (defined($packages{source_base}));
 $dest_base = $packages{dest_base} if (defined($packages{dest_base}));
+
+if (defined($opts{d})) {
+	$dest_base = $opts{d};
+	if (! -d $dest_base) {
+		make_path($dest_base) or die("Couldn't create dir $dest_base");
+	}
+}
 
 delete $packages{source_base};
 delete $packages{dest_base};
