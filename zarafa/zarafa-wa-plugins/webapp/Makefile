@@ -8,3 +8,6 @@ passwd/lang/de_DE.UTF-8/LC_MESSAGES/plugin_passwd.po: passwd/js/passwd.js passwd
 
 passwd/lang/de_DE.UTF-8/LC_MESSAGES/plugin_passwd.mo: passwd/lang/de_DE.UTF-8/LC_MESSAGES/plugin_passwd.po
 	msgfmt passwd/lang/de_DE.UTF-8/LC_MESSAGES/plugin_passwd.po -o passwd/lang/de_DE.UTF-8/LC_MESSAGES/plugin_passwd.mo
+
+zarafa-webapp-passwd.tar.gz:
+	tar cfvz zarafa-webapp-passwd.tar.gz passwd

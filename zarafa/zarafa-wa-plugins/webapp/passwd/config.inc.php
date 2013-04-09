@@ -1,9 +1,9 @@
 <?php
-// configuration file for dialogs/pwdchange.php
+// configuration file for passwd plugin
 
 class Configuration
 {
-	// define, if this zarafa-installation uses ldap
+	// select authentication method: ldap, ad, passwd (see php/pwdchange.php)
 	private $method = "ldap";
 
 	// basedn, to search for users dn
