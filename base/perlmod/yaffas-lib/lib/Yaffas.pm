@@ -60,7 +60,7 @@ sub do_back_quote(@) {
 	warn "call do_back_quote with more than one param."	if (scalar @_ <= 1);
 	warn "Use absolute path!\n" unless($_[0] =~ m#^/#);
 
-	throw Yaffas::Exception("Yaffas.pm: do_back_quote; caller: ".( caller(1) )[3]." (line: ".( caller(1) )[2].")") unless -x $_[0];
+	throw Yaffas::Exception("Yaffas.pm: do_back_quote; caller: ".( caller(1) )[3]." (line: ".( caller(1) )[2].", bin=$_[0])") unless -x $_[0];
 
 	my $pid;
 	unless (defined($pid = open(KID, "-|"))) {
