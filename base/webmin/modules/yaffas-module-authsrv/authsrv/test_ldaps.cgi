@@ -25,7 +25,7 @@ try {
 	print to_json({ldaps => $ldap_encryption ? 1 : 0});
 } catch Yaffas::Exception with {
 	print all_error_box(shift);
-}
+};
 
 =pod
 

@@ -36,7 +36,7 @@ catch Yaffas::Exception with{
 	header($main::text{'lbl_index_header'}, "");
 	print Yaffas::UI::all_error_box($err);
 	main::footer("/support/", $main::text{lbl_index_header});
-}
+};
 =pod
 
 =head1 COPYRIGHT

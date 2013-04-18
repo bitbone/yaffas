@@ -178,12 +178,12 @@ Reads config and returns ENABLED, COMMUNITY, NETWORK as array.
 
 sub get_snmp_config() {
 	my $file = undef;
-	try{
-        	$file = Yaffas::File->new(Yaffas::Constant::FILE->{snmpd_conf});
-        }
-        catch Yaffas::Exception with{
-                throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{snmpd_conf});
-        }
+	try {
+		$file = Yaffas::File->new(Yaffas::Constant::FILE->{snmpd_conf});
+	}
+	catch Yaffas::Exception with{
+		throw Yaffas::Exception("err_file_read", Yaffas::Constant::FILE->{snmpd_conf});
+	};
 
 	my @vals;
 	foreach ($file->get_content()) {

@@ -15,7 +15,8 @@ use Yaffas::File;
 use Yaffas::Constant;
 use Yaffas::Module::Backup;
 use Yaffas::Product;
-use Yaffas::Exception qw(:try);
+use Yaffas::Exception;
+use Error qw(:try);
 
 ### protos
 sub backup($$);
