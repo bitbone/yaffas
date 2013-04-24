@@ -13,7 +13,7 @@ sub BEGIN {
 						&SAMBA &NETWORK &MYSQL &CUPS &KAV &KAS
 						&CAPIINIT &CAPI4HYLAFAX &GREYLIST
 						&FETCHMAIL &POSTGRESQL &SPAMASSASSIN &WINBIND &SNMPD
-						&DIVAS &GOGGLETYKE &SSHD
+						&DIVAS &DIVASHTTPD &GOGGLETYKE &SSHD
 						&ZARAFA_SERVER &ZARAFA_GATEWAY &ZARAFA_SPOOLER &ZARAFA_MONITOR &ZARAFA_ICAL &ZARAFA_LICENSED &ZARAFA_DAGENT
 						&APACHE &BBLCD &NFSD &NSLCD
 						&MPPD &POLICYD_WEIGHT &AMAVIS &CLAMAV &SPAMD &CLAMAV_FRESHCLAM
@@ -342,6 +342,8 @@ sub ZARAFA_SEARCH(){ 48; }
 
 sub YAFFAS_MAILDISCLAIMERS(){ 49; }
 
+sub DIVASHTTPD(){ 50; }
+
 =back
 
 =head2 Constants for Actions
@@ -449,6 +451,7 @@ if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian') {
 				 POSTFIX() => "/etc/init.d/postfix",
 				 CLAMAV_FRESHCLAM() => "/etc/init.d/clamav-freshclam",
 				 YAFFAS_MAILDISCLAIMERS() => "/etc/init.d/yaffas-maildisclaimers",
+				 DIVASHTTPD() => "/usr/lib/opendiva/divas/diva_httpd.rc",
 				);
 
 	if (Yaffas::Constant::OS eq 'Debian') {
@@ -650,6 +653,7 @@ sub installed_services(;$)
 		else
 		{
 			$services->{'divas'}		= { 'constant' => DIVAS(), 'allow' => [ 'start', 'stop', ] };
+			$services->{'divashttpd'}		= { 'constant' => DIVASHTTPD(), 'allow' => [ 'start', 'stop', ] };
 		}
 		$services->{'mysql'}		= { 'constant' => MYSQL(), 'allow' => [ 'start', 'stop', 'restart' ] };
 		$services->{'apache'}		= { 'constant' => APACHE(), 'allow' => [ 'start', 'stop', 'restart' ] };
@@ -875,6 +879,7 @@ sub _start($$) {
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_SPOOLER() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_LICENSED() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ ZARAFA_DAGENT() } ||
+	   $_[0] eq $Yaffas::Service::SERVICES{ DIVASHTTPD() } ||
 	   $_[0] eq $Yaffas::Service::SERVICES{ WINBIND() }
 	   ){
 		if($_[0] =~ /\s/) {
