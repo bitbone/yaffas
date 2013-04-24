@@ -268,6 +268,7 @@ use constant {
 		"git_revision" => "/opt/yaffas/share/doc/example/etc/git-revision",
 		"nslcd_conf" => "/etc/nslcd.conf",
 		"mybitkit_conf" => "/opt/yaffas/etc/bitkit-update/login.conf",
+		"bitkitfax_mysql" => "/etc/mysql/bitkitfax.cnf",
 	}
 };
 
