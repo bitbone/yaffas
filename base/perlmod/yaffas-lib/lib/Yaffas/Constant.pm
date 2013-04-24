@@ -190,7 +190,7 @@ use constant {
 		"mtpx_config" => '/data/config/fax/bbfaxconf/mtpx.conf',
 		"divas_cfg" => DIR->{divasdir}."/divas_cfg.rc",
 		"divas_cid" => "/etc/hylafax/cid",
-		"config_ttyds_template" => DIR->{webmin}."bbfaxconf/templates/config.ttyds",
+		"config_ttyds_template" => DIR->{webmin}."faxconf/templates/config.ttyds",
 		"exim_mail2fax_conf" => ( OS eq 'Ubuntu' or OS eq 'Debian' ) ? "/etc/exim4/exim.mail2fax_hosts" : "/etc/exim/exim.mail2fax_hosts",
 		"mail2fax_config" => "/data/config/fax/mail2fax/config",
 		"sendfax_custom" => "/data/config/fax/mail2fax/sendfax.custom",
