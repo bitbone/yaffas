@@ -36,7 +36,6 @@ use Yaffas::Mail;
 use Yaffas::Mail::Mailalias;
 use Yaffas::File;
 use Yaffas::File::Config;
-use Yaffas::Postgres;
 use Yaffas::Product;
 use Text::Iconv;
 use File::Path;
@@ -191,44 +190,12 @@ return 1 on success, exception on error
 
 sub clean_group_data($) {
 	my $group = shift;
-	try {
-		if (Yaffas::Product::check_product('fax'))
-		{
-			my $dbh = Yaffas::Postgres::connect_db("bbfaxconf") ;
-
-			# get id of group
-			my $sqlq = "select id from ug where ug = '$group' and type = 'g'";
-			my @tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
-			my $id = $tmp[0][0];
-
-			if (defined ($id))
-			{
-				# delete ft of gid
-				$sqlq = "delete from ft where id = $id";
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-
-				# delete msn(s) of gid
-				if (Yaffas::Check::faxtype eq "AVM")
-				{
-					$sqlq = "delete from msn_avm where id = $id";
-				}
-				else
-				{
-					$sqlq = "delete from msn_eicon where id = $id";
-				}
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-
-				# delete gid
-				$sqlq = "delete from ug where id = $id";
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-			}
-			Yaffas::Postgres::pg_disconnect($dbh);
-		}
-		return 1;
+	if (Yaffas::Product::check_product('fax'))
+	{
+		eval { use Yaffas::FaxDB; };
+		Yaffas::FaxDB::delete_entity({group => $group});
 	}
-	catch Yaffas::Exception with {
-		shift()->throw();
-	};
+	return 1;
 }
 
 
@@ -449,72 +416,39 @@ return 1 on success, exception on error
 
 sub clean_user_data ($) {
 	my $login = shift;
-	try {
-		if (Yaffas::Product::check_product('fax'))
-		{
-			my $dbh = Yaffas::Postgres::connect_db("bbfaxconf");
-			# get id of user 
-			my $sqlq = "select id from ug where ug = '$login' and type = 'u'";
-			my @tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
-			my $id = $tmp[0][0];
-
-			if (defined ($id))
-			{
-				# delete ft of uid
-				$sqlq = "delete from ft where id = $id";
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-
-				# delete msn(s) of uid
-				if (Yaffas::Check::faxtype() eq "AVM")
-				{
-					$sqlq = "delete from msn_avm where id = $id";
-				}
-				else
-				{
-					$sqlq = "delete from msn_eicon where id = $id";
-				}
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-
-				# delete uid
-				$sqlq = "delete from ug where id = $id";
-				Yaffas::Postgres::del_entry($dbh, $sqlq);
-			}
-			Yaffas::Postgres::pg_disconnect($dbh);
-		}
-		if(-e Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg") {
-			unlink(Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg");
-		}
-
-		if(-e Yaffas::Constant::DIR->{eps_dir}.$login.".eps") {
-			unlink(Yaffas::Constant::DIR->{eps_dir}.$login.".eps");
-		}
-
-		unless ($? == 0)
-		{
-			Yaffas::Exception->throw("err_del_userjpeg" , $! );
-		}
-
-		# move users pdf dir to print operator readable dir
-		my $pdf_user_dir = Yaffas::Constant::DIR->{'pdf_user_dir'}.$login;
-		if( -d $pdf_user_dir) {
-			my $new_dir = Yaffas::Constant::DIR->{'pdf_user_dir'};
-			opendir(DIR, $new_dir) or throw Yaffas::Exception('err_opendir', $new_dir);
-			my $count = '000';
-			my @files = sort(readdir DIR);
-			closedir DIR;
-			foreach my $file (@files) {
-				if($file =~ /^$login\.deleted\.(\d\d\d)$/) {
-					$count = $1;
-				}
-			}
-			$count++;
-			$new_dir .= "$login.deleted.$count";
-			rename $pdf_user_dir, $new_dir or throw Yaffas::Exception('err_rename_dir', $pdf_user_dir);
-		}
+	if (Yaffas::Product::check_product('fax')) {
+		eval { use Yaffas::FaxDB; };
+		Yaffas::FaxDB::delete_entity({group => $group});
 	}
-	catch Yaffas::Exception with {
-		shift()->throw();
-	};
+	# FIXME: this should be in the check_product('fax') block!?
+	if (-e Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg") {
+		unlink(Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg") or
+			Yaffas::Exception->throw("err_del_userjpeg" , $!);
+	}
+
+	if (-e Yaffas::Constant::DIR->{eps_dir}.$login.".eps") {
+		unlink(Yaffas::Constant::DIR->{eps_dir}.$login.".eps") or
+			Yaffas::Exception->throw("err_del_userjpeg" , $!);
+
+	}
+
+	# move users pdf dir to print operator readable dir
+	my $pdf_user_dir = Yaffas::Constant::DIR->{'pdf_user_dir'}.$login;
+	if( -d $pdf_user_dir) {
+		my $new_dir = Yaffas::Constant::DIR->{'pdf_user_dir'};
+		opendir(DIR, $new_dir) or throw Yaffas::Exception('err_opendir', $new_dir);
+		my $count = '000';
+		my @files = sort(readdir DIR);
+		closedir DIR;
+		foreach my $file (@files) {
+			if($file =~ /^$login\.deleted\.(\d\d\d)$/) {
+				$count = $1;
+			}
+		}
+		$count++;
+		$new_dir .= "$login.deleted.$count";
+		rename $pdf_user_dir, $new_dir or throw Yaffas::Exception('err_rename_dir', $pdf_user_dir);
+	}
 }
 
 =item password ( USERNAME, PASSWORD )
@@ -1268,43 +1202,9 @@ sub mod_user_ftype(%) {
 		}
 		throw $exception if ($throw_exc == 1);
 
-		my $dbh;
-		if (Yaffas::Product::check_product('fax'))
-		{
-			$dbh = Yaffas::Postgres::connect_db("bbfaxconf");
-		}
-		if (defined($dbh))
-		{
-			# does user exists?
-			my $sqlq = "select id from ug where ug='$user' and type='u'";
-			unless ( scalar (Yaffas::Postgres::search_entry_rows($dbh, $sqlq)) )
-			{
-				$sqlq = "insert into ug (ug, type) values ('$user', 'u')";
-				$ret = Yaffas::Postgres::add_entry($dbh, $sqlq);
-			}
-			
-			# exists an entry? update it
-			$sqlq = "select ft.filetype from ug,ft where ug.id = ft.id and ug.ug = '$user' and ug.type = 'u'";
-			if ( scalar (Yaffas::Postgres::search_entry_rows($dbh, $sqlq)) )
-			{
-				$sqlq = "update ft set filetype = '$ftype' from ug where ug.id = ft.id and ug.ug = '$user' and ug.type = 'u'";
-				$ret =  Yaffas::Postgres::replace_entry($dbh, $sqlq);
-			}
-			else
-			{
-				# no entry? insert it.
-				# get id of entry.
-				$sqlq = "select id from ug where ug = '$user' and type = 'u'";
-				my @tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
-				my $id = $tmp[0][0];
-
-				if (defined($id))
-				{
-					$sqlq = "insert into ft (id, filetype) values ($id, '$ftype')";
-					$ret =  Yaffas::Postgres::add_entry($dbh, $sqlq);
-				}
-			}
-			Yaffas::Postgres::pg_disconnect($dbh);
+		if (Yaffas::Product::check_product('fax')) {
+			eval { use Yaffas::FaxDB; };
+			Yaffas::FaxDB::filetype({user => $user}, $ftype);
 		}
 	}
 
@@ -1339,43 +1239,9 @@ sub mod_group_ftype(%) {
 		throw $exception if ($throw_exc == 1);
 
 		my $dbh;
-		if (Yaffas::Product::check_product('fax'))
-		{
-			$dbh = Yaffas::Postgres::connect_db("bbfaxconf");
-		}
-
-		if (defined($dbh))
-		{
-			# does user exists?
-			my $sqlq = "select id from ug where ug='$group' and type='g'";
-			unless ( scalar (Yaffas::Postgres::search_entry_rows($dbh, $sqlq)) )
-			{
-				$sqlq = "insert into ug (ug, type) values ('$group', 'g')";
-				$ret = Yaffas::Postgres::add_entry($dbh, $sqlq);
-			}
-
-			# exists an entry? update it
-			$sqlq = "select ft.filetype from ug,ft where ug.id = ft.id and ug.ug = '$group' and ug.type = 'g'";
-			if ( scalar (Yaffas::Postgres::search_entry_rows($dbh, $sqlq)) )
-			{
-				$sqlq = "update ft set filetype = '$ftype' from ug where ug.id = ft.id and ug.ug = '$group' and ug.type = 'g'";
-				$ret =  Yaffas::Postgres::replace_entry($dbh, $sqlq);
-			}
-			else
-			{
-				# no entry? insert it.
-				# get id of entry.
-				$sqlq = "select id from ug where ug = '$group' and type = 'g'";
-				my @tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
-				my $id = $tmp[0][0];
-
-				if (defined($id))
-				{
-					$sqlq = "insert into ft (id, filetype) values ($id, '$ftype')";
-					$ret =  Yaffas::Postgres::add_entry($dbh, $sqlq);
-				}
-			}
-			Yaffas::Postgres::pg_disconnect($dbh);
+		if (Yaffas::Product::check_product('fax')) {
+			eval { use Yaffas::FaxDB; };
+			Yaffas::FaxDB::filetype({user => $user}, $ftype);
 		}
 	}
 
@@ -1419,24 +1285,18 @@ TYPE 'u' for user, 'g' for group
 
 sub get_hylafax_filetype ($$)
 {
-	my $ug = shift;
+	my $name = shift;
 	my $type = shift;
 
-	my $dbh;
-	if (Yaffas::Product::check_product('fax'))
-	{
-		$dbh = Yaffas::Postgres::connect_db("bbfaxconf");
+	if (!Yaffas::Product::check_product('fax')) {
+		return undef;
 	}
-	my @ftype = ();
-
-	if (defined($dbh))
-	{
-		my $sqlq = "select ft.filetype from ft,ug where ug.ug='$ug' and ug.type = '$type' and ug.id = ft.id";
-		@ftype = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
-		Yaffas::Postgres::pg_disconnect($dbh);
+	eval { use Yaffas::FaxDB; };
+	my @result = Yaffas::FaxDB::filetype({$type => $name});
+	if (!@result) {
+		return undef;
 	}
-
-	defined($ftype[0][0]) ? return $ftype[0][0] : return undef;
+	return $result[0];
 }
 
 sub _get_winbind_separator() {
