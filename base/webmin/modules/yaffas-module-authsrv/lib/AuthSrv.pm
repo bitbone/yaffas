@@ -1816,19 +1816,13 @@ inconsitencies can occur if someone deletes or modifies users or groups via comm
 =cut
 
 sub get_sys_and_db_users() {
-
-	#this produces a hash with all array values as keys and undef as hash values
+	# this produces a hash with all array values as keys and undef as hash values
 	my %ret;
 	@ret{ Yaffas::UGM::get_users() } = ();
-	try {
-		my $dbh = eval { Yaffas::Postgres::connect_db("bbfaxconf") };
-		unless ($@) {
-			@ret{ Yaffas::Postgres::search_ug_table("u") } = ();
-		}
+	eval { use Yaffas::FaxDB; };
+	foreach my ($type, $entity) (Yaffas::FaxDB::entity({type => "user"})) {
+		$ret{$entity} = ();
 	}
-	catch Yaffas::Exception with {
-		shift()->throw();
-	};
 
 	return \%ret;
 }
@@ -1844,15 +1838,10 @@ see also get_sys_and_db_users( )
 sub get_sys_and_db_groups() {
 	my %ret;
 	@ret{ Yaffas::UGM::get_groups() } = ();
-	try {
-		my $dbh = eval { Yaffas::Postgres::connect_db("bbfaxconf") };
-		unless ($@) {
-			@ret{ Yaffas::Postgres::search_ug_table("g") } = ();
-		}
+	eval { use Yaffas::FaxDB; };
+	foreach my ($type, $entity) (Yaffas::FaxDB::entity({type => "group"})) {
+		$ret{$entity} = ();
 	}
-	catch Yaffas::Exception with {
-		shift()->throw();
-	};
 
 	return \%ret;
 }
