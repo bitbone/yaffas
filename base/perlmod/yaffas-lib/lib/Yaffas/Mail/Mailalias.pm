@@ -11,6 +11,7 @@ sub BEGIN {
 	@EXPORT_OK = qw(&list_alias &rm_alias &add_alias);
 }
 
+use Data::Dumper;
 use Yaffas::File::Config;
 use Error qw(:try);
 use Yaffas::Exception;
@@ -81,8 +82,13 @@ sub new {
 		*_read = *Yaffas::Mail::Mailalias::File::_read;
 	}
 
+    *_read_local = *Yaffas::Mail::Mailalias::File::_read;
+    *_write_local = *Yaffas::Mail::Mailalias::File::_write;
 
-	$self->{ALIAS} = _read($mode);
+    my $main =_read($mode);
+    my $add = _read_local("/etc/postfix/local-alias.cf");
+
+	$self->{ALIAS} = { %{$main}, %{$add} };
 	$self->{MODE} = $mode;
 	bless $self, $class;
 	return $self;
@@ -103,7 +109,7 @@ sub add {
 
 	if (defined($self->{ALIAS}->{$from})) {
 		# test if the alias is allready in the list.
-		my @to = split /, /, $self->{ALIAS}->{$from};#
+		my @to = split /\s*,\s*/, $self->{ALIAS}->{$from};#
 		if (grep {$_ eq $to} @to) {
 			# schon vorhanden
 			throw Yaffas::Exception("err_already_exists", $from . " -> " . $to);
@@ -184,6 +190,18 @@ sub get_alias_destination {
 
 }
 
+sub get_alias_type {
+    my $self = shift;
+    my $alias = shift;
+
+    if ($self->{ALIAS}->{$alias} =~ /@/) {
+        return "manual";
+    }
+    else {
+        return "user";
+    }
+}
+
 =item get_all
 
 Returns a hash of all aliases
@@ -253,8 +271,27 @@ Saves all settings
 =cut
 
 sub write {
-	my $self = shift;
-	_write($self->{MODE}, $self->{ALIAS}, $self->{ALIAS_remove});
+    my $self = shift;
+
+    my %ldap;
+    my %file;
+
+    # decide in which category each alias entry should be
+    foreach my $alias (keys %{$self->{ALIAS}}) {
+        if ($self->get_alias_type($alias) eq "user") {
+            $ldap{$alias} = join ",", $self->get_alias_destination($alias);
+        }
+        else {
+            $file{$alias} = join ",", $self->get_alias_destination($alias);
+        }
+    }
+
+    use Data::Dumper;
+    print "write:\n";
+    print Dumper \%file;
+
+    _write($self->{MODE}, \%ldap, $self->{ALIAS_remove});
+    _write_local($self->{MODE}, \%file);
 }
 
 

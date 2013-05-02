@@ -5,36 +5,45 @@ use strict;
 use warnings;
 
 use Yaffas::File::Config;
+use Yaffas::Constant;
 
 my %alias_file = (
-				  "USER" => "/etc/aliases",
-				  "DIR" => "/etc/aliases.dir"
-				 );
+    "USER" => "/etc/postfix/local-alias.cf",
+    "DIR" => "/etc/postfix/local-alias.cf",
+);
 
 
 sub _write {
-	my $mode = shift;
-	my $data = shift;
+    my $mode = shift;
+    my $data = shift;
 
-	my $bkc = Yaffas::File::Config->new($alias_file{$mode},
-										{
-										-SplitPolicy => 'custom',
-										-SplitDelimiter => ':\s*',
-										-StoreDelimiter => ': ',
-										});
-	$bkc->get_cfg()->save_file($alias_file{$mode}, $data);
-	return 1;
+    my $bkc = Yaffas::File::Config->new($alias_file{$mode},
+        {
+            -SplitPolicy => 'custom',
+            -SplitDelimiter => '\s+',
+            -StoreDelimiter => ' ',
+        });
+    $bkc->get_cfg()->save_file($alias_file{$mode}, $data);
+
+    use Data::Dumper;
+
+    print "file.pm\n";
+    print Dumper $data;
+
+    Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
+
+    return 1;
 }
 
 sub _read {
-	my $mode = shift;
-	my $bkc = Yaffas::File::Config->new($alias_file{$mode},
-										{
-										-SplitPolicy => 'custom',
-										-SplitDelimiter => ':\s*',
-										-StoreDelimiter => ': ',
-										});
-	return $bkc->get_cfg_values();
+    my $file = shift;
+    my $bkc = Yaffas::File::Config->new($file,
+        {
+            -SplitPolicy => 'custom',
+            -SplitDelimiter => '\s+',
+            -StoreDelimiter => ' ',
+        });
+    return $bkc->get_cfg_values();
 }
 
 return 1;

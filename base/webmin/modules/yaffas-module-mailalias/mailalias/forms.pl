@@ -79,57 +79,52 @@ sub _display_alias_for {
 
 	my $user_aliases = Yaffas::Mail::Mailalias->new();
 	my @user_alias = $user_aliases->get_alias_destination($from);
+    my $type = $user_aliases->get_alias_type($from);
 
-	print section(
-				  $section_header,
-				  $Cgi->table(
-							  $Cgi->Tr([
-										$Cgi->td([
-												  $main::text{lbl_mailalias} . ":",
-												  (
-												   $edit
-												   ?
-												   $from . $Cgi->hidden({-id=>"from", -name=>"from", -value=>$from})
-												   :
-												   $Cgi->textfield(
-																   -name => "from",
-																   -value => $from,
-																  )
-												  )
-												 ]),
-										Yaffas::UI::small_form({
-																input_name => 'to',
-																input_value => [Yaffas::UGM::get_users()],
-																input_label => $main::text{lbl_destination_usr} . ":",
-																del_label => $main::text{lbl_del} . ": ",
-																del_name => "del_to",
-																content => \@user_alias,
-																input_field => \&CGI::scrolling_list,
-																input_options => {-size=>5, -multiple => 'true'},
-																hide_add => scalar @user_alias ? 0 : 1
-															   }),
+    my %hide_manual;
+    
+    if (!$edit) {
+        %hide_manual = (-style => "display:none;");
+    }
 
-#										$Cgi->td($Cgi->b("-- ".$main::text{lbl_or}." --")),
-#										(Yaffas::Product::check_product("zarafa") and scalar Yaffas::Mail::get_mailboxes() == 0) ?
-#										(
-#										 $Cgi->td({-colspan=>2}, $main::text{lbl_no_zarafa_public_folders}),
-#										)
-#										: 
-#										(
-#										 $Cgi->td([
-#												  $main::text{lbl_destination_dir} . ":",
-#												  $Cgi->scrolling_list(
-#																	   -name=>'folders',
-#																	   -values=> \@folder_alias,
-#																	   -defaults => $selected_folder_alias,
-#																	   -size=>5,
-#																	  ),
-#												  ])
-#										)
-#										,
-										]),
-							 ),
-				 );
+    print section(
+        $section_header,
+        $Cgi->table(
+            $Cgi->Tr(
+                $Cgi->td([
+                        $main::text{lbl_mailalias} . ":",
+                        (
+                            $edit
+                            ?
+                            $from . $Cgi->hidden({-id=>"from", -name=>"from", -value=>$from})
+                            :
+                            $Cgi->textfield(
+                                -name => "from",
+                                -value => $from,
+                            )
+                        )
+                    ])
+            ),
+            $Cgi->Tr(
+                $Cgi->td([
+                        "Type:",
+                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default=>$type, -values=>[qw(user manual)], -onChange => "module.changeAliasType()"}),
+                    ]),
+            ),
+            $Cgi->Tr({-id => "row-user"},
+                $Cgi->td([
+                        $main::text{lbl_destination_usr}.":",
+                        $Cgi->scrolling_list( { -name => "to", -size => 5, -multiple => 'true', -values => [Yaffas::UGM::get_users()], -default => \@user_alias } ),
+                ]),
+            ),
+            $Cgi->Tr({-id => "row-manual", %hide_manual },
+                $Cgi->td([
+                        "Recipient:",
+                        $Cgi->textfield({ -name => "recipient", -size=> 80, -value => join(", ", @user_alias)}),
+                    ]),
+            ),
+    ),
+);
 
 }
 

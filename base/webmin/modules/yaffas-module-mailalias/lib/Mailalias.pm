@@ -95,53 +95,51 @@ sub conf_dump() {
 
 sub add_edit_alias {
 	my $from    = $main::in{from};
-	my @to      = split /\s*\0\s*/, $main::in{to};
+	my @to;
 	my @del     = split /\0/, $main::in{del_to};
-	my @folders = split /\0/, $main::in{folders};
+    my $type    = $main::in{type};
 
 	my $e           = Yaffas::Exception->new();
 	my $useralias   = Yaffas::Mail::Mailalias->new();
-	my $folderalias = Yaffas::Mail::Mailalias->new("DIR");
+
+    if ($type eq "user") {
+        @to = split /\s*\0\s*/, $main::in{to};
+    }
+    elsif ($type eq "manual") {
+        @to = split /\s*,\s*/, $main::in{recipient};
+    }
+    else {
+        $e->add( "err_unknown_type", $type);
+    }
 
 	Yaffas::Check::alias($from) or $e->add( "err_check_alias", $from );
-
-	if ( scalar @to > 0 and scalar @folders > 0 ) {
-
-		# both are selected
-		$e->add("err_select_only_one");
-	}
 
 	my %user = $useralias->get_all();
 	my @useraliases = grep /^$from$/, keys %user;
 
-	if ( @useraliases and @folders and ( scalar @del ne scalar @useraliases ) )
-	{
+    foreach my $to (@to) {
+        if ($type eq "user") {
+            if (Yaffas::UGM::user_exists($to) and Yaffas::Check::username($to)) {
+                next;
+            }
+            $e->add( "err_check_alias", $to );
+        }
+        elsif($type eq "manual") {
+            if ($type eq "manual" and Yaffas::Check::email($to)) {
+                next;
+            }
+            $e->add( "err_check_alias", $to );
+        }
 
-		# on edit: no @to is given, but @folders
-		$e->add("err_select_only_one");
-	}
+    }
 
-	foreach my $to (@to) {
-		unless ( Yaffas::UGM::user_exists($to)
-				 or Yaffas::Check::username($to)
-				 or Yaffas::Check::email($to) )
-		{
-			$e->add( "err_check_alias", $to );
-		}
-	}
-
-	if ( Yaffas::Product::check_product("zarafa") ) {
-
-		# convert all mailbox names to iso
-		my $converter = Text::Iconv->new( "utf-8", "iso-8859-15" );
-		@folders = map { $converter->convert($_) } @folders;
-	}
-
+=pod
 	foreach (@folders) {
 		unless ( Yaffas::Mail::check_mailbox($_) ) {
 			$e->add( "err_check_alias_folder", $_ );
 		}
 	}
+=cut
 
 	if ($e) {
 		print Yaffas::UI::all_error_box($e);
@@ -149,15 +147,9 @@ sub add_edit_alias {
 	else {
 		my @err;
 		try {
-
-			$useralias->remove( $from, $_ ) for (@del);
+			$useralias->remove( $from );
 			$useralias->add( $from, $_ ) for (@to);
 			$useralias->write();
-
-			$folderalias->remove($from);
-			$folderalias->add( $from, $_ ) for (@folders);
-			$folderalias->write();
-
 		}
 		catch Yaffas::Exception with {
 			push @err, [ shift, $from ];

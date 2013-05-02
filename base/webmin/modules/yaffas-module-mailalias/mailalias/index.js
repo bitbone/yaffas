@@ -2,6 +2,7 @@ Aliases = function() {
 	this.table = null;
 	this.menu = null;
 	this.setupTable();
+    //this.changeAliasType();
 }
 
 Aliases.prototype.confirmation = function(url, args, submit) {
@@ -77,40 +78,47 @@ Aliases.prototype.editAlias = function() {
 	var r = this.table.selectedRows();
 	
 	if (r.length > 0) {
-		Yaffas.ui.openTab("/mailalias/edit.cgi", {alias: r[0][0]});
+		Yaffas.ui.openTab("/mailalias/edit.cgi", {alias: r[0][0]}, function() { this.changeAliasType() }.bind(this));
 	}
 }
 
 Aliases.prototype.savedForm = function(url, args) {
-	switch(url) {
-		case "delete.cgi":
-			this.table.reload();
-			break;
-		case "add.cgi":
-			Yaffas.ui.resetTab();
-			this.table.reload();
-			break;
-		case "edit.cgi":
-			if (args["to"]) {
-                if (YAHOO.lang.isArray(args.to)) {
-                    for (var i = 0; i < args.to.length; ++i) {
-                        Yaffas.list.add("del_to", args.to[i], "/mailalias/edit.cgi");
-                    }
-                }
-                else {
-                    Yaffas.list.add("del_to", args.to, "/mailalias/edit.cgi");
-                }
-				Yaffas.ui.resetTab();
-			}
-			else if (args["del_to"]) {
-				Yaffas.list.remove("del_to", args.del_to);
-			}
-			else {
-				Yaffas.ui.closeTab();
-			}
-			this.table.reload();
-			break;
-	}
+    switch(url) {
+        case "add.cgi":
+            Yaffas.ui.resetTab();
+            module.changeAliasType();
+            break;
+        case "edit.cgi":
+            Yaffas.ui.closeTab();
+            break;
+    }
+    this.table.reload();
+}
+
+Aliases.prototype.changeAliasType = function() {
+    var tab = Yaffas.ui.tabs.get("activeTab").get("contentEl");
+    var from = tab.select("select#aliastype")[0];
+
+    var manual = tab.select("tr#row-manual")[0];
+    var user = tab.select("tr#row-user")[0];
+
+    var current = "";
+
+    if (typeof from !== null) {
+        current = from.value;
+    }
+    else {
+        return;
+    }
+
+    if (current === "user") {
+        manual.hide();
+        user.show();
+    }
+    else {
+        manual.show();
+        user.hide();
+    }
 }
 
 Aliases.prototype.cleanup = function() {
