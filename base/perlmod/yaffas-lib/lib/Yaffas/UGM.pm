@@ -418,7 +418,7 @@ sub clean_user_data ($) {
 	my $login = shift;
 	if (Yaffas::Product::check_product('fax')) {
 		eval { use Yaffas::FaxDB; };
-		Yaffas::FaxDB::delete_entity({group => $group});
+		Yaffas::FaxDB::delete_entity({group => $login});
 	}
 	# FIXME: this should be in the check_product('fax') block!?
 	if (-e Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg") {
@@ -1241,7 +1241,7 @@ sub mod_group_ftype(%) {
 		my $dbh;
 		if (Yaffas::Product::check_product('fax')) {
 			eval { use Yaffas::FaxDB; };
-			Yaffas::FaxDB::filetype({user => $user}, $ftype);
+			Yaffas::FaxDB::filetype({group => $group}, $ftype);
 		}
 	}
 
