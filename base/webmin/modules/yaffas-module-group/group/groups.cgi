@@ -64,7 +64,7 @@ my @groups = map {
 		: "",
 		(
 			filetype => $show_filetype
-			? Yaffas::UGM::get_hylafax_filetype( $_, "g" )
+			? Yaffas::UGM::get_hylafax_filetype( $_, "group" )
 			: ""
 		)
 	}

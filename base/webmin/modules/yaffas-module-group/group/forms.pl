@@ -46,7 +46,7 @@ sub add_group_form(@) {
 										   gif=>"GIF",
 										   jpg=>"JPG",
 										  },
-									 -default=>Yaffas::UGM::get_hylafax_filetype($_, "g"),
+									 -default=>Yaffas::UGM::get_hylafax_filetype($_, "group"),
 									 -size=>1
 								      }
 								       )
@@ -108,7 +108,7 @@ sub show_edit_groups {
 											gif=>"GIF",
 											jpg=>"JPG",
 										       },
-									      -default=>Yaffas::UGM::get_hylafax_filetype($_, "g"),
+									      -default=>Yaffas::UGM::get_hylafax_filetype($_, "group"),
 									      -size=>1
 									     }
 									    )
@@ -166,7 +166,7 @@ sub show_filetype(@) {
 											     gif=>"GIF",
 												 jpb=>"JPG",
 											    },
-										   -default=>Yaffas::UGM::get_hylafax_filetype($_, "g"),
+										   -default=>Yaffas::UGM::get_hylafax_filetype($_, "group"),
 										   -size=>1
 										  }
 										 ).

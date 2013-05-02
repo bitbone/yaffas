@@ -1820,7 +1820,7 @@ sub get_sys_and_db_users() {
 	my %ret;
 	@ret{ Yaffas::UGM::get_users() } = ();
 	eval { use Yaffas::FaxDB; };
-	foreach my ($type, $entity) (Yaffas::FaxDB::entity({type => "user"})) {
+	while (my($type, $entity) = each(Yaffas::FaxDB::entity({type => "user"}))) {
 		$ret{$entity} = ();
 	}
 
@@ -1839,7 +1839,7 @@ sub get_sys_and_db_groups() {
 	my %ret;
 	@ret{ Yaffas::UGM::get_groups() } = ();
 	eval { use Yaffas::FaxDB; };
-	foreach my ($type, $entity) (Yaffas::FaxDB::entity({type => "group"})) {
+	while (my($type, $entity) = each(Yaffas::FaxDB::entity({type => "group"}))) {
 		$ret{$entity} = ();
 	}
 
