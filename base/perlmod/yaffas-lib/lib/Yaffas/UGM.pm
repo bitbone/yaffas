@@ -1279,7 +1279,7 @@ Returns filetype of user or group.
 Undef on Error
 
 USER/GROUP name
-TYPE 'u' for user, 'g' for group
+TYPE 'user' for user, 'group' for group
 
 =cut
 

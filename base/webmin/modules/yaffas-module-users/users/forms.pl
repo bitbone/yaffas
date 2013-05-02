@@ -60,7 +60,7 @@ sub _edit_user($$\@\@;$){
 			@usergroups = get_suppl_groupnames ( $login );
 			$is_mailuser = _in_group($login, $mailusers);
 			$email = get_email($login);
-			$filetype = Yaffas::UGM::get_hylafax_filetype($login, 'u');
+			$filetype = Yaffas::UGM::get_hylafax_filetype($login, 'user');
             my $a = Yaffas::Module::Mailalias->new();
             @aliases = $a->get_user_aliases($login);
 			$zarafaquota = Yaffas::Mail::get_zarafa_quota($login);
@@ -504,7 +504,7 @@ sub set_user_filetype(@)
 							  map
 							  {
 								  my $name = get_username_by_uid($_);
-								  my $user_ftype = Yaffas::UGM::get_hylafax_filetype($name, 'u');
+								  my $user_ftype = Yaffas::UGM::get_hylafax_filetype($name, 'user');
 								  $Cgi->Tr
 								  (
 								   $Cgi->hidden("user", $name),
