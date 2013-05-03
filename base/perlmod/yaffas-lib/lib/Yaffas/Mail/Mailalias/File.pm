@@ -8,8 +8,8 @@ use Yaffas::File::Config;
 use Yaffas::Constant;
 
 my %alias_file = (
-    "USER" => "/etc/postfix/local-alias.cf",
-    "DIR" => "/etc/postfix/local-alias.cf",
+    "USER" => Yaffas::Constant::FILE->{postfix_local_aliases},
+    "DIR" => Yaffas::Constant::FILE->{postfix_local_aliases},
 );
 
 
@@ -25,19 +25,14 @@ sub _write {
         });
     $bkc->get_cfg()->save_file($alias_file{$mode}, $data);
 
-    use Data::Dumper;
-
-    print "file.pm\n";
-    print Dumper $data;
-
     Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
 
     return 1;
 }
 
 sub _read {
-    my $file = shift;
-    my $bkc = Yaffas::File::Config->new($file,
+    my $mode = shift;
+    my $bkc = Yaffas::File::Config->new($alias_file{$mode},
         {
             -SplitPolicy => 'custom',
             -SplitDelimiter => '\s+',

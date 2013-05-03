@@ -245,6 +245,7 @@ use constant {
 		"postfix_ldap_users" => "/etc/postfix/ldap-users.cf",
 		"postfix_ldap_group" => "/etc/postfix/ldap-group.cf",
 		"postfix_ldap_aliases" => "/etc/postfix/ldap-aliases.cf",
+		"postfix_local_aliases" => "/opt/yaffas/config/postfix/local-aliases.cf",
 		"postfix_smtp_auth" => "/etc/postfix/smtp_auth.cf",
 		"fetchmail_default_conf" => "/etc/default/fetchmail",
 		"zarafa_backup_conf" => "/opt/yaffas/config/zarafa/backup.conf",

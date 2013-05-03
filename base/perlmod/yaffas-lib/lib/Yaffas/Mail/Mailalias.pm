@@ -86,7 +86,7 @@ sub new {
     *_write_local = *Yaffas::Mail::Mailalias::File::_write;
 
     my $main =_read($mode);
-    my $add = _read_local("/etc/postfix/local-alias.cf");
+    my $add = _read_local($mode);
 
 	$self->{ALIAS} = { %{$main}, %{$add} };
 	$self->{MODE} = $mode;
