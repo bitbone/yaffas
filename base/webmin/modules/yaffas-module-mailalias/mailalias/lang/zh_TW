@@ -17,7 +17,7 @@ lbl_destination_dir=資料夾
 lbl_destination_usr=用戶
 
 lbl_del=移除
-lbl_user=用戶
+lbl_user=收件人
 lbl_or=或
 
 lbl_add=增加
@@ -33,3 +33,8 @@ err_select_only_one=別名只可以設定為用戶或文件夾
 lbl_check_aliasesrm_error=移除別名時之錯誤
 lbl_no_zarafa_public_folders=您無定義zarafa管理員或未建立文件夾。請於模組<a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">郵件伺服器/配置</a>定義之
 moduletitle=郵件別名配置
+
+lbl_alias_type_user=user
+lbl_alias_type_manual=email
+lbl_alias_type=類型
+lbl_recipient=收件人

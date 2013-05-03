@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-19 00:34+0100\n"
-"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -234,10 +234,15 @@ msgstr "Poštni alias"
 msgid "Folder"
 msgstr "Mapa"
 
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "Uporabnik"
+
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr "Prejemnik"
 
 #: lang/en:21
 #, no-wrap
@@ -303,3 +308,18 @@ msgstr "Nimate definiranega Zarafa administratorja ali pa ni bila ustvarjena nob
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Konfiguracija aliasa sporočil"
+
+#: lang/en:37
+#, no-wrap
+msgid "user"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "email"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "Type"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2013-05-04 00:19+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -80,9 +80,14 @@ msgstr ""
 msgid "Folder"
 msgstr ""
 
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
+msgstr ""
+
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
 msgstr ""
 
 #: lang/en:21
@@ -152,4 +157,19 @@ msgstr ""
 #: lang/en:35
 #, no-wrap
 msgid "Mail alias configuration"
+msgstr ""
+
+#: lang/en:37
+#, no-wrap
+msgid "user"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "email"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Type"
 msgstr ""

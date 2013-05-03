@@ -59,6 +59,7 @@ poll_ecannot=Permissões inválidas para editar a configuração fetchmail deste
 poll_efile=Somente configuração do usuário poderão ser editados
 poll_interval=Intervalo do Poll
 poll_envelope=Envelope
+poll_smtpaddress=Local mail domain (smtpaddress)
 
 stop_err=Erro ao parar fetchmail
 stop_ecannot=Você não tem permissões suficientes para parar o fetchmail
@@ -136,4 +137,5 @@ err_remote_passwd=Por favor fornecer uma senha para o usuário no servidor de e-
 err_enable_fetchmail=Não foi possível habilitar o serviço Fetchmail.
 err_bad_targets=Negando tentativa de criar poll sem ter um usuário de destino.
 err_bad_email=Não foi possível usar o nome de usuário fornecido como destio, porque ele não tem nenhum endereço de email válido configurado.
+err_smtpaddress=Invalid smtpaddress option (may not contain any whitespace).
 moduletitle=Busca de E-Mail do Fetchmail
