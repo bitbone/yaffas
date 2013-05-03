@@ -107,8 +107,8 @@ sub _display_alias_for {
             ),
             $Cgi->Tr(
                 $Cgi->td([
-                        "Type:",
-                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default=>$type, -values=>[qw(user manual)], -onChange => "module.changeAliasType()"}),
+                        $main::text{lbl_alias_type}.":",
+                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default=>$type, -values=>[qw(user manual)], -labels => { map { $_ => $main::text{"lbl_alias_type_".$_} } qw(user manual)}, -onChange => "module.changeAliasType()"}),
                     ]),
             ),
             $Cgi->Tr({-id => "row-user"},
@@ -119,7 +119,7 @@ sub _display_alias_for {
             ),
             $Cgi->Tr({-id => "row-manual", %hide_manual },
                 $Cgi->td([
-                        "Recipient:",
+                        $main::text{lbl_recipient}.":",
                         $Cgi->textfield({ -name => "recipient", -size=> 80, -value => join(", ", @user_alias)}),
                     ]),
             ),

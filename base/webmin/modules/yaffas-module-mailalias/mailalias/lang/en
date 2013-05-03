@@ -17,7 +17,7 @@ lbl_destination_dir=Folder
 lbl_destination_usr=User
 
 lbl_del=Remove
-lbl_user=User
+lbl_user=Recipient
 lbl_or=or
 
 lbl_add=Add
@@ -33,3 +33,8 @@ err_select_only_one=An alias can only be set for user or folder.
 lbl_check_aliasesrm_error=Error while removing alias.
 lbl_no_zarafa_public_folders=You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.
 moduletitle=Mail alias configuration
+
+lbl_alias_type_user=user
+lbl_alias_type_manual=email
+lbl_alias_type=Type
+lbl_recipient=Recipient
