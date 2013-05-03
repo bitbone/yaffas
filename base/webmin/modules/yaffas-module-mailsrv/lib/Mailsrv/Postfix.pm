@@ -507,10 +507,13 @@ sub set_postfix_ldap {
 
 sub toggle_distribution_groups($) {
 	my $toggle = shift;
+
+	my $localaliases = Yaffas::Constant::FILE->{postfix_local_aliases};
+
 	if("ldap" eq lc $toggle) {
-		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf, ldap:/etc/postfix/ldap-group.cf");
+		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, hash:$localaliases, ldap:/etc/postfix/ldap-aliases.cf, ldap:/etc/postfix/ldap-group.cf");
 	} elsif("file" eq lc $toggle) {
-		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, ldap:/etc/postfix/ldap-aliases.cf, hash:/etc/postfix/ldap-group.cf");
+		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, hash:$localaliases, ldap:/etc/postfix/ldap-aliases.cf, hash:/etc/postfix/ldap-group.cf");
 	}
 }
 

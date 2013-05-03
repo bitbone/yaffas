@@ -19,7 +19,7 @@ mydestination =
 mynetworks = [::1]/128, [::ffff:127.0.0.0]/104, 127.0.0.0/8
 virtual_mailbox_domains = localhost
 virtual_mailbox_maps = ldap:/etc/postfix/ldap-users.cf
-virtual_alias_maps = regexp:/etc/postfix/virtual_users_global, hash:/etc/postfix/ldap-group.cf, ldap:/etc/postfix/ldap-aliases.cf
+virtual_alias_maps = regexp:/etc/postfix/virtual_users_global, hash:/opt/yaffas/config/postfix/local-aliases.cf, hash:/etc/postfix/ldap-group.cf, ldap:/etc/postfix/ldap-aliases.cf
 virtual_transport = lmtp:127.0.0.1:2003
 
 smtpd_sasl_auth_enable = yes
