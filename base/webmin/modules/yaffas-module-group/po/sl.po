@@ -157,192 +157,194 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-19 00:34+0100\n"
+"PO-Revision-Date: 2013-03-18 15:04+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "Mreža"
 
 #: lang/en:2
 #, no-wrap
 msgid "Create"
-msgstr ""
+msgstr "Ustvari"
 
 #: lang/en:3
 #, no-wrap
 msgid "Edit"
-msgstr ""
+msgstr "Uredi"
 
 #: lang/en:4
 #, no-wrap
 msgid "Create group"
-msgstr ""
+msgstr "Ustvari skupino"
 
 #: lang/en:5
 #, no-wrap
 msgid "Delete group(s)"
-msgstr ""
+msgstr "Izbriši skupino"
 
 #: lang/en:6
 #, no-wrap
 msgid "Edit group(s)"
-msgstr ""
+msgstr "Uredi skupino (e)"
 
 #: lang/en:7
 #, no-wrap
 msgid "Create group(s)"
-msgstr ""
+msgstr "Ustvari skupino (e)"
 
 #: lang/en:8
 #, no-wrap
 msgid "Modify user"
-msgstr ""
+msgstr "Spremeni uporabnika"
 
 #: lang/en:10
 #, no-wrap
 msgid "Groupadministration"
-msgstr ""
+msgstr "Skupinska administracija"
 
 #: lang/en:11
 #, no-wrap
 msgid "Groupname"
-msgstr ""
+msgstr "Ime skupine"
 
 #: lang/en:12
 #, no-wrap
 msgid "Groups"
-msgstr ""
+msgstr "Skupine"
 
 #: lang/en:13
 #, no-wrap
 msgid "Group"
-msgstr ""
+msgstr "Skupina"
 
 #: lang/en:14
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: lang/en:15
 #, no-wrap
 msgid "Filetype"
-msgstr ""
+msgstr "Tip datoteke"
 
 #: lang/en:17
 #, no-wrap
 msgid "Set Filetype"
-msgstr ""
+msgstr "Nastavi tip datoteke"
 
 #: lang/en:19
 #, no-wrap
 msgid "Creating cache"
-msgstr ""
+msgstr "Ustvari predpomnilnik"
 
 #: lang/en:20
 #, no-wrap
 msgid "done"
-msgstr ""
+msgstr "končano"
 
 #: lang/en:22
 #, no-wrap
 msgid "Do you really want to delete these groups?"
-msgstr ""
+msgstr "Ali res želite izbrisati te skupine?"
 
 #: lang/en:23
 #, no-wrap
 msgid "Authentification"
-msgstr ""
+msgstr "Avtentikacija"
 
 #: lang/en:24
 #, no-wrap
 msgid "Email"
-msgstr ""
+msgstr "Elektronsko sporočilo"
 
 #: lang/en:25
 #, no-wrap
 msgid "Allow send as for"
-msgstr ""
+msgstr "Dovoli pošlji kot za"
 
 #: lang/en:27
 #, no-wrap
 msgid "Configure disclaimer"
-msgstr ""
+msgstr "Uredi omejitev odgovornosti"
 
 #: lang/en:29
 #, no-wrap
 msgid "All input fields has to be filled!"
-msgstr ""
+msgstr "Vsa vnosna polja morajo biti izpolnjena!"
 
 #: lang/en:30
 #, no-wrap
 msgid "Creation of groups failed!"
-msgstr ""
+msgstr "Oblikovanje skupin je spodletelo!"
 
 #: lang/en:31
 #, no-wrap
 msgid "Deletion of groups failed!"
-msgstr ""
+msgstr "Izbris skupin je spodletel!"
 
 #: lang/en:32
 #, no-wrap
 msgid "Group doesn't exist!"
-msgstr ""
+msgstr "Skupina ne obstaja!"
 
 #: lang/en:33
 #, no-wrap
 msgid "Group exists already!"
-msgstr ""
+msgstr "Skupina že obstaja!"
 
 #: lang/en:34
 #, no-wrap
 msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
-msgstr ""
+msgstr "Imena skupin morajo vsebovati najmanj en (številčni) znak, začnite s črko (brez umlauta)"
 
 #: lang/en:35
 #, no-wrap
 msgid "Wrong mode!"
-msgstr ""
+msgstr "Napačen način!"
 
 #: lang/en:36
 #, no-wrap
 msgid "No group selected!"
-msgstr ""
+msgstr "Ni izbrane skupine!"
 
 #: lang/en:37
 #, no-wrap
 msgid "This action is only supported with local authentication."
-msgstr ""
+msgstr "To dejanje je podprto samo z lokalno avtentikacijo."
 
 #: lang/en:38
 #, no-wrap
 msgid "E-mail address not valid"
-msgstr ""
+msgstr "Neveljaven elektronski naslov"
 
 #: lang/en:39
 #, no-wrap
 msgid "Could not set e-mail address"
-msgstr ""
+msgstr "Ne morem nastaviti naslova elektronskega sporočila"
 
 #: lang/en:40
 #, no-wrap
 msgid "Could not change e-mail address"
-msgstr ""
+msgstr "Ne morem spremeniti naslova elektronskega sporočila"
 
 #: lang/en:41
 #, no-wrap
 msgid "Invalid e-mail address"
-msgstr ""
+msgstr "Neveljaven naslov elektronskega sporočila"
 
 #: lang/en:42
 #, no-wrap
 msgid "Group Management"
-msgstr ""
+msgstr "Skupinsko upravljanje"

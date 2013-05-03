@@ -157,127 +157,132 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Change Password"
-msgstr ""
+msgstr "Spremeni geslo"
 
 #: lang/en:2
 #, no-wrap
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
+# 88%
 #: lang/en:4
 #, no-wrap
 msgid "Password:"
-msgstr ""
+msgstr "Geslo:"
 
+# 93%
 #: lang/en:5
 #, no-wrap
 msgid "Repeat password:"
-msgstr ""
+msgstr "Ponovi geslo:"
 
 #: lang/en:6
 #, no-wrap
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: lang/en:7
 #, no-wrap
 msgid "Admin-Password"
-msgstr ""
+msgstr "Admin-geslo"
 
 #: lang/en:8
 #, no-wrap
 msgid "Root-Password"
-msgstr ""
+msgstr "Root-geslo"
 
 #: lang/en:9
 #, no-wrap
 msgid "Domain-Administrator-Password"
-msgstr ""
+msgstr "Domain-Administrator-Password"
 
 #: lang/en:11
 #, no-wrap
 msgid "Could not set MySQL password!"
-msgstr ""
+msgstr "Could not set MySQL password!"
 
 #: lang/en:12
 #, no-wrap
 msgid "Can't read following file(s):"
-msgstr ""
+msgstr "Can't read following file(s):"
 
 #: lang/en:13
 #, no-wrap
 msgid "Can't write following file(s):"
-msgstr ""
+msgstr "Can't write following file(s):"
 
 #: lang/en:15
 #, no-wrap
 msgid "Can not set the root password!"
-msgstr ""
+msgstr "Can not set the root password!"
 
 #: lang/en:16
 #, no-wrap
 msgid "Can not set the domain-administrator password!"
-msgstr ""
+msgstr "Can not set the domain-administrator password!"
 
 #: lang/en:17
 #, no-wrap
 msgid "Can not execute SMBPASSWD!"
-msgstr ""
+msgstr "Can not execute SMBPASSWD!"
 
 #: lang/en:18
 #, no-wrap
 msgid "This function is only available in the unlimited version"
-msgstr ""
+msgstr "This function is only available in the unlimited version"
 
 #: lang/en:19
 #, no-wrap
 msgid "Can not execute following:"
-msgstr ""
+msgstr "Can not execute following:"
 
 #: lang/en:20
 #, no-wrap
 msgid "Can not execute LDAP Modify!"
-msgstr ""
+msgstr "Can not execute LDAP Modify!"
 
 #: lang/en:21
 #, no-wrap
 msgid "Can not delete following file(s):"
-msgstr ""
+msgstr "Can not delete following file(s):"
 
 #: lang/en:22
 #, no-wrap
 msgid "Can not copy following file(s):"
-msgstr ""
+msgstr "Can not copy following file(s):"
 
 #: lang/en:24
 #, no-wrap
 msgid "Password have to be at least on character long and must not contain a hash (#)."
-msgstr ""
+msgstr "Password have to be at least on character long and must not contain a hash (#)."
 
 #: lang/en:25
 #, no-wrap
 msgid "Both passwords have to be identical."
-msgstr ""
+msgstr "Obe gesli morata biti identični."
 
+# 94%
 #: lang/en:26
 #, no-wrap
 msgid "Password not valid."
-msgstr ""
+msgstr "Geslo ni veljavno."
 
 #: lang/en:27
 #, no-wrap
 msgid "Admin password"
-msgstr ""
+msgstr "Admin geslo"

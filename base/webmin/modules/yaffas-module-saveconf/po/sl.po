@@ -157,182 +157,189 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Wrong Configfile Version"
-msgstr ""
+msgstr "Wrong Configfile Version"
 
 #: lang/en:2
 #, no-wrap
 msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
-msgstr ""
+msgstr "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
 
 #: lang/en:3
 #, no-wrap
 msgid "Apply backupfile"
-msgstr ""
+msgstr "Apply backupfile"
 
 #: lang/en:4
 #, no-wrap
 msgid "Save backupfile"
-msgstr ""
+msgstr "Save backupfile"
 
 #: lang/en:5
 #, no-wrap
 msgid "Backup"
-msgstr ""
+msgstr "Backup"
 
 #: lang/en:6
 #, no-wrap
 msgid "Success"
-msgstr ""
+msgstr "Success"
 
 #: lang/en:7
 #, no-wrap
 msgid "Messages:"
-msgstr ""
+msgstr "Sporočila:"
 
 #: lang/en:8
 #, no-wrap
 msgid "This is not a valid yaffas backupfile"
-msgstr ""
+msgstr "This is not a valid yaffas backupfile"
 
 #: lang/en:9
 #, no-wrap
 msgid "please install your license-key first"
-msgstr ""
+msgstr "please install your license-key first"
 
 #: lang/en:10
 #, no-wrap
 msgid "cannot"
-msgstr ""
+msgstr "cannot"
 
 #: lang/en:11
 #, no-wrap
 msgid "touch"
-msgstr ""
+msgstr "touch"
 
 #: lang/en:12
 #, no-wrap
 msgid "open file"
-msgstr ""
+msgstr "open file"
 
+# 85%
 #: lang/en:13
 #, no-wrap
 msgid "execute"
-msgstr ""
+msgstr "Izvedi"
 
+# 85%
 #: lang/en:14
 #, no-wrap
 msgid "Can't create zipfile!"
-msgstr ""
+msgstr "Can't create zipfile!"
 
 #: lang/en:15
 #, no-wrap
 msgid "Can't create LDAP ldiffile!"
-msgstr ""
+msgstr "Can't create LDAP ldiffile!"
 
 #: lang/en:16
 #, no-wrap
 msgid "Message"
-msgstr ""
+msgstr "Sporočilo"
 
 #: lang/en:17
 #, no-wrap
 msgid "Continue"
-msgstr ""
+msgstr "Nadaljuj"
 
 #: lang/en:18
 #, no-wrap
 msgid "Cancel"
-msgstr ""
+msgstr "Prekliči"
 
 #: lang/en:19
 #, no-wrap
 msgid "Following list cant be converted:"
-msgstr ""
+msgstr "Following list cant be converted:"
 
 #: lang/en:20
 #, no-wrap
 msgid "Configured MSN's"
-msgstr ""
+msgstr "Configured MSN's"
 
 #: lang/en:21
 #, no-wrap
 msgid "User eMail adress"
-msgstr ""
+msgstr "User eMail adress"
 
 #: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
-msgstr ""
+msgstr "User password. Will be created as 'start123' and should be changed as soon as possible!"
 
 #: lang/en:23
 #, no-wrap
 msgid "Restore Configuration"
-msgstr ""
+msgstr "Restore Configuration"
 
+# 83%
 #: lang/en:24
 #, no-wrap
 msgid "Save Configuration"
-msgstr ""
+msgstr "Save Configuration"
 
 #: lang/en:25
 #, no-wrap
 msgid "Applying configuration file failed."
-msgstr ""
+msgstr "Applying configuration file failed."
 
+# 81%
 #: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
-msgstr ""
+msgstr "Error in configuration file"
 
 #: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
-msgstr ""
+msgstr "Please install all licence files for your installed products before you insert the configuration."
 
 #: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
-msgstr ""
+msgstr "Could not save config, because the LDAP service is not running."
 
 #: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
-msgstr ""
+msgstr "Could not restore user and groups."
 
 #: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
-msgstr ""
+msgstr "Your Configurationfile is not for this fax-card type."
 
 #: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
-msgstr ""
+msgstr "No authentication type is configured."
 
 #: lang/en:32
 #, no-wrap
 msgid "Errors occured."
-msgstr ""
+msgstr "Errors occured."
 
 #: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
-msgstr ""
+msgstr "Would you like to save your incomplete Configuration?"
 
+# 77%
 #: lang/en:34
 #, no-wrap
 msgid "Save configuration"
-msgstr ""
+msgstr "Shrani konfiguracijo"

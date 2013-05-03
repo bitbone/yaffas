@@ -157,382 +157,387 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "The IP address or netmask it not valid."
-msgstr ""
+msgstr "The IP address or netmask it not valid."
 
 #: lang/en:2
 #, no-wrap
 msgid "The DNS server address has to be a valid IP address."
-msgstr ""
+msgstr "The DNS server address has to be a valid IP address."
 
 #: lang/en:3 lang/en:11
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
-msgstr ""
+msgstr "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
 
 #: lang/en:4
 #, no-wrap
 msgid "Could not rename domain."
-msgstr ""
+msgstr "Ne morem preimenovati domene."
 
 #: lang/en:5
 #, no-wrap
 msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
-msgstr ""
+msgstr "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
 
 #: lang/en:6
 #, no-wrap
 msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
-msgstr ""
+msgstr "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
 
 #: lang/en:7
 #, no-wrap
 msgid "Could not copy the following file:"
-msgstr ""
+msgstr "Could not copy the following file:"
 
 #: lang/en:9
 #, no-wrap
 msgid "You have to enable a least one network interface."
-msgstr ""
+msgstr "You have to enable a least one network interface."
 
 #: lang/en:10
 #, no-wrap
 msgid "The gateway address has to be different to the server address."
-msgstr ""
+msgstr "The gateway address has to be different to the server address."
 
 #: lang/en:12
 #, no-wrap
 msgid "The associated hardware interface has to be enabled."
-msgstr ""
+msgstr "The associated hardware interface has to be enabled."
 
 #: lang/en:14
 #, no-wrap
 msgid "Error reading data for use with samba."
-msgstr ""
+msgstr "Error reading data for use with samba."
 
 #: lang/en:15
 #, no-wrap
 msgid "Error writing data for use with samba."
-msgstr ""
+msgstr "Error writing data for use with samba."
 
 #: lang/en:16
 #, no-wrap
 msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
-msgstr ""
+msgstr "The hostname (sambaDomain) does not exist exactly one time in LDAP."
 
 #: lang/en:18
 #, no-wrap
 msgid "This module is deactivated, because channel bonding is active."
-msgstr ""
+msgstr "This module is deactivated, because channel bonding is active."
 
 #: lang/en:19
 #, no-wrap
 msgid "Bridged network interfaces are not supported."
-msgstr ""
+msgstr "Bridged network interfaces are not supported."
 
 #: lang/en:21
 #, no-wrap
 msgid "No IP address is set."
-msgstr ""
+msgstr "Ni nastavljenega IP naslova."
 
 #: lang/en:23 lang/en:74
 #, no-wrap
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguracija"
 
 #: lang/en:24
 #, no-wrap
 msgid "Network Settings"
-msgstr ""
+msgstr "Nastavitve mreže"
 
+# 88%
 #: lang/en:26
 #, no-wrap
 msgid "Host name"
-msgstr ""
+msgstr "Ime gostitelja"
 
 #: lang/en:27
 #, no-wrap
 msgid "Domain name"
-msgstr ""
+msgstr "Ime domene"
 
+# 77%
 #: lang/en:28
 #, no-wrap
 msgid "Workgroup"
-msgstr ""
+msgstr "Workgroup"
 
 #: lang/en:29
 #, no-wrap
 msgid "IP address"
-msgstr ""
+msgstr "IP naslov"
 
 #: lang/en:30
 #, no-wrap
 msgid "Netmask"
-msgstr ""
+msgstr "Netmask"
 
 #: lang/en:31
 #, no-wrap
 msgid "Gateway (if available)"
-msgstr ""
+msgstr "Gateway (if available)"
 
 #: lang/en:32
 #, no-wrap
 msgid "Search domain"
-msgstr ""
+msgstr "Išči domeno"
 
 #: lang/en:33
 #, no-wrap
 msgid "DNS Server IP"
-msgstr ""
+msgstr "DNS Server IP"
 
 #: lang/en:34
 #, no-wrap
 msgid "Network"
-msgstr ""
+msgstr "Mreža"
 
 #: lang/en:35
 #, no-wrap
 msgid "Delete"
-msgstr ""
+msgstr "Izbriši"
 
 #: lang/en:36
 #, no-wrap
 msgid "Interface"
-msgstr ""
+msgstr "Interface"
 
 #: lang/en:37
 #, no-wrap
 msgid "Base settings"
-msgstr ""
+msgstr "Osnovne nastavitve"
 
 #: lang/en:38
 #, no-wrap
 msgid "Mode"
-msgstr ""
+msgstr "Način"
 
 #: lang/en:39
 #, no-wrap
 msgid "Vendor"
-msgstr ""
+msgstr "Vendor"
 
 #: lang/en:40
 #, no-wrap
 msgid "MAC address"
-msgstr ""
+msgstr "MAC naslov"
 
 #: lang/en:41
 #, no-wrap
 msgid "Product"
-msgstr ""
+msgstr "Produkt"
 
 #: lang/en:43
 #, no-wrap
 msgid "enabled"
-msgstr ""
+msgstr "enabled"
 
 #: lang/en:44
 #, no-wrap
 msgid "disabled"
-msgstr ""
+msgstr "onemogočeno"
 
 #: lang/en:45
 #, no-wrap
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: lang/en:46
 #, no-wrap
 msgid "New virtual IP address"
-msgstr ""
+msgstr "Nov virtualni IP naslov"
 
 #: lang/en:47
 #, no-wrap
 msgid "Delete virtual IP address"
-msgstr ""
+msgstr "Izbriši virtualni IP naslov"
 
 #: lang/en:48
 #, no-wrap
 msgid "Do you really want to delete the following network interface?"
-msgstr ""
+msgstr "Do you really want to delete the following network interface?"
 
 #: lang/en:49
 #, no-wrap
 msgid "Create"
-msgstr ""
+msgstr "Ustvari"
 
 #: lang/en:50
 #, no-wrap
 msgid "New virtual address on interface"
-msgstr ""
+msgstr "Nov virtualni naslov na vmesniku"
 
 #: lang/en:51
 #, no-wrap
 msgid "Switch from DHCP to static"
-msgstr ""
+msgstr "Switch from DHCP to static"
 
 #: lang/en:52
 #, no-wrap
 msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
-msgstr ""
+msgstr "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
 
 #: lang/en:54
 #, no-wrap
 msgid "HTTP Proxy"
-msgstr ""
+msgstr "HTTP Proxy"
 
 #: lang/en:55
 #, no-wrap
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: lang/en:56
 #, no-wrap
 msgid "Port"
-msgstr ""
+msgstr "Port"
 
 #: lang/en:57
 #, no-wrap
 msgid "Authentication (optional)"
-msgstr ""
+msgstr "Authentication (optional)"
 
 #: lang/en:58
 #, no-wrap
 msgid "User"
-msgstr ""
+msgstr "Uporabnik"
 
 #: lang/en:59
 #, no-wrap
 msgid "Password"
-msgstr ""
+msgstr "Geslo"
 
 #: lang/en:61
 #, no-wrap
 msgid "Proxyname not valid!"
-msgstr ""
+msgstr "Proxyname not valid!"
 
 #: lang/en:62
 #, no-wrap
 msgid "Port not valid!"
-msgstr ""
+msgstr "Port not valid!"
 
 #: lang/en:63
 #, no-wrap
 msgid "Username not valid!"
-msgstr ""
+msgstr "Uporabniško ime ni veljavno!"
 
+# 94%
 #: lang/en:64
 #, no-wrap
 msgid "Password not valid!"
-msgstr ""
+msgstr "Geslo je nepravilno!"
 
 #: lang/en:65
 #, no-wrap
 msgid "Error while setting APT proxy!"
-msgstr ""
+msgstr "Error while setting APT proxy!"
 
 #: lang/en:66
 #, no-wrap
 msgid "Error while setting WGET proxy!"
-msgstr ""
+msgstr "Error while setting WGET proxy!"
 
 #: lang/en:67
 #, no-wrap
 msgid "Error while setting KAV proxy!"
-msgstr ""
+msgstr "Error while setting KAV proxy!"
 
 #: lang/en:68
 #, no-wrap
 msgid "Error while deleting APT proxy!"
-msgstr ""
+msgstr "Error while deleting APT proxy!"
 
 #: lang/en:69
 #, no-wrap
 msgid "Error while deleting WGET proxy!"
-msgstr ""
+msgstr "Error while deleting WGET proxy!"
 
 #: lang/en:70
 #, no-wrap
 msgid "Error while deleting KAVS proxy!"
-msgstr ""
+msgstr "Error while deleting KAVS proxy!"
 
 #: lang/en:71
 #, no-wrap
 msgid "Error while setting freshclam proxy!"
-msgstr ""
+msgstr "Error while setting freshclam proxy!"
 
 #: lang/en:72
 #, no-wrap
 msgid "Error while deleting freshclam proxy!"
-msgstr ""
+msgstr "Error while deleting freshclam proxy!"
 
 #: lang/en:73
 #, no-wrap
 msgid "Error restarting freshclam!"
-msgstr ""
+msgstr "Error restarting freshclam!"
 
 #: help/en:1
 #, no-wrap
 msgid "e.g. hostname"
-msgstr ""
+msgstr "e.g. hostname"
 
 #: help/en:2
 #, no-wrap
 msgid "e.g. yaffas.org"
-msgstr ""
+msgstr "e.g. yaffas.org"
 
 #: help/en:3
 #, no-wrap
 msgid "e.g. yaffas"
-msgstr ""
+msgstr "e.g. yaffas"
 
 #: help/en:4
 #, no-wrap
 msgid "IP address for eth0<br>e.g. 192.168.0.100"
-msgstr ""
+msgstr "IP address for eth0<br>e.g. 192.168.0.100"
 
 #: help/en:5
 #, no-wrap
 msgid "Netmask for eth0<br>e.g. 255.255.255.0"
-msgstr ""
+msgstr "Netmask for eth0<br>e.g. 255.255.255.0"
 
 #: help/en:6
 #, no-wrap
 msgid "Gateway for your network. This must be an IPv4 address of this network."
-msgstr ""
+msgstr "Gateway for your network. This must be an IPv4 address of this network."
 
 #: help/en:7
 #, no-wrap
 msgid "DNS server for resolving names into IP adresses."
-msgstr ""
+msgstr "DNS server for resolving names into IP adresses."
 
 #: help/en:8
 #, no-wrap
 msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
-msgstr ""
+msgstr "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
 
 #: help/en:9
 #, no-wrap
 msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
-msgstr ""
+msgstr "HTTP proxy server address. This can be an IPv4 address or a hostname."
 
 #: help/en:10
 #, no-wrap
 msgid "Port of the HTTP proxy server."
-msgstr ""
+msgstr "Port of the HTTP proxy server."
 
 #: help/en:11
 #, no-wrap
 msgid "Optional username, if you have to authenticate against the proxy."
-msgstr ""
+msgstr "Optional username, if you have to authenticate against the proxy."

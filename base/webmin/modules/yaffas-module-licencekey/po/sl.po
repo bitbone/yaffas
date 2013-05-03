@@ -157,202 +157,204 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-20 00:34+0100\n"
+"PO-Revision-Date: 2013-03-19 15:15+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Install New Key"
-msgstr ""
+msgstr "Install New Key"
 
 #: lang/en:2
 #, no-wrap
 msgid "Existing Keys"
-msgstr ""
+msgstr "Existing Keys"
 
 #: lang/en:3
 #, no-wrap
 msgid "Licensekey"
-msgstr ""
+msgstr "Licensekey"
 
 #: lang/en:4
 #, no-wrap
 msgid "System"
-msgstr ""
+msgstr "Sistem"
 
 #: lang/en:5
 #, no-wrap
 msgid "Apply key"
-msgstr ""
+msgstr "Apply key"
 
 #: lang/en:6
 #, no-wrap
 msgid "Customer"
-msgstr ""
+msgstr "Customer"
 
 #: lang/en:7
 #, no-wrap
 msgid "Initial Key"
-msgstr ""
+msgstr "Initial Key"
 
 #: lang/en:8
 #, no-wrap
 msgid "Licensenumber"
-msgstr ""
+msgstr "Licensenumber"
 
 #: lang/en:9
 #, no-wrap
 msgid "Incoming MSNs"
-msgstr ""
+msgstr "Incoming MSNs"
 
 #: lang/en:10
 #, no-wrap
 msgid "unlimited"
-msgstr ""
+msgstr "unlimited"
 
 #: lang/en:11
 #, no-wrap
 msgid "Unlimited (only limited by telephone system)"
-msgstr ""
+msgstr "Unlimited (only limited by telephone system)"
 
 #: lang/en:12
 #, no-wrap
 msgid "Configurable controllers"
-msgstr ""
+msgstr "Configurable controllers"
 
 #: lang/en:13
 #, no-wrap
 msgid "Valid from"
-msgstr ""
+msgstr "Valid from"
 
 #: lang/en:14
 #, no-wrap
 msgid "Valid until"
-msgstr ""
+msgstr "Valid until"
 
 #: lang/en:15
 #, no-wrap
 msgid "Configurable printers"
-msgstr ""
+msgstr "Configurable printers"
 
 #: lang/en:16
 #, no-wrap
 msgid "PDF encryption"
-msgstr ""
+msgstr "PDF encryption"
 
 #: lang/en:17
 #, no-wrap
 msgid "Notepaper"
-msgstr ""
+msgstr "Notepaper"
 
 #: lang/en:18
 #, no-wrap
 msgid "Merge PDFs"
-msgstr ""
+msgstr "Merge PDFs"
 
 #: lang/en:19
 #, no-wrap
 msgid "enabled"
-msgstr ""
+msgstr "enabled"
 
 #: lang/en:20
 #, no-wrap
 msgid "disabled"
-msgstr ""
+msgstr "onemogočeno"
 
 #: lang/en:21
 #, no-wrap
 msgid "yaffas base"
-msgstr ""
+msgstr "yaffas base"
 
 #: lang/en:23
 #, no-wrap
 msgid "Licensetype"
-msgstr ""
+msgstr "Licensetype"
 
 #: lang/en:24
 #, no-wrap
 msgid "Companylicense"
-msgstr ""
+msgstr "Companylicense"
 
 #: lang/en:25
 #, no-wrap
 msgid "1-10 User"
-msgstr ""
+msgstr "1-10 User"
 
 #: lang/en:26
 #, no-wrap
 msgid "11-50 User"
-msgstr ""
+msgstr "11-50 User"
 
 #: lang/en:27
 #, no-wrap
 msgid "51-100 User"
-msgstr ""
+msgstr "51-100 User"
 
 #: lang/en:28
 #, no-wrap
 msgid "101-250 User"
-msgstr ""
+msgstr "101-250 User"
 
 #: lang/en:29
 #, no-wrap
 msgid "251-500 User"
-msgstr ""
+msgstr "251-500 User"
 
 #: lang/en:31
 #, no-wrap
 msgid "Could not copy the key."
-msgstr ""
+msgstr "Could not copy the key."
 
 #: lang/en:32
 #, no-wrap
 msgid "The product for your key is not installed!"
-msgstr ""
+msgstr "The product for your key is not installed!"
 
 #: lang/en:33
 #, no-wrap
 msgid "Can't create file!"
-msgstr ""
+msgstr "Can't create file!"
 
 #: lang/en:34
 #, no-wrap
 msgid "Can't write file!"
-msgstr ""
+msgstr "Can't write file!"
 
 #: lang/en:35
 #, no-wrap
 msgid "Invalid key location!"
-msgstr ""
+msgstr "Invalid key location!"
 
 #: lang/en:36
 #, no-wrap
 msgid "Can't remove new key!"
-msgstr ""
+msgstr "Can't remove new key!"
 
 #: lang/en:37
 #, no-wrap
 msgid "Wrong key version for installed product!"
-msgstr ""
+msgstr "Wrong key version for installed product!"
 
 #: lang/en:38
 #, no-wrap
 msgid "No key available!"
-msgstr ""
+msgstr "No key available!"
 
 #: lang/en:39
 #, no-wrap
 msgid "Successfully saved licensekey!"
-msgstr ""
+msgstr "Successfully saved licensekey!"
 
 #: lang/en:40
 #, no-wrap
 msgid "yaffas license key management"
-msgstr ""
+msgstr "yaffas license key management"

@@ -157,127 +157,129 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-05 18:27+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-27 00:32+0100\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1
 #, no-wrap
 msgid "Option"
-msgstr ""
+msgstr "Opcija"
 
 #: lang/en:2
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "State"
 
 #: lang/en:3
 #, no-wrap
 msgid "Save"
-msgstr ""
+msgstr "Shrani"
 
 #: lang/en:4
 #, no-wrap
 msgid "Options"
-msgstr ""
+msgstr "Opcije"
 
 #: lang/en:5
 #, no-wrap
 msgid "Disable full Global Address Book"
-msgstr ""
+msgstr "Disable full Global Address Book"
 
 #: lang/en:6
 #, no-wrap
 msgid "Enable Alphabetbar in Global Address Book"
-msgstr ""
+msgstr "Enable Alphabetbar in Global Address Book"
 
 #: lang/en:7
 #, no-wrap
 msgid "Enable Public Folders"
-msgstr ""
+msgstr "Enable Public Folders"
 
 #: lang/en:8
 #, no-wrap
 msgid "Disable delete in restore items"
-msgstr ""
+msgstr "Disable delete in restore items"
 
 #: lang/en:9
 #, no-wrap
 msgid "Enable spellchecker in HTLM editor"
-msgstr ""
+msgstr "Enable spellchecker in HTLM editor"
 
 #: lang/en:10 lang/en:13
 #, no-wrap
 msgid "Theme Color"
-msgstr ""
+msgstr "Theme Color"
 
 #: lang/en:11
 #, no-wrap
 msgid "White"
-msgstr ""
+msgstr "White"
 
 #: lang/en:12
 #, no-wrap
 msgid "Silver"
-msgstr ""
+msgstr "Silver"
 
 #: lang/en:15
 #, no-wrap
 msgid "Unknown Webaccess Option"
-msgstr ""
+msgstr "Unknown Webaccess Option"
 
 #: lang/en:16
 #, no-wrap
 msgid "Unknown Color"
-msgstr ""
+msgstr "Unknown Color"
 
 #: lang/en:17
 #, no-wrap
 msgid "Could not open webaccess config file"
-msgstr ""
+msgstr "Could not open webaccess config file"
 
 #: lang/en:18
 #, no-wrap
 msgid "Please install the package \"aspell-lang\" (e.g. aspell-de for german) for spell checking in your language."
-msgstr ""
+msgstr "Please install the package \"aspell-lang\" (e.g. aspell-de for german) for spell checking in your language."
 
 #: lang/en:19
 #, no-wrap
 msgid "Webaccess"
-msgstr ""
+msgstr "Webaccess"
 
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
-msgstr ""
+msgstr "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB."
-msgstr ""
+msgstr "This limits the maximum disk usage for each user in MB."
 
 #: help/en:3
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
-msgstr ""
+msgstr "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 
 #: help/en:4
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
-msgstr ""
+msgstr "This is the password that is set on the database. You need to set this password manually."
 
 #: help/en:5
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
-msgstr ""
+msgstr "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 
 #: help/en:6
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
-msgstr ""
+msgstr "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."

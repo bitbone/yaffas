@@ -157,242 +157,251 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2013-03-22 00:32+0100\n"
+"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sl\n"
-"X-Generator: Translate Toolkit 1.8.1\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
+"X-Generator: Pootle 2.1.5\n"
 
 #: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
 #: lang/en:2
 #, no-wrap
 msgid "Service"
-msgstr ""
+msgstr "Servis"
 
 #: lang/en:3
 #, no-wrap
 msgid "State"
-msgstr ""
+msgstr "State"
 
 #: lang/en:4
 #, no-wrap
 msgid "Start Service on Boot"
-msgstr ""
+msgstr "Start Service on Boot"
 
 #: lang/en:5
 #, no-wrap
 msgid "Monitor"
-msgstr ""
+msgstr "Monitor"
 
 #: lang/en:6
 #, no-wrap
 msgid "Action"
-msgstr ""
+msgstr "Dejanje"
 
 #: lang/en:7
 #, no-wrap
 msgid "Execute"
-msgstr ""
+msgstr "Izvedi"
 
 #: lang/en:8
 #, no-wrap
 msgid "Start"
-msgstr ""
+msgstr "Start"
 
 #: lang/en:9
 #, no-wrap
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
-msgstr ""
+msgstr "Konfiguracija"
 
 #: lang/en:11
 #, no-wrap
 msgid "Restart"
-msgstr ""
+msgstr "Ponovno zaženi"
 
 #: lang/en:12
 #, no-wrap
 msgid "Started"
-msgstr ""
+msgstr "Started"
 
 #: lang/en:13
 #, no-wrap
 msgid "Stopped"
-msgstr ""
+msgstr "Stopped"
 
 #: lang/en:14
 #, no-wrap
 msgid "Service has been started"
-msgstr ""
+msgstr "Service has been started"
 
 #: lang/en:15
 #, no-wrap
 msgid "Service must not be started"
-msgstr ""
+msgstr "Service must not be started"
 
 #: lang/en:16
 #, no-wrap
 msgid "Service couldn't be started"
-msgstr ""
+msgstr "Service couldn't be started"
 
 #: lang/en:17
 #, no-wrap
 msgid "Service has been stopped"
-msgstr ""
+msgstr "Service has been stopped"
 
 #: lang/en:18
 #, no-wrap
 msgid "Service must not be stopped"
-msgstr ""
+msgstr "Service must not be stopped"
 
 #: lang/en:19
 #, no-wrap
 msgid "Service couldn't be stopped"
-msgstr ""
+msgstr "Service couldn't be stopped"
 
 #: lang/en:20
 #, no-wrap
 msgid "Service has been restarted"
-msgstr ""
+msgstr "Service has been restarted"
 
 #: lang/en:21
 #, no-wrap
 msgid "Service must not be restarted"
-msgstr ""
+msgstr "Service must not be restarted"
 
 #: lang/en:22
 #, no-wrap
 msgid "Service couldn't be restarted"
-msgstr ""
+msgstr "Service couldn't be restarted"
 
 #: lang/en:23
 #, no-wrap
 msgid "Stop service"
-msgstr ""
+msgstr "Stop service"
 
+# 80%
+# 78%
 #: lang/en:24
 #, no-wrap
 msgid "Do you really want to stop this service?"
-msgstr ""
+msgstr "Do you really want to stop this service?"
 
 #: lang/en:27 lang/en:28
 #, no-wrap
 msgid "Shutdown system"
-msgstr ""
+msgstr "Zaustavi sistem."
 
 #: lang/en:29
 #, no-wrap
 msgid "Reboot system"
-msgstr ""
+msgstr "Reboot system"
 
 #: lang/en:30
 #, no-wrap
 msgid "System is shutting down."
-msgstr ""
+msgstr "System is shutting down."
 
 #: lang/en:31
 #, no-wrap
 msgid "System is rebooting. In some minutes you can login again."
-msgstr ""
+msgstr "System is rebooting. In some minutes you can login again."
 
+# 80%
+# 75%
 #: lang/en:32
 #, no-wrap
 msgid "Do you really want to halt the system?"
-msgstr ""
+msgstr "Do you really want to halt the system?"
 
+# 80%
+# 75%
+# 87%
 #: lang/en:33
 #, no-wrap
 msgid "Do you really want to reboot the system?"
-msgstr ""
+msgstr "Do you really want to reboot the system?"
 
 #: lang/en:36
 #, no-wrap
 msgid "Day"
-msgstr ""
+msgstr "Dan"
 
 #: lang/en:37
 #, no-wrap
 msgid "Month"
-msgstr ""
+msgstr "Mesec"
 
 #: lang/en:38
 #, no-wrap
 msgid "Date"
-msgstr ""
+msgstr "Datum"
 
 #: lang/en:39
 #, no-wrap
 msgid "Hour"
-msgstr ""
+msgstr "Ura"
 
 #: lang/en:40
 #, no-wrap
 msgid "Year"
-msgstr ""
+msgstr "Leto"
 
 #: lang/en:41
 #, no-wrap
 msgid "Timezone"
-msgstr ""
+msgstr "Časovni pas"
 
 #: lang/en:42
 #, no-wrap
 msgid "System time"
-msgstr ""
+msgstr "Čas sistema"
 
 #: lang/en:43
 #, no-wrap
 msgid "Invalid timezone"
-msgstr ""
+msgstr "Neveljaven časovni pas"
 
 #: lang/en:44
 #, no-wrap
 msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
-msgstr ""
+msgstr "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
 
 #: lang/en:47
 #, no-wrap
 msgid "now"
-msgstr ""
+msgstr "sedaj"
 
 #: lang/en:48
 #, no-wrap
 msgid "hourly"
-msgstr ""
+msgstr "vsako uro"
 
 #: lang/en:49
 #, no-wrap
 msgid "daily at "
-msgstr ""
+msgstr "dnevno ob"
 
 #: lang/en:50
 #, no-wrap
 msgid " minute"
-msgstr ""
+msgstr " minuta"
 
 #: lang/en:51
 #, no-wrap
 msgid " hour"
-msgstr ""
+msgstr " ura"
 
 #: lang/en:52
 #, no-wrap
 msgid "Time Server"
-msgstr ""
+msgstr "Časovni server"
 
 #: help/en:1
 #, no-wrap
 msgid "Enter the hostname or IP address of the time server to be used for NTP."
-msgstr ""
+msgstr "Enter the hostname or IP address of the time server to be used for NTP."
