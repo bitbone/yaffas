@@ -9,7 +9,7 @@ source ~/.update-zarafa-client 2>/dev/null
 URL="http://download.zarafa.com/supported"
 STATUS=${STATUS:-final}
 VERSION="7.1"
-RELEASE="7.1.3-40304"
+RELEASE="7.1.4-41394"
 CMD="wget --user=$USERNAME --password=$PASSWORD -qc"
 
 [[ -z $USERNAME ]] && read -p "Username: " USERNAME
@@ -22,6 +22,11 @@ extract_versions() {
 extract_client_binary() {
 	sed -rne \
 		's:.*["/](zarafaclient-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
+}
+
+extract_client_binary_en() {
+	sed -rne \
+		's:.*["/](zarafaclient-en-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
 }
 
 AVAILABLE_VERSIONS=$($CMD "$URL/$STATUS/" -qO - | extract_versions)
@@ -57,13 +62,14 @@ fi
 PKGDIR="$(dirname "$0")/../base/yaffas-software"
 BASEURL="$URL/$STATUS/$VERSION/$RELEASE"
 CLIENT_BINARY=$($CMD "$BASEURL/windows/" -qO - | extract_client_binary)
+CLIENT_BINARY_EN=$($CMD "$BASEURL/windows/" -qO - | extract_client_binary_en)
 mkdir -p "${PKGDIR}/software/zarafa"
 pushd "${PKGDIR}/software/zarafa" >/dev/null
 git rm -qf zarafa*.{exe,msi} 2>/dev/null || true
 echo "Downloading zarafamigrationtool.exe..."
 $CMD "$BASEURL/windows/zarafamigrationtool.exe"
-echo "Downloading zarafaclient-en.msi..."
-$CMD "$BASEURL/windows/zarafaclient-en.msi"
+echo "Downloading $CLIENT_BINARY_EN..."
+$CMD "$BASEURL/windows/$CLIENT_BINARY_EN" -O zarafaclient-en.msi
 echo "Downloading $CLIENT_BINARY..."
 $CMD "$BASEURL/windows/$CLIENT_BINARY"
 cd ../..
