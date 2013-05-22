@@ -160,8 +160,8 @@ Domains are defined in RFC1035 section "2.3.1 Preferred name syntax"
 sub domainname ($){
         my $domainname = shift;
         return undef unless defined $domainname;
-        return undef unless $domainname =~ m/^[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*$/;
         return undef if (length($domainname) > 1024);
+        return undef unless $domainname =~ m/^[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?)*$/;
         return 1;
 }
 
