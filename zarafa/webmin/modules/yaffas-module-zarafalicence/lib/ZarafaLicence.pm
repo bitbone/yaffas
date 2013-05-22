@@ -136,7 +136,10 @@ sub install_acalkey($) {
 sub get_log() {
 	my $file = Yaffas::File->new("/var/log/zarafa/licensed.log");
 	my @lines = $file->get_content();
-	return splice @lines, -3, 3;
+	if ($#lines + 1 > 3) {
+		return splice @lines, -3, 3;
+	}
+	return @lines;
 }
 
 sub get_user_count {
