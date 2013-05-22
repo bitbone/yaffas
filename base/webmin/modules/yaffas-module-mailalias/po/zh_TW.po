@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -235,10 +235,15 @@ msgstr "郵件別名"
 msgid "Folder"
 msgstr "資料夾"
 
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "用戶"
+
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr "收件人"
 
 #: lang/en:21
 #, no-wrap
@@ -304,3 +309,18 @@ msgstr "您無定義zarafa管理員或未建立文件夾。請於模組<a href=\
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "郵件別名配置"
+
+#: lang/en:37
+#, no-wrap
+msgid "user"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "email"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "類型"

@@ -1,8 +1,9 @@
 interval=指定輪詢間隔秒數
+envelope=The header name of the envelope address (e.g. X-Envelope-To or X-Original-To). Grab this information from the mail source headers. This should be set when using multidrop, otherwise multidrop may fail to work properly.
 poll=您想接收其郵件之遠端主機名稱或IP地址
 proto=使用協定；如果伺服器宣告支援TLS，就會自動使用。如果您想要使用SSL，請在下方選擇"SSL模式"
 via=遠端伺服器之DNS名稱。此設定覆寫伺服器名稱
 port=遠端伺服器TCP/IP port。您如果不知道請使用"Default"。如果開啟"Connect SSL Mode"，此預設值會選擇SSL協定，就不用更改此設定
 ssl=指定SSL加密連線，如果您想要用TLS或是未加密連線，請設定"No"
-poll_envelope=信封地址之標頭名稱(e.g. X-Envelope-To)
 user=指定自遠端機器登入之用戶
+smtpaddress=Domain to use when deliverying mails to the local mail server (DOMAIN in RCPT TO:user@DOMAIN)

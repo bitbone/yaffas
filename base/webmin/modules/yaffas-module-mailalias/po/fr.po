@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-26 09:24+0200\n"
-"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"PO-Revision-Date: 2012-06-11 10:02+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,10 +82,15 @@ msgstr "Alias courriel"
 msgid "Folder"
 msgstr "Dossier"
 
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "Utilisateur"
+
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr "Destinataire"
 
 #: lang/en:21
 #, no-wrap
@@ -152,3 +157,18 @@ msgstr "Aucun administrateur Zarafa n'a été défini ou bien aucun répertoire 
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Configuration de l'alias de courriel"
+
+#: lang/en:37
+#, no-wrap
+msgid "user"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "email"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "Type"

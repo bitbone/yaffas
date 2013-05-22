@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -87,10 +87,15 @@ msgid "Folder"
 msgstr "Pasta"
 
 # 75%
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "Usuário"
+
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr "Destinatário"
 
 #: lang/en:21
 #, no-wrap
@@ -157,3 +162,18 @@ msgstr "Nenhum administrador Zarafa definido ou nenhuma pasta criada. Por favor 
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Configuração de alias de e-mail"
+
+#: lang/en:37
+#, no-wrap
+msgid "user"
+msgstr ""
+
+#: lang/en:38
+#, no-wrap
+msgid "email"
+msgstr ""
+
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "Tipo"

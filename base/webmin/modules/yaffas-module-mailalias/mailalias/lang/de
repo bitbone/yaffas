@@ -17,7 +17,7 @@ lbl_destination_dir=Ordner
 lbl_destination_usr=Benutzer
 
 lbl_del=Entfernen
-lbl_user=Benutzer
+lbl_user=Empfänger
 lbl_or=oder
 
 lbl_add=Hinzufügen
@@ -33,3 +33,8 @@ err_select_only_one=Ein Alias darf nur entweder auf einen Benutzer oder Ordner g
 lbl_check_aliasesrm_error=Fehler beim löschen des Aliase.
 lbl_no_zarafa_public_folders=Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">im Modul Mailserver/Konfiguration</a> konfiguriert haben.
 moduletitle=Mailalias-Konfiguration
+
+lbl_alias_type_user=user
+lbl_alias_type_manual=email
+lbl_alias_type=Typ
+lbl_recipient=Empfänger

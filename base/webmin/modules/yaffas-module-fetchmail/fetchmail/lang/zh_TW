@@ -59,6 +59,7 @@ poll_ecannot=您不能編輯此用戶之擷取郵件配置
 poll_efile=只能編輯用戶之擷取郵件配置
 poll_interval=輪詢間隔
 poll_envelope=信封
+poll_smtpaddress=Local mail domain (smtpaddress)
 
 stop_err=無法停止擷取郵件
 stop_ecannot=您不能停止擷取郵件
@@ -136,4 +137,5 @@ err_remote_passwd=請提供郵件伺服器用戶之密碼
 err_enable_fetchmail=無法啟用擷取郵件程序
 err_bad_targets=拒絕嘗試建立沒有任何目標用戶的查詢
 err_bad_email=不能使用給予的用戶名作為目標，因為沒有有效相關聯的電子郵件地址。
+err_smtpaddress=Invalid smtpaddress option (may not contain any whitespace).
 moduletitle=擷取郵件之郵件取回
