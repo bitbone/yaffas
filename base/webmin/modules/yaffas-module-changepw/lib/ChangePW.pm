@@ -17,7 +17,6 @@ use Yaffas::Exception;
 use Yaffas::Conf;
 use Yaffas::Conf::Function;
 use Yaffas::Constant;
-use Yaffas::Module::AuthSrv;
 use Error qw(:try);
 eval "use DBI";
 
