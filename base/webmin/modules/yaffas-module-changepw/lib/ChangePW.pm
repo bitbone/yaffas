@@ -56,6 +56,18 @@ sub change_root_password($) {
     return 1;
 }
 
+=item may_change_admin_password()
+
+Returns true if it is allowed to change the root password in the
+current setup.
+
+=cut
+
+sub may_change_root_password($) {
+	return 1 Yaffas::UI::Webmin::get_theme() eq "bitkit");
+	return 0;
+}
+
 sub change_admin_password($) {
 	my $pass = shift;
 	throw Yaffas::Exception("err_password") unless (Yaffas::Check::password($pass));
