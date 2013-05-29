@@ -16,7 +16,8 @@ mkdir -p /etc/postfix/sasl
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
 
 CONF=/etc/postfix
-mkdir -p $CONF
+YAFFAS_CONF=/opt/yaffas/config/postfix
+mkdir -p $CONF $YAFFAS_CONF
 
 touch $CONF/ldap-aliases.cf
 touch $CONF/ldap-aliases.cf.db
@@ -26,6 +27,8 @@ touch $CONF/smtp_auth.cf
 postmap $CONF/smtp_auth.cf
 touch $CONF/virtual_users_global
 postmap $CONF/virtual_users_global
+touch $YAFFAS_CONF/local-aliases.cf
+postmap $YAFFAS_CONF/local-aliases.cf
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db
