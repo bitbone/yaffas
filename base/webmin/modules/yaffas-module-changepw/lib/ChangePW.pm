@@ -63,7 +63,7 @@ current setup.
 
 =cut
 
-sub may_change_root_password($) {
+sub may_change_root_password() {
 	return 0 if -f Yaffas::Constant::FILE->{changepw_deny_root_pw_change};
 	return 1 if Yaffas::UI::Webmin::get_theme() eq "bitkit";
 	return 0;
