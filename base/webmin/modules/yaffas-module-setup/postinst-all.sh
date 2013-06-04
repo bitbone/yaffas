@@ -15,10 +15,12 @@ if [ -e $LOGFILE ]; then
 	exit 0
 fi
 
-for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zarafa yaffas-software yaffas-module-security z-push; do
-	echo "executing $YAFFAS_SHARE/${module}/postinst-${DIST}.sh ..." >> $LOGFILE
+for module in yaffas-ldap yaffas-samba yaffas-postfix yaffas-security yaffas-zarafa yaffas-software yaffas-module-security z-push bitkit-ldap-tools; do
+	SCRIPT=$YAFFAS_SHARE/${module}/postinst-${DIST}.sh
+	[[ -f "$SCRIPT" ]] || continue
+	echo "executing $SCRIPT ..." >> $LOGFILE
 	echo "" >> $LOGFILE
-	bash $YAFFAS_SHARE/${module}/postinst-${DIST}.sh >> $LOGFILE
+	bash "$SCRIPT" >> $LOGFILE
 	echo "" >> $LOGFILE
 	echo "... done" >> $LOGFILE
 done
