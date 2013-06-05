@@ -46,6 +46,8 @@ touch $CONF/smtp_auth.cf
 postmap $CONF/smtp_auth.cf
 touch $CONF/virtual_users_global
 postmap $CONF/virtual_users_global
+touch $CONF/sender_canonical
+postmap $CONF/sender_canonical
 touch $YAFFAS_CONF/local-aliases.cf
 postmap $YAFFAS_CONF/local-aliases.cf
 
