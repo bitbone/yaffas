@@ -61,7 +61,7 @@ sub parse {
 			$quoted_text =~ s/^"//g;
 			$quoted_text =~ s/"$//g;
 			# Translate the string it
-			$par = $self->translate($quoted_text, $ref);
+			$par = $self->translate($quoted_text, $ref, "string");
 			# Escape the \n characters
 			$par =~ s/\n/\\n/g;
 			# Now push the result

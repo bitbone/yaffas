@@ -11,10 +11,10 @@ install:
 	cp -r lang/* $(DESTDIR)/$(YAFFAS_LANG)/
 
 .lang:
-	make -f lang/Yaffas/Auth/Makefile
-	make -f lang/Yaffas/File/Makefile
-	make -f lang/Yaffas/Mail/Makefile
-	make -f lang/Yaffas/Postgres/Makefile
-	make -f lang/Yaffas/Product/Makefile
-	make -f lang/Yaffas/UGM/Makefile
-	make -f lang/Yaffas/UI/Makefile
+	make -C lang/Yaffas/Auth/ .lang
+	make -C lang/Yaffas/File/ .lang
+	make -C lang/Yaffas/Mail/ .lang
+	make -C lang/Yaffas/Postgres/ .lang
+	make -C lang/Yaffas/Product/ .lang
+	make -C lang/Yaffas/UGM/ .lang
+	make -C lang/Yaffas/UI/ .lang

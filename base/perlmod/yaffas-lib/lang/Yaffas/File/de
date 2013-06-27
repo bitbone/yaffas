@@ -1,4 +1,4 @@
 err_user_not_exist=Benutzer existiert nicht
-err_user_not_exist=Gruppe existiert nicht
+err_group_not_exist=Gruppe existiert nicht
 err_chown=Konnte Benutzer/Grupper nicht setzen
 err_chmod=Konnte Berechtigungen nicht setzten

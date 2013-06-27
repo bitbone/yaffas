@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2013-06-27 15:42+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. type: string
+#: en:1
+#, no-wrap
+msgid "Wrong Active Directory password for"
+msgstr "Falsches Active Directory Passwort für"
+
+#. type: string
+#: en:2
+#, no-wrap
+msgid "Active Directory DN not correct"
+msgstr "Active Directory DN nicht korrekt"
+
+#. type: string
+#: en:3
+#, no-wrap
+msgid "Administratorname not valid"
+msgstr "Administratorname nicht erlaubt"
+
+#. type: string
+#: en:4
+#, no-wrap
+msgid "Username not valid"
+msgstr "Benutzername nicht erlaubt"
+
+#. type: string
+#: en:5
+#, no-wrap
+msgid "Password not valid"
+msgstr "Passwort nicht erlaubt"

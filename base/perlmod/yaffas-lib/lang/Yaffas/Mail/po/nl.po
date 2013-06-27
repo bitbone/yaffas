@@ -1,0 +1,53 @@
+# Dutch translations for yaffas package
+# Copyright (C) 2013 bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# Automatically generated, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: yaffas 1.0\n"
+"POT-Creation-Date: 2013-06-27 15:45+0300\n"
+"PO-Revision-Date: 2013-06-27 15:45+0300\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. type: string
+#: en:1
+#, no-wrap
+msgid "The name of the mailbox can only contain digits and chars."
+msgstr ""
+
+#. type: string
+#: en:2
+#, no-wrap
+msgid "The quota value can only contain digits."
+msgstr ""
+
+#. type: string
+#: en:3
+#, no-wrap
+msgid "This mailbox does not exists."
+msgstr ""
+
+#. type: string
+#: en:4
+#, no-wrap
+msgid "Wrong parameters."
+msgstr ""
+
+#. type: string
+#: en:5
+#, no-wrap
+msgid "A folder name can only contain chars from a-z, digits 0-9, \"-\" and \".\"."
+msgstr ""
+
+#. type: string
+#: en:6
+#, no-wrap
+msgid "This alias already exists."
+msgstr ""
