@@ -393,7 +393,7 @@ sub set_mailsize($) {
 	my $size = shift;
 	if (defined($size)) {
 		unless ($size eq "") {
-			throw Yaffas::Exception("err_size") unless ($size =~ /^\d+$/ && $size > 0);
+			throw Yaffas::Exception("err_size") unless ($size =~ /^\d+$/ && $size >= 0);
 			$size = $size * 1024 * 1024;
 		}
 		_set_value("message_size_limit", $size);
