@@ -45,5 +45,12 @@ if ($myhostname !~ /\./) {
     $myhostname .= ".yaffas.local";
 }
 
+# disable quarantine (https://jira.zarafa.com/browse/ADM-334)
+# because there is no interface to check and release messages
+$virus_quarantine_method = undef;
+$spam_quarantine_method = undef;
+$banned_files_quarantine_method = undef;
+$bad_header_quarantine_method = undef;
+
 
 1;
