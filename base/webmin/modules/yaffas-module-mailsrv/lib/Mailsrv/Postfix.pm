@@ -16,7 +16,6 @@ sub BEGIN {
 					&get_accept_domains &set_accept_domains &rm_accept_domains
 					&get_mailsize &set_mailsize
 					&get_archive &set_archive
-					&get_zarafa_admin &set_zarafa_admin
 				   );
 }
 use Yaffas qw/do_back_quote/;
@@ -416,49 +415,6 @@ sub set_archive($) {
 		unless (grep {$_ eq $archive} Yaffas::UGM::get_users("yaffasmail") or Yaffas::Check::email($archive));
 	}
 	_set_value("always_bcc", $archive);
-}
-
-sub set_zarafa_admin($$) {
-	my $username = shift;
-	my $password = shift;
-
-	throw Yaffas::Exception("err_zarafa_not_installed") unless (Yaffas::Product::check_product("zarafa"));
-
-	if (not defined $username or $username eq "") {
-		_set_value("zarafa_admin", "");
-		Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_admin_cfg}, "")->save();
-	}
-	else {
-		my $old_admin = get_zarafa_admin();
-		if (defined $old_admin and $username eq $old_admin and $password eq "") {
-			# old username and empty password
-			return;
-		}
-		my $bke = Yaffas::Exception->new();
-		$bke->add("err_user_not_exists") unless Yaffas::UGM::user_exists($username);
-		$bke->add("err_password_missing") unless defined($password);
-
-		$bke->add("err_user_not_zarafa_admin") unless Yaffas::Module::Users::get_zarafa_admin($username);
-
-		throw $bke if $bke;
-		my $file = Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_admin_cfg}, "");
-		$file->wipe_content();
-		$file->add_line($username);
-		$file->add_line($password);
-		$file->save() or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{zarafa_admin_cfg});
-
-		Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{zarafa_public_folder_script}, $TESTDIR);
-		if ($? != 0) {
-			$file->wipe_content();
-			$file->save() or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{zarafa_admin_cfg});
-			throw Yaffas::Exception("err_user_password");
-		}
-		_set_value("zarafa_admin", $username);
-	}
-}
-
-sub get_zarafa_admin() {
-	return _get_value("zarafa_admin");
 }
 
 sub set_postfix_ldap {
