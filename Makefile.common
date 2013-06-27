@@ -49,8 +49,21 @@ endif
 # Other definitions commonly used by our makefiles
 YAFFAS_OWNER=	root
 YAFFAS_GROUP=	root
+LANG_DIR=lang
+HELP_DIR=help
+PO_DIR=../po
 
 .PHONY: .lang
 .lang:
-	cd $(MODULE) && PERLLIB=$(SRCDIR)/tools/po4a/ po4a -k 0 -M utf8 -L utf8 --package-name "yaffas" --copyright-holder "bitbone AG" --package-version "1.0" -f $(SRCDIR)/conf/po4a-build.conf
+	cd $(MODULE) && PERLLIB=$(SRCDIR)/tools/po4a/ po4a \
+		-k 0 \
+		-M utf8 \
+		-L utf8 \
+		--variable LANG_DIR=$(LANG_DIR) \
+		--variable HELP_DIR=$(HELP_DIR) \
+		--variable PO_DIR=$(PO_DIR) \
+		--package-name "yaffas" \
+		--copyright-holder "bitbone AG" \
+		--package-version "1.0" \
+		-f $(SRCDIR)/conf/po4a-build.conf
 	cd $(MODULE) && $(SRCDIR)/tools/update-module-title.sh
