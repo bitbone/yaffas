@@ -77,6 +77,10 @@ A complete manual and current documentation of Zarafa WebAccess and WebApp can b
 With this module you can create brick-level backups of your zarafa data.
 You are afterwards able to restore single elements of the stores.
 
+For the module to be usable it is necessary to manually install the package
++zarafa-backup+ (RedHat-based systems: +yum install zarafa-backup+,
+Debian-based systems: +apt-get install zarafa-backup+)
+
 To create the backup select a time and day for the full and differential backup.
 You can select a directory on the server where you want to save the backups and configure a preserve time.
 After that timespan old backups will be deleted.
