@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,133 +166,159 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Address for System Messages"
 msgstr "接收系統郵件地址"
 
+# type: string
 #: lang/en:2 lang/en:32
 #, no-wrap
 msgid "Notification"
 msgstr "通知"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "系統"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "E-mail"
 msgstr "電子郵件"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Send e-mail"
 msgstr "傳送電子郵件"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Always"
 msgstr "總是"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Critical errors"
 msgstr "嚴重錯誤"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Errors"
 msgstr "錯誤"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Test your e-mail address"
 msgstr "測試您的電子郵件地址"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Click the button below to send a mail to your previously set e-mail address."
 msgstr "點選此按鈕來傳送您之前設定的電子郵件地址"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Test"
 msgstr "測試"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "This is not a valid mail address"
 msgstr "不是正確的電子郵件地址"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Can not modify configuration entry."
 msgstr "無法修改設定檔組態"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Error writing configuration file."
 msgstr "寫入設定檔錯誤"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Type can only be: always, errors or never."
 msgstr "類型只能為:總是、錯誤或是從不"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Line not found in configuration file."
 msgstr "在此設定檔案中沒有Line"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Please set an e-mail address first."
 msgstr "請先設定電子郵件地址"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Could not send a mail to your address."
 msgstr "無法傳送郵件到您的地址"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "An e-mail has been sent to your given address. Please check your mailbox."
 msgstr "郵件已傳送到您的地址。請檢查您的信箱"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Successfully set adress for system messages."
 msgstr "成功設定系統訊息地址"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Test - yaffas notify"
 msgstr "Test - yaffas notify"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
 msgstr "此測試郵件發送到您的設定的地址。如果您收到此郵件，有錯誤就會通知您"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "E-mail address test"
 msgstr "測試電子郵件地址"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
 msgstr "此電子郵件用來確認管理者地址。如果您收到此郵件，未來將會被通知任何系統狀況"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
 msgstr "Have fun with yaffas"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter a valid email address to receive notifications about the status of the system."

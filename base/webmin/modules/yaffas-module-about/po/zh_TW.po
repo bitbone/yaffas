@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,450 +166,539 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:11
 #, no-wrap
 msgid "System information"
 msgstr "系統資訊"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "About yaffas"
 msgstr "關於yaffas"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "系統"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Versions"
 msgstr "版本"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Version"
 msgstr "版本"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Revision"
 msgstr "調整"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Product"
 msgstr "產品"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "The information cannot be read!"
 msgstr "無法讀取此資訊"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Written by"
 msgstr "寫入由"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "General information"
 msgstr "一般資訊"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "on an"
 msgstr "上一個"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Up-time of"
 msgstr "上行時間"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "days"
 msgstr "天"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "hours"
 msgstr "小時"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "minutes"
 msgstr "分鐘"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Load average"
 msgstr "平均負載"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "CPU load"
 msgstr "CPU負載"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Overall load"
 msgstr "整體負載"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "for the last minute"
 msgstr "最後一分鐘"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "for the last 5 minutes"
 msgstr "最後五分鐘"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "for the last 15 minutes"
 msgstr "最後十五分鐘"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Memory usage"
 msgstr "記憶體使用"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Main memory"
 msgstr "主要記憶體"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Swap memory"
 msgstr "置換記憶體"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Total"
 msgstr "全部"
 
+# type: string
 #: lang/en:31 lang/en:100
 #, no-wrap
 msgid "Used"
 msgstr "使用的"
 
+# type: string
 #: lang/en:32 lang/en:45
 #, no-wrap
 msgid "Free"
 msgstr "空閒"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Shared"
 msgstr "分享"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Buffers"
 msgstr "緩衝"
 
+# type: string
 # 83%
 #: lang/en:35
 #, no-wrap
 msgid "Cache"
 msgstr "暫存"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Module"
 msgstr "模組"
 
+# type: string
 #: lang/en:37 lang/en:99
 #, no-wrap
 msgid "Size"
 msgstr "大小"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Referring modules"
 msgstr "參考模組"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Modules currently in use"
 msgstr "此模組使用中"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Available Memory"
 msgstr "可用記憶體"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Usage Key:"
 msgstr "使用方法："
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "In Use"
 msgstr "已使用"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Buffer"
 msgstr "緩衝"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "IRQ usage"
 msgstr "IRQ使用"
 
+# type: string
 #: lang/en:48 lang/en:91
 #, no-wrap
 msgid "Device"
 msgstr "裝置"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "IO usage"
 msgstr "IO使用"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Network statistics"
 msgstr "網路狀態"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Interface"
 msgstr "介面"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Receive"
 msgstr "接收"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Sent"
 msgstr "傳送"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Bytes"
 msgstr "位元組"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Errors"
 msgstr "錯誤"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Dropped"
 msgstr "結束"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Overruns"
 msgstr "超過"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Frame"
 msgstr "框架"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Carrier"
 msgstr "Carrier"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Collisions"
 msgstr "衝突"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Active connections"
 msgstr "啟用的連線"
 
+# type: string
 #: lang/en:63 lang/en:81
 #, no-wrap
 msgid "Protocol"
 msgstr "協定"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Receive queue"
 msgstr "接收佇列"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Send queue"
 msgstr "傳送佇列"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Local"
 msgstr "本地"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Foreign"
 msgstr "外面"
 
+# type: string
 #: lang/en:68 lang/en:85
 #, no-wrap
 msgid "State"
 msgstr "州"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Who's logged"
 msgstr "使用者紀錄"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "User"
 msgstr "用戶"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "TTY"
 msgstr "TTY"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "From"
 msgstr "寄件人"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Login@"
 msgstr "登入@"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Idle"
 msgstr "閒置"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Jcpu"
 msgstr "Jcpu"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Pcpu"
 msgstr "Pcpu"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Command"
 msgstr "指令"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "Listening sockets"
 msgstr "Listening sockets"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Active sockets"
 msgstr "Active sockets"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Unix sockets"
 msgstr "Unix sockets"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "RefCnt"
 msgstr "RefCnt"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Flags"
 msgstr "Flags"
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "Type"
 msgstr "類型"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "I-node"
 msgstr "I-node"
 
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Path"
 msgstr "路徑"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "File system statistics"
 msgstr "檔案系統狀態"
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "Mounted file system"
 msgstr "掛載檔案系統"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "Directory"
 msgstr "目錄"
 
+# type: string
 #: lang/en:93 lang/en:98
 #, no-wrap
 msgid "File system"
 msgstr "檔案系統"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Mode"
 msgstr "模式"
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "File system information"
 msgstr "檔案系統資訊"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Available"
 msgstr "可用的"
 
+# type: string
 # 80%
 #: lang/en:102
 #, no-wrap
 msgid "Used%"
 msgstr "使用%"
 
+# type: string
 #: lang/en:103
 #, no-wrap
 msgid "Mounted on"
 msgstr "掛載於"
 
+# type: string
 #: lang/en:105
 #, no-wrap
 msgid "Time"
 msgstr "時間"
 
+# type: string
 #: lang/en:106
 #, no-wrap
 msgid "Value"
 msgstr "值"
 
+# type: string
 #: lang/en:108
 #, no-wrap
 msgid "Memory type"
 msgstr "記憶體類型"
 
+# type: string
 #: lang/en:109
 #, no-wrap
 msgid "Information"

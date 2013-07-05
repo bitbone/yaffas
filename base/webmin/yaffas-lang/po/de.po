@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-13 15:17+0100\n"
-"PO-Revision-Date: 2013-02-13 15:09+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,76 +15,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Accounts"
 msgstr "Benutzerkonten"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Appearance"
 msgstr "Erscheinungsbild"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Fax"
 msgstr "Fax"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Manual"
 msgstr "Handbuch"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Hardware"
 msgstr "Hardware"
 
+# type: string
 # 75%
 #: lang/en:6
 #, no-wrap
 msgid "Subscription"
 msgstr "Subskription"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Mailbox"
 msgstr "Mailbox"
 
+# type: string
 # 90%
 #: lang/en:8
 #, no-wrap
 msgid "Mail Server"
 msgstr "Mailserver"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Maintenance"
 msgstr "Wartung"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Security"
 msgstr "Sicherheit"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "PDF Printers"
 msgstr "PDF Drucker"
 
+# type: string
 #: lang/en:12 lang/en:13
 #, no-wrap
 msgid "Zarafa"
 msgstr "Zarafa"
 
+# type: string
 # 76%
 #: lang/en:15
 #, no-wrap
 msgid "Could not connect to Postgres database."
 msgstr "Konnte die Postgres-Datenbank nicht erreichen."
 
+# type: string
 # 85%
 # 80%
 #: lang/en:16
@@ -92,6 +106,7 @@ msgstr "Konnte die Postgres-Datenbank nicht erreichen."
 msgid "Could not find the following directories:"
 msgstr "Konnte die folgenden Verzeichnisse nicht finden:"
 
+# type: string
 # 85%
 # 80%
 #: lang/en:17
@@ -99,57 +114,67 @@ msgstr "Konnte die folgenden Verzeichnisse nicht finden:"
 msgid "Could not read the following directories:"
 msgstr "Konnte die folgenden Verzeichnisse nicht lesen:"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Could not copy the following file:"
 msgstr "Konnte die folgende Datei nicht kopieren:"
 
+# type: string
 # 81%
 #: lang/en:19
 #, no-wrap
 msgid "Could not delete the following files:"
 msgstr "Konnte die folgenden Dateien nicht löschen:"
 
+# type: string
 # 81%
 #: lang/en:20
 #, no-wrap
 msgid "Could not execute the following files:"
 msgstr "Konnte die folgenden Dateien nicht ausführen:"
 
+# type: string
 # 85%
 #: lang/en:21
 #, no-wrap
 msgid "Could not find the following files:"
 msgstr "Konnte die folgenden Dateien nicht finden:"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Could not create hard link for the following files:"
 msgstr "Konnte keinen Hardlink für die folgenden Dateien anlegen:"
 
+# type: string
 # 85%
 #: lang/en:23
 #, no-wrap
 msgid "Could not read the following files:"
 msgstr "Konnte die folgenden Dateien nicht lesen:"
 
+# type: string
 # 81%
 #: lang/en:24
 #, no-wrap
 msgid "Could not rename the following files:"
 msgstr "Konnte die folgenden Dateien nicht umbenennen:"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Could not create symlink for the following files:"
 msgstr "Konnte keinen symbolischen Link für die folgenden Dateien anlegen:"
 
+# type: string
 # 83%
 #: lang/en:26
 #, no-wrap
 msgid "Could not write the following files:"
 msgstr "Konnte in die folgenden Dateien nicht schreiben:"
 
+# type: string
 # 85%
 # 88%
 #: lang/en:27
@@ -157,318 +182,385 @@ msgstr "Konnte in die folgenden Dateien nicht schreiben:"
 msgid "Could not find the following users:"
 msgstr "Konnte die folgenden Benutzer nicht finden:"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Your license expired. Please install a new license file or contact <a href='mailto:info@bitbone.de'>info@bitbone.de</a> for further use."
 msgstr "Ihre Lizenz ist abgelaufen. Bitte installieren sie eine neue Lizenzdatei oder kontaktieren sie <a href='mailto:info@bitbone.de'>info@bitbone.de</a>, um das System weiter nutzen zu können."
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "There is already an alias with this name:"
 msgstr "Es gibt bereits einen Alias mit diesem Namen:"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "There is already a user with this name:"
 msgstr "Es gibt bereits einen Benutzer mit diesem Namen:"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Apply"
 msgstr "Anwenden"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Cancel"
 msgstr "Abbrechen"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "No"
 msgstr "Nein"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "OK"
 msgstr "OK"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Show all"
 msgstr "Alle anzeigen"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Next"
 msgstr "Weiter"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Previous"
 msgstr "Zurück"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Go to"
 msgstr "Gehe zu"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Save"
 msgstr "Speichern"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Yes"
 msgstr "Ja"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Creating cache"
 msgstr "Erzeuge Zwischenspeicher"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "done"
 msgstr "fertig"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Filter"
 msgstr "Filter"
 
+# type: string
 # 85%
 #: lang/en:45
 #, no-wrap
 msgid "delete"
 msgstr "löschen"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "yaffas|MAIL"
 msgstr "yaffas|MAIL"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "yaffas|FAX"
 msgstr "yaffas|FAX"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "yaffas|GATE"
 msgstr "yaffas|GATE"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "yaffas|PDF"
 msgstr "yaffas|PDF"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "yaffas|FILE"
 msgstr "yaffas|FILE"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Modules for configuring the system accounts"
 msgstr "Module für die Konfiguration der Systemkonten"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Modules to customize the appearance"
 msgstr "Module für die Anpassung des Erscheinungsbildes"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Modules for the license management"
 msgstr "Module für das Lizenzmanagement"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Modules for configuring the fax system"
 msgstr "Module für die Konfiguration des Faxsystems"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Handbooks for system administration"
 msgstr "Handbücher für die Systemadministration"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Modules for printer, disk and other hardware configuration"
 msgstr "Module für die Drucker-, Festplatten- und andere Hardwarekonfigurationen"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Modules for configuring mailboxes"
 msgstr "Module für die Konfiguration von E-Mail Postfächern"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Modules for configuring the MTA"
 msgstr "Module für die Konfiguration des MTA"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Modules for configuring security options"
 msgstr "Module für die Konfiguration der Sicherheitseinstellungen"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "Can not open $1 : $2"
 msgstr "Kann $1 nicht öffnen: $2"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
 msgstr "Bitte drücken sie den 'Anwenden' Knopf in der Fax Konfiguration. Die Konfiguration wurde geändert."
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Attention!"
 msgstr "Achtung!"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Language"
 msgstr "Sprache"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "German"
 msgstr "Deutsch"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "English"
 msgstr "Englisch"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "Dutch"
 msgstr "Niederländisch"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "French"
 msgstr "Französisch"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Brazil"
 msgstr "Portugisisch (Brasilien)"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Chinese (Taiwan)"
 msgstr "Chinesisch (Taiwan)"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "{PageLinks} Page {JumpToPageDropdown} {RowsPerPageDropdown} entries per page"
 msgstr "{PageLinks} Seite {JumpToPageDropdown} {RowsPerPageDropdown} Einträge pro Seite"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "About bitkit"
 msgstr "Über bitkit"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "About yaffas"
 msgstr "Über yaffas"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "About Z-Admin"
 msgstr "Über Z-Admin"
 
+# type: string
 #: lang/en:81
 #, no-wrap
 msgid "Logged out"
 msgstr "Abgemeldet"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Another administrator logged in. You have to log in again."
 msgstr "Ein anderer Administrator hat sich angemeldet. Sie müssen sich neu anmelden."
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "The session timed out, please re-login."
 msgstr "Die Sitzung ist abgelaufen, bitte neu einloggen."
 
+# type: string
 #: lang/en:85
 #, no-wrap
 msgid "Loading please wait..."
 msgstr "Lade, bitte warten..."
 
+# type: string
 # 83%
 #: lang/en:86
 #, no-wrap
 msgid "Error"
 msgstr "Fehler"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Help"
 msgstr "Hilfe"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "Loading..."
 msgstr "Lade..."
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "Data error."
 msgstr "Datenfehler."
 
+# type: string
 #: lang/en:91
 #, no-wrap
 msgid "No records found."
 msgstr "Keine Einträge gefunden."
 
+# type: string
 #: lang/en:93
 #, no-wrap
 msgid "Filter data"
 msgstr "Daten filtern"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Show filter"
 msgstr "Filter anzeigen"
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "Could not connect to backend!"
 msgstr "Konnte nicht zum Backend verbinden!"
 
+# type: string
 #: lang/en:98
 #, no-wrap
 msgid "Logout"
 msgstr "Abmelden"
 
+# type: string
 #: lang/en:100
 #, no-wrap
 msgid "Do you want to close the administrators connection?"
 msgstr "Möchten sie die Verbindung des Administrators beenden?"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Couldnt restart webmin."
 msgstr "Webmin konnte nicht neu gestartet werden."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:102
 #, no-wrap
 msgid "Close"
 msgstr "Schließen"
 
+# type: string
 #: lang/en:103
 #, no-wrap
 msgid "There is already an administrator connected.<br>If you want to log in, you will need to close his connection."
 msgstr "Es ist bereits ein Administrator angemeldet.<br>Wenn Sie sich anmelden möchten, wird die andere Verbindung geschlossen."
 
+# type: string
 #: lang/en:104
 #, no-wrap
 msgid "There is already an administrator connected from $1.<br>If you want to log in, you will need to close his connection."

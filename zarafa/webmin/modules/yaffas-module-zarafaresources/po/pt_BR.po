@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-08 00:27+0100\n"
-"PO-Revision-Date: 2012-12-07 20:55+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,180 +15,215 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Manage resources"
 msgstr "Gerenciar recursos"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Resource"
 msgstr "Recurso"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Description"
 msgstr "Descrição"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Email"
 msgstr "E-mail"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Decline conflicts"
 msgstr "Recusar conflitos"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Decline recurrent meetings"
 msgstr "Recusar agendamentos recorrentes"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "New resource"
 msgstr "Novo recurso"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Modify resource"
 msgstr "Modificar recurso"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Delete resource"
 msgstr "Remover recurso"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Do you really want to delete these resources?"
 msgstr "Realmente deseja remover estes recursos?"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
 msgstr "As permissões adequadas para os usuários que poderão reservar este recurso precisam ser definidos na configuração de permissão do calendário deste recurso."
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Type"
 msgstr "Tipo"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Capacity"
 msgstr "Capacidade"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Room"
 msgstr "Sala"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Equipment"
 msgstr "Equipamento"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "The name of the resource contains illegal characters."
 msgstr "O nome do recurso contém caracteres inválidos."
 
+# type: string
 # 85%
 #: lang/en:18
 #, no-wrap
 msgid "The name of the resource is taken from a special user."
 msgstr "O nome do recurso já está sendo usado por um usuário."
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "The description of the resource contains illegal characters."
 msgstr "A descrição do recurso contém caracteres inválidos."
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "No e-mail address specified."
 msgstr "Endereço de e-mail não especificado."
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "You cannot use localhost as domain-part."
 msgstr "Localhost não pode ser usado como parte do domínio."
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr "O domínio não está definido como domínio local na configuração do servidor de e-mail."
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Local-part of e-mail address must be identical with name."
 msgstr "A parte local do endereço de e-mail tem que ser igual ao nome."
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "The e-mail address is not valid."
 msgstr "Endereço de e-mail inválido."
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "The name of the resource is taken from a user."
 msgstr "O nome do recurso já está sendo usado por um usuário."
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "The name of the resource is taken from a user's alias."
 msgstr "O nome do recurso já está sendo usado como alias de um usuário."
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "The given resource doesn't exist."
 msgstr "O recurso informado não existe."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "No local mail domains configured."
 msgstr "Nenhum domínio local configurado."
 
+# type: string
 # 93%
 #: lang/en:29
 #, no-wrap
 msgid "Capacity has to be a number."
 msgstr "Capacidade precisa ser um número."
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Resources"
 msgstr "Recursos"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This name will be shown in the global address book."
 msgstr "Este nome será exibido no catálogo de endereços."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "You may want to add a description if the name of the resource isn't self-explanatory."
 msgstr "Uma descrição para o recurso deve ser adicionado caso o nome não é autoexplicativo."
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "Check this box and the resource can only be booked once."
 msgstr "Com este campo ativo o recuso pode ser reservado somente uma vez."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
 msgstr "Com este campo ativo o recuso não aceitará reuniões recorrentes."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Select the type of the resource."
 msgstr "Selecione o tipo do recurso."
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "Define the capacity of the resource. This value is only available for equipment resources."

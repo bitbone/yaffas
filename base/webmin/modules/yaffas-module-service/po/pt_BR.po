@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,238 +15,284 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr "Serviços"
 
+# type: string
 # 87%
 #: lang/en:2
 #, no-wrap
 msgid "Service"
 msgstr "Serviço"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "State"
 msgstr "Estado"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Start Service on Boot"
 msgstr "Inicializar serviço no boot"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Monitor"
 msgstr "Monitorar"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Action"
 msgstr "Ação"
 
+# type: string
 # 85%
 #: lang/en:7
 #, no-wrap
 msgid "Execute"
 msgstr "Executar"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Start"
 msgstr "Início"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Stop"
 msgstr "Parar"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
 msgstr "Configuração"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Restart"
 msgstr "Reiniciar"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Started"
 msgstr "Iniciado"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Stopped"
 msgstr "Interrompido"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Service has been started"
 msgstr "Serviço foi iniciado"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Service must not be started"
 msgstr "Serviço precisa ser iniciado"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Service couldn't be started"
 msgstr "Serviço não pôde ser iniciado"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Service has been stopped"
 msgstr "Serviço foi terminado"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Service must not be stopped"
 msgstr "Serviço não pode ser terminado"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Service couldn't be stopped"
 msgstr "Serviço não pôde ser terminado"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Service has been restarted"
 msgstr "Serviço foi reiniciado"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Service must not be restarted"
 msgstr "Serviço não precisa ser reiniciado"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Service couldn't be restarted"
 msgstr "Serviço não pôde ser reiniciado"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Stop service"
 msgstr "Terminar serviço"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Do you really want to stop this service?"
 msgstr "Realmente deseja terminar este serviço?"
 
+# type: string
 #: lang/en:27 lang/en:28
 #, no-wrap
 msgid "Shutdown system"
 msgstr "Desligar sistema"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Reboot system"
 msgstr "Reiniciar sistema"
 
+# type: string
 # 95%
 #: lang/en:30
 #, no-wrap
 msgid "System is shutting down."
 msgstr "Sistema está sendo terminado."
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "System is rebooting. In some minutes you can login again."
 msgstr "Sistema está reiniciando. Em alguns minutos o login estará disponível novamente."
 
+# type: string
 # 97%
 #: lang/en:32
 #, no-wrap
 msgid "Do you really want to halt the system?"
 msgstr "Realmente deseja parar o sistema."
 
+# type: string
 # 97%
 #: lang/en:33
 #, no-wrap
 msgid "Do you really want to reboot the system?"
 msgstr "Realmente deseja reiniciar o sistema."
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Day"
 msgstr "Dia"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Month"
 msgstr "Mês"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Date"
 msgstr "Data"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Hour"
 msgstr "Hora"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Year"
 msgstr "Ano"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Timezone"
 msgstr "Fuso horário"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "System time"
 msgstr "Hora do sistema"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Invalid timezone"
 msgstr "Fuso horário inválido"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
 msgstr ""
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "now"
 msgstr "agora"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "hourly"
 msgstr "cada hora"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "daily at "
 msgstr "diariamente às "
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid " minute"
 msgstr " minuto"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid " hour"
 msgstr " hora"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr "Servidor de Horário"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter the hostname or IP address of the time server to be used for NTP."

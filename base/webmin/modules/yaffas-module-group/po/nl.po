@@ -6,105 +6,123 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Network"
 msgstr "Netwerk"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Create"
 msgstr "Maak aan"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Edit"
 msgstr "Bewerken"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Create group"
 msgstr "Groep aanmaken"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Delete group(s)"
 msgstr "Groep(en) verwijderen"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Edit group(s)"
 msgstr "Groep(en) bewerken"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Create group(s)"
 msgstr "Groep(en) aanmaken"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Modify user"
 msgstr "Gebruiker bewerken"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Groupadministration"
 msgstr "Groepenbeheer"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Groupname"
 msgstr "Groepnaam"
 
+# type: string
 # 83%
 #: lang/en:12
 #, no-wrap
 msgid "Groups"
 msgstr "Groepen"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Group"
 msgstr "Groep"
 
+# type: string
 # 75%
 #: lang/en:14
 #, no-wrap
 msgid "User"
 msgstr "Gebruiker"
 
+# type: string
 # 80%
 #: lang/en:15
 #, no-wrap
 msgid "Filetype"
 msgstr "Bestandstype"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Set Filetype"
 msgstr "Bestandstype instellen"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Creating cache"
 msgstr "Cache wordt aangemaakt"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "done"
 msgstr "klaar"
 
+# type: string
 # 81%
 # 85%
 # 95%
@@ -113,92 +131,110 @@ msgstr "klaar"
 msgid "Do you really want to delete these groups?"
 msgstr "Wilt u deze groepen echt verwijderen?"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Authentification"
 msgstr "Authenticatie"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Email"
 msgstr "E-mail"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Allow send as for"
 msgstr "Sta toe om te verzenden als"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Configure disclaimer"
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "All input fields has to be filled!"
 msgstr "Alle velden moeten worden ingevuld!"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Creation of groups failed!"
 msgstr "Aanmaken van groepen is mislukt!"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Deletion of groups failed!"
 msgstr "Verwijderen van groepen is mislukt!"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Group doesn't exist!"
 msgstr "Groep bestaat niet!"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Group exists already!"
 msgstr "Groep bestaat al!"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Group names have to consist of at least one (alphanumerical) character, beginning with a letter (no umlaut)."
 msgstr ""
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Wrong mode!"
 msgstr "Verkeerde modus!"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "No group selected!"
 msgstr "Geen groep geselecteerd!"
 
+# type: string
 # 96%
 #: lang/en:37
 #, fuzzy, no-wrap
 msgid "This action is only supported with local authentication."
 msgstr "Deze actie wordt alleen ondersteund met lokale authenticatie."
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "E-mail address not valid"
 msgstr ""
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Could not set e-mail address"
 msgstr ""
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Could not change e-mail address"
 msgstr ""
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Invalid e-mail address"
 msgstr "Ongeldig e-mailadres"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Group Management"

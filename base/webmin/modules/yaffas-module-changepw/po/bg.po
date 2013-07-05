@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,116 +167,140 @@ msgstr ""
 "Language: bg\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Password"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Password:"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Repeat password:"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Save"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Admin-Password"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Root-Password"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Domain-Administrator-Password"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Could not set MySQL password!"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Can't read following file(s):"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Can't write following file(s):"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Can not set the root password!"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Can not set the domain-administrator password!"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Can not execute SMBPASSWD!"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "This function is only available in the unlimited version"
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Can not execute following:"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Can not execute LDAP Modify!"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Can not delete following file(s):"
 msgstr ""
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Can not copy following file(s):"
 msgstr ""
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Password have to be at least on character long and must not contain a hash (#)."
 msgstr ""
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Both passwords have to be identical."
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Password not valid."
 msgstr ""
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Admin password"

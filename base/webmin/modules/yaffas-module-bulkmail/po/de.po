@@ -6,47 +6,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
 msgstr "Rundmail"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "From"
 msgstr "Von"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
 msgstr "Betreff"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Message"
 msgstr "Nachricht"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send"
 msgstr "Senden"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
 msgstr "Bitte füllen Sie alle Felder aus und überprüfen Sie ihre Absender E-Mail Adresse."
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."

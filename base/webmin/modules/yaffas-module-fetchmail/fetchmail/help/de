@@ -1,9 +1,9 @@
 interval=Geben sie das Abrufintervall in Sekunden an.
-envelope=The header name of the envelope address (e.g. X-Envelope-To or X-Original-To). Grab this information from the mail source headers. This should be set when using multidrop, otherwise multidrop may fail to work properly.
+envelope=Der Name der Kopfzeile, der die Envelope-Adresse enthält (bspw. X-Envelope-To oder X-Original-To). Der korrekte Wert für diese Option kann aus den Headern einer Test-Mail gelesen werden. Diese Option sollte unbedingt gesetzt werden, wenn Multidrop verwendet wird, da dieses sonst u.U. nicht korrekt funktioniert.
 poll=Der entfernte Hostname oder die IP-Adresse von der sie E-Mails empfangen wollen.
 proto=Das zu benutzende Protokoll; wenn der Server TLS-Unterstützung anbietet, wird sie automatisch genutzt. Wenn SSL benutzt werden soll, muss unten der Haken bei "Mit SSL verbinden" gesetzt werden.
 via=Der DNS Name des entfernten Servers. Diese Einstellung hat Vorrang vor dem Servernamen.
 port=Der TCP-Port des entfernten Servers. Sollte in den meisten Fällen auf "Standard" gesetzt bleiben. Wenn "Mit SSL verbinden" aktiviert ist, wird in der Standardeinstellung automatisch der korrekte Port für die SSL-Variante des gewählten Protokolls verwendet, ohne dass manuell eingegriffen werden muss.
 ssl=Legt fest, ob SSL-verschlüsselte Verbindungen benutzt werden sollen. Soll TLS oder keine Verschlüsselung benutzt werden, so muss hier "Nein" gewählt werden.
 user=Geben sie den Login-Benutzer der entfernten Maschine an.
-smtpaddress=Domain to use when deliverying mails to the local mail server (DOMAIN in RCPT TO:user@DOMAIN)
+smtpaddress=Domain, die für die lokale Zustellung der E-Mails verwendet wird (DOMAIN in RCPT TO:user@DOMAIN)

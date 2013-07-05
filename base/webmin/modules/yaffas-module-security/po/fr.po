@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-18 11:05+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,258 +15,309 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Apply"
 msgstr "Appliquer"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Edit"
 msgstr "Édition"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Delete"
 msgstr "Supprimer"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Add"
 msgstr "Ajouter"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Activate"
 msgstr "Activer"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Deactivate"
 msgstr "Désactiver"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Update"
 msgstr "Actualiser"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Delete entry"
 msgstr "Supprimer la saisie"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Do you really want to delete this entry?"
 msgstr "Désirez-vous vraiment supprimer cette saisie ?"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to disable this service?"
 msgstr "Désirez-vous vraiment désactiver ce service ?"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Do you really want to enable this service?"
 msgstr "Désirez-vous vraiment activer ce service ?"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Policy"
 msgstr "Règle"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Enable policy"
 msgstr "Activer le règle"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Disable policy"
 msgstr "Désactiver la règle"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "DNSBL"
 msgstr "DNSBL"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "RHSBL"
 msgstr "RHSBL"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Hostname"
 msgstr "Nom d'hôte"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Hit score"
 msgstr "Taux de réussite"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Miss score"
 msgstr "Taux d'échec"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Log name"
 msgstr "Identifiant de connexion"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "ClamAV"
 msgstr "ClamAV"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Activate clamav"
 msgstr "Activer clamav"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Deactivate clamav"
 msgstr "Désactiver clamav"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Scan archives"
 msgstr "Scanner les archives"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Virus alert email"
 msgstr "Courriel d'alerte Virus"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Maximum size of scannable objects in MB"
 msgstr "Taille maximale en Mo des éléments pouvant être scannés."
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Update the ClamAV signatures"
 msgstr "Mettre à jour les signatures ClamAV"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Configure clamav"
 msgstr "Configurer clamav"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Spamassassin"
 msgstr "Spamassassin"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Configure Spamassassin"
 msgstr "Configurer Spamassassin"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Activate spamassassin"
 msgstr "Activer Spamassassin"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Deactivate spamassassin"
 msgstr "Désactiver Spamassassin"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Update the Spamassassin filters"
 msgstr "Mettre à jour les filtres Spamassassin"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Network"
 msgstr "Réseau"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Internal networks"
 msgstr "Réseaux internes"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Trusted networks"
 msgstr "Réseaux de confiance"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Add spam detected headers at level"
 msgstr "Ajouter 'spam detected' dans les entêtes à partir du niveau"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Whitelisting"
 msgstr "Liste blanche"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
 msgstr ""
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Address"
 msgstr "Adresse"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Type"
 msgstr "Type"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Source"
 msgstr "Source"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Entry"
 msgstr "Saisie"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "Invalid e-mail address"
 msgstr "Adresse électronique invalide"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Maximum size of scannable objects must be a number (in MB)."
 msgstr ""
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Security"
 msgstr "Sécurité"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This value defines at which score mails are handled as spam."
 msgstr "Cette valeur définit le niveau à partir duquel les courriels sont considérés comme spam."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "Define a host or network by its IP address or CIDR."
 msgstr "Définir un hôte ou un réseau par son adresse IP ou CIDR."
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
 msgstr "ClamAV scannera uniquement les objets qui ne dépassent pas la taille indiquée. Les objets plus larges ne seront PAS scannés."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
 msgstr "Si ClamAV détecte un objet suspect, un courriel sera envoyé à l'adresse indiquée."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Enable this to scan archives like RAR, ZIP, GZ..."

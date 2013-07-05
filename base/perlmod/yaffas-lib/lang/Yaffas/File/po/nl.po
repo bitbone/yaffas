@@ -1,20 +1,21 @@
-# Dutch translations for yaffas package
-# Copyright (C) 2013 bitbone AG
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
 # This file is distributed under the same license as the yaffas package.
-# Automatically generated, 2013.
-#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
-"Project-Id-Version: yaffas 1.0\n"
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-27 15:44+0300\n"
-"PO-Revision-Date: 2013-06-27 15:43+0300\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
-"Language: nl\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.6\n"
 
 #. type: string
 #: en:1

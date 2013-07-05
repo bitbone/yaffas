@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,269 +166,322 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Country (2 letter code)"
 msgstr "國家(2 letter code)"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Common Name (e.g. host.name.de)"
 msgstr "Common Name (e.g. host.name.de)"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Country not correct."
 msgstr "Country not correct."
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Common Name not correct or not set."
 msgstr "Common Name not correct or not set."
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Days are not correct."
 msgstr "日期輸入錯誤"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "E-mail Adress not correct."
 msgstr "電子郵件輸入錯誤"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Generation not successful"
 msgstr "Generation not successful"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Locality not correct"
 msgstr "本機輸入錯誤"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Organization Name not correct."
 msgstr "組織名稱輸入錯誤"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Organization Unit not correct."
 msgstr "組織單位輸入錯誤"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Please select A service."
 msgstr "請選擇一個服務"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "State or province not correct."
 msgstr "State or province not correct."
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Parameters not correct."
 msgstr "Parameters not correct."
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Certificate not valid."
 msgstr "憑證不是有效的"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Fork failed"
 msgstr "Fork failed"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Certificate wasn't created."
 msgstr "沒有建立憑證"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "No certificate selected."
 msgstr "沒有選擇的憑證"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "E-mail address (e.g. webmaster@company.com)"
 msgstr "電子郵件地址(e.g. webmaster@company.com)"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Certificate valid for (days)"
 msgstr "憑證有效日(天)"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Generate key"
 msgstr "產生KEY"
 
+# type: string
 #: lang/en:25 lang/en:42
 #, no-wrap
 msgid "Generate Self Signed Certificate and Key"
 msgstr "產生自身簽認憑證與KEY"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Service"
 msgstr "服務"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Generate Certificate & Key"
 msgstr "產生憑證和KEY"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Symlink Error"
 msgstr "符號連結錯誤"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Certificate:"
 msgstr "憑證："
 
+# type: string
 # 87%
 #: lang/en:31
 #, no-wrap
 msgid "Service:"
 msgstr "服務："
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Upload Certificate"
 msgstr "上傳憑證"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Upload certificate"
 msgstr "上傳憑證"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Import Certificate"
 msgstr "匯入憑證"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Delete Certificate"
 msgstr "刪除憑證"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Should this Certificate really be deleted?"
 msgstr "確定刪除此憑證？"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "The Certificate was imported successfully!"
 msgstr "成功匯入憑證"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "An error occured during importing! Please check your certificate file."
 msgstr "匯入過程發生錯誤。請檢查您的憑證檔案"
 
+# type: string
 #: lang/en:40 lang/en:66
 #, no-wrap
 msgid "Certificate / Key Management"
 msgstr "Certificate / Key Management"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Import Key or Signed Certificate"
 msgstr "匯入KEY或已簽認的憑證"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Manage/View Installed Certificates and Keys"
 msgstr "管理/檢視已安裝的憑證和keys"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Certificate Manager"
 msgstr "憑證管理"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Keysize (in bits)"
 msgstr "Keysize (in bits)"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Locality (e.g. city)"
 msgstr "Locality (e.g. city)"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Organization Name (e.g. company)"
 msgstr "Organization Name (e.g. company)"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Organization Unit Name (e.g. division)"
 msgstr "Organization Unit Name (e.g. division)"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "State or province (full name)"
 msgstr "State or province (full name)"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Begin Date"
 msgstr "開始日期"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Delete"
 msgstr "刪除"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "File deleted sucessfully"
 msgstr "已成功刪除檔案"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Name"
 msgstr "名稱"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Expires on"
 msgstr "有效期到"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Certificate not valid!"
 msgstr "無效的憑證"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Manage Installed Certificates"
 msgstr "管理已安裝的憑證"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The services are going to be restarted!"
 msgstr "將重新啟動此服務"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "yes"
 msgstr "是"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "no"
 msgstr "否"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Success"

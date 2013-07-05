@@ -6,183 +6,217 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
-"PO-Revision-Date: 2012-04-26 09:24+0200\n"
-"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-06-11 10:02+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Wrong Configfile Version"
 msgstr "Version de fichier de configuration erronée"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
 msgstr "Votre fichier de configuration ne s'applique pas à ce produit. Désirez-vous vraiment l'appliquer au système ?"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Apply backupfile"
 msgstr "Appliquer le fichier de sauvegarde"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Save backupfile"
 msgstr "Enregistrer le fichier de sauvegarde"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Backup"
 msgstr "Sauvegarde"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Success"
 msgstr "Succès"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Messages:"
 msgstr "Messages :"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "This is not a valid yaffas backupfile"
 msgstr "Ceci n'est pas un fichier de sauvegarde yaffas valide"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "please install your license-key first"
 msgstr "Veuillez d'abord installer votre clé de licence"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "cannot"
 msgstr "impossible"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "touch"
 msgstr "touch"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "open file"
 msgstr "ouvrir le fichier"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "execute"
 msgstr "exécuter"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Can't create zipfile!"
 msgstr "Impossible de créer le fichier Zip !"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Can't create LDAP ldiffile!"
 msgstr "Impossible de créer le fichier ID pour LDAP !"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Message"
 msgstr "Message"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Continue"
 msgstr "Continuer"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Cancel"
 msgstr "Annuler"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Following list cant be converted:"
 msgstr "La liste suivante peut être convertie :"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Configured MSN's"
 msgstr "MSN's configurés"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "User eMail adress"
 msgstr "Adresse électronique de l'utilisateur"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr "Mot de passe de l'utilisateur. Sera créé en tant que 'start123' et devra être changé dès que possible !"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Restore Configuration"
 msgstr "Restaurer la configuration"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Save Configuration"
 msgstr "Enregistrer la configuration"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Applying configuration file failed."
 msgstr "L'application du fichier de configuration a échouée."
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
 msgstr "Erreur dans le fichier de configuration"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr "Veuillez installer tous les fichiers de licence pour vos produits installés avant d'insérer la configuration."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
 msgstr "Impossible d'enregistrer la configuration parce que le service LDAP n'est pas en cours d'exécution."
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
 msgstr "Impossible de restaurer les utilisateurs et groupes."
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
 msgstr "Votre fichier de configuration n'est pas applicable pour ce type de carte fax."
 
+# type: string
 # 78%
 #: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
 msgstr "Aucun type d'authentification n'a été configuré"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Errors occured."
 msgstr "Des erreurs se sont produites."
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
 msgstr "Désirez-vous enregistrer votre configuration incomplète ?"
 
+# type: string
 # 94%
 #: lang/en:34
 #, no-wrap

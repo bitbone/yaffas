@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,38 +166,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Language"
 msgstr "改變語言"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr "系統"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Choose Language"
 msgstr "選擇語言"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "German"
 msgstr "德語"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "English"
 msgstr "英語"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Language not found!"
 msgstr "未能找到語言！"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Set Language"
