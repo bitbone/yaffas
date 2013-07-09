@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,262 +166,313 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "The IP address or netmask it not valid."
 msgstr "此IP地址或其網路遮罩無效"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "The DNS server address has to be a valid IP address."
 msgstr "DNS伺服器地址必須為有效IP地址"
 
+# type: string
 #: lang/en:3 lang/en:11
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two."
 msgstr "網域只能含字符(a-z及A-Z)、數字(0-9)\"、”.”及”-“，最短為二。"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Could not rename domain."
 msgstr "無法對網域重新命名"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Hostname may only contain characters (a-z and A-Z), numbers (0-9) and '-'. It also has a minimum length of two."
 msgstr "主機名稱僅含字元(a-z及A-Z)，數字(0-9)及”-“。最短為二"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'."
 msgstr "工作群組僅含字元(a-z及A-Z)，數字(0-9)、”.”、”_”及”-“"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Could not copy the following file:"
 msgstr "無法複製下列檔案："
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "You have to enable a least one network interface."
 msgstr "您須至少啟用一個網路介面"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "The gateway address has to be different to the server address."
 msgstr "閘口地址須與伺服器地址不同"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "The associated hardware interface has to be enabled."
 msgstr "須啟用相關硬體介面"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Error reading data for use with samba."
 msgstr "使用samba讀取數據時發生錯誤。"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Error writing data for use with samba."
 msgstr "使用samba寫數據時發生錯誤。"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "The hostname (sambaDomain) does not exist exactly one time in LDAP."
 msgstr "主機名稱(samba網域)不在LDAP內一次。"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "This module is deactivated, because channel bonding is active."
 msgstr "此模組被關閉，因為已經啟用綁定通道"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Bridged network interfaces are not supported."
 msgstr "不支援橋接網路介面"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "No IP address is set."
 msgstr "未設定IP地址"
 
+# type: string
 #: lang/en:23 lang/en:74
 #, no-wrap
 msgid "Configuration"
 msgstr "設定"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Network Settings"
 msgstr "網路設定"
 
+# type: string
 # 88%
 #: lang/en:26
 #, no-wrap
 msgid "Host name"
 msgstr "主機名稱"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Domain name"
 msgstr "網域名稱"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Workgroup"
 msgstr "工作群組"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "IP address"
 msgstr "IP地址"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Netmask"
 msgstr "網路遮罩"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Gateway (if available)"
 msgstr "閘口(如果可用)"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Search domain"
 msgstr "搜尋網域"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "DNS Server IP"
 msgstr "DNS伺服器之IP"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Network"
 msgstr "網路"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Delete"
 msgstr "刪除"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Interface"
 msgstr "介面"
 
+# type: string
 # 85%
 #: lang/en:37
 #, no-wrap
 msgid "Base settings"
 msgstr "基礎設定"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Mode"
 msgstr "模式"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Vendor"
 msgstr "供應商"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "MAC address"
 msgstr "MAC地址"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Product"
 msgstr "產品"
 
+# type: string
 # 85%
 #: lang/en:43
 #, no-wrap
 msgid "enabled"
 msgstr "啟用"
 
+# type: string
 # 87%
 #: lang/en:44
 #, no-wrap
 msgid "disabled"
 msgstr "關閉"
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Status"
 msgstr "狀態"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "New virtual IP address"
 msgstr "新虛擬IP地址"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Delete virtual IP address"
 msgstr "刪除虛擬IP地址"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Do you really want to delete the following network interface?"
 msgstr "您真要刪除下面之網路介面嗎?"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Create"
 msgstr "建立"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "New virtual address on interface"
 msgstr "介面上之新虛擬地址"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Switch from DHCP to static"
 msgstr "自DHCP切換至靜態"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "If you save, the network interface will be switched from DHCP to a static address. Do you want to continue?"
 msgstr "如果您儲存，網路介面將自DHCP切換至靜態地址，您要繼續嗎?"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "HTTP Proxy"
 msgstr "HTTP 代理"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Proxy"
 msgstr "代理"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Port"
 msgstr "埠"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Authentication (optional)"
 msgstr "身分驗證(可選) "
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "User"
 msgstr "用戶"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Password"
 msgstr "密碼"
 
+# type: string
 # 94%
 # 75%
 #: lang/en:61
@@ -429,118 +480,141 @@ msgstr "密碼"
 msgid "Proxyname not valid!"
 msgstr "代理名稱無效！"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Port not valid!"
 msgstr "埠無效！"
 
+# type: string
 # 94%
 #: lang/en:63
 #, no-wrap
 msgid "Username not valid!"
 msgstr "用戶名稱無效！"
 
+# type: string
 # 94%
 #: lang/en:64
 #, no-wrap
 msgid "Password not valid!"
 msgstr "密碼無效！"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Error while setting APT proxy!"
 msgstr "設定APT代理時發生錯誤！"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Error while setting WGET proxy!"
 msgstr "設定WGET代理時發生錯誤！"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Error while setting KAV proxy!"
 msgstr "設定KAV代理時發生錯誤！"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Error while deleting APT proxy!"
 msgstr "刪除APT代理時發生錯誤！"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Error while deleting WGET proxy!"
 msgstr "刪除WGET代理時發生錯誤！"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "Error while deleting KAVS proxy!"
 msgstr "刪除KAVS代理時發生錯誤！"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "Error while setting freshclam proxy!"
 msgstr "設定freshclam代理時發生錯誤！"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "Error while deleting freshclam proxy!"
 msgstr "刪除freshclam代理時發生錯誤！"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Error restarting freshclam!"
 msgstr "重新啟動freshclam時發生錯誤！"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "e.g. hostname"
 msgstr "如主機名稱"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "e.g. yaffas.org"
 msgstr "如yaffas.org"
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "e.g. yaffas"
 msgstr "如yaffas"
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "IP address for eth0<br>e.g. 192.168.0.100"
 msgstr "eth0<br>e.g. 192.168.0.100之IP地址"
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Netmask for eth0<br>e.g. 255.255.255.0"
 msgstr "eth0<br>e.g. 255.255.255.0之網路遮罩"
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "Gateway for your network. This must be an IPv4 address of this network."
 msgstr "您的網路之閘口。須為此網路之IPv4地址"
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "DNS server for resolving names into IP adresses."
 msgstr "將名稱解析為IP地址之DNS伺服器。"
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "Append this value during resolving of short names.<br>To resolve the name \"server\" this value is appended. e.g. yaffas.org -> server.yaffas.org"
 msgstr "在解析簡稱時附加此值。<br>解析\"server\" 名稱時，附加yaffas.org，成為server.yaffas.org。"
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "HTTP proxy server address. This can be an IPv4 address or a hostname."
 msgstr "HTTP代理伺服器地址。可以是IPv4地址或主機名稱"
 
+# type: string
 #: help/en:10
 #, no-wrap
 msgid "Port of the HTTP proxy server."
 msgstr "HTTP代理伺服器之埠。"
 
+# type: string
 #: help/en:11
 #, no-wrap
 msgid "Optional username, if you have to authenticate against the proxy."

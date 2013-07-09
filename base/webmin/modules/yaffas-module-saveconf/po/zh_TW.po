@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,175 +166,209 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Wrong Configfile Version"
 msgstr "錯誤之配置檔案版本"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
 msgstr "您的配置檔案不是此產品的。您真的要用於此系統嗎?"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Apply backupfile"
 msgstr "使用備份檔案"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Save backupfile"
 msgstr "儲存備份檔案"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Backup"
 msgstr "備份"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Success"
 msgstr "成功"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Messages:"
 msgstr "郵件："
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "This is not a valid yaffas backupfile"
 msgstr "這不是有效的yaffas備份檔案"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "please install your license-key first"
 msgstr "請先安裝您的授權密鑰"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "cannot"
 msgstr "無法"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "touch"
 msgstr "觸碰"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "open file"
 msgstr "開啟檔案"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "execute"
 msgstr "執行"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Can't create zipfile!"
 msgstr "無法建立zip檔案"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Can't create LDAP ldiffile!"
 msgstr "無法建立LDAP ldiffile檔案！"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Message"
 msgstr "郵件"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Continue"
 msgstr "繼續"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Cancel"
 msgstr "取消"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Following list cant be converted:"
 msgstr "可以轉換下面的列表："
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Configured MSN's"
 msgstr "配置的MSN "
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "User eMail adress"
 msgstr "用戶郵件地址"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr "用戶密碼。將建立為'start123' 並應盡快變更！"
 
+# type: string
 # 76%
 #: lang/en:23
 #, no-wrap
 msgid "Restore Configuration"
 msgstr "恢復配置"
 
+# type: string
 # 88%
 #: lang/en:24
 #, no-wrap
 msgid "Save Configuration"
 msgstr "基礎配置"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Applying configuration file failed."
 msgstr "應用配置檔案失敗"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
 msgstr "配置檔案有錯誤"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr "在插入您的配置前，請先安裝您安裝之產品的全部許可檔案"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
 msgstr "因為LDAP伺服器不在運作中，無法儲存配置"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
 msgstr "無法恢復用戶及群組"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
 msgstr "您的配置檔案不是此傳真卡類型"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
 msgstr "無配置您的身分驗證類型"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Errors occured."
 msgstr "發生錯誤"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
 msgstr "您要儲存您的不完整配置嗎?"
 
+# type: string
 # 83%
 #: lang/en:34
 #, no-wrap

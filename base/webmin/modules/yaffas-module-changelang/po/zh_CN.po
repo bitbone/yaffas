@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-04 12:06+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,36 +167,43 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Language"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Choose Language"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "German"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "English"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Language not found!"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Set Language"

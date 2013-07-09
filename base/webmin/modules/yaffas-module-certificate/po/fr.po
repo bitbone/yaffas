@@ -6,277 +6,330 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-26 09:24+0200\n"
-"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-06-11 10:02+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Country (2 letter code)"
 msgstr "Pays (code à 2 lettres)"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Common Name (e.g. host.name.de)"
 msgstr "Nom commun (p. ex.. nom.hote.fr)"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Country not correct."
 msgstr "Le pays est invalide."
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Common Name not correct or not set."
 msgstr "Le nom commun est invalide ou n'a pas été défini."
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Days are not correct."
 msgstr "La date est invalide."
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "E-mail Adress not correct."
 msgstr "L'adresse électronique est invalide."
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Generation not successful"
 msgstr "L'opération a échoué"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Locality not correct"
 msgstr "La localité est invalide"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Organization Name not correct."
 msgstr "Le nom de l'organisation est invalide."
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Organization Unit not correct."
 msgstr "L'unité organisationnelle est invalide"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Please select A service."
 msgstr "Veuillez sélectionner un service."
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "State or province not correct."
 msgstr "État ou province invalide"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Parameters not correct."
 msgstr "Paramètres invalides"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Certificate not valid."
 msgstr "Certificat invalide"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Fork failed"
 msgstr "Échec du processus de fork"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Certificate wasn't created."
 msgstr "Le certificat n'as pas été créé."
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "No certificate selected."
 msgstr "Aucun certificat sélectionné."
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "E-mail address (e.g. webmaster@company.com)"
 msgstr "Adresse électronique (p. ex.. webmestre@compagnie.fr)"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Certificate valid for (days)"
 msgstr "Le certificat est valide pour (jours)"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Generate key"
 msgstr "Générer une clé"
 
+# type: string
 #: lang/en:25 lang/en:42
 #, no-wrap
 msgid "Generate Self Signed Certificate and Key"
 msgstr "Générer un certificat auto-signé et une clé"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Service"
 msgstr "Service"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Generate Certificate & Key"
 msgstr "Générer certificat et clé"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Symlink Error"
 msgstr "Erreur de lien symbolique"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Certificate:"
 msgstr "Certificat :"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Service:"
 msgstr "Service :"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Upload Certificate"
 msgstr "Télécharger un certificat"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Upload certificate"
 msgstr "Télécharger un certificat"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Import Certificate"
 msgstr "Importer un certificat"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Delete Certificate"
 msgstr "Supprimer un certificat"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Should this Certificate really be deleted?"
 msgstr "Désirez-vous vraiment supprimer ce certificat ?"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "The Certificate was imported successfully!"
 msgstr "Le certificat a été importé avec succès !"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "An error occured during importing! Please check your certificate file."
 msgstr "Une erreur s'est produite lors de l'importation ! Veuillez vérifier le fichier de votre certificat."
 
+# type: string
 #: lang/en:40 lang/en:66
 #, no-wrap
 msgid "Certificate / Key Management"
 msgstr "Gestion Certificat et Clé"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Import Key or Signed Certificate"
 msgstr "Importer une clé ou un certificat signé"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Manage/View Installed Certificates and Keys"
 msgstr "Gérer/Afficher les certificats et les clés installées"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Certificate Manager"
 msgstr "Gestionnaire de certificat"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Keysize (in bits)"
 msgstr "Taille de la clé (in octets)"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Locality (e.g. city)"
 msgstr "Localité (p. ex. ville)"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Organization Name (e.g. company)"
 msgstr "Nom Organisation (p. ex. compagnie)"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Organization Unit Name (e.g. division)"
 msgstr "Nom Unité Organisationnelle (p. ex. division)"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "State or province (full name)"
 msgstr "État ou province (nom complet)"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Begin Date"
 msgstr "Date de début"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Delete"
 msgstr "Supprimer"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "File deleted sucessfully"
 msgstr "Fichier supprimé avec succès"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Name"
 msgstr "Nom"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Expires on"
 msgstr "Expire le"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Certificate not valid!"
 msgstr "Certificat invalide !"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Manage Installed Certificates"
 msgstr "Gérer les certificats installés"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The services are going to be restarted!"
 msgstr "Les services vont être redémarrés !"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "yes"
 msgstr "oui"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "no"
 msgstr "non"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Success"

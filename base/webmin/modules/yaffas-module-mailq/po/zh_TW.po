@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,162 +166,193 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Email Queue"
 msgstr "郵件佇列"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Mailserver"
 msgstr "郵件伺服器"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "ID"
 msgstr "ID"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Size"
 msgstr "大小"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Time"
 msgstr "時間"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Sender"
 msgstr "寄件人"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Recipient"
 msgstr "收件人"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Status"
 msgstr "狀態"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Attempt to deliver"
 msgstr "重新發送"
 
+# type: string
 # 76%
 #: lang/en:10
 #, no-wrap
 msgid "Delete emails"
 msgstr "刪除郵件"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Forward to postmaster"
 msgstr "轉寄到postmaster"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Forward to special user"
 msgstr "轉寄到特定使用者"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "OK"
 msgstr "OK"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "All"
 msgstr "全部"
 
+# type: string
 # 75%
 #: lang/en:15
 #, no-wrap
 msgid "None"
 msgstr "None"
 
+# type: string
 # 83%
 #: lang/en:16
 #, no-wrap
 msgid "Emails"
 msgstr "電子郵件"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Email address"
 msgstr "郵件地址"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Mail ID"
 msgstr "郵件ID"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "forward to"
 msgstr "轉寄到"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Really remove the emails with this mail ids?"
 msgstr "要移除此郵件嗎？"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Network"
 msgstr "網路"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "No emails selected."
 msgstr "沒有選擇的郵件"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "No mail IDs selected"
 msgstr "沒有選擇的郵件ID"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Error marking email addresses as delivered"
 msgstr "標記傳送的郵件發生錯誤"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Error while adding new recipient to the mailid"
 msgstr "新增新的收件人到此郵件ID發生錯誤"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Error while force a delivery"
 msgstr "傳送發生錯誤"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Error removing email"
 msgstr "移除郵件發生錯誤"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Error at dequeue attempt for email"
 msgstr "嘗試發送郵件錯誤"
 
+# type: string
 # 81%
 #: lang/en:29
 #, no-wrap
 msgid "No valid email address"
 msgstr "無效電子郵件地址"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Display"
 msgstr "顯示"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Mail Queue"

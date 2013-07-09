@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-11-30 00:30+0100\n"
+"POT-Creation-Date: 2013-07-05 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,31 +15,37 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Access for"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Community (Password)"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Enable SNMP"
 msgstr ""
 
+# type: string
 #: lang/en:4 lang/en:10
 #, no-wrap
 msgid "SNMP Configuration"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Replace SNMP configuration?"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid ""
@@ -48,21 +54,25 @@ msgid ""
 "config be overwritten?"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "The access can only be set for IP-Addresses or networks."
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "The community-string can only contain digits (0-9) and chars (a-z, A-Z)."
 msgstr ""
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Password for the SNMP access."
 msgstr ""
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid ""

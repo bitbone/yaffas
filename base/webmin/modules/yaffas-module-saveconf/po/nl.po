@@ -6,184 +6,218 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-24 00:15+0100\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Wrong Configfile Version"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Your Configurationfile is not for this Product. Do You really want to apply it to the System?"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Apply backupfile"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Save backupfile"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Backup"
 msgstr "Reservekopie"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Success"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Messages:"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "This is not a valid yaffas backupfile"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "please install your license-key first"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "cannot"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "touch"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "open file"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "execute"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Can't create zipfile!"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Can't create LDAP ldiffile!"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Message"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Continue"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Cancel"
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Following list cant be converted:"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Configured MSN's"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "User eMail adress"
 msgstr ""
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "User password. Will be created as 'start123' and should be changed as soon as possible!"
 msgstr ""
 
+# type: string
 # 76%
 #: lang/en:23
 #, fuzzy, no-wrap
 msgid "Restore Configuration"
 msgstr "Basisconfiguratie"
 
+# type: string
 # 88%
 #: lang/en:24
 #, fuzzy, no-wrap
 msgid "Save Configuration"
 msgstr "Basisconfiguratie"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Applying configuration file failed."
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Error in configuration file"
 msgstr ""
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Please install all licence files for your installed products before you insert the configuration."
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Could not save config, because the LDAP service is not running."
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Could not restore user and groups."
 msgstr ""
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Your Configurationfile is not for this fax-card type."
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "No authentication type is configured."
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Errors occured."
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Would you like to save your incomplete Configuration?"
 msgstr ""
 
+# type: string
 # 83%
 #: lang/en:34
 #, fuzzy, no-wrap

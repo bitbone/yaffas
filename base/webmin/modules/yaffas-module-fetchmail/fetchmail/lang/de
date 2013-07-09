@@ -59,7 +59,7 @@ poll_ecannot=Sie sind nicht berechtigt die Fetchmail-Konfiguration dieses Benutz
 poll_efile=Nur die Fetchmail-Konfigurationsdateien des Benutzers können geändert werden
 poll_interval=Abholintervall
 poll_envelope=Envelope
-poll_smtpaddress=Local mail domain (smtpaddress)
+poll_smtpaddress=Lokale Mail-Domain (smtpaddress)
 
 stop_err=Konnte Fetchmail nicht anhalten
 stop_ecannot=Sie haben keine Berechtigung fetchmail zu stoppen
@@ -137,5 +137,5 @@ err_remote_passwd=Bitte geben Sie ein Passwort für den Mailserverbenutzer an.
 err_enable_fetchmail=Der fetchmail Dienst konnte nicht aktiviert werden.
 err_bad_targets=Der Versuch, einen Abholauftrag ohne Zielbenutzer zu erstellen, wurde abgebrochen.
 err_bad_email=Der gewählte Benutzername kann nicht als Ziel verwendet werden, da er keine gültige Mailadresse besitzt.
-err_smtpaddress=Invalid smtpaddress option (may not contain any whitespace).
+err_smtpaddress=Ungültige smtpaddress-Option (darf keine Leerzeichen enthalten).
 moduletitle=Fetchmail-Konfiguration

@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,36 +167,43 @@ msgstr ""
 "Language: bg\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "From"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Message"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."

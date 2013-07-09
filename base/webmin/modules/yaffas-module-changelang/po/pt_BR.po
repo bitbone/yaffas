@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,38 +15,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Language"
 msgstr "Alterar linguagem"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr "Sistema"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Choose Language"
 msgstr "Escolher Linguagem"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "German"
 msgstr "Alemão"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "English"
 msgstr "Inglês"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Language not found!"
 msgstr "Linguagem não encontrada!"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Set Language"

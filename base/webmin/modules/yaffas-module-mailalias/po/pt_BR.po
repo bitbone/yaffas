@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,164 +15,200 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Edit"
 msgstr "Editar"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Add alias"
 msgstr "Adicionar alias"
 
+# type: string
 #: lang/en:3 lang/en:19
 #, no-wrap
 msgid "Remove"
 msgstr "Remover"
 
+# type: string
 # 85%
 #: lang/en:4
 #, no-wrap
 msgid "Execute"
 msgstr "Executar"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Apply"
 msgstr "Aplicar"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Mail alias Configuration"
 msgstr "Configuração de alias de e-mail"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Index"
 msgstr "Index"
 
+# type: string
 # 90%
 #: lang/en:9
 #, no-wrap
 msgid "Mail server"
 msgstr "Servidor de e-mail"
 
+# type: string
 # 79%
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to delete the alias(es)?"
 msgstr "Você realmente deseja excluir o(s) alias?"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Please enter valid values!"
 msgstr "Por favor insira os valores válidos!"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Mail aliases"
 msgstr "Alias de e-mail"
 
+# type: string
 # 75%
 #: lang/en:15
 #, no-wrap
 msgid "Mail alias"
 msgstr "E-mail alias"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Folder"
 msgstr "Pasta"
 
+# type: string
 # 75%
 #: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "Usuário"
 
+# type: string
 #: lang/en:20 lang/en:40
 #, no-wrap
 msgid "Recipient"
 msgstr "Destinatário"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "or"
 msgstr "ou"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Add"
 msgstr "Adicionar"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Configuration of mail aliases is done through active directory."
 msgstr "Configuração de alias é feita pelo Active Directory."
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "The following usernames or e-mail addresses are not valid."
 msgstr "Os seguintes nomes de usuários ou endereço de e-mails são inválidos."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "This alias already exists."
 msgstr "Este alias já existe."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "This alias name is not valid."
 msgstr "Este nome de alias não é válido."
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "No alias selected."
 msgstr "Nenhum alias selecionado."
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Nothing selected"
 msgstr "Nada selecionado"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Alias exists as user."
 msgstr "Alias já existente como usuário."
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "An alias can only be set for user or folder."
 msgstr "Um alias pode ser definido somente para um usuário ou pasta."
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Error while removing alias."
 msgstr "Erro ao remover alias."
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr "Nenhum administrador Zarafa definido ou nenhuma pasta criada. Por favor definir no módulo <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Configuração do servidor de E-mail</a>."
 
+# type: string
 # 95%
 #: lang/en:35
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Configuração de alias de e-mail"
 
+# type: string
+# 75%
+# 100%
 #: lang/en:37
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "user"
-msgstr ""
+msgstr "Usuário"
 
+# type: string
+# 80%
+# 100%
 #: lang/en:38
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "email"
-msgstr ""
+msgstr "E-mail"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Type"

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-22 00:32+0100\n"
-"PO-Revision-Date: 2013-03-21 14:39+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -167,456 +167,545 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:11
 #, no-wrap
 msgid "System information"
 msgstr "Informacije o sistemu"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "About yaffas"
 msgstr "About yaffas"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "Sistem"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Versions"
 msgstr "Versions"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Version"
 msgstr "Version"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Revision"
 msgstr "Revision"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Product"
 msgstr "Produkt"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "The information cannot be read!"
 msgstr "Ne morem brati informacije!"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Written by"
 msgstr "Napisal"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "General information"
 msgstr "Splošne informacije"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "on an"
 msgstr "on an"
 
+# type: string
 # 90%
 #: lang/en:16
 #, no-wrap
 msgid "Up-time of"
 msgstr "Up-time of"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "days"
 msgstr "dni"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "hours"
 msgstr "ur"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "minutes"
 msgstr "minut"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Load average"
 msgstr "Load average"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "CPU load"
 msgstr "CPU load"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Overall load"
 msgstr "Overall load"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "for the last minute"
 msgstr "for the last minute"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "for the last 5 minutes"
 msgstr "for the last 5 minutes"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "for the last 15 minutes"
 msgstr "for the last 15 minutes"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Memory usage"
 msgstr "Memory usage"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Main memory"
 msgstr "Main memory"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Swap memory"
 msgstr "Swap memory"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Total"
 msgstr "Skupaj"
 
+# type: string
 # 75%
 #: lang/en:31 lang/en:100
 #, no-wrap
 msgid "Used"
 msgstr "Uporabljeno"
 
+# type: string
 #: lang/en:32 lang/en:45
 #, no-wrap
 msgid "Free"
 msgstr "Prosto"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Shared"
 msgstr "V skupni rabi"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Buffers"
 msgstr "Buffers"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Cache"
 msgstr "Predpomnilnik"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Module"
 msgstr "Modul"
 
+# type: string
 #: lang/en:37 lang/en:99
 #, no-wrap
 msgid "Size"
 msgstr "Velikost"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Referring modules"
 msgstr "Referring modules"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Modules currently in use"
 msgstr "Modules currently in use"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Available Memory"
 msgstr "Available Memory"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Usage Key:"
 msgstr "Usage Key:"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "In Use"
 msgstr "In Use"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Buffer"
 msgstr "Buffer"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "IRQ usage"
 msgstr "IRQ usage"
 
+# type: string
 #: lang/en:48 lang/en:91
 #, no-wrap
 msgid "Device"
 msgstr "Device"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "IO usage"
 msgstr "IO usage"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Network statistics"
 msgstr "Network statistics"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Interface"
 msgstr "Interface"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Receive"
 msgstr "Prejemanje"
 
+# type: string
 # 75%
 #: lang/en:54
 #, no-wrap
 msgid "Sent"
 msgstr "Sent"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Bytes"
 msgstr "Bytes"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Errors"
 msgstr "Napake"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Dropped"
 msgstr "Dropped"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Overruns"
 msgstr "Overruns"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Frame"
 msgstr "Okvir"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Carrier"
 msgstr "Carrier"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Collisions"
 msgstr "Collisions"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Active connections"
 msgstr "Aktivne povezave"
 
+# type: string
 #: lang/en:63 lang/en:81
 #, no-wrap
 msgid "Protocol"
 msgstr "Protokol"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Receive queue"
 msgstr "Receive queue"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Send queue"
 msgstr "Send queue"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Local"
 msgstr "Lokalno"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Foreign"
 msgstr "Zunanje"
 
+# type: string
 #: lang/en:68 lang/en:85
 #, no-wrap
 msgid "State"
 msgstr "State"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Who's logged"
 msgstr "Kdo je prijavljen"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "User"
 msgstr "Uporabnik"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "TTY"
 msgstr "TTY"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "From"
 msgstr "Od"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Login@"
 msgstr "Login@"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Idle"
 msgstr "Idle"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Jcpu"
 msgstr "Jcpu"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Pcpu"
 msgstr "Pcpu"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Command"
 msgstr "Ukaz"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "Listening sockets"
 msgstr "Listening sockets"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Active sockets"
 msgstr "Active sockets"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Unix sockets"
 msgstr "Unix sockets"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "RefCnt"
 msgstr "RefCnt"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Flags"
 msgstr "Zastavice"
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "Type"
 msgstr "Type"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "I-node"
 msgstr "I-node"
 
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Path"
 msgstr "Path"
 
+# type: string
 # 90%
 #: lang/en:89
 #, no-wrap
 msgid "File system statistics"
 msgstr "File sytem statistics"
 
+# type: string
 # 94%
 #: lang/en:90
 #, no-wrap
 msgid "Mounted file system"
 msgstr "Mounted file system"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "Directory"
 msgstr "Direktorij"
 
+# type: string
 # 90%
 #: lang/en:93 lang/en:98
 #, no-wrap
 msgid "File system"
 msgstr "Podatkovni sistem"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Mode"
 msgstr "Način"
 
+# type: string
 # 95%
 #: lang/en:96
 #, no-wrap
 msgid "File system information"
 msgstr "Informacije o podatkovnem sistemu"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Available"
 msgstr "Na voljo"
 
+# type: string
 # 80%
 #: lang/en:102
 #, no-wrap
 msgid "Used%"
 msgstr "Used%"
 
+# type: string
 #: lang/en:103
 #, no-wrap
 msgid "Mounted on"
 msgstr "Mounted on"
 
+# type: string
 #: lang/en:105
 #, no-wrap
 msgid "Time"
 msgstr "Čas"
 
+# type: string
 #: lang/en:106
 #, no-wrap
 msgid "Value"
 msgstr "Value"
 
+# type: string
 #: lang/en:108
 #, no-wrap
 msgid "Memory type"
 msgstr "Tip spomina"
 
+# type: string
 #: lang/en:109
 #, no-wrap
 msgid "Information"

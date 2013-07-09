@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-19 00:26+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -166,150 +166,179 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 # 87%
 #: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr "服務"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Service"
 msgstr "服務"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "State"
 msgstr "州"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Start Service on Boot"
 msgstr "開機時啟動服務"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Monitor"
 msgstr "監控"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Action"
 msgstr "動作"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Execute"
 msgstr "執行"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Start"
 msgstr "開始"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Stop"
 msgstr "停止"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
 msgstr "設定"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Restart"
 msgstr "重新啟動"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Started"
 msgstr "已啟動"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Stopped"
 msgstr "停止"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Service has been started"
 msgstr "服務已經啟動"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Service must not be started"
 msgstr "服務一定尚未啟動"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Service couldn't be started"
 msgstr "服務不能啟動"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Service has been stopped"
 msgstr "服務已經停止"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Service must not be stopped"
 msgstr "服務一定尚未停止"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Service couldn't be stopped"
 msgstr "服務無法停止"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Service has been restarted"
 msgstr "服務已經重新啟動"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Service must not be restarted"
 msgstr "服務一定尚未重新啟動"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Service couldn't be restarted"
 msgstr "服務無法重新啟動"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Stop service"
 msgstr "停止服務"
 
+# type: string
 # 86%
 #: lang/en:24
 #, no-wrap
 msgid "Do you really want to stop this service?"
 msgstr "您真的要停止此服務嗎?"
 
+# type: string
 #: lang/en:27 lang/en:28
 #, no-wrap
 msgid "Shutdown system"
 msgstr "關閉系統"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Reboot system"
 msgstr "重新啟動系統"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "System is shutting down."
 msgstr "系統關機中"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "System is rebooting. In some minutes you can login again."
 msgstr "系統重新啟動中。幾分鐘內您可再次登入"
 
+# type: string
 # 87%
 # 75%
 #: lang/en:32
@@ -317,6 +346,7 @@ msgstr "系統重新啟動中。幾分鐘內您可再次登入"
 msgid "Do you really want to halt the system?"
 msgstr "您真的要停止系統嗎?"
 
+# type: string
 # 87%
 # 75%
 #: lang/en:33
@@ -324,81 +354,97 @@ msgstr "您真的要停止系統嗎?"
 msgid "Do you really want to reboot the system?"
 msgstr "您真的要重新啟動系統嗎?"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Day"
 msgstr "日"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Month"
 msgstr "月"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Date"
 msgstr "日期"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Hour"
 msgstr "小時"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Year"
 msgstr "年"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Timezone"
 msgstr "時區"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "System time"
 msgstr "系統時間"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Invalid timezone"
 msgstr "無效的時區"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Changing the time failed (hwclock returned an error). On some systems such as linux-vserver guests it is not possible to change the time. The time has to be corrected on the host system instead."
 msgstr "更改時間失敗(hwclock發生錯誤)。在某些guest作業系統例如Linux主機，不允許更改時間，不過可以更改Host主機系統時間來替代"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "now"
 msgstr "現在"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "hourly"
 msgstr "每小時"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "daily at "
 msgstr "每日於"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid " minute"
 msgstr "分鐘"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid " hour"
 msgstr "小時"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr "時間伺服器"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter the hostname or IP address of the time server to be used for NTP."

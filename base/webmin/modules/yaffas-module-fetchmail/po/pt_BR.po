@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-04 00:18+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,690 +15,826 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Query"
 msgstr "Consulta"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Server to poll"
 msgstr "Servidor para ser consultado"
 
+# type: string
 #: lang/en:3 lang/en:31
 #, no-wrap
 msgid "Protocol"
 msgstr "Protocolo"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Active?"
 msgstr "Ativo?"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Remote and local users"
 msgstr "Remoto e usuários locais"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Add a new server"
 msgstr "Adicionar um novo servidor"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Check all servers"
 msgstr "Check todos servidores"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Edit default settings"
 msgstr "Editar as configurações padrão"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Unix user"
 msgstr "Usuário Unix"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Fetchmail configuration"
 msgstr "Configuração do Fetchmail"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Add Fetchmail server for user:"
 msgstr "Adicionar servidor de Fetchmail para usuário:"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Fetchmail configuration in $1"
 msgstr "Configuração de Fetchmail em $1"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "server list"
 msgstr "Lista de servidor"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Start Fetchmail Daemon"
 msgstr "Iniciar serviço Fetchmail"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Stop Fetchmail Daemon"
 msgstr "Parar serviço Fetchmail"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Click this button to start the fetchmail daemon on this server, and have it check for mail every $1 seconds. The daemon will run as user $2 and use the configuration above."
 msgstr "Clique este botão para iniciar o serviço Fetchmail neste servidor, que irá conferir por e-mails novos a cada $1 segundos. O serviço vai ser executado como usuário $2 e usar a configuração acima."
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Click this button to stop the fetchmail daemon currently running as user $1. Mail will no longer be automatically downloaded every $2 seconds."
 msgstr "Clique este botão para parar o serviço Fetchmail que está sendo executado como usuário $1. E-Mail não será mais baixado a cada $2 segundos."
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "The fetchmail program $1 could not be found. Maybe fetchmail is not installed on your system, or your <a href='$2'>module configuration</a> is incorrect."
 msgstr "O programa Fetchmail $1 não pode ser encontrado. Talvez o Fetchmail não está instalado no seu sistema, ou a <a href='$2'>configuração dos módulos</a> está incorreta."
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "No Unix users have <tt>.fetchmailrc</tt> files."
 msgstr "Nenhum usuário Unix possui arquivos <tt>.fetchmailrc</tt>."
 
+# type: string
 #: lang/en:20 lang/en:105
 #, no-wrap
 msgid "Scheduled Checking"
 msgstr "Checagem agendada"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Click this button to create, change or remove a Cron job to have Fetchmail run automatically on schedule to check for and download email using the configuration above."
 msgstr "Clique este botão para criar, editar ou remover o Cron-job para a execução automática do Fetchmail para buscar e-mails novos usando a configuração acima."
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Fetchmail version $1"
 msgstr "Fetchmail versão $1"
 
+# type: string
 #: lang/en:24 lang/en:26
 #, no-wrap
 msgid "Add query"
 msgstr "Adicionar consulta"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Edit query"
 msgstr "Editar consulta"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Server name"
 msgstr "Nome do servidor"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Polling enabled?"
 msgstr "Polling habilitado?"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Mail server to contact"
 msgstr "servidor de e-mail para o contato"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Same as server name"
 msgstr "Mesmo que o nome do servidor"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Server port"
 msgstr "Porta do servidor"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Mail server user details"
 msgstr "Enviar detalhes do usuário/servidor"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Remote user"
 msgstr "Usuario remoto"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Remote password"
 msgstr "Senha remota"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Local user(s)"
 msgstr "Usuário(s) local"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Local user(s) or e-mail adresses"
 msgstr "Usuário(s) local ou endereço de e-mail"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Leave messages on server?"
 msgstr "Deixar mensagens no servidor?"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Always fetch all messages?"
 msgstr "Sempre buscar todas as mensagens?"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Usually no"
 msgstr "Normalmente não"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Connect in SSL mode?"
 msgstr "Conectar com o modo SSL?"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Failed to save server"
 msgstr "Falha ao salvar servidor"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Missing or invalid server name"
 msgstr "Nome do servidor não informado ou inválido"
 
+# type: string
 # 79%
 #: lang/en:44
 #, no-wrap
 msgid "Invalid mail server name"
 msgstr "Nome do servidor de e-mail inválido"
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Missing or invalid port number"
 msgstr "Número da porta não informado ou inválido"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Missing or invalid remote user name"
 msgstr "Nome do usuário remoto não informado ou inválido"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Add another user"
 msgstr "Adicionar outro usuário"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Check this server"
 msgstr "Conferir este servidor"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Check condition"
 msgstr "Conferir condição"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "Always check"
 msgstr "Sempre conferir"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Only if interface is up"
 msgstr "Somente se interface estiver ligada"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "with address / netmask"
 msgstr "com endereço / máscara de rede"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Missing or invalid network interface"
 msgstr "Interface de rede não informada ou inválida"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Missing or invalid address"
 msgstr "Endereço não informado ou inválido"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Invalid address netmask"
 msgstr "Máscara de rede não informada ou inválida"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Command to run before connecting"
 msgstr "Comando a ser executado antes de conectar"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Command to run after disconnecting"
 msgstr "Comando a ser executado depois de desconectar"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "You are not allowed to edit this user's fetchmail config"
 msgstr "Permissões inválidas para editar a configuração fetchmail deste usuário"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Only users' fetchmail config files can be edited"
 msgstr "Somente configuração do usuário poderão ser editados"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Poll interval"
 msgstr "Intervalo do Poll"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Envelope"
 msgstr "Envelope"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Local mail domain (smtpaddress)"
 msgstr ""
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Failed to stop fetchmail"
 msgstr "Erro ao parar fetchmail"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "You are not allowed to stop fetchmail"
 msgstr "Você não tem permissões suficientes para parar o fetchmail"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Failed to start fetchmail"
 msgstr "Erro ao iniciar fetchmail"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Missing or invalid checking interval"
 msgstr "Intervalo de checagem inválido"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "You are not allowed to start fetchmail"
 msgstr "Você não tem permissões suficientes para iniciar o fetchmail"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "Checking Servers"
 msgstr "Verificação de servidores"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "Checking for mail on server(s) with command $1 .."
 msgstr "Verificação por e-mails no servidor(s) com o comando $1 .."
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid ".. checking complete."
 msgstr ".. verificação completa."
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid ".. checking failed!"
 msgstr ".. falha na verificação!"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Settings"
 msgstr "Configurações"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Default Settings"
 msgstr "Configurações padrão"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Default settings for all servers"
 msgstr "Configurações padrão para todos servidores"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "Failed to save default settings"
 msgstr "Falha ao salvar as configurações padrão"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Added server $1 in file $2"
 msgstr "Adicionado servidor $1 no arquivo $2"
 
+# type: string
 #: lang/en:81
 #, no-wrap
 msgid "Modified server $1 in file $2"
 msgstr "Modificado servidor $1 no arquivo $2"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Deleted server $1 in file $2"
 msgstr "Excluído servidor $1 no arquivo $2"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Added server $1 for user $2"
 msgstr "Adicionado servidor $1 para usuário $2"
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "Modified server $1 for user $2"
 msgstr "Modificado servidor $1 para usuário $2"
 
+# type: string
 #: lang/en:85
 #, no-wrap
 msgid "Deleted server $1 for user $2"
 msgstr "Excluído servidor $1 para usuário $2"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "Checked all servers in file $1"
 msgstr "Verificado todos servidores no arquivo $1"
 
+# type: string
 #: lang/en:87 lang/en:90
 #, no-wrap
 msgid "Checked server $2 in file $1"
 msgstr "Verificado servidor $2 no arquivo $1"
 
+# type: string
 #: lang/en:88
 #, no-wrap
 msgid "Checked all servers for user $1"
 msgstr "Verificado todos servidores para usuário $1"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "Checked server $2 for user $1"
 msgstr "Verificado servidor $2 para usuário $1"
 
+# type: string
 #: lang/en:91
 #, no-wrap
 msgid "Changed global settings for user $1"
 msgstr "Alterado as configurações globais para usuário $1"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "Changed global settings in file $1"
 msgstr "Alterado as configurações globais no arquivo $1"
 
+# type: string
 # 83%
 #: lang/en:93
 #, no-wrap
 msgid "Started fetchmail daemon"
 msgstr "Iniciar serviço Fetchmail"
 
+# type: string
 # 79%
 #: lang/en:94
 #, no-wrap
 msgid "Stopped fetchmail daemon"
 msgstr "Parar serviço Fetchmail"
 
+# type: string
 #: lang/en:95
 #, no-wrap
 msgid "Enabled scheduled checking"
 msgstr "Habilitado o agendamento para verificação"
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "Modified scheduled checking"
 msgstr "Modificado o agendamento para verificação"
 
+# type: string
 #: lang/en:97
 #, no-wrap
 msgid "Disabled scheduled checking"
 msgstr "Desabilitado o agendamento para verificação"
 
+# type: string
 #: lang/en:99
 #, no-wrap
 msgid "Can edit fetchmail config for"
 msgstr "Possível de editar configuração fetchmail para"
 
+# type: string
 #: lang/en:100
 #, no-wrap
 msgid "All users"
 msgstr "Todos usuários"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Current webmin user"
 msgstr "Usuário atual do webmin"
 
+# type: string
 #: lang/en:102
 #, no-wrap
 msgid "Only users"
 msgstr "Somente usuários"
 
+# type: string
 #: lang/en:103
 #, no-wrap
 msgid "All except users"
 msgstr "Todos, menos usuários"
 
+# type: string
 #: lang/en:106
 #, no-wrap
 msgid "This page can be used to enable or disable a Cron job to check the mail servers in your Fetchmail configuration on a regular schedule. Using a Cron job superior to running the Fetchmail daemon, as it does not need to be re-started at boot time."
 msgstr "Esta página pode ser usada para habilitar ou desabilitar um Cron-job para a verificação em intervalos dos servidores de email na configuração do Fetchmail."
 
+# type: string
 #: lang/en:107
 #, no-wrap
 msgid "Scheduled Fetchmail settings"
 msgstr "Configurações do Fetchmail agendados"
 
+# type: string
 #: lang/en:108
 #, no-wrap
 msgid "Scheduled checking enabled?"
 msgstr "Verificação periódica habilitada?"
 
+# type: string
 #: lang/en:109
 #, no-wrap
 msgid "Yes, at times configured below .."
 msgstr "Sim, nas horas configuradas abaixo .."
 
+# type: string
 #: lang/en:110
 #, no-wrap
 msgid "Destination for Fetchmail output"
 msgstr "Destino para o resultado do Fetchmail"
 
+# type: string
 #: lang/en:111
 #, no-wrap
 msgid "Write to file $1"
 msgstr "Escrever no arquivo $1"
 
+# type: string
 #: lang/en:112
 #, no-wrap
 msgid "Email to address $1"
 msgstr "E-mail para o endereço $1"
 
+# type: string
 #: lang/en:113
 #, no-wrap
 msgid "Discard"
 msgstr "Descartar"
 
+# type: string
 #: lang/en:114
 #, no-wrap
 msgid "Output to cron"
 msgstr "Resultado para o cron"
 
+# type: string
 #: lang/en:115
 #, no-wrap
 msgid "Run Fetchmail as user"
 msgstr "Executar Fetchmail como usuário"
 
+# type: string
 #: lang/en:116
 #, no-wrap
 msgid "Failed to save scheduled checking"
 msgstr "Falha ao salvar o agendamento para verificação"
 
+# type: string
 #: lang/en:117
 #, no-wrap
 msgid "Missing or invalid output filename"
 msgstr "Nome do arquivo de saída não fornecido ou inválido"
 
+# type: string
 #: lang/en:118
 #, no-wrap
 msgid "Missing or invalid email address"
 msgstr "Endereço de e-mail não fornecido ou inválido"
 
+# type: string
 #: lang/en:119
 #, no-wrap
 msgid "Missing or invalid Unix user"
 msgstr "Usuário Unix não fornecido ou inválido"
 
+# type: string
 #: lang/en:120
 #, no-wrap
 msgid "Scheduled checking is not available in this mode"
 msgstr "Checagem agendada não disponível neste modo"
 
+# type: string
 # 83%
 #: lang/en:122
 #, no-wrap
 msgid "Delete"
 msgstr "Remover"
 
+# type: string
 # 78%
 #: lang/en:123
 #, no-wrap
 msgid "Do you really want to delete this server?"
 msgstr "Você realmente deseja excluir este servidor?"
 
+# type: string
 #: lang/en:124
 #, no-wrap
 msgid "Multidrop"
 msgstr "Multientrega"
 
+# type: string
 #: lang/en:125
 #, no-wrap
 msgid "Destination"
 msgstr "Destino"
 
+# type: string
 #: lang/en:126
 #, no-wrap
 msgid "Alias"
 msgstr "Alias"
 
+# type: string
 # 75%
 #: lang/en:127
 #, no-wrap
 msgid "User"
 msgstr "Usuário"
 
+# type: string
 #: lang/en:129
 #, no-wrap
 msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 msgstr "Depois de adicionar novas configurações ou caso os usuários não recebem emails como esperado, você deve verificar o log /var/log/fetchmail.log, qual pode ser visualizado também via <a href=\"#m=logfiles-3\">Manutenção -&gt; Exibição de arquivos de log</a>."
 
+# type: string
 #: lang/en:131
 #, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Por favor fornecer usuário remoto e local."
 
+# type: string
 #: lang/en:132
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "O nome do usuário fornecido é inválido."
 
+# type: string
 #: lang/en:133
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "O alias fornecido é inválido."
 
+# type: string
 #: lang/en:134
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Por favor selecionar \"usuário\", \"alias\" ou \"multientrega\"."
 
+# type: string
 #: lang/en:135
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Por favor fornecer um servidor de e-mail válido para o usuário."
 
+# type: string
 # 100%
 #: lang/en:136
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Por favor fornecer uma senha para o usuário no servidor de e-mail."
 
+# type: string
 #: lang/en:137
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Não foi possível habilitar o serviço Fetchmail."
 
+# type: string
 #: lang/en:138
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
 msgstr "Negando tentativa de criar poll sem ter um usuário de destino."
 
+# type: string
 #: lang/en:139
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
 msgstr "Não foi possível usar o nome de usuário fornecido como destio, porque ele não tem nenhum endereço de email válido configurado."
 
+# type: string
 #: lang/en:140
 #, no-wrap
 msgid "Invalid smtpaddress option (may not contain any whitespace)."
 msgstr ""
 
+# type: string
 #: lang/en:141
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Busca de E-Mail do Fetchmail"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Specify the polling interval in seconds."
 msgstr "Especificar intervalo em segundos para realizar o polling."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "The header name of the envelope address (e.g. X-Envelope-To or X-Original-To). Grab this information from the mail source headers. This should be set when using multidrop, otherwise multidrop may fail to work properly."
 msgstr ""
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "The remote host name or IP address from which you want to receive mail."
 msgstr "O nome de máquina ou endereço IP remoto onde deverão ser buscados os e-mais."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "Protocol to use; if the server advertises TLS support, it will be automatically used. If you want to use SSL, specify \"Connect in SSL mode\" below."
 msgstr "Protocolo a ser usado. Caso o servidor suporta TLS este será usado automaticamente. Caso queira usar SSL, ativa a opção \"Conectar com o modo SSL\" abaixo."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "The DNS name of the remote server. This setting overrides the server name."
 msgstr "O nome DNS do servidor remoto. Essa configuração substitui o nome do servidor."
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "The TCP/IP port of the remote server. Leave this at \"Default\" unless you know what you are doing. If \"Connect in SSL mode\" is enabled, the default also chooses the proper SSL-variant of the given protocol, without any need to change this option."
 msgstr "A porta TCP/IP do servidor remoto. Mantenha essa opção em \"Default\" caso você não tem certeza de que está fazendo. Caso \"Conectar com o modo SSL\" está ativo, o valor padrão também cobre o SSL do protocolo em questão sem a necessidade de modificar essa opção."
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "Specify whether SSL-encrypted connections should be used. If you want to use TLS or unencrypted connections, set this to \"No\" instead."
 msgstr "Especifique se uma conexão SSL deve ser usada. Caso você queira usar TLS ou conexões não criptografadas, selecione a opção \"Não\". "
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "Specify the login user from the remote machine."
 msgstr "Especificar o login do usuário no servidor remoto."
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "Domain to use when deliverying mails to the local mail server (DOMAIN in RCPT TO:user@DOMAIN)"

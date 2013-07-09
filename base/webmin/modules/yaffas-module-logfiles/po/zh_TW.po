@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,48 +166,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "A logfile must be selected."
 msgstr "須選定記錄檔案"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "It is not allowed to download this file."
 msgstr "不容許下載此檔案"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Logfiles"
 msgstr "log檔案"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Download"
 msgstr "下載"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Show old logfiles"
 msgstr "顯示舊記錄檔案"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Show new logfiles"
 msgstr "顯示新記錄檔案"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Size"
 msgstr "大小"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "File"
 msgstr "檔案"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Log file viewer"

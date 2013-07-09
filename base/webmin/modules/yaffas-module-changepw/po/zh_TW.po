@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,120 +166,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Password"
 msgstr "更改密碼"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr "系統"
 
+# type: string
 # 88%
 #: lang/en:4
 #, no-wrap
 msgid "Password:"
 msgstr "密碼："
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Repeat password:"
 msgstr "重複密碼："
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Save"
 msgstr "儲存"
 
+# type: string
 # 85%
 #: lang/en:7
 #, no-wrap
 msgid "Admin-Password"
 msgstr "管理者密碼"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Root-Password"
 msgstr "Root-Password"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Domain-Administrator-Password"
 msgstr "Domain-Administrator-Password"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Could not set MySQL password!"
 msgstr "無法設定MYSQL密碼！"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Can't read following file(s):"
 msgstr "無法讀下列檔案："
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Can't write following file(s):"
 msgstr "無法寫下列檔案："
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Can not set the root password!"
 msgstr "無法設定root password!"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Can not set the domain-administrator password!"
 msgstr "無法設定網域管理員密碼！"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Can not execute SMBPASSWD!"
 msgstr "無法執行SMBPASSWD ！"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "This function is only available in the unlimited version"
 msgstr "此功能僅有無限制版本可用"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Can not execute following:"
 msgstr "無法執行下列："
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Can not execute LDAP Modify!"
 msgstr "無法執行LDAP修改！"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Can not delete following file(s):"
 msgstr "無法刪除下列檔案："
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Can not copy following file(s):"
 msgstr "無法複製下列檔案："
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Password have to be at least on character long and must not contain a hash (#)."
 msgstr "密碼須至少一字元長度並且不能包含井號(#)。"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Both passwords have to be identical."
 msgstr "兩密碼須相同"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Password not valid."
 msgstr "密碼無效"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Admin password"

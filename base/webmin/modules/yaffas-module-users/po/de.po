@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-15 00:30+0100\n"
-"PO-Revision-Date: 2013-02-13 15:09+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,481 +15,580 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
 msgstr "Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:2 lang/en:3
 #, no-wrap
 msgid "Password not valid"
 msgstr "Passwort nicht gültig"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "E-mail address not valid"
 msgstr "E-Mail Adresse nicht gültig"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Could not set e-mail address"
 msgstr "Konnte die E-Mail Adresse nicht setzen"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Could not change e-mail address"
 msgstr "Konnte die E-Mail Adresse nicht ändern"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Invalid e-mail address"
 msgstr "Ungültige E-Mail Adresse"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "No e-mail address specified"
 msgstr "Keine E-Mail Adresse angegeben."
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Groups not valid"
 msgstr "Gruppen nicht gültig"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Passwords are not equal"
 msgstr "Die beiden Passwörter sind unterschiedlich"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "No user selected."
 msgstr "Kein Benutzer ausgewählt."
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Wrong filetype selected."
 msgstr "Falscher Dateityp ausgewählt."
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Could not change the login."
 msgstr "Konnte den Login nicht ändern."
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Could not read UIDs of the following users:"
 msgstr "Konnte die UIDs folgender Benutzer nicht auslesen:"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "The alias is not valid."
 msgstr "Der Alias ist ungültig."
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "If you want to you use aliases for this user, you should activate his mailbox."
 msgstr "Um Aliase verwenden zu können, benötigt der User eine Mailbox."
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "The selected username is already used by the system."
 msgstr "Der ausgewählte Benutzername ist bereits vom System reserviert."
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "The quota value has to be a number."
 msgstr "Der Quotawert muss eine Zahl sein!"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "The quota value has to be positive."
 msgstr "Der Quotawert muss positiv sein!"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr "Die Domäne ist in der Mailserver Konfiguration nicht als lokale Domäne definiert."
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "You cannot use localhost as domain-part"
 msgstr "Domänenanteil der E-Mail Adresse darf nicht localhost sein."
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "The username and the local-part are different. You must define an alias to localpart. Otherwise zarafa will not be able to deliver emails properly."
 msgstr "Der Benutzername und der lokale Anteil unterscheiden sich. Damit Zarafa die angegebene E-Mailadresse verarbeiten kann, muss folgender E-Mail Alias angelegt werden:"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Username and e-mail local-part are different. To make Zarafa work with the given e-mail address you have to define the following e-mail alias:"
 msgstr "Der Benutzername und der lokale Anteil unterscheiden sich. Damit Zarafa die angegebene E-Mailadresse verarbeiten kann, muss folgender E-Mail Alias angelegt werden:"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "This user could not be added/edited."
 msgstr "Der Benutzer konnte nicht hinzugefügt/bearbeitet werden."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "This action is only supported with local authentification."
 msgstr "Diese Aktion wird nur bei lokaler Authentifizierung unterstützt."
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "User was created but Zarafa store was not created. This means normally that your license does not allow any more users."
 msgstr "Der Benutzer wurde angelegt, doch es konnte kein Zarafa Konto angelegt werden. Das bedeutet sehr wahrscheinlich, dass ihre Zarafa Lizenz keine weiteren Benutzer erlaubt."
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "This user is used for delivery in public folders. You have to select another user for this, then you can delete this one."
 msgstr "Der Benutzer wird für die Zustellung in Ordner verwendet. Sie müssen zuerst diese Einstellung ändern, bevor Sie den Benutzer löschen können."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Internal call to zarafa-admin --force-resync failed, error code:"
 msgstr "Aufruf von zarafa-admin --force-resync fehlgeschlagen, Fehlercode:"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Usermanagment"
 msgstr "Benutzerverwaltung"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Add user"
 msgstr "Benutzer hinzufügen"
 
+# type: string
 #: lang/en:32 lang/en:51
 #, no-wrap
 msgid "Printer operator"
 msgstr "Druckeroperator"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Printer Administrator"
 msgstr "Drucker Administrator"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Modified users"
 msgstr "Benutzer geändert"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Modify user"
 msgstr "Benutzer ändern"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Do You really want to delete the selected users?"
 msgstr "Wollen Sie die Benutzer wirklich löschen?"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Remove user"
 msgstr "Benutzer löschen"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "E-mail address"
 msgstr "E-Mail Adresse"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Name"
 msgstr "Name"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Groups"
 msgstr "Gruppen"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Enable e-mail account"
 msgstr "E-Mail Account aktivieren"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "No matter"
 msgstr "Egal"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "No printer operator"
 msgstr "Kein Druckeroperator"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "Benutzername"
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "Passwort"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Repeat password"
 msgstr "Passwort wiederholen"
 
+# type: string
 #: lang/en:47 lang/en:72
 #, no-wrap
 msgid "User Management"
 msgstr "Benutzerverwaltung"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Filetype for fax delivery"
 msgstr "Dateityp für Faxzustellung"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "E-mail alias"
 msgstr "E-Mail Alias"
 
+# type: string
 # 87%
 #: lang/en:50
 #, no-wrap
 msgid "Authentication"
 msgstr "Authentifizierung"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "User"
 msgstr "Benutzer"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Mailbox quota"
 msgstr "Mailbox-Quota"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Zarafa administrator"
 msgstr "Zarafa Administrator"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Zarafa shared store user"
 msgstr "Zarafa Gemeinschaftskonto"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "irreversible after activation"
 msgstr "nach Aktivierung unumkehrbar"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Given name"
 msgstr "Vorname"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Surname"
 msgstr "Nachname"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Zarafa store"
 msgstr "Zarafa Store"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "no Zarafa license"
 msgstr "keine Zarafa Lizenz"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Convert into a zarafa resource"
 msgstr "In eine Zarafa Ressource umwandeln"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Should the following users really be converted into zarafa resources?"
 msgstr "Sollen folgende Nutzer wirklich in Zarafa Ressourcen umgewandelt werden?"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "User created with following warnings"
 msgstr "Benutzer wurde mit folgenden Warnungen angelegt"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Business Phone"
 msgstr "Firmennummer"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Location"
 msgstr "Ort"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Fax"
 msgstr "Fax"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Department"
 msgstr "Abteilung"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Allow send as"
 msgstr "Senden als"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "For user"
 msgstr "Für Benutzer erlauben"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "For group"
 msgstr "Für Gruppe erlauben"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "Features"
 msgstr "Funktionen"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Add"
 msgstr "Hinzufügen"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Remove"
 msgstr "Entfernen"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Set default"
 msgstr "Standard"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Modify"
 msgstr "Ändern"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "User currently in the office"
 msgstr "Der Benutzer ist zur Zeit im Büro"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "User currently out of the office"
 msgstr "Der Benutzer ist zur Zeit nicht im Büro"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Edit out of office"
 msgstr "Abwesenheit bearbeiten"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Subject"
 msgstr "Betreff"
 
+# type: string
 #: lang/en:81
 #, no-wrap
 msgid "Message"
 msgstr "Nachricht"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Hide from addressbook"
 msgstr "Aus dem Adressbuch ausblenden"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Store size"
 msgstr "Postfachgröße"
 
+# type: string
 # 90%
 #: lang/en:84
 #, no-wrap
 msgid "Store type"
 msgstr "Postfachtyp"
 
+# type: string
 #: lang/en:85
 #, no-wrap
 msgid "Administrator"
 msgstr "Administrator"
 
+# type: string
 # 85%
 #: lang/en:86
 #, no-wrap
 msgid "Active"
 msgstr "Aktiv"
 
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Shared"
 msgstr "Shared"
 
+# type: string
 #: lang/en:88
 #, no-wrap
 msgid "None"
 msgstr "Keine"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "Force offline profile resynchronization"
 msgstr "Offline-Profil Resynchronisierung erzwingen"
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
 msgstr "Diese Funktion zwingt im Cached-Mode laufende Clients, alle Daten erneut mit dem Server zu synchronisieren. Dies kann gewisse clientseitige Probleme beheben, nimmt aber je nach Größe des Postfachs eventuell einige Zeit und Bandbreite in Anspruch. Es sollte daher abgewogen werden, ob dies wirklich erwünscht ist, insbesondere in Umgebungen mit langsamer Server-Anbindung.<br /><br/>Soll die Re-Synchronisation jetzt für den folgenden Benutzer durchgeführt werden?"
 
+# type: string
 #: lang/en:91
 #, no-wrap
 msgid "Configure disclaimer"
 msgstr "Konfiguriere E-Mail-Signatur"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "On"
-msgstr ""
+msgstr "Aktiviert"
 
+# type: string
 #: lang/en:93
 #, no-wrap
 msgid "Off"
 msgstr "Aus"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Default (on)"
-msgstr ""
+msgstr "Standard (aktiviert)"
 
+# type: string
 #: lang/en:95
 #, no-wrap
 msgid "Default (off)"
-msgstr ""
+msgstr "Standard (deaktiviert)"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "When a user is administrator, the user will be allowed to open all Zarafa stores of any user."
 msgstr "Wenn ein Benutzer Administrator ist, kann er alle Zarafa Stores aller Benutzer öffnen."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "The user will not be able to login and he will not be added to the active users of your license. Other users can open this users store as a delegate."
 msgstr "Der Benutzer kann sich nicht anmelden und wird nicht zu den aktiven Benutzern ihrer Lizenz hinzugezählt. Andere Benutzer können den Store dieses Benutzers als Vertreter öffnen."
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "Enter the amount of disk space this user may take up. The user will be warned if he draws near that limit. After the limit is reached, the user will not be able to send and receive mails."
 msgstr "Geben sie die Größe des Plattenplatzes an, die dieser Benutzer belegen darf. Der Benutzer wird gewarnt, wenn er sich diesem Limit nähert. Nachdem das Limit erreicht ist, kann er keine E-Mails mehr senden oder empfangen."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "When enabled it hides this user from the global addressbook."

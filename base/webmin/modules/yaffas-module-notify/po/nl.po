@@ -6,143 +6,169 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Address for System Messages"
 msgstr ""
 
+# type: string
 #: lang/en:2 lang/en:32
 #, no-wrap
 msgid "Notification"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "Systeem"
 
+# type: string
 # 83%
 #: lang/en:4
 #, fuzzy, no-wrap
 msgid "E-mail"
 msgstr "E-mail"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Send e-mail"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Always"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Critical errors"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Errors"
 msgstr "Fouten"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Test your e-mail address"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Click the button below to send a mail to your previously set e-mail address."
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Test"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "This is not a valid mail address"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Can not modify configuration entry."
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Error writing configuration file."
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Type can only be: always, errors or never."
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Line not found in configuration file."
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Please set an e-mail address first."
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Could not send a mail to your address."
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "An e-mail has been sent to your given address. Please check your mailbox."
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Successfully set adress for system messages."
 msgstr ""
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Test - yaffas notify"
 msgstr ""
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
 msgstr ""
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "E-mail address test"
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
 msgstr ""
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter a valid email address to receive notifications about the status of the system."

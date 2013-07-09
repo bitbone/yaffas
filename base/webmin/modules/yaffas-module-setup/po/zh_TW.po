@@ -157,242 +157,288 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-11 09:44+0100\n"
-"PO-Revision-Date: 2013-01-30 12:22+0200\n"
-"Last-Translator: Christof <musik@bitbone.de>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
+"Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Welcome"
 msgstr "歡迎"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "This setup dialog will asks for the basic settings that are needed to be set to finish the installation.<br />If you are unsure about the settings, please hover over the lightbulbs and you will get some more explanation."
 msgstr "此設定對話將要求為完成安裝所需之基本設定。如您對設定不確定，請滑過燈泡，您就可以得到更多解釋。"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Admin password"
 msgstr "管理者密碼"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Admin password (repeat)"
 msgstr "管理者密碼(重覆)"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "MySQL database"
 msgstr "MySQL資料庫"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "MySQL server"
 msgstr "MySQ伺服器"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "MySQL username"
 msgstr "MySQL用戶名稱"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "MySQL password"
 msgstr "MySQL密碼"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Setup finished"
 msgstr "設定完成"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Setup was finished successfully. After relogin you can use all features."
 msgstr "設定成功。在重新登入後，您可使用全部功能"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Mailserver settings"
 msgstr "郵件伺服器設定"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Primary mail domain"
 msgstr "主要郵件網域"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Smarthost"
 msgstr "智慧主機"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Username (if needed)"
 msgstr "用戶名稱(如有需要)"
 
+# type: string
 #: lang/en:18 lang/en:24
 #, no-wrap
 msgid "Password"
 msgstr "密碼"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Create user"
 msgstr "建立使用者"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Loginname"
 msgstr "登入名稱"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Firstname"
 msgstr "前名"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Surname"
 msgstr "姓"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Password (repeat)"
 msgstr "密碼(重覆)"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Email"
 msgstr "電子郵件"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "If you fill this form, then local LDAP authentication will be enabled."
 msgstr "您若填寫此表格，本地LDAP身分驗證將被啟用。"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Zarafa settings"
 msgstr "Zarafa設定"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Basic settings"
 msgstr "基礎設定"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "This might take some time"
 msgstr "可能需要花點時間"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "setting up"
 msgstr "設定中"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "initial configuration"
 msgstr "初始化設定"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Finish"
 msgstr "完成"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Next"
 msgstr "次"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Previous"
 msgstr "前"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "無法連線到資料庫"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "The admin password is empty or does not match."
 msgstr "管理者密碼是空的或不匹配"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr "網域只能含字符(a-z及A-Z)、數字(0-9)\"、”.”及”-“，最短為一"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "The given username already exists locally. Please specify another username or delete the existing user first."
 msgstr "此使用者已存在。請指定另一個使用者名稱或是先刪除已存在的使用者"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Setup"
 msgstr "設定"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 msgstr "此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
 msgstr "此為設定在資料庫上之密碼。您須用手動設定此密碼。"
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 msgstr "這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。"
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr "這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。"
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "This is the primary maildomain of your server. You can add more domains later in Mailserver->Configuration."
 msgstr "這是您的伺服器之主要郵件網域。您以後可在郵件伺服器->配置增加更多網域"
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "Optional setting if you need a smarthost to send emails. If you keep this empty the mailserver will try to send emails directly to the recipient."
 msgstr "如您需要一個智慧主機來發送郵件之可選設定。如您讓其保留為空的，郵件伺服器將直接發送郵件給收件人"
 
+# type: string
 #: help/en:7 help/en:8
 #, no-wrap
 msgid "Optional setting if your smarthost needs authentication."
 msgstr "如您的智慧主機需要身分驗證之可選設定"
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "This is the name that you will have to login with."
 msgstr "這是您登入所用的名稱"
 
+# type: string
 #: help/en:10
 #, no-wrap
 msgid "First name of that user."
 msgstr "該用戶的首名"
 
+# type: string
 #: help/en:11
 #, no-wrap
 msgid "Surname of that user."
 msgstr "該用戶的姓"
 
+# type: string
 #: help/en:12
 #, no-wrap
 msgid "Email address of that user that will be used for sending and receiving."

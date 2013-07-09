@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -167,38 +167,45 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
 msgstr "Bulk mailing"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "From"
 msgstr "Od"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
 msgstr "Zadeva"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Message"
 msgstr "Sporočilo"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send"
 msgstr "Pošlji"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
 msgstr "Please complete all forms and check your e-mail address."
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."

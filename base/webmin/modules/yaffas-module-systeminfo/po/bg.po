@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,381 +167,457 @@ msgstr ""
 "Language: bg\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "System information"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Written by"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "General information"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "on an"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Uptime of"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "days"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "hours"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "minutes"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Load average"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "CPU load"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Overall load"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "for the last minute"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "for the last 5 minutes"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "for the last 15 minutes"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Memory usage"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Main memory"
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Swap memory"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Total"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Used"
 msgstr ""
 
+# type: string
 #: lang/en:22 lang/en:35
 #, no-wrap
 msgid "Free"
 msgstr ""
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Shared"
 msgstr ""
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Buffers"
 msgstr ""
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Cache"
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Module"
 msgstr ""
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Size"
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Referring modules"
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Modules currently in use"
 msgstr ""
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Available Memory"
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Usage Key:"
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "In Use"
 msgstr ""
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Buffer"
 msgstr ""
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "IRQ usage"
 msgstr ""
 
+# type: string
 #: lang/en:38 lang/en:81
 #, no-wrap
 msgid "Device"
 msgstr ""
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "IO usage"
 msgstr ""
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Network statistics"
 msgstr ""
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Interface"
 msgstr ""
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Receive"
 msgstr ""
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Send"
 msgstr ""
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Bytes"
 msgstr ""
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Errors"
 msgstr ""
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Dropped"
 msgstr ""
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Overruns"
 msgstr ""
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Frame"
 msgstr ""
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "Carrier"
 msgstr ""
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Collisions"
 msgstr ""
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Active connections"
 msgstr ""
 
+# type: string
 #: lang/en:53 lang/en:71
 #, no-wrap
 msgid "Protocol"
 msgstr ""
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Receive queue"
 msgstr ""
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Send queue"
 msgstr ""
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Local"
 msgstr ""
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Foreign"
 msgstr ""
 
+# type: string
 #: lang/en:58 lang/en:75
 #, no-wrap
 msgid "State"
 msgstr ""
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Who's logged"
 msgstr ""
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "User"
 msgstr ""
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "TTY"
 msgstr ""
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "From"
 msgstr ""
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "Login@"
 msgstr ""
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Idle"
 msgstr ""
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Jcpu"
 msgstr ""
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Pcpu"
 msgstr ""
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Command"
 msgstr ""
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Listening sockets"
 msgstr ""
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Active sockets"
 msgstr ""
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "Unix sockets"
 msgstr ""
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "RefCnt"
 msgstr ""
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Flags"
 msgstr ""
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Type"
 msgstr ""
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "I-node"
 msgstr ""
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Path"
 msgstr ""
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Filesytem statistics"
 msgstr ""
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Mounted filesystem"
 msgstr ""
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Directory"
 msgstr ""
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Filesystem"
 msgstr ""
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "Mode"
 msgstr ""
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "Filesystem information"
 msgstr ""
 
+# type: string
 #: lang/en:88
 #, no-wrap
 msgid "System Information"

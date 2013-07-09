@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,450 +15,539 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 # 94%
 #: lang/en:1 lang/en:11
 #, no-wrap
 msgid "System information"
 msgstr "Informações sobre o sistema"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "About yaffas"
 msgstr "Sobre yaffas"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "Sistema"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Versions"
 msgstr "Versões"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Version"
 msgstr "Versão"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Revision"
 msgstr "Revisão"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Product"
 msgstr "Produto"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "The information cannot be read!"
 msgstr "Essa informação não pode ser lida!"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Written by"
 msgstr "Escrito por"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "General information"
 msgstr "Informações gerais"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "on an"
 msgstr "em um"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Up-time of"
 msgstr "Up-time em"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "days"
 msgstr "dias"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "hours"
 msgstr "horas"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "minutes"
 msgstr "minutos"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Load average"
 msgstr "Carga média"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "CPU load"
 msgstr "Carga de CPU"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Overall load"
 msgstr "Carga total"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "for the last minute"
 msgstr "no último minuto"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "for the last 5 minutes"
 msgstr "nos últimos 5 minutos"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "for the last 15 minutes"
 msgstr "nos últimos 15 minutos"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Memory usage"
 msgstr "Uso de memória"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Main memory"
 msgstr "Memória principal"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Swap memory"
 msgstr "Memória swap"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Total"
 msgstr "Total"
 
+# type: string
 #: lang/en:31 lang/en:100
 #, no-wrap
 msgid "Used"
 msgstr "Usado"
 
+# type: string
 #: lang/en:32 lang/en:45
 #, no-wrap
 msgid "Free"
 msgstr "Livre"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Shared"
 msgstr "Compartilhado"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Buffers"
 msgstr "Buffers"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Cache"
 msgstr "Cache"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Module"
 msgstr "Módulo"
 
+# type: string
 #: lang/en:37 lang/en:99
 #, no-wrap
 msgid "Size"
 msgstr "Tamanho"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Referring modules"
 msgstr "Módulos referentes"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Modules currently in use"
 msgstr "Módulos atualmente em uso"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Available Memory"
 msgstr "Memória Disponível"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Usage Key:"
 msgstr "Chave de uso:"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "In Use"
 msgstr "Em Uso"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Buffer"
 msgstr "Buffer"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "IRQ usage"
 msgstr "Uso de IRQ"
 
+# type: string
 #: lang/en:48 lang/en:91
 #, no-wrap
 msgid "Device"
 msgstr "Dispositivo"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "IO usage"
 msgstr "Uso IO"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Network statistics"
 msgstr "Estatísticas de rede"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Interface"
 msgstr "Interface"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Receive"
 msgstr "Receber"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Sent"
 msgstr "Enviados"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Bytes"
 msgstr "Bytes"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Errors"
 msgstr "Erros"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Dropped"
 msgstr "Largados"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Overruns"
 msgstr "Saturações"
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "Frame"
 msgstr "Quadro"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Carrier"
 msgstr "Portadora"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Collisions"
 msgstr "Colisões"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Active connections"
 msgstr "Conexões ativas"
 
+# type: string
 #: lang/en:63 lang/en:81
 #, no-wrap
 msgid "Protocol"
 msgstr "Protocolo"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Receive queue"
 msgstr "Fila de recebimento"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Send queue"
 msgstr "Fila de envio"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Local"
 msgstr "Local"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Foreign"
 msgstr "Remoto"
 
+# type: string
 #: lang/en:68 lang/en:85
 #, no-wrap
 msgid "State"
 msgstr "Estado"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Who's logged"
 msgstr "Quem está logado"
 
+# type: string
 # 75%
 #: lang/en:70
 #, no-wrap
 msgid "User"
 msgstr "Usuário"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "TTY"
 msgstr "TTY"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "From"
 msgstr "De"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Login@"
 msgstr "Logon@"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Idle"
 msgstr "Ocioso"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Jcpu"
 msgstr "Jcpu"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Pcpu"
 msgstr "Pcpu"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Command"
 msgstr "Comando"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "Listening sockets"
 msgstr "Soquetes abertos"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Active sockets"
 msgstr "Soquetes ativos"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Unix sockets"
 msgstr "Soquetes Unix"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "RefCnt"
 msgstr "RefCnt"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Flags"
 msgstr "Flags"
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "Type"
 msgstr "Tipo"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "I-node"
 msgstr "I-node"
 
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Path"
 msgstr "Caminho"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "File system statistics"
 msgstr "Estatísticas do sistema de arquivos"
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "Mounted file system"
 msgstr "Sistema de arquivos montados"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "Directory"
 msgstr "Diretório"
 
+# type: string
 #: lang/en:93 lang/en:98
 #, no-wrap
 msgid "File system"
 msgstr "Sistema de arquivos"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Mode"
 msgstr "Modo"
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "File system information"
 msgstr "Informação do sistema de arquivos"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Available"
 msgstr "Disponível"
 
+# type: string
 #: lang/en:102
 #, no-wrap
 msgid "Used%"
 msgstr "Usado%"
 
+# type: string
 #: lang/en:103
 #, no-wrap
 msgid "Mounted on"
 msgstr "Montado em"
 
+# type: string
 #: lang/en:105
 #, no-wrap
 msgid "Time"
 msgstr "Hora"
 
+# type: string
 #: lang/en:106
 #, no-wrap
 msgid "Value"
 msgstr "Valor"
 
+# type: string
 #: lang/en:108
 #, no-wrap
 msgid "Memory type"
 msgstr "Tipo de memória"
 
+# type: string
 #: lang/en:109
 #, no-wrap
 msgid "Information"

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-21 00:33+0100\n"
-"PO-Revision-Date: 2013-03-20 15:08+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -167,54 +167,64 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Apply"
 msgstr "Uporabi"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Edit"
 msgstr "Uredi"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Delete"
 msgstr "Izbriši"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Add"
 msgstr "Dodaj"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Activate"
 msgstr "Aktiviraj"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Deactivate"
 msgstr "Deaktiviraj"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Update"
 msgstr "Posodobi"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Delete entry"
 msgstr "Izbriši vnos"
 
+# type: string
 # 80%
 #: lang/en:9
 #, no-wrap
 msgid "Do you really want to delete this entry?"
 msgstr "Ali res želite izbrisati ta vnos?"
 
+# type: string
 # 80%
 # 81%
 #: lang/en:11
@@ -222,207 +232,248 @@ msgstr "Ali res želite izbrisati ta vnos?"
 msgid "Do you really want to disable this service?"
 msgstr "Ali res želite onemogočiti ta servis?"
 
+# type: string
 # 80%
 #: lang/en:12
 #, no-wrap
 msgid "Do you really want to enable this service?"
 msgstr "Ali res želite omogočiti ta servis?"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Policy"
 msgstr "Policy"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Enable policy"
 msgstr "Enable policy"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Disable policy"
 msgstr "Disable policy"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "DNSBL"
 msgstr "DNSBL"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "RHSBL"
 msgstr "RHSBL"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Hostname"
 msgstr "Ime gostitelja"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Hit score"
 msgstr "Hit score"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Miss score"
 msgstr "Miss score"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Log name"
 msgstr "Prijavno ime"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "ClamAV"
 msgstr "ClamAV"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Activate clamav"
 msgstr "Activate clamav"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Deactivate clamav"
 msgstr "Deactivate clamav"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Scan archives"
 msgstr "Skeniraj arhive"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Virus alert email"
 msgstr "Opozorilno sporočilo o virusu"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Maximum size of scannable objects in MB"
 msgstr "Maximum size of scannable objects in MB"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Update the ClamAV signatures"
 msgstr "Update the ClamAV signatures"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Configure clamav"
 msgstr "Configure clamav"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Spamassassin"
 msgstr "Spamassassin"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Configure Spamassassin"
 msgstr "Configure Spamassassin"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Activate spamassassin"
 msgstr "Activate spamassassin"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Deactivate spamassassin"
 msgstr "Deactivate spamassassin"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Update the Spamassassin filters"
 msgstr "Update the Spamassassin filters"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Network"
 msgstr "Mreža"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Internal networks"
 msgstr "Interne mreže"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Trusted networks"
 msgstr "Zaupanja vredne mreže"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Add spam detected headers at level"
 msgstr "Add spam detected headers at level"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Whitelisting"
 msgstr "Bela lista"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
 msgstr "Mail from the domains, mail addresses, IPs or IP networks listed here will never be rejected."
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Address"
 msgstr "Naslov"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Type"
 msgstr "Type"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Source"
 msgstr "Izvor"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Entry"
 msgstr "Vnos"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "Invalid e-mail address"
 msgstr "Neveljaven naslov elektronskega sporočila"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Maximum size of scannable objects must be a number (in MB)."
 msgstr "Maximum size of scannable objects must be a number (in MB)."
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Security"
 msgstr "Varnost"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This value defines at which score mails are handled as spam."
 msgstr "This value defines at which score mails are handled as spam."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "Define a host or network by its IP address or CIDR."
 msgstr "Define a host or network by its IP address or CIDR."
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
 msgstr "ClamAV will scan only objects that are smaller than the specified amount. Larger objects will NOT be scanned."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "If ClamAV detects a suspicious object, it will send a mail to the specified address."
 msgstr "If ClamAV detects a suspicious object, it will send a mail to the specified address."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Enable this to scan archives like RAR, ZIP, GZ..."

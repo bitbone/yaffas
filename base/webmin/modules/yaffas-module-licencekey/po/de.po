@@ -6,202 +6,240 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:01+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Install New Key"
 msgstr "Installiere Neuen Lizenzschlüssel"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Existing Keys"
 msgstr "Vorhandene Lizenzschlüssel"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Licensekey"
 msgstr "Lizenzkey"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "System"
 msgstr "System"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Apply key"
 msgstr "Schlüssel einspielen"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Customer"
 msgstr "Lizenznehmer"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Initial Key"
 msgstr "Initialer Key"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Licensenumber"
 msgstr "Lizenznummer"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Incoming MSNs"
 msgstr "Anzahl eingehender MSNs"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "unlimited"
 msgstr "unbeschränkt"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Unlimited (only limited by telephone system)"
 msgstr "Unlimitiert (durch Telefonanlage beschränkt)"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Configurable controllers"
 msgstr "Anzahl konfigurierbarer Kontroller"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Valid from"
 msgstr "Gültig von"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Valid until"
 msgstr "Gültig bis"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Configurable printers"
 msgstr "Anzahl konfigurierbarer Drucker"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "PDF encryption"
 msgstr "PDF Verschlüsselung"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Notepaper"
 msgstr "Briefpapier"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Merge PDFs"
 msgstr "PDFs zusammenfassen"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "enabled"
 msgstr "aktiviert"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "disabled"
 msgstr "deaktiviert"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "yaffas base"
 msgstr "yaffas base"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Licensetype"
 msgstr "Lizenztyp"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Companylicense"
 msgstr "Firmenlizenz"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "1-10 User"
 msgstr "1-10 Benutzer"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "11-50 User"
 msgstr "11-50 Benutzer"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "51-100 User"
 msgstr "51-100 Benutzer"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "101-250 User"
 msgstr "101-250 Benutzer"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "251-500 User"
 msgstr "251-500 Benutzer"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Could not copy the key."
 msgstr "Konnte den Schlüssel nicht kopieren."
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "The product for your key is not installed!"
 msgstr "Das Produkt für Ihren Schlüssel ist nicht installiert!"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Can't create file!"
 msgstr "Konnte Datei nicht anlegen!"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Can't write file!"
 msgstr "Konnte Datei nicht schreiben!"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Invalid key location!"
 msgstr "Falsche Key Quelle!"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Can't remove new key!"
 msgstr "Kann neuen Key nicht löschen!"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Wrong key version for installed product!"
 msgstr "Falsche Keyversion für dieses Produkt!"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "No key available!"
 msgstr "Kein Key vorhanden."
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Successfully saved licensekey!"
 msgstr "Lizenzkey erfolgreich gespeichert!"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "yaffas license key management"

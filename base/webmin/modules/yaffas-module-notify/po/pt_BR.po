@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,134 +15,160 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Address for System Messages"
 msgstr "Endereço e de-mail para as Mensagens do Sistema"
 
+# type: string
 #: lang/en:2 lang/en:32
 #, no-wrap
 msgid "Notification"
 msgstr "Notificação"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "System"
 msgstr "Sistema"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "E-mail"
 msgstr "E-mail"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Send e-mail"
 msgstr "Enviar e-mail"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Always"
 msgstr "Sempre"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Critical errors"
 msgstr "Erros críticos"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Errors"
 msgstr "Erros"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Test your e-mail address"
 msgstr "Teste seu endereço de e-mail"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Click the button below to send a mail to your previously set e-mail address."
 msgstr "Clicar o botão abaixo para enviar um e-mail para o endereço de email fornecido anteriormente."
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Test"
 msgstr "Teste"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "This is not a valid mail address"
 msgstr "Este não é um endereço de e-mail válido"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Can not modify configuration entry."
 msgstr "Não foi possível modificar essa opção de configuração."
 
+# type: string
 # 81%
 #: lang/en:14
 #, no-wrap
 msgid "Error writing configuration file."
 msgstr "Erro ao escrever o arquivo de configuração."
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Type can only be: always, errors or never."
 msgstr "O tipo poderá ser: sempre, erros ou nunca."
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Line not found in configuration file."
 msgstr "Linha não encontrada no arquivo de configuração."
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Please set an e-mail address first."
 msgstr "Definir um primeiro um endereço de e-mail."
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Could not send a mail to your address."
 msgstr "Não foi possível enviar um email para seu endereço de e-mail."
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "An e-mail has been sent to your given address. Please check your mailbox."
 msgstr "Um e-mail foi enviado para o seu endereço de e-mail. Por favor conferir sua caixa de entrada."
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Successfully set adress for system messages."
 msgstr "Endereço para mensagens do sistema foi definido com sucesso."
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Test - yaffas notify"
 msgstr "Teste - notificação yaffas"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "This mail was sent to test the reachability of your given address. If you have received this mail, you will be informed about errors."
 msgstr "Este e-mail foi enviado para testar o endereço de e-mail fornecido. Se você recebeu este email será informado sobre erros."
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "E-mail address test"
 msgstr "Testar endereço de e-mail"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "This e-mail is used to check the reachability of the administrators address. If you received this e-mail you will be notified through this channel in the future should errors occur."
 msgstr "Este e-mail é usado para testar o endereço de email do administrador. Se você recebeu este email você será notificado desta forma no caso de erro que poderão ocorrer no futuro."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Have fun with yaffas"
 msgstr "Divirta-se com yaffas"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter a valid email address to receive notifications about the status of the system."
