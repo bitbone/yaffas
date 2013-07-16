@@ -24,6 +24,11 @@ extract_client_binary() {
 		's:.*["/](zarafaclient-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
 }
 
+extract_client_en_binary() {
+	sed -rne \
+		's:.*["/](zarafaclient-en-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
+}
+
 AVAILABLE_VERSIONS=$($CMD "$URL/$STATUS/" -qO - | extract_versions)
 LATEST_MAJOR_VERSION=$(echo "$AVAILABLE_VERSIONS" | tail -n1)
 if [[ $LATEST_MAJOR_VERSION != $VERSION ]]; then
@@ -56,14 +61,15 @@ fi
 
 PKGDIR="$(dirname "$0")/../base/yaffas-software"
 BASEURL="$URL/$STATUS/$VERSION/$RELEASE"
+CLIENT_EN_BINARY=$($CMD "$BASEURL/windows/" -qO - | extract_client_en_binary)
 CLIENT_BINARY=$($CMD "$BASEURL/windows/" -qO - | extract_client_binary)
 mkdir -p "${PKGDIR}/software/zarafa"
 pushd "${PKGDIR}/software/zarafa" >/dev/null
 git rm -qf zarafa*.{exe,msi} 2>/dev/null || true
 echo "Downloading zarafamigrationtool.exe..."
 $CMD "$BASEURL/windows/zarafamigrationtool.exe"
-echo "Downloading zarafaclient-en.msi..."
-$CMD "$BASEURL/windows/zarafaclient-en.msi"
+echo "Downloading $CLIENT_EN_BINARY..."
+$CMD "$BASEURL/windows/$CLIENT_EN_BINARY"
 echo "Downloading $CLIENT_BINARY..."
 $CMD "$BASEURL/windows/$CLIENT_BINARY"
 cd ../..
