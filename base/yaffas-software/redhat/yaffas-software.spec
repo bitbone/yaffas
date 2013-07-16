@@ -25,7 +25,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 # remove older zarafa clients such as zarafaclient-7.1.5-42115.msi
-rm -f $(readlink /opt/software/zarafa/zarafaclient.msi)
+rm -f $(readlink /opt/software/zarafa/zarafaclient.msi | grep -vF zarafaclient-7.1.5-42115.msi)
 
 # create a new symlink to the latest version
 ln -sf /opt/software/zarafa/zarafaclient-7.1.5-42115.msi /opt/software/zarafa/zarafaclient.msi
