@@ -69,7 +69,7 @@ git rm -qf zarafa*.{exe,msi} 2>/dev/null || true
 echo "Downloading zarafamigrationtool.exe..."
 $CMD "$BASEURL/windows/zarafamigrationtool.exe"
 echo "Downloading $CLIENT_EN_BINARY..."
-$CMD "$BASEURL/windows/$CLIENT_EN_BINARY"
+$CMD "$BASEURL/windows/$CLIENT_EN_BINARY" -O zarafaclient-en.msi
 echo "Downloading $CLIENT_BINARY..."
 $CMD "$BASEURL/windows/$CLIENT_BINARY"
 cd ../..
