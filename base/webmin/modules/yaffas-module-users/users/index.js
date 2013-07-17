@@ -52,7 +52,7 @@ Users.prototype.showEditDisclaimer = function() {
 	var s = this.usertable.selectedRows();
 
 	if (s.length > 0) {
-		Yaffas.ui.openTab('/maildisclaimers/setuser.cgi', {user: s[0][0]},
+		Yaffas.ui.openTab('/maildisclaimers/setuser.cgi', {user: s[0][2]},
 			MailDisclaimers.setupDisclaimerCallback);
 	}
 }
