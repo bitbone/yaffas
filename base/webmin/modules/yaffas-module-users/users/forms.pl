@@ -374,7 +374,7 @@ sub show_edit_user(@) {
 	my @existing_groups = get_groups();
 	my @mail = Yaffas::UGM::get_users();
 	my $size;
-	$size = $#existing_groups;
+	$size = scalar @existing_groups;
 	$size = 2 if $size < 2;
 	$size = 5 if $size >= 4;
 
@@ -405,7 +405,7 @@ sub show_new_user(){
 	my @mail;
 
 	my $size;
-	$size = $#existing_groups;
+	$size = scalar @existing_groups;
 	$size = 2 if $size < 2;
 	$size = 5 if $size >= 4;
 
