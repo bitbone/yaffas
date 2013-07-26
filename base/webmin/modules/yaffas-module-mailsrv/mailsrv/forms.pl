@@ -135,8 +135,9 @@ sub base_settings_form() {
 
 sub smarthost_form ($$) {
 	$Yaffas::UI::Print_inner_div = 0;
-	my ( $smarthost, $username ) = get_smarthost();
+	my ( $smarthost, $username, $password ) = get_smarthost();
 	print $Cgi->start_form( "post", "check_smarthost.cgi" );
+
 	my ( $routeing, $maildomain ) = get_smarthost_routing();
 
 	if ( defined( $main::in{smarthost} ) ) {
@@ -149,6 +150,12 @@ sub smarthost_form ($$) {
 
 	if ( defined( $main::in{rewrite_domain} ) ) {
 		$maildomain = $main::in{rewrite_domain};
+	}
+
+	my $password_tag = "";
+
+	if (defined ($password) && $password ne "") {
+		$password_tag = join "", map { ("a".."z")[rand 26] } 1..12;
 	}
 
 	if ( defined( $main::in{route_all} ) ) {
@@ -174,7 +181,7 @@ sub smarthost_form ($$) {
 					$Cgi->td(
 						[
 							$main::text{lbl_password} . ":",
-							$Cgi->password_field("password"),
+							$Cgi->password_field("password", $password_tag).$Cgi->hidden("password_tag", $password_tag),
 						]
 					)
 				]

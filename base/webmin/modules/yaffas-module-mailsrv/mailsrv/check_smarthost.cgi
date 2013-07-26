@@ -21,6 +21,7 @@ header($main::text{'index_header'}, "");
 my $smarthost = $main::in{'smarthost'};
 my $username = $main::in{'username'};
 my $pass = $main::in{'password'};
+my $password_tag = $main::in{'password_tag'};
 my $old_smarthost = $main::in{'old_smarthost'};
 my $route_all = $main::in{route_all};
 my $rewrite_domain = $main::in{rewrite_domain};
@@ -30,6 +31,13 @@ try {
 
 	if ($smarthost) {
 		## add mode
+
+		# password not changed, so keep old password
+		if ($pass eq $password_tag && $password_tag ne ""){
+			my (undef, undef, $p) = get_smarthost();
+			$pass = $p;
+		}
+
 		set_smarthost($smarthost, $username, ($pass? $pass : ""));
 		if (defined($main::in{route_all})) {
 			# enable BBroute_all
