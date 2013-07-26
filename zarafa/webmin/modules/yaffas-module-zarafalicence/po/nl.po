@@ -6,84 +6,98 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-20 00:29+0300\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Submit"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Install new serial"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Installed subscriptions"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Base serial"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Serial number"
 msgstr "Serienummer"
 
+# type: string
 # 91%
 #: lang/en:6
 #, fuzzy, no-wrap
 msgid "Licensed Log"
 msgstr "Licentielogboek"
 
+# type: string
 # 96%
 #: lang/en:7
 #, fuzzy, no-wrap
 msgid "This is not a valid zarafa serial"
 msgstr "Dit is geen geldige Zarafa-sleutel"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Archiver serial"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "User count"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "No serial installed!"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Allowed"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Available"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Used"

@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,318 +166,382 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Userfilter"
 msgstr "用戶過濾"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Default"
 msgstr "預設值"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "AD Plugin"
 msgstr "AD Plugin"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "AD Group"
 msgstr "AD 群組"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Delete these zarafa stores?"
 msgstr "刪除這些Zarafa儲存?"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "With this step, the following zarafa stores would be deleted:"
 msgstr "以此步驟，下列Zarafa儲存將被刪除："
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Could not find Group."
 msgstr "無法找到群組"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Could not find the rootDomainNamingContext in AD."
 msgstr "在AD內無法找到根域命名上下文"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Maximum attachment size in Webaccess"
 msgstr "Webaccess最大附件檔案大小"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Size"
 msgstr "大小"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Purge old deleted items now?"
 msgstr "現在清除舊的已刪除項目？"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "The maximum attachment size must be numeric and >0."
 msgstr "此最大的附件檔案大小必須是數字並且大於0"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "The softdelete lifetime must be numeric and >=0."
 msgstr "此軟刪除存活時間必須是數字並且大於等於0"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Could not purge old items."
 msgstr "無法清除舊項目"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Optimize"
 msgstr "優化"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Addressable memory"
 msgstr "定址記憶體"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Optimized for"
 msgstr "之優化"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Optimize memory"
 msgstr "優化記憶體"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "unknown"
 msgstr "不明"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Quota e-mail templates"
 msgstr "配額電子郵件之格式"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Message at 80%"
 msgstr "信息達80%"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Message at 90%"
 msgstr "信息達90%"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Message at 100%"
 msgstr "信息達100%"
 
+# type: string
 #: lang/en:28 lang/en:29
 #, no-wrap
 msgid "Default quota"
 msgstr "預設配額"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Enable POP3 for users by default"
 msgstr "預設啟動使用者POP3服務"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Enable IMAP for users by default"
 msgstr "預設啟動使用者IMAP服務"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Feature"
 msgstr "功能"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "State"
 msgstr "州"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "MySQL settings"
 msgstr "MYSQL設定"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Database"
 msgstr "資料庫"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Server"
 msgstr "伺服器"
 
+# type: string
 #: lang/en:39 lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "用戶名稱"
 
+# type: string
 #: lang/en:40 lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "密碼"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "PRF Creator"
 msgstr "PRF Creator"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Profile name"
 msgstr "配置名稱"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Server adress"
 msgstr "伺服器位置"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Overwrite profile"
 msgstr "覆寫配置"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Backup profile"
 msgstr "備份配置"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Download"
 msgstr "下載"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Connection type"
 msgstr "連線類型"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Autodetect"
 msgstr "自動偵測"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Online"
 msgstr "線上"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Cached"
 msgstr "暫存"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 msgstr "使用此檔案您需要執行outlook命令列使用此參數\"/importprf\"(e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Basic settings"
 msgstr "基礎設定"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Number of days to keep deleted items"
 msgstr "保留已刪除項目的天數"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "無法連線到資料庫"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "此配額只能包含數字"
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Configuration"
 msgstr "設定"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr "MySQL密碼內不能有井號(#)字元"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 msgstr "指名各郵件經Webaccess上載之附件的最大大小(MB)"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
 msgstr "限制每位使用者最大使用容量(MB).空白表示無限制"
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 msgstr "此為用來連接資料庫之用戶名稱。用戶須被建立並擁有權限使用特定資料庫。"
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
 msgstr "此為設定在資料庫上之密碼。您須用手動設定此密碼。"
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 msgstr "這是MYSQL伺服器地址，本地安裝之伺服器則請輸入「localhost」。"
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr "這是Zarafa使用之資料庫名稱，我們建議用”Zarafa”。若不存在，將予建立。用戶須有正確權限，才能如此做。"
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
 msgstr "指定伺服器位置來使用outlook連線到Zarafa伺服器"
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "The name for the outlook profile."
 msgstr "Outlook配置檔名稱"
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
 msgstr "此使用者名稱用來連接伺服器。您可以使用\"%UserName%\"變數來替換目前使用者的名稱"
 
+# type: string
 #: help/en:10
 #, no-wrap
 msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
 msgstr "如果您指定一個使用者名稱您必須也要指定此使用者密碼。如果您沒有指定，outlook將會詢問此使用者密碼"
 
+# type: string
 #: help/en:11
 #, no-wrap
 msgid "Specify if you want your profile to be overwritten during installation."
 msgstr "指定在安裝的過程中如果您想要覆寫您的設定檔"
 
+# type: string
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
 msgstr "指定在覆寫前是否要備份設定檔"
 
+# type: string
 #: help/en:13
 #, no-wrap
 msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."

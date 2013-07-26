@@ -20,7 +20,6 @@ ReadParse();
 my $pass1 = $main::in{'pass1'};
 my $pass2 = $main::in{'pass2'};
 
-
 try {
 	Yaffas::Module::ChangePW::check_passwords($pass1, $pass2);
 	Yaffas::Module::ChangePW::change_admin_password($pass1);

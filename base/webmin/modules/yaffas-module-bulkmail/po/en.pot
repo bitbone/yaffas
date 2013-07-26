@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2013-07-05 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,36 +15,43 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "From"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Message"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid ""

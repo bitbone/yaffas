@@ -6,9 +6,9 @@ yaffas-software (1.3.2-3) lucid; urgency=low
 
 yaffas-software (1.3.2-2) lucid; urgency=low
 
-  * updated zarafa client to 7.1.4-41819
+  * update to version 1.3.2-2
 
- -- Christof Musik <christof@sanjay.bitbone.de>  Mon, 06 May 2013 08:35:10 +0200
+ -- Package Builder <packages@yaffas.org>  Wed, 16 Jul 2013 10:33:34 +0100
 
 yaffas-software (1.3.2-1) lucid; urgency=low
 

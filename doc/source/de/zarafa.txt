@@ -65,6 +65,10 @@ Eine komplette Anleitung und aktuelle Dokumentationen für den Zarafa WebAccess 
 Mit diesem Modul ist es möglich Brick-Level Backup der Zarafa Daten zu erstellen.
 Es ist dann möglich einzelne Elemente wiederherzustellen.
 
+Zur Nutzung des Moduls ist es nötig, das Paket +zarafa-backup+
+nachzuinstallieren (RedHat-basierte Systeme: +yum install zarafa-backup+,
+Debian-basierte Systeme: +apt-get install zarafa-backup+).
+
 Um ein Backup zu erstellen wählen Sie Zeit und Tag für das Voll- und Differentielle Backup aus.
 Geben Sie ein Verzeichnis an, in das die Backups gesichert werden sollen.
 Außerdem können Sie festlegen wie lange ein Backup aufgehoben wird bevor es gelöscht wird.

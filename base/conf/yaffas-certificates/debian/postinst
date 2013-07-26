@@ -20,61 +20,39 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 
 case "$1" in
     configure)
-
-		# Linking certs
-		CERTDIR="/opt/yaffas/etc/ssl/certs/"
+        # Linking certs
+        CERTDIR="/opt/yaffas/etc/ssl/certs/"
 
         YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-        mkdir -p /opt/yaffas/etc/ssl/certs/org/
+        PERL5LIB=/opt/yaffas/lib/perl5/
+        mkdir -p ${CERTDIR}/org/
 
         if [ -f /opt/yaffas/var/default.crt ]; then
             cp /opt/yaffas/var/default.* $CERTDIR/org/
         fi
 
-		if [ ! -f $CERTDIR/org/default.crt ]; then
-	        cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* $CERTDIR/org/
-		fi
+        if [ ! -f $CERTDIR/org/default.crt ]; then
+            cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* $CERTDIR/org/
+        fi
 
-	if [ -z "$2" ]; then
+        if [ -z "$2" ]; then
+            # first install => generate a default certificate
+            set -e
+            perl -MYaffas::Module::Certificate -e '
+                Yaffas::Module::Certificate::create_certificate({
+                    service => "all",
+                    o => "Default organization",
+                    ou => "IT",
+                    cn => "localhost",
+                    l => "Default",
+                    c => "DT",
+                    st => "Default",
+                    emailAddress => "root@localhost",
+                    keysize => 2048,
+                    days => 10*365
+                });'
+        fi
 
-		CERTS="postfix exim webmin cyrus usermin ldap zarafa-webaccess zarafa-server zarafa-gateway zarafa-ical mppmanager cups"
-
-		for i in $CERTS; do
-			ln -sf $CERTDIR/org/default.key  $CERTDIR/$i.key
-			ln -sf $CERTDIR/org/default.crt  $CERTDIR/$i.crt
-			cat $CERTDIR/org/default.crt $CERTDIR/org/default.key > $CERTDIR/$i
-		done
-
-		# Webmin config
-		PRODUCTS="webmin usermin"
-		for PRODUCT in $PRODUCTS; do
-
-			CONF="/opt/yaffas/etc/$PRODUCT/miniserv.conf"
-			TMPCONF="/tmp/miniserv.conf"
-
-			if [ -r $CONF ]; then
-				echo "Editing $PRODUCT"
-
-				KC="key cert"
-				for BBKC in $KC; do
-					if [ "$BBKC" = "cert" ]; then
-						FILEEXTENSION="crt";
-					else
-						FILEEXTENSION="key";
-					fi
-					if grep -q "^${BBKC}file" $CONF; then
-						sed -e "s/^${BBKC}file=.*/${BBKC}file=\/opt\/yaffas\/etc\/ssl\/certs\/$PRODUCT.${FILEEXTENSION}/" $CONF  > $TMPCONF
-						rm -f $CONF
-						mv -f $TMPCONF $CONF
-						chmod 600 $CONF
-					else
-						echo "${BBKC}file=/opt/yaffas/etc/ssl/certs/$PRODUCT.${FILEEXTENSION}" >> $CONF
-					fi
-				done
-			fi
-		done
-	fi
-    
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
@@ -93,5 +71,3 @@ esac
 #DEBHELPER#
 
 exit 0
-
-

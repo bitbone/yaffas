@@ -6,328 +6,392 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-13 00:21+0100\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Userfilter"
 msgstr "Gebruikersfilter"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Default"
 msgstr "Standaard"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "AD Plugin"
 msgstr "AD Plug-in"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "AD Group"
 msgstr "AD Groep"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Delete these zarafa stores?"
 msgstr "Deze zarafa stores verwijderen?"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "With this step, the following zarafa stores would be deleted:"
 msgstr "Met deze stap zullen de volgende zarafa stores worden verwijderd:"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Could not find Group."
 msgstr "Kon Groep niet vinden."
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Could not find the rootDomainNamingContext in AD."
 msgstr "Kon de rootDomainNamingContext niet vinden in AD."
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Maximum attachment size in Webaccess"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Size"
 msgstr "Grootte"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Purge old deleted items now?"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "The maximum attachment size must be numeric and >0."
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "The softdelete lifetime must be numeric and >=0."
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Could not purge old items."
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Optimize"
 msgstr "Optimaliseer"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Addressable memory"
 msgstr "Adresseerbaar geheugen"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Optimized for"
 msgstr "Geoptimaliseerd voor"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Optimize memory"
 msgstr "Optimaliseer geheugen"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "unknown"
 msgstr "onbekend"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Quota e-mail templates"
 msgstr "Quota-e-mailsjablonen"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Message at 80%"
 msgstr "Bericht op 80%"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Message at 90%"
 msgstr "Bericht op 90%"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Message at 100%"
 msgstr "Bericht op 100%"
 
+# type: string
 #: lang/en:28 lang/en:29
 #, no-wrap
 msgid "Default quota"
 msgstr "Standaard quota"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Enable POP3 for users by default"
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Enable IMAP for users by default"
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Feature"
 msgstr "Functionaliteit"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "State"
 msgstr "Status"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "MySQL settings"
 msgstr "MySQL-instellingen"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Database"
 msgstr "Database"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Server"
 msgstr "Server"
 
+# type: string
 #: lang/en:39 lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "Gebruikersnaam"
 
+# type: string
 #: lang/en:40 lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "Wachtwoord"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "PRF Creator"
 msgstr ""
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Profile name"
 msgstr ""
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Server adress"
 msgstr ""
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Overwrite profile"
 msgstr ""
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Backup profile"
 msgstr ""
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Download"
 msgstr ""
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Connection type"
 msgstr ""
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Autodetect"
 msgstr ""
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Online"
 msgstr ""
 
+# type: string
 # 83%
 #: lang/en:54
 #, fuzzy, no-wrap
 msgid "Cached"
 msgstr "Cache"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 msgstr ""
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Basic settings"
 msgstr "Basis-instellingen"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Number of days to keep deleted items"
 msgstr ""
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Kan geen verbinding krijgen met de database."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "De quotawaarde kan alleen cijfers bevatten."
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Configuration"
 msgstr "Configuratie"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr "Het is niet mogelijk om een hekje (#) te gebruiken in het MySQL-wachtwoord."
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 msgstr "Geef de maximale grootte van bijlagen per bericht in MB die kunnen worden geüpload via de Webaccess."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
 msgstr ""
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 msgstr ""
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
 msgstr "Dit is het wachtwoord dat op de database is ingesteld. U moet het wachtwoord met de hand instellen."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 msgstr ""
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr ""
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
 msgstr ""
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "The name for the outlook profile."
 msgstr ""
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
 msgstr ""
 
+# type: string
 #: help/en:10
 #, no-wrap
 msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
 msgstr ""
 
+# type: string
 #: help/en:11
 #, no-wrap
 msgid "Specify if you want your profile to be overwritten during installation."
 msgstr ""
 
+# type: string
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
 msgstr ""
 
+# type: string
 #: help/en:13
 #, no-wrap
 msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."

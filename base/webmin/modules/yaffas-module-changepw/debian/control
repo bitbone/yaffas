@@ -7,6 +7,6 @@ Standards-Version: 3.5.2
 
 Package: yaffas-module-changepw
 Architecture: all
-Depends: ${shlibs:Depends}, yaffas-core, expect, yaffas-lib, yaffas-module-authsrv, perl-base
+Depends: ${shlibs:Depends}, yaffas-core, expect, yaffas-lib, perl-base
 Description: Module for changing system passwords
  Module for changing system passwords

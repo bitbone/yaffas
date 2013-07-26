@@ -17,6 +17,11 @@ Yaffas::init_webmin();
 
 main::header();
 
+if (!Yaffas::Module::ChangePW::may_change_root_password()) {
+	print "May not change root password";
+	exit;
+}
+
 ReadParse();
 my $pass1 = $main::in{'pass1'};
 my $pass2 = $main::in{'pass2'};

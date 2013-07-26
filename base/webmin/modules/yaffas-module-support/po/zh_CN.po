@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-15 00:30+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,56 +167,67 @@ msgstr ""
 "Language: zh_CN\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:14
 #, no-wrap
 msgid "Support"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Click on download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Download"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "System"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Please press download to get the available system and hardware informations."
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Hardware List"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lshw\" installed."
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Your system doesn't have the needed programm \"lspci\" installed."
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "An error occured while executing \"pspci\"."
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "An error occured while executing \"lshw\"."

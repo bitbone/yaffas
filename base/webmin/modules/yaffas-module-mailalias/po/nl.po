@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-27 00:31+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2013-03-26 14:54+0200\n"
 "Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,48 +15,57 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Edit"
 msgstr "Bewerken"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Add alias"
 msgstr ""
 
+# type: string
 #: lang/en:3 lang/en:19
 #, no-wrap
 msgid "Remove"
 msgstr "Verwijder"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Execute"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Apply"
 msgstr "Toepassen"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Mail alias Configuration"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Index"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Mail server"
 msgstr ""
 
+# type: string
 # 81%
 # 76%
 #: lang/en:11
@@ -64,93 +73,140 @@ msgstr ""
 msgid "Do you really want to delete the alias(es)?"
 msgstr "Wilt u deze service echt uitschakelen?"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Please enter valid values!"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Mail aliases"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Mail alias"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Folder"
 msgstr "Map"
 
+# type: string
 # 75%
-#: lang/en:17 lang/en:20
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "Gebruiker"
 
+# type: string
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr ""
+
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "or"
 msgstr "of"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Add"
 msgstr "Voeg toe"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Configuration of mail aliases is done through active directory."
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "The following usernames or e-mail addresses are not valid."
 msgstr ""
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "This alias already exists."
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "This alias name is not valid."
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "No alias selected."
 msgstr ""
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Nothing selected"
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Alias exists as user."
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "An alias can only be set for user or folder."
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Error while removing alias."
 msgstr ""
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr ""
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr ""
+
+# type: string
+# 75%
+# 100%
+#: lang/en:37
+#, fuzzy, no-wrap
+msgid "user"
+msgstr "Gebruiker"
+
+# type: string
+# 80%
+# 100%
+#: lang/en:38
+#, fuzzy, no-wrap
+msgid "email"
+msgstr "E-mail"
+
+# type: string
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "Type"

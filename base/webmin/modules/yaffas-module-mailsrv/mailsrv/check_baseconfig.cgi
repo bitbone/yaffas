@@ -8,7 +8,7 @@ use Yaffas;
 use Yaffas::Service qw(POSTFIX STOP START STATUS control RESTART);
 use Yaffas::UI;
 use Yaffas::Exception;
-use Yaffas::Module::Mailsrv::Postfix qw(set_verify_rcp set_mailserver set_mailsize set_zarafa_admin);
+use Yaffas::Module::Mailsrv::Postfix qw(set_mailserver set_mailsize);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Secconfig;
 
@@ -18,23 +18,8 @@ Yaffas::init_webmin();
 header($main::text{'index_header'}, "");
 ReadParse();
 
-#my $maildomain = $main::in{maildomain};
-my $mailadmin  = $main::in{mailadmin};
-my $verify_action  = $main::in{verify_action};
 my $mailserver = $main::in{mailservername};
 my $mailsize = $main::in{mailsize};
-my $username = $main::in{zarafa_admin};
-my $password = $main::in{password};
-my $client_tls = $main::in{client_tls};
-my $server_tls = $main::in{server_tls};
-
-my ($old_verify_action,$old_mailadmin) = get_verify_rcp ();
-my $old_mailserver = get_mailserver ();
-my $old_mailsize = get_mailsize ();
-
-my $fax = check_product("fax");
-my $gate = check_product("gate");
-my $pdf = check_product("pdf");
 
 my $bke = Yaffas::Exception->new();
 
@@ -49,14 +34,6 @@ try {
 } catch Yaffas::Exception with {
 	$bke->append(shift);
 };
-
-if (check_product("zarafa")) {
-	try {
-		set_zarafa_admin($username, $password);
-	} catch Yaffas::Exception with {
-		$bke->append(shift);
-	};
-}
 
 try {
 	throw $bke if $bke;

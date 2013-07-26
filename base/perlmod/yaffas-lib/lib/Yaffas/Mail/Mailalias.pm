@@ -42,7 +42,7 @@ This Module provides functions for Webmin module bbmailalias.
 
 =head1 EXAMPLE
 
- my $a = new Yaffas::Mail::Mailalias->new();
+ my $a = new Yaffas::Mail::Mailalias;
  $a->add("alias", "user");
  $a->remove("rmalias");
  $a->write();

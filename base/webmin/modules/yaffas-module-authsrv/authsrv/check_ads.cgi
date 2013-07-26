@@ -83,14 +83,15 @@ try {
 			control(YAFFAS_MAILDISCLAIMERS(), RESTART());
 		}
 
-	try {
-		Yaffas::Service::control(WEBMIN, RESTART);
-	} catch Yaffas::Exception with {
-		print Yaffas::UI::all_error_box(shift);
-	};
+		try {
+			Yaffas::Service::control(WEBMIN, RESTART);
+		} catch Yaffas::Exception with {
+			print Yaffas::UI::all_error_box(shift);
+		};
 
-	sleep(3);
-	print Yaffas::UI::ok_box();
+		sleep(3);
+		print Yaffas::UI::ok_box();
+	}
 }
 catch Yaffas::Exception with {
 	Yaffas::Service::control(NSCD, START) unless Yaffas::Constant::OS =~ m/RHEL\d/ ;

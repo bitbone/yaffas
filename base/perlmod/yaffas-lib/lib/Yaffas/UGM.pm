@@ -192,7 +192,7 @@ sub clean_group_data($) {
 	my $group = shift;
 	if (Yaffas::Product::check_product('fax'))
 	{
-		eval { use Yaffas::FaxDB; };
+		eval "use Yaffas::FaxDB;";
 		Yaffas::FaxDB::delete_entity({group => $group});
 	}
 	return 1;
@@ -417,8 +417,8 @@ return 1 on success, exception on error
 sub clean_user_data ($) {
 	my $login = shift;
 	if (Yaffas::Product::check_product('fax')) {
-		eval { use Yaffas::FaxDB; };
-		Yaffas::FaxDB::delete_entity({group => $login});
+		eval "use Yaffas::FaxDB;";
+		Yaffas::FaxDB::delete_entity({user => $login});
 	}
 	# FIXME: this should be in the check_product('fax') block!?
 	if (-e Yaffas::Constant::DIR->{jpeg_dir}.$login.".jpg") {
@@ -1203,7 +1203,7 @@ sub mod_user_ftype(%) {
 		throw $exception if ($throw_exc == 1);
 
 		if (Yaffas::Product::check_product('fax')) {
-			eval { use Yaffas::FaxDB; };
+			eval "use Yaffas::FaxDB;";
 			Yaffas::FaxDB::filetype({user => $user}, $ftype);
 		}
 	}
@@ -1240,7 +1240,7 @@ sub mod_group_ftype(%) {
 
 		my $dbh;
 		if (Yaffas::Product::check_product('fax')) {
-			eval { use Yaffas::FaxDB; };
+			eval "use Yaffas::FaxDB;";
 			Yaffas::FaxDB::filetype({group => $group}, $ftype);
 		}
 	}
@@ -1291,7 +1291,7 @@ sub get_hylafax_filetype ($$)
 	if (!Yaffas::Product::check_product('fax')) {
 		return undef;
 	}
-	eval { use Yaffas::FaxDB; };
+	eval "use Yaffas::FaxDB;";
 	my @result = Yaffas::FaxDB::filetype({$type => $name});
 	if (!@result) {
 		return undef;

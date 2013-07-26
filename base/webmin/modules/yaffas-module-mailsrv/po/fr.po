@@ -6,392 +6,468 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-26 09:24+0200\n"
-"Last-Translator: Pierrick <pierrick@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-06-11 10:02+0200\n"
+"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Base Configuration"
 msgstr "Configuration de base"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Mail server name"
 msgstr "Nom du serveur de courrier"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Unknown recipient"
 msgstr "Destinataire inconnu"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Refuse Mail"
 msgstr "Refuser le courriel"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Delete Mail"
 msgstr "Supprimer le courriel"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send to mailadmin"
 msgstr "Envoyer à l'administrateur de courrier"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Mail administrator"
 msgstr "Administrateur de courrier"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Mail domain"
 msgstr "Domaine de courrier"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "IP"
 msgstr "IP"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Smarthost"
 msgstr "Smarthost"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Smarthost server"
 msgstr "Serveur smarthost"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Username"
 msgstr "Nom d'utilisateur"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Password"
 msgstr "Mot de passe"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Do you really want to delete these entries?"
 msgstr "Désirez-vous vraiment supprimer ces données ?"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Local Domains"
 msgstr "Domaines locaux"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Open Relay Subnets"
 msgstr "Sous-réseau de relais ouvert"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Save"
 msgstr "Enregistrer"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Mailserv"
 msgstr "Mailserv"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Mailserver"
 msgstr "Serveur de courrier"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Add"
 msgstr "Ajouter"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Delete"
 msgstr "Supprimer"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Maximum mail size"
 msgstr "Taille maximale du courriel"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "E-Mail forwarding"
 msgstr "Transfert du courriel"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Forward all e-mail"
 msgstr "Transférer tout le courriel"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Rewrite local domain"
 msgstr "Réécrire le domaine local"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Enable archival storage"
 msgstr "Activer le stockage des archives"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Destination of archival storage"
 msgstr "Destination du stockage des archives"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Archival Storage"
 msgstr "Stockage des archives"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Zarafa administrator for delivery into public folders"
 msgstr "Administrateur Zarafa en charge de la distribution vers les dossiers publics"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "The destination have to be a local user or an e-mail address!"
 msgstr "La destination doit être un utilisateur local ou une adresse électronique !"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "You have to insert a valid domainname."
 msgstr "Vous devez saisir un nom de domaine valide."
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "No Entries."
 msgstr "Aucune saisie."
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Smarthost not valid."
 msgstr "Smarthost invalide."
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Username not valid."
 msgstr "Nom d'utilisateur invalide."
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Password not valid."
 msgstr "Mot de passe invalide."
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Maildomain not valid."
 msgstr "Domaine de courrier invalide."
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "IP adress or IP range not valid."
 msgstr "Adresse IP ou zone IP invalide."
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Error: The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of one."
 msgstr "Erreur : Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins un caractère."
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Mailadmin not valid."
 msgstr "L'administrateur de courrier est invalide."
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Mailserver not valid."
 msgstr "Le serveur de courrier est invalide."
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "The mail size has to be a number."
 msgstr "La taille du courrier doit être un nombre."
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Invalid value for recipient verification"
 msgstr "Valeur invalide pour la vérification du destinataire"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Zarafa is not installed."
 msgstr "Zarafa n'est pas installé."
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "This user does not exists on this system."
 msgstr "Cet utilisateur n'existe pas sur ce système."
 
+# type: string
 #: lang/en:59
 #, no-wrap
 msgid "No password given."
 msgstr "Aucun mot de passe n'a été fourni."
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "This user is not an zarafa administrator."
 msgstr "Cet utilisateur n'est pas un administrateur Zarafa."
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The password is not correct."
 msgstr "Le mot de passe n'est pas correct."
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Antivirus"
 msgstr "Antivirus"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "Antispam"
 msgstr "Antispam"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Greylist"
 msgstr "Liste grise"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Quarantine"
 msgstr "Quarantaine"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Mail Security"
 msgstr "Sécurité du courriel"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Spamassassin"
 msgstr "Spamassassin"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "MPP Policyserver"
 msgstr "Serveur de règle MPP"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "Enabled"
 msgstr "Activé"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Disabled"
 msgstr "Désactivé"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Status"
 msgstr "État"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Service"
 msgstr "Service"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Feature"
 msgstr "Fonctionnalité"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Start"
 msgstr "Démarrer"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Stop"
 msgstr "Annuler"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Running"
 msgstr "En cours d'exécution"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Stopped"
 msgstr "À l'arrêt"
 
+# type: string
 #: lang/en:85
 #, no-wrap
 msgid "E-mail"
 msgstr "Courriel"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "Virus found notification"
 msgstr "Notification de détection de Virus"
 
+# type: string
 #: lang/en:88
 #, no-wrap
 msgid "Disabled TLS/SSL"
 msgstr "TLS/SSL désactivé"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "Disable TLS/SSL to smarthost"
 msgstr "Désactiver TLS/SSL vers le smarthost"
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "Disable TLS/SSL to mailclient"
 msgstr "Désactiver TLS/SSL vers le client de courriel"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "You submitted e-mail address is not correct!"
 msgstr "Vous avez saisi une adresse électronique invalide !"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Your KAV key is expired or not valid!"
 msgstr "Votre clé KAV est expirée ou invalide !"
 
+# type: string
 #: lang/en:95
 #, no-wrap
 msgid "You have to update your KAV before you activate this feature."
 msgstr "Vous devez mettre à jour votre KAV avant d'activer cette fonctionnalité."
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "You have to update your KAS before you activate this feature."
 msgstr "Vous devez mettre à jour votre KAS avant d'activer cette fonctionnalité."
 
+# type: string
 #: lang/en:97
 #, no-wrap
 msgid "Please activate policy server in MPP interface first."
 msgstr "Veuillez tout d'abord activer le serveur de règle dans l'interface MPP."
 
+# type: string
 #: lang/en:98
 #, no-wrap
 msgid "Configuration"
 msgstr "Configuration"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This name will be sent to remote SMTP servers for outgoing mails."
 msgstr "Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."

@@ -1,0 +1,5 @@
+err_ads_pass=Wrong Active Directory password for
+err_ads_dn=Active Directory DN not correct
+err_admin_wrong=Administratorname not valid
+err_user_wrong=Username not valid
+err_pass_wrong=Password not valid

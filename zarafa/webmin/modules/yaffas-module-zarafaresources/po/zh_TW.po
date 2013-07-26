@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-11-10 00:23+0100\n"
-"PO-Revision-Date: 2012-11-09 09:35+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,178 +166,213 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Manage resources"
 msgstr "管理資源"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Resource"
 msgstr "資源"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Description"
 msgstr "描述"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Email"
 msgstr "電子郵件"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Decline conflicts"
 msgstr "拒絕衝突"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Decline recurrent meetings"
 msgstr "拒絕重複會議"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "New resource"
 msgstr "新資源"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Modify resource"
 msgstr "修改資源"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Delete resource"
 msgstr "刪除資源"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Do you really want to delete these resources?"
 msgstr "您真的要刪除這些資源嗎?"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Do not forget to give appropriate permissions to users that need to book this resource in the calendar setting for this resource."
 msgstr "請勿忘記提供適當權限給需要在行事曆設定登記此資源的用戶。"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Type"
 msgstr "類型"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Capacity"
 msgstr "容量"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Room"
 msgstr "空間"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Equipment"
 msgstr "設備"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "The name of the resource contains illegal characters."
 msgstr "此資源名稱含有違法字符"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "The name of the resource is taken from a special user."
 msgstr "資源名稱取自一位特殊用戶"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "The description of the resource contains illegal characters."
 msgstr "此資源之描述含有違法字符"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "No e-mail address specified."
 msgstr "未指定電子郵件地址"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "You cannot use localhost as domain-part."
 msgstr "您無法使用本地主機作為網域部分"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "The domain is not defined as local domain in your mailserver configuration."
 msgstr "此網域不是定義為您的郵件伺服器配置內之本地網域"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Local-part of e-mail address must be identical with name."
 msgstr "電子郵件地址之本地部分須與名稱一致"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "The e-mail address is not valid."
 msgstr "電子郵件地址無效"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "The name of the resource is taken from a user."
 msgstr "資源名稱取自一位特殊用戶"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "The name of the resource is taken from a user's alias."
 msgstr "資源名稱取自一位用戶之別名"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "The given resource doesn't exist."
 msgstr "此特定資源不存在"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "No local mail domains configured."
 msgstr "未配置本地郵件網域"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Capacity has to be a number."
 msgstr "容量須為數字"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Resources"
 msgstr "資源"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This name will be shown in the global address book."
 msgstr "此名稱將顯示於全域通訊錄內"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "You may want to add a description if the name of the resource isn't self-explanatory."
 msgstr "如果資源名稱非不言自明，您可能要加入描述"
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "Check this box and the resource can only be booked once."
 msgstr "勾選此框，此資源只能登記一次。"
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "Check this box to disable recurring appointments for this resource."
 msgstr "勾選此框以關閉此資源之重複性約定。"
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Select the type of the resource."
 msgstr "選擇資源之類型"
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "Define the capacity of the resource. This value is only available for equipment resources."

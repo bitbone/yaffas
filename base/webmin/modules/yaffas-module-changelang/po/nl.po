@@ -6,47 +6,54 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-05-24 09:46+0200\n"
-"Last-Translator: Robin <r.vandenkerkhoff@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: nl\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Change Language"
 msgstr "Verander Taal"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "System"
 msgstr "Systeem"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Choose Language"
 msgstr "Kies Taal"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "German"
 msgstr "Duits"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "English"
 msgstr "Engels"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Language not found!"
 msgstr "Taal niet gevonden!"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Set Language"

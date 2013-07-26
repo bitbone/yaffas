@@ -1819,8 +1819,8 @@ sub get_sys_and_db_users() {
 	# this produces a hash with all array values as keys and undef as hash values
 	my %ret;
 	@ret{ Yaffas::UGM::get_users() } = ();
-	eval { use Yaffas::FaxDB; };
-	while (my($type, $entity) = each(Yaffas::FaxDB::entity({type => "user"}))) {
+	eval "use Yaffas::FaxDB;";
+	while (my($type, $entity, $id) = each(Yaffas::FaxDB::entity({type => "user"}))) {
 		$ret{$entity} = ();
 	}
 
@@ -1838,8 +1838,8 @@ see also get_sys_and_db_users( )
 sub get_sys_and_db_groups() {
 	my %ret;
 	@ret{ Yaffas::UGM::get_groups() } = ();
-	eval { use Yaffas::FaxDB; };
-	while (my($type, $entity) = each(Yaffas::FaxDB::entity({type => "group"}))) {
+	eval "use Yaffas::FaxDB;";
+	while (my($type, $entity, $id) = each(Yaffas::FaxDB::entity({type => "group"}))) {
 		$ret{$entity} = ();
 	}
 

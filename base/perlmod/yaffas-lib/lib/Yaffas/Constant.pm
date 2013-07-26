@@ -219,7 +219,7 @@ use constant {
 		"inittab" => "/etc/inittab",
 		"r_ifcfg" => "/etc/sysconfig/network-scripts/ifcfg",
 		"iftab" => "/etc/iftab",
-		"email_addresses" => ( OS eq 'Ubuntu' or OS eq 'Debian' ) ? "/etc/exim4/exim.user-rewrite" : "/etc/exim/exim.user-rewrite",
+		"email_addresses" => "/etc/postfix/sender_canonical",
 		"proc_dma" => "/proc/dma",
 		"proc_swaps" => "/proc/swaps",
 		"authconfig" => "/etc/sysconfig/authconfig",
@@ -270,6 +270,7 @@ use constant {
 		"nslcd_conf" => "/etc/nslcd.conf",
 		"mybitkit_conf" => "/opt/yaffas/etc/bitkit-update/login.conf",
 		"bitkitfax_mysql" => "/etc/mysql/bitkitfax.cnf",
+		"changepw_deny_root_pw_change" => "/opt/yaffas/config/deny-root-pw-change",
 	}
 };
 

@@ -17,7 +17,6 @@ use Yaffas::Exception;
 use Yaffas::Conf;
 use Yaffas::Conf::Function;
 use Yaffas::Constant;
-use Yaffas::Module::AuthSrv;
 use Error qw(:try);
 eval "use DBI";
 
@@ -55,6 +54,19 @@ sub change_root_password($) {
     _revert_sshd_config();
 
     return 1;
+}
+
+=item may_change_admin_password()
+
+Returns true if it is allowed to change the root password in the
+current setup.
+
+=cut
+
+sub may_change_root_password() {
+	return 0 if -f Yaffas::Constant::FILE->{changepw_deny_root_pw_change};
+	return 1 if Yaffas::UI::Webmin::get_theme() eq "bitkit";
+	return 0;
 }
 
 sub change_admin_password($) {

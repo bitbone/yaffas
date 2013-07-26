@@ -35,7 +35,8 @@ fi
 adduser postfix sasl
 
 CONF=/etc/postfix
-mkdir -p $CONF
+YAFFAS_CONF=/opt/yaffas/config/postfix
+mkdir -p $CONF $YAFFAS_CONF
 
 touch $CONF/ldap-aliases.cf
 touch $CONF/ldap-aliases.cf.db
@@ -43,7 +44,12 @@ touch $CONF/ldap-users.cf
 touch $CONF/ldap-users.cf.db
 touch $CONF/smtp_auth.cf
 postmap $CONF/smtp_auth.cf
+touch $CONF/virtual_users_global
 postmap $CONF/virtual_users_global
+touch $CONF/sender_canonical
+postmap $CONF/sender_canonical
+touch $YAFFAS_CONF/local-aliases.cf
+postmap $YAFFAS_CONF/local-aliases.cf
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db

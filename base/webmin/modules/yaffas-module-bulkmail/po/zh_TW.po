@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,38 +166,45 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:2 lang/en:11
 #, no-wrap
 msgid "Bulk mailing"
 msgstr "大量郵件"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "From"
 msgstr "寄件人"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Subject"
 msgstr "主旨"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Message"
 msgstr "郵件"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Send"
 msgstr "傳送"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Please complete all forms and check your e-mail address."
 msgstr "請完成全部表格並檢查您的電子郵件地址"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Your mails are queued for sending. This may take some time depending on your hardware."

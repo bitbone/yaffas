@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-10-10 00:25+0300\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,241 +167,292 @@ msgstr ""
 "Language: bg\n"
 "X-Generator: Translate Toolkit 1.8.1\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Stop"
 msgstr ""
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Close"
 msgstr ""
 
+# type: string
 #: lang/en:3 lang/en:19
 #, no-wrap
 msgid "Restore"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Restoring folder $1..."
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Restoring element $1..."
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "done"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "failed"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Start restore"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Restore was started"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Restore running"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Restore finished"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Subject"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Sender"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Date"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Start"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "End"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Select backup"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Backup Overview"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Clear"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Do you want to remove these elements from restore list?"
 msgstr ""
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Really clear?"
 msgstr ""
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Store"
 msgstr ""
 
+# type: string
 #: lang/en:24 lang/en:27
 #, no-wrap
 msgid "Backup time"
 msgstr ""
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Settings"
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Global settings"
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Full backup"
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Differential backup"
 msgstr ""
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "at"
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Backup directory"
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Remove"
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Preserve fullbackup (in days)"
 msgstr ""
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Removing directory"
 msgstr ""
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Click on \"restore\" to restore the selected messages."
 msgstr ""
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "No backup available"
 msgstr ""
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Zarafa Backup"
 msgstr ""
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Zarafa Backup is not installed"
 msgstr ""
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Time not correct."
 msgstr ""
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Preserve time not set or not correct."
 msgstr ""
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Could not open file."
 msgstr ""
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Could not find a full backup."
 msgstr ""
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Could not create directory."
 msgstr ""
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Value for backup days incorrect."
 msgstr ""
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Could not open directory."
 msgstr ""
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Loading folder structure take too long. Please try again later."
 msgstr ""
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Couldn't create symlinks for differential backup. Please check your storage device."
 msgstr ""
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Backup"
 msgstr ""
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "In which directory should the backups be stored?"
 msgstr ""
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "How long should each backup be preserved?"

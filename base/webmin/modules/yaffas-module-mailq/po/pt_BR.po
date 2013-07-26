@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
-"PO-Revision-Date: 2012-04-18 15:19+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,163 +15,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 # 81%
 #: lang/en:1
 #, no-wrap
 msgid "Email Queue"
 msgstr "Fila de e-mail"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Mailserver"
 msgstr "servidor de e-mail"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "ID"
 msgstr "ID"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Size"
 msgstr "Tamanho"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Time"
 msgstr "Hora"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Sender"
 msgstr "Remetente"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Recipient"
 msgstr "Destinatário"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Status"
 msgstr "Estado"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Attempt to deliver"
 msgstr "Tentativa de entrega"
 
+# type: string
 # 76%
 #: lang/en:10
 #, no-wrap
 msgid "Delete emails"
 msgstr "Excluir e-mails"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Forward to postmaster"
 msgstr "Encaminhar para o Postmaster"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Forward to special user"
 msgstr "Encaminhar para usuário especial"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "OK"
 msgstr "OK"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "All"
 msgstr "Todos"
 
+# type: string
 # 75%
 #: lang/en:15
 #, no-wrap
 msgid "None"
 msgstr "Nenhum"
 
+# type: string
 # 83%
 #: lang/en:16
 #, no-wrap
 msgid "Emails"
 msgstr "E-mails"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Email address"
 msgstr "Endereço de e-mail"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Mail ID"
 msgstr "Mail ID"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "forward to"
 msgstr "encaminhar para"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Really remove the emails with this mail ids?"
 msgstr "Realmente remover os e-mails com estes ids?"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Network"
 msgstr "Rede"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "No emails selected."
 msgstr "Nenhum e-mail selecionando."
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "No mail IDs selected"
 msgstr "Nenhum Mail ID selecionado"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Error marking email addresses as delivered"
 msgstr "Erro ao marcar o endereço de e-mail como entregue"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Error while adding new recipient to the mailid"
 msgstr "Erro ao adicionar novo destinatário para o mailid"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Error while force a delivery"
 msgstr "Erro ao forçar a uma entrega"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Error removing email"
 msgstr "Erro ao remover e-mail"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "Error at dequeue attempt for email"
 msgstr "Erro na tentativa de tirar o e-mail da fila"
 
+# type: string
 # 81%
 #: lang/en:29
 #, no-wrap
 msgid "No valid email address"
 msgstr "Endereço de e-mail inválido"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Display"
 msgstr "Exibição"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Mail Queue"

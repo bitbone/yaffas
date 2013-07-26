@@ -6,57 +6,66 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-05 18:02+0300\n"
-"PO-Revision-Date: 2012-07-05 17:21+0200\n"
-"Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "A logfile must be selected."
 msgstr "Es muss eine Log-Datei ausgewählt werden."
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "It is not allowed to download this file."
 msgstr "Download der Datei nicht erlaubt."
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Logfiles"
 msgstr "Log Dateien"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Download"
 msgstr "Herunterladen"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Show old logfiles"
 msgstr "Alte Log Dateien betrachten"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Show new logfiles"
 msgstr "Neue Log Dateien betrachten"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Size"
 msgstr "Größe"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "File"
 msgstr "Datei"
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Log file viewer"

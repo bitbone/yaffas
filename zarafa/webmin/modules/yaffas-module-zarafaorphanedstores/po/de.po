@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-10 00:27+0100\n"
-"PO-Revision-Date: 2013-01-09 14:27+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-06-27 13:59+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -15,146 +15,174 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:29
 #, no-wrap
 msgid "Orphaned Stores"
 msgstr "Verwaiste Postfächer"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Description"
 msgstr "Beschreibung"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Store Guid"
 msgstr "Postfach GUID"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Guessed Username"
 msgstr "Geschätzter Benutzername"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Size"
 msgstr "Größe"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Last Modified"
 msgstr "Letzte Änderung"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Last Login"
 msgstr "Letzter Login"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Store Type"
 msgstr "Postfachtyp"
 
+# type: string
 # 89%
 #: lang/en:9
 #, no-wrap
 msgid "Do you really want to delete the selected store?"
 msgstr "Wollen Sie das Postfach wirklich löschen?"
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Delete orphaned store"
 msgstr "Verwaistes Postfach löschen"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to copy this store to the public store?"
 msgstr "Möchten Sie dieses Postfach wirklich in den öffentlichen Ordner kopieren?"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Delete"
 msgstr "Löschen"
 
+# type: string
 #: lang/en:13 lang/en:19
 #, no-wrap
 msgid "Hook to user"
 msgstr "An einen Benutzer anhängen"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Copy to public store"
 msgstr "In den öffentlichen Ordner kopieren"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Hook orphaned store"
 msgstr "Verwaistes Postfach umhängen"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Confirm"
 msgstr "Bestätigen"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Username"
 msgstr "Benutzername"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Full Name"
 msgstr "Voller Name"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Orphaned Store ID"
 msgstr "Verwaistes Postfach ID"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Hook store"
 msgstr "Postfach umhängen"
 
+# type: string
 # 75%
 #: lang/en:22
 #, no-wrap
 msgid "to user"
 msgstr "an Benutzer"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Hook"
 msgstr "Umhängen"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Cancel"
 msgstr "Abbrechen"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Could not hook orphaned store"
 msgstr "Konnte das verwaiste Postfach nicht umhängen"
 
+# type: string
 # 76%
 #: lang/en:26
 #, no-wrap
 msgid "Could not find store"
 msgstr "Konnte das angegebene Postfach nicht finden."
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Could not hook the store to the selected user."
 msgstr "Konnte das Postfach nicht an den angegebenen Benutzer anhängen."
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "You have to select a user first"
 msgstr "Sie müssen zuerst einen Benutzer auswählen"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "This is a list of all zarafa stores which are not hooked to any user. Usually this happens when users are deleted. You have the option to delete these stores, hook them to another user or copy them to the public store. Hooking a orphaned store to a user will make the orphaned store the user's new store. The user's old store will in turn be orphaned."

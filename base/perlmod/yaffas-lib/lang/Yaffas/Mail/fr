@@ -1,0 +1,6 @@
+err_mailbox_name=The name of the mailbox can only contain digits and chars.
+err_quota_value=The quota value can only contain digits.
+err_mailbox_not_exist=This mailbox does not exists.
+err_invalid_parameters=Wrong parameters.
+err_folder_name=A folder name can only contain chars from a-z, digits 0-9, "-" and ".".
+err_alias_exists=This alias already exists.

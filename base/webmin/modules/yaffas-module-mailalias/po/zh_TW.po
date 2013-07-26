@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,141 +166,197 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Edit"
 msgstr "編輯"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Add alias"
 msgstr "增加別名"
 
+# type: string
 #: lang/en:3 lang/en:19
 #, no-wrap
 msgid "Remove"
 msgstr "移除"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Execute"
 msgstr "執行"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Apply"
 msgstr "套用"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Mail alias Configuration"
 msgstr "郵件別名配置"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Index"
 msgstr "索引"
 
+# type: string
 # 90%
 #: lang/en:9
 #, no-wrap
 msgid "Mail server"
 msgstr "郵件伺服器"
 
+# type: string
 # 79%
 #: lang/en:11
 #, no-wrap
 msgid "Do you really want to delete the alias(es)?"
 msgstr "您真的要刪除此別名嗎?"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Please enter valid values!"
 msgstr "請輸入有效值! "
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Mail aliases"
 msgstr "郵件別名"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Mail alias"
 msgstr "郵件別名"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Folder"
 msgstr "資料夾"
 
-#: lang/en:17 lang/en:20
+# type: string
+#: lang/en:17
 #, no-wrap
 msgid "User"
 msgstr "用戶"
 
+# type: string
+#: lang/en:20 lang/en:40
+#, no-wrap
+msgid "Recipient"
+msgstr "收件人"
+
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "or"
 msgstr "或"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Add"
 msgstr "增加"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Configuration of mail aliases is done through active directory."
 msgstr "經由AD目錄完成郵件別名之配置"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "The following usernames or e-mail addresses are not valid."
 msgstr "下列用戶名稱或電子郵件地址無效。"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "This alias already exists."
 msgstr "此別名已經存在"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "This alias name is not valid."
 msgstr "此別名無效"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "No alias selected."
 msgstr "未選定別名"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Nothing selected"
 msgstr "沒有選擇"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Alias exists as user."
 msgstr "別名當作用戶存在"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "An alias can only be set for user or folder."
 msgstr "別名只可以設定為用戶或文件夾"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Error while removing alias."
 msgstr "移除別名時之錯誤"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr "您無定義zarafa管理員或未建立文件夾。請於模組<a href=\\\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\\\">郵件伺服器/配置</a>定義之"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "郵件別名配置"
+
+# type: string
+# 75%
+# 100%
+#: lang/en:37
+#, fuzzy, no-wrap
+msgid "user"
+msgstr "用戶"
+
+# type: string
+# 80%
+# 100%
+#: lang/en:38
+#, fuzzy, no-wrap
+msgid "email"
+msgstr "電子郵件"
+
+# type: string
+#: lang/en:39
+#, no-wrap
+msgid "Type"
+msgstr "類型"

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2012-10-20 00:30+0300\n"
+"POT-Creation-Date: 2013-07-05 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,71 +15,85 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Submit"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Install new serial"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Installed subscriptions"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Base serial"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Serial number"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Licensed Log"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "This is not a valid zarafa serial"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Archiver serial"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Zarafa Subscription"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "User count"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "No serial installed!"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Allowed"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Available"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Used"

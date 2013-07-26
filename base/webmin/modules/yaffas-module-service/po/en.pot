@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2013-01-10 00:28+0100\n"
+"POT-Creation-Date: 2013-07-05 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,196 +15,235 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: string
 #: lang/en:1 lang/en:53
 #, no-wrap
 msgid "Services"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Service"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "State"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "Start Service on Boot"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Monitor"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Action"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Execute"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Start"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Stop"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Configuration"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Restart"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Started"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Stopped"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Service has been started"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Service must not be started"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Service couldn't be started"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Service has been stopped"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Service must not be stopped"
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Service couldn't be stopped"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Service has been restarted"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Service must not be restarted"
 msgstr ""
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Service couldn't be restarted"
 msgstr ""
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Stop service"
 msgstr ""
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Do you really want to stop this service?"
 msgstr ""
 
+# type: string
 #: lang/en:27 lang/en:28
 #, no-wrap
 msgid "Shutdown system"
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Reboot system"
 msgstr ""
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "System is shutting down."
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "System is rebooting. In some minutes you can login again."
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Do you really want to halt the system?"
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Do you really want to reboot the system?"
 msgstr ""
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Day"
 msgstr ""
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Month"
 msgstr ""
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Date"
 msgstr ""
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Hour"
 msgstr ""
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Year"
 msgstr ""
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Timezone"
 msgstr ""
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "System time"
 msgstr ""
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Invalid timezone"
 msgstr ""
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid ""
@@ -213,36 +252,43 @@ msgid ""
 "to be corrected on the host system instead."
 msgstr ""
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "now"
 msgstr ""
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "hourly"
 msgstr ""
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "daily at "
 msgstr ""
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid " minute"
 msgstr ""
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid " hour"
 msgstr ""
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Time Server"
 msgstr ""
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Enter the hostname or IP address of the time server to be used for NTP."

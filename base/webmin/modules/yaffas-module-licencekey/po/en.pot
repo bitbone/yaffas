@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2011-10-07 14:58+0300\n"
+"POT-Creation-Date: 2013-07-05 12:02+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,191 +15,229 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: ENCODING"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Install New Key"
 msgstr ""
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Existing Keys"
 msgstr ""
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Licensekey"
 msgstr ""
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "System"
 msgstr ""
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Apply key"
 msgstr ""
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "Customer"
 msgstr ""
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Initial Key"
 msgstr ""
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Licensenumber"
 msgstr ""
 
+# type: string
 #: lang/en:9
 #, no-wrap
 msgid "Incoming MSNs"
 msgstr ""
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "unlimited"
 msgstr ""
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Unlimited (only limited by telephone system)"
 msgstr ""
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Configurable controllers"
 msgstr ""
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "Valid from"
 msgstr ""
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "Valid until"
 msgstr ""
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Configurable printers"
 msgstr ""
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "PDF encryption"
 msgstr ""
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Notepaper"
 msgstr ""
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Merge PDFs"
 msgstr ""
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "enabled"
 msgstr ""
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "disabled"
 msgstr ""
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "yaffas base"
 msgstr ""
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Licensetype"
 msgstr ""
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Companylicense"
 msgstr ""
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "1-10 User"
 msgstr ""
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "11-50 User"
 msgstr ""
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "51-100 User"
 msgstr ""
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "101-250 User"
 msgstr ""
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "251-500 User"
 msgstr ""
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Could not copy the key."
 msgstr ""
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "The product for your key is not installed!"
 msgstr ""
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Can't create file!"
 msgstr ""
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Can't write file!"
 msgstr ""
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Invalid key location!"
 msgstr ""
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Can't remove new key!"
 msgstr ""
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Wrong key version for installed product!"
 msgstr ""
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "No key available!"
 msgstr ""
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Successfully saved licensekey!"
 msgstr ""
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "yaffas license key management"

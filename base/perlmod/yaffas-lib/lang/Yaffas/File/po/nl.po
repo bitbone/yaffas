@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR bitbone AG
+# This file is distributed under the same license as the yaffas package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-27 15:44+0300\n"
+"PO-Revision-Date: 2013-03-26 14:54+0200\n"
+"Last-Translator: Paul <p.boot@zarafa.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: nl\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 2.1.6\n"
+
+#. type: string
+#: en:1
+#, no-wrap
+msgid "User does not exist"
+msgstr ""
+
+#. type: string
+#: en:2
+#, no-wrap
+msgid "Group does not exist"
+msgstr ""
+
+#. type: string
+#: en:3
+#, no-wrap
+msgid "Could not change owner/group"
+msgstr ""
+
+#. type: string
+#: en:4
+#, no-wrap
+msgid "Could not change permissions"
+msgstr ""

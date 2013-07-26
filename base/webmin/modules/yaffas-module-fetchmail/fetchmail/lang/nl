@@ -59,6 +59,7 @@ poll_ecannot=You are not allowed to edit this user's fetchmail config
 poll_efile=Only users' fetchmail config files can be edited
 poll_interval=Poll interval
 poll_envelope=Envelope
+poll_smtpaddress=Local mail domain (smtpaddress)
 
 stop_err=Failed to stop fetchmail
 stop_ecannot=You are not allowed to stop fetchmail
@@ -136,4 +137,5 @@ err_remote_passwd=Please provide a password for the mailserver user.
 err_enable_fetchmail=Fetchmail daemon could not be enabled.
 err_bad_targets=Denying attempt to create poll query without any target users.
 err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
+err_smtpaddress=Invalid smtpaddress option (may not contain any whitespace).
 moduletitle=Fetchmail Mail Retrieval

@@ -1,5 +1,5 @@
 err_ads_pass=Falsches Active Directory Passwort für
+err_ads_dn=Active Directory DN nicht korrekt
 err_admin_wrong=Administratorname nicht erlaubt
 err_user_wrong=Benutzername nicht erlaubt
 err_pass_wrong=Passwort nicht erlaubt
-err_ads_dn=Active Directory DN nicht korrekt

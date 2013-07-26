@@ -157,8 +157,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-05 00:30+0100\n"
-"PO-Revision-Date: 2013-01-04 11:20+0200\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -166,28 +166,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1 lang/en:111
 #, no-wrap
 msgid "Authentication Server"
 msgstr "身分驗證伺服器"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Index"
 msgstr "索引"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "Accounts"
 msgstr "帳戶"
 
+# type: string
 #: lang/en:5 lang/en:10
 #, no-wrap
 msgid "Domain Controller"
 msgstr "網域控制器"
 
+# type: string
 # 87%
 # 76%
 # 75%
@@ -196,16 +201,19 @@ msgstr "網域控制器"
 msgid "Local authentication"
 msgstr "本地身分驗證"
 
+# type: string
 #: lang/en:7 lang/en:59
 #, no-wrap
 msgid "Local authentication (passwd/group)"
 msgstr "本地身分驗證(密碼/群組)"
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "No authentication method configured"
 msgstr "未配置身分驗證方法"
 
+# type: string
 # 87%
 # 76%
 #: lang/en:9
@@ -213,528 +221,638 @@ msgstr "未配置身分驗證方法"
 msgid "DC authentication"
 msgstr "DC之身分驗證"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Authentication server"
 msgstr "身分驗證伺服器"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Select authentication"
 msgstr "選擇身分驗證"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "yaffas LDAP server"
 msgstr "yaffas LDAP伺服器"
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "LDAP Server"
 msgstr "LDAP伺服器"
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Samba PDC"
 msgstr "Samba 主網域控制器"
 
+# type: string
 #: lang/en:16
 #, no-wrap
 msgid "Active Directory"
 msgstr "Active Directory"
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Active Directory Service"
 msgstr "Active Directory Service"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Local (/etc/passwd,/etc/group)"
 msgstr "Local (/etc/passwd,/etc/group)"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Add product"
 msgstr "增加產品"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Server/IP"
 msgstr "伺服器/IP"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "Base DN"
 msgstr "基礎DN"
 
+# type: string
 #: lang/en:22
 #, no-wrap
 msgid "Bind DN"
 msgstr "綁定DN"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid " Bind password"
 msgstr "綁定密碼"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid " Repeat bind password"
 msgstr "重複綁定密碼"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Products"
 msgstr "產品"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Product"
 msgstr "產品"
 
+# type: string
 #: lang/en:27
 #, no-wrap
 msgid "Version / IP"
 msgstr "版本/IP"
 
+# type: string
 #: lang/en:28
 #, no-wrap
 msgid "IP adress"
 msgstr "IP地址"
 
+# type: string
 #: lang/en:29
 #, no-wrap
 msgid "Allow authentication requests of remote clients via LDAP."
 msgstr "容許經由LDAP請求遠端用戶之身分驗證"
 
+# type: string
 #: lang/en:30
 #, no-wrap
 msgid "Allow authentication requests of remote clients via PDC."
 msgstr "容許經由主網域控制器請求遠端用戶之身分驗證"
 
+# type: string
 # 80%
 #: lang/en:31
 #, no-wrap
 msgid "Domain administrator"
 msgstr "網域管理員"
 
+# type: string
 #: lang/en:32 lang/en:58
 #, no-wrap
 msgid "Password"
 msgstr "密碼"
 
+# type: string
 #: lang/en:33
 #, no-wrap
 msgid "Repeat password"
 msgstr "重覆密碼"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "Test DC Connection"
 msgstr "測試網域控制器連接"
 
+# type: string
 #: lang/en:35
 #, no-wrap
 msgid "Ping Test"
 msgstr "Ping 測試"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "Trust Test"
 msgstr "信任測試"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "DC Users"
 msgstr "網域用戶"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Domain"
 msgstr "網域"
 
+# type: string
 #: lang/en:39
 #, no-wrap
 msgid "Current Config"
 msgstr "目前之配置"
 
+# type: string
 #: lang/en:40
 #, no-wrap
 msgid "Change"
 msgstr "改變"
 
+# type: string
 #: lang/en:41
 #, no-wrap
 msgid "Type"
 msgstr "類型"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "Search attribute group"
 msgstr "搜尋屬性群組"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Base DN group"
 msgstr "基礎DN群組"
 
+# type: string
 #: lang/en:44
 #, no-wrap
 msgid "Search attribute user"
 msgstr "搜尋屬性用戶"
 
+# type: string
 #: lang/en:45
 #, no-wrap
 msgid "Base DN user"
 msgstr "基礎DN用戶"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "To use this authentication method you need the following schema file. You have to include and use it in your LDAP server."
 msgstr "要用此身分驗證方法，您需要下面的架構檔案。您須置入並在您的LDAP伺服器內使用"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Caution!"
 msgstr "警告！"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Active Directory User"
 msgstr "Active Directory使用者"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "User name or DN"
 msgstr "用戶名稱或DN"
 
+# type: string
 #: lang/en:50
 #, no-wrap
 msgid "Join Domain without encryption?"
 msgstr "不經加密就加入網域?"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Your Active Directory server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will not join the domain."
 msgstr "您的Active Directory不支援數據加密(ldaps)。您能接受不經加密傳送目錄資料嗎?如您選擇”否”，yaffas伺服器將不加入網域。"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Your LDAP server does not support data encryption (ldaps). Do you accept that directory information will be transmitted unencrypted? If you choose 'no' here the yaffas server will change current authentication type."
 msgstr "您的LDAP伺服器不支援數據加密(ldaps)。您能接受不經加密傳送目錄資料嗎?如您選擇”否”，yaffas伺服器將改變目前之加密類型。"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Delete user fax configuration and PDF files"
 msgstr "刪除用戶傳真配置及PDF檔案"
 
+# type: string
 #: lang/en:54
 #, no-wrap
 msgid "Delete all users' and groups' fax configurations and pdf users' files."
 msgstr "刪除全部用戶及群組傳真配置及用戶檔案"
 
+# type: string
 #: lang/en:55
 #, no-wrap
 msgid "Print operators group"
 msgstr "列印操作員群組"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "Change print operators group"
 msgstr "改變列印操作員群組"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Administrator"
 msgstr "管理者"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Email attribute"
 msgstr "電子郵件屬性"
 
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "Choose a domain's sambaSID"
 msgstr "選擇網域之sambaSID"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "Could not open the samba configuration file."
 msgstr "無法打開samba配置檔案"
 
+# type: string
 #: lang/en:64
 #, no-wrap
 msgid "Could not restart the samba server."
 msgstr "無法重新啟動samba伺服器"
 
+# type: string
 #: lang/en:65
 #, no-wrap
 msgid "No DC was given."
 msgstr "沒有指定DC"
 
+# type: string
 #: lang/en:66
 #, no-wrap
 msgid "Invalid server name"
 msgstr "伺服器名稱無效"
 
+# type: string
 #: lang/en:67
 #, no-wrap
 msgid "Invalid domain name"
 msgstr "網域名稱無效"
 
+# type: string
 #: lang/en:68
 #, no-wrap
 msgid "Invalid base DN"
 msgstr "無效基礎DN"
 
+# type: string
 #: lang/en:69
 #, no-wrap
 msgid "Invalid bind DN"
 msgstr "無效綁定DN"
 
+# type: string
 #: lang/en:70
 #, no-wrap
 msgid "Invalid password"
 msgstr "無效密碼"
 
+# type: string
 #: lang/en:71
 #, no-wrap
 msgid "Invalid IP adress"
 msgstr "無效IP地址"
 
+# type: string
 #: lang/en:72
 #, no-wrap
 msgid "Invalid product"
 msgstr "無效產品"
 
+# type: string
 #: lang/en:73
 #, no-wrap
 msgid "Computer already is an authentication server."
 msgstr "電腦已是一個身分驗證伺服器"
 
+# type: string
 #: lang/en:74
 #, no-wrap
 msgid "Passwords are not equal"
 msgstr "密碼不一致"
 
+# type: string
 #: lang/en:75
 #, no-wrap
 msgid "Valid values are activate and deactivate."
 msgstr "有效值是啟用與關閉"
 
+# type: string
 #: lang/en:76
 #, no-wrap
 msgid "Valid values are 'on' and 'off'."
 msgstr "有效值是”開”及”關”"
 
+# type: string
 #: lang/en:77
 #, no-wrap
 msgid "Passwords are not equal."
 msgstr "密碼不一致"
 
+# type: string
 #: lang/en:78
 #, no-wrap
 msgid "Username contains ilegal characters."
 msgstr "用戶名稱含非法字元"
 
+# type: string
 #: lang/en:79
 #, no-wrap
 msgid "Error reading file."
 msgstr "讀檔案錯誤"
 
+# type: string
 #: lang/en:80
 #, no-wrap
 msgid "Error writing file."
 msgstr "寫檔案錯誤"
 
+# type: string
 #: lang/en:81
 #, no-wrap
 msgid "No files specified for rollback."
 msgstr "無指定檔案要退回"
 
+# type: string
 #: lang/en:82
 #, no-wrap
 msgid "Could not delete backup files."
 msgstr "無法刪除備份檔案"
 
+# type: string
 #: lang/en:83
 #, no-wrap
 msgid "Could not create backup files."
 msgstr "無法建立備份檔案"
 
+# type: string
 #: lang/en:84
 #, no-wrap
 msgid "An error occured while joining the domain."
 msgstr "加入網域時發生錯誤"
 
+# type: string
 #: lang/en:85
 #, no-wrap
 msgid "The search attribute for the user or group is not correct. You can only insert figures and characters from a-z and 0-9."
 msgstr "用戶或群組之搜尋屬性不正確。您僅能插入符號及自a-z及0-9之字元"
 
+# type: string
 #: lang/en:86
 #, no-wrap
 msgid "Invalid authentication type."
 msgstr "身分驗證類型無效"
 
+# type: string
 #: lang/en:87
 #, no-wrap
 msgid "Could not get LDAP base DN."
 msgstr "無法取得LDAP基礎DN"
 
+# type: string
 #: lang/en:88
 #, no-wrap
 msgid "Domain name is missing."
 msgstr "遺失網域名稱"
 
+# type: string
 #: lang/en:89
 #, no-wrap
 msgid "Domain administrator is missing."
 msgstr "遺失網域管理員"
 
+# type: string
 #: lang/en:90
 #, no-wrap
 msgid "No password was specified."
 msgstr "未指定密碼"
 
+# type: string
 #: lang/en:91
 #, no-wrap
 msgid "No server address was specified."
 msgstr "未指定伺服器地址"
 
+# type: string
 #: lang/en:92
 #, no-wrap
 msgid "No LDAP / Active Directory user was specified."
 msgstr "未指定LDAP/Active Directory用戶"
 
+# type: string
 #: lang/en:93
 #, no-wrap
 msgid "Could not get DN of user"
 msgstr "無法取得用戶之DN"
 
+# type: string
 #: lang/en:94
 #, no-wrap
 msgid "Could not contact directory service on"
 msgstr "無法接觸目錄服務於"
 
+# type: string
 #: lang/en:95
 #, no-wrap
 msgid "This option is not possible with yaffas|ZARAFA."
 msgstr "此選項不能配合yaffas|ZARAFA "
 
+# type: string
 #: lang/en:96
 #, no-wrap
 msgid "No LDAP URI specified."
 msgstr "未指定LDAP URI"
 
+# type: string
 #: lang/en:97
 #, no-wrap
 msgid "No BASEDN  specified."
 msgstr "未指定BASE DN "
 
+# type: string
 #: lang/en:98
 #, no-wrap
 msgid "LDAP / Active Directory user could not bind to server"
 msgstr "LDAP/Active Directory用戶無法綁至伺服器"
 
+# type: string
 #: lang/en:99
 #, no-wrap
 msgid "No old users specified."
 msgstr "未指定舊用戶"
 
+# type: string
 #: lang/en:100
 #, no-wrap
 msgid "No old groups specified."
 msgstr "未指定舊群組"
 
+# type: string
 #: lang/en:101
 #, no-wrap
 msgid "Cannot contact host"
 msgstr "無法聯絡主機"
 
+# type: string
 #: lang/en:102
 #, no-wrap
 msgid "Could not change ownership of files."
 msgstr "無法改變檔案之所有者"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 # 94%
 #: lang/en:103
 #, no-wrap
 msgid "Password not valid"
 msgstr "密碼無效"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:104
 #, no-wrap
 msgid "Wrong Active Directory password for"
 msgstr "錯誤之Active Directory 密碼"
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:105
 #, no-wrap
 msgid "Active Directory DN not correct"
 msgstr "Active Directory DN不正確"
 
+# type: string
 #: lang/en:106
 #, no-wrap
 msgid "Error reading data for use with samba."
 msgstr "使用samba讀取數據時發生錯誤。"
 
+# type: string
 #: lang/en:107
 #, no-wrap
 msgid "Error writing data for use with samba."
 msgstr "使用samba寫數據時發生錯誤。"
 
+# type: string
 #: lang/en:108
 #, no-wrap
 msgid "The samba domain already exists in LDAP! Please rectify this."
 msgstr "samba網域已經存在於LDAP內！請更正之"
 
+# type: string
 #: lang/en:109
 #, no-wrap
 msgid "<no matching Domain>"
 msgstr "<無匹配的網域>"
 
+# type: string
 #: lang/en:110
 #, no-wrap
 msgid "unknown postfix file"
 msgstr "不明postfix檔案"
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "LDAP Search Base DN. LDAP entries are searched from that point. e.g. o=yaffas,c=org"
 msgstr "LDA搜尋基礎DN。起始點(如0=yaffas，c=org)開始搜尋LDAP。"
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "Attribute with users email address. Default: mail"
 msgstr "用戶電子郵件地址之屬性。預設：mail"
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "User to bind with. e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
 msgstr "用戶綁定e.g. cn=ldapadmin,ou=People,o=yaffas,c=org"
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "Whole domainname of your Active Directory. e.g. yaffas.org"
 msgstr "您的Active Directory之全網域名稱，如yaffas.org"
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "Name or IP adress of your domain controller or controllers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."
 msgstr "您的網域控制器之名稱或IP地址"
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "Name of a domain administrator. This user should be created in users organizational unit."
 msgstr "網域管理員之名稱。此用戶應建立於用戶之組織單位內"
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "User for read only access. You can give the username or a full dn syntax."
 msgstr "僅能讀之用戶。您可給用戶名稱或全dn語法"
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "Hostname or IP address of the LDAP server or servers. Can be a comma, semicolon or space separated list of hostnames or IP addresses."

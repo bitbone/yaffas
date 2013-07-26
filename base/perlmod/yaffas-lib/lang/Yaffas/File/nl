@@ -1,0 +1,4 @@
+err_user_not_exist=User does not exist
+err_group_not_exist=Group does not exist
+err_chown=Could not change owner/group
+err_chmod=Could not change permissions

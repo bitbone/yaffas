@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-27 00:32+0100\n"
+"POT-Creation-Date: 2013-07-05 12:01+0300\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -167,320 +167,384 @@ msgstr ""
 "Language: sl\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3);\n"
-"X-Generator: Pootle 2.1.5\n"
+"X-Generator: Pootle 2.1.6\n"
 
+# type: string
 #: lang/en:1
 #, no-wrap
 msgid "Userfilter"
 msgstr "Userfilter"
 
+# type: string
 #: lang/en:2
 #, no-wrap
 msgid "Default"
 msgstr "Privzeto"
 
+# type: string
 #: lang/en:3
 #, no-wrap
 msgid "AD Plugin"
 msgstr "AD Plugin"
 
+# type: string
 #: lang/en:4
 #, no-wrap
 msgid "AD Group"
 msgstr "AD Group"
 
+# type: string
 #: lang/en:5
 #, no-wrap
 msgid "Delete these zarafa stores?"
 msgstr "Delete these zarafa stores?"
 
+# type: string
 #: lang/en:6
 #, no-wrap
 msgid "With this step, the following zarafa stores would be deleted:"
 msgstr "With this step, the following zarafa stores would be deleted:"
 
+# type: string
 #: lang/en:7
 #, no-wrap
 msgid "Could not find Group."
 msgstr "Nisem našel skupine."
 
+# type: string
 #: lang/en:8
 #, no-wrap
 msgid "Could not find the rootDomainNamingContext in AD."
 msgstr "Could not find the rootDomainNamingContext in AD."
 
+# type: string
 #: lang/en:10
 #, no-wrap
 msgid "Maximum attachment size in Webaccess"
 msgstr "Maximum attachment size in Webaccess"
 
+# type: string
 #: lang/en:11
 #, no-wrap
 msgid "Size"
 msgstr "Velikost"
 
+# type: string
 #: lang/en:12
 #, no-wrap
 msgid "Purge old deleted items now?"
 msgstr "Purge old deleted items now?"
 
+# type: string
 #: lang/en:13
 #, no-wrap
 msgid "The maximum attachment size must be numeric and >0."
 msgstr "The maximum attachment size must be numeric and >0."
 
+# type: string
 #: lang/en:14
 #, no-wrap
 msgid "The softdelete lifetime must be numeric and >=0."
 msgstr "The softdelete lifetime must be numeric and >=0."
 
+# type: string
 #: lang/en:15
 #, no-wrap
 msgid "Could not purge old items."
 msgstr "Could not purge old items."
 
+# type: string
 #: lang/en:17
 #, no-wrap
 msgid "Optimize"
 msgstr "Optimiziraj"
 
+# type: string
 #: lang/en:18
 #, no-wrap
 msgid "Addressable memory"
 msgstr "Addressable memory"
 
+# type: string
 #: lang/en:19
 #, no-wrap
 msgid "Optimized for"
 msgstr "Optimized for"
 
+# type: string
 #: lang/en:20
 #, no-wrap
 msgid "Optimize memory"
 msgstr "Optimize memory"
 
+# type: string
 #: lang/en:21
 #, no-wrap
 msgid "unknown"
 msgstr "neznan"
 
+# type: string
 #: lang/en:23
 #, no-wrap
 msgid "Quota e-mail templates"
 msgstr "Quota e-mail templates"
 
+# type: string
 #: lang/en:24
 #, no-wrap
 msgid "Message at 80%"
 msgstr "Message at 80%"
 
+# type: string
 #: lang/en:25
 #, no-wrap
 msgid "Message at 90%"
 msgstr "Message at 90%"
 
+# type: string
 #: lang/en:26
 #, no-wrap
 msgid "Message at 100%"
 msgstr "Message at 100%"
 
+# type: string
 #: lang/en:28 lang/en:29
 #, no-wrap
 msgid "Default quota"
 msgstr "Default quota"
 
+# type: string
 #: lang/en:31
 #, no-wrap
 msgid "Enable POP3 for users by default"
 msgstr "Enable POP3 for users by default"
 
+# type: string
 #: lang/en:32
 #, no-wrap
 msgid "Enable IMAP for users by default"
 msgstr "Enable IMAP for users by default"
 
+# type: string
 # 87%
 #: lang/en:33
 #, no-wrap
 msgid "Feature"
 msgstr "Funkcije"
 
+# type: string
 #: lang/en:34
 #, no-wrap
 msgid "State"
 msgstr "State"
 
+# type: string
 #: lang/en:36
 #, no-wrap
 msgid "MySQL settings"
 msgstr "MySQL settings"
 
+# type: string
 #: lang/en:37
 #, no-wrap
 msgid "Database"
 msgstr "Baza podatkov"
 
+# type: string
 #: lang/en:38
 #, no-wrap
 msgid "Server"
 msgstr "Server"
 
+# type: string
 #: lang/en:39 lang/en:44
 #, no-wrap
 msgid "Username"
 msgstr "Uporabniško ime"
 
+# type: string
 #: lang/en:40 lang/en:45
 #, no-wrap
 msgid "Password"
 msgstr "Geslo"
 
+# type: string
 #: lang/en:42
 #, no-wrap
 msgid "PRF Creator"
 msgstr "PRF Creator"
 
+# type: string
 #: lang/en:43
 #, no-wrap
 msgid "Profile name"
 msgstr "Profile name"
 
+# type: string
 #: lang/en:46
 #, no-wrap
 msgid "Server adress"
 msgstr "Server adress"
 
+# type: string
 #: lang/en:47
 #, no-wrap
 msgid "Overwrite profile"
 msgstr "Overwrite profile"
 
+# type: string
 #: lang/en:48
 #, no-wrap
 msgid "Backup profile"
 msgstr "Backup profile"
 
+# type: string
 #: lang/en:49
 #, no-wrap
 msgid "Download"
 msgstr "Prenos"
 
+# type: string
 #: lang/en:51
 #, no-wrap
 msgid "Connection type"
 msgstr "Connection type"
 
+# type: string
 #: lang/en:52
 #, no-wrap
 msgid "Autodetect"
 msgstr "Autodetect"
 
+# type: string
 #: lang/en:53
 #, no-wrap
 msgid "Online"
 msgstr "Online"
 
+# type: string
 # 83%
 #: lang/en:54
 #, no-wrap
 msgid "Cached"
 msgstr "Cached"
 
+# type: string
 #: lang/en:56
 #, no-wrap
 msgid "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 msgstr "To use this created file you have to run outlook on a commandline with the \"/importprf\" parameter. (e.g. outlook.exe /importprf \\\\path\\to\\file.prf)"
 
+# type: string
 #: lang/en:57
 #, no-wrap
 msgid "Basic settings"
 msgstr "Osnovne nastavitve"
 
+# type: string
 #: lang/en:58
 #, no-wrap
 msgid "Number of days to keep deleted items"
 msgstr "Number of days to keep deleted items"
 
+# type: string
 #: lang/en:60
 #, no-wrap
 msgid "Could not connect to database."
 msgstr "Ne morem se povezati v bazo podatkov."
 
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
 #: lang/en:61
 #, no-wrap
 msgid "The quota value can only contain digits."
 msgstr "The quota value can only contain digits."
 
+# type: string
 #: lang/en:62
 #, no-wrap
 msgid "Configuration"
 msgstr "Konfiguracija"
 
+# type: string
 #: lang/en:63
 #, no-wrap
 msgid "It is not possible to have a hash (#) character in the MySQL password."
 msgstr "It is not possible to have a hash (#) character in the MySQL password."
 
+# type: string
 #: help/en:1
 #, no-wrap
 msgid "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 msgstr "Specify the maximum size of attachments for each mail in MB to be uploaded via the Webaccess."
 
+# type: string
 #: help/en:2
 #, no-wrap
 msgid "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
 msgstr "This limits the maximum disk usage for each user in MB. Leave empty for no limit."
 
+# type: string
 #: help/en:3
 #, no-wrap
 msgid "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 msgstr "This is the username that will be used for connecting to the database. The user has to be created and have the permissions to use the given database."
 
+# type: string
 #: help/en:4
 #, no-wrap
 msgid "This is the password that is set on the database. You need to set this password manually."
 msgstr "This is the password that is set on the database. You need to set this password manually."
 
+# type: string
 #: help/en:5
 #, no-wrap
 msgid "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 msgstr "This is the address of the MySQL server. For locally installed servers enter 'localhost'."
 
+# type: string
 #: help/en:6
 #, no-wrap
 msgid "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 msgstr "This is the name of the database to be used by Zarafa.<br />We recommend 'zarafa'.<br />It will be created if it doesn't exists. To do this the user needs the right permissions."
 
+# type: string
 #: help/en:7
 #, no-wrap
 msgid "Specify the server address that will be used to connect your outlook clients to zarafa server."
 msgstr "Specify the server address that will be used to connect your outlook clients to zarafa server."
 
+# type: string
 #: help/en:8
 #, no-wrap
 msgid "The name for the outlook profile."
 msgstr "The name for the outlook profile."
 
+# type: string
 #: help/en:9
 #, no-wrap
 msgid "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
 msgstr "The username to connect to the server. Most of the time you will want to use \"%UserName%\" which will be replaced by outlook with the current username."
 
+# type: string
 #: help/en:10
 #, no-wrap
 msgid "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
 msgstr "If you specify a username you should also specify a password for that user. If you leave it blank, then outlook will ask for it."
 
+# type: string
 #: help/en:11
 #, no-wrap
 msgid "Specify if you want your profile to be overwritten during installation."
 msgstr "Specify if you want your profile to be overwritten during installation."
 
+# type: string
 #: help/en:12
 #, no-wrap
 msgid "Specify if you want to backup an existing profile before overwriting it."
 msgstr "Specify if you want to backup an existing profile before overwriting it."
 
+# type: string
 #: help/en:13
 #, no-wrap
 msgid "Items (mails, calendar entries, ...) are not immediately deleted in Zarafa. They stay restorable for some time. This entry specifies how long (in days)."
