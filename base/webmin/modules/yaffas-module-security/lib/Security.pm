@@ -12,6 +12,7 @@ use Yaffas::Conf::Function;
 use Yaffas::Check;
 use Yaffas::Module::Proxy;
 use Error qw(:try);
+use Net::DNS::Resolver;
 
 sub BEGIN {
 	our @ISA = qw/Yaffas::Module/;
@@ -1241,6 +1242,32 @@ sub conf_dump {
 
 
 	$conf->save();
+}
+
+sub clamav_state {
+    my $res = Net::DNS::Resolver->new;
+    $res->tcp_timeout(2);
+    $res->udp_timeout(2);
+    my $query = $res->search("current.cvd.clamav.net", "TXT");
+    my $avail = "";
+
+    if ($query) {
+        foreach my $answer (grep { $_->type eq 'TXT' } $query->answer) {
+            $avail = (split(/:/, $answer->txtdata))[2];
+            last;
+        }
+    }
+    else {
+        $avail = "failed - ".$res->errorstring;
+    }
+
+    my $tmp = Yaffas::do_back_quote("/usr/sbin/clamd", "-V");
+
+    my @clamd = split(/\//, $tmp);
+
+    chomp $clamd[2];
+
+    return { available => $avail, installed => $clamd[1], date => $clamd[2] };
 }
 
 

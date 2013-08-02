@@ -6,6 +6,8 @@ use Yaffas::UI qw($Cgi section start_section end_section section_button textfiel
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Security;
 
+sub _clamav_state;
+
 my @dnsbl_policy = (
 	[ $main::text{'lbl_host'}, 'dnsbl_host', ''],
 	[ $main::text{'lbl_hit'}, 'dnsbl_hit', ''],
@@ -144,6 +146,8 @@ sub antivirus(){
 			#$Cgi->button({-id=>'av_update',-value=>$main::text{'lbl_update'}});
 
 	print $Cgi->end_div();
+
+    _clamav_state();
 	print end_section();
 }
 
@@ -160,6 +164,17 @@ sub whitelist(){
             $Cgi->div({-class=>'hd'}, $main::text{'lbl_add'}),
             $Cgi->div({-class=>'bd'}, _policy_form([$main::text{'lbl_wl_entry'},'whitelist_entry','']))
         ),
+    );
+}
+
+sub _clamav_state {
+    my $state = Yaffas::Module::Security::clamav_state();
+
+    print $Cgi->h2($main::text{lbl_clamav_status});
+    print $Cgi->table(
+        $Cgi->Tr($Cgi->td([$main::text{lbl_clamav_lastupdate}.":", $state->{date}])),
+        $Cgi->Tr($Cgi->td([$main::text{lbl_clamav_status_inst}.":", $state->{installed}])),
+        $Cgi->Tr($Cgi->td([$main::text{lbl_clamav_status_avail}.":", $state->{available}])),
     );
 }
 
