@@ -386,6 +386,7 @@ use constant {
 		"brctl" => (OS eq 'Ubuntu' and OSVER eq '12.04') ? '/sbin/brctl' : '/usr/sbin/brctl',
 		"dhclient" => '/sbin/dhclient',
 		"locale-gen" => '/usr/sbin/locale-gen',
+		"clamd" => '/usr/sbin/clamd',
 	}
 };
 

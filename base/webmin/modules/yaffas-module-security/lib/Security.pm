@@ -1261,7 +1261,7 @@ sub clamav_state {
         $avail = "failed - ".$res->errorstring;
     }
 
-    my $tmp = Yaffas::do_back_quote("/usr/sbin/clamd", "-V");
+    my $tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{clamd}, "-V");
 
     my @clamd = split(/\//, $tmp);
 
