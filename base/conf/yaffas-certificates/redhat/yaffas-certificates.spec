@@ -39,10 +39,6 @@ if [ -f /opt/yaffas/var/default.crt ]; then
     cp /opt/yaffas/var/default.* ${CERTDIR}/org/
 fi
 
-if [ ! -f ${CERTDIR}/org/default.crt ]; then
-	%{__cp} -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* ${CERTDIR}/org/
-fi
-
 if [ $1 -eq 1 ]; then
 	# first install => generate a default certificate
 	set -e

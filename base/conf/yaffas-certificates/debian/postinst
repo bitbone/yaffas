@@ -31,10 +31,6 @@ case "$1" in
             cp /opt/yaffas/var/default.* $CERTDIR/org/
         fi
 
-        if [ ! -f $CERTDIR/org/default.crt ]; then
-            cp -f ${YAFFAS_EXAMPLE}/etc/ssl/certs/org/default.* $CERTDIR/org/
-        fi
-
         if [ -z "$2" ]; then
             # first install => generate a default certificate
             set -e
