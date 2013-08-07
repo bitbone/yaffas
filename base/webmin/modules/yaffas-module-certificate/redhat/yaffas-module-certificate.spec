@@ -9,7 +9,7 @@ Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Provides:	perl(Yaffas::Module::Certificate)
-Requires:	yaffas-install-lib, yaffas-core, openssl, perl, perl(Yaffas), perl(CGI::Carp), perl(Error), perl(Exporter), perl(File::Copy), perl(Time::Local)
+Requires:	yaffas-install-lib, yaffas-certificates, yaffas-core, openssl, perl, perl(Yaffas), perl(CGI::Carp), perl(Error), perl(Exporter), perl(File::Copy), perl(Time::Local)
 AutoReqProv: no
 
 %description
