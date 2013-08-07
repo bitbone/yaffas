@@ -717,7 +717,11 @@ sub _save_interfaces {
 		$file->save();
 
 		my $resolv = Yaffas::File->new(Yaffas::Constant::FILE->{resolv_conf}, "");
-		$resolv->add_line("nameserver ".join " ", @dns);
+		foreach my $dns (@dns) {
+			if ($dns) {
+				$resolv->add_line("nameserver ".$dns);
+			}
+		}
 		$resolv->add_line("search ".join " ", @search);
 		$resolv->save();
 	}
