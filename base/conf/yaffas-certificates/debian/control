@@ -7,6 +7,6 @@ Standards-Version: 3.6.1
 
 Package: yaffas-certificates
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends} yaffas-install-lib, yaffas-core
+Depends: ${shlibs:Depends}, ${misc:Depends} yaffas-install-lib, yaffas-core, yaffas-module-certificate
 Description: Default yaffas certificates
  Default yaffas certificates
