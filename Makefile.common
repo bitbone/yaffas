@@ -19,6 +19,7 @@ YAFFAS_LANG=	$(YAFFAS_PREFIX)/lang
 YAFFAS_DOC=		$(YAFFAS_PREFIX)/share/doc
 YAFFAS_EXAMPLE=	$(YAFFAS_DOC)/example
 YAFFAS_INIT=	$(YAFFAS_CONF)/init.d
+YAFFAS_LIBEXEC=	$(YAFFAS_PREFIX)/libexec
 
 APACHE_ROOT=	/var/www
 APACHE_SITES=	/etc/apache2/sites-enabled

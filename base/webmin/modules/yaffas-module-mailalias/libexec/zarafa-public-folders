@@ -1,0 +1,61 @@
+#!/usr/bin/php5
+<?php
+/* Copyright bitbone AG 2008-2009 */
+
+define('ZARAFA_SOCKET', 'file:///var/run/zarafa');
+
+$testdir = "";
+if (count($argv) >= 2 && $argv[1])
+	$testdir = $argv[1];
+
+
+include("mapi/mapi.util.php");
+include("mapi/mapicode.php");
+include("mapi/mapidefs.php");
+include("mapi/mapitags.php");
+
+
+$session = mapi_logon_zarafa('SYSTEM', '', ZARAFA_SOCKET);
+if ($session == false) {
+	echo "Unable to connect to Zarafa as SYSTEM at " . ZARAFA_SOCKET;
+	exit(255);
+}
+
+$storetable = mapi_getmsgstorestable($session);
+$storeslist = mapi_table_queryallrows($storetable, array(PR_ENTRYID, PR_MDB_PROVIDER));
+$publicstore = false;
+foreach ($storeslist as $store) {
+	if ($store[PR_MDB_PROVIDER] == ZARAFA_STORE_PUBLIC_GUID) {
+		$publicstore = mapi_openmsgstore($session, $store[PR_ENTRYID]);
+	}
+}
+
+if ($publicstore) {
+	$inbox = mapi_msgstore_openentry($publicstore, null);
+	if ($inbox == false) {
+		echo "Can't open public store\n";
+		exit(255);
+	}
+	$folders = mapi_folder_gethierarchytable($inbox, CONVENIENT_DEPTH);
+	$folderlist = mapi_table_queryallrows($folders);
+
+	foreach ($folderlist as $f) {
+		if ($f[PR_DISPLAY_NAME] == "IPM_SUBTREE") {
+			get_folders($f[PR_ENTRYID], "");
+		}
+	}
+}
+
+function get_folders($folderid, $parent) {
+	global $publicstore;
+	$inbox = mapi_msgstore_openentry($publicstore, $folderid);
+	$folders = mapi_folder_gethierarchytable($inbox);
+	$folderlist = mapi_table_queryallrows($folders);
+	foreach ($folderlist as $f) {
+		$folder = $parent . $f[PR_DISPLAY_NAME];
+		echo $folder."\n";
+
+		get_folders($f[PR_ENTRYID], $parent.$f[PR_DISPLAY_NAME]."/");
+	}
+}
+?>

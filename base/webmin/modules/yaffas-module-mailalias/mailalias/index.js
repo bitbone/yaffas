@@ -2,7 +2,6 @@ Aliases = function() {
 	this.table = null;
 	this.menu = null;
 	this.setupTable();
-    //this.changeAliasType();
 }
 
 Aliases.prototype.confirmation = function(url, args, submit) {
@@ -41,14 +40,10 @@ Aliases.prototype.setupTable = function() {
         label: _("lbl_mailalias"),
         sortable: true
     }, {
-        key: "user",
-        label: _("lbl_user"),
+        key: "target",
+        label: _("lbl_target"),
         sortable: true,
-    }/*, {
-        key: "folder",
-        label: _("lbl_destination_dir"),
-        sortable: true
-    }*/
+		}
 	];
 		
 	this.table = new Yaffas.Table({
@@ -99,8 +94,9 @@ Aliases.prototype.changeAliasType = function() {
     var tab = Yaffas.ui.tabs.get("activeTab").get("contentEl");
     var from = tab.select("select#aliastype")[0];
 
-    var manual = tab.select("tr#row-manual")[0];
+    var mail = tab.select("tr#row-mail")[0];
     var user = tab.select("tr#row-user")[0];
+		var dir = tab.select("tr#row-dir")[0];
 
     var current = "";
 
@@ -111,13 +107,17 @@ Aliases.prototype.changeAliasType = function() {
         return;
     }
 
-    if (current === "user") {
-        manual.hide();
-        user.show();
+    user.hide();
+    mail.hide();
+    dir.hide();
+    if (current == "user") {
+      user.show();
     }
+		else if (current == "mail") {
+      mail.show();
+		}
     else {
-        manual.show();
-        user.hide();
+      dir.show();
     }
 }
 

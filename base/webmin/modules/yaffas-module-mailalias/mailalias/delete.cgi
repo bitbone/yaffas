@@ -5,8 +5,10 @@ use warnings;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 
 use Yaffas;
-use Yaffas::Mail::Mailalias;
 use Yaffas::UI qw(error_box ok_box);
+use Yaffas::Exception;
+use Yaffas::Mail::Mailalias;
+use Error qw(:try);
 
 Yaffas::init_webmin();
 ReadParse();
@@ -14,36 +16,19 @@ header();
 
 my @alias = split /\0/ , $main::in{"delete_me"};
 
-my $user_alias = Yaffas::Mail::Mailalias->new();
-my $dir_alias;
-if (Yaffas::Product::check_product('mail'))
-{
-	$dir_alias = Yaffas::Mail::Mailalias->new("DIR");
-}
-
-my $exception = Yaffas::Exception->new();
-
-for (@alias) {
-	$user_alias->remove($_);
-	if (Yaffas::Product::check_product('mail'))
-	{
-		$dir_alias->remove($_);
+try {
+	for my $aliastype ("USER", "MAIL", "DIR") {
+		my $alias = Yaffas::Mail::Mailalias->new($aliastype);
+		for (@alias) {
+			$alias->remove($_);
+		}
+		$alias->write();
 	}
-}
-
-eval {
-	$user_alias->write() or die;
-	if (Yaffas::Product::check_product('mail'))
-	{
-		$dir_alias->write() or die;
-	}
-
+} catch Yaffas::Exception with {
+	print error_box($main::text{lbl_check_aliasesrm_error});
+} otherwise {
 	print ok_box();
 };
-
-if ($@){
-	print error_box($main::text{lbl_check_aliasesrm_error});
-}
 
 footer();
 

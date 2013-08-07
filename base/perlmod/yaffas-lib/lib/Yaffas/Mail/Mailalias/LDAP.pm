@@ -17,12 +17,13 @@ sub _write {
    my $mode = shift;
    my $data = shift;
    my $remove = shift;
-   my $clean = {};
+   my $useraliases = {};
 
-   while(my($k,$v) = each %{$data})
+   return {} if $mode && $mode ne 'USER';
+
+   while(my($k,$users) = each %{$data})
    {
-       my @users = split(/\s*,\s*/, $v);
-       push @{ $clean->{ $_} }, $k for @users;
+       push @{ $useraliases->{ $_} }, $k for @$users;
    }
 
    while(my($k,$v) = each %{$remove})
@@ -30,7 +31,7 @@ sub _write {
         Yaffas::LDAP::replace_entries($k, ['replace' => [ 'zarafaAliases' => [] ]] );
    }
 
-   while(my($uid, $aref) = each %$clean)
+   while(my($uid, $aref) = each %$useraliases)
    {
        my $changes = [];
        push @$changes, 'replace' => [ 'zarafaAliases' => [] ];
@@ -39,7 +40,6 @@ sub _write {
        {
            push @$changes, 'add' => [ 'zarafaAliases' => $alias ] ;
        }
-
        Yaffas::LDAP::replace_entries($uid, $changes);
    }
 
@@ -48,7 +48,7 @@ sub _write {
 
 sub _read {
    my $mode = shift;
-   return {} if $mode && $mode eq 'DIR';
+   return {} if $mode && $mode ne 'USER';
 
    my @users = Yaffas::LDAP::search_entry("objectClass=zarafa-user", "uid");
    my %ret;
@@ -61,11 +61,11 @@ sub _read {
        {
            if(exists($ret{$a}))
            {
-               $ret{$a} = join(", ", $ret{$a}, $user);
+               push($ret{$a}, $user);
            }
            else
            {
-               $ret{$a} = $user;
+               $ret{$a} = [$user];
            }
        }
    }

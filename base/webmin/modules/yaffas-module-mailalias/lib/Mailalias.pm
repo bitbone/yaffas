@@ -96,26 +96,25 @@ sub conf_dump() {
 sub add_edit_alias {
 	my $from    = $main::in{from};
 	my @to;
-	my @del     = split /\0/, $main::in{del_to};
-    my $type    = $main::in{type};
+    my $type    = uc $main::in{type};
 
 	my $e           = Yaffas::Exception->new();
-	my $useralias   = Yaffas::Mail::Mailalias->new();
+	my $alias;
 
-    if ($type eq "user") {
+    if ($type eq "USER") {
         @to = split /\s*\0\s*/, $main::in{to};
     }
-    elsif ($type eq "manual") {
+    elsif ($type eq "MAIL") {
         @to = split /\s*,\s*/, $main::in{recipient};
     }
+	elsif ($type eq "DIR") {
+		@to = $main::in{dir};
+	}
     else {
         $e->add( "err_unknown_type", $type);
     }
 
 	Yaffas::Check::alias($from) or $e->add( "err_check_alias", $from );
-
-	my %user = $useralias->get_all();
-	my @useraliases = grep /^$from$/, keys %user;
 
     foreach my $to (@to) {
         if ($type eq "user") {
@@ -130,40 +129,42 @@ sub add_edit_alias {
             }
             $e->add( "err_check_alias", $to );
         }
-
-    }
-
-=pod
-	foreach (@folders) {
-		unless ( Yaffas::Mail::check_mailbox($_) ) {
-			$e->add( "err_check_alias_folder", $_ );
+		elsif ($type eq "dir") {
+			if ($to =~ /[\r\n]/) {
+				$e->add("err_check_folder");
+			}
+			# no further checks here, we accept any folder name
 		}
-	}
-=cut
+    }
 
 	if ($e) {
 		print Yaffas::UI::all_error_box($e);
+		return;
+	}
+	my @err;
+	# remove all previous occurences and re-add the new alias
+	try {
+		for my $tmptype ("USER", "MAIL", "DIR") {
+			$alias = Yaffas::Mail::Mailalias->new($tmptype);
+			$alias->remove( $from );
+			if ($tmptype eq $type) {
+				$alias->add( $from, $_ ) for (@to);
+			}
+			$alias->write();
+		}
+	}
+	catch Yaffas::Exception with {
+		push @err, [ shift, $from ];
+	}
+	otherwise {
+		print Yaffas::UI::error_box(shift);
+	};
+
+	if (@err) {
+		print Yaffas::UI::all_error_box( $_->[0] ) for @err;
 	}
 	else {
-		my @err;
-		try {
-			$useralias->remove( $from );
-			$useralias->add( $from, $_ ) for (@to);
-			$useralias->write();
-		}
-		catch Yaffas::Exception with {
-			push @err, [ shift, $from ];
-		}
-		otherwise {
-			print Yaffas::UI::error_box(shift);
-		};
-
-		if (@err) {
-			print Yaffas::UI::all_error_box( $_->[0] ) for @err;
-		}
-		else {
-			print Yaffas::UI::ok_box();
-		}
+		print Yaffas::UI::ok_box();
 	}
 }
 
