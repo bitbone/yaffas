@@ -11,7 +11,6 @@ sub BEGIN {
 	@EXPORT_OK = qw(&list_alias &rm_alias &add_alias);
 }
 
-use Data::Dumper;
 use Yaffas::File::Config;
 use Error qw(:try);
 use Yaffas::Exception;
@@ -59,36 +58,32 @@ Creates a new instance of this Class
 
 sub new {
 	my $class = shift;
-	my $mode = shift;
+	my $mode = shift || "USER";
 	my $self = {};
 
-	$mode = "USER" unless (defined $mode && ($mode eq "DIR"));
-
-	my $bkc = Yaffas::File::Config->new(Yaffas::Constant::DIR->{bkfiles}.'alias.cfg', {
-			-SplitPolicy => 'custom',
-			-SplitDelimiter => '=\s*',
-			-StoreDelimiter => '=',
+	if ($mode ne "USER" && $mode ne "DIR" && $mode ne "MAIL") {
+		throw new Yaffas::Exception("Internal error: unknown mode $mode");
+	}
+	*_write = *Yaffas::Mail::Mailalias::File::_write;
+	*_read = *Yaffas::Mail::Mailalias::File::_read;
+	if ($mode eq "USER") {
+		# user aliases may be in LDAP (default) or in files;
+		# the decision is made by alias.cfg
+		my $bkc = Yaffas::File::Config->new(Yaffas::Constant::DIR->{bkfiles}.'alias.cfg', {
+				-SplitPolicy => 'custom',
+				-SplitDelimiter => '=\s*',
+				-StoreDelimiter => '=',
 		});
-	my $c = $bkc->get_cfg_values();
+		my $c = $bkc->get_cfg_values();
 
-	if($c->{'method'} && $c->{'method'} =~ m#^ldap\z#i)
-	{
-		*_write = *Yaffas::Mail::Mailalias::LDAP::_write;
-		*_read = *Yaffas::Mail::Mailalias::LDAP::_read;
-	}
-	else
-	{
-		*_write = *Yaffas::Mail::Mailalias::File::_write;
-		*_read = *Yaffas::Mail::Mailalias::File::_read;
+		if($c->{'method'} && $c->{'method'} =~ m#^ldap\z#i)
+		{
+			*_write = *Yaffas::Mail::Mailalias::LDAP::_write;
+			*_read = *Yaffas::Mail::Mailalias::LDAP::_read;
+		}
 	}
 
-    *_read_local = *Yaffas::Mail::Mailalias::File::_read;
-    *_write_local = *Yaffas::Mail::Mailalias::File::_write;
-
-    my $main =_read($mode);
-    my $add = _read_local($mode);
-
-	$self->{ALIAS} = { %{$main}, %{$add} };
+	$self->{ALIAS} = _read($mode);
 	$self->{MODE} = $mode;
 	bless $self, $class;
 	return $self;
@@ -108,18 +103,12 @@ sub add {
 	throw Yaffas::Exception("err_alias_name", $to) if ($to =~ /[|>]+/);
 
 	if (defined($self->{ALIAS}->{$from})) {
-		# test if the alias is allready in the list.
-		my @to = split /\s*,\s*/, $self->{ALIAS}->{$from};#
-		if (grep {$_ eq $to} @to) {
-			# schon vorhanden
-			throw Yaffas::Exception("err_already_exists", $from . " -> " . $to);
-		} else {
-			# noch nicht vorhanden.
-			$self->{ALIAS}->{$from} .= ", $to";
+		if (!grep(/^$to$/, @{$self->{ALIAS}->{$from}})) {
+			push($self->{ALIAS}->{$from}, $to);
 		}
 	}
 	else {
-		$self->{ALIAS}->{$from} = $to;
+		$self->{ALIAS}->{$from} = [$to];
 	}
 }
 
@@ -138,15 +127,14 @@ sub remove {
 
 	my @names;
 	if ($to) {
-		@names = split /\s*,\s*/, $self->{ALIAS}->{$from};
+		@names = @{$self->{ALIAS}->{$from}};
 		@names = grep {$_ ne $to} @names;
 	}
 
 	if (@names) {
-		$self->{ALIAS}->{$from} = join ", ", @names;
+		$self->{ALIAS}->{$from} = \@names;
 	} else {
-		my @users = split /\s*,\s*/, $self->{ALIAS}->{$from};
-		foreach (@users) {
+		foreach (@{$self->{ALIAS}->{$from}}) {
 			$self->{ALIAS_remove}->{$_} = $from;
 		}
 		delete $self->{ALIAS}->{$from};
@@ -167,7 +155,7 @@ sub get_user_aliases {
 	my @ret;
 
 	foreach my $alias (keys %{$self->{ALIAS}}) {
-		foreach my $n (split /\s*,\s*/, $self->{ALIAS}->{$alias}) {
+		foreach my $n ($self->{ALIAS}->{$alias}) {
 			if ($n eq $to) {
 				push @ret, $alias;
 			}
@@ -186,20 +174,15 @@ sub get_alias_destination {
 	my $self = shift;
 	my $alias = shift;
 
-	return split /\s*,\s*/, ($self->{ALIAS}->{$alias} || return() );
-
+	return @{$self->{ALIAS}->{$alias}} if $self->{ALIAS}->{$alias};
+	return ();
 }
 
 sub get_alias_type {
     my $self = shift;
     my $alias = shift;
 
-    if ($self->{ALIAS}->{$alias} =~ /@/) {
-        return "manual";
-    }
-    else {
-        return "user";
-    }
+	return $self->{MODE};
 }
 
 =item get_all
@@ -210,7 +193,7 @@ Returns a hash of all aliases
 
 sub get_all {
 	my $self = shift;
-	return %{$self->{ALIAS}};
+	return $self->{ALIAS};
 }
 
 =item forward( USER, [ FORWARDS ] )
@@ -235,16 +218,16 @@ sub forward {
 		}
 		throw $bke if $bke;
 
-		$self->{ALIAS}->{$user} = join ", ", $user, @fw;
+		push($self->{ALIAS}->{$user}, $user, @fw);
 	}
 	else {
 		# get mode
 		my $forward = "";
 		if (defined $self->{ALIAS}->{$user}) {
-			my @forwards = split /\s*,\s*/, $self->{ALIAS}->{$user};
+			my @forwards = $self->{ALIAS}->{$user};
 
 			if(grep {$_ eq $user} @forwards) {
-				$forward = join ", ", grep {$_ ne $user} @forwards;
+				$forward = grep {$_ ne $user} @forwards;
 			}
 		}
 		return $forward;
@@ -272,26 +255,7 @@ Saves all settings
 
 sub write {
     my $self = shift;
-
-    my %ldap;
-    my %file;
-
-    # decide in which category each alias entry should be
-    foreach my $alias (keys %{$self->{ALIAS}}) {
-        if ($self->get_alias_type($alias) eq "user") {
-            $ldap{$alias} = join ",", $self->get_alias_destination($alias);
-        }
-        else {
-            $file{$alias} = join ",", $self->get_alias_destination($alias);
-        }
-    }
-
-    use Data::Dumper;
-    print "write:\n";
-    print Dumper \%file;
-
-    _write($self->{MODE}, \%ldap, $self->{ALIAS_remove});
-    _write_local($self->{MODE}, \%file);
+    _write($self->{MODE}, $self->{ALIAS}, $self->{ALIAS_remove});
 }
 
 
@@ -330,7 +294,7 @@ sub list_alias(;$) {
 
 sub add_alias($$) {
 	my $from = shift;
-	my $to = shift;;
+	my $to = shift;
 
 	my $aliases = Yaffas::Mail::Mailalias->new();
 	$aliases->add($from, $to);

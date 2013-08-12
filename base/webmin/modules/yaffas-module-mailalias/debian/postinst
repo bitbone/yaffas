@@ -27,6 +27,33 @@ case "$1" in
     del_license $MODULE "all"
 	add_license $MODULE ""
 
+	# create and configure transport_maps:
+	POSTFIX_TRANSPORT=/opt/yaffas/config/postfix/transport-deliver-to-public
+	POSTFIX_MASTER_CF=/etc/postfix/master.cf
+	ZARAFA_DELIVER_TO_PUBLIC=/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
+	touch "$POSTFIX_TRANSPORT"
+	postmap "$POSTFIX_TRANSPORT"
+	cur_transport_maps=$(postconf -h transport_maps)
+	if ! echo "$cur_transport_maps" | grep -q hash:$POSTFIX_TRANSPORT; then
+		if [[ -z "$cur_transport_maps" ]]; then
+			# if transport_maps is empty, we add ourselves
+			postconf -e transport_maps="hash:$POSTFIX_TRANSPORT"
+		else
+			# if transport_maps is non-empty, we append ourselves to this list
+			postconf -e transport_maps="$cur_transport_maps, hash:$POSTFIX_TRANSPORT"
+		fi
+	fi
+
+	SERVICE_NAME=zarafa-publicfolder
+	if [[ -z $(postconf -M ${SERVICE_NAME}.unix) ]]; then
+		# add a master.cf service entry:
+		cat $POSTFIX_MASTER_CF <<EOT
+${SERVICE_NAME} unix -      n      n    -    10      pipe
+    flags=DORu user=vmail argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
+EOT
+		postconf -e ${SERVICE_NAME}_destination_recipient_limit=1
+	fi
+
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

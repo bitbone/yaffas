@@ -7,7 +7,6 @@ use Yaffas::Mail::Mailalias qw(list_alias);
 use Yaffas::UI::TablePaging qw(show_page);
 use Yaffas::UI qw($Cgi section section_button table);
 use Yaffas::Constant;
-use Text::Iconv;
 
 # mailaliases
 sub mailaliases {
@@ -51,41 +50,35 @@ sub _display_alias_for_end(){
 sub _display_alias_for {
 	my $from = shift;
 	my $to = shift;
-	my $selected_folder_alias = shift;
-	$selected_folder_alias = [] unless ref $selected_folder_alias;
-
 	my $section_header = shift || $main::text{lbl_addalias};
 
 	my $edit = shift;
 
-	my @folder_alias = ();
-	if (Yaffas::Product::check_product('mail') and not Yaffas::Product::check_product("zarafa")) {
-		my $sf = Yaffas::Constant::MISC()->{sharedfolder};
-		## alle folder die mit "shared folder" beginnen aber nicht der virtuelle "shared folder" selbst.
-		@folder_alias = grep {$_} map {
-			if ($_ ne $sf and index($_, $sf) == 0) {
-				s/^$sf\///;
-				$_
-			}else {
-				undef;
-			}
-		} Yaffas::Mail::get_mailboxes();
-	}
-	if (Yaffas::Product::check_product('zarafa')) {
-		my $converter = Text::Iconv->new("iso-8859-15", "utf-8");
-		@folder_alias = map {$converter->convert($_)} Yaffas::Mail::get_mailboxes();
-		$selected_folder_alias = [map {$converter->convert($_)} @{$selected_folder_alias}];
+	my $aliases;
+	my (@user_alias, @mail_alias, @dir_alias);
+	if ($edit) {
+		$aliases = Yaffas::Mail::Mailalias->new("USER");
+		@user_alias = $aliases->get_alias_destination($from);
+		$aliases = Yaffas::Mail::Mailalias->new("MAIL");
+		@mail_alias = $aliases->get_alias_destination($from);
+		$aliases = Yaffas::Mail::Mailalias->new("DIR");
+		@dir_alias = $aliases->get_alias_destination($from);
 	}
 
-	my $user_aliases = Yaffas::Mail::Mailalias->new();
-	my @user_alias = $user_aliases->get_alias_destination($from);
-    my $type = $user_aliases->get_alias_type($from);
-
-    my %hide_manual;
+    my (%hide_mail, %hide_user, %hide_dir);
+	%hide_mail = %hide_user = %hide_dir = (-style => "display:none;");
     
-    if (!$edit) {
-        %hide_manual = (-style => "display:none;");
-    }
+	my $type;
+	if (!$edit || @user_alias) {
+		$type = "USER";
+		%hide_user = ();
+	} elsif (@mail_alias) {
+		$type = "MAIL";
+		%hide_mail = ();
+	} elsif (@dir_alias) {
+		$type = "DIR";
+		%hide_dir = ();
+	}
 
     print section(
         $section_header,
@@ -108,21 +101,27 @@ sub _display_alias_for {
             $Cgi->Tr(
                 $Cgi->td([
                         $main::text{lbl_alias_type}.":",
-                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default=>$type, -values=>[qw(user manual)], -labels => { map { $_ => $main::text{"lbl_alias_type_".$_} } qw(user manual)}, -onChange => "module.changeAliasType()"}),
+                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default => lc $type, -values=>[qw(user mail dir)], -labels => { map { $_ => $main::text{"lbl_alias_type_".$_} } qw(user mail)}, -onChange => "module.changeAliasType()"}),
                     ]),
             ),
-            $Cgi->Tr({-id => "row-user"},
+            $Cgi->Tr({-id => "row-user", %hide_user},
                 $Cgi->td([
                         $main::text{lbl_destination_usr}.":",
                         $Cgi->scrolling_list( { -name => "to", -size => 5, -multiple => 'true', -values => [Yaffas::UGM::get_users()], -default => \@user_alias } ),
                 ]),
             ),
-            $Cgi->Tr({-id => "row-manual", %hide_manual },
+            $Cgi->Tr({-id => "row-mail", %hide_mail },
                 $Cgi->td([
                         $main::text{lbl_recipient}.":",
-                        $Cgi->textfield({ -name => "recipient", -size=> 80, -value => join(", ", @user_alias)}),
+                        $Cgi->textfield({ -name => "recipient", -size=> 80, -value => join(", ", @mail_alias)}),
                     ]),
             ),
+			$Cgi->Tr({-id => "row-dir", %hide_dir },
+				$Cgi->td([
+						$main::text{lbl_destination_dir}.":",
+						$Cgi->scrolling_list({ -name => "dir", -size => 5, -values => [_get_public_folders()], -default => \@dir_alias}),
+					]),
+			),
     ),
 );
 
@@ -141,12 +140,15 @@ sub _display_alias_edit_begin(){
 
 sub _display_alias_edit ($){
 	my $from = shift;
+	$Cgi->hidden("edit", $from);
+	_display_alias_for($from, "", $main::text{lbl_changealias}.": $from", 1);
+}
 
-	my $dir_aliases = Yaffas::Mail::Mailalias->new("DIR");
-	my @dir_to = $dir_aliases->get_alias_destination($from);
-	$Cgi->hidden("edit",$from);
-
-	_display_alias_for($from, "", \@dir_to, $main::text{lbl_changealias}.": $from", 1);
+sub _get_public_folders() {
+	# returns all Zarafa public folders
+	my @lines = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{zarafa_public_folder_script});
+	map { chomp } @lines;
+	return @lines;
 }
 
 return 1;

@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# This script implements direct delivery to a public folder.
+#
+# It is a small wrapper around zarafa-dagent, which can be
+# used from a Postfix transport_map. That also explains
+# why it is necessary -- it handles a single argument
+# (the folder name) and inserts the missing
+# zarafa-dagent arguments from this in-file default config
+# and from /etc/zarafa/folderadmin.cfg.
+# It also sets UTF-8-aware LC_ALL/LANG environment
+# variables so that umlauts in folder names do not get
+# lost.
+#
+# This file is part of yaffas.
+
+DAGENT_PATH=/usr/bin/zarafa-dagent
+
+ALIAS_USER=$(head -n1 /etc/zarafa/folderadmin.cfg)
+ALIAS_USER=${ALIAS_USER:-bbalias}
+
+PUBLIC_FOLDER=$1
+if [[ ! $PUBLIC_FOLDER ]]; then
+	echo "No public folder given" >&2
+	exit 1
+fi
+
+export LC_ALL=en_EN.utf8
+export LANG=en_EN.utf8
+
+exec "$DAGENT_PATH" -C -P "$PUBLIC_FOLDER" "$ALIAS_USER"
+
+# yaffas is free software: you can redistribute it and/or modify it
+# under the terms of the GNU Affero General Public License as published
+# by the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# yaffas is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Affero General Public
+# License for more details.
+#
+# You should have received a copy of the GNU Affero General Public
+# License along with yaffas.  If not, see
+# <http://www.gnu.org/licenses/>.

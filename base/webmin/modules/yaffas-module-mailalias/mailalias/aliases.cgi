@@ -13,21 +13,23 @@ use JSON;
 
 Yaffas::json_header();
 
-my %user_alias = list_alias();
-my %dir_alias  = list_alias("DIR");
+my $user_alias = list_alias("USER");
+my $mail_alias = list_alias("MAIL");
+my $dir_alias  = list_alias("DIR");
 
-my %tmp = ( %user_alias, %dir_alias );
-my @keys = keys %tmp;
+my %aliases = ( %{$user_alias}, %{$mail_alias}, %{$dir_alias} );
 my @content;
 
-foreach (@keys) {
+foreach (keys %aliases) {
+	if (!$aliases{$_}) {
+		next;
+	}
 	push @content, {
 		alias => $_,
-		user => defined($user_alias{$_}) ? (join ", ", split( /\s*,\s*/, $user_alias{$_})) : "",
-		folder => defined($dir_alias{$_}) ? $dir_alias{$_} : ""
+		target => defined(${$dir_alias}{$_}) ? @{$aliases{$_}}[-1] : join(", ", @{$aliases{$_}})
 	};
 }
-print to_json( { "Response" => \@content } );
+print to_json( { "Response" => \@content }, { latin1 => 1 } );
 =pod
 
 =head1 COPYRIGHT
