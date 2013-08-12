@@ -43,7 +43,7 @@ fi
 %doc debian/{copyright,changelog}
 /opt/yaffas/webmin/mailalias
 /opt/yaffas/lib/perl5/Yaffas/Module/Mailalias.pm
-/opt/yaffas/libexec/mailalias/zarafa-delivery-to-public
+/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
 /opt/yaffas/libexec/mailalias/zarafa-public-folders
 
 %changelog
