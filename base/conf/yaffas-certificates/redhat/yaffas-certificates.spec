@@ -98,6 +98,5 @@ fi
 %files
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}
-/opt/yaffas/share/doc/example/etc/ssl/certs/org
 
 %changelog
