@@ -190,11 +190,13 @@ msgstr "Active Directory DN不正確"
 msgid "Administratorname not valid"
 msgstr ""
 
+# 94%
+# 100%
 #. type: string
 #: en:4
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Username not valid"
-msgstr ""
+msgstr "用戶名稱無效！"
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string

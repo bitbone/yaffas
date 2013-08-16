@@ -17,17 +17,22 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Pootle 2.1.6\n"
 
+# 85%
+# 75%
+# 100%
 #. type: string
 #: en:1
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "User does not exist"
-msgstr ""
+msgstr "Le groupe n'existe pas !"
 
+# 85%
+# 100%
 #. type: string
 #: en:2
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Group does not exist"
-msgstr ""
+msgstr "Le groupe n'existe pas !"
 
 #. type: string
 #: en:3
