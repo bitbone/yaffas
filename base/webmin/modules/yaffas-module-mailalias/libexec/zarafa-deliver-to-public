@@ -16,7 +16,7 @@
 
 DAGENT_PATH=/usr/bin/zarafa-dagent
 
-ALIAS_USER=$(head -n1 /etc/zarafa/folderadmin.cfg)
+ALIAS_USER=$(head -n1 /etc/zarafa/folderadmin.cfg 2>/dev/null || true)
 ALIAS_USER=${ALIAS_USER:-bbalias}
 
 PUBLIC_FOLDER=$1
@@ -25,8 +25,8 @@ if [[ ! $PUBLIC_FOLDER ]]; then
 	exit 1
 fi
 
-export LC_ALL=en_EN.utf8
-export LANG=en_EN.utf8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 exec "$DAGENT_PATH" -C -P "$PUBLIC_FOLDER" "$ALIAS_USER"
 
