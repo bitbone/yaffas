@@ -1,1 +1,1 @@
-/postmaster@.*/ root@localhost
+/^postmaster@.*/ root@localhost
