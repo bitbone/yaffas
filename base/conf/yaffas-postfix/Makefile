@@ -10,6 +10,6 @@ install:
 	$(INSTALL) postfix $(DESTDIR)$(YAFFAS_EXAMPLE)/etc/
 	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp -r share/yaffas-postfix $(DESTDIR)/$(YAFFAS_PREFIX)/share
-	cp -r share/yaffas-upgrade/* $(DESTDIR)/$(YAFFAS_PREFIX)/yaffas-upgrade/
+	cp -r share/yaffas-upgrade $(DESTDIR)/$(YAFFAS_PREFIX)/share
 
 .PHONY: all install clean
