@@ -52,6 +52,8 @@ touch $YAFFAS_CONF/local-aliases.cf
 postmap $YAFFAS_CONF/local-aliases.cf
 touch $YAFFAS_CONF/transport-deliver-to-public
 postmap $YAFFAS_CONF/transport-deliver-to-public
+touch $YAFFAS_CONF/public-folder-aliases.cf
+postmap $YAFFAS_CONF/public-folder-aliases.cf
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db

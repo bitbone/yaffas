@@ -12,6 +12,12 @@ if ! postconf transport_maps | grep -qF "$TABLE"; then
 	postconf -e transport_maps="$MAPS"
 fi
 
+touch $YAFFAS_CONF/transport-deliver-to-public
+postmap $YAFFAS_CONF/transport-deliver-to-public
+
+touch $YAFFAS_CONF/public-folder-aliases.cf
+postmap $YAFFAS_CONF/public-folder-aliases.cf
+
 [[ $(postconf -Mf zarafa-publicfolder.unix) ]] && exit 0
 
 cat >>/etc/postfix/master.cf <<EOT
