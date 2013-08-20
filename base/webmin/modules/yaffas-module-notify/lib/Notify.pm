@@ -114,15 +114,15 @@ sub set_notify($;$) {
 			if (! $faxrcvd->write() );
 
             my $line = $postfix_alias->search_line(qr#/FaxMaster@#);
-            $postfix_alias->splice_line($line, 1, "/FaxMaster@.*/ root") if defined $line;
-            $postfix_alias->add_line("/FaxMaster@.*/ root") unless defined $line;
+            $postfix_alias->splice_line($line, 1, "/^FaxMaster@.*/ root") if defined $line;
+            $postfix_alias->add_line("/^FaxMaster@.*/ root") unless defined $line;
         }
 
         my $line = $postfix_alias->search_line(qr#/root@#);
 
         if (defined $line and $line >= 0) {
             if ($mail ne "") {
-                $postfix_alias->splice_line($line, 1, "/root@.*/ $mail");
+                $postfix_alias->splice_line($line, 1, "/^root@.*/ $mail");
             }
             else {
                 $postfix_alias->splice_line($line, 1);
@@ -130,7 +130,7 @@ sub set_notify($;$) {
         }
         else {
             if ($mail ne "") {
-                $postfix_alias->add_line("/root@.*/ $mail");
+                $postfix_alias->add_line("/^root@.*/ $mail");
             }
         }
 
