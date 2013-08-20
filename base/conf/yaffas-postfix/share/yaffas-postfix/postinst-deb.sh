@@ -19,8 +19,8 @@ cp -f -a /opt/yaffas/share/doc/example/etc/postfix/dynamicmaps.cf /etc/postfix
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf /etc/postfix/sasl/
 cp -f -a /opt/yaffas/share/doc/example/etc/postfix/virtual_users_global /etc/postfix
 
-if ! grep -q "^/postmaster@" /etc/postfix/virtual_users_global; then
-	echo "/postmaster@.*/ root@localhost" >> /etc/postfix/virtual_users_global
+if ! grep -q "^/\\^postmaster@" /etc/postfix/virtual_users_global; then
+	echo "/^postmaster@.*/ root@localhost" >> /etc/postfix/virtual_users_global
 fi
 
 if ! grep -q "START=yes" /etc/default/saslauthd; then

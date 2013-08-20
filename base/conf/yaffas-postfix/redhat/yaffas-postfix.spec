@@ -43,5 +43,6 @@ fi
 /opt/yaffas/share/doc/example/etc/postfix/sasl/smtpd.conf
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
+/opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-postmaster.sh
 
 %changelog

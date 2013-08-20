@@ -113,12 +113,12 @@ sub set_notify($;$) {
 			throw Yaffas::Exception('err_write_file')
 			if (! $faxrcvd->write() );
 
-            my $line = $postfix_alias->search_line(qr#/FaxMaster@#);
+            my $line = $postfix_alias->search_line(qr#/\^FaxMaster@#);
             $postfix_alias->splice_line($line, 1, "/^FaxMaster@.*/ root") if defined $line;
             $postfix_alias->add_line("/^FaxMaster@.*/ root") unless defined $line;
         }
 
-        my $line = $postfix_alias->search_line(qr#/root@#);
+        my $line = $postfix_alias->search_line(qr#/\^root@#);
 
         if (defined $line and $line >= 0) {
             if ($mail ne "") {
