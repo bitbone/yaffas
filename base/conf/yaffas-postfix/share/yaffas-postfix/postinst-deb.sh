@@ -50,11 +50,15 @@ touch $CONF/sender_canonical
 postmap $CONF/sender_canonical
 touch $YAFFAS_CONF/local-aliases.cf
 postmap $YAFFAS_CONF/local-aliases.cf
+touch $YAFFAS_CONF/transport-deliver-to-public
+postmap $YAFFAS_CONF/transport-deliver-to-public
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db
 
 /usr/bin/newaliases
+
+useradd --system vmail || true
 
 invoke-rc.d postfix restart
 invoke-rc.d saslauthd restart

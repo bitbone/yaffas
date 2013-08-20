@@ -103,3 +103,6 @@ amavis unix - - n - 2 smtp
 	-o smtpd_client_connection_count_limit=0
 	-o smtpd_client_connection_rate_limit=0
 	-o receive_override_options=no_header_body_checks,no_unknown_recipient_checks
+
+zarafa-publicfolder unix -      n      n    -    10      pipe
+     flags=DORu user=vmail argv=/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public ${nexthop}

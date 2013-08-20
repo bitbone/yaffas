@@ -31,6 +31,8 @@ touch $CONF/sender_canonical
 postmap $CONF/sender_canonical
 touch $YAFFAS_CONF/local-aliases.cf
 postmap $YAFFAS_CONF/local-aliases.cf
+touch $YAFFAS_CONF/transport-deliver-to-public
+postmap $YAFFAS_CONF/transport-deliver-to-public
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db
@@ -43,6 +45,8 @@ if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
     chkconfig saslauthd on
     service saslauthd restart
 fi
+
+useradd --system vmail || true
 	
 # disable sendmail
 service sendmail stop
