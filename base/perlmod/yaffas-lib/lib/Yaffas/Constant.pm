@@ -385,7 +385,7 @@ use constant {
 		"pfcat" => '/opt/yaffas/bin/pfcat.sh',
 		"sa_update" => "/usr/bin/sa-update",
 		"policyd_weight" => '/usr/sbin/policyd-weight',
-		"brctl" => (OS eq 'Ubuntu' and OSVER eq '12.04') ? '/sbin/brctl' : '/usr/sbin/brctl',
+		"brctl" => ((OS eq 'Ubuntu' and OSVER eq '10.04') || (OS eq 'Debian' and OSVER eq '6')) ? '/usr/sbin/brctl' : '/sbin/brctl',
 		"dhclient" => '/sbin/dhclient',
 		"locale-gen" => '/usr/sbin/locale-gen',
 		"clamd" => '/usr/sbin/clamd',
