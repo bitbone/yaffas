@@ -1492,6 +1492,7 @@ sub set_zarafa_ldap(;$) {
 	$cfg_values->{'ldap_addresslist_type_attribute_value'} = "zarafa-addresslist";
 	$cfg_values->{'ldap_contact_type_attribute_value'} = "zarafa-contact";
 	$cfg_values->{'ldap_dynamicgroup_type_attribute_value'} = "zarafa-dynamicgroup";
+	$cfg_values->{'ldap_groupmembers_relation_attribute'} = "uid";
 
 	if ( $type eq LOCAL_LDAP ) {
 		$basedn = Yaffas::LDAP::get_local_domain();
@@ -1551,7 +1552,7 @@ sub set_zarafa_ldap(;$) {
 		$cfg_values->{'ldap_addresslist_type_attribute_value'} = "zarafaAddresslist";
 		$cfg_values->{'ldap_contact_type_attribute_value'} = "contact";
 		$cfg_values->{'ldap_dynamicgroup_type_attribute_value'} = "zarafaDynamicgroup";
-
+		$cfg_values->{'ldap_groupmembers_relation_attribute'} = "dn";
 	}
 	else {
 		$exception->add( "err_invalid_authtype", "$type" );
