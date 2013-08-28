@@ -80,7 +80,7 @@ fi
 rm -f /data/db/mysql/ib_logfile* /var/lib/mysql/ib_logfile*
 sed -e 's/^cache_cell_size.*/cache_cell_size = '$MEM'/' -i /etc/zarafa/server.cfg
 
-if [ "$(lsb_release -sr)" != "12.04" ]; then
+if [[ "$(lsb_release -sr)" == "10.04" || "$(lsb_release -sr)" == 6.* ]]; then
 	if uname -m | grep -q "x86_64"; then
 		sed -e 's#^plugin_path\s*=.*#plugin_path=/usr/lib64/zarafa#' -i /etc/zarafa/server.cfg
 	else
