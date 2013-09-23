@@ -184,11 +184,7 @@ sub set_smarthost($$$) {
 	my $pass = shift;
 
 
-	if ($sh =~ /^\d+\.\d+\.\d+\.\d+$/) {
-		Yaffas::Check::ip($sh) or throw Yaffas::Exception('err_smarthost');
-	} else {
-		Yaffas::Check::domainname($sh) or throw Yaffas::Exception('err_smarthost');
-	}
+	Yaffas::Check::smarthost($sh) or throw Yaffas::Exception('err_smarthost');
 
 	unless ($user eq "" || ( (length($user) > 1) && (length($user) < 1024) && 
 			$user !~ m/[\s:`]+/ )

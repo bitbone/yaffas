@@ -181,6 +181,29 @@ sub hostname ($) {
         return 1;
 }
 
+=item smarthost ( HOSTNAME )
+
+Check if the given string is a valid smarthost for usage in Postfix.
+Returns 1 on a valid value, else undef.
+
+=cut
+
+sub smarthost($) {
+	my $value = shift;
+
+	# strip off any valid port definition at the end (just for the check)
+	$value =~ s/:\d+\Z//;
+
+	# strip off any sorrounding [...]s (just for the check)
+	$value =~ s/^\[(.*)\]\Z/$1/;
+
+	# now check if the left-over is a valid ip or hostname
+	return 1 if ip($value);
+	return 1 if domainname($value);
+	return undef;
+}
+
+
 =item password ( PASSWORD )
 
 Checks if a passwordstring is valid. Returns 1 if password is valid else undef.
