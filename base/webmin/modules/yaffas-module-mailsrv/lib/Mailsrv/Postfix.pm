@@ -159,7 +159,9 @@ sub set_mailserver ($) {
 
 sub get_smarthost (){
 	my $sh = _get_value("relayhost");
-	$sh =~ s/[\[\]]//g;
+	# remove sorrounding []s for readability (set_smarthost will re-add
+	# them if necessary)
+	$sh =~ s/^\[(.*?)\]\Z/$1/;
 
 	my $bkf = Yaffas::File->new(Yaffas::Constant::FILE->{'postfix_smtp_auth'});
 	my $ln = $bkf->search_line($sh);
@@ -185,6 +187,12 @@ sub set_smarthost($$$) {
 
 
 	Yaffas::Check::smarthost($sh) or throw Yaffas::Exception('err_smarthost');
+	# ensure that the host part is covered in [...]
+	if ($sh !~ /^\[.+\]/) {
+		# warning: this might break with ipv6 ips:
+		$sh =~ s/^(.+?)(:\d+)?\Z/[$1]$2/;
+	}
+
 
 	unless ($user eq "" || ( (length($user) > 1) && (length($user) < 1024) && 
 			$user !~ m/[\s:`]+/ )
@@ -196,7 +204,7 @@ sub set_smarthost($$$) {
 		throw Yaffas::Exception('err_password');
 	}
 
-	_set_value('relayhost', "[$sh]");
+	_set_value('relayhost', "$sh");
 	_set_value('smtp_sasl_auth_enable', 'yes');
 	_set_value('smtp_sasl_password_maps', 'hash:/etc/postfix/smtp_auth.cf');
 	_set_value('smtp_sasl_security_options', 'noanonymous');
