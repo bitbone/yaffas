@@ -26,7 +26,7 @@ extract_client_binary() {
 
 extract_client_binary_en() {
 	sed -rne \
-		's:.*["/](zarafaclient-en-'$VERSION'([0-9\.-]+|beta)+.msi)">.*:\1:p'
+		's:.*["/](zarafaclient-en(-'$VERSION'([0-9\.-]+|beta)+)?\.msi)">.*:\1:p'
 }
 
 AVAILABLE_VERSIONS=$($CMD "$URL/$STATUS/" -qO - | extract_versions)
@@ -76,6 +76,9 @@ cd ../..
 echo "Updating version in redhat/yaffas-software.spec..."
 sed -re \
 		's:zarafaclient-[0-9\.\-]{8,}\.msi:'$CLIENT_BINARY':g' \
+		-i redhat/*.spec
+sed -re \
+		's:zarafaclient-en(-[0-9\.\-]{8,})?\.msi:'$CLIENT_BINARY_EN':g' \
 		-i redhat/*.spec
 echo "Updating version in debian/postinst..."
 sed -re \
