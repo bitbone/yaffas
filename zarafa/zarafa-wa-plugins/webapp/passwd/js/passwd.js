@@ -62,16 +62,7 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
         Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget.superclass.constructor.call(this, config);
     },
 
-    handlePasswordChanged: function(res) {
-        var t = res.responseText;
-        var obj = {};
-        try {
-            obj = Ext.decode(t);
-        }
-        catch(e) {
-            obj.status = "failure";
-            obj.message = dgettext("plugin_passwd", "Unknown response");
-        }
+    handlePasswordChanged: function(obj) {
         var msg = dgettext("plugin_passwd", obj.message);
         var err = obj.error;
 
@@ -114,8 +105,24 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
         // Basic request
         Ext.Ajax.request({
             url: 'plugins/passwd/php/pwdchange.php',
-            success: this.handlePasswordChanged,
-            failure: function() {console.log("failure")},
+            success: function(res) {
+							var t = res.responseText;
+							var obj = {};
+							try {
+									obj = Ext.decode(t);
+							}
+							catch(e) {
+									obj.status = "failure";
+									obj.message = dgettext("plugin_passwd", "Unknown response");
+							}
+							return this.handlePasswordChanged(obj);
+						}.bind(this),
+            failure: function() {
+							return this.handlePasswordChanged({
+								status: "failure",
+								message: "non-ok HTTP response"
+							});
+						}.bind(this),
             params: { pwdchange_newpwd1: this.newPassword.getValue(),
                 pwdchange_oldpw: this.oldPassword.getValue(),
                 pwdchange_newpwd2: this.newPasswordRepeat.getValue(),
