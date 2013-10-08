@@ -66,8 +66,8 @@ Zarafa.plugins.passwdplugin.PasswdPluginSettingsWidget = Ext.extend(Zarafa.setti
         var msg = dgettext("plugin_passwd", obj.message);
         var err = obj.error;
 
-        if (err !== "") {
-            msg = msg+"<br><br>"+dgettext("plugin_passwd", "Error was")+":<br>"+err;
+        if (err) {
+            msg = msg+"<br><br>"+dgettext("plugin_passwd", "Error was")+":<br>"+err; // FIXME properly scape html!
         }
         var title = "";
 

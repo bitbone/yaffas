@@ -13,7 +13,10 @@ bindtextdomain ($domain, "plugins/passwd/lang/");
 textdomain ($domain);
 
 function send_result($status, $msg, $err) {
-    printf('{status: "%s", message: "%s", error: "%s"}', $status, $msg, $err);
+    print json_encode(array(
+        "status" => $status,
+        "message" => $msg,
+        "error" => $err));
 }
 
 
