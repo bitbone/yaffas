@@ -1,6 +1,9 @@
 <?php
 // configuration file for passwd plugin
 
+// this is handled in php/plugin.passwd.php
+define("PLUGIN_PASSWD_USER_DEFAULT_ENABLE", true);
+
 class PluginpasswdConfiguration
 {
 	// select authentication method: ldap, ad, passwd (see php/pwdchange.php)
