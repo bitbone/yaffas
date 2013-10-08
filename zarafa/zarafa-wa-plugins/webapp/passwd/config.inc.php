@@ -1,7 +1,7 @@
 <?php
 // configuration file for dialogs/pwdchange.php
 
-class Configuration
+class PluginpasswdConfiguration
 {
 	// define, if this zarafa-installation uses ldap
 	private $method = "ldap";
@@ -26,5 +26,7 @@ class Configuration
 	}
 
 }
+/*
+	vim:ts=2:sw=2:noet:
+*/
 ?>
-
