@@ -1,6 +1,9 @@
 <?php
 // configuration file for dialogs/pwdchange.php
 
+// this is handled in php/plugin.passwd.php
+define("PLUGIN_PASSWD_USER_DEFAULT_ENABLE", true);
+
 class PluginpasswdConfiguration
 {
 	// define, if this zarafa-installation uses ldap
