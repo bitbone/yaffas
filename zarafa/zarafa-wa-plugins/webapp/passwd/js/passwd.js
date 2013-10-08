@@ -154,6 +154,12 @@ Zarafa.plugins.passwdplugin.PasswdPlugin = Ext.extend(Zarafa.core.Plugin, {
 
 
 Zarafa.onReady(function() {
-    container.registerPlugin(new Zarafa.plugins.passwdplugin.PasswdPlugin());
+    container.registerPlugin(
+        new Zarafa.core.PluginMetaData({
+            name: 'passwd',
+            displayName: dgettext("plugin_passwd", 'Change password'),
+            pluginConstructor: Zarafa.plugins.passwdplugin.PasswdPlugin
+        })
+    );
 });
 
