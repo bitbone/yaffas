@@ -9,20 +9,26 @@
 		<authorURL>http://www.zarafa.com</authorURL>
 		<description>Plugin to allow users to change their password</description>
 	</info>
-    <translations>
-        <translationsdir>lang</translationsdir>
-    </translations>
+	<config>
+		<configfile>config.inc.php</configfile>
+	</config>
+	<translations>
+		<translationsdir>lang</translationsdir>
+	</translations>
 	<components>
 		<component>
 			<files>
+				<server>
+					<serverfile>php/plugin.passwd.php</serverfile>
+				</server>
 				<client>
 					<clientfile load="release">js/passwd.js</clientfile>
 					<clientfile load="debug">js/passwd.js</clientfile>
 					<clientfile load="source">js/passwd.js</clientfile>
 				</client>
-        <resources>
-          <resourcefile>css/passwd.css</resourcefile>
-        </resources>
+				<resources>
+					<resourcefile>css/passwd.css</resourcefile>
+				</resources>
 			</files>
 		</component>
 	</components>
