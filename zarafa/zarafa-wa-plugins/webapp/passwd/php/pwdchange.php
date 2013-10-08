@@ -53,8 +53,8 @@ $newpw2   = (isset($_POST["pwdchange_newpwd2"]) ? $_POST["pwdchange_newpwd2"]  :
 $pathname = dirname($_SERVER['SCRIPT_FILENAME']);
 
 // get some basic configuration
-include '../config.inc.php';
-$config = new Configuration();
+require_once "../config.inc.php";
+$config = new PluginpasswdConfiguration();
 
 // check if we should use ldap or zarafa-admin
 $method = $config->get_method ();

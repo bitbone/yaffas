@@ -1,7 +1,7 @@
 <?php
 // configuration file for passwd plugin
 
-class Configuration
+class PluginpasswdConfiguration
 {
 	// select authentication method: ldap, ad, passwd (see php/pwdchange.php)
 	private $method = "ldap";
@@ -26,5 +26,7 @@ class Configuration
 	}
 
 }
+/*
+	vim:ts=2:sw=2:noet:
+*/
 ?>
-
