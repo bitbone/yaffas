@@ -108,11 +108,11 @@ The options for editing are only avaliable if you use local LDAP.
 To create a new user open the _"Add user"_ tab. To edit a user right click on it and select _"Edit user"_.
 
 The username, given name, surname and password fields are required.
-During editing you can not change the username.
-Setting group memberships is optional. Selecting multiple groups or removing a group from the selection can be achieved by pressing <CTRL> while clicking.
+During editing you cannot change the username.
+Setting group memberships is optional. Selecting multiple groups or removing a group from the selection can be achieved by pressing <Ctrl> while clicking.
 
 You can select which features (right now only IMAP and POP3) should be enabled or disabled for the user.
-The sendas configuration is needed if you want to allow other users or groups to send in the name of this user. Only selected users (use Ctrl or Shift to select multiple entries).
+The sendas configuration is needed if you want to allow other users or groups to send in the name of this user. Only selected users (use <Ctrl> or <Shift> to select multiple entries) will be given this permission.
 
 Shared accounts are a special accounts that are not allowed to login. You have to give permissions for other users to this store to work with it.
 This account type will also not use a whole license.

@@ -128,10 +128,39 @@ https://jira.zarafa.com/browse/ADM-275[entspr. Ticket] nachgesehen werden.
 === Benutzerverwaltung
 Unter dem Menüpunkt  _Benutzerkonten -> Benutzerverwaltung_ werden alle existierenden Benutzer angezeigt. Bei einer großen Anzahl von Benutzern können die Sortier- und Filterfunktion sehr hilfreich sein. Um einen vorhandenen Benutzer zu editieren oder zu löschen, klicken Sie mit der rechten Maustaste auf den entsprechenden Benutzer.
 
+[NOTE]
+==============
+Die Optionen zum Hinzufügen und Bearbeiten von Benutzern sind derzeit nur
+mit "Local LDAP" verfügbar.
+==============
 
 
-==== Neuen Benutzer hinzufügen
+
+==== Anlegen und Bearbeiten von Benutzern
 Um einen neuen Benutzer anzulegen, wählen Sie den Reiter  _"Benutzer hinzufügen"_ aus. Hierfür benötigen Sie Username, Vorname, Nachname und die zweimalige Eingabe eines Passwortes. Optional können eine oder mehrere Gruppenmitgliedschaften gesetzt werden. Die Auswahl mehrerer Gruppen und das Entfernen einer Gruppenzugehörigkeit ist dabei mit gedrückter STRG-Taste möglich. 
+
+An dieser Stelle können außerdem benutzerspezifisch IMAP und POP3
+freigegeben bzw. gesperrt werden.
+
+Über die sendas-Konfiguration kann es anderen Benutzern oder Gruppen
+erlaubt werden, im Namen des Nutzers Mails zu versenden. Nur die
+ausgewählten Benutzer erhalten diese Berechtigung (mehrere Einträge können
+mit <Strg> bzw. <Shift> ausgewählt werden).
+
+Wird ein Haken beim Punkt Gemeinschaftskonto gesetzt, so kann sich der
+Benutzer nicht einloggen. Stattdessen müssen Berechtigungen für andere
+Benutzer vergeben werden, sodass diese das Postfach mitbenutzen können.
+Dieser Kontotyp geht auch nicht in die Benutzerzählung für die Auswertung
+der Lizenz mit ein.
+
+Ein Zarafa-Administrator ist ein Benutzer, der Berechtigungen für das
+Öffnen und Bearbeiten aller Postfächer aller Nutzer hat. Bei der Vergabe
+dieser Rechte sollte daher besondere Sorgfalt an den Tag gelegt werden.
+
+Das Feld E-Mail-Alias kann zum Hinzufügen von alternativen E-Mail-Adressen
+für diesen Benutzer verwendet werden. Es müssen an dieser Stelle ganze
+E-Mail-Adressen eingetragen werden.
+
 
 [NOTE]
 ==============
