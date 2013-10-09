@@ -1,0 +1,109 @@
+body {
+    max-width: 52em;
+    margin: 0 auto;
+    padding: 1em;
+    text-align: justify;
+    font-family: serif;
+}
+
+table, p {
+    font-family: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #3c5caa;
+    font-family: "Droid Sans", "Ubuntu", "DejaVu Sans", sans-serif;
+}
+
+a {
+    color: #3c5caa;
+}
+
+a:hover {
+    color: #6a81bc;
+}
+
+hr {
+    border: none;
+    background: #7d95d2;
+    height: 3px;
+}
+
+pre.literallayout {
+    background: #e9efff;
+    padding: 0.5em;
+    border-left: solid 6px #6a81bc;
+}
+
+code.literal {
+    background: #e9efff;
+    padding: 1px;
+    margin: 2px;
+    border: solid 1px #c8cede;
+}
+
+div.note pre.literallayout {
+    border-left-color: #8ca3de;
+}
+
+div.note, div.important, div.warning {
+    margin: 0.5em 0 2em 4em !important;
+}
+
+div.note table, div.important table, div.warning table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+div.note tr:last-child td, div.important tr:last-child td, div.warning tr:last-child td {
+    background: #e9efff;
+    padding: 0.2em 0.2em 0.2em 1em;
+}
+
+div.note th, div.important th, div.warning th {
+    background: #e9efff;
+}
+
+div.note tr:first-child td, div.important tr:first-child td, div.warning tr:first-child td {
+    background: #6a81bc;
+}
+
+div.note tr:first-child td img , div.important tr:first-child td img, div.warning tr:first-child td img {
+    margin: 3px;
+}
+
+div.important tr:last-child td, div.important th {
+    background: #ffd0b4;
+}
+
+div.important tr:first-child td {
+    background: #ffa067;
+}
+
+div.warning tr:last-child td, div.warning th {
+    background: #ffc4c4;
+}
+
+div.warning tr:first-child td {
+    background: #ff8080;
+}
+
+.informaltable table td, .informaltable table th {
+    border: solid 1px #aaa !important;
+}
+.informaltable table tr:first-child th {
+    border-top: none !important;
+}
+.informaltable table tr:last-child td {
+    border-bottom: none !important;
+}
+.informaltable table tr td:first-child, .informaltable table tr th:first-child {
+    border-left: none !important;
+}
+.informaltable table tr td:last-child, .informaltable table tr th:last-child {
+    border-right: none !important;
+}
+.informaltable table {
+    border: none !important;
+}
+
