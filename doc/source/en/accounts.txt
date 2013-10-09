@@ -112,7 +112,7 @@ During editing you can not change the username.
 Setting group memberships is optional. Selecting multiple groups or removing a group from the selection can be achieved by pressing <CTRL> while clicking.
 
 You can select which features (right now only IMAP and POP3) should be enabled or disabled for the user.
-The sendas configuration is needed if you want to allow other users or groups to send in the name of this user.
+The sendas configuration is needed if you want to allow other users or groups to send in the name of this user. Only selected users (use Ctrl or Shift to select multiple entries).
 
 Shared accounts are a special accounts that are not allowed to login. You have to give permissions for other users to this store to work with it.
 This account type will also not use a whole license.
