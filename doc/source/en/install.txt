@@ -312,6 +312,14 @@ gpgcheck = 1
 priority = 1
 ----
 
+Additionally, the EPEL configuration has be to changed due to a recent
+dependency problem. To do that, add the following line at the end of the
+`[epel]` block in `/etc/yum.repos.d/epel.repo` (after `gpgkey=...`):
+
+  exclude=clamav clamav-db amavisd-new
+
+
+
 **Import GPG keys**
 
   rpm --import http://repo.yaffas.org/repo.rpm.key
