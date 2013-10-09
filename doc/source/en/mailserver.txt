@@ -127,6 +127,12 @@ If you started these services after activating them at the security module, the 
 If the ClamAV service will not start, it may have no virus signatures. The freshclam service draws them automatically, but requires an internet connection. A proxy server can be configured at Network Configuration if necessary. This will cause an update of the signatures via freshclam.
 ==============
 
+[NOTE]
+==============
+Do not change `/etc/amavis/conf.d/60-yaffas` as it will be overwritten. If
+you need custom changes, put them in a new file such as `61-local`. You can
+also override variables there if necessary.
+==============
 
 
 === Bulk Mailing

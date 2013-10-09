@@ -129,6 +129,15 @@ Falls der clamav-Dienst sich nicht starten lässt, so hat dieser möglicherweise
 
 ==============
 
+[NOTE]
+==============
+Die Datei `/etc/amavis/conf.d/60-yaffas` sollte nicht verändert werden, da
+jegliche Änderungen überschrieben werden. Wenn manuelle Anpassungen nötig
+sind, so sollten diese in einer neuen Datei wie `61-local` vorgenommen
+werden. Dort können auch Variablen anders belegt werden.
+
+==============
+
 
 
 
