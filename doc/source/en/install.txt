@@ -1,14 +1,14 @@
 == Installation
 
 {product} has to be installed on a freshly set up Linux distribution.
-At the moment Ubuntu 10.04/12.04, Debian 6 and Red Hat 5/6 are officially
+At the moment Ubuntu 10.04/12.04, Debian 6/7 and Red Hat 5/6 are officially
 supported.
 The following steps describe how {product} can be installed.
 There are packages available for both 32bit and 64bit architectures.
 
 === System requirements
 
-  * Ubuntu Server 10.04/12.04, Debian 6 or Red Hat Enterprise Linux 5/6
+  * Ubuntu Server 10.04/12.04, Debian 6/7 or Red Hat Enterprise Linux 5/6
   * Correctly configured fully qualified hostname
   * Static IP address
 
@@ -131,7 +131,7 @@ image:{images_common}14_kerberos_thumb.png[link="{images_common}14_kerberos.png"
 image:{images_common}15_kerberos_thumb.png[link="{images_common}15_kerberos.png"]
 
 
-==== Debian 6
+==== Debian 6 and 7
 
 **Adding required repositories**
 
