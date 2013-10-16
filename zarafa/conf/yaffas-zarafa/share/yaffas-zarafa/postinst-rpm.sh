@@ -60,6 +60,7 @@ rm -f /tmp/zarafa.{pp,mod,te}
 
 /sbin/restorecon -R /etc/zarafa
 /sbin/restorecon -R /var/lib/zarafa-webaccess
+/sbin/restorecon -R /var/lib/zarafa-webapp
 /sbin/restorecon -R /var/lib/zarafa
 
 # WebApp 1.3 and later default to connecting to http://localhost:236
