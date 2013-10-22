@@ -65,23 +65,29 @@ msgstr ""
 msgid "could not delete the user"
 msgstr ""
 
+# 75%
+# 100%
 #. type: string
 #: en:9
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Counld not delete the directory."
-msgstr ""
+msgstr "Kon directory niet aanmaken."
 
+# 88%
+# 100%
 #. type: string
 #: en:10
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Could not rename directory."
-msgstr ""
+msgstr "Kon directory niet aanmaken."
 
+# 75%
+# 100%
 #. type: string
 #: en:11
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Could not delete the group."
-msgstr ""
+msgstr "Kon directory niet aanmaken."
 
 #. type: string
 #: en:12
@@ -125,11 +131,13 @@ msgstr ""
 msgid "Could not change the permissions for the print$ share."
 msgstr ""
 
+# 81%
+# 100%
 #. type: string
 #: en:19
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Group does not exists."
-msgstr ""
+msgstr "Groep bestaat niet!"
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string
