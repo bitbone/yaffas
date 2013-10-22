@@ -38,3 +38,4 @@ lbl_alias_type_user=user
 lbl_alias_type_manual=email
 lbl_alias_type=類型
 lbl_recipient=收件人
+lbl_target=Target

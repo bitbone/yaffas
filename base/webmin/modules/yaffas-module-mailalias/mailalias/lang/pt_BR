@@ -38,3 +38,4 @@ lbl_alias_type_user=user
 lbl_alias_type_manual=email
 lbl_alias_type=Tipo
 lbl_recipient=Destinatário
+lbl_target=Target

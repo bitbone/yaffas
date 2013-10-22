@@ -29,6 +29,10 @@ lbl_virusalert=病毒警報電子郵件
 lbl_maxlength=可掃描物件之最大大小(MB)
 lbl_clam_update=更新此ClamAV病毒特徵
 lbl_clam_configure=配置clamav
+lbl_clamav_status=ClamAV Status
+lbl_clamav_lastupdate=Last updated
+lbl_clamav_status_avail=Available pattern update
+lbl_clamav_status_inst=Installed pattern update
 
 lbl_sa=Spamassassin
 lbl_sa_configure=配置Spamassassin

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2013-10-23 00:18+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -213,3 +213,9 @@ msgstr "E-mail"
 #, no-wrap
 msgid "Type"
 msgstr "Tipo"
+
+# type: string
+#: lang/en:41
+#, no-wrap
+msgid "Target"
+msgstr ""
