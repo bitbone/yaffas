@@ -1,4 +1,10 @@
 <?php
+  if (!defined("PLUGIN_PASSWD_USER_DEFAULT_ENABLE")) {
+    // this will usually by defined in config.inc.php, but
+    // users who installed with previous versions may not
+    // have it
+    define("PLUGIN_PASSWD_USER_DEFAULT_ENABLE", true);
+  }
   /**
    * Passwd Plugin
    * Integrates (AD) password changing functionality
