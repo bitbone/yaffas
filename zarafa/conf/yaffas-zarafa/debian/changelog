@@ -1,3 +1,9 @@
+yaffas-zarafa (1.3.2-4) lucid; urgency=low
+
+  * update to version 1.3.2-4
+
+ -- Package Builder <packages@yaffas.org>  Tue, 22 Oct 2013 15:23:31 +0200
+
 yaffas-zarafa (1.3.2-3) lucid; urgency=low
 
   * fixing SELinux permissions on CentOS/RHEL for WebApp
