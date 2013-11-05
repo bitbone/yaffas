@@ -29,6 +29,10 @@ lbl_virusalert=Virus alert email
 lbl_maxlength=Maximum size of scannable objects in MB
 lbl_clam_update=Update the ClamAV signatures
 lbl_clam_configure=Configure clamav
+lbl_clamav_status=ClamAV Status
+lbl_clamav_lastupdate=Last updated
+lbl_clamav_status_avail=Available pattern update
+lbl_clamav_status_inst=Installed pattern update
 
 lbl_sa=Spamassassin
 lbl_sa_configure=Configure Spamassassin

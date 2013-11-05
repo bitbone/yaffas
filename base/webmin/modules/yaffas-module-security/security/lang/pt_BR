@@ -29,6 +29,10 @@ lbl_virusalert=E-mail de alerta de vírus
 lbl_maxlength=Tamanho máximo de objeto para serem varridos em MB
 lbl_clam_update=Atualizar assinaturas do ClamAV
 lbl_clam_configure=Configurar ClamAV
+lbl_clamav_status=ClamAV Status
+lbl_clamav_lastupdate=Last updated
+lbl_clamav_status_avail=Available pattern update
+lbl_clamav_status_inst=Installed pattern update
 
 lbl_sa=Spamassassin
 lbl_sa_configure=Configurar Spamassassin
