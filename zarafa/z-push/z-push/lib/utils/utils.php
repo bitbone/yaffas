@@ -78,35 +78,6 @@ class Utils {
     }
 
     /**
-     * iPhone defines standard summer time information for current year only,
-     * starting with time change in February. Dates from the 1st January until
-     * the time change are undefined and the server uses GMT or its current time.
-     * The function parses the ical attachment and replaces DTSTART one year back
-     * in VTIMEZONE section if the event takes place in this undefined time.
-     * See also http://developer.berlios.de/mantis/view.php?id=311
-     *
-     * @param string    $ical               iCalendar data
-     *
-     * @access public
-     * @return string
-     */
-    static public function IcalTimezoneFix($ical) {
-        $eventDate = substr($ical, (strpos($ical, ":", strpos($ical, "DTSTART", strpos($ical, "BEGIN:VEVENT")))+1), 8);
-        $posStd = strpos($ical, "DTSTART:", strpos($ical, "BEGIN:STANDARD")) + strlen("DTSTART:");
-        $posDst = strpos($ical, "DTSTART:", strpos($ical, "BEGIN:DAYLIGHT")) + strlen("DTSTART:");
-        $beginStandard = substr($ical, $posStd , 8);
-        $beginDaylight = substr($ical, $posDst , 8);
-
-        if (($eventDate < $beginStandard) && ($eventDate < $beginDaylight) ) {
-            ZLog::Write(LOGLEVEL_DEBUG,"icalTimezoneFix for event on $eventDate, standard:$beginStandard, daylight:$beginDaylight");
-            $year = intval(date("Y")) - 1;
-            $ical = substr_replace($ical, $year, (($beginStandard < $beginDaylight) ? $posDst : $posStd), strlen($year));
-        }
-
-        return $ical;
-    }
-
-    /**
      * Build an address string from the components
      *
      * @param string    $street     the street
@@ -868,6 +839,30 @@ class Utils {
         return $plaintext;
     }
     /* END fmbiete's contribution r1516, ZP-318 */
+
+    /**
+     * Checks if a file has the same owner and group as the parent directory.
+     * If not, owner and group are fixed (being updated to the owner/group of the directory).
+     * Function code contributed by Robert Scheck aka rsc.
+     *
+     * @param string $file
+     *
+     * @access public
+     * @return boolean
+     */
+    public static function FixFileOwner($file) {
+        if(posix_getuid() == 0 && file_exists($file)) {
+            $dir = dirname($file);
+            $perm_dir = stat($dir);
+            $perm_log = stat($file);
+
+            if($perm_dir[4] !== $perm_log[4] || $perm_dir[5] !== $perm_log[5]) {
+                chown($file, $perm_dir[4]);
+                chgrp($file, $perm_dir[5]);
+            }
+        }
+        return true;
+    }
 
     /**
      * Returns AS-style LastVerbExecuted value from the server value.

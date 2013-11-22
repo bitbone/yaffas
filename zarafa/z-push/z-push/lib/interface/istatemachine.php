@@ -61,6 +61,9 @@ interface IStateMachine {
     const HIERARCHY = "hc";
     const BACKENDSTORAGE = "bs";
 
+    const STATEVERSION_01 = "1";    // Z-Push 2.0.x - default value if unset
+    const STATEVERSION_02 = "2";    // Z-Push 2.1.0 Milestone 1
+
     /**
      * Constructor
      * @throws FatalMisconfigurationException
@@ -138,7 +141,7 @@ interface IStateMachine {
      * @param string    $devid
      *
      * @access public
-     * @return array
+     * @return boolean     indicating if the user was added or not (existed already)
      */
     public function LinkUserDevice($username, $devid);
 
@@ -149,7 +152,7 @@ interface IStateMachine {
      * @param string    $devid
      *
      * @access public
-     * @return array
+     * @return boolean
      */
     public function UnLinkUserDevice($username, $devid);
 
@@ -163,6 +166,34 @@ interface IStateMachine {
      * @return array
      */
     public function GetAllDevices($username = false);
+
+    /**
+     * Returns the current version of the state files
+     *
+     * @access public
+     * @return int
+     */
+    public function GetStateVersion();
+
+    /**
+     * Sets the current version of the state files
+     *
+     * @param int       $version            the new supported version
+     *
+     * @access public
+     * @return boolean
+     */
+    public function SetStateVersion($version);
+
+    /**
+     * Returns all available states for a device id
+     *
+     * @param string    $devid              the device id
+     *
+     * @access public
+     * @return array(mixed)
+     */
+    public function GetAllStatesForDevice($devid);
 }
 
 ?>

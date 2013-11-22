@@ -53,6 +53,9 @@
 * Consult LICENSE file for details
 ************************************************/
 
+// config file
+require_once("backend/maildir/config.php");
+
 include_once('lib/default/diffbackend/diffbackend.php');
 include_once('include/mimeDecode.php');
 require_once('include/z_RFC822.php');
@@ -474,32 +477,45 @@ class BackendMaildir extends BackendDiff {
      * Called when a message has been changed on the mobile.
      * This functionality is not available for emails.
      *
-     * @param string        $folderid       id of the folder
-     * @param string        $id             id of the message
-     * @param SyncXXX       $message        the SyncObject containing a message
+     * @param string              $folderid            id of the folder
+     * @param string              $id                  id of the message
+     * @param SyncXXX             $message             the SyncObject containing a message
+     * @param ContentParameters   $contentParameters
      *
      * @access public
      * @return array                        same return value as StatMessage()
      * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
      */
-    public function ChangeMessage($folderid, $id, $message) {
+    public function ChangeMessage($folderid, $id, $message, $contentParameters) {
+        // TODO SyncInterval check + ContentParameters
+        // see https://jira.zarafa.com/browse/ZP-258 for details
+        // before changing the message, it should be checked if the message is in the SyncInterval
+        // to determine the cutoffdate use Utils::GetCutOffDate($contentparameters->GetFilterType());
+        // if the message is not in the interval an StatusException with code SYNC_STATUS_SYNCCANNOTBECOMPLETED should be thrown
         return false;
     }
 
     /**
      * Changes the 'read' flag of a message on disk
      *
-     * @param string        $folderid       id of the folder
-     * @param string        $id             id of the message
-     * @param int           $flags          read flag of the message
+     * @param string              $folderid            id of the folder
+     * @param string              $id                  id of the message
+     * @param int                 $flags               read flag of the message
+     * @param ContentParameters   $contentParameters
      *
      * @access public
      * @return boolean                      status of the operation
      * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
      */
-    public function SetReadFlag($folderid, $id, $flags) {
+    public function SetReadFlag($folderid, $id, $flags, $contentParameters) {
         if($folderid != 'root')
             return false;
+
+        // TODO SyncInterval check + ContentParameters
+        // see https://jira.zarafa.com/browse/ZP-258 for details
+        // before setting the read flag, it should be checked if the message is in the SyncInterval
+        // to determine the cutoffdate use Utils::GetCutOffDate($contentparameters->GetFilterType());
+        // if the message is not in the interval an StatusException with code SYNC_STATUS_OBJECTNOTFOUND should be thrown
 
         $fn = $this->findMessage($id);
 
@@ -528,16 +544,23 @@ class BackendMaildir extends BackendDiff {
     /**
      * Called when the user has requested to delete (really delete) a message
      *
-     * @param string        $folderid       id of the folder
-     * @param string        $id             id of the message
+     * @param string              $folderid             id of the folder
+     * @param string              $id                   id of the message
+     * @param ContentParameters   $contentParameters
      *
      * @access public
      * @return boolean                      status of the operation
      * @throws StatusException              could throw specific SYNC_STATUS_* exceptions
      */
-    public function DeleteMessage($folderid, $id) {
+    public function DeleteMessage($folderid, $id, $contentParameters) {
         if($folderid != 'root')
             return false;
+
+        // TODO SyncInterval check + ContentParameters
+        // see https://jira.zarafa.com/browse/ZP-258 for details
+        // before deleting the message, it should be checked if the message is in the SyncInterval
+        // to determine the cutoffdate use Utils::GetCutOffDate($contentparameters->GetFilterType());
+        // if the message is not in the interval an StatusException with code SYNC_STATUS_OBJECTNOTFOUND should be thrown
 
         $fn = $this->findMessage($id);
 
@@ -555,15 +578,16 @@ class BackendMaildir extends BackendDiff {
      * Called when the user moves an item on the PDA from one folder to another
      * not implemented
      *
-     * @param string        $folderid       id of the source folder
-     * @param string        $id             id of the message
-     * @param string        $newfolderid    id of the destination folder
+     * @param string              $folderid            id of the source folder
+     * @param string              $id                  id of the message
+     * @param string              $newfolderid         id of the destination folder
+     * @param ContentParameters   $contentParameters
      *
      * @access public
      * @return boolean                      status of the operation
      * @throws StatusException              could throw specific SYNC_MOVEITEMSSTATUS_* exceptions
      */
-    public function MoveMessage($folderid, $id, $newfolderid) {
+    public function MoveMessage($folderid, $id, $newfolderid, $contentParameters) {
         return false;
     }
 

@@ -1,13 +1,10 @@
 <?php
 /***********************************************
-* File      :   ichanges.php
+* File      :   config.php
 * Project   :   Z-Push
-* Descr     :   Generic IChanges interface. This interface can
-*               not be implemented alone.
-*               IImportChanges and IExportChanges interfaces
-*               inherit from this interface
+* Descr     :   VCardDir backend configuration file
 *
-* Created   :   02.01.2012
+* Created   :   27.11.2012
 *
 * Copyright 2007 - 2013 Zarafa Deutschland GmbH
 *
@@ -44,43 +41,11 @@
 * Consult LICENSE file for details
 ************************************************/
 
-interface IChanges {
-    /**
-     * Constructor
-     *
-     * @throws StatusException
-     */
+// ************************
+//  BackendZarafa settings
+// ************************
 
-    /**
-     * Initializes the state and flags
-     *
-     * @param string        $state
-     * @param int           $flags
-     *
-     * @access public
-     * @return boolean      status flag
-     * @throws StatusException
-     */
-    public function Config($state, $flags = 0);
-
-    /**
-     * Configures additional parameters used for content synchronization
-     *
-     * @param ContentParameters         $contentparameters
-     *
-     * @access public
-     * @return boolean
-     * @throws StatusException
-     */
-    public function ConfigContentParameters($contentparameters);
-
-    /**
-     * Reads and returns the current state
-     *
-     * @access public
-     * @return string
-     */
-    public function GetState();
-}
+// Defines the server to which we want to connect
+define('MAPI_SERVER', 'file:///var/run/zarafa');
 
 ?>
