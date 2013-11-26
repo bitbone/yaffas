@@ -199,3 +199,10 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=235482[#235482],
 https://bugzilla.mozilla.org/show_bug.cgi?id=248846[#248846] und
 https://bugzilla.mozilla.org/show_bug.cgi?id=746052[#746052].
 
+
+==== Erweiterte Konfiguration
+Einige seltener gefragte Funktionen sind nicht über die Weboberfläche,
+sondern nur direkt auf der Kommandozeile konfigurierbar.
+
+Weitere Informationen dazu befinden sich in der README-Datei in
++/opt/yaffas/libexec/maildisclaimers/doc/+
