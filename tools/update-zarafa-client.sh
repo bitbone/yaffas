@@ -9,7 +9,7 @@ source ~/.update-zarafa-client 2>/dev/null
 URL="http://download.zarafa.com/supported"
 STATUS=${STATUS:-final}
 VERSION="7.1"
-RELEASE="7.1.4-41394"
+RELEASE="7.1.7-43126"
 CMD="wget --user=$USERNAME --password=$PASSWORD -qc"
 
 [[ -z $USERNAME ]] && read -p "Username: " USERNAME
