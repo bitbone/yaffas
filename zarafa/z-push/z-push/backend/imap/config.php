@@ -1,13 +1,10 @@
 <?php
 /***********************************************
-* File      :   ichanges.php
+* File      :   config.php
 * Project   :   Z-Push
-* Descr     :   Generic IChanges interface. This interface can
-*               not be implemented alone.
-*               IImportChanges and IExportChanges interfaces
-*               inherit from this interface
+* Descr     :   IMAP backend configuration file
 *
-* Created   :   02.01.2012
+* Created   :   27.11.2012
 *
 * Copyright 2007 - 2013 Zarafa Deutschland GmbH
 *
@@ -44,43 +41,38 @@
 * Consult LICENSE file for details
 ************************************************/
 
-interface IChanges {
-    /**
-     * Constructor
-     *
-     * @throws StatusException
-     */
+// ************************
+//  BackendIMAP settings
+// ************************
 
-    /**
-     * Initializes the state and flags
-     *
-     * @param string        $state
-     * @param int           $flags
-     *
-     * @access public
-     * @return boolean      status flag
-     * @throws StatusException
-     */
-    public function Config($state, $flags = 0);
+// Defines the server to which we want to connect
+define('IMAP_SERVER', 'localhost');
 
-    /**
-     * Configures additional parameters used for content synchronization
-     *
-     * @param ContentParameters         $contentparameters
-     *
-     * @access public
-     * @return boolean
-     * @throws StatusException
-     */
-    public function ConfigContentParameters($contentparameters);
+// connecting to default port (143)
+define('IMAP_PORT', 143);
 
-    /**
-     * Reads and returns the current state
-     *
-     * @access public
-     * @return string
-     */
-    public function GetState();
-}
+// best cross-platform compatibility (see http://php.net/imap_open for options)
+define('IMAP_OPTIONS', '/notls/norsh');
+
+// overwrite the "from" header if it isn't set when sending emails
+// options: 'username'    - the username will be set (usefull if your login is equal to your emailaddress)
+//        'domain'    - the value of the "domain" field is used
+//        '@mydomain.com' - the username is used and the given string will be appended
+define('IMAP_DEFAULTFROM', '');
+
+// copy outgoing mail to this folder. If not set z-push will try the default folders
+define('IMAP_SENTFOLDER', '');
+
+// forward messages inline (default false - as attachment)
+define('IMAP_INLINE_FORWARD', false);
+
+// use imap_mail() to send emails (default) - if false mail() is used
+define('IMAP_USE_IMAPMAIL', true);
+
+/* BEGIN fmbiete's contribution r1527, ZP-319 */
+// list of folders we want to exclude from sync. Names, or part of it, separated by |
+// example: dovecot.sieve|archive|spam
+define('IMAP_EXCLUDED_FOLDERS', '');
+/* END fmbiete's contribution r1527, ZP-319 */
 
 ?>

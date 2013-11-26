@@ -51,6 +51,10 @@ class DeviceManager {
     const MSG_BROKEN_CAUSINGLOOP = 2;
     const MSG_BROKEN_SEMANTICERR = 4;
 
+    const FLD_SYNC_INITIALIZED = 1;
+    const FLD_SYNC_INPROGRESS = 2;
+    const FLD_SYNC_COMPLETED = 4;
+
     private $device;
     private $deviceHash;
     private $statemachine;
@@ -327,6 +331,18 @@ class DeviceManager {
     public function InitializeFolderCache($folders) {
         $this->stateManager->SetDevice($this->device);
         return $this->stateManager->InitializeFolderCache($folders);
+    }
+
+    /**
+     * Returns the ActiveSync folder type for a FolderID
+     *
+     * @param string    $folderid
+     *
+     * @access public
+     * @return int/boolean        boolean if no type is found
+     */
+    public function GetFolderTypeFromCacheById($folderid) {
+        return $this->device->GetFolderType($folderid);
     }
 
     /**
@@ -648,6 +664,35 @@ class DeviceManager {
      */
     public function SetHeartbeatStateIntegrity($folderid, $uuid, $counter) {
         return $this->loopdetection->SetSyncStateUsage($folderid, $uuid, $counter);
+    }
+
+    /**
+     * Sets the current status of the folder
+     *
+     * @param string     $folderid          folder id
+     * @param int        $statusflag        current status: DeviceManager::FLD_SYNC_INITIALIZED, DeviceManager::FLD_SYNC_INPROGRESS, DeviceManager::FLD_SYNC_COMPLETED
+     *
+     * @access public
+     * @return
+     */
+    public function SetFolderSyncStatus($folderid, $statusflag) {
+        $currentStatus = $this->device->GetFolderSyncStatus($folderid);
+
+        // status available or just initialized
+        if (isset($currentStatus[ASDevice::FOLDERSYNCSTATUS]) || $statusflag == self::FLD_SYNC_INITIALIZED) {
+            // only update if there is a change
+            if ($statusflag !== $currentStatus[ASDevice::FOLDERSYNCSTATUS] && $statusflag != self::FLD_SYNC_COMPLETED) {
+                $this->device->SetFolderSyncStatus($folderid, array(ASDevice::FOLDERSYNCSTATUS => $statusflag));
+                ZLog::Write(LOGLEVEL_DEBUG, sprintf("SetFolderSyncStatus(): set %s for %s", $statusflag, $folderid));
+            }
+            // if completed, remove the status
+            else if ($statusflag == self::FLD_SYNC_COMPLETED) {
+                $this->device->SetFolderSyncStatus($folderid, false);
+                ZLog::Write(LOGLEVEL_DEBUG, sprintf("SetFolderSyncStatus(): completed for %s", $folderid));
+            }
+        }
+
+        return true;
     }
 
     /**
