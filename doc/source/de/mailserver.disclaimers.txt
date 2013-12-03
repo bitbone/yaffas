@@ -199,6 +199,19 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=235482[#235482],
 https://bugzilla.mozilla.org/show_bug.cgi?id=248846[#248846] und
 https://bugzilla.mozilla.org/show_bug.cgi?id=746052[#746052].
 
+==== Outlook-RTF-Mails (Rich-Text)
+Das RTF-E-Mail-Format wird von diesem Modul nicht korrekt unterstützt!
+E-Mails in diesem Format werden von Outlook in älteren Versionen
+standardmäßig versendet. In neueren Versionen ist diese Funktion nur noch
+nach expliziter Konfiguration aktiv. Microsoft rät auch von diesem Format
+ab.
+Weitere Infos befinden sich unter
+http://office.microsoft.com/de-de/outlook-help/andern-des-nachrichtenformats-in-nur-text-html-oder-rich-text-HP001232996.aspx
+
+Läuft eine so formatierte E-Mail durch den Maildisclaimer, so wird der
+RTF-Teil der E-Mail unverändert weitergeschickt. Die Empfänger einer
+solchen Mail sehen keine E-Mail-Signatur, sofern sie ebenfalls einen
+Client einsetzen, der das RTF-Format unterstützt.
 
 ==== Erweiterte Konfiguration
 Einige seltener gefragte Funktionen sind nicht über die Weboberfläche,
