@@ -387,7 +387,7 @@ image:{images}19_setup_zarafa_thumb.png[link="{images}19_setup_zarafa.png"]
 In the next step, the mail server parameters will be configured. A primary
 mail domain (e.g. machinename.example.org) has to be configured, a smart
 host (and the required authentification data) has only be specified, if
-the {product] server should forward all outgoing mails to the given host.
+the {product} server should forward all outgoing mails to the given host.
 
 image:{images}20_setup_mailserver_thumb.png[link="{images}20_setup_mailserver.png"]
 
