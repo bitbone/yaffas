@@ -7,6 +7,6 @@ Standards-Version: 3.6.0
 
 Package: yaffas-module-group
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, yaffas-module-authsrv
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core
 Description: Groupadministration for Webmin
  Groupadministration for Webmin
