@@ -31,6 +31,7 @@ case "$1" in
 	POSTFIX_TRANSPORT=/opt/yaffas/config/postfix/transport-deliver-to-public
 	POSTFIX_MASTER_CF=/etc/postfix/master.cf
 	ZARAFA_DELIVER_TO_PUBLIC=/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
+	mkdir -p "$(dirname "$POSTFIX_TRANSPORT")"
 	touch "$POSTFIX_TRANSPORT"
 	postmap "$POSTFIX_TRANSPORT"
 	cur_transport_maps=$(postconf -h transport_maps)
