@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ADM-378 (rfc-ignorant.de has been discontinued)
-perl -e '
+PERL5LIB=/opt/yaffas/lib/perl5/ perl -e '
 if (!eval "use Yaffas::Module::Security; return 1") {
 	# no yaffas? nothing todo...
 	exit 0;
