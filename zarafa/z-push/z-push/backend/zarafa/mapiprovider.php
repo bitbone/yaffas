@@ -128,10 +128,8 @@ class MAPIProvider {
 
             foreach($rows as $row) {
                 if(isset($row[PR_ATTACH_NUM])) {
-                    if (isset($row[PR_ATTACH_SIZE]) && $row[PR_ATTACH_SIZE] < MAX_EMBEDDED_SIZE) {
-                        $mapiattach = mapi_message_openattach($mapimessage, $row[PR_ATTACH_NUM]);
-                        $message->picture = base64_encode(mapi_attach_openbin($mapiattach, PR_ATTACH_DATA_BIN));
-                    }
+                    $mapiattach = mapi_message_openattach($mapimessage, $row[PR_ATTACH_NUM]);
+                    $message->picture = base64_encode(mapi_attach_openbin($mapiattach, PR_ATTACH_DATA_BIN));
                 }
             }
         }
@@ -563,7 +561,12 @@ class MAPIProvider {
             }
 
             // Organizer is the sender
-            $message->meetingrequest->organizer = $message->from;
+            if (strpos($message->messageclass, "IPM.Schedule.Meeting.Resp") === 0) {
+                $message->meetingrequest->organizer = $message->to;
+            }
+            else {
+                $message->meetingrequest->organizer = $message->from;
+            }
 
             // Process recurrence
             if(isset($props[$meetingrequestproperties["isrecurringtag"]]) && $props[$meetingrequestproperties["isrecurringtag"]]) {
@@ -1239,10 +1242,13 @@ class MAPIProvider {
         $representingprops = $this->getProps($mapimessage, $p);
 
         if (!isset($representingprops[$appointmentprops["representingentryid"]])) {
-            $props[$appointmentprops["representingname"]] = Request::GetAuthUser();
+            $storeProps = mapi_getprops($this->store, array(PR_MAILBOX_OWNER_ENTRYID));
+            $props[$appointmentprops["representingentryid"]] = $storeProps[PR_MAILBOX_OWNER_ENTRYID];
+            $displayname = $this->getFullnameFromEntryID($storeProps[PR_MAILBOX_OWNER_ENTRYID]);
+
+            $props[$appointmentprops["representingname"]] = ($displayname !== false) ? $displayname : Request::GetAuthUser();
             $props[$appointmentprops["sentrepresentingemail"]] = Request::GetAuthUser();
             $props[$appointmentprops["sentrepresentingaddt"]] = "ZARAFA";
-            $props[$appointmentprops["representingentryid"]] = mapi_createoneoff(Request::GetAuthUser(), "ZARAFA", Request::GetAuthUser());
             $props[$appointmentprops["sentrepresentinsrchk"]] = $props[$appointmentprops["sentrepresentingaddt"]].":".$props[$appointmentprops["sentrepresentingemail"]];
 
             if(isset($appointment->attendees) && is_array($appointment->attendees) && !empty($appointment->attendees)) {
@@ -1381,47 +1387,45 @@ class MAPIProvider {
         if (isset($contact->picture)) {
             $picbinary = base64_decode($contact->picture);
             $picsize = strlen($picbinary);
-            if ($picsize < MAX_EMBEDDED_SIZE) {
-                $props[$contactprops["haspic"]] = false;
+            $props[$contactprops["haspic"]] = false;
 
-                // TODO contact picture handling
-                // check if contact has already got a picture. delete it first in that case
-                // delete it also if it was removed on a mobile
-                $picprops = mapi_getprops($mapimessage, array($contactprops["haspic"]));
-                if (isset($picprops[$contactprops["haspic"]]) && $picprops[$contactprops["haspic"]]) {
-                    ZLog::Write(LOGLEVEL_DEBUG, "Contact already has a picture. Delete it");
+            // TODO contact picture handling
+            // check if contact has already got a picture. delete it first in that case
+            // delete it also if it was removed on a mobile
+            $picprops = mapi_getprops($mapimessage, array($contactprops["haspic"]));
+            if (isset($picprops[$contactprops["haspic"]]) && $picprops[$contactprops["haspic"]]) {
+                ZLog::Write(LOGLEVEL_DEBUG, "Contact already has a picture. Delete it");
 
-                    $attachtable = mapi_message_getattachmenttable($mapimessage);
-                    mapi_table_restrict($attachtable, MAPIUtils::GetContactPicRestriction());
-                    $rows = mapi_table_queryallrows($attachtable, array(PR_ATTACH_NUM));
-                    if (isset($rows) && is_array($rows)) {
-                        foreach ($rows as $row) {
-                            mapi_message_deleteattach($mapimessage, $row[PR_ATTACH_NUM]);
-                        }
+                $attachtable = mapi_message_getattachmenttable($mapimessage);
+                mapi_table_restrict($attachtable, MAPIUtils::GetContactPicRestriction());
+                $rows = mapi_table_queryallrows($attachtable, array(PR_ATTACH_NUM));
+                if (isset($rows) && is_array($rows)) {
+                    foreach ($rows as $row) {
+                        mapi_message_deleteattach($mapimessage, $row[PR_ATTACH_NUM]);
                     }
                 }
+            }
 
-                // only set picture if there's data in the request
-                if ($picbinary !== false && $picsize > 0) {
-                    $props[$contactprops["haspic"]] = true;
-                    $pic = mapi_message_createattach($mapimessage);
-                    // Set properties of the attachment
-                    $picprops = array(
-                        PR_ATTACH_LONG_FILENAME_A => "ContactPicture.jpg",
-                        PR_DISPLAY_NAME => "ContactPicture.jpg",
-                        0x7FFF000B => true,
-                        PR_ATTACHMENT_HIDDEN => false,
-                        PR_ATTACHMENT_FLAGS => 1,
-                        PR_ATTACH_METHOD => ATTACH_BY_VALUE,
-                        PR_ATTACH_EXTENSION_A => ".jpg",
-                        PR_ATTACH_NUM => 1,
-                        PR_ATTACH_SIZE => $picsize,
-                        PR_ATTACH_DATA_BIN => $picbinary,
-                    );
+            // only set picture if there's data in the request
+            if ($picbinary !== false && $picsize > 0) {
+                $props[$contactprops["haspic"]] = true;
+                $pic = mapi_message_createattach($mapimessage);
+                // Set properties of the attachment
+                $picprops = array(
+                    PR_ATTACH_LONG_FILENAME_A => "ContactPicture.jpg",
+                    PR_DISPLAY_NAME => "ContactPicture.jpg",
+                    0x7FFF000B => true,
+                    PR_ATTACHMENT_HIDDEN => false,
+                    PR_ATTACHMENT_FLAGS => 1,
+                    PR_ATTACH_METHOD => ATTACH_BY_VALUE,
+                    PR_ATTACH_EXTENSION_A => ".jpg",
+                    PR_ATTACH_NUM => 1,
+                    PR_ATTACH_SIZE => $picsize,
+                    PR_ATTACH_DATA_BIN => $picbinary,
+                );
 
-                    mapi_setprops($pic, $picprops);
-                    mapi_savechanges($pic);
-                }
+                mapi_setprops($pic, $picprops);
+                mapi_savechanges($pic);
             }
         }
 
@@ -1547,7 +1551,9 @@ class MAPIProvider {
         $props = array();
         $props[$noteprops["messageclass"]] = "IPM.StickyNote";
         // set body otherwise the note will be "broken" when editing it in outlook
-        $props[$noteprops["body"]] = $note->asbody->data;
+        $this->setASbody($note->asbody, $props, $noteprops);
+
+        $props[$noteprops["internetcpid"]] = INTERNET_CPID_UTF8;
         mapi_setprops($mapimessage, $props);
     }
 
@@ -2036,6 +2042,28 @@ class MAPIProvider {
     }
 
     /**
+     * Returns fullname from an entryid
+     *
+     * @param binary $entryid
+     * @return string fullname or false on error
+     */
+    private function getFullnameFromEntryID($entryid) {
+        $addrbook = $this->getAddressbook();
+        $mailuser = mapi_ab_openentry($addrbook, $entryid);
+        if(!$mailuser) {
+            ZLog::Write(LOGLEVEL_ERROR, sprintf("Unable to get mailuser for getFullnameFromEntryID (0x%X)", mapi_last_hresult()));
+            return false;
+        }
+
+        $props = mapi_getprops($mailuser, array(PR_DISPLAY_NAME));
+        if (isset($props[PR_DISPLAY_NAME])) {
+            return $props[PR_DISPLAY_NAME];
+        }
+        ZLog::Write(LOGLEVEL_ERROR, sprintf("Unable to get fullname for getFullnameFromEntryID (0x%X)", mapi_last_hresult()));
+        return false;
+    }
+
+    /**
      * Builds a displayname from several separated values
      *
      * @param SyncContact       $contact
@@ -2335,27 +2363,22 @@ class MAPIProvider {
         }
 
         if (isset($stream) && isset($streamsize)) {
-            if ($streamsize < MAX_EMBEDDED_SIZE) {
-                if (Request::GetProtocolVersion() >= 12.0) {
-                    if (!isset($message->asbody))
-                        $message->asbody = new SyncBaseBody();
-                    //TODO data should be wrapped in a MapiStreamWrapper
-                    $message->asbody->data = mapi_stream_read($stream, MAX_EMBEDDED_SIZE);
-                    $message->asbody->estimatedDataSize = $streamsize;
-                    $message->asbody->truncated = 0;
-                }
-                else {
-                    $message->mimetruncated = 0;
-                    //TODO mimedata should be a wrapped in a MapiStreamWrapper
-                    $message->mimedata = mapi_stream_read($stream, MAX_EMBEDDED_SIZE);
-                    $message->mimesize = $streamsize;
-                }
-                unset($message->body, $message->bodytruncated);
-                return true;
+            if (Request::GetProtocolVersion() >= 12.0) {
+                if (!isset($message->asbody))
+                    $message->asbody = new SyncBaseBody();
+                //TODO data should be wrapped in a MapiStreamWrapper
+                $message->asbody->data = mapi_stream_read($stream, $streamsize);
+                $message->asbody->estimatedDataSize = $streamsize;
+                $message->asbody->truncated = 0;
             }
             else {
-                ZLog::Write(LOGLEVEL_WARN, sprintf("Your request (%d bytes) exceeds the value for inline attachments (%d bytes). You can change the value of MAX_EMBEDDED_SIZE in config.php", $mstreamstat['cb'], MAX_EMBEDDED_SIZE));
+                $message->mimetruncated = 0;
+                //TODO mimedata should be a wrapped in a MapiStreamWrapper
+                $message->mimedata = mapi_stream_read($stream, $streamsize);
+                $message->mimesize = $streamsize;
             }
+            unset($message->body, $message->bodytruncated);
+            return true;
         }
         else {
             ZLog::Write(LOGLEVEL_ERROR, sprintf("Error opening attachment for imtoinet"));
