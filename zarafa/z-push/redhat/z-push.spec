@@ -36,6 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/share/z-push
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
+/opt/yaffas/share/yaffas-upgrade/z-push-migration-2.0.x-2.1.0.sh
 %{_sysconfdir}/logrotate.d/z-push
 
 %changelog
