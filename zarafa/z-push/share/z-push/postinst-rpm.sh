@@ -20,10 +20,3 @@ if grep -q "/var/www/z-push/index.php" $HTTPD_CONF; then
 fi
 
 service httpd restart
-
-if [ ! -f /var/lib/z-push/settings ]; then
-    pushd /usr/share/z-push/tools
-    /usr/bin/php ./migrate-2.0.x-2.1.0.php
-    popd
-fi
-

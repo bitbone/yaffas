@@ -1,3 +1,15 @@
+z-push (2.1.1-1) precise; urgency=low
+
+  * fixing automatical 2.0 to 2.1 migration
+
+ -- Package Builder <packages@yaffas.org>  Tue, 11 Mar 2014 15:35:09 +0100
+
+z-push (2.1.1) precise; urgency=low
+
+  * integrating z-push 2.1.1
+
+ -- Package Builder <packages@yaffas.org>  Thu, 27 Feb 2014 16:04:43 +0100
+
 z-push (2.1.0-1) precise; urgency=low
 
   * update to z-push-2.1.0a

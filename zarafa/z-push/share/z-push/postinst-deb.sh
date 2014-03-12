@@ -15,14 +15,6 @@ if grep -q "/var/www/z-push/index.php" /etc/apache2/sites-available/zarafa-webac
     service apache2 reload
 fi
 
-if [ ! -f /var/lib/z-push/settings ]; then
-    service apache2 restart
-
-    pushd /usr/share/z-push/tools
-    /usr/bin/php ./migrate-2.0.x-2.1.0.php
-    popd
-fi
-
 exit 0
 
 
