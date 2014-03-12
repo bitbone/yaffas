@@ -177,8 +177,8 @@ sub get_alias_destination {
 }
 
 sub get_alias_type {
-    my $self = shift;
-    my $alias = shift;
+	my $self = shift;
+	my $alias = shift;
 
 	return $self->{MODE};
 }
@@ -252,8 +252,8 @@ Saves all settings
 =cut
 
 sub write {
-    my $self = shift;
-    _write($self->{MODE}, $self->{ALIAS}, $self->{ALIAS_remove});
+	my $self = shift;
+	_write($self->{MODE}, $self->{ALIAS}, $self->{ALIAS_remove});
 }
 
 

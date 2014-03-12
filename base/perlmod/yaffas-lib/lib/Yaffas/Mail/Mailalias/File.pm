@@ -11,7 +11,7 @@ my %alias_file = (
     "USER" => Yaffas::Constant::FILE->{postfix_local_aliases},
     "MAIL" => Yaffas::Constant::FILE->{postfix_local_aliases},
     "DIR" => Yaffas::Constant::FILE->{postfix_transport_publicfolder},
-	"DIR_virtual" => Yaffas::Constant::FILE->{postfix_publicfolder_aliases}
+    "DIR_virtual" => Yaffas::Constant::FILE->{postfix_publicfolder_aliases}
 );
 our $dir_transport = "zarafa-publicfolder:";
 our $dir_domain_suffix = ".zarafa-publicfolder";
@@ -21,39 +21,39 @@ sub _write {
     my %data = %{shift()};
 
     my $bkc = Yaffas::File::Config->new($alias_file{$mode}, {
-		-SplitPolicy => 'custom',
-		-SplitDelimiter => '\s+',
-		-StoreDelimiter => ' ',
-	}, "");
-	my %writedata;
-	foreach my $key (keys %data) {
-		if ($mode eq "DIR") {
-			# prefix each target folder with our postfix transport:
-			$writedata{$key . $dir_domain_suffix} = $dir_transport . @{$data{$key}}[-1];
-		} else {
-			$writedata{$key} = join(",", @{$data{$key}});
-		}
-	}
+        -SplitPolicy => 'custom',
+        -SplitDelimiter => '\s+',
+        -StoreDelimiter => ' ',
+    }, "");
+    my %writedata;
+    foreach my $key (keys %data) {
+        if ($mode eq "DIR") {
+            # prefix each target folder with our postfix transport:
+            $writedata{$key . $dir_domain_suffix} = $dir_transport . @{$data{$key}}[-1];
+        } else {
+            $writedata{$key} = join(",", @{$data{$key}});
+        }
+    }
     $bkc->get_cfg()->save_file($alias_file{$mode}, \%writedata);
 
     Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
 
-	if ($mode ne "DIR") {
-		return 1;
-	}
+    if ($mode ne "DIR") {
+        return 1;
+    }
 
-	# dir aliasing also needs a special virtual alias file,
-	# which will now be updated:
-	$mode = "DIR_virtual";
+    # dir aliasing also needs a special virtual alias file,
+    # which will now be updated:
+    $mode = "DIR_virtual";
     $bkc = Yaffas::File::Config->new($alias_file{$mode}, {
-		-SplitPolicy => 'custom',
-		-SplitDelimiter => '\s+',
-		-StoreDelimiter => ' ',
-	});
-	%writedata = ();
-	foreach my $key (keys %data) {
-		$writedata{$key} = $key . $dir_domain_suffix;
-	}
+        -SplitPolicy => 'custom',
+        -SplitDelimiter => '\s+',
+        -StoreDelimiter => ' ',
+    });
+    %writedata = ();
+    foreach my $key (keys %data) {
+        $writedata{$key} = $key . $dir_domain_suffix;
+    }
     $bkc->get_cfg()->save_file($alias_file{$mode}, \%writedata);
 
     Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
@@ -70,21 +70,21 @@ sub _read {
             -StoreDelimiter => ' ',
         });
     my %data = %{$bkc->get_cfg_values()};
-	my %returndata;
-	for my $key (keys(%data)) {
-		my @parts;
-		if ($mode eq "DIR") {
-			# remove the postfix transport from the folder name
-			my $fullname = $data{$key};
-			$fullname =~ s/^$dir_transport//;
-			@parts = $fullname;
-			$key =~ s/$dir_domain_suffix$//;
-		} else {
-			@parts = split(/\s*,\s*/, $data{$key});
-		}
-		$returndata{$key} = \@parts;
-	}
-	return \%returndata;
+    my %returndata;
+    for my $key (keys(%data)) {
+        my @parts;
+        if ($mode eq "DIR") {
+            # remove the postfix transport from the folder name
+            my $fullname = $data{$key};
+            $fullname =~ s/^$dir_transport//;
+            @parts = $fullname;
+            $key =~ s/$dir_domain_suffix$//;
+        } else {
+            @parts = split(/\s*,\s*/, $data{$key});
+        }
+        $returndata{$key} = \@parts;
+    }
+    return \%returndata;
 }
 
 return 1;
