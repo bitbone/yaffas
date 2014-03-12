@@ -14,7 +14,6 @@ ReadParse();
 
 header();
 
-# ugly hack - copied function from check_new_edit.cgi to this, all checks are made there
 Yaffas::Module::Mailalias::add_edit_alias();
 
 footer();
