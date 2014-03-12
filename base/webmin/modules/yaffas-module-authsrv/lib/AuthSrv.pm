@@ -1819,10 +1819,12 @@ inconsitencies can occur if someone deletes or modifies users or groups via comm
 sub get_sys_and_db_users() {
 	# this produces a hash with all array values as keys and undef as hash values
 	my %ret;
-	@ret{ Yaffas::UGM::get_users() } = ();
-	eval "use Yaffas::FaxDB;";
-	while (my($type, $entity, $id) = each(Yaffas::FaxDB::entity({type => "user"}))) {
-		$ret{$entity} = ();
+	$ret{ Yaffas::UGM::get_users() } = ();
+	if (eval "use Yaffas::FaxDB; 1") {
+		my %users = Yaffas::FaxDB::entity({type => "user"});
+		while (my($type, $entity, $id) = each(%users)) {
+			$ret{$entity} = ();
+		}
 	}
 
 	return \%ret;
@@ -1838,10 +1840,12 @@ see also get_sys_and_db_users( )
 
 sub get_sys_and_db_groups() {
 	my %ret;
-	@ret{ Yaffas::UGM::get_groups() } = ();
-	eval "use Yaffas::FaxDB;";
-	while (my($type, $entity, $id) = each(Yaffas::FaxDB::entity({type => "group"}))) {
-		$ret{$entity} = ();
+	$ret{ Yaffas::UGM::get_groups() } = ();
+	if (eval "use Yaffas::FaxDB; 1") {
+		my %groups = Yaffas::FaxDB::entity({type => "group"});
+		while (my($type, $entity, $id) = each(%groups)) {
+			$ret{$entity} = ();
+		}
 	}
 
 	return \%ret;
