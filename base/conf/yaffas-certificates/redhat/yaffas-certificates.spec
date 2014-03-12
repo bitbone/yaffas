@@ -8,7 +8,7 @@ Group: Applications/System
 Source: file://%{name}-%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires: yaffas-install-lib, yaffas-module-certificates
+Requires: yaffas-install-lib, yaffas-module-certificate
 
 %description
 Default yaffas certificates
