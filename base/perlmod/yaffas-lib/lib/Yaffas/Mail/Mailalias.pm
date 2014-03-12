@@ -17,8 +17,6 @@ use Yaffas::Exception;
 use Yaffas::Constant;
 use Yaffas::Check;
 use Yaffas::UGM;
-use Yaffas::Auth;
-use Yaffas::Auth::Type;
 use Yaffas::Mail::Mailalias::File;
 use Yaffas::Mail::Mailalias::LDAP;
 
