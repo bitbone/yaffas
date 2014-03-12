@@ -21,7 +21,6 @@ if ( defined($alias) ) {
 	edit_alias($alias);
 }
 elsif (defined($main::in{from})) {
-	# ugly hack - copied function from check_new_edit.cgi to this, all checks are made there
 	Yaffas::Module::Mailalias::add_edit_alias();
 }
 
