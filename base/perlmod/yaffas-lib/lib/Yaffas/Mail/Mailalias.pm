@@ -104,7 +104,7 @@ sub add {
 
 	if (defined($self->{ALIAS}->{$from})) {
 		if (!grep(/^$to$/, @{$self->{ALIAS}->{$from}})) {
-			push($self->{ALIAS}->{$from}, $to);
+			push(@{$self->{ALIAS}->{$from}}, $to);
 		}
 	}
 	else {
@@ -218,7 +218,7 @@ sub forward {
 		}
 		throw $bke if $bke;
 
-		push($self->{ALIAS}->{$user}, $user, @fw);
+		push(@{$self->{ALIAS}->{$user}}, $user, @fw);
 	}
 	else {
 		# get mode

@@ -18,23 +18,23 @@ our $dir_domain_suffix = ".zarafa-publicfolder";
 
 sub _write {
     my $mode = shift;
-    my $data = shift;
+    my %data = %{shift()};
 
     my $bkc = Yaffas::File::Config->new($alias_file{$mode}, {
 		-SplitPolicy => 'custom',
 		-SplitDelimiter => '\s+',
 		-StoreDelimiter => ' ',
 	}, "");
-	my $writedata = {};
-	foreach my $key (keys $data) {
+	my %writedata;
+	foreach my $key (keys %data) {
 		if ($mode eq "DIR") {
 			# prefix each target folder with our postfix transport:
-			$writedata->{$key . $dir_domain_suffix} = $dir_transport . @{$data->{$key}}[-1];
+			$writedata{$key . $dir_domain_suffix} = $dir_transport . @{$data{$key}}[-1];
 		} else {
-			$writedata->{$key} = join(",", @{$data->{$key}});
+			$writedata{$key} = join(",", @{$data{$key}});
 		}
 	}
-    $bkc->get_cfg()->save_file($alias_file{$mode}, $writedata);
+    $bkc->get_cfg()->save_file($alias_file{$mode}, \%writedata);
 
     Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
 
@@ -50,11 +50,11 @@ sub _write {
 		-SplitDelimiter => '\s+',
 		-StoreDelimiter => ' ',
 	});
-	$writedata = {};
-	foreach my $key (keys $data) {
-		$writedata->{$key} = $key . $dir_domain_suffix;
+	%writedata = ();
+	foreach my $key (keys %data) {
+		$writedata{$key} = $key . $dir_domain_suffix;
 	}
-    $bkc->get_cfg()->save_file($alias_file{$mode}, $writedata);
+    $bkc->get_cfg()->save_file($alias_file{$mode}, \%writedata);
 
     Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{postmap}, $alias_file{$mode});
 
@@ -69,20 +69,22 @@ sub _read {
             -SplitDelimiter => '\s+',
             -StoreDelimiter => ' ',
         });
-    my $data = $bkc->get_cfg_values();
-	my $returndata = {};
-	for my $key (keys($data)) {
+    my %data = %{$bkc->get_cfg_values()};
+	my %returndata;
+	for my $key (keys(%data)) {
 		my @parts;
 		if ($mode eq "DIR") {
 			# remove the postfix transport from the folder name
-			@parts = $data->{$key} =~ s/^$dir_transport//r;
+			my $fullname = $data{$key};
+			$fullname =~ s/^$dir_transport//;
+			@parts = $fullname;
 			$key =~ s/$dir_domain_suffix$//;
 		} else {
-			@parts = split(/\s*,\s*/, $data->{$key});
+			@parts = split(/\s*,\s*/, $data{$key});
 		}
-		$returndata->{$key} = \@parts;
+		$returndata{$key} = \@parts;
 	}
-	return $returndata;
+	return \%returndata;
 }
 
 return 1;

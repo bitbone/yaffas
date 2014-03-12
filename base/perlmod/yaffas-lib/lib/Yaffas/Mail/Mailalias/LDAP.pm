@@ -61,7 +61,7 @@ sub _read {
        {
            if(exists($ret{$a}))
            {
-               push($ret{$a}, $user);
+               push(@{$ret{$a}}, $user);
            }
            else
            {
