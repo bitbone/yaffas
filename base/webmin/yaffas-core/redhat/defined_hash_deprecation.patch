@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 06_defined_hash_deprecation.dpatch by Christian Hoffmann <hoffmann@bitbone.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Silences a deprecation warning upon webmin (re)restart
+
+@DPATCH@
+diff -urNad '--exclude=CVS' '--exclude=.svn' '--exclude=.git' '--exclude=.arch' '--exclude=.hg' '--exclude=_darcs' '--exclude=.bzr' yaffas-core~/usr/local/webmin/miniserv.pl yaffas-core/usr/local/webmin/miniserv.pl
+--- yaffas-core~/usr/local/webmin/miniserv.pl	2014-03-12 10:37:43.024210523 +0000
++++ yaffas-core/usr/local/webmin/miniserv.pl	2014-03-12 10:37:58.163184004 +0000
+@@ -3085,7 +3085,7 @@
+ 		push(@doms, $2);
+ 		}
+ 
+-	if ($config{'user_mapping'} && !defined(%user_mapping)) {
++	if ($config{'user_mapping'} && !%user_mapping) {
+ 		# Read the user mapping file
+ 		%user_mapping = ();
+ 		open(MAPPING, $config{'user_mapping'});

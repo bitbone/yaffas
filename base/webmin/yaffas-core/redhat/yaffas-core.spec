@@ -26,6 +26,7 @@ make clean
 %{__patch} -p1 < redhat/$(basename %PATCH2)
 %{__patch} -p1 < redhat/$(basename %PATCH3)
 %{__patch} -p1 < redhat/$(basename %PATCH4)
+%{__patch} -p1 < redhat/$(basename %PATCH5)
 
 %install
 
@@ -41,6 +42,7 @@ done
 %clean
 %{__rm} -rf $RPM_BUILD_ROOT
 
+%{__patch} -R -p1 < redhat/$(basename %PATCH5)
 %{__patch} -R -p1 < redhat/$(basename %PATCH4)
 %{__patch} -R -p1 < redhat/$(basename %PATCH3)
 %{__patch} -R -p1 < redhat/$(basename %PATCH2)
