@@ -130,7 +130,7 @@ sub add_edit_alias {
             $e->add( "err_check_alias", $to );
         }
 		elsif ($type eq "dir") {
-			if ($to =~ /[\r\n]/) {
+			if (!$to || $to =~ /[\r\n]/) {
 				$e->add("err_check_folder");
 			}
 			# no further checks here, we accept any folder name
