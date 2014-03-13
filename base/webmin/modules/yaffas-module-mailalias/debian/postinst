@@ -20,11 +20,11 @@ set -e
 source /opt/yaffas/lib/bbinstall-lib.sh
 
 case "$1" in
-    configure)
+	configure)
 
-    MODULE="mailalias"
-    add_webmin_acl $MODULE
-    del_license $MODULE "all"
+	MODULE="mailalias"
+	add_webmin_acl $MODULE
+	del_license $MODULE "all"
 	add_license $MODULE ""
 
 	# create and configure transport_maps:
@@ -55,22 +55,22 @@ case "$1" in
 		# add a master.cf service entry:
 		cat >> $POSTFIX_MASTER_CF <<EOT
 
-${SERVICE_NAME} unix -      n      n    -    10      pipe
-    flags=DORu user=vmail argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
+${SERVICE_NAME} unix -	  n	  n	-	10	  pipe
+	flags=DORu user=vmail argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
 EOT
 		postconf -e ${SERVICE_NAME}_destination_recipient_limit=1
 	fi
 
-    ;;
+	;;
 
-    abort-upgrade|abort-remove|abort-deconfigure)
+	abort-upgrade|abort-remove|abort-deconfigure)
 
-    ;;
+	;;
 
-    *)
-        echo "postinst called with unknown argument \`$1'" >&2
-        exit 1
-    ;;
+	*)
+		echo "postinst called with unknown argument \`$1'" >&2
+		exit 1
+	;;
 esac
 
 # dh_installdeb will replace this with shell code automatically
