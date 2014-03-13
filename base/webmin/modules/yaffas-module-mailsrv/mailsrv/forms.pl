@@ -8,8 +8,8 @@ use warnings;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Module::Mailsrv::Postfix
   qw(get_accept_domains get_accept_relay get_smarthost get_mailserver
-  get_verify_rcp get_mailsize get_smarthost_routing get_archive);
-use Yaffas::UI qw($Cgi section section_button value_add_del_form textfield);
+  get_verify_rcp get_mailsize get_smarthost_routing get_archive get_zarafa_admin);
+use Yaffas::UI qw($Cgi section section_button value_add_del_form textfield scrolling_list);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Users;
 use Yaffas::UGM;
@@ -22,6 +22,7 @@ sub base_settings_form() {
 	$cfg{mailservername} = get_mailserver();
 	( $cfg{verify_action}, $cfg{mailadmin} ) = get_verify_rcp();
 	$cfg{mailsize}     = get_mailsize();
+	$cfg{zarafa_admin} = get_zarafa_admin();
 	my %tlsstatus = Yaffas::Module::Secconfig::get_tls_status();
 
 	foreach (qw(mailservername mailadmin mailsize verify_action zarafa_admin)) {
@@ -127,6 +128,30 @@ sub base_settings_form() {
 				]
 			)
 		),
+		check_product("zarafa")
+		? (
+			$Cgi->h2( $main::text{lbl_only_for_public} ),
+			$Cgi->table(
+				$Cgi->Tr(
+					[
+						$Cgi->td(
+							[
+								$main::text{lbl_username} . ":",
+								scrolling_list(
+									-name     => "zarafa_admin",
+									-multiple => 0,
+									-default  => $cfg{zarafa_admin},
+									-values   => \@zarafaadmins,
+									-size     => 1,
+								)
+							]
+						),
+					]
+				)
+			),
+		  )
+		: ()
+
 	);
 	print section_button( $Cgi->submit( "submit", $main::text{lbl_save} ), );
 	print $Cgi->end_form();

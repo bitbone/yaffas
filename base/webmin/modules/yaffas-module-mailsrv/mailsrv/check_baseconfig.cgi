@@ -8,7 +8,7 @@ use Yaffas;
 use Yaffas::Service qw(POSTFIX STOP START STATUS control RESTART);
 use Yaffas::UI;
 use Yaffas::Exception;
-use Yaffas::Module::Mailsrv::Postfix qw(set_mailserver set_mailsize);
+use Yaffas::Module::Mailsrv::Postfix qw(set_mailserver set_mailsize set_zarafa_admin);
 use Yaffas::Product qw(check_product);
 use Yaffas::Module::Secconfig;
 
@@ -20,6 +20,8 @@ ReadParse();
 
 my $mailserver = $main::in{mailservername};
 my $mailsize = $main::in{mailsize};
+
+my $zarafa_admin_username = $main::in{zarafa_admin};
 
 my $bke = Yaffas::Exception->new();
 
@@ -34,6 +36,14 @@ try {
 } catch Yaffas::Exception with {
 	$bke->append(shift);
 };
+
+if (check_product("zarafa")) {
+	try {
+		set_zarafa_admin($zarafa_admin_username);
+	} catch Yaffas::Exception with {
+		$bke->append(shift);
+	};
+}
 
 try {
 	throw $bke if $bke;
