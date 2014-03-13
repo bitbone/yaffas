@@ -68,8 +68,13 @@ sub show_edit {
 	my @sysaliases =
 	  qw(backup bin cyrus daemon fetchmail ftp games gnats greylist irc list lp mailer-daemon mailflt man mysql news nobody noc postgres proxy security sshd sync sys usenet uucp www www-data Debian-exim mail);
 
-	# create a list of local aliases an users
-	my %local_aliases = Yaffas::Mail::Mailalias::list_alias('USER');
+	# create a list of local aliases...
+	my $user_alias = Yaffas::Mail::Mailalias::list_alias("USER");
+	my $mail_alias = Yaffas::Mail::Mailalias::list_alias("MAIL");
+	my $dir_alias  = Yaffas::Mail::Mailalias::list_alias("DIR");
+	my %local_aliases = ( %{$user_alias}, %{$mail_alias}, %{$dir_alias} );
+
+	# ... and users
 	my %local_users = map( { $_ => $_ } Yaffas::UGM::get_users() );
 
 	# Remove Blacklisted Users and Aliases from the list
