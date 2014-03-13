@@ -304,7 +304,10 @@ sub _load_settings {
 			} else {
 				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
 			}
-			my @udevinfo = do_back_quote(@udev_cmd);
+			my @udevinfo;
+			if (-x @udev_cmd[0]) {
+				@udevinfo = do_back_quote(@udev_cmd);
+			}
 
 			my $found_section = 0;
 			foreach my $line (@udevinfo) {
