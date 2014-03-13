@@ -3,7 +3,7 @@ use warnings;
 use strict;
 
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
-use Yaffas::Mail::Mailalias qw(list_alias);
+use Yaffas::Mail::Mailalias;
 use Yaffas::UI::TablePaging qw(show_page);
 use Yaffas::UI qw($Cgi section section_button table scrolling_list);
 use Yaffas::Constant;
