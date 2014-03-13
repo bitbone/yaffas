@@ -16,7 +16,7 @@ sub BEGIN {
 					&get_accept_domains &set_accept_domains &rm_accept_domains
 					&get_mailsize &set_mailsize
 					&get_archive &set_archive
-					&get_zarafa_admin &set_zarafa_admin
+					&get_zarafa_admin &set_zarafa_admin &has_valid_zarafa_admin
 				   );
 }
 use Yaffas qw/do_back_quote/;
@@ -507,6 +507,16 @@ sub get_zarafa_admin() {
 	my $zarafa_admin_name = $file->get_content(0); #first line
 	$zarafa_admin_name =~ s/\s+//g;
 	return $zarafa_admin_name;
+}
+
+sub has_valid_zarafa_admin() {
+	# returns whether the currently configured admin value is (still)
+	# valid
+	my $username = get_zarafa_admin();
+	return 0 unless $username;
+	return 0 unless Yaffas::UGM::user_exists($username);
+	return 0 unless Yaffas::Module::Users::get_zarafa_admin($username);
+	return 1;
 }
 
 sub conf_dump() {

@@ -14,6 +14,7 @@ sub BEGIN {
 use Yaffas::Conf;
 use Yaffas::Conf::Section;
 use Yaffas::Conf::Function;
+use Yaffas::Module::Mailsrv::Postfix qw(has_valid_zarafa_admin);
 use Yaffas::Mail::Mailalias;
 use Yaffas::Auth;
 use Yaffas::Auth::Type;
@@ -109,6 +110,9 @@ sub add_edit_alias {
     }
 	elsif ($type eq "DIR") {
 		@to = $main::in{dir};
+
+		Yaffas::Module::Mailsrv::Postfix::has_valid_zarafa_admin() or
+			$e->add( "err_no_valid_zarafa_admin", $from );
 	}
     else {
         $e->add( "err_unknown_type", $type);
