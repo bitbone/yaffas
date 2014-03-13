@@ -44,7 +44,7 @@ case "$1" in
 	touch "$POSTFIX_TRANSPORT"
 	postmap "$POSTFIX_TRANSPORT"
 	cur_transport_maps=$(postconf -h transport_maps)
-	if ! echo "$cur_transport_maps" | grep -q hash:$POSTFIX_TRANSPORT; then
+	if ! echo "$cur_transport_maps" | grep -qF "hash:$POSTFIX_TRANSPORT"; then
 		POSTFIX_CONFIG_CHANGED=1
 		if [[ -z "$cur_transport_maps" ]]; then
 			# if transport_maps is empty, we add it ourselves
@@ -61,7 +61,7 @@ case "$1" in
 		touch "$alias_file"
 		postmap "$alias_file"
 		cur_aliases=$(postconf -h virtual_alias_maps)
-		if ! echo "$cur_aliases" | grep -q hash:$alias_file; then
+		if ! echo "$cur_aliases" | grep -qF "hash:$alias_file"; then
 			POSTFIX_CONFIG_CHANGED=1
 			if [[ -z "$cur_aliases" ]]; then
 				# if virtual_alias_maps is empty, we add ourselves
