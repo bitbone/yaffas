@@ -17,12 +17,15 @@
 DAGENT_PATH=/usr/bin/zarafa-dagent
 
 ALIAS_USER=$(head -n1 /etc/zarafa/folderadmin.cfg 2>/dev/null || true)
-ALIAS_USER=${ALIAS_USER:-bbalias}
+if [[ ! $ALIAS_USER ]]; then
+	echo "No zarafa admin user configured" >&2
+	exit 1
+fi
 
 PUBLIC_FOLDER=$1
 if [[ ! $PUBLIC_FOLDER ]]; then
 	echo "No public folder given" >&2
-	exit 1
+	exit 2
 fi
 
 export LC_ALL=en_US.UTF-8
