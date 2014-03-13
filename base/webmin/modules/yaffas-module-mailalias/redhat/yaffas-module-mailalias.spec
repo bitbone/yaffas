@@ -40,6 +40,7 @@ if [ "$1" = "0" ]; then
 	# create and configure transport_maps:
 	POSTFIX_TRANSPORT=/opt/yaffas/config/postfix/transport-deliver-to-public
 	POSTFIX_MASTER_CF=/etc/postfix/master.cf
+	ZARAFA_SERVER_CFG=/etc/zarafa/server.cfg
 	ZARAFA_DELIVER_TO_PUBLIC=/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
 	mkdir -p "$(dirname "$POSTFIX_TRANSPORT")"
 	touch "$POSTFIX_TRANSPORT"
@@ -69,6 +70,17 @@ ${SERVICE_NAME} unix -	  n	  n	-	10	  pipe
 	flags=DORu user=vmail argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
 EOT
 		postconf -e ${SERVICE_NAME}_destination_recipient_limit=1
+	fi
+
+	# check if the vmail user is allowed to act as zarafa admin:
+	if ! grep -qP '^[^\r\n#]*local_admin_users\s*=(.*\s+)?vmail(\s+.*)$' "${ZARAFA_SERVER_CFG}"; then
+		sed -re 's/(^[^\r\n#]*local_admin_users\s*=.*)/\1 vmail/' \
+			-i "${ZARAFA_SERVER_CFG}"
+
+		# if zarafa-server is running already (common when upgrading),
+		# restart it:
+		service zarafa-server status >/dev/null 2>&1 && \
+			service zarafa-server restart
 	fi
 
 fi
