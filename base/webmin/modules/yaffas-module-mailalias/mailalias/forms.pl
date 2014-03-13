@@ -5,7 +5,7 @@ use strict;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Mail::Mailalias;
 use Yaffas::UI::TablePaging qw(show_page);
-use Yaffas::UI qw($Cgi section section_button table scrolling_list);
+use Yaffas::UI qw($Cgi section section_button table scrolling_list textfield);
 use Yaffas::Constant;
 
 # mailaliases
@@ -91,7 +91,7 @@ sub _display_alias_for {
                             ?
                             $from . $Cgi->hidden({-id=>"from", -name=>"from", -value=>$from})
                             :
-                            $Cgi->textfield(
+                            textfield(
                                 -name => "from",
                                 -value => $from,
                             )
@@ -113,7 +113,7 @@ sub _display_alias_for {
             $Cgi->Tr({-id => "row-mail", %hide_mail },
                 $Cgi->td([
                         $main::text{lbl_recipient}.":",
-                        $Cgi->textfield({ -name => "recipient", -size=> 80, -value => join(", ", @mail_alias)}),
+                        textfield({ -name => "recipient", -size=> 80, -value => join(", ", @mail_alias)}),
                     ]),
             ),
 			$Cgi->Tr({-id => "row-dir", %hide_dir },

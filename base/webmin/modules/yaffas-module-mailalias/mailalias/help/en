@@ -1,1 +1,2 @@
 dir=Target public folder. Please create them as a sub-folder of "Public folders" using WebApp or some other client. Please also note that you have to configure a valid Zarafa Admin in Mail Server > Configuration.
+recipient=Specify one or more mail addresses, separated by commas.
