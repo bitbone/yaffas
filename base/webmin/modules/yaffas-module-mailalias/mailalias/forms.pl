@@ -5,7 +5,7 @@ use strict;
 use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 use Yaffas::Mail::Mailalias qw(list_alias);
 use Yaffas::UI::TablePaging qw(show_page);
-use Yaffas::UI qw($Cgi section section_button table);
+use Yaffas::UI qw($Cgi section section_button table scrolling_list);
 use Yaffas::Constant;
 
 # mailaliases
@@ -101,13 +101,13 @@ sub _display_alias_for {
             $Cgi->Tr(
                 $Cgi->td([
                         $main::text{lbl_alias_type}.":",
-                        $Cgi->scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default => lc $type, -values=>[qw(user mail dir)], -labels => { map { $_ => $main::text{"lbl_alias_type_".$_} } qw(user mail)}, -onChange => "module.changeAliasType()"}),
+                        scrolling_list({ -id=> "aliastype", -name=> "type", -size => 1, -default => lc $type, -values=>[qw(user mail dir)], -labels => { map { $_ => $main::text{"lbl_alias_type_".$_} } qw(user mail)}, -onChange => "module.changeAliasType()"}),
                     ]),
             ),
             $Cgi->Tr({-id => "row-user", %hide_user},
                 $Cgi->td([
                         $main::text{lbl_destination_usr}.":",
-                        $Cgi->scrolling_list( { -name => "to", -size => 5, -multiple => 'true', -values => [Yaffas::UGM::get_users()], -default => \@user_alias } ),
+                        scrolling_list( { -name => "to", -size => 5, -multiple => 'true', -values => [Yaffas::UGM::get_users()], -default => \@user_alias } ),
                 ]),
             ),
             $Cgi->Tr({-id => "row-mail", %hide_mail },
@@ -119,7 +119,7 @@ sub _display_alias_for {
 			$Cgi->Tr({-id => "row-dir", %hide_dir },
 				$Cgi->td([
 						$main::text{lbl_destination_dir}.":",
-						$Cgi->scrolling_list({ -name => "dir", -size => 5, -values => [_get_public_folders()], -default => \@dir_alias}),
+						scrolling_list({ -name => "dir", -size => 5, -values => [_get_public_folders()], -default => \@dir_alias}),
 					]),
 			),
     ),
