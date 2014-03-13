@@ -7,6 +7,6 @@ Standards-Version: 3.6.0
 
 Package: yaffas-module-mailalias
 Architecture: all
-Depends: yaffas-core
+Depends: yaffas-core, yaffas-module-mailsrv
 Description: Webmin module for alias configuration
  Webmin module for alias configuration
