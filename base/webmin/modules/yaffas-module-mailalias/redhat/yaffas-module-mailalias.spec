@@ -123,6 +123,7 @@ fi
 /opt/yaffas/lib/perl5/Yaffas/Module/Mailalias.pm
 /opt/yaffas/share/yaffas-upgrade/01-yaffas-module-mailalias-selinux.sh
 /opt/yaffas/share/yaffas-module-mailalias/zarafa-deliver-to-public.te
+/opt/yaffas/share/yaffas-module-mailalias/postinst-rpm.sh
 /opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
 /opt/yaffas/libexec/mailalias/zarafa-public-folders
 
