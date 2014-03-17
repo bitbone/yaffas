@@ -31,7 +31,7 @@ foreach my $path (@path) {
 		my $check = 1;
 		my $file = "$path/lang/$lang";
 
-		open FILE, "< /tmp/yaffas-lang/$lang" or die ("Can't open file: $!");
+		open FILE, "< /opt/yaffas/share/yaffas-lang/$lang" or die ("Can't open file: $!");
 		my @tmp = <FILE>;
 
 		foreach my $value (@tmp) {
@@ -82,7 +82,7 @@ foreach my $path (@path) {
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}
 
-/tmp/yaffas-lang/*
-%dir /tmp/yaffas-lang
+/opt/yaffas/share/yaffas-lang/*
+%dir /opt/yaffas/share/yaffas-lang
 
 %changelog
