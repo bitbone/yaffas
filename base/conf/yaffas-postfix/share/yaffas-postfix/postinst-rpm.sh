@@ -29,13 +29,6 @@ touch $CONF/virtual_users_global
 postmap $CONF/virtual_users_global
 touch $CONF/sender_canonical
 postmap $CONF/sender_canonical
-touch $YAFFAS_CONF/local-aliases.cf
-postmap $YAFFAS_CONF/local-aliases.cf
-touch $YAFFAS_CONF/transport-deliver-to-public
-postmap $YAFFAS_CONF/transport-deliver-to-public
-touch $YAFFAS_CONF/public-folder-aliases.cf
-postmap $YAFFAS_CONF/public-folder-aliases.cf
-
 
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db
@@ -49,8 +42,9 @@ if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
     service saslauthd restart
 fi
 
-useradd --system vmail || true
 	
+/opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
+
 # disable sendmail
 service sendmail stop
 chkconfig sendmail off
