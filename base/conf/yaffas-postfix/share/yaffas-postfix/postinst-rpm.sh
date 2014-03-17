@@ -43,7 +43,7 @@ if ! grep -q 'MECH="rimap"' /etc/sysconfig/saslauthd; then
 fi
 
 	
-/opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
+bash /opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
 
 # disable sendmail
 service sendmail stop

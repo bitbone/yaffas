@@ -52,7 +52,7 @@ postmap $CONF/sender_canonical
 chmod 600 $CONF/smtp_auth.cf
 chmod 600 $CONF/smtp_auth.cf.db
 
-/opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
+bash /opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
 
 /usr/bin/newaliases
 
