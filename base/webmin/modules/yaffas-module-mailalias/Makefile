@@ -18,4 +18,5 @@ install:
 	mkdir -p $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)
 	cp share/$(FULL_MODULE)/* $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)
 	chmod 755 $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)/*.sh
+	mkdir -p $(DESTDIR)/$(YAFFAS_SHARE)/yaffas-upgrade/
 	cp share/yaffas-upgrade/* $(DESTDIR)/$(YAFFAS_SHARE)/yaffas-upgrade/
