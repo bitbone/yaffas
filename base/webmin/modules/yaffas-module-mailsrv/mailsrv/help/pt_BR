@@ -1,2 +1,3 @@
 mailservername=Este nome será enviado ao SMTP remoto para e-mails enviados.
 mailsize=Limite de tamanho para todos os e-mails recebidos e enviados. Deixar em branco para um tamanho de e-mail ilimitado.
+zarafa_admin=Choose any valid Zarafa administrator from this list. This is required for delivery to a public folder to work (see Mail alias configuration).

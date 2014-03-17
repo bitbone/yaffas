@@ -24,6 +24,7 @@ lbl_add=增加
 lbl_mailalias_ad=經由AD目錄完成郵件別名之配置
 
 err_check_alias=下列用戶名稱或電子郵件地址無效。
+err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
 err_already_exists=此別名已經存在
 err_alias_name=此別名無效
 err_no_alias=未選定別名

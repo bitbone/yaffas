@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-03-18 00:19+0100\n"
 "PO-Revision-Date: 2013-06-27 13:59+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -474,3 +474,9 @@ msgstr "Dieser Name wird bei ausgehenden E-Mails an den SMTP Server übergeben."
 #, no-wrap
 msgid "This limits the size of all incoming and outgoing mails. Leave it blank and the server will handle mails with unlimited size."
 msgstr "Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie das Feld leer lassen, wird der Server E-Mail mit beliebiger Größe verarbeiten."
+
+# type: string
+#: help/en:3
+#, no-wrap
+msgid "Choose any valid Zarafa administrator from this list. This is required for delivery to a public folder to work (see Mail alias configuration)."
+msgstr ""

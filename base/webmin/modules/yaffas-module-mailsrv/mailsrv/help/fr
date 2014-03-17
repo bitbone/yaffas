@@ -1,2 +1,3 @@
 mailservername=Ce nom sera envoyé aux serveurs SMTP distants pour les courriels sortants
 mailsize=Ceci limite la taille de tous les courriels entrants et sortants. Laisser vide afin que le serveur gère les courriels sans aucune limite de taille.
+zarafa_admin=Choose any valid Zarafa administrator from this list. This is required for delivery to a public folder to work (see Mail alias configuration).

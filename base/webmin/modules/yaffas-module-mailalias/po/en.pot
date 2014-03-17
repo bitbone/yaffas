@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2013-10-23 00:19+0300\n"
+"POT-Creation-Date: 2014-03-18 00:19+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,7 +100,7 @@ msgid "User"
 msgstr ""
 
 # type: string
-#: lang/en:20 lang/en:40
+#: lang/en:20 lang/en:41
 #, no-wrap
 msgid "Recipient"
 msgstr ""
@@ -132,47 +132,56 @@ msgstr ""
 # type: string
 #: lang/en:27
 #, no-wrap
-msgid "This alias already exists."
+msgid ""
+"No valid Zarafa admin user is currently configured. This is necessary for "
+"delivery to public folders to work. Please do so first in Mail Server > "
+"Configuration."
 msgstr ""
 
 # type: string
 #: lang/en:28
 #, no-wrap
-msgid "This alias name is not valid."
+msgid "This alias already exists."
 msgstr ""
 
 # type: string
 #: lang/en:29
 #, no-wrap
-msgid "No alias selected."
+msgid "This alias name is not valid."
 msgstr ""
 
 # type: string
 #: lang/en:30
 #, no-wrap
-msgid "Nothing selected"
+msgid "No alias selected."
 msgstr ""
 
 # type: string
 #: lang/en:31
 #, no-wrap
-msgid "Alias exists as user."
+msgid "Nothing selected"
 msgstr ""
 
 # type: string
 #: lang/en:32
 #, no-wrap
-msgid "An alias can only be set for user or folder."
+msgid "Alias exists as user."
 msgstr ""
 
 # type: string
 #: lang/en:33
 #, no-wrap
-msgid "Error while removing alias."
+msgid "An alias can only be set for user or folder."
 msgstr ""
 
 # type: string
 #: lang/en:34
+#, no-wrap
+msgid "Error while removing alias."
+msgstr ""
+
+# type: string
+#: lang/en:35
 #, no-wrap
 msgid ""
 "You have no zarafa administrator defined or there was no folder "
@@ -182,31 +191,46 @@ msgid ""
 msgstr ""
 
 # type: string
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr ""
 
 # type: string
-#: lang/en:37
+#: lang/en:38
 #, no-wrap
 msgid "user"
 msgstr ""
 
 # type: string
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "email"
 msgstr ""
 
 # type: string
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "Type"
 msgstr ""
 
 # type: string
-#: lang/en:41
+#: lang/en:42
 #, no-wrap
 msgid "Target"
+msgstr ""
+
+# type: string
+#: help/en:1
+#, no-wrap
+msgid ""
+"Target public folder. Please create them as a sub-folder of \"Public "
+"folders\" using WebApp or some other client. Please also note that you have "
+"to configure a valid Zarafa Admin in Mail Server > Configuration."
+msgstr ""
+
+# type: string
+#: help/en:2
+#, no-wrap
+msgid "Specify one or more mail addresses, separated by commas."
 msgstr ""
