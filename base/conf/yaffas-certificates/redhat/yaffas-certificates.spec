@@ -31,7 +31,7 @@ fi
 %post
 YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
 CERTDIR="/opt/yaffas/etc/ssl/certs/"
-PERL5LIB=/opt/yaffas/lib/perl5/
+export PERL5LIB=/opt/yaffas/lib/perl5/
 
 mkdir -p ${CERTDIR}/org/
 

@@ -24,7 +24,7 @@ case "$1" in
         CERTDIR="/opt/yaffas/etc/ssl/certs/"
 
         YAFFAS_EXAMPLE="/opt/yaffas/share/doc/example"
-        PERL5LIB=/opt/yaffas/lib/perl5/
+        export PERL5LIB=/opt/yaffas/lib/perl5/
         mkdir -p ${CERTDIR}/org/
 
         if [ -f /opt/yaffas/var/default.crt ]; then
