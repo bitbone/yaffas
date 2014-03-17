@@ -286,12 +286,12 @@ priority = 1
 ----
 
 Außerdem muss derzeit aufgrund eines Abhängigkeitsproblems die
-EPEL-Konfiguration bearbeitet werden. Hierfür wird in der Datei
+EPEL-Konfiguration bearbeitet werden. Hierfür muss in der Datei
 `/etc/yum.repos.d/epel.repo` am Ende des ersten Block (`[epel]`, nach
 `gpgkey=...`) folgende
 Zeile hinzugefügt werden:
 
-  exclude=clamav clamav-db amavisd-new
+  exclude=clamav* clamd* amavisd*
 
 
 
