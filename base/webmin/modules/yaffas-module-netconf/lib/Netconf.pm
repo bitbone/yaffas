@@ -305,7 +305,7 @@ sub _load_settings {
 				@udev_cmd = (Yaffas::Constant::APPLICATION->{udevadm}, 'info', '-a', '-p', "/class/net/$dev");
 			}
 			my @udevinfo;
-			if (-x @udev_cmd[0]) {
+			if (-x $udev_cmd[0]) {
 				@udevinfo = do_back_quote(@udev_cmd);
 			}
 
