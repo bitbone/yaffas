@@ -87,9 +87,9 @@ if ! grep -qP '^[^#]*'${SERVICE_NAME}'\s+unix\s+' $POSTFIX_MASTER_CF; then
 	# add a master.cf service entry:
 	cat >> $POSTFIX_MASTER_CF <<EOT
 
-	${SERVICE_NAME} unix -	  n	  n	-	10	  pipe
-	flags=DORu user=${ZARAFA_ADMIN_USER} argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
-	EOT
+${SERVICE_NAME} unix -	  n	  n	-	10	  pipe
+		flags=DORu user=${ZARAFA_ADMIN_USER} argv=$ZARAFA_DELIVER_TO_PUBLIC \${nexthop}
+EOT
 	postconf -e ${SERVICE_NAME}_destination_recipient_limit=1
 fi
 
