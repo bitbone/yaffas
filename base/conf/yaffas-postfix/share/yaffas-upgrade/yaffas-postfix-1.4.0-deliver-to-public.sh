@@ -73,4 +73,4 @@ if ! grep -qP '^[^\r\n#]*local_admin_users\s*=(.*\s+)?'${ZARAFA_ADMIN_USER}'(\s+
 		service zarafa-server restart
 fi
 
-[[ $POSTFIX_CONFIG_CHANGED ]] && postfix reload
+[[ $POSTFIX_CONFIG_CHANGED != 0 ]] && postfix reload
