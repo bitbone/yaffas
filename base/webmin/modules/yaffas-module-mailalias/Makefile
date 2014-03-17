@@ -3,6 +3,7 @@ include ../../../../Makefile.common
 
 DESTDIR ?= /
 MODULE=mailalias
+FULL_MODULE=yaffas-module-$(MODULE)
 
 clean:
 
@@ -14,3 +15,7 @@ install:
 	cp -r  lib/* $(DESTDIR)/$(YAFFAS_MODULE)/
 	cp     libexec/* $(DESTDIR)/$(YAFFAS_LIBEXEC)/$(MODULE)/
 	chmod 755 $(DESTDIR)/$(YAFFAS_LIBEXEC)/$(MODULE)/*
+	mkdir -p $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)
+	cp share/$(FULL_MODULE)/* $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)
+	chmod 755 $(DESTDIR)/$(YAFFAS_SHARE)/$(FULL_MODULE)/*.sh
+	cp share/yaffas-upgrade/* $(DESTDIR)/$(YAFFAS_SHARE)/yaffas-upgrade/
