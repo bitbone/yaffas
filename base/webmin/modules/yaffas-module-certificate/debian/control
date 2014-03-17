@@ -7,6 +7,6 @@ Standards-Version: 3.6.0
 
 Package: yaffas-module-certificate
 Architecture: all
-Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, yaffas-certificates, openssl
+Depends: ${shlibs:Depends}, ${misc:Depends}, yaffas-core, openssl
 Description: bbcertificate
  bbcertificate
