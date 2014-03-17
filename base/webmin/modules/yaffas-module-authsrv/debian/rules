@@ -9,8 +9,11 @@ SHELL=/bin/bash
 %:
 	dh $@
 
+OS=$(shell lsb_release -si)-$(shell lsb_release -sr)
+WHICH_LIBS=$(shell [[ $(OS) != Ubuntu-10.04 && $(OS) != Debian-6.* ]] && echo 8 || echo 7)
+
 override_dh_gencontrol:
-ifeq ($(shell [[ $(shell lsb_release -si) == Ubuntu && $(shell lsb_release -sr) == 10.04 ]] && echo old || [[ $(shell lsb_release -si) == Debian && $(shell lsb_release -sr) == 6.* ]] && echo old || echo new),old)
+ifeq ($(WHICH_LIBS),7)
 	dh_gencontrol -- -Vkerberos=libkadm5clnt-mit7,libkadm5srv-mit7,libkdb5-4
 else
 	dh_gencontrol -- -Vkerberos=libkadm5clnt-mit8,libkadm5srv-mit8,libkdb5-6
