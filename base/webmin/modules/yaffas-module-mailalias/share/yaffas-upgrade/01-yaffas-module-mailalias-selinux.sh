@@ -22,4 +22,5 @@ install_selinux_policy() {
 }
 
 install_selinux_policy /opt/yaffas/share/yaffas-module-mailalias/zarafa-deliver-to-public.te
-chcon -t zarafa_deliver_to_public_exec_t /opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
+semanage fcontext -a -t zarafa_deliver_to_public_exec_t /opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
+restorecon /opt/yaffas/libexec/mailalias/zarafa-deliver-to-public

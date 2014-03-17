@@ -3,11 +3,13 @@ module zarafa-deliver-to-public 1.0;
 require {
 	type unconfined_t;
 	type postfix_pipe_t;
+	attribute file_type;
 	class process { transition };
 	class file { read open getattr execute_no_trans execute entrypoint };
 }
 
 type zarafa_deliver_to_public_exec_t;
+typeattribute zarafa_deliver_to_public_exec_t file_type;
 type_transition postfix_pipe_t zarafa_deliver_to_public_exec_t : process unconfined_t;
 
 allow postfix_pipe_t unconfined_t : process { transition };
