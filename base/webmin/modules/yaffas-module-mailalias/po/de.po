@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-18 00:18+0100\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"POT-Creation-Date: 2014-03-19 00:17+0100\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -135,7 +135,7 @@ msgstr "Die folgenden Usernamen oder E-Mail Adressen sind nicht korrekt."
 #: lang/en:27
 #, no-wrap
 msgid "No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration."
-msgstr ""
+msgstr "Es ist zur Zeit kein gültiger Zarafa-Admin festgelegt. Dies ist aber nötig, um die Mailauslieferung in öffentliche Ordner zu ermöglichen. Bitte diese Konfiguration in Mailserver > Konfiguration vornehmen."
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string
@@ -219,16 +219,16 @@ msgstr "Typ"
 #: lang/en:42
 #, no-wrap
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
 
 # type: string
 #: help/en:1
 #, no-wrap
 msgid "Target public folder. Please create them as a sub-folder of \"Public folders\" using WebApp or some other client. Please also note that you have to configure a valid Zarafa Admin in Mail Server > Configuration."
-msgstr ""
+msgstr "Ziel-Ordner. Bitte via WebApp oder einem anderen Client als Unterordner von \"Öffentliche Ordner\" erstellen. Außerdem muss ein Zarafa-Admin unter Mailserver > Konfiguration festgelegt werden."
 
 # type: string
 #: help/en:2
 #, no-wrap
 msgid "Specify one or more mail addresses, separated by commas."
-msgstr ""
+msgstr "Eine oder mehrere E-Mail-Adressen, getrennt durch Kommata."

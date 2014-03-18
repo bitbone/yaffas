@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-27 15:45+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: en:1
 #, no-wrap
 msgid "The name of the mailbox can only contain digits and chars."
-msgstr ""
+msgstr "Der Name der Mailbox darf nur Buchstaben und Zahlen enthalten."
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string
@@ -35,19 +35,19 @@ msgstr "Der Wert des Quotas darf nur aus Ziffern bestehen."
 #: en:3
 #, no-wrap
 msgid "This mailbox does not exists."
-msgstr ""
+msgstr "Das Postfach existiert nicht."
 
 #. type: string
 #: en:4
 #, no-wrap
 msgid "Wrong parameters."
-msgstr ""
+msgstr "Falsche Parameter."
 
 #. type: string
 #: en:5
 #, no-wrap
 msgid "A folder name can only contain chars from a-z, digits 0-9, \"-\" and \".\"."
-msgstr ""
+msgstr "Ein Ordnername darf nur Buchstaben, Zahlen, \"-\" und \".\" enthalten."
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string

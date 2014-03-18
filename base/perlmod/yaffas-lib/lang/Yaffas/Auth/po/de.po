@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-27 15:42+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,15 +37,15 @@ msgstr "Active Directory DN nicht korrekt"
 #: en:3
 #, no-wrap
 msgid "Administratorname not valid"
-msgstr ""
+msgstr "Administrator-Name ist ungültig"
 
 # 94%
 # 100%
 #. type: string
 #: en:4
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Username not valid"
-msgstr "Der Benutzername ist nicht gültig!"
+msgstr "Der Benutzername ist nicht gültig"
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string

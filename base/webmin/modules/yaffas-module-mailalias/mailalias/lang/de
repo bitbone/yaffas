@@ -24,7 +24,7 @@ lbl_add=Hinzufügen
 lbl_mailalias_ad=Die Konfiguration der Mail Aliasse geschieht über das Active Directory.
 
 err_check_alias=Die folgenden Usernamen oder E-Mail Adressen sind nicht korrekt.
-err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
+err_no_valid_zarafa_admin=Es ist zur Zeit kein gültiger Zarafa-Admin festgelegt. Dies ist aber nötig, um die Mailauslieferung in öffentliche Ordner zu ermöglichen. Bitte diese Konfiguration in Mailserver > Konfiguration vornehmen.
 err_already_exists=Diese Alias existiert bereits.
 err_alias_name=Der Alias Name ist nicht gültig.
 err_no_alias=Kein Alias ausgewählt.
@@ -39,4 +39,4 @@ lbl_alias_type_user=Benutzer
 lbl_alias_type_manual=E-Mail
 lbl_alias_type=Typ
 lbl_recipient=Empfänger
-lbl_target=Target
+lbl_target=Ziel

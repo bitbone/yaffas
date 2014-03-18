@@ -29,10 +29,10 @@ lbl_virusalert=Benachrichtigungsadresse bei Viren
 lbl_maxlength=Maximale Größe zum Scannen in MB
 lbl_clam_update=ClamAV-Signaturen aktualisieren
 lbl_clam_configure=Clamav konfigurieren
-lbl_clamav_status=ClamAV Status
-lbl_clamav_lastupdate=Last updated
-lbl_clamav_status_avail=Available pattern update
-lbl_clamav_status_inst=Installed pattern update
+lbl_clamav_status=ClamAV-Status
+lbl_clamav_lastupdate=Zuletzt aktualisiert
+lbl_clamav_status_avail=Verfügbare Signaturdefinitionen
+lbl_clamav_status_inst=Installierte Signaturdefinitionen
 
 lbl_sa=Spamassassin
 lbl_sa_configure=Spamassassin konfigurieren

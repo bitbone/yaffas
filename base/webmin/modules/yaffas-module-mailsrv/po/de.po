@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-18 00:19+0100\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"POT-Creation-Date: 2014-03-19 00:18+0100\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -479,4 +479,4 @@ msgstr "Dies begrenzt die Größe aller ein- und ausgehenden E-Mails. Wenn sie d
 #: help/en:3
 #, no-wrap
 msgid "Choose any valid Zarafa administrator from this list. This is required for delivery to a public folder to work (see Mail alias configuration)."
-msgstr ""
+msgstr "Bitte einen gültigen Zarafa-Administrator aus dieser Liste auswählen. Dieser wird für die direkte Zustellung von Mails in öffentliche Ordner benötigt (siehe Mailalias-Konfiguration)."
