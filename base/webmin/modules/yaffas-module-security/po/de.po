@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 00:18+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"POT-Creation-Date: 2014-03-19 00:17+0100\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -189,25 +189,25 @@ msgstr "Clamav konfigurieren"
 #: lang/en:32
 #, no-wrap
 msgid "ClamAV Status"
-msgstr ""
+msgstr "ClamAV-Status"
 
 # type: string
 #: lang/en:33
 #, no-wrap
 msgid "Last updated"
-msgstr ""
+msgstr "Zuletzt aktualisiert"
 
 # type: string
 #: lang/en:34
 #, no-wrap
 msgid "Available pattern update"
-msgstr ""
+msgstr "Verfügbare Signaturdefinitionen"
 
 # type: string
 #: lang/en:35
 #, no-wrap
 msgid "Installed pattern update"
-msgstr ""
+msgstr "Installierte Signaturdefinitionen"
 
 # type: string
 #: lang/en:37

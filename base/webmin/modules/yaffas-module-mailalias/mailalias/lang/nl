@@ -24,6 +24,7 @@ lbl_add=Voeg toe
 lbl_mailalias_ad=Configuration of mail aliases is done through active directory.
 
 err_check_alias=The following usernames or e-mail addresses are not valid.
+err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
 err_already_exists=This alias already exists.
 err_alias_name=This alias name is not valid.
 err_no_alias=No alias selected.

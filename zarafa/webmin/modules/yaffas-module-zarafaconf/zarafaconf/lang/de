@@ -1,4 +1,4 @@
-lbl_userfilter=Benutzer Filter
+lbl_userfilter=Benutzer-Filter
 lbl_ldapfilter_type_0=Standard (alle)
 lbl_ldapfilter_type_1=AD Plugin
 lbl_ldapfilter_type_2=AD Gruppe

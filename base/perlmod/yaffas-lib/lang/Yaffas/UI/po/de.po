@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-27 15:54+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,19 +27,19 @@ msgstr ""
 #: TablePaging/en:2
 #, no-wrap
 msgid "refresh"
-msgstr ""
+msgstr "aktualisieren"
 
 #. type: string
 #: TablePaging/en:3
 #, no-wrap
 msgid "toggle selection"
-msgstr ""
+msgstr "Auswahl umkehren"
 
 #. type: string
 #: TablePaging/en:4
 #, no-wrap
 msgid "toggle sortation"
-msgstr ""
+msgstr "Sortierung umkehren"
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string

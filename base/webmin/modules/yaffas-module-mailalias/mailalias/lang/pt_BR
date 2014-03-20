@@ -24,6 +24,7 @@ lbl_add=Adicionar
 lbl_mailalias_ad=Configuração de alias é feita pelo Active Directory.
 
 err_check_alias=Os seguintes nomes de usuários ou endereço de e-mails são inválidos.
+err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
 err_already_exists=Este alias já existe.
 err_alias_name=Este nome de alias não é válido.
 err_no_alias=Nenhum alias selecionado.

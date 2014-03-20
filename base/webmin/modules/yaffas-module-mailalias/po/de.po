@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-23 00:18+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"POT-Creation-Date: 2014-03-19 00:17+0100\n"
+"PO-Revision-Date: 2014-03-18 16:35+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgid "User"
 msgstr "Benutzer"
 
 # type: string
-#: lang/en:20 lang/en:40
+#: lang/en:20 lang/en:41
 #, no-wrap
 msgid "Recipient"
 msgstr "Empfänger"
@@ -131,58 +131,64 @@ msgstr "Die Konfiguration der Mail Aliasse geschieht über das Active Directory.
 msgid "The following usernames or e-mail addresses are not valid."
 msgstr "Die folgenden Usernamen oder E-Mail Adressen sind nicht korrekt."
 
-# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string
 #: lang/en:27
+#, no-wrap
+msgid "No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration."
+msgstr "Es ist zur Zeit kein gültiger Zarafa-Admin festgelegt. Dies ist aber nötig, um die Mailauslieferung in öffentliche Ordner zu ermöglichen. Bitte diese Konfiguration in Mailserver > Konfiguration vornehmen."
+
+# #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
+# type: string
+#: lang/en:28
 #, no-wrap
 msgid "This alias already exists."
 msgstr "Diese Alias existiert bereits."
 
 # type: string
-#: lang/en:28
+#: lang/en:29
 #, no-wrap
 msgid "This alias name is not valid."
 msgstr "Der Alias Name ist nicht gültig."
 
 # type: string
-#: lang/en:29
+#: lang/en:30
 #, no-wrap
 msgid "No alias selected."
 msgstr "Kein Alias ausgewählt."
 
 # type: string
-#: lang/en:30
+#: lang/en:31
 #, no-wrap
 msgid "Nothing selected"
 msgstr "Nichts ausgewählt"
 
 # type: string
-#: lang/en:31
+#: lang/en:32
 #, no-wrap
 msgid "Alias exists as user."
 msgstr "Der Alias existiert als Benutzer."
 
 # type: string
-#: lang/en:32
+#: lang/en:33
 #, no-wrap
 msgid "An alias can only be set for user or folder."
 msgstr "Ein Alias darf nur entweder auf einen Benutzer oder Ordner gesetzt werden."
 
 # type: string
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "Error while removing alias."
 msgstr "Fehler beim löschen des Aliase."
 
 # type: string
-#: lang/en:34
+#: lang/en:35
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
 # type: string
 # 95%
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Mailalias-Konfiguration"
@@ -190,7 +196,7 @@ msgstr "Mailalias-Konfiguration"
 # type: string
 # 75%
 # 100%
-#: lang/en:37
+#: lang/en:38
 #, no-wrap
 msgid "user"
 msgstr "Benutzer"
@@ -198,19 +204,31 @@ msgstr "Benutzer"
 # type: string
 # 80%
 # 100%
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "email"
 msgstr "E-Mail"
 
 # type: string
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "Type"
 msgstr "Typ"
 
 # type: string
-#: lang/en:41
+#: lang/en:42
 #, no-wrap
 msgid "Target"
-msgstr ""
+msgstr "Ziel"
+
+# type: string
+#: help/en:1
+#, no-wrap
+msgid "Target public folder. Please create them as a sub-folder of \"Public folders\" using WebApp or some other client. Please also note that you have to configure a valid Zarafa Admin in Mail Server > Configuration."
+msgstr "Ziel-Ordner. Bitte via WebApp oder einem anderen Client als Unterordner von \"Öffentliche Ordner\" erstellen. Außerdem muss ein Zarafa-Admin unter Mailserver > Konfiguration festgelegt werden."
+
+# type: string
+#: help/en:2
+#, no-wrap
+msgid "Specify one or more mail addresses, separated by commas."
+msgstr "Eine oder mehrere E-Mail-Adressen, getrennt durch Kommata."
