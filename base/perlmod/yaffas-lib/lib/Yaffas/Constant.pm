@@ -231,8 +231,6 @@ use constant {
 		"sendmail_faxdomain" => "/etc/mail/fax-domains",
 		"sendmail_authtype" => "/etc/mail/bbauthtype",
 		"sendmail_mail2fax_hosts" => "/etc/mail/mail2fax_hosts",
-		"mail2fax_authtype" => "/opt/yaffas/config/mail2fax/authtype",
-		"mail2fax_domain" => "/opt/yaffas/config/mail2fax/domain",
 		"postfix_mail2fax_aliases" => "/opt/yaffas/config/postfix/mail2fax-aliases",
 		"postfix_mail2fax_ips" => "/opt/yaffas/config/postfix/mail2fax-ips",
 		"postfix_mail2fax_transport" => "/opt/yaffas/config/postfix/transport-mail2fax",
