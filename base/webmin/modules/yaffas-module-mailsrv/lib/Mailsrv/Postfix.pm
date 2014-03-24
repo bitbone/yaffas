@@ -469,13 +469,31 @@ sub set_postfix_ldap {
 sub toggle_distribution_groups($) {
 	my $toggle = shift;
 
-	my $localaliases = Yaffas::Constant::FILE->{postfix_local_aliases};
-
-	if("ldap" eq lc $toggle) {
-		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, hash:$localaliases, ldap:/etc/postfix/ldap-aliases.cf, ldap:/etc/postfix/ldap-group.cf, hash:/opt/yaffas/config/postfix/public-folder-aliases.cf");
-	} elsif("file" eq lc $toggle) {
-		_set_value("virtual_alias_maps", "regexp:/etc/postfix/virtual_users_global, hash:$localaliases, ldap:/etc/postfix/ldap-aliases.cf, hash:/etc/postfix/ldap-group.cf, hash:/opt/yaffas/config/postfix/public-folder-aliases.cf");
+	my $group_alias_file = "/etc/postfix/ldap-group.cf";
+	# for $toggle eq "file" and default behavior:
+	my $group_alias_type = "hash";
+	if (lc $toggle eq "ldap") {
+		$group_alias_type = $toggle;
 	}
+	my $group_aliases = "$group_alias_type:$group_alias_file";
+
+	my @aliases = split(/,\s*/, _get_value("virtual_alias_maps"));
+
+	my $found_group_aliases = 0;
+	for my $i (0 .. $#aliases) {
+		my $alias = $aliases[$i];
+		if ($alias =~ m|^\w+:\Q$group_alias_file\E$|) {
+			# found previous entry, let's overwrite it
+			$aliases[$i] = $group_aliases;
+			$found_group_aliases = 1;
+		}
+	}
+
+	if (!$found_group_aliases) {
+		push(@aliases, $group_aliases);
+	}
+
+	_set_value("virtual_alias_maps", join(", ", @aliases));
 }
 
 sub set_zarafa_admin($) {
