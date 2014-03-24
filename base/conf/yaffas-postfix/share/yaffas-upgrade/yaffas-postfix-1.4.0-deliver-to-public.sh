@@ -8,6 +8,14 @@ ZARAFA_SERVER_CFG=/etc/zarafa/server.cfg
 ZARAFA_DELIVER_TO_PUBLIC=/opt/yaffas/libexec/mailalias/zarafa-deliver-to-public
 POSTFIX_CONFIG_CHANGED=0
 
+remove_trailing_comma() {
+	# removes a trailing comma on the last input line
+	# (used with postconf -h);
+	# implemented function, as aliases don't work in subshells
+	sed -re '$ s/,\s*$//'
+}
+
+
 # create our ZARAFA_ADMIN_USER if necessary
 getent passwd "${ZARAFA_ADMIN_USER}" >/dev/null || useradd --system --shell /bin/false "${ZARAFA_ADMIN_USER}"
 
@@ -15,7 +23,7 @@ getent passwd "${ZARAFA_ADMIN_USER}" >/dev/null || useradd --system --shell /bin
 mkdir -p "$(dirname "$POSTFIX_TRANSPORT")"
 touch "$POSTFIX_TRANSPORT"
 postmap "$POSTFIX_TRANSPORT"
-cur_transport_maps=$(postconf -h transport_maps)
+cur_transport_maps=$(postconf -h transport_maps | remove_trailing_comma)
 if ! echo "$cur_transport_maps" | grep -qF "hash:$POSTFIX_TRANSPORT"; then
 	POSTFIX_CONFIG_CHANGED=1
 	if [[ -z "$cur_transport_maps" ]]; then
@@ -32,7 +40,7 @@ for alias_file in "$POSTFIX_LOCAL_ALIASES" "$POSTFIX_PUBLIC_ALIASES"; do
 	mkdir -p "$(dirname "$alias_file")"
 	touch "$alias_file"
 	postmap "$alias_file"
-	cur_aliases=$(postconf -h virtual_alias_maps)
+	cur_aliases=$(postconf -h virtual_alias_maps | remove_trailing_comma)
 	if ! echo "$cur_aliases" | grep -qF "hash:$alias_file"; then
 		POSTFIX_CONFIG_CHANGED=1
 		if [[ -z "$cur_aliases" ]]; then
