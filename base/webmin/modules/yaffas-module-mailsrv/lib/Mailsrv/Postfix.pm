@@ -502,7 +502,6 @@ sub set_zarafa_admin($) {
 	throw Yaffas::Exception("err_zarafa_not_installed") unless (Yaffas::Product::check_product("zarafa"));
 
 	if (not defined $username or $username eq "") {
-		_set_value("zarafa_admin", "");
 		Yaffas::File->new(Yaffas::Constant::FILE->{zarafa_admin_cfg}, "")->save();
 	}
 	else {
