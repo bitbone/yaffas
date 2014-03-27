@@ -995,14 +995,22 @@ sub auth_srv_ldap($) {
 	  or throw Yaffas::Exception( "err_file_read",
 		Yaffas::Constant::FILE->{'slapd_default_conf'} );
 
-	my $linenr = $slapc->search_line(qr/^\s*SLAPD_SERVICES=/);
-	if ( defined($linenr) ) {
+	# there may be multiple occurences of SLAPD_SERVICES=, we only want
+	# to replace the last occurence (ADM-393)
+	my $linenr = -1;
+	my $last_linenr;
+	do {
+		$last_linenr = $linenr;
+		$linenr = $slapc->search_line(qr/^\s*SLAPD_SERVICES=/, $linenr+1);
+	} while (defined $linenr);
+
+	if (defined $last_linenr && $last_linenr >= 0) {
 		if ( $auth eq 'activate' ) {
-			$slapc->splice_line( $linenr, 1,
+			$slapc->splice_line( $last_linenr, 1,
 				"SLAPD_SERVICES=\" ldap:/// ldaps:/// \"" );
 		}
 		else {
-			$slapc->splice_line( $linenr, 1,
+			$slapc->splice_line( $last_linenr, 1,
 				"SLAPD_SERVICES=\" ldap://127.0.0.1 \"" );
 		}
 	}
