@@ -3,6 +3,9 @@ OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constan
 
 set -e
 
+# fix postfix chroot for libldap/gnutls (ADM-391)
+bash /opt/yaffas/share/yaffas-upgrade/yaffas-upgrade/yaffas-postfix-1.4.0-ldaps-fix.sh
+
 # copy files only on new installation
 if [ -e /etc/postfix/main.cf ]; then
 	mv -f /etc/postfix/main.cf /etc/postfix/main.cf.yaffassave
