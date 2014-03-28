@@ -14,15 +14,8 @@ ReadParse();
 
 header();
 
-if (Yaffas::Auth::get_auth_type() eq "Active Directory") {
-    print section($main::text{lbl_mailalias},
-        $Cgi->p($main::text{lbl_mailalias_ad})
-    );
-}
-else {
-    print mailaliases();
-    print new_alias("","");
-}
+print mailaliases();
+print new_alias("","");
 
 footer();
 

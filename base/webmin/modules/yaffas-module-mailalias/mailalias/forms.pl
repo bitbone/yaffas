@@ -54,11 +54,14 @@ sub _display_alias_for {
 
 	my $edit = shift;
 
+	my $is_ad = Yaffas::Auth::get_auth_type() eq "Active Directory";
 	my $aliases;
 	my (@user_alias, @mail_alias, @dir_alias);
 	if ($edit) {
-		$aliases = Yaffas::Mail::Mailalias->new("USER");
-		@user_alias = $aliases->get_alias_destination($from);
+		if (!$is_ad) {
+			$aliases = Yaffas::Mail::Mailalias->new("USER");
+			@user_alias = $aliases->get_alias_destination($from);
+		}
 		$aliases = Yaffas::Mail::Mailalias->new("MAIL");
 		@mail_alias = $aliases->get_alias_destination($from);
 		$aliases = Yaffas::Mail::Mailalias->new("DIR");
@@ -69,10 +72,10 @@ sub _display_alias_for {
 	%hide_mail = %hide_user = %hide_dir = (-style => "display:none;");
     
 	my $type;
-	if (!$edit || @user_alias) {
+	if (!$is_ad && (!$edit || @user_alias)) {
 		$type = "USER";
 		%hide_user = ();
-	} elsif (@mail_alias) {
+	} elsif (!$edit || @mail_alias) {
 		$type = "MAIL";
 		%hide_mail = ();
 	} elsif (@dir_alias) {
@@ -106,8 +109,10 @@ sub _display_alias_for {
             ),
             $Cgi->Tr({-id => "row-user", %hide_user},
                 $Cgi->td([
+					$is_ad ? ("", $main::text{lbl_mailalias_ad}) : ( 
                         $main::text{lbl_destination_usr}.":",
                         scrolling_list( { -name => "to", -size => 5, -multiple => 'true', -values => [Yaffas::UGM::get_users()], -default => \@user_alias } ),
+					)
                 ]),
             ),
             $Cgi->Tr({-id => "row-mail", %hide_mail },

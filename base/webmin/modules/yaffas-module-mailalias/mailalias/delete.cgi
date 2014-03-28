@@ -6,6 +6,7 @@ use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
 
 use Yaffas;
 use Yaffas::UI qw(error_box ok_box);
+use Yaffas::Auth;
 use Yaffas::Exception;
 use Yaffas::Mail::Mailalias;
 use Error qw(:try);
@@ -17,7 +18,9 @@ header();
 my @alias = split /\0/ , $main::in{"delete_me"};
 
 try {
+	my $is_ad = Yaffas::Auth::get_auth_type() eq "Active Directory";
 	for my $aliastype ("USER", "MAIL", "DIR") {
+		next if $is_ad && $aliastype eq "USER";
 		my $alias = Yaffas::Mail::Mailalias->new($aliastype);
 		for (@alias) {
 			$alias->remove($_);
