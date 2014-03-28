@@ -21,7 +21,7 @@ lbl_user=收件人
 lbl_or=或
 
 lbl_add=增加
-lbl_mailalias_ad=經由AD目錄完成郵件別名之配置
+lbl_mailalias_ad=Configuration of user mail aliases must be done in Active Directory.
 
 err_check_alias=下列用戶名稱或電子郵件地址無效。
 err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
@@ -31,6 +31,7 @@ err_no_alias=未選定別名
 err_nothing=沒有選擇
 err_alias_is_user=別名當作用戶存在
 err_select_only_one=別名只可以設定為用戶或文件夾
+err_user_alias_ad=When using ActiveDirectory, no user aliases can be configured here. Use Active Directory management tools instead.
 lbl_check_aliasesrm_error=移除別名時之錯誤
 lbl_no_zarafa_public_folders=您無定義zarafa管理員或未建立文件夾。請於模組<a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">郵件伺服器/配置</a>定義之
 moduletitle=郵件別名配置
