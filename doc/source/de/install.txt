@@ -11,7 +11,8 @@ Die Pakete sind für 32bit und 64bit geeignet.
   * Korrekt konfigurierter Hostname
   * Statische IP Adresse
 
-Diese Anleitung bezieht sich nur auf neu installiert Systeme. Sollten Sie ein bereits konfiguriertes System haben können sie {product} momentan noch nicht nutzen. Diese Option wird später nachgeliefert.
+Diese Anleitung bezieht sich nur auf neu installierte Systeme.
+Eine Installation auf schon eingerichteten Systemen wird derzeit nicht unterstützt.
 
 Da es momentan noch ein Problem mit dem Speichern von Konfiguationsdateien gibt, darf das MySQL-Passwort kein Hash-Zeichen (#) enthalten.
 

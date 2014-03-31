@@ -12,7 +12,7 @@ There are packages available for both 32bit and 64bit architectures.
   * Correctly configured fully qualified hostname
   * Static IP address
 
-{product} can be installed on a preconfigured Zarafa system, however beware that your configuration will be overwritten and that you can loose your data.
+{product} can be installed on a preconfigured Zarafa system, however, please be aware that your configuration will be overwritten and that you can loose your data!
 
 Please also make sure that your MySQL password does not contain a hash sign (#) since there is a problem with the current configuration management.
 
