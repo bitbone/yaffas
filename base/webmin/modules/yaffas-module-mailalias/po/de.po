@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 00:17+0100\n"
-"PO-Revision-Date: 2014-03-18 16:35+0200\n"
+"POT-Creation-Date: 2014-03-29 00:20+0100\n"
+"PO-Revision-Date: 2014-03-28 12:39+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgid "User"
 msgstr "Benutzer"
 
 # type: string
-#: lang/en:20 lang/en:41
+#: lang/en:20 lang/en:42
 #, no-wrap
 msgid "Recipient"
 msgstr "Empfänger"
@@ -122,8 +122,8 @@ msgstr "Hinzufügen"
 # type: string
 #: lang/en:24
 #, no-wrap
-msgid "Configuration of mail aliases is done through active directory."
-msgstr "Die Konfiguration der Mail Aliasse geschieht über das Active Directory."
+msgid "Configuration of user mail aliases must be done in Active Directory."
+msgstr ""
 
 # type: string
 #: lang/en:26
@@ -177,18 +177,24 @@ msgstr "Ein Alias darf nur entweder auf einen Benutzer oder Ordner gesetzt werde
 # type: string
 #: lang/en:34
 #, no-wrap
+msgid "When using ActiveDirectory, no user aliases can be configured here. Use Active Directory management tools instead."
+msgstr ""
+
+# type: string
+#: lang/en:35
+#, no-wrap
 msgid "Error while removing alias."
 msgstr "Fehler beim löschen des Aliase."
 
 # type: string
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr "Es ist noch kein Zarafa Administrator für die Zustellung in Öffentliche Ordner definiert oder es wurde noch kein Ordner angelegt. Bitte stellen Sie sicher, dass Sie einen Administrator <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">im Modul Mailserver/Konfiguration</a> konfiguriert haben."
 
 # type: string
 # 95%
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Mailalias-Konfiguration"
@@ -196,7 +202,7 @@ msgstr "Mailalias-Konfiguration"
 # type: string
 # 75%
 # 100%
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "user"
 msgstr "Benutzer"
@@ -204,19 +210,19 @@ msgstr "Benutzer"
 # type: string
 # 80%
 # 100%
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "email"
 msgstr "E-Mail"
 
 # type: string
-#: lang/en:40
+#: lang/en:41
 #, no-wrap
 msgid "Type"
 msgstr "Typ"
 
 # type: string
-#: lang/en:42
+#: lang/en:43
 #, no-wrap
 msgid "Target"
 msgstr "Ziel"

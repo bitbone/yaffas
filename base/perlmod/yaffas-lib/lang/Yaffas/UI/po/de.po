@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-06-27 15:54+0300\n"
-"PO-Revision-Date: 2014-03-18 16:35+0200\n"
+"PO-Revision-Date: 2014-03-28 12:39+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: TablePaging/en:1
 #, no-wrap
 msgid "page by page"
-msgstr ""
+msgstr "Seitenweise"
 
 #. type: string
 #: TablePaging/en:2

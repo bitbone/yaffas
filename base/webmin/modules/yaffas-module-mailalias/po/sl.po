@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-18 00:18+0100\n"
+"POT-Creation-Date: 2014-03-29 00:20+0100\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -254,7 +254,7 @@ msgid "User"
 msgstr "Uporabnik"
 
 # type: string
-#: lang/en:20 lang/en:41
+#: lang/en:20 lang/en:42
 #, no-wrap
 msgid "Recipient"
 msgstr "Prejemnik"
@@ -274,8 +274,8 @@ msgstr "Dodaj"
 # type: string
 #: lang/en:24
 #, no-wrap
-msgid "Configuration of mail aliases is done through active directory."
-msgstr "Konfiguracija poštnih aliasev je bila opravljena preko aktivnega direktorija."
+msgid "Configuration of user mail aliases must be done in Active Directory."
+msgstr ""
 
 # type: string
 #: lang/en:26
@@ -329,17 +329,23 @@ msgstr "Alias je lahko nastavljen samo za uporabnika ali mapo."
 # type: string
 #: lang/en:34
 #, no-wrap
+msgid "When using ActiveDirectory, no user aliases can be configured here. Use Active Directory management tools instead."
+msgstr ""
+
+# type: string
+#: lang/en:35
+#, no-wrap
 msgid "Error while removing alias."
 msgstr "Napaka pri odstranjevanju aliasa."
 
 # type: string
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 msgstr "Nimate definiranega Zarafa administratorja ali pa ni bila ustvarjena nobena mapa. Prosim opredelite jo v modulu <a href=\"javascript:Yaffas.ui.openPage('bbmailsrv-4')\">Mail Server/Configuration</a>."
 
 # type: string
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr "Konfiguracija aliasa sporočil"
@@ -347,7 +353,7 @@ msgstr "Konfiguracija aliasa sporočil"
 # type: string
 # 75%
 # 100%
-#: lang/en:38
+#: lang/en:39
 #, fuzzy, no-wrap
 msgid "user"
 msgstr "Uporabnik"
@@ -355,19 +361,19 @@ msgstr "Uporabnik"
 # type: string
 # 80%
 # 100%
-#: lang/en:39
+#: lang/en:40
 #, fuzzy, no-wrap
 msgid "email"
 msgstr "Elektronsko sporočilo"
 
 # type: string
-#: lang/en:40
+#: lang/en:41
 #, no-wrap
 msgid "Type"
 msgstr "Type"
 
 # type: string
-#: lang/en:42
+#: lang/en:43
 #, no-wrap
 msgid "Target"
 msgstr ""

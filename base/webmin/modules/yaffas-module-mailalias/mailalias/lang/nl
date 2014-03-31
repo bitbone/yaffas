@@ -21,7 +21,7 @@ lbl_user=Recipient
 lbl_or=of
 
 lbl_add=Voeg toe
-lbl_mailalias_ad=Configuration of mail aliases is done through active directory.
+lbl_mailalias_ad=Configuration of user mail aliases must be done in Active Directory.
 
 err_check_alias=The following usernames or e-mail addresses are not valid.
 err_no_valid_zarafa_admin=No valid Zarafa admin user is currently configured. This is necessary for delivery to public folders to work. Please do so first in Mail Server > Configuration.
@@ -31,6 +31,7 @@ err_no_alias=No alias selected.
 err_nothing=Nothing selected
 err_alias_is_user=Alias exists as user.
 err_select_only_one=An alias can only be set for user or folder.
+err_user_alias_ad=When using ActiveDirectory, no user aliases can be configured here. Use Active Directory management tools instead.
 lbl_check_aliasesrm_error=Error while removing alias.
 lbl_no_zarafa_public_folders=You have no zarafa administrator defined or there was no folder created. Please define it in the module <a href="javascript:Yaffas.ui.openPage('bbmailsrv-4')">Mail Server/Configuration</a>.
 moduletitle=Mail alias configuration

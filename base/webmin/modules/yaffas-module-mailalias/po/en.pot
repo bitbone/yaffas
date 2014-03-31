@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2014-03-18 00:19+0100\n"
+"POT-Creation-Date: 2014-03-29 00:21+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,7 +100,7 @@ msgid "User"
 msgstr ""
 
 # type: string
-#: lang/en:20 lang/en:41
+#: lang/en:20 lang/en:42
 #, no-wrap
 msgid "Recipient"
 msgstr ""
@@ -120,7 +120,7 @@ msgstr ""
 # type: string
 #: lang/en:24
 #, no-wrap
-msgid "Configuration of mail aliases is done through active directory."
+msgid "Configuration of user mail aliases must be done in Active Directory."
 msgstr ""
 
 # type: string
@@ -177,11 +177,19 @@ msgstr ""
 # type: string
 #: lang/en:34
 #, no-wrap
-msgid "Error while removing alias."
+msgid ""
+"When using ActiveDirectory, no user aliases can be configured here. Use "
+"Active Directory management tools instead."
 msgstr ""
 
 # type: string
 #: lang/en:35
+#, no-wrap
+msgid "Error while removing alias."
+msgstr ""
+
+# type: string
+#: lang/en:36
 #, no-wrap
 msgid ""
 "You have no zarafa administrator defined or there was no folder "
@@ -191,31 +199,31 @@ msgid ""
 msgstr ""
 
 # type: string
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Mail alias configuration"
 msgstr ""
 
 # type: string
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "user"
 msgstr ""
 
 # type: string
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "email"
 msgstr ""
 
 # type: string
-#: lang/en:40
+#: lang/en:41
 #, no-wrap
 msgid "Type"
 msgstr ""
 
 # type: string
-#: lang/en:42
+#: lang/en:43
 #, no-wrap
 msgid "Target"
 msgstr ""
