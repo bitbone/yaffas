@@ -45,6 +45,6 @@ fi
 /opt/yaffas/share/%{name}/postinst-rpm.sh
 /opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-postmaster.sh
 /opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-deliver-to-public.sh
-/opt/yaffas/share/yaffas-upgrade/yaffas-upgrade/yaffas-postfix-1.4.0-ldaps-fix.sh
+/opt/yaffas/share/yaffas-upgrade/yaffas-postfix-1.4.0-ldaps-fix.sh
 
 %changelog
