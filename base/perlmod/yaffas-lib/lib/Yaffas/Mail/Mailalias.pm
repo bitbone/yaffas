@@ -153,7 +153,7 @@ sub get_user_aliases {
 	my @ret;
 
 	foreach my $alias (keys %{$self->{ALIAS}}) {
-		foreach my $n ($self->{ALIAS}->{$alias}) {
+		foreach my $n (@{$self->{ALIAS}->{$alias}}) {
 			if ($n eq $to) {
 				push @ret, $alias;
 			}
