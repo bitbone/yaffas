@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-29 00:20+0100\n"
-"PO-Revision-Date: 2014-03-28 12:39+0200\n"
+"POT-Creation-Date: 2014-04-01 00:17+0300\n"
+"PO-Revision-Date: 2014-03-31 17:08+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -123,7 +123,7 @@ msgstr "Hinzufügen"
 #: lang/en:24
 #, no-wrap
 msgid "Configuration of user mail aliases must be done in Active Directory."
-msgstr ""
+msgstr "Die Konfiguration von Benutzer-E-Mail-Aliasen muss über Active Directory durchgeführt werden."
 
 # type: string
 #: lang/en:26
@@ -178,7 +178,7 @@ msgstr "Ein Alias darf nur entweder auf einen Benutzer oder Ordner gesetzt werde
 #: lang/en:34
 #, no-wrap
 msgid "When using ActiveDirectory, no user aliases can be configured here. Use Active Directory management tools instead."
-msgstr ""
+msgstr "Wenn Active Directory als Authentifizierungsbackend benutzt wird, können an dieser Stelle keine Benutzer-Aliase konfiguriert werden. Dies muss stattdessen über die Active-Directory-Verwaltungs-Werkzeuge durchgeführt werden."
 
 # type: string
 #: lang/en:35
