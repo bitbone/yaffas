@@ -286,7 +286,7 @@ sub add_user($$$$@) {
 	push @cmd, Yaffas::Constant::APPLICATION->{useradd}, "-g", $pgid;
 
 	# are we on Ubuntu 12.04+ or Debian 7+?
-	if ((Yaffas::Constant::OS eq "Ubuntu" && Yaffas::Constant::OSVER ne "10.04") || (Yaffas::Constant::OS eq "Debian" && Yaffas::Constant::OSVER ne "6")) {
+	if ((Yaffas::Constant::OS eq "Ubuntu" && Yaffas::Constant::OSVER ne "10.04") || (Yaffas::Constant::OS eq "Debian" && Yaffas::Constant::OSVER !~ /^6($|\.)/)) {
 		# we require --non-unique to work around yet another smbldap-useradd
 		# bug, which is sadly in Ubuntu's 12.04 and Debian 7 packages;
 		# by doing this we circumvent the duplicate uid check, which is
