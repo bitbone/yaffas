@@ -99,11 +99,17 @@ sub add_edit_alias {
 	my @to;
     my $type    = uc $main::in{type};
 
+	my $is_ad = Yaffas::Auth::get_auth_type() eq "Active Directory";
 	my $e           = Yaffas::Exception->new();
 	my $alias;
 
     if ($type eq "USER") {
         @to = split /\s*\0\s*/, $main::in{to};
+		if ($is_ad) {
+			# when using AD, no user alias configuration can be done
+			# (the UI does not show this either)
+			$e->add('err_user_alias_ad');
+		}
     }
     elsif ($type eq "MAIL") {
         @to = split /\s*,\s*/, $main::in{recipient};
