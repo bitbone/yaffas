@@ -30,7 +30,7 @@ Der Server lässt sich über den Reiter  _"System herunterfahren"_ wahlweise neu
 
 
 
-=== Zertifikat / Schlüssel Verwaltung 
+=== Zertifikat- / Schlüssel-Verwaltung 
 
 Um die Kommunikation mit dem Webinterface und den Mailverkehr zu verschlüsseln werden Zertifikate und Schlüssel benötigt. Diese garantieren die Authentizität, Vertraulichkeit und Integrität der Daten gegenüber Dritten. Kostenlos signierte SSL-Zertifikate sind unter der Adresse <http://www.cacert.org> erhältlich.
 
