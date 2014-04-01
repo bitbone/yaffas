@@ -15,8 +15,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "Droid Sans", "Ubuntu", "DejaVu Sans", sans-serif;
 }
 
-h1 {
+h1,
+.chapter h2 { /* "h1" due to asciidoc strangeness */
     margin-top: 2.5em;
+    font-size: 2em;
+}
+.chapter .section h2 { /* real h2 */
+    font-size: 1.2em;
 }
 
 a {
