@@ -3,7 +3,7 @@ body {
     margin: 0 auto;
     padding: 1em;
     text-align: justify;
-    font-family: serif;
+    font-family: "Droid Serif", "DejaVu Sans Serif", serif;
 }
 
 table, p {
@@ -13,6 +13,10 @@ table, p {
 h1, h2, h3, h4, h5, h6 {
     color: #3c5caa;
     font-family: "Droid Sans", "Ubuntu", "DejaVu Sans", sans-serif;
+}
+
+h1 {
+    margin-top: 2.5em;
 }
 
 a {
@@ -88,22 +92,29 @@ div.warning tr:first-child td {
     background: #ff8080;
 }
 
-.informaltable table td, .informaltable table th {
-    border: solid 1px #aaa !important;
+.titlepage h1 {
+    margin-bottom: 1em;
 }
-.informaltable table tr:first-child th {
+
+.informaltable table td,
+.informaltable table th {
+    border: solid 1px #ddd !important;
+}
+.informaltable table tr:first-of-type td,
+.informaltable table tr:first-of-type th {
     border-top: none !important;
 }
 .informaltable table tr:last-child td {
     border-bottom: none !important;
 }
-.informaltable table tr td:first-child, .informaltable table tr th:first-child {
+.informaltable table tr td:first-of-type,
+.informaltable table tr th:first-of-type {
     border-left: none !important;
 }
-.informaltable table tr td:last-child, .informaltable table tr th:last-child {
+.informaltable table tr td:last-of-type,
+.informaltable table tr th:last-of-type {
     border-right: none !important;
 }
 .informaltable table {
     border: none !important;
 }
-
