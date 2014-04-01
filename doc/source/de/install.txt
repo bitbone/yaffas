@@ -404,3 +404,30 @@ Debian/Ubuntu).
 
 Dies ist nur mit einer kommerziellen Zarafa-Lizenz möglich.
 
+=== Updaten des Systems
+
+Jedes System mit Netzwerkzugriff sollte regelmäßig mit den neuesten
+Sicherheitskorrekturen versorgt werden.
+Das gilt natürlich auch für dieses neu installierte {product}-System.
+Neben Sicherheitsupdates der Distribution werden außerdem von uns Updates
+für Zarafa und die {product}-Komponenten zur Verfügung gestellt, die
+Probleme korrigieren oder allgemeine Verbesserungen enthalten.
+
+Aus diesem Grund ist es wichtig, regelmäßig auf Updates zu prüfen und
+diese ggf. zu installieren.
+
+Auf Debian/Ubuntu-Systemen sollte +apt-get update && apt-get upgrade+
+hierfür benutzt werden.
+
+[IMPORTANT]
+==============
+Es muss immer *behalten* (bzw. *keep*) gewählt werden, wenn apt nachfragt,
+ob Konfigurationsdateien überschrieben werden sollen.
+Ein Überschreiben der Konfigurationsdateien wird vermutlich die
+Installation unbrauchbar machen!
+In anderen Worten: Einfach immer mit ENTER bestätigen, wenn nach dem
+Überschreiben der Konfigurationsdateien gefragt wird (das wählt die
+Standard-Antwort [N]ein).
+==============
+
+Auf RHEL-Systemen sollte +yum upgrade+ benutzt werden.

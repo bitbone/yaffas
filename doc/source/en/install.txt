@@ -422,3 +422,26 @@ zarafa-backup or zarafa-webaccess-muc respectiveley (using +yum install+ on
 RHEL and +apt-get install+ on Debian/Ubuntu).
 This will only work if you have a commercial Zarafa license.
 
+=== Updating
+
+Every networked system should regularly be updated with the latest security fixes.
+This is valid for your fresh {product} system as well, of course.
+In addition, we regularly provide updated packages for both Zarafa and
+{product} components so that you can get the latest bug fixes and
+improvements.
+
+Therefore it is important for you to check for updates periodically.
+
+On Debian/Ubuntu systems, please use +apt-get update && apt-get upgrade+
+and confirm.
+[IMPORTANT]
+==============
+Always choose to *keep* any config files which apt may want to overwrite.
+Do not overwrite them.
+Doing so would probably break your installation!
+In other words, just press ENTER (which chooses the default answer of [N]o
+when you are asked.
+==============
+
+
+On RHEL systems, please use +yum upgrade+ and confirm.
