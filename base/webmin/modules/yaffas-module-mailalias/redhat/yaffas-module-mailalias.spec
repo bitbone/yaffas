@@ -8,7 +8,7 @@ Group:		Applications/System
 Source:		file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	yaffas-install-lib, yaffas-core, yaffas-module-mailsrv, policycoreutils-python
+Requires:	yaffas-install-lib, yaffas-core, yaffas-module-mailsrv, /usr/sbin/semanage
 AutoReqProv: no
 
 %description
