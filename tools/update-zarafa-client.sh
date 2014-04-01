@@ -6,7 +6,7 @@ PASSWORD="$2"
 
 source ~/.update-zarafa-client 2>/dev/null
 
-URL="http://download.zarafa.com/supported"
+URL="https://download.zarafa.com/supported"
 STATUS=${STATUS:-final}
 VERSION="7.1"
 RELEASE="7.1.7-43126"
