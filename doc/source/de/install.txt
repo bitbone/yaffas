@@ -135,8 +135,19 @@ Versionen möglich sind!
 ==============
 endif::release-type-beta[]
 
+Es muss lediglich unser Repository wie unten beschrieben hinzugefügt
+werden, damit {product} über die regulären apt-Kommandos installierbar
+ist.
+
+Für Debian 6:
+
 [subs="attributes"]
   echo "deb http://repo.yaffas.org/{repository_prefix}squeeze ./" >> /etc/apt/sources.list
+
+Für Debian 7:
+
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}wheezy ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========

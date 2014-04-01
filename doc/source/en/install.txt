@@ -146,10 +146,17 @@ to newer versions will be possible.
 ==============
 endif::release-type-beta[]
 
-Add the following repositories in order to install {product} and required dependencies via the standard apt commands.
+Just add our repository as described below in order to install {product} and required dependencies via the standard apt commands.
+
+For Debian 6:
 
 [subs="attributes"]
   echo "deb http://repo.yaffas.org/{repository_prefix}squeeze ./" >> /etc/apt/sources.list
+
+For Debian 7:
+
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}wheezy ./" >> /etc/apt/sources.list
 
 [NOTE]
 ===========
