@@ -28,7 +28,7 @@ try {
 }
 catch Yaffas::Exception with {
 	print Yaffas::UI::all_error_box(shift);
-}
+};
 footer();
 =pod
 
