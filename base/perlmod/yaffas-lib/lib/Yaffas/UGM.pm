@@ -820,7 +820,7 @@ returns a List of all existings GID between 501 and 65000 plus admin groups (e.g
 
 sub get_groups () {
 	my @admin_groups = ();
-	if (Yaffas::Product::check_product("PDF") || Yaffas::Product::check_product("FAX") || Yaffas::Product::check_product("FILE")) {
+	if (Yaffas::Product::check_product("pdf") || Yaffas::Product::check_product("fax") || Yaffas::Product::check_product("file")) {
 		@admin_groups = @{Yaffas::Constant::MISC->{admin_groups}};
 	}
 	return grep {$_} map {(/^(.*):.*:(.*):.*$/ &&
