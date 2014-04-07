@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-04-08 00:22+0300\n"
 "PO-Revision-Date: 2013-03-26 14:54+0200\n"
 "Last-Translator: Paul <p.boot@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 # type: string
 #: lang/en:1
 #, no-wrap
-msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
+msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid. Usernames also have to start with a letter."
 msgstr ""
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#

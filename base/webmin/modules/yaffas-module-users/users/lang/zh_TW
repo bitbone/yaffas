@@ -1,4 +1,4 @@
-err_username=用戶名稱無效。僅有小寫、數字、點及負號有效。
+err_username=Username not valid. Only lowercase characters, digits, dots and minus are valid. Usernames also have to start with a letter.
 err_change_password=密碼無效
 err_password=密碼無效
 err_email=電子郵件地址無效
