@@ -37,6 +37,13 @@ try {
 
 	Yaffas::Module::ChangePW::change_admin_password($pw1);
 
+	use Yaffas::Module::Netconf;
+	my $netconf = Yaffas::Module::Netconf->new();
+	if (!defined $n->domainname() || $n->domainname() eq "")
+		$n->domainname("yaffas.local");
+		$n->save();
+	}
+
 	if (Yaffas::Product::check_product("zarafa")) {
 		eval "use Yaffas::Module::ZarafaConf;";
 		Yaffas::Module::ZarafaConf::set_zarafa_database($main::in{mysql_host}, $main::in{mysql_database}, $main::in{mysql_user}, $main::in{mysql_password});
