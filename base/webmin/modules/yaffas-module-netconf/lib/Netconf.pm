@@ -623,14 +623,14 @@ sub _save_hostname {
 		for my $if (@interfaces) {
 			if($if eq $bridges[0]) {
 				$ip = $if->address;
-				next;
+				last if (defined $ip && $ip ne '');
 			}
 		}
 	} else {
 		foreach my $dev (nsort keys %{$self->{DEVICES}}) {
-			unless ($dev eq "lo") {
-				$ip = $self->{DEVICES}->{$dev}->{IP};
-			}
+			next if $dev eq "lo";
+			$ip = $self->{DEVICES}->{$dev}->{IP};
+			last if (defined $ip && $ip ne '');
 		}
 	}
 
