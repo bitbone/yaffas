@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-04-08 00:22+0300\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -171,8 +171,8 @@ msgstr ""
 # type: string
 #: lang/en:1
 #, no-wrap
-msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid."
-msgstr "用戶名稱無效。僅有小寫、數字、點及負號有效。"
+msgid "Username not valid. Only lowercase characters, digits, dots and minus are valid. Usernames also have to start with a letter."
+msgstr ""
 
 # #-#-#-#-#  en.pot (yaffas 1.0)  #-#-#-#-#
 # type: string

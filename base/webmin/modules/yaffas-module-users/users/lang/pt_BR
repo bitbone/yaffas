@@ -1,4 +1,4 @@
-err_username=Nome do usuário inválido. Somente caracteres minúsculos, dígitos, pontos e hifens são válidos.
+err_username=Username not valid. Only lowercase characters, digits, dots and minus are valid. Usernames also have to start with a letter.
 err_change_password=Senha inválida
 err_password=Senha inválida
 err_email=Endereço de e-mail não válido

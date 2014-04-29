@@ -1,4 +1,4 @@
-err_username=Username nicht gültig. Es sind nur Kleinbuchstaben, Zahlen, Punkt und Minus erlaubt.
+err_username=Username not valid. Only lowercase characters, digits, dots and minus are valid. Usernames also have to start with a letter.
 err_change_password=Passwort nicht gültig
 err_password=Passwort nicht gültig
 err_email=E-Mail Adresse nicht gültig
