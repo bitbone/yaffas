@@ -11,6 +11,7 @@ use Yaffas::Module::ChangePW;
 use Yaffas::UGM;
 use Yaffas::Service qw(NSCD GOGGLETYKE WINBIND WEBMIN STOP START RESTART SAMBA ZARAFA_SERVER POSTFIX USERMIN);
 use Yaffas::Module::Mailsrv::Postfix qw(set_accept_domains set_smarthost);
+use Yaffas::Module::Netconf;
 
 Yaffas::init_webmin();
 
@@ -37,11 +38,10 @@ try {
 
 	Yaffas::Module::ChangePW::change_admin_password($pw1);
 
-	use Yaffas::Module::Netconf;
 	my $netconf = Yaffas::Module::Netconf->new();
-	if (!defined $n->domainname() || $n->domainname() eq "")
-		$n->domainname("yaffas.local");
-		$n->save();
+	if (!defined $netconf->domainname() || $netconf->domainname() eq "") {
+		$netconf->domainname("yaffas.local");
+		$netconf->save();
 	}
 
 	if (Yaffas::Product::check_product("zarafa")) {
