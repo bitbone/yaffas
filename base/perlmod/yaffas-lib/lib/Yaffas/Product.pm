@@ -168,7 +168,7 @@ sub get_version_of($) {
 	if ($product eq "zarafa") {
 		my $tmp = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{zarafa_admin}, "-V");
 
-		if ($tmp =~ /^Product version:\s+(\d),(\d),(\d),(\d+)/) {
+		if ($tmp =~ /^Product version:\s+(\d+),(\d+),(\d+),(\d+)/) {
 			return "$1.$2.$3-$4";
 		}
 	}
