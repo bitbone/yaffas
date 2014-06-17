@@ -35,6 +35,7 @@ smtpd_recipient_restrictions = permit_mynetworks,
 							 reject_unauth_destination,
 							 reject_unknown_recipient_domain,
 							 check_client_access hash:/opt/yaffas/config/postfix/whitelist-postfix,
+							 check_client_access cidr:/opt/yaffas/config/postfix/whitelist-postfix,
 							 check_policy_service inet:127.0.0.1:12525,
 
 sender_canonical_maps = hash:/etc/postfix/sender_canonical
