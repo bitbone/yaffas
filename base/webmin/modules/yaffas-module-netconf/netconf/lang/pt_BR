@@ -6,7 +6,7 @@ err_hostname=O nome de máquina poderá conter somente caracteres (a-z e A-Z), n
 err_workgroup_check=O grupo de trabalho poderá conter somente caracteres (a-z e A-Z), números (0-9), '.', '_' e '-'.
 err_copy_file=Não foi possível localizar os arquivos:
 
-err_one_enabled=Será necessário habilitar no mínimo uma interface de rede.
+err_one_enabled=You have to enable at least one network interface.
 err_gateway_eq_ip=O endereço do gateway precisa ser diferente do endereço do servidor.
 err_search=O nome do domínio poderá conter somente caracteres (a-z e A-Z), números (0-9), '.' e '-', e precisa ter também um tamanho mínimo de dois.
 err_parent_enable=A interface de hardware associada não esta habilitada.
