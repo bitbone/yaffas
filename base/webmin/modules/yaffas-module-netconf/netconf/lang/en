@@ -6,7 +6,7 @@ err_hostname=Hostname may only contain characters (a-z and A-Z), numbers (0-9) a
 err_workgroup_check=Workgroup may only contain characters (a-z and A-Z), numbers (0-9), '.', '_' and '-'.
 err_copy_file=Could not copy the following file:
 
-err_one_enabled=You have to enable a least one network interface.
+err_one_enabled=You have to enable at least one network interface.
 err_gateway_eq_ip=The gateway address has to be different to the server address.
 err_search=The domain may only contain characters (a-z and A-Z), numbers (0-9), '.' and '-'. It also has a minimum length of two.
 err_parent_enable=The associated hardware interface has to be enabled.
