@@ -41,7 +41,7 @@ try {
 	my $netconf = Yaffas::Module::Netconf->new();
 	if (!defined $netconf->domainname() || $netconf->domainname() eq "") {
 		$netconf->domainname("yaffas.local");
-		$netconf->save();
+		$netconf->save(1);
 	}
 
 	if (Yaffas::Product::check_product("zarafa")) {

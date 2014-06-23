@@ -126,6 +126,7 @@ Saves the configuration to file and loads the settings
 
 sub save {
 	my $self = shift;
+	my $no_interface_verification = shift;
 
 	$self->disable_virtual();
 
@@ -140,7 +141,7 @@ sub save {
 
 	my $bridges = scalar keys %{_get_bridges()};
 
-	throw Yaffas::Exception("err_one_enabled") unless($one_enabled or $dhcp or $bridges);
+	throw Yaffas::Exception("err_one_enabled") unless($one_enabled or $dhcp or $bridges or $no_interface_verification);
 
 	return if $self->{TESTMODE};
 
@@ -634,20 +635,21 @@ sub _save_hostname {
 		}
 	}
 
-	throw Yaffas::Exception("err_no_ip") if $ip eq '';
-
+	my $file;
 	my $dnsname = $self->{DOMAINNAME};
 
-	my $file = Yaffas::File->new(Yaffas::Constant::FILE->{hosts}, "") or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
+	if ($ip ne '') {
+		$file = Yaffas::File->new(Yaffas::Constant::FILE->{hosts}, "") or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hosts});
 
-	$file->add_line("127.0.0.1\tlocalhost\n");
+		$file->add_line("127.0.0.1\tlocalhost\n");
 
-	my $tmp = "$ip\t$hostname";
-	$tmp .= ".$dnsname" if (length($dnsname) > 0);
-	$tmp .= "\t$hostname\n";
+		my $tmp = "$ip\t$hostname";
+		$tmp .= ".$dnsname" if (length($dnsname) > 0);
+		$tmp .= "\t$hostname\n";
 
-	$file->add_line($tmp);
-	$file->save();
+		$file->add_line($tmp);
+		$file->save();
+	}
 
 	$file = Yaffas::File->new(Yaffas::Constant::FILE->{hostname}, $hostname) 
 		or throw Yaffas::Exception("err_file_write", Yaffas::Constant::FILE->{hostname});
