@@ -168,3 +168,5 @@ the paths for the backup of {product} & ZARAFA are:
   - restore of single paths out of the temporary directory
   - init 2 -> normal mode of use
 
+For additional information on Zarafa backups, please refer to:
+http://doc.zarafa.com/7.1/Administrator_Manual/en-US/html/_full_database_dump.html

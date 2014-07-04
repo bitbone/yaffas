@@ -155,3 +155,6 @@ Die zu sichernden Pfade für {product} & ZARAFA lauten:
   - Rücksicherung der einzelnen Pfade aus dem temporäres Verzeichnis
   - init 2 -> Normaler Betriebsmodus
 
+Für weitere Informationen bezüglich Zarafa-Backups beachten Sie bitte auch
+die offizielle Dokumentation:
+http://doc.zarafa.com/7.1/Administrator_Manual/en-US/html/_full_database_dump.html
