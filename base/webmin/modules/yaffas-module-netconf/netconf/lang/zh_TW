@@ -6,7 +6,7 @@ err_hostname=主機名稱僅含字元(a-z及A-Z)，數字(0-9)及”-“。最�
 err_workgroup_check=工作群組僅含字元(a-z及A-Z)，數字(0-9)、”.”、”_”及”-“
 err_copy_file=無法複製下列檔案：
 
-err_one_enabled=您須至少啟用一個網路介面
+err_one_enabled=You have to enable at least one network interface.
 err_gateway_eq_ip=閘口地址須與伺服器地址不同
 err_search=網域只能含字符(a-z及A-Z)、數字(0-9)"、”.”及”-“，最短為二。
 err_parent_enable=須啟用相關硬體介面

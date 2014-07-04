@@ -6,7 +6,7 @@ err_hostname=Un nom d'hôte ne peut comporter que des lettres (a-z et A-Z), des 
 err_workgroup_check=Un groupe de travail ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'.
 err_copy_file=Impossible d'enregistrer le fichier suivant :
 
-err_one_enabled=Vous devez activer au moins une interface de réseau.
+err_one_enabled=You have to enable at least one network interface.
 err_gateway_eq_ip=L'adresse de la passerelle doit être différente que l'adresse du serveur.
 err_search=Le domaine ne peut comporter que des lettres (a-z et A-Z), des chiffres (0-9), '.' et '-'. Il doit également contenir au moins deux caractères.
 err_parent_enable=L'interface matérielle associée doit être activée.
