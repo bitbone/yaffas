@@ -80,6 +80,9 @@ endif
 ifeq ($(shell lsb_release -sr),12.04)
 	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=ldap-auth-config
 endif
+ifeq ($(shell lsb_release -sr),14.04)
+	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=ldap-auth-config
+endif
 else
 	dh_gencontrol -- -Vmkpasswd=whois -Vslapd=slapd
 endif
