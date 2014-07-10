@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
-Requires:	yaffas-core, yaffas-module-authsrv, yaffas-module-users, yaffas-install-lib, mysql-server, zarafa, yaffas-module-mailsrv, perl-Text-Template
+Requires:	yaffas-core, yaffas-module-authsrv, yaffas-module-users, yaffas-install-lib, mysql-server, zarafa, yaffas-module-mailsrv, perl(Text::Template)
 AutoReqProv: no
 
 %description

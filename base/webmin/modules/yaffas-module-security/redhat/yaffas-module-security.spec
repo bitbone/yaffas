@@ -8,7 +8,7 @@ Group:      Applications/System
 Source:     file://%{name}-%{version}.tar.gz
 BuildArch:  noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:   yaffas-install-lib, yaffas-core, perl-Net-DNS, amavisd-new, clamav, clamd, spamassassin, policyd-weight
+Requires:   yaffas-install-lib, yaffas-core, perl(Net::DNS), amavisd-new, clamav, clamd, spamassassin, policyd-weight
 AutoReqProv: no
 
 %description

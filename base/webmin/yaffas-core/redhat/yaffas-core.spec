@@ -13,7 +13,7 @@ Patch4:		main_in_get_post.patch
 Patch5:		defined_hash_deprecation.patch
 BuildArch:	noarch
 BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
-Requires:	perl, perl-Net-SSLeay, yaffas-install-lib, yaffas-lib
+Requires:	perl, perl(Net::SSLeay), yaffas-install-lib, yaffas-lib
 AutoReqProv: no
 
 %description
