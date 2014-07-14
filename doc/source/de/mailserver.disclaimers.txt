@@ -172,6 +172,23 @@ In diesem Fall können folgende Ausdrücke verwendet werden:
   multipart/encrypted
 
 [[mailserver-disclaimers-pgp]]
+
+===== Blacklist auf Basis der Absenderadresse
+Insbesondere während einer Migration kann es sinnvoll sein, die Disclaimer
+unabhängig von der spezifischen Konfiguration nur für einzelne
+Mail-Adressen zu aktivieren oder zu deaktivieren.
+
+Ein selektives Aktivieren für bestimmte Adressen ist beispielsweise mit
+folgender Konfiguration möglich:
+
+    +testuser1@example.org
+    *
+
+Ein selektives Deaktivieren für bestimmte Konfiguration erfolgt dann
+analog dazu mit folgendem Eintrag:
+
+    testuser1@example.org
+
 ==== Verschlüsselte / signierte E-Mails (PGP, S/MIME)
 Das Anfügen von Disclaimern an kryptographisch signierte oder
 verschlüsselte E-Mails (PGP/MIME oder S/MIME) ist nicht immer problemlos
