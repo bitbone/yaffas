@@ -8,11 +8,11 @@ use Yaffas::UI;
 use Yaffas::Exception;
 use File::Samba;
 use Yaffas::Constant;
-use Yaffas::Module::Mailalias;
 use Yaffas::Module::Users;
 use Yaffas::Auth;
 use Yaffas::Auth::Type;
 use Error qw(:try);
+my $HAVE_MAIL_ALIASES = eval "use Yaffas::Module::Mailalias; 1;";
 
 require './forms.pl';
 
@@ -145,7 +145,7 @@ try {
 
 			if ($bke) {
 				$e->append($bke);
-			} else {
+			} elsif ($HAVE_MAIL_ALIASES) {
 				my $a = Yaffas::Module::Mailalias->new();
 				# remove old aliases
 				my @setaliases = $a->get_user_aliases($login);

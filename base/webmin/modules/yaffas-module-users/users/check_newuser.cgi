@@ -9,7 +9,6 @@ use Error qw(:try);
 use Yaffas::UI qw(yn_confirm);
 use Yaffas::UGM qw(is_user_in_group get_system_users);
 use Yaffas::Module::Users;
-use Yaffas::Module::Mailalias;
 use Yaffas::Module::Mailsrv;
 use Yaffas::Check;
 use Yaffas::Exception;
@@ -18,6 +17,7 @@ use Yaffas::Auth;
 use Yaffas::Auth::Type;
 use Yaffas;
 #use Yaffas::Mail;
+my $HAVE_MAIL_ALIASES = eval "use Yaffas::Module::Mailalias; 1;";
 
 require "./forms.pl";
 our $cgi = $Yaffas::UI::Cgi;
@@ -109,7 +109,8 @@ try {
 		$e->throw();
 	}
 
-	if (defined $delalias) {
+	if (defined $delalias && $HAVE_MAIL_ALIASES) {
+
 		# Delete an existing alias with the same name.
 		my $alias = Yaffas::Mail::Mailalias->new();
 		$alias->remove($user);
@@ -126,7 +127,7 @@ try {
 			Yaffas::UGM::mod_user_ftype({$user=>$filetype});
 		}
 
-		if (@aliases) {
+		if (@aliases && $HAVE_MAIL_ALIASES) {
 			my $a = Yaffas::Module::Mailalias->new();
 			foreach my $alias (@aliases) {
 				$a->add($alias, $user);

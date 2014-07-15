@@ -6,12 +6,12 @@ use Yaffas;
 use Yaffas::UI;
 use Yaffas::UGM;
 use Yaffas::Module::Users;
-use Yaffas::Module::Mailalias;
 use Error qw(:try);
 use Yaffas::Exception;
 use Yaffas::Auth;
 use Yaffas::Auth::Type;
 use Yaffas::Module::Mailsrv;
+my $HAVE_MAIL_ALIASES = eval "use Yaffas::Module::Mailalias; 1;";
 
 require './forms.pl';
 
@@ -33,12 +33,14 @@ try {
 		Yaffas::UGM::rm_user( $uid );
 		Yaffas::UGM::clear_cache();
 
-		my $a = Yaffas::Module::Mailalias->new();
-		my @setaliases = $a->get_user_aliases($login);
-		foreach my $alias (@setaliases) {
-			$a->remove($alias, $login);
+		if ($HAVE_MAIL_ALIASES) {
+			my $a = Yaffas::Module::Mailalias->new();
+			my @setaliases = $a->get_user_aliases($login);
+			foreach my $alias (@setaliases) {
+				$a->remove($alias, $login);
+			}
+			$a->write();
 		}
-		$a->write();
 	}
 	print Yaffas::UI::ok_box();
 } catch Yaffas::Exception with {
