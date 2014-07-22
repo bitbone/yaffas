@@ -1,3 +1,9 @@
+yaffas-lib (1.4.0-2) lucid; urgency=low
+
+  * GetentWinbind support (mainly for Maildisclaimer setups)
+
+ -- Package Builder <packages@yaffas.org>  Tue, 22 Jul 2014 15:32:58 +0200
+
 yaffas-lib (1.4.0-1) lucid; urgency=low
 
   * update to version 1.4.0-1
