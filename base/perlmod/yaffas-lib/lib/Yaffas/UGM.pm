@@ -79,6 +79,18 @@ sub get_next_free_uid(;@);
 {
 	my $getent;
 	my $getent_cmd = Yaffas::Constant::APPLICATION->{getent};
+	# Should we use our own GetentWinbind instead of `getent ...`?
+	# ATM (2014), this is never done automatically, but we have setups where
+	# nss_winbind does not work properly and we use this wrapper to workaround that.
+	# So any time we find the wrapper, we'll use it.
+	#
+	# PERFORMANCE: we could also integrate this as a module call instead of a system
+	# call if using the wrapper
+	my $getent_winbind = __FILE__;
+	$getent_winbind =~ s|\.pm$|/GetentWinbind.pm|;
+	if (-e $getent_winbind) {
+		$getent_cmd = $getent_winbind;
+	}
 	sub insert_displayname($) {
 		# receives a single passwd line, replaces the realname
 		# with the displayName from LDAP and returns the result
