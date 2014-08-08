@@ -229,12 +229,12 @@ sub get_revision_of($){
 	$product = "base" if $product eq "framework";
 
 	if(Yaffas::Constant::OS eq 'Ubuntu' or Yaffas::Constant::OS eq 'Debian' ) {
-		foreach my $dpkg (Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-s", "bbupdate-$product")) {
+		foreach my $dpkg (Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{dpkg}, "-s", "bitkit-update-$product")) {
 			$rev = $1 if $dpkg =~ m/^Version:\s*?.*?(\d\d\d)$/;
 		}
     }
 	elsif(Yaffas::Constant::OS =~ m/RHEL\d/ ) {
-		my $rpm = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{rpm}, "-q", "--qf", '%{version}', "bbupdate-$product");
+		my $rpm = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{rpm}, "-q", "--qf", '%{version}', "bitkit-update-$product");
 		$rev = $1 if $rpm =~ m/^\d\d\d(\d\d\d)$/;
 	}
 
