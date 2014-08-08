@@ -87,8 +87,13 @@ sub main() {
 				}
 			}
 			elsif( $main::in{"type_$i"} eq "local_alias" ){
-				my %aliase = Yaffas::Mail::Mailalias::list_alias();	
-				if( $aliase{$main::in{"alias_$i"}} ){
+				# create a list of local aliases...
+				my $user_alias = Yaffas::Mail::Mailalias::list_alias("USER");
+				my $mail_alias = Yaffas::Mail::Mailalias::list_alias("MAIL");
+				my $dir_alias  = Yaffas::Mail::Mailalias::list_alias("DIR");
+				my %local_aliases = ( %{$user_alias}, %{$mail_alias}, %{$dir_alias} );
+
+				if( $local_aliases{$main::in{"alias_$i"}} ){
 					push(@is, $main::in{"alias_$i"});
 				}
 				else{
