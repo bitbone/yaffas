@@ -272,17 +272,18 @@ sub set_timezone {
         unlink "/etc/localtime";
     }
     my $dir = Yaffas::Constant::DIR->{zoneinfo};
-    copy($dir."/posix/".$zone, "/etc/localtime");
+    copy($dir."/".$zone, "/etc/localtime");
 }
 
 sub get_timezones {
-    my @zones = `find /usr/share/zoneinfo/posix/ -type f | cut -d/ -f6- | sort`;
+    my $dir = Yaffas::Constant::DIR->{zoneinfo};
+    my @zones = `find "$dir" -type f | cut -d/ -f6- | sort`;
 
     foreach (@zones) {
         chomp($_);
     }
 
-    return @zones;
+    return grep { m|^[^/]+/[^/]+$| } @zones;
 }
 
 1;
