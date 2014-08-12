@@ -81,6 +81,7 @@ function ssha_encode($password){
 }
 
 function ssha_password_verify($hash, $password){
+    global $hash_equals;
     // Verify SSHA hash
     $ohash = base64_decode(substr($hash, 6));
     $osalt = substr($ohash, 20);
