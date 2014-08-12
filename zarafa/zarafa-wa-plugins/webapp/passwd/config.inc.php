@@ -16,6 +16,11 @@ class PluginpasswdConfiguration
 	// examples: "ldapi:///" or "localhost" or "127.0.0.1"
 	private $uri = "localhost";
 
+	// if you dont support anonymous bind change the next lines
+	private $bindanon = true;
+	private $binduser = "cn=ldapadmin,dc=bitbone,dc=de";
+	private $binduserpw = "MYSECRETPASSWORD";
+
 	function get_basedn () {
 		return $this->basedn;
 	}
@@ -26,6 +31,18 @@ class PluginpasswdConfiguration
 
 	function get_method () {
 		return $this->method;
+	}
+
+	function get_binduser () {
+		return $this->binduser;
+	}
+
+	function get_binduserpw () {
+		return $this->binduserpw;
+	}
+
+	function is_bindanon () {
+		return !!$this->binduserpw;
 	}
 
 }

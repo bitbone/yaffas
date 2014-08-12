@@ -1,5 +1,16 @@
 <?php
 
+session_start();
+
+$lang = getenv("HTTP_ACCEPT_LANGUAGE");
+$set_lang = explode(',', $lang);
+
+if (isset($_POST['lang'])) {
+    $_SESSION['lang'] = $_POST['lang'];
+} else {
+    $_SESSION['lang'] = $set_lang[0];
+}
+
 // init gettext
 $domain = "passwd";
 if ($_SESSION['lang'] != "en_EN") {
@@ -12,22 +23,70 @@ if ($_SESSION['lang'] != "en_EN") {
 bindtextdomain ($domain, "plugins/passwd/lang/");
 textdomain ($domain);
 
-function send_result($status, $msg, $err) {
+/**
+ * Compares two strings.
+ *
+ * This method implements a constant-time algorithm to compare strings.
+ *
+ * Taken from Symfony:
+ * https://github.com/symfony/security-core/blob/e76be03b0a56d41c20b9027219593e31e0faa571/Util/StringUtils.php
+ *
+ * @param string $knownString The string of known length to compare against
+ * @param string $userInput   The string that the user can control
+ *
+ * @return bool    true if the two strings are the same, false otherwise
+ */
+function hash_equals_symfony($knownString, $userInput) {
+    // Prevent issues if string length is 0
+    $knownString .= chr(0);
+    $userInput .= chr(0);
+    $knownLen = strlen($knownString);
+    $userLen = strlen($userInput);
+
+    // Set the result to the difference between the lengths
+    $result = $knownLen - $userLen;
+
+    // Note that we ALWAYS iterate over the user-supplied length
+    // This is to prevent leaking length information
+    for ($i = 0; $i < $userLen; $i++) {
+        // Using % here is a trick to prevent notices
+        // It's safe, since if the lengths are different
+        // $result is already non-0
+        $result |= (ord($knownString[$i % $knownLen]) ^ ord($userInput[$i]));
+    }
+
+    // They are only identical strings if $result is exactly 0...
+    return 0 === $result;
+}
+
+$hash_equals = "hash_equals";
+if (!function_exists("hash_equals")) {
+    // php-5.6 has native support; if the function is not
+    // available, use the above one from symfony
+    $hash_equals .= "_symfony";
+}
+
+function send_result($status, $msg, $err = "") {
+
     print json_encode(array(
         "status" => $status,
         "message" => $msg,
         "error" => $err));
 }
 
-
-// 	create a ldap-password-hash from $text
-function ssha_encode ($text) {
-    $salt = "";
-    for ($i=1;$i<=10;$i++) {
-        $salt .= substr('0123456789abcdef',rand(0,15),1);
-    }
-    $hash = "{SSHA}".base64_encode(pack("H*",sha1($text.$salt)).$salt);
+function ssha_encode($password){
+    $salt = pack("CCCC", mt_rand(), mt_rand(), mt_rand(), mt_rand());
+    $hash = "{SSHA}" . base64_encode(pack("H*", sha1($password . $salt)) . $salt);
     return $hash;
+}
+
+function ssha_password_verify($hash, $password){
+    // Verify SSHA hash
+    $ohash = base64_decode(substr($hash, 6));
+    $osalt = substr($ohash, 20);
+    $ohash = substr($ohash, 0, 20);
+    $nhash = pack("H*", sha1($password . $osalt));
+    return $hash_equals($ohash, $nhash);
 }
 
 // check passwords. They should meet the following criteria:
@@ -80,8 +139,18 @@ if ($method == "ldap") {
 
     // connect to ldap directory
     $ds = ldap_connect($config->get_uri());
+    ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+
     $ldap_error = ldap_errno($ds);
     if ($ldap_error == 0) {
+
+        if (!$config->is_bindanon()) {
+            $bind = ldap_bind($ds, $config->get_binduser(),$config->get_binduserpw());
+            if (!$bind) {
+                send_result ("failure", _("Password update failed. Please contact the system administrator."), "Binding to the ldap server failed.");
+                exit ("Bind with special user failed");
+            }
+        }
 
         // lookup the users dn
         $sr = ldap_search (
@@ -96,7 +165,6 @@ if ($method == "ldap") {
             $dn = $info[0]['dn'];
 
             // bind to ldap directory
-            ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
             $bind = ldap_bind($ds, $dn, $password);
             $ldap_error = ldap_errno($ds);
             if ($ldap_error == 0) {
@@ -110,6 +178,13 @@ if ($method == "ldap") {
                 ) {
 
                     $password_hash = ssha_encode ($newpw1);
+                    $checkpw = ssha_password_verify($password_hash, $newpw1);
+
+                    if (!$checkpw) {
+                        send_result ("failure", _("Password update failed. Please contact the system administrator."), "The password verification failed");
+                        exit ("Hash Password error");
+                    }
+
                     $entry = array('userPassword' => $password_hash);
                     $return_mod = ldap_modify ($ds, $dn, $entry);
                     $ldap_error = ldap_errno($ds);
@@ -142,11 +217,11 @@ if ($method == "ldap") {
             }
         }
         else {
-            send_result ("failure", _("Password update failed. Please contact the system administrator."));
+            send_result ("failure", _("Password update failed. Please contact the system administrator."), "Could not find a user with name $uid");
         }
 
     } else {
-        send_result ("failure", _("Password update failed. Please contact the system administrator."));
+        send_result ("failure", _("Password update failed. Please contact the system administrator.", "Could not bind to the ldap server"));
     }
 
     // release ldap-bind
