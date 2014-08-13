@@ -13,6 +13,19 @@ if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
 fi
 cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
 
+have_default_index() {
+	local FILE=/var/www/index
+	[[ -e "${FILE}.php" ]] && return 1
+	[[ ! -e "${FILE}.html" ]] && return 0
+	grep -qF 'The web server software is running but no content has been added, yet.' "${FILE}.html" && return 0
+	return 1
+}
+
+if have_default_index; then
+	[[ -e /var/www/index.html ]] && mv -f /var/www/index.html /var/www/index.html.yaffassave
+	cp ${YAFFAS_EXAMPLE}/var/www/index.html /var/www/index.html
+fi
+
 PHPINI=/etc/php5/apache2/php.ini
 PHPCLIINI=/etc/php5/cli/php.ini
 LDAPHOSTNAME=`grep "BASEDN=" /etc/ldap.settings | cut -d= -f2-`

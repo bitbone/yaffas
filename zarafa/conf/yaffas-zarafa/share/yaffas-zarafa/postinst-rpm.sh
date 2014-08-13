@@ -25,6 +25,19 @@ if [ -e $SSL_CONF ]; then
     sed -e 's#^SSLCertificateKeyFile.*#SSLCertificateKeyFile /opt/yaffas/etc/ssl/certs/zarafa-webaccess.key#' -i $SSL_CONF
 fi
 
+have_default_index() {
+	local FILE=/var/www/index
+	[[ -e "${FILE}.php" ]] && return 1
+	[[ ! -e "${FILE}.html" ]] && return 0
+	grep -qF 'The web server software is running but no content has been added, yet.' "${FILE}.html" && return 0
+	return 1
+}
+
+if have_default_index; then
+	[[ -e /var/www/index.html ]] && mv -f /var/www/index.html /var/www/index.html.yaffassave
+	cp ${YAFFAS_EXAMPLE}/var/www/index.html /var/www/index.html
+fi
+
 # optimize memory
 # only on a fresh installation
 MEM=$(cat /proc/meminfo | awk '/MemTotal:/ { printf "%d", $2*1024 }')

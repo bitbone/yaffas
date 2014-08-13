@@ -62,6 +62,7 @@ fi
 %config /opt/yaffas/share/doc/example/etc/zarafa/server.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/spooler.cfg
 %config /opt/yaffas/share/doc/example/etc/zarafa/search.cfg
+/opt/yaffas/share/doc/example/var/www/index.html
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
 /opt/yaffas/share/yaffas-upgrade/02-yaffas-zarafa.sh

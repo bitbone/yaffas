@@ -13,10 +13,12 @@ install:
 	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available
 	mkdir -p $(DESTDIR)/var/log/zarafa
 	mkdir -p $(DESTDIR)/$(YAFFAS_PREFIX)/share
+	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/var/www
 	cp -r share/yaffas-zarafa $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	cp -r share/yaffas-upgrade $(DESTDIR)/$(YAFFAS_PREFIX)/share
 	
 	cp -a $(wildcard $(ETC)/*.cfg) $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/zarafa/
+	cp -a var/www/index.html $(DESTDIR)/$(YAFFAS_EXAMPLE)/var/www/
 ifeq ($(YAFFAS_OS),Ubuntu)
 	cp -a $(ETC)/zarafa-webaccess-ssl $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available/
 endif
