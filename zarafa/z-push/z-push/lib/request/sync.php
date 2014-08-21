@@ -175,17 +175,22 @@ class Sync extends RequestProcessor {
                         ZLog::Write(LOGLEVEL_WARN, "Not possible to determine class of request. Request did not contain class and apparently there is an issue with the HierarchyCache.");
 
                     // SUPPORTED properties
-                    if(self::$decoder->getElementStartTag(SYNC_SUPPORTED)) {
-                        $supfields = array();
-                        while(1) {
-                            $el = self::$decoder->getElement();
+                    if(($se = self::$decoder->getElementStartTag(SYNC_SUPPORTED)) !== false) {
+                        // ZP-481: LG phones send an empty supported tag, so only read the contents if available here
+                        // if <Supported/> is received, it's as no supported fields would have been sent at all.
+                        // unsure if this is the correct approach, or if in this case some default list should be used
+                        if ($se[EN_FLAGS] & EN_FLAGS_CONTENT) {
+                            $supfields = array();
+                            while(1) {
+                                $el = self::$decoder->getElement();
 
-                            if($el[EN_TYPE] == EN_TYPE_ENDTAG)
-                                break;
-                            else
-                                $supfields[] = $el[EN_TAG];
+                                if($el[EN_TYPE] == EN_TYPE_ENDTAG)
+                                    break;
+                                else
+                                    $supfields[] = $el[EN_TAG];
+                            }
+                            self::$deviceManager->SetSupportedFields($spa->GetFolderId(), $supfields);
                         }
-                        self::$deviceManager->SetSupportedFields($spa->GetFolderId(), $supfields);
                     }
 
                     // Deletes as moves can be an empty tag as well as have value
@@ -212,7 +217,12 @@ class Sync extends RequestProcessor {
                     }
 
                     if(self::$decoder->getElementStartTag(SYNC_WINDOWSIZE)) {
-                        $spa->SetWindowSize(self::$decoder->getElementContent());
+                        $ws = self::$decoder->getElementContent();
+                        // normalize windowsize - see ZP-477
+                        if ($ws == 0 || $ws > 512)
+                            $ws = 512;
+
+                        $spa->SetWindowSize($ws);
 
                         // also announce the currently requested window size to the DeviceManager
                         self::$deviceManager->SetWindowSize($spa->GetFolderId(), $spa->GetWindowSize());
@@ -348,7 +358,7 @@ class Sync extends RequestProcessor {
                         ZLog::Write(LOGLEVEL_DEBUG, "HierarchyCache is also not available. Triggering HierarchySync to device");
                     }
 
-                    if(self::$decoder->getElementStartTag(SYNC_PERFORM)) {
+                    if(($el = self::$decoder->getElementStartTag(SYNC_PERFORM)) && ($el[EN_FLAGS] & EN_FLAGS_CONTENT)) {
                         // We can not proceed here as the content class is unknown
                         if ($status != SYNC_STATUS_SUCCESS) {
                             ZLog::Write(LOGLEVEL_WARN, "Ignoring all incoming actions as global status indicates problem.");
