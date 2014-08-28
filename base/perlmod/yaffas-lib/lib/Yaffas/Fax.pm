@@ -307,9 +307,9 @@ sub update_incoming_faxcapi_section ($$)
     my $bchannel = shift;
     my $in_msns = "";
 
-	if (!(eval "use Yaffas::FaxDB; 1")) {
-		die("unable to use FaxDB");
-	}
+    if (!(eval "use Yaffas::FaxDB; 1")) {
+        die("unable to use FaxDB");
+    }
 
     my @msns = Yaffas::FaxDB::msn({type => "user", controller => $controller, bchannel => $bchannel});
     my $count = 0;
