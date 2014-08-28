@@ -307,26 +307,27 @@ sub update_incoming_faxcapi_section ($$)
     my $bchannel = shift;
     my $in_msns = "";
 
-    my @msns = get_incoming_msn();
+	if (!(eval "use Yaffas::FaxDB; 1")) {
+		die("unable to use FaxDB");
+	}
+
+    my @msns = Yaffas::FaxDB::msn({type => "user", controller => $controller, bchannel => $bchannel});
     my $count = 0;
 
 	if (check_existing_conf_entry($controller))
 	{
 		foreach (@msns)
 		{
-			my $searchmsn = $_;
-			if ($searchmsn =~ m/^(\d+)_(\d+)_(\d+)$/ && $2 == $controller && $3 == $bchannel)
+			my $msn = ${$_}[0];
+			$in_msns .= "$msn ";
+			if ($count > 5)
 			{
-				$in_msns .= "$1 ";
-				if ($count > 5)
-				{
-					$in_msns .= " \\\n";
-					$count = 0;
-				}
-				else
-				{
-					$count++;
-				}
+				$in_msns .= " \\\n";
+				$count = 0;
+			}
+			else
+			{
+				$count++;
 			}
 		}
 		$in_msns =~ s/\s*\\\n\s*$//s; 
