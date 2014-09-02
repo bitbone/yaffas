@@ -42,7 +42,7 @@ fi
 %defattr(-,root,root)
 %doc debian/{copyright,changelog}
 /opt/yaffas/webmin/users
-/opt/yaffas/webmin/users/vacation.php
+/opt/yaffas/webmin/users/zarafa-set-oof
 /opt/yaffas/lib/perl5/Yaffas/Module/Users.pm
 
 %changelog

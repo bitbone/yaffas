@@ -390,6 +390,7 @@ use constant {
 		"dhclient" => '/sbin/dhclient',
 		"locale-gen" => '/usr/sbin/locale-gen',
 		"clamd" => '/usr/sbin/clamd',
+		"zarafa-set-oof" => '/opt/yaffas/webmin/users/zarafa-set-oof',
 	}
 };
 

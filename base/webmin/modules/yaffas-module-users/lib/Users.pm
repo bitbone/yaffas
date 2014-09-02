@@ -19,7 +19,7 @@ use Error qw(:try);
 use Encode;
 use JSON;
 use Yaffas::UGM qw(get_users get_suppl_groupnames);
-use File::Temp;
+use File::Temp qw(tempfile);
 
 our @ISA = qw(Yaffas::Module);
 
@@ -218,7 +218,7 @@ sub set_features($$) {
 
 sub get_vacation($) {
     my $user = shift;
-    my $json = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $user, "json" );
+    my $json = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{"zarafa-set-oof"}, "--user", $user, "--dump-json" );
 
     my $tmp = from_json($json);
 
@@ -231,23 +231,30 @@ sub set_vacation($$;$$) {
     my $subject = shift;
     my $message = shift;
 
+    my @args = (Yaffas::Constant::APPLICATION->{"zarafa-set-oof"}, "--user", $username);
     if ($status eq "false") {
-        system(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $username, "disable");
+        push @args, "--mode", "0";
     }
     else {
-        my $tmpfile = File::Temp->new(TEMPLATE => "tempXXXXXX", DIR => "/tmp/", SUFFIX => ".msg");
-        my $file = $tmpfile->filename();
-
-        print $tmpfile $subject."\n";
-        print $tmpfile $message;
-
-        system(Yaffas::Constant::APPLICATION->{php5}, Yaffas::Constant::DIR->{webmin}."/users/vacation.php", $username, $file);
-        print "ok";
+        push @args, "--mode", "1";
     }
 
+    push @args, "--subject", $subject if defined($subject);
+    my ($tmpfile, $tmpfilename);
+    if (defined($message)) {
+        ($tmpfile, $tmpfilename) = tempfile(TEMPLATE => "tempXXXXXX", DIR => "/tmp/", SUFFIX => ".msg");
+
+        print $tmpfile $message;
+        close $tmpfile;
+        push @args, "--message", $tmpfilename;
+
+    }
+
+    Yaffas::do_back_quote(@args);
     if ($? != 0) {
         throw Yaffas::Error("err_vacation_save", $username);
     }
+    unlink($tmpfilename) if defined($tmpfilename);
 }
 
 return 1;
