@@ -6,6 +6,7 @@ include('/usr/share/php/mapi/mapidefs.php');
 include('/usr/share/php/mapi/mapicode.php');
 include('/usr/share/php/mapi/mapitags.php');
 include('/usr/share/php/mapi/mapiguid.php');
+include('/usr/share/zarafa-webaccess/config.php');
 include('/usr/share/zarafa-webaccess/server/core/class.settings.php');
 include('/usr/share/zarafa-webaccess/server/core/class.mapisession.php');
 include('/usr/share/zarafa-webaccess/server/core/class.conversion.php');
