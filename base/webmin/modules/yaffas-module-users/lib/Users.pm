@@ -218,6 +218,7 @@ sub set_features($$) {
 
 sub get_vacation($) {
     my $user = shift;
+    $ENV{'LC_ALL'} = 'en_US.UTF-8'; #needs UTF-8!
     my $json = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{"zarafa-set-oof"}, "--user", $user, "--dump-json" );
 
     my $tmp = from_json($json);
@@ -250,6 +251,7 @@ sub set_vacation($$;$$) {
 
     }
 
+    $ENV{'LC_ALL'} = 'en_US.UTF-8'; #needs UTF-8!
     Yaffas::do_back_quote(@args);
     if ($? != 0) {
         throw Yaffas::Error("err_vacation_save", $username);
