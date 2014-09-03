@@ -26,6 +26,7 @@ err_no_local_auth=Diese Aktion wird nur bei lokaler Authentifizierung unterstüt
 err_create_store=Der Benutzer wurde angelegt, doch es konnte kein Zarafa Konto angelegt werden. Das bedeutet sehr wahrscheinlich, dass ihre Zarafa Lizenz keine weiteren Benutzer erlaubt.
 err_user_is_zarafa_admin=Der Benutzer wird für die Zustellung in Ordner verwendet. Sie müssen zuerst diese Einstellung ändern, bevor Sie den Benutzer löschen können.
 err_zarafa_admin_force_resync_failed=Aufruf von zarafa-admin --force-resync fehlgeschlagen, Fehlercode:
+err_vacation_load=Die Abwesenheitsinformationen von diesem Benutzer können nicht abgerufen werden. Abwesenheitseinstellungen können nur für aktive Benutzer mit Zarafa-Store gesetzt werden.
 
 lbl_usermanagment=Benutzerverwaltung
 lbl_adduser=Benutzer hinzufügen

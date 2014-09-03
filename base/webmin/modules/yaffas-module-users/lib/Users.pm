@@ -221,9 +221,16 @@ sub get_vacation($) {
     $ENV{'LC_ALL'} = 'en_US.UTF-8'; #needs UTF-8!
     my $json = Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{"zarafa-set-oof"}, "--user", $user, "--dump-json" );
 
-    my $tmp = from_json($json);
+    my $result;
+    eval {
+        $result = from_json($json);
+        1;
+    } or do {
+        throw Yaffas::Exception("err_vacation_load");
+        return "", "", "";
+    };
 
-    return $tmp->{set}, $tmp->{subject}, $tmp->{message};
+    return $result->{set}, $result->{subject}, $result->{message};
 }
 
 sub set_vacation($$;$$) {

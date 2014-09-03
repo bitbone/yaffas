@@ -26,6 +26,7 @@ err_no_local_auth=This action is only supported with local authentification.
 err_create_store=User was created but Zarafa store was not created. This means normally that your license does not allow any more users.
 err_user_is_zarafa_admin=This user is used for delivery in public folders. You have to select another user for this, then you can delete this one.
 err_zarafa_admin_force_resync_failed=Internal call to zarafa-admin --force-resync failed, error code:
+err_vacation_load=Unable to access this user's vacation information. Make sure the user has a valid Zarafa store.
 
 lbl_usermanagment=Usermanagment
 lbl_adduser=Add user
