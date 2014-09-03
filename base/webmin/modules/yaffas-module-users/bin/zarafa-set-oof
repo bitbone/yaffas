@@ -1,5 +1,4 @@
 #!/usr/bin/python -u
-
 import os
 import locale
 import sys
@@ -138,24 +137,30 @@ def main(argv = None):
 
     try:
         oldstatus = st.GetProps([PR_EC_OUTOFOFFICE], 0)[0].Value
+        if oldstatus == MAPI_E_NOT_FOUND:
+            oldstatus = False
     except Exception:
         print "Unable to read out of office status of user '%s'" % username
 
     try:
         oldsubject = st.GetProps([PR_EC_OUTOFOFFICE_SUBJECT], 0)[0].Value
+        if oldsubject == MAPI_E_NOT_FOUND:
+            oldsubject = None
+
     except Exception:
         print "Unable to read out of office subject of user '%s'" % username
 
     try:
         oldmsg = st.GetProps([PR_EC_OUTOFOFFICE_MSG], 0)[0].Value
+        if oldmsg == MAPI_E_NOT_FOUND:
+            oldmsg = None
     except Exception:
         print "Unable to read out of office message of user '%s'" % username
 
     if dump_json:
-        print(json.dumps({'set': bool(oldstatus), 'subject': oldsubject, 'message': oldmsg}))
+        result = json.dumps({'set': bool(oldstatus), 'subject': oldsubject, 'message': oldmsg})
+        print(result)
         sys.exit(0)
-
-
 
     if mode != MODE_UPDATE_ONLY:
         try:
