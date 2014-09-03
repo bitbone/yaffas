@@ -17,6 +17,7 @@ use Yaffas::Constant;
 use Yaffas::Auth;
 use Yaffas::Fax;
 use Text::Iconv;
+use Encode;
 use JSON;
 my $HAVE_MAIL_ALIASES = eval "use Yaffas::Module::Mailalias; 1;";
 
@@ -464,7 +465,7 @@ sub show_edit_vacation {
         $main::text{lbl_edit_vacation_msg}.": $username",
         $Cgi->hidden({ -name=>"username", -value=>$username}),
         $Cgi->p(
-            $Cgi->radio_group({ -name => "status", -values => [qw(false true)], -labels => {true=>$main::text{lbl_vacation_enabled}, false=>$main::text{lbl_vacation_disabled}}, -default => $status, -linebreak => "true" }),
+            $Cgi->radio_group({ -name => "status", -values => [qw(false true)], -labels => {true=>Encode::decode("utf-8", $main::text{lbl_vacation_enabled}), false=>Encode::decode("utf-8", $main::text{lbl_vacation_disabled})}, -default => $status, -linebreak => "true" }),
         ),
         $Cgi->table(
             $Cgi->Tr(
