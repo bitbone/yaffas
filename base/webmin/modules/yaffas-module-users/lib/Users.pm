@@ -254,7 +254,7 @@ sub set_vacation($$;$$) {
     $ENV{'LC_ALL'} = 'en_US.UTF-8'; #needs UTF-8!
     Yaffas::do_back_quote(@args);
     if ($? != 0) {
-        throw Yaffas::Error("err_vacation_save", $username);
+        throw Yaffas::Exception("err_vacation_save", $username);
     }
     unlink($tmpfilename) if defined($tmpfilename);
 }
