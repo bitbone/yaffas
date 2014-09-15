@@ -8,6 +8,6 @@ Standards-Version: 3.5.2
 Package: yaffas-module-mailsrv
 Architecture: all
 Provides: yaffas-secconfig
-Depends: ${shlibs:Depends}, yaffas-core, yaffas-module-users, postfix
+Depends: ${shlibs:Depends}, libswitch-perl, yaffas-core, yaffas-module-users, postfix
 Description: Basic mailserver configuration
  Basic mailserver configuration

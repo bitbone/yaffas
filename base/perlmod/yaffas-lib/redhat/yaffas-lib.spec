@@ -9,7 +9,7 @@ Source:			file://%{name}-%{version}.tar.gz
 BuildArch:		noarch
 BuildRoot:		%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	perl(ExtUtils::MakeMaker)
-Requires:		perl >= 5, perl(Sort::Naturally), perl(Algorithm::Dependency), yaffas-lib-file-samba, perl(Config::General), binutils, perl(URI), perl(Archive::Tar), perl(Error), perl(Net::LDAP), perl(DBI), perl(XML::LibXML), perl(DBD::Pg), samba-client, perl(Config::General), redhat-lsb
+Requires:		perl >= 5, perl(Sort::Naturally), perl(Algorithm::Dependency), yaffas-lib-file-samba, perl(Config::General), binutils, perl(URI), perl(Archive::Tar), perl(Error), perl(Net::LDAP), perl(DBI), perl(XML::LibXML), perl(DBD::Pg), perl(Switch), samba-client, perl(Config::General), redhat-lsb
 
 %description
 Yaffas library in perl for yaffas products
