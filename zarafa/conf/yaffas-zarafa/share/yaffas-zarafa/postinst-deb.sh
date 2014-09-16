@@ -1,5 +1,6 @@
 #!/bin/bash
 OS=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OS')
+OSVER=$(perl -I /opt/yaffas/lib/perl5 -MYaffas::Constant -we 'print Yaffas::Constant::OSVER')
 
 set -e
 
@@ -12,6 +13,15 @@ if [ -e /etc/apache2/sites-available/zarafa-webaccess-ssl ]; then
 	mv -f /etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available/zarafa-webaccess-ssl.yaffassave
 fi
 cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/apache2/sites-available
+
+if [[ $OS == "Ubuntu" && $OSVER != "10.04" && $OSVER != "12.04" ]]; then
+	# Ubuntu >=14.04 only recognizes .conf files
+	pushd /etc/apache2/sites-available >/dev/null
+	for conf in zarafa-webapp zarafa-webaccess zarafa-webaccess-ssl; do
+		ln -s "${conf}" "${conf}.conf"
+	done
+	popd >/dev/null
+fi
 
 have_default_index() {
 	local FILE=/var/www/index
