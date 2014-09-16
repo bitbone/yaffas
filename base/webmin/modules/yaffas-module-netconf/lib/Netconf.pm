@@ -658,7 +658,11 @@ sub _save_hostname {
 	# call /etc/init.d/hostname.sh
 	if(Yaffas::Constant::get_os() eq "Ubuntu" or Yaffas::Constant::OS eq "Debian"){
 		my $app = Yaffas::Constant::APPLICATION->{"hostname.sh"};
-		system($app, "start");
+		if (ref($app) == "ARRAY") {
+			system(@{$app}, "start");
+		} else {
+			system($app, "start");
+		}
 		throw Yaffas::Exception("err_file_execute", $app) unless($?>>8 == 0);
 	}
 	else {

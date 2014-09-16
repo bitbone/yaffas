@@ -331,7 +331,7 @@ use constant {
 		"faxcron" => "/usr/sbin/faxcron",
 		"faxstat" => "/usr/bin/faxstat",
 		"openssl" => "/usr/bin/openssl",
-		"hostname.sh" => (OS eq 'Debian' ? "/etc/init.d/hostname.sh" : "/etc/init.d/hostname"),
+		"hostname.sh" => ((OS eq 'Ubuntu' and OSVER eq '14.04') ? ["service", "hostname"] : (OS eq 'Debian' ? "/etc/init.d/hostname.sh" : "/etc/init.d/hostname")),
 		"dnsdomainname" => ( Yaffas::Constant::OS eq 'Ubuntu' or OS eq 'Debian' ) ? "/bin/dnsdomainname" : "/bin/domainname",
 		"nscd" => "/usr/sbin/nscd",
 		"sievec" => "/usr/lib/cyrus/bin/sievec",
