@@ -322,8 +322,8 @@ sub check_cert($){
 
 	foreach (@data)
 	{
-		$stat++ if m/^[-]+BEGIN\s+CERTIFICATE[-]+$/;
-		$stat++ if m/^[-]+BEGIN\s+([^ ]+ )?PRIVATE KEY[-]+$/;
+		$stat++ if m/^-+BEGIN\s+CERTIFICATE-+$/;
+		$stat++ if m/^-+BEGIN\s+([^ ]+\s+)?PRIVATE KEY-+$/;
 	}
 
 	return undef unless $stat == 2;
