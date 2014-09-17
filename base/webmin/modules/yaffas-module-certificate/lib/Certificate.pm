@@ -311,7 +311,6 @@ sub get_services() {
 
 sub check_cert($){
 	my $file = shift;
-	my $stat = undef;
 	
 	Yaffas::do_back_quote(Yaffas::Constant::APPLICATION->{openssl} , "x509", "-in" , $file);
 	return undef if $?;
@@ -320,13 +319,18 @@ sub check_cert($){
 	my @data = <FILE>;
 	close(FILE);
 
+	my $private_keys = 0;
+	my $certs = 0;
+
 	foreach (@data)
 	{
-		$stat++ if m/^-+BEGIN\s+CERTIFICATE-+$/;
-		$stat++ if m/^-+BEGIN\s+([^ ]+\s+)?PRIVATE KEY-+$/;
+		$certs++ if m/^-+BEGIN\s+CERTIFICATE-+$/;
+		$private_keys++ if m/^-+BEGIN\s+([^ ]+\s+)?PRIVATE KEY-+$/;
 	}
 
-	return undef unless $stat == 2;
+	# we need exactly one private key and one or more certificates
+	return undef unless $private_keys == 1;
+	return undef unless $certs >= 1;
 	return 1;
 }
 
