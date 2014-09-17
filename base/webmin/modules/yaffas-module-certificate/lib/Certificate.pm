@@ -271,6 +271,8 @@ sub import_cert($$){
 	$KEY = Yaffas::Constant::DIR->{ssl_certs_org} . $KEY;
 	$TMP = Yaffas::Constant::DIR->{ssl_certs_org} . $TMP;
 
+	$upload =~ s/\r//g;
+
 	open(TMP, ">", $TMP) or throw Yaffas::Exception('err_file_write', $TMP);
 	print TMP $upload;
 	close(TMP) or throw Yaffas::Exception('err_file_write', $TMP);
