@@ -327,6 +327,41 @@ sub show_edit {
 							$Cgi->td(
 								$Cgi->input(
 									{
+										-type  => 'radio',
+										-name  => "type_$i",
+										-value => 'address',
+										(
+											(
+												!$new &&
+												defined($u) &&
+												$id !~ /^template-/ &&
+												!exists(
+													$local_aliases{ $u->{'is'}
+														  [0] }
+												) &&
+												!exists( $local_users{ (Yaffas::LDAP::search_user_by_attribute("email", $u->{'is'}[0]))[0] }) &&
+												$u->{'is'}[0] ne "*"
+											) ? ( -checked => 'checked' )
+											: ('')
+										)
+									}
+								),
+								$main::text{'lbl_address'} . ": "
+							),
+							$Cgi->td(
+								textfield(
+									{
+										-size => 20,
+										-name => "address_" . $i,
+										-value => $u->{'is'}[0],
+									}
+								)
+							),
+						),
+						$Cgi->Tr(
+							$Cgi->td(
+								$Cgi->input(
+									{
 										-type     => 'radio',
 										-name     => "type_$i",
 										-value    => 'multidrop',

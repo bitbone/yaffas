@@ -125,6 +125,7 @@ lbl_multidrop=Multidrop
 lbl_target=Destination
 lbl_local_alias=Alias
 lbl_local_user=User
+lbl_address=Mail address
 
 lbl_check_logs=After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href="#m=logfiles-3">Maintainance -&gt; Log file viewer</a>.
 
@@ -136,6 +137,7 @@ err_remote_user=Please provide a valid mailserver user.
 err_remote_passwd=Please provide a password for the mailserver user.
 err_enable_fetchmail=Fetchmail daemon could not be enabled.
 err_bad_targets=Denying attempt to create poll query without any target users.
+err_bad_target_address=Invalid target mail address given:
 err_bad_email=Cannot use the given username as a target as it has no valid email address associated with it.
 err_smtpaddress=Invalid smtpaddress option (may not contain any whitespace).
 moduletitle=Fetchmail Mail Retrieval

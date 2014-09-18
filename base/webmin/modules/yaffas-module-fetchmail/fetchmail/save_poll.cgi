@@ -3,6 +3,7 @@
 # Update, create or delete a server to poll
 
 use Yaffas;
+use Yaffas::Check;
 use Yaffas::UI;
 use Yaffas::UGM;
 use Yaffas::Product;
@@ -102,6 +103,11 @@ sub main() {
 			}
 			elsif( $main::in{"type_$i"} eq "multidrop" ){
 				push(@is, '*');
+			}
+			elsif( $main::in{"type_$i"} eq "address" ){
+				my $addr = $main::in{"address_$i"};
+				throw Yaffas::Exception("err_bad_target_address", $addr) unless Yaffas::Check::email($addr);
+				push(@is, $addr);
 			}
 			else{
 				&_my_error($main::text{'err_no_selection'});
