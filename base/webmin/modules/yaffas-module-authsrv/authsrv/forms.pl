@@ -94,6 +94,7 @@ sub ads()
 {
 	my $info = Yaffas::Auth::get_pdc_info();
 	my $ads_user = $main::in{'ads_user'};
+	my $workgroup = ( split( /\./, $info->{domain} ) )[0];
 	if (Yaffas::Auth::get_auth_type() eq ADS) {
 		unless ((defined $ads_user) && (length($ads_user) > 0)) {
 			$ads_user = Yaffas::Module::AuthSrv::get_ldap_settings()->{'BINDDN'};
@@ -124,6 +125,16 @@ sub ads()
 						-name => 'dom_name',
 						-size => 20,
 						-value => ( $main::in{'dom_name'} )?( $main::in{'dom_name'} ):( $info->{domain} )
+					),
+				),
+			),
+			$cgi->Tr(
+				$cgi->td( $main::text{lbl_workgroup}.":" ),
+				$cgi->td(
+					textfield(
+						-name => 'workgroup',
+						-size => 20,
+						-value => ( $main::in{'workgroup'} )?( $main::in{'workgroup'} ):( $workgroup )
 					),
 				),
 			),

@@ -21,6 +21,7 @@ header();
 # switch to ads
 my $pdc = $main::in{'pass_pdc'};
 my $dom_name = $main::in{dom_name};
+my $workgroup = $main::in{workgroup};
 my $dom_adm = $main::in{dom_adm};
 my $dom_pass1 = $main::in{dom_pass1};
 my $printop_group =$main::in{printop_group};
@@ -59,7 +60,7 @@ try {
 			$oldusers = Yaffas::Module::AuthSrv::get_sys_and_db_users();
 			$oldgroups = Yaffas::Module::AuthSrv::get_sys_and_db_groups();
 		}
-		Yaffas::Module::AuthSrv::set_pdc( \@pdcs, $dom_name, $dom_adm, $dom_pass1, $type, $ads_user, $ads_user_pass1, $ldap_encryption );
+		Yaffas::Module::AuthSrv::set_pdc( \@pdcs, $dom_name, $dom_adm, $dom_pass1, $type, $ads_user, $ads_user_pass1, $ldap_encryption, $workgroup );
 		Yaffas::Module::AuthSrv::mod_nsswitch();
 
 		control(SAMBA, RESTART);
