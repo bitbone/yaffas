@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-24 01:02+0300\n"
+"POT-Creation-Date: 2014-10-06 12:02+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,10 +61,12 @@ msgid "Could not copy the following file:"
 msgstr "Não foi possível localizar os arquivos:"
 
 # type: string
+# 98%
+# 100%
 #: lang/en:9
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "You have to enable at least one network interface."
-msgstr ""
+msgstr "Será necessário habilitar no mínimo uma interface de rede."
 
 # type: string
 #: lang/en:10

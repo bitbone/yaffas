@@ -26,6 +26,7 @@ err_no_local_auth=此動作僅有本地身分驗證支援
 err_create_store=用戶已經建立但Zarafa儲存未建立。這通常表示您的授權不容許更多用戶。
 err_user_is_zarafa_admin=此用戶係用於公共文件夾內。您須為其選擇另一用戶，然後您可刪除這個
 err_zarafa_admin_force_resync_failed=Internal call to zarafa-admin --force-resync failed, error code:
+err_vacation_load=Unable to access this user's vacation information. Make sure the user has a valid Zarafa store.
 
 lbl_usermanagment=用戶管理
 lbl_adduser=增加用戶
