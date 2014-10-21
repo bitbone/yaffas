@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-19 00:18+0100\n"
-"PO-Revision-Date: 2014-03-18 16:35+0200\n"
-"Last-Translator: Christian <hoffmann@bitbone.de>\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
+"PO-Revision-Date: 2014-10-21 11:31+0200\n"
+"Last-Translator: Folkert <f.vanheusden@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -261,7 +261,7 @@ msgstr "Verbindungstyp"
 #: lang/en:52
 #, no-wrap
 msgid "Autodetect"
-msgstr "automatisch erkennen"
+msgstr "Automatisch erkennen"
 
 # type: string
 #: lang/en:53

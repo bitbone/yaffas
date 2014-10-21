@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -862,73 +862,85 @@ msgid "User"
 msgstr "用戶"
 
 # type: string
-#: lang/en:129
+#: lang/en:128
+#, no-wrap
+msgid "Mail address"
+msgstr ""
+
+# type: string
+#: lang/en:130
 #, no-wrap
 msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 msgstr "新增查詢之後或是沒有收到期望的郵件，您應該查看/var/log/fetchmail.log紀錄。查詢位置在 <a href=\"#m=logfiles-3\">維護; Log file viewer</a>."
 
 # type: string
-#: lang/en:131
+#: lang/en:132
 #, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "請提供本地及遠端用戶"
 
 # type: string
-#: lang/en:132
+#: lang/en:133
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "所給的本地用戶名稱無效"
 
 # type: string
-#: lang/en:133
+#: lang/en:134
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "所給的別名無效"
 
 # type: string
-#: lang/en:134
+#: lang/en:135
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "請選擇\"用戶\", \"別名\" 或 \"多點\"。"
 
 # type: string
-#: lang/en:135
+#: lang/en:136
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "請提供有效之郵件伺服器用戶"
 
 # type: string
-#: lang/en:136
+#: lang/en:137
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "請提供郵件伺服器用戶之密碼"
 
 # type: string
-#: lang/en:137
+#: lang/en:138
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "無法啟用擷取郵件程序"
 
 # type: string
-#: lang/en:138
+#: lang/en:139
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
 msgstr "拒絕嘗試建立沒有任何目標用戶的查詢"
 
 # type: string
-#: lang/en:139
+#: lang/en:140
+#, no-wrap
+msgid "Invalid target mail address given:"
+msgstr ""
+
+# type: string
+#: lang/en:141
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
 msgstr "不能使用給予的用戶名作為目標，因為沒有有效相關聯的電子郵件地址。"
 
 # type: string
-#: lang/en:140
+#: lang/en:142
 #, no-wrap
 msgid "Invalid smtpaddress option (may not contain any whitespace)."
 msgstr ""
 
 # type: string
-#: lang/en:141
+#: lang/en:143
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "擷取郵件之郵件取回"

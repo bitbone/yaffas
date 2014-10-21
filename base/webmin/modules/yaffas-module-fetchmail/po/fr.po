@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -708,73 +708,85 @@ msgid "User"
 msgstr "Utilisateur"
 
 # type: string
-#: lang/en:129
+#: lang/en:128
+#, no-wrap
+msgid "Mail address"
+msgstr ""
+
+# type: string
+#: lang/en:130
 #, no-wrap
 msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 msgstr ""
 
 # type: string
-#: lang/en:131
+#: lang/en:132
 #, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Veuillez saisir le nom d'un utilisateur local ou distant."
 
 # type: string
-#: lang/en:132
+#: lang/en:133
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "Le nom de l'utilisateur local donné est invalide"
 
 # type: string
-#: lang/en:133
+#: lang/en:134
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "L'alias donné est invalide."
 
 # type: string
-#: lang/en:134
+#: lang/en:135
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Veuillez sélectionner \"utilisateur\", \"alias\" ou \"multidrop\"."
 
 # type: string
-#: lang/en:135
+#: lang/en:136
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Veuillez saisir un nom d'utilisateur du serveur de courrier valide."
 
 # type: string
-#: lang/en:136
+#: lang/en:137
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Veuillez saisir le mot de passe de l'utilisateur du serveur de courrier."
 
 # type: string
-#: lang/en:137
+#: lang/en:138
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Impossible d'activer le daemon Fetchmail."
 
 # type: string
-#: lang/en:138
+#: lang/en:139
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
 msgstr ""
 
 # type: string
-#: lang/en:139
+#: lang/en:140
+#, no-wrap
+msgid "Invalid target mail address given:"
+msgstr ""
+
+# type: string
+#: lang/en:141
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
 msgstr ""
 
 # type: string
-#: lang/en:140
+#: lang/en:142
 #, no-wrap
 msgid "Invalid smtpaddress option (may not contain any whitespace)."
 msgstr ""
 
 # type: string
-#: lang/en:141
+#: lang/en:143
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Récupération du courrier par Fetchmail"

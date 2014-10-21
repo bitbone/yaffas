@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-06 12:02+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -415,20 +415,20 @@ msgstr "Service"
 # type: string
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as"
-msgstr "Permettre 'Envoyer en tant que'"
+msgid "Allow send as this user for"
+msgstr ""
 
 # type: string
 #: lang/en:70
 #, no-wrap
-msgid "For user"
-msgstr "Pour l'utilisateur"
+msgid "the following users"
+msgstr ""
 
 # type: string
 #: lang/en:71
 #, no-wrap
-msgid "For group"
-msgstr "Pour le groupe"
+msgid "the following groups"
+msgstr ""
 
 # type: string
 #: lang/en:72

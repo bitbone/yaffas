@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -861,73 +861,85 @@ msgid "User"
 msgstr "Uporabnik"
 
 # type: string
-#: lang/en:129
+#: lang/en:128
+#, no-wrap
+msgid "Mail address"
+msgstr ""
+
+# type: string
+#: lang/en:130
 #, no-wrap
 msgid "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 msgstr "After adding new queries or when not receiving mail as expected, you should have a look at /var/log/fetchmail.log, which can be viewed in <a href=\"#m=logfiles-3\">Maintainance -&gt; Log file viewer</a>."
 
 # type: string
-#: lang/en:131
+#: lang/en:132
 #, no-wrap
 msgid "Please provide a local and remote user."
 msgstr "Please provide a local and remote user."
 
 # type: string
-#: lang/en:132
+#: lang/en:133
 #, no-wrap
 msgid "The given local username is invalid."
 msgstr "The given local username is invalid."
 
 # type: string
-#: lang/en:133
+#: lang/en:134
 #, no-wrap
 msgid "The given alias is invalid."
 msgstr "Dani alias je neveljaven."
 
 # type: string
-#: lang/en:134
+#: lang/en:135
 #, no-wrap
 msgid "Please select \"user\", \"alias\" or \"multidrop\"."
 msgstr "Please select \"user\", \"alias\" or \"multidrop\"."
 
 # type: string
-#: lang/en:135
+#: lang/en:136
 #, no-wrap
 msgid "Please provide a valid mailserver user."
 msgstr "Please provide a valid mailserver user."
 
 # type: string
-#: lang/en:136
+#: lang/en:137
 #, no-wrap
 msgid "Please provide a password for the mailserver user."
 msgstr "Please provide a password for the mailserver user."
 
 # type: string
-#: lang/en:137
+#: lang/en:138
 #, no-wrap
 msgid "Fetchmail daemon could not be enabled."
 msgstr "Fetchmail daemon could not be enabled."
 
 # type: string
-#: lang/en:138
+#: lang/en:139
 #, no-wrap
 msgid "Denying attempt to create poll query without any target users."
 msgstr "Denying attempt to create poll query without any target users."
 
 # type: string
-#: lang/en:139
+#: lang/en:140
+#, no-wrap
+msgid "Invalid target mail address given:"
+msgstr ""
+
+# type: string
+#: lang/en:141
 #, no-wrap
 msgid "Cannot use the given username as a target as it has no valid email address associated with it."
 msgstr "Cannot use the given username as a target as it has no valid email address associated with it."
 
 # type: string
-#: lang/en:140
+#: lang/en:142
 #, no-wrap
 msgid "Invalid smtpaddress option (may not contain any whitespace)."
 msgstr ""
 
 # type: string
-#: lang/en:141
+#: lang/en:143
 #, no-wrap
 msgid "Fetchmail Mail Retrieval"
 msgstr "Fetchmail Mail Retrieval"

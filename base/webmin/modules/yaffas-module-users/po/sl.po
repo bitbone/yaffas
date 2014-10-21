@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-06 12:02+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -570,23 +570,22 @@ msgid "Department"
 msgstr "Oddelek"
 
 # type: string
-# 76%
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as"
-msgstr "Allow send as"
+msgid "Allow send as this user for"
+msgstr ""
 
 # type: string
 #: lang/en:70
 #, no-wrap
-msgid "For user"
-msgstr "Za uporabnika"
+msgid "the following users"
+msgstr ""
 
 # type: string
 #: lang/en:71
 #, no-wrap
-msgid "For group"
-msgstr "Za skupino"
+msgid "the following groups"
+msgstr ""
 
 # type: string
 #: lang/en:72

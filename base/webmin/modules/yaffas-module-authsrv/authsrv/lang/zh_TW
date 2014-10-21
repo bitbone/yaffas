@@ -36,6 +36,7 @@ lbl_pdc_ping=Ping 測試
 lbl_pdc_trust=信任測試
 lbl_pdc_users=網域用戶
 lbl_dom_name=網域
+lbl_workgroup=工作群組
 lbl_status=目前之配置
 lbl_change=改變
 lbl_pdc_type=類型

@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-06 12:02+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -570,24 +570,22 @@ msgid "Department"
 msgstr "部門"
 
 # type: string
-# 76%
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as"
-msgstr "允許發送為"
+msgid "Allow send as this user for"
+msgstr ""
 
 # type: string
-# 75%
 #: lang/en:70
 #, no-wrap
-msgid "For user"
-msgstr "用戶之"
+msgid "the following users"
+msgstr ""
 
 # type: string
 #: lang/en:71
 #, no-wrap
-msgid "For group"
-msgstr "群組之"
+msgid "the following groups"
+msgstr ""
 
 # type: string
 # 87%

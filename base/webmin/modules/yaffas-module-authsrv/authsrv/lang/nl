@@ -36,6 +36,7 @@ lbl_pdc_ping=Ping Test
 lbl_pdc_trust=Trust Test
 lbl_pdc_users=DC Users
 lbl_dom_name=Domain
+lbl_workgroup=Workgroup
 lbl_status=Current Config
 lbl_change=Change
 lbl_pdc_type=Type
