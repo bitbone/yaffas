@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-08 00:22+0300\n"
+"POT-Creation-Date: 2014-10-06 12:02+0300\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -338,390 +338,396 @@ msgid "Internal call to zarafa-admin --force-resync failed, error code:"
 msgstr "Internal call to zarafa-admin --force-resync failed, error code:"
 
 # type: string
-#: lang/en:30
+#: lang/en:29
+#, no-wrap
+msgid "Unable to access this user's vacation information. Make sure the user has a valid Zarafa store."
+msgstr ""
+
+# type: string
+#: lang/en:31
 #, no-wrap
 msgid "Usermanagment"
 msgstr "Upravljanje z uporabniki"
 
 # type: string
-#: lang/en:31
+#: lang/en:32
 #, no-wrap
 msgid "Add user"
 msgstr "Dodaj uporabnika"
 
 # type: string
-#: lang/en:32 lang/en:51
+#: lang/en:33 lang/en:52
 #, no-wrap
 msgid "Printer operator"
 msgstr "Tiskalniški upravljalec"
 
 # type: string
-#: lang/en:33
+#: lang/en:34
 #, no-wrap
 msgid "Printer Administrator"
 msgstr "Tiskalniški administrator"
 
 # type: string
-#: lang/en:34
+#: lang/en:35
 #, no-wrap
 msgid "Modified users"
 msgstr "Spremenjeni uporabniki"
 
 # type: string
-#: lang/en:35
+#: lang/en:36
 #, no-wrap
 msgid "Modify user"
 msgstr "Spremeni uporabnika"
 
 # type: string
 # 75%
-#: lang/en:36
+#: lang/en:37
 #, no-wrap
 msgid "Do You really want to delete the selected users?"
 msgstr "Ali res želite izbrisati izbrane skupine?"
 
 # type: string
-#: lang/en:37
+#: lang/en:38
 #, no-wrap
 msgid "Remove user"
 msgstr "Odstrani uporabnika"
 
 # type: string
 # 92%
-#: lang/en:38
+#: lang/en:39
 #, no-wrap
 msgid "E-mail address"
 msgstr "Naslov elektronskega sporočila"
 
 # type: string
-#: lang/en:39
+#: lang/en:40
 #, no-wrap
 msgid "Name"
 msgstr "Ime"
 
 # type: string
-#: lang/en:40
+#: lang/en:41
 #, no-wrap
 msgid "Groups"
 msgstr "Skupine"
 
 # type: string
-#: lang/en:41
+#: lang/en:42
 #, no-wrap
 msgid "Enable e-mail account"
 msgstr "Omogoči elektronski naslov"
 
 # type: string
-#: lang/en:42
+#: lang/en:43
 #, no-wrap
 msgid "No matter"
 msgstr "Ni pomembno"
 
 # type: string
-#: lang/en:43
+#: lang/en:44
 #, no-wrap
 msgid "No printer operator"
 msgstr "Ni tiskalniškega operaterja"
 
 # type: string
-#: lang/en:44
+#: lang/en:45
 #, no-wrap
 msgid "Username"
 msgstr "Uporabniško ime"
 
 # type: string
-#: lang/en:45
+#: lang/en:46
 #, no-wrap
 msgid "Password"
 msgstr "Geslo"
 
 # type: string
-#: lang/en:46
+#: lang/en:47
 #, no-wrap
 msgid "Repeat password"
 msgstr "Ponovi geslo"
 
 # type: string
-#: lang/en:47 lang/en:72
+#: lang/en:48 lang/en:73
 #, no-wrap
 msgid "User Management"
 msgstr "Upravljanje z uporabniki"
 
 # type: string
-#: lang/en:48
+#: lang/en:49
 #, no-wrap
 msgid "Filetype for fax delivery"
 msgstr "Tip datoteke za pošiljko iz faksa"
 
 # type: string
 # 75%
-#: lang/en:49
+#: lang/en:50
 #, no-wrap
 msgid "E-mail alias"
 msgstr "Poštni alias"
 
 # type: string
 # 87%
-#: lang/en:50
+#: lang/en:51
 #, no-wrap
 msgid "Authentication"
 msgstr "Avtentikacija"
 
 # type: string
-#: lang/en:52
+#: lang/en:53
 #, no-wrap
 msgid "User"
 msgstr "Uporabnik"
 
 # type: string
-#: lang/en:53
+#: lang/en:54
 #, no-wrap
 msgid "Mailbox quota"
 msgstr "Kvota nabiralnika"
 
 # type: string
-#: lang/en:54
+#: lang/en:55
 #, no-wrap
 msgid "Zarafa administrator"
 msgstr "Zarafa administrator"
 
 # type: string
-#: lang/en:55
+#: lang/en:56
 #, no-wrap
 msgid "Zarafa shared store user"
 msgstr "Zarafa shared store user"
 
 # type: string
-#: lang/en:56
+#: lang/en:57
 #, no-wrap
 msgid "irreversible after activation"
 msgstr "irreversible after activation"
 
 # type: string
-#: lang/en:57
+#: lang/en:58
 #, no-wrap
 msgid "Given name"
 msgstr "Dano ime"
 
 # type: string
-#: lang/en:58
+#: lang/en:59
 #, no-wrap
 msgid "Surname"
 msgstr "Priimek"
 
 # type: string
-#: lang/en:59
+#: lang/en:60
 #, no-wrap
 msgid "Zarafa store"
 msgstr "Zarafa hramba"
 
 # type: string
-#: lang/en:60
+#: lang/en:61
 #, no-wrap
 msgid "no Zarafa license"
 msgstr "ni Licence za Zarafo"
 
 # type: string
-#: lang/en:61
+#: lang/en:62
 #, no-wrap
 msgid "Convert into a zarafa resource"
 msgstr "Spremeniv zarafa izvor"
 
 # type: string
-#: lang/en:62
+#: lang/en:63
 #, no-wrap
 msgid "Should the following users really be converted into zarafa resources?"
 msgstr "Ali naj bodo naslednji uporabniki res spremenjeni v zarafa izvor?"
 
 # type: string
-#: lang/en:63
+#: lang/en:64
 #, no-wrap
 msgid "User created with following warnings"
 msgstr "Uporabnik ustvarjen z naslednjimi opozorili"
 
 # type: string
-#: lang/en:64
+#: lang/en:65
 #, no-wrap
 msgid "Business Phone"
 msgstr "Poslovni telefon"
 
 # type: string
-#: lang/en:65
+#: lang/en:66
 #, no-wrap
 msgid "Location"
 msgstr "Lokacija"
 
 # type: string
-#: lang/en:66
+#: lang/en:67
 #, no-wrap
 msgid "Fax"
 msgstr "Faks"
 
 # type: string
-#: lang/en:67
+#: lang/en:68
 #, no-wrap
 msgid "Department"
 msgstr "Oddelek"
 
 # type: string
 # 76%
-#: lang/en:68
+#: lang/en:69
 #, no-wrap
 msgid "Allow send as"
 msgstr "Allow send as"
 
 # type: string
-#: lang/en:69
+#: lang/en:70
 #, no-wrap
 msgid "For user"
 msgstr "Za uporabnika"
 
 # type: string
-#: lang/en:70
+#: lang/en:71
 #, no-wrap
 msgid "For group"
 msgstr "Za skupino"
 
 # type: string
-#: lang/en:71
+#: lang/en:72
 #, no-wrap
 msgid "Features"
 msgstr "Funkcije"
 
 # type: string
-#: lang/en:73
+#: lang/en:74
 #, no-wrap
 msgid "Add"
 msgstr "Dodaj"
 
 # type: string
-#: lang/en:74
+#: lang/en:75
 #, no-wrap
 msgid "Remove"
 msgstr "Odstrani"
 
 # type: string
-#: lang/en:75
+#: lang/en:76
 #, no-wrap
 msgid "Set default"
 msgstr "Nastavi privzeto"
 
 # type: string
-#: lang/en:76
+#: lang/en:77
 #, no-wrap
 msgid "Modify"
 msgstr "Spremeni"
 
 # type: string
-#: lang/en:77
+#: lang/en:78
 #, no-wrap
 msgid "User currently in the office"
 msgstr "Uporabnik je trenutno v pisarni"
 
 # type: string
-#: lang/en:78
+#: lang/en:79
 #, no-wrap
 msgid "User currently out of the office"
 msgstr "Uporabnik je trenutno odsoten"
 
 # type: string
-#: lang/en:79
+#: lang/en:80
 #, no-wrap
 msgid "Edit out of office"
 msgstr "Uredi odsotnost"
 
 # type: string
-#: lang/en:80
+#: lang/en:81
 #, no-wrap
 msgid "Subject"
 msgstr "Zadeva"
 
 # type: string
-#: lang/en:81
+#: lang/en:82
 #, no-wrap
 msgid "Message"
 msgstr "Sporočilo"
 
 # type: string
-#: lang/en:82
+#: lang/en:83
 #, no-wrap
 msgid "Hide from addressbook"
 msgstr "Skrij iz imenika"
 
 # type: string
-#: lang/en:83
+#: lang/en:84
 #, no-wrap
 msgid "Store size"
 msgstr "Shrani velikost"
 
 # type: string
-#: lang/en:84
+#: lang/en:85
 #, no-wrap
 msgid "Store type"
 msgstr "Shrani tip"
 
 # type: string
-#: lang/en:85
+#: lang/en:86
 #, no-wrap
 msgid "Administrator"
 msgstr "Administrator"
 
 # type: string
-#: lang/en:86
+#: lang/en:87
 #, no-wrap
 msgid "Active"
 msgstr "Aktiven"
 
 # type: string
-#: lang/en:87
+#: lang/en:88
 #, no-wrap
 msgid "Shared"
 msgstr "V skupni rabi"
 
 # type: string
-#: lang/en:88
+#: lang/en:89
 #, no-wrap
 msgid "None"
 msgstr "Nič"
 
 # type: string
-#: lang/en:89
+#: lang/en:90
 #, no-wrap
 msgid "Force offline profile resynchronization"
 msgstr "Force offline profile resynchronization"
 
 # type: string
-#: lang/en:90
+#: lang/en:91
 #, no-wrap
 msgid "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
 msgstr "This forces the client (in cached mode) to re-download all data from the server. Certain client-side problems might be fixed by this process, but depending on the mailbox size this may consume lots of time and bandwidth, so please verify if you really want this, especially in low-bandwidth setups.<br/><br/>Force resynchronization for the following user?"
 
 # type: string
-#: lang/en:91
+#: lang/en:92
 #, no-wrap
 msgid "Configure disclaimer"
 msgstr "Uredi omejitev odgovornosti"
 
 # type: string
-#: lang/en:92
+#: lang/en:93
 #, no-wrap
 msgid "On"
 msgstr "Vključeno"
 
 # type: string
-#: lang/en:93
+#: lang/en:94
 #, no-wrap
 msgid "Off"
 msgstr "Izključeno"
 
 # type: string
-#: lang/en:94
+#: lang/en:95
 #, no-wrap
 msgid "Default (on)"
 msgstr "Privzeto (vključeno)"
 
 # type: string
-#: lang/en:95
+#: lang/en:96
 #, no-wrap
 msgid "Default (off)"
 msgstr "Privzeto (izključeno)"

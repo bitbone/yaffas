@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-06-24 01:02+0300\n"
+"POT-Creation-Date: 2014-10-06 12:02+0300\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,10 +212,12 @@ msgid "Could not copy the following file:"
 msgstr "Could not copy the following file:"
 
 # type: string
+# 98%
+# 100%
 #: lang/en:9
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "You have to enable at least one network interface."
-msgstr ""
+msgstr "You have to enable a least one network interface."
 
 # type: string
 #: lang/en:10

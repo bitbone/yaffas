@@ -26,6 +26,7 @@ err_no_local_auth=Essa ação é suportada somente usado a autenticação local.
 err_create_store=O usuário foi criado com sucesso, mas a caixa do usuário no Zarafa não foi criado. Geralmente isso significa que sua licença ZCP não permite mais usuários.
 err_user_is_zarafa_admin=Este usuário é usado para entregar e-mails em pastas públicas. Primeiro é necessário escolher um outro usuário para este fim. Depois este usuário poderá ser removido.
 err_zarafa_admin_force_resync_failed=Execução interna do zarafa-admin --force-resync falhou com o código de erro:
+err_vacation_load=Unable to access this user's vacation information. Make sure the user has a valid Zarafa store.
 
 lbl_usermanagment=Gerenciamento de Usuários
 lbl_adduser=Adicionar usuário
