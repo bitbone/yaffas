@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2014-10-06 12:02+0300\n"
+"POT-Creation-Date: 2014-10-22 00:57+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -422,19 +422,19 @@ msgstr ""
 # type: string
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as"
+msgid "Allow send as this user for"
 msgstr ""
 
 # type: string
 #: lang/en:70
 #, no-wrap
-msgid "For user"
+msgid "the following users"
 msgstr ""
 
 # type: string
 #: lang/en:71
 #, no-wrap
-msgid "For group"
+msgid "the following groups"
 msgstr ""
 
 # type: string

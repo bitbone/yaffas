@@ -125,6 +125,7 @@ lbl_multidrop=Multidrop
 lbl_target=Lokales Ziel
 lbl_local_alias=Alias
 lbl_local_user=Benutzer
+lbl_address=Mail address
 
 lbl_check_logs=Nach dem Hinzufügen von neuen Einträgen oder falls E-Mails nicht wie erwartet abgeholt werden, sollte die Log-Datei /var/log/fetchmail.log konsultiert werden, welche auch via <a href="#m=logfiles-3">Wartung -&gt; Logdateienbetrachter</a> einsehbar ist.
 
@@ -136,6 +137,7 @@ err_remote_user=Bitte geben Sie einen gültigen Mailserverbenutzer an.
 err_remote_passwd=Bitte geben Sie ein Passwort für den Mailserverbenutzer an.
 err_enable_fetchmail=Der fetchmail Dienst konnte nicht aktiviert werden.
 err_bad_targets=Der Versuch, einen Abholauftrag ohne Zielbenutzer zu erstellen, wurde abgebrochen.
+err_bad_target_address=Invalid target mail address given:
 err_bad_email=Der gewählte Benutzername kann nicht als Ziel verwendet werden, da er keine gültige Mailadresse besitzt.
 err_smtpaddress=Ungültige smtpaddress-Option (darf keine Leerzeichen enthalten).
 moduletitle=Fetchmail-Konfiguration

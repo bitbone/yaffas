@@ -36,6 +36,7 @@ lbl_pdc_ping=Tester le ping
 lbl_pdc_trust=Tester le niveau de confiance
 lbl_pdc_users=Utilisateurs DC
 lbl_dom_name=Domaine
+lbl_workgroup=Groupe de travail
 lbl_status=Configuration actuelle
 lbl_change=Modification
 lbl_pdc_type=Type

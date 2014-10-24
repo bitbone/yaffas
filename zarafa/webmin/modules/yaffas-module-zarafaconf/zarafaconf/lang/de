@@ -49,7 +49,7 @@ lbl_backupprofile=Profil sichern
 lbl_download=Herunterladen
 
 lbl_connectiontype=Verbindungstyp
-lbl_connectiontype_autodetect=automatisch erkennen
+lbl_connectiontype_autodetect=Automatisch erkennen
 lbl_connectiontype_online=Online
 lbl_connectiontype_cached=Cached (zwischenspeichern)
 
