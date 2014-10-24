@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 00:57+0300\n"
+"POT-Creation-Date: 2014-10-25 00:57+0300\n"
 "PO-Revision-Date: 2012-12-10 16:33+0200\n"
 "Last-Translator: Sebastian <s.kummer@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -425,7 +425,7 @@ msgstr "Departamento"
 # type: string
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as this user for"
+msgid "Allow sending as this user for"
 msgstr ""
 
 # type: string

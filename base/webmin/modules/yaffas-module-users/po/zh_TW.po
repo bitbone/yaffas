@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 00:57+0300\n"
+"POT-Creation-Date: 2014-10-25 00:57+0300\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -572,7 +572,7 @@ msgstr "部門"
 # type: string
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as this user for"
+msgid "Allow sending as this user for"
 msgstr ""
 
 # type: string

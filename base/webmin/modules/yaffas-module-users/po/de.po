@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 00:57+0300\n"
-"PO-Revision-Date: 2014-10-21 11:31+0200\n"
-"Last-Translator: Folkert <f.vanheusden@zarafa.com>\n"
+"POT-Creation-Date: 2014-10-25 00:57+0300\n"
+"PO-Revision-Date: 2014-10-24 11:00+0200\n"
+"Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -415,20 +415,20 @@ msgstr "Abteilung"
 # type: string
 #: lang/en:69
 #, no-wrap
-msgid "Allow send as this user for"
+msgid "Allow sending as this user for"
 msgstr ""
 
 # type: string
 #: lang/en:70
 #, no-wrap
 msgid "the following users"
-msgstr ""
+msgstr "für folgende Benutzer erlauben"
 
 # type: string
 #: lang/en:71
 #, no-wrap
 msgid "the following groups"
-msgstr ""
+msgstr "für folgende Gruppen erlauben"
 
 # type: string
 #: lang/en:72

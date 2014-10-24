@@ -6,7 +6,7 @@ err_hostname=Der Rechnername darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen
 err_workgroup_check=Die Workgroup darf nur aus Buchstaben (a-z und A-Z), Zahlen (0-9), '.', '_' und '-' bestehen.
 err_copy_file=Konnte die folgende Datei nicht kopieren:
 
-err_one_enabled=You have to enable at least one network interface.
+err_one_enabled=Es muss mindestens eine Netzwerkschnittstelle aktiviert werden.
 err_gateway_eq_ip=Die Gateway Adresse muss sich von der Adresse des Server unterscheiden.
 err_search=Der Domainname darf nur aus Buchstaben (a-z und A-Z), sowie Zahlen (0-9), '.' und '-' bestehen. Ausserdem muss er mindestens zwei Zeichen lang sein!
 err_parent_enable=Die zugehörige Hardware-Schnittstelle muss aktiviert sein.

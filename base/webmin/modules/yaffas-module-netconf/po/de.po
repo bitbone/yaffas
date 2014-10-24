@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-06 12:02+0300\n"
-"PO-Revision-Date: 2014-07-04 11:25+0200\n"
+"POT-Creation-Date: 2014-10-25 00:57+0300\n"
+"PO-Revision-Date: 2014-10-24 11:00+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -63,9 +63,9 @@ msgstr "Konnte die folgende Datei nicht kopieren:"
 # 98%
 # 100%
 #: lang/en:9
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "You have to enable at least one network interface."
-msgstr "Es muss mindestens eine Netzwerkschnittstelle aktiviert sein."
+msgstr "Es muss mindestens eine Netzwerkschnittstelle aktiviert werden."
 
 # type: string
 #: lang/en:10
