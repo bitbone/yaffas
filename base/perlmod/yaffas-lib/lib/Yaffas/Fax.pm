@@ -15,7 +15,6 @@ sub get_incoming_msn();
 sub get_display_msn($);
 sub get_user_msn($);
 sub get_group_msn($);
-sub get_all_user_msn();
 sub get_all_group_msn();
 sub get_hf_filetype($;$);
 sub update_incoming_faxcapi();
@@ -253,8 +252,8 @@ It returns array of MSNs. The MSNs are from the DB.
 
 sub get_incoming_msn()
 {
-	my @msns = get_all_user_msn();
-	my @groupmsns = get_all_group_msn();
+	my @msns = Yaffas::FaxDB::msn({type => "user"});
+	my @groupmsns = Yaffas::FaxDB::msn({type => "group"});
 	push @msns, @groupmsns;
 
 	return undef unless @msns;
@@ -307,27 +306,26 @@ sub update_incoming_faxcapi_section ($$)
     my $bchannel = shift;
     my $in_msns = "";
 
-    if (!(eval "use Yaffas::FaxDB; 1")) {
-        die("unable to use FaxDB");
-    }
-
-    my @msns = Yaffas::FaxDB::msn({type => "user", controller => $controller, bchannel => $bchannel});
+    my @msns = get_incoming_msn();
     my $count = 0;
 
 	if (check_existing_conf_entry($controller))
 	{
-		foreach (@msns)
+		foreach my $msn (@msns)
 		{
-			my $msn = ${$_}[0];
-			$in_msns .= "$msn ";
-			if ($count > 5)
+			my @msn = @{$msn};
+			if ($msn[1] == $controller && $msn[2] == $bchannel)
 			{
-				$in_msns .= " \\\n";
-				$count = 0;
-			}
-			else
-			{
-				$count++;
+				$in_msns .= "$msn[0] ";
+				if ($count > 5)
+				{
+					$in_msns .= " \\\n";
+					$count = 0;
+				}
+				else
+				{
+					$count++;
+				}
 			}
 		}
 		$in_msns =~ s/\s*\\\n\s*$//s; 
