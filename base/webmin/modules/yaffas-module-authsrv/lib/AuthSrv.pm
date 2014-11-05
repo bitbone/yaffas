@@ -1023,7 +1023,7 @@ sub auth_srv_ldap($) {
 	}
 }
 
-=item set_pdc( [DC, DOMAIN, ADMIN, PASSWD, TYPE, BINDUSER, BINDPW, ENCRYPTION] )
+=item set_pdc( [DC, DOMAIN, ADMIN, PASSWD, TYPE, BINDUSER, BINDPW, ENCRYPTION, WORKGROUP] )
 
 configures Domain Controller settings
 
@@ -1035,11 +1035,12 @@ configures Domain Controller settings
  BINDUSER - bind user for AD access (fax, zarafa)
  BINDPW - bind user password(fax, zarafa)
  ENCRYPTION - 1 for ldaps, undef fo ldap
+ WORKGROUP - if not shortname(DOMAIN)
 
 =cut
 
-sub set_pdc( ;$$$$$$$$) {
-	my( $pdcs, $domain, $admin, $passwd, $type, $binduser, $bindpw, $encryption ) = @_;
+sub set_pdc( ;$$$$$$$$$) {
+	my( $pdcs, $domain, $admin, $passwd, $type, $binduser, $bindpw, $encryption, $workgroup ) = @_;
 	unless ( ref($pdcs) eq "ARRAY" ) {
 		$pdcs = [$pdcs];
 	}
@@ -1114,8 +1115,11 @@ sub set_pdc( ;$$$$$$$$) {
 		# Kerberos realms must be uppercase, so convert it
 		my $realm = uc $domain;
 
-# Active Directory requires the workgroup to be the short form of the domain, so extract it
-		my $workgroup = ( split( /\./, $domain ) )[0];
+# Active Directory requires the workgroup to be the short form of the domain, so extract it;
+# if an explicit workgroup is set, use this
+		if (!defined($workgroup) || $workgroup eq "") {
+			$workgroup = ( split( /\./, $domain ) )[0];
+		}
 		$exception->add('err_invalid_domain2')
 		  unless ( defined($workgroup) or $workgroup eq "" );
 
