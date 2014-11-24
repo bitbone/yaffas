@@ -8,6 +8,6 @@ Standards-Version: 3.7.3
 Package: yaffas-postfix
 Architecture: all
 Conflicts: exim4
-Depends: postfix, postfix-ldap, sasl2-bin
+Depends: postfix, postfix-ldap, postfix-pcre, sasl2-bin
 Description: Configuration package for postfix
  Configuration package for postfix
