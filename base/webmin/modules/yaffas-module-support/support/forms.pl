@@ -10,9 +10,13 @@ use Yaffas::UI::Webmin;
 sub get_infos {
 	my $theme = Yaffas::UI::Webmin::get_theme();
 	print $Cgi->start_form( {-action=>"save_support_infos.cgi",-method=>"post"} );
-	print Yaffas::UI::section( $main::text{lbl_support},
-		($theme eq 'zadmin' ? $Cgi->p($main::text{lbl_klick_dl_zadmin}) : $Cgi->p($main::text{lbl_klick_dl_yaffas}))
-	);
+	my $text = $main::text{lbl_klick_dl_yaffas};
+	if ($theme eq 'bitkit') {
+		$text = $main::text{lbl_klick_dl_bitkit};
+	} elsif ($theme eq 'zadmin') {
+		$text = $main::text{lbl_klick_dl_zadmin};
+	}
+	print Yaffas::UI::section( $main::text{lbl_support}, $Cgi->p($text));
 	print Yaffas::UI::section_button($Cgi->button({-id=>"dlsupport",-label=>$main::text{'lbl_download'}}));
 	print $Cgi->end_form();
 }
