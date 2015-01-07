@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 00:57+0300\n"
+"POT-Creation-Date: 2014-12-01 01:03+0100\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -862,10 +862,12 @@ msgid "User"
 msgstr "用戶"
 
 # type: string
+# 84%
+# 100%
 #: lang/en:128
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mail address"
-msgstr ""
+msgstr "郵件地址"
 
 # type: string
 #: lang/en:130

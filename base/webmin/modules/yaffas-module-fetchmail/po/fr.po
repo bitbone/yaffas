@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-22 00:57+0300\n"
+"POT-Creation-Date: 2014-12-01 01:03+0100\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -708,10 +708,12 @@ msgid "User"
 msgstr "Utilisateur"
 
 # type: string
+# 84%
+# 100%
 #: lang/en:128
-#, no-wrap
+#, fuzzy, no-wrap
 msgid "Mail address"
-msgstr ""
+msgstr "Adresse électronique"
 
 # type: string
 #: lang/en:130
