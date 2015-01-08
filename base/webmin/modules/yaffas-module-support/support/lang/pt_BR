@@ -1,7 +1,8 @@
 lbl_index_header=Suporte
 lbl_support=Suporte
-lbl_klick_dl_yaffas=Clique no botão de download para salvar a configuração para uso posterior. Envie um email para <a href="mailto:support@yaffas.org">support@yaffas.org</a> para obter suporte. Algumas partes do arquivo salvo serão necessários.
-lbl_klick_dl_zadmin=Clique no botão de download para salvar a configuração para uso posterior. Crie um tópico no fórum do Z-Admin em <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>. Alguns dos dados salvos poderão ser requeridos.
+lbl_klick_dl_yaffas=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@yaffas.org">support@yaffas.org</a> for support. You might be asked for parts of the config file data.
+lbl_klick_dl_zadmin=Click on the download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
+lbl_klick_dl_bitkit=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@bitbone.de">support@bitbone.de</a> for support. You may be asked for parts of the config file data.
 lbl_download=Download
 lbl_index_return=Sistema
 lbl_lshw_text=Pressionar download para obter informações disponíveis sobre o sistema e hardware.

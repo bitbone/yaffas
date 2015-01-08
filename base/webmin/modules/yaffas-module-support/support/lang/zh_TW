@@ -1,7 +1,8 @@
 lbl_index_header=支援
 lbl_support=支援
-lbl_klick_dl_yaffas=點選下載按鈕來儲存設定檔。傳送郵件到<a href="mailto:support@yaffas.org">support@yaffas.org</a>.您可能會被詢問此設定檔案內容
-lbl_klick_dl_zadmin=Click on download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
+lbl_klick_dl_yaffas=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@yaffas.org">support@yaffas.org</a> for support. You might be asked for parts of the config file data.
+lbl_klick_dl_zadmin=Click on the download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
+lbl_klick_dl_bitkit=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@bitbone.de">support@bitbone.de</a> for support. You may be asked for parts of the config file data.
 lbl_download=下載
 lbl_index_return=系統
 lbl_lshw_text=請按下載來獲得目前系統和硬體資訊
