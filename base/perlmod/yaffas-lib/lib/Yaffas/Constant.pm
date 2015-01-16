@@ -235,6 +235,7 @@ use constant {
 		"postfix_mail2fax_ips" => "/opt/yaffas/config/postfix/mail2fax-ips",
 		"postfix_mail2fax_transport" => "/opt/yaffas/config/postfix/transport-mail2fax",
 		"postfix_mail2fax_access" => "/opt/yaffas/config/postfix/mail2fax-access",
+		"postfix_fax_senders" => "/opt/yaffas/config/postfix/fax-senders",
 		"bootlog" => "/var/log/boot",
 		"webaccess_htaccess" => "/usr/share/zarafa-webaccess/.htaccess",
 		"zarafa_quota_mail_warn" => "/etc/zarafa/quotamail/userwarning.mail",

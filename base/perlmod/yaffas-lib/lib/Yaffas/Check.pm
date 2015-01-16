@@ -65,13 +65,13 @@ sub pathetic_username ($) {
 =item faxtype ( )
 
 Check if which faxtype is installed.
-Returns AVM or EICON
+Returns CAPI or EICON
 
 =cut
 
 sub faxtype()
 {
-	return ( -d Yaffas::Constant::DIR->{'divasdir'}) ? "EICON" : "AVM";
+	return ( -d Yaffas::Constant::DIR->{'divasdir'}) ? "EICON" : "CAPI";
 }
 
 =item username ( USERNAME )
@@ -573,7 +573,7 @@ sub long_msn($)
 {
 	my $long_msn = shift;
 
-	if (Yaffas::Check::faxtype() eq "AVM")
+	if (Yaffas::Check::faxtype() eq "CAPI")
 	{
 		return $long_msn =~ m/^\d+_\d+_\d$/;
 	}

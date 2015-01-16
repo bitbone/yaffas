@@ -645,7 +645,7 @@ sub installed_services(;$)
 	if(check_product('fax'))
 	{
 		$services->{'hylafax'}		= { 'constant' => HYLAFAX(), 'allow' => ['start', 'stop', 'restart' ] };
-		if ($faxtype eq "AVM")
+		if ($faxtype eq "CAPI")
 		{
 			$services->{'capiinit'}		= { 'constant' => CAPIINIT(), 'allow' => [ 'start', 'stop', 'restart' ] };
 			$services->{'capi4hylafax'}	= { 'constant' => CAPI4HYLAFAX(), 'allow' => [ 'start', 'stop', 'restart' ] };
