@@ -205,7 +205,7 @@ sub check_existing_conf_entry($)
 	my $faxtype = Yaffas::Check::faxtype();
 	my $ctrlnr = shift;
 	throw Yaffas::Exception("err_only_nr") if ( $ctrlnr !~ m/^\d+$/ );
-	if ($faxtype eq "AVM") {
+	if ($faxtype eq "CAPI") {
 		my $cffc_f = Yaffas::Constant::FILE->{config_faxcapi};
 		my $cffc = Yaffas::File->new($cffc_f) or throw Yaffas::Exception("err_file_read", $cffc_f);
 		return defined ($cffc->search_line(qr!^\s*#\s*begin\s+card\s+$ctrlnr.*$!));
@@ -255,8 +255,6 @@ sub get_incoming_msn()
 	my @msns = Yaffas::FaxDB::msn({type => "user"});
 	my @groupmsns = Yaffas::FaxDB::msn({type => "group"});
 	push @msns, @groupmsns;
-
-	return undef unless @msns;
 
 	return @msns;
 }
