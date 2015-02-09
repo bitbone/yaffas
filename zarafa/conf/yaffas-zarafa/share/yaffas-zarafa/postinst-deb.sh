@@ -17,7 +17,7 @@ cp -f ${YAFFAS_EXAMPLE}/etc/apache2/sites-available/zarafa-webaccess-ssl /etc/ap
 if [[ $OS == "Ubuntu" && $OSVER != "10.04" && $OSVER != "12.04" ]]; then
 	# Ubuntu >=14.04 only recognizes .conf files
 	pushd /etc/apache2/sites-available >/dev/null
-	for conf in zarafa-webapp zarafa-webaccess zarafa-webaccess-ssl; do
+	for conf in zarafa-webaccess zarafa-webaccess-ssl; do
 		ln -s "${conf}" "${conf}.conf"
 	done
 	popd >/dev/null
