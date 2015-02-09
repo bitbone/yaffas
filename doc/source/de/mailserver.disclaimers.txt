@@ -20,6 +20,10 @@ Verfügung.
 Die hier konfigurierten Disclaimer arbeiten direkt im Mailserver und
 dürfen nicht mit dem gleichnamigen Zarafa-Feature verwechselt werden.
 
+Es handelt sich dabei um ein zusätzliches
+https://bitbone.de/bitkit-MAILDISCLAIMER.615.0.html[{product}-Modul],
+das nicht im Standardumfang enthalten ist.
+
 Das {product}-Maildisclaimer-Feature bietet zum Teil umfangreichere
 Möglichkeiten (wie die
 Einbettung von Bildern in Disclaimern) und ist für ein
