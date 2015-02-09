@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-12-01 01:03+0100\n"
-"PO-Revision-Date: 2014-10-24 11:00+0200\n"
+"POT-Creation-Date: 2015-01-08 01:01+0100\n"
+"PO-Revision-Date: 2015-01-07 15:50+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -416,9 +416,9 @@ msgstr "Abteilung"
 # 90%
 # 100%
 #: lang/en:69
-#, fuzzy, no-wrap
+#, no-wrap
 msgid "Allow sending as this user for"
-msgstr "Senden als dieser Benutzer"
+msgstr "Senden als dieser Benutzer erlauben"
 
 # type: string
 #: lang/en:70
