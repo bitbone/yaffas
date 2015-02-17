@@ -62,7 +62,7 @@ longcategory_security=Module für die Konfiguration der Sicherheitseinstellungen
 
 efileopen=Kann $1 nicht öffnen: $2
 
-lbl_faxtakeover=Bitte drücken sie den 'Anwenden' Knopf in der Fax Konfiguration. Die Konfiguration wurde geändert.
+lbl_faxtakeover=Bitte drücken sie den 'Übernehmen'-Knopf im Tab Fax-Einstellungen. Die Konfiguration wurde geändert.
 lbl_achtung=Achtung!
 
 lbl_lang=Sprache
