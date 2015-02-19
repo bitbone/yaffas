@@ -230,7 +230,7 @@ gets controller mode for given ctrl
 sub get_ctrl_mode($)
 {
 	my $ctrl = shift;
-	my $conff = Yaffas::Constant::DIR->{bkconfig} . "fax/bbfaxconf/ctrl.mode";
+	my $conff = Yaffas::Constant::DIR->{bkconfig} . "fax/faxconf/ctrl.mode";
 
 	my $conf = Yaffas::File::Config->new($conff,
 										 {
