@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
-"PO-Revision-Date: 2013-06-27 13:59+0200\n"
+"POT-Creation-Date: 2015-02-20 00:56+0100\n"
+"PO-Revision-Date: 2015-02-09 15:31+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -378,8 +378,8 @@ msgstr "Kann $1 nicht öffnen: $2"
 # type: string
 #: lang/en:65
 #, no-wrap
-msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-msgstr "Bitte drücken sie den 'Anwenden' Knopf in der Fax Konfiguration. Die Konfiguration wurde geändert."
+msgid "Please press the 'Apply' button in the Fax Configuration's Fax Settings tab. The Configuration has been changed."
+msgstr ""
 
 # type: string
 #: lang/en:66

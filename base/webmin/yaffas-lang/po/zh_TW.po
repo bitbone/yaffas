@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2015-02-20 00:56+0100\n"
 "PO-Revision-Date: 2013-02-18 13:01+0200\n"
 "Last-Translator: Evan <evan@ulink.com.tw>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -517,8 +517,8 @@ msgstr "無法打開$1 : $2 "
 # type: string
 #: lang/en:65
 #, no-wrap
-msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-msgstr "請於傳真配置內按下”運用”按鈕。配置已經改變。"
+msgid "Please press the 'Apply' button in the Fax Configuration's Fax Settings tab. The Configuration has been changed."
+msgstr ""
 
 # type: string
 #: lang/en:66

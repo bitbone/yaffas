@@ -157,7 +157,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-07-05 12:01+0300\n"
+"POT-Creation-Date: 2015-02-20 00:56+0100\n"
 "PO-Revision-Date: 2013-03-26 23:36+0200\n"
 "Last-Translator: Aleksandra <aleksandra.zupanc@crmsistemi.si>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -516,8 +516,8 @@ msgstr "Ne morem odpreti $1 : $2"
 # type: string
 #: lang/en:65
 #, no-wrap
-msgid "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
-msgstr "Please press the 'Apply' Button in the Fax Configuration. The Configuration has been changed."
+msgid "Please press the 'Apply' button in the Fax Configuration's Fax Settings tab. The Configuration has been changed."
+msgstr ""
 
 # type: string
 #: lang/en:66

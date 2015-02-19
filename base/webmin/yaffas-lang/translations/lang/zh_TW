@@ -62,7 +62,7 @@ longcategory_security=配置安全選項之模組
 
 efileopen=無法打開$1 : $2 
 
-lbl_faxtakeover=請於傳真配置內按下”運用”按鈕。配置已經改變。
+lbl_faxtakeover=Please press the 'Apply' button in the Fax Configuration's Fax Settings tab. The Configuration has been changed.
 lbl_achtung=注意！
 
 lbl_lang=語言

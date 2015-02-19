@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: yaffas 1.0\n"
-"POT-Creation-Date: 2013-07-05 12:02+0300\n"
+"POT-Creation-Date: 2015-02-20 00:57+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -363,8 +363,8 @@ msgstr ""
 #: lang/en:65
 #, no-wrap
 msgid ""
-"Please press the 'Apply' Button in the Fax Configuration. The Configuration "
-"has been changed."
+"Please press the 'Apply' button in the Fax Configuration's Fax Settings "
+"tab. The Configuration has been changed."
 msgstr ""
 
 # type: string
