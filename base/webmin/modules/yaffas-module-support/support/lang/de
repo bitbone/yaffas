@@ -1,8 +1,8 @@
 lbl_index_header=Support
 lbl_support=Support
-lbl_klick_dl_yaffas=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@yaffas.org">support@yaffas.org</a> for support. You might be asked for parts of the config file data.
-lbl_klick_dl_zadmin=Click on the download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data.
-lbl_klick_dl_bitkit=Click on the download button to save the configuration for later usage. Send an e-mail to <a href="mailto:support@bitbone.de">support@bitbone.de</a> for support. You may be asked for parts of the config file data.
+lbl_klick_dl_yaffas=Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Kontaktieren Sie das yaffas-Team unter <a href="mailto:support@yaffas.org">support@yaffas.org</a>, falls Probleme bestehen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen.
+lbl_klick_dl_zadmin=Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Erstellen Sie ein neues Thema (auf Englisch) im Z-Admin-Forum unter <a href="http://forums.zarafa.com" target="_blank">http://forums.zarafa.com<a/>, falls Sie Hilfestellungen benötigen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen.
+lbl_klick_dl_bitkit=Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Kontaktieren Sie den bitbone-Support unter <a href="mailto:support@bitbone.de">support@bitbone.de</a>, falls Probleme bestehen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen.
 lbl_download=Herunterladen
 lbl_index_return=System
 lbl_lshw_text=Zum speichern der System- und Hardwareinformationen klicken Sie bitte auf Download.

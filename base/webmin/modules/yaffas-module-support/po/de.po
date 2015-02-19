@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-08 01:01+0100\n"
-"PO-Revision-Date: 2015-01-07 15:50+0200\n"
+"POT-Creation-Date: 2015-02-10 01:00+0100\n"
+"PO-Revision-Date: 2015-02-09 15:31+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,19 +27,19 @@ msgstr "Support"
 #: lang/en:3
 #, no-wrap
 msgid "Click on the download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a> for support. You might be asked for parts of the config file data."
-msgstr ""
+msgstr "Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Kontaktieren Sie das yaffas-Team unter <a href=\"mailto:support@yaffas.org\">support@yaffas.org</a>, falls Probleme bestehen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen."
 
 # type: string
 #: lang/en:4
 #, no-wrap
 msgid "Click on the download button to save the configuration for later usage. Create a forum topic for support on Z-Admin in the Z-Admin forums on <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, you might be asked for parts of the config file data."
-msgstr ""
+msgstr "Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Erstellen Sie ein neues Thema (auf Englisch) im Z-Admin-Forum unter <a href=\"http://forums.zarafa.com\" target=\"_blank\">http://forums.zarafa.com<a/>, falls Sie Hilfestellungen benötigen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen."
 
 # type: string
 #: lang/en:5
 #, no-wrap
 msgid "Click on the download button to save the configuration for later usage. Send an e-mail to <a href=\"mailto:support@bitbone.de\">support@bitbone.de</a> for support. You may be asked for parts of the config file data."
-msgstr ""
+msgstr "Klicken Sie auf den Download-Button, um die Konfiguration für einen späteren Import zu sichern. Kontaktieren Sie den bitbone-Support unter <a href=\"mailto:support@bitbone.de\">support@bitbone.de</a>, falls Probleme bestehen. Ggf. werden Sie dann aufgefordert, die hier gesicherte Konfiguration (in Teilen) bereitzustellen."
 
 # type: string
 #: lang/en:6
