@@ -67,7 +67,7 @@ sub get_display_msn($)
 		my $dbh = Yaffas::Postgres::connect_db("bbfaxconf");
 		if (defined($dbh))
 		{
-			if ($faxtype eq "AVM")
+			if ($faxtype eq "CAPI")
 			{
 				my $mode = get_ctrl_mode($ctrl);
 				my $sqlq = "select msn, ctrl, channel from msn_avm where ctrl = '$ctrl'";
@@ -169,7 +169,7 @@ sub add_msn($$$$;$)
 		if (defined($id))
 		{
 			# insert msn for this id
-			if ($fax_type eq "AVM")
+			if ($fax_type eq "CAPI")
 			{
 				unless (defined($bc))
 				{
@@ -411,7 +411,7 @@ sub get_user_msn($)
 		# get msns of id
 		if ( defined($id) )
 		{
-			if ($fax_type eq "AVM")
+			if ($fax_type eq "CAPI")
 			{
 				$sqlq = "select msn, ctrl, channel from msn_avm where id = '$id'";
 				@tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
@@ -469,7 +469,7 @@ sub get_group_msn($)
 		# get msns of id
 		if ( defined($id) )
 		{
-			if ( $fax_type eq "AVM" )
+			if ( $fax_type eq "CAPI" )
 			{
 				$sqlq = "select msn, ctrl, channel from msn_avm where id = '$id'";
 				@tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
@@ -517,7 +517,7 @@ sub get_all_ctrl_msns($)
 	my $dbh = Yaffas::Postgres::connect_db("bbfaxconf");
 	if (defined($dbh))
 	{
-		if ( $fax_type eq "AVM" )
+		if ( $fax_type eq "CAPI" )
 		{
 			my $sqlq = "select msn, ctrl, channel from msn_avm where ctrl = $ctrl";
 			my @tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
@@ -566,7 +566,7 @@ sub get_owner_of_msn($)
 
 	if (Yaffas::Check::ldap_msn($ldap_msn))
 	{
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			($msn, $ctrl, $bc) = split(/_/, $ldap_msn);
 		}
@@ -579,7 +579,7 @@ sub get_owner_of_msn($)
 		{
 			my $sqlq = "";
 			# get id of msn
-			if ($fax_type eq "AVM")
+			if ($fax_type eq "CAPI")
 			{
 				unless (defined($bc))
 				{
@@ -638,7 +638,7 @@ sub get_all_user_msn()
 	{
 		my $sqlq = "";
 		my @tmp = ();
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			$sqlq = "select msn, ctrl, channel from msn_avm where id in (select id from ug where type = 'u')";
 			@tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
@@ -685,7 +685,7 @@ sub get_all_group_msn()
 
 	if (defined($dbh))
 	{
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			$sqlq = "select msn, ctrl, channel from msn_avm where id in (select id from ug where type = 'g')";
 			@tmp = Yaffas::Postgres::search_entry_rows($dbh, $sqlq);
@@ -735,7 +735,7 @@ sub get_msn_user($)
 
 	if (Yaffas::Check::ldap_msn($longmsn))
 	{
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			($msn, $ctrl, $bc) = split(/_/, $longmsn);
 		}
@@ -749,7 +749,7 @@ sub get_msn_user($)
 		{
 			my $sqlq = "";
 			# get id of longmsn
-			if ($fax_type eq "AVM")
+			if ($fax_type eq "CAPI")
 			{
 				unless (defined($bc))
 				{
@@ -868,7 +868,7 @@ sub rm_msn (@)
 
 	foreach my $ldapmsn (@{$msns})
 	{
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			($msn, $controller, $bchannel) = split(/_/, $ldapmsn);
 		}
@@ -885,7 +885,7 @@ sub rm_msn (@)
 
 		if (defined($dbh))
 		{
-			if ($fax_type eq "AVM")
+			if ($fax_type eq "CAPI")
 			{
 				if ("$cmode" eq "separat")
 				{
@@ -914,9 +914,9 @@ sub rm_msn (@)
 	}
 
 	# call function to update faxcapi with incoming msn's
-	if ($fax_type eq "AVM")
+	if ($fax_type eq "CAPI")
 	{
-		# AVM conf update
+		# CAPI conf update
 		throw Yaffas::Exception("err_update_hyla_conf") if
 			(! update_incoming_faxcapi() );
 	}
@@ -951,7 +951,7 @@ sub msn_configured ($$;$)
 	if (defined($dbh))
 	{
 		my $sqlq = "";
-		if ($fax_type eq "AVM")
+		if ($fax_type eq "CAPI")
 		{
 			unless (defined($bchannel))
 			{
