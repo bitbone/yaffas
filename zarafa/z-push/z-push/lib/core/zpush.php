@@ -282,6 +282,10 @@ class ZPush {
         else if ((!is_int(SYNC_CONTACTS_MAXPICTURESIZE) || SYNC_CONTACTS_MAXPICTURESIZE < 1))
             throw new FatalMisconfigurationException("The SYNC_CONTACTS_MAXPICTURESIZE value must be a number higher than 0.");
 
+        if (!defined('USE_PARTIAL_FOLDERSYNC')) {
+            define('USE_PARTIAL_FOLDERSYNC', false);
+        }
+
         // the check on additional folders will not throw hard errors, as this is probably changed on live systems
         if (isset($additionalFolders) && !is_array($additionalFolders))
             ZLog::Write(LOGLEVEL_ERROR, "ZPush::CheckConfig() : The additional folders synchronization not available as array.");
@@ -617,9 +621,9 @@ class ZPush {
         $message $additionalMessage
         <br><br>
         More information about Z-Push can be found at:<br>
-        <a href="http://z-push.sf.net/">Z-Push homepage</a><br>
-        <a href="http://z-push.sf.net/download">Z-Push download page at BerliOS</a><br>
-        <a href="http://z-push.sf.net/tracker">Z-Push Bugtracker and Roadmap</a><br>
+        <a href="http://z-push.org/">Z-Push homepage</a><br>
+        <a href="http://z-push.org/download">Z-Push download page</a><br>
+        <a href="http://jira.zarafa.com/browse/ZP">Z-Push Bugtracker and Roadmap</a><br>
         <br>
         All modifications to this sourcecode must be published and returned to the community.<br>
         Please see <a href="http://www.gnu.org/licenses/agpl-3.0.html">AGPLv3 License</a> for details.<br>
