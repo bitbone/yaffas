@@ -22,7 +22,7 @@ install:
 ifeq ($(YAFFAS_OS),Ubuntu)
 	cp -a $(ETC)/zarafa-webaccess-ssl $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available/
 	mkdir -p $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/php5/apache2/conf.d
-	cp -a etc/yaffas-zarafa.ini $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/php5/apache2/conf.d
+	cp -a etc/yaffas-zarafa.ini $(DESTDIR)/etc/php5/apache2/conf.d
 endif
 ifeq ($(YAFFAS_OS),Debian)
 	cp -a $(ETC)/zarafa-webaccess-ssl $(DESTDIR)/$(YAFFAS_EXAMPLE)/etc/apache2/sites-available/
