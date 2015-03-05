@@ -312,7 +312,7 @@ sub update_incoming_faxcapi_section ($$)
 		foreach my $msn (@msns)
 		{
 			my @msn = @{$msn};
-			if ($msn[1] == $controller && $msn[2] == $bchannel)
+			if ($msn[1] == $controller && ($bchannel == 0 || $msn[2] == $bchannel))
 			{
 				$in_msns .= "$msn[0] ";
 				if ($count > 5)
