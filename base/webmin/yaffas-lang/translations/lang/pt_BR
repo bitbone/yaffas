@@ -62,7 +62,7 @@ longcategory_security=Módulos para a configuração das opções de segurança
 
 efileopen=Não foi possível abrir $1 : $2
 
-lbl_faxtakeover=Por favor pressionar o botão 'Aplicar' na configuração de fax. A configuração foi modificada.
+lbl_faxtakeover=Please press the 'Apply' button in the Fax Configuration's Fax Settings tab. The Configuration has been changed.
 lbl_achtung=Atenção!
 
 lbl_lang=Linguagem
