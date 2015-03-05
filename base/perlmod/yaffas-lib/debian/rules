@@ -4,6 +4,7 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+SHELL=/bin/bash
 OS=$(shell lsb_release -si)-$(shell lsb_release -sr)
 UBUNTU_LUCID=$(shell if [[ $(OS) == Ubuntu-10.04 ]]; then echo 1; else echo 0; fi)
 
