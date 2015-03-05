@@ -4,5 +4,15 @@
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
 
+OS=$(shell lsb_release -si)-$(shell lsb_release -sr)
+UBUNTU_LUCID=$(shell if [[ $(OS) == Ubuntu-10.04 ]]; then echo 1; else echo 0; fi)
+
 %:
 	dh $@
+
+override_dh_gencontrol:
+ifeq ($(UBUNTU_LUCID), 1)
+	dh_gencontrol -- -Vperl-switch=perl-modules
+else
+	dh_gencontrol -- -Vperl-switch=libswitch-perl
+endif

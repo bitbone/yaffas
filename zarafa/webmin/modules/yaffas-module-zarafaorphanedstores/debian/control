@@ -7,6 +7,6 @@ Standards-Version: 3.6.2
 
 Package: yaffas-module-zarafaorphanedstores
 Architecture: all
-Depends: libswitch-perl, yaffas-core, yaffas-module-users, yaffas-install-lib
+Depends: ${perl-switch}, yaffas-core, yaffas-module-users, yaffas-install-lib
 Description: Module for managing zarafa orphaned stores
  Module for managing zarafa orphaned stores
