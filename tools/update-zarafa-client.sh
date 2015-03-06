@@ -78,7 +78,7 @@ sed -re \
 		's:zarafaclient-[0-9\.\-]{8,}\.msi:'$CLIENT_BINARY':g' \
 		-i redhat/*.spec
 sed -re \
-		's:zarafaclient-en(-[0-9\.\-]{8,})?\.msi:'$CLIENT_BINARY_EN':g' \
+		's:zarafaclient-en(-[0-9\.\-]{8,})?\.msi:'zarafaclient-en.msi':g' \
 		-i redhat/*.spec
 echo "Updating version in debian/postinst..."
 sed -re \
