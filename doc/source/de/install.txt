@@ -63,6 +63,10 @@ _Ubuntu 12.04 LTS_
 [subs="attributes"]
   echo "deb http://repo.yaffas.org/{repository_prefix}precise ./" >> /etc/apt/sources.list
 
+_Ubuntu 14.04 LTS_
+[subs="attributes"]
+  echo "deb http://repo.yaffas.org/{repository_prefix}trusty ./" >> /etc/apt/sources.list
+
 Bitte stellen Sie außerdem sicher, dass das https://help.ubuntu.com/community/Repositories/CommandLine[+universe+-Repository aktiviert] ist
 (überprüfbar via +grep universe /etc/apt/sources.list+).
 
