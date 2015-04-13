@@ -8,7 +8,7 @@ URL:		http://www.yaffas.org
 Source0:	file://%{name}-%{version}.tar.gz
 BuildRoot:	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 BuildArch:  noarch
-Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafaorphanedstores, yaffas-module-zarafawebaccess, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap, zarafa-webapp, zarafa-wa-plugins
+Requires:	php, php-cli, php-ldap, mysql-server, zarafa-webaccess, zarafa, yaffas-module-zarafalicence, yaffas-module-zarafaresources, yaffas-module-zarafaconf, yaffas-module-changelang, yaffas-module-zarafaorphanedstores, yaffas-module-zarafawebaccess, yaffas-module-zarafabackup, mod_ssl, yaffas-ldap, zarafa-webapp, zarafa-wa-plugins, zarafa-webapp-extbox, zarafa-webapp-quickitems, zarafa-webapp-titlecounter, zarafa-webapp-clockwidget, zarafa-webapp-files, zarafa-webapp-folderwidgets, zarafa-webapp-pdfbox
 
 %description
 Additional yaffas configuration to make zarafa work
