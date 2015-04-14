@@ -1,3 +1,9 @@
+yaffas-module-security (1.5.0-2) lucid; urgency=low
+
+  * version bump to 1.5.0-2
+
+ -- Package Builder <packages@yaffas.org>  Tue, 14 Apr 2015 11:19:39 +0200
+
 yaffas-module-security (1.5.0-1) lucid; urgency=low
 
   * update to version 1.5.0-1
