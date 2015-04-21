@@ -10,3 +10,7 @@ if grep -q index_services_path $SERVERCFG; then
     echo "search_socket = file:///var/run/zarafa-search" >> $SERVERCFG
 fi
 
+# Work around for ZCP-13222 (apache2ctl graceful crashes apache with
+# ZCP-7.1.12's php-mapi);
+# can be removed once a newer release than ZCP 7.1.12 gets included
+touch /etc/zarafa/php-mapi.cfg

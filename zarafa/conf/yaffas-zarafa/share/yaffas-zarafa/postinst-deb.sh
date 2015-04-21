@@ -135,6 +135,9 @@ zarafa-admin -s
 /etc/init.d/zarafa-dagent restart
 /etc/init.d/apache2 restart
 
+# Work around for ZCP-13222 (apache2ctl graceful crashes apache with
+# ZCP-7.1.12's php-mapi);
+# can be removed once a newer release than ZCP 7.1.12 gets included
+touch /etc/zarafa/php-mapi.cfg
+
 exit 0
-
-
