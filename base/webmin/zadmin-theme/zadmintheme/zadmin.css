@@ -24,7 +24,7 @@ iframe {
 /* CKEditor uses an iframe which is hidden by the rule above;
  * we'll make it visible again here
  */
-.cke iframe {
+.cke iframe, .cke_reset_all iframe {
     display: block;
 }
 
