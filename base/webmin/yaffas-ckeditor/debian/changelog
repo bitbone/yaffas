@@ -1,3 +1,9 @@
+yaffas-ckeditor (4.4.7-1) lucid; urgency=low
+
+  * version bump
+
+ -- Package Builder <packages@yaffas.org>  Mon, 22 Jun 2015 13:28:33 +0200
+
 yaffas-ckeditor (4.4.5-2) lucid; urgency=low
 
   * version bump
