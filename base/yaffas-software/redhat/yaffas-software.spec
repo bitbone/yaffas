@@ -24,11 +24,11 @@ make install DESTDIR=$RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-# remove older zarafa clients such as zarafaclient-7.1.12-49565.msi
-rm -f $(readlink /opt/software/zarafa/zarafaclient.msi | grep -vF zarafaclient-7.1.12-49565.msi)
+# remove older zarafa clients such as zarafaclient-7.1.12-50428.msi
+rm -f $(readlink /opt/software/zarafa/zarafaclient.msi | grep -vF zarafaclient-7.1.12-50428.msi)
 
 # create a new symlink to the latest version
-ln -sf /opt/software/zarafa/zarafaclient-7.1.12-49565.msi /opt/software/zarafa/zarafaclient.msi
+ln -sf /opt/software/zarafa/zarafaclient-7.1.12-50428.msi /opt/software/zarafa/zarafaclient.msi
 
 %postun
 INCLUDES="/etc/samba/includes.smb"
@@ -42,7 +42,7 @@ fi
 %defattr(-,root,root,-)
 %doc debian/{copyright,changelog}
 /opt/software/zarafa/zarafaclient-en.msi
-/opt/software/zarafa/zarafaclient-7.1.12-49565.msi
+/opt/software/zarafa/zarafaclient-7.1.12-50428.msi
 /opt/software/zarafa/zarafamigrationtool.exe
 /opt/yaffas/share/%{name}/postinst-deb.sh
 /opt/yaffas/share/%{name}/postinst-rpm.sh
