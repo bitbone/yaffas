@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-25 00:57+0300\n"
+"POT-Creation-Date: 2015-07-04 00:58+0300\n"
 "PO-Revision-Date: 2012-06-11 10:02+0200\n"
 "Last-Translator: Ivo <i.timmermans@zarafa.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,8 +192,8 @@ msgstr ""
 # type: string
 #: lang/en:31
 #, no-wrap
-msgid "Usermanagment"
-msgstr "Gestion des utilisateurs"
+msgid "User managment"
+msgstr ""
 
 # type: string
 #: lang/en:32

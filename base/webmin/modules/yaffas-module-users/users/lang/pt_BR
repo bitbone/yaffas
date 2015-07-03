@@ -28,7 +28,7 @@ err_user_is_zarafa_admin=Este usuário é usado para entregar e-mails em pastas 
 err_zarafa_admin_force_resync_failed=Execução interna do zarafa-admin --force-resync falhou com o código de erro:
 err_vacation_load=Unable to access this user's vacation information. Make sure the user has a valid Zarafa store.
 
-lbl_usermanagment=Gerenciamento de Usuários
+lbl_usermanagment=User managment
 lbl_adduser=Adicionar usuário
 lbl_prnop=Operador de Impressora
 lbl_prn_admin=Administrador de Impressora

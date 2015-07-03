@@ -28,7 +28,7 @@ err_user_is_zarafa_admin=Der Benutzer wird für die Zustellung in Ordner verwend
 err_zarafa_admin_force_resync_failed=Aufruf von zarafa-admin --force-resync fehlgeschlagen, Fehlercode:
 err_vacation_load=Abwesenheits-Informationen des Nutzers können nicht abgerufen werden. Bitte sicherstellen, dass dem Benutzer ein Zarafa-Store zugeordnet ist.
 
-lbl_usermanagment=Benutzerverwaltung
+lbl_usermanagment=User managment
 lbl_adduser=Benutzer hinzufügen
 lbl_prnop=Druckeroperator
 lbl_prn_admin=Drucker Administrator
