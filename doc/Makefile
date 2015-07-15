@@ -14,7 +14,9 @@ RELEASE_TYPE := $(if $(RELEASE_TYPE),$(RELEASE_TYPE),dev)
 A2X_ATTRIBUTES := -a product=$(PRODUCT) -a product-$(PRODUCT) \
 		-a release-type=$(RELEASE_TYPE) -a release-type-$(RELEASE_TYPE) \
 		-a version=$(VERSION) \
-		--stylesheet=styles.css
+		--stylesheet=styles.css \
+		--asciidoc-opts "--conf-file docbook45-linkfix.conf"
+
 
 HTML_EN := en_EN.html en_EN.chunked 
 HTML_DE := de_DE.html de_DE.chunked
