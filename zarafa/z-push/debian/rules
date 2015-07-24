@@ -37,6 +37,11 @@ build-stamp: configure-stamp
 	$(MAKE)
 	#docbook-to-man debian/z-push.sgml > z-push.1
 
+	# Fix migration script base path; migration script will be unable to find
+	# its config otherwise.
+	sed -re "s|define\\('ZPUSH_BASE_PATH', \"../src\"\\);|define('ZPUSH_BASE_PATH', dirname(__FILE__) . \"/../\");|" \
+			-i tools/migrate-2.0.x-2.1.0.php
+
 	touch build-stamp
 
 clean:
