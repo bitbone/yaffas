@@ -9,5 +9,8 @@ if [ ! -f /var/lib/z-push/settings ]; then
 		service apache2 restart
 	fi
 	cd /usr/share/z-push/tools
+
+	# php coredumps when the locale is not available:
+	export LC_ALL=C
 	/usr/bin/php ./migrate-2.0.x-2.1.0.php
 fi
