@@ -3,6 +3,12 @@ include ../../Makefile.common
 
 DESTDIR ?= /
 
+build:
+	# Fix migration script base path; migration script will be unable to find
+	# its config otherwise.
+	sed -re "s|define\\('ZPUSH_BASE_PATH', \"../src\"\\);|define('ZPUSH_BASE_PATH', dirname(__FILE__) . \"/../\");|" \
+			-i z-push/tools/migrate-2.0.x-2.1.0.php
+
 clean:
 
 install:

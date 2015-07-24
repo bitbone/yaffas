@@ -18,10 +18,6 @@ groupware can be connected and synced with these devices.
 
 %build
 make %{?_smp_mflags}
-# Fix migration script base path; migration script will be unable to find
-# its config otherwise.
-sed -re "s|define\\('ZPUSH_BASE_PATH', \"../src\"\\);|define('ZPUSH_BASE_PATH', dirname(__FILE__) . \"/../\");|" \
-	-i tools/migrate-2.0.x-2.1.0.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
