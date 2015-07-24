@@ -1,3 +1,9 @@
+yaffas-module-bulkmail (1.5.0-4) lucid; urgency=low
+
+  * update to version 1.5.0-4
+
+ -- Package Builder <packages@yaffas.org>  Fri, 24 Jul 2015 09:18:54 +0200
+
 yaffas-module-bulkmail (1.5.0-2) lucid; urgency=low
 
   * version bump to 1.5.0-2
