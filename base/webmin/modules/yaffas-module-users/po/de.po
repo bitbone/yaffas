@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-08 01:01+0100\n"
-"PO-Revision-Date: 2015-01-07 15:50+0200\n"
+"POT-Creation-Date: 2015-07-04 00:58+0300\n"
+"PO-Revision-Date: 2015-02-09 15:31+0200\n"
 "Last-Translator: Christian <hoffmann@bitbone.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -192,8 +192,8 @@ msgstr "Abwesenheits-Informationen des Nutzers können nicht abgerufen werden. B
 # type: string
 #: lang/en:31
 #, no-wrap
-msgid "Usermanagment"
-msgstr "Benutzerverwaltung"
+msgid "User managment"
+msgstr ""
 
 # type: string
 #: lang/en:32
