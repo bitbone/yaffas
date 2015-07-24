@@ -27,9 +27,9 @@ source /opt/yaffas/lib/bbinstall-lib.sh
 case "$1" in
     configure)
 		# remove older zarafa clients such as zarafaclient-7.1.1-1234
-		rm -f $(readlink /opt/software/zarafa/zarafaclient.msi | grep -vF zarafaclient-7.1.13-50732.msi)
+		rm -f $(readlink /opt/software/zarafa/zarafaclient.msi | grep -vF zarafaclient-7.1.13-50958.msi)
 		# create a new symlink to the latest version
-		ln -sf /opt/software/zarafa/zarafaclient-7.1.13-50732.msi \
+		ln -sf /opt/software/zarafa/zarafaclient-7.1.13-50958.msi \
 			/opt/software/zarafa/zarafaclient.msi
     ;;
 
