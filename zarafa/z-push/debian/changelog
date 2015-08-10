@@ -1,3 +1,9 @@
+z-push (2.2.2) precise; urgency=low
+
+  * update to z-push-2.2.2
+
+ -- Package Builder <packages@yaffas.org>  Mon, 10 Aug 2015 11:10:21 +0200
+
 z-push (2.2.1-1) precise; urgency=low
 
   * migration script bugfix

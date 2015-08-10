@@ -623,12 +623,25 @@ class Sync extends RequestProcessor {
                     }
                 }
 
-                // in case there are no changes, we can reply with an empty response
-                if (!$foundchanges && $status == SYNC_STATUS_SUCCESS){
-                    ZLog::Write(LOGLEVEL_DEBUG, "No changes found. Replying with empty response and closing connection.");
-                    self::$specialHeaders = array();
-                    self::$specialHeaders[] = "Connection: close";
-                    return true;
+                // in case there are no changes and no other request has synchronized while we waited, we can reply with an empty response
+                if (!$foundchanges && $status == SYNC_STATUS_SUCCESS) {
+                    // if there were changes to the SPA or CPOs we need to save this before we terminate
+                    // only save if the state was not modified by some other request, if so, return state invalid status
+                    foreach($sc as $folderid => $spa) {
+                        if (self::$deviceManager->CheckHearbeatStateIntegrity($spa->GetFolderId(), $spa->GetUuid(), $spa->GetUuidCounter())) {
+                            $status = SYNC_COMMONSTATUS_SYNCSTATEVERSIONINVALID;
+                        }
+                        else {
+                            $sc->SaveCollection($spa);
+                        }
+                    }
+
+                    if ($status == SYNC_STATUS_SUCCESS) {
+                        ZLog::Write(LOGLEVEL_DEBUG, "No changes found and no other process changed states. Replying with empty response and closing connection.");
+                        self::$specialHeaders = array();
+                        self::$specialHeaders[] = "Connection: close";
+                        return true;
+                    }
                 }
 
                 if ($foundchanges) {
@@ -912,6 +925,15 @@ class Sync extends RequestProcessor {
                                         self::$deviceManager->AnnounceIgnoredMessage($spa->GetFolderId(), $brokenSO->id, $brokenSO);
                                     }
                                 }
+                                // something really bad happened while exporting changes
+                                catch (StatusException $stex) {
+                                    $status = $stex->getCode();
+                                    // during export we found out that the states should be thrown away (ZP-623)
+                                    if ($status == SYNC_STATUS_INVALIDSYNCKEY) {
+                                        self::$deviceManager->ForceFolderResync($spa->GetFolderId());
+                                        break;
+                                    }
+                                }
 
                                 if($n >= $windowSize) {
                                     ZLog::Write(LOGLEVEL_DEBUG, sprintf("HandleSync(): Exported maxItems of messages: %d / %d", $n, $changecount));
@@ -928,8 +950,10 @@ class Sync extends RequestProcessor {
                             self::$encoder->endTag();
                             self::$topCollector->AnnounceInformation(sprintf("Outgoing %d objects%s", $n, ($n >= $windowSize)?" of ".$changecount:""), true);
 
-                            // update folder status
-                            $spa->SetFolderSyncRemaining($changecount);
+                            // update folder status, if there is something set
+                            if ($spa->GetFolderSyncRemaining() && $changecount > 0) {
+                                $spa->SetFolderSyncRemaining($changecount);
+                            }
                             // changecount is initialized with 'false', so 0 means no changes!
                             if ($changecount === 0 || ($changecount !== false && $changecount <= $windowSize))
                                 self::$deviceManager->SetFolderSyncStatus($folderid, DeviceManager::FLD_SYNC_COMPLETED);
@@ -966,12 +990,13 @@ class Sync extends RequestProcessor {
                                 ZLog::Write(LOGLEVEL_ERROR, sprintf("HandleSync(): error saving '%s' - no state information available", $spa->GetNewSyncKey()));
                         }
 
-                        // reset status for the next folder
-                        $status = SYNC_STATUS_SUCCESS;
-
                         // save SyncParameters
                         if ($status == SYNC_STATUS_SUCCESS && empty($actiondata["fetchids"]))
                             $sc->SaveCollection($spa);
+
+                        // reset status for the next folder
+                        $status = SYNC_STATUS_SUCCESS;
+
 
                     } // END foreach collection
                 }

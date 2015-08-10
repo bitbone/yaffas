@@ -279,8 +279,9 @@ class MAPIProvider {
                 }
             }
 
-            //set attendee's status and type if they're available
-            if (isset($row[PR_RECIPIENT_TRACKSTATUS]))
+            //set attendee's status and type if they're available and if we are the organizer
+            $storeprops = $this->getStoreProps();
+            if (isset($row[PR_RECIPIENT_TRACKSTATUS]) && $messageprops[$appointmentprops["representingentryid"]] == $storeprops[PR_MAILBOX_OWNER_ENTRYID])
                 $attendee->attendeestatus = $row[PR_RECIPIENT_TRACKSTATUS];
             if (isset($row[PR_RECIPIENT_TYPE]))
                 $attendee->attendeetype = $row[PR_RECIPIENT_TYPE];
@@ -841,6 +842,12 @@ class MAPIProvider {
         // ignore hidden folders
         if (isset($folderprops[PR_ATTR_HIDDEN]) && $folderprops[PR_ATTR_HIDDEN] != false) {
             ZLog::Write(LOGLEVEL_DEBUG, sprintf("MAPIProvider->GetFolder(): invalid folder '%s' as it is a hidden folder (PR_ATTR_HIDDEN)", $folderprops[PR_DISPLAY_NAME]));
+            return false;
+        }
+
+        // ignore certain undesired folders, like "RSS Feeds"
+        if (isset($folderprops[PR_CONTAINER_CLASS]) && $folderprops[PR_CONTAINER_CLASS] == "IPF.Note.OutlookHomepage") {
+            ZLog::Write(LOGLEVEL_DEBUG, sprintf("MAPIProvider->GetFolder(): folder '%s' should not be synchronized", $folderprops[PR_DISPLAY_NAME]));
             return false;
         }
 
