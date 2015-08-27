@@ -55,6 +55,7 @@ fi
 /opt/yaffas/share/%{name}/postinst-rpm.sh
 /opt/yaffas/share/yaffas-upgrade/yaffas-module-security-1.3.0-update-amavis-60-yaffas.sh
 /opt/yaffas/share/yaffas-upgrade/yaffas-module-security-1.3.2-5-update-policyd-rfc-ignorant.sh
+/opt/yaffas/share/yaffas-upgrade/yaffas-module-security-1.5.0-5-update-policyd-ahbl.sh
 %dir /opt/yaffas/config/postfix
 
 %changelog
