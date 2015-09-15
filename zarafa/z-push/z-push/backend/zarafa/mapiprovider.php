@@ -792,6 +792,15 @@ class MAPIProvider {
             $message->lastverbexecuted = Utils::GetLastVerbExecuted($message->lastverbexecuted);
         }
 
+        // OL 2013 doesn't show sender and subject for signed emails because the headers are missing
+        if(isset($message->messageclass) && strpos($message->messageclass, "IPM.Note.SMIME.MultipartSigned") === 0 &&
+                isset($message->asbody->type) && $message->asbody->type == SYNC_BODYPREFERENCE_MIME) {
+            ZLog::Write(LOGLEVEL_DEBUG, "Attach the transport message headers to a signed message");
+            $transportHeaders = array(PR_TRANSPORT_MESSAGE_HEADERS_W);
+            $messageHeaders = $this->getProps($mapimessage, $transportHeaders);
+            $message->asbody->data = $messageHeaders[PR_TRANSPORT_MESSAGE_HEADERS] ."\r\n\r\n" . $message->asbody->data;
+        }
+
         return $message;
     }
 
@@ -1551,9 +1560,10 @@ class MAPIProvider {
             // "start" and "end" are in GMT when passing to class.recurrence
             // set recurrence start here because it's calculated differently for tasks and appointments
             $recur["start"] = $task->recurrence->start;
-            $recur["regen"] = $task->regenerate;
+            $recur["regen"] = (isset($task->recurrence->regenerate) && $task->recurrence->regenerate) ? 1 : 0;
             //Also add dates to $recur
             $recur["duedate"] = $task->duedate;
+            $recur["complete"] = (isset($task->complete) && $task->complete) ? 1 : 0;
             $recurrence->setRecurrence($recur);
         }
 
