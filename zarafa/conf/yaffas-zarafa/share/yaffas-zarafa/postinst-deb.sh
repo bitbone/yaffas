@@ -141,4 +141,8 @@ zarafa-admin -s
 # can be removed once a newer release than ZCP 7.1.12 gets included
 touch /etc/zarafa/php-mapi.cfg
 
+MAPI_LOG=/var/log/zarafa/php-mapi.log
+chown :www-data "$MAPI_LOG"
+chmod 660 "$MAPI_LOG"
+
 exit 0
