@@ -69,6 +69,7 @@ fi
 /opt/yaffas/share/yaffas-upgrade/03-yaffas-zarafa-notifications.sh
 /opt/yaffas/share/yaffas-upgrade/04-zarafa-webapp-selinux.sh
 /opt/yaffas/share/yaffas-upgrade/05-zarafa-local-admin-vmail.sh
+/opt/yaffas/share/yaffas-upgrade/06-zarafa-mapi-log-perms.sh
 /tmp/zarafa.te
 
 %changelog
