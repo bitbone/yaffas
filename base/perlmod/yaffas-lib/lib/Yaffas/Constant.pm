@@ -351,7 +351,7 @@ use constant {
 		"wbinfo" => "/usr/bin/wbinfo",
 		"net" => "/usr/bin/net",
 		"file" => "/usr/bin/file",
-		"zarafa_admin" => "/usr/bin/zarafa-admin",
+		"zarafa_admin" => ( -X "/usr/sbin/zarafa-admin" ) ? "/usr/sbin/zarafa-admin" : "/usr/bin/zarafa-admin",
 		"gpg" => "/usr/bin/gpg",
 		"gs_bin" => ( OS eq 'Ubuntu' or OS eq 'Debian' ) ? "/usr/bin/gs" : "/opt/Yaffas/ghostscript/bin/gs-gpl",
 		"webmin_web_lib" => "/opt/yaffas/webmin/web-lib.pl",
