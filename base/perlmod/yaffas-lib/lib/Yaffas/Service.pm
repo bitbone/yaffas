@@ -1052,21 +1052,21 @@ sub _status($){
 		my @ret_lsmod = `/sbin/lsmod`;
 		return (grep { $_ =~ m/divas/} @ret_lsmod);
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_GATEWAY() }) {
-		return __check_process('/usr/bin/zarafa-gateway');
+		return __check_process('zarafa-gateway');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_MONITOR() }) {
-		return __check_process('/usr/bin/zarafa-monitor');
+		return __check_process('zarafa-monitor');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SERVER() }) {
-		return __check_process('/usr/bin/zarafa-server');
+		return __check_process('zarafa-server');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SEARCH() }) {
-		return __check_process('/usr/bin/zarafa-search');
+		return __check_process('zarafa-search');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_SPOOLER() }) {
-		return __check_process('/usr/bin/zarafa-spooler');
+		return __check_process('zarafa-spooler');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_ICAL() }) {
-		return __check_process('/usr/bin/zarafa-ical');
+		return __check_process('zarafa-ical');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_LICENSED() }) {
-		return __check_process('/usr/bin/zarafa-licensed');
+		return __check_process('zarafa-licensed');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ ZARAFA_DAGENT() }) {
-		return __check_process('/usr/bin/zarafa-dagent');
+		return __check_process('zarafa-dagent');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ SSHD() }) {
 		return __check_process('/usr/sbin/sshd');
 	} elsif ($service eq $Yaffas::Service::SERVICES{ MPPD() }) {

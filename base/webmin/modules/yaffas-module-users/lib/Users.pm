@@ -41,7 +41,7 @@ sub get_zarafa_admin($) {
 	else {
 		# FIXME: dirty evil solution
 		# Yaffas::LDAP should really be fixed, so it can handle also ADS and REMOTE_LDAP
-		return `/usr/bin/zarafa-admin --details $login | awk -F: '/^Administrator/{ ORS=""; gsub(/[[:space:]]*/, "", \$2); print \$2; }'` eq "yes";
+		return `zarafa-admin --details $login | awk -F: '/^Administrator/{ ORS=""; gsub(/[[:space:]]*/, "", \$2); print \$2; }'` eq "yes";
 	}
 }
 

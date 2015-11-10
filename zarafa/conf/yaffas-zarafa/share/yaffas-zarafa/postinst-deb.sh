@@ -121,7 +121,7 @@ set +e
 /etc/init.d/mysql start
 /etc/init.d/slapd start
 /etc/init.d/zarafa-server stop
-/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+zarafa-server --ignore-attachment-storage-conflict
 /etc/init.d/zarafa-server stop
 if pgrep zarafa-server > /dev/null; then
     killall zarafa-server

@@ -90,7 +90,7 @@ sub run {
     }
 
     print "Starting backup...\n";
-    print Yaffas::do_back_quote("/bin/bash", "-c", "/usr/bin/zarafa-backup -a 2>&1");
+    print Yaffas::do_back_quote("/bin/bash", "-c", "zarafa-backup -a 2>&1");
 
     if ($type eq "full") {
         cleanup();
@@ -164,7 +164,11 @@ sub run_restore {
     $text =~ s/\$1/\n$label\n/;
     print $text;
 
-    push @cmd, "/usr/bin/zarafa-restore";
+	if (-X "/usr/sbin/zarafa-restore") {
+	    push @cmd, "/usr/sbin/zarafa-restore";
+	} else {
+	    push @cmd, "/usr/bin/zarafa-restore";
+	}
 
     if ($user eq "Public") {
         push @cmd, "-p";
@@ -346,7 +350,9 @@ sub cleanup {
 }
 
 sub is_installed {
-    if( -x "/usr/bin/zarafa-backup") {
+    if( -x "/usr/sbin/zarafa-backup") {
+        return 1;
+    } elsif( -x "/usr/bin/zarafa-backup") {
         return 1;
     } else {
         return 0;

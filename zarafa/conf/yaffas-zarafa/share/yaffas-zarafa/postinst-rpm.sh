@@ -82,7 +82,7 @@ setsebool httpd_can_network_connect=1
 
 chkconfig zarafa-server on
 service zarafa-server stop
-/usr/bin/zarafa-server --ignore-attachment-storage-conflict
+zarafa-server --ignore-attachment-storage-conflict
 service zarafa-server restart
 
 # enable services

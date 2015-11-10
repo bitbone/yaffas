@@ -14,7 +14,8 @@
 #
 # This file is part of yaffas.
 
-DAGENT_PATH=/usr/bin/zarafa-dagent
+DAGENT_PATH=/usr/sbin/zarafa-dagent
+[[ -x $DAGENT_PATH ]] || DAGENT_PATH=/usr/bin/zarafa-dagent
 
 ALIAS_USER=$(head -n1 /etc/zarafa/folderadmin.cfg 2>/dev/null || true)
 if [[ ! $ALIAS_USER ]]; then
