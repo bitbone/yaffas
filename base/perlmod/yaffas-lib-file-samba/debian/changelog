@@ -1,3 +1,9 @@
+yaffas-lib-file-samba (1.5.0-5) lucid; urgency=low
+
+  * update to version 1.5.0-5
+
+ -- Package Builder <packages@yaffas.org>  Wed, 18 Nov 2015 11:13:38 +0100
+
 yaffas-lib-file-samba (1.5.0-4) lucid; urgency=low
 
   * update to version 1.5.0-4
