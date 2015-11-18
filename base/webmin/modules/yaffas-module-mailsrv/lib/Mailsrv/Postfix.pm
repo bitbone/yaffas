@@ -165,7 +165,7 @@ sub get_smarthost (){
 	$sh =~ s/^\[(.*?)\]\Z/$1/;
 
 	my $bkf = Yaffas::File->new(Yaffas::Constant::FILE->{'postfix_smtp_auth'});
-	my $ln = $bkf->search_line($sh);
+	my $ln = $bkf->search_line(quotemeta($sh));
 	my $line = $bkf->get_content($ln);
 
 	my ($username, $password);
@@ -246,7 +246,7 @@ sub rm_smarthost($) {
 
 
 	my $bkf = Yaffas::File->new(Yaffas::Constant::FILE->{'exim_passwd_client'});
-	my $ln = $bkf->search_line($sh);
+	my $ln = $bkf->search_line(quotemeta($sh));
 	$bkf->splice_line($ln, 1 );
 	$bkf->write();
 }
